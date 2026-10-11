@@ -141,3 +141,16 @@ The original deliverable is the implemented, exercised cleanup workflow and oper
 - [x] Add a linked macOS word-list setup section to RUNBOOK for fresh checkouts. Compared reconstruction against the existing prepared lexicon in memory; bytes match. No source files, queues, outputs, or performance-agent files changed; no model requests or production runs started.
 
 Documentation-only unit; Markdown formatting and diff checks run before commit. No code/test changes.
+
+## User-requested one-hour Qwen worker (started 2026-10-11 18:17 UTC)
+
+The user explicitly asked Codex to run the documented long local job. Started `make run-qwen` against the existing `static-final-20261011` queue, with Qwen `qwen3.8:27b-mlx`, sequential requests, maximum 1,000 jobs or 3,600 seconds. Initial state: 686 completed, 238 review, 21,623 pending, zero claimed; both worker/request locks were available before launch.
+
+- Execution handle: shell session **23933**; confirmed running with a job claimed.
+- Log: `tmp/qwen-hour-20261011.log`.
+- Live state: `make status`; inspect existing worker before starting another.
+- Results save per job in the same `jobs.sqlite`; no queue recreation or provider switch. This is the newly authorized bounded production worker, separate from the earlier small POCs.
+- [ ] Record terminal outcome/counts once session 23933 ends. A request already in flight can extend beyond the one-hour deadline.
+- [ ] After the worker exits, `make run-static` refreshes exports with accepted saved results. Published exports are not refreshed by `make run-qwen` itself.
+
+Do not start another worker while this session is active. The user's OpenCode performance work under `tmp/performance/` remains untouched.
