@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import sqlite3
 from pathlib import Path
 
 import pytest
@@ -24,6 +25,7 @@ from congressional_globe.storage import (
     progress,
     retry_job,
     retry_review_jobs,
+    review_job,
     run_summary,
 )
 
@@ -338,8 +340,107 @@ def test_run_summary_reports_progress_and_eta(tmp_path: Path) -> None:
         "remaining": 0,
         "percent_complete": 100.0,
         "average_completed_seconds": 1.0,
+        "average_resolved_seconds": 1.0,
+        "timed_resolved_jobs": 1,
+        "estimated_pending_hours": 0.0,
         "estimated_remaining_hours": 0.0,
     }
+
+
+def _clear_duration(database: Path, job_id: str) -> None:
+    with sqlite3.connect(database) as connection:
+        connection.execute("UPDATE cleanup_jobs SET duration_ms = NULL WHERE id = ?", (job_id,))
+
+
+def test_run_summary_uses_timed_resolved_jobs_for_pending_estimate(tmp_path: Path) -> None:
+    paragraphs = tmp_path / "paragraphs.jsonl"
+    database = tmp_path / "jobs.sqlite"
+    paragraphs.write_text(
+        "".join(
+            json.dumps({"id": f"p{index}", "scan_leaf": index, "text_ocr": "x"}) + "\n"
+            for index in range(1, 6)
+        ),
+        encoding="utf-8",
+    )
+    create_run(database, "run-1", paragraphs)
+    first = claim_next(database, "run-1", "ollama", "model")
+    second = claim_next(database, "run-1", "ollama", "model")
+    third = claim_next(database, "run-1", "ollama", "model")
+    assert first is not None and second is not None and third is not None
+    complete_job(database, first.id, {}, 1_000)
+    complete_job(database, second.id, {}, 2_000)
+    _clear_duration(database, second.id)
+    review_job(database, third.id, "needs review", 32_400_000)
+    claimed = claim_next(database, "run-1", "ollama", "model")
+    assert claimed is not None
+
+    summary = run_summary(database, "run-1")
+
+    assert summary["average_completed_seconds"] == 1.0
+    assert summary["average_resolved_seconds"] == 16_200.5
+    assert summary["timed_resolved_jobs"] == 2
+    assert summary["estimated_pending_hours"] == 9.0
+    assert summary["estimated_remaining_hours"] == 9.0
+    assert summary["remaining"] == 3
+
+
+def test_run_summary_handles_zero_and_missing_timings_and_no_pending(tmp_path: Path) -> None:
+    paragraphs = tmp_path / "paragraphs.jsonl"
+    database = tmp_path / "jobs.sqlite"
+    paragraphs.write_text(
+        "".join(
+            json.dumps({"id": f"p{index}", "scan_leaf": index, "text_ocr": "x"}) + "\n"
+            for index in range(1, 4)
+        ),
+        encoding="utf-8",
+    )
+    create_run(database, "run-1", paragraphs)
+    completed = claim_next(database, "run-1", "ollama", "model")
+    reviewed = claim_next(database, "run-1", "ollama", "model")
+    missing = claim_next(database, "run-1", "ollama", "model")
+    assert completed is not None and reviewed is not None and missing is not None
+    complete_job(database, completed.id, {}, 0)
+    review_job(database, reviewed.id, "needs review", 4)
+    complete_job(database, missing.id, {}, 5)
+    _clear_duration(database, reviewed.id)
+    _clear_duration(database, missing.id)
+
+    summary = run_summary(database, "run-1")
+
+    assert summary["average_completed_seconds"] == 0.0
+    assert summary["average_resolved_seconds"] == 0.0
+    assert summary["timed_resolved_jobs"] == 1
+    assert summary["estimated_pending_hours"] == 0.0
+    assert summary["estimated_remaining_hours"] == 0.0
+
+
+def test_run_summary_without_resolved_timings_cannot_estimate_pending(tmp_path: Path) -> None:
+    paragraphs = tmp_path / "paragraphs.jsonl"
+    database = tmp_path / "jobs.sqlite"
+    paragraphs.write_text(
+        "".join(
+            json.dumps({"id": f"p{index}", "scan_leaf": index, "text_ocr": "x"}) + "\n"
+            for index in range(1, 4)
+        ),
+        encoding="utf-8",
+    )
+    create_run(database, "run-1", paragraphs)
+    reviewed = claim_next(database, "run-1", "ollama", "model")
+    completed = claim_next(database, "run-1", "ollama", "model")
+    assert claim_next(database, "run-1", "ollama", "model") is not None
+    assert reviewed is not None and completed is not None
+    review_job(database, reviewed.id, "needs review", 3)
+    complete_job(database, completed.id, {}, 4)
+    _clear_duration(database, reviewed.id)
+    _clear_duration(database, completed.id)
+
+    summary = run_summary(database, "run-1")
+
+    assert summary["average_completed_seconds"] is None
+    assert summary["average_resolved_seconds"] is None
+    assert summary["timed_resolved_jobs"] == 0
+    assert summary["estimated_pending_hours"] is None
+    assert summary["estimated_remaining_hours"] is None
 
 
 def _hocr() -> str:

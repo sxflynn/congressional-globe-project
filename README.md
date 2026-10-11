@@ -51,6 +51,8 @@ make status
 
 `pending` means work remains; `completed` means proposed corrections passed validation; `review` means the passage needs attention. A completed passage may still contain OCR errors.
 
+`estimated_pending_hours` estimates model processing time from recorded request timings; human review and export time are extra.
+
 ## 4. Refresh and find your results
 
 After the worker stops:

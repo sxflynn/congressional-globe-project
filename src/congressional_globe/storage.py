@@ -154,23 +154,16 @@ def progress(database_path: Path, run_id: str) -> dict[str, int]:
 def run_summary(database_path: Path, run_id: str) -> dict[str, int | float | None]:
     engine = _engine(database_path)
     with Session(engine) as session:
-        statuses = session.scalars(
-            select(CleanupJob.status).where(CleanupJob.run_id == run_id)
-        ).all()
-        durations = session.scalars(
-            select(CleanupJob.duration_ms).where(
-                CleanupJob.run_id == run_id, CleanupJob.status == "completed"
+        rows = [
+            (status, duration)
+            for status, duration in session.execute(
+                select(CleanupJob.status, CleanupJob.duration_ms).where(CleanupJob.run_id == run_id)
             )
-        ).all()
-    counts = Counter(statuses)
+        ]
+    counts = Counter(status for status, _duration in rows)
     total = sum(counts.values())
     completed = counts["completed"]
     remaining = total - completed
-    average_ms = (
-        sum(duration for duration in durations if duration is not None) / completed
-        if completed
-        else None
-    )
     return {
         "completed": completed,
         "pending": counts["pending"],
@@ -179,13 +172,51 @@ def run_summary(database_path: Path, run_id: str) -> dict[str, int | float | Non
         "total": total,
         "remaining": remaining,
         "percent_complete": round((completed / total) * 100, 2) if total else 0,
-        "average_completed_seconds": round(average_ms / 1000, 2)
-        if average_ms is not None
-        else None,
-        "estimated_remaining_hours": round((average_ms * remaining) / 3_600_000, 2)
-        if average_ms is not None
-        else None,
+        **_summary_timing(rows, counts["pending"] + counts["claimed"]),
     }
+
+
+def _summary_timing(
+    rows: list[tuple[str, int | None]], pending_work: int
+) -> dict[str, int | float | None]:
+    completed_times = _resolved_durations(rows, {"completed"})
+    resolved_times = _resolved_durations(rows, {"completed", "review"})
+    average_completed_ms = _mean(completed_times)
+    average_resolved_ms = _mean(resolved_times)
+    estimate_ms = _pending_estimate(average_resolved_ms, pending_work)
+    return {
+        "average_completed_seconds": _rounded_seconds(average_completed_ms),
+        "average_resolved_seconds": _rounded_seconds(average_resolved_ms),
+        "timed_resolved_jobs": len(resolved_times),
+        "estimated_pending_hours": _rounded_hours(estimate_ms),
+        "estimated_remaining_hours": _rounded_hours(estimate_ms),
+    }
+
+
+def _resolved_durations(rows: list[tuple[str, int | None]], statuses: set[str]) -> list[int]:
+    return [
+        duration
+        for status, duration in rows
+        if status in statuses and duration is not None and duration >= 0
+    ]
+
+
+def _rounded_seconds(duration_ms: float | None) -> float | None:
+    return round(duration_ms / 1000, 2) if duration_ms is not None else None
+
+
+def _rounded_hours(duration_ms: float | None) -> float | None:
+    return round(duration_ms / 3_600_000, 2) if duration_ms is not None else None
+
+
+def _mean(durations: list[int]) -> float | None:
+    return sum(durations) / len(durations) if durations else None
+
+
+def _pending_estimate(average_ms: float | None, pending_work: int) -> float | None:
+    if pending_work == 0:
+        return 0.0
+    return average_ms * pending_work if average_ms is not None else None
 
 
 def job_by_id(database_path: Path, run_id: str, paragraph_id: str) -> CleanupJob | None:
