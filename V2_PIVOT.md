@@ -62,15 +62,15 @@ On a small, labeled historical-query set, does an evidence-linked structured/dis
 The user requested this exploratory POC and explicitly authorized small GPT Mini and Ollama tests. Current work prepares an isolated ten-query, fifty-window comparison, with at most twenty sequential local Qwen requests per run after preparation checks, then a selected small Mini comparison. No full-corpus processing is part of this experiment. Production OCR, cleanup queues and exports stay intact. The first lexical retrieval baseline will not prove vector retrieval; a separate bounded embedding comparison is still needed. Qwen3 embedding 4B and 8B are now installed. Exact execution state and delegate ownership are in `PROGRESS.md`.
 
 - [x] Establish the user-requested experiment objective while preserving the cleanup path.
-- [ ] Select and freeze a small, stratified set of windows and queries; record source and text-layer hashes.
+- [x] Select and freeze the initial fifty-window pool and harder 125-window tier; record source/text hashes and provisional query labels. Full relevance labeling remains pending.
 - [ ] Define typed, versioned tag/assertion and evidence-span contracts, including alternatives, unknown/mixed, and review states.
 - [ ] Write provisional labels and decision thresholds before running systems; keep ambiguity and reviewer disagreement visible.
-- [ ] Compare raw OCR and current static-normalized inputs against the same text-only and tagged retrieval baselines.
+- [x] Compare raw/static lexical baselines and deterministic appended-tag arms on the same inputs. Separate metadata filters and harder semantic retrieval remain pending.
 - [ ] Report per-part/document-type errors, citations, unsupported claims, and all limitations before deciding whether to continue.
 
 ## Risks to test
 
-The offline design audit is saved at `artifacts/v2-pivot-20261011/design-review.json`. Before deciding on the pivot, compare raw-only retrieval against the same raw text with proposed metadata; raw versus normalized text alone cannot show tagging value. Until all pool windows have relevance labels, report intended-target ranks/hits rather than precision or recall. Explicit unanswerable, mixed-speaker and unknown-date controls are required, and exact quotations need entailment review. The initial local model inventory contains no embedding-capable model; model selection research is underway separately.
+The offline design audit is saved at `artifacts/v2-pivot-20261011/design-review.json`. Before deciding on the pivot, compare raw-only retrieval against the same raw text with proposed metadata; raw versus normalized text alone cannot show tagging value. Until all pool windows have relevance labels, report intended-target ranks/hits rather than precision or recall. Explicit unanswerable, mixed-speaker and unknown-date controls are required, and exact quotations need entailment review. Qwen3 embedding 4B and 8B are installed; native 4B inference works. The first embedding sample saturated at all intended targets ranked first and cannot establish comparative quality.
 
 - OCR errors may obscure names, dates, or legislative references; adding tags can give false confidence if evidence spans do not support them.
 - Page windows can mix speakers and topics. Page-bounded chunking is a starting point, not a boundary detector.
@@ -78,3 +78,15 @@ The offline design audit is saved at `artifacts/v2-pivot-20261011/design-review.
 - Easy index entries may inflate results. Stratify and report by proceedings, index, and Appendix rather than only an aggregate score.
 - Loose discovery labels may help search but must not leak into accepted structured filters or grounded answers.
 - A small purposive POC can reject an unsafe approach or reveal a promising one; it cannot establish corpus-wide quality.
+
+## Current evidence and provisional direction
+
+The unchanged-OCR route is **promising but not ready for full processing**. Qwen and Mini can summarize selected substantive passages despite OCR noise; source evidence and attribution remain harder than general comprehension. The first 4B embedding experiment successfully indexed fifty paired raw/static windows (110 inputs including queries, 140.867 seconds), but all ten queries ranked their intended target first, so it establishes functioning infrastructure rather than a quality advantage. The harder 125-window lexical experiment put 25/29 intended targets first on raw versus 24/29 on static; distractor relevance is unannotated, so these are not precision/recall estimates.
+
+Appending broad deterministic tag words to BM25 text did not improve raw hit@1 and reduced MRR (0.931 → 0.9164), including the Dakota target dropping rank 1 → 13. That tests one use of tags, not whether separately stored filters or ranking fusion help. Regex name cues are not speaker assignments, and exact source spans do not prove the role attached to them. Do not populate hard historical filters from these candidates.
+
+Six matched Mini calls on the first three targets took 16.691 seconds and approximately $0.015387 at uncached token rates; all six still require review. This is diagnostic replication of known Qwen failures, not a held-out model benchmark. Paired source/model outputs and a pending human rubric are saved in `artifacts/v2-pivot-20261011/mini-matched-review/`. The latest prompt-only diagnostic and terminal status belong in `PROGRESS.md`, which supersedes older checkpoints.
+
+A defensible next evaluation must separate (1) retrieving relevant raw passages, (2) correct evidence-backed roles/topics/dates with unknown/mixed handling, and (3) grounded answers. Test separate discovery metadata rather than concatenating all tags into prose; use held-out queries and independent relevance/role labels. Retain optional cleanup for demonstrated OCR-sensitive misses instead of treating perfect cleanup as a prerequisite. Human review and the harder semantic comparison remain necessary before recommending corpus-wide processing.
+
+A prompt-only three-raw-case Mini diagnostic improved literal evidence and letter-author separation in one case (one validated/two review; 8.259 seconds, approximately $0.007323). It still missed a floor speaker and retained malformed `186-1` as a literal cue, not a resolved historical date. These observed limitations reinforce separate role/date validation and explicit unknown values. Next: the harder Tier-2 semantic benchmark, separately scored metadata filtering/fusion, and human review; no corpus-wide pivot decision yet.

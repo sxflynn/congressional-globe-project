@@ -4,6 +4,8 @@ Last updated: 2026-10-11
 
 Active exploration: [V2_PIVOT.md](V2_PIVOT.md) compares organizing and enriching unchanged OCR against the existing cleaned-text path. Preserve both; do not resume cleanup model jobs as part of that experiment. `PROGRESS.md` records its sample preparation, commands and limitations.
 
+The latest V2 diagnostic used nine Mini calls, approximately $0.023 total: generally supported answers, persistent evidence/role failures, and no full-processing recommendation. Human review packets and the next harder semantic/filter experiment are recorded in `PROGRESS.md` and `V2_HANDOFF.md`. The QA prototype now streams count, percentage, elapsed/ETA and source/response events.
+
 For continuation in another AI harness, follow [V2_HANDOFF.md](V2_HANDOFF.md). It records the preserved corpus, authorization, installed embedding models, exact POC commands, stopped trial, outstanding checks and resume order.
 
 ## Purpose
