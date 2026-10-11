@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from collections import Counter
 from collections.abc import Iterator
+from contextlib import closing
 from datetime import UTC, datetime
 from hashlib import sha256
 from itertools import islice
@@ -12,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from sqlalchemy import Integer, String, Text, create_engine, select
+from sqlalchemy import text as sql_text
 from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column
 
 
@@ -25,6 +27,8 @@ class CleanupJob(Base):
     id: Mapped[str] = mapped_column(String(128), primary_key=True)
     run_id: Mapped[str] = mapped_column(String(128), index=True)
     paragraph_id: Mapped[str] = mapped_column(String(128), index=True)
+    identity: Mapped[str | None] = mapped_column(String(512), nullable=True, index=True)
+    input_hash: Mapped[str | None] = mapped_column(String(64), nullable=True)
     source_json: Mapped[str] = mapped_column(Text)
     source_text: Mapped[str] = mapped_column(Text)
     status: Mapped[str] = mapped_column(String(32), default="pending", index=True)
@@ -34,6 +38,8 @@ class CleanupJob(Base):
     result_json: Mapped[str | None] = mapped_column(Text, nullable=True)
     error: Mapped[str | None] = mapped_column(Text, nullable=True)
     duration_ms: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    usage_json: Mapped[str | None] = mapped_column(Text, nullable=True)
+    raw_response: Mapped[str | None] = mapped_column(Text, nullable=True)
     updated_at: Mapped[str] = mapped_column(String(40), default=lambda: _now())
 
 
@@ -82,13 +88,40 @@ def release_claimed(database_path: Path, run_id: str) -> int:
 
 
 def complete_job(
-    database_path: Path, job_id: str, result: dict[str, Any], duration_ms: int
+    database_path: Path,
+    job_id: str,
+    result: dict[str, Any],
+    duration_ms: int,
+    raw_response: str | None = None,
+    usage: dict[str, int] | None = None,
 ) -> None:
-    _update_job(database_path, job_id, "completed", json.dumps(result), None, duration_ms)
+    if result.get("cleanup", {}).get("needs_image_review") is True:
+        raise ValueError("jobs requesting image review cannot be completed")
+    _update_job(
+        database_path,
+        job_id,
+        "completed",
+        json.dumps(result),
+        None,
+        duration_ms,
+        raw_response,
+        usage,
+    )
 
 
 def review_job(database_path: Path, job_id: str, error: str, duration_ms: int) -> None:
     _update_job(database_path, job_id, "review", None, error, duration_ms)
+
+
+def review_job_result(
+    database_path: Path,
+    job_id: str,
+    error: str,
+    duration_ms: int,
+    raw_response: str,
+    usage: dict[str, int],
+) -> None:
+    _update_job(database_path, job_id, "review", None, error, duration_ms, raw_response, usage)
 
 
 def retry_job(database_path: Path, job_id: str, error: str, duration_ms: int) -> None:
@@ -169,10 +202,25 @@ def job_by_id(database_path: Path, run_id: str, paragraph_id: str) -> CleanupJob
 
 
 def completed_jobs(database_path: Path, run_id: str) -> list[CleanupJob]:
+    return _jobs(database_path, run_id, "completed")
+
+
+def jobs_for_run(database_path: Path, run_id: str) -> list[CleanupJob]:
     engine = _engine(database_path)
     with Session(engine) as session:
         jobs = session.scalars(
-            select(CleanupJob).where(CleanupJob.run_id == run_id, CleanupJob.status == "completed")
+            select(CleanupJob).where(CleanupJob.run_id == run_id).order_by(CleanupJob.id)
+        ).all()
+        for job in jobs:
+            session.expunge(job)
+        return list(jobs)
+
+
+def _jobs(database_path: Path, run_id: str, status: str) -> list[CleanupJob]:
+    engine = _engine(database_path)
+    with Session(engine) as session:
+        jobs = session.scalars(
+            select(CleanupJob).where(CleanupJob.run_id == run_id, CleanupJob.status == status)
         ).all()
         for job in jobs:
             session.expunge(job)
@@ -181,7 +229,26 @@ def completed_jobs(database_path: Path, run_id: str) -> list[CleanupJob]:
 
 def _engine(database_path: Path):
     database_path.parent.mkdir(parents=True, exist_ok=True)
-    return create_engine(f"sqlite:///{database_path}", connect_args={"timeout": 30})
+    engine = create_engine(f"sqlite:///{database_path}", connect_args={"timeout": 30})
+    Base.metadata.create_all(engine)
+    _migrate_schema(engine)
+    return engine
+
+
+def _migrate_schema(engine: Any) -> None:
+    additions = {
+        "identity": "VARCHAR(512)",
+        "input_hash": "VARCHAR(64)",
+        "usage_json": "TEXT",
+        "raw_response": "TEXT",
+    }
+    with closing(engine.connect()) as connection, connection.begin():
+        columns = {
+            row[1] for row in connection.execute(sql_text("PRAGMA table_info(cleanup_jobs)"))
+        }
+        for name, kind in additions.items():
+            if name not in columns:
+                connection.execute(sql_text(f"ALTER TABLE cleanup_jobs ADD COLUMN {name} {kind}"))
 
 
 def _ensure_empty_run(session: Session, run_id: str) -> None:
@@ -235,15 +302,29 @@ def _limited(records: Iterator[dict[str, Any]], limit: int | None) -> Iterator[d
 
 
 def _job_from_payload(run_id: str, payload: dict[str, Any]) -> CleanupJob:
-    text = payload["text_ocr"]
-    identifier = f"{run_id}:{payload['id']}:{sha256(text.encode()).hexdigest()[:16]}"
+    text = payload.get("text_normalized")
+    if text is None:
+        text = payload["text_ocr"]
+    input_hash = sha256(text.encode()).hexdigest()
+    identity = _composite_identity(payload)
+    identifier = sha256(f"{run_id}:{identity}:{input_hash}".encode()).hexdigest()
     return CleanupJob(
         id=identifier,
         run_id=run_id,
         paragraph_id=payload["id"],
+        identity=identity,
+        input_hash=input_hash,
         source_json=json.dumps(payload, separators=(",", ":")),
         source_text=text,
     )
+
+
+def composite_identity(payload: dict[str, Any]) -> str:
+    return _composite_identity(payload)
+
+
+def _composite_identity(payload: dict[str, Any]) -> str:
+    return "\x1f".join(str(payload.get(key, "")) for key in ("item_identifier", "scan_leaf", "id"))
 
 
 def _pending_jobs(run_id: str):
@@ -262,6 +343,8 @@ def _update_job(
     result_json: str | None,
     error: str | None,
     duration_ms: int,
+    raw_response: str | None = None,
+    usage: dict[str, int] | None = None,
 ) -> None:
     engine = _engine(database_path)
     with Session(engine) as session, session.begin():
@@ -272,6 +355,10 @@ def _update_job(
         job.result_json = result_json
         job.error = error
         job.duration_ms = duration_ms
+        if raw_response is not None:
+            job.raw_response = raw_response
+        if usage is not None:
+            job.usage_json = json.dumps(usage, separators=(",", ":"))
         job.updated_at = _now()
 
 

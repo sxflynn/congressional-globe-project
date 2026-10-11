@@ -6,6 +6,7 @@ import json
 import os
 import sqlite3
 from collections.abc import Iterator
+from hashlib import sha256
 from pathlib import Path
 from tempfile import NamedTemporaryFile, TemporaryDirectory
 from typing import Any
@@ -196,7 +197,19 @@ def _normalized_paragraph(
     identity: tuple[str, int, str],
 ) -> ParagraphRecord:
     updates: dict[str, Any] = {"text_normalized": text_normalized}
-    for field in ("static_edits", "static_cleanup_provenance", "unresolved_wrap_hints"):
+    for field in (
+        "static_edits",
+        "static_cleanup_provenance",
+        "unresolved_wrap_hints",
+        "role",
+        "role_source",
+        "context",
+        "ai_edits",
+        "ai_input_text",
+        "ai_input_sha256",
+        "cleanup_status",
+        "ai_provenance",
+    ):
         if field in derived:
             updates[field] = derived[field]
     merged = ParagraphRecord.model_validate({**paragraph.model_dump(mode="json"), **updates})
@@ -207,15 +220,23 @@ def _normalized_paragraph(
 def _verify_static_ledger(
     paragraph: ParagraphRecord, derived: dict[str, Any], identity: tuple[str, int, str]
 ) -> None:
-    if "static_edits" not in derived or _has_ai_edits(derived):
-        return
     static_text = apply_edits(paragraph.text_ocr, paragraph.static_edits)
+    if paragraph.ai_input_text is not None:
+        _verify_ai_stage(paragraph, static_text, identity)
+        return
     if static_text != paragraph.text_normalized:
         raise ValueError(f"Static edit ledger does not reproduce normalized text: {identity}")
 
 
-def _has_ai_edits(derived: dict[str, Any]) -> bool:
-    return "applied_edits" in derived or "ai_cleanup" in derived
+def _verify_ai_stage(
+    paragraph: ParagraphRecord, static_text: str, identity: tuple[str, int, str]
+) -> None:
+    if paragraph.ai_input_text != static_text:
+        raise ValueError(f"AI input does not match static text: {identity}")
+    if paragraph.ai_input_sha256 != sha256(static_text.encode()).hexdigest():
+        raise ValueError(f"AI input hash mismatch: {identity}")
+    if apply_edits(static_text, paragraph.ai_edits) != paragraph.text_normalized:
+        raise ValueError(f"AI edit ledger does not reproduce normalized text: {identity}")
 
 
 def _reject_unmatched_paragraphs(database: Path) -> None:

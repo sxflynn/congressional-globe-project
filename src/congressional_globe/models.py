@@ -5,7 +5,7 @@ from __future__ import annotations
 from enum import StrEnum
 from typing import Any
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class SourceKind(StrEnum):
@@ -23,6 +23,26 @@ class BoundingBox(BaseModel):
     top: int = Field(ge=0)
     right: int = Field(ge=0)
     bottom: int = Field(ge=0)
+
+    @model_validator(mode="after")
+    def validate_order(self) -> BoundingBox:
+        if self.right < self.left or self.bottom < self.top:
+            raise ValueError("bounding box coordinates must be ordered")
+        return self
+
+
+class ArchivePageMapEntry(BaseModel):
+    model_config = ConfigDict(extra="allow", frozen=True)
+
+    leaf_num: int = Field(alias="leafNum", ge=0)
+    page_number: str | int | None = Field(default=None, alias="pageNumber")
+    confidence: int | None = Field(default=None, ge=0, le=100)
+
+
+class ArchivePageMap(BaseModel):
+    model_config = ConfigDict(extra="allow", frozen=True)
+
+    pages: list[ArchivePageMapEntry]
 
 
 class PrintedPage(BaseModel):
@@ -66,6 +86,14 @@ class ParagraphRecord(BaseModel):
     static_edits: list[TextEdit] = Field(default_factory=list)
     static_cleanup_provenance: dict[str, str] | None = None
     unresolved_wrap_hints: list[dict[str, str]] = Field(default_factory=list)
+    role: str = "body"
+    role_source: str | None = None
+    context: dict[str, str] = Field(default_factory=dict)
+    ai_edits: list[TextEdit] = Field(default_factory=list)
+    ai_input_text: str | None = None
+    ai_input_sha256: str | None = None
+    cleanup_status: str | None = None
+    ai_provenance: dict[str, Any] | None = None
 
 
 class PageRecord(BaseModel):

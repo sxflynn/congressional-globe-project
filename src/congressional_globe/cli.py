@@ -34,6 +34,7 @@ from congressional_globe.storage import (
     retry_review_jobs,
     run_summary,
 )
+from congressional_globe.workflow import run_static_first
 
 
 def main() -> None:
@@ -60,6 +61,7 @@ def _commands() -> dict[str, CommandHandler]:
         "reconcile-ai": _reconcile_ai,
         "cleanup": _cleanup,
         "static-cleanup": _static_cleanup,
+        "static-first": _static_first,
     }
 
 
@@ -166,6 +168,28 @@ def _static_cleanup(arguments: argparse.Namespace, _: Path) -> None:
     print(json.dumps({"paragraphs": count, "output": arguments.output}))
 
 
+def _static_first(arguments: argparse.Namespace, root: Path) -> None:
+    report = run_static_first(
+        root,
+        arguments.run_id,
+        Path(arguments.lexicon),
+        output_root=Path(arguments.output_root),
+        page_limit=arguments.page_limit,
+        backend=arguments.backend,
+        model=arguments.model,
+        ai_limit=arguments.ai_limit,
+        plan_only=arguments.plan_only,
+        benchmark_summary_path=(
+            Path(arguments.benchmark_summary) if arguments.benchmark_summary else None
+        ),
+        input_usd_per_million=arguments.input_rate,
+        output_usd_per_million=arguments.output_rate,
+        base_url=arguments.base_url,
+        progress_interval=arguments.progress_interval,
+    )
+    print(json.dumps(report, sort_keys=True))
+
+
 CleanupHandler = Callable[[argparse.Namespace], None]
 
 
@@ -252,6 +276,7 @@ def _parser() -> argparse.ArgumentParser:
     _reconcile_command(commands)
     _cleanup_command(commands)
     _static_cleanup_command(commands)
+    _static_first_command(commands)
     return parser
 
 
@@ -260,6 +285,26 @@ def _static_cleanup_command(commands: argparse._SubParsersAction[argparse.Argume
     command.add_argument("--paragraphs", required=True)
     command.add_argument("--lexicon", required=True)
     command.add_argument("--output", required=True)
+
+
+def _static_first_command(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
+    command = commands.add_parser(
+        "static-first", help="Build a provenance-first static cleanup run across all five parts"
+    )
+    _root_argument(command)
+    command.add_argument("--run-id", required=True)
+    command.add_argument("--lexicon", required=True)
+    command.add_argument("--output-root", default="artifacts/runs")
+    command.add_argument("--page-limit", type=int)
+    command.add_argument("--plan-only", action="store_true")
+    command.add_argument("--backend", choices=("none", "ollama", "openai"), default="none")
+    command.add_argument("--model")
+    command.add_argument("--ai-limit", type=int)
+    command.add_argument("--benchmark-summary")
+    command.add_argument("--input-rate", type=float)
+    command.add_argument("--output-rate", type=float)
+    command.add_argument("--base-url", default="http://127.0.0.1:11434/v1")
+    command.add_argument("--progress-interval", type=int, default=30)
 
 
 def _inventory_command(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:

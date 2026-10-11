@@ -279,3 +279,68 @@ Before full processing, create a human-reviewed evaluation sample covering index
 3. Queue only residuals for the LLM (`gpt-5.4-mini` or local), carrying `x_wconf` and any DjVu alternate spelling as hints.
 4. If Batch is needed, integrate it with the SQLite job state rather than creating a second source of truth.
 5. Add a lightweight progress report only if CLI status and `events.jsonl` prove insufficient.
+
+### 2026-10-11 full five-part static audit
+
+The full static pass now runs with an explicit command and no provider requests:
+
+```bash
+uv run globe static-first \
+  --root . \
+  --run-id static-full-audit-20261011 \
+  --lexicon artifacts/benchmarks/static-first-poc-20261011/lexicon.txt \
+  --plan-only
+```
+
+`--plan-only` writes extracted pages, paragraphs, static patches, residual paragraphs, and a manifest. It does not start a cleanup worker. The default backend is `none`; omitting `--plan-only` also prepares a resumable residual queue and exports static canonical pages and RAG records. A provider requires an explicit backend and model. Reuse the same run ID and inputs to resume its queue; use a different run ID for a changed lexicon. Raw source material remains unchanged.
+
+Measured full scope: 15 source derivative files across all five parts (five hOCR, five DjVu XML, five page maps), **5,412 scan pages and 296,995 paragraphs**. The static audit reads hOCR and page maps; DjVu is inventoried, not used as correction authority. There are 5,369 pages with at least one extracted paragraph; the remaining 43 pages are still represented in page JSONL. Locally saved IA item metadata is absent and recorded as unavailable rather than reconstructed.
+
+The baseline run took **260.849 seconds (4 minutes 21 seconds)** on this machine: extraction 148.469 s, static cleanup 46.282 s, residual routing 34.340 s, and other hashing/review-count work. It made 202,064 validated line-wrap patches across 93,969 paragraphs and left 29,525 unresolved wrap hints. The narrow router flagged 28,054 paragraphs: 23,694 with unresolved wraps and 4,360 with suspicious glyphs only. These are candidate requests, not confirmed OCR errors or the complete contextual workload.
+
+#### Reproducible quality sample
+
+Evidence lives under `artifacts/static-audit-20261011/`; large derived files and scratch files are ignored by Git. The audit script and supplemental evaluation script are saved with the evidence, along with source fingerprints and anchored review verdicts. Seed **3911866**, Algorithm R reservoir sampling, independently stratified by part and sampling unit:
+
+- 60 individual baseline patches per part: **300 patches** total.
+- 30 flagged paragraphs per part: **150 paragraphs** total.
+- 20 unflagged paragraphs per part: **100 paragraphs** total.
+- A separate sample of 20 newly added supplemental patches per part: **100 additional patches**.
+
+Every paragraph's static edit ledger was replayed and checked against its normalized text, including after the supplemental pass. Raw text and composite source identities were compared between baseline and supplemental output. hOCR and page-map fingerprints were rechecked afterward: all ten source files were unchanged.
+
+Codex text-context review, including delegated GPT-6 Luna reviews, judged 297/300 baseline patches plausible correct joins, with three ambiguous historical compound spellings (`rail-road` twice and `slave-holders` once), and no clearly damaging joins. All 100 sampled supplemental joins looked correct in their supplied context. These are model-assisted text reviews, **not human gold labels or scan-image verification**; they do not establish a population error rate. Source anchors and individual uncertain verdicts remain available for image review.
+
+The 150 baseline flagged paragraph samples included 50 candidates for further static word-list work, 95 needing contextual or image review, and five legitimate or ambiguous compounds. Among the 100 unflagged paragraph samples, 63 had no obvious issue, 25 needed contextual/image review, and 12 remained ambiguous. Examples of misses include fused words and character substitutions. Because sampling was stratified equally by part and verdicts are not image-verified, these raw counts are not a corpus error-rate estimate. **Do not call the unflagged corpus clean.**
+
+The confidence rule also marks **150,424 paragraphs** for possible review, including 25,572 already in the baseline model-candidate set. That broad signal is too large to use directly as an automatic model queue. Calibrate it against reviewed examples and preserve its reasons separately.
+
+#### Measured word-list improvement
+
+The explicit 44-form list in `resources/static-lexicon-supplement.txt` addresses familiar inflections, irregular forms, and names missing from the platform dictionary, such as `gentlemen`, `submitted`, `having`, `territories`, `Wisconsin`, and `Tennessee`. Each form has hundreds or thousands of intact occurrences elsewhere in the raw corpus. This finite, reviewed list was used instead of broadening suffix rules or automatically accepting every frequent OCR spelling. Conventional hyphenated numbers such as `twenty-five` were excluded.
+
+Combine that list with the baseline dictionary, then reuse the extracted paragraphs for a new static pass:
+
+```bash
+uv run globe static-cleanup \
+  --paragraphs artifacts/runs/static-full-audit-20261011/paragraphs.jsonl \
+  --lexicon artifacts/static-audit-20261011/supplemented-lexicon.txt \
+  --output artifacts/static-audit-20261011/supplemented-static.jsonl
+```
+
+The saved supplemental lexicon is the sorted union of the baseline lexicon and the tracked 44-form list; its fingerprint is recorded in every derived row.
+
+| Measure                             | Baseline | With 44-form supplement |
+| ----------------------------------- | -------: | ----------------------: |
+| Static patches                      |  202,064 |                 209,609 |
+| Paragraphs receiving static patches |   93,969 |                  96,093 |
+| Unresolved wrap hints               |   29,525 |                  21,980 |
+| Narrow model-candidate paragraphs   |   28,054 |                  22,479 |
+
+This gains **7,545 additional static patches** and removes **5,575 candidate requests (19.9%)**, without introducing a new candidate request. `supplemented-residuals.jsonl` contains the remaining flagged paragraphs with anchors, geometry, text, patches, and unresolved reasons. It is an auditable candidate set, not authorization to submit the full corpus.
+
+#### Provisional time and cost
+
+Using the earlier five-case residual benchmark unchanged, 22,479 sequential candidate calls project to about **10.7 hours / $19.3** for OpenAI mini, **46.0 hours / $0 API charge** for local Qwen, or **43.9 hours / $0 API charge** for local Gemma. The mini calculation uses the explicitly checked $0.75/M input and $4.50/M output rates. Local electricity/hardware costs are not estimated. These timings and costs extrapolate a tiny sample with repeated index material, not the random residual sample or the full paragraph-length distribution; retry, review, and export costs are excluded. The actual contextual workload can be larger because the narrow router misses other errors. Benchmark a stratified, reviewed residual sample before committing to a full provider run.
+
+Next static work should prioritize the reviewed residual candidates, retain compound-hyphen ambiguity, measure precision of confidence and glyph signals, and evaluate source-supported fixes for recurring OCR substitutions. Each expansion needs a new anchored sample and a measured queue reduction; recurrence alone must not authorize a correction.

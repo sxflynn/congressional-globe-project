@@ -6,7 +6,12 @@ from congressional_globe.models import PageRecord, ParagraphRecord, RAGChunk
 
 
 def chunk_page(page: PageRecord, max_characters: int = 4_000) -> list[RAGChunk]:
-    groups = _paragraph_groups(page.paragraphs, max_characters)
+    substantive = [
+        paragraph
+        for paragraph in page.paragraphs
+        if paragraph.role not in {"running_header", "page_number"}
+    ]
+    groups = _paragraph_groups(substantive, max_characters)
     return [_chunk(page, group, index) for index, group in enumerate(groups)]
 
 

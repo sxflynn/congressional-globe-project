@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 import re
 from collections.abc import Iterator
 from pathlib import Path
@@ -11,6 +10,8 @@ from lxml import etree  # ty: ignore[unresolved-import]
 
 from congressional_globe.inventory import PARTS
 from congressional_globe.models import (
+    ArchivePageMap,
+    ArchivePageMapEntry,
     BoundingBox,
     LineRecord,
     PageRecord,
@@ -29,8 +30,8 @@ _FONT_SIZE = re.compile(r"x_fsize ([\d.]+)")
 
 
 def load_page_map(path: Path) -> dict[int, PrintedPage]:
-    payload = json.loads(path.read_text(encoding="utf-8"))
-    return {entry["leafNum"]: _printed_page(entry) for entry in payload["pages"]}
+    payload = ArchivePageMap.model_validate_json(path.read_text(encoding="utf-8"))
+    return {entry.leaf_num: _printed_page(entry) for entry in payload.pages}
 
 
 def iter_pages(hocr_path: Path, page_map: dict[int, PrintedPage]) -> Iterator[PageRecord]:
@@ -38,11 +39,19 @@ def iter_pages(hocr_path: Path, page_map: dict[int, PrintedPage]) -> Iterator[Pa
     for _, element in context:
         if _is_hocr_page(element):
             yield _page_record(element, hocr_path.stem.removesuffix("_hocr"), page_map)
-            element.clear()
+            _release_page(element)
+
+
+def _release_page(element: etree._Element) -> None:
+    element.clear()
+    parent = element.getparent()
+    if parent is not None:
+        while element.getprevious() is not None:
+            del parent[0]
 
 
 def _is_hocr_page(element: etree._Element) -> bool:
-    return element.get("class") == "ocr_page"
+    return _has_class(element, "ocr_page")
 
 
 def _page_record(
@@ -60,7 +69,7 @@ def _page_record(
         hocr_page_id=element.get("id", f"page_{scan_leaf:06d}"),
         image_width_px=width,
         image_height_px=height,
-        dpi=_int_match(_DPI, title),
+        dpi=_int_match(_DPI, title) or None,
         printed_page=page_map.get(scan_leaf, PrintedPage()),
         text_ocr="\n\n".join(paragraph.text_ocr for paragraph in paragraphs),
         paragraphs=paragraphs,
@@ -122,12 +131,12 @@ def _sort_key(paragraph: ParagraphRecord) -> tuple[int, int, int]:
     return (column, paragraph.bbox.top, paragraph.bbox.left)
 
 
-def _printed_page(entry: dict[str, object]) -> PrintedPage:
-    number = str(entry.get("pageNumber") or "") or None
+def _printed_page(entry: ArchivePageMapEntry) -> PrintedPage:
+    number = str(entry.page_number) if entry.page_number is not None else None
     return PrintedPage(
         detected=number,
         source=SourceKind.ARCHIVE_MAP if number else SourceKind.UNKNOWN,
-        confidence=_as_int(entry.get("confidence")),
+        confidence=entry.confidence,
     )
 
 
@@ -164,7 +173,3 @@ def _has_class(element: etree._Element, name: str) -> bool:
 
 def _text(element: etree._Element) -> str:
     return " ".join("".join(element.itertext()).split())
-
-
-def _as_int(value: object) -> int | None:
-    return value if isinstance(value, int) else None
