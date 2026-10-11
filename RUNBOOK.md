@@ -424,6 +424,8 @@ This combines the base dictionary, additional forms, proper names, and the track
 
 ## Continuing bounded quality POCs
 
+Future streaming worker logs should include source-linked per-job before/after result events and accepted patches alongside lifecycle events. Show the exact model input before cleanup and only the accepted output afterward; mark unchanged, review and failed results explicitly and keep withheld proposals separate. The implementation and verification checklist is in `PROGRESS.md`; the active hour-long worker's logging has not been changed.
+
 The next benchmark design should compare candidates on a fixed, versioned task set, then use a different model to review a seeded sample of original inputs versus candidate outputs. Human review supplies the reference labels and adjudicates disagreements; model review alone cannot certify correctness. Keep before/after evidence, source anchors, model/prompt configuration, failures, time, tokens and costs, and report human-reviewed coverage. The implementation checklist and evaluation measures are in `PROGRESS.md` under “TODO: reproducible model benchmarks with independent review.” This workflow is planned, not implemented.
 
 The user approved two hours of 15-minute scheduled local-only checks, with at most four additional isolated POCs of 15 minutes/60 requests each. Preserve the active one-hour Qwen worker and serialize all local requests. `PROGRESS.md` records the cumulative experiment count and exact process/run state. Stop early if quality plateaus or unsafe accepted edits appear; this permission does not authorize paid requests or draining the full queue.
