@@ -7,6 +7,7 @@ Build a trustworthy, richly structured digital corpus from the five locally coll
 - Use `uv`; do not create or manage raw Python virtual environments.
 - Use Pydantic v2 at every external-data boundary.
 - Keep raw OCR and Internet Archive metadata immutable. Derived artifacts belong under `artifacts/`.
+- Use `tmp/` for disposable scratch files, POC outputs, and intermediate experiments that should not be committed. Git ignores its contents except `tmp/.gitkeep`; retain durable benchmark evidence and final derived artifacts under `artifacts/`.
 - AI work is opt-in: never submit an API request or alter corpus text without an explicit command.
 - AI text cleanup must be patch-based, validated, and recorded in an edit ledger.
 - Prefer streaming parsers for hOCR/DjVu sources; the files are large.

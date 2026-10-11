@@ -5,7 +5,7 @@ from __future__ import annotations
 import time
 from collections.abc import Iterator
 from pathlib import Path
-from typing import Any
+from typing import Any, TypeGuard
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -53,6 +53,7 @@ class BenchmarkSummary(BaseModel):
     cases_path: str
     requested_limit: int | None
     cases: int
+    usage_cases: int | None = None
     succeeded: int
     failed: int
     review_required: int
@@ -225,6 +226,7 @@ def _empty_counts() -> dict[str, int]:
         "exact_matches": 0,
         "unchanged_controls": 0,
         "unchanged_control_errors": 0,
+        "usage_cases": 0,
         "total_input_tokens": 0,
         "total_output_tokens": 0,
     }
@@ -249,12 +251,17 @@ def _count_record(counts: dict[str, int], record: BenchmarkRecord, case: Benchma
 def _count_usage(counts: dict[str, int], usage: dict[str, Any] | None) -> None:
     if usage is None:
         return
-    counts["total_input_tokens"] += _token_count(usage.get("input_tokens"))
-    counts["total_output_tokens"] += _token_count(usage.get("output_tokens"))
+    input_tokens = usage.get("input_tokens")
+    output_tokens = usage.get("output_tokens")
+    if not _is_token_count(input_tokens) or not _is_token_count(output_tokens):
+        return
+    counts["usage_cases"] += 1
+    counts["total_input_tokens"] += input_tokens
+    counts["total_output_tokens"] += output_tokens
 
 
-def _token_count(value: Any) -> int:
-    return value if isinstance(value, int) and value >= 0 else 0
+def _is_token_count(value: Any) -> TypeGuard[int]:
+    return type(value) is int and value >= 0
 
 
 def _make_summary(

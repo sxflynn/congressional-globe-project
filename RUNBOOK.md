@@ -132,7 +132,9 @@ The Ollama adapter uses OpenAI-compatible Chat Completions with `reasoning_effor
 
 `cleanup status` is read-only and reports completed, pending, claimed, review, remaining, percentage, average completed-job time, and an ETA derived from completed jobs. It can run in a second terminal while a worker is active.
 
-## Cloud cost planning (estimate only)
+## Cloud cost planning (historical nano estimate)
+
+The historical nano estimate below does not apply to the current `gpt-5.4-mini` path. Use the measured time/cost projections below with current provider prices.
 
 The current five-part corpus has 296,995 paragraphs and roughly 11.14 million OCR words. For a GPT-5-nano-class strict-JSON cleanup pass, budget 550–720 input tokens per paragraph (OCR plus repeated prompt/schema) and 30–100 output tokens (a no-op or small patch list). At GPT-5 nano's published $0.05/M input and $0.40/M output rates, this is approximately $12–23 for the full corpus, with a central estimate around $15. Batch API normally halves that to about $6–12, with a 24-hour completion window. Part 5 alone is roughly 22% of the full estimate. These are planning numbers, not a quote: record actual API usage from a representative cloud sample before a full submission. GPT-5 nano is marked deprecated in current model docs; select an available successor before submitting.
 
@@ -202,6 +204,32 @@ uv run globe export-rag --pages artifacts/benchmarks/static-first-poc-20261011/p
 ```
 
 The one-command final workflow is still under development. Remaining required work: structural/header labels and sourced date/context metadata; reliable residual routing and composition of model patches with static patches in the resumable queue; representative residual POCs across all five parts; and a manifest plus validation gate before final export. Do not run the whole corpus with models based on this sample.
+
+### Time and cost projections
+
+Time and API cost are primary decision criteria alongside correction quality. `globe estimate` makes no model requests: it reads saved benchmark evidence and projects an explicitly supplied number of model jobs. Use the residual workload after static cleanup, rather than assuming every paragraph needs a request. The current estimate models one sequential request per job, with a separately supplied retry allowance.
+
+At the standard `gpt-5.4-mini` prices verified on 2026-10-11 ($0.75 per million input tokens and $4.50 per million output tokens), the four-case OpenAI POC cost approximately $0.00348. Source: [official model pricing](https://developers.openai.com/api/docs/models/gpt-5.4-mini). The measured averages were 646.5 input and 85.75 output tokens per request. Pricing is supplied explicitly to the planner so it cannot silently rely on stale rates.
+
+| Model requests | Local Qwen elapsed | OpenAI mini elapsed | OpenAI API dollars |
+| --- | --- | --- | --- |
+| 1,000 | 2.6 hours | 26 minutes | $0.87 |
+| 10,000 | 26 hours | 4.4 hours | $8.71 |
+| 296,995 (every paragraph) | 32.2 days | 5.4 days | $258.61 |
+
+These are provisional scenarios extrapolated from four small cases, not corpus-wide forecasts or confidence intervals. Hard residual paragraphs may take more time and tokens. Static extraction/export overhead, image review, embeddings, electricity, hardware costs, retries, downtime, and cloud rate limits are excluded unless separately measured or supplied. Ollama API charges are zero; machine runtime remains a real constraint. Cloud concurrency and Batch scheduling are not assumed by this sequential calculation. The residual fraction observed on two pages is not representative enough to project across all five parts.
+
+```bash
+uv run globe estimate \
+  --summary artifacts/benchmarks/static-first-ollama-qwen-20261011/summary.json \
+  --jobs 10000
+
+uv run globe estimate \
+  --summary artifacts/benchmarks/static-first-openai-mini-20261011/summary.json \
+  --jobs 10000 --input-rate 0.75 --output-rate 4.50 --retry-fraction 0.10
+```
+
+The final single-command workflow must include a planning report with measured static time, residual counts, projected model time/cost, and sample limitations before its full-run invocation. Representative residual POCs are still required to finalize those estimates and provider selection.
 
 ## Canonical corpus design
 

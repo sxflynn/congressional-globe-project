@@ -12,3 +12,7 @@ wheels/
 artifacts/
 *.partial
 *.interrupted
+
+# Disposable scratch and POC outputs; retain the directory marker.
+/tmp/*
+!/tmp/.gitkeep

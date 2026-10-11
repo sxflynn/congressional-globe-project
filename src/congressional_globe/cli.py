@@ -20,6 +20,7 @@ from congressional_globe.pipeline import (
     merge_normalized_paragraphs,
     write_inventory,
 )
+from congressional_globe.planning import estimate, load_summary
 from congressional_globe.providers import (
     CleanupProvider,
     OllamaProvider,
@@ -52,6 +53,7 @@ def _commands() -> dict[str, CommandHandler]:
         "extract": _extract,
         "build-rag": _build_rag,
         "benchmark": _benchmark,
+        "estimate": _estimate,
         "export-rag": _export_rag,
         "prepare-ai": _prepare_ai,
         "submit-batch": _submit_batch,
@@ -91,6 +93,18 @@ def _benchmark_provider(arguments: argparse.Namespace) -> CleanupProvider:
     if arguments.backend == "ollama":
         return OllamaProvider(arguments.model, arguments.base_url, arguments.timeout)
     return OpenAIResponsesProvider(arguments.model, arguments.timeout)
+
+
+def _estimate(arguments: argparse.Namespace, _: Path) -> None:
+    summary = load_summary(Path(arguments.summary))
+    projection = estimate(
+        summary,
+        arguments.jobs,
+        input_usd_per_million=arguments.input_rate,
+        output_usd_per_million=arguments.output_rate,
+        retry_fraction=arguments.retry_fraction,
+    )
+    print(projection.model_dump_json(indent=2))
 
 
 def _export_rag(arguments: argparse.Namespace, _: Path) -> None:
@@ -231,6 +245,7 @@ def _parser() -> argparse.ArgumentParser:
     _extract_command(commands)
     _build_command(commands)
     _benchmark_command(commands)
+    _estimate_command(commands)
     _export_rag_command(commands)
     _prepare_command(commands)
     _submit_command(commands)
@@ -281,6 +296,15 @@ def _benchmark_command(commands: argparse._SubParsersAction[argparse.ArgumentPar
     command.add_argument("--timeout", type=float, default=45)
     command.add_argument("--base-url", default="http://localhost:11434/v1")
     command.add_argument("--output", default="artifacts/benchmarks")
+
+
+def _estimate_command(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
+    command = commands.add_parser("estimate", help="Project time and API cost without model calls")
+    command.add_argument("--summary", required=True)
+    command.add_argument("--jobs", type=int, required=True)
+    command.add_argument("--input-rate", type=float)
+    command.add_argument("--output-rate", type=float)
+    command.add_argument("--retry-fraction", type=float, default=0)
 
 
 def _export_rag_command(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
