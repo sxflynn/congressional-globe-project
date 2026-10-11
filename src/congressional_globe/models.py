@@ -1,0 +1,125 @@
+"""Validated data contracts for raw, canonical, and AI-derived records."""
+
+from __future__ import annotations
+
+from enum import StrEnum
+from typing import Any
+
+from pydantic import BaseModel, ConfigDict, Field
+
+
+class SourceKind(StrEnum):
+    ARCHIVE_MAP = "archive_map"
+    DIRECT_HEADER = "direct_header"
+    PROPAGATED = "propagated"
+    MANUAL_REVIEW = "manual_review"
+    UNKNOWN = "unknown"
+
+
+class BoundingBox(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    left: int = Field(ge=0)
+    top: int = Field(ge=0)
+    right: int = Field(ge=0)
+    bottom: int = Field(ge=0)
+
+
+class PrintedPage(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    detected: str | None = None
+    inferred: str | None = None
+    source: SourceKind = SourceKind.UNKNOWN
+    confidence: int | None = Field(default=None, ge=0, le=100)
+
+
+class ParagraphRecord(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str
+    reading_order: int = Field(ge=0)
+    bbox: BoundingBox | None = None
+    line_ids: list[str]
+    text_ocr: str
+    text_normalized: str | None = None
+
+
+class PageRecord(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str
+    item_identifier: str
+    part_number: int | None = Field(default=None, ge=1)
+    scan_leaf: int = Field(ge=0)
+    hocr_page_id: str
+    image_width_px: int | None = Field(default=None, ge=1)
+    image_height_px: int | None = Field(default=None, ge=1)
+    dpi: int | None = Field(default=None, ge=1)
+    printed_page: PrintedPage
+    text_ocr: str
+    text_normalized: str | None = None
+    paragraphs: list[ParagraphRecord]
+
+
+class TextEdit(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    start_char: int = Field(ge=0)
+    end_char: int = Field(ge=0)
+    expected: str
+    replacement: str
+    reason: str
+    confidence: float = Field(ge=0, le=1)
+
+
+class CleanupResult(BaseModel):
+    """Strict model output used to reconstruct normalized text from raw text."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    edits: list[TextEdit]
+    needs_image_review: bool
+    review_reason: str | None = None
+
+
+def strict_json_schema(model: type[BaseModel]) -> dict[str, Any]:
+    """Return a schema that satisfies OpenAI strict structured outputs.
+
+    Strict mode requires every object property to appear in ``required``; Pydantic
+    omits properties that carry defaults, so promote them here for transport only.
+    """
+    schema = model.model_json_schema()
+    _require_all_properties(schema)
+    return schema
+
+
+def _require_all_properties(node: Any) -> None:
+    if isinstance(node, dict):
+        _require_object_properties(node)
+        children = node.values()
+    elif isinstance(node, list):
+        children = node
+    else:
+        return
+    for child in children:
+        _require_all_properties(child)
+
+
+def _require_object_properties(node: dict[str, Any]) -> None:
+    properties = node.get("properties")
+    if node.get("type") == "object" and isinstance(properties, dict):
+        node["required"] = list(properties)
+
+
+class RAGChunk(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str
+    text: str
+    item_identifier: str
+    part_number: int | None
+    scan_leaves: list[int]
+    printed_pages: list[str]
+    paragraph_ids: list[str]
+    citation: str
