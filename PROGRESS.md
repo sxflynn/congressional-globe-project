@@ -285,3 +285,20 @@ Read [V2_HANDOFF.md](V2_HANDOFF.md) for the executable continuation path, author
 - [ ] Reserve/execute `v2-qwen-pivot-20261011` after checking no active worker. Last process/queue inspection found none, with production status unchanged at 1,339 completed / 423 review / 20,785 pending / zero claimed. Use the exact command in V2_HANDOFF; twenty paired requests, 45-second request timeout, fifteen-minute budget. No V2 inference has started at this checkpoint.
 
 Full gate is terminal, exit 0: Ruff formatting/lint, ty, complexity at most five in source/tests, **107 tests passed**. Evidence: `artifacts/v2-pivot-20261011/embedding-interface-gate.log`. Next step: commit this checkpoint, then launch/reconcile the bounded Qwen comparison and tiny 4B dimension sanity check sequentially. Update active handles immediately. Preserve this state if credits run out; no model download or full indexing is needed to continue.
+
+### Active Qwen pivot comparison
+
+Checkpoint committed as `8dc1a24`. Launched the authorized twenty-request local comparison, run **`v2-qwen-pivot-20261011`**, exec session **65064**. Shell log: `artifacts/v2-pivot-20261011/qwen-pivot.log`; per-call audit: `artifacts/v2-pivot-20261011/runs/v2-qwen-pivot-20261011/results.jsonl`. The command in `V2_HANDOFF.md` runs inside `subprocess.run(..., timeout=900, check=True)` for an outer fifteen-minute deadline. Do not overlap embedding or completion requests and do not restart this run until its handle/process is confirmed terminal. Source/production queue remains untouched. At this launch checkpoint no results have been reviewed.
+
+Luna `v2_embedding_interface` is preparing a separate offline embedding benchmark runner over the frozen fifty-window pool. It must send no requests while session 65064 is active. Next: poll that exact session or inspect its process; after terminal exit, reconcile all saved results and inspect raw/static answers, quotations and tag proposals. Then perform the tiny native 4B dimension sanity check and run the prepared bounded embedding comparison if ready. Record Mini/negative-control calls separately; none have run yet.
+
+### Terminal pivot trial and credit-conservation handoff
+
+Qwen run `v2-qwen-pivot-20261011` is **stopped**, session 65064 terminal exit 1. Root stopped only its identified child PID 80434 after repeated output-limit failures; Ollama and the corpus queue were not terminated or changed. Three saved calls all have `finish_reason: length` at 700 output tokens, with 100.56 seconds summed duration and 4,065 input / 2,100 output tokens. Local API charge $0. Any in-flight unsaved call has unknown usage/outcome. Partial answers suggest comprehension, but no valid completed comparison or tagging quality claim follows. Evidence: per-run `terminal-report.json`, `results.jsonl` and frozen `script-used.py` (SHA-256 `189d1ffd2fba203c62366adaa7a6410c1a31c55669c20fd1309d152a867e13f3`). Do not repeat unchanged.
+
+Active offline delegates at this checkpoint:
+
+- Luna `benchmark_harness`: shorten answer/evidence/tag output, refactor every helper to complexity at most five, dry-run/mock-check. No provider calls; do not alter the frozen first-trial script.
+- Luna `v2_embedding_interface`: prepare isolated cache/resume/rank benchmark over fifty raw/static windows, full 4B vectors plus explicitly labeled 1,024-dimension Matryoshka projection. No model requests. Native 1,024 output still requires runtime confirmation.
+
+The committed source embedding foundation has passed the complete 107-test gate. GPT Mini, abstention controls and embedding inference have **not** run. Next executable step for any harness: inspect delegate files/reports and process state, finish the compact prompt/refactor or embedding dry-run, then launch the corresponding small POC under a new run ID. Follow `V2_HANDOFF.md`; preserve current work rather than restarting the cleanup workflow. Goal remains active and pivot viability remains unproven.

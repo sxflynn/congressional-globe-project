@@ -4,6 +4,8 @@ Last updated: 2026-10-11
 
 Active exploration: [V2_PIVOT.md](V2_PIVOT.md) compares organizing and enriching unchanged OCR against the existing cleaned-text path. Preserve both; do not resume cleanup model jobs as part of that experiment. `PROGRESS.md` records its sample preparation, commands and limitations.
 
+For continuation in another AI harness, follow [V2_HANDOFF.md](V2_HANDOFF.md). It records the preserved corpus, authorization, installed embedding models, exact POC commands, stopped trial, outstanding checks and resume order.
+
 ## Purpose
 
 Build a portable historical research corpus with authoritative canonical transcription, separately versioned authorities and evidence-backed enrichments, and derived full-text, structured, semantic and RAG retrieval exports. Preserve precise links to Internet Archive items/scan leaves, printed pages, canonical spans, hOCR elements and geometry. `PROJECT_GOAL.md` defines the updated goal, existing-schema support, future workflow stages and guardrails. Codex builds the reproducible workflow; future explicitly authorized stages perform enrichment. The current priority remains reliable corpus processing, without re-OCR or expanding into original-image visual validation.

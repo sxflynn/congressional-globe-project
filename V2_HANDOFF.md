@@ -38,6 +38,8 @@ Recheck `/api/tags` before resuming: tags can change. The 0.6B baseline and othe
 
 ## Commands and restart rules
 
+Latest terminal checkpoint: Qwen QA/tag run `v2-qwen-pivot-20261011`, exec session **65064**, exited **1** after root stopped only child PID 80434 with SIGTERM. Three saved responses all reached the 700-token output limit; an in-flight unsaved request has unknown outcome/usage. Evidence: `runs/<run-id>/terminal-report.json`, `results.jsonl`, immutable `script-used.py`, and `artifacts/v2-pivot-20261011/qwen-pivot.log`. The trial proves a response-budget problem, not raw-OCR inadequacy. Do not repeat it unchanged; the prototype is being shortened/refactored offline. Check the latest `PROGRESS.md` before starting any local request.
+
 First inspect production state and active processes. Never overlap local model requests or restart an apparently active POC solely because a polling request timed out.
 
 ```bash
@@ -53,12 +55,12 @@ UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python tmp/v2_pivo
   --run-id v2-resume-dryrun-01 --limit 10 --arm both
 ```
 
-Authorized local comparison, **only after checking the latest active state in PROGRESS**:
+Authorized local comparison template, **only after the prompt/refactor checks and latest process inspection**. Use a new run ID; the first trial below has already stopped:
 
 ```bash
 UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python tmp/v2_pivot_benchmark.py \
   --live --backend ollama --model qwen3.8:27b-mlx \
-  --run-id v2-qwen-pivot-20261011 --limit 10 --arm both --timeout 45
+  --run-id v2-qwen-pivot-short-01 --limit 10 --arm both --timeout 45
 ```
 
 This schedules twenty sequential calls with a fifteen-minute budget. Each result is appended to `runs/<run-id>/results.jsonl`; inspect that file even if the final report is missing. Do not repeat this run ID or call failed jobs automatically. Archive partial evidence before choosing a narrowly targeted follow-up.
@@ -69,7 +71,7 @@ The prototype has known complexity violations above five in several helpers. It 
 
 ## Ordered next work
 
-1. Check the latest labels and dry-run report, then run/reconcile the bounded local QA/tag comparison if it has not already started. Inspect every claim, not just schema success. Run the two abstention controls separately after confirming the positive run is terminal.
+1. Finish the shorter-output prompt and prototype complexity refactor. Check its dry-run/fixture report, then use a new bounded local QA/tag run ID. Inspect every claim, not just schema success. Run the two abstention controls separately after confirming the positive run is terminal. Preserve the first truncated-response trial.
 2. Use a small matched Mini sample to investigate local-model failures or attribution differences. Record observed API usage/cost and finish status; preserve malformed outputs.
 3. Finish/review the embedding interface and run `make gate`. Confirm native `/api/embed` returns requested 1,024 versus full 2,560 dimensions for Qwen 4B on tiny inputs; no silent token truncation. Measure request time on this Mac.
 4. Embed the frozen fifty windows and ten queries in small batches with resumable, hash/config-keyed output. Compare raw/static 4B at 1,024/full dimensions; normalize correctly, use Qwen query instructions, no document instruction. Keep each vector configuration in a separate namespace. Test 8B only if the 4B result warrants it; no full indexing.
