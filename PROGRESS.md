@@ -32,7 +32,7 @@ The static-first, resumable one-command workflow is implemented. Small OpenAI an
 | `static-audit-20261011/` | Samples, reviews, source fingerprints, supplemental lexicon/output, current-router count. |
 | `benchmarks/context-audit-20261011/` | Eight-case provider comparisons, one-case mini retest, anchors and raw results. |
 | `runs/e2e-final-20261011/` | Terminal bounded POC queue, exports, provider reports, `independent_verification.json`. No worker active. |
-| `runs/static-final-20261011/` | Full static-only canonical/RAG export, started this handoff; final state recorded below. |
+| `runs/static-final-20261011/` | Terminal full static-only canonical/RAG export; built-in validation passed. |
 
 Scratch verification scripts: `tmp/verify_final_poc.py` and `tmp/verify_full_export.py`. Copy durable scripts into the corresponding artifact run when finished. Scratch logs: `tmp/e2e-final-{static,qwen,mini}.log` and `tmp/static-final.log`. Large artifacts are intentionally uncommitted and exist on this machine; do not assume a fresh clone contains them.
 
@@ -46,7 +46,8 @@ Raw IA metadata files are unavailable locally for all five parts and explicitly 
 
 ## Ordered next steps
 
-1. [ ] Finish the already started full static export and save its terminal report. Do not start another worker for this run while one is active. Verify exports with `tmp/verify_full_export.py`, then record final counts, limitations, and process state here.
+1. [x] Finish full static export and save `terminal_report.json`: 5,412 pages, 296,995 paragraphs, 19,803 RAG chunks; built-in validation passed.
+   - [ ] Finish independent verification with `UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python artifacts/runs/static-final-20261011/verify_full_export.py`. It was interrupted at the user's wrap-up request; do not claim it passed.
 2. [x] Format all Markdown, check `git diff --check`, and commit implementation/user changes: `24ba80d`. Repeat formatting and commit for later handoff corrections.
 3. [ ] Before expanding cleanup, create human/image-reviewed labels across indexes, proceedings, Appendix, date transitions, and low-confidence text. Quantify router misses and false positives. Do not equate current model-assisted samples with gold labels.
 4. [ ] Evaluate further static repairs on anchored examples, retain ambiguous compounds, then measure reduction and review a new random sample before adopting each rule.
@@ -76,7 +77,9 @@ The bounded POC used `--start-leaf 114 --page-limit 4`; those inputs must stay i
 
 ## Final handoff state
 
-Implementation/user changes are committed in `24ba80d`. The full static export exposed a SQLite query-planner issue: single-column indexes selected the run ID and scanned the queue per paragraph. Added composite indexes for exact and legacy lookups. Interrupted session 52967 (exit 130) and resumed the same queue with verified cached preprocessing, backend `none`, AI limit zero, shell session 38960, log `tmp/static-final-resume.log`. No provider workers are running. Full exports remain unverified until the run and independent verifier finish.
+Implementation and user changes are committed; timed Qwen worker and composite lookup indexes are implemented. Full static export finished successfully (session 38960, exit 0), with 5,412 pages, 296,995 paragraphs, 19,803 chunks, 22,547 pending model jobs, and zero model requests. Cached resume/export took 447.34 seconds; this excludes the earlier extraction and interrupted slow lookup attempt. Built-in validation passed. Date remains unknown on 5,321 pages and chamber on 5,173; 152,889 records carry review reasons. Raw IA metadata remains unavailable.
+
+The independent full verifier was interrupted (session 78974) at the user's request to wrap up with 3% credits remaining. Resume its saved script before asserting independent verification. Bounded independent checks passed earlier. No Codex workers remain active; the OpenCode performance agent and any user-started Ollama worker are separate. The goal is handed off with this last verification unchecked; no additional model runs should start automatically.
 
 ## Operator's one-hour Qwen command
 
