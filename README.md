@@ -44,6 +44,8 @@ Each run records `jobs.sqlite`, `events.jsonl`, provider response files, and an 
 
 ## One-command static-first workflow
 
+See `HAPPY_PATH.md` for the recommended local/cloud POC choices, a human-run full workflow command, and the one-hour resumable Qwen session.
+
 With the locally prepared, fingerprinted word list, the complete local workflow is:
 
 ```bash
