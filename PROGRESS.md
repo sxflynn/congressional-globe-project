@@ -47,7 +47,7 @@ Raw IA metadata files are unavailable locally for all five parts and explicitly 
 ## Ordered next steps
 
 1. [x] Finish full static export and save `terminal_report.json`: 5,412 pages, 296,995 paragraphs, 19,803 RAG chunks; built-in validation passed.
-   - [ ] Finish independent verification with `UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python artifacts/runs/static-final-20261011/verify_full_export.py`. It was interrupted at the user's wrap-up request; do not claim it passed.
+   - [x] Independent full verification passed: all source identities/raw text, 209,609 static patches, Pydantic records, output hashes, and all 15 raw source fingerprints. Evidence: `artifacts/runs/static-final-20261011/independent_verification.json`.
 2. [x] Format all Markdown, check `git diff --check`, and commit implementation/user changes: `24ba80d`. Repeat formatting and commit for later handoff corrections.
 3. [ ] Before expanding cleanup, create human/image-reviewed labels across indexes, proceedings, Appendix, date transitions, and low-confidence text. Quantify router misses and false positives. Do not equate current model-assisted samples with gold labels.
 4. [ ] Evaluate further static repairs on anchored examples, retain ambiguous compounds, then measure reduction and review a new random sample before adopting each rule.
@@ -79,7 +79,7 @@ The bounded POC used `--start-leaf 114 --page-limit 4`; those inputs must stay i
 
 Implementation and user changes are committed; timed Qwen worker and composite lookup indexes are implemented. Full static export finished successfully (session 38960, exit 0), with 5,412 pages, 296,995 paragraphs, 19,803 chunks, 22,547 pending model jobs, and zero model requests. Cached resume/export took 447.34 seconds; this excludes the earlier extraction and interrupted slow lookup attempt. Built-in validation passed. Date remains unknown on 5,321 pages and chamber on 5,173; 152,889 records carry review reasons. Raw IA metadata remains unavailable.
 
-The independent full verifier was interrupted (session 78974) at the user's request to wrap up with 3% credits remaining. Resume its saved script before asserting independent verification. Bounded independent checks passed earlier. No Codex workers remain active; the OpenCode performance agent and any user-started Ollama worker are separate. The goal is handed off with this last verification unchecked; no additional model runs should start automatically.
+The independent full verifier finished successfully (session 78974, exit 0) before the stop request reached it. Its terminal log and `independent_verification.json` confirm all 209,609 static patches replay, complete source coverage, output hashes, and all 15 raw source fingerprints. No Codex workers remain active. Work is paused at the user's credit-conservation wrap-up request; the OpenCode performance agent and any user-started Ollama worker are separate.
 
 ## Operator's one-hour Qwen command
 
