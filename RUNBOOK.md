@@ -4,7 +4,7 @@ Last updated: 2026-10-11
 
 ## Purpose
 
-This folder is being prepared as a provenance-first corpus for retrieval-augmented generation (RAG). The desired end state is searchable, cleaned text with reliable citations back to the Internet Archive scan leaf, printed page, hOCR element, and (where useful) bounding box.
+Build a portable historical research corpus with authoritative canonical transcription, separately versioned authorities and evidence-backed enrichments, and derived full-text, structured, semantic and RAG retrieval exports. Preserve precise links to Internet Archive items/scan leaves, printed pages, canonical spans, hOCR elements and geometry. `PROJECT_GOAL.md` defines the updated goal, existing-schema support, future workflow stages and guardrails. Codex builds the reproducible workflow; future explicitly authorized stages perform enrichment. The current priority remains reliable corpus processing, without re-OCR or expanding into original-image visual validation.
 
 Do **not** replace or discard the raw OCR sources. All cleanup must be reversible and traceable to those sources.
 
@@ -270,7 +270,7 @@ Derive page-bounded chunks after canonical extraction/cleanup. Each chunk should
 
 Use strict JSON-schema output for AI cleanup/enrichment and process deterministic page/paragraph jobs by stable ID. For volume-scale work, use batch processing and carry the stable corpus ID in each request's `custom_id`; batch result ordering is not reliable. Keep the batch input/output and run manifest for every transformation.
 
-Before full processing, create a human-reviewed evaluation sample covering indexes, dense two-column proceedings, Appendix material, date/chamber changes, and low-confidence OCR.
+Before scaling model processing, define a reviewed evaluation sample covering indexes, dense proceedings, Appendix material, date/chamber changes, and low-confidence OCR. Original-image visual validation is outside the current scope; text-context labels must not be described as image-verified gold.
 
 ## Current progress and next steps
 

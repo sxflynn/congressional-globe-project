@@ -4,7 +4,7 @@ Updated: 2026-10-11. Read this before doing project work. Follow the ordered che
 
 ## Current outcome
 
-The static-first, resumable one-command workflow is implemented. Small OpenAI and local Ollama POCs ran; **no full-corpus model run is authorized or has run**. Export validation establishes record/ledger consistency, not complete OCR correctness. The corpus still needs quality calibration and image review.
+The static-first, resumable one-command workflow is implemented. Small OpenAI and local Ollama POCs ran; **no full-corpus model run is authorized or has run**. Export validation establishes record/ledger consistency, not complete OCR correctness. The corpus still needs quality calibration. Original-image visual validation and re-OCR are outside the newly clarified immediate scope.
 
 ## Completed
 
@@ -49,7 +49,7 @@ Raw IA metadata files are unavailable locally for all five parts and explicitly 
 1. [x] Finish full static export and save `terminal_report.json`: 5,412 pages, 296,995 paragraphs, 19,803 RAG chunks; built-in validation passed.
    - [x] Independent full verification passed: all source identities/raw text, 209,609 static patches, Pydantic records, output hashes, and all 15 raw source fingerprints. Evidence: `artifacts/runs/static-final-20261011/independent_verification.json`.
 2. [x] Format all Markdown, check `git diff --check`, and commit implementation/user changes: `24ba80d`. Repeat formatting and commit for later handoff corrections.
-3. [ ] Before expanding cleanup, create human/image-reviewed labels across indexes, proceedings, Appendix, date transitions, and low-confidence text. Quantify router misses and false positives. Do not equate current model-assisted samples with gold labels.
+3. [ ] Before expanding cleanup, define reviewed text-context evaluation labels across indexes, proceedings, Appendix, date transitions, and low-confidence text. Quantify router misses and false positives; preserve ambiguity. Do not equate model-assisted samples with verified historical facts or image gold. Re-OCR/original-image visual validation is outside current scope.
 4. [ ] Evaluate further static repairs on anchored examples, retain ambiguous compounds, then measure reduction and review a new random sample before adopting each rule.
 5. [ ] Only after a new explicit user command, process a bounded additional model sample or scale the residual queue. Inspect queue status first; reuse compatible run IDs and matching provider benchmarks. Never automatically drain the full queue as a continuation of this handoff.
 6. [ ] Profile Python CPU utilization and evaluate multi-core multiprocessing and threading: user observes about 99% CPU on one Mac core. Measure extraction, static cleanup, JSON/Pydantic serialization, SQLite merge, and export separately; compare process workers for CPU-bound work and threads for I/O. Preserve bounded memory, deterministic source/paragraph order, validation, and edit ledgers. Keep Ollama requests strictly sequential. Benchmark before adopting concurrency.
@@ -107,3 +107,13 @@ Reported full-corpus sequential → parallel timings with 14 process workers: ex
 - [ ] Integrate opt-in process workers into production after authorization; preserve sequential compatibility, ordered output, bounded memory, source fingerprints, run locking and staged validation. Test completed/review/legacy jobs, worker failures, and unmatched/duplicate records before claiming production readiness. Full-scale materialization evidence covers a pending-only queue. Keep Ollama strictly sequential. Do not rerun a sequential golden pipeline on every production run merely to establish hashes, since that would erase much of the speedup; use verified baseline comparisons during rollout and retain runtime integrity checks.
 
 The performance checklist now has strong POC evidence; production adoption remains pending. Threads are not the primary approach for the CPU-bound stages on the reported GIL-enabled Python build.
+
+## Updated project goal and architecture (2026-10-11)
+
+The user expanded the long-term goal to a portable, model/framework-independent historical research corpus. `PROJECT_GOAL.md` records the end state, research questions, current-schema support and gaps, layered data products, proposed metadata/call-audit contracts, stage design, retrieval semantics and phased roadmap. `AGENTS.md` now requires architectural decisions to follow it; README/RUNBOOK are aligned. This unit changes documentation only; no enrichment pipeline, historical assignments, model calls, re-OCR or image-validation runs were performed.
+
+- [x] Update the project goal and map existing contracts to future requirements.
+- [x] Define canonical vs authority vs enrichment vs retrieval/index responsibilities, temporal affiliations, speaker/mention distinction, evidence/version semantics, unknown/mixed filters, reproducible call auditing and independent reprocessing requirements.
+- [ ] Next architectural unit when requested: formalize versioned collection/release/identity/evidence/assertion and call-audit schemas with compatibility/migration examples and synthetic fixtures for the representative research questions. Keep the reliable corpus and verified multiprocessing rollout as near-term engineering work; the enrichment roadmap is not an automatic instruction to implement everything.
+
+The project's architectural goal in repository documents is updated. The earlier desktop cleanup goal record remains paused with its earlier objective; available goal tools change status but do not edit an unfinished objective. This documentation update does not resume that processing goal or mark its broader enrichment roadmap complete.

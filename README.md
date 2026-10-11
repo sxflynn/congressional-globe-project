@@ -1,6 +1,6 @@
 # Congressional Globe corpus factory
 
-This project creates a provenance-first, RAG-ready corpus from Internet Archive hOCR, DjVu XML, and page-number maps. It does not alter source OCR files and does not submit AI jobs unless an operator explicitly requests it.
+This project builds a portable historical research corpus from Internet Archive hOCR, DjVu XML, and page-number maps: authoritative canonical transcription, separate versioned authorities/enrichments, and derived full-text, structured-search and RAG outputs. `PROJECT_GOAL.md` defines the long-term architecture and current capability gaps; enrichment and search stages described there are planned, not implemented. It does not alter source OCR files and does not submit AI jobs unless an operator explicitly requests it.
 
 For cloud commands, copy `.env.example` to `.env` and set `OPENAI_API_KEY` locally. The CLI loads that file automatically; `.env` is ignored by Git. Never paste an API key into chat or commit it.
 
