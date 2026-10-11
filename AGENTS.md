@@ -1,3 +1,7 @@
+# Project goal
+
+Build a trustworthy, richly structured digital corpus from the five locally collected parts of the 39th Congress, 1st Session of *The Congressional Globe*. Preserve the Internet Archive metadata and raw OCR/hOCR/DjVu source material unchanged, then produce validated canonical JSON/JSONL and RAG-ready records with accurate dates, page and paragraph locations, source anchors, geometry, and a traceable history for every text correction. The result should let a future search or RAG system answer questions with precise, verifiable citations and filter by date and other relevant metadata. Create reliable tooling and workflows for extraction, cleanup, validation, review, and export; do not assume that a single part is the complete Congressional Globe.
+
 # Project preferences
 
 - Use `uv`; do not create or manage raw Python virtual environments.
