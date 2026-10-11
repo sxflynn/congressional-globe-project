@@ -47,19 +47,69 @@ def run_jobs(
     limit: int,
     base_url: str,
     progress_interval: int,
+    max_seconds: float | None = None,
 ) -> dict[str, int]:
+    if max_seconds is not None and max_seconds <= 0:
+        raise ValueError("max_seconds must be positive")
+    deadline = None if max_seconds is None else perf_counter() + max_seconds
     with _worker_lock(run_directory, run_id):
         provider = _provider(backend, model, base_url)
         database_path = run_database(run_directory)
         release_claimed(database_path, run_id)
-        for _ in range(limit):
-            job = claim_next(database_path, run_id, backend, model)
-            if job is None:
-                break
-            _event(run_directory, job, "claimed", 0, {})
-            if not _process_job(run_directory, database_path, job, provider, progress_interval):
-                break
+        _drain_jobs(
+            run_directory,
+            database_path,
+            run_id,
+            backend,
+            model,
+            limit,
+            provider,
+            progress_interval,
+            deadline,
+        )
         return progress(database_path, run_id)
+
+
+def _drain_jobs(
+    run_directory: Path,
+    database_path: Path,
+    run_id: str,
+    backend: str,
+    model: str,
+    limit: int,
+    provider: CleanupProvider,
+    progress_interval: int,
+    deadline: float | None,
+) -> None:
+    for _ in range(limit):
+        job = _claim_before_deadline(database_path, run_id, backend, model, deadline)
+        if job is None or not _process_claimed_job(
+            run_directory, database_path, job, provider, progress_interval
+        ):
+            return
+
+
+def _claim_before_deadline(
+    database_path: Path,
+    run_id: str,
+    backend: str,
+    model: str,
+    deadline: float | None,
+) -> CleanupJob | None:
+    if deadline is not None and perf_counter() >= deadline:
+        return None
+    return claim_next(database_path, run_id, backend, model)
+
+
+def _process_claimed_job(
+    run_directory: Path,
+    database_path: Path,
+    job: CleanupJob,
+    provider: CleanupProvider,
+    progress_interval: int,
+) -> bool:
+    _event(run_directory, job, "claimed", 0, {})
+    return _process_job(run_directory, database_path, job, provider, progress_interval)
 
 
 @contextmanager

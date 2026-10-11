@@ -374,3 +374,22 @@ Outputs are `canonical_pages.jsonl`, `chunks.jsonl`, `manual_review.jsonl`, and 
 Full-scale export exposed a SQLite planner issue absent from the bounded sample: run-ID indexes caused per-paragraph queue scans. Composite indexes now cover `(run_id, identity, input_hash)` and legacy `(run_id, paragraph_id, identity)` lookups. The static-only run was interrupted and resumed with the same queue and cached preprocessing; see `PROGRESS.md` for its terminal verification state.
 
 Performance follow-up: the user observed Python saturating one Mac CPU core at approximately 99%. Profile stage costs and evaluate multiprocessing for CPU-bound extraction/validation/serialization and threads for I/O; benchmark throughput and memory while retaining deterministic order, source anchors, ledger validation, and sequential Ollama requests. This investigation is pending in `PROGRESS.md`.
+
+### Operator command: one-hour local Qwen session
+
+From the project directory, inspect the existing queue first:
+
+```bash
+uv run globe cleanup status --run-directory artifacts/runs/static-final-20261011 \
+  --run-id static-final-20261011
+```
+
+Then run up to one hour of sequential local cleanup (also capped at 1,000 requests):
+
+```bash
+uv run globe cleanup run --run-directory artifacts/runs/static-final-20261011 \
+  --run-id static-final-20261011 --backend ollama --model qwen3.8:27b-mlx \
+  --limit 1000 --max-seconds 3600 --progress-interval 30
+```
+
+The budget is checked between jobs. A request already in flight finishes before exit, so elapsed time can exceed one hour by that request. Successful patches and review decisions are saved in SQLite as each job finishes; rerun the same command to continue pending jobs. Local API cost is zero; hardware/electricity costs are excluded. Use `cleanup status` in another terminal to watch progress. This command updates the queue; it does not regenerate canonical/RAG exports. After the worker exits, repeat the documented static-first command with `--backend none --ai-limit 0` to materialize saved results and refresh validated exports.

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from collections.abc import Callable
 from pathlib import Path
 
@@ -227,6 +228,7 @@ def _cleanup_run_jobs(arguments: argparse.Namespace) -> None:
         arguments.limit,
         arguments.base_url,
         arguments.progress_interval,
+        arguments.max_seconds,
     )
     print(json.dumps(counts, sort_keys=True))
 
@@ -411,6 +413,17 @@ def _cleanup_run(commands: argparse._SubParsersAction[argparse.ArgumentParser]) 
     command.add_argument("--limit", type=int, default=1)
     command.add_argument("--base-url", default="http://127.0.0.1:11434/v1")
     command.add_argument("--progress-interval", type=int, default=30)
+    command.add_argument("--max-seconds", type=_positive_float)
+
+
+def _positive_float(value: str) -> float:
+    try:
+        seconds = float(value)
+    except ValueError as error:
+        raise argparse.ArgumentTypeError("must be a positive number of seconds") from error
+    if not math.isfinite(seconds) or seconds <= 0:
+        raise argparse.ArgumentTypeError("must be a positive number of seconds")
+    return seconds
 
 
 def _cleanup_status(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:

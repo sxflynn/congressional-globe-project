@@ -77,3 +77,15 @@ The bounded POC used `--start-leaf 114 --page-limit 4`; those inputs must stay i
 ## Final handoff state
 
 Implementation/user changes are committed in `24ba80d`. The full static export exposed a SQLite query-planner issue: single-column indexes selected the run ID and scanned the queue per paragraph. Added composite indexes for exact and legacy lookups. Interrupted session 52967 (exit 130) and resumed the same queue with verified cached preprocessing, backend `none`, AI limit zero, shell session 38960, log `tmp/static-final-resume.log`. No provider workers are running. Full exports remain unverified until the run and independent verifier finish.
+
+## Operator's one-hour Qwen command
+
+Requested by the user for them to run manually; do not automatically start it:
+
+```bash
+uv run globe cleanup run --run-directory artifacts/runs/static-final-20261011 \
+  --run-id static-final-20261011 --backend ollama --model qwen3.8:27b-mlx \
+  --limit 1000 --max-seconds 3600 --progress-interval 30
+```
+
+The time budget is checked between requests, so the last request may extend beyond one hour. Inspect `cleanup status` first. Rerunning continues the same queue. Afterward, the static-only resume command above refreshes canonical/RAG exports using saved accepted patches and preserves review records. The user has asked for this command; no hour-long worker was started by Codex.

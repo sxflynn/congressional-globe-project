@@ -246,6 +246,38 @@ def test_run_jobs_does_not_retry_connection_failure_in_same_drain(
     assert progress(database, run_id)["pending"] == 2
 
 
+def test_run_jobs_does_not_claim_after_wall_clock_budget(tmp_path: Path, monkeypatch):
+    rows = [_static_row("part-a", 4, f"p{index}") for index in range(3)]
+    paragraphs = tmp_path / "static.jsonl"
+    _write_rows(paragraphs, rows)
+    run_directory = tmp_path / "run"
+    run_id = "run-1"
+    database = cleanup.run_database(run_directory)
+    create_run(database, run_id, paragraphs)
+    now = [0.0]
+    claims = 0
+    real_claim = cleanup.claim_next
+
+    def claim(*args):
+        nonlocal claims
+        claims += 1
+        return real_claim(*args)
+
+    def finish_request(*_args):
+        now[0] = 5.0
+        return True
+
+    monkeypatch.setattr(cleanup, "perf_counter", lambda: now[0])
+    monkeypatch.setattr(cleanup, "claim_next", claim)
+    monkeypatch.setattr(cleanup, "_provider", lambda *_args: object())
+    monkeypatch.setattr(cleanup, "_process_job", finish_request)
+
+    cleanup.run_jobs(run_directory, run_id, "ollama", "fixture", 10, "http://localhost", 100, 5)
+
+    assert claims == 1
+    assert progress(database, run_id)["pending"] == 2
+
+
 def test_rejected_punctuation_edit_routes_entire_response_to_review(tmp_path: Path, monkeypatch):
     row = {**_static_row(), "text_ocr": "an, ihc", "text_normalized": "an, ihc", "static_edits": []}
     paragraphs = tmp_path / "static.jsonl"
