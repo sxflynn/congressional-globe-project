@@ -50,5 +50,5 @@ uv run ruff check .
 uv run ty check
 uv run complexipy src tests --max-complexity-allowed 5
 uv run pytest
-npx --yes prettier@3.9.10 --prose-wrap never --write "**/*.md"
+npx prettier@3.9.10 --prose-wrap never --write "**/*.md"
 ```
