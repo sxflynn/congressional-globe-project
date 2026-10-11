@@ -85,7 +85,7 @@ The prototype's helpers now all score at most five (`v2-qwen-pivot-compact-refac
 2. Use a small matched Mini sample to investigate local-model failures or attribution differences. Record observed API usage/cost and finish status; preserve malformed outputs.
 3. [done] Embedding interface/gate and the frozen-pool embedding run are complete. Still open: confirm native `/api/embed` returns requested 1,024 versus full 2,560 dimensions for Qwen 4B on tiny inputs; no silent token truncation.
 4. [done, saturated] The frozen fifty windows/ten queries were embedded in 22 resumable, hash-keyed batches. All four 4B configs hit@1 10/10, MRR 1.0 — no separation of raw vs static or full vs projected dimensions. Do not re-run unchanged; build a harder, relevance-labeled tier before drawing retrieval conclusions. No full indexing.
-5. Compare identical raw text **without versus with separately generated, evidence-linked controlled tags**, including topic aliases and entity candidates. Surface-form mention extraction is not authority resolution. Loose discovery tags cannot satisfy verified speaker/date/party filters.
+5. [done] Compare identical raw text **without versus with separately generated, evidence-linked controlled tags**, including topic aliases and entity candidates. Surface-form mention extraction is not authority resolution. Loose discovery tags cannot satisfy verified speaker/date/party filters. Deterministic tag arm did not recover static's best cases (see the tag-arm section below); a refined or model-backed tag pass remains open.
 6. Produce a human review packet, case-by-case scorecard, exact reproduction commands, measured time/tokens/cost and an explicit recommendation: promising pivot, inconclusive, or unsuitable. Only then decide the next larger benchmark. The requested 1,000–5,000 passages / 30–50 human-labeled queries is a later benchmark tier, not the first smoke test.
 
 ## Evaluation rules
@@ -98,7 +98,7 @@ The prototype's helpers now all score at most five (`v2-qwen-pivot-compact-refac
 - Lexical search success does not prove semantic/vector retrieval. Compare embedding models on the same frozen inputs and query conventions.
 - The current sample is tiny and curated. Report observed throughput/cost, not a corpus-wide accuracy or guaranteed runtime. A larger representative benchmark is needed for institutional deployment.
 
-## Latest implemented tier: abstention controls, native 1024, Tier-2 BM25 baseline
+## Latest implemented tier: abstention controls, native 1024, Tier-2 BM25 baseline, tag arm
 
 All three items below are done and recorded terminally in `PROGRESS.md` (OpenCode `big-pickle`, bounded local calls, $0 API, no production change).
 
@@ -106,9 +106,13 @@ All three items below are done and recorded terminally in `PROGRESS.md` (OpenCod
 - **Native `/api/embed` `dimensions=1024`**: confirmed real 1,024-dim deterministic output for `qwen3-embedding:4b` (`tmp/embed_1024.json`, `embed_1024b.json`, `embed_1024c.json`; full 2,560 in `embed_full.json`). Any bounded embedding test may now use native MRL projection instead of the local first-1,024 slice.
 - **Tier-2 pool + BM25 baseline**: `tier2/pool.jsonl` = 125 windows (50 sample + 75 new, 15/part; `build-report.json`, seed 20261011, input sha `4ab8ef6b…`). `tier2-hard-queries.jsonl` has 19 hard queries (paraphrase ×10, near-miss ×4, repair_clean ×3, repair_garble ×2), all evidence quotes exact-verified. `tmp/score_tier2.py` → `tier2/bm25-report.json`: raw hit@1 **25/29 (MRR 0.931)** vs static **24/29 (MRR 0.908)** — no longer saturated; 4 queries separate raw vs static (`base-target-06` static wins; `base-target-08`, `h-paraphrase-04`, `h-repair-02` raw wins). Intended-target rank only; distractors unlabeled.
 
-## Tag-augmented arm (next executable step)
+## Tag-augmented arm (done, deterministic-only)
 
-Test the actual pivot hypothesis on the 125-window pool: rank the **same raw text** without vs with evidence-linked controlled tags, using the BM25-assisted rank metric above (plus an optional native-1,024-dim embedding arm). Keep `tmp/score_tier2.py` as the comparison harness; any new tag parser must stream `pool.jsonl`, verify anchors, and record which tag families were empty/unannotated rather than treating them as absence.
+The 125-window/29-query tag arm is executed: `raw_text` (and `static_text`) plus an evidence-anchored controlled-tag block per window, scored with the identical `score_tier2.py`/`bench._bm25` path. `tmp/tag_tier2.py` (durable `tier2/tag_tier2.py`, SHA-256 `c8326463a…`) generated `tier2/tagged_pool.jsonl` (SHA-256 `81c9a6ae7…`) plus `tier2/tag-generation-report.json` (deterministic-only, no request log, 0 anchor failures, per-window family coverage with empty families `unannotated`). `tmp/score_tag_arms.py` (durable `tier2/score_tag_arms.py`, SHA-256 `2e471e4a9…`) produced `tier2/tag-arm-report.json`; raw/static ranks reused unchanged from `bm25-report.json`.
+
+Result: overall hit@1 unchanged at 25/29 for both tag arms but MRR drops (raw 0.931 → raw+tags 0.9164; static 0.908 → static+tags 0.9107) and hit@3/5 go 29 → 28; easy-band MRR drops (0.9000 → 0.8577) because `base-target-08` falls rank 1 → 13, while `base-target-06` (static's win) is not recovered and `h-repair-02` (repair-clean) stays rank 2. `base-target-01` improves 2 → 1 and `h-paraphrase-04` is recovered by static+tags. Full verdict sentence lives in the report. Net: deterministic surface tags do **not** recover retrieval to static's best cases; a second lexical retry (cleaner topic tokens, pruned aliases) or model-backed tags remain testable before the pivot verdict.
+
+Exact commands (rerun any time; `artifacts/` is gitignored so outputs are local): `uv run python tmp/tag_tier2.py` then `uv run python tmp/score_tag_arms.py`; same hashes regardless of `tmp/` refresh because durable copies live next to the report.
 
 ## Before handing off again
 
