@@ -67,6 +67,14 @@ This schedules twenty sequential calls with a fifteen-minute budget. Each result
 
 For Mini, change `--backend openai --model gpt-5.4-mini`, use a new run ID and `--limit 3 --arm both` for six requests. `.env` loading is built in. Use the same frozen prompt/context when comparing providers; selected cases must be explicitly recorded. No automatic production queue draining.
 
+The embedding runner is ready at `tmp/v2_embedding_benchmark.py`, with durable copy `artifacts/v2-pivot-20261011/embedding_benchmark.py`. Its validated dry run `v2-embedding-dryrun-20261011-r3` has **zero cached batches and zero model requests**. It plans 22 sequential requests for 100 raw/static document inputs plus ten instructed queries, in batches of five. After process/digest inspection, this command resumes that prepared run with a hard outer deadline:
+
+```bash
+UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python -c 'import subprocess, sys; subprocess.run([sys.executable, "tmp/v2_embedding_benchmark.py", "--run-id", "v2-embedding-dryrun-20261011-r3", "--live", "--resume", "--max-input-texts", "200", "--max-seconds", "900"], timeout=900, check=True)'
+```
+
+This generates full 2,560-dimensional 4B vectors and derives a **local first-1,024-dimensions plus L2 normalization** comparison from the same vectors. It does not prove native `/api/embed` 1,024 output matches that projection. Validated batch caches are reusable; failed/unfinished batches are not silently treated as completed. Inspect `plan.json`, progress/failure records, caches and final report under the selected run directory before resuming. Restore the durable script into `tmp/` if needed; keep its path assumptions intact.
+
 The prototype has known complexity violations above five in several helpers. It is an experimental script, **not a production-quality deliverable**; refactoring remains required. The normal project gate does not cover ignored scratch/artifact scripts. Preserve the exact script snapshot/hash used for a measured run before refactoring it. If the tmp copy is missing, restore its durable copy to `tmp/v2_pivot_benchmark.py` from the project directory; its default paths rely on that location.
 
 ## Ordered next work
