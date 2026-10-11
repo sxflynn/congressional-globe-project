@@ -407,3 +407,17 @@ OpenCode's `tmp/performance/PARALLELIZATION_PROPOSAL.md` reports full-corpus pro
 ## Makefile shortcuts
 
 The small root `Makefile` wraps existing CLI commands. `make gate` applies both formatters and runs every required check/test. `make run-workflow` aliases `make run-static`: prepare or refresh the static/canonical/RAG files without model calls. Then choose `make run-qwen`, `make run-gemma`, or `make run-openai` for an explicit one-hour/1,000-request worker on the same existing queue. Each worker target first reports queue status; `make status` is also available separately. Run `make run-static` after the worker exits to publish its accepted patches. Targets are serialized, have no configurable variable matrix, and use the current prepared local run/lexicon. OpenAI requires the saved key and incurs API charges. See README or HAPPY_PATH for the command table.
+
+## Word-list setup on macOS
+
+The simple Make targets require `artifacts/static-audit-20261011/supplemented-lexicon.txt`. The file is generated and ignored by Git. On the prepared machine it already exists; do not rebuild it while a run is active. For a fresh checkout on macOS with the standard dictionary files, create it once:
+
+```bash
+mkdir -p artifacts/static-audit-20261011
+{
+  printf '\n'
+  cat /usr/share/dict/words /usr/share/dict/web2a /usr/share/dict/propernames resources/static-lexicon-supplement.txt
+} | LC_ALL=C sort -u > artifacts/static-audit-20261011/supplemented-lexicon.txt
+```
+
+This combines the base dictionary, additional forms, proper names, and the tracked project supplement. The leading blank entry preserves the existing prepared file's exact format. Reconstruction from the current machine's dictionaries was compared in memory and matches the existing word list byte for byte. On machines without these dictionary files, obtain the prepared lexicon or an equivalent documented word list before running the Make workflow. Changed dictionary content changes the run fingerprint; an incompatible existing run requires a new run ID and corresponding Make command adjustment.

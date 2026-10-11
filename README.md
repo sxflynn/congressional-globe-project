@@ -1,87 +1,79 @@
-# Congressional Globe corpus factory
+# Congressional Globe
 
-This project builds a portable historical research corpus from Internet Archive hOCR, DjVu XML, and page-number maps: authoritative canonical transcription, separate versioned authorities/enrichments, and derived full-text, structured-search and RAG outputs. `PROJECT_GOAL.md` defines the long-term architecture and current capability gaps; enrichment and search stages described there are planned, not implemented. It does not alter source OCR files and does not submit AI jobs unless an operator explicitly requests it.
+Turn the five parts of the 39th Congress, 1st Session into cleaned, searchable text files. Original OCR files are kept unchanged.
 
-For cloud commands, copy `.env.example` to `.env` and set `OPENAI_API_KEY` locally. The CLI loads that file automatically; `.env` is ignored by Git. Never paste an API key into chat or commit it.
+## 1. Set up
 
-## Basic Make commands
-
-Run these from the project directory. The Makefile uses the prepared local lexicon and the existing `static-final-20261011` queue; no configuration variables are required.
-
-| Command | Action |
-| --- | --- |
-| `make gate` | Run Ruff and Markdown formatters, all required checks, and all tests; formatting edits files |
-| `make run-workflow` or `make run-static` | Prepare the static corpus/queue, or refresh canonical/RAG exports with saved accepted patches; no model calls |
-| `make status` | Inspect the shared queue |
-| `make run-qwen` | Resume pending jobs with local Qwen |
-| `make run-gemma` | Resume pending jobs with local Gemma |
-| `make run-openai` | Resume pending jobs with GPT-5.4 Mini; requires `.env` key and incurs API charges |
-
-Typical sequence: `make run-static`, then one of the model targets, then `make run-static` again to refresh exports. Each model target checks queue status and runs for up to one hour or 1,000 requests, finishing any in-flight request before exit. Rerun to resume the same queue. Model targets update SQLite, not published exports. Wait for existing workers before starting another; Make targets are serialized even with `make -j`. The commands assume the local ignored lexicon/evidence files already exist. Agents should request elevated permissions for `make gate` because it runs the project-required Prettier formatter. Running model targets is an explicit operator action, not part of the gate.
-
-## Quick start
+You need **uv** and **make**. Open a terminal in this project folder, then install the Python dependencies:
 
 ```bash
 uv sync --all-groups
-uv run globe inventory
-uv run globe extract --identifier congressionalglo7395unit
-uv run globe build-rag --run-id local-demo
 ```
 
-The output is written to `artifacts/<run-id>/`. Start with `PROGRESS.md` for current status and next steps; see `RUNBOOK.md` for source context and `AGENTS.md` for required workflow gates.
+The source files belong in the project folder. The Make commands also need `artifacts/static-audit-20261011/supplemented-lexicon.txt`, the word list used for cleanup. It is already prepared on this machine; a fresh clone needs the [word-list setup](RUNBOOK.md#word-list-setup-on-macos).
 
-## Commands
-
-- `inventory` validates expected source files and can calculate SHA-256 checksums.
-- `extract` writes canonical page and paragraph JSONL for one downloaded part.
-- `build-rag` creates page-bounded retrieval chunks and a collection manifest.
-- `prepare-ai` creates OpenAI Batch-compatible requests locally; it makes no API calls.
-- `submit-batch` requires `OPENAI_API_KEY` and `--confirm-submit`.
-- `reconcile-ai` validates Batch results, applies only validated patches, and sends malformed responses to a separate review queue. It never changes raw OCR or canonical extraction.
-
-## Resumable local or cloud cleanup
-
-The cleanup queue is a typed SQLAlchemy/SQLite job store. It lets a local or cloud worker claim only unfinished records from the same run. Ollama is always sequential; it uses the required non-secret client placeholder `api_key="ollama"` and never reads `OPENAI_API_KEY`.
+## 2. Prepare the files and queue
 
 ```bash
-uv run globe cleanup init --run-directory artifacts/runs/local-v1 --run-id local-v1 \
-  --paragraphs artifacts/extraction/congressionalglo7395unit_paragraphs.jsonl
-uv run globe cleanup run --run-directory artifacts/runs/local-v1 --run-id local-v1 \
-  --backend ollama --model qwen3.8:27b-mlx --limit 100 --progress-interval 30
-uv run globe cleanup status --run-directory artifacts/runs/local-v1 --run-id local-v1
-uv run globe cleanup export --run-directory artifacts/runs/local-v1 --run-id local-v1 \
-  --output artifacts/runs/local-v1/normalized.jsonl
+make run-static
+make status
 ```
 
-To continue the same unfinished queue with the cloud API, replace `--backend ollama` with `--backend openai` and provide an OpenAI model. The ordinary cloud path requires `OPENAI_API_KEY`; the existing Batch commands remain a separate, explicit cost-optimized export/submission path. `gpt-5.4-mini` is the current cloud POC candidate; the Responses path pins `temperature=0` and uses a strict JSON schema shared with the Batch request builder. The cleanup prompt defines `expected` as the complete replaced span, forbids no-op and duplicate edits, and asks for every confident line-wrap join.
+This reads all five parts, fixes straightforward line-break errors, writes the output files, and queues passages needing further cleanup. It makes no model requests. Allow several minutes. `make run-workflow` does the same thing.
 
-Each run records `jobs.sqlite`, `events.jsonl`, provider response files, and an exportable derived JSONL result. A record with malformed JSON, an invalid patch, or a provider failure becomes `review`; raw hOCR is never changed. Resolved edits are de-duplicated and sorted deterministically before application. `RUNBOOK.md` records the full static audit, provider POCs, measured workload reductions, and remaining quality limitations.
+## 3. Run further cleanup (optional)
 
-## One-command static-first workflow
+Choose **one** of these commands:
 
-See `HAPPY_PATH.md` for the recommended local/cloud POC choices, a human-run full workflow command, and the one-hour resumable Qwen session.
+| Command           | What it uses                           |
+| ----------------- | -------------------------------------- |
+| `make run-qwen`   | Local Qwen; no API charge              |
+| `make run-gemma`  | Local Gemma; no API charge             |
+| `make run-openai` | OpenAI GPT-5.4 Mini; paid API requests |
 
-With the locally prepared, fingerprinted word list, the complete local workflow is:
+For a local model, start your Ollama-compatible server at `http://127.0.0.1:11434` first. It must have `qwen3.8:27b-mlx` or `gemma4:31b-mlx` available for the corresponding command. These are the model names configured for this machine.
+
+For OpenAI, if you do not already have `.env`, create it:
 
 ```bash
-uv run globe static-first --root . --run-id corpus-v1 \
-  --lexicon artifacts/static-audit-20261011/supplemented-lexicon.txt \
-  --backend none --ai-limit 0
+cp .env.example .env
 ```
 
-This command makes no model requests. It extracts all five parts, performs static cleanup, prepares a residual queue, validates static patches, then publishes canonical pages, RAG chunks, a manual review file, and a validation report under `artifacts/runs/corpus-v1/`. Unknown dates and unresolved text remain explicitly identified. Validation proves artifact consistency, not that every OCR reading is correct.
+Open `.env` in a text editor and replace the placeholder with your OpenAI API key. The program loads it automatically; Git ignores this file.
 
-Run the identical command again to resume the same queue. To opt into a bounded model run, retain the run ID and input options, replace `--backend none --ai-limit 0` with `--backend ollama --model qwen3.8:27b-mlx --ai-limit 3`, and provide `--benchmark-summary artifacts/benchmarks/context-audit-20261011/providers/context-random-qwen-20261011/summary.json`. To switch provider, change the backend, model, and matching benchmark summary. Changed source/preprocessing fingerprints require a new run; do not reuse a run ID for incompatible inputs. `--backend none` produces static exports without model calls; `--plan-only` stops before queue/export. `--start-leaf 114 --page-limit 4 --ai-limit 3` bounds a POC to four pages per part and at most three model requests. `--ai-limit` omitted processes the pending snapshot once; connection failures stop the worker for later resume.
+Each worker runs for up to **one hour or 1,000 passages**, whichever comes first. It finishes an in-flight request before stopping and saves progress as it goes. Run the same command again to continue. Run only one worker at a time.
 
-Qwen performed best on the small contextual POC; this does not establish full-corpus accuracy. Cloud mini was faster but required a punctuation-preservation correction and review handling. See the runbook for exact evidence and costs before choosing a provider.
-
-## Required checks
+In another terminal, check progress with:
 
 ```bash
-uv run ruff format --check .
-uv run ruff check .
-uv run ty check
-uv run complexipy src tests --max-complexity-allowed 5
-uv run pytest
-npx prettier@3.9.10 --prose-wrap never --write "**/*.md"
+make status
 ```
+
+`pending` means work remains; `completed` means proposed corrections passed validation; `review` means the passage needs attention. A completed passage may still contain OCR errors.
+
+## 4. Refresh and find your results
+
+After the worker stops:
+
+```bash
+make run-static
+```
+
+This incorporates saved corrections and refreshes the files without making more model requests. Results are in **`artifacts/runs/static-final-20261011/`**:
+
+- `canonical_pages.jsonl` — original and cleaned text, page locations, and correction history.
+- `chunks.jsonl` — smaller passages for search and retrieval.
+- `manual_review.jsonl` — passages still needing attention.
+- `validation_report.json` — output consistency checks.
+
+Uncertain text and missing dates remain marked for review or unknown; validation does not mean every OCR error has been fixed.
+
+## Check the project
+
+```bash
+make gate
+```
+
+Runs the formatters, code checks, and tests. You also need Node.js/npm for the Markdown formatter. Formatting can change files.
+
+For troubleshooting and detailed commands, see [RUNBOOK.md](RUNBOOK.md). For model comparisons and estimated time/cost, see [HAPPY_PATH.md](HAPPY_PATH.md).

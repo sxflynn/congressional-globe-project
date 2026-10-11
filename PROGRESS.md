@@ -133,3 +133,11 @@ The original deliverable is the implemented, exercised cleanup workflow and oper
 - [x] Add a small literal-command Makefile: `gate`, `run-workflow` (static alias), `run-static`, `status`, `run-qwen`, `run-gemma`, and `run-openai`. No variable matrix. Model workers inspect status first, reuse the existing queue, and are bounded to one hour/1,000 requests. Make recipes are serialized.
 - [x] Document targets and static → model worker → static export refresh in README, HAPPY_PATH and RUNBOOK; AGENTS now directs agents to `make gate`.
 - [x] `make gate` passed: both formatters, Ruff format/lint checks, ty, complexity ≤5, and all 81 tests. Dry-ran every workflow target with `make -n`; no production worker started and no corpus regeneration performed. Gate log: `tmp/make-gate.log`; session 23129 exited 0.
+
+## Human-oriented README tutorial
+
+- [x] Replace the long README with a focused four-step tutorial: install dependencies, prepare static outputs/queue, choose an optional local/cloud worker, then refresh/find results. Keep architecture, internal schemas, benchmark detail and agent-specific instructions in their dedicated documents.
+- [x] Document prerequisites, local endpoint/model names, first-time `.env` setup, one-hour/1,000-passage limits, resumability, status meanings, output files and `make gate`.
+- [x] Add a linked macOS word-list setup section to RUNBOOK for fresh checkouts. Compared reconstruction against the existing prepared lexicon in memory; bytes match. No source files, queues, outputs, or performance-agent files changed; no model requests or production runs started.
+
+Documentation-only unit; Markdown formatting and diff checks run before commit. No code/test changes.
