@@ -10,6 +10,8 @@ Read `V2_PIVOT.md` for the active alternative experiment: organize and enrich un
 
 `V2_EMBEDDING_MODELS.md` records the local embedding shortlist and backend compatibility checks. The user authorizes small GPT Mini and Ollama sampling/testing requests; keep them bounded and audited. Full-corpus model processing and model downloads are separate actions.
 
+For cross-harness continuation, follow `V2_HANDOFF.md` and the latest execution state in `PROGRESS.md`. Record active handles and terminal evidence before restarting any experiment.
+
 # Project preferences
 
 - Read `PROGRESS.md` before starting work and `PROJECT_GOAL.md` before making architectural/schema decisions. Follow its ordered next-step checklist and resume commands; do not repeat completed POCs or start full-corpus model processing. New user instructions take precedence.

@@ -4,6 +4,8 @@
 
 For the local embedding-model recommendation and compatibility checks, see [V2_EMBEDDING_MODELS.md](V2_EMBEDDING_MODELS.md).
 
+For another AI harness to continue, follow [V2_HANDOFF.md](V2_HANDOFF.md) and the latest `PROGRESS.md` checkpoint. The user authorizes bounded GPT Mini and Ollama POCs; full processing remains human-launched.
+
 This is an alternative, unvalidated direction. It does not replace, invalidate, or authorize discarding the static cleanup, patch ledgers, queue, canonical exports, or RAG work already completed. Keep those artifacts immutable and available for comparison.
 
 **Hypothesis:** research discovery may improve more from structuring page/turn windows and adding evidence-linked person, place, topic, and legislation tags than from spending the next iteration repairing OCR. Preserve the OCR as-is for this experiment. Do not treat normalized OCR as ground truth; the existing static and AI outputs remain separate comparison inputs.
@@ -57,7 +59,7 @@ On a small, labeled historical-query set, does an evidence-linked structured/dis
 
 ## Scope and handoff checklist
 
-The user requested this exploratory POC. Current work prepares an isolated ten-query, fifty-window comparison, with at most twenty sequential local Qwen requests after preparation checks. No paid calls or full-corpus processing are part of this experiment. Production OCR, cleanup queues and exports stay intact. The first lexical retrieval baseline will not prove vector retrieval; a separate bounded embedding comparison is still needed. Exact execution state and delegate ownership are in `PROGRESS.md`.
+The user requested this exploratory POC and explicitly authorized small GPT Mini and Ollama tests. Current work prepares an isolated ten-query, fifty-window comparison, with at most twenty sequential local Qwen requests per run after preparation checks, then a selected small Mini comparison. No full-corpus processing is part of this experiment. Production OCR, cleanup queues and exports stay intact. The first lexical retrieval baseline will not prove vector retrieval; a separate bounded embedding comparison is still needed. Qwen3 embedding 4B and 8B are now installed. Exact execution state and delegate ownership are in `PROGRESS.md`.
 
 - [x] Establish the user-requested experiment objective while preserving the cleanup path.
 - [ ] Select and freeze a small, stratified set of windows and queries; record source and text-layer hashes.
