@@ -156,7 +156,7 @@ Before the prompt revision, `gpt-5.4-nano` sent 8 of 12 jobs to review: it inven
 
 After the revision, `gpt-5.4-mini` completed 6/6 and then 5/6 of the same sample, fixing 37/38 and 22/38 wrap artifacts with valid, source-anchored joins. `gpt-5.4-nano` normalized every paragraph but consistently returned a single edit and left all 38 wraps unchanged, so it is not viable for this repair class. Remaining review cases are non-unique anchors, which still fail closed as intended. Treat `gpt-5.4-mini` as the current cloud default and re-run this sample before any large submission; geometry-aware deterministic dehyphenation remains the preferred fix for the roughly 30% of Part 5 paragraphs that contain line-wrap artifacts.
 
-### 2026-10-11 static-cleanup investigation (findings only, not yet implemented)
+### 2026-10-11 static-first cleanup
 
 Goal: move the mechanically decidable cleanup out of the LLM path and leave only genuinely contextual work for a model. Measurements below are over all 66,146 Part 5 paragraphs or a sample of 100–150 hOCR pages.
 
@@ -169,7 +169,16 @@ Goal: move the mechanically decidable cleanup out of the LLM path and leave only
 - Running heads, page numbers, and dates are statically detectable by repetition and page position (`THE CONGRESSIONAL GLOBE.`, `INDEX TO`, all-digit lines).
 - 3,865 paragraphs (5.8%) contain junk characters (`^c`, `\`, `€ • » ■`); the rest is mostly legitimate (`—`, `£`, `§`, `°`). 42,382 paragraphs (64%) contain neither a line-wrap hyphen nor junk characters and need no deterministic edit at all.
 
-Proposed static-first path (not built yet): retain line/word spans in extraction; run a deterministic normalizer (lexicon/morphology dehyphenation, header/footer/page-number marking, ligature and character fixes, whitespace/punctuation) before any AI; queue only residuals for the LLM with `x_wconf` and any DjVu alternate spelling attached as hints; reserve image review for low-confidence and still-unresolved cases. The local Ollama server currently serves `qwen3.8:27b-mlx`, `gemma4:31b-mlx`, and `muse-glimmer:30b-mlx` for residual experiments.
+Implemented first slice: extraction now retains each hOCR line and word, including word ID, bounding box, `x_wconf`, and `x_fsize`. `globe static-cleanup` reads extracted paragraph JSONL and an explicitly supplied newline-delimited lexicon, joins alphabetic line-wraps only when the joined form is present in the lexicon (or is a supported simple inflection), and writes derived JSONL with source-anchored `static_edits`. OCR source fields remain unchanged. Example:
+
+```bash
+uv run globe static-cleanup \
+  --paragraphs artifacts/extraction/IDENTIFIER_paragraphs.jsonl \
+  --lexicon path/to/wordlist.txt \
+  --output artifacts/static-cleanup/IDENTIFIER_paragraphs.jsonl
+```
+
+The lexicon is an input rather than a bundled platform dictionary, so runs can record and reuse the exact word list. This pass intentionally leaves uncertain joins untouched for later model or image review. Header/footer and page-number marking, ligature/character cleanup, DjVu alternate-spelling hints, confidence-aware residual routing, and image-review queueing remain unimplemented. The local Ollama server currently serves `qwen3.8:27b-mlx`, `gemma4:31b-mlx`, and `muse-glimmer:30b-mlx` for residual experiments.
 
 ## Canonical corpus design
 

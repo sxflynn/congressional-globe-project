@@ -34,6 +34,25 @@ class PrintedPage(BaseModel):
     confidence: int | None = Field(default=None, ge=0, le=100)
 
 
+class WordRecord(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str
+    text: str
+    bbox: BoundingBox | None = None
+    confidence: int | None = Field(default=None, ge=0, le=100)
+    font_size: float | None = Field(default=None, gt=0)
+
+
+class LineRecord(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str
+    bbox: BoundingBox | None = None
+    text: str
+    words: list[WordRecord]
+
+
 class ParagraphRecord(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -41,6 +60,7 @@ class ParagraphRecord(BaseModel):
     reading_order: int = Field(ge=0)
     bbox: BoundingBox | None = None
     line_ids: list[str]
+    lines: list[LineRecord] = Field(default_factory=list)
     text_ocr: str
     text_normalized: str | None = None
 

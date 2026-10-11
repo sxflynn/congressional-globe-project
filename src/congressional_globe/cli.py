@@ -13,6 +13,7 @@ from congressional_globe.ai import prepare_batch, reconcile_batch, submit_batch
 from congressional_globe.cleanup import export_results, run_database, run_jobs
 from congressional_globe.inventory import PARTS
 from congressional_globe.pipeline import build_rag, extract_identifier, write_inventory
+from congressional_globe.static_cleanup import normalize_jsonl
 from congressional_globe.storage import (
     CleanupJob,
     create_run,
@@ -42,6 +43,7 @@ def _commands() -> dict[str, CommandHandler]:
         "submit-batch": _submit_batch,
         "reconcile-ai": _reconcile_ai,
         "cleanup": _cleanup,
+        "static-cleanup": _static_cleanup,
     }
 
 
@@ -76,6 +78,13 @@ def _reconcile_ai(arguments: argparse.Namespace, _: Path) -> None:
 
 def _cleanup(arguments: argparse.Namespace, _: Path) -> None:
     _cleanup_handlers()[arguments.cleanup_command](arguments)
+
+
+def _static_cleanup(arguments: argparse.Namespace, _: Path) -> None:
+    count = normalize_jsonl(
+        Path(arguments.paragraphs), Path(arguments.lexicon), Path(arguments.output)
+    )
+    print(json.dumps({"paragraphs": count, "output": arguments.output}))
 
 
 CleanupHandler = Callable[[argparse.Namespace], None]
@@ -160,7 +169,15 @@ def _parser() -> argparse.ArgumentParser:
     _submit_command(commands)
     _reconcile_command(commands)
     _cleanup_command(commands)
+    _static_cleanup_command(commands)
     return parser
+
+
+def _static_cleanup_command(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
+    command = commands.add_parser("static-cleanup")
+    command.add_argument("--paragraphs", required=True)
+    command.add_argument("--lexicon", required=True)
+    command.add_argument("--output", required=True)
 
 
 def _inventory_command(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:

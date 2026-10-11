@@ -16,6 +16,7 @@ from congressional_globe.models import (
     strict_json_schema,
 )
 from congressional_globe.normalization import apply_edits, resolve_edits
+from congressional_globe.static_cleanup import normalize_jsonl, normalize_line_wraps
 from congressional_globe.storage import (
     claim_next,
     complete_job,
@@ -43,6 +44,87 @@ def test_extraction_preserves_hocr_ids_geometry_and_page_map(tmp_path: Path) -> 
     assert page.paragraphs[0].bbox is not None
     assert page.paragraphs[0].bbox.left == 100
     assert page.paragraphs[1].id == "par_right"
+
+
+def test_extraction_retains_word_geometry_and_confidence(tmp_path: Path) -> None:
+    hocr_path = tmp_path / "example_hocr.html"
+    hocr_path.write_text(_hocr_with_words(), encoding="utf-8")
+
+    page = next(iter_pages(hocr_path, {}))
+    word = page.paragraphs[0].lines[0].words[0]
+
+    assert word.id == "word_1"
+    assert word.text == "exam-"
+    assert word.confidence == 87
+    assert word.bbox is not None and word.bbox.left == 10
+
+
+def test_static_cleanup_joins_only_lexicon_supported_line_wraps() -> None:
+    page = PageRecord.model_validate(
+        {
+            "id": "i:leaf:1",
+            "item_identifier": "i",
+            "scan_leaf": 1,
+            "hocr_page_id": "page_1",
+            "printed_page": {},
+            "text_ocr": "exam- ple text",
+            "paragraphs": [
+                {
+                    "id": "p1",
+                    "reading_order": 0,
+                    "line_ids": ["l1", "l2"],
+                    "text_ocr": "exam- ple text",
+                    "lines": [
+                        {"id": "l1", "text": "exam-", "words": []},
+                        {"id": "l2", "text": "ple text", "words": []},
+                    ],
+                }
+            ],
+        }
+    )
+
+    paragraph = page.paragraphs[0]
+    normalized, edits = normalize_line_wraps(paragraph, {"example"})
+    untouched, no_edits = normalize_line_wraps(paragraph, {"exam", "ple"})
+
+    assert normalized == "example text"
+    assert edits[0].expected == "exam- ple"
+    assert untouched == paragraph.text_ocr
+    assert no_edits == []
+
+
+def test_static_cleanup_cli_payload_preserves_source_and_page_metadata(tmp_path: Path) -> None:
+    paragraphs = tmp_path / "paragraphs.jsonl"
+    lexicon = tmp_path / "words.txt"
+    output = tmp_path / "normalized.jsonl"
+    paragraphs.write_text(
+        json.dumps(
+            {
+                "id": "p1",
+                "reading_order": 0,
+                "line_ids": ["l1", "l2"],
+                "text_ocr": "exam- ple",
+                "lines": [
+                    {"id": "l1", "text": "exam-", "words": []},
+                    {"id": "l2", "text": "ple", "words": []},
+                ],
+                "item_identifier": "part-one",
+                "part_number": 1,
+                "scan_leaf": 12,
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    lexicon.write_text("example\n", encoding="utf-8")
+
+    assert normalize_jsonl(paragraphs, lexicon, output) == 1
+    result = json.loads(output.read_text(encoding="utf-8"))
+
+    assert result["text_ocr"] == "exam- ple"
+    assert result["text_normalized"] == "example"
+    assert result["scan_leaf"] == 12
+    assert result["static_edits"][0]["expected"] == "exam- ple"
 
 
 def test_patch_application_is_reversible_and_rejects_bad_source() -> None:
@@ -227,4 +309,15 @@ def _hocr() -> str:
             '    <span class="ocr_line" id="line_left">Left column.</span></p>',
             "</div></body></html>",
         ]
+    )
+
+
+def _hocr_with_words() -> str:
+    return (
+        '<html><body><div class="ocr_page" id="page_1" '
+        'title="bbox 0 0 100 100; ppageno 1; scan_res 300 300">'
+        '<p class="ocr_par" id="p1"><span class="ocr_line" id="l1" '
+        'title="bbox 5 5 60 20"><span class="ocrx_word" id="word_1" '
+        'title="bbox 10 5 40 20; x_wconf 87; x_fsize 12">exam-</span></span></p>'
+        "</div></body></html>"
     )

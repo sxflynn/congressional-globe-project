@@ -12,16 +12,20 @@ from lxml import etree  # ty: ignore[unresolved-import]
 from congressional_globe.inventory import PARTS
 from congressional_globe.models import (
     BoundingBox,
+    LineRecord,
     PageRecord,
     ParagraphRecord,
     PrintedPage,
     SourceKind,
+    WordRecord,
 )
 
 _BBOX = re.compile(r"bbox (\d+) (\d+) (\d+) (\d+)")
 _PAGE = re.compile(r"ppageno (\d+)")
 _DIMENSIONS = re.compile(r"bbox 0 0 (\d+) (\d+)")
 _DPI = re.compile(r"scan_res (\d+)")
+_CONFIDENCE = re.compile(r"x_wconf (\d+)")
+_FONT_SIZE = re.compile(r"x_fsize ([\d.]+)")
 
 
 def load_page_map(path: Path) -> dict[int, PrintedPage]:
@@ -71,13 +75,35 @@ def _paragraphs(page: etree._Element) -> list[ParagraphRecord]:
 
 
 def _paragraph_record(element: etree._Element) -> ParagraphRecord:
-    line_ids = [child.get("id", "") for child in element.iter() if _has_class(child, "ocr_line")]
+    lines = [_line_record(child) for child in element.iter() if _has_class(child, "ocr_line")]
     return ParagraphRecord(
         id=element.get("id", ""),
         reading_order=0,
         bbox=_bbox(element.get("title", "")),
-        line_ids=[line_id for line_id in line_ids if line_id],
+        line_ids=[line.id for line in lines if line.id],
+        lines=lines,
         text_ocr=_text(element),
+    )
+
+
+def _line_record(element: etree._Element) -> LineRecord:
+    words = [_word_record(child) for child in element.iter() if _has_class(child, "ocrx_word")]
+    return LineRecord(
+        id=element.get("id", ""),
+        bbox=_bbox(element.get("title", "")),
+        text=_text(element),
+        words=words,
+    )
+
+
+def _word_record(element: etree._Element) -> WordRecord:
+    title = element.get("title", "")
+    return WordRecord(
+        id=element.get("id", ""),
+        text=_text(element),
+        bbox=_bbox(title),
+        confidence=_int_match(_CONFIDENCE, title) if _CONFIDENCE.search(title) else None,
+        font_size=_float_match(_FONT_SIZE, title),
     )
 
 
@@ -113,6 +139,11 @@ def _dimensions(title: str) -> tuple[int | None, int | None]:
 def _int_match(pattern: re.Pattern[str], value: str) -> int:
     match = pattern.search(value)
     return int(match.group(1)) if match else 0
+
+
+def _float_match(pattern: re.Pattern[str], value: str) -> float | None:
+    match = pattern.search(value)
+    return float(match.group(1)) if match else None
 
 
 def _bbox(title: str) -> BoundingBox | None:
