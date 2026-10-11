@@ -47,7 +47,7 @@ Raw IA metadata files are unavailable locally for all five parts and explicitly 
 ## Ordered next steps
 
 1. [ ] Finish the already started full static export and save its terminal report. Do not start another worker for this run while one is active. Verify exports with `tmp/verify_full_export.py`, then record final counts, limitations, and process state here.
-2. [ ] Format all Markdown with the required elevated Prettier command, check `git diff --check`, and commit the current unit including user changes. Use one line, no agent attribution.
+2. [x] Format all Markdown, check `git diff --check`, and commit implementation/user changes: `24ba80d`. Repeat formatting and commit for later handoff corrections.
 3. [ ] Before expanding cleanup, create human/image-reviewed labels across indexes, proceedings, Appendix, date transitions, and low-confidence text. Quantify router misses and false positives. Do not equate current model-assisted samples with gold labels.
 4. [ ] Evaluate further static repairs on anchored examples, retain ambiguous compounds, then measure reduction and review a new random sample before adopting each rule.
 5. [ ] Only after a new explicit user command, process a bounded additional model sample or scale the residual queue. Inspect queue status first; reuse compatible run IDs and matching provider benchmarks. Never automatically drain the full queue as a continuation of this handoff.
@@ -75,4 +75,4 @@ The bounded POC used `--start-leaf 114 --page-limit 4`; those inputs must stay i
 
 ## Final handoff state
 
-Full static export is currently running with backend `none`, AI limit zero, shell session 52967, log `tmp/static-final.log`. No provider workers are running. Replace this paragraph with the observed terminal outcome before handing off if it finishes in this turn.
+Implementation/user changes are committed in `24ba80d`. The full static export exposed a SQLite query-planner issue: single-column indexes selected the run ID and scanned the queue per paragraph. Added composite indexes for exact and legacy lookups. Interrupted session 52967 (exit 130) and resumed the same queue with verified cached preprocessing, backend `none`, AI limit zero, shell session 38960, log `tmp/static-final-resume.log`. No provider workers are running. Full exports remain unverified until the run and independent verifier finish.

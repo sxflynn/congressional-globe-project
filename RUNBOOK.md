@@ -370,3 +370,5 @@ uv run globe static-first --root . --run-id static-final-20261011 \
 ```
 
 Outputs are `canonical_pages.jsonl`, `chunks.jsonl`, `manual_review.jsonl`, and `validation_report.json` under the run directory. A passing validation report establishes record/ledger consistency; `cleanup_complete: false` preserves unresolved work. Missing raw IA metadata is explicitly reported as unavailable. To opt into model processing later, inspect `cleanup status`, then repeat the same inputs/run ID with an explicit backend/model and matching `--benchmark-summary`; use `--ai-limit` to bound requests. Omitting that limit with a model processes the pending queue. Changing extraction code, source fingerprints, or lexicon requires a new run ID.
+
+Full-scale export exposed a SQLite planner issue absent from the bounded sample: run-ID indexes caused per-paragraph queue scans. Composite indexes now cover `(run_id, identity, input_hash)` and legacy `(run_id, paragraph_id, identity)` lookups. The static-only run was interrupted and resumed with the same queue and cached preprocessing; see `PROGRESS.md` for its terminal verification state.

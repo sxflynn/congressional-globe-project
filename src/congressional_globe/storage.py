@@ -310,6 +310,17 @@ def _migrate_schema(engine: Any) -> None:
         for name, kind in additions.items():
             if name not in columns:
                 connection.execute(sql_text(f"ALTER TABLE cleanup_jobs ADD COLUMN {name} {kind}"))
+        _create_lookup_indexes(connection)
+
+
+def _create_lookup_indexes(connection: Any) -> None:
+    for name, columns in (
+        ("ix_cleanup_jobs_run_identity_hash", "run_id, identity, input_hash"),
+        ("ix_cleanup_jobs_run_paragraph_identity", "run_id, paragraph_id, identity"),
+    ):
+        connection.execute(
+            sql_text(f"CREATE INDEX IF NOT EXISTS {name} ON cleanup_jobs ({columns})")
+        )
 
 
 def _ensure_empty_run(session: Session, run_id: str) -> None:
