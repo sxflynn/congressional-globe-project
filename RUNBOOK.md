@@ -180,6 +180,29 @@ uv run globe static-cleanup \
 
 The lexicon is an input rather than a bundled platform dictionary, so runs can record and reuse the exact word list. This pass intentionally leaves uncertain joins untouched for later model or image review. Header/footer and page-number marking, ligature/character cleanup, DjVu alternate-spelling hints, confidence-aware residual routing, and image-review queueing remain unimplemented. The local Ollama server currently serves `qwen3.8:27b-mlx`, `gemma4:31b-mlx`, and `muse-glimmer:30b-mlx` for residual experiments.
 
+### 2026-10-11 static cleanup and export POC
+
+The static pass now checks actual hOCR line boundaries and resolves their source positions sequentially, including repeated line text. Inline hyphenated phrases are preserved. Input/output aliases (including hard links and the lexicon) are rejected. Derived rows retain pipeline, lexicon, and input SHA-256 fingerprints, source-anchored edits, and unresolved wrap hints. This establishes line-boundary evidence; it does not use bounding-box thresholds to infer ambiguous layouts.
+
+A bounded POC used Part 5 scan leaves 17 and 120. Across their 201 paragraphs, the static pass applied 71 validated edits and left five unresolved wrap hints in five paragraphs. Two selected paragraphs contained five known wrap repairs; the static pass made all five. This is a targeted transport and integration sample, not a stratified corpus accuracy estimate.
+
+The provider comparison used those two original paragraphs plus their two cleaned controls. Both `gpt-5.4-mini` and `qwen3.8:27b-mlx` matched all four expected outputs and preserved both clean controls. OpenAI consumed 2,586 input / 343 output tokens in 6.3 seconds; local Qwen consumed 2,814 input / 483 output tokens in 37.4 seconds. These are observed request totals, not cost estimates. Static repair of the five selected wraps used no model calls. The sample did not measure contextual residual errors, so it cannot select a residual provider yet.
+
+POC evidence lives under `artifacts/benchmarks/static-first-poc-20261011/`, `static-first-openai-mini-20261011/`, and `static-first-ollama-qwen-20261011/`. The two full pages were merged with their derived paragraphs and exported as canonical JSONL plus seven page-bounded RAG chunks. The merge uses a temporary SQLite index, verifies raw-text equality and complete paragraph coverage, validates static edit ledgers, retains provenance, and replaces the final canonical file only after validation succeeds. Chunk citations now include hOCR page and paragraph IDs; normalized empty strings are preserved.
+
+```bash
+# Opt-in, bounded provider evaluation against expected-text JSONL cases.
+uv run globe benchmark --cases artifacts/benchmarks/static-first-poc-20261011/cases.jsonl \
+  --backend ollama --model qwen3.8:27b-mlx --run-id NEW-BENCHMARK-ID --limit 4
+
+# Export supplied canonical pages and a complete derived paragraph file.
+uv run globe export-rag --pages artifacts/benchmarks/static-first-poc-20261011/pages.jsonl \
+  --paragraphs artifacts/benchmarks/static-first-poc-20261011/full-page-static.jsonl \
+  --output artifacts/export-poc
+```
+
+The one-command final workflow is still under development. Remaining required work: structural/header labels and sourced date/context metadata; reliable residual routing and composition of model patches with static patches in the resumable queue; representative residual POCs across all five parts; and a manifest plus validation gate before final export. Do not run the whole corpus with models based on this sample.
+
 ## Canonical corpus design
 
 Create a canonical, hierarchical JSON representation plus a RAG-specific JSONL derivative.

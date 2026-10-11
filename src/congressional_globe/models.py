@@ -63,6 +63,9 @@ class ParagraphRecord(BaseModel):
     lines: list[LineRecord] = Field(default_factory=list)
     text_ocr: str
     text_normalized: str | None = None
+    static_edits: list[TextEdit] = Field(default_factory=list)
+    static_cleanup_provenance: dict[str, str] | None = None
+    unresolved_wrap_hints: list[dict[str, str]] = Field(default_factory=list)
 
 
 class PageRecord(BaseModel):
@@ -143,3 +146,4 @@ class RAGChunk(BaseModel):
     printed_pages: list[str]
     paragraph_ids: list[str]
     citation: str
+    hocr_page_id: str | None = None

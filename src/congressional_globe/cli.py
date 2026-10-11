@@ -10,9 +10,21 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from congressional_globe.ai import prepare_batch, reconcile_batch, submit_batch
+from congressional_globe.benchmarking import run_benchmark
 from congressional_globe.cleanup import export_results, run_database, run_jobs
 from congressional_globe.inventory import PARTS
-from congressional_globe.pipeline import build_rag, extract_identifier, write_inventory
+from congressional_globe.pipeline import (
+    build_rag,
+    build_rag_from_pages,
+    extract_identifier,
+    merge_normalized_paragraphs,
+    write_inventory,
+)
+from congressional_globe.providers import (
+    CleanupProvider,
+    OllamaProvider,
+    OpenAIResponsesProvider,
+)
 from congressional_globe.static_cleanup import normalize_jsonl
 from congressional_globe.storage import (
     CleanupJob,
@@ -39,6 +51,8 @@ def _commands() -> dict[str, CommandHandler]:
         "inventory": _inventory,
         "extract": _extract,
         "build-rag": _build_rag,
+        "benchmark": _benchmark,
+        "export-rag": _export_rag,
         "prepare-ai": _prepare_ai,
         "submit-batch": _submit_batch,
         "reconcile-ai": _reconcile_ai,
@@ -57,6 +71,57 @@ def _extract(arguments: argparse.Namespace, root: Path) -> None:
 
 def _build_rag(arguments: argparse.Namespace, root: Path) -> None:
     build_rag(root, Path(arguments.output), arguments.run_id, arguments.single_json)
+
+
+def _benchmark(arguments: argparse.Namespace, _: Path) -> None:
+    provider = _benchmark_provider(arguments)
+    summary = run_benchmark(
+        Path(arguments.cases),
+        provider,
+        backend=arguments.backend,
+        model=arguments.model,
+        run_id=arguments.run_id,
+        limit=arguments.limit,
+        artifacts_dir=Path(arguments.output),
+    )
+    print(summary.model_dump_json())
+
+
+def _benchmark_provider(arguments: argparse.Namespace) -> CleanupProvider:
+    if arguments.backend == "ollama":
+        return OllamaProvider(arguments.model, arguments.base_url, arguments.timeout)
+    return OpenAIResponsesProvider(arguments.model, arguments.timeout)
+
+
+def _export_rag(arguments: argparse.Namespace, _: Path) -> None:
+    pages = Path(arguments.pages)
+    paragraphs = Path(arguments.paragraphs)
+    output = Path(arguments.output)
+    output.mkdir(parents=True, exist_ok=True)
+    canonical_pages = output / "canonical_pages.jsonl"
+    chunks = output / "chunks.jsonl"
+    _reject_cli_output_aliases(chunks, (pages, paragraphs))
+    page_count = merge_normalized_paragraphs(pages, paragraphs, canonical_pages)
+    chunk_count = build_rag_from_pages(canonical_pages, chunks)
+    print(
+        json.dumps(
+            {
+                "canonical_pages": str(canonical_pages),
+                "pages": page_count,
+                "chunks": str(chunks),
+                "chunk_count": chunk_count,
+            },
+            sort_keys=True,
+        )
+    )
+
+
+def _reject_cli_output_aliases(output: Path, sources: tuple[Path, ...]) -> None:
+    for source in sources:
+        same_path = output.resolve() == source.resolve()
+        same_file = output.exists() and source.exists() and output.samefile(source)
+        if same_path or same_file:
+            raise ValueError(f"Output path aliases an input file: {source}")
 
 
 def _prepare_ai(arguments: argparse.Namespace, _: Path) -> None:
@@ -165,6 +230,8 @@ def _parser() -> argparse.ArgumentParser:
     _inventory_command(commands)
     _extract_command(commands)
     _build_command(commands)
+    _benchmark_command(commands)
+    _export_rag_command(commands)
     _prepare_command(commands)
     _submit_command(commands)
     _reconcile_command(commands)
@@ -200,6 +267,27 @@ def _build_command(commands: argparse._SubParsersAction[argparse.ArgumentParser]
     command.add_argument("--run-id", required=True)
     command.add_argument("--output", default="artifacts")
     command.add_argument("--single-json", action="store_true")
+
+
+def _benchmark_command(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
+    command = commands.add_parser(
+        "benchmark", help="Run an explicit small-sample provider benchmark"
+    )
+    command.add_argument("--cases", required=True)
+    command.add_argument("--backend", choices=("ollama", "openai"), default="ollama")
+    command.add_argument("--model", required=True)
+    command.add_argument("--run-id", required=True)
+    command.add_argument("--limit", type=int, default=6)
+    command.add_argument("--timeout", type=float, default=45)
+    command.add_argument("--base-url", default="http://localhost:11434/v1")
+    command.add_argument("--output", default="artifacts/benchmarks")
+
+
+def _export_rag_command(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
+    command = commands.add_parser("export-rag")
+    command.add_argument("--pages", required=True)
+    command.add_argument("--paragraphs", required=True)
+    command.add_argument("--output", required=True)
 
 
 def _prepare_command(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:

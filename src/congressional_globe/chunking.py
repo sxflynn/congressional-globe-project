@@ -14,7 +14,8 @@ def _paragraph_groups(paragraphs: list[ParagraphRecord], limit: int) -> list[lis
     groups: list[list[ParagraphRecord]] = []
     current: list[ParagraphRecord] = []
     for paragraph in paragraphs:
-        if current and _group_length(current) + len(paragraph.text_ocr) + 2 > limit:
+        paragraph_length = len(_paragraph_text(paragraph))
+        if current and _group_length(current) + paragraph_length + 2 > limit:
             groups.append(current)
             current = []
         current.append(paragraph)
@@ -24,27 +25,36 @@ def _paragraph_groups(paragraphs: list[ParagraphRecord], limit: int) -> list[lis
 
 
 def _group_length(group: list[ParagraphRecord]) -> int:
-    return sum(len(paragraph.text_ocr) + 2 for paragraph in group)
+    text_length = sum(len(_paragraph_text(paragraph)) for paragraph in group)
+    return text_length + max(0, len(group) - 1) * 2
+
+
+def _paragraph_text(paragraph: ParagraphRecord) -> str:
+    if paragraph.text_normalized is not None:
+        return paragraph.text_normalized
+    return paragraph.text_ocr
 
 
 def _chunk(page: PageRecord, group: list[ParagraphRecord], index: int) -> RAGChunk:
     page_value = page.printed_page.inferred or page.printed_page.detected or "unpaginated"
-    citation = _citation(page, page_value)
+    citation = _citation(page, page_value, group)
     return RAGChunk(
         id=f"{page.id}:chunk:{index:04d}",
-        text="\n\n".join(paragraph.text_normalized or paragraph.text_ocr for paragraph in group),
+        text="\n\n".join(_paragraph_text(paragraph) for paragraph in group),
         item_identifier=page.item_identifier,
         part_number=page.part_number,
         scan_leaves=[page.scan_leaf],
         printed_pages=[page_value],
         paragraph_ids=[paragraph.id for paragraph in group],
         citation=citation,
+        hocr_page_id=page.hocr_page_id,
     )
 
 
-def _citation(page: PageRecord, page_value: str) -> str:
+def _citation(page: PageRecord, page_value: str, group: list[ParagraphRecord]) -> str:
     part = f", pt. {page.part_number}" if page.part_number else ""
     return (
         f"The Congressional Globe, 39th Cong., 1st Sess.{part}, p. {page_value}, "
-        f"leaf {page.scan_leaf}"
+        f"leaf {page.scan_leaf}, hOCR {page.hocr_page_id}, "
+        f"paragraphs {', '.join(paragraph.id for paragraph in group)}"
     )

@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Protocol, cast
 
 from openai import OpenAI
@@ -18,6 +18,7 @@ LOCAL_API_KEY = "ollama"
 class ProviderResult:
     cleanup: CleanupResult
     raw_response: str
+    usage: dict[str, int] = field(default_factory=dict)
 
 
 class CleanupProvider(Protocol):
@@ -27,8 +28,10 @@ class CleanupProvider(Protocol):
 class OllamaProvider:
     """Most compatible local path: OpenAI-style Chat Completions, one call at a time."""
 
-    def __init__(self, model: str, base_url: str) -> None:
-        self._client = OpenAI(base_url=base_url, api_key=LOCAL_API_KEY)
+    def __init__(self, model: str, base_url: str, timeout_seconds: float = 60) -> None:
+        self._client = OpenAI(
+            base_url=base_url, api_key=LOCAL_API_KEY, timeout=timeout_seconds, max_retries=0
+        )
         self._model = model
 
     def clean(self, text: str) -> ProviderResult:
@@ -49,12 +52,18 @@ class OllamaProvider:
             raise ValueError(
                 f"Local provider returned empty content (finish_reason={finish_reason!r})"
             )
-        return ProviderResult(CleanupResult.model_validate_json(content), content)
+        usage = response.usage
+        tokens = (
+            {}
+            if usage is None
+            else {"input_tokens": usage.prompt_tokens, "output_tokens": usage.completion_tokens}
+        )
+        return ProviderResult(CleanupResult.model_validate_json(content), content, tokens)
 
 
 class OpenAIResponsesProvider:
-    def __init__(self, model: str) -> None:
-        self._client = OpenAI()
+    def __init__(self, model: str, timeout_seconds: float = 60) -> None:
+        self._client = OpenAI(timeout=timeout_seconds, max_retries=0)
         self._model = model
 
     def clean(self, text: str) -> ProviderResult:
@@ -66,8 +75,14 @@ class OpenAIResponsesProvider:
             reasoning={"effort": "none"},
             text=cast(Any, {"format": _format()}),
         )
+        usage = response.usage
+        tokens = (
+            {}
+            if usage is None
+            else {"input_tokens": usage.input_tokens, "output_tokens": usage.output_tokens}
+        )
         return ProviderResult(
-            CleanupResult.model_validate_json(response.output_text), response.output_text
+            CleanupResult.model_validate_json(response.output_text), response.output_text, tokens
         )
 
 
