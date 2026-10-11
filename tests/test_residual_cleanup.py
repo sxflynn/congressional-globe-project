@@ -10,7 +10,7 @@ from openai import APIConnectionError
 
 from congressional_globe import cleanup
 from congressional_globe.models import CleanupResult, TextEdit
-from congressional_globe.providers import ProviderResult
+from congressional_globe.providers import ProviderOutputError, ProviderResult
 from congressional_globe.storage import (
     claim_next,
     complete_job,
@@ -42,9 +42,13 @@ def _static_row(item: str = "part-a", leaf: int = 4, paragraph_id: str = "p1") -
     return {
         "id": paragraph_id,
         "item_identifier": item,
+        "part_number": 1,
         "scan_leaf": leaf,
+        "printed_page": {"detected": "12", "inferred": None, "source": "direct_header"},
+        "hocr_page_id": f"page_{leaf:06d}",
         "reading_order": 0,
-        "line_ids": [],
+        "line_ids": [f"line_{leaf:06d}_000001"],
+        "bbox": {"left": 10, "top": 20, "right": 30, "bottom": 40},
         "text_ocr": "raw",
         "text_normalized": "static",
         "static_edits": [static_edit.model_dump(mode="json")],
@@ -129,6 +133,63 @@ def test_completed_ai_result_materializes_against_static_input(tmp_path: Path, m
     job = jobs_for_run(cleanup.run_database(run_directory), run_id)[0]
     assert job.raw_response == '{"raw":"response"}'
     assert json.loads(job.usage_json or "{}") == {"input_tokens": 7, "output_tokens": 3}
+    events = [
+        json.loads(line)
+        for line in (run_directory / "events.jsonl").read_text(encoding="utf-8").splitlines()
+    ]
+    result_event = next(event for event in events if event["event"] == "job_result")
+    assert result_event["run_id"] == run_id
+    assert result_event["identity"] == job.identity
+    assert result_event["status"] == "completed"
+    assert result_event["before_text"] == "static"
+    assert result_event["after_text"] == "final"
+    assert result_event["after_text_kind"] == "accepted_normalized"
+    assert result_event["applied_edits"][0]["replacement"] == "final"
+
+
+def test_provider_parse_failure_persists_raw_usage_and_review_result_event(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    paragraphs = tmp_path / "static.jsonl"
+    _write_rows(paragraphs, [_static_row()])
+    run_directory = tmp_path / "run"
+    run_id = "parse-failure"
+    database = cleanup.run_database(run_directory)
+    create_run(database, run_id, paragraphs)
+
+    class MalformedProvider:
+        def clean(self, text: str) -> ProviderResult:
+            raise ProviderOutputError(
+                "invalid provider JSON",
+                raw_response='{"edits":',
+                usage={"input_tokens": 19, "output_tokens": 6},
+                finish_reason="length",
+                output_status=None,
+            )
+
+    monkeypatch.setattr(cleanup, "_provider", lambda *_args: MalformedProvider())
+    cleanup.run_jobs(run_directory, run_id, "ollama", "fixture", 1, "http://localhost", 100)
+
+    job = jobs_for_run(database, run_id)[0]
+    assert job.status == "review"
+    assert job.raw_response == '{"edits":'
+    assert json.loads(job.usage_json or "{}") == {"input_tokens": 19, "output_tokens": 6}
+    assert (run_directory / "responses" / f"{job.id}.json").read_text(
+        encoding="utf-8"
+    ) == '{"edits":'
+    events = [
+        json.loads(line)
+        for line in (run_directory / "events.jsonl").read_text(encoding="utf-8").splitlines()
+    ]
+    result_event = next(event for event in events if event["event"] == "job_result")
+    assert result_event["status"] == "review"
+    assert result_event["before_text"] == "static"
+    assert result_event["after_text"] == "static"
+    assert result_event["after_text_kind"] == "unchanged_retained_input"
+    assert result_event["applied_edits"] == []
+    assert result_event["raw_response"] == '{"edits":'
+    assert result_event["finish_reason"] == "length"
+    assert result_event["usage"] == {"input_tokens": 19, "output_tokens": 6}
 
 
 def test_image_review_response_is_not_completed_and_materializes_static(tmp_path, monkeypatch):
@@ -231,7 +292,7 @@ def test_run_jobs_does_not_retry_connection_failure_in_same_drain(
     class FailingProvider:
         calls = 0
 
-        def clean(self, _text: str) -> ProviderResult:
+        def clean(self, text: str) -> ProviderResult:
             self.calls += 1
             raise APIConnectionError(message="offline", request=cast(Any, None))
 
@@ -244,6 +305,51 @@ def test_run_jobs_does_not_retry_connection_failure_in_same_drain(
     assert provider.calls == 1
     assert sorted(job.attempts for job in jobs) == [0, 1]
     assert progress(database, run_id)["pending"] == 2
+    events = [
+        json.loads(line)
+        for line in (run_directory / "events.jsonl").read_text(encoding="utf-8").splitlines()
+    ]
+    result_event = next(event for event in events if event["event"] == "job_result")
+    assert result_event["status"] == "retry_pending"
+    assert result_event["before_text"] == result_event["after_text"] == "static"
+    assert result_event["after_text_kind"] == "unchanged_retained_input"
+    assert result_event["applied_edits"] == []
+
+
+def test_noop_completion_records_unchanged_text_and_source_citation(tmp_path: Path, monkeypatch):
+    row = {
+        **_static_row(),
+        "text_ocr": "unchanged",
+        "text_normalized": "unchanged",
+        "static_edits": [],
+    }
+    paragraphs = tmp_path / "static.jsonl"
+    _write_rows(paragraphs, [row])
+    run_directory = tmp_path / "run"
+    run_id = "noop-result"
+    database = cleanup.run_database(run_directory)
+    create_run(database, run_id, paragraphs)
+    result = ProviderResult(
+        CleanupResult(edits=[], needs_image_review=False, review_reason=None),
+        '{"edits":[]}',
+        {"input_tokens": 5, "output_tokens": 2},
+    )
+    monkeypatch.setattr(cleanup, "_provider", lambda *_args: _Provider(result))
+
+    cleanup.run_jobs(run_directory, run_id, "ollama", "fixture", 1, "http://localhost", 100)
+
+    events = [
+        json.loads(line)
+        for line in (run_directory / "events.jsonl").read_text(encoding="utf-8").splitlines()
+    ]
+    result_event = next(event for event in events if event["event"] == "job_result")
+    assert result_event["before_text"] == result_event["after_text"] == "unchanged"
+    assert result_event["after_text_kind"] == "accepted_normalized"
+    assert result_event["applied_edits"] == []
+    assert result_event["printed_page"]["detected"] == "12"
+    assert result_event["hocr_page_id"] == "page_000004"
+    assert result_event["line_ids"] == ["line_000004_000001"]
+    assert result_event["bbox"] == {"left": 10, "top": 20, "right": 30, "bottom": 40}
 
 
 def test_run_jobs_does_not_claim_after_wall_clock_budget(tmp_path: Path, monkeypatch):

@@ -65,6 +65,7 @@ This incorporates saved corrections and refreshes the files without making more 
 - `chunks.jsonl` — smaller passages for search and retrieval.
 - `manual_review.jsonl` — passages still needing attention.
 - `validation_report.json` — output consistency checks.
+- `events.jsonl` — worker progress; new worker runs include before/after text and accepted edits.
 
 Uncertain text and missing dates remain marked for review or unknown; validation does not mean every OCR error has been fixed.
 

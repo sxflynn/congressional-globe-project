@@ -8,6 +8,7 @@ import json
 import os
 import tempfile
 from contextlib import contextmanager
+from datetime import UTC, datetime
 from pathlib import Path
 from threading import Event, Lock, Thread
 from time import perf_counter
@@ -17,7 +18,12 @@ from openai import APIConnectionError
 
 from congressional_globe.models import CleanupResult, TextEdit
 from congressional_globe.normalization import apply_edits, resolve_edits, validate_edit_shapes
-from congressional_globe.providers import CleanupProvider, OllamaProvider, OpenAIResponsesProvider
+from congressional_globe.providers import (
+    CleanupProvider,
+    OllamaProvider,
+    OpenAIResponsesProvider,
+    ProviderOutputError,
+)
 from congressional_globe.storage import (
     CleanupJob,
     claim_next,
@@ -320,7 +326,15 @@ def _process_job(
         _record_retry(run_directory, database_path, job, str(error), started)
         return False
     except Exception as error:
-        _record_review(run_directory, database_path, job, str(error), started, provider_result)
+        _record_review(
+            run_directory,
+            database_path,
+            job,
+            str(error),
+            started,
+            provider_result,
+            error if isinstance(error, ProviderOutputError) else None,
+        )
         return True
     else:
         _record_completion(
@@ -378,6 +392,16 @@ def _record_completion(
         duration_ms,
         {"edit_count": len(applied_edits), "usage": provider_result.usage},
     )
+    _result_event(
+        run_directory,
+        job,
+        duration_ms,
+        "completed",
+        normalized,
+        "accepted_normalized",
+        applied_edits,
+        provider_result=provider_result,
+    )
 
 
 def _record_review(
@@ -387,11 +411,22 @@ def _record_review(
     error: str,
     started: float,
     provider_result: Any = None,
+    provider_error: ProviderOutputError | None = None,
 ) -> None:
     duration_ms = _duration(started)
+    raw_response = None
+    usage = None
     if provider_result is None:
-        review_job(database_path, job.id, error, duration_ms)
+        if provider_error is None:
+            review_job(database_path, job.id, error, duration_ms)
+        else:
+            raw_response = provider_error.raw_response
+            usage = provider_error.usage
+            _raw_response_path(run_directory, job).write_text(raw_response, encoding="utf-8")
+            review_job_result(database_path, job.id, error, duration_ms, raw_response, usage)
     else:
+        raw_response = provider_result.raw_response
+        usage = provider_result.usage
         review_job_result(
             database_path,
             job.id,
@@ -401,6 +436,21 @@ def _record_review(
             provider_result.usage,
         )
     _event(run_directory, job, "review", duration_ms, {"reason": error})
+    _result_event(
+        run_directory,
+        job,
+        duration_ms,
+        "review",
+        job.source_text,
+        "unchanged_retained_input",
+        [],
+        provider_result=provider_result,
+        error=error,
+        raw_response=raw_response,
+        usage=usage,
+        finish_reason=getattr(provider_error, "finish_reason", None),
+        output_status=getattr(provider_error, "output_status", None),
+    )
 
 
 def _record_provider_review(
@@ -420,6 +470,62 @@ def _record_retry(
     duration_ms = _duration(started)
     retry_job(database_path, job.id, error, duration_ms)
     _event(run_directory, job, "retry", duration_ms, {"reason": error})
+    _result_event(
+        run_directory,
+        job,
+        duration_ms,
+        "retry_pending",
+        job.source_text,
+        "unchanged_retained_input",
+        [],
+        error=error,
+    )
+
+
+def _result_event(
+    run_directory: Path,
+    job: CleanupJob,
+    duration_ms: int,
+    status: str,
+    after_text: str,
+    after_text_kind: str,
+    applied_edits: list[TextEdit],
+    *,
+    provider_result: Any = None,
+    error: str | None = None,
+    raw_response: str | None = None,
+    usage: dict[str, int] | None = None,
+    finish_reason: str | None = None,
+    output_status: str | None = None,
+) -> None:
+    source = json.loads(job.source_json)
+    details = {
+        "run_id": job.run_id,
+        "identity": job.identity,
+        "item_identifier": source.get("item_identifier"),
+        "part_number": source.get("part_number"),
+        "scan_leaf": source.get("scan_leaf"),
+        "printed_page": source.get("printed_page"),
+        "hocr_page_id": source.get("hocr_page_id"),
+        "line_ids": source.get("line_ids"),
+        "bbox": source.get("bbox"),
+        "status": status,
+        "recorded_at": datetime.now(UTC).isoformat(),
+        "before_text": job.source_text,
+        "after_text": after_text,
+        "after_text_kind": after_text_kind,
+        "applied_edits": [edit.model_dump(mode="json") for edit in applied_edits],
+        "error": error,
+        "raw_response": (
+            raw_response
+            if raw_response is not None
+            else getattr(provider_result, "raw_response", None)
+        ),
+        "usage": usage if usage is not None else getattr(provider_result, "usage", {}),
+        "finish_reason": finish_reason or getattr(provider_result, "finish_reason", None),
+        "output_status": output_status or getattr(provider_result, "output_status", None),
+    }
+    _event(run_directory, job, "result", duration_ms, details)
 
 
 def _event(
