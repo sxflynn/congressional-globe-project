@@ -200,3 +200,13 @@ Hour worker session 23933 remains active; elevated process inspection confirmed 
 `artifacts/poc-quality-20261011/safeguard-analysis.json` analyzed 542 accepted patches from 634 completed jobs in a captured 809-job hour cohort: 128 differed from an exact hyphen/whitespace join, eight converted digit-dominated mixed strings to numeric text, nine removed symbols. These heuristic flags are **not confirmed harms**; preserved compound hyphens and legitimate glyph repairs can also be flagged. They support evaluating targeted static/review rules before scaling, not blanket rejection or historical spelling normalization.
 
 Next check: confirm session 23933 is terminal and no job remains claimed, record hour totals, then execute the prepared isolated challenge with the deadline wrapper. Keep the production queue intact. Use `uv run python` for the wrapper; preserve its durable copy and dry-run/timeout evidence under `artifacts/poc-quality-20261011/challenge-preparation/`. New benchmark calls now capture finish reason/status; historical hour-worker records do not.
+
+The wrapper is ready: Pydantic v2 validates plan/cases/manifest and benchmark records; its own child receives 895 seconds plus five seconds for termination. Dry-run, harmless timeout self-test, Ruff and ty passed; no model requests. After checking worker termination and reserving POC **1/4** in this file, execute:
+
+```bash
+UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python tmp/run_bounded_challenge.py \
+  --model qwen3.8:27b-mlx \
+  --run-id qwen-offset-challenge-20261011-run1
+```
+
+Run evidence goes to `challenge-preparation/runner-evidence/`; results go to `challenge-preparation/runs/<run-id>/`. If the scratch script is missing, use the identical durable `challenge-preparation/run_bounded_challenge.py`. Do not repeat an existing run ID or launch this while another local request worker is active.
