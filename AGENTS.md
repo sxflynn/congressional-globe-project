@@ -28,7 +28,7 @@ Read `PROJECT_GOAL.md` for the full architectural requirements, current schema m
 
 ## Required gates
 
-Run these before handing off code:
+Run `make gate` before handing off code (with elevated permissions for its Prettier formatter). It applies Ruff/Markdown formatting and executes all checks/tests below; use it as the single gate entry point. The individual required checks are:
 
 ```bash
 uv run ruff format --check .

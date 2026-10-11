@@ -4,6 +4,21 @@ This project builds a portable historical research corpus from Internet Archive 
 
 For cloud commands, copy `.env.example` to `.env` and set `OPENAI_API_KEY` locally. The CLI loads that file automatically; `.env` is ignored by Git. Never paste an API key into chat or commit it.
 
+## Basic Make commands
+
+Run these from the project directory. The Makefile uses the prepared local lexicon and the existing `static-final-20261011` queue; no configuration variables are required.
+
+| Command | Action |
+| --- | --- |
+| `make gate` | Run Ruff and Markdown formatters, all required checks, and all tests; formatting edits files |
+| `make run-workflow` or `make run-static` | Prepare the static corpus/queue, or refresh canonical/RAG exports with saved accepted patches; no model calls |
+| `make status` | Inspect the shared queue |
+| `make run-qwen` | Resume pending jobs with local Qwen |
+| `make run-gemma` | Resume pending jobs with local Gemma |
+| `make run-openai` | Resume pending jobs with GPT-5.4 Mini; requires `.env` key and incurs API charges |
+
+Typical sequence: `make run-static`, then one of the model targets, then `make run-static` again to refresh exports. Each model target checks queue status and runs for up to one hour or 1,000 requests, finishing any in-flight request before exit. Rerun to resume the same queue. Model targets update SQLite, not published exports. Wait for existing workers before starting another; Make targets are serialized even with `make -j`. The commands assume the local ignored lexicon/evidence files already exist. Agents should request elevated permissions for `make gate` because it runs the project-required Prettier formatter. Running model targets is an explicit operator action, not part of the gate.
+
 ## Quick start
 
 ```bash

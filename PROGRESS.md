@@ -127,3 +127,9 @@ The project's architectural goal in repository documents is updated. The documen
 Queue snapshot at this audit: `static-final-20261011` has 686 completed, 238 review, 21,623 pending, zero claimed. These additional saved results appeared outside Codex's POCs; the existing canonical/RAG export is still the earlier static snapshot, not a refreshed representation of this live queue. Locks were available before the isolated Muse benchmark; that benchmark is now terminal (session 61112, exit 0). No Codex model worker remains active. No full-corpus worker was started or queue recreated in this unit. Current local model inventory has Qwen, Gemma and Muse; a specific Meta Llama benchmark requires a specified available model.
 
 The original deliverable is the implemented, exercised cleanup workflow and operator command, not a claim that every historical paragraph is clean or that future enrichment is finished. Evidence for the completion audit is saved in `artifacts/workflow-completion-audit-20261011.json`. Remaining quality calibration, multiprocessing production integration, and the `PROJECT_GOAL.md` enrichment roadmap stay unchecked.
+
+## Basic Makefile entry points
+
+- [x] Add a small literal-command Makefile: `gate`, `run-workflow` (static alias), `run-static`, `status`, `run-qwen`, `run-gemma`, and `run-openai`. No variable matrix. Model workers inspect status first, reuse the existing queue, and are bounded to one hour/1,000 requests. Make recipes are serialized.
+- [x] Document targets and static → model worker → static export refresh in README, HAPPY_PATH and RUNBOOK; AGENTS now directs agents to `make gate`.
+- [x] `make gate` passed: both formatters, Ruff format/lint checks, ty, complexity ≤5, and all 81 tests. Dry-ran every workflow target with `make -n`; no production worker started and no corpus regeneration performed. Gate log: `tmp/make-gate.log`; session 23129 exited 0.
