@@ -1,0 +1,78 @@
+# Progress and handoff
+
+Updated: 2026-10-11. Read this before doing project work. Follow the ordered checklist below; preserve completed evidence and honor new user instructions. This file records execution state; `RUNBOOK.md` contains detailed findings and `README.md` contains usage. The user is conserving five-hour credits: avoid repeating analysis, provider POCs, or already passed checks without a concrete reason.
+
+## Current outcome
+
+The static-first, resumable one-command workflow is implemented. Small OpenAI and local Ollama POCs ran; **no full-corpus model run is authorized or has run**. Export validation establishes record/ledger consistency, not complete OCR correctness. The corpus still needs quality calibration and image review.
+
+## Completed
+
+- [x] Preserve all five parts, raw source text, source anchors, hOCR IDs, geometry, and correction provenance.
+- [x] Add ignored `tmp/` scratch folder with tracked `.gitkeep`; keep durable evidence under ignored `artifacts/`.
+- [x] Use `npx prettier@3.9.10` without `--yes`, with elevated permissions.
+- [x] Run full static audit: 15 source derivatives, 5,412 pages, 296,995 paragraphs; baseline elapsed 260.849 s.
+- [x] Create reproducible random audit samples: 300 baseline patches, 150 flagged paragraphs, 100 unflagged paragraphs, 100 supplemental patches; seed 3911866, stratified by part.
+- [x] Review samples with GPT-6 Luna delegation. Text-context verdicts are provisional; no scan-image gold labels. Preserve ambiguous compounds.
+- [x] Add reviewed 44-form static lexicon supplement: 7,545 additional patches, 5,575 fewer candidate requests (19.9%) under the earlier router.
+- [x] Rerun stricter mixed-letter/digit router: 22,547 candidates over supplemental static output (68 additional flags).
+- [x] Benchmark five contextual problems and three controls with mini, Qwen, Gemma; retest mini punctuation preservation. No further POC repetition is needed for this unit.
+- [x] Add punctuation/numeric safeguards, unsafe legacy-result revalidation, atomic materialization, and shared sequential Ollama request lock.
+- [x] Fix extraction to preserve hOCR block order; remove pixel threshold that interleaved columns.
+- [x] Export sourced date/chamber facts, scoped from their heading onward; retain unknown/conflicting facts and review reasons.
+- [x] Verify bounded one-command export and provider switching without recreating queue: 20 pages, 1,035 paragraphs, 73 chunks, 85 jobs; three Qwen then three mini requests. Final status: 79 pending, five review, one completed, zero claimed.
+- [x] Independently replay bounded static/AI ledgers; check source equality, coverage, Pydantic models, anchors, geometry, heading order, export hashes.
+- [x] Run required code gates: Ruff format/check, ty, complexity ≤5, pytest **79 passed**. Markdown formatting is required again after final status edits.
+
+## Runs and evidence
+
+| Path under `artifacts/` | Purpose and state |
+| --- | --- |
+| `runs/static-full-audit-20261011/` | Historical full extraction/static audit, plan-only. Do not resume it with changed preprocessing. |
+| `static-audit-20261011/` | Samples, reviews, source fingerprints, supplemental lexicon/output, current-router count. |
+| `benchmarks/context-audit-20261011/` | Eight-case provider comparisons, one-case mini retest, anchors and raw results. |
+| `runs/e2e-final-20261011/` | Terminal bounded POC queue, exports, provider reports, `independent_verification.json`. No worker active. |
+| `runs/static-final-20261011/` | Full static-only canonical/RAG export, started this handoff; final state recorded below. |
+
+Scratch verification scripts: `tmp/verify_final_poc.py` and `tmp/verify_full_export.py`. Copy durable scripts into the corresponding artifact run when finished. Scratch logs: `tmp/e2e-final-{static,qwen,mini}.log` and `tmp/static-final.log`. Large artifacts are intentionally uncommitted and exist on this machine; do not assume a fresh clone contains them.
+
+## Time, cost, and limitations
+
+Eight-case projections for 22,547 sequential candidates: mini **9.0 hours / $18.53**, Qwen **40.7 hours / $0 API**, Gemma **33.1 hours / $0 API**. These are tiny, purposive-sample extrapolations. Retries, image review, export overhead, local electricity/hardware are excluded. The harder bounded POC took 50.44 s for three local requests plus export versus 7.99 s for three mini requests plus export; five results required review. Actual full-run time and quality may differ substantially.
+
+Qwen agreed with all eight provisional expected outputs; Gemma missed one glyph error; mini had six accepted agreements, with two held for review. The revised mini prompt passed the one-case index retest. A completed job means its accepted patches passed validation, **not that all paragraph errors were corrected**. Unflagged text is not certified clean. Low-confidence flags are broad and must not all be sent to a model automatically.
+
+Raw IA metadata files are unavailable locally for all five parts and explicitly recorded as unavailable. Date/chamber facts are conservative; they are not inferred across scan leaves. Historical audit counts used earlier extraction/classification code; the final static export counts must be reported separately.
+
+## Ordered next steps
+
+1. [ ] Finish the already started full static export and save its terminal report. Do not start another worker for this run while one is active. Verify exports with `tmp/verify_full_export.py`, then record final counts, limitations, and process state here.
+2. [ ] Format all Markdown with the required elevated Prettier command, check `git diff --check`, and commit the current unit including user changes. Use one line, no agent attribution.
+3. [ ] Before expanding cleanup, create human/image-reviewed labels across indexes, proceedings, Appendix, date transitions, and low-confidence text. Quantify router misses and false positives. Do not equate current model-assisted samples with gold labels.
+4. [ ] Evaluate further static repairs on anchored examples, retain ambiguous compounds, then measure reduction and review a new random sample before adopting each rule.
+5. [ ] Only after a new explicit user command, process a bounded additional model sample or scale the residual queue. Inspect queue status first; reuse compatible run IDs and matching provider benchmarks. Never automatically drain the full queue as a continuation of this handoff.
+6. [ ] Optional future work: obtain/preserve raw IA metadata with sources, integrate Batch with the same SQLite queue if needed, add a dashboard only if CLI status proves insufficient.
+
+## Exact resume commands
+
+Static-only full output command (safe from model calls):
+
+```bash
+UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run globe static-first \
+  --root . --run-id static-final-20261011 \
+  --lexicon artifacts/static-audit-20261011/supplemented-lexicon.txt \
+  --backend none --ai-limit 0
+```
+
+First inspect state if resuming model work later:
+
+```bash
+UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run globe cleanup status \
+  --run-directory artifacts/runs/e2e-final-20261011 --run-id e2e-final-20261011
+```
+
+The bounded POC used `--start-leaf 114 --page-limit 4`; those inputs must stay identical when resuming it. Provider changes retain the same queue. Preprocessing/lexicon/source changes require a new run ID. `--ai-limit` omitted with a provider drains the pending snapshot, so **keep a bounded limit unless the user explicitly authorizes scaling**.
+
+## Final handoff state
+
+Full static export is currently running with backend `none`, AI limit zero, shell session 52967, log `tmp/static-final.log`. No provider workers are running. Replace this paragraph with the observed terminal outcome before handing off if it finishes in this turn.

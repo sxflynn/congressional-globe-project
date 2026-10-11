@@ -87,6 +87,77 @@ def test_explicit_calendar_date_and_chamber_keep_source_on_page_context() -> Non
     assert speech.role == "body"
 
 
+def test_page_facts_start_at_header_reading_order_and_keep_first_source() -> None:
+    before = {**_paragraph("before", "Senate proceedings continued.", 800, 900), "reading_order": 0}
+    header = {
+        **_paragraph("header", "IN SENATE. Tuesday, December 5, 1865.", 120, 170),
+        "reading_order": 1,
+    }
+    repeated = {
+        **_paragraph("repeat", "IN SENATE. Tuesday, December 5, 1865.", 180, 230),
+        "reading_order": 2,
+    }
+    after = {**_paragraph("after", "The Senate then proceeded.", 800, 900), "reading_order": 3}
+
+    classified = classify_page(_page([before, header, repeated, after]))
+
+    assert "edition_date" not in classified.paragraphs[0].context
+    assert "chamber" not in classified.paragraphs[0].context
+    for paragraph in classified.paragraphs[1:]:
+        assert paragraph.context["edition_date"] == "1865-12-05"
+        assert paragraph.context["chamber"] == "senate"
+        assert paragraph.context["edition_date_source_paragraph_id"] == "header"
+        assert paragraph.context["chamber_source_paragraph_id"] == "header"
+
+
+def test_combined_header_on_anchored_top_line_attaches_facts_without_body_match() -> None:
+    header = "IN SENATE. Tuesday, December 5, 1865."
+    header_line = f"{header} This being the day prescribed."
+    paragraph = _paragraph("header-and-body", f"{header_line} Proceedings began.", 950, 1150)
+    paragraph["lines"] = [
+        {
+            "id": "header-line",
+            "text": header_line,
+            "bbox": {"left": 100, "top": 950, "right": 900, "bottom": 1000},
+            "words": [],
+        },
+        {
+            "id": "body-line",
+            "text": "Proceedings began.",
+            "bbox": {"left": 100, "top": 1020, "right": 900, "bottom": 1070},
+            "words": [],
+        },
+    ]
+
+    classified = classify_page(_page([paragraph])).paragraphs[0]
+
+    assert classified.context["edition_date"] == "1865-12-05"
+    assert classified.context["edition_date_source_paragraph_id"] == "header-and-body"
+    assert classified.context["edition_date_source_text"] == header_line
+    assert classified.context["chamber"] == "senate"
+    assert classified.context["chamber_source_paragraph_id"] == "header-and-body"
+
+
+def test_bad_weekday_or_corrupt_year_is_reviewed_and_date_not_attached() -> None:
+    wrong_weekday = _paragraph("weekday", "IN SENATE. Monday, December 5, 1865.", 120, 170)
+    corrupt_year = _paragraph(
+        "year",
+        "HOUSE OF REPRESENTATIVES. Tuesday, December 5, 1SG6. The House met.",
+        120,
+        170,
+    )
+
+    classified = classify_page(_page([wrong_weekday, corrupt_year]))
+
+    for paragraph in classified.paragraphs:
+        assert "edition_date" not in paragraph.context
+        assert "date:" in paragraph.context["review_hint"]
+
+    corrupt = classify_page(_page([corrupt_year])).paragraphs[0]
+    assert corrupt.context["chamber"] == "house_of_representatives"
+    assert "edition_date" not in corrupt.context
+
+
 def test_invalid_or_weekday_conflicting_date_becomes_review_hint() -> None:
     page = _page([_paragraph("date", "WEDNESDAY, February 31, 1865.", 120, 170)])
 
@@ -114,11 +185,15 @@ def test_conflicting_explicit_header_dates_are_not_propagated() -> None:
 def test_model_routing_only_flags_unresolved_wraps_and_suspicious_glyphs() -> None:
     clean = _paragraph("clean", "The bill—$5 under § 2 and £1.", 100, 150)
     suspicious = _paragraph("suspicious", "The bill cost €5.", 100, 150)
+    mixed_token = _paragraph("mixed", "The OCR yielded pr0230ses.", 100, 150)
     clean_record = PageRecord.model_validate(
         {**_page([clean]).model_dump(mode="json"), "paragraphs": [clean]}
     ).paragraphs[0]
     suspicious_record = PageRecord.model_validate(
         {**_page([suspicious]).model_dump(mode="json"), "paragraphs": [suspicious]}
+    ).paragraphs[0]
+    mixed_record = PageRecord.model_validate(
+        {**_page([mixed_token]).model_dump(mode="json"), "paragraphs": [mixed_token]}
     ).paragraphs[0]
     unresolved_record = clean_record.model_copy(
         update={"unresolved_wrap_hints": [{"candidate": "gentlemen"}]}
@@ -127,6 +202,7 @@ def test_model_routing_only_flags_unresolved_wraps_and_suspicious_glyphs() -> No
 
     assert not needs_model(clean_record)
     assert needs_model(suspicious_record)
+    assert needs_model(mixed_record)
     assert needs_model(unresolved_record)
     assert not needs_model(header_record)
 

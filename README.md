@@ -13,7 +13,7 @@ uv run globe extract --identifier congressionalglo7395unit
 uv run globe build-rag --run-id local-demo
 ```
 
-The output is written to `artifacts/<run-id>/`. See `RUNBOOK.md` for source context and `AGENTS.md` for required workflow gates.
+The output is written to `artifacts/<run-id>/`. Start with `PROGRESS.md` for current status and next steps; see `RUNBOOK.md` for source context and `AGENTS.md` for required workflow gates.
 
 ## Commands
 
@@ -38,9 +38,25 @@ uv run globe cleanup export --run-directory artifacts/runs/local-v1 --run-id loc
   --output artifacts/runs/local-v1/normalized.jsonl
 ```
 
-To continue the same unfinished queue with the cloud API, replace `--backend ollama` with `--backend openai` and provide an OpenAI model. The ordinary cloud path requires `OPENAI_API_KEY`; the existing Batch commands remain a separate, explicit cost-optimized export/submission path. `gpt-5.4-mini` is the validated cloud default; the Responses path pins `temperature=0` and uses a strict JSON schema shared with the Batch request builder. The cleanup prompt defines `expected` as the complete replaced span, forbids no-op and duplicate edits, and asks for every confident line-wrap join.
+To continue the same unfinished queue with the cloud API, replace `--backend ollama` with `--backend openai` and provide an OpenAI model. The ordinary cloud path requires `OPENAI_API_KEY`; the existing Batch commands remain a separate, explicit cost-optimized export/submission path. `gpt-5.4-mini` is the current cloud POC candidate; the Responses path pins `temperature=0` and uses a strict JSON schema shared with the Batch request builder. The cleanup prompt defines `expected` as the complete replaced span, forbids no-op and duplicate edits, and asks for every confident line-wrap join.
 
-Each run records `jobs.sqlite`, `events.jsonl`, provider response files, and an exportable derived JSONL result. A record with malformed JSON, an invalid patch, or a provider failure becomes `review`; raw hOCR is never changed. Resolved edits are de-duplicated and sorted deterministically before application. `RUNBOOK.md` records a static-cleanup investigation that would resolve most dehyphenation without a model call once the extractor retains word geometry.
+Each run records `jobs.sqlite`, `events.jsonl`, provider response files, and an exportable derived JSONL result. A record with malformed JSON, an invalid patch, or a provider failure becomes `review`; raw hOCR is never changed. Resolved edits are de-duplicated and sorted deterministically before application. `RUNBOOK.md` records the full static audit, provider POCs, measured workload reductions, and remaining quality limitations.
+
+## One-command static-first workflow
+
+With the locally prepared, fingerprinted word list, the complete local workflow is:
+
+```bash
+uv run globe static-first --root . --run-id corpus-v1 \
+  --lexicon artifacts/static-audit-20261011/supplemented-lexicon.txt \
+  --backend none --ai-limit 0
+```
+
+This command makes no model requests. It extracts all five parts, performs static cleanup, prepares a residual queue, validates static patches, then publishes canonical pages, RAG chunks, a manual review file, and a validation report under `artifacts/runs/corpus-v1/`. Unknown dates and unresolved text remain explicitly identified. Validation proves artifact consistency, not that every OCR reading is correct.
+
+Run the identical command again to resume the same queue. To opt into a bounded model run, retain the run ID and input options, replace `--backend none --ai-limit 0` with `--backend ollama --model qwen3.8:27b-mlx --ai-limit 3`, and provide `--benchmark-summary artifacts/benchmarks/context-audit-20261011/providers/context-random-qwen-20261011/summary.json`. To switch provider, change the backend, model, and matching benchmark summary. Changed source/preprocessing fingerprints require a new run; do not reuse a run ID for incompatible inputs. `--backend none` produces static exports without model calls; `--plan-only` stops before queue/export. `--start-leaf 114 --page-limit 4 --ai-limit 3` bounds a POC to four pages per part and at most three model requests. `--ai-limit` omitted processes the pending snapshot once; connection failures stop the worker for later resume.
+
+Qwen performed best on the small contextual POC; this does not establish full-corpus accuracy. Cloud mini was faster but required a punctuation-preservation correction and review handling. See the runbook for exact evidence and costs before choosing a provider.
 
 ## Required checks
 

@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
+import fcntl
 import json
+import tempfile
+from contextlib import contextmanager
 from dataclasses import dataclass, field
 from typing import Any, Protocol, cast
 
@@ -35,6 +38,10 @@ class OllamaProvider:
         self._model = model
 
     def clean(self, text: str) -> ProviderResult:
+        with _ollama_request_lock():
+            return self._clean(text)
+
+    def _clean(self, text: str) -> ProviderResult:
         response = self._client.chat.completions.create(
             model=self._model,
             messages=[
@@ -59,6 +66,17 @@ class OllamaProvider:
             else {"input_tokens": usage.prompt_tokens, "output_tokens": usage.completion_tokens}
         )
         return ProviderResult(CleanupResult.model_validate_json(content), content, tokens)
+
+
+@contextmanager
+def _ollama_request_lock():
+    lock_path = f"{tempfile.gettempdir()}/congressional-globe-ollama-request.lock"
+    with open(lock_path, "a", encoding="utf-8") as lock_file:
+        fcntl.flock(lock_file, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(lock_file, fcntl.LOCK_UN)
 
 
 class OpenAIResponsesProvider:

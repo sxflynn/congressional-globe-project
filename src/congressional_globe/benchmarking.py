@@ -10,7 +10,7 @@ from typing import Any, TypeGuard
 from pydantic import BaseModel, ConfigDict, Field
 
 from congressional_globe.models import TextEdit
-from congressional_globe.normalization import apply_edits, resolve_edits
+from congressional_globe.normalization import apply_edits, resolve_edits, validate_edit_shapes
 from congressional_globe.providers import CleanupProvider
 
 
@@ -174,6 +174,7 @@ def _run_case(provider: CleanupProvider, case: BenchmarkCase) -> BenchmarkRecord
         needs_review = result.cleanup.needs_image_review
         review_reason = result.cleanup.review_reason
         edits = resolve_edits(case.text_ocr, result.cleanup.edits)
+        validate_edit_shapes(case.text_ocr, edits)
         normalized_text = apply_edits(case.text_ocr, edits)
         return BenchmarkRecord(
             case_id=case.id,

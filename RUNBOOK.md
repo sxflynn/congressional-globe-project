@@ -180,7 +180,7 @@ uv run globe static-cleanup \
   --output artifacts/static-cleanup/IDENTIFIER_paragraphs.jsonl
 ```
 
-The lexicon is an input rather than a bundled platform dictionary, so runs can record and reuse the exact word list. This pass intentionally leaves uncertain joins untouched for later model or image review. Header/footer and page-number marking, ligature/character cleanup, DjVu alternate-spelling hints, confidence-aware residual routing, and image-review queueing remain unimplemented. The local Ollama server currently serves `qwen3.8:27b-mlx`, `gemma4:31b-mlx`, and `muse-glimmer:30b-mlx` for residual experiments.
+The lexicon is an input rather than a bundled platform dictionary, so runs can record and reuse the exact word list. This pass intentionally leaves uncertain joins untouched for later model or image review. Later work below implements conservative running-header/page-number marking, source-backed same-page date/chamber context, residual routing, and explicit review exports. General ligature/character rewriting and DjVu alternate-spelling correction remain deferred. The local Ollama server currently serves `qwen3.8:27b-mlx`, `gemma4:31b-mlx`, and `muse-glimmer:30b-mlx` for residual experiments.
 
 ### 2026-10-11 static cleanup and export POC
 
@@ -203,7 +203,7 @@ uv run globe export-rag --pages artifacts/benchmarks/static-first-poc-20261011/p
   --output artifacts/export-poc
 ```
 
-The one-command final workflow is still under development. Remaining required work: structural/header labels and sourced date/context metadata; reliable residual routing and composition of model patches with static patches in the resumable queue; representative residual POCs across all five parts; and a manifest plus validation gate before final export. Do not run the whole corpus with models based on this sample.
+The later `static-first` workflow composes the static and model ledgers in one resumable queue, exports sourced structure/context, and stages final artifacts behind a validation gate. The initial two-page sample alone was insufficient for model selection; see the full static audit and contextual POC below.
 
 ### Time and cost projections
 
@@ -272,13 +272,9 @@ Use strict JSON-schema output for AI cleanup/enrichment and process deterministi
 
 Before full processing, create a human-reviewed evaluation sample covering indexes, dense two-column proceedings, Appendix material, date/chamber changes, and low-confidence OCR.
 
-## Immediate next steps
+## Current progress and next steps
 
-1. Implement the static-first path: retain line/word spans in extraction, add lexicon/morphology dehyphenation and header/footer/page-number marking, and measure before/after on a sample.
-2. Build a compact quality-review sample before scaling any model (index, dense two-column proceedings, Appendix, date/chamber changes, and low-confidence OCR).
-3. Queue only residuals for the LLM (`gpt-5.4-mini` or local), carrying `x_wconf` and any DjVu alternate spelling as hints.
-4. If Batch is needed, integrate it with the SQLite job state rather than creating a second source of truth.
-5. Add a lightweight progress report only if CLI status and `events.jsonl` prove insufficient.
+See `PROGRESS.md` for the authoritative checklist and exact resume commands. The static-first path, residual queue, small provider comparisons, and bounded canonical/RAG export verification are implemented. Remaining work is quality calibration and image-supported review before any full-corpus model run. Batch integration and a dashboard remain optional future work.
 
 ### 2026-10-11 full five-part static audit
 
@@ -344,3 +340,33 @@ This gains **7,545 additional static patches** and removes **5,575 candidate req
 Using the earlier five-case residual benchmark unchanged, 22,479 sequential candidate calls project to about **10.7 hours / $19.3** for OpenAI mini, **46.0 hours / $0 API charge** for local Qwen, or **43.9 hours / $0 API charge** for local Gemma. The mini calculation uses the explicitly checked $0.75/M input and $4.50/M output rates. Local electricity/hardware costs are not estimated. These timings and costs extrapolate a tiny sample with repeated index material, not the random residual sample or the full paragraph-length distribution; retry, review, and export costs are excluded. The actual contextual workload can be larger because the narrow router misses other errors. Benchmark a stratified, reviewed residual sample before committing to a full provider run.
 
 Next static work should prioritize the reviewed residual candidates, retain compound-hyphen ambiguity, measure precision of confidence and glyph signals, and evaluate source-supported fixes for recurring OCR substitutions. Each expansion needs a new anchored sample and a measured queue reduction; recurrence alone must not authorize a correction.
+
+### Contextual POC and export verification (2026-10-11)
+
+The one-command workflow now verifies fingerprints when resuming, preserves hOCR block order, attaches date/chamber facts only at or after their source heading, and exports paragraph geometry, anchors, context, status, and both correction ledgers inside RAG records. Conflicting or corrupt heading dates remain unknown. Materialization is atomic under the run lock; unsafe legacy patches become review records. Ollama requests use a shared OS lock across workers and benchmarks. Standalone punctuation rewrites and numeric-value changes are withheld for review. These guards validate proposed changes; they cannot establish that a model caught every OCR error.
+
+The contextual benchmark uses five problem paragraphs (one per part) selected from the random static audit and three unchanged controls. Its expected texts are provisional text-context judgments, not scan-image gold. Evidence: `artifacts/benchmarks/context-audit-20261011/`.
+
+| Provider | Eight-case duration | Accepted agreement with expected text | Control changes | API charge |
+| --- | --: | --: | --: | --: |
+| OpenAI gpt-5.4-mini | 11.51 s | 6/8 | 0/3 | $0.00657 |
+| Ollama qwen3.8:27b-mlx | 51.97 s | 8/8 | 0/3 | $0 |
+| Ollama gemma4:31b-mlx | 42.31 s | 7/8 | 0/3 | $0 |
+
+Mini proposed a punctuation rewrite in an inverted index and separately requested image review; both were withheld. After tightening the punctuation-preservation prompt, a one-case mini retest corrected `ihc` to `the` while preserving the comma (1.37 s, about $0.00080). Gemma missed that glyph error entirely. Qwen's eight accepted results agreed with the provisional expectations, but this tiny selection is insufficient to authorize automatic corpus-wide cleanup.
+
+The stricter mixed-letter/digit router now finds **22,547 candidates** when rerun over the full supplemental static output, 68 more than the earlier router. Scaling the eight-case sample means gives **9.0 hours / $18.53** for mini, **40.7 hours / $0 API charge** for Qwen, and **33.1 hours / $0 API charge** for Gemma. Mini pricing is $0.75/M input and $4.50/M output ([official model pricing](https://developers.openai.com/api/docs/models/gpt-5.4-mini)). These estimates exclude retries, image review, static/export overhead, and local hardware/electricity costs. The sample is purposive and small; no confidence interval or quality guarantee is implied.
+
+A separate runtime verification used leaves 114–117 in each part: **20 pages, 1,035 paragraphs, 73 RAG chunks, 85 queued candidates**. Initial static/export execution took 10.88 s. Resuming the same queue for three Qwen requests took 50.44 s including export, then three mini requests took 7.99 s including export. Qwen's three jobs required review (one truncated JSON response and two image-review decisions). Mini completed one four-patch result and withheld two others; 79 jobs remain pending, five in review, none claimed. The completed paragraph still contains other visible OCR errors. These harder examples show why the eight-case timing projection can underestimate runtime and why pending/review flags must remain visible.
+
+Independent verification replayed every static and AI ledger, checked source-text equality and paragraph coverage, validated all Pydantic records, checked heading order, anchors and geometry, and verified export hashes. Explicit headings produced sourced dates 1865-12-04 (Part 1 leaf 117) and 1866-07-16 (Part 5 leaf 114); 18 other pages retained unknown date/chamber facts. Evidence and provider reports: `artifacts/runs/e2e-final-20261011/`. No full-corpus model requests were made.
+
+#### One command for static canonical and RAG outputs
+
+```bash
+uv run globe static-first --root . --run-id static-final-20261011 \
+  --lexicon artifacts/static-audit-20261011/supplemented-lexicon.txt \
+  --backend none --ai-limit 0
+```
+
+Outputs are `canonical_pages.jsonl`, `chunks.jsonl`, `manual_review.jsonl`, and `validation_report.json` under the run directory. A passing validation report establishes record/ledger consistency; `cleanup_complete: false` preserves unresolved work. Missing raw IA metadata is explicitly reported as unavailable. To opt into model processing later, inspect `cleanup status`, then repeat the same inputs/run ID with an explicit backend/model and matching `--benchmark-summary`; use `--ai-limit` to bound requests. Omitting that limit with a model processes the pending queue. Changing extraction code, source fingerprints, or lexicon requires a new run ID.

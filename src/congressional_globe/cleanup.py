@@ -5,6 +5,8 @@ from __future__ import annotations
 import fcntl
 import hashlib
 import json
+import os
+import tempfile
 from contextlib import contextmanager
 from pathlib import Path
 from threading import Event, Lock, Thread
@@ -14,7 +16,7 @@ from typing import Any
 from openai import APIConnectionError
 
 from congressional_globe.models import CleanupResult, TextEdit
-from congressional_globe.normalization import apply_edits, resolve_edits
+from congressional_globe.normalization import apply_edits, resolve_edits, validate_edit_shapes
 from congressional_globe.providers import CleanupProvider, OllamaProvider, OpenAIResponsesProvider
 from congressional_globe.storage import (
     CleanupJob,
@@ -22,7 +24,7 @@ from congressional_globe.storage import (
     complete_job,
     completed_jobs,
     composite_identity,
-    jobs_for_run,
+    materialization_lookup,
     progress,
     release_claimed,
     retry_job,
@@ -86,18 +88,41 @@ def export_results(run_directory: Path, run_id: str, output: Path) -> int:
 def materialize_all(run_directory: Path, run_id: str, static_path: Path, output_path: Path) -> int:
     """Compose a full static corpus with only matching, validated completed AI results."""
     _reject_materialize_alias(static_path, output_path)
-    jobs = _jobs_by_identity(jobs_for_run(run_database(run_directory), run_id))
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    descriptor, temporary_name = tempfile.mkstemp(
+        prefix=f".{output_path.name}.", suffix=".tmp", dir=output_path.parent
+    )
+    temporary_path = Path(temporary_name)
+    try:
+        with (
+            os.fdopen(descriptor, "w", encoding="utf-8") as target,
+            _worker_lock(run_directory, run_id),
+        ):
+            count = _write_materialized(run_directory, run_id, static_path, target)
+        os.replace(temporary_path, output_path)
+        return count
+    except Exception:
+        temporary_path.unlink(missing_ok=True)
+        raise
+
+
+def _write_materialized(run_directory: Path, run_id: str, static_path: Path, target: Any) -> int:
     count = 0
     with (
+        materialization_lookup(run_database(run_directory), run_id) as lookup,
         static_path.open(encoding="utf-8") as source,
-        output_path.open("w", encoding="utf-8") as target,
     ):
+        find_job, mark_review = lookup
         for line in source:
             if not line.strip():
                 continue
             payload = json.loads(line)
-            composed = _compose_record(payload, jobs)
+            text = payload.get("text_normalized")
+            if text is None:
+                text = payload["text_ocr"]
+            input_hash = hashlib.sha256(text.encode()).hexdigest()
+            job = find_job(composite_identity(payload), input_hash, payload["id"])
+            composed = _compose_record(payload, job, text, input_hash, mark_review)
             target.write(json.dumps(composed, ensure_ascii=False, separators=(",", ":")) + "\n")
             count += 1
     return count
@@ -110,43 +135,40 @@ def _reject_materialize_alias(static_path: Path, output_path: Path) -> None:
         raise ValueError("materialized output must differ from static input")
 
 
-def _jobs_by_identity(jobs: list[CleanupJob]) -> dict[tuple[str, str], CleanupJob]:
-    return {
-        (
-            job.identity or composite_identity(json.loads(job.source_json)),
-            job.input_hash or hashlib.sha256(job.source_text.encode()).hexdigest(),
-        ): job
-        for job in jobs
-    }
-
-
 def _compose_record(
-    payload: dict[str, Any], jobs: dict[tuple[str, str], CleanupJob]
+    payload: dict[str, Any],
+    job: CleanupJob | None,
+    text: str,
+    input_hash: str,
+    mark_review: Any,
 ) -> dict[str, Any]:
-    text = payload.get("text_normalized")
-    if text is None:
-        text = payload["text_ocr"]
-    input_hash = hashlib.sha256(text.encode()).hexdigest()
-    job = jobs.get((composite_identity(payload), input_hash))
     if job is None:
         return {**payload, "cleanup_status": "not_queued"}
     if job.status != "completed":
-        return {**payload, "cleanup_status": job.status}
-    return _compose_completed(payload, job, text, input_hash)
+        return (
+            _review_payload(payload, job.error)
+            if job.status == "review"
+            else {
+                **payload,
+                "cleanup_status": job.status,
+            }
+        )
+    return _compose_completed(payload, job, text, input_hash, mark_review)
 
 
 def _compose_completed(
-    payload: dict[str, Any], job: CleanupJob, ai_input: str, input_hash: str
+    payload: dict[str, Any],
+    job: CleanupJob,
+    ai_input: str,
+    input_hash: str,
+    mark_review: Any,
 ) -> dict[str, Any]:
-    result = json.loads(job.result_json or "{}")
-    cleanup = CleanupResult.model_validate(result["cleanup"])
-    if cleanup.needs_image_review:
-        return {**payload, "cleanup_status": "review"}
-    edits = [TextEdit.model_validate(edit) for edit in result["applied_edits"]]
-    _validate_static_input(payload, job.source_text)
-    normalized = apply_edits(ai_input, edits)
-    if normalized != result.get("text_normalized"):
-        raise ValueError(f"Completed cleanup output mismatch for {job.id}")
+    try:
+        result, edits, normalized = _validated_completed_result(payload, job, ai_input)
+    except (KeyError, TypeError, ValueError) as error:
+        reason = f"materialization validation failed: {error}"
+        mark_review(job, reason)
+        return _review_payload(payload, reason)
     return {
         **payload,
         "text_normalized": normalized,
@@ -156,6 +178,28 @@ def _compose_completed(
         "cleanup_status": "completed",
         "ai_provenance": _ai_provenance(payload, edits, input_hash, job, result.get("usage", {})),
     }
+
+
+def _validated_completed_result(
+    payload: dict[str, Any], job: CleanupJob, ai_input: str
+) -> tuple[dict[str, Any], list[TextEdit], str]:
+    result = json.loads(job.result_json or "{}")
+    cleanup = CleanupResult.model_validate(result["cleanup"])
+    if cleanup.needs_image_review:
+        raise ValueError(cleanup.review_reason or "provider requested image review")
+    edits = [TextEdit.model_validate(edit) for edit in result["applied_edits"]]
+    _validate_static_input(payload, job.source_text)
+    validate_edit_shapes(ai_input, edits)
+    normalized = apply_edits(ai_input, edits)
+    if normalized != result.get("text_normalized"):
+        raise ValueError(f"Completed cleanup output mismatch for {job.id}")
+    return result, edits, normalized
+
+
+def _review_payload(payload: dict[str, Any], reason: str | None) -> dict[str, Any]:
+    context = dict(payload.get("context") or {})
+    context["model_review_reason"] = reason or "cleanup result requires review"
+    return {**payload, "cleanup_status": "review", "context": context}
 
 
 def _validate_static_input(payload: dict[str, Any], input_text: str) -> None:
@@ -220,6 +264,7 @@ def _process_job(
             _record_provider_review(run_directory, database_path, job, provider_result, started)
             return True
         applied_edits = resolve_edits(job.source_text, provider_result.cleanup.edits)
+        validate_edit_shapes(job.source_text, applied_edits)
         normalized = apply_edits(job.source_text, applied_edits)
     except APIConnectionError as error:
         _record_retry(run_directory, database_path, job, str(error), started)

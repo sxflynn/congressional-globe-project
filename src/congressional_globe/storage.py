@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import json
 from collections import Counter
-from collections.abc import Iterator
-from contextlib import closing
+from collections.abc import Callable, Generator, Iterator
+from contextlib import closing, contextmanager
 from datetime import UTC, datetime
 from hashlib import sha256
 from itertools import islice
@@ -214,6 +214,67 @@ def jobs_for_run(database_path: Path, run_id: str) -> list[CleanupJob]:
         for job in jobs:
             session.expunge(job)
         return list(jobs)
+
+
+def iter_jobs_for_run(database_path: Path, run_id: str) -> Iterator[CleanupJob]:
+    """Stream detached jobs for a run without retaining source JSON in memory."""
+    engine = _engine(database_path)
+    with Session(engine) as session:
+        query = (
+            select(CleanupJob)
+            .where(CleanupJob.run_id == run_id)
+            .order_by(CleanupJob.id)
+            .execution_options(yield_per=500)
+        )
+        for job in session.scalars(query):
+            session.expunge(job)
+            yield job
+
+
+@contextmanager
+def materialization_lookup(
+    database_path: Path, run_id: str
+) -> Generator[
+    tuple[Callable[..., CleanupJob | None], Callable[[CleanupJob, str], None]], None, None
+]:
+    """Yield a keyed job lookup without loading the run's payloads into memory."""
+    engine = _engine(database_path)
+    with Session(engine) as session:
+
+        def find(identity: str, input_hash: str, paragraph_id: str) -> CleanupJob | None:
+            job = session.scalar(
+                select(CleanupJob).where(
+                    CleanupJob.run_id == run_id,
+                    CleanupJob.identity == identity,
+                    CleanupJob.input_hash == input_hash,
+                )
+            )
+            if job is not None:
+                return job
+            # Older queues did not persist composite identity or input hashes.
+            legacy = session.scalars(
+                select(CleanupJob).where(
+                    CleanupJob.run_id == run_id,
+                    CleanupJob.paragraph_id == paragraph_id,
+                    CleanupJob.identity.is_(None),
+                )
+            ).all()
+            for candidate in legacy:
+                source = json.loads(candidate.source_json)
+                if (
+                    _composite_identity(source) == identity
+                    and sha256(candidate.source_text.encode()).hexdigest() == input_hash
+                ):
+                    return candidate
+            return None
+
+        def mark_review(job: CleanupJob, reason: str) -> None:
+            job.status = "review"
+            job.error = reason
+            job.updated_at = _now()
+            session.commit()
+
+        yield find, mark_review
 
 
 def _jobs(database_path: Path, run_id: str, status: str) -> list[CleanupJob]:

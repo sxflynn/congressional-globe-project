@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import sqlite3
 from pathlib import Path
 
 import pytest
@@ -72,8 +73,51 @@ def test_backend_none_materializes_pending_static_rows_without_provider(
     run_dir = output_root / "no-ai"
     assert (run_dir / "jobs.sqlite").is_file()
     assert (run_dir / "canonical_pages.jsonl").is_file()
+    assert (run_dir / "manual_review.jsonl").is_file()
+    validation = json.loads((run_dir / "validation_report.json").read_text(encoding="utf-8"))
+    assert validation["validation_passed"] is True
+    assert len(validation["outputs"]) == 3
+    assert validation["model_pending"] == len(PARTS)
+    assert validation["unknown_edition_date_pages"] == len(PARTS)
+    assert len(_jsonl(run_dir / "manual_review.jsonl")) == len(PARTS)
     output_records = _jsonl(run_dir / "normalized.jsonl")
     assert sum(record.get("cleanup_status") == "pending" for record in output_records) == len(PARTS)
+
+    resumed = workflow.run_static_first(
+        root,
+        "no-ai",
+        lexicon,
+        output_root=output_root,
+        backend="ollama",
+        model="stub-model",
+        ai_limit=0,
+    )
+    assert resumed["queue_created"] is False
+    assert resumed["pending"] == len(PARTS)
+
+
+def test_resume_rejects_mismatched_existing_queue_payload(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, lexicon = _source_fixture(tmp_path)
+    output_root = tmp_path / "runs"
+    monkeypatch.setattr(workflow, "load_page_map", lambda _path: {})
+    monkeypatch.setattr(workflow, "iter_pages", lambda path, _map: iter([_page(path.stem)]))
+    monkeypatch.setattr(workflow, "classify_page", lambda page: page)
+    monkeypatch.setattr(
+        workflow, "needs_model", lambda paragraph: paragraph.id.endswith("-residual")
+    )
+    workflow.run_static_first(root, "queue-check", lexicon, output_root=output_root)
+    database = output_root / "queue-check" / "jobs.sqlite"
+    with sqlite3.connect(database) as connection:
+        connection.execute(
+            "UPDATE cleanup_jobs SET source_text = ? WHERE id = "
+            "(SELECT id FROM cleanup_jobs WHERE run_id = ? LIMIT 1)",
+            ("tampered source", "queue-check"),
+        )
+
+    with pytest.raises(ValueError, match="mismatched job payload"):
+        workflow.run_static_first(root, "queue-check", lexicon, output_root=output_root)
 
 
 def test_resume_rejects_changed_lexicon_or_page_limit(
@@ -93,6 +137,90 @@ def test_resume_rejects_changed_lexicon_or_page_limit(
     lexicon.write_text("different\n", encoding="utf-8")
     with pytest.raises(ValueError, match="different root, lexicon, or page limit"):
         workflow.run_static_first(root, "stable", lexicon, output_root=output_root, page_limit=1)
+
+
+def test_resume_reuses_verified_extraction_and_static_artifacts(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, lexicon = _source_fixture(tmp_path)
+    output_root = tmp_path / "runs"
+    monkeypatch.setattr(workflow, "load_page_map", lambda _path: {})
+    monkeypatch.setattr(workflow, "iter_pages", lambda path, _map: iter([_page(path.stem)]))
+    monkeypatch.setattr(workflow, "classify_page", lambda page: page)
+    monkeypatch.setattr(workflow, "needs_model", lambda _paragraph: False)
+    monkeypatch.setattr(workflow, "_processing_fingerprint", lambda: "test-fingerprint")
+    first = workflow.run_static_first(
+        root, "resume", lexicon, output_root=output_root, plan_only=True
+    )
+    assert first["pages"] == len(PARTS)
+
+    monkeypatch.setattr(
+        workflow,
+        "_extract_classify",
+        lambda *_args: pytest.fail("verified extraction artifacts should be reused"),
+    )
+    second = workflow.run_static_first(
+        root, "resume", lexicon, output_root=output_root, plan_only=True
+    )
+
+    assert second["pages"] == len(PARTS)
+    manifest = json.loads(
+        (output_root / "resume" / "workflow_manifest.json").read_text(encoding="utf-8")
+    )
+    assert set(manifest["artifact_sha256"]) == {"pages", "paragraphs", "static", "residual"}
+
+
+def test_start_leaf_is_applied_before_page_limit(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, lexicon = _source_fixture(tmp_path)
+    monkeypatch.setattr(workflow, "load_page_map", lambda _path: {})
+
+    def pages(path: Path, _page_map: object):
+        base = _page(path.stem)
+        return iter(
+            base.model_copy(update={"scan_leaf": leaf, "id": f"{base.id}:leaf:{leaf}"})
+            for leaf in (1, 2, 3)
+        )
+
+    monkeypatch.setattr(workflow, "iter_pages", pages)
+    monkeypatch.setattr(workflow, "classify_page", lambda page: page)
+    monkeypatch.setattr(workflow, "needs_model", lambda _paragraph: False)
+
+    report = workflow.run_static_first(
+        root,
+        "leaf-sample",
+        lexicon,
+        output_root=tmp_path / "runs",
+        page_limit=1,
+        start_leaf=2,
+        plan_only=True,
+    )
+
+    assert report["scope"] == "plan_only"
+    extracted = _jsonl(tmp_path / "runs" / "leaf-sample" / "pages.jsonl")
+    assert len(extracted) == len(PARTS)
+    assert all(page["scan_leaf"] == 2 for page in extracted)
+
+
+def test_resume_rejects_changed_processing_code_fingerprint(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, lexicon = _source_fixture(tmp_path)
+    output_root = tmp_path / "runs"
+    monkeypatch.setattr(workflow, "load_page_map", lambda _path: {})
+    monkeypatch.setattr(workflow, "iter_pages", lambda path, _map: iter([_page(path.stem)]))
+    monkeypatch.setattr(workflow, "classify_page", lambda page: page)
+    monkeypatch.setattr(workflow, "needs_model", lambda _paragraph: False)
+    workflow.run_static_first(
+        root, "code-fingerprint", lexicon, output_root=output_root, plan_only=True
+    )
+
+    monkeypatch.setattr(workflow, "_processing_fingerprint", lambda: "changed-processing")
+    with pytest.raises(ValueError, match="different root, lexicon, or page limit"):
+        workflow.run_static_first(
+            root, "code-fingerprint", lexicon, output_root=output_root, plan_only=True
+        )
 
 
 def test_ai_execution_requires_explicit_model(tmp_path: Path) -> None:

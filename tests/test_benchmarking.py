@@ -137,6 +137,56 @@ def test_benchmark_keeps_raw_response_when_patch_validation_fails(tmp_path: Path
     assert record["error"].startswith("ValueError:")
 
 
+def test_benchmark_rejects_punctuation_only_patch_with_ocr_edit(tmp_path: Path) -> None:
+    cases_path = tmp_path / "cases.jsonl"
+    cases_path.write_text(
+        json.dumps({"id": "punctuation", "text_ocr": "an, ihc", "expected_text": "an, the"}) + "\n",
+        encoding="utf-8",
+    )
+    response = ProviderResult(
+        cleanup=CleanupResult(
+            edits=[
+                TextEdit(
+                    start_char=0,
+                    end_char=3,
+                    expected="an,",
+                    replacement="an",
+                    reason="punctuation",
+                    confidence=0.9,
+                ),
+                TextEdit(
+                    start_char=4,
+                    end_char=7,
+                    expected="ihc",
+                    replacement="the",
+                    reason="OCR correction",
+                    confidence=0.9,
+                ),
+            ],
+            needs_image_review=False,
+            review_reason=None,
+        ),
+        raw_response="response",
+        usage={},
+    )
+
+    summary = run_benchmark(
+        cases_path,
+        FakeProvider([response]),
+        backend="openai",
+        model="test-model",
+        run_id="punctuation-edit",
+        limit=1,
+        artifacts_dir=tmp_path / "artifacts",
+    )
+
+    record = json.loads(
+        (tmp_path / "artifacts/punctuation-edit/results.jsonl").read_text(encoding="utf-8")
+    )
+    assert summary.failed == 1
+    assert "punctuation-only" in record["error"]
+
+
 def test_benchmark_counts_review_response_separately_and_keeps_usage(tmp_path: Path) -> None:
     cases_path = tmp_path / "cases.jsonl"
     cases_path.write_text(

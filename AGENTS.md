@@ -4,6 +4,9 @@ Build a trustworthy, richly structured digital corpus from the five locally coll
 
 # Project preferences
 
+- Read `PROGRESS.md` before starting work. Follow its ordered next-step checklist and resume commands; do not repeat completed POCs or start full-corpus model processing. New user instructions take precedence.
+- Update `PROGRESS.md` after each unit of work and before handing off: record completed checks, exact run IDs, active or stopped processes, evidence paths, limitations, and the next executable step. Keep README usage and RUNBOOK findings consistent with it; never mark an unchecked result complete.
+
 - Use `uv`; do not create or manage raw Python virtual environments.
 - Use Pydantic v2 at every external-data boundary.
 - Keep raw OCR and Internet Archive metadata immutable. Derived artifacts belong under `artifacts/`.

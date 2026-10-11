@@ -15,7 +15,7 @@ from congressional_globe.models import (
     TextEdit,
     strict_json_schema,
 )
-from congressional_globe.normalization import apply_edits, resolve_edits
+from congressional_globe.normalization import apply_edits, resolve_edits, validate_edit_shapes
 from congressional_globe.static_cleanup import normalize_jsonl, normalize_line_wraps
 from congressional_globe.storage import (
     claim_next,
@@ -40,10 +40,11 @@ def test_extraction_preserves_hocr_ids_geometry_and_page_map(tmp_path: Path) -> 
 
     assert page.hocr_page_id == "page_000001"
     assert page.printed_page.detected == "42"
-    assert page.paragraphs[0].id == "par_left"
+    assert page.paragraphs[0].id == "par_right"
     assert page.paragraphs[0].bbox is not None
-    assert page.paragraphs[0].bbox.left == 100
-    assert page.paragraphs[1].id == "par_right"
+    assert page.paragraphs[0].bbox.left == 1800
+    assert page.paragraphs[1].id == "par_left"
+    assert [paragraph.reading_order for paragraph in page.paragraphs] == [0, 1]
 
 
 def test_extraction_retains_word_geometry_and_confidence(tmp_path: Path) -> None:
@@ -140,6 +141,51 @@ def test_patch_application_is_reversible_and_rejects_bad_source() -> None:
     assert apply_edits("A: bad", [edit]) == "A: good"
     with pytest.raises(ValueError, match="does not match"):
         apply_edits("A: typo", [edit])
+
+
+def test_edit_shape_validator_rejects_punctuation_and_numeric_only_changes() -> None:
+    punctuation = TextEdit(
+        start_char=0,
+        end_char=3,
+        expected="an,",
+        replacement="an",
+        reason="fixture",
+        confidence=0.9,
+    )
+    numeric = TextEdit(
+        start_char=0,
+        end_char=4,
+        expected="1865",
+        replacement="1866",
+        reason="fixture",
+        confidence=0.9,
+    )
+
+    with pytest.raises(ValueError, match="punctuation-only"):
+        validate_edit_shapes("an,", [punctuation])
+    with pytest.raises(ValueError, match="numeric-only"):
+        validate_edit_shapes("1865", [numeric])
+
+
+def test_edit_shape_validator_allows_word_repairs_and_hyphen_joins() -> None:
+    lexical = TextEdit(
+        start_char=0,
+        end_char=3,
+        expected="ihc",
+        replacement="the",
+        reason="fixture",
+        confidence=0.9,
+    )
+    wrapped = TextEdit(
+        start_char=4,
+        end_char=10,
+        expected="exam- ple",
+        replacement="example",
+        reason="fixture",
+        confidence=0.9,
+    )
+
+    validate_edit_shapes("ihc exam- ple", [lexical, wrapped])
 
 
 def test_chunk_keeps_page_bounded_citation() -> None:

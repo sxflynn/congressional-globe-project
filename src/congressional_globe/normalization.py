@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+import re
+import unicodedata
+
 from congressional_globe.models import TextEdit
 
 
@@ -17,6 +20,52 @@ def resolve_edits(text: str, edits: list[TextEdit]) -> list[TextEdit]:
     """Correct model offsets only when its exact source anchor occurs once."""
     resolved = [_resolve_edit(text, edit) for edit in edits]
     return _dedupe_and_sort(resolved)
+
+
+def validate_edit_shapes(text: str, edits: list[TextEdit]) -> None:
+    """Reject edits that only change punctuation or numeric values."""
+    for edit in edits:
+        _validate_edit_shape(edit)
+
+
+def _validate_edit_shape(edit: TextEdit) -> None:
+    if edit.expected == edit.replacement:
+        return
+    if _numeric_only_pair(edit.expected, edit.replacement):
+        raise ValueError("numeric-only edits require review")
+    if not _punctuation_only(edit) or _allowed_separator_repair(edit):
+        return
+    raise ValueError("punctuation-only edits require review")
+
+
+def _numeric_only_pair(expected: str, replacement: str) -> bool:
+    return _is_numeric_only(expected) and _is_numeric_only(replacement)
+
+
+def _punctuation_only(edit: TextEdit) -> bool:
+    return _without_punctuation(edit.expected) == _without_punctuation(edit.replacement)
+
+
+def _allowed_separator_repair(edit: TextEdit) -> bool:
+    return _whitespace_only(edit.expected, edit.replacement) or _hyphen_join(edit)
+
+
+def _is_numeric_only(value: str) -> bool:
+    return bool(value.strip()) and all(char.isdigit() or char in " ,./$%-" for char in value)
+
+
+def _without_punctuation(value: str) -> str:
+    return "".join(char for char in value if not unicodedata.category(char).startswith("P"))
+
+
+def _whitespace_only(expected: str, replacement: str) -> bool:
+    return expected != replacement and expected.split() == replacement.split()
+
+
+def _hyphen_join(edit: TextEdit) -> bool:
+    return bool(
+        re.fullmatch(r"[A-Za-z]+-\s+[A-Za-z]+", edit.expected)
+    ) and edit.replacement == re.sub(r"-\s+", "", edit.expected)
 
 
 def _dedupe_and_sort(edits: list[TextEdit]) -> list[TextEdit]:

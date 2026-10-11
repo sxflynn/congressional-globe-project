@@ -175,6 +175,7 @@ def _static_first(arguments: argparse.Namespace, root: Path) -> None:
         Path(arguments.lexicon),
         output_root=Path(arguments.output_root),
         page_limit=arguments.page_limit,
+        start_leaf=arguments.start_leaf,
         backend=arguments.backend,
         model=arguments.model,
         ai_limit=arguments.ai_limit,
@@ -296,6 +297,7 @@ def _static_first_command(commands: argparse._SubParsersAction[argparse.Argument
     command.add_argument("--lexicon", required=True)
     command.add_argument("--output-root", default="artifacts/runs")
     command.add_argument("--page-limit", type=int)
+    command.add_argument("--start-leaf", type=int, default=0)
     command.add_argument("--plan-only", action="store_true")
     command.add_argument("--backend", choices=("none", "ollama", "openai"), default="none")
     command.add_argument("--model")

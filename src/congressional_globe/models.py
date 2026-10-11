@@ -163,6 +163,29 @@ def _require_object_properties(node: dict[str, Any]) -> None:
         node["required"] = list(properties)
 
 
+class RAGParagraphSource(BaseModel):
+    """Source and cleanup provenance for one paragraph represented in a chunk."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    paragraph_id: str
+    item_identifier: str
+    part_number: int | None = None
+    scan_leaf: int
+    printed_page: PrintedPage
+    hocr_page_id: str
+    hocr_line_ids: list[str]
+    bbox: BoundingBox | None = None
+    role: str = "body"
+    role_source: str | None = None
+    context: dict[str, str] = Field(default_factory=dict)
+    cleanup_status: str | None = None
+    static_edits: list[TextEdit] = Field(default_factory=list)
+    static_cleanup_provenance: dict[str, str] | None = None
+    ai_edits: list[TextEdit] = Field(default_factory=list)
+    ai_provenance: dict[str, Any] | None = None
+
+
 class RAGChunk(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -175,3 +198,10 @@ class RAGChunk(BaseModel):
     paragraph_ids: list[str]
     citation: str
     hocr_page_id: str | None = None
+    paragraph_sources: list[RAGParagraphSource] = Field(default_factory=list)
+    edition_date: str | None = None
+    edition_date_source_paragraph_id: str | None = None
+    edition_date_source_text: str | None = None
+    chamber: str | None = None
+    chamber_source_paragraph_id: str | None = None
+    chamber_source_text: str | None = None

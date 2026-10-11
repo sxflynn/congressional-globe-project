@@ -117,18 +117,11 @@ def _word_record(element: etree._Element) -> WordRecord:
 
 
 def _ordered(paragraphs: list[ParagraphRecord]) -> list[ParagraphRecord]:
-    sortable = sorted(paragraphs, key=_sort_key)
+    """Retain source hOCR block order instead of assuming a fixed column layout."""
     return [
         paragraph.model_copy(update={"reading_order": index})
-        for index, paragraph in enumerate(sortable)
+        for index, paragraph in enumerate(paragraphs)
     ]
-
-
-def _sort_key(paragraph: ParagraphRecord) -> tuple[int, int, int]:
-    if paragraph.bbox is None:
-        return (2, 0, paragraph.reading_order)
-    column = 0 if paragraph.bbox.left < 1600 else 1
-    return (column, paragraph.bbox.top, paragraph.bbox.left)
 
 
 def _printed_page(entry: ArchivePageMapEntry) -> PrintedPage:

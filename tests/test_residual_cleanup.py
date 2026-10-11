@@ -3,8 +3,10 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+from typing import Any, cast
 
 import pytest
+from openai import APIConnectionError
 
 from congressional_globe import cleanup
 from congressional_globe.models import CleanupResult, TextEdit
@@ -175,6 +177,176 @@ def test_materializer_keeps_pending_static_row(tmp_path: Path) -> None:
 
     assert result["text_normalized"] == "static"
     assert result["cleanup_status"] == "pending"
+
+
+def test_materializer_matches_repeated_paragraph_ids_by_composite_identity(
+    tmp_path: Path, monkeypatch
+) -> None:
+    provider = _Provider(_ai_result())
+    run_directory = tmp_path / "run"
+    run_id = "run-1"
+    queued = tmp_path / "queued.jsonl"
+    _write_rows(queued, [_static_row("part-a", 4), _static_row("part-b", 4)])
+    create_run(cleanup.run_database(run_directory), run_id, queued)
+    monkeypatch.setattr(cleanup, "_provider", lambda *_args: provider)
+    cleanup.run_jobs(run_directory, run_id, "ollama", "fixture", 1, "http://localhost", 100)
+    static_path = tmp_path / "static.jsonl"
+    output = tmp_path / "combined.jsonl"
+    _write_rows(static_path, [_static_row("part-a", 4), _static_row("part-b", 4)])
+
+    cleanup.materialize_all(run_directory, run_id, static_path, output)
+    results = [json.loads(line) for line in output.read_text(encoding="utf-8").splitlines()]
+
+    assert [row["cleanup_status"] for row in results] == ["completed", "pending"]
+    assert results[0]["text_normalized"] == "final"
+    assert results[1]["text_normalized"] == "static"
+
+
+def test_materializer_preserves_empty_static_normalized_text(tmp_path: Path) -> None:
+    run_directory = tmp_path / "run"
+    run_id = "run-1"
+    static_path = tmp_path / "static.jsonl"
+    output = tmp_path / "combined.jsonl"
+    row = {**_static_row(), "text_ocr": "raw", "text_normalized": "", "static_edits": []}
+    _write_rows(static_path, [row])
+    create_run(cleanup.run_database(run_directory), run_id, static_path)
+
+    cleanup.materialize_all(run_directory, run_id, static_path, output)
+    result = json.loads(output.read_text(encoding="utf-8"))
+
+    assert result["text_normalized"] == ""
+    assert result["cleanup_status"] == "pending"
+
+
+def test_run_jobs_does_not_retry_connection_failure_in_same_drain(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    paragraphs = tmp_path / "static.jsonl"
+    _write_rows(paragraphs, [_static_row("part-a", 4), _static_row("part-b", 4)])
+    run_directory = tmp_path / "run"
+    run_id = "run-1"
+    database = cleanup.run_database(run_directory)
+    create_run(database, run_id, paragraphs)
+
+    class FailingProvider:
+        calls = 0
+
+        def clean(self, _text: str) -> ProviderResult:
+            self.calls += 1
+            raise APIConnectionError(message="offline", request=cast(Any, None))
+
+    provider = FailingProvider()
+    monkeypatch.setattr(cleanup, "_provider", lambda *_args: provider)
+
+    cleanup.run_jobs(run_directory, run_id, "ollama", "fixture", 10, "http://localhost", 100)
+
+    jobs = jobs_for_run(database, run_id)
+    assert provider.calls == 1
+    assert sorted(job.attempts for job in jobs) == [0, 1]
+    assert progress(database, run_id)["pending"] == 2
+
+
+def test_rejected_punctuation_edit_routes_entire_response_to_review(tmp_path: Path, monkeypatch):
+    row = {**_static_row(), "text_ocr": "an, ihc", "text_normalized": "an, ihc", "static_edits": []}
+    paragraphs = tmp_path / "static.jsonl"
+    _write_rows(paragraphs, [row])
+    run_directory = tmp_path / "run"
+    run_id = "run-1"
+    database = cleanup.run_database(run_directory)
+    create_run(database, run_id, paragraphs)
+    result = ProviderResult(
+        CleanupResult(
+            edits=[
+                TextEdit(
+                    start_char=0,
+                    end_char=3,
+                    expected="an,",
+                    replacement="an",
+                    reason="fixture punctuation change",
+                    confidence=0.9,
+                ),
+                TextEdit(
+                    start_char=4,
+                    end_char=7,
+                    expected="ihc",
+                    replacement="the",
+                    reason="fixture OCR correction",
+                    confidence=0.9,
+                ),
+            ],
+            needs_image_review=False,
+            review_reason=None,
+        ),
+        '{"raw":"response"}',
+        {"input_tokens": 2, "output_tokens": 2},
+    )
+    monkeypatch.setattr(cleanup, "_provider", lambda *_args: _Provider(result))
+
+    cleanup.run_jobs(run_directory, run_id, "ollama", "fixture", 1, "http://localhost", 100)
+
+    job = jobs_for_run(database, run_id)[0]
+    assert job.status == "review"
+    assert "punctuation-only" in (job.error or "")
+    assert job.raw_response == '{"raw":"response"}'
+
+
+def test_materializer_moves_legacy_unsafe_completed_job_to_review(tmp_path: Path):
+    row = {**_static_row(), "text_ocr": "an,", "text_normalized": "an,", "static_edits": []}
+    static_path = tmp_path / "static.jsonl"
+    _write_rows(static_path, [row])
+    run_directory = tmp_path / "run"
+    run_id = "run-1"
+    database = cleanup.run_database(run_directory)
+    create_run(database, run_id, static_path)
+    job = claim_next(database, run_id, "ollama", "legacy")
+    assert job is not None
+    edit = TextEdit(
+        start_char=0,
+        end_char=3,
+        expected="an,",
+        replacement="an",
+        reason="legacy punctuation edit",
+        confidence=0.9,
+    )
+    complete_job(
+        database,
+        job.id,
+        {
+            "cleanup": CleanupResult(
+                edits=[edit], needs_image_review=False, review_reason=None
+            ).model_dump(mode="json"),
+            "applied_edits": [edit.model_dump(mode="json")],
+            "text_normalized": "an",
+        },
+        3,
+        raw_response="legacy raw response",
+    )
+    output = tmp_path / "combined.jsonl"
+
+    cleanup.materialize_all(run_directory, run_id, static_path, output)
+
+    result = json.loads(output.read_text(encoding="utf-8"))
+    refreshed = jobs_for_run(database, run_id)[0]
+    assert result["text_normalized"] == "an,"
+    assert result["cleanup_status"] == "review"
+    assert "punctuation-only" in result["context"]["model_review_reason"]
+    assert refreshed.status == "review"
+    assert refreshed.raw_response == "legacy raw response"
+    assert refreshed.result_json is not None
+
+
+def test_materializer_keeps_existing_output_on_invalid_input(tmp_path: Path):
+    run_directory = tmp_path / "run"
+    run_id = "run-1"
+    static_path = tmp_path / "static.jsonl"
+    output = tmp_path / "combined.jsonl"
+    static_path.write_text("not-json\n", encoding="utf-8")
+    output.write_text("existing\n", encoding="utf-8")
+
+    with pytest.raises(json.JSONDecodeError):
+        cleanup.materialize_all(run_directory, run_id, static_path, output)
+
+    assert output.read_text(encoding="utf-8") == "existing\n"
 
 
 def test_materializer_rejects_static_input_alias(tmp_path: Path) -> None:
