@@ -96,3 +96,14 @@ The time budget is checked between requests, so the last request may extend beyo
 ## Concurrent performance investigation
 
 The user has another agent (OpenCode) working in `tmp/performance/` to test performance. That directory belongs to its ongoing investigation: do not edit, clean, delete, or commit its files. Coordinate through the user before overlapping performance work. Review its findings when available before implementing the multi-core checklist item; do not assume its experiments are validated production changes.
+
+## Reviewed OpenCode performance POC
+
+Read `tmp/performance/PARALLELIZATION_PROPOSAL.md` and supporting logs. Independently hashed parallel canonical/chunk outputs: both exactly match the published production hashes. Preserved the report, five logs, and review under `artifacts/performance-review-20261011/`; no benchmark or model calls were rerun, and no files under `tmp/performance/` were changed.
+
+Reported full-corpus sequential → parallel timings with 14 process workers: extraction 148.580 → 18.367 s; static cleanup 45.845 → 6.734 s; routing 34.327 → 4.882 s; materialization 67.269 → 6.593 s; merge 216.369 → 33.865 s; RAG 50.492 → 7.402 s. Summed stages project 563.5 → 78.5 s (7.18×); this is not a measured complete workflow invocation and excludes some orchestration/validation overhead.
+
+- [x] Read external performance POC and confirm final output hash equivalence independently.
+- [ ] Integrate opt-in process workers into production after authorization; preserve sequential compatibility, ordered output, bounded memory, source fingerprints, run locking and staged validation. Test completed/review/legacy jobs, worker failures, and unmatched/duplicate records before claiming production readiness. Full-scale materialization evidence covers a pending-only queue. Keep Ollama strictly sequential. Do not rerun a sequential golden pipeline on every production run merely to establish hashes, since that would erase much of the speedup; use verified baseline comparisons during rollout and retain runtime integrity checks.
+
+The performance checklist now has strong POC evidence; production adoption remains pending. Threads are not the primary approach for the CPU-bound stages on the reported GIL-enabled Python build.
