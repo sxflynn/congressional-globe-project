@@ -11,6 +11,8 @@
 - Ollama uses the non-secret placeholder API key `ollama` and must run one request at a time.
 - Reuse an existing cleanup run ID to resume pending jobs or change provider; do not recreate its queue.
 - Benchmark substantive paragraphs before scaling a local model across the corpus.
+- Always run `npx --yes prettier@3.9.10 --prose-wrap never --write "**/*.md"` when editing markdown files.
+- After completing a unit of work, commit it using a single line commit message, with no agent attribution.
 
 # Required gates
 
@@ -22,6 +24,7 @@ uv run ruff check .
 uv run ty check
 uv run complexipy src tests --max-complexity-allowed 5
 uv run pytest
+npx --yes prettier@3.9.10 --prose-wrap never --write "**/*.md"
 ```
 
 - Maximum permitted cyclomatic complexity is **5**. Refactor instead of adding an exception.
