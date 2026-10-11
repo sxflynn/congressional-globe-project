@@ -22,7 +22,7 @@ The static-first, resumable one-command workflow is implemented. Small OpenAI an
 - [x] Export sourced date/chamber facts, scoped from their heading onward; retain unknown/conflicting facts and review reasons.
 - [x] Verify bounded one-command export and provider switching without recreating queue: 20 pages, 1,035 paragraphs, 73 chunks, 85 jobs; three Qwen then three mini requests. Final status: 79 pending, five review, one completed, zero claimed.
 - [x] Independently replay bounded static/AI ledgers; check source equality, coverage, Pydantic models, anchors, geometry, heading order, export hashes.
-- [x] Run required code gates: Ruff format/check, ty, complexity ≤5, pytest **79 passed**. Markdown formatting is required again after final status edits.
+- [x] Run required code gates: Ruff format/check, ty, complexity ≤5, pytest **81 passed**. Markdown formatting is required again after final status edits.
 
 ## Runs and evidence
 
@@ -89,3 +89,7 @@ uv run globe cleanup run --run-directory artifacts/runs/static-final-20261011 \
 ```
 
 The time budget is checked between requests, so the last request may extend beyond one hour. Inspect `cleanup status` first. Rerunning continues the same queue. Afterward, the static-only resume command above refreshes canonical/RAG exports using saved accepted patches and preserves review records. The user has asked for this command; no hour-long worker was started by Codex.
+
+## Concurrent performance investigation
+
+The user has another agent (OpenCode) working in `tmp/performance/` to test performance. That directory belongs to its ongoing investigation: do not edit, clean, delete, or commit its files. Coordinate through the user before overlapping performance work. Review its findings when available before implementing the multi-core checklist item; do not assume its experiments are validated production changes.
