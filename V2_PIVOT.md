@@ -66,6 +66,8 @@ The user requested this exploratory POC. Current work prepares an isolated ten-q
 
 ## Risks to test
 
+The offline design audit is saved at `artifacts/v2-pivot-20261011/design-review.json`. Before deciding on the pivot, compare raw-only retrieval against the same raw text with proposed metadata; raw versus normalized text alone cannot show tagging value. Until all pool windows have relevance labels, report intended-target ranks/hits rather than precision or recall. Explicit unanswerable, mixed-speaker and unknown-date controls are required, and exact quotations need entailment review. The initial local model inventory contains no embedding-capable model; model selection research is underway separately.
+
 - OCR errors may obscure names, dates, or legislative references; adding tags can give false confidence if evidence spans do not support them.
 - Page windows can mix speakers and topics. Page-bounded chunking is a starting point, not a boundary detector.
 - Historical names, offices, parties, and bill numbers require period-appropriate, sourced authorities; contemporary name matching is insufficient.

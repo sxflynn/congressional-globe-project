@@ -80,3 +80,5 @@ make gate
 Runs the formatters, code checks, and tests. You also need Node.js/npm for the Markdown formatter. Formatting can change files.
 
 For troubleshooting and detailed commands, see [RUNBOOK.md](RUNBOOK.md). For model comparisons and estimated time/cost, see [HAPPY_PATH.md](HAPPY_PATH.md).
+
+An alternative approach—searching and tagging the original OCR without further correction—is being tested separately in [V2_PIVOT.md](V2_PIVOT.md). The commands above remain the existing cleanup workflow.
