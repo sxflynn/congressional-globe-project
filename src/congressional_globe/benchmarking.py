@@ -39,6 +39,8 @@ class BenchmarkRecord(BaseModel):
     exact_expected_agreement: bool | None = None
     unchanged_control_error: bool | None = None
     usage: dict[str, Any] | None = None
+    finish_reason: str | None = None
+    output_status: str | None = None
     error: str | None = None
 
 
@@ -163,6 +165,8 @@ def _run_case(provider: CleanupProvider, case: BenchmarkCase) -> BenchmarkRecord
     started = time.perf_counter()
     raw_response: str | None = None
     usage: dict[str, Any] | None = None
+    finish_reason: str | None = None
+    output_status: str | None = None
     edits: list[TextEdit] | None = None
     normalized_text: str | None = None
     needs_review = False
@@ -171,6 +175,8 @@ def _run_case(provider: CleanupProvider, case: BenchmarkCase) -> BenchmarkRecord
         result = provider.clean(case.text_ocr)
         raw_response = result.raw_response
         usage = _provider_usage(result)
+        finish_reason = getattr(result, "finish_reason", None)
+        output_status = getattr(result, "output_status", None)
         needs_review = result.cleanup.needs_image_review
         review_reason = result.cleanup.review_reason
         edits = resolve_edits(case.text_ocr, result.cleanup.edits)
@@ -189,9 +195,14 @@ def _run_case(provider: CleanupProvider, case: BenchmarkCase) -> BenchmarkRecord
                 normalized_text != case.text_ocr if case.expected_text == case.text_ocr else None
             ),
             usage=usage,
+            finish_reason=finish_reason,
+            output_status=output_status,
         )
     except Exception as error:
         raw_response = raw_response or _exception_raw_response(error)
+        usage = usage or _exception_usage(error)
+        finish_reason = finish_reason or _exception_text(error, "finish_reason")
+        output_status = output_status or _exception_text(error, "output_status")
         return BenchmarkRecord(
             case_id=case.id,
             raw_response=raw_response,
@@ -201,6 +212,8 @@ def _run_case(provider: CleanupProvider, case: BenchmarkCase) -> BenchmarkRecord
             needs_image_review=needs_review,
             review_reason=review_reason,
             usage=usage,
+            finish_reason=finish_reason,
+            output_status=output_status,
             error=f"{type(error).__name__}: {error}",
         )
 
@@ -217,6 +230,16 @@ def _provider_usage(result: Any) -> dict[str, Any] | None:
 def _exception_raw_response(error: Exception) -> str | None:
     raw = getattr(error, "raw_response", None)
     return raw if isinstance(raw, str) else None
+
+
+def _exception_usage(error: Exception) -> dict[str, Any] | None:
+    usage = getattr(error, "usage", None)
+    return dict(usage) if isinstance(usage, dict) else None
+
+
+def _exception_text(error: Exception, field: str) -> str | None:
+    value = getattr(error, field, None)
+    return value if isinstance(value, str) else None
 
 
 def _empty_counts() -> dict[str, int]:

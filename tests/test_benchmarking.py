@@ -5,7 +5,7 @@ from pathlib import Path
 
 from congressional_globe.benchmarking import run_benchmark
 from congressional_globe.models import CleanupResult, TextEdit
-from congressional_globe.providers import ProviderResult
+from congressional_globe.providers import ProviderOutputError, ProviderResult
 
 
 class FakeProvider:
@@ -254,3 +254,39 @@ def test_benchmark_validates_limited_cases_before_calling_provider(tmp_path: Pat
 
     assert provider.calls == []
     assert not (artifacts_dir / "invalid-input").exists()
+
+
+def test_benchmark_keeps_provider_parse_failure_metadata(tmp_path: Path) -> None:
+    cases_path = tmp_path / "cases.jsonl"
+    cases_path.write_text(
+        json.dumps({"id": "truncated", "text_ocr": "source", "expected_text": "target"}) + "\n",
+        encoding="utf-8",
+    )
+
+    class TruncatedProvider:
+        def clean(self, text: str) -> ProviderResult:
+            raise ProviderOutputError(
+                "Provider output was truncated",
+                raw_response='{"edits":',
+                usage={"input_tokens": 21, "output_tokens": 4},
+                finish_reason="length",
+                output_status=None,
+            )
+
+    summary = run_benchmark(
+        cases_path,
+        TruncatedProvider(),
+        backend="ollama",
+        model="test-model",
+        run_id="truncated-response",
+        artifacts_dir=tmp_path / "artifacts",
+    )
+    record = json.loads(
+        (tmp_path / "artifacts/truncated-response/results.jsonl").read_text(encoding="utf-8")
+    )
+
+    assert summary.failed == 1
+    assert summary.total_input_tokens == 21 and summary.total_output_tokens == 4
+    assert record["raw_response"] == '{"edits":'
+    assert record["finish_reason"] == "length"
+    assert record["usage"] == {"input_tokens": 21, "output_tokens": 4}
