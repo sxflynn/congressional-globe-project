@@ -421,3 +421,9 @@ mkdir -p artifacts/static-audit-20261011
 ```
 
 This combines the base dictionary, additional forms, proper names, and the tracked project supplement. The leading blank entry preserves the existing prepared file's exact format. Reconstruction from the current machine's dictionaries was compared in memory and matches the existing word list byte for byte. On machines without these dictionary files, obtain the prepared lexicon or an equivalent documented word list before running the Make workflow. Changed dictionary content changes the run fingerprint; an incompatible existing run requires a new run ID and corresponding Make command adjustment.
+
+## Continuing bounded quality POCs
+
+The user approved two hours of 15-minute scheduled local-only checks, with at most four additional isolated POCs of 15 minutes/60 requests each. Preserve the active one-hour Qwen worker and serialize all local requests. `PROGRESS.md` records the cumulative experiment count and exact process/run state. Stop early if quality plateaus or unsafe accepted edits appear; this permission does not authorize paid requests or draining the full queue.
+
+The first live-worker snapshot sampled 40 cases across all five parts: 30 completed and ten review cases. Every completed sample replayed its ledger exactly; quality review is still pending. The cohort had 239 completed, 84 review and one claimed job, with 26.0% of resolved cases held for review. Early/index-heavy queue order limits generalization to debate text. Preserve unresolved artifacts and ambiguity; completed does not mean error-free. Evidence is under `artifacts/poc-quality-20261011/`. Response truncation metadata and failed-response token accounting need improvement before strong model comparisons.

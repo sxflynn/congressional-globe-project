@@ -154,3 +154,15 @@ The user explicitly asked Codex to run the documented long local job. Started `m
 - [ ] After the worker exits, `make run-static` refreshes exports with accepted saved results. Published exports are not refreshed by `make run-qwen` itself.
 
 Do not start another worker while this session is active. The user's OpenCode performance work under `tmp/performance/` remains untouched.
+
+## Bounded local quality follow-ups (authorized 18:41 UTC)
+
+The user authorized continued POCs and explicitly approved scheduled checks every 15 minutes for two hours, at most four additional isolated local POCs, each capped at 15 minutes/60 requests. No paid OpenAI calls or full-queue processing are authorized by this follow-up. Automation `congressional-globe-bounded-local-pocs` is active with eight 15-minute occurrences. Stop additional model experiments early on a quality plateau or unsafe accepted edits. Record the cumulative POC count here before launching each experiment so scheduled turns cannot exceed four.
+
+- Additional scheduled POCs started: **0/4**. Current hour-long worker remains session **23933**, confirmed live at 18:41 UTC; do not overlap local requests.
+- [x] Read-only cohort snapshot: 324 claimed IDs, 239 completed, 84 review, one claimed. Evidence: `artifacts/poc-quality-20261011/snapshot.json` and `samples.jsonl`; sampler: `tmp/snapshot_poc_quality.py`. Forty stratified samples cover all five parts, including ten completed zero-edit cases. All 30 completed sampled outputs replay their applied edits exactly; all ten sampled reviews retain raw responses. This establishes ledger consistency, not correction quality.
+- [ ] GPT-6 Luna text-context quality review of the 40 samples is running in `static_review`. Check its saved review before deciding the next POC. No image verification.
+- [ ] After the hour worker exits, record terminal state, then consider an isolated 12-case challenge focused on offset failures plus unchanged controls and substantive OCR. Keep source identities and independently checked expected labels. Never reuse ambiguous labels as gold.
+- [ ] Capture response finish reason and raw/token metadata for failed responses before interpreting truncation-related comparisons. Current benchmark/provider records do not consistently retain these fields; malformed responses can lose usage/raw evidence.
+
+The cohort resolved 323 jobs with 84 held for review (26.0%); it is predominantly early/index material, not a representative estimate of substantive debate performance. Snapshot durations total 1,250.607 seconds and available usage totals 246,032 input/29,094 output tokens. No local API charge; hardware/electricity are excluded. Published canonical/RAG files remain the earlier static snapshot until an explicit export refresh after the worker exits.
