@@ -14,7 +14,7 @@
 - Always run `npx prettier@3.9.10 --prose-wrap never --write "**/*.md"` when editing markdown files, and if you are Codex, request elevated permissions to run it.
 - After completing a unit of work, commit it using a single line commit message, with no agent attribution.
 
-# Required gates
+## Required gates
 
 Run these before handing off code:
 
@@ -30,7 +30,7 @@ npx prettier@3.9.10 --prose-wrap never --write "**/*.md"
 - Maximum permitted cyclomatic complexity is **5**. Refactor instead of adding an exception.
 - Keep tests focused on core behavior and failure modes; do not add broad low-value test suites.
 
-# Current corpus reminder
+## Current corpus reminder
 
 - This project covers the five parts of the 39th Congress, 1st Session. Do not label a single part as the entire Congressional Globe.
 - Treat catalog-level and edition-level dates as separate facts; preserve both with sources.
