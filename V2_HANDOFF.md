@@ -42,7 +42,7 @@ Latest terminal checkpoint: Qwen QA/tag run `v2-qwen-pivot-20261011`, exec sessi
 
 **Embedding run is complete** (no worker live): `v2-embedding-dryrun-20261011-r3` finished 22/22 batches, 110 inputs, 140.867 s, 80,052 prompt-eval tokens, zero failures. Directory: **`artifacts/v2-pivot-20261011/embedding-runs/v2-embedding-dryrun-20261011-r3/`**, distinct from QA `runs/`. Rank result is a **ceiling effect** — all four configs (raw/static × full-2560/projected-1024) ranked every intended target #1 (hit@1 10/10, MRR 1.0); the sample cannot separate raw vs static or dimensionality. The 1,024 arm is a local first-1,024 projection plus L2, not a native `/api/embed` `dimensions=1024` response (still untested). Reuse the saved caches; do not re-run unchanged.
 
-**Compact-QA retry is prepared but not run:** `v2-qwen-pivot-compact-refactor-dryrun-20261011` (all helpers ≤5, mock-check passes) enables a bounded live retry under a **new** run ID.
+**Compact-QA retry has now run three times** (OpenCode `big-pickle`, 60 sequential local Qwen calls, $0 API, no production change). `v2-qwen-pivot-compact-live-01` reproduced the 700-token truncation (reasoning consumed the budget). Root cause: the Ollama path omitted a thinking-disable. Fix: `extra_body={"reasoning_effort":"none"}` in `_ollama_reply` (Ollama's OpenAI-compat endpoint ignores `think:false` but honors `reasoning_effort`). `live-02` then finished 20/20 `stop` but 11 failed on the 140-char `answer_evidence` cap; relaxing it to 320 gave `live-03`: 5 validated / 12 review / 3 failed, `answer_status` 17 supported. **Current prototype script is `619e542a…`** (durable copy synced); the pre-fix scripts are preserved in each run directory as `script-used.py`. Result quality is provisional and not correctness-verified; 0/20 reference exact-string matches is expected (answers paraphrase).
 
 First inspect production state and active processes. Never overlap local model requests or restart an apparently active POC solely because a polling request timed out.
 
@@ -59,15 +59,13 @@ UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python tmp/v2_pivo
   --run-id v2-resume-dryrun-01 --limit 10 --arm both
 ```
 
-Authorized local comparison template, **only after the prompt/refactor checks and latest process inspection**. Use a new run ID; the first trial below has already stopped:
+Authorized local comparison template, **only after the latest process inspection**. `live-01/02/03` are spent; use a new run ID (the script rejects existing directories):
 
 ```bash
-UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python tmp/v2_pivot_benchmark.py \
-  --live --backend ollama --model qwen3.8:27b-mlx \
-  --run-id v2-qwen-pivot-short-01 --limit 10 --arm both --timeout 45
+UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python -c 'import subprocess, sys; subprocess.run([sys.executable, "tmp/v2_pivot_benchmark.py", "--live", "--backend", "ollama", "--model", "qwen3.8:27b-mlx", "--run-id", "v2-qwen-pivot-compact-live-04", "--limit", "10", "--arm", "both", "--timeout", "45"], timeout=900, check=True)'
 ```
 
-This schedules twenty sequential calls with a fifteen-minute budget. Each result is appended to `runs/<run-id>/results.jsonl`; inspect that file even if the final report is missing. Do not repeat this run ID or call failed jobs automatically. Archive partial evidence before choosing a narrowly targeted follow-up.
+This schedules twenty sequential calls with a fifteen-minute outer deadline; thinking is disabled (`reasoning_effort`). Each result is appended to `runs/<run-id>/results.jsonl`; inspect that file even if the final report is missing. Do not repeat a spent run ID or call failed jobs automatically. Archive partial evidence before choosing a narrowly targeted follow-up. The next planned local run is the **negative/abstention controls** (`controls.jsonl`), not a repeat of the positive comparison.
 
 For Mini, change `--backend openai --model gpt-5.4-mini`, use a new run ID and `--limit 3 --arm both` for six requests. `.env` loading is built in. Use the same frozen prompt/context when comparing providers; selected cases must be explicitly recorded. No automatic production queue draining.
 
@@ -79,11 +77,11 @@ UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python -c 'import 
 
 This generates full 2,560-dimensional 4B vectors and derives a **local first-1,024-dimensions plus L2 normalization** comparison from the same vectors. It does not prove native `/api/embed` 1,024 output matches that projection. Validated batch caches are reusable; failed/unfinished batches are not silently treated as completed. Inspect `plan.json`, progress/failure records, caches and final report under the selected run directory before resuming. Restore the durable script into `tmp/` if needed; keep its path assumptions intact.
 
-The prototype has known complexity violations above five in several helpers. It is an experimental script, **not a production-quality deliverable**; refactoring remains required. The normal project gate does not cover ignored scratch/artifact scripts. Preserve the exact script snapshot/hash used for a measured run before refactoring it. If the tmp copy is missing, restore its durable copy to `tmp/v2_pivot_benchmark.py` from the project directory; its default paths rely on that location.
+The prototype's helpers now all score at most five (`v2-qwen-pivot-compact-refactor-dryrun-20261011/complexity-report.txt`), though it is still an experimental script, **not a production-quality deliverable**, and `ty` flags typing issues in it. The normal project gate does not cover ignored scratch/artifact scripts. Its current durable hash is `619e542a…`; the pre-fix scripts are preserved per run as `script-used.py`. If the tmp copy is missing, restore its durable copy to `tmp/v2_pivot_benchmark.py` from the project directory; its default paths rely on that location.
 
 ## Ordered next work
 
-1. Finish the shorter-output prompt and prototype complexity refactor. Check its dry-run/fixture report, then use a new bounded local QA/tag run ID. Inspect every claim, not just schema success. Run the two abstention controls separately after confirming the positive run is terminal. Preserve the first truncated-response trial.
+1. [done] Compact prompt/refactor finished and the bounded local QA run was executed and debugged (`live-01/02/03`). Thinking is disabled, the evidence cap is 320, and the pipeline no longer truncates (20/20 `stop`). Still open: inspect the `live-03` answers/quotes case by case, then run the two abstention controls as a separate bounded run.
 2. Use a small matched Mini sample to investigate local-model failures or attribution differences. Record observed API usage/cost and finish status; preserve malformed outputs.
 3. [done] Embedding interface/gate and the frozen-pool embedding run are complete. Still open: confirm native `/api/embed` returns requested 1,024 versus full 2,560 dimensions for Qwen 4B on tiny inputs; no silent token truncation.
 4. [done, saturated] The frozen fifty windows/ten queries were embedded in 22 resumable, hash-keyed batches. All four 4B configs hit@1 10/10, MRR 1.0 — no separation of raw vs static or full vs projected dimensions. Do not re-run unchanged; build a harder, relevance-labeled tier before drawing retrieval conclusions. No full indexing.
