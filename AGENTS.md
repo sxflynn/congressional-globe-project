@@ -6,6 +6,8 @@ Codex builds the disciplined, reproducible workflow: schemas, prompts, orchestra
 
 Read `PROJECT_GOAL.md` for the full architectural requirements, current schema mapping and phased roadmap. Use it to guide short-term cleanup, identity, provenance and chunking decisions without implementing the entire roadmap automatically.
 
+Read `V2_PIVOT.md` for the active alternative experiment: organize and enrich untouched OCR for retrieval rather than require further OCR repair first. Preserve the existing cleanup path and outputs. Use Luna delegates for bounded sample preparation, evaluation and documentation; track exact experiment state in `PROGRESS.md`. Evaluate retrieval, controlled tagging and grounded answers separately before recommending a pivot.
+
 # Project preferences
 
 - Read `PROGRESS.md` before starting work and `PROJECT_GOAL.md` before making architectural/schema decisions. Follow its ordered next-step checklist and resume commands; do not repeat completed POCs or start full-corpus model processing. New user instructions take precedence.

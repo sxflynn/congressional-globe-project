@@ -4,6 +4,8 @@ Updated: 2026-10-11. Read this before doing project work. Follow the ordered che
 
 ## Current outcome
 
+**Active priority: V2_PIVOT exploration, requested by the user.** Read [V2_PIVOT.md](V2_PIVOT.md). Preserve the completed cleanup work while testing whether unchanged OCR plus organization and separate evidence-linked metadata can support useful research retrieval and answers. The earlier scheduled cleanup-model stop remains in effect for that effort; this is a separate experiment. No pivot decision or full enrichment run has been made.
+
 The static-first, resumable one-command workflow is implemented. Small OpenAI and local Ollama POCs ran; **no full-corpus model run is authorized or has run**. Export validation establishes record/ledger consistency, not complete OCR correctness. The corpus still needs quality calibration. Original-image visual validation and re-OCR are outside the newly clarified immediate scope.
 
 ## Completed
@@ -246,3 +248,14 @@ No provider requests or production corpus changes in this unit. Model POC count 
 - [ ] Review ordinary/legal forms first: conferred, postponed, bounties, commenced, supplies, preemption, recommitted, declaring, excluded, securities, salaries and enemies. Keep compound/spelling questions explicit (especially preemption). Proper names/places require separate contextual evidence: Morrill, Hubbell, Patterson, Ashley, Washburn, Oregon, Shellabarger and Woodbridge. Nothing from this inventory is adopted yet.
 
 Next executable unit: build a cloned candidate lexicon for a small reviewed subset of ordinary forms, measure actual routing changes, and inspect a seeded sample across all five parts plus negative controls. Preserve the earlier two-form evidence; do not repeat model benchmarks. Then implement and verify compatible-result reuse on synthetic/cloned queues before adopting changed preprocessing. Source-span response contracts remain a separate proposed improvement. This check changes documentation/evidence only; the latest code gate remains the passing 93-test run. README operator commands are unchanged.
+
+## V2_PIVOT: active exploratory work
+
+- [x] Preserve existing cleanup outputs, queue and implementation; current baseline commit `c414db9`.
+- [x] Create `V2_PIVOT.md`, linked from agent instructions, with alternative architecture, experiment controls, unknown/mixed metadata rules and decision criteria. This is an unvalidated hypothesis, not an adopted replacement.
+- [ ] Luna `static_review`: prepare ten source-anchored raw/static window pairs (two per part), provisional queries/labels and forty distractor windows, deterministic seed 3911866. Own evidence under `artifacts/v2-pivot-20261011/`; no production mutations.
+- [ ] Luna `benchmark_harness`: prepare isolated, explicit opt-in local Qwen experiment, at most twenty requests sequentially, 45-second request timeout and fifteen-minute outer deadline. Validate schemas, exact quote evidence, model configuration and audit outputs. Prepare offline lexical retrieval comparison; do not present it as vector-search validation. No paid API calls.
+- [ ] Run offline preparation checks and review samples before launching local evaluation. Record exact command, run ID, live process/session and outcomes here. Then inspect accepted, failed and abstained cases before deciding the next POC.
+- [ ] Compare raw/static retrieval ranks, grounded answers and metadata quality independently. Add controlled-tag retrieval and a bounded embedding experiment before concluding that the proposed complete RAG path works. Human labels and broad historical authority resolution remain pending.
+
+No V2 provider requests yet. Existing production status remains 1,339 completed / 423 review / 20,785 pending / zero claimed. The next executable step is to inspect the delegated sample manifest and dry-run harness when they finish; do not resume the old OCR model queue. Scripts/evidence are isolated and machine-local; committed documents must carry a reconstructible handoff.
