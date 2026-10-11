@@ -2,6 +2,8 @@
 
 ## Status and hypothesis
 
+For the local embedding-model recommendation and compatibility checks, see [V2_EMBEDDING_MODELS.md](V2_EMBEDDING_MODELS.md).
+
 This is an alternative, unvalidated direction. It does not replace, invalidate, or authorize discarding the static cleanup, patch ledgers, queue, canonical exports, or RAG work already completed. Keep those artifacts immutable and available for comparison.
 
 **Hypothesis:** research discovery may improve more from structuring page/turn windows and adding evidence-linked person, place, topic, and legislation tags than from spending the next iteration repairing OCR. Preserve the OCR as-is for this experiment. Do not treat normalized OCR as ground truth; the existing static and AI outputs remain separate comparison inputs.

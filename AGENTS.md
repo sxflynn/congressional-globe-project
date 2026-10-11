@@ -8,6 +8,8 @@ Read `PROJECT_GOAL.md` for the full architectural requirements, current schema m
 
 Read `V2_PIVOT.md` for the active alternative experiment: organize and enrich untouched OCR for retrieval rather than require further OCR repair first. Preserve the existing cleanup path and outputs. Use Luna delegates for bounded sample preparation, evaluation and documentation; track exact experiment state in `PROGRESS.md`. Evaluate retrieval, controlled tagging and grounded answers separately before recommending a pivot.
 
+`V2_EMBEDDING_MODELS.md` records the local embedding shortlist and backend compatibility checks. The user authorizes small GPT Mini and Ollama sampling/testing requests; keep them bounded and audited. Full-corpus model processing and model downloads are separate actions.
+
 # Project preferences
 
 - Read `PROGRESS.md` before starting work and `PROJECT_GOAL.md` before making architectural/schema decisions. Follow its ordered next-step checklist and resume commands; do not repeat completed POCs or start full-corpus model processing. New user instructions take precedence.
