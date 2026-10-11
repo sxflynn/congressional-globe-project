@@ -40,6 +40,8 @@ Recheck `/api/tags` before resuming: tags can change. The 0.6B baseline and othe
 
 Latest terminal checkpoint: Qwen QA/tag run `v2-qwen-pivot-20261011`, exec session **65064**, exited **1** after root stopped only child PID 80434 with SIGTERM. Three saved responses all reached the 700-token output limit; an in-flight unsaved request has unknown outcome/usage. Evidence: `runs/<run-id>/terminal-report.json`, `results.jsonl`, immutable `script-used.py`, and `artifacts/v2-pivot-20261011/qwen-pivot.log`. The trial proves a response-budget problem, not raw-OCR inadequacy. Do not repeat it unchanged; the prototype is being shortened/refactored offline. Check the latest `PROGRESS.md` before starting any local request.
 
+**Active embedding run:** `v2-embedding-dryrun-20261011-r3` now resumed live, exec session **16163**, child PID **83016**. Log: `artifacts/v2-pivot-20261011/embedding-poc.log`. Its directory is **`artifacts/v2-pivot-20261011/embedding-runs/v2-embedding-dryrun-20261011-r3/`**, distinct from QA `runs/`. Last verified snapshot: three successful cached batches. Do not launch another local request while this worker is live; inspect this exact handle/PID and progress file before resuming.
+
 First inspect production state and active processes. Never overlap local model requests or restart an apparently active POC solely because a polling request timed out.
 
 ```bash
@@ -67,7 +69,7 @@ This schedules twenty sequential calls with a fifteen-minute budget. Each result
 
 For Mini, change `--backend openai --model gpt-5.4-mini`, use a new run ID and `--limit 3 --arm both` for six requests. `.env` loading is built in. Use the same frozen prompt/context when comparing providers; selected cases must be explicitly recorded. No automatic production queue draining.
 
-The embedding runner is ready at `tmp/v2_embedding_benchmark.py`, with durable copy `artifacts/v2-pivot-20261011/embedding_benchmark.py`. Its validated dry run `v2-embedding-dryrun-20261011-r3` has **zero cached batches and zero model requests**. It plans 22 sequential requests for 100 raw/static document inputs plus ten instructed queries, in batches of five. After process/digest inspection, this command resumes that prepared run with a hard outer deadline:
+The embedding runner is ready at `tmp/v2_embedding_benchmark.py`, with durable copy `artifacts/v2-pivot-20261011/embedding_benchmark.py`. Its original validated dry run made zero requests; it has now resumed live as noted above. It plans 22 sequential requests for 100 raw/static document inputs plus ten instructed queries, in batches of five. After confirming the active worker is terminal and inspecting progress/digests, this command resumes the prepared run with a hard outer deadline:
 
 ```bash
 UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python -c 'import subprocess, sys; subprocess.run([sys.executable, "tmp/v2_embedding_benchmark.py", "--run-id", "v2-embedding-dryrun-20261011-r3", "--live", "--resume", "--max-input-texts", "200", "--max-seconds", "900"], timeout=900, check=True)'
