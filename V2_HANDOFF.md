@@ -1,5 +1,13 @@
 # V2 pivot handoff for any AI harness
 
+## Latest tagging checkpoint
+
+The user also asks whether dirty OCR increases AI tagging workload. Provider-free comparison on 50 windows found **identical raw/static candidate topic sets** with word boundaries and hyphen/whitespace folding:78 assignments in 44 windows, 1.70 seconds. Literal raw matching found72/43. Source OCR remained immutable; exact spans and full anchors were checked. The earlier substring comparator was confounded; final report supersedes preliminary cleanup gains. These are candidate counts, not subject precision/recall or proof 44 windows can bypass AI.
+
+Ten paired GPT Mini tagging calls completed in 18.055 seconds for estimated $0.01967325. Raw input 8,551 tokens/static 8,422; five cases and fixed prompt overhead do not establish corpus-wide token costs. Both arms expose vocabulary-scope mistakes, such as Senate salary debate assigned to ministerial-office compensation. All 10 responses are structurally valid, historical judgments remain pending. No more model calls in this unit. Main gate passed107 tests.
+
+Latest evidence and exact hashes are in the final `PROGRESS.md` checkpoint and `artifacts/v2-pivot-20261011/tag-cleanup-cost/`. Mini run `subject-tags-mini-20261011-01`/session 97596 is terminal; do not restart. Next: human scope/negative labels, a frozen broader vocabulary, held-out precision/recall, and an audited residual-routing policy before estimating savings. A cue hit is not an accepted subject and no hit is not absence. Copy ignored evidence/scripts for another machine.
+
 ## Latest decision checkpoint: raw OCR versus cleanup
 
 The current question is whether further OCR cleanup must precede vector retrieval and grounded answers. Fresh POC `raw-static-transfer-live-20261011-01` compares original OCR with existing deterministic static edits across50 windows,10 questions and all five parts, excluding earlier sample paragraphs. Both native Qwen4B arms rank all 10 intended targets first. This supports a **reviewed raw-text retrieval pilot**, with targeted cleanup for demonstrated failures; it does not justify full processing or declare OCR errors harmless. This is not a comparison with perfect transcription.
