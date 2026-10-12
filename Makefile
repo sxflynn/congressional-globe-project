@@ -1,4 +1,4 @@
-.PHONY: gate run-workflow run-static status run-qwen run-gemma run-openai
+.PHONY: gate run-workflow run-static status run-qwen run-gemma run-openai v2-sample
 .NOTPARALLEL:
 
 gate:
@@ -38,3 +38,14 @@ run-openai:
 	uv run globe cleanup run --run-directory artifacts/runs/static-final-20261011 \
 		--run-id static-final-20261011 --backend openai --model gpt-5.4-mini \
 		--limit 1000 --max-seconds 3600 --progress-interval 30
+
+# Offline review preparation: creates new artifacts and never calls a model.
+v2-sample:
+	uv run globe subject-exclusions \
+		--samples artifacts/v2-pivot-20261011/tier2/pool.jsonl artifacts/v2-pivot-20261011/raw-vs-static-transfer/windows.jsonl \
+		--jobs-database artifacts/runs/static-final-20261011/jobs.sqlite \
+		--output artifacts/v2-subject-exclusions.json
+	uv run globe subject-sample \
+		--pages artifacts/runs/static-final-20261011/canonical_pages.jsonl \
+		--exclusions artifacts/v2-subject-exclusions.json \
+		--output artifacts/v2-subject-review --seed 20261012 --per-part 2

@@ -83,6 +83,14 @@ For troubleshooting and detailed commands, see [RUNBOOK.md](RUNBOOK.md). For mod
 
 An alternative approach—searching and tagging the original OCR without further correction—is being tested separately in [V2_PIVOT.md](V2_PIVOT.md). The commands above remain the existing cleanup workflow.
 
+For a small raw-text topic-review sample, with **no model calls**:
+
+```bash
+make v2-sample
+```
+
+This needs the existing local experiment pools and writes ten passages to `artifacts/v2-subject-review/review_packets.jsonl`, plus a frozen draft vocabulary. It refuses to overwrite an existing sample. The sample is already prepared on this machine; read it instead of rerunning. Setup and review limitations are in [V2_TAGGING_EVAL.md](V2_TAGGING_EVAL.md).
+
 To review the current experiment's source passages and model results on this machine, open the local review page:
 
 ```bash

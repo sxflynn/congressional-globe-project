@@ -79,6 +79,7 @@ def test_attempted_database_jobs_are_read_only_and_pending_jobs_are_skipped(tmp_
             "item_identifier": "globe39part1",
             "part_number": 1,
             "scan_leaf": 200,
+            "id": "par_000200_000002",
         }
         connection.execute(
             "INSERT INTO cleanup_jobs VALUES (?, ?, ?, ?, ?)",
@@ -97,6 +98,32 @@ def test_attempted_database_jobs_are_read_only_and_pending_jobs_are_skipped(tmp_
     assert report.jobs_database_sha256 is not None
     assert len(manifest.paragraphs) == 2
     assert database.read_bytes() == before
+
+
+def test_attempted_job_row_id_must_match_source_json_id(tmp_path) -> None:
+    sample = tmp_path / "sample.json"
+    database = tmp_path / "jobs.sqlite"
+    output = tmp_path / "exclusions.json"
+    _sample(sample)
+    with sqlite3.connect(database) as connection:
+        connection.execute(
+            "CREATE TABLE cleanup_jobs "
+            "(id TEXT, attempts INTEGER, paragraph_id TEXT, source_json TEXT, status TEXT)"
+        )
+        source = {
+            "item_identifier": "globe39part1",
+            "part_number": 1,
+            "scan_leaf": 200,
+            "id": "par_000200_000003",
+        }
+        connection.execute(
+            "INSERT INTO cleanup_jobs VALUES (?, ?, ?, ?, ?)",
+            ("attempted", 1, "par_000200_000002", json.dumps(source), "review"),
+        )
+
+    with pytest.raises(ValueError, match="does not match source_json id"):
+        build_subject_exclusions([sample], output, database)
+    assert not output.exists()
 
 
 def test_invalid_manifest_boundaries_are_rejected() -> None:

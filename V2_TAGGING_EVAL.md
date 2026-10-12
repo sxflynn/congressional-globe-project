@@ -54,3 +54,13 @@ Prior candidate matching and ten-call Mini results are diagnostics only, not thi
 Use `validate_subject_proposals` before consuming assignments. The `reviewed_in_scope_subject_ids` helper validates source and vocabulary references and returns eligibility only from explicit human-reviewed decisions. Review records must come from a trusted host review channel; a provider response must never be permitted to claim human review. The helper neither authenticates a reviewer nor establishes historical truth. Loose discovery tags never enter it.
 
 The implementation does not yet supply a curated vocabulary release, a model runner, a human-review import workflow, calibrated auto-accept policy, passage assessment for missing/OOV subjects, authority resolution or production routing. The evaluation protocol above remains necessary. `make gate` checks the portable contracts/matcher; historical quality requires separate human evidence.
+
+## Prepare a reproducible offline review sample
+
+`make v2-sample` makes no provider requests and alters no source or cleanup queue. It requires the local canonical snapshot, the prior Tier-2 pool and fresh raw/static comparison windows named in the Makefile. Another machine must copy those ignored artifacts first. The target writes a known-exclusion inventory from those two sample files plus cleanup jobs with recorded attempts, then selects two raw page-bounded windows per part. It refuses existing output paths.
+
+Outputs: `artifacts/v2-subject-exclusions.json` and its build report; `artifacts/v2-subject-review/{review_packets.jsonl,manifest.json,vocabulary.json}`. Review packets are blind to model outputs and candidate tags, with blank human labels and full paragraph/page/leaf/hash/geometry references. The vocabulary snapshot is draft, not a verified historical authority.
+
+Progress prints pages scanned and elapsed seconds while streaming. Total page count is unknown until completion; no invented ETA is displayed. The manifest records source, packet, code, exclusion and vocabulary digests, eligible and excluded counts, seed and selection policy. Reuse the saved sample for paired model tests rather than resampling. For a deliberately new diagnostic use `globe subject-sample` with a new output directory and recorded seed.
+
+This is **part-stratified diagnostic preparation**, not a held-out quality benchmark: exclusions cover only recorded inputs, document types are not yet adjudicated, and windows/paragraphs outside the 200–3,500-character policy are omitted. Human review remains pending; trusted label import and model-tagging orchestration are not implemented by this command. No actual residual workload or safe auto-accept rate is established.

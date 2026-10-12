@@ -35,6 +35,9 @@ from congressional_globe.storage import (
     retry_review_jobs,
     run_summary,
 )
+from congressional_globe.subject_exclusions import build_subject_exclusions
+from congressional_globe.subject_sampling import build_subject_review_sample
+from congressional_globe.subject_vocabulary import load_draft_vocabulary
 from congressional_globe.workflow import run_static_first
 
 
@@ -63,6 +66,8 @@ def _commands() -> dict[str, CommandHandler]:
         "cleanup": _cleanup,
         "static-cleanup": _static_cleanup,
         "static-first": _static_first,
+        "subject-sample": _subject_sample,
+        "subject-exclusions": _subject_exclusions,
     }
 
 
@@ -280,6 +285,8 @@ def _parser() -> argparse.ArgumentParser:
     _cleanup_command(commands)
     _static_cleanup_command(commands)
     _static_first_command(commands)
+    _subject_sample_command(commands)
+    _subject_exclusions_command(commands)
     return parser
 
 
@@ -455,3 +462,64 @@ def _cleanup_shared(command: argparse.ArgumentParser) -> None:
 
 def _root_argument(command: argparse.ArgumentParser) -> None:
     command.add_argument("--root", default=".")
+
+
+def _subject_sample(arguments: argparse.Namespace, _: Path) -> None:
+    vocabulary = load_draft_vocabulary()
+    report = build_subject_review_sample(
+        Path(arguments.pages),
+        Path(arguments.exclusions),
+        Path(arguments.output),
+        arguments.seed,
+        arguments.per_part,
+        progress_callback=_subject_sample_progress,
+    )
+    output = Path(arguments.output)
+    (output / "vocabulary.json").write_text(
+        vocabulary.model_dump_json(indent=2) + "\n", encoding="utf-8"
+    )
+    report["vocabulary_digest"] = vocabulary.digest
+    report["vocabulary_version"] = vocabulary.version
+    (output / "manifest.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(report, indent=2))
+
+
+def _subject_exclusions(arguments: argparse.Namespace, _: Path) -> None:
+    output = Path(arguments.output)
+    report_path = output.with_suffix(".report.json")
+    if report_path.exists():
+        raise FileExistsError(report_path)
+    report = build_subject_exclusions(
+        [Path(path) for path in arguments.samples],
+        output,
+        Path(arguments.jobs_database),
+    )
+    serialized = json.dumps(report.model_dump(mode="json"), indent=2)
+    report_path.write_text(serialized + "\n", encoding="utf-8")
+    print(serialized)
+
+
+def _subject_sample_command(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
+    command = commands.add_parser(
+        "subject-sample", help="Prepare a small raw-text review sample; no model calls"
+    )
+    command.add_argument("--pages", required=True)
+    command.add_argument("--exclusions", required=True)
+    command.add_argument("--output", required=True)
+    command.add_argument("--seed", type=int, default=20261012)
+    command.add_argument("--per-part", type=int, default=2)
+
+
+def _subject_exclusions_command(
+    commands: argparse._SubParsersAction[argparse.ArgumentParser],
+) -> None:
+    command = commands.add_parser(
+        "subject-exclusions", help="Record known prior samples and attempted jobs; no model calls"
+    )
+    command.add_argument("--samples", nargs="+", required=True)
+    command.add_argument("--jobs-database", required=True)
+    command.add_argument("--output", required=True)
+
+
+def _subject_sample_progress(event: dict[str, object]) -> None:
+    print(json.dumps(event), flush=True)

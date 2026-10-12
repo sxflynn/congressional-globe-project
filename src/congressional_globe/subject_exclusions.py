@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 import sqlite3
+import tempfile
 from pathlib import Path
 from typing import Annotated, Literal
 from urllib.parse import quote
@@ -72,7 +74,7 @@ class _DatabaseSource(BaseModel):
     item_identifier: NonBlank
     part_number: int = Field(ge=1, le=5)
     scan_leaf: int = Field(ge=0)
-    paragraph_id: NonBlank
+    id: NonBlank
 
 
 def build_subject_exclusions(
@@ -167,6 +169,8 @@ def _read_attempted_jobs(
 ) -> tuple[str | None, int]:
     if database is None:
         return None, 0
+    before_state = _database_state(database)
+    before_hash = _database_digest(database)
     uri = f"file:{quote(str(database.resolve()))}?mode=ro"
     with sqlite3.connect(uri, uri=True) as connection:
         claimed = connection.execute(
@@ -178,23 +182,49 @@ def _read_attempted_jobs(
             "SELECT attempts, paragraph_id, source_json FROM cleanup_jobs WHERE attempts > 0"
         )
         records = [_database_exclusion(row) for row in rows]
+    after_state = _database_state(database)
+    after_hash = _database_digest(database)
+    if before_state != after_state or before_hash != after_hash:
+        raise ValueError("jobs database changed while exclusions were being read")
     exclusions.update(records)
-    return _sha256_file(database), len(records)
+    return after_hash, len(records)
 
 
 def _database_exclusion(row: tuple[int, str, str]) -> ExcludedParagraph:
     _attempts, paragraph_id, source_json = row
     source_data = json.loads(source_json)
-    source = _DatabaseSource.model_validate({**source_data, "paragraph_id": paragraph_id})
-    match = _PARAGRAPH_ID.fullmatch(source.paragraph_id)
+    source = _DatabaseSource.model_validate(source_data)
+    if source.id != paragraph_id:
+        raise ValueError("cleanup job paragraph_id does not match source_json id")
+    match = _PARAGRAPH_ID.fullmatch(source.id)
     if match is None or int(match.group(1)) != source.scan_leaf:
         raise ValueError("attempted cleanup job has an inconsistent generated paragraph ID")
     return ExcludedParagraph(
         item_identifier=source.item_identifier,
         part_number=source.part_number,
         scan_leaf=source.scan_leaf,
-        paragraph_id=source.paragraph_id,
+        paragraph_id=source.id,
     )
+
+
+def _database_state(path: Path) -> tuple[tuple[int, int, int, int] | None, ...]:
+    return tuple(_path_state(candidate) for candidate in (path, Path(f"{path}-wal")))
+
+
+def _path_state(path: Path) -> tuple[int, int, int, int] | None:
+    if not path.exists():
+        return None
+    stat = path.stat()
+    return stat.st_dev, stat.st_ino, stat.st_size, stat.st_mtime_ns
+
+
+def _database_digest(path: Path) -> str:
+    content = "".join(
+        f"{candidate.name}:{_sha256_file(candidate)}"
+        for candidate in (path, Path(f"{path}-wal"))
+        if candidate.exists()
+    )
+    return hashlib.sha256(content.encode("utf-8")).hexdigest()
 
 
 def _sha256_file(path: Path) -> str:
@@ -211,5 +241,16 @@ def _source_sort_key(source: ExcludedParagraph) -> tuple[str, int, int, str]:
 
 def _write_new_file(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("x", encoding="utf-8") as destination:
-        destination.write(content)
+    temporary: Path | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", dir=path.parent, prefix=f".{path.name}.", delete=False
+        ) as destination:
+            temporary = Path(destination.name)
+            destination.write(content)
+            destination.flush()
+            os.fsync(destination.fileno())
+        os.link(temporary, path)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)

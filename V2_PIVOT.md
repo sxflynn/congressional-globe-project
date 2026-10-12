@@ -1,5 +1,7 @@
 # V2 pivot: research-first corpus without OCR repair
 
+Latest offline operator step: `make v2-sample` prepares ten blinded raw-text topic-review passages and freezes the draft vocabulary, with no model calls. Current output is `artifacts/v2-subject-review/`; do not overwrite or rerun it. Requirements, diagnostic limitations and commands are in [V2_TAGGING_EVAL.md](V2_TAGGING_EVAL.md); exact evidence is in the newest `PROGRESS.md` checkpoint.
+
 Draft next-stage subject scopes and evaluation requirements: [V2_TAGGING_EVAL.md](V2_TAGGING_EVAL.md). Historical diagnostics remain frozen; this contract is not an approved vocabulary or a quality result.
 
 ## Evidence checklist for the pivot decision
