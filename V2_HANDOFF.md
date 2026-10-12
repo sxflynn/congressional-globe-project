@@ -20,7 +20,7 @@ Human review is next: `artifacts/v2-pivot-20261011/raw-vs-static-transfer/review
 
 ## Start here
 
-**Resume from “Latest decision checkpoint” below and the final PROGRESS entries. Earlier command examples are historical; completed run IDs must not be launched again.**
+**Resume from the evidence checklist in `V2_PIVOT.md`, the latest tagging checkpoint here and the final PROGRESS entries. Earlier command examples are historical; completed run IDs must not be launched again.**
 
 Work in `/Users/sflynn/Downloads/congressional globe project`. Read `AGENTS.md`, the latest V2 section of `PROGRESS.md`, `V2_PIVOT.md` and `V2_EMBEDDING_MODELS.md`. New user instructions take precedence. Preserve the existing cleanup implementation, sources, queues and exports. The experiment asks whether **unchanged OCR plus organization and metadata** can support research retrieval and grounded answers without further OCR correction.
 

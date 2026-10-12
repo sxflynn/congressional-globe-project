@@ -1,5 +1,25 @@
 # V2 pivot: research-first corpus without OCR repair
 
+## Evidence checklist for the pivot decision
+
+Offline audit after commit `cfe5a39`; this checklist records the original scope, not a claim of completion. Evidence paths below are relative to `artifacts/v2-pivot-20261011/` and require copying local artifacts when moving machines.
+
+| Requirement | Evidence currently available | What remains open |
+| --- | --- | --- |
+| Preserve existing cleanup and immutable OCR | Separate raw/static inputs, source hashes and exact anchored spans; queue unchanged in latest checkpoint | Preserve both paths in the eventual pilot/export |
+| Organize raw text for retrieval | Source-linked windows across all five parts; `raw-vs-static-transfer/windows.jsonl` | Speaker-turn/debate boundaries remain unverified; windows are not speeches |
+| Raw vectors versus cleaned vectors | Native Qwen4B rankings in `raw-vs-static-transfer/embedding-runs/raw-static-transfer-live-20261011-01/retrieval-report.json`, both10/10 intended targets first; harder125-window/29-question experiment also recorded | Human relevance judgments, harder held-out questions and negative controls; current samples nearly saturate |
+| Controlled subject tagging and OCR workload | `tag-cleanup-cost/report.json`: improved raw/static candidates identical; ten Mini proposals and pending human packet | Scoped vocabulary, accepted subject labels, precision/recall and actual residual-call workload |
+| People, cities and legislation | Evidence-linked lexical candidates in `tier2/tagged_pool.jsonl`; five-case role diagnostic with held failures in `metadata-filters/span-selection/` | Person/place/bill authority resolution, historical affiliations and reviewed relationships; candidate mentions are not resolved identities |
+| Loose discovery tags | Proposed as a separate unverified layer | Separate bounded evaluation; no validated loose-tag result |
+| Hard metadata plus vector retrieval | `metadata-filters/report.json` demonstrates candidate-only filtering | Verified speaker/date coverage remains zero; no trusted combined filtering benchmark |
+| Grounded answers from returned raw documents | Actual top-three inputs and paired Mini/Qwen outputs in `raw-vs-static-transfer/runs/`; provisional review with exact citations | Human adjudication; qualification, attribution and abstention failures remain |
+| Reproducible human-operated workflow | Frozen inputs/config/scripts, audits/progress and offline commands in `PROGRESS.md` and `V2_HANDOFF.md`; provider-neutral embedding contracts in source | Portable pilot packaging, reviewed release and full-run decision; Git alone omits local prototype scripts/evidence |
+
+**Recommendation supported today:** continue toward a reviewed raw-text retrieval pilot; retain optional static matching/readability and targeted cleanup. Do not treat vector success as proof that historical metadata or subjects are correct. The full pivot objective remains active because the controlled authorities, trusted hard filters, loose-tag evaluation and packaged pilot are not established.
+
+**Next executable work:** inspect the saved human-pending subject/answer packets before making more calls. Freeze explicit vocabulary scope notes and a held-out evaluation contract, then measure acceptance and residual workload against human labels. Do not rerun completed experiments to manufacture confidence.
+
 ## Latest tagging checkpoint
 
 The user also asks whether dirty OCR increases AI tagging workload. Provider-free comparison on 50 windows found **identical raw/static candidate topic sets** with word boundaries and hyphen/whitespace folding:78 assignments in 44 windows, 1.70 seconds. Literal raw matching found72/43. Source OCR remained immutable; exact spans and full anchors were checked. The earlier substring comparator was confounded; final report supersedes preliminary cleanup gains. These are candidate counts, not subject precision/recall or proof 44 windows can bypass AI.

@@ -566,3 +566,9 @@ UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python artifacts/v
 Artifacts/scripts are Git-ignored and machine-local; copy this evidence directory and source snapshot when changing machines/harnesses. Follow `V2_HANDOFF.md` and this latest checkpoint. No further local or paid experiment is needed to inspect the saved evidence.
 
 Final wrap-up: production queue remains 1,339 completed /423 review /20,785 pending /0 claimed. All workers in this unit are terminal; no further model calls scheduled by this work. Human review and workload-policy validation remain unfinished, explicitly handed off above.
+
+### Offline pivot-scope audit and handoff
+
+Previous goal turn was **progress**: new deterministic/ten-call tagging evidence, reviewed packets and commit `cfe5a39`. This continuation made no model calls. Luna `pivot_evidence_audit` inspected current files and reports; root checked provider-neutral source contracts and the saved subject human packet (`pending_human_review`). Added the requirement-by-requirement evidence checklist at the top of `V2_PIVOT.md`, separating demonstrated small experiments from unverified authorities, loose tags, hard speaker/date filters and portable pilot packaging. `V2_HANDOFF.md` now directs continuation there.
+
+The original goal remains active and incomplete; no completion or blocked status is warranted. This is not an impasse: vocabulary scope notes and a held-out evaluation contract can be prepared offline, while human adjudication remains necessary for historical quality claims. Respect the human's wrap-up request: no further model calls in this unit, no full-corpus processing, no restarted spent runs. Next work follows the ordered checklist above.
