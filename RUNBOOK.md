@@ -485,3 +485,7 @@ On the harder 125-window/29-question sample, Qwen3 embedding 4B put intended tar
 The complete current static export contains 19,803 validated RAG chunks. Observed local embedding throughput projects approximately 6.1–6.3 hours for that snapshot, excluding index construction/export, startup and workload changes. Evidence and source hashes are in `artifacts/v2-pivot-20261011/tier2/runtime-estimate/report.json`; no full-corpus embedding job was launched.
 
 Human review: `open artifacts/v2-pivot-20261011/human-review/index.html`, inspect the 31 pending entries and download draft ratings. The next model-stage POC uses frozen source-span IDs rather than asking models to recopy evidence. Controlled roles and unknown dates still require independent meaning/attribution review. Copy ignored local evidence alongside the tracked handoff when switching harnesses or machines. Current recommendation is a reviewed raw-text retrieval pilot with cleanup available for demonstrated misses; full processing remains premature.
+
+### Offline V2 subject review
+
+Use `globe subject-review-template` and `globe subject-review-import` as documented in [V2_TAGGING_EVAL.md](V2_TAGGING_EVAL.md). These bind explicit human judgments to the frozen raw sample and vocabulary without provider calls or canonical changes. Sample quality, human judgments and model comparisons remain separate; consult the latest PROGRESS checkpoint.

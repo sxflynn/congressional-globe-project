@@ -36,6 +36,7 @@ from congressional_globe.storage import (
     run_summary,
 )
 from congressional_globe.subject_exclusions import build_subject_exclusions
+from congressional_globe.subject_review import build_subject_review_template, import_subject_reviews
 from congressional_globe.subject_sampling import build_subject_review_sample
 from congressional_globe.subject_vocabulary import load_draft_vocabulary
 from congressional_globe.workflow import run_static_first
@@ -68,6 +69,8 @@ def _commands() -> dict[str, CommandHandler]:
         "static-first": _static_first,
         "subject-sample": _subject_sample,
         "subject-exclusions": _subject_exclusions,
+        "subject-review-template": _subject_review_template,
+        "subject-review-import": _subject_review_import,
     }
 
 
@@ -287,6 +290,7 @@ def _parser() -> argparse.ArgumentParser:
     _static_first_command(commands)
     _subject_sample_command(commands)
     _subject_exclusions_command(commands)
+    _subject_review_commands(commands)
     return parser
 
 
@@ -523,3 +527,25 @@ def _subject_exclusions_command(
 
 def _subject_sample_progress(event: dict[str, object]) -> None:
     print(json.dumps(event), flush=True)
+
+
+def _subject_review_template(arguments: argparse.Namespace, _: Path) -> None:
+    count = build_subject_review_template(Path(arguments.sample), Path(arguments.output))
+    print(json.dumps({"windows": count, "status": "pending_human_review", "provider_calls": 0}))
+
+
+def _subject_review_import(arguments: argparse.Namespace, _: Path) -> None:
+    report = import_subject_reviews(
+        Path(arguments.sample), Path(arguments.reviews), Path(arguments.output)
+    )
+    print(report.model_dump_json(indent=2))
+
+
+def _subject_review_commands(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
+    template = commands.add_parser("subject-review-template", help="Prepare blank human labels")
+    template.add_argument("--sample", required=True)
+    template.add_argument("--output", required=True)
+    review = commands.add_parser("subject-review-import", help="Validate explicit human labels")
+    review.add_argument("--sample", required=True)
+    review.add_argument("--reviews", required=True)
+    review.add_argument("--output", required=True)

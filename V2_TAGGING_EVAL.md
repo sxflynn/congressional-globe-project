@@ -53,7 +53,7 @@ Prior candidate matching and ten-call Mini results are diagnostics only, not thi
 
 Use `validate_subject_proposals` before consuming assignments. The `reviewed_in_scope_subject_ids` helper validates source and vocabulary references and returns eligibility only from explicit human-reviewed decisions. Review records must come from a trusted host review channel; a provider response must never be permitted to claim human review. The helper neither authenticates a reviewer nor establishes historical truth. Loose discovery tags never enter it.
 
-The implementation does not yet supply a curated vocabulary release, a model runner, a human-review import workflow, calibrated auto-accept policy, passage assessment for missing/OOV subjects, authority resolution or production routing. The evaluation protocol above remains necessary. `make gate` checks the portable contracts/matcher; historical quality requires separate human evidence.
+The implementation does not yet supply a curated vocabulary release, a model runner, calibrated auto-accept policy, passage assessment for missing/OOV subjects, authority resolution or production routing. The evaluation protocol above remains necessary. `make gate` checks the portable contracts/matcher; historical quality requires separate human evidence.
 
 ## Prepare a reproducible offline review sample
 
@@ -63,4 +63,25 @@ Outputs: `artifacts/v2-subject-exclusions.json` and its build report; `artifacts
 
 Progress prints pages scanned and elapsed seconds while streaming. Total page count is unknown until completion; no invented ETA is displayed. The manifest records source, packet, code, exclusion and vocabulary digests, eligible and excluded counts, seed and selection policy. Reuse the saved sample for paired model tests rather than resampling. For a deliberately new diagnostic use `globe subject-sample` with a new output directory and recorded seed.
 
-This is **part-stratified diagnostic preparation**, not a held-out quality benchmark: exclusions cover only recorded inputs, document types are not yet adjudicated, and windows/paragraphs outside the 200–3,500-character policy are omitted. Human review remains pending; trusted label import and model-tagging orchestration are not implemented by this command. No actual residual workload or safe auto-accept rate is established.
+This is **part-stratified diagnostic preparation**, not a held-out quality benchmark: exclusions cover only recorded inputs, document types are not yet adjudicated, and windows/paragraphs outside the 200–3,500-character policy are omitted. Human review remains pending; the separate label-import commands below require explicit human decisions; model-tagging orchestration is not implemented by this command. No actual residual workload or safe auto-accept rate is established.
+
+## Record human judgments separately
+
+Keep `review_packets.jsonl` unchanged. Generate a separate editable label file:
+
+```bash
+uv run globe subject-review-template --sample artifacts/v2-subject-review \
+  --output artifacts/v2-subject-human-labels.jsonl
+```
+
+Read each window in the packet alongside the frozen `vocabulary.json`. Replace pending fields in the label file with your reviewer identifier, timezone-bearing timestamp, note and decision. For subjects use stable vocabulary IDs, `in_scope` or `mention_only`, and exact paragraph quotes with half-open Unicode character offsets. Record substantive topics outside the vocabulary separately, including their evidence. Unknown means insufficient evidence; no subject means none is substantively in scope, not merely no cue hits. Do not let an AI populate this file and then describe its decisions as human judgments.
+
+Validate and preserve your completed file:
+
+```bash
+uv run globe subject-review-import --sample artifacts/v2-subject-review \
+  --reviews artifacts/v2-subject-human-labels.jsonl \
+  --output artifacts/v2-subject-human-reviewed.jsonl
+```
+
+Both commands are offline and refuse existing outputs. Import requires a decision for every window, binds the exact packet and vocabulary digests, and checks cited raw-text spans and source anchors. Blank/pending labels cannot be imported. It preserves a separate reviewed dataset and reports input/output hashes. Explicit file submission is the human-review trust boundary; validation does not authenticate the reviewer or establish historical truth. Reviewed labels do not automatically certify held-out coverage, authorize model processing, or create a safe automatic acceptance policy. Preserve independently authored reviews as separate files to inspect disagreements before adjudication.
