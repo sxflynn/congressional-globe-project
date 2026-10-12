@@ -1,5 +1,7 @@
 # Congressional Globe RAG Corpus Runbook
 
+Subject-stage development: [V2_TAGGING_EVAL.md](V2_TAGGING_EVAL.md) defines draft scopes and evaluation requirements. Portable subject contracts and a provider-free cue matcher now live in source; this is not a production tagging command or an accepted vocabulary.
+
 ## Latest tagging checkpoint
 
 The user also asks whether dirty OCR increases AI tagging workload. Provider-free comparison on 50 windows found **identical raw/static candidate topic sets** with word boundaries and hyphen/whitespace folding:78 assignments in 44 windows, 1.70 seconds. Literal raw matching found72/43. Source OCR remained immutable; exact spans and full anchors were checked. The earlier substring comparator was confounded; final report supersedes preliminary cleanup gains. These are candidate counts, not subject precision/recall or proof 44 windows can bypass AI.

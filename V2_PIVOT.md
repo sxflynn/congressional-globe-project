@@ -1,5 +1,7 @@
 # V2 pivot: research-first corpus without OCR repair
 
+Draft next-stage subject scopes and evaluation requirements: [V2_TAGGING_EVAL.md](V2_TAGGING_EVAL.md). Historical diagnostics remain frozen; this contract is not an approved vocabulary or a quality result.
+
 ## Evidence checklist for the pivot decision
 
 Offline audit after commit `cfe5a39`; this checklist records the original scope, not a claim of completion. Evidence paths below are relative to `artifacts/v2-pivot-20261011/` and require copying local artifacts when moving machines.
