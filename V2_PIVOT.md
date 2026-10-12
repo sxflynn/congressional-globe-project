@@ -1,5 +1,15 @@
 # V2 pivot: research-first corpus without OCR repair
 
+## Latest decision checkpoint: raw OCR versus cleanup
+
+The current question is whether further OCR cleanup must precede vector retrieval and grounded answers. Fresh POC `raw-static-transfer-live-20261011-01` compares original OCR with existing deterministic static edits across50 windows,10 questions and all five parts, excluding earlier sample paragraphs. Both native Qwen4B arms rank all 10 intended targets first. This supports a **reviewed raw-text retrieval pilot**, with targeted cleanup for demonstrated failures; it does not justify full processing or declare OCR errors harmless. This is not a comparison with perfect transcription.
+
+Actual retrieved top-three contexts fed20 Mini answers (32.44 seconds, estimated $0.048741) and10 matched local Qwen answers (251.89 seconds, $0 API). All responses pass schema/citation-ID checks; AI-provisional review finds Mini raw 7 supported /3 partial versus static 6 supported /4 partial, and Qwen each arm 1 supported /3 partial /1 incorrect abstention. These are small diagnostic counts, not accuracy estimates. Five pairs have different top-three contexts, and single completions cannot establish a causal cleanup effect. Raw OCR still yielded the correct twenty-dollar monthly guardian allowance; cleanup did not consistently fix omitted qualifications, hedge loss, clipped answers or abstention.
+
+All workers are terminal (embedding 77553, Mini 87884, Qwen 40536); do not repeat their IDs. Main gate passed 107 tests. Latest queue remains 1,339 completed /423 review /20,785 pending /0 claimed. Exact audit hashes, freeze-timing caveat and resume command are in the final `PROGRESS.md` checkpoint.
+
+Human review is next: `artifacts/v2-pivot-20261011/raw-vs-static-transfer/review/human-review-pending-20.json` and `qwen-human-packet-pending.jsonl`, with paired source evidence in `mini-answer-review.json`, `pairedscorecard.json` and `qwen-answer-review.json`. All decisions are pending. These packets are separate from the older HTML viewer. Then establish harder human-adjudicated tasks and unanswerable controls, and package the pilot; metadata interface tuning is secondary to this main decision. No further calls are needed to inspect saved results. Copy these ignored machine-local artifacts when moving harnesses/machines; a Git checkout alone omits them.
+
 ## Status and hypothesis
 
 For the local embedding-model recommendation and compatibility checks, see [V2_EMBEDDING_MODELS.md](V2_EMBEDDING_MODELS.md).

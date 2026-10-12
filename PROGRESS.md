@@ -463,3 +463,60 @@ UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python artifacts/v
 For existing run progress, read `runs/<run-id>/progress.json` or `tail -f runs/<run-id>/events.jsonl` under the span-selection directory. Events preserve source/result and counts/percent/elapsed/ETA; the ETA is observed pacing, not a guarantee. `--live --provider openai --model gpt-5.4-mini` or `--live --provider ollama --model qwen3.8:27b-mlx` explicitly enables a bounded five-case run; **do not rerun the spent IDs or start another test without the next-version preparation above**. A missing tmp copy is irrelevant: this durable script runs in place. These artifacts remain local/ignored; copy them for another machine/harness.
 
 Independent two-provider review is complete at `metadata-filters/span-selection/review/two-provider-case-review.json`; five matched human entries remain pending in `two-provider-human-packet-pending.json`. These are additional to the 31 entries in the HTML viewer. All excerpts and source hashes were checked; no human or image verification is claimed. Main gate passed 107 tests; ignored POC helpers passed separate Ruff/complexity/fixture checks, not main-suite coverage.
+
+### Direct raw-versus-cleaned transfer POC preparation
+
+Previous unit **made progress**: completed harder semantic/fusion experiments, bounded evidence-ID diagnostics and committed cross-harness findings (`9865653`). The subsequent explanatory reply changed no state. User clarified the main question: whether OCR cleanup is necessary before vectors and grounded answers. This unit prioritizes a **fresh matched raw/static retrieval-and-answer sample** over further metadata interface tuning; human review and reliable metadata remain open.
+
+Authoritative inspection: no live model worker; production queue 1,339 completed /423 review /20,785 pending /zero claimed. Luna delegates `raw_cleanup_sample`, `raw_cleanup_vectors`, `raw_cleanup_eval` prepare isolated artifacts under `artifacts/v2-pivot-20261011/raw-vs-static-transfer/`: 10 substantive target windows and40distractors spanning all five parts, excluding earlier source paragraphs; questions/evidence frozen before retrieval. Native 4B vectors compare raw vs existing static text with identical query settings. The answer task has only a concise answer/status and short paragraph aliases; host materializes literal source paragraphs. No new cleaning, corpus writes, authority assignments or model calls have started at this checkpoint.
+
+Planned limits: ≤25 sequential embedding requests /900seconds; ≤20 Mini answer calls /45seconds each /700output tokens /900seconds, optionally a separate ten-call local matched subset only after the embedding worker is terminal. Source/edit/noise selection is a proxy for challenging text, not measured OCR accuracy. Labels remain AI-provisional and human-pending; a new sample is not an independently established gold benchmark. Root audits scripts/inputs/fixtures before live.
+
+Evaluation refinement before live: the primary answer test will consume the **actual top three windows returned by the new raw/static vector searches**, not the assigned target passage. Short paragraph aliases are generated across those returned contexts, preserving window/source/paragraph mappings. Frozen top3/report hashes, prompt and k=3 make the comparison reproducible; gold target/reference claims stay out of model inputs. Direct-target fixtures are plumbing/conditional-comprehension checks only.
+
+Fresh embedding run **`raw-static-transfer-live-20261011-01`** launched, session **77553**: 50 windows/10queries,110inputs/22plannednew requests, native Qwen4B2560, verifiedexpectedmodeldigest,25request hardcap,840-second runtime/900-second outer deadline. Frozenrunner `72d988af245cd4a2d85956f286bd492e64653dbd401214cc7a88b2a2db949bed`; copied to `embedding-runs/<run-id>/script-used.py`. Progress/events/report/cache under that directory, shell log `raw-vs-static-transfer/embedding-worker.log`. Inputs were frozen before calls; static arm excludes allAIedits. Poll77553, do not startanotherOllamaworker orrepeatthisID.
+
+### Fresh vector result and freeze timing correction
+
+Embedding session **77553 terminal, exit0**. Run `raw-static-transfer-live-20261011-01` completed110inputs/22newrequests in **111.143seconds**,73,178prompt-evaltokens,$0API. Native2560 raw/static both10/10 intendedtargetfirst(MRR1.0). This fresh selected-question50-window sample is again saturated and does not establish corpus-wide relevance accuracy; answer grounding is the next discriminator. Original/source and static texts were unchanged.
+
+Preparer revised provisional reference claims/evidence during worker launch and rewrote query/manifest files after the initial offline dryrun. Root preserved `postlaunch-preparer-revision/` and verified **actual loaded live queries reconstructed from the terminal report match current queries byte-for-byte**, SHA `a36c6cee447342792abc08e010505b0e9831c9f9472ab12a0f84b423330a9da7`. The early dryrun hash0c9642dd differs; do not use it to describe live inputs. Saved `embedding-runs/<run-id>/queries-used.jsonl` and `freeze-timing-correction.json`. The preparer's pre-live-review timing flag is unreliable; labels were finalized before answer-provider calls, not defensibly before launch. No provider rerun was needed.
+
+Independent reference audit `review/reference-claim-audit.json` found4supported/5supportedwithqualification/1partial among tenAIauthored claims; humanpending. Q03 omits required assent/Governor transmission/presidentialproclamation steps; Q07 must retain “Ithink”; Q08 should specify50%advalorem. Reference strings are not gold and will not be used as exact-match answer correctness.
+
+Matched top3-answer runs launched: **Mini `raw-static-answer-mini-20261011-01`, session87884**,20requests(alltenquestions×raw/static); **Qwen `raw-static-answer-qwen-20261011-01`, session40536**,10sequentiallocalrequests(q01/03/05/07/09×raw/static,onequestion/part). The embedding worker is terminal; MiniremoteandQwenlocal can coexist without overlapping local requests. Same concise answer prompt/schema,700outputtokens,45secondtimeout,noSDKretries,900secondruntime. ScriptSHA `be5f494ccc4c972bf2b3772b6e62ea6af9db8d4ecccaabf63ab58f070c0f4d60`; actualreportSHA `d8d4db272db89c24195632c95778f9c952645a4a3ad9eb767d68f22b0e1d5056`. Source/target/manifest/rubric/script copied to each `runs/<run-id>/frozen-inputs/`. Results/events/atomicprogress under those runs; shelllogs `mini-answer-worker.log`/`qwen-answer-worker.log`. Poll87884/40536 before anyrepeat. No productionwrites.
+
+Mini answer session **87884 terminal, exit0**:20/20responses andstructuralpasses,32.44 secondswall/32.359summedrequestseconds,56,582input/1,401outputtokens,zerocached,estimated **$0.048741**. Allanswersclaimsupport; this is not yet semanticacceptance. IndependentLuna review underway. Qwen 40536 remainsactive (latestconfirmed4/10responses,allstructurallyvalid); no otherlocalworker. Exactquestiontextjoins toactualembeddingreport andall50anchors/hashes passedoffline; retrievedinputpayloads8,977–12,063characters; no arbitrarytruncation.
+
+### Direct raw/static POC terminal and decision checkpoint
+
+All three workers are terminal, exit 0: embedding 77553, Mini 87884, Qwen 40536. No live model worker remains. Final queue inspection: 1,339 completed /423 review /20,785 pending /0 claimed; sources, accepted edits, exports and production queue were not modified. Main `make gate` passed 107 tests (70.03 seconds), Ruff/ty/complexity; log `raw-vs-static-transfer/gate.log`. Ignored POC helpers have separate offline fixtures/Ruff/complexity checks, not main-suite coverage.
+
+| Bounded test | Requests | Wall time | Input/output tokens | API cost estimate |
+| --- | --: | --: | --- | --: |
+| Qwen4B native2560 embeddings, raw/static | 22 | 111.143s | 73,178 prompt-eval | $0 |
+| GPT Mini answers,10 questions ×2arms | 20 | 32.44s | 56,582 /1,401 | $0.048741 |
+| Local Qwen answers,5questions ×2arms | 10 | 251.89s | 27,669 /753 | $0 |
+
+Mini pricing is a token-rate estimate, not an invoice; local costs exclude hardware/electricity. Matched Mini ten calls took 17.738 summed request seconds versus Qwen 251.843; small cases, differing backends/tokenizers and one completion per arm prevent generalized speed/quality guarantees. Root verified all 30 reviewed answers, statuses, evidence aliases and input-payload hashes against saved result rows; ten matched provider input hashes agree.
+
+**Finding:** both raw/static vector arms retrieved the intended target first on 10/10 fresh selected questions among50 windows. This supports continuing with raw-text retrieval without making further LLM OCR cleanup a prerequisite. It does not prove cleanup unnecessary for every research task. Comparison is original OCR versus existing deterministic static edits, not perfect transcription or a completed LLM cleanup. No full-corpus launch is recommended yet. Top-three window sets differ in five pairs; generation variation and context differences prevent attributing answer differences solely to cleanup.
+
+Independent AI-provisional Mini review: raw 7 supported /3 partial; static 6 supported /4 partial. Qwen: each arm 1 supported /3 partial /1 incorrect abstention. All20 Mini and10Qwen responses pass structural checks; this is not historical correctness. Qwen voter-qualification answers end mid-sentence at the 500-character field limit despite valid JSON/stop finish. Both local arms omit a presidential proclamation step and abstain on an answerable committee question. Mini raw preserves Fessenden's “I think,” while its static answer drops that hedge; both omit the ad-valorem unit in the steel-duty answer. Original OCR `sura` did not prevent either model from answering the Spencer Kellogg guardian allowance as twenty dollars per month. These examples show answer fidelity/format limits which static cleanup did not consistently solve. Exact names, numbers, dates and quotations still need stronger evaluation.
+
+Review files under `artifacts/v2-pivot-20261011/raw-vs-static-transfer/review/`: `mini-answer-review.json`, `pairedscorecard.json`, `human-review-pending-20.json`, `qwen-answer-review.json`, `qwen-human-packet-pending.jsonl`. All human decisions remain pending; these are separate from the earlier 31-entry HTML viewer. Root caught a reviewer conflation of Mini's hedge-preserving answer with Qwen's answer; corrected review and correction audit retain the actual identical Qwen q07 answers. Do not treat automated review as human gold.
+
+**Ordered next steps (supersedes older lists):**
+
+1. [ ] Human-adjudicate these paired answer packets and prior relevance disagreements, focusing on omitted conditions, hedges, attribution and citations.
+2. [ ] Freeze a harder held-out benchmark with human standards, exact-name/date/number/quotation tasks, unanswerable controls and relevant alternatives. Avoid another saturated known-question rerun.
+3. [ ] Package a resumable raw-text retrieval pilot with reviewable citations, progress logs and operator commands; add targeted cleanup only for demonstrated failures. Keep speaker/date enrichment independently evaluated.
+4. [ ] The human decides whether to launch full indexing after that evidence. No full-corpus model job has run in this unit.
+
+Offline reproduction of answer plumbing (new ID, zero provider calls; existing saved retrieval report):
+
+```bash
+UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python artifacts/v2-pivot-20261011/raw-vs-static-transfer/answer_benchmark.py --run-id offline-transfer-check-02 --retrieval-report artifacts/v2-pivot-20261011/raw-vs-static-transfer/embedding-runs/raw-static-transfer-live-20261011-01/retrieval-report.json
+```
+
+Do not restart completed live IDs. Inspect `runs/<run-id>/progress.json` or `events.jsonl` for counts/percent/elapsed/ETA and literal source/result evidence. Cross-machine continuation requires copying these Git-ignored artifacts and source snapshot. Freeze-timing correction above remains authoritative; do not claim provisional reference labels were finalized before worker launch.
