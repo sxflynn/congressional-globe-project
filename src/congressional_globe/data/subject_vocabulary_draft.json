@@ -1,0 +1,87 @@
+{
+  "version": "v2-subjects-draft-1",
+  "schema_version": "1",
+  "status": "draft",
+  "definitions": [
+    {
+      "subject_id": "subj.reconstruction",
+      "label": "Reconstruction",
+      "scope": "Postwar restoration, readmission, and political reorganization of the former Confederate states.",
+      "inclusion": ["restoration of former states", "readmission", "political reorganization"],
+      "exclusion": ["incidental use of reconstruction in another sense"],
+      "aliases": ["reconstruction", "restoration", "readmission"]
+    },
+    {
+      "subject_id": "subj.citizenship",
+      "label": "Citizenship",
+      "scope": "National citizenship, legal status, naturalization, and incidents of citizenship.",
+      "inclusion": ["national citizenship", "citizenship status", "naturalization", "legal incidents of citizenship"],
+      "exclusion": ["citizen used only as an address or honorific"],
+      "aliases": ["citizenship", "citizen", "naturalization", "nationality"]
+    },
+    {
+      "subject_id": "subj.civil_rights",
+      "label": "Civil rights",
+      "scope": "Equal civil or legal rights and their protection, including race-related rights.",
+      "inclusion": ["equal civil rights", "legal protection", "race-related rights"],
+      "exclusion": ["bare person or place mention without rights discussion"],
+      "aliases": ["civil rights", "equal rights", "civil equality", "legal protection"]
+    },
+    {
+      "subject_id": "subj.voting_rights",
+      "label": "Voting rights",
+      "scope": "Suffrage, franchise, voter qualifications, access to voting, and the right to vote.",
+      "inclusion": ["suffrage", "franchise", "voter qualifications", "access to voting", "right to vote"],
+      "exclusion": ["unrelated elections", "office or chamber procedure"],
+      "aliases": ["suffrage", "franchise", "elective franchise", "right of suffrage", "right to vote", "voting rights", "elective franchise", "electoral qualification"]
+    },
+    {
+      "subject_id": "subj.constitutional_change",
+      "label": "Constitutional change",
+      "scope": "Constitutional amendment, interpretation, or federal and state constitutional power when materially discussed.",
+      "inclusion": ["constitutional amendment", "constitutional interpretation", "federal or state constitutional power"],
+      "exclusion": ["routine bill amendment mentioned without constitutional discussion", "generic amendment reference alone"],
+      "aliases": ["constitutional amendment", "amendment to the Constitution", "Constitution", "constitutional power", "constitutional interpretation", "federal power", "state power"]
+    },
+    {
+      "subject_id": "subj.taxation",
+      "label": "Taxation",
+      "scope": "Tax policy, rates, collection, public revenue, and tax incidence.",
+      "inclusion": ["tax policy", "tax rates", "tax collection", "revenue", "tax incidence"],
+      "exclusion": ["incidental tax label in an unrelated list"],
+      "aliases": ["tax", "taxation", "tax rate", "revenue", "duties", "internal revenue", "excise"]
+    },
+    {
+      "subject_id": "subj.military_affairs",
+      "label": "Military affairs",
+      "scope": "Armed forces, military administration and service, and demobilization.",
+      "inclusion": ["armed forces", "military administration", "military service", "demobilization"],
+      "exclusion": ["passing veteran or person reference without military issue discussion"],
+      "aliases": ["army", "navy", "military", "armed forces", "soldier", "veteran", "demobilization"]
+    },
+    {
+      "subject_id": "subj.congressional_procedure",
+      "label": "Congressional procedure",
+      "scope": "Chamber rules, debate, motions, jurisdiction, and the legislative process.",
+      "inclusion": ["chamber rules", "debate", "motions", "jurisdiction", "legislative process"],
+      "exclusion": ["ordinary bill content", "procedural word used incidentally"],
+      "aliases": ["rule", "debate", "motion", "point of order", "jurisdiction", "legislative process", "Senate procedure", "House procedure"]
+    },
+    {
+      "subject_id": "subj.infrastructure",
+      "label": "Infrastructure",
+      "scope": "Public works, transport, communications, and their construction or operation.",
+      "inclusion": ["public works", "transport", "communications", "construction or operation of infrastructure"],
+      "exclusion": ["place or route mentioned only as context"],
+      "aliases": ["railroad", "railway", "road", "canal", "bridge", "telegraph", "harbor", "public works", "post road"]
+    },
+    {
+      "subject_id": "subj.public_compensation",
+      "label": "Public compensation",
+      "scope": "Pay, allowances, and compensation for public officers or employees.",
+      "inclusion": ["public officer pay", "employee allowances", "government compensation"],
+      "exclusion": ["private compensation", "name or title reference without compensation discussion"],
+      "aliases": ["salary", "salaries", "compensation", "allowance", "pay", "public officer", "government employee"]
+    }
+  ]
+}
