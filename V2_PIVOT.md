@@ -65,7 +65,7 @@ The user requested this exploratory POC and explicitly authorized small GPT Mini
 - [x] Select and freeze the initial fifty-window pool and harder 125-window tier; record source/text hashes and provisional query labels. Full relevance labeling remains pending.
 - [ ] Define typed, versioned tag/assertion and evidence-span contracts, including alternatives, unknown/mixed, and review states.
 - [ ] Write provisional labels and decision thresholds before running systems; keep ambiguity and reviewer disagreement visible.
-- [x] Compare raw/static lexical baselines and deterministic appended-tag arms on the same inputs. Separate metadata filters and harder semantic retrieval remain pending.
+- [x] Compare raw/static lexical baselines and deterministic appended-tag arms on the same inputs. Separate candidate filters and the harder semantic comparison are complete; verified metadata and human relevance labels remain pending.
 - [ ] Report per-part/document-type errors, citations, unsupported claims, and all limitations before deciding whether to continue.
 
 ## Risks to test
@@ -87,6 +87,34 @@ Appending broad deterministic tag words to BM25 text did not improve raw hit@1 a
 
 Six matched Mini calls on the first three targets took 16.691 seconds and approximately $0.015387 at uncached token rates; all six still require review. This is diagnostic replication of known Qwen failures, not a held-out model benchmark. Paired source/model outputs and a pending human rubric are saved in `artifacts/v2-pivot-20261011/mini-matched-review/`. The latest prompt-only diagnostic and terminal status belong in `PROGRESS.md`, which supersedes older checkpoints.
 
-A defensible next evaluation must separate (1) retrieving relevant raw passages, (2) correct evidence-backed roles/topics/dates with unknown/mixed handling, and (3) grounded answers. Test separate discovery metadata rather than concatenating all tags into prose; use held-out queries and independent relevance/role labels. Retain optional cleanup for demonstrated OCR-sensitive misses instead of treating perfect cleanup as a prerequisite. Human review and the harder semantic comparison remain necessary before recommending corpus-wide processing.
+A defensible next evaluation must separate (1) retrieving relevant raw passages, (2) correct evidence-backed roles/topics/dates with unknown/mixed handling, and (3) grounded answers. Test separate discovery metadata rather than concatenating all tags into prose; use held-out queries and independent relevance/role labels. Retain optional cleanup for demonstrated OCR-sensitive misses instead of treating perfect cleanup as a prerequisite. Human review and a broader independently labeled benchmark remain necessary before recommending corpus-wide processing.
 
-A prompt-only three-raw-case Mini diagnostic improved literal evidence and letter-author separation in one case (one validated/two review; 8.259 seconds, approximately $0.007323). It still missed a floor speaker and retained malformed `186-1` as a literal cue, not a resolved historical date. These observed limitations reinforce separate role/date validation and explicit unknown values. Next: the harder Tier-2 semantic benchmark, separately scored metadata filtering/fusion, and human review; no corpus-wide pivot decision yet.
+A prompt-only three-raw-case Mini diagnostic improved literal evidence and letter-author separation in one case (one validated/two review; 8.259 seconds, approximately $0.007323). It still missed a floor speaker and retained malformed `186-1` as a literal cue, not a resolved historical date. These observed limitations reinforce separate role/date validation and explicit unknown values. The harder Tier-2 semantic benchmark and separately scored metadata filtering/fusion are now complete below. Next: evidence-ID role selection and human review; no corpus-wide processing recommendation yet.
+
+## Harder semantic and separate-filter evidence
+
+The Tier-2 semantic comparison completed on the same frozen 125 windows and 29 questions. Native Qwen3 4B vectors put the intended passage first for 27/29 questions on both raw and static text, and within the top three for all 29. The locally derived 1,024-vector variant put 28/29 first on both layers; it is not a native 1,024 run. The two native top-ranked alternatives also support the questions according to provisional independent AI review. This remains selected-query evidence with incomplete human relevance labels, not a corpus-wide accuracy percentage.
+
+| Retrieval over raw text         | Intended target first |    MRR |
+| ------------------------------- | --------------------: | -----: |
+| BM25                            |                 25/29 | 0.9310 |
+| Native 2,560 semantic           |                 27/29 | 0.9655 |
+| Derived 1,024 semantic          |                 28/29 | 0.9828 |
+| Fixed equal-weight RRF, native  |                 25/29 | 0.9310 |
+| Fixed equal-weight RRF, derived |                 26/29 | 0.9483 |
+
+RRF used k=60, chosen before results, and required no new model calls. It helped the easy questions but hurt other bands relative to semantic search. All approaches place intended targets within the top five. Preserve exact lexical search as a separate capability; these results do not establish a universally better fusion policy. Full rankings and provenance are in `tier2/hybrid-report.json` and the semantic run directory.
+
+Separately stored candidate filters kept the raw text and ranking intact. A Rogers cue narrowed 125 windows to five candidates and moved the target rank 2 → 1; Dakota remained first among 30 discovery candidates, avoiding the appended-tag arm's rank-13 regression. These filters were selected from known cases, and unanchored speaker cues can include mentions. Four AI-authored role fixtures distinguish floor speakers, petition presenters and letter authors but are not authority verified. Strict historical filtering therefore leaves all windows unresolved, rather than treating missing tags as confirmed nonmatches. Synthetic policy controls are excluded from historical results.
+
+The harder embedding run used 34 new requests and 22 compatible cached batches, finishing in 168.743 seconds with 112,415 new prompt-eval tokens and $0 local API charge. An offline Pydantic-validated scan of all 19,803 current chunks measured 63,160,061 Unicode characters; simple extrapolations suggest roughly 6.1 hours by passage count or 6.3 hours by character count at the observed 4B pace. This describes the current static chunk snapshot: future raw boundaries, sustained load, context lengths and index/export time may change the result. It is not permission or a command to start full indexing.
+
+Human review is available as the self-contained local `artifacts/v2-pivot-20261011/human-review/index.html`: 31 pending entries with exact sources, provider results and provisional assessments. Ratings download as a draft JSON file; nothing is applied to canonical data. Structural/schema/JavaScript checks passed; a rendered browser check was unavailable in this harness.
+
+**Current recommendation:** proceed with a reviewed raw-text retrieval pilot; do not make more OCR correction a prerequisite for the next pilot. Preserve the cleanup option for demonstrated OCR-sensitive cases. Do not run full processing yet: verified speaker/date/authority metadata and human relevance/answer review remain open. Next investigate an evidence-ID protocol so models select immutable spans and controlled labels while the backend supplies literal source evidence, rather than asking models to recopy OCR text.
+
+### Evidence-ID interface diagnostic
+
+The five-window Mini source-span selection test completed with one valid output and four failures held by the validator. It used 21,823 input /2,705 output tokens (zero cached), 14.812 seconds summed request time, approximately $0.02854 at current token rates. Exact-source materialization eliminates quote copying only when supplied IDs are selected correctly: long composite IDs were invented in two cases, a paragraph was selected as a person candidate in another, and the mixed-turn case exceeded the 1,200-token cap. The one valid case correctly distinguished Sumner presenting a citizens’ petition from the petitioners. Independent AI review also found Burnett wrongly assigned quoted-speaker status in a rejected response; exact IDs alone cannot establish role correctness. Evidence and all failures remain preserved under `metadata-filters/span-selection/`; human ratings are pending.
+
+Before scaling this interface, evaluate short request-local aliases mapped by the host to immutable source IDs, and split dense windows into smaller role-specific tasks. Do not fix malformed model IDs automatically, increase acceptance by weakening validation, or infer a resolved proceedings date from event/relative/OCR date cues. The matched local run is terminal: one valid/four failures, including three timeouts, 220.866 seconds, $0 API and partial usage only. Both interfaces need redesign before scaling; consult PROGRESS for exact run IDs and next steps.

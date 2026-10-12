@@ -2,6 +2,8 @@
 
 ## Start here
 
+**Resume from “Current harder-tier checkpoint” below and the final PROGRESS entries. Earlier command examples are historical; completed run IDs must not be launched again.**
+
 Work in `/Users/sflynn/Downloads/congressional globe project`. Read `AGENTS.md`, the latest V2 section of `PROGRESS.md`, `V2_PIVOT.md` and `V2_EMBEDDING_MODELS.md`. New user instructions take precedence. Preserve the existing cleanup implementation, sources, queues and exports. The experiment asks whether **unchanged OCR plus organization and metadata** can support research retrieval and grounded answers without further OCR correction.
 
 The local corpus covers **five parts of the 39th Congress, first session**, not the entire historical Congressional Globe. The multi-decade research examples are future requirements. Do small POCs; the human will launch full processing later.
@@ -129,3 +131,48 @@ The current QA prototype emits flushed `events.jsonl` and stdout showing complet
 `make gate` passed (107 tests); ignored prototypes have independent fixture/Ruff/complexity evidence and are not covered by the main gate. Native 1,024/full-dimensional responses have been preserved under `native-dimensions/` with hashes, replacing scratch-only dependencies.
 
 Next actionable unit is **offline preparation of a harder Tier-2 semantic benchmark** over `tier2/pool.jsonl` and `tier2-hard-queries.jsonl`, including compatible cache reuse, explicit dimensions/query instructions, streaming progress and a bounded-call plan. Then test separate metadata filters/fusion and review uncertain historical roles. Existing tagged BM25 results alone do not prove hybrid or hard-filter retrieval. Read the latest ordered checklist in `PROGRESS.md`; do not resume cleanup or repeat known-case prompt tuning as evidence of general quality.
+
+## Current harder-tier checkpoint (supersedes earlier experiment commands)
+
+The harder Tier-2 semantic POC is **terminal**, session 14242 exit 0, run `v2-tier2-embedding-dryrun-20261011-01`. Do not repeat the saturated initial run, the spent Mini diagnostics, or this completed embedding run. Evidence under `embedding-runs/<run-id>/`: 279 inputs /56 batches, 22 reused /34 new local requests, 168.743 seconds, 112,415 new prompt-eval tokens, $0 API. Native 2,560 raw/static both 27/29 intended targets first; local derived 1,024 both 28/29. All targets are within three. The derived vectors are not native 1,024 results. Independent AI review finds both native top alternatives relevant; all human verdicts remain pending.
+
+Offline equal-weight RRF k=60 is complete: native fusion 25/29 and derived fusion 26/29, below semantic-only on this sample. Evidence: `tier2/hybrid-report.json` and `hybrid_benchmark.py`. Separate candidate filters demonstrate plumbing (Rogers 2→1) but not held-out quality; verified speaker/date coverage remains zero. Speaker cues are not resolved speakers. Evidence: `metadata-filters/{report.json,candidate_filters.json,v2_metadata_filters.py}`.
+
+The current static RAG snapshot has 19,803 validated chunks, 63,160,061 characters. Observed new document embedding throughput projects roughly 6.08–6.31 hours for that snapshot, excluding index/export and workload changes. Evidence: `tier2/runtime-estimate/report.json`. This is not a promised full-corpus duration.
+
+Open the **31-entry pending human review packet**:
+
+```bash
+open artifacts/v2-pivot-20261011/human-review/index.html
+```
+
+It contains 18 lexical relevance pairs, four semantic alternatives and nine Mini cases. Rate support and attribution, save notes and download draft JSON. No verified labels or canonical changes are produced automatically. Builder fixtures and JavaScript syntax passed; browser rendering was unavailable, so rendered UI is unverified. Rebuild with `UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python artifacts/v2-pivot-20261011/human-review/builder.py`.
+
+Next bounded experiment is **source-span selection**, not another copied-quote prompt retry: five frozen contexts under `metadata-filters/span-selection/`, source IDs plus controlled roles/topics/unknown statuses. Host validation/materialization supplies literal evidence. Three known cases diagnose failures; two seeded new cases probe transfer, not a representative accuracy benchmark. Live calls remain pending at this checkpoint while root audits runner failure logging and contracts. Read the newest PROGRESS entry before executing any command. Afterwards independently review role/date meaning and add human labels; exact IDs alone are not truth.
+
+All scripts/reports above are **gitignored machine-local artifacts**, not files delivered by cloning Git. Copy `artifacts/v2-pivot-20261011/` plus its referenced canonical snapshot when moving machines. The tracked handoff records paths and results. No inference worker is currently active; production queue inspection remains 1,339 completed /423 review /20,785 pending /zero claimed. Earlier scheduled permissions were time bounded; current small Mini/Ollama testing is authorized by the user's later direct instruction, not an extension of that schedule.
+
+Offline span-selection expectations were frozen before live responses in `metadata-filters/span-selection/review/case-expectations.json`. All quoted excerpts match raw OCR; labels are AI-provisional, not gold. Risks: petition presenter vs petitioners; signed `M. brAyman` letter author vs Davis floor speaker; malformed `186-1` cited-event cue vs proceedings date; continued speech without identity; `Mr. Speaker`/truncated `Mr. BID` false or partial cues; modal `may` is not a date. Singular date scope and out-of-vocabulary topic coverage need a later schema revision. Do not populate authoritative filters from this smoke test. Main `make gate` passed 107 tests; gate log `tier2/gate.log`.
+
+### Span-selection terminal checkpoint and next work
+
+Both five-case workers are **terminal, exit 0**: Mini session45442 (`span-select-mini-20261011-01`) and Qwen session1323 (`span-select-ollama-20261011-01`). Each produced **one valid /four held failures**; valid means schema/reference checks, not verified history. Mini: 14.812 seconds, 21,823 input /2,705 output, zero cached, approximately **$0.028540** at token rates. Qwen: **220.866 seconds**, $0 API, three 45-second timeouts plus one invalid candidate kind; usage exists for only two returned responses (7,048 input /963 output), so total local token usage is unknown. Timeouts are neither historical errors nor zero-token calls. No automatic retries or further calls in this unit.
+
+The valid shared case identifies Sumner as speaking in a citizens’ petition context; Mini additionally distinguishes the presenter role. AI review is provisional. Mini's rejected letter case still mislabels Burnett as a quoted speaker despite correctly distinguishing Brayman and Davis in other assignments. Exact IDs cannot replace role/entailment review. Raw failed/incomplete responses, usage, errors, configuration and source/result events remain under `metadata-filters/span-selection/runs/<run-id>/`. Model-server inventory `ollama-loaded-models.json` records observed local digest `5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e`, nvfp4 MLX. Frozen runner SHA `c56f9e89899a865b2bf70e51da2e7b45279387a5ca8338298649124629ba837f`. The provider interfaces differ (Mini Responses vs local Chat Completions); timeout/cap/tokenizer differences limit timing conclusions. API cost is a token-price estimate, not an invoice.
+
+**Ordered next steps (supersedes earlier lists):**
+
+1. [ ] Human-review the saved 31-entry viewer and five-case span-selection packets; establish relevance/role judgments and disagreements before claiming quality.
+2. [ ] Build an offline next-version contract using short request-local evidence aliases mapped to immutable paragraph/cue IDs, paragraph-specific role evidence, explicit date kind/scope, and explicit unannotated/out-of-vocabulary topics. Split dense mixed windows into smaller tasks. Preserve current frozen experiments; never silently repair IDs or weaken source validation.
+3. [ ] Run a newly frozen small held-out test of that contract only after offline checks; compare Mini/local on identical cases, preserve failures and new cost/time estimates. Do not repeat this failed long-ID configuration as a general benchmark or launch full-corpus models.
+4. [ ] After human standards and held-out quality are established, package the resumable pilot workflow and operator commands. Current recommendation: proceed with a **reviewed raw-text retrieval pilot**, retain cleanup for demonstrated misses; full metadata enrichment and full indexing are not ready for launch.
+
+Offline smoke check (defaults to mock, fresh generated run ID, **zero provider calls**):
+
+```bash
+UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python artifacts/v2-pivot-20261011/metadata-filters/span-selection/run_span_selection.py
+```
+
+For existing run progress, read `runs/<run-id>/progress.json` or `tail -f runs/<run-id>/events.jsonl` under the span-selection directory. Events preserve source/result and counts/percent/elapsed/ETA; the ETA is observed pacing, not a guarantee. `--live --provider openai --model gpt-5.4-mini` or `--live --provider ollama --model qwen3.8:27b-mlx` explicitly enables a bounded five-case run; **do not rerun the spent IDs or start another test without the next-version preparation above**. A missing tmp copy is irrelevant: this durable script runs in place. These artifacts remain local/ignored; copy them for another machine/harness.
+
+Independent two-provider review is complete at `metadata-filters/span-selection/review/two-provider-case-review.json`; five matched human entries remain pending in `two-provider-human-packet-pending.json`. These are additional to the 31 entries in the HTML viewer. All excerpts and source hashes were checked; no human or image verification is claimed. Main gate passed 107 tests; ignored POC helpers passed separate Ruff/complexity/fixture checks, not main-suite coverage.

@@ -82,3 +82,11 @@ Runs the formatters, code checks, and tests. You also need Node.js/npm for the M
 For troubleshooting and detailed commands, see [RUNBOOK.md](RUNBOOK.md). For model comparisons and estimated time/cost, see [HAPPY_PATH.md](HAPPY_PATH.md).
 
 An alternative approach—searching and tagging the original OCR without further correction—is being tested separately in [V2_PIVOT.md](V2_PIVOT.md). The commands above remain the existing cleanup workflow.
+
+To review the current experiment's source passages and model results on this machine, open the local review page:
+
+```bash
+open artifacts/v2-pivot-20261011/human-review/index.html
+```
+
+Choose a review set, read the source, add ratings/notes, and download your review draft. No model or server is needed. These local experiment files are not included in a fresh Git checkout.
