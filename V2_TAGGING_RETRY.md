@@ -15,11 +15,12 @@ Evidence lives under `artifacts/v2-tagging-retry-20261022/` (Git-ignored; copy i
 | Run | State |
 | --- | --- |
 | `topic-offline-20261022-01` | Completed without provider requests; source/schema plumbing only |
-| `topic-mini-20261022-01` | Five HTTP401 errors: saved key expired; no model outputs or token usage |
+| `topic-mini-20261022-01` | Historical failed attempt:five HTTP401 errors, no model outputs or token usage |
+| `topic-mini-20261022-02` | Updated key worked:five valid outputs,13.690seconds,estimated$0.0139935 |
 | `topic-qwen-20261022-01` | Terminal:4valid/1timeout;157.041seconds |
 | `topic-qwen-warm-p1-20261022-01` | Terminal:one valid same-input retry;16.205seconds;90secondtimeout |
 
-Mini requires a replacement `OPENAI_API_KEY` in `.env` before another attempt. Do not put the secret in chat or logs. The failed Mini summary sums missing usage as zero; this is not verified billing or successful inference. Local Qwen uses the existing sequential lock and makes at most five requests, each capped at45seconds, with no automatic retries. Progress logs report completed/remaining requests, elapsed time and estimated remaining time.
+The user replaced the expired key privately in `.env`; the five-case Mini retry completed. Do not put secrets in chat or logs. The failed Mini summary sums missing usage as zero; this is not verified billing or successful inference. Local Qwen uses the existing sequential lock and makes at most five requests, each capped at45seconds, with no automatic retries. Progress logs report completed/remaining requests, elapsed time and estimated remaining time.
 
 ## What the raw-text results show
 
@@ -35,21 +36,29 @@ The local work took **173.246seconds including the failed first attempt**, with 
 
 The separate reviewer read full raw windows and checked outputs, not just JSON syntax. Root audited its conclusions too: an oath mentioning the Constitution may yield an overbroad controlled mention-only mapping, but that is a scope judgment, not an invented explicit exclusion in the vocabulary. The reviewer’s first petition-role/subject confusion was corrected before calls; original notes remain available. “AI review” remains provisional, not human-certified truth. Loose hints are evidence-linked discovery aids, never hard metadata.
 
-This is encouraging evidence that the raw-text path can produce useful topic proposals. It is **not** representative accuracy, a paid/local model comparison, causal evidence about OCR cleanup, or permission to scale. The broader vocabulary and prompt changed together, and the cases were already known diagnostics. No date, person, city or legislation authority assignments were established by this subject POC.
+This is encouraging evidence that the raw-text path can produce useful topic proposals. It is **not** representative accuracy, a representative paid/local quality ranking, causal evidence about OCR cleanup, or permission to scale. The broader vocabulary and prompt changed together, and the cases were already known diagnostics. No date, person, city or legislation authority assignments were established by this subject POC.
+
+## Paired Mini and Qwen results
+
+The updated Mini key worked: `topic-mini-20261022-02`, five calls/five valid outputs, **13.690seconds**,12,088input/1,095outputtokens, **estimated$0.0139935**. The cost uses recorded usage and the checked model rates, not an invoice. No automatic retries. Historical401responses remain preserved. Root verified identical five source windows and vocabulary/prompt/schema digests across Mini and Qwen, script snapshots,27materialized raw paragraph evidence records, and the unchanged blind human packet.
+
+| Comparison | Mini | Qwen |
+| --- | --- | --- |
+| Time for this diagnostic | 13.690seconds,5calls | 173.246seconds,6calls including first timeout and warm retry |
+| API cost | Estimated$0.0139935 | $0localAPI charge |
+| Main topics | Voting/civilrights,petitioninfra/tax/restoration,spirits taxation,bill procedure,employee pay | Same main supported topics |
+| Truncated petition “praying for protection to American…” | Adds military affairs in_scope despite acknowledging missing context; unsupported inference | Does not assign military subject from that fragment |
+| Salary passage | Procedure mention_only,employee compensation substantive | Adds procedure in_scope; secondary scope remains uncertain |
+| War-loss claim | Useful loose hint but OOV flagfalse | Useful loose hint and explicit OOV war-loss/property-compensation topic |
+
+A separate Luna review compares every output with full raw text and the frozen definitions; root also inspects the outputs. These are provisional textual judgments. Mini's invented military topic is a real review finding even though its JSON and paragraph references validate. Conversely, source fragments do not justify inventing a subject to fill a vocabulary slot. Neither model is a universal winner from this sample. Different API enforcement (Mini strict schema versus local JSON-object prompting), a cold/warm local run, and one completion per case limit timing/quality conclusions. Token counts across provider implementations are not directly comparable.
+
+Evidence: `mini-independent-review.json/.md`, `paired-comparison.json`, `mini-root-verification.json` plus the earlier Qwen/source reviews and per-run snapshots. No model calls are needed to inspect them. The review is not human gold, representative accuracy, or proof that cleanup can always be skipped.
 
 ## What happens next
 
-1. Replace the expired Mini key privately in `.env`; then run the same five inputs once with a new run ID for an actual comparison. The saved failed run must remain intact.
-2. Have a human spot-check the salary/procedure boundary and vocabulary coverage, using the concrete examples rather than JSON validity as the acceptance standard. The ten-window blind sample is still unchanged and pending human labels.
-3. Run a separate short-alias speaker-role POC distinguishing floor speakers, petition presenters and mentioned people; keep dates unknown unless explicit source evidence supports them. This remains pending.
-4. Use a fresh reviewed sample before estimating quality, residual workload or corpus processing time. The full workflow stays human-launched.
+1. A short-alias speaker-role POC distinguishing floor speakers, petition presenters and mentioned people; keep dates unknown unless explicit source evidence supports them. Topic classification does not establish those identities. This remains pending.
+2. Human spot-checks of the truncated-petition failure and salary/procedure boundary, then fresh blinded labels and negative controls before quality/workload projections. The ten-window blind sample is unchanged and pending human labels.
+3. People/city/bill authority resolution and a reviewed portable pilot remain open. Full processing stays human-launched.
 
-Mini resume command after credential replacement (five calls, no retries; refuses an existing run ID):
-
-```bash
-UV_CACHE_DIR=/private/tmp/congressional-globe-uv-cache uv run python \
-  artifacts/v2-tagging-retry-20261022/runner.py --backend openai \
-  --model gpt-5.4-mini --run-id topic-mini-20261022-02 --live
-```
-
-Do not rerun Qwen unchanged to inspect these results. Read `independent-review.json/.md`, `source-expectations*.json/.md`, `root-verification.json` and per-run snapshots. The helper is a local artifact prototype, not an installed production command. Another machine must copy this evidence folder and the earlier frozen source inputs. Final helper adds single-window selection, a1–90secondtimeout option, authentication fail-fast and explicit unknown paid usage/cost; live script copies preserve the earlier behavior without rewriting it.
+Both providers' tagging attempts are terminal; do not rerun the completed commands unchanged. Use the latest `PROGRESS.md` checkpoint when continuing. The helper is a local artifact prototype, not an installed production command. Another machine must copy this evidence folder and earlier frozen source inputs. The final helper supports single-window selection,1–90secondtimeouts, authentication fail-fast and explicit unknown paid usage/cost; saved script copies preserve every earlier run configuration.

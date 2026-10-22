@@ -1,6 +1,6 @@
 # V2 pivot: research-first corpus without OCR repair
 
-Latest model POC: [V2_TAGGING_RETRY.md](V2_TAGGING_RETRY.md). Local Qwen produced useful raw-OCR topic proposals in five diagnostic passages after one timeout/retry. Mini is blocked by an expired saved key; no paid model outputs were obtained. Independent AI review found remaining scope ambiguities; this is not human gold or scale readiness.
+Latest model POC: [V2_TAGGING_RETRY.md](V2_TAGGING_RETRY.md). Local Qwen and Mini completed the five-passage raw-OCR topic diagnostic. Mini took13.690seconds/estimated$0.0139935; Qwen took173.246seconds/$0API including one timeout/retry. Source review catches an unsupported Mini military tag and scope differences; this is not human gold or scale readiness. The expired-key issue was resolved before Mini’s successful retry.
 
 Latest review commands: `globe subject-review-template` prepares a separate pending label file; `globe subject-review-import` validates explicit human decisions. See [V2_TAGGING_EVAL.md](V2_TAGGING_EVAL.md). Actual labels remain pending.
 

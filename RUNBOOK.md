@@ -492,4 +492,4 @@ Use `globe subject-review-template` and `globe subject-review-import` as documen
 
 ### Improved raw-OCR tagging diagnostic
 
-See [V2_TAGGING_RETRY.md](V2_TAGGING_RETRY.md) for the five-case Qwen outputs, independent source-context review, timings, failure handling and the Mini resume command after key replacement. All local requests are terminal; inspect saved outputs before any new worker. Topic results do not establish speaker/date/place/bill authorities or full-corpus quality.
+See [V2_TAGGING_RETRY.md](V2_TAGGING_RETRY.md) for the five-case Qwen outputs, independent source-context review, timings, failure handling and the completed Mini comparison after private key replacement. All local requests are terminal; inspect saved outputs before any new worker. Topic results do not establish speaker/date/place/bill authorities or full-corpus quality.
