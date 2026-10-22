@@ -1,5 +1,7 @@
 # V2 pivot handoff for any AI harness
 
+Latest model POC: [V2_TAGGING_RETRY.md](V2_TAGGING_RETRY.md). Local Qwen produced useful raw-OCR topic proposals in five diagnostic passages after one timeout/retry. Mini is blocked by an expired saved key; no paid model outputs were obtained. Independent AI review found remaining scope ambiguities; this is not human gold or scale readiness.
+
 Latest review commands: `globe subject-review-template` prepares a separate pending label file; `globe subject-review-import` validates explicit human decisions. See [V2_TAGGING_EVAL.md](V2_TAGGING_EVAL.md). Actual labels remain pending.
 
 Latest offline operator step: `make v2-sample` prepares ten blinded raw-text topic-review passages and freezes the draft vocabulary, with no model calls. Current output is `artifacts/v2-subject-review/`; do not overwrite or rerun it. Requirements, diagnostic limitations and commands are in [V2_TAGGING_EVAL.md](V2_TAGGING_EVAL.md); exact evidence is in the newest `PROGRESS.md` checkpoint.
