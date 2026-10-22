@@ -6,6 +6,8 @@ Every engineering agent must read this document before working, use its ordered 
 
 Navigation: [Goal and scope](#1-goal-and-division-of-responsibility) · [Data/search architecture](#3-data-and-retrieval-architecture) · [Resumable workload](#4-long-running-workload-contract) · [Evaluation](#5-evaluation-and-decision-rules) · [Current progress](#6-current-progress-and-evidence) · [Ordered checklist and next POC](#7-ordered-master-execution-checklist) · [Operator commands](#8-operator-commands-and-current-limitations) · [Agent rules](#9-agent-working-rules-and-handoff-discipline).
 
+**Stateless agents start with [the startup/recovery procedure](#stateless-startup-and-mid-flight-recovery), then [the live work record](#live-work-record--update-before-launch-and-at-each-checkpoint).** Codex, OpenCode and other harnesses share the same plan, work ownership and durable evidence; chat history, model memory and access to the original harness are not prerequisites. **P0, whether further OCR cleanup earns its cost, remains an open research decision.**
+
 ## 1. Goal and division of responsibility
 
 Build a trustworthy, portable historical research and search foundation from **all five locally collected parts of the 39th Congress, first session of The Congressional Globe**. A researcher or future AI assistant must be able to find relevant passages, apply historically meaningful filters, read surrounding context, and follow precise citations back to the primary documents.
@@ -153,16 +155,40 @@ A passing code gate is necessary for shipped implementation, not sufficient for 
 
 ### Current status — update this block in place
 
-- **Active direction:** reviewed raw-text retrieval/enrichment pilot; retain optional cleanup for demonstrated failures.
+- **Active direction:** reviewed raw-text retrieval/enrichment pilot; retain optional cleanup for demonstrated failures. **P0 remains open:** no final decision to skip, selectively apply or broadly apply additional OCR cleanup.
 - **Current milestone:** M1, bounded speaker/role/date evidence POC. Topic diagnostic complete; speaker/date retry not yet prepared or run.
 - **Current code:** extraction, cleanup/export, embedding boundary, subject contracts/matcher/sampler and explicit human-label import are tracked. Production research search/enrichment workflow is not complete.
 - **Latest project gate:** consolidation session 51262, terminal exit 0; 147 tests passed in 0.72 seconds; Ruff, ty, complexity ≤5 and Markdown formatting passed. Log `artifacts/document-consolidation-20261022/gate.log`. Last comparison commit before consolidation: `85c4cc6`.
-- **Active processes:** last POC handles are terminal; no worker started by this documentation consolidation. Reinspect actual processes/queue before any new request. A saved lock/status file is not proof that a worker is live.
+- **Active processes:** at 2026-10-22 23:51:03 UTC, queue inspection and a scan for known project worker commands found no matching workers (inspection shell/search processes excluded). Recorded POC handles are terminal. This is a timestamped observation, not proof that no unrelated external client can use Ollama. Reinspect before requests; a lock/status file alone proves neither liveness nor termination.
 - **Queue last observed:** `static-final-20261011`, 1,339 completed / 423 review / 20,785 pending / 0 claimed. These are cleanup task states, not corpus accuracy.
 - **Canonical snapshot:** 5,412 pages / 296,995 paragraphs / 19,803 page-bounded chunks. Its verified static export is older than subsequent SQLite AI results; do not describe it as refreshed from the live queue.
 - **Human review:** ten raw windows / 92 paragraphs frozen, two windows per part, labels pending. Part-only sampling, length eligibility bias and incomplete historical exclusions mean diagnostic preparation, not established held-out gold.
 - **Credentials:** Mini succeeded after the human replaced the expired `.env` key; no current credential blocker. Never copy the key into a document, log or chat.
 - **Limits:** no full-corpus model enrichment or corpus-wide embedding job is authorized by this plan. The earlier specifically authorized one-hour cleanup worker completed; its authorization is not an instruction to drain the queue now. Historical two-hour scheduled POC permission does not authorize new recurring work.
+
+### Live work record — update before launch and at each checkpoint
+
+This is the shared handoff for every harness. Keep one record per active unit, including offline implementation and delegated file ownership. On completion move only the compact result into the evidence ledger, leaving a clear next unit here.
+
+| Field | Current value |
+| --- | --- |
+| Work unit / research question | M1 preparation, not started; improve speaker-role/date proposals over raw text and contribute evidence to P0 |
+| Owner / harness / owned files | Unclaimed; the next agent records identity, harness and owned paths before editing |
+| State / last verification | `not_started`; known worker/queue check 2026-10-22 23:51:03 UTC |
+| Run IDs / host / OS process identity | None; no new M1 retry launched. Existing known workers are terminal |
+| Exact command / cwd / limits / configuration | No audited M1 retry command exists yet. Cwd is the repository root; next action is offline preparation, not requests |
+| Inputs / evidence | Exact predecessor paths and offline command in the M1 section below |
+| Completed / remaining / failures | Topic comparison complete; old role/date failure reports saved. New alias preparation, fixtures, requests and semantic review remain |
+| Durable results / logs / task store | No new M1 outputs yet. Cleanup store `artifacts/runs/static-final-20261011/jobs.sqlite` is not an M1 queue |
+| Locks | Shared Ollama request lock: `congressional-globe-ollama-request.lock` in the OS temporary directory; inspect actual lock/process state, not file presence |
+| Safe next action / resume instruction | Inspect frozen role/date failures and implement/validate offline short-alias preparation. Nothing is currently running to resume; do not repeat completed topic calls |
+| Decision/stop condition | Inspect every tiny-batch role/date result, preserve unknowns/failures, record quality/time/cost and effect on P0; no full processing |
+
+**Before each launch**, record unique run ID, exact argv/cwd, host, selected limits, input/prompt/schema/code/non-secret configuration fingerprints, durable output/store paths and stdout/event logs. Write `launch_intent` first; immediately after launch record **OS PID plus process start time/full command** and UTC observation. A harness terminal/session ID is secondary, never the only recovery handle. Never fingerprint or copy secrets.
+
+Checkpoint completed/remaining/review/failed/cached counts, last persisted result, unresolved attempts and the exact safe next inspection/resume action as work happens. Record verified exit/termination evidence before marking terminal. If abruptly killed, the replacement agent reconstructs state from OS/store/events, preserving unknown outcomes and prior usage. A planned handoff must not leave these facts only in chat.
+
+This is a mandatory coordination protocol, not an already implemented distributed scheduler. M2 must implement/test durable recovery across harnesses. Some current one-shot prototypes refuse existing directories and cannot resume partial runs automatically; documentation must not pretend otherwise.
 
 ### Verified foundation and known gaps
 
@@ -222,6 +248,7 @@ These are the **only active roadmap and next-step list**. Update statuses here r
 
 | ID | Status | Work and dependency | Completion evidence / exit condition |
 | --- | --- | --- | --- |
+| P0 | **Open research decision, in flight** | Determine whether additional OCR cleanup earns its cost across search, enrichment and answers; runs through M1–M6 | Reviewed paired evidence supports an explicit skip/selective/broad-cleanup policy with total time/cost and limits; human decides before M7 |
 | M0 | Foundation complete; preserve | Maintain immutable sources and verified canonical baseline; inspect old evidence | Saved hashes/ledgers and source coverage; known snapshot/queue distinction retained |
 | M1 | **Next** | Tiny improved speaker-role/date POC using old failure lessons; source-linked short aliases; independent review | Per-case roles and scoped dates/unknowns, exact evidence, raw outputs/errors, time/cost; explain residual failures; diagnostic≠gold |
 | M2 | Pending; offline work can overlap M1 | Prove a minimal durable enrichment slice through prepare→run→inspect→resume→review→export; generalize existing cleanup machinery only where needed | Forced interruption and partial failure recover; compatible results reused; version changes deliberate; auditable attempts/progress; no source mutation |
@@ -233,14 +260,45 @@ These are the **only active roadmap and next-step list**. Update statuses here r
 
 Cross-cutting backlog: measured multiprocessing rollout after failure/equivalence checks; optional external metadata acquisition with preservation; model/dimension comparisons when a fresh evaluation can distinguish them. Do not let these replace the next research capability. Do not repeatedly tune on the five known topic cases and call it progress toward held-out quality.
 
+### P0: is further OCR cleanup worth it?
+
+**Unresolved, not abandoned and not settled by choosing a raw-first pilot.** Preserve the existing cleanup implementation, queue, ledgers and static snapshot. Earlier raw/static experiments compare original OCR with deterministic static edits, not perfect transcription or a fully AI-cleaned corpus.
+
+| Open question | Current signal | Missing decision evidence |
+| --- | --- | --- |
+| Can researchers find passages without broad cleanup? | Similar target ranks in small raw/static vector diagnostics; useful source-preserving lexical joining | Fresh relevance labels, exact names/quotes/numbers, split-word/ambiguous-compound failures, negative controls and trustworthy filters |
+| Does dirty OCR increase enrichment workload or errors? | Raw/static cue sets matched in one diagnostic; revised raw-topic proposals useful | Reviewed speaker/date/entity/bill/topic assignments and omissions; actual safe rule acceptance versus model/review routing, not cue counts |
+| Can answers faithfully use returned raw text? | Some correct answers despite damage; also missing qualifications and incorrect abstentions | Human-supported claims/citations, unanswerable cases and consistent retrieved context in paired comparisons |
+| Which workflow is worth many hours? | Tiny time/cost samples; resumable cleanup worker preserved | Total search-view/cleanup/enrichment/embedding/review/retry costs under a declared quality policy and representative throughput |
+
+Compare frozen matched units: **A**, raw OCR plus source-preserving search normalization and enrichment; **B**, existing static text plus the same enrichment/retrieval; **C**, only when needed and explicitly bounded, targeted AI corrections for demonstrated failures. Match context, boundaries, queries, labels and configuration when attributing an effect to OCR. A broad AI-cleanup arm is not automatically authorized.
+
+Every relevant POC must state its P0 hypothesis/arm, sample/configuration hashes, outcome, limits and next decision. M1 initially tests whether the revised role/date contract works over raw text; it does not by itself isolate OCR effects. A later paired comparison must separate OCR problems from prompt, authority and boundary failures. Reuse compatible saved inputs/results instead of paying to repeat completed work.
+
+The final P0 deliverable is an evidence-backed policy: skip further cleanup within a demonstrated scope, apply deterministic/targeted fixes to defined failure classes, or justify broader cleanup where gains outweigh total costs. The answer can differ by task/document condition. Do not force a binary conclusion, hide the decision in an incidental backlog item, or start full cleanup merely to research it. Vector hits, useful tags and passing code gates cannot close P0.
+
 ### Next bounded experiment: M1
 
-1. Read the existing `metadata-filters/span-selection/` frozen cases and reviews. Do not relaunch the failed long-ID configuration.
+1. Read these exact files under `artifacts/v2-pivot-20261011/metadata-filters/span-selection/`: `frozen_inputs.jsonl`, `manifest.json`, `selection_protocol.json`, `prompt.txt`, `output.schema.json`, `review/case-expectations.json` and `review/two-provider-case-review.json`. Frozen JSONL contains full raw text, hashes, spans and anchors. `prepare_span_selection.py` / `run_span_selection.py` explain historical behavior; **do not relaunch their failed long-ID configuration**. Old `runs/span-select-mini-20261011-01/` and `runs/span-select-ollama-20261011-01/` are terminal with errors.
 2. Prepare about five bounded source windows covering petition presentation, ordinary speech, a letter/quotation, an unnamed continuation and mixed turns. Explicit date evidence and date-negative cases must both appear. Reusing old cases is diagnostic; fresh cases need a declared split and exclusion check.
 3. Use short request-local paragraph/cue aliases mapped by the host to immutable sources. Separate speaker-role and date tasks if one combined response is too dense. Require paragraph/span-local role evidence, date kind/scope and explicit unknowns; do not silently fix invented IDs.
 4. Freeze source expectations before calls, label AI assessments honestly, validate offline failure fixtures, and record request/time/output limits before using installed Qwen and a matched small Mini sample. Existing bounded-testing authorization applies; this is not permission to drain any queue.
 5. Independently review every response against full raw context, including false positives and omissions. Save a short source→proposal→review scorecard and actual time/cost. Human questions should concern concrete examples, not approval of unspecified future work.
 6. Update M1/current status/evidence and select the next action from observed failures. If data or authority support is absent, retain unknown and report coverage; do not manufacture a passing result. Do not expand a plateauing POC into corpus work.
+
+The immediate executable action is offline inspection, not a model request:
+
+```bash
+uv run python -m json.tool artifacts/v2-pivot-20261011/metadata-filters/span-selection/review/two-provider-case-review.json
+```
+
+Then implement the new bounded preparation/runner in a newly named artifact directory, with frozen input manifest, alias map, role/date prompts and schemas, offline failure-fixture results, and exact future launch/inspection commands. Register those paths in the live work record before requesting model work. There is no approved executable M1 retry command yet; do not invent one.
+
+For offline M1 preparation from the already frozen cases, copy **the entire** `artifacts/v2-pivot-20261011/metadata-filters/span-selection/` directory, retaining its relative path. Its frozen JSONL includes the needed raw windows; no full-corpus regeneration or source download is needed just to inspect/remap those diagnostic cases. Verify `frozen_inputs.jsonl` against `manifest.json` field `frozen_inputs_sha256` (expected `ac7a47b51e65641e787baa108201ebf8e50cf082fc11c8a01cabec6b6da4f484`); prompt/schema/protocol hashes also match that manifest. Review files and per-run results stay alongside it. The manifest's original “offline preparation” description is historical; actual run outcomes come from saved run summaries/results and current process evidence.
+
+For **regeneration or independent canonical/source comparison**, additionally copy `artifacts/runs/static-final-20261011/{canonical_pages.jsonl,workflow_manifest.json,independent_verification.json}` and the original `<item>_hocr.html`, `<item>_djvu.xml`, `<item>_page_numbers.json` for the five item IDs listed in §2. Preserve directory layout and verify recorded source fingerprints before claiming equivalence. `pyproject.toml`/`uv.lock` and tracked source contracts travel with Git; models and credentials do not.
+
+Git alone cannot recover ignored artifacts. If the specific inputs are absent, do compatible offline contract work with explicitly synthetic fixtures; do not fabricate historical samples or restart old POCs to hide missing evidence.
 
 ## 8. Operator commands and current limitations
 
@@ -301,6 +359,23 @@ This is a future human action, not an instruction to import pending labels now. 
 
 ## 9. Agent working rules and handoff discipline
 
+### Stateless startup and mid-flight recovery
+
+Use this same procedure in Codex, OpenCode or any other harness. Tool-specific startup files, if needed, must point here rather than copy the plan into another backlog.
+
+1. **Orient:** read `AGENTS.md`, this plan's goal/P0/current status/live work record and active checklist. Inspect `git status --short` and recent commits. Preserve uncommitted human/other-agent work; never reset it to obtain a clean start.
+2. **Verify reality:** inspect the recorded host/PID **and process start time/full command** to avoid PID reuse, any accessible harness session, durable queue/results/events and fresh logs. `make status` describes cleanup only. On Mac, `ps -axo pid,lstart,etime,command` provides process identity; use an equivalent elsewhere and exclude the inspection shell/search itself. A loaded Ollama model or lock-file presence alone proves neither an active request nor a dead worker. If process inspection is denied, obtain the harness's available permission/tooling access or mark runtime state unknown and continue offline; denial is not evidence that no worker exists.
+3. **If running:** do not restart, duplicate or interrupt the worker. Observe the same process/store and update the checkpoint. Review persisted rows or do explicitly separate offline work while waiting. Keep local requests sequential under the actual shared lock.
+4. **If unknown:** retain `observation_unknown` and re-poll the same handle or inspect OS/store evidence. An observation timeout is not termination. If the old host is inaccessible, do not launch a duplicate job; continue safe offline work and identify the required host/state recovery.
+5. **If terminal/interrupted:** retain logs/exit evidence, compare intended tasks with saved results and unresolved attempts, then use the documented compatible resume path. Reuse unchanged cleanup queue/run IDs. For a non-resumable POC, do not overwrite its directory or repeat every request under a new ID: first audit recovery/reuse of compatible results, or define a specifically bounded follow-up for unresolved cases with its reason and unknown prior usage recorded. Failed validation stays a recorded failure.
+6. **If idle:** claim the next unclaimed work unit and owned paths in the live record, timestamp it and declare limits. Re-read shared state before launch; resolve another agent's ownership explicitly. Do not assume their worker stopped when your conversation ended or take over `tmp/performance/`.
+7. **Continue the active plan:** currently do offline M1 preparation while P0 stays open. Read saved topic results rather than rerunning Mini/Qwen. Existing bounded-testing permission applies; lack of full-run permission does not block useful offline engineering.
+8. **Persist as you go:** launch intent/config before requests, OS identity immediately after launch, results/checkpoints incrementally, and exact state/evidence/limits/next action at handoff. Commit completed units. A final chat message must never be the only record.
+
+**Handoff acceptance:** a replacement agent using only the repository, copied artifacts and observable runtime must identify the goal/P0 question, owner/unit, actual worker state, completed/unresolved work, exact safe next action, and bounds/authorization. If not, repair the live record before another model call. M2 must demonstrate this with an interrupted worker and a second harness or independent process; that runtime guarantee is still pending.
+
+### Engineering rules
+
 1. Read this plan first. Check actual Git/files/run evidence; distinguish current status from historical snapshots. State which milestone and decision a proposed unit advances.
 2. Use Luna delegates for bounded preparation, evaluation and documentation when available, as requested by the human. Delegate with clear file ownership; inspect their findings. Do not treat an AI reviewer as human gold. If a different harness cannot provide that model, disclose the limitation rather than silently inventing delegation.
 3. Use uv, Pydantic v2 at external-data boundaries and streaming parsers for large OCR files. Keep cyclomatic complexity ≤5; refactor rather than add exceptions. Tests should cover core behavior/failure cases, not broad low-value suites.
@@ -321,3 +396,4 @@ Original documents, the prior README and prior agent instructions are preserved 
 | Date | Change / evidence |
 | --- | --- |
 | 2026-10-22 | Consolidated the human's clarified backend/search/enrichment goals, long-running workflow requirements, current paired model findings and ordered M0–M7 execution plan. Preserved prior documents and made legacy paths pointers. No model requests or corpus processing in this consolidation unit. Two independent Luna audits found no material requirement/evidence omissions. All 12 original snapshots verified against recorded hashes; current Markdown file links/anchors checked; `make gate` passed 147 tests. Commit is recorded in Git; exact gate evidence is in the current status block. |
+| 2026-10-22 | Added a harness-neutral startup/recovery procedure, shared live work record and exact offline M1 entrypoints. Registered P0 as the open OCR-cleanup value decision with matched arms and required evidence. Fresh known-worker/queue observation recorded; no model calls or corpus processing. Runtime cross-harness interruption/recovery remains an explicit M2 implementation/test requirement. A fresh-context reader identified the goal, owner, worker-state limits and exact offline next action; its source-copy ambiguity was resolved with explicit minimal and regeneration dependency lists. Documentation links, frozen-input hashes and archived snapshot integrity checked; Markdown formatting passed. |
