@@ -4,6 +4,8 @@ Prepare the five parts of the 39th Congress, first session for keyword, OCR-tole
 
 **[MASTER_PLAN.md](MASTER_PLAN.md)** contains the goal, current results, remaining milestones, commands and progress. All agents follow and update that one document.
 
+For decisions, samples to grade, demos and space to write your answers, open **[HUMAN_REVIEW.md](HUMAN_REVIEW.md)**. Save your responses there, then tell an agent “continue working.”
+
 ## Get started
 
 Install **uv** and **make**, then run from this folder:
@@ -40,4 +42,4 @@ Optional `make run-qwen`, `make run-gemma` and `make run-openai` resume **OCR cl
 make gate
 ```
 
-Runs formatting, code checks and tests. Node.js/npm is needed for the Markdown formatter; formatting may change files. Detailed experiment results, human-review instructions and the next development task are maintained only in the master plan.
+Runs formatting, code checks and tests. Node.js/npm is needed for the Markdown formatter; formatting may change files. Project status, evidence and the next development task are maintained in the master plan; readable requests and your original answers belong in `HUMAN_REVIEW.md`.
