@@ -4,6 +4,7 @@
 
 **Any stateless Codex, OpenCode or other agent starts with the master's “Stateless startup and mid-flight recovery” procedure and shared live work record.** Do not depend on chat history or another harness's terminal IDs. Inspect actual processes and durable results, record ownership/checkpoints, and keep P0—the still-open value of further OCR cleanup—part of the active plan.
 
+- Follow the master's H1–H6 human checkpoints and shared HR register. Explicitly tag the human with a concrete packet when a decision or sample grade is needed; record actual requests/answers and blocking scope. Never treat AI review or silence as human approval. Reuse existing authorization and keep independent work moving instead of asking permission for routine tasks.
 - Advance its current milestone and next decision; check actual files, Git and run state before acting.
 - Update its current status, milestone/evidence tables and next action after each unit and before handoff. Do not create another plan, progress file or competing backlog.
 - `PROGRESS.md`, `PROJECT_GOAL.md`, `V2_*`, `RUNBOOK.md`, `HAPPY_PATH.md` and `TAG_ARM_PROMPT.md` are compatibility pointers. Their archived originals are historical evidence, not current instructions or commands to execute.
