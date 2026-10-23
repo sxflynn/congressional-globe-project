@@ -1,0 +1,69 @@
+{
+  "review_id": "m1-short-alias-source-review-20261023-01",
+  "status": "AI-provisional source expectations, frozen before any new calls; not human gold",
+  "provider_inputs_sha256": "220898f3e12b0bb77132b65e365c94520df56ab92d855798cc36f228fb744a0f",
+  "review_basis": "Luna read-only source inspection plus root exact canonical/alias validation; no images inspected",
+  "cases": {
+    "target-01": {
+      "expected": "Explicit Farnsworth/Rogers turns must remain distinct; opening speaker unknown; do not retroactively attribute earlier material from a later name",
+      "date_limitation": "Lexical may cues are not dates"
+    },
+    "target-02": {
+      "expected": "Sumner petition-presenter/floor-speaker roles distinguished from petition authors; exact petition request substantive under prior policy",
+      "date_limitation": "Do not assign a date from may"
+    },
+    "target-03": {
+      "expected": "Malformed Brayman signature is uncertain letter author, Davis later floor speaker, Burnett mention is not a quoted turn",
+      "date_limitation": "Malformed 186-1 is not a defensible full date"
+    },
+    "t2-1-010": {
+      "expected": "Unnamed continuation unknown; paragraph alias is not person identity; Davis/President mentions do not identify floor speaker"
+    },
+    "t2-4-053": {
+      "expected": "Keep Kasson/Holmes/later turns local; Mr Speaker is a title not a named identity; mixed paragraphs require review not whole-paragraph attribution"
+    },
+    "hr008-cross-page-p5-403-404-v1": {
+      "expected": [
+        {
+          "targets": [
+            "P12",
+            "P13"
+          ],
+          "candidate": "C3",
+          "role": "floor_speaker",
+          "basis": "P7 names WADE; ordered P8 ends The; P12 begins House. Page break is not a new turn."
+        },
+        {
+          "targets": [
+            "P14"
+          ],
+          "candidate": "C4",
+          "role": "floor_speaker",
+          "basis": "Explicit new Mr. SUMNER turn; must stop Wade carry."
+        },
+        {
+          "targets": [
+            "P15",
+            "P16"
+          ],
+          "status": "unknown_or_needs_review",
+          "basis": "OCR Yv-ADE cue is not a literal supplied candidate; do not blindly carry Sumner or silently normalize identity.",
+          "candidate_policy": "Null for unknown; any named alternative must remain explicitly needs_review, not a confident assignment"
+        }
+      ],
+      "source_quotes": {
+        "previous_page_end": "yes at least twenty-five per cent. I do not think there is anything extravagant in this proposi- tion for the equalization of these salaries. The",
+        "next_page_opening": "House came to a conclusion on the subject as to what they supposed their employes ought to have, and I believe",
+        "corrupted_turn": "Mr. Yv'ADE. I am speaking of the Sergeant- at-Arms ; and I will speak of some other gen- tlemen here"
+      }
+    }
+  },
+  "limits": [
+    "Six diagnostic cases, five reused; not held-out or representative quality estimate",
+    "Role-only schema has no date/confidence/authority resolution output",
+    "Targets are paragraphs, so mixed-turn span scope still needs semantic review before materialization",
+    "Cross-page sample includes only selected 8+8 paragraphs, not full page context",
+    "Literal uppercase cue detector intentionally misses OCR-corrupted names; no claim of complete recall"
+  ],
+  "next": "Implement bounded audited runner after these expectations are read; do not reuse old failed long-ID runner"
+}

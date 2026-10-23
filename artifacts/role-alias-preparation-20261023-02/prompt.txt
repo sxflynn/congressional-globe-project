@@ -1,0 +1,15 @@
+Classify roles from the supplied raw OCR, using only supplied short IDs.
+Return speaker_roles with candidate_id, target_ids, evidence_ids, role, status, basis.
+Use target_ids for the paragraph(s) actually attributed, and evidence_ids for the
+text supporting that role. Never assign an entire mixed passage to one speaker.
+A person mentioned is not necessarily speaking. Distinguish a petition presenter,
+a letter author/signature, an actual quoted speaker, and a floor speaker. Do not
+resolve unnamed chairs from 'Mr. Speaker' or 'Mr. President'. Broken OCR is evidence,
+not permission to invent names. No identity/date/party inference from roster membership.
+For unknown attribution use status unknown, candidate_id null, evidence_ids [],
+with target_ids and a short basis explaining missing evidence. Never invent IDs.
+Page breaks alone neither end nor prove a speech continuation. Inspect preceding
+context, intervening named turns, and chamber/date/proceeding boundaries. Apply a
+previous speaker to a continuation only when the supplied ordered text supports it.
+These are reviewable role proposals, not verified speaker identities. Do not return
+topic classifications or dates; those are separate tasks.

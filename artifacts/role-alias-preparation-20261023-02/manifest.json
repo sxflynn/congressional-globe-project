@@ -1,0 +1,30 @@
+{
+  "experiment_id": "role-alias-preparation-v1",
+  "status": "offline prepared; no provider calls, no role/date results",
+  "case_ids": [
+    "target-01",
+    "target-02",
+    "target-03",
+    "t2-1-010",
+    "t2-4-053",
+    "hr008-cross-page-p5-403-404-v1"
+  ],
+  "case_count": 6,
+  "predecessor_sha256": "ac7a47b51e65641e787baa108201ebf8e50cf082fc11c8a01cabec6b6da4f484",
+  "canonical_pages_sha256": "4ab8ef6b325b650a0db002a94d690989f02d82333e977e5fed05c8f651772eeb",
+  "files_sha256": {
+    "alias-maps.json": "088150f8ed34883e8143168e03ababebaecd9c3058f3d584b85755e7ea6909ca",
+    "frozen-inputs.jsonl": "b098e3d0b138f6d522dc8085be3496878f4de789fc7e2b851e0299c87d20fdee",
+    "output.schema.json": "965b47bfae9253f1f5862c4193a2b5f534c3838ac89c7c02888dda3099cc0605",
+    "prompt.txt": "03abcc0b8e175efecef80073b02b13d10b2484ef8233dc97e0e0803c66269098",
+    "provider-inputs.jsonl": "220898f3e12b0bb77132b65e365c94520df56ab92d855798cc36f228fb744a0f"
+  },
+  "code_sha256": {
+    "role_preparation.py": "2929102c6e8d1333ead830b53f4385e2e373882e6feecccb234f9510626ed776",
+    "role_aliases.py": "8f4ff097c8fce2f8843124e48547fc1fdddf6c8b84b28e2662f9cc536d615b5d"
+  },
+  "elapsed_seconds": 3.929,
+  "limits": "Six diagnostic cases; role-only task; dates and authority linking deferred",
+  "review": "No human gold labels. Cross-page source review must precede model launch.",
+  "next": "Freeze source expectations, then implement an audited bounded runner"
+}
