@@ -1,0 +1,168 @@
+{
+  "$defs": {
+    "JsonValue": {}
+  },
+  "additionalProperties": false,
+  "properties": {
+    "record_id": {
+      "title": "Record Id",
+      "type": "string"
+    },
+    "source_id": {
+      "enum": [
+        "house",
+        "senate",
+        "districts"
+      ],
+      "title": "Source Id",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "representative",
+        "delegate",
+        "senator",
+        "district_directory_entry"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "linked_page": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Linked Page"
+    },
+    "chamber": {
+      "anyOf": [
+        {
+          "enum": [
+            "house",
+            "senate"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Chamber"
+    },
+    "congress_number": {
+      "anyOf": [
+        {
+          "const": 39,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Congress Number"
+    },
+    "party": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Party"
+    },
+    "state": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "State"
+    },
+    "district": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "District"
+    },
+    "section": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Section"
+    },
+    "verification_status": {
+      "const": "unverified_wikipedia_extraction",
+      "default": "unverified_wikipedia_extraction",
+      "title": "Verification Status",
+      "type": "string"
+    },
+    "service_start": {
+      "default": null,
+      "title": "Service Start",
+      "type": "null"
+    },
+    "service_end": {
+      "default": null,
+      "title": "Service End",
+      "type": "null"
+    },
+    "applies_to_39th_congress": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Applies To 39Th Congress"
+    },
+    "source_details": {
+      "additionalProperties": {
+        "$ref": "#/$defs/JsonValue"
+      },
+      "title": "Source Details",
+      "type": "object"
+    }
+  },
+  "required": [
+    "record_id",
+    "source_id",
+    "kind",
+    "name",
+    "source_details"
+  ],
+  "title": "WikiRecord",
+  "type": "object"
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": "wikipedia-candidates-v1",
+  "extractor_sha256": {
+    "wikipedia.py": "fa03360dfe5a470bd4bfa90403ff128543eb0f72eaf2d445ec4515238eeb0765",
+    "wiki_records.py": "383ec6210a30e6bb4d185a9380b488281e175de9735951095ee33c4532879469",
+    "wiki_sources.py": "e6efd0b015160bf12fc37f4a611a294c74519229c541fce03a1402ee049f4fa0",
+    "wiki_house.py": "b8c660642bd31f8ddd13c563fda7e68c61d5d484dbb93851987edc64dcaf703e",
+    "wiki_senate.py": "a38ae971029fe4a850bcc948ad104998cccf52c97e0f89752c076d11797bd54c",
+    "wiki_districts.py": "d8937aaee658d3b9ae59e008f2ba9d63e1fb7499ceb362537c713a86bdd36b52"
+  },
+  "sources": [
+    {
+      "source_id": "house",
+      "requested_url": "https://en.wikipedia.org/wiki/List_of_United_States_representatives_in_the_39th_Congress",
+      "resolved_url": "https://en.wikipedia.org/wiki/List_of_United_States_representatives_in_the_39th_Congress",
+      "retrieved_at_utc": "2026-10-23T01:57:03.535401+00:00",
+      "sha256": "d0f45f8cf7a2c43795b57f65483b4115325c815f74fee9480ba159d3c6944b76",
+      "bytes": 424147,
+      "revision_id": "1324512801",
+      "headers": {
+        "last-modified": "Tue, 20 Oct 2026 05:15:42 GMT",
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "permanent_url": "https://en.wikipedia.org/w/index.php?title=List_of_United_States_representatives_in_the_39th_Congress&oldid=1324512801",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+      "source_id": "senate",
+      "requested_url": "https://en.wikipedia.org/wiki/List_of_United_States_senators_in_the_39th_Congress",
+      "resolved_url": "https://en.wikipedia.org/wiki/List_of_United_States_senators_in_the_39th_Congress",
+      "retrieved_at_utc": "2026-10-23T01:57:03.643455+00:00",
+      "sha256": "2cf904f38adef5dac871af7a306cad6be5642a0779f7f5b8fa9fbbae7023440b",
+      "bytes": 151915,
+      "revision_id": "1340642044",
+      "headers": {
+        "last-modified": "Fri, 16 Oct 2026 13:11:08 GMT",
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "permanent_url": "https://en.wikipedia.org/w/index.php?title=List_of_United_States_senators_in_the_39th_Congress&oldid=1340642044",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+      "source_id": "districts",
+      "requested_url": "https://en.wikipedia.org/wiki/List_of_United_States_congressional_districts",
+      "resolved_url": "https://en.wikipedia.org/wiki/List_of_United_States_congressional_districts",
+      "retrieved_at_utc": "2026-10-23T01:57:03.554254+00:00",
+      "sha256": "a3557d6782c427a652f28ddabf9d02f734b6031cb33d4df67ce131ebd91085e5",
+      "bytes": 1416042,
+      "revision_id": "1379601745",
+      "headers": {
+        "last-modified": "Sun, 18 Oct 2026 22:35:33 GMT",
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "permanent_url": "https://en.wikipedia.org/w/index.php?title=List_of_United_States_congressional_districts&oldid=1379601745",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  ],
+  "counts": {
+    "representative": 202,
+    "delegate": 9,
+    "senator": 58,
+    "district_directory_entry": 680
+  },
+  "records_sha256": "e5aa143e1e29aa19e93be09ab748997c5bac5adfacbae3be87ceab589a758007",
+  "scope": "39th Congress membership lists cover both sessions, not first-session attendance",
+  "limitations": [
+    "Wikipedia extraction is unverified; no Bioguide or official service crosscheck yet.",
+    "Seniority dates are not service intervals; all individual service dates remain null.",
+    "Party strings are source labels, not independently verified temporal affiliations.",
+    "District directory mixes historical/current entries; 39th applicability is unknown.",
+    "District lists only: overview population/representation tables are not exported.",
+    "House/delegate state codes use displayed district codes; territories included.",
+    "Non-voting list entries without a congressional-district link are not exported.",
+    "Membership inclusion does not establish that a person spoke in a given passage."
+  ],
+  "attribution": "Wikipedia contributors; retain page revisions and CC BY-SA attribution."
+}

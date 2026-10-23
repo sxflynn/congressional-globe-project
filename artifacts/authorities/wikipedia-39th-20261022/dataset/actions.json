@@ -1,0 +1,63 @@
+{
+  "working_directory": "repository root",
+  "network_policy": "fetch contacts three requested pages; extract/query are offline",
+  "actions": {
+    "fetch_new_snapshot": [
+      "uv",
+      "run",
+      "python",
+      "-m",
+      "congressional_globe.wikipedia",
+      "fetch",
+      "--sources",
+      "NEW_SNAPSHOT_DIRECTORY"
+    ],
+    "replay_saved_snapshot": [
+      "uv",
+      "run",
+      "python",
+      "-m",
+      "congressional_globe.wikipedia",
+      "extract",
+      "--sources",
+      "artifacts/authorities/wikipedia-39th-20261022/sources",
+      "--output",
+      "NEW_OUTPUT_DIRECTORY"
+    ],
+    "query_member": [
+      "uv",
+      "run",
+      "python",
+      "-m",
+      "congressional_globe.wikipedia",
+      "query",
+      "artifacts/authorities/wikipedia-39th-20261022/dataset/records.jsonl",
+      "--where",
+      "name=Stevens"
+    ],
+    "query_ohio_members": [
+      "uv",
+      "run",
+      "python",
+      "-m",
+      "congressional_globe.wikipedia",
+      "query",
+      "artifacts/authorities/wikipedia-39th-20261022/dataset/records.jsonl",
+      "--where",
+      "state=OH"
+    ],
+    "query_district_directory": [
+      "uv",
+      "run",
+      "python",
+      "-m",
+      "congressional_globe.wikipedia",
+      "query",
+      "artifacts/authorities/wikipedia-39th-20261022/dataset/records.jsonl",
+      "--where",
+      "section=Ohio"
+    ]
+  },
+  "matching": "Case-insensitive literal substring; AND filters; null never matches.",
+  "output_policy": "Fresh output directories required; no snapshot/export overwrites."
+}

@@ -14,7 +14,7 @@ Install **uv** and **make**, then run from this folder:
 uv sync --all-groups
 ```
 
-Original source files and generated artifacts are not bundled in Git. On another machine, copy the sources and required resources or follow the [setup and operator notes](MASTER_PLAN.md#8-operator-commands-and-current-limitations). The prepared machine already has the canonical files and experiment evidence.
+Original corpus source files and most generated artifacts are not bundled in Git. The small Wikipedia authority-candidate bundle below is included. On another machine, copy the sources and required resources or follow the [setup and operator notes](MASTER_PLAN.md#8-operator-commands-and-current-limitations). The prepared machine already has the canonical files and experiment evidence.
 
 ## Read the current data
 
@@ -25,6 +25,16 @@ Under `artifacts/runs/static-final-20261011/`:
 - `manual_review.jsonl` and `validation_report.json`: review items and consistency checks.
 
 The export is a saved snapshot; it does not automatically reflect later cleanup-worker results. Missing dates and uncertain metadata remain explicit. Validation does not certify historical accuracy.
+
+## Look up congressional members
+
+A small, source-linked Wikipedia dataset is included for member and district lookups:
+
+```bash
+uv run python -m congressional_globe.wikipedia query artifacts/authorities/wikipedia-39th-20261022/dataset/records.jsonl --where name=Stevens
+```
+
+It contains unverified source-derived candidates, not completed speaker attribution. [Replay commands and limitations](MASTER_PLAN.md#query-and-rebuild-the-wikipedia-mini-dataset) are in the master plan.
 
 ## Existing cleanup commands
 

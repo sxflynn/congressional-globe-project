@@ -43,9 +43,9 @@ For each sample, write **acceptable**, **incorrect**, or **unsure / need more co
 
 #### Your response — S1
 
-- **Grade:** _Write here._
-- **Reason or correction:** _Write here._
-- **More context needed, if any:** _Write here, or leave blank._
+- **Grade:** yes, thats a good response. B+
+- **Reason or correction:** I don't fully understand your process, but while voting rights is definately a major topic, I could see other minor topics needing to be tagged. on is "Republican government" which is part of the constitution, it says the constitution guarantees a republican form of government, and I know that was important. And voting rights is good, I just think it depends on how granular we want to get with tagging. If you're talking about the entire speech this man is giving, then yes, one of the topics should be tagged as voting rights, obviously based on this one sentence in the speech. Know what I mean?
+- **More context needed, if any:** none
 
 ### Sample S2 — a model guessed from a truncated petition
 
@@ -65,8 +65,8 @@ For each sample, write **acceptable**, **incorrect**, or **unsure / need more co
 
 #### Your response — S2
 
-- **Grade of Mini's assignment:** _Write acceptable, incorrect or unsure._
-- **Preferred behavior or rule:** _Write here._
+- **Grade of Mini's assignment:** First of all, Qwen was right to be cautious. It's not about military at all. Second of all, this is a good example of OCR slop. The original text actually says: "The petition of 660 citizens of Pennsylvania, praying for protection to American labor". The word "labor" was on the right line. So anyway, this is a good example of OCR slop and maybe huting the agent. I'd like to think there would be a way for an agent to pull up the actual screenshot of what it's trying to read. That would be a nice thing to explore. Add that to the technical exploration backlog, because I think if we end up deciding to go the route of actually going through and cleaning up the OCR first, then I think the agent would need to have a way to say "hey, I'm unsure of this, it looks like OCR slop, what was the original thing?" and then its able to qury and bring up a nice little perfect screenshot of the scanned area and then it can say "oh yeah, duh, it was 660!"
+- **Preferred behavior or rule:** Your caution was good. We do know "petition" is a key word here, so if the word "petition" were garbled in the original OCR, then it might be worth making sure it gets tagged.
 - **More context needed, if any:** _Write here, or leave blank._
 
 ### Sample S3 — is legislative procedure a real second topic?
