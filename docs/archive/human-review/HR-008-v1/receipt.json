@@ -1,0 +1,24 @@
+{
+  "packet_id": "HR-008-v1",
+  "original_path": "HUMAN_REVIEW.md",
+  "archive_path": "docs/archive/human-review/HR-008-v1/original.md",
+  "original_sha256": "07571d77209d5aebc27952dd8dadfa2829915872470429db12a2390559d5e3a4",
+  "reviewer_as_entered": "SF",
+  "review_date_as_entered": "10/22/26",
+  "processed_local_date": "2026-10-22",
+  "trigger": "Human explicitly reported completion in chat and requested incorporation and cleanup",
+  "state": "answered_and_applied_to_plan",
+  "review_type": "output-informed diagnostic calibration, not blind gold",
+  "sample_decisions": {
+    "S1": "Voting-rights tag acceptable; human grade B+; finer topic granularity needs exploration",
+    "S2": "Reject military-affairs assignment; favor caution; human reports 660 and American labor from original; preserve petition discovery cue",
+    "S3": "Compensation acceptable; congressional procedure is a passing mention in this sample"
+  },
+  "follow_up": [
+    "Explore finer topics without silently adopting new controlled terms",
+    "Explore targeted source-image crop for uncertain OCR",
+    "Include preceding-page speaker introductions in cross-page attribution POC"
+  ],
+  "scope": "Plan/policy and backlog updated; no corpus edits, model runs, validated label import, provider budget or P0 decision approved",
+  "authority": "MASTER_PLAN.md; original human wording is in archived original.md"
+}

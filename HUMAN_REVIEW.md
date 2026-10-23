@@ -1,136 +1,30 @@
 # Human review desk
 
-**This is your place to read what the agents need from you and write your answers.** Agents prepare decisions, samples and demos here. You can respond in the **Your response** areas, save this file, then tell the next agent “continue working.” You can also answer in chat; the agent must preserve your actual answer here with its source.
+Read requests here, write in **Your response**, save, then tell the agent “I answered the review.” The agent must incorporate your answers into [MASTER_PLAN.md](MASTER_PLAN.md), archive your original wording, and clear the completed set from this desk. The master plan owns policy, progress and next work.
 
-[MASTER_PLAN.md](MASTER_PLAN.md) owns the roadmap, progress and decision register. This file holds the readable questions, evidence and your original responses—not a second project plan. No coding or JSON editing is required. Empty answers, example text and unchecked choices are not approval. Never put API keys or other secrets here.
+## Needs your attention
 
-## Start here
+**Nothing currently awaiting your response.** HR-008 is completed and incorporated. Future standards (HR-003), blind grading (HR-004), and speaker/date samples (HR-005) have not yet been presented; they are not pending requests for you.
 
-| Item | What to do | Time |
+## Completed reviews
+
+| Review | Your decisions and resulting work | Original answers |
 | --- | --- | --- |
-| [HR-008: grade three topic-tag examples](#hr-008-grade-three-topic-tag-examples) | Read each passage and proposal; write acceptable, incorrect or unsure, plus any rule you want us to follow | About 5–10 minutes |
-| [Demo: what the small tagging run produced](#demo-01--saved-topic-tagging-results) | Optional: see what worked, what failed, and what it cost | About 2 minutes |
-| [Future request format](#template-for-future-agent-requests) | For agents to use when a new decision, sample packet or demo is ready | No response needed |
+| HR-008-v1 · SF · 10/22/26 · Applied | S1: voting rights acceptable, B+; explore finer topics. S2: reject military inference, favor caution; explore source-image crops and protect petition discovery. S3: compensation acceptable, procedure incidental here. Carry speaker context across pages. | [Full questions and your unchanged answers](docs/archive/human-review/HR-008-v1/original.md) · [Processing receipt](docs/archive/human-review/HR-008-v1/receipt.json) |
 
-The standards/cost scorecard (HR-003), fresh blind source grading (HR-004), and speaker/date calibration (HR-005) are **not being requested here yet**. Agents must prepare those concrete packets first. Grading these three examples does not approve a full run, set a corpus-wide accuracy target, or decide whether OCR cleanup can be skipped.
+These were diagnostic sample judgments, not approval of a full run or a decision to skip OCR cleanup. No need to answer them again. New evidence or a materially different question gets a new packet/version.
 
-## HR-008: grade three topic-tag examples
+## How agents close a review
 
-### Agent's request
-
-- **Request version:** HR-008-v1, prepared 2026-10-22; H2 calibration checkpoint. Request state and delivery are recorded in the master plan.
-- **Why we need you:** we have source-based AI reviews, but we need to learn whether these outcomes match your research expectations.
-- **What you are grading:** the usefulness and evidence for a topic assignment. A _substantive_ topic is something the passage actually addresses; a _passing mention_ does not qualify it for that substantive-topic filter. Your existing rule that explicit petition requests count as substantive remains in effect; we are not asking it again.
-- **What this is not:** a blind test. You can see model outputs and the agent's recommendations. These are old diagnostic cases, not a representative accuracy benchmark or the untouched ten-window blind sample.
-- **What waits:** calling these judgments human-calibrated, or adopting a new policy from them.
-- **What can continue:** offline preparation and already authorized bounded diagnostics. You do not need to supervise every model request or label the whole corpus.
-
-For each sample, write **acceptable**, **incorrect**, or **unsure / need more context**, then a short reason. For a model disagreement, say which behavior you prefer or whether both are reasonable. You can leave an item unanswered; an agent must keep it pending.
-
-### Sample S1 — finding voting rights despite damaged OCR
-
-**Source:** Part 1, printed page 589, scan leaf 707, IA item [congressionalg7391unit](https://archive.org/details/congressionalg7391unit). Paragraph `par_000707_000027` in diagnostic window `rawstatic-distractor-p1-01`. The link opens the item; it is not a verified direct image-page link.
-
-**Original OCR, unchanged:**
-
-> The right to vote is the right of self-protec- tion, through the possession of a share in the Government. Without this a man's rights lie at the 'mercy of other men Avho have every self- ish incentive to rob and oppress him. This is the great central idea of a republican Govern- ment. The absence of this is the source of all despotism. I would ask, what white man would consider himself safe without the right to vote, especially if the Government was exercised exclusively by a hostile race?
-
-**What the models proposed:** Mini and Qwen both treated **voting rights** as a substantive subject. They also proposed civil rights based on other paragraphs in the full window; this question concerns only voting rights in the excerpt above.
-
-**Agent's recommendation:** this is a useful supported match even though words such as `self-protec- tion` and `Govern- ment` are broken. That recommendation is an AI assessment, not your answer.
-
-**Question:** Would you want this passage returned when you filter for voting rights? Is that tag acceptable from this evidence?
-
-#### Your response — S1
-
-- **Grade:** yes, thats a good response. B+
-- **Reason or correction:** I don't fully understand your process, but while voting rights is definately a major topic, I could see other minor topics needing to be tagged. on is "Republican government" which is part of the constitution, it says the constitution guarantees a republican form of government, and I know that was important. And voting rights is good, I just think it depends on how granular we want to get with tagging. If you're talking about the entire speech this man is giving, then yes, one of the topics should be tagged as voting rights, obviously based on this one sentence in the speech. Know what I mean?
-- **More context needed, if any:** none
-
-### Sample S2 — a model guessed from a truncated petition
-
-**Source:** Part 2, printed page 1176, scan leaf 328, IA item [congressionalglo7392unit](https://archive.org/details/congressionalglo7392unit). Paragraph `par_000328_000032` in `rawstatic-distractor-p2-01`. The next paragraph starts a different petition; the cited paragraph stops at “American.” The missing object is not established by this excerpt.
-
-**Original OCR, unchanged:**
-
-> By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American
-
-**Mini's proposal:** **military affairs — substantive**. Its explanation said the request was in a postwar context and acknowledged that the text was truncated.
-
-**Qwen's behavior:** it did not assign military affairs from this fragment. It identified a separate Army reference elsewhere in the window as mention-only context for a property-loss petition.
-
-**Agent's recommendation:** reject Mini's military assignment for this fragment and retain uncertainty. The missing words could change what “protection” means; the date/context alone does not supply them.
-
-**Question:** Do you agree that this should stay unclassified/uncertain for military affairs unless more evidence is obtained? How should the system behave when the text is incomplete like this?
-
-#### Your response — S2
-
-- **Grade of Mini's assignment:** First of all, Qwen was right to be cautious. It's not about military at all. Second of all, this is a good example of OCR slop. The original text actually says: "The petition of 660 citizens of Pennsylvania, praying for protection to American labor". The word "labor" was on the right line. So anyway, this is a good example of OCR slop and maybe huting the agent. I'd like to think there would be a way for an agent to pull up the actual screenshot of what it's trying to read. That would be a nice thing to explore. Add that to the technical exploration backlog, because I think if we end up deciding to go the route of actually going through and cleaning up the OCR first, then I think the agent would need to have a way to say "hey, I'm unsure of this, it looks like OCR slop, what was the original thing?" and then its able to qury and bring up a nice little perfect screenshot of the scanned area and then it can say "oh yeah, duh, it was 660!"
-- **Preferred behavior or rule:** Your caution was good. We do know "petition" is a key word here, so if the word "petition" were garbled in the original OCR, then it might be worth making sure it gets tagged.
-- **More context needed, if any:** _Write here, or leave blank._
-
-### Sample S3 — is legislative procedure a real second topic?
-
-**Source:** Part 5, printed page 4132, scan leaf 404, IA item [congressionalglo7395unit](https://archive.org/details/congressionalglo7395unit). Paragraphs `par_000404_000003` and `par_000404_000004` in `rawstatic-distractor-p5-01`. The first is reproduced in full; the second quotation is its neighbor's opening excerpt.
-
-**Original OCR, unchanged:**
-
-> House came to a conclusion on the subject as to what they supposed their employes ought to have, and I believe they passed a resolution giving their employes the salaries which this amendment proposes to give'the corresponding officers of the Senate. It is said, however, that what they undertook to do they were not au- thorized to do, and that it may be stricken out ; butthat will make no diflerence finally, if Congress should come to the conclusion that the increase was not unreasonable and that it was judicious to distribute it among their em- ployes. I suppose if it was illegal when they fixed it, if it was so adjudged by us, we could make it legal, and it would not alter the pro- portion, and would not change the propriety of this bill.
-
-**Neighboring context, exact excerpt:**
-
-> I will say, however, that the special com- mittee that was raised with directions to equal- ize the salaries of the Senate emploj'es with those of the House, equalized upon the hy- pothesis that what the House had done was or would be made legal, and that it would stand as the judgment of the House that their sala- ries ought to be enhanced to that amount.
-
-**What both models agreed on:** public employee compensation is a substantive topic. They also used the later Sergeant-at-Arms pay discussion in the full window as evidence.
-
-**Where they differed:**
-
-- **Mini:** congressional procedure is only a passing mention; the substantive issue is salaries.
-- **Qwen:** congressional procedure is also substantive, because the passage discusses committee action, a House resolution and whether salary changes are legal.
-
-**Agent's assessment:** the words support both procedural context and pay policy. Whether procedure deserves its own substantive filter match is a research-usefulness boundary, not something JSON validation can settle.
-
-**Question:** If you filter for congressional procedure, should this passage be included? Prefer **substantive**, **passing mention**, **depends on a more specific rule**, or **need more context**, and explain briefly.
-
-#### Your response — S3
-
-- **Preferred treatment:** _Write here._
-- **Reason or rule:** _Write here._
-- **Is the compensation tag acceptable?** _Write here._
-
-### Your overall guidance — HR-008
-
-- **Anything the system should do differently:** _Write here, or leave blank._
-- **Any sample you want to revisit:** _Write here, or leave blank._
-- **Name/initials and date, if you want them recorded:** _Optional; write here._
-
-### Agent follow-up — HR-008
-
-**Not yet applied.** Human response areas are unfilled when this packet is created. The next agent must read actual responses, preserve unanswered items, record the answer source/time/version, update HR-008 in the master register, and state the adopted scope or remaining uncertainty here. Do not write a human answer, infer one from this request, or mark the whole packet approved because one sample was graded.
-
-**Supporting evidence:** [saved Mini inputs](artifacts/v2-tagging-retry-20261022/runs/topic-mini-20261022-02/frozen-inputs.json), [Mini results](artifacts/v2-tagging-retry-20261022/runs/topic-mini-20261022-02/results.jsonl), [Qwen first run](artifacts/v2-tagging-retry-20261022/runs/topic-qwen-20261022-01/results.jsonl), [Qwen first-passage retry](artifacts/v2-tagging-retry-20261022/runs/topic-qwen-warm-p1-20261022-01/results.jsonl), and [independent paired review](artifacts/v2-tagging-retry-20261022/paired-comparison.json). These local ignored files need copying on another machine. The excerpts above are included here so you can read the request without opening JSON or running a model.
-
-## Demo 01 — saved topic-tagging results
-
-**Type:** read-only walkthrough of a completed diagnostic; no model calls, server or new spending. Not a demo of a finished search service or web application.
-
-| What happened | Observed result |
-| --- | --- |
-| Same five raw passages were given to Mini and Qwen | Both found useful main subjects; the samples above show successes and differences |
-| Mini processed the five passages | 13.690 seconds; estimated $0.0139935 (about 1.4 cents); five valid outputs |
-| Qwen processed them locally | 173.246 seconds including a timeout and one successful retry; $0 API charge; usage for the timeout unknown |
-| We checked source references and reviewed meaning separately | Valid JSON did not prevent Mini's unsupported military tag |
-
-Read Samples S1–S3 to walk through actual source → model proposal → review question. No command needs to be run. These tiny timings and judgments do not establish full-corpus quality or cost, and comparing them does not decide P0.
-
-### Your optional demo feedback
-
-- **What was clear or confusing:** _Write here, or leave blank._
-- **What you want the next demo to show:** _Write here, or leave blank._
+1. Read the actual answers when the human reports completion; leave genuinely unanswered required questions open.
+2. Archive the exact answered packet before editing this desk. Preserve questions, source excerpts, model proposals, sample IDs, original answers and reviewer/date; record its hash and original path. Archive snapshots are immutable and excluded from formatting.
+3. Apply each answer narrowly in the master plan: accepted judgments, conditions, unresolved policy, backlog, affected next POC and human-request state. Distinguish an implemented change from a planned experiment. Preserve human-reported image readings separately from verified OCR patches.
+4. Add an agent processing receipt, verify the archive hash and all decisions, then replace the completed packet here with a short linked receipt. Keep this desk focused on active requests; optional blank demo feedback is not an unanswered required grade.
+5. Format the edited documents, commit the completed unit and briefly tell the human what was adopted and what comes next. Never erase original answers, invent missing responses, or treat sample feedback as broader authorization.
 
 ## Template for future agent requests
 
-**Template only—no human response requested until an agent creates a concrete item with a real HR ID.** Keep the active queue small; put answered items below active ones without deleting original human responses.
+**Template only—no human response requested until an agent creates a concrete item with a real HR ID.** Keep the active queue small. After the human confirms completion, archive the exact answered packet, apply its decisions to the master plan, and replace it here with a compact completed receipt.
 
 ### Agent prepares
 
