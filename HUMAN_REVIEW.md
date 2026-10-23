@@ -4,7 +4,55 @@ Read requests here, write in **Your response**, save, then tell the agent “I a
 
 ## Needs your attention
 
-**Nothing currently awaiting your response.** HR-008 is completed and incorporated. Future standards (HR-003), blind grading (HR-004), and speaker/date samples (HR-005) have not yet been presented; they are not pending requests for you.
+**[HR-005-v1: one speaker-attribution judgment](#hr-005-v1--can-context-resolve-a-damaged-speaker-name)** is ready below (about 2 minutes). HR-008 remains completed. HR-003 standards and HR-004 blind grading have not yet been presented.
+
+## HR-005-v1 — can context resolve a damaged speaker name?
+
+**Prepared/notified:** 2026-10-23; H2/H3, M1. One new output-informed calibration question, not a blind benchmark or full-run approval. Your previous topic grades and cross-page requirement remain applied.
+
+**Source:** Part 5, printed pages 4131–4132, scan leaves 403–404, IA item [congressionalglo7395unit](https://archive.org/details/congressionalglo7395unit). These are exact OCR excerpts; the item link is not a verified direct image-page link. Full ordered context and source anchors are saved in the linked packet below.
+
+**What we tested:** Mini and local Qwen read the previous page and the next page together. Both connected the continued passage to the earlier **Mr. WADE** and kept **Mr. SUMNER** as a separate interruption. The unresolved question is the damaged name after Sumner, not whether page breaks can continue a speech.
+
+**Earlier named turn, previous page — exact opening excerpt:**
+
+> Mr. WADE. I am not able to say what the aggregate of the proposed increase is. I do not know how much it will amount to. I have never summed it up. This proposition adds to all these employes about twenty-five per, cent,
+
+**Previous page ending — exact excerpt:**
+
+> yes at least twenty-five per cent. I do not think there is anything extravagant in this proposi- tion for the equalization of these salaries. The
+
+**Next page body opening — exact excerpt:**
+
+> House came to a conclusion on the subject as to what they supposed their employes ought to have, and I believe they passed a resolution giving their employes the salaries which this amendment proposes to give'the corresponding officers of t
+
+**Later interruption — full paragraph:**
+
+> Mr. SUMNER. Yv"ho isthat?
+
+**Reply with damaged name — exact opening excerpt:**
+
+> Mr. Yv'ADE. I am speaking of the Sergeant- at-Arms ; and I will speak of some other gen- tlemen here, not particularly under him, that we have to deal with daily, who, I think, are entitled to our commendation for their con- stant, faithful attendance to their duties. I know of no reason why. if salaries are to be enhanced, there is anyth
+
+**Both model proposals:** treat that last reply and its following paragraph as **Mr. Wade speaking**, using the surrounding exchange to interpret `Yv'ADE`. The original OCR stays unchanged. These are person-link proposals, not verified authority records.
+
+**Agent recommendation:** keep this as a proposed match requiring review until we establish an evidence rule for damaged names. The conservative pre-run expectation requested uncertainty, but this is a plausible contextual identification, not an established historical mistake. We need your research standard here.
+
+**Your question:** For this specific reply, is the evidence sufficient to include it when filtering for Mr. Wade, or should it remain uncertain until stronger evidence (such as the scan or a verified roster) is checked? This does not approve automatically resolving every misspelled name.
+
+### Your response — HR-005-v1
+
+- **Treatment:** _Supported Wade match / uncertain / need the scan or more context._
+- **Reason or condition:** _Write here._
+- **Name/date, optional:** _Write here._
+
+### Agent follow-up — HR-005-v1
+
+Awaiting your answer. Offline engineering can continue; calling this damaged-name normalization accepted waits for your judgment. All proposals remain separate from canonical OCR. No validated human-label import or corpus processing has occurred.
+
+[Full frozen packet and source expectations](artifacts/role-alias-preparation-20261023-02/source-review.json) · [Mini results](artifacts/role-comparison-20261023-02/mini/summary.json) · [Qwen results](artifacts/role-comparison-20261023-02/qwen/summary.json) · [Paired source review and cost/timing](artifacts/role-comparison-20261023-02/comparison-review.json).
+
+The other test asked models to recognize an unnamed speaker. Both abstained meaningfully, but their responses failed different output-contract checks. Those are engineering issues for the agent to fix; you do not need to review JSON formatting.
 
 ## Completed reviews
 

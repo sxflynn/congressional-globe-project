@@ -1,0 +1,146 @@
+{
+  "statuses": {
+    "error": 0,
+    "unresolved": 0,
+    "pending": 0,
+    "inflight": 0,
+    "invalid": 1,
+    "valid": 1
+  },
+  "attempts": 2,
+  "results": [
+    {
+      "window_id": "hr008-cross-page-p5-403-404-v1",
+      "status": "valid",
+      "result": {
+        "elapsed_seconds": 4.259,
+        "finish_reason": null,
+        "output_text": "{\"speaker_roles\":[{\"candidate_id\":null,\"evidence_ids\":[],\"target_ids\":[\"P1\"],\"role\":\"other\",\"status\":\"unknown\",\"basis\":\"Narration/result line with no speaker attribution.\"},{\"candidate_id\":\"C1\",\"evidence_ids\":[\"C1\",\"P2\",\"P3\",\"P4\",\"P5\"],\"target_ids\":[\"P2\",\"P3\",\"P4\",\"P5\"],\"role\":\"floor_speaker\",\"status\":\"proposed\",\"basis\":\"Mr. WADE is the named floor speaker introducing and defending the amendment across the contiguous passage.\"},{\"candidate_id\":\"C2\",\"evidence_ids\":[\"C2\",\"P6\"],\"target_ids\":[\"P6\"],\"role\":\"floor_speaker\",\"status\":\"proposed\",\"basis\":\"Mr. JOHNSON asks a question from the floor.\"},{\"candidate_id\":\"C1\",\"evidence_ids\":[\"C3\",\"P7\",\"P8\",\"P12\",\"P13\",\"P15\",\"P16\"],\"target_ids\":[\"P7\",\"P8\",\"P12\",\"P13\",\"P15\",\"P16\"],\"role\":\"floor_speaker\",\"status\":\"proposed\",\"basis\":\"Mr. WADE resumes and continues the floor speech after Johnson's interruption.\"},{\"candidate_id\":null,\"evidence_ids\":[],\"target_ids\":[\"P9\",\"P10\",\"P11\"],\"role\":\"other\",\"status\":\"unknown\",\"basis\":\"Page/header text, not attributed speech.\"},{\"candidate_id\":\"C4\",\"evidence_ids\":[\"C4\",\"P14\"],\"target_ids\":[\"P14\"],\"role\":\"floor_speaker\",\"status\":\"proposed\",\"basis\":\"Mr. SUMNER interjects with a brief question.\"}]}",
+        "provider_request_id": "resp_0659e9d4032b67af006adb49f0260c87d18b03f4f1826ee546",
+        "raw_response": "{\"id\": \"resp_0659e9d4032b67af006adb49f0260c87d18b03f4f1826ee546\", \"access_programs\": null, \"created_at\": 1792756208.0, \"error\": null, \"incomplete_details\": null, \"instructions\": \"Classify roles from the supplied raw OCR, using only supplied short IDs.\\nReturn speaker_roles with candidate_id, target_ids, evidence_ids, role, status, basis.\\nUse target_ids for the paragraph(s) actually attributed, and evidence_ids for the\\ntext supporting that role. Never assign an entire mixed passage to one speaker.\\nA person mentioned is not necessarily speaking. Distinguish a petition presenter,\\na letter author/signature, an actual quoted speaker, and a floor speaker. Do not\\nresolve unnamed chairs from 'Mr. Speaker' or 'Mr. President'. Broken OCR is evidence,\\nnot permission to invent names. No identity/date/party inference from roster membership.\\nFor unknown attribution use status unknown, candidate_id null, evidence_ids [],\\nwith target_ids and a short basis explaining missing evidence. Never invent IDs.\\nPage breaks alone neither end nor prove a speech continuation. Inspect preceding\\ncontext, intervening named turns, and chamber/date/proceeding boundaries. Apply a\\nprevious speaker to a continuation only when the supplied ordered text supports it.\\nThese are reviewable role proposals, not verified speaker identities. Do not return\\ntopic classifications or dates; those are separate tasks.\\n\\nUse only IDs allowed by the supplied schema enums. candidate_id is a C alias, never a role label.\", \"metadata\": {}, \"model\": \"gpt-5.4-mini-2026-03-17\", \"object\": \"response\", \"output\": [{\"id\": \"msg_0659e9d4032b67af006adb49f16c2087d19dae937422e4d1ed\", \"content\": [{\"annotations\": [], \"text\": \"{\\\"speaker_roles\\\":[{\\\"candidate_id\\\":null,\\\"evidence_ids\\\":[],\\\"target_ids\\\":[\\\"P1\\\"],\\\"role\\\":\\\"other\\\",\\\"status\\\":\\\"unknown\\\",\\\"basis\\\":\\\"Narration/result line with no speaker attribution.\\\"},{\\\"candidate_id\\\":\\\"C1\\\",\\\"evidence_ids\\\":[\\\"C1\\\",\\\"P2\\\",\\\"P3\\\",\\\"P4\\\",\\\"P5\\\"],\\\"target_ids\\\":[\\\"P2\\\",\\\"P3\\\",\\\"P4\\\",\\\"P5\\\"],\\\"role\\\":\\\"floor_speaker\\\",\\\"status\\\":\\\"proposed\\\",\\\"basis\\\":\\\"Mr. WADE is the named floor speaker introducing and defending the amendment across the contiguous passage.\\\"},{\\\"candidate_id\\\":\\\"C2\\\",\\\"evidence_ids\\\":[\\\"C2\\\",\\\"P6\\\"],\\\"target_ids\\\":[\\\"P6\\\"],\\\"role\\\":\\\"floor_speaker\\\",\\\"status\\\":\\\"proposed\\\",\\\"basis\\\":\\\"Mr. JOHNSON asks a question from the floor.\\\"},{\\\"candidate_id\\\":\\\"C1\\\",\\\"evidence_ids\\\":[\\\"C3\\\",\\\"P7\\\",\\\"P8\\\",\\\"P12\\\",\\\"P13\\\",\\\"P15\\\",\\\"P16\\\"],\\\"target_ids\\\":[\\\"P7\\\",\\\"P8\\\",\\\"P12\\\",\\\"P13\\\",\\\"P15\\\",\\\"P16\\\"],\\\"role\\\":\\\"floor_speaker\\\",\\\"status\\\":\\\"proposed\\\",\\\"basis\\\":\\\"Mr. WADE resumes and continues the floor speech after Johnson's interruption.\\\"},{\\\"candidate_id\\\":null,\\\"evidence_ids\\\":[],\\\"target_ids\\\":[\\\"P9\\\",\\\"P10\\\",\\\"P11\\\"],\\\"role\\\":\\\"other\\\",\\\"status\\\":\\\"unknown\\\",\\\"basis\\\":\\\"Page/header text, not attributed speech.\\\"},{\\\"candidate_id\\\":\\\"C4\\\",\\\"evidence_ids\\\":[\\\"C4\\\",\\\"P14\\\"],\\\"target_ids\\\":[\\\"P14\\\"],\\\"role\\\":\\\"floor_speaker\\\",\\\"status\\\":\\\"proposed\\\",\\\"basis\\\":\\\"Mr. SUMNER interjects with a brief question.\\\"}]}\", \"type\": \"output_text\", \"logprobs\": []}], \"role\": \"assistant\", \"status\": \"completed\", \"type\": \"message\", \"phase\": \"final_answer\"}], \"parallel_tool_calls\": true, \"temperature\": 1.0, \"tool_choice\": \"auto\", \"tools\": [], \"top_p\": 0.98, \"background\": false, \"completed_at\": 1792756211.0, \"conversation\": null, \"max_output_tokens\": 3000, \"max_tool_calls\": null, \"moderation\": null, \"previous_response_id\": null, \"prompt\": null, \"prompt_cache_diagnostics\": null, \"prompt_cache_key\": null, \"prompt_cache_options\": null, \"prompt_cache_retention\": \"24h\", \"reasoning\": {\"context\": \"current_turn\", \"effort\": \"none\", \"generate_summary\": null, \"mode\": \"standard\", \"summary\": null}, \"safety_identifier\": null, \"service_tier\": \"default\", \"status\": \"completed\", \"text\": {\"format\": {\"name\": \"role_result\", \"schema_\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"speaker_roles\"], \"properties\": {\"speaker_roles\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"candidate_id\", \"evidence_ids\", \"target_ids\", \"role\", \"status\", \"basis\"], \"properties\": {\"candidate_id\": {\"type\": [\"string\", \"null\"], \"enum\": [\"C1\", \"C2\", \"C3\", \"C4\", null], \"description\": \"A supplied C cue alias, or null.\"}, \"evidence_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\", \"enum\": [\"P1\", \"P2\", \"C1\", \"P3\", \"P4\", \"P5\", \"P6\", \"C2\", \"P7\", \"C3\", \"P8\", \"P9\", \"P10\", \"P11\", \"P12\", \"P13\", \"P14\", \"C4\", \"P15\", \"P16\"], \"description\": \"A supplied paragraph or cue alias.\"}}, \"target_ids\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"string\", \"enum\": [\"P1\", \"P2\", \"P3\", \"P4\", \"P5\", \"P6\", \"P7\", \"P8\", \"P9\", \"P10\", \"P11\", \"P12\", \"P13\", \"P14\", \"P15\", \"P16\"], \"description\": \"A supplied P paragraph alias.\"}}, \"role\": {\"type\": \"string\", \"enum\": [\"floor_speaker\", \"petition_presenter\", \"letter_author\", \"quoted_speaker\", \"person_mentioned\", \"other\"]}, \"status\": {\"type\": \"string\", \"enum\": [\"proposed\", \"unknown\", \"mixed\", \"needs_review\"]}, \"basis\": {\"type\": \"string\", \"minLength\": 1}}}}}}, \"type\": \"json_schema\", \"description\": null, \"strict\": true}, \"verbosity\": \"medium\"}, \"top_logprobs\": 0, \"truncation\": \"disabled\", \"usage\": {\"input_tokens\": 4889, \"input_tokens_details\": {\"cache_write_tokens\": 0, \"cached_tokens\": 0}, \"output_tokens\": 350, \"output_tokens_details\": {\"reasoning_tokens\": 0}, \"total_tokens\": 5239}, \"user\": null, \"billing\": {\"payer\": \"openai\"}, \"frequency_penalty\": 0.0, \"presence_penalty\": 0.0, \"store\": true, \"tool_usage\": {\"image_gen\": {\"input_tokens\": 0, \"input_tokens_details\": {\"image_tokens\": 0, \"text_tokens\": 0}, \"output_tokens\": 0, \"output_tokens_details\": {\"image_tokens\": 0, \"text_tokens\": 0}, \"total_tokens\": 0}, \"web_search\": {\"num_requests\": 0}}}",
+        "role_proposals": {
+          "speaker_roles": [
+            {
+              "basis": "Narration/result line with no speaker attribution.",
+              "candidate_id": null,
+              "evidence_ids": [],
+              "role": "other",
+              "status": "unknown",
+              "target_ids": [
+                "P1"
+              ]
+            },
+            {
+              "basis": "Mr. WADE is the named floor speaker introducing and defending the amendment across the contiguous passage.",
+              "candidate_id": "C1",
+              "evidence_ids": [
+                "C1",
+                "P2",
+                "P3",
+                "P4",
+                "P5"
+              ],
+              "role": "floor_speaker",
+              "status": "proposed",
+              "target_ids": [
+                "P2",
+                "P3",
+                "P4",
+                "P5"
+              ]
+            },
+            {
+              "basis": "Mr. JOHNSON asks a question from the floor.",
+              "candidate_id": "C2",
+              "evidence_ids": [
+                "C2",
+                "P6"
+              ],
+              "role": "floor_speaker",
+              "status": "proposed",
+              "target_ids": [
+                "P6"
+              ]
+            },
+            {
+              "basis": "Mr. WADE resumes and continues the floor speech after Johnson's interruption.",
+              "candidate_id": "C1",
+              "evidence_ids": [
+                "C3",
+                "P7",
+                "P8",
+                "P12",
+                "P13",
+                "P15",
+                "P16"
+              ],
+              "role": "floor_speaker",
+              "status": "proposed",
+              "target_ids": [
+                "P7",
+                "P8",
+                "P12",
+                "P13",
+                "P15",
+                "P16"
+              ]
+            },
+            {
+              "basis": "Page/header text, not attributed speech.",
+              "candidate_id": null,
+              "evidence_ids": [],
+              "role": "other",
+              "status": "unknown",
+              "target_ids": [
+                "P9",
+                "P10",
+                "P11"
+              ]
+            },
+            {
+              "basis": "Mr. SUMNER interjects with a brief question.",
+              "candidate_id": "C4",
+              "evidence_ids": [
+                "C4",
+                "P14"
+              ],
+              "role": "floor_speaker",
+              "status": "proposed",
+              "target_ids": [
+                "P14"
+              ]
+            }
+          ]
+        },
+        "status": "completed",
+        "usage": {
+          "cached_input_tokens": 0,
+          "input_tokens": 4889,
+          "output_tokens": 350
+        },
+        "validation_scope": "schema/reference only"
+      }
+    },
+    {
+      "window_id": "t2-1-010",
+      "status": "invalid",
+      "result": {
+        "elapsed_seconds": 2.604,
+        "finish_reason": null,
+        "output_text": "{\"speaker_roles\":[{\"candidate_id\":null,\"evidence_ids\":[],\"target_ids\":[\"P1\"],\"role\":\"floor_speaker\",\"status\":\"unknown\",\"basis\":\"The paragraph is a continuous first-person speech, but no supplied cue identifies the speaker by name or gives a prior attribution in the window.\"},{\"candidate_id\":null,\"evidence_ids\":[\"C2\"],\"target_ids\":[\"P1\"],\"role\":\"person_mentioned\",\"status\":\"proposed\",\"basis\":\"'President' appears only as a referenced officeholder in the sentence about aggression by officers or authorities of the General Government; it is not a speaking turn.\"},{\"candidate_id\":null,\"evidence_ids\":[\"C1\"],\"target_ids\":[\"P1\"],\"role\":\"person_mentioned\",\"status\":\"proposed\",\"basis\":\"'Jefferson Davis' is mentioned as a comparison target in the argument; this is a reference, not a quoted or speaking role.\"}]}",
+        "provider_request_id": "resp_0001595b36018eed006adb49f4395087d18408cf3cbf50b525",
+        "raw_response": "{\"id\": \"resp_0001595b36018eed006adb49f4395087d18408cf3cbf50b525\", \"access_programs\": null, \"created_at\": 1792756212.0, \"error\": null, \"incomplete_details\": null, \"instructions\": \"Classify roles from the supplied raw OCR, using only supplied short IDs.\\nReturn speaker_roles with candidate_id, target_ids, evidence_ids, role, status, basis.\\nUse target_ids for the paragraph(s) actually attributed, and evidence_ids for the\\ntext supporting that role. Never assign an entire mixed passage to one speaker.\\nA person mentioned is not necessarily speaking. Distinguish a petition presenter,\\na letter author/signature, an actual quoted speaker, and a floor speaker. Do not\\nresolve unnamed chairs from 'Mr. Speaker' or 'Mr. President'. Broken OCR is evidence,\\nnot permission to invent names. No identity/date/party inference from roster membership.\\nFor unknown attribution use status unknown, candidate_id null, evidence_ids [],\\nwith target_ids and a short basis explaining missing evidence. Never invent IDs.\\nPage breaks alone neither end nor prove a speech continuation. Inspect preceding\\ncontext, intervening named turns, and chamber/date/proceeding boundaries. Apply a\\nprevious speaker to a continuation only when the supplied ordered text supports it.\\nThese are reviewable role proposals, not verified speaker identities. Do not return\\ntopic classifications or dates; those are separate tasks.\\n\\nUse only IDs allowed by the supplied schema enums. candidate_id is a C alias, never a role label.\", \"metadata\": {}, \"model\": \"gpt-5.4-mini-2026-03-17\", \"object\": \"response\", \"output\": [{\"id\": \"msg_0001595b36018eed006adb49f5459487d1b86234bfc475df7d\", \"content\": [{\"annotations\": [], \"text\": \"{\\\"speaker_roles\\\":[{\\\"candidate_id\\\":null,\\\"evidence_ids\\\":[],\\\"target_ids\\\":[\\\"P1\\\"],\\\"role\\\":\\\"floor_speaker\\\",\\\"status\\\":\\\"unknown\\\",\\\"basis\\\":\\\"The paragraph is a continuous first-person speech, but no supplied cue identifies the speaker by name or gives a prior attribution in the window.\\\"},{\\\"candidate_id\\\":null,\\\"evidence_ids\\\":[\\\"C2\\\"],\\\"target_ids\\\":[\\\"P1\\\"],\\\"role\\\":\\\"person_mentioned\\\",\\\"status\\\":\\\"proposed\\\",\\\"basis\\\":\\\"'President' appears only as a referenced officeholder in the sentence about aggression by officers or authorities of the General Government; it is not a speaking turn.\\\"},{\\\"candidate_id\\\":null,\\\"evidence_ids\\\":[\\\"C1\\\"],\\\"target_ids\\\":[\\\"P1\\\"],\\\"role\\\":\\\"person_mentioned\\\",\\\"status\\\":\\\"proposed\\\",\\\"basis\\\":\\\"'Jefferson Davis' is mentioned as a comparison target in the argument; this is a reference, not a quoted or speaking role.\\\"}]}\", \"type\": \"output_text\", \"logprobs\": []}], \"role\": \"assistant\", \"status\": \"completed\", \"type\": \"message\", \"phase\": \"final_answer\"}], \"parallel_tool_calls\": true, \"temperature\": 1.0, \"tool_choice\": \"auto\", \"tools\": [], \"top_p\": 0.98, \"background\": false, \"completed_at\": 1792756214.0, \"conversation\": null, \"max_output_tokens\": 3000, \"max_tool_calls\": null, \"moderation\": null, \"previous_response_id\": null, \"prompt\": null, \"prompt_cache_diagnostics\": null, \"prompt_cache_key\": null, \"prompt_cache_options\": null, \"prompt_cache_retention\": \"24h\", \"reasoning\": {\"context\": \"current_turn\", \"effort\": \"none\", \"generate_summary\": null, \"mode\": \"standard\", \"summary\": null}, \"safety_identifier\": null, \"service_tier\": \"default\", \"status\": \"completed\", \"text\": {\"format\": {\"name\": \"role_result\", \"schema_\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"speaker_roles\"], \"properties\": {\"speaker_roles\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"candidate_id\", \"evidence_ids\", \"target_ids\", \"role\", \"status\", \"basis\"], \"properties\": {\"candidate_id\": {\"type\": [\"string\", \"null\"], \"enum\": [\"C1\", \"C2\", \"C3\", null], \"description\": \"A supplied C cue alias, or null.\"}, \"evidence_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\", \"enum\": [\"P1\", \"C1\", \"C2\", \"C3\"], \"description\": \"A supplied paragraph or cue alias.\"}}, \"target_ids\": {\"type\": \"array\", \"minItems\": 1, \"items\": {\"type\": \"string\", \"enum\": [\"P1\"], \"description\": \"A supplied P paragraph alias.\"}}, \"role\": {\"type\": \"string\", \"enum\": [\"floor_speaker\", \"petition_presenter\", \"letter_author\", \"quoted_speaker\", \"person_mentioned\", \"other\"]}, \"status\": {\"type\": \"string\", \"enum\": [\"proposed\", \"unknown\", \"mixed\", \"needs_review\"]}, \"basis\": {\"type\": \"string\", \"minLength\": 1}}}}}}, \"type\": \"json_schema\", \"description\": null, \"strict\": true}, \"verbosity\": \"medium\"}, \"top_logprobs\": 0, \"truncation\": \"disabled\", \"usage\": {\"input_tokens\": 1846, \"input_tokens_details\": {\"cache_write_tokens\": 0, \"cached_tokens\": 0}, \"output_tokens\": 197, \"output_tokens_details\": {\"reasoning_tokens\": 0}, \"total_tokens\": 2043}, \"user\": null, \"billing\": {\"payer\": \"openai\"}, \"frequency_penalty\": 0.0, \"presence_penalty\": 0.0, \"store\": true, \"tool_usage\": {\"image_gen\": {\"input_tokens\": 0, \"input_tokens_details\": {\"image_tokens\": 0, \"text_tokens\": 0}, \"output_tokens\": 0, \"output_tokens_details\": {\"image_tokens\": 0, \"text_tokens\": 0}, \"total_tokens\": 0}, \"web_search\": {\"num_requests\": 0}}}",
+        "status": "completed",
+        "usage": {
+          "cached_input_tokens": 0,
+          "input_tokens": 1846,
+          "output_tokens": 197
+        },
+        "validation_error": "2 validation errors for RoleResult\nspeaker_roles.1\n  Value error, proposed attribution requires a candidate and evidence [type=value_error, input_value={'candidate_id': None, 'e...s not a speaking turn.\"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\nspeaker_roles.2\n  Value error, proposed attribution requires a candidate and evidence [type=value_error, input_value={'candidate_id': None, 'e...oted or speaking role.\"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error"
+      }
+    }
+  ],
+  "api_cost_usd_estimate": 0.00751275,
+  "quality": "Schema/reference validity only; semantic/human review pending",
+  "recovery": "No automatic retries; unknown outcomes block resume"
+}

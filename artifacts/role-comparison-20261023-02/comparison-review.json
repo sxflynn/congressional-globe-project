@@ -1,0 +1,102 @@
+{
+  "review_id": "role-comparison-20261023-02-source-review",
+  "review_status": "AI-provisional diagnostic; human HR-005-v1 requested, not gold",
+  "cases": [
+    "hr008-cross-page-p5-403-404-v1",
+    "t2-1-010"
+  ],
+  "source_preparation": "artifacts/role-alias-preparation-20261023-02",
+  "pilot": {
+    "path": "artifacts/role-comparison-20261023-01/mini",
+    "calls": 1,
+    "invalid": 1,
+    "pending_not_processed": 1,
+    "failure": "role label floor_speaker returned as candidate_id; rejected; source record preserved",
+    "estimated_api_cost_usd": 0.00450225
+  },
+  "paired": {
+    "mini": {
+      "calls": 2,
+      "statuses": {
+        "error": 0,
+        "unresolved": 0,
+        "pending": 0,
+        "inflight": 0,
+        "invalid": 1,
+        "valid": 1
+      },
+      "seconds_sum": 6.863,
+      "estimated_api_cost_usd": 0.00751275,
+      "known_input_tokens": 6735,
+      "known_output_tokens": 547
+    },
+    "qwen": {
+      "calls": 2,
+      "statuses": {
+        "pending": 0,
+        "valid": 1,
+        "error": 0,
+        "inflight": 0,
+        "invalid": 1,
+        "unresolved": 0
+      },
+      "seconds_sum": 96.506,
+      "estimated_api_cost_usd": 0.0,
+      "known_input_tokens": 7355,
+      "known_output_tokens": 1050
+    }
+  },
+  "semantic_review": {
+    "cross_page": {
+      "agreement": "Both distinguish Wade, Johnson and Sumner; link leaf403 to leaf404 P12/P13 and isolate Sumner P14",
+      "candidate_alias_equivalence": "C1 and C3 both quote Mr. WADE; either may ground a Wade proposal with appropriate local evidence",
+      "open_policy_boundary": "Both assign OCR Yv-ADE P15/P16 to Wade without uncertainty. Conservative frozen AI expectation asks review, but context makes it plausible; historical correctness/acceptance not adjudicated. HR-005-v1 asks human."
+    },
+    "unnamed": {
+      "agreement": "Both abstain from inventing the unnamed floor speaker and distinguish mentioned people",
+      "mini_failure": "Null candidates for proposed Davis/President mentions violate current candidate/evidence relationship",
+      "qwen_failure": "Unknown speaker cites P1 as negative evidence; current contract forbids any evidence on unknown",
+      "interpretation": "Both whole responses remain invalid under frozen contract. Do not salvage parts or equate these representation failures with wrong historical interpretation."
+    }
+  },
+  "next_engineering": [
+    "Revalidate saved raw replies offline under a separately versioned v2 review before spending on any new call; never overwrite old invalid results",
+    "Design versioned unknown/negative-evidence semantics; avoid rejecting meaningful evidence merely to satisfy a serialization convention",
+    "Constrain status/candidate/evidence combinations in per-request schema and add a small generic example before retrying only the negative control",
+    "Preserve failed calls and old schema; do not relabel prior invalid responses as valid",
+    "Wait for HR-005 damaged-name policy before claiming this normalization accepted; improve conservative guard meanwhile"
+  ],
+  "scope_limits": [
+    "Two paired diagnostic cases only, parts1 and5; not all five parts or a representative benchmark",
+    "No date extraction, verified person/service authorities, OCR patches or corpus enrichment",
+    "Qwen local call includes model loading; two-case timings cannot project full-corpus runtime",
+    "Vendor decoding differs: Mini strict structured output, Ollama JSON mode with same packet-specific schema in prompt",
+    "Compatible resume demonstrated on copied terminal stores with a forbidden-call sentinel; actual interrupted cross-harness recovery remains unproven",
+    "Model tags/digest observed in preflight; automatic server-digest pinning on resume remains future work",
+    "CLI exit0 currently means runner completed, not all results valid; inspect summary statuses"
+  ],
+  "rates": {
+    "input_per_million": 0.75,
+    "cached_input_per_million": 0.075,
+    "output_per_million": 4.5,
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+    "checked_local_date": "2026-10-23",
+    "cost_kind": "usage-based estimate, not invoice"
+  },
+  "all_paid_calls": 3,
+  "all_local_model_calls": 2,
+  "total_paid_estimate_usd": 0.012015,
+  "no_canonical_changes": true,
+  "source_hashes": {
+    "mini/summary.json": "9b018d2e4a38e3a98fac6d95282bac899c3805c47d7949bb2bdc020d8035a189",
+    "qwen/summary.json": "46e22d274547f6b42f3b8585959b064b1dc698cd5eaafd98ce2d3966d9b17bf5",
+    "resume-proof.json": "646f7e0871176a492e8c4afa2519941d0864b598822d4fc44f6a11b8411874fc"
+  },
+  "environment_observed_after_calls": {
+    "python": "3.14.7",
+    "openai": "3.28.0",
+    "pydantic": "2.14.0",
+    "uv_lock_sha256": "b576671aeac0f87bda71b05dfd9ef47064048518fd717f724c45eaaa223bd66e"
+  },
+  "audit_note": "Comparison02 adapter/controller source snapshots match launch code hashes; exact SDK argument bodies reconstructed offline from those adapters. Pilot01 predates ID specialization; raw response/config and generic source packet preserved, but full old adapter source was not snapshotted. Future runner should persist request bodies/source snapshots automatically before calls."
+}

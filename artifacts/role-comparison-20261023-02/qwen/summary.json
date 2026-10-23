@@ -1,0 +1,131 @@
+{
+  "statuses": {
+    "pending": 0,
+    "valid": 1,
+    "error": 0,
+    "inflight": 0,
+    "invalid": 1,
+    "unresolved": 0
+  },
+  "attempts": 2,
+  "results": [
+    {
+      "window_id": "hr008-cross-page-p5-403-404-v1",
+      "status": "valid",
+      "result": {
+        "elapsed_seconds": 68.562,
+        "finish_reason": "stop",
+        "output_text": "{\n  \"speaker_roles\": [\n    {\n      \"candidate_id\": \"C1\",\n      \"evidence_ids\": [\n        \"C1\",\n        \"P2\"\n      ],\n      \"target_ids\": [\n        \"P2\",\n        \"P3\",\n        \"P4\",\n        \"P5\"\n      ],\n      \"role\": \"floor_speaker\",\n      \"status\": \"proposed\",\n      \"basis\": \"Cue C1 'Mr. WADE' introduces P2 where he renews an amendment and presents the text of additional sections in P3-P5.\"\n    },\n    {\n      \"candidate_id\": \"C2\",\n      \"evidence_ids\": [\n        \"C2\",\n        \"P6\"\n      ],\n      \"target_ids\": [\n        \"P6\"\n      ],\n      \"role\": \"floor_speaker\",\n      \"status\": \"proposed\",\n      \"basis\": \"Cue C2 'Mr. JOHNSON' introduces P6 where he asks a question regarding the aggregate increase in appropriations.\"\n    },\n    {\n      \"candidate_id\": \"C3\",\n      \"evidence_ids\": [\n        \"C3\",\n        \"P7\",\n        \"P8\",\n        \"P12\",\n        \"P13\"\n      ],\n      \"target_ids\": [\n        \"P7\",\n        \"P8\",\n        \"P12\",\n        \"P13\"\n      ],\n      \"role\": \"floor_speaker\",\n      \"status\": \"proposed\",\n      \"basis\": \"Cue C3 'Mr. WADE' introduces P7. P8 continues his argument. P9-P11 are page headers. P12 and P13 continue his speech, discussing the House's resolution and the Sergeant-at-Arms, interrupted by P14.\"\n    },\n    {\n      \"candidate_id\": \"C4\",\n      \"evidence_ids\": [\n        \"C4\",\n        \"P14\"\n      ],\n      \"target_ids\": [\n        \"P14\"\n      ],\n      \"role\": \"floor_speaker\",\n      \"status\": \"proposed\",\n      \"basis\": \"Cue C4 'Mr. SUMNER' introduces P14 where he asks 'Who is that?' interrupting the previous speaker.\"\n    },\n    {\n      \"candidate_id\": \"C1\",\n      \"evidence_ids\": [\n        \"P15\",\n        \"P16\"\n      ],\n      \"target_ids\": [\n        \"P15\",\n        \"P16\"\n      ],\n      \"role\": \"floor_speaker\",\n      \"status\": \"proposed\",\n      \"basis\": \"P15 begins with 'Mr. Yv'ADE' (OCR error for WADE) and answers Sumner's question, continuing the argument from P13. P16 continues this speech.\"\n    }\n  ]\n}",
+        "provider_request_id": "chatcmpl-29",
+        "raw_response": "{\"id\": \"chatcmpl-29\", \"choices\": [{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"{\\n  \\\"speaker_roles\\\": [\\n    {\\n      \\\"candidate_id\\\": \\\"C1\\\",\\n      \\\"evidence_ids\\\": [\\n        \\\"C1\\\",\\n        \\\"P2\\\"\\n      ],\\n      \\\"target_ids\\\": [\\n        \\\"P2\\\",\\n        \\\"P3\\\",\\n        \\\"P4\\\",\\n        \\\"P5\\\"\\n      ],\\n      \\\"role\\\": \\\"floor_speaker\\\",\\n      \\\"status\\\": \\\"proposed\\\",\\n      \\\"basis\\\": \\\"Cue C1 'Mr. WADE' introduces P2 where he renews an amendment and presents the text of additional sections in P3-P5.\\\"\\n    },\\n    {\\n      \\\"candidate_id\\\": \\\"C2\\\",\\n      \\\"evidence_ids\\\": [\\n        \\\"C2\\\",\\n        \\\"P6\\\"\\n      ],\\n      \\\"target_ids\\\": [\\n        \\\"P6\\\"\\n      ],\\n      \\\"role\\\": \\\"floor_speaker\\\",\\n      \\\"status\\\": \\\"proposed\\\",\\n      \\\"basis\\\": \\\"Cue C2 'Mr. JOHNSON' introduces P6 where he asks a question regarding the aggregate increase in appropriations.\\\"\\n    },\\n    {\\n      \\\"candidate_id\\\": \\\"C3\\\",\\n      \\\"evidence_ids\\\": [\\n        \\\"C3\\\",\\n        \\\"P7\\\",\\n        \\\"P8\\\",\\n        \\\"P12\\\",\\n        \\\"P13\\\"\\n      ],\\n      \\\"target_ids\\\": [\\n        \\\"P7\\\",\\n        \\\"P8\\\",\\n        \\\"P12\\\",\\n        \\\"P13\\\"\\n      ],\\n      \\\"role\\\": \\\"floor_speaker\\\",\\n      \\\"status\\\": \\\"proposed\\\",\\n      \\\"basis\\\": \\\"Cue C3 'Mr. WADE' introduces P7. P8 continues his argument. P9-P11 are page headers. P12 and P13 continue his speech, discussing the House's resolution and the Sergeant-at-Arms, interrupted by P14.\\\"\\n    },\\n    {\\n      \\\"candidate_id\\\": \\\"C4\\\",\\n      \\\"evidence_ids\\\": [\\n        \\\"C4\\\",\\n        \\\"P14\\\"\\n      ],\\n      \\\"target_ids\\\": [\\n        \\\"P14\\\"\\n      ],\\n      \\\"role\\\": \\\"floor_speaker\\\",\\n      \\\"status\\\": \\\"proposed\\\",\\n      \\\"basis\\\": \\\"Cue C4 'Mr. SUMNER' introduces P14 where he asks 'Who is that?' interrupting the previous speaker.\\\"\\n    },\\n    {\\n      \\\"candidate_id\\\": \\\"C1\\\",\\n      \\\"evidence_ids\\\": [\\n        \\\"P15\\\",\\n        \\\"P16\\\"\\n      ],\\n      \\\"target_ids\\\": [\\n        \\\"P15\\\",\\n        \\\"P16\\\"\\n      ],\\n      \\\"role\\\": \\\"floor_speaker\\\",\\n      \\\"status\\\": \\\"proposed\\\",\\n      \\\"basis\\\": \\\"P15 begins with 'Mr. Yv'ADE' (OCR error for WADE) and answers Sumner's question, continuing the argument from P13. P16 continues this speech.\\\"\\n    }\\n  ]\\n}\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": null}}], \"created\": 1792756319, \"model\": \"qwen3.8:27b-mlx\", \"object\": \"chat.completion\", \"metadata\": null, \"moderation\": null, \"service_tier\": null, \"system_fingerprint\": \"fp_ollama\", \"usage\": {\"completion_tokens\": 670, \"prompt_tokens\": 5393, \"total_tokens\": 6063, \"completion_tokens_details\": null, \"prompt_tokens_details\": {\"audio_tokens\": null, \"cache_write_tokens\": null, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null}}}",
+        "role_proposals": {
+          "speaker_roles": [
+            {
+              "basis": "Cue C1 'Mr. WADE' introduces P2 where he renews an amendment and presents the text of additional sections in P3-P5.",
+              "candidate_id": "C1",
+              "evidence_ids": [
+                "C1",
+                "P2"
+              ],
+              "role": "floor_speaker",
+              "status": "proposed",
+              "target_ids": [
+                "P2",
+                "P3",
+                "P4",
+                "P5"
+              ]
+            },
+            {
+              "basis": "Cue C2 'Mr. JOHNSON' introduces P6 where he asks a question regarding the aggregate increase in appropriations.",
+              "candidate_id": "C2",
+              "evidence_ids": [
+                "C2",
+                "P6"
+              ],
+              "role": "floor_speaker",
+              "status": "proposed",
+              "target_ids": [
+                "P6"
+              ]
+            },
+            {
+              "basis": "Cue C3 'Mr. WADE' introduces P7. P8 continues his argument. P9-P11 are page headers. P12 and P13 continue his speech, discussing the House's resolution and the Sergeant-at-Arms, interrupted by P14.",
+              "candidate_id": "C3",
+              "evidence_ids": [
+                "C3",
+                "P7",
+                "P8",
+                "P12",
+                "P13"
+              ],
+              "role": "floor_speaker",
+              "status": "proposed",
+              "target_ids": [
+                "P7",
+                "P8",
+                "P12",
+                "P13"
+              ]
+            },
+            {
+              "basis": "Cue C4 'Mr. SUMNER' introduces P14 where he asks 'Who is that?' interrupting the previous speaker.",
+              "candidate_id": "C4",
+              "evidence_ids": [
+                "C4",
+                "P14"
+              ],
+              "role": "floor_speaker",
+              "status": "proposed",
+              "target_ids": [
+                "P14"
+              ]
+            },
+            {
+              "basis": "P15 begins with 'Mr. Yv'ADE' (OCR error for WADE) and answers Sumner's question, continuing the argument from P13. P16 continues this speech.",
+              "candidate_id": "C1",
+              "evidence_ids": [
+                "P15",
+                "P16"
+              ],
+              "role": "floor_speaker",
+              "status": "proposed",
+              "target_ids": [
+                "P15",
+                "P16"
+              ]
+            }
+          ]
+        },
+        "status": "completed",
+        "usage": {
+          "cached_input_tokens": 0,
+          "input_tokens": 5393,
+          "output_tokens": 670
+        },
+        "validation_scope": "schema/reference only"
+      }
+    },
+    {
+      "window_id": "t2-1-010",
+      "status": "invalid",
+      "result": {
+        "elapsed_seconds": 27.944,
+        "finish_reason": "stop",
+        "output_text": "{\n  \"speaker_roles\": [\n    {\n      \"candidate_id\": null,\n      \"evidence_ids\": [\n        \"P1\"\n      ],\n      \"target_ids\": [\n        \"P1\"\n      ],\n      \"role\": \"floor_speaker\",\n      \"status\": \"unknown\",\n      \"basis\": \"The text is a first-person political speech ('I am no Democrat', 'I was an old-line Whig') addressing the chamber ('Gentlemen', 'But, sir'), but no specific speaker name or cue is provided in the raw text or cues to identify the individual.\"\n    },\n    {\n      \"candidate_id\": \"C1\",\n      \"evidence_ids\": [\n        \"P1\",\n        \"C1\"\n      ],\n      \"target_ids\": [\n        \"P1\"\n      ],\n      \"role\": \"person_mentioned\",\n      \"status\": \"proposed\",\n      \"basis\": \"Jefferson Davis is explicitly named in the text as a historical figure ('Jefferson Davis against the United States') to whom treason is compared, but is not the speaker.\"\n    },\n    {\n      \"candidate_id\": \"C2\",\n      \"evidence_ids\": [\n        \"P1\",\n        \"C2\"\n      ],\n      \"target_ids\": [\n        \"P1\"\n      ],\n      \"role\": \"person_mentioned\",\n      \"status\": \"proposed\",\n      \"basis\": \"The term 'President' appears in the text as part of a list of officials ('whether that encroachment was made by a President...'), referring to a generic or specific officeholder mentioned in the argument, not the speaker.\"\n    }\n  ]\n}",
+        "provider_request_id": "chatcmpl-116",
+        "raw_response": "{\"id\": \"chatcmpl-116\", \"choices\": [{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"{\\n  \\\"speaker_roles\\\": [\\n    {\\n      \\\"candidate_id\\\": null,\\n      \\\"evidence_ids\\\": [\\n        \\\"P1\\\"\\n      ],\\n      \\\"target_ids\\\": [\\n        \\\"P1\\\"\\n      ],\\n      \\\"role\\\": \\\"floor_speaker\\\",\\n      \\\"status\\\": \\\"unknown\\\",\\n      \\\"basis\\\": \\\"The text is a first-person political speech ('I am no Democrat', 'I was an old-line Whig') addressing the chamber ('Gentlemen', 'But, sir'), but no specific speaker name or cue is provided in the raw text or cues to identify the individual.\\\"\\n    },\\n    {\\n      \\\"candidate_id\\\": \\\"C1\\\",\\n      \\\"evidence_ids\\\": [\\n        \\\"P1\\\",\\n        \\\"C1\\\"\\n      ],\\n      \\\"target_ids\\\": [\\n        \\\"P1\\\"\\n      ],\\n      \\\"role\\\": \\\"person_mentioned\\\",\\n      \\\"status\\\": \\\"proposed\\\",\\n      \\\"basis\\\": \\\"Jefferson Davis is explicitly named in the text as a historical figure ('Jefferson Davis against the United States') to whom treason is compared, but is not the speaker.\\\"\\n    },\\n    {\\n      \\\"candidate_id\\\": \\\"C2\\\",\\n      \\\"evidence_ids\\\": [\\n        \\\"P1\\\",\\n        \\\"C2\\\"\\n      ],\\n      \\\"target_ids\\\": [\\n        \\\"P1\\\"\\n      ],\\n      \\\"role\\\": \\\"person_mentioned\\\",\\n      \\\"status\\\": \\\"proposed\\\",\\n      \\\"basis\\\": \\\"The term 'President' appears in the text as part of a list of officials ('whether that encroachment was made by a President...'), referring to a generic or specific officeholder mentioned in the argument, not the speaker.\\\"\\n    }\\n  ]\\n}\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": null}}], \"created\": 1792756347, \"model\": \"qwen3.8:27b-mlx\", \"object\": \"chat.completion\", \"metadata\": null, \"moderation\": null, \"service_tier\": null, \"system_fingerprint\": \"fp_ollama\", \"usage\": {\"completion_tokens\": 380, \"prompt_tokens\": 1962, \"total_tokens\": 2342, \"completion_tokens_details\": null, \"prompt_tokens_details\": {\"audio_tokens\": null, \"cache_write_tokens\": null, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null}}}",
+        "status": "completed",
+        "usage": {
+          "cached_input_tokens": 0,
+          "input_tokens": 1962,
+          "output_tokens": 380
+        },
+        "validation_error": "1 validation error for RoleResult\nspeaker_roles.0\n  Value error, unknown role attribution must have null candidate and no evidence IDs [type=value_error, input_value={'candidate_id': None, 'e...entify the individual.\"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error"
+      }
+    }
+  ],
+  "api_cost_usd_estimate": 0.0,
+  "quality": "Schema/reference validity only; semantic/human review pending",
+  "recovery": "No automatic retries; unknown outcomes block resume"
+}
