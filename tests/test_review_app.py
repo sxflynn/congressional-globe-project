@@ -149,3 +149,30 @@ def test_review_opens_directly_without_access_code(tmp_path, monkeypatch) -> Non
     assert not any(widget.label == "Access code" for widget in app.text_input)
     assert app.selectbox
     assert not app.exception
+
+
+def test_packet_definitions_render_in_prompts_evidence_and_choice_help(tmp_path, monkeypatch):
+    store = _store(tmp_path, monkeypatch)
+    store.register(
+        {
+            "id": "DEMO-TEST",
+            "version": 2,
+            "title": "Definition example",
+            "instructions": "Explain a widget.",
+            "glossary": [{"term": "widget", "definition": "A small invented test object."}],
+            "questions": [
+                {
+                    "id": "choice",
+                    "prompt": "Which widget?",
+                    "options": ["widget", "other"],
+                    "evidence": [{"label": "Test evidence", "text": "One widget."}],
+                }
+            ],
+        }
+    )
+    app = _app()
+    rendered = "\n".join(item.value for item in app.markdown)
+    assert rendered.count("A small invented test object.") == 4
+    assert "Answer terms:" in rendered
+    assert app.selectbox[-1].options == ["", "widget", "other"]
+    assert not app.exception

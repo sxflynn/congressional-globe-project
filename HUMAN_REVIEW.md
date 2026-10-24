@@ -10,6 +10,10 @@ Use the browser desk for new reviews. This page links prior answers and explains
 
 HR-005-v1 and HR-008-v1 are already answered and incorporated; no repeat review is needed. HR-003 standards/resources are now requested; new role/date samples have not been requested.
 
+## Definitions while reviewing
+
+Tap a dotted-underlined term to open a short, plain-language definition. Close it, tap outside it, or press Escape to return to the review. Opening definitions keeps your unsaved answers in place. Instructions, questions and evidence use the same glossary; terms that occur only in answer choices are explained just above the choices.
+
 ## Original scan demonstration
 
 Open [Source images](http://10.0.0.56:8501/?view=source-images) for geometry-linked scan crops: the damaged petition, an exact word/number, and two more paragraphs. Original print and unchanged OCR are displayed together. This is read-only, not another request to regrade HR-008 or an automatic correction. HR-004 remains under Pending; if you consult its scans, note that in your response so image-assisted judgments are not treated as OCR-only readability evidence.

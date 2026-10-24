@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import hashlib
-import html
 import os
 import sqlite3
 from pathlib import Path
@@ -11,6 +10,7 @@ from typing import Any
 
 import streamlit as st
 
+from congressional_globe.review_glossary import show_option_definitions, show_text, styles
 from congressional_globe.review_store import ReviewStore
 from congressional_globe.scan_review import show_source_images
 
@@ -53,26 +53,23 @@ def _widget_prefix(packet_id: str, version: int, reviewer: str, revision_id: str
     return hashlib.sha256(source.encode()).hexdigest()[:12]
 
 
-def _evidence(question: Any) -> None:
-    for item in _value(question, "evidence", []):
-        st.markdown(f"**{_value(item, 'label', 'Evidence')}**")
-        st.markdown(
-            "<div class='source-card'><pre>"
-            + html.escape(str(_value(item, "text", "")))
-            + "</pre></div>",
-            unsafe_allow_html=True,
-        )
+def _evidence(question: Any, scope: str, glossary: list[dict]) -> None:
+    for index, item in enumerate(_value(question, "evidence", [])):
+        show_text(str(_value(item, "label", "Evidence")), f"{scope}-label-{index}", glossary)
+        show_text(str(_value(item, "text", "")), f"{scope}-evidence-{index}", glossary, source=True)
         url = _safe_url(_value(item, "url"))
         if url:
             st.markdown(f"[Open source]({url})")
 
 
-def _answer_widget(question: Any, current: str, key_prefix: str) -> str:
+def _answer_widget(question: Any, current: str, key_prefix: str, glossary: list[dict]) -> str:
     question_id = str(_value(question, "id"))
     label = str(_value(question, "prompt"))
     required = bool(_value(question, "required", True))
-    st.markdown(f"**{label}**" + (" *" if required else ""))
-    _evidence(question)
+    scope = f"{key_prefix}-{question_id}"
+    show_text(label + (" *" if required else ""), scope, glossary)
+    _evidence(question, scope, glossary)
+    show_option_definitions(question, f"{scope}-options", glossary)
     options = _value(question, "options", []) or []
     key = f"answer-{key_prefix}-{question_id}"
     if options:
@@ -123,7 +120,9 @@ def _show_packet(
     packet_id, version = _value(packet, "id"), _value(packet, "version")
     st.subheader(_value(packet, "title"))
     st.caption(f"{packet_id} · version {version}" + (" · revision" if revision else ""))
-    st.write(_value(packet, "instructions"))
+    glossary = _value(packet, "glossary", [])
+    show_text(str(_value(packet, "instructions")), f"{packet_id}-{version}-instructions", glossary)
+    st.caption("Tap a dotted-underlined term for its definition. Close it to keep reading.")
     reviewer = _reviewer(packet_id, version, store, revision_id, revision, reviewer_default)
     if reviewer is None:
         return
@@ -185,7 +184,10 @@ def _review_form(
     with st.form(f"review-{packet_id}-{version}-{key_prefix}"):
         answers = {
             str(_value(question, "id")): _answer_widget(
-                question, baseline.get(str(_value(question, "id")), ""), key_prefix
+                question,
+                baseline.get(str(_value(question, "id")), ""),
+                key_prefix,
+                _value(packet, "glossary", []),
             )
             for question in questions
         }
@@ -357,6 +359,7 @@ def _masthead() -> None:
 def main() -> None:
     st.set_page_config(page_title="Congressional Globe · Human review", layout="centered")
     _masthead()
+    styles()
     st.subheader("Human review desk")
     data = _store_data()
     if data is None:

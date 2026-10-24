@@ -1,0 +1,437 @@
+{
+  "version": 1,
+  "terms": [
+    {
+      "term": "static cleanup",
+      "definition": "Text changes made by fixed rules and word lists, without asking a language model. Here it means the existing saved version of the OCR after those rules; it can still contain mistakes.",
+      "aliases": [
+        "static text",
+        "current static cleanup"
+      ]
+    },
+    {
+      "term": "selected outputs",
+      "definition": "The particular saved model responses chosen for evaluation or for a proposed reading version. Other responses, failed attempts and alternatives remain saved; selection alone does not mean a person has approved them.",
+      "aliases": [
+        "selected output"
+      ]
+    },
+    {
+      "term": "substantive repair",
+      "definition": "A correction needed to restore the actual wording or meaning, such as a wrong name, number, missing phrase or negation. Merely changing spacing or appearance does not count.",
+      "aliases": []
+    },
+    {
+      "term": "evidence controls",
+      "definition": "Test examples deliberately given missing or unrelated source evidence, to check that the model asks for review instead of guessing. They are tests of behavior, not ordinary historical passages.",
+      "aliases": [
+        "evidence control"
+      ]
+    },
+    {
+      "term": "critical regressions",
+      "definition": "New serious errors introduced by cleanup into text that was previously correct, such as changing a person, amount, date, bill number or the word “not.”",
+      "aliases": [
+        "critical regression",
+        "regressions",
+        "regression"
+      ]
+    },
+    {
+      "term": "OCR",
+      "definition": "Optical character recognition: software that turns a scanned page into searchable text. Its output can misread letters, numbers and layout.",
+      "aliases": []
+    },
+    {
+      "term": "raw OCR",
+      "definition": "The original machine-read text, preserved exactly as collected, including its errors.",
+      "aliases": [
+        "raw text"
+      ]
+    },
+    {
+      "term": "clean reading layer",
+      "definition": "A separate, corrected version intended for reading and listening. It keeps links to the original text and scan, and does not replace them.",
+      "aliases": [
+        "clean reading",
+        "derived clean text"
+      ]
+    },
+    {
+      "term": "source-grounded",
+      "definition": "Supported by what the original page actually shows, with a link back to that evidence. Plausible wording alone is not enough.",
+      "aliases": [
+        "source-supported"
+      ]
+    },
+    {
+      "term": "source expectations",
+      "definition": "A record of what a reviewer can read in the scan, prepared before looking at the new model answers. Unclear readings stay unresolved.",
+      "aliases": [
+        "source expectation"
+      ]
+    },
+    {
+      "term": "source packet",
+      "definition": "A saved collection of the exact passages, context, image references and settings to be used in a test.",
+      "aliases": [
+        "frozen packet",
+        "source-bound design"
+      ]
+    },
+    {
+      "term": "freeze",
+      "definition": "Save a fixed, identifiable version before a test so that all models use the same material and later changes are visible.",
+      "aliases": [
+        "frozen"
+      ]
+    },
+    {
+      "term": "SHA-256",
+      "definition": "A file or text fingerprint. Matching fingerprints show that the bytes match the recorded version; they do not prove that the historical text is correct.",
+      "aliases": [
+        "hash",
+        "hashes",
+        "fingerprint",
+        "fingerprints"
+      ]
+    },
+    {
+      "term": "canonical edits",
+      "definition": "Changes to the project’s published base text or accepted records. A proposed correction does not automatically change these records.",
+      "aliases": [
+        "canonical text",
+        "canonical rewrite"
+      ]
+    },
+    {
+      "term": "pilot",
+      "definition": "A small, limited trial used to learn whether a larger workflow is worth pursuing. It is not permission to process the whole collection.",
+      "aliases": [
+        "POC"
+      ]
+    },
+    {
+      "term": "P0",
+      "definition": "The project’s still-open decision about whether further OCR cleanup is worth its total cost, and for which uses.",
+      "aliases": []
+    },
+    {
+      "term": "diagnostic sample",
+      "definition": "A small set chosen to reveal particular strengths and failures. Its results do not estimate the error rate of the whole collection.",
+      "aliases": [
+        "diagnostic",
+        "balanced diagnostic sample"
+      ]
+    },
+    {
+      "term": "strata",
+      "definition": "Groups of examples chosen to cover different conditions, such as corpus part, document type or OCR damage.",
+      "aliases": [
+        "stratum"
+      ]
+    },
+    {
+      "term": "corpus",
+      "definition": "The complete collection being studied: here, the five collected parts of the 39th Congress, first session.",
+      "aliases": []
+    },
+    {
+      "term": "held-out",
+      "definition": "Kept separate from examples used to develop or adjust the method, so a later test is less influenced by prior tuning.",
+      "aliases": [
+        "held-out gold"
+      ]
+    },
+    {
+      "term": "calibration",
+      "definition": "A few examples used to clarify how a person or method should judge cases. They are not automatically an independent final test.",
+      "aliases": []
+    },
+    {
+      "term": "controls",
+      "definition": "Comparison examples used to check behavior, including unchanged text or deliberately missing evidence. Their exact purpose should be stated.",
+      "aliases": [
+        "control"
+      ]
+    },
+    {
+      "term": "TTS",
+      "definition": "Text-to-speech: software that reads text aloud. Checking the text for likely spoken errors is different from actually listening to generated audio.",
+      "aliases": [
+        "text-to-speech",
+        "TTS-text"
+      ]
+    },
+    {
+      "term": "RAG",
+      "definition": "Retrieval-augmented generation: an AI system first finds passages, then uses them as evidence when answering a question.",
+      "aliases": []
+    },
+    {
+      "term": "retrieval",
+      "definition": "Finding relevant passages in the collection, using words, meaning or filters.",
+      "aliases": []
+    },
+    {
+      "term": "enrichment",
+      "definition": "Adding proposed information to passages, such as a speaker, date, subject or bill reference. Each claim needs its own evidence.",
+      "aliases": [
+        "annotation",
+        "tagging"
+      ]
+    },
+    {
+      "term": "fidelity",
+      "definition": "How closely the proposed reading preserves what the original scan says, including names, numbers and qualifications.",
+      "aliases": []
+    },
+    {
+      "term": "unsupported substantive changes",
+      "definition": "Changes to actual wording or meaning that the supplied source evidence does not justify.",
+      "aliases": [
+        "unsupported substantive change"
+      ]
+    },
+    {
+      "term": "critical fidelity",
+      "definition": "Whether the reading preserves meaning-bearing details such as names, numbers, dates, negations and whole sentences. A serious change in any of these is a critical error.",
+      "aliases": []
+    },
+    {
+      "term": "manual review",
+      "definition": "A person examines the passage and source to resolve an uncertainty or check a proposed change.",
+      "aliases": [
+        "human review"
+      ]
+    },
+    {
+      "term": "provider",
+      "definition": "The service or local software that runs a language model and returns its response.",
+      "aliases": [
+        "providers"
+      ]
+    },
+    {
+      "term": "inference",
+      "definition": "Running a model on an input to generate a response. It does not mean the response has been verified.",
+      "aliases": [
+        "inference attempts",
+        "inference attempt"
+      ]
+    },
+    {
+      "term": "attempts",
+      "definition": "Individual requests sent to a model, including ones that fail or time out. A retry is another attempt.",
+      "aliases": [
+        "attempt"
+      ]
+    },
+    {
+      "term": "tokens",
+      "definition": "The pieces of text a model reads or writes, often words or parts of words. Token limits are not the same as word limits.",
+      "aliases": [
+        "token"
+      ]
+    },
+    {
+      "term": "context",
+      "definition": "Surrounding text and other information supplied with a passage. It can help interpretation but must not be used to invent missing wording.",
+      "aliases": []
+    },
+    {
+      "term": "output tokens",
+      "definition": "The pieces of text the model is allowed to generate in its reply.",
+      "aliases": []
+    },
+    {
+      "term": "timeout",
+      "definition": "A request that has not completed within the allowed time. It may require checking whether the model is still working.",
+      "aliases": [
+        "timeouts"
+      ]
+    },
+    {
+      "term": "truncation",
+      "definition": "Text cut off because an input or reply exceeds a limit. A cut-off reply is not a complete successful result.",
+      "aliases": [
+        "truncate",
+        "truncated"
+      ]
+    },
+    {
+      "term": "recovery checks",
+      "definition": "Tests that saved work can be recovered after an interruption without losing results or accidentally repeating requests.",
+      "aliases": [
+        "recovery proof"
+      ]
+    },
+    {
+      "term": "resume",
+      "definition": "Continue from saved work after stopping, reusing completed compatible results rather than starting over.",
+      "aliases": []
+    },
+    {
+      "term": "replay",
+      "definition": "Reproduce a saved transformation or result from the same recorded inputs, without asking a model again.",
+      "aliases": []
+    },
+    {
+      "term": "cache",
+      "definition": "Saved material that can be reused when its inputs and settings still match.",
+      "aliases": [
+        "cached"
+      ]
+    },
+    {
+      "term": "source crop",
+      "definition": "A small image cut from an original scanned page. Its recorded page and position connect it to the text being checked.",
+      "aliases": [
+        "crop",
+        "crops",
+        "source crops"
+      ]
+    },
+    {
+      "term": "evidence anchors",
+      "definition": "Exact references connecting a claim or correction to its original passage, page and image region.",
+      "aliases": [
+        "evidence anchor",
+        "source anchors",
+        "source anchor"
+      ]
+    },
+    {
+      "term": "patches",
+      "definition": "Recorded changes containing the old text, replacement text and exact location. They allow checking and reversing a correction.",
+      "aliases": [
+        "patch"
+      ]
+    },
+    {
+      "term": "schema",
+      "definition": "The required structure and fields of a saved record or model reply. Passing this check shows correct structure, not historical correctness.",
+      "aliases": [
+        "JSON",
+        "structured output"
+      ]
+    },
+    {
+      "term": "validation",
+      "definition": "Automatic checks that data follows required rules, such as correct fields and matching source text. These checks alone do not establish historical truth.",
+      "aliases": [
+        "validated"
+      ]
+    },
+    {
+      "term": "independent confirmation",
+      "definition": "A further test on fresh examples after choosing a method, to see whether its apparent benefit holds up.",
+      "aliases": [
+        "confirmation batch",
+        "fresh confirmation"
+      ]
+    },
+    {
+      "term": "local resource envelope",
+      "definition": "The agreed limits on local model requests, running time, image transfers and other computer resources.",
+      "aliases": [
+        "resource envelope"
+      ]
+    },
+    {
+      "term": "baseline",
+      "definition": "The existing version used for comparison, such as raw OCR or current static cleanup.",
+      "aliases": []
+    },
+    {
+      "term": "incremental value",
+      "definition": "The extra useful improvement over the existing comparison version, after accounting for new mistakes and added effort.",
+      "aliases": []
+    },
+    {
+      "term": "unknown",
+      "definition": "A result for which the available evidence does not support a reliable answer. It is not a correct reading or permission to guess.",
+      "aliases": []
+    },
+    {
+      "term": "abstention",
+      "definition": "Explicitly declining to supply an unsupported reading or assignment and leaving it for review.",
+      "aliases": [
+        "abstain",
+        "abstentions"
+      ]
+    },
+    {
+      "term": "throughput",
+      "definition": "How much material the workflow completes in a measured amount of time, including the stated failures and overhead.",
+      "aliases": []
+    },
+    {
+      "term": "real units",
+      "definition": "The actual historical passages in the test, counted once per passage. Artificial missing-image or wrong-image tests are counted separately.",
+      "aliases": [
+        "real unit",
+        "units"
+      ]
+    },
+    {
+      "term": "provisional",
+      "definition": "A working proposal or judgment that may change after review or more evidence. It has not been adopted as a final standard.",
+      "aliases": []
+    },
+    {
+      "term": "API",
+      "definition": "A software connection that lets the workflow send a request to a model service and receive its response.",
+      "aliases": []
+    },
+    {
+      "term": "runner",
+      "definition": "The program that sends the prepared requests, saves replies and tracks progress, failures and time limits.",
+      "aliases": []
+    },
+    {
+      "term": "preflight",
+      "definition": "Checks completed before a run begins, such as confirming the inputs fit the model limits and the source fingerprints match.",
+      "aliases": []
+    },
+    {
+      "term": "shared lock",
+      "definition": "A coordination mechanism that allows only one participating local model request at a time, to prevent jobs from overlapping.",
+      "aliases": []
+    },
+    {
+      "term": "strictly sequential",
+      "definition": "One request runs at a time; the next starts only after the previous request has finished or been reconciled.",
+      "aliases": []
+    },
+    {
+      "term": "benchmark",
+      "definition": "A fixed set of examples and scoring rules used to compare methods. A small benchmark does not establish performance for every passage.",
+      "aliases": []
+    },
+    {
+      "term": "negations",
+      "definition": "Words such as “not” or “never” that reverse or limit a statement. Losing one can change the historical meaning.",
+      "aliases": [
+        "negation"
+      ]
+    },
+    {
+      "term": "automatic adoption",
+      "definition": "Using a proposed result without checking that individual result by hand. The pilot does not itself permit this for the corpus.",
+      "aliases": []
+    },
+    {
+      "term": "context tokens",
+      "definition": "The pieces of text the model can take into account, including instructions, surrounding passages and the space needed for a reply.",
+      "aliases": []
+    },
+    {
+      "term": "abbreviations",
+      "definition": "Shortened forms such as “Mr.” or “Sec.” Preserving them avoids silently adding wording that is not printed.",
+      "aliases": [
+        "abbreviation"
+      ]
+    }
+  ]
+}

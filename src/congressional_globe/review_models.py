@@ -4,7 +4,15 @@ from __future__ import annotations
 
 from typing import Annotated
 
-from pydantic import BaseModel, ConfigDict, Field, HttpUrl, StringConstraints, model_validator
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    HttpUrl,
+    StringConstraints,
+    model_serializer,
+    model_validator,
+)
 
 NonBlank = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1)]
 
@@ -33,6 +41,16 @@ class ReviewQuestion(BaseModel):
         return self
 
 
+class GlossaryTerm(BaseModel):
+    """Plain-language explanation, with literal alternative spellings to annotate."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    term: NonBlank
+    definition: NonBlank
+    aliases: list[NonBlank] = Field(default_factory=list)
+
+
 class ReviewPacket(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -42,6 +60,23 @@ class ReviewPacket(BaseModel):
     instructions: NonBlank
     blind: bool = False
     questions: list[ReviewQuestion] = Field(min_length=1)
+    glossary: list[GlossaryTerm] = Field(default_factory=list)
+
+    @model_serializer(mode="wrap")
+    def compatible_payload(self, handler):
+        payload = handler(self)
+        if not self.glossary:
+            payload.pop("glossary", None)
+        return payload
+
+    @model_validator(mode="after")
+    def unique_glossary_terms(self) -> ReviewPacket:
+        names = [
+            name.casefold() for entry in self.glossary for name in [entry.term, *entry.aliases]
+        ]
+        if len(names) != len(set(names)):
+            raise ValueError("glossary terms and aliases must be unique")
+        return self
 
     @model_validator(mode="after")
     def unique_question_ids(self) -> ReviewPacket:

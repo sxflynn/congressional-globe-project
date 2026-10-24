@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-24",
+  "scope": "Review-desk inline glossary, no research scoring",
+  "catalog": "docs/review-glossary.json",
+  "entries": 66,
+  "browser_checks": {
+    "viewport": [
+      390,
+      844
+    ],
+    "light_and_dark": true,
+    "popup_width_pixels": 358,
+    "popup_left_pixels": 16,
+    "popup_right_pixels": 374,
+    "horizontal_overflow": false,
+    "click_opens": true,
+    "keyboard_enter_opens": true,
+    "escape_closes": true,
+    "close_button_closes": true,
+    "unsaved_note_preserved": true,
+    "temporary_note_cleared": true,
+    "submission_created": false
+  },
+  "compatibility": {
+    "registered_packet_files_modified": false,
+    "legacy_hashes_verified": [
+      "HR-003-v1",
+      "HR-004-v1"
+    ],
+    "embedded_glossary_export_test": true
+  },
+  "gate": {
+    "command": "make gate",
+    "tests": 257,
+    "log": "tmp/review-glossary/gate.log"
+  },
+  "limits": [
+    "Browser proof is Chromium at a phone-sized viewport, not a physical iPhone test.",
+    "Shared definitions are presentation help; embedded definitions are part of the immutable packet.",
+    "No historical outputs accepted or human answers fabricated."
+  ]
+}
