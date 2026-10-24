@@ -1,0 +1,22 @@
+{
+  "case_id": "text-only-corrupt",
+  "status": "valid",
+  "expected": {
+    "status": "uncertain",
+    "text": null
+  },
+  "proposed": {
+    "status": "uncertain",
+    "transcription": null,
+    "confidence": "low",
+    "reason": "No image was supplied to verify the count before 'citizens'; the OCR text 'GCO' does not contain the word 'citizens' or a visible count."
+  },
+  "evaluation": {
+    "status_matches": true,
+    "text_matches": null
+  },
+  "elapsed_seconds": 10.42786154197529,
+  "input_tokens": 183,
+  "output_tokens": 67,
+  "done_reason": "stop"
+}

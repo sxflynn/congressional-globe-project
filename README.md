@@ -38,7 +38,7 @@ To retrieve another paragraph from the local OCR sources:
 uv run globe scan crop --item congressionalglo7392unit --leaf 328 --paragraph par_000328_000032 --output artifacts/my-scan --fetch
 ```
 
-Without `--fetch`, this only prepares an offline plan. Repeating the same command verifies and reuses cached files. A different target needs a new output directory. For a precise word/patch, add `--start 34 --end 37 --expected GCO --padding 16`; offsets refer to the **original OCR**, not corrected text. The tool downloads only requested image regions and records source identity, hashes and geometry. An image view does not apply a correction. Details and limits are in the master plan's **S0** section.
+Without `--fetch`, this only prepares an offline plan. Repeating the same command verifies and reuses cached files. A different target needs a new output directory. For a precise word/patch, add `--start 34 --end 37 --expected GCO --padding 16`; offsets refer to the **original OCR**, not corrected text. The tool downloads only requested image regions and records source identity, hashes and geometry. An image view does not apply a correction. Details and limits are in the master plan's **S0** section. A tiny local Qwen vision test also corrected the damaged number and recovered a missing word from the scan; results, repeatable commands and limitations are in **S1**. This is a review experiment, not automatic corpus correction.
 
 ## Read the current data
 

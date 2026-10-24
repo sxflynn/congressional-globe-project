@@ -1,0 +1,22 @@
+{
+  "case_id": "image-original-corrupt",
+  "status": "valid",
+  "expected": {
+    "status": "correct",
+    "text": "660"
+  },
+  "proposed": {
+    "status": "correct",
+    "transcription": "660",
+    "confidence": "high",
+    "reason": "The visible crop shows the printed count '660' immediately before the word 'citizens' (partially visible as 'c'). The OCR 'GCO' is incorrect; the image evidence supports '660'."
+  },
+  "evaluation": {
+    "status_matches": true,
+    "text_matches": true
+  },
+  "elapsed_seconds": 4.339294167002663,
+  "input_tokens": 365,
+  "output_tokens": 66,
+  "done_reason": "stop"
+}

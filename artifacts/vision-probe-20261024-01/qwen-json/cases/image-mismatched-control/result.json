@@ -1,0 +1,22 @@
+{
+  "case_id": "image-mismatched-control",
+  "status": "valid",
+  "expected": {
+    "status": "uncertain",
+    "text": null
+  },
+  "proposed": {
+    "status": "uncertain",
+    "transcription": null,
+    "confidence": "high",
+    "reason": "The supplied crop does not contain the word 'citizens' or any printed count immediately before it; the visible text is a legal passage (Sec. 8 and start of Sec. 9) with no such count."
+  },
+  "evaluation": {
+    "status_matches": true,
+    "text_matches": null
+  },
+  "elapsed_seconds": 7.654894249979407,
+  "input_tokens": 871,
+  "output_tokens": 63,
+  "done_reason": "stop"
+}

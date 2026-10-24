@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-24T15:44:27.329461+00:00",
+  "python_pid": 5739,
+  "uv_pid": 5738,
+  "start_local": "2026-10-24 11:44:13 America/New_York",
+  "ollama_runner_pid": 5741,
+  "runner_start_local": "2026-10-24 11:44:14 America/New_York",
+  "harness_session_id": 71687,
+  "command": "uv run python -m congressional_globe.vision_probe --cases artifacts/vision-preparation-20261024-01/cases.json --output artifacts/vision-probe-20261024-01/qwen --model qwen3.8:27b-mlx --expected-digest 5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e --live",
+  "terminal_observation": {
+    "observed_at": "2026-10-24T15:45:25.232876+00:00",
+    "exit_code": 0,
+    "finished_cases": 6
+  }
+}

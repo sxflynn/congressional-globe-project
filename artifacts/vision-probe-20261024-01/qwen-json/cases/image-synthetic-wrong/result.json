@@ -1,0 +1,22 @@
+{
+  "case_id": "image-synthetic-wrong",
+  "status": "valid",
+  "expected": {
+    "status": "correct",
+    "text": "660"
+  },
+  "proposed": {
+    "status": "correct",
+    "transcription": "660",
+    "confidence": "high",
+    "reason": "The visible crop shows the printed count '660' immediately before the word 'citizens', which differs from the supplied OCR '999'."
+  },
+  "evaluation": {
+    "status_matches": true,
+    "text_matches": true
+  },
+  "elapsed_seconds": 2.8724274998530746,
+  "input_tokens": 366,
+  "output_tokens": 51,
+  "done_reason": "stop"
+}

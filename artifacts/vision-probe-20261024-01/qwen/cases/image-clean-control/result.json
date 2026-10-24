@@ -1,0 +1,22 @@
+{
+  "case_id": "image-clean-control",
+  "status": "valid",
+  "expected": {
+    "status": "unchanged",
+    "text": "660"
+  },
+  "proposed": {
+    "status": "unchanged",
+    "transcription": "660",
+    "confidence": "high",
+    "reason": "The crop clearly shows the printed number '660' immediately preceding the word 'citizens' (partially visible as 'c')."
+  },
+  "evaluation": {
+    "status_matches": true,
+    "text_matches": true
+  },
+  "elapsed_seconds": 2.5131839588284492,
+  "input_tokens": 256,
+  "output_tokens": 58,
+  "done_reason": "stop"
+}

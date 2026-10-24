@@ -1,0 +1,22 @@
+{
+  "case_id": "image-clean-control",
+  "status": "valid",
+  "expected": {
+    "status": "unchanged",
+    "text": "660"
+  },
+  "proposed": {
+    "status": "unchanged",
+    "transcription": "660",
+    "confidence": "high",
+    "reason": "The visible crop clearly shows the printed count '660' immediately before the word 'citizens', matching the supplied OCR."
+  },
+  "evaluation": {
+    "status_matches": true,
+    "text_matches": true
+  },
+  "elapsed_seconds": 1.8617747081443667,
+  "input_tokens": 366,
+  "output_tokens": 46,
+  "done_reason": "stop"
+}

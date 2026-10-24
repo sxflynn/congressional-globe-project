@@ -1,0 +1,152 @@
+{
+  "experiment": "vision-probe-20261024-01",
+  "verdict": "Installed qwen3.8:27b-mlx can read these scan crops and correct OCR; no model download needed for this feasibility result. Selective source-assisted review is viable to investigate, not production proven.",
+  "model": {
+    "tag": "qwen3.8:27b-mlx",
+    "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "runner": "mlx",
+    "runtime_architecture": "qwen3_5",
+    "quantization": "nvfp4",
+    "ollama_version": "0.40.8",
+    "reported_loaded_bytes": 22935961336,
+    "identity_caveat": "Local tag and runtime family both preserved; upstream checkpoint equivalence not independently proved."
+  },
+  "batches": {
+    "qwen": {
+      "requests": 6,
+      "schema_valid": 3,
+      "truncated": 3,
+      "request_seconds": 52.79045741655864,
+      "input_tokens": 2126,
+      "output_tokens": 1005,
+      "api_cost_usd": 0,
+      "note": "Local compute/electricity not costed. First batch includes cold loading; second warm. Tiny repeated cases are not corpus throughput."
+    },
+    "qwen-json": {
+      "requests": 6,
+      "schema_valid": 6,
+      "truncated": 0,
+      "request_seconds": 26.02814054186456,
+      "input_tokens": 2786,
+      "output_tokens": 355,
+      "api_cost_usd": 0,
+      "note": "Local compute/electricity not costed. First batch includes cold loading; second warm. Tiny repeated cases are not corpus throughput."
+    }
+  },
+  "cases": [
+    {
+      "case_id": "text-only-corrupt",
+      "before": "GCO",
+      "judgment": {
+        "status": "uncertain",
+        "transcription": null,
+        "confidence": "high",
+        "reason": "No image was supplied to verify the count before 'citizens'."
+      },
+      "status_match": true,
+      "text_match": null,
+      "seconds": 3.571602249983698
+    },
+    {
+      "case_id": "image-original-corrupt",
+      "before": "GCO",
+      "judgment": {
+        "status": "correct",
+        "transcription": "660",
+        "confidence": "high",
+        "reason": "The visible crop shows the printed count '660' immediately before the word 'citizens' (partially visible as 'c'). The OCR 'GCO' is incorrect; the image evidence supports '660'."
+      },
+      "status_match": true,
+      "text_match": true,
+      "seconds": 4.339294167002663
+    },
+    {
+      "case_id": "image-synthetic-wrong",
+      "before": "999",
+      "judgment": {
+        "status": "correct",
+        "transcription": "660",
+        "confidence": "high",
+        "reason": "The visible crop shows the printed count '660' immediately before the word 'citizens', which differs from the supplied OCR '999'."
+      },
+      "status_match": true,
+      "text_match": true,
+      "seconds": 2.8724274998530746
+    },
+    {
+      "case_id": "image-clean-control",
+      "before": "660",
+      "judgment": {
+        "status": "unchanged",
+        "transcription": "660",
+        "confidence": "high",
+        "reason": "The visible crop clearly shows the printed count '660' immediately before the word 'citizens', matching the supplied OCR."
+      },
+      "status_match": true,
+      "text_match": true,
+      "seconds": 1.8617747081443667
+    },
+    {
+      "case_id": "image-petition-context",
+      "before": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American",
+      "judgment": {
+        "status": "correct",
+        "transcription": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American labor.",
+        "confidence": "high",
+        "reason": "The visible text matches the supplied OCR with minor corrections: 'Tlie' to 'The', 'GCO' to '660', and the continuation 'labor.' is included as it belongs to the same petition. The next 'By Mr.' line is excluded as instructed."
+      },
+      "status_match": true,
+      "text_match": true,
+      "seconds": 5.72814766690135
+    },
+    {
+      "case_id": "image-mismatched-control",
+      "before": "GCO",
+      "judgment": {
+        "status": "uncertain",
+        "transcription": null,
+        "confidence": "high",
+        "reason": "The supplied crop does not contain the word 'citizens' or any printed count immediately before it; the visible text is a legal passage (Sec. 8 and start of Sec. 9) with no such count."
+      },
+      "status_match": true,
+      "text_match": null,
+      "seconds": 7.654894249979407
+    }
+  ],
+  "review": {
+    "root": "Compared source crop visually: printed660; full Moorhead petition ends labor.; next Stevens petition excluded. All six JSON-mode statuses/transcriptions match frozen expectations.",
+    "independent_luna": "Read-only review_store independently inspected cached scans and saved outputs; confirms660 on both damaged strings, unchanged clean control, exact petition, no-image/wrong-image abstentions. AI review, not new human grading.",
+    "confidence": "Both abstentions self-report high. This may mean confidence in abstaining; never treat confidence alone as confidence in transcription correctness.",
+    "format": "Schema-constrained batch had3truncated replies; JSON mode plus explicit prompt schema had6valid. Two protocol changes and warm model mean no isolated engine-cause or speed claim."
+  },
+  "limits": [
+    "One number and one petition, not representative OCR accuracy; repeated related controls are not independent corpus samples.",
+    "No degraded-image/ambiguous-digit control, names, difficult layouts, multiple pages or all-five-part vision coverage.",
+    "No GPT comparison, model download, new image fetch, canonical edit or accepted correction ledger entry.",
+    "Current POC checks shape and source evidence diagnostically; production patch/source validation, routing thresholds, human review and wider evaluation remain required.",
+    "Image-context text outside paragraph box cannot automatically be inserted without validated source/span/boundary mapping."
+  ],
+  "next": "Complete queued S0 remaining-part/edge registration, then freeze a few distinct real uncertainty cases with genuinely unreadable controls and compare raw-text vs scan-assisted outcomes before proposing routing/acceptance thresholds. Human H1/H2/H5 checkpoints persist.",
+  "sources": [
+    {
+      "title": "Qwen upstream vision model card",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "title": "MLX image-text model card",
+      "url": "https://huggingface.co/mlx-community/Qwen3.8-27B-nvfp4"
+    },
+    {
+      "title": "Ollama vision API",
+      "url": "https://docs.ollama.com/capabilities/vision"
+    },
+    {
+      "title": "Already installed alternative: Gemma4 31B MLX (not tested here)",
+      "url": "https://huggingface.co/mlx-community/gemma-4-31b-it-4bit"
+    },
+    {
+      "title": "Potential 30B alternative, download not authorized or needed here",
+      "url": "https://huggingface.co/mlx-community/Qwen3-VL-30B-A3B-Instruct-4bit"
+    }
+  ]
+}

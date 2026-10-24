@@ -1,0 +1,128 @@
+{
+  "status": "complete",
+  "completed": 6,
+  "total": 6,
+  "results": [
+    {
+      "case_id": "text-only-corrupt",
+      "status": "valid",
+      "expected": {
+        "status": "uncertain",
+        "text": null
+      },
+      "proposed": {
+        "status": "uncertain",
+        "transcription": null,
+        "confidence": "low",
+        "reason": "No image was supplied to verify the count before 'citizens'; the OCR text 'GCO' does not contain the word 'citizens' or a visible count."
+      },
+      "evaluation": {
+        "status_matches": true,
+        "text_matches": null
+      },
+      "elapsed_seconds": 10.42786154197529,
+      "input_tokens": 183,
+      "output_tokens": 67,
+      "done_reason": "stop"
+    },
+    {
+      "case_id": "image-original-corrupt",
+      "status": "truncated",
+      "expected": {
+        "status": "correct",
+        "text": "660"
+      },
+      "proposed": null,
+      "evaluation": {},
+      "elapsed_seconds": 9.694010749924928,
+      "input_tokens": 255,
+      "output_tokens": 256,
+      "done_reason": "length"
+    },
+    {
+      "case_id": "image-synthetic-wrong",
+      "status": "truncated",
+      "expected": {
+        "status": "correct",
+        "text": "660"
+      },
+      "proposed": null,
+      "evaluation": {},
+      "elapsed_seconds": 8.596479833126068,
+      "input_tokens": 256,
+      "output_tokens": 256,
+      "done_reason": "length"
+    },
+    {
+      "case_id": "image-clean-control",
+      "status": "valid",
+      "expected": {
+        "status": "unchanged",
+        "text": "660"
+      },
+      "proposed": {
+        "status": "unchanged",
+        "transcription": "660",
+        "confidence": "high",
+        "reason": "The crop clearly shows the printed number '660' immediately preceding the word 'citizens' (partially visible as 'c')."
+      },
+      "evaluation": {
+        "status_matches": true,
+        "text_matches": true
+      },
+      "elapsed_seconds": 2.5131839588284492,
+      "input_tokens": 256,
+      "output_tokens": 58,
+      "done_reason": "stop"
+    },
+    {
+      "case_id": "image-petition-context",
+      "status": "valid",
+      "expected": {
+        "status": "correct",
+        "text": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American labor."
+      },
+      "proposed": {
+        "status": "correct",
+        "transcription": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American labor.",
+        "confidence": "high",
+        "reason": "The image clearly shows the petition text starting with 'By Mr. MOORHEAD:' and ending with 'labor.' The OCR had errors: 'Tlie' instead of 'The', 'GCO' instead of '660', and it was truncated. The full text is visible and legible."
+      },
+      "evaluation": {
+        "status_matches": true,
+        "text_matches": true
+      },
+      "elapsed_seconds": 7.316977874841541,
+      "input_tokens": 415,
+      "output_tokens": 112,
+      "done_reason": "stop"
+    },
+    {
+      "case_id": "image-mismatched-control",
+      "status": "truncated",
+      "expected": {
+        "status": "uncertain",
+        "text": null
+      },
+      "proposed": null,
+      "evaluation": {},
+      "elapsed_seconds": 14.241943457862362,
+      "input_tokens": 761,
+      "output_tokens": 256,
+      "done_reason": "length"
+    }
+  ],
+  "preflight": {
+    "model": "qwen3.8:27b-mlx",
+    "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "runner": "mlx",
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools",
+      "thinking"
+    ],
+    "family": null,
+    "version": "0.40.8"
+  }
+}

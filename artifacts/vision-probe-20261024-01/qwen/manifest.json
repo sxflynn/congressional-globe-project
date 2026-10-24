@@ -1,0 +1,29 @@
+{
+  "schema_version": "vision-probe-v1",
+  "packet_version": "vision-number-and-petition-v1",
+  "cases_sha256": "91114d34b0c50ed8bb7906ab8de63c6001f3d30c87b496a073a8c2c8cc07932f",
+  "image_sha256": {
+    "image-original-corrupt": "1c641e105872c9800ce0af243161d4505e1ae703c4fa0a912eebada2aa61f617",
+    "image-synthetic-wrong": "1c641e105872c9800ce0af243161d4505e1ae703c4fa0a912eebada2aa61f617",
+    "image-clean-control": "1c641e105872c9800ce0af243161d4505e1ae703c4fa0a912eebada2aa61f617",
+    "image-petition-context": "8a125859cbddd83f7a4813c1348358ebe3865d19cab908c90269d71f54df8b61",
+    "image-mismatched-control": "6134a7b69122ae40244f50ed4808718f1a383c8117307c36e7eac863645422ac"
+  },
+  "config": {
+    "model": "qwen3.8:27b-mlx",
+    "expected_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "base_url": "http://127.0.0.1:11434",
+    "request_timeout_seconds": 90,
+    "batch_deadline_seconds": 600,
+    "max_output_tokens": 256,
+    "num_ctx": 8192,
+    "temperature": 0,
+    "think": false,
+    "keep_alive": "5m",
+    "stream": false
+  },
+  "config_sha256": "8b07b183f60c7e058aca25ab3b8afe99be4b6fb7ba45d24f743f8093626c9255",
+  "code_sha256": "90918940ff475fb18725d9a03b5357c9ee8a1079ce84236b7bee1ed25a7eb98a",
+  "cases_path": "/Users/sflynn/Downloads/congressional globe project/artifacts/vision-preparation-20261024-01/cases.json",
+  "basis_sha256": "ef802880cadf10b214a16d7804668a87de923e88c68b51b5bce2a03a4df42373"
+}
