@@ -4,9 +4,11 @@ Use the browser desk for new reviews. This page links prior answers and explains
 
 ## Needs your attention
 
+**New: HR-003 · Clean reading pilot: standards and local resource limits.** About5–8minutes in [the browser desk](http://10.0.0.56:8501): agree or amend the proposed all-five-part sample, quality criteria, up to60local attempts/two hours, and up to60minutes of later review. This is a concrete bounded pilot proposal; no provider calls begin before these choices and the source/runner checks are complete. [Full design](docs/holistic-cleanup-investigation-scorecard.md).
+
 **Ready in the browser: HR-004 · Two real passages: topics and OCR readability.** About 5–8 minutes: read two unchanged Congressional Globe excerpts (parts 2 and 3), identify the subjects, and tell us whether OCR damage prevents understanding. No model answers are shown. Open [the desk](http://10.0.0.56:8501), select **HR-004**, and submit your answers there. You do not need to edit this file.
 
-HR-005-v1 and HR-008-v1 are already answered and incorporated; no repeat review is needed. HR-003 standards and new role/date samples have not been requested.
+HR-005-v1 and HR-008-v1 are already answered and incorporated; no repeat review is needed. HR-003 standards/resources are now requested; new role/date samples have not been requested.
 
 ## Original scan demonstration
 
