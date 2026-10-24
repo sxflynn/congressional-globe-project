@@ -1,0 +1,77 @@
+{
+  "schema_version": "scan-s0-parts145-review-v1",
+  "run_id": "scan-s0-parts145-20261024-01",
+  "observed_at_utc": "2026-10-24T17:47:32.799135+00:00",
+  "cases": [
+    {
+      "name": "part1",
+      "item": "congressionalg7391unit",
+      "part": 1,
+      "leaf": 400,
+      "printed_page": "284",
+      "paragraph_id": "par_000400_000014",
+      "precision": "paragraph",
+      "images": 1,
+      "bytes": 79915
+    },
+    {
+      "name": "part4",
+      "item": "congressionalglo00unit",
+      "part": 4,
+      "leaf": 400,
+      "printed_page": "3168",
+      "paragraph_id": "par_000400_000003",
+      "precision": "paragraph",
+      "images": 1,
+      "bytes": 126038
+    },
+    {
+      "name": "part5",
+      "item": "congressionalglo7395unit",
+      "part": 5,
+      "leaf": 400,
+      "printed_page": "4128",
+      "paragraph_id": "par_000400_000003",
+      "precision": "paragraph",
+      "images": 1,
+      "bytes": 91566
+    },
+    {
+      "name": "multiline",
+      "item": "congressionalg7391unit",
+      "part": 1,
+      "leaf": 400,
+      "paragraph_id": "par_000400_000014",
+      "precision": "word-span",
+      "selection_start": 31,
+      "selection_end": 50,
+      "selection_text": "misrep- resentation",
+      "images": 2,
+      "bytes": 19800
+    },
+    {
+      "name": "edge",
+      "item": "congressionalg7391unit",
+      "part": 1,
+      "leaf": 400,
+      "paragraph_id": "par_000400_000014",
+      "precision": "word-span",
+      "selection_start": 179,
+      "selection_end": 188,
+      "selection_text": "unless he",
+      "images": 1,
+      "bytes": 11657
+    }
+  ],
+  "total_images": 6,
+  "total_bytes": 328976,
+  "findings": [
+    "Parts 1,4,5 each yield an auditable paragraph crop with exact IIIF region registration and source hashes; printed-page values differ per part and are preserved.",
+    "The multiline span crosses a line break (two regions on adjacent lines) and is captured exactly as raw selected words; padding/clamping behaves per region.",
+    "The edge span at the end of the paragraph (last line) is captured correctly as a single region.",
+    "All targets hash-checked against local hOCR/page-map and returned exact dimensions from IIIF metadata."
+  ],
+  "external_model_calls": 0,
+  "external_model_cost_usd": 0,
+  "registration": "exact dimensions; native pixel coordinates; no inferred scaling/rotation"
+}

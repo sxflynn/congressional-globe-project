@@ -1,0 +1,110 @@
+{
+  "schema_version": "scan-bundle-v1",
+  "target": {
+    "item_identifier": "congressionalg7391unit",
+    "part_number": 1,
+    "scan_leaf": 400,
+    "hocr_page_id": "page_000400",
+    "paragraph_id": "par_000400_000014",
+    "printed_page": "284",
+    "raw_text": "Mr. CHANLER. I protest against misrep- resentation of myself by the gentleman. The gentleman has no right to continue his course of argument after it has been specifically denied unless he",
+    "raw_sha256": "63f18b4fdf7f2dc838343d4bb851d1e5214376938190b375dac81dbdfe5f70fa",
+    "hocr_sha256": "7300280b1d7966fb72a67717765f839bd174ce11fd20728b505f6bb366998f8f",
+    "page_map_sha256": "d4ca0462c350b0e5ac060102a549360e0b0256713f10f8cf31d50d405bfbfe48",
+    "ocr_width": 3114,
+    "ocr_height": 4298,
+    "selection_start": 0,
+    "selection_end": 188,
+    "selection_text": "Mr. CHANLER. I protest against misrep- resentation of myself by the gentleman. The gentleman has no right to continue his course of argument after it has been specifically denied unless he",
+    "precision": "paragraph",
+    "max_width": 1600,
+    "regions": [
+      {
+        "bbox": {
+          "left": 118,
+          "top": 1904,
+          "right": 1132,
+          "bottom": 2232
+        },
+        "line_ids": [
+          "line_000400_000044",
+          "line_000400_000045",
+          "line_000400_000046",
+          "line_000400_000047",
+          "line_000400_000048"
+        ],
+        "word_ids": [
+          "word_000400_000298",
+          "word_000400_000299",
+          "word_000400_000300",
+          "word_000400_000301",
+          "word_000400_000302",
+          "word_000400_000303",
+          "word_000400_000304",
+          "word_000400_000305",
+          "word_000400_000306",
+          "word_000400_000307",
+          "word_000400_000308",
+          "word_000400_000309",
+          "word_000400_000310",
+          "word_000400_000311",
+          "word_000400_000312",
+          "word_000400_000313",
+          "word_000400_000314",
+          "word_000400_000315",
+          "word_000400_000316",
+          "word_000400_000317",
+          "word_000400_000318",
+          "word_000400_000319",
+          "word_000400_000320",
+          "word_000400_000321",
+          "word_000400_000322",
+          "word_000400_000323",
+          "word_000400_000324",
+          "word_000400_000325",
+          "word_000400_000326",
+          "word_000400_000327",
+          "word_000400_000328"
+        ]
+      }
+    ]
+  },
+  "target_sha256": "6f3c540d307202aad26072e2c8df0ebf3263e4def30fd41c9e049c36a3e08055",
+  "info_receipt": {
+    "requested_url": "https://iiif.archive.org/iiif/congressionalg7391unit$400/info.json",
+    "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0400.jp2/info.json",
+    "retrieved_at_utc": "2026-10-24T17:46:02.041063+00:00",
+    "elapsed_seconds": 4.009438917040825,
+    "bytes": 991,
+    "sha256": "fade15b686ea626382f6ff5b83b084d60e90ea0d70932e7d86bd350284248e40",
+    "content_type": "application/json;charset=utf-8"
+  },
+  "images": [
+    {
+      "file": "crop-01.jpg",
+      "width": 1014,
+      "height": 328,
+      "region": [
+        118,
+        1904,
+        1014,
+        328
+      ],
+      "receipt": {
+        "requested_url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0400.jp2/118,1904,1014,328/1014,/0/default.jpg",
+        "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0400.jp2/118,1904,1014,328/1014,/0/default.jpg",
+        "retrieved_at_utc": "2026-10-24T17:46:02.861294+00:00",
+        "elapsed_seconds": 0.8168482498731464,
+        "bytes": 79915,
+        "sha256": "e8d4c6a813096c41c8af60e1a7909144144452449f48e284316054afce9ee54f",
+        "content_type": "image/jpeg"
+      }
+    }
+  ],
+  "code_sha256": {
+    "scan_models.py": "8c099fc7068cbb216a40cf05a4241d48eb9218a789ddcb5b1fbbc344c77c46b1",
+    "scan_geometry.py": "a70e9423ddb9c0868ecd1bd1aea8cac781919f03abfe84bb87631872055fc238",
+    "scan_fetch.py": "7ce46f0afc70f860b99ff631eb3eb006885741e50608cf2dbeaac0fec3e25da2"
+  },
+  "registration": "exact dimensions; native pixel coordinates; no inferred scaling/rotation"
+}
