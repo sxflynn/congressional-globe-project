@@ -46,3 +46,5 @@ Historical record of completed work. [MASTER_PLAN.md](MASTER_PLAN.md) remains th
 - 2026-10-24: Recorded human preference for early matched comparison of all three installed local models (Qwen27B, Gemma31B, Muse30B), strictly sequentially. Reuse completed Qwen evidence; next prepare bounded Gemma/Muse runs with model/runtime checks and compare correctness, abstention, validity and resource use. Preference/planning update only; no additional model calls.
 
 - 2026-10-24: Reconfirmed human hardware: Mac mini M4 Pro with64GB unified memory. Documented sequential model-batch recommendation, measured Qwen22.94GB loaded report versus combined file sizes, shared GPU/memory contention, and future single-model concurrency benchmark criteria. No inference, concurrency test or server-setting change in this documentation unit.
+
+- 2026-10-24: Human changed the commit rule: AI-authored commits must briefly identify the committing model in the single-line message. Updated AGENTS.md and MASTER_PLAN.md; unknown model identity must be recorded honestly.
