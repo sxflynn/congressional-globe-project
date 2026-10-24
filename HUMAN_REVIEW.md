@@ -4,11 +4,11 @@ Use the browser desk for new reviews. This page links prior answers and explains
 
 ## Needs your attention
 
-**New: HR-003 · Clean reading pilot: standards and local resource limits.** About5–8minutes in [the browser desk](http://10.0.0.56:8501): agree or amend the proposed all-five-part sample, quality criteria, up to60local attempts/two hours, and up to60minutes of later review. This is a concrete bounded pilot proposal; no provider calls begin before these choices and the source/runner checks are complete. [Full design](docs/holistic-cleanup-investigation-scorecard.md).
+**HR-003 received and applied.** You approved the sample, provisional quality standards and conditional local resource limits. You requested less review or a different review plan; that follow-up remains open. No repeat of the approved questions is needed.
 
 **Ready in the browser: HR-004 · Two real passages: topics and OCR readability.** About 5–8 minutes: read two unchanged Congressional Globe excerpts (parts 2 and 3), identify the subjects, and tell us whether OCR damage prevents understanding. No model answers are shown. Open [the desk](http://10.0.0.56:8501), select **HR-004**, and submit your answers there. You do not need to edit this file.
 
-HR-005-v1 and HR-008-v1 are already answered and incorporated; no repeat review is needed. HR-003 standards/resources are now requested; new role/date samples have not been requested.
+HR-005-v1 and HR-008-v1 are already answered and incorporated; no repeat review is needed. HR-003 standards/resources are approved; review effort needs revision; new role/date samples have not been requested.
 
 ## Definitions while reviewing
 
@@ -22,6 +22,7 @@ Open [Source images](http://10.0.0.56:8501/?view=source-images) for geometry-lin
 
 | Review | Your decisions and resulting work | Original answers |
 | --- | --- | --- |
+| HR-003-v1 · Stephen Flynn · 10/24/2026 · Applied | First-pilot coverage, provisional quality and conditional local resources approved; less/different human review requested, revised effort still open. | [Exact packet and answers](docs/archive/human-review/HR-003-v1/d02da43f-cba3-4654-be1f-b9f3c72de125.json) |
 | DEMO-001-v1 · Stephen Flynn · Practice acknowledged | Practice submission preserved and acknowledged; no historical labels or policy changes. | [Exact answer](docs/archive/human-review/DEMO-001-v1/968f885a-c4ae-4ea3-8f56-59203d63ff97.json) · [Applied receipt](docs/archive/human-review/DEMO-001-v1/968f885a-c4ae-4ea3-8f56-59203d63ff97-applied.json) |
 | HR-005-v1 · Stephen · 10/24/2026 · Applied | You confirmed the damaged-name reply is Mr. Wade in this specific context. Recorded as a human-reviewed attribution success; no blanket damaged-name rule or OCR rewrite. | [Full questions and your unchanged answer](docs/archive/human-review/HR-005-v1/original.md) · [Processing receipt and source-linked decision](docs/archive/human-review/HR-005-v1/receipt.json) |
 | HR-008-v1 · SF · 10/22/26 · Applied | S1: voting rights acceptable, B+; explore finer topics. S2: reject military inference, favor caution; explore source-image crops and protect petition discovery. S3: compensation acceptable, procedure incidental here. Carry speaker context across pages. | [Full questions and your unchanged answers](docs/archive/human-review/HR-008-v1/original.md) · [Processing receipt](docs/archive/human-review/HR-008-v1/receipt.json) |

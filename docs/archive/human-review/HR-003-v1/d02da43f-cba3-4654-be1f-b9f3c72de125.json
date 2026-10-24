@@ -1,0 +1,113 @@
+{
+  "packet_snapshot": {
+    "packet_json": "{\"blind\":false,\"id\":\"HR-003\",\"instructions\":\"About 5–8 minutes. Please agree or amend the proposed standards BEFORE any fresh model comparison. This is a policy/design review, not historical sample grading. No new model outputs are included. Your answers can authorize only the bounded local pilot described here, once its source packet, source expectations and runner/recovery checks are frozen and verified. They do not approve a corpus-wide job, paid API, model download, final cleanup policy, or automatic canonical edits. Choose request changes and describe them in the final field if needed. The full source-bound design is docs/holistic-cleanup-investigation-scorecard.md at the SHA-256 attached below.\",\"questions\":[{\"evidence\":[{\"label\":\"Proposed design v1 · docs/holistic-cleanup-investigation-scorecard.md · UTF-8 file SHA-256 9a90b1698c27f84d9360329efd82dea72e483c3046d76467fe59d5001c5d32fd · policy proposal, no historical source claim\",\"text\":\"18 real units: three per part (ordinary proceedings, damage affecting a name/number/date/bill, compact index/structured entry), plus three long connected passages in different parts including a page/column continuation and quotation/legislative text. Two additional missing/wrong-image controls. Maximum 12,000 raw words; source images and expectations frozen before outputs. Prior diagnostic/model-exposed cases and HR-004 windows excluded. Coverage is deliberately balanced, not a population error estimate. Five fresh confirmation candidates reserved for a separately bounded later run.\",\"url\":null}],\"id\":\"coverage\",\"options\":[\"Agree to this first-pilot coverage\",\"Request coverage changes\",\"Defer this pilot\"],\"prompt\":\"Is this balanced diagnostic sample sufficient for the first whole-passage clean reading pilot?\",\"required\":true},{\"evidence\":[{\"label\":\"Proposed design v1 · docs/holistic-cleanup-investigation-scorecard.md · UTF-8 file SHA-256 9a90b1698c27f84d9360329efd82dea72e483c3046d76467fe59d5001c5d32fd · policy proposal, no historical source claim\",\"text\":\"Zero observed unsupported substantive changes in selected outputs: wrong names, numbers, dates, bill IDs, negations or omitted sentences block automatic adoption. At least17/18 real units usable without substantive repair; no more than3/18 needing manual review; both targets apply. Both evidence controls must route unsupported readings to review. At least3/18 real units must show a source-supported meaningful reading or TTS-text gain over current static cleanup, with zero critical regressions. Count invalid/timeouts/review explicitly; unknown is not a correct reading. Passing permits only the next confirmation/evaluation step, not P0 closure or a general model winner.\",\"url\":null}],\"id\":\"quality\",\"options\":[\"Agree to these provisional criteria\",\"Request quality-criteria changes\",\"Defer criteria until more discussion\"],\"prompt\":\"Do you agree to these provisional fidelity and usefulness criteria?\",\"required\":true},{\"evidence\":[{\"label\":\"Proposed design v1 · docs/holistic-cleanup-investigation-scorecard.md · UTF-8 file SHA-256 9a90b1698c27f84d9360329efd82dea72e483c3046d76467fe59d5001c5d32fd · policy proposal, no historical source claim\",\"text\":\"Three installed local candidates (Qwen27B, Gemma31B, Muse30B), identical20units each, at most60attempts total; strictly sequential under the shared lock. Maximum120seconds/request,2400seconds/model,7200seconds overall including loading; no automatic retries. Common supported envelope at most16384context/4096output tokens, preflight fit required, no silent truncation. At most24new source crop files/12MB transferred via existing resolver. Zero paid API calls, downloads, recurring jobs or corpus edits. Stop and revise if bounds or source sufficiency fail; interrupted/unknown calls are reconciled before another attempt.\",\"url\":null}],\"id\":\"resources\",\"options\":[\"Approve this bounded local envelope after freeze and recovery checks\",\"Request resource-limit changes\",\"Do not run provider calls yet\"],\"prompt\":\"May the later verified runner use this exact local resource envelope?\",\"required\":true},{\"evidence\":[{\"label\":\"Proposed design v1 · docs/holistic-cleanup-investigation-scorecard.md · UTF-8 file SHA-256 9a90b1698c27f84d9360329efd82dea72e483c3046d76467fe59d5001c5d32fd · policy proposal, no historical source claim\",\"text\":\"Review source expectations before outputs, then anonymized candidate readings beside scans and raw/static controls. Measure review time and disagreements. Stop acceptance claims if the cap leaves unreviewed material. First phase assesses reading and pronunciation-relevant text only; actual audio listening, downstream retrieval/RAG/enrichment comparisons and a fresh confirmation remain unresolved and separately planned. No full-corpus time/cost estimate from this balanced sample alone.\",\"url\":null}],\"id\":\"review-effort\",\"options\":[\"Agree to up to60minutes in small packets\",\"Request less review or a different review plan\",\"Defer human grading\"],\"prompt\":\"Is up to60minutes of human review, delivered in small packets, acceptable for the primary comparison?\",\"required\":true},{\"evidence\":[],\"id\":\"amendments\",\"options\":[],\"prompt\":\"If you requested changes or deferred anything, describe the desired limits/criteria here. Otherwise optional comments.\",\"required\":false}],\"title\":\"Clean reading pilot: standards and local resource limits\",\"version\":1}",
+    "packet_sha256": "d24bdfd502063ce392c84990bdc78023d829d7c5573176933f0e1c4623e7d12b"
+  },
+  "packet": {
+    "blind": false,
+    "id": "HR-003",
+    "instructions": "About 5–8 minutes. Please agree or amend the proposed standards BEFORE any fresh model comparison. This is a policy/design review, not historical sample grading. No new model outputs are included. Your answers can authorize only the bounded local pilot described here, once its source packet, source expectations and runner/recovery checks are frozen and verified. They do not approve a corpus-wide job, paid API, model download, final cleanup policy, or automatic canonical edits. Choose request changes and describe them in the final field if needed. The full source-bound design is docs/holistic-cleanup-investigation-scorecard.md at the SHA-256 attached below.",
+    "questions": [
+      {
+        "evidence": [
+          {
+            "label": "Proposed design v1 · docs/holistic-cleanup-investigation-scorecard.md · UTF-8 file SHA-256 9a90b1698c27f84d9360329efd82dea72e483c3046d76467fe59d5001c5d32fd · policy proposal, no historical source claim",
+            "text": "18 real units: three per part (ordinary proceedings, damage affecting a name/number/date/bill, compact index/structured entry), plus three long connected passages in different parts including a page/column continuation and quotation/legislative text. Two additional missing/wrong-image controls. Maximum 12,000 raw words; source images and expectations frozen before outputs. Prior diagnostic/model-exposed cases and HR-004 windows excluded. Coverage is deliberately balanced, not a population error estimate. Five fresh confirmation candidates reserved for a separately bounded later run.",
+            "url": null
+          }
+        ],
+        "id": "coverage",
+        "options": [
+          "Agree to this first-pilot coverage",
+          "Request coverage changes",
+          "Defer this pilot"
+        ],
+        "prompt": "Is this balanced diagnostic sample sufficient for the first whole-passage clean reading pilot?",
+        "required": true
+      },
+      {
+        "evidence": [
+          {
+            "label": "Proposed design v1 · docs/holistic-cleanup-investigation-scorecard.md · UTF-8 file SHA-256 9a90b1698c27f84d9360329efd82dea72e483c3046d76467fe59d5001c5d32fd · policy proposal, no historical source claim",
+            "text": "Zero observed unsupported substantive changes in selected outputs: wrong names, numbers, dates, bill IDs, negations or omitted sentences block automatic adoption. At least17/18 real units usable without substantive repair; no more than3/18 needing manual review; both targets apply. Both evidence controls must route unsupported readings to review. At least3/18 real units must show a source-supported meaningful reading or TTS-text gain over current static cleanup, with zero critical regressions. Count invalid/timeouts/review explicitly; unknown is not a correct reading. Passing permits only the next confirmation/evaluation step, not P0 closure or a general model winner.",
+            "url": null
+          }
+        ],
+        "id": "quality",
+        "options": [
+          "Agree to these provisional criteria",
+          "Request quality-criteria changes",
+          "Defer criteria until more discussion"
+        ],
+        "prompt": "Do you agree to these provisional fidelity and usefulness criteria?",
+        "required": true
+      },
+      {
+        "evidence": [
+          {
+            "label": "Proposed design v1 · docs/holistic-cleanup-investigation-scorecard.md · UTF-8 file SHA-256 9a90b1698c27f84d9360329efd82dea72e483c3046d76467fe59d5001c5d32fd · policy proposal, no historical source claim",
+            "text": "Three installed local candidates (Qwen27B, Gemma31B, Muse30B), identical20units each, at most60attempts total; strictly sequential under the shared lock. Maximum120seconds/request,2400seconds/model,7200seconds overall including loading; no automatic retries. Common supported envelope at most16384context/4096output tokens, preflight fit required, no silent truncation. At most24new source crop files/12MB transferred via existing resolver. Zero paid API calls, downloads, recurring jobs or corpus edits. Stop and revise if bounds or source sufficiency fail; interrupted/unknown calls are reconciled before another attempt.",
+            "url": null
+          }
+        ],
+        "id": "resources",
+        "options": [
+          "Approve this bounded local envelope after freeze and recovery checks",
+          "Request resource-limit changes",
+          "Do not run provider calls yet"
+        ],
+        "prompt": "May the later verified runner use this exact local resource envelope?",
+        "required": true
+      },
+      {
+        "evidence": [
+          {
+            "label": "Proposed design v1 · docs/holistic-cleanup-investigation-scorecard.md · UTF-8 file SHA-256 9a90b1698c27f84d9360329efd82dea72e483c3046d76467fe59d5001c5d32fd · policy proposal, no historical source claim",
+            "text": "Review source expectations before outputs, then anonymized candidate readings beside scans and raw/static controls. Measure review time and disagreements. Stop acceptance claims if the cap leaves unreviewed material. First phase assesses reading and pronunciation-relevant text only; actual audio listening, downstream retrieval/RAG/enrichment comparisons and a fresh confirmation remain unresolved and separately planned. No full-corpus time/cost estimate from this balanced sample alone.",
+            "url": null
+          }
+        ],
+        "id": "review-effort",
+        "options": [
+          "Agree to up to60minutes in small packets",
+          "Request less review or a different review plan",
+          "Defer human grading"
+        ],
+        "prompt": "Is up to60minutes of human review, delivered in small packets, acceptable for the primary comparison?",
+        "required": true
+      },
+      {
+        "evidence": [],
+        "id": "amendments",
+        "options": [],
+        "prompt": "If you requested changes or deferred anything, describe the desired limits/criteria here. Otherwise optional comments.",
+        "required": false
+      }
+    ],
+    "title": "Clean reading pilot: standards and local resource limits",
+    "version": 1
+  },
+  "submission": {
+    "submission_id": "d02da43f-cba3-4654-be1f-b9f3c72de125",
+    "packet_id": "HR-003",
+    "version": 1,
+    "packet_sha256": "d24bdfd502063ce392c84990bdc78023d829d7c5573176933f0e1c4623e7d12b",
+    "reviewer": "Stephen Flynn",
+    "answers": {
+      "amendments": "",
+      "coverage": "Agree to this first-pilot coverage",
+      "quality": "Agree to these provisional criteria",
+      "resources": "Approve this bounded local envelope after freeze and recovery checks",
+      "review-effort": "Request less review or a different review plan"
+    },
+    "notes": null,
+    "payload_sha256": "81b4904b2566b6e98de2d04b2a60a8f65d5f275ae5dc7112b49f95ab7a226e82",
+    "revision": 1,
+    "superseded": false,
+    "created_at": "2026-10-24 21:26:32",
+    "applied": false,
+    "applied_reference": null,
+    "applied_at": null
+  },
+  "applied_receipt": null
+}

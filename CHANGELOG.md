@@ -63,3 +63,5 @@ Historical record of completed work. [MASTER_PLAN.md](MASTER_PLAN.md) remains th
 - 2026-10-24: Restored the review desk after its command-session server exited. Started a detached process (PID68381, parent PID1) with null stdin and file-backed logs; verified localhost/LAN health and live glossary rendering. A launchctl attempt failed because macOS denied access to Downloads; removed that failed job. No code, packet, answer or corpus changes.
 
 - 2026-10-24: Disabled typing/filtering in review answer dropdowns with Streamlit `filter_mode=None`. Phone-sized browser confirmed `inputmode=none`, no typed input and unchanged visible choices; make gate passed257tests. Live detached desk retained; packets, saved answers and research data unchanged.
+
+- 2026-10-24: Applied Stephen Flynn’s HR-003-v1 revision1 submission: approved primary coverage/provisional quality/conditional bounded local resources; requested less review or a different review plan. Archived exact packet/answers and verified hashes/latest revision. Proposed60-minute review is not approved; focused shorter-review question pending. No provider calls, source fetches, labels or corpus changes.
