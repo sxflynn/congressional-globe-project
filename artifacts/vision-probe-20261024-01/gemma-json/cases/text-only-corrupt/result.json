@@ -1,0 +1,22 @@
+{
+  "case_id": "text-only-corrupt",
+  "status": "valid",
+  "expected": {
+    "status": "uncertain",
+    "text": null
+  },
+  "proposed": {
+    "status": "uncertain",
+    "transcription": null,
+    "confidence": "high",
+    "reason": "No image provided to verify the count before 'citizens'."
+  },
+  "evaluation": {
+    "status_matches": true,
+    "text_matches": null
+  },
+  "elapsed_seconds": 11.059839082881808,
+  "input_tokens": 295,
+  "output_tokens": 34,
+  "done_reason": "stop"
+}

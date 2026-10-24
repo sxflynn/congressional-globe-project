@@ -1,0 +1,12 @@
+{"event": "case_started", "case_id": "text-only-corrupt", "completed": 0, "total": 6, "before": "GCO", "status": "started"}
+{"event": "case_completed", "case_id": "text-only-corrupt", "completed": 1, "total": 6, "elapsed_seconds": 10.759999416070059, "status": "valid", "input_tokens": 298, "output_tokens": 51, "before": "GCO", "proposed": null}
+{"event": "case_started", "case_id": "image-original-corrupt", "completed": 1, "total": 6, "before": "GCO", "status": "started"}
+{"event": "case_completed", "case_id": "image-original-corrupt", "completed": 2, "total": 6, "elapsed_seconds": 3.9007837909739465, "status": "valid", "input_tokens": 306, "output_tokens": 72, "before": "GCO", "proposed": null}
+{"event": "case_started", "case_id": "image-synthetic-wrong", "completed": 2, "total": 6, "before": "999", "status": "started"}
+{"event": "case_completed", "case_id": "image-synthetic-wrong", "completed": 3, "total": 6, "elapsed_seconds": 2.5956969170365483, "status": "valid", "input_tokens": 305, "output_tokens": 51, "before": "999", "proposed": null}
+{"event": "case_started", "case_id": "image-clean-control", "completed": 3, "total": 6, "before": "660", "status": "started"}
+{"event": "case_completed", "case_id": "image-clean-control", "completed": 4, "total": 6, "elapsed_seconds": 2.157626000000164, "status": "valid", "input_tokens": 305, "output_tokens": 46, "before": "660", "proposed": "660"}
+{"event": "case_started", "case_id": "image-petition-context", "completed": 4, "total": 6, "before": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American", "status": "started"}
+{"event": "case_completed", "case_id": "image-petition-context", "completed": 5, "total": 6, "elapsed_seconds": 11.16403687512502, "status": "invalid_schema", "input_tokens": 596, "output_tokens": 172, "before": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American", "proposed": null}
+{"event": "case_started", "case_id": "image-mismatched-control", "completed": 5, "total": 6, "before": "GCO", "status": "started"}
+{"event": "case_completed", "case_id": "image-mismatched-control", "completed": 6, "total": 6, "elapsed_seconds": 12.824021334061399, "status": "valid", "input_tokens": 1077, "output_tokens": 61, "before": "GCO", "proposed": null}

@@ -1,0 +1,22 @@
+{
+  "case_id": "image-clean-control",
+  "status": "valid",
+  "expected": {
+    "status": "unchanged",
+    "text": "660"
+  },
+  "proposed": {
+    "status": "unchanged",
+    "transcription": "660",
+    "confidence": "high",
+    "reason": "The image clearly shows the number 660."
+  },
+  "evaluation": {
+    "status_matches": true,
+    "text_matches": true
+  },
+  "elapsed_seconds": 1.8112210840918124,
+  "input_tokens": 358,
+  "output_tokens": 31,
+  "done_reason": "stop"
+}

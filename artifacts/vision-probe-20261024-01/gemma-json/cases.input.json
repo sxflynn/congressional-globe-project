@@ -1,0 +1,60 @@
+{
+  "version": "vision-number-and-petition-v1",
+  "prompt": "You check historical OCR against a supplied scan crop. The OCR may be wrong; the image is the evidence. Never invent a reading from plausible historical context. Report correct when the visible target differs from supplied OCR, unchanged when it matches, or uncertain when no usable image/target is available. For uncertain return null transcription. Confidence is your self-report, not a verified score. Follow the task's exact scope and exclude surrounding unrelated text. Give a brief evidence basis in reason, not a long explanation. Return only the requested JSON schema. Do not apply edits to any source.",
+  "cases": [
+    {
+      "id": "text-only-corrupt",
+      "task": "Read only the printed count immediately before the word 'citizens'. Put only that count in transcription. If the supplied crop does not visibly show that count or no image is supplied, return uncertain with null transcription.",
+      "ocr": "GCO",
+      "image": null,
+      "image_sha256": null,
+      "expected_text": null,
+      "expected_status": "uncertain"
+    },
+    {
+      "id": "image-original-corrupt",
+      "task": "Read only the printed count immediately before the word 'citizens'. Put only that count in transcription. If the supplied crop does not visibly show that count or no image is supplied, return uncertain with null transcription.",
+      "ocr": "GCO",
+      "image": "artifacts/scans/scan-poc-20261024-01/number/crop-01.jpg",
+      "image_sha256": "1c641e105872c9800ce0af243161d4505e1ae703c4fa0a912eebada2aa61f617",
+      "expected_text": "660",
+      "expected_status": "correct"
+    },
+    {
+      "id": "image-synthetic-wrong",
+      "task": "Read only the printed count immediately before the word 'citizens'. Put only that count in transcription. If the supplied crop does not visibly show that count or no image is supplied, return uncertain with null transcription.",
+      "ocr": "999",
+      "image": "artifacts/scans/scan-poc-20261024-01/number/crop-01.jpg",
+      "image_sha256": "1c641e105872c9800ce0af243161d4505e1ae703c4fa0a912eebada2aa61f617",
+      "expected_text": "660",
+      "expected_status": "correct"
+    },
+    {
+      "id": "image-clean-control",
+      "task": "Read only the printed count immediately before the word 'citizens'. Put only that count in transcription. If the supplied crop does not visibly show that count or no image is supplied, return uncertain with null transcription.",
+      "ocr": "660",
+      "image": "artifacts/scans/scan-poc-20261024-01/number/crop-01.jpg",
+      "image_sha256": "1c641e105872c9800ce0af243161d4505e1ae703c4fa0a912eebada2aa61f617",
+      "expected_text": "660",
+      "expected_status": "unchanged"
+    },
+    {
+      "id": "image-petition-context",
+      "task": "Transcribe only the entire petition beginning 'By Mr. MOORHEAD:' and stop before the next 'By Mr.' line. Include its visible continuation if it belongs to that petition. Exclude the preceding petition. Preserve historical wording, names and numbers; do not modernize. Compare with supplied OCR.",
+      "ocr": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American",
+      "image": "artifacts/scans/scan-poc-20261024-01/petition/crop-01.jpg",
+      "image_sha256": "8a125859cbddd83f7a4813c1348358ebe3865d19cab908c90269d71f54df8b61",
+      "expected_text": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American labor.",
+      "expected_status": "correct"
+    },
+    {
+      "id": "image-mismatched-control",
+      "task": "Read only the printed count immediately before the word 'citizens'. Put only that count in transcription. If the supplied crop does not visibly show that count or no image is supplied, return uncertain with null transcription.",
+      "ocr": "GCO",
+      "image": "artifacts/scans/scan-poc-20261024-01/civil-rights/crop-01.jpg",
+      "image_sha256": "6134a7b69122ae40244f50ed4808718f1a383c8117307c36e7eac863645422ac",
+      "expected_text": null,
+      "expected_status": "uncertain"
+    }
+  ]
+}

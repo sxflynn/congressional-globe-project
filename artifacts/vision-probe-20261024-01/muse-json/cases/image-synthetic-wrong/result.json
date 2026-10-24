@@ -1,0 +1,22 @@
+{
+  "case_id": "image-synthetic-wrong",
+  "status": "valid",
+  "expected": {
+    "status": "correct",
+    "text": "660"
+  },
+  "proposed": {
+    "status": "uncertain",
+    "transcription": null,
+    "confidence": "low",
+    "reason": "The image crop is too small and unclear to verify any printed count before the word 'citizens'; the visible text appears truncated and does not show a reliable count."
+  },
+  "evaluation": {
+    "status_matches": false,
+    "text_matches": false
+  },
+  "elapsed_seconds": 2.5956969170365483,
+  "input_tokens": 305,
+  "output_tokens": 51,
+  "done_reason": "stop"
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "image-clean-control",
+  "status": "valid",
+  "expected": {
+    "status": "unchanged",
+    "text": "660"
+  },
+  "proposed": {
+    "status": "correct",
+    "transcription": "660",
+    "confidence": "high",
+    "reason": "The visible printed text shows '660 c' immediately before the word 'citizens' in the crop, matching the supplied OCR '660'."
+  },
+  "evaluation": {
+    "status_matches": false,
+    "text_matches": true
+  },
+  "elapsed_seconds": 2.157626000000164,
+  "input_tokens": 305,
+  "output_tokens": 46,
+  "done_reason": "stop"
+}

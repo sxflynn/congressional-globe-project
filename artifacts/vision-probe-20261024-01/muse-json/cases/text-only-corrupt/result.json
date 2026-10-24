@@ -1,0 +1,22 @@
+{
+  "case_id": "text-only-corrupt",
+  "status": "valid",
+  "expected": {
+    "status": "uncertain",
+    "text": null
+  },
+  "proposed": {
+    "status": "uncertain",
+    "transcription": null,
+    "confidence": "low",
+    "reason": "The supplied crop is not provided in the prompt, so the printed count immediately before the word 'citizens' cannot be verified. No usable image/target is available."
+  },
+  "evaluation": {
+    "status_matches": true,
+    "text_matches": null
+  },
+  "elapsed_seconds": 10.759999416070059,
+  "input_tokens": 298,
+  "output_tokens": 51,
+  "done_reason": "stop"
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "image-original-corrupt",
+  "status": "valid",
+  "expected": {
+    "status": "correct",
+    "text": "660"
+  },
+  "proposed": {
+    "status": "uncertain",
+    "transcription": null,
+    "confidence": "low",
+    "reason": "The image crop is too small and unclear to reliably read the printed count immediately before the word 'citizens'. The OCR text 'GCO' does not match a visible count, and the crop does not show the word 'citizens' or a clear numeric count."
+  },
+  "evaluation": {
+    "status_matches": false,
+    "text_matches": false
+  },
+  "elapsed_seconds": 3.9007837909739465,
+  "input_tokens": 306,
+  "output_tokens": 72,
+  "done_reason": "stop"
+}

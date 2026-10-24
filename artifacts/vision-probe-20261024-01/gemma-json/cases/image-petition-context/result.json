@@ -1,0 +1,22 @@
+{
+  "case_id": "image-petition-context",
+  "status": "valid",
+  "expected": {
+    "status": "correct",
+    "text": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American labor."
+  },
+  "proposed": {
+    "status": "correct",
+    "transcription": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American labor.",
+    "confidence": "high",
+    "reason": "The OCR misread 'The' as 'Tlie', '660' as 'GCO', and missed the final word 'labor.'"
+  },
+  "evaluation": {
+    "status_matches": true,
+    "text_matches": true
+  },
+  "elapsed_seconds": 5.8015925840009,
+  "input_tokens": 471,
+  "output_tokens": 77,
+  "done_reason": "stop"
+}

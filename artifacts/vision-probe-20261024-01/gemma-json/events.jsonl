@@ -1,0 +1,12 @@
+{"event": "case_started", "case_id": "text-only-corrupt", "completed": 0, "total": 6, "before": "GCO", "status": "started"}
+{"event": "case_completed", "case_id": "text-only-corrupt", "completed": 1, "total": 6, "elapsed_seconds": 11.059839082881808, "status": "valid", "input_tokens": 295, "output_tokens": 34, "before": "GCO", "proposed": null}
+{"event": "case_started", "case_id": "image-original-corrupt", "completed": 1, "total": 6, "before": "GCO", "status": "started"}
+{"event": "case_completed", "case_id": "image-original-corrupt", "completed": 2, "total": 6, "elapsed_seconds": 3.4571062920149416, "status": "valid", "input_tokens": 357, "output_tokens": 48, "before": "GCO", "proposed": "660"}
+{"event": "case_started", "case_id": "image-synthetic-wrong", "completed": 2, "total": 6, "before": "999", "status": "started"}
+{"event": "case_completed", "case_id": "image-synthetic-wrong", "completed": 3, "total": 6, "elapsed_seconds": 2.0923630830366164, "status": "valid", "input_tokens": 358, "output_tokens": 46, "before": "999", "proposed": "660"}
+{"event": "case_started", "case_id": "image-clean-control", "completed": 3, "total": 6, "before": "660", "status": "started"}
+{"event": "case_completed", "case_id": "image-clean-control", "completed": 4, "total": 6, "elapsed_seconds": 1.8112210840918124, "status": "valid", "input_tokens": 358, "output_tokens": 31, "before": "660", "proposed": "660"}
+{"event": "case_started", "case_id": "image-petition-context", "completed": 4, "total": 6, "before": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American", "status": "started"}
+{"event": "case_completed", "case_id": "image-petition-context", "completed": 5, "total": 6, "elapsed_seconds": 5.8015925840009, "status": "valid", "input_tokens": 471, "output_tokens": 77, "before": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American", "proposed": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American labor."}
+{"event": "case_started", "case_id": "image-mismatched-control", "completed": 5, "total": 6, "before": "GCO", "status": "started"}
+{"event": "case_completed", "case_id": "image-mismatched-control", "completed": 6, "total": 6, "elapsed_seconds": 5.330790374893695, "status": "valid", "input_tokens": 561, "output_tokens": 37, "before": "GCO", "proposed": null}

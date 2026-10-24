@@ -1,0 +1,22 @@
+{
+  "case_id": "image-mismatched-control",
+  "status": "valid",
+  "expected": {
+    "status": "uncertain",
+    "text": null
+  },
+  "proposed": {
+    "status": "uncertain",
+    "transcription": null,
+    "confidence": "low",
+    "reason": "The supplied crop shows Sec. 8 and Sec. 9 text but does not visibly contain the word 'citizens' nor a printed count immediately before it. No usable target is present in the image."
+  },
+  "evaluation": {
+    "status_matches": true,
+    "text_matches": null
+  },
+  "elapsed_seconds": 12.824021334061399,
+  "input_tokens": 1077,
+  "output_tokens": 61,
+  "done_reason": "stop"
+}

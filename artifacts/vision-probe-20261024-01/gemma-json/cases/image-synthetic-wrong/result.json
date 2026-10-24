@@ -1,0 +1,22 @@
+{
+  "case_id": "image-synthetic-wrong",
+  "status": "valid",
+  "expected": {
+    "status": "correct",
+    "text": "660"
+  },
+  "proposed": {
+    "status": "correct",
+    "transcription": "660",
+    "confidence": "high",
+    "reason": "The image clearly shows the number '660' before the start of the word 'citizens'."
+  },
+  "evaluation": {
+    "status_matches": true,
+    "text_matches": true
+  },
+  "elapsed_seconds": 2.0923630830366164,
+  "input_tokens": 358,
+  "output_tokens": 46,
+  "done_reason": "stop"
+}

@@ -1,0 +1,152 @@
+{
+  "status": "complete",
+  "completed": 6,
+  "total": 6,
+  "results": [
+    {
+      "case_id": "text-only-corrupt",
+      "status": "valid",
+      "expected": {
+        "status": "uncertain",
+        "text": null
+      },
+      "proposed": {
+        "status": "uncertain",
+        "transcription": null,
+        "confidence": "high",
+        "reason": "No image provided to verify the count before 'citizens'."
+      },
+      "evaluation": {
+        "status_matches": true,
+        "text_matches": null
+      },
+      "elapsed_seconds": 11.059839082881808,
+      "input_tokens": 295,
+      "output_tokens": 34,
+      "done_reason": "stop"
+    },
+    {
+      "case_id": "image-original-corrupt",
+      "status": "valid",
+      "expected": {
+        "status": "correct",
+        "text": "660"
+      },
+      "proposed": {
+        "status": "correct",
+        "transcription": "660",
+        "confidence": "high",
+        "reason": "The image clearly shows the number '660', whereas the OCR incorrectly read it as 'GCO'."
+      },
+      "evaluation": {
+        "status_matches": true,
+        "text_matches": true
+      },
+      "elapsed_seconds": 3.4571062920149416,
+      "input_tokens": 357,
+      "output_tokens": 48,
+      "done_reason": "stop"
+    },
+    {
+      "case_id": "image-synthetic-wrong",
+      "status": "valid",
+      "expected": {
+        "status": "correct",
+        "text": "660"
+      },
+      "proposed": {
+        "status": "correct",
+        "transcription": "660",
+        "confidence": "high",
+        "reason": "The image clearly shows the number '660' before the start of the word 'citizens'."
+      },
+      "evaluation": {
+        "status_matches": true,
+        "text_matches": true
+      },
+      "elapsed_seconds": 2.0923630830366164,
+      "input_tokens": 358,
+      "output_tokens": 46,
+      "done_reason": "stop"
+    },
+    {
+      "case_id": "image-clean-control",
+      "status": "valid",
+      "expected": {
+        "status": "unchanged",
+        "text": "660"
+      },
+      "proposed": {
+        "status": "unchanged",
+        "transcription": "660",
+        "confidence": "high",
+        "reason": "The image clearly shows the number 660."
+      },
+      "evaluation": {
+        "status_matches": true,
+        "text_matches": true
+      },
+      "elapsed_seconds": 1.8112210840918124,
+      "input_tokens": 358,
+      "output_tokens": 31,
+      "done_reason": "stop"
+    },
+    {
+      "case_id": "image-petition-context",
+      "status": "valid",
+      "expected": {
+        "status": "correct",
+        "text": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American labor."
+      },
+      "proposed": {
+        "status": "correct",
+        "transcription": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American labor.",
+        "confidence": "high",
+        "reason": "The OCR misread 'The' as 'Tlie', '660' as 'GCO', and missed the final word 'labor.'"
+      },
+      "evaluation": {
+        "status_matches": true,
+        "text_matches": true
+      },
+      "elapsed_seconds": 5.8015925840009,
+      "input_tokens": 471,
+      "output_tokens": 77,
+      "done_reason": "stop"
+    },
+    {
+      "case_id": "image-mismatched-control",
+      "status": "valid",
+      "expected": {
+        "status": "uncertain",
+        "text": null
+      },
+      "proposed": {
+        "status": "uncertain",
+        "transcription": null,
+        "confidence": "high",
+        "reason": "The word 'citizens' is not present in the provided image crop."
+      },
+      "evaluation": {
+        "status_matches": true,
+        "text_matches": null
+      },
+      "elapsed_seconds": 5.330790374893695,
+      "input_tokens": 561,
+      "output_tokens": 37,
+      "done_reason": "stop"
+    }
+  ],
+  "preflight": {
+    "model": "gemma4:31b-mlx",
+    "digest": "637cc0ff15709212de4aa694be67e3af5e80533ca538c86ad69c53c511e40840",
+    "runner": "mlx",
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools",
+      "thinking"
+    ],
+    "family": "gemma4",
+    "version": "0.40.8"
+  }
+}

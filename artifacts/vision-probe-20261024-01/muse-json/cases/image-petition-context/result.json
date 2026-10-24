@@ -1,0 +1,15 @@
+{
+  "case_id": "image-petition-context",
+  "status": "invalid_schema",
+  "expected": {
+    "status": "correct",
+    "text": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American labor."
+  },
+  "proposed": null,
+  "evaluation": {},
+  "elapsed_seconds": 11.16403687512502,
+  "input_tokens": 596,
+  "output_tokens": 172,
+  "done_reason": "stop",
+  "validation_error": "5 validation errors for VisionJudgment\nself\n  Extra inputs are not permitted [type=extra_forbidden, input_value=\"The OCR text: By Mr. MOO...is wrong, so status is \", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/extra_forbidden\nstatus\n  Field required [type=missing, input_value={'self': \"The OCR text: B...s wrong, so status is \"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\ntranscription\n  Field required [type=missing, input_value={'self': \"The OCR text: B...s wrong, so status is \"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nconfidence\n  Field required [type=missing, input_value={'self': \"The OCR text: B...s wrong, so status is \"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nreason\n  Field required [type=missing, input_value={'self': \"The OCR text: B...s wrong, so status is \"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing"
+}

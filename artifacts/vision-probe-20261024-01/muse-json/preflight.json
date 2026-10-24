@@ -1,0 +1,42 @@
+{
+  "model": "muse-glimmer:30b-mlx",
+  "digest": "015fa21845bead56096c2f8773aff7a2047063507fe82897e662ad544c5b2fa6",
+  "runner": "mlx",
+  "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking"
+  ],
+  "family": "muse_glimmer",
+  "version": "0.40.8",
+  "tags_sha256": "3996338c71b352dfcd9b4870352b76ef9bdb80e2e6beb57109ff379a75df6182",
+  "ps_sha256": "74718d8ea29b9baca4e461f3edd06f001d79cc9475ff986f811917d981dc61f6",
+  "show_sha256": "06fba569361ccab1cdcae6d83754a1f850d706e485154bdbb3b75bb9b9b8d76b",
+  "preflight_elapsed_seconds": {
+    "tags": 0.06363166589289904,
+    "ps": 0.0008872079197317362,
+    "version": 0.00033587496727705,
+    "show": 0.014052291866391897
+  },
+  "loaded_models": [
+    {
+      "name": "gemma4:31b-mlx",
+      "model": "gemma4:31b-mlx",
+      "size": 22838813316,
+      "digest": "637cc0ff15709212de4aa694be67e3af5e80533ca538c86ad69c53c511e40840",
+      "details": {
+        "parent_model": "",
+        "format": "safetensors",
+        "family": "",
+        "families": null,
+        "parameter_size": "",
+        "quantization_level": ""
+      },
+      "expires_at": "2026-10-24T12:09:24.142765-04:00",
+      "size_vram": 22838813316,
+      "context_length": 8192,
+      "runner": "mlx"
+    }
+  ]
+}

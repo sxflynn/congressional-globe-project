@@ -1,0 +1,327 @@
+{
+  "schema_version": "vision-model-comparison-v1",
+  "run_id": "vision-compare-20261024-01",
+  "observed_at_utc": "2026-10-24T16:06:03.597440+00:00",
+  "scope": "Three installed local MLX vision candidates on the identical frozen six-case S1 packet (vision-number-and-petition-v1). Same cases SHA-256 91114d34b0c50ed8bb7906ab8de63c6001f3d30c87b496a073a8c2c8cc07932f, images, prompt and JSON-mode protocol; Qwen reused saved results, Gemma and Muse newly run.",
+  "models": {
+    "qwen": {
+      "tag": "qwen3.8:27b-mlx",
+      "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+      "runner": "mlx",
+      "family": "qwen3_5",
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "loaded_model_report_bytes": [
+        20493188872
+      ],
+      "request_seconds_sum": 26.028141,
+      "input_tokens_sum": 2786,
+      "output_tokens_sum": 355,
+      "valid": 6,
+      "invalid_schema": 0,
+      "status_matches": 6,
+      "cases": [
+        {
+          "case_id": "text-only-corrupt",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": null,
+          "proposed_status": "uncertain",
+          "proposed_text": null,
+          "elapsed_seconds": 3.571602249983698,
+          "input_tokens": 293,
+          "output_tokens": 32,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-original-corrupt",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": true,
+          "proposed_status": "correct",
+          "proposed_text": "660",
+          "elapsed_seconds": 4.339294167002663,
+          "input_tokens": 365,
+          "output_tokens": 66,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-synthetic-wrong",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": true,
+          "proposed_status": "correct",
+          "proposed_text": "660",
+          "elapsed_seconds": 2.8724274998530746,
+          "input_tokens": 366,
+          "output_tokens": 51,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-clean-control",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": true,
+          "proposed_status": "unchanged",
+          "proposed_text": "660",
+          "elapsed_seconds": 1.8617747081443667,
+          "input_tokens": 366,
+          "output_tokens": 46,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-petition-context",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": true,
+          "proposed_status": "correct",
+          "proposed_text": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American labor.",
+          "elapsed_seconds": 5.72814766690135,
+          "input_tokens": 525,
+          "output_tokens": 97,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-mismatched-control",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": null,
+          "proposed_status": "uncertain",
+          "proposed_text": null,
+          "elapsed_seconds": 7.654894249979407,
+          "input_tokens": 871,
+          "output_tokens": 63,
+          "done_reason": "stop",
+          "validation_error": null
+        }
+      ]
+    },
+    "gemma": {
+      "tag": "gemma4:31b-mlx",
+      "digest": "637cc0ff15709212de4aa694be67e3af5e80533ca538c86ad69c53c511e40840",
+      "runner": "mlx",
+      "family": "gemma4",
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "loaded_model_report_bytes": [],
+      "request_seconds_sum": 29.552913,
+      "input_tokens_sum": 2400,
+      "output_tokens_sum": 273,
+      "valid": 6,
+      "invalid_schema": 0,
+      "status_matches": 6,
+      "cases": [
+        {
+          "case_id": "text-only-corrupt",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": null,
+          "proposed_status": "uncertain",
+          "proposed_text": null,
+          "elapsed_seconds": 11.059839082881808,
+          "input_tokens": 295,
+          "output_tokens": 34,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-original-corrupt",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": true,
+          "proposed_status": "correct",
+          "proposed_text": "660",
+          "elapsed_seconds": 3.4571062920149416,
+          "input_tokens": 357,
+          "output_tokens": 48,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-synthetic-wrong",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": true,
+          "proposed_status": "correct",
+          "proposed_text": "660",
+          "elapsed_seconds": 2.0923630830366164,
+          "input_tokens": 358,
+          "output_tokens": 46,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-clean-control",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": true,
+          "proposed_status": "unchanged",
+          "proposed_text": "660",
+          "elapsed_seconds": 1.8112210840918124,
+          "input_tokens": 358,
+          "output_tokens": 31,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-petition-context",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": true,
+          "proposed_status": "correct",
+          "proposed_text": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American labor.",
+          "elapsed_seconds": 5.8015925840009,
+          "input_tokens": 471,
+          "output_tokens": 77,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-mismatched-control",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": null,
+          "proposed_status": "uncertain",
+          "proposed_text": null,
+          "elapsed_seconds": 5.330790374893695,
+          "input_tokens": 561,
+          "output_tokens": 37,
+          "done_reason": "stop",
+          "validation_error": null
+        }
+      ]
+    },
+    "muse": {
+      "tag": "muse-glimmer:30b-mlx",
+      "digest": "015fa21845bead56096c2f8773aff7a2047063507fe82897e662ad544c5b2fa6",
+      "runner": "mlx",
+      "family": "muse_glimmer",
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "loaded_model_report_bytes": [
+        22838813316
+      ],
+      "request_seconds_sum": 43.402164,
+      "input_tokens_sum": 2887,
+      "output_tokens_sum": 453,
+      "valid": 5,
+      "invalid_schema": 1,
+      "status_matches": 2,
+      "cases": [
+        {
+          "case_id": "text-only-corrupt",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": null,
+          "proposed_status": "uncertain",
+          "proposed_text": null,
+          "elapsed_seconds": 10.759999416070059,
+          "input_tokens": 298,
+          "output_tokens": 51,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-original-corrupt",
+          "status": "valid",
+          "status_matches": false,
+          "text_matches": false,
+          "proposed_status": "uncertain",
+          "proposed_text": null,
+          "elapsed_seconds": 3.9007837909739465,
+          "input_tokens": 306,
+          "output_tokens": 72,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-synthetic-wrong",
+          "status": "valid",
+          "status_matches": false,
+          "text_matches": false,
+          "proposed_status": "uncertain",
+          "proposed_text": null,
+          "elapsed_seconds": 2.5956969170365483,
+          "input_tokens": 305,
+          "output_tokens": 51,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-clean-control",
+          "status": "valid",
+          "status_matches": false,
+          "text_matches": true,
+          "proposed_status": "correct",
+          "proposed_text": "660",
+          "elapsed_seconds": 2.157626000000164,
+          "input_tokens": 305,
+          "output_tokens": 46,
+          "done_reason": "stop",
+          "validation_error": null
+        },
+        {
+          "case_id": "image-petition-context",
+          "status": "invalid_schema",
+          "status_matches": null,
+          "text_matches": null,
+          "proposed_status": null,
+          "proposed_text": null,
+          "elapsed_seconds": 11.16403687512502,
+          "input_tokens": 596,
+          "output_tokens": 172,
+          "done_reason": "stop",
+          "validation_error": "5 validation errors for VisionJudgment\nself\n  Extra inputs are not permitted [type=extra_forbidden, input_value=\"The OCR text: By Mr. MOO...is wrong, so status is \", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/extra_forbidden\nstatus\n  Field required [type=missing, input_value={'self': \"The OCR text: B...s wrong, so status is \"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\ntranscription\n  Field required [type=missing, input_value={'self': \"The OCR text: B...s wrong, so status is \"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nconfidence\n  Field required [type=missing, input_value={'self': \"The OCR text: B...s wrong, so status is \"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nreason\n  Field required [type=missing, input_value={'self': \"The OCR text: B...s wrong, so status is \"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing"
+        },
+        {
+          "case_id": "image-mismatched-control",
+          "status": "valid",
+          "status_matches": true,
+          "text_matches": null,
+          "proposed_status": "uncertain",
+          "proposed_text": null,
+          "elapsed_seconds": 12.824021334061399,
+          "input_tokens": 1077,
+          "output_tokens": 61,
+          "done_reason": "stop",
+          "validation_error": null
+        }
+      ]
+    }
+  },
+  "findings": [
+    "Qwen and Gemma produced six valid schema-conforming judgments and matched all six frozen expectations: corrected GCO and deliberate 999 to 660, kept clean 660 unchanged, recovered the full petition text including labor., and abstained for the no-image and mismatched-image controls.",
+    "Muse produced five valid judgments and one invalid schema: it emitted a reasoning wrapper {\"self\": ...} instead of the required fields on the petition case, so that case cannot be scored as a correct transcription despite its visible reasoning naming the right reading.",
+    "Muse abstained (uncertain) on both number corrections (original GCO and deliberate 999) because it judged the 90x58 pixel word-span crop too small/unclear, and labeled the clean control \"correct\" instead of \"unchanged\"; the transcribed text matched but the status contract did not.",
+    "Muse abstained correctly on the no-image and mismatched-page controls. It did not invent a reading.",
+    "Gemma and Qwen are tied on these six related controls; the sample cannot establish a general model winner. Muse is the weakest on this packet, principally showing small-crop sensitivity and JSON-contract leakage."
+  ],
+  "protocol_limitations": [
+    "All three used JSON mode (schema spelled out in the prompt, strict Pydantic validation after the response), think=false, temperature0, 256 output tokens, 8192 context, one request at a time.",
+    "Muse retained visible chain-of-thought-like text in its content field on the petition case, which broke the schema; this is a model/protocol interaction, not salvaged or retried.",
+    "Abstention thresholds are model-specific: a small but legible 90x58 pixel crop was read by Qwen and Gemma but called too small by Muse.",
+    "No model response was applied to canonical OCR; expected labels were withheld from requests."
+  ],
+  "review_limitations": [
+    "This harness (OpenCode big-pickle) cannot accept image input, so the comparison used the frozen source expectations and the earlier S0 agent visual diagnostic (artifacts/scans/scan-poc-20261024-01/review.json) for the printed 660/labor reading; no fresh independent visual re-check was performed here.",
+    "These six cases are related, output-informed feasibility controls, not representative held-out accuracy or human-reviewed gold."
+  ],
+  "next_decision": "Do not expand this saturated six-case comparison. Next: bounded S0 checks (one crop each parts1/4/5 plus multiline/edge registration), then genuinely distinct uncertainty cases and an unreadable-image control before any selective-repair routing policy."
+}
