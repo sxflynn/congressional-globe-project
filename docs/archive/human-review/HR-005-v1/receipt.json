@@ -1,0 +1,43 @@
+{
+  "packet_id": "HR-005-v1",
+  "state": "answered_and_applied_to_plan",
+  "original_path": "HUMAN_REVIEW.md",
+  "archive_path": "docs/archive/human-review/HR-005-v1/original.md",
+  "original_sha256": "a98244a964a2e1961d3b9c752129571a32737cac63606d1e84502c44031df639",
+  "answer_source": "Human-authored response fields in HUMAN_REVIEW.md; completion explicitly confirmed in chat",
+  "reviewer_as_entered": "Stephen",
+  "review_date_as_entered": "10/24/2026",
+  "processed_local_date": "2026-10-24",
+  "original_answers": {
+    "treatment": "Yes, the AI was correct, it is Mr. Wade, yes.",
+    "reason_or_condition": "No reason, it was just correct in this instance.",
+    "name_date": "Stephen 10/24/2026"
+  },
+  "review_type": "Output-informed diagnostic human adjudication, not blind gold",
+  "agent_normalized_assignment": {
+    "case_id": "hr008-cross-page-p5-403-404-v1",
+    "provider_inputs_sha256": "220898f3e12b0bb77132b65e365c94520df56ab92d855798cc36f228fb744a0f",
+    "raw_text_sha256": "19fd57d51eb097b55cf27deba5f5c626e5dd50e45876e4f5878627f625bcfe70",
+    "speaker_display_name": "Mr. Wade",
+    "role": "floor_speaker",
+    "decision": "supported_for_this_reviewed_context",
+    "targets": [
+      {
+        "alias": "P15",
+        "source_paragraph_id": "ia:congressionalglo7395unit:leaf:404::par_000404_000006",
+        "text_sha256": "b5eec275bb456f57b8ad8436254143b92295921cf33d9b2ff3b03de2090bde0b"
+      },
+      {
+        "alias": "P16",
+        "source_paragraph_id": "ia:congressionalglo7395unit:leaf:404::par_000404_000007",
+        "text_sha256": "2cfb28fd7b912272156336ada28b296f5ac3780e2c29c0b51a70f4fe880edf87"
+      }
+    ],
+    "basis": "Human confirms the specific damaged-name reply attribution shown in the question, which proposed the reply and following paragraph; supports a Wade filter match for this reviewed example",
+    "authority_person_id": null
+  },
+  "scope": "Specific Yv-ADE reply and following paragraph in the supplied context. Does not approve all contextual name repairs, identify verified biographical authority/service dates, certify model accuracy, decide P0 or authorize full processing.",
+  "supersession": "Overrides conservative AI expectation of uncertainty for this case only. Frozen AI expectations, raw responses and original validation results remain unchanged.",
+  "work_applied": "Master plan and human desk updated; machine-readable review receipt added. No canonical transcription or corpus enrichment export changed; no validated bulk-label import or new model calls.",
+  "next": "Continue offline protocol v2 negative-evidence/status work; revalidate saved outputs into separate review records before considering new calls. Do not reask this resolved example without new contradictory evidence."
+}
