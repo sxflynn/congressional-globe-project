@@ -7,7 +7,6 @@ from congressional_globe.review_store import ReviewStore
 
 
 def _store(tmp_path, monkeypatch) -> ReviewStore:
-    monkeypatch.setattr(review_app, "_local_only", lambda: True)
     database = tmp_path / "reviews.sqlite"
     monkeypatch.setenv("GLOBE_REVIEW_DATABASE", str(database))
     store = ReviewStore(database)
@@ -142,27 +141,11 @@ def test_revision_draft_restores_after_new_app_session(tmp_path, monkeypatch) ->
     assert _question_widget(reopened, "comment", "text_area").value == "Saved revision note"
 
 
-def test_network_access_requires_code_before_showing_packets(tmp_path, monkeypatch) -> None:
+def test_review_opens_directly_without_access_code(tmp_path, monkeypatch) -> None:
     _store(tmp_path, monkeypatch)
-    monkeypatch.setattr(review_app, "_local_only", lambda: False)
-    monkeypatch.setattr(review_app, "_access_code", lambda: "test-access-only")
+    monkeypatch.delenv("GLOBE_REVIEW_ACCESS_CODE", raising=False)
     app = _app()
-    assert not app.selectbox
-    app.text_input[0].set_value("wrong")
-    app.button[0].click().run()
-    assert app.error
-    assert not app.selectbox
-    app.text_input[0].set_value("test-access-only")
-    app.button[0].click().run()
+    assert app.text_input(key="reviewer").label == "Your name or reviewer ID"
+    assert not any(widget.label == "Access code" for widget in app.text_input)
     assert app.selectbox
     assert not app.exception
-
-
-def test_network_without_access_code_does_not_open_database(tmp_path, monkeypatch) -> None:
-    database = tmp_path / "must-not-open.sqlite"
-    monkeypatch.setenv("GLOBE_REVIEW_DATABASE", str(database))
-    monkeypatch.setattr(review_app, "_local_only", lambda: False)
-    monkeypatch.setattr(review_app, "_access_code", lambda: "")
-    app = _app()
-    assert app.error
-    assert not database.exists()
