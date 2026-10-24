@@ -27,6 +27,7 @@ from congressional_globe.providers import (
     OllamaProvider,
     OpenAIResponsesProvider,
 )
+from congressional_globe.review_cli import add_review_commands, run_review
 from congressional_globe.static_cleanup import normalize_jsonl
 from congressional_globe.storage import (
     CleanupJob,
@@ -56,6 +57,7 @@ CommandHandler = Callable[[argparse.Namespace, Path], None]
 def _commands() -> dict[str, CommandHandler]:
     return {
         "inventory": _inventory,
+        "review": run_review,
         "extract": _extract,
         "build-rag": _build_rag,
         "benchmark": _benchmark,
@@ -276,6 +278,7 @@ def _job_payload(job: CleanupJob | None) -> dict[str, object]:
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="globe")
     commands = parser.add_subparsers(dest="command", required=True)
+    add_review_commands(commands)
     _inventory_command(commands)
     _extract_command(commands)
     _build_command(commands)

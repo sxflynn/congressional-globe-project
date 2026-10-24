@@ -1,0 +1,22 @@
+{
+  "id": "DEMO-001",
+  "version": 1,
+  "title": "Practice review — synthetic example",
+  "instructions": "This is invented practice text, not Congressional Globe evidence. Try saving a draft and submitting it. Your practice answer does not change project policy or historical data. Agents must never use DEMO reviews as research labels.",
+  "blind": true,
+  "questions": [
+    {
+      "id": "topic",
+      "prompt": "What subject does this invented petition explicitly request action on?",
+      "options": ["Voting rights", "Military affairs", "Uncertain / need more context"],
+      "evidence": [
+        {"label": "Invented practice passage", "text": "A petition asks Congress to secure the right of voting for the petitioners."}
+      ]
+    },
+    {
+      "id": "notes",
+      "prompt": "Optional notes about this practice review",
+      "required": false
+    }
+  ]
+}

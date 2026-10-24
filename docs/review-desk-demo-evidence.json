@@ -1,0 +1,159 @@
+{
+  "kind": "synthetic-review-desk-acceptance-demonstration",
+  "observed_at": "2026-10-24T14:25:39.165472+00:00",
+  "scope": "Invented practice passage and agent-generated test answers only; no human historical judgment or policy change.",
+  "browser_checks": {
+    "viewport": [
+      390,
+      844
+    ],
+    "document_scroll_width": 390,
+    "dark_body": "rgb(14, 17, 23)",
+    "light_body": "rgb(255, 255, 255)",
+    "draft_reload_restored_exact_answer": true,
+    "two_submit_clicks_one_submission": true,
+    "server_stop_exit_code": 0,
+    "restarted_server_showed_same_submission": true,
+    "separate_cli_export_and_apply_visible_in_history": true
+  },
+  "gate": {
+    "command": "make gate",
+    "exit_code": 0,
+    "tests_passed": 200,
+    "new_review_tests": 18,
+    "complexity_maximum": 5
+  },
+  "submitted_export": {
+    "packet_snapshot": {
+      "packet_json": "{\"blind\":true,\"id\":\"DEMO-001\",\"instructions\":\"This is invented practice text, not Congressional Globe evidence. Try saving a draft and submitting it. Your practice answer does not change project policy or historical data. Agents must never use DEMO reviews as research labels.\",\"questions\":[{\"evidence\":[{\"label\":\"Invented practice passage\",\"text\":\"A petition asks Congress to secure the right of voting for the petitioners.\",\"url\":null}],\"id\":\"topic\",\"options\":[\"Voting rights\",\"Military affairs\",\"Uncertain / need more context\"],\"prompt\":\"What subject does this invented petition explicitly request action on?\",\"required\":true},{\"evidence\":[],\"id\":\"notes\",\"options\":[],\"prompt\":\"Optional notes about this practice review\",\"required\":false}],\"title\":\"Practice review — synthetic example\",\"version\":1}",
+      "packet_sha256": "0377c5bce6703e0905e74c8edb8b002b1dad71db7d847502632d8279b1d7223c"
+    },
+    "packet": {
+      "blind": true,
+      "id": "DEMO-001",
+      "instructions": "This is invented practice text, not Congressional Globe evidence. Try saving a draft and submitting it. Your practice answer does not change project policy or historical data. Agents must never use DEMO reviews as research labels.",
+      "questions": [
+        {
+          "evidence": [
+            {
+              "label": "Invented practice passage",
+              "text": "A petition asks Congress to secure the right of voting for the petitioners.",
+              "url": null
+            }
+          ],
+          "id": "topic",
+          "options": [
+            "Voting rights",
+            "Military affairs",
+            "Uncertain / need more context"
+          ],
+          "prompt": "What subject does this invented petition explicitly request action on?",
+          "required": true
+        },
+        {
+          "evidence": [],
+          "id": "notes",
+          "options": [],
+          "prompt": "Optional notes about this practice review",
+          "required": false
+        }
+      ],
+      "title": "Practice review — synthetic example",
+      "version": 1
+    },
+    "submission": {
+      "submission_id": "fba1c2a4-22d2-4a39-a050-84299f45e3b1",
+      "packet_id": "DEMO-001",
+      "version": 1,
+      "packet_sha256": "0377c5bce6703e0905e74c8edb8b002b1dad71db7d847502632d8279b1d7223c",
+      "reviewer": "Synthetic browser tester — not human",
+      "answers": {
+        "notes": "Synthetic proof only — preserve this exact text.",
+        "topic": "Voting rights"
+      },
+      "notes": null,
+      "payload_sha256": "35c29000d53e08bf8668335bd91f98b25fe961b997c785d04ba849ab8b178332",
+      "revision": 1,
+      "superseded": false,
+      "created_at": "2026-10-24 14:22:24",
+      "applied": false,
+      "applied_reference": null,
+      "applied_at": null
+    },
+    "applied_receipt": null
+  },
+  "applied_export": {
+    "packet_snapshot": {
+      "packet_json": "{\"blind\":true,\"id\":\"DEMO-001\",\"instructions\":\"This is invented practice text, not Congressional Globe evidence. Try saving a draft and submitting it. Your practice answer does not change project policy or historical data. Agents must never use DEMO reviews as research labels.\",\"questions\":[{\"evidence\":[{\"label\":\"Invented practice passage\",\"text\":\"A petition asks Congress to secure the right of voting for the petitioners.\",\"url\":null}],\"id\":\"topic\",\"options\":[\"Voting rights\",\"Military affairs\",\"Uncertain / need more context\"],\"prompt\":\"What subject does this invented petition explicitly request action on?\",\"required\":true},{\"evidence\":[],\"id\":\"notes\",\"options\":[],\"prompt\":\"Optional notes about this practice review\",\"required\":false}],\"title\":\"Practice review — synthetic example\",\"version\":1}",
+      "packet_sha256": "0377c5bce6703e0905e74c8edb8b002b1dad71db7d847502632d8279b1d7223c"
+    },
+    "packet": {
+      "blind": true,
+      "id": "DEMO-001",
+      "instructions": "This is invented practice text, not Congressional Globe evidence. Try saving a draft and submitting it. Your practice answer does not change project policy or historical data. Agents must never use DEMO reviews as research labels.",
+      "questions": [
+        {
+          "evidence": [
+            {
+              "label": "Invented practice passage",
+              "text": "A petition asks Congress to secure the right of voting for the petitioners.",
+              "url": null
+            }
+          ],
+          "id": "topic",
+          "options": [
+            "Voting rights",
+            "Military affairs",
+            "Uncertain / need more context"
+          ],
+          "prompt": "What subject does this invented petition explicitly request action on?",
+          "required": true
+        },
+        {
+          "evidence": [],
+          "id": "notes",
+          "options": [],
+          "prompt": "Optional notes about this practice review",
+          "required": false
+        }
+      ],
+      "title": "Practice review — synthetic example",
+      "version": 1
+    },
+    "submission": {
+      "submission_id": "fba1c2a4-22d2-4a39-a050-84299f45e3b1",
+      "packet_id": "DEMO-001",
+      "version": 1,
+      "packet_sha256": "0377c5bce6703e0905e74c8edb8b002b1dad71db7d847502632d8279b1d7223c",
+      "reviewer": "Synthetic browser tester — not human",
+      "answers": {
+        "notes": "Synthetic proof only — preserve this exact text.",
+        "topic": "Voting rights"
+      },
+      "notes": null,
+      "payload_sha256": "35c29000d53e08bf8668335bd91f98b25fe961b997c785d04ba849ab8b178332",
+      "revision": 1,
+      "superseded": false,
+      "created_at": "2026-10-24 14:22:24",
+      "applied": true,
+      "applied_reference": "synthetic-demo-only-no-policy-change",
+      "applied_at": "2026-10-24 14:24:01"
+    },
+    "applied_receipt": {
+      "reference": "synthetic-demo-only-no-policy-change",
+      "applied_at": "2026-10-24 14:24:01"
+    }
+  },
+  "limitations": [
+    "Local single-user loopback UI; no authentication or phone/LAN mode.",
+    "No automatic background agent or model/corpus processing.",
+    "Blind flag is an author declaration; no semantic leak detector.",
+    "No automated export restoration command; transfer SQLite for mid-flight drafts/submissions."
+  ],
+  "code_sha256": {
+    "review_store.py": "a835fc8f7b620bae1226df40a3d55634da2ac3944653d9a8f93a0f0bcbedd8b2",
+    "review_cli.py": "d161bd2b30c506162e9692df9d9cdb25bb80247a5a6ca13498cf10944fec650b",
+    "review_app.py": "27f4af006be3b5cd943a26db7093fea628c9942a06fdf2bec036865e21807619",
+    "review_models.py": "01c57f90669941272f3da980f831b863fb880cd72e055e87b47776fde89072ae"
+  }
+}

@@ -1,6 +1,6 @@
 # Human review desk
 
-Read requests here, write in **Your response**, save, then tell the agent “I answered the review.” The agent must incorporate your answers into [MASTER_PLAN.md](MASTER_PLAN.md), archive your original wording, and clear the completed set from this desk. The master plan owns policy, progress and next work.
+Use the browser desk for new reviews. This page links prior answers and explains how to start it; [MASTER_PLAN.md](MASTER_PLAN.md) owns policy, progress and next work.
 
 ## Needs your attention
 
@@ -15,38 +15,25 @@ Read requests here, write in **Your response**, save, then tell the agent “I a
 
 These were diagnostic sample judgments, not approval of a full run or a decision to skip OCR cleanup. No need to answer them again. New evidence or a materially different question gets a new packet/version.
 
-## How agents close a review
+## Use the browser desk
 
-1. Read the actual answers when the human reports completion; leave genuinely unanswered required questions open.
-2. Archive the exact answered packet before editing this desk. Preserve questions, source excerpts, model proposals, sample IDs, original answers and reviewer/date; record its hash and original path. Archive snapshots are immutable and excluded from formatting.
-3. Apply each answer narrowly in the master plan: accepted judgments, conditions, unresolved policy, backlog, affected next POC and human-request state. Distinguish an implemented change from a planned experiment. Preserve human-reported image readings separately from verified OCR patches.
-4. Add an agent processing receipt, verify the archive hash and all decisions, then replace the completed packet here with a short linked receipt. Keep this desk focused on active requests; optional blank demo feedback is not an unanswered required grade.
-5. Format the edited documents, commit the completed unit and briefly tell the human what was adopted and what comes next. Never erase original answers, invent missing responses, or treat sample feedback as broader authorization.
+From this project folder, run:
 
-## Template for future agent requests
+```bash
+make review
+```
 
-**Template only—no human response requested until an agent creates a concrete item with a real HR ID.** Keep the active queue small. After the human confirms completion, archive the exact answered packet, apply its decisions to the master plan, and replace it here with a compact completed receipt.
+Open [the review desk](http://127.0.0.1:8501). Enter your name, review the evidence, and choose **Save draft** or **Submit review**. Submitted reviews wait for an agent to apply them; you do not need to edit Markdown or announce completion in chat. Agents check the inbox at their next work turn. This is not an always-running background agent.
 
-### Agent prepares
+Try `make review-demo` for an invented practice example. Practice answers are not historical labels or project decisions. The app supports your system's light/dark preference and a narrow phone-sized screen, but this first version listens only on this computer. Network access from a phone is deferred.
 
-- **ID / version / master-plan gate / related milestone:**
-- **Plain-language title and specific question:**
-- **Why this decision matters; recommendation and alternatives:**
-- **Evidence or demo:** exact source excerpts, context/citations and proposed output; identify whether source-only blind grading or output-informed calibration. Include expected/observed behavior and safe demo steps. No hidden model call in a supposedly read-only demo.
-- **Scope, cost/time and review effort:**
-- **What waits; what work continues:**
-- **If a run is being requested:** exact command, provider/configuration, request/runtime/spending limits, recovery/stop behavior and known risks. Ordinary sample grades are not full-run approval.
-- **Delivery:** when/how the human was notified; current state remains in the master HR register.
+Saved drafts and submissions are in `artifacts/human-review/reviews.sqlite`. Unsaved typing can be lost on reload. Stop the server before copying this file for backup or moving it to another machine; agents also commit exact JSON submissions/receipts when applying decisions.
 
-### Your response
+## Agent procedure
 
-- **Decision or grades:** _Write here._
-- **Corrections, conditions or uncertainty:** _Write here._
-- **Date/name, optional:** _Write here._
+1. Follow [AGENTS.md](AGENTS.md) and the master plan's browser review protocol. At startup run `uv run globe review inbox`; new submissions do not require a separate human chat message.
+2. Author a versioned packet using `uv run globe review schema`; register it with `uv run globe review register docs/review-packets/PACKET.json`. Preserve source excerpts, citations, question IDs and appropriate context. Leave choices unanswered. Blind packets contain no model outputs or recommendations anywhere in their payload.
+3. Export the submitted packet and exact human answers, inspect revisions and apply the latest judgment narrowly to the master plan. Commit the archive and plan, then record the applied commit reference and archive the application receipt in a second new file. Never overwrite originals, equate free-text grading with validated structured subject labels, or expand a sample judgment into a full-run approval.
+4. Historical Markdown archives above remain immutable. If a human explicitly answers in chat or an old Markdown packet, preserve its exact wording and origin using the legacy archive/receipt procedure; do not manufacture a browser submission.
 
-### Agent applies and reports back
-
-- **Actual answer and provenance:** preserve the original human response; do not overwrite it with a summary.
-- **What changed / effective policy scope / unresolved items:**
-- **Master-plan HR/readiness updates and evidence links:**
-- **Next check or reopening condition:**
+The master plan owns the HR register, accepted policy and progress. This file is an operator/archive pointer, not a second queue or backlog.

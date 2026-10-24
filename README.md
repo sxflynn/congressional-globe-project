@@ -1,10 +1,10 @@
 # Congressional Globe research foundation
 
-Prepare the five parts of the 39th Congress, first session for keyword, OCR-tolerant and semantic search, with historical filters and precise source citations. The data/backend workflow is under development; a complete research search service or web interface is not shipped yet.
+Prepare the five parts of the 39th Congress, first session for keyword, OCR-tolerant and semantic search, with historical filters and precise source citations. The data/backend workflow is under development; a complete research search service or public research interface is not shipped yet.
 
 **[MASTER_PLAN.md](MASTER_PLAN.md)** contains the goal, current results, remaining milestones, commands and progress. All agents follow and update that one document.
 
-For decisions, samples to grade, demos and space to write your answers, open **[HUMAN_REVIEW.md](HUMAN_REVIEW.md)**. Save your responses there, then tell an agent “continue working.”
+Use the browser review desk below to answer questions and grade samples. Agents pick up submitted answers when they next work on the project.
 
 ## Get started
 
@@ -15,6 +15,18 @@ uv sync --all-groups
 ```
 
 Original corpus source files and most generated artifacts are not bundled in Git. The small Wikipedia authority-candidate bundle below is included. On another machine, copy the sources and required resources or follow the [setup and operator notes](MASTER_PLAN.md#8-operator-commands-and-current-limitations). The prepared machine already has the canonical files and experiment evidence.
+
+## Review samples
+
+```bash
+make review
+```
+
+Open [the review desk](http://127.0.0.1:8501). Choose a pending review, enter your name, read the source excerpts, and answer the questions. **Save draft** saves unfinished answers; **Submit review** sends a completed review to the agent inbox. Unsaved typing is not preserved. Submitted answers appear under **Submitted**, then **History** after an agent applies them. You can submit a revision without erasing your previous answer.
+
+To try an invented practice example first, use `make review-demo`. It does not call a model or change historical data. Stop the server with Ctrl+C. The desk starts on this computer only; phone/LAN access is not configured in this first version.
+
+Saved reviews live in `artifacts/human-review/reviews.sqlite`, outside Git. Stop the desk before copying that file as a backup or transferring it to another machine. Agents archive submitted answers as portable JSON alongside plan updates. Existing paper reviews are linked from [HUMAN_REVIEW.md](HUMAN_REVIEW.md).
 
 ## Read the current data
 
@@ -52,4 +64,4 @@ Optional `make run-qwen`, `make run-gemma` and `make run-openai` resume **OCR cl
 make gate
 ```
 
-Runs formatting, code checks and tests. Node.js/npm is needed for the Markdown formatter; formatting may change files. Project status, evidence and the next development task are maintained in the master plan; readable requests and your original answers belong in `HUMAN_REVIEW.md`.
+Runs formatting, code checks and tests. Node.js/npm is needed for the Markdown formatter; formatting may change files. Project status and the next development task are maintained in the master plan.

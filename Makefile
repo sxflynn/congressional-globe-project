@@ -1,5 +1,12 @@
-.PHONY: gate run-workflow run-static status run-qwen run-gemma run-openai v2-sample
+.PHONY: gate review review-demo run-workflow run-static status run-qwen run-gemma run-openai v2-sample
 .NOTPARALLEL:
+
+review:
+	uv run streamlit run src/congressional_globe/review_app.py --server.address 127.0.0.1 --server.headless true --browser.gatherUsageStats false
+
+review-demo:
+	uv run globe review register docs/review-demo.json
+	$(MAKE) review
 
 gate:
 	uv run ruff format .

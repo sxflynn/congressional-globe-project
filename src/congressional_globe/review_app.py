@@ -1,0 +1,346 @@
+"""Local Streamlit interface for durable human review packets."""
+
+from __future__ import annotations
+
+import hashlib
+import html
+import os
+import sqlite3
+from pathlib import Path
+from typing import Any
+
+import streamlit as st
+
+from congressional_globe.review_store import ReviewStore
+
+
+def _database_path() -> Path:
+    configured = os.environ.get("GLOBE_REVIEW_DATABASE")
+    return Path(configured) if configured else Path("artifacts/human-review/reviews.sqlite")
+
+
+def _value(record: Any, key: str, default: Any = None) -> Any:
+    return record.get(key, default) if isinstance(record, dict) else getattr(record, key, default)
+
+
+def _answer_history(
+    store: ReviewStore, packet_id: str, version: int, reviewer: str
+) -> dict[str, str]:
+    records = [
+        row
+        for row in store.submissions()
+        if row["packet_id"] == packet_id
+        and row["version"] == version
+        and row["reviewer"] == reviewer
+    ]
+    return max(records, key=lambda row: row["revision"])["answers"] if records else {}
+
+
+def _safe_url(value: Any) -> str | None:
+    url = str(value or "")
+    return url if url.startswith(("https://", "http://")) else None
+
+
+def _packet_label(packet: Any) -> str:
+    packet_id = str(_value(packet, "id"))
+    prefix = "DEMO · " if packet_id.upper().startswith("DEMO") else ""
+    return f"{prefix}{packet_id} · v{_value(packet, 'version')} · {_value(packet, 'title')}"
+
+
+def _widget_prefix(packet_id: str, version: int, reviewer: str, revision_id: str) -> str:
+    source = f"{packet_id}:{version}:{reviewer}:{revision_id}"
+    return hashlib.sha256(source.encode()).hexdigest()[:12]
+
+
+def _evidence(question: Any) -> None:
+    for item in _value(question, "evidence", []):
+        st.markdown(f"**{_value(item, 'label', 'Evidence')}**")
+        st.markdown(
+            "<div class='source-card'><pre>"
+            + html.escape(str(_value(item, "text", "")))
+            + "</pre></div>",
+            unsafe_allow_html=True,
+        )
+        url = _safe_url(_value(item, "url"))
+        if url:
+            st.markdown(f"[Open source]({url})")
+
+
+def _answer_widget(question: Any, current: str, key_prefix: str) -> str:
+    question_id = str(_value(question, "id"))
+    label = str(_value(question, "prompt"))
+    required = bool(_value(question, "required", True))
+    st.markdown(f"**{label}**" + (" *" if required else ""))
+    _evidence(question)
+    options = _value(question, "options", []) or []
+    key = f"answer-{key_prefix}-{question_id}"
+    if options:
+        choices = ["", *list(options)]
+        index = choices.index(current) if current in choices else 0
+        return st.selectbox("Choose an answer", choices, index=index, key=key)
+    return st.text_area("Your answer", value=current, key=key)
+
+
+def _save_result(
+    store: ReviewStore,
+    packet: Any,
+    reviewer: str,
+    answers: dict[str, str],
+    submit: bool,
+    revision: bool = False,
+) -> None:
+    packet_id, version = _value(packet, "id"), _value(packet, "version")
+    if not reviewer.strip():
+        st.error("Enter your name or reviewer ID before saving or submitting.")
+        return
+    try:
+        if not submit:
+            store.save_draft(packet_id, version, reviewer, answers)
+            st.success("Draft saved. You can return to it later.")
+            return
+        result = store.submit(packet_id, version, reviewer, answers)
+        st.success(_submission_message(result))
+        if revision:
+            st.session_state.pop("revision_target", None)
+    except (ValueError, KeyError, RuntimeError, sqlite3.Error) as exc:
+        st.error(str(exc))
+
+
+def _submission_message(result: dict[str, Any]) -> str:
+    state = "Applied" if result["applied"] else "Submitted — awaiting agent"
+    return f"{state}. Receipt: {result['submission_id']} · revision {result['revision']}"
+
+
+def _show_packet(
+    packet: Any,
+    store: ReviewStore,
+    prior: dict[str, str] | None = None,
+    revision: bool = False,
+    revision_id: str = "",
+    reviewer_default: str = "",
+) -> None:
+    packet_id, version = _value(packet, "id"), _value(packet, "version")
+    st.subheader(_value(packet, "title"))
+    st.caption(f"{packet_id} · version {version}" + (" · revision" if revision else ""))
+    st.write(_value(packet, "instructions"))
+    reviewer = _reviewer(packet_id, version, store, revision_id, revision, reviewer_default)
+    if reviewer is None:
+        return
+    baseline = _baseline(store, packet_id, version, reviewer, prior)
+    key_prefix = _widget_prefix(packet_id, version, reviewer, revision_id)
+    questions = _value(packet, "questions", [])
+    answers, save, submit = _review_form(packet, questions, baseline, key_prefix, revision)
+    if save or submit:
+        _save_result(store, packet, reviewer, answers, submit, revision)
+
+
+def _reviewer(
+    packet_id: str,
+    version: int,
+    store: ReviewStore,
+    revision_id: str,
+    revision: bool,
+    reviewer_default: str,
+) -> str | None:
+    reviewer_key = f"revision-reviewer-{revision_id}" if revision else "reviewer"
+    reviewer_value = st.text_input(
+        "Your name or reviewer ID",
+        value=st.session_state.get(reviewer_key, "") or reviewer_default,
+        key=reviewer_key,
+        disabled=revision,
+    )
+    reviewer = reviewer_default.strip() if revision else reviewer_value.strip()
+    try:
+        if reviewer.strip():
+            store.get_draft(packet_id, version, reviewer)
+    except (ValueError, KeyError) as exc:
+        st.error(f"This packet version is no longer available for editing: {exc}")
+        return None
+    return reviewer
+
+
+def _baseline(
+    store: ReviewStore,
+    packet_id: str,
+    version: int,
+    reviewer: str,
+    prior: dict[str, str] | None,
+) -> dict[str, str]:
+    draft = store.get_draft(packet_id, version, reviewer) if reviewer.strip() else None
+    saved = _value(draft, "answers", {}) or {}
+    if saved:
+        return {**(prior or {}), **saved}
+    return prior or _answer_history(store, packet_id, version, reviewer)
+
+
+def _review_form(
+    packet: Any,
+    questions: list[Any],
+    baseline: dict[str, str],
+    key_prefix: str,
+    revision: bool,
+) -> tuple[dict[str, str], bool, bool]:
+    packet_id, version = _value(packet, "id"), _value(packet, "version")
+    with st.form(f"review-{packet_id}-{version}-{key_prefix}"):
+        answers = {
+            str(_value(question, "id")): _answer_widget(
+                question, baseline.get(str(_value(question, "id")), ""), key_prefix
+            )
+            for question in questions
+        }
+        save_label = "Save revision draft" if revision else "Save draft"
+        submit_label = "Submit revision" if revision else "Submit review"
+        save = st.form_submit_button(save_label)
+        submit = st.form_submit_button(submit_label)
+    return answers, save, submit
+
+
+def _show_submission(submission: Any) -> None:
+    state = "Applied" if _value(submission, "applied", False) else "Submitted — awaiting agent"
+    receipt = _value(submission, "submission_id", "")
+    st.caption(f"{state} · receipt {receipt} · revision {_value(submission, 'revision', '?')}")
+    st.write(f"Reviewer: {_value(submission, 'reviewer', 'Unknown')}")
+    for question_id, answer in (_value(submission, "answers", {}) or {}).items():
+        st.write(f"**{question_id}** — {answer}")
+    reference = _value(submission, "applied_reference")
+    if reference:
+        st.info(f"Applied: {reference}")
+
+
+def _legacy_history() -> None:
+    st.markdown("### Completed paper reviews")
+    st.caption("Read-only records from before this desk. They are not new web submissions.")
+    with st.expander("HR-005-v1 · Wade speaker attribution"):
+        st.write("The human confirmed the specific attribution to Mr. Wade in this context.")
+        _legacy_downloads("HR-005-v1")
+    with st.expander("HR-008-v1 · Three topic-tag examples"):
+        st.write(
+            "Voting rights and public employee compensation were accepted in these examples; "
+            "the military inference was rejected. Cross-page speaker context should be retained."
+        )
+        _legacy_downloads("HR-008-v1")
+
+
+def _legacy_downloads(review_id: str) -> None:
+    archive = Path(__file__).resolve().parents[2] / "docs" / "archive" / "human-review" / review_id
+    for filename in ("original.md", "receipt.json"):
+        path = archive / filename
+        if path.is_file():
+            st.download_button(
+                f"Download {filename}",
+                path.read_bytes(),
+                file_name=f"{review_id}-{filename}",
+                key=f"download-{review_id}-{filename}",
+            )
+
+
+def _revision_view(store: ReviewStore, target: dict[str, Any]) -> None:
+    _show_revision_target(store, target)
+    if st.button("Cancel revision"):
+        st.session_state.pop("revision_target", None)
+        st.rerun()
+
+
+def _show_revision_target(store: ReviewStore, target: dict[str, Any]) -> None:
+    packet = store.get_packet(target["packet_id"], target["version"])
+    if packet is None:
+        st.error("The packet for this submission is no longer available.")
+        return
+    if not _is_latest_packet(store, target):
+        st.error("This review belongs to an older packet version and cannot be revised.")
+        return
+    _show_packet(
+        packet,
+        store,
+        target["answers"],
+        revision=True,
+        revision_id=target["submission_id"],
+        reviewer_default=target["reviewer"],
+    )
+
+
+def _is_latest_packet(store: ReviewStore, target: dict[str, Any]) -> bool:
+    latest = store.get_packet(target["packet_id"])
+    return latest is not None and latest["version"] == target["version"]
+
+
+def _submission_views(store: ReviewStore, submissions: list[dict[str, Any]], section: str) -> None:
+    visible = _visible_submissions(submissions, section)
+    if _render_submissions(store, visible):
+        return
+    if section == "History":
+        _legacy_history()
+    elif not visible:
+        st.info("No submitted reviews in this view.")
+
+
+def _render_submissions(store: ReviewStore, visible: list[dict[str, Any]]) -> bool:
+    return any(_submission_card(store, row) for row in visible)
+
+
+def _visible_submissions(submissions: list[dict[str, Any]], section: str) -> list[dict[str, Any]]:
+    return [
+        row
+        for row in submissions
+        if (row["applied"] or row.get("superseded", False)) == (section == "History")
+    ]
+
+
+def _submission_card(store: ReviewStore, row: dict[str, Any]) -> bool:
+    suffix = " · superseded" if row.get("superseded", False) else ""
+    title = f"{row['packet_id']} · v{row['version']} · revision {row['revision']}{suffix}"
+    with st.expander(title):
+        _show_submission(row)
+        revise = st.button("Revise this response", key=f"revise-{row['submission_id']}")
+    if revise:
+        st.session_state["revision_target"] = row
+        _revision_view(store, row)
+    return revise
+
+
+def _pending_view(
+    store: ReviewStore, packets: list[dict[str, Any]], submissions: list[dict[str, Any]]
+) -> None:
+    submitted = {(row["packet_id"], row["version"]) for row in submissions}
+    available = [packet for packet in packets if (packet["id"], packet["version"]) not in submitted]
+    if not available:
+        st.info("No pending reviews.")
+        return
+    packet = st.selectbox("Review set", available, format_func=_packet_label)
+    _show_packet(packet, store)
+
+
+def _store_data() -> tuple[ReviewStore, list[dict[str, Any]], list[dict[str, Any]]] | None:
+    try:
+        store = ReviewStore(_database_path())
+        return store, store.packets(), store.submissions()
+    except (OSError, ValueError, RuntimeError, sqlite3.Error) as exc:
+        st.error(f"The review desk could not open its database: {exc}")
+        return None
+
+
+def main() -> None:
+    st.set_page_config(page_title="Human review desk", layout="centered")
+    st.markdown(
+        "<style>.source-card{border-radius:.5rem;padding:.7rem;background:#f2f4f7;color:#202124}"
+        ".source-card pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;margin:0}"
+        "@media(prefers-color-scheme:dark){.source-card{background:#25282c;color:#f1f3f4}}</style>",
+        unsafe_allow_html=True,
+    )
+    st.title("Human review desk")
+    data = _store_data()
+    if data is None:
+        return
+    store, packets, submissions = data
+    section = st.radio("View", ["Pending", "Submitted", "History"], horizontal=True)
+    target = st.session_state.get("revision_target")
+    if target:
+        _revision_view(store, target)
+    elif section == "Pending":
+        _pending_view(store, packets, submissions)
+    else:
+        _submission_views(store, submissions, section)
+
+
+if __name__ == "__main__":
+    main()
