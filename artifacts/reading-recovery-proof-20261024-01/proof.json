@@ -1,0 +1,43 @@
+{
+  "synthetic": true,
+  "provider_calls": 0,
+  "child_exit": 73,
+  "interrupted_attempt_before_reconcile": {
+    "attempt_id": "7fa86a34-c178-4cf1-afc6-6d2faa339318",
+    "task_id": "interrupted-synthetic",
+    "status": "inflight",
+    "request": {
+      "network_dispatch": false,
+      "synthetic": true,
+      "text": "café GCO"
+    },
+    "raw_reply": null,
+    "usage": null,
+    "detail": null
+  },
+  "blocked_claim": "an attempt is unresolved; reconcile before dispatch",
+  "completed_attempt": {
+    "attempt_id": "aeb21890-1bca-4164-b903-dc5a84038ac4",
+    "task_id": "completed-synthetic",
+    "status": "valid",
+    "request": {
+      "network_dispatch": false,
+      "synthetic": true,
+      "text": "unchanged"
+    },
+    "raw_reply": "{\"synthetic\":true,\"status\":\"unchanged\"}",
+    "usage": null,
+    "detail": null
+  },
+  "resume_new_dispatches": 0,
+  "summary": {
+    "pending": 0,
+    "inflight": 0,
+    "invalid": 0,
+    "failed": 1,
+    "timeout": 0,
+    "valid": 1
+  },
+  "incompatible_config_refused": true,
+  "sqlite_sha256": "76e7ef7d870bee9c8a267dd9c24523d8928de845beb120e8581f63499d20a40b"
+}

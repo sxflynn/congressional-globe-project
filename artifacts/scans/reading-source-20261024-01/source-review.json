@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "provider_calls": 0,
+  "canonical_edits": 0,
+  "units": [
+    {
+      "kind": "structured",
+      "source_id": "congressionalg7391unit:207:par_000207_000040",
+      "printed_page": "91",
+      "raw_sha256": "bc6151d6157b4d29fdce9ed755e45533d17650f5643afe7ecaf9c185c442d9d9",
+      "bundle_sha256": "ed6d2d3804d0b57c4c0f7e6d48dc5856085122b4eaa071e10557dc4e4fc81d7a",
+      "image_sha256": "3a7eea2d21b15745f0dfcb4ed7cf4491d9e8bc4ebd8f3b12eb2b1a6423be5664",
+      "reviewer": "Codex root, source-image inspection",
+      "review_status": "AI source expectations only; not human labels",
+      "visual_registration": "Visible text and target region correspond; padding contains neighboring print",
+      "finding": "Legislative section3 is clearly legible. It is quoted bill text within proceedings, suitable as compact structured material. Raw OCR has letter confusions; no canonical changes applied.",
+      "supported_repairs": [
+        {
+          "start": 18,
+          "end": 26,
+          "old": "furilier",
+          "new": "further"
+        },
+        {
+          "start": 115,
+          "end": 123,
+          "old": "slavei-y",
+          "new": "slavery"
+        },
+        {
+          "start": 326,
+          "end": 329,
+          "old": "arc",
+          "new": "are"
+        },
+        {
+          "start": 404,
+          "end": 407,
+          "old": "arc",
+          "new": "are"
+        },
+        {
+          "start": 545,
+          "end": 548,
+          "old": "arc",
+          "new": "are"
+        }
+      ],
+      "scope": "Only this section paragraph inspected; other target/context paragraphs in the unit remain ungraded."
+    },
+    {
+      "kind": "long",
+      "source_id": "congressionalglo7393unit:126:par_000126_000010",
+      "printed_page": "1936",
+      "raw_sha256": "72c608f93fc6e64fcdf5b49d3fa4b59a3691576aba3154783e59df5709c1a473",
+      "bundle_sha256": "b94057fac81e0b5b1c2f3d6382d7354fb5620fdc90bf40ed617851d7c496cd89",
+      "image_sha256": "71b9c1d5ee2e519fc20d39fbbda9d555286b5fe58856dc53ea8bcba7d6bc9694",
+      "reviewer": "Codex root, source-image inspection",
+      "review_status": "AI source expectations only; not human labels",
+      "visual_registration": "Visible text and target region correspond; padding contains neighboring print",
+      "finding": "Long paragraph visibly contains connected pension debate by Mr.GRIMES followed by Mr.VAN WINKLE. It is not one speaker turn. Following Grimes line is padding, outside target raw text.",
+      "supported_readings": [
+        "three or four hundred dollars",
+        "there has been no laches, no neglect, no misconduct",
+        "the sense of justice of the Senate."
+      ],
+      "scope": "Source layout/turns and the quoted readings inspected; no full reference transcription or quantitative accuracy score established."
+    }
+  ],
+  "transfer": {
+    "provider_calls": 0,
+    "cap_bytes": 12000000,
+    "bytes": 1114498,
+    "image_files": 2,
+    "receipts": [
+      {
+        "requested_url": "https://iiif.archive.org/iiif/congressionalg7391unit$207/info.json",
+        "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0207.jp2/info.json",
+        "retrieved_at_utc": "2026-10-24T21:39:08.793256+00:00",
+        "elapsed_seconds": 1.7452000000048429,
+        "bytes": 991,
+        "sha256": "338e51b2890e1b9ee7ebc7055f78c56f6cb244809ae80f25c52dddc67dc95ef8",
+        "content_type": "application/json;charset=utf-8"
+      },
+      {
+        "requested_url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0207.jp2/2024,3213,953,473/953,/0/default.jpg",
+        "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0207.jp2/2024,3213,953,473/953,/0/default.jpg",
+        "retrieved_at_utc": "2026-10-24T21:39:12.521336+00:00",
+        "elapsed_seconds": 3.7244422091171145,
+        "bytes": 123942,
+        "sha256": "3a7eea2d21b15745f0dfcb4ed7cf4491d9e8bc4ebd8f3b12eb2b1a6423be5664",
+        "content_type": "image/jpeg"
+      },
+      {
+        "requested_url": "https://iiif.archive.org/iiif/congressionalglo7393unit$126/info.json",
+        "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7393unit%2fcongressionalglo7393unit_jp2.zip%2fcongressionalglo7393unit_jp2%2fcongressionalglo7393unit_0126.jp2/info.json",
+        "retrieved_at_utc": "2026-10-24T21:39:16.311214+00:00",
+        "elapsed_seconds": 1.939824250061065,
+        "bytes": 999,
+        "sha256": "154094bc8dd66d5e0c75573e56671260f74600173f417c97e3d257f4f2e5b84d",
+        "content_type": "application/json;charset=utf-8"
+      },
+      {
+        "requested_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7393unit%2fcongressionalglo7393unit_jp2.zip%2fcongressionalglo7393unit_jp2%2fcongressionalglo7393unit_0126.jp2/1137,309,948,3618/948,/0/default.jpg",
+        "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7393unit%2fcongressionalglo7393unit_jp2.zip%2fcongressionalglo7393unit_jp2%2fcongressionalglo7393unit_0126.jp2/1137,309,948,3618/948,/0/default.jpg",
+        "retrieved_at_utc": "2026-10-24T21:39:17.609044+00:00",
+        "elapsed_seconds": 1.2952602501027286,
+        "bytes": 988566,
+        "sha256": "71b9c1d5ee2e519fc20d39fbbda9d555286b5fe58856dc53ea8bcba7d6bc9694",
+        "content_type": "image/jpeg"
+      }
+    ]
+  },
+  "limit": "Two inspected paragraphs do not certify all18units; source expectations remain incomplete."
+}

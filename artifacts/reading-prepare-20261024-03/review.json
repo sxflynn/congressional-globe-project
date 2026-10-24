@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "source_candidates_frozen": true,
+  "launch_ready": false,
+  "primary_units": 18,
+  "confirmation_units": 5,
+  "primary_raw_words": 6367,
+  "source_bound_paragraphs": 223,
+  "source_text_layer": "immutable OCR + independently replayed existing static edits",
+  "sampling": "seed20261024, source-order stratified reservoir; heuristic format cues pending image review",
+  "excluded_known_exposures": true,
+  "exposure_inventory_complete": false,
+  "held_out_gold": false,
+  "source_expectations": "Two paragraphs inspected; remaining reference expectations not complete",
+  "model_calls": 0,
+  "canonical_edits": 0,
+  "human_labels_created": 0,
+  "source_scan_review": "artifacts/scans/reading-source-20261024-01/source-review.json",
+  "journal_proof": "artifacts/reading-recovery-proof-20261024-01/proof.json",
+  "gate": {
+    "command": "make gate",
+    "tests": 286,
+    "log": "tmp/reading-pilot/gate.log"
+  },
+  "independent_review": "Luna implemented/hardened the journal; read-only audit led to explicit cue labels and a separate hOCR-binding check",
+  "remaining": [
+    "Complete whole-unit image bindings within remaining22new images and10885502bytes",
+    "Complete source-image expectations before model outputs",
+    "Fingerprint installed providers and measure actual text/image fit",
+    "Integrate bounded sequential provider dispatch with the attempt journal",
+    "Resolve requested reduction in human review effort"
+  ],
+  "implementation_sha256": {
+    "reading_preparation.py": "a10d717e55f3558e22542c7f53cb65b1a8ff00a978707ea8137732b1a2d370d7",
+    "reading_source_check.py": "1e84c70eff043434722b27adb5798c8f8caa014414f888c70e3e521a38c9ef6e",
+    "reading_run_store.py": "f426b114a95c1ffd19d1e2a5b23adc50d75bd54202a7f04e62a2de681d5a6d2e",
+    "reading_contracts.py": "e0a5520d8b87a9e67842842df69e249404017474bd203610b6724d84d1a826d9"
+  },
+  "files_sha256": {
+    "prompt.txt": "d9b0f44f3819f3fff01dedf59916e7d638e9cc884150e17028c7724b2b0a10ff",
+    "reply.schema.json": "dbefe41dff014e8fb27cd4835bdbe6a0bf1c0bbeaa186ce4981e04c8503ea749",
+    "source-files.json": "a8cebc854230240fe195e43ad8da1a5ab6d70b09b1e7acc3098c47dcb327a7eb",
+    "source-binding-proof.json": "7ffb5f6c2f34d4f4d43388335685e290998b62717ccdb88b8baa7b65d98cdac8",
+    "candidate.schema.json": "a92da6be3404eee7bf467f8b98b0f4a2b283d1248cccae553da45a0e3fbc28da",
+    "manifest.json": "d7c147c31daa655bae5b13d4ad5349adf8a14d1828591fbcf8e73a590a80d98b",
+    "candidates.jsonl": "9358e8e4cb7b4cd22f7423671aa8f336e82f04336d6df5ef261ab904585ee51a"
+  }
+}

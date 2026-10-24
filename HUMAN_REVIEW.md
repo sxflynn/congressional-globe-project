@@ -18,6 +18,8 @@ Tap a dotted-underlined term to open a short, plain-language definition. Close i
 
 Open [Source images](http://10.0.0.56:8501/?view=source-images) for geometry-linked scan crops: the damaged petition, an exact word/number, and two more paragraphs. Original print and unchanged OCR are displayed together. This is read-only, not another request to regrade HR-008 or an automatic correction. HR-004 remains under Pending; if you consult its scans, note that in your response so image-assisted judgments are not treated as OCR-only readability evidence.
 
+Two new clean-reading candidate crops are also available in Source images: a quoted bill section (part1, printed page91) and connected pension debate (part3, printed page1936). These are partial source checks for the pilot, not new grading requests or accepted corpus corrections.
+
 ## Completed reviews
 
 | Review | Your decisions and resulting work | Original answers |

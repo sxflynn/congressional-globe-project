@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "run_id": "reading-prepare-20261024-03",
+  "parent_manifest": "artifacts/reading-prepare-20261024-02/manifest.json",
+  "parent_manifest_sha256": "d8b0561e5a6f53b184248e2d62da0e4a6f43949b074ff30eb7099481448b1017",
+  "selection_unchanged": true,
+  "changes": [
+    "Rename provisional format categories as cues",
+    "Separate file-hash verification from candidate-to-source verification"
+  ],
+  "primary_count": 18,
+  "confirmation_count": 5,
+  "primary_word_count": 6367,
+  "provider_calls": 0,
+  "image_fetches": 0,
+  "source_review": "pending",
+  "launch_ready": false,
+  "files_sha256": {
+    "source-files.json": "a8cebc854230240fe195e43ad8da1a5ab6d70b09b1e7acc3098c47dcb327a7eb",
+    "candidate.schema.json": "a92da6be3404eee7bf467f8b98b0f4a2b283d1248cccae553da45a0e3fbc28da",
+    "candidates.jsonl": "9358e8e4cb7b4cd22f7423671aa8f336e82f04336d6df5ef261ab904585ee51a"
+  },
+  "code_sha256": {
+    "reading_preparation.py": "60495a51e46dc111bc49ec2dc3f9307c996831f0e9cc2539917937d1867bf214",
+    "reading_source_check.py": "1e84c70eff043434722b27adb5798c8f8caa014414f888c70e3e521a38c9ef6e",
+    "reading_run_store.py": "f426b114a95c1ffd19d1e2a5b23adc50d75bd54202a7f04e62a2de681d5a6d2e",
+    "reading_contracts.py": "e0a5520d8b87a9e67842842df69e249404017474bd203610b6724d84d1a826d9"
+  }
+}

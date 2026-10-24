@@ -1,0 +1,319 @@
+{
+  "candidate": {
+    "$defs": {
+      "BoundingBox": {
+        "additionalProperties": false,
+        "properties": {
+          "left": {
+            "minimum": 0,
+            "title": "Left",
+            "type": "integer"
+          },
+          "top": {
+            "minimum": 0,
+            "title": "Top",
+            "type": "integer"
+          },
+          "right": {
+            "minimum": 0,
+            "title": "Right",
+            "type": "integer"
+          },
+          "bottom": {
+            "minimum": 0,
+            "title": "Bottom",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "left",
+          "top",
+          "right",
+          "bottom"
+        ],
+        "title": "BoundingBox",
+        "type": "object"
+      },
+      "PrintedPage": {
+        "additionalProperties": false,
+        "properties": {
+          "detected": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Detected"
+          },
+          "inferred": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Inferred"
+          },
+          "source": {
+            "$ref": "#/$defs/SourceKind",
+            "default": "unknown"
+          },
+          "confidence": {
+            "anyOf": [
+              {
+                "maximum": 100,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Confidence"
+          }
+        },
+        "title": "PrintedPage",
+        "type": "object"
+      },
+      "ReadingParagraph": {
+        "additionalProperties": false,
+        "properties": {
+          "item_identifier": {
+            "minLength": 1,
+            "title": "Item Identifier",
+            "type": "string"
+          },
+          "part_number": {
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Part Number",
+            "type": "integer"
+          },
+          "scan_leaf": {
+            "minimum": 0,
+            "title": "Scan Leaf",
+            "type": "integer"
+          },
+          "printed_page": {
+            "$ref": "#/$defs/PrintedPage"
+          },
+          "reading_order": {
+            "minimum": 0,
+            "title": "Reading Order",
+            "type": "integer"
+          },
+          "paragraph_id": {
+            "minLength": 1,
+            "title": "Paragraph Id",
+            "type": "string"
+          },
+          "hocr_page_id": {
+            "minLength": 1,
+            "title": "Hocr Page Id",
+            "type": "string"
+          },
+          "line_ids": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "title": "Line Ids",
+            "type": "array"
+          },
+          "bbox": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/BoundingBox"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "raw": {
+            "title": "Raw",
+            "type": "string"
+          },
+          "raw_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Raw Sha256",
+            "type": "string"
+          },
+          "static": {
+            "title": "Static",
+            "type": "string"
+          },
+          "static_patches": {
+            "items": {
+              "$ref": "#/$defs/TextEdit"
+            },
+            "title": "Static Patches",
+            "type": "array"
+          },
+          "static_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Static Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "item_identifier",
+          "part_number",
+          "scan_leaf",
+          "printed_page",
+          "reading_order",
+          "paragraph_id",
+          "hocr_page_id",
+          "line_ids",
+          "bbox",
+          "raw",
+          "raw_sha256",
+          "static",
+          "static_patches",
+          "static_sha256"
+        ],
+        "title": "ReadingParagraph",
+        "type": "object"
+      },
+      "SourceKind": {
+        "enum": [
+          "archive_map",
+          "direct_header",
+          "propagated",
+          "manual_review",
+          "unknown"
+        ],
+        "title": "SourceKind",
+        "type": "string"
+      },
+      "TextEdit": {
+        "additionalProperties": false,
+        "properties": {
+          "start_char": {
+            "minimum": 0,
+            "title": "Start Char",
+            "type": "integer"
+          },
+          "end_char": {
+            "minimum": 0,
+            "title": "End Char",
+            "type": "integer"
+          },
+          "expected": {
+            "title": "Expected",
+            "type": "string"
+          },
+          "replacement": {
+            "title": "Replacement",
+            "type": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string"
+          },
+          "confidence": {
+            "maximum": 1,
+            "minimum": 0,
+            "title": "Confidence",
+            "type": "number"
+          }
+        },
+        "required": [
+          "start_char",
+          "end_char",
+          "expected",
+          "replacement",
+          "reason",
+          "confidence"
+        ],
+        "title": "TextEdit",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "minLength": 1,
+        "title": "Id",
+        "type": "string"
+      },
+      "part_number": {
+        "maximum": 5,
+        "minimum": 1,
+        "title": "Part Number",
+        "type": "integer"
+      },
+      "stratum": {
+        "enum": [
+          "ordinary",
+          "damage_cue",
+          "structured",
+          "long",
+          "continuation",
+          "quotation"
+        ],
+        "title": "Stratum",
+        "type": "string"
+      },
+      "split": {
+        "enum": [
+          "primary",
+          "confirmation"
+        ],
+        "title": "Split",
+        "type": "string"
+      },
+      "target": {
+        "items": {
+          "$ref": "#/$defs/ReadingParagraph"
+        },
+        "minItems": 1,
+        "title": "Target",
+        "type": "array"
+      },
+      "context_before": {
+        "items": {
+          "$ref": "#/$defs/ReadingParagraph"
+        },
+        "title": "Context Before",
+        "type": "array"
+      },
+      "context_after": {
+        "items": {
+          "$ref": "#/$defs/ReadingParagraph"
+        },
+        "title": "Context After",
+        "type": "array"
+      },
+      "selection_reason": {
+        "minLength": 1,
+        "title": "Selection Reason",
+        "type": "string"
+      },
+      "source_review": {
+        "const": "pending",
+        "default": "pending",
+        "title": "Source Review",
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "part_number",
+      "stratum",
+      "split",
+      "target",
+      "selection_reason"
+    ],
+    "title": "ReadingCandidate",
+    "type": "object"
+  }
+}

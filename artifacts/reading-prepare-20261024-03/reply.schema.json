@@ -1,0 +1,129 @@
+{
+  "$defs": {
+    "ReadingPatch": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "minimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "old": {
+          "title": "Old",
+          "type": "string"
+        },
+        "new": {
+          "title": "New",
+          "type": "string"
+        },
+        "image_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Image Ids",
+          "type": "array"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "start",
+        "end",
+        "old",
+        "new",
+        "image_ids",
+        "reason"
+      ],
+      "title": "ReadingPatch",
+      "type": "object"
+    },
+    "UncertainReading": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "exclusiveMinimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "start",
+        "end",
+        "reason"
+      ],
+      "title": "UncertainReading",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "unit_id": {
+      "minLength": 1,
+      "title": "Unit Id",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "unchanged",
+        "proposed",
+        "needs_review"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "patches": {
+      "items": {
+        "$ref": "#/$defs/ReadingPatch"
+      },
+      "title": "Patches",
+      "type": "array"
+    },
+    "uncertain": {
+      "items": {
+        "$ref": "#/$defs/UncertainReading"
+      },
+      "title": "Uncertain",
+      "type": "array"
+    }
+  },
+  "required": [
+    "unit_id",
+    "status",
+    "patches",
+    "uncertain"
+  ],
+  "title": "ReadingReply",
+  "type": "object"
+}
