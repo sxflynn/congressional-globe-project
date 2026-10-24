@@ -331,13 +331,21 @@ Full paired evidence: `mini-independent-review.json/.md`, `independent-review.js
 
 ### Model and fingerprint facts
 
-- Machine: Mac mini M4 Pro, 64 GB unified memory. Local Qwen completion tag checked2026-10-22: `qwen3.8:27b-mlx`, digest `5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e`. Recheck installed tags before future requests; do not assume resident/idle state.
+- Machine (human reconfirmed2026-10-24): Mac mini M4 Pro, 64 GB unified memory. Local Qwen completion tag checked2026-10-22: `qwen3.8:27b-mlx`, digest `5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e`. Recheck installed tags before future requests; do not assume resident/idle state.
 - Embedding tags checked installed: `qwen3-embedding:4b` (2,560 dimensions) and `:8b` (4,096 dimensions). Native 4B 1,024-output compatibility was separately confirmed. The benchmark of locally sliced 1,024 vectors is distinct; do not silently relabel it. Smaller candidates remain future bounded comparisons, not downloads or current winners.
 - Canonical snapshot SHA256: `4ab8ef6b325b650a0db002a94d690989f02d82333e977e5fed05c8f651772eeb`.
 - Blind review packet SHA256: `138d7660e3dc2b342c8bc7518a6d3ee410f4126a62bb904cde508fca27207bba`; keep it blind while humans label.
 - Draft vocabulary version `v2-subjects-draft-1`, content digest `3011bfe5d17e778ea29956fb356b477489277c55eb0a3754a80b63b1de158b57`. It is a draft, not a final authority release.
 - Final local topic helper SHA256: `f5568a896d235a0ed7d6910bfcefb6deed442fb40546f09081b707bfa85cfc95`. It is an ignored prototype, not an installed production command. Per-run `script-used.py` is authoritative for earlier behavior.
 - Existing static snapshot timing projection for 19,803 chunks was roughly 6.08–6.31 hours for embedding from a small throughput sample. It excludes new chunking, indexing/review and sustained-load differences; do not present it as a completion promise.
+
+### Local execution strategy on this Mac
+
+Default to one local model request at a time, with cases grouped by model (finish Qwen batch, then Gemma, then Muse) rather than repeatedly switching models. This gives uncontended comparison timings and reduces loading churn. The shared request lock remains required. All three use the same Mac GPU/unified-memory resources; concurrent calls are not three independent accelerators. Better throughput from concurrency is an empirical question, not an assumption.
+
+Observed S1 Qwen loaded-memory report:22.94GB at8192context. Installed model file sizes total about55.86GB for Qwen/Gemma/Muse, which is not their combined inference-memory requirement. Other models' loaded/peak memory remains unmeasured; context/image buffers and macOS/apps need headroom. Do not assume64GB can efficiently hold all three or that swap improves throughput.
+
+[Ollama documents](https://docs.ollama.com/faq#how-does-ollama-handle-concurrent-requests) concurrent models only when available memory permits, otherwise queuing/unloading, and increased context memory for parallel requests. These are general runtime docs, not verification of identical MLX scheduling/settings on this installed version. A later bounded throughput experiment may compare one versus two in-flight requests to the **chosen single model**, with backend support verified, total elapsed/cases-per-minute, latency, memory pressure/swap and failures recorded; it does not override today's sequential policy or authorize an unbounded parallel workload. No concurrency benchmark/configuration change was performed for this planning note.
 
 ## 7. Ordered master execution checklist
 
