@@ -324,6 +324,9 @@ def _masthead() -> None:
     st.markdown(
         """
         <style>
+        /* The local review desk needs no floating Streamlit deployment toolbar. */
+        [data-testid="stHeader"]{display:none}
+        [data-testid="stMainBlockContainer"]{padding-top:2rem}
         .globe-masthead{padding:1.2rem .25rem 1rem;margin:0 0 1.5rem;
           text-align:center;border-top:4px double currentColor;
           border-bottom:4px double currentColor}
