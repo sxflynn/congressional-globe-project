@@ -1,0 +1,82 @@
+{
+  "schema_version": "scan-bundle-v1",
+  "target": {
+    "item_identifier": "congressionalg7391unit",
+    "part_number": 1,
+    "scan_leaf": 75,
+    "hocr_page_id": "page_000075",
+    "paragraph_id": "par_000075_000137",
+    "printed_page": "LXVII",
+    "raw_text": "bill ,.••• '••••• 4288",
+    "raw_sha256": "5bd60ddee82f4c2b6a4447a78d9ebcc80b1d991a1f5a3b1582a6ca22d3a49a29",
+    "hocr_sha256": "7300280b1d7966fb72a67717765f839bd174ce11fd20728b505f6bb366998f8f",
+    "page_map_sha256": "d4ca0462c350b0e5ac060102a549360e0b0256713f10f8cf31d50d405bfbfe48",
+    "ocr_width": 3127,
+    "ocr_height": 4298,
+    "selection_start": 0,
+    "selection_end": 22,
+    "selection_text": "bill ,.••• '••••• 4288",
+    "precision": "paragraph",
+    "max_width": 1600,
+    "regions": [
+      {
+        "bbox": {
+          "left": 2030,
+          "top": 3915,
+          "right": 2955,
+          "bottom": 4090
+        },
+        "line_ids": [
+          "line_000075_000271"
+        ],
+        "word_ids": [
+          "word_000075_001760",
+          "word_000075_001761",
+          "word_000075_001762",
+          "word_000075_001763",
+          "word_000075_001764",
+          "word_000075_001765",
+          "word_000075_001766"
+        ]
+      }
+    ]
+  },
+  "target_sha256": "ad51a726e87ebd802a60cd0e51516a9699b38d0236359eb3880189e5f0e49c61",
+  "info_receipt": {
+    "requested_url": "https://iiif.archive.org/iiif/congressionalg7391unit$75/info.json",
+    "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0075.jp2/info.json",
+    "retrieved_at_utc": "2026-10-24T20:14:43.898692+00:00",
+    "elapsed_seconds": 1.0931184999644756,
+    "bytes": 991,
+    "sha256": "5a313e6da2394ecc96ec7c509a41c0f22d5ab505f3f6f0f0c736d7b737176b61",
+    "content_type": "application/json;charset=utf-8"
+  },
+  "images": [
+    {
+      "file": "crop-01.jpg",
+      "width": 925,
+      "height": 175,
+      "region": [
+        2030,
+        3915,
+        925,
+        175
+      ],
+      "receipt": {
+        "requested_url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0075.jp2/2030,3915,925,175/925,/0/default.jpg",
+        "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0075.jp2/2030,3915,925,175/925,/0/default.jpg",
+        "retrieved_at_utc": "2026-10-24T20:14:44.562929+00:00",
+        "elapsed_seconds": 0.6611362919211388,
+        "bytes": 35510,
+        "sha256": "e8e59599fec00db31110dcb949a14495e90ba29e8eadb93684df4d45f50380b0",
+        "content_type": "image/jpeg"
+      }
+    }
+  ],
+  "code_sha256": {
+    "scan_models.py": "8c099fc7068cbb216a40cf05a4241d48eb9218a789ddcb5b1fbbc344c77c46b1",
+    "scan_geometry.py": "a70e9423ddb9c0868ecd1bd1aea8cac781919f03abfe84bb87631872055fc238",
+    "scan_fetch.py": "7ce46f0afc70f860b99ff631eb3eb006885741e50608cf2dbeaac0fec3e25da2"
+  },
+  "registration": "exact dimensions; native pixel coordinates; no inferred scaling/rotation"
+}

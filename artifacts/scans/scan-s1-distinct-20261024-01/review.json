@@ -1,0 +1,61 @@
+{
+  "schema_version": "scan-s1-distinct-review-v1",
+  "run_id": "scan-s1-distinct-20261024-01",
+  "observed_at_utc": "2026-10-24T20:14:44.562929+00:00",
+  "purpose": "Bounded source-image inspection of two previously withheld part-1 review rows, selected before image retrieval to look for one damaged-name correction and one unreadable/abstention control.",
+  "cases": [
+    {
+      "name": "washington",
+      "item": "congressionalg7391unit",
+      "part": 1,
+      "leaf": 73,
+      "printed_page": "LXV",
+      "paragraph_id": "par_000073_000148",
+      "raw_text": "bill (S. No. 380) to incorporate the AVash- ingt(jn County Horse Railroad Company",
+      "raw_sha256": "895cbf1f9db93ac3851c1a8edd439a09ce07e154219d8c22f42e28a203de0bef",
+      "target_sha256": "8ddebc7c7c93e344d837c2cc6f310e63f8f7f6a67e1f15978b764a4524197acd",
+      "image_sha256": "f4b0673839157594ca0e4c7d2bd053debeb7fab742f472be15db225b5734c516",
+      "region": [1905, 2980, 973, 217],
+      "visual_finding": "The registered crop visibly reads 'Washington County Horse Railroad Company'; the printed word wraps as 'Wash-' / 'ington'.",
+      "source_grounded_transcription": "Washington",
+      "automatic_correction_applied": false
+    },
+    {
+      "name": "miscellaneous-appropriation",
+      "item": "congressionalg7391unit",
+      "part": 1,
+      "leaf": 75,
+      "printed_page": "LXVII",
+      "paragraph_id": "par_000075_000137",
+      "raw_text": "bill ,.••• '••••• 4288",
+      "raw_sha256": "5bd60ddee82f4c2b6a4447a78d9ebcc80b1d991a1f5a3b1582a6ca22d3a49a29",
+      "target_sha256": "ad51a726e87ebd802a60cd0e51516a9699b38d0236359eb3880189e5f0e49c61",
+      "image_sha256": "e8e59599fec00db31110dcb949a14495e90ba29e8eadb93684df4d45f50380b0",
+      "region": [2030, 3915, 925, 175],
+      "visual_finding": "Contrary to the pre-image unreadability hypothesis, the registered crop visibly reads 'remarks on the miscellaneous appropriation bill' followed by dot leaders and page 4288.",
+      "source_grounded_transcription": "remarks on the miscellaneous appropriation bill........................................4288",
+      "automatic_correction_applied": false
+    }
+  ],
+  "summary": {
+    "requested_crops": 2,
+    "downloaded_images": 2,
+    "downloaded_image_bytes": 87518,
+    "metadata_bytes": 1982,
+    "external_model_calls": 0,
+    "external_model_cost_usd": 0,
+    "unreadable_control_obtained": false
+  },
+  "findings": [
+    "The first case is a distinct image-grounded damaged-name reading that supports Washington in this source line, while preserving the original OCR and without assigning a person or changing canonical text.",
+    "The second selected row is not an unreadable-image control: its image resolves a fuller index entry. This negative selection result is retained rather than relabeled as an abstention case.",
+    "Neither result proves a model can transcribe the cases, supports automatic correction, or establishes a corpus-wide error rate."
+  ],
+  "limitations": [
+    "Two part-1 index-like lines are not a representative all-five-part sample.",
+    "No vision model or human-review packet was used; these are agent visual diagnostics from source-registered crops.",
+    "The text following the dot leaders is transcribed as a visual aid only; exact punctuation/spacing is not promoted to a canonical patch.",
+    "A future abstention/control case must be selected and frozen before image retrieval; do not reuse the resolved miscellaneous-appropriation row as unreadable evidence."
+  ],
+  "registration": "IIIF receipts, source/page hashes, exact native-pixel regions, image hashes, and code hashes are retained in each case bundle; no inferred scaling or rotation."
+}

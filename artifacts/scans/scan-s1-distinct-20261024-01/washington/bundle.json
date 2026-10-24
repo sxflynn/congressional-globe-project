@@ -1,0 +1,89 @@
+{
+  "schema_version": "scan-bundle-v1",
+  "target": {
+    "item_identifier": "congressionalg7391unit",
+    "part_number": 1,
+    "scan_leaf": 73,
+    "hocr_page_id": "page_000073",
+    "paragraph_id": "par_000073_000148",
+    "printed_page": "LXV",
+    "raw_text": "bill (S. No. 380) to incorporate the AVash- ingt(jn County Horse Railroad Company",
+    "raw_sha256": "895cbf1f9db93ac3851c1a8edd439a09ce07e154219d8c22f42e28a203de0bef",
+    "hocr_sha256": "7300280b1d7966fb72a67717765f839bd174ce11fd20728b505f6bb366998f8f",
+    "page_map_sha256": "d4ca0462c350b0e5ac060102a549360e0b0256713f10f8cf31d50d405bfbfe48",
+    "ocr_width": 3127,
+    "ocr_height": 4298,
+    "selection_start": 0,
+    "selection_end": 81,
+    "selection_text": "bill (S. No. 380) to incorporate the AVash- ingt(jn County Horse Railroad Company",
+    "precision": "paragraph",
+    "max_width": 1600,
+    "regions": [
+      {
+        "bbox": {
+          "left": 1905,
+          "top": 2980,
+          "right": 2878,
+          "bottom": 3197
+        },
+        "line_ids": [
+          "line_000073_000249",
+          "line_000073_000250"
+        ],
+        "word_ids": [
+          "word_000073_001594",
+          "word_000073_001595",
+          "word_000073_001596",
+          "word_000073_001597",
+          "word_000073_001598",
+          "word_000073_001599",
+          "word_000073_001600",
+          "word_000073_001601",
+          "word_000073_001602",
+          "word_000073_001603",
+          "word_000073_001604",
+          "word_000073_001605",
+          "word_000073_001606"
+        ]
+      }
+    ]
+  },
+  "target_sha256": "8ddebc7c7c93e344d837c2cc6f310e63f8f7f6a67e1f15978b764a4524197acd",
+  "info_receipt": {
+    "requested_url": "https://iiif.archive.org/iiif/congressionalg7391unit$73/info.json",
+    "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0073.jp2/info.json",
+    "retrieved_at_utc": "2026-10-24T20:14:33.255791+00:00",
+    "elapsed_seconds": 7.380650625098497,
+    "bytes": 991,
+    "sha256": "715ab96863c2adc2186920c6a1fc5d2028543e77d9a4260f399cf56aaccc50eb",
+    "content_type": "application/json;charset=utf-8"
+  },
+  "images": [
+    {
+      "file": "crop-01.jpg",
+      "width": 973,
+      "height": 217,
+      "region": [
+        1905,
+        2980,
+        973,
+        217
+      ],
+      "receipt": {
+        "requested_url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0073.jp2/1905,2980,973,217/973,/0/default.jpg",
+        "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0073.jp2/1905,2980,973,217/973,/0/default.jpg",
+        "retrieved_at_utc": "2026-10-24T20:14:34.003031+00:00",
+        "elapsed_seconds": 0.7440895419567823,
+        "bytes": 52008,
+        "sha256": "f4b0673839157594ca0e4c7d2bd053debeb7fab742f472be15db225b5734c516",
+        "content_type": "image/jpeg"
+      }
+    }
+  ],
+  "code_sha256": {
+    "scan_models.py": "8c099fc7068cbb216a40cf05a4241d48eb9218a789ddcb5b1fbbc344c77c46b1",
+    "scan_geometry.py": "a70e9423ddb9c0868ecd1bd1aea8cac781919f03abfe84bb87631872055fc238",
+    "scan_fetch.py": "7ce46f0afc70f860b99ff631eb3eb006885741e50608cf2dbeaac0fec3e25da2"
+  },
+  "registration": "exact dimensions; native pixel coordinates; no inferred scaling/rotation"
+}
