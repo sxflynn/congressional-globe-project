@@ -12,6 +12,7 @@ from typing import Any
 import streamlit as st
 
 from congressional_globe.review_store import ReviewStore
+from congressional_globe.scan_review import show_source_images
 
 
 def _database_path() -> Path:
@@ -358,7 +359,15 @@ def main() -> None:
     if data is None:
         return
     store, packets, submissions = data
-    section = st.radio("View", ["Pending", "Submitted", "History"], horizontal=True)
+    section = st.radio(
+        "View",
+        ["Pending", "Submitted", "History", "Source images"],
+        index=3 if st.query_params.get("view") == "source-images" else 0,
+        horizontal=True,
+    )
+    if section == "Source images":
+        show_source_images()
+        return
     target = st.session_state.get("revision_target")
     if target:
         _revision_view(store, target)

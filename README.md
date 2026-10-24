@@ -28,6 +28,18 @@ To try an invented practice example first, use `make review-demo`. It does not c
 
 Saved reviews live in `artifacts/human-review/reviews.sqlite`, outside Git. Stop the desk before copying that file as a backup or transferring it to another machine. Agents archive submitted answers as portable JSON alongside plan updates. Existing paper reviews are linked from [HUMAN_REVIEW.md](HUMAN_REVIEW.md).
 
+## Compare OCR with the scan
+
+Open [Source images](http://10.0.0.56:8501/?view=source-images) in the review desk. Four small examples show unchanged OCR and the corresponding original print, including the damaged petition and an individual number. Images are cached locally; opening this view makes no model request or external download.
+
+To retrieve another paragraph from the local OCR sources:
+
+```bash
+uv run globe scan crop --item congressionalglo7392unit --leaf 328 --paragraph par_000328_000032 --output artifacts/my-scan --fetch
+```
+
+Without `--fetch`, this only prepares an offline plan. Repeating the same command verifies and reuses cached files. A different target needs a new output directory. For a precise word/patch, add `--start 34 --end 37 --expected GCO --padding 16`; offsets refer to the **original OCR**, not corrected text. The tool downloads only requested image regions and records source identity, hashes and geometry. An image view does not apply a correction. Details and limits are in the master plan's **S0** section.
+
 ## Read the current data
 
 Under `artifacts/runs/static-final-20261011/`:

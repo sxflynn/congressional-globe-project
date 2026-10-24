@@ -28,6 +28,7 @@ from congressional_globe.providers import (
     OpenAIResponsesProvider,
 )
 from congressional_globe.review_cli import add_review_commands, run_review
+from congressional_globe.scan_cli import add_scan_commands, run_scan
 from congressional_globe.static_cleanup import normalize_jsonl
 from congressional_globe.storage import (
     CleanupJob,
@@ -58,6 +59,7 @@ def _commands() -> dict[str, CommandHandler]:
     return {
         "inventory": _inventory,
         "review": run_review,
+        "scan": run_scan,
         "extract": _extract,
         "build-rag": _build_rag,
         "benchmark": _benchmark,
@@ -279,6 +281,7 @@ def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="globe")
     commands = parser.add_subparsers(dest="command", required=True)
     add_review_commands(commands)
+    add_scan_commands(commands)
     _inventory_command(commands)
     _extract_command(commands)
     _build_command(commands)

@@ -1,0 +1,190 @@
+{
+  "schema_version": "scan-poc-review-v1",
+  "run_id": "scan-poc-20261024-01",
+  "observed_at_utc": "2026-10-24T15:19:53.028721+00:00",
+  "cases": [
+    {
+      "case": "petition",
+      "item": "congressionalglo7392unit",
+      "leaf": 328,
+      "printed_page": "1176",
+      "paragraph_id": "par_000328_000032",
+      "precision": "paragraph",
+      "raw_sha256": "773dfa49f6c469679cf0f5165730a597a9d10841d0e1904c17c091821ab2394e",
+      "region": [
+        2053,
+        1271,
+        1012,
+        191
+      ],
+      "image_bytes": 53870,
+      "metadata_bytes": 999,
+      "request_seconds": 1.681913249194622,
+      "source_dimensions": [
+        3151,
+        4275
+      ],
+      "crop_dimensions": [
+        1012,
+        191
+      ]
+    },
+    {
+      "case": "number",
+      "item": "congressionalglo7392unit",
+      "leaf": 328,
+      "printed_page": "1176",
+      "paragraph_id": "par_000328_000032",
+      "precision": "word-span",
+      "raw_sha256": "773dfa49f6c469679cf0f5165730a597a9d10841d0e1904c17c091821ab2394e",
+      "region": [
+        2799,
+        1320,
+        90,
+        58
+      ],
+      "image_bytes": 2349,
+      "metadata_bytes": 999,
+      "request_seconds": 1.4658884170930833,
+      "source_dimensions": [
+        3151,
+        4275
+      ],
+      "crop_dimensions": [
+        90,
+        58
+      ]
+    },
+    {
+      "case": "archives",
+      "item": "congressionalglo7393unit",
+      "leaf": 545,
+      "printed_page": "2355",
+      "paragraph_id": "par_000545_000051",
+      "precision": "paragraph",
+      "raw_sha256": "aa1d5d055b18bf523e1503c3253d98056f0d4ea28b12668e05f6716f00157736",
+      "region": [
+        1943,
+        1850,
+        1016,
+        1619
+      ],
+      "image_bytes": 389635,
+      "metadata_bytes": 999,
+      "request_seconds": 14.387472792062908,
+      "source_dimensions": [
+        3101,
+        4340
+      ],
+      "crop_dimensions": [
+        1016,
+        1619
+      ]
+    },
+    {
+      "case": "civil-rights",
+      "item": "congressionalglo7392unit",
+      "leaf": 1009,
+      "printed_page": "1857",
+      "paragraph_id": "par_001009_000037",
+      "precision": "paragraph",
+      "raw_sha256": "b5d1fa8a49564148b2637a4c71f884d7176b36adbcf38fafb0d0ca0f7d20db8e",
+      "region": [
+        1924,
+        2373,
+        1015,
+        570
+      ],
+      "image_bytes": 180088,
+      "metadata_bytes": 999,
+      "request_seconds": 2.8032796250190586,
+      "source_dimensions": [
+        3158,
+        4290
+      ],
+      "crop_dimensions": [
+        1015,
+        570
+      ]
+    }
+  ],
+  "formal_requests": 8,
+  "formal_image_count": 4,
+  "formal_downloaded_bytes": 629938,
+  "formal_request_seconds_sum": 20.338554083369672,
+  "exploratory_requests": 2,
+  "exploratory_downloaded_bytes": 54869,
+  "total_logical_requests": 10,
+  "unique_pages": 3,
+  "parts_tested": [
+    2,
+    3
+  ],
+  "external_model_calls": 0,
+  "external_model_cost_usd": 0,
+  "cache_resume": {
+    "network_calls": 0,
+    "forbidden_opener_sentinel": true,
+    "replay_seconds": 0.0028729161713272333,
+    "includes_ocr_source_preparation": false,
+    "earlier_measured_ocr_preparation_seconds": 5.163538416847587
+  },
+  "visual_checks": [
+    {
+      "case": "petition",
+      "reviewer_kind": "agent_visual_diagnostic",
+      "observation": "Image aligns with the petition and visibly contains 660 citizens and protection to American labor. Canonical OCR remains GCO and omits labor. The padded context recovers the omitted printed continuation outside the original paragraph box.",
+      "automatic_correction_applied": false
+    },
+    {
+      "case": "number",
+      "reviewer_kind": "agent_visual_diagnostic",
+      "observation": "Exact raw offsets34:37 select GCO; crop contains the printed number660.",
+      "automatic_correction_applied": false
+    },
+    {
+      "case": "archives",
+      "reviewer_kind": "agent_visual_diagnostic",
+      "observation": "Cropped print begins Mr. SUMNER and matches the raw paragraph about government archives, fire-proof buildings and the State Department; neighboring print remains visible in padding."
+    },
+    {
+      "case": "civil-rights",
+      "reviewer_kind": "agent_visual_diagnostic",
+      "observation": "Cropped print begins Sec.8 and matches the raw paragraph; padding includes the end of preceding text and beginning of Sec.9."
+    }
+  ],
+  "limitations": [
+    "Three pages in two parts; not all-five-part reliability or OCR repair quality evidence.",
+    "Exact image dimensions and JP2 leaf identity checked; no inferred scaling/rotation. Same-dimension rotation or different pixel registration still needs visual assessment.",
+    "No overview/full-resolution page downloaded; these are scan-derived JPEG regions served from original JP2 via IIIF.",
+    "Word selection requires exact raw-word reconstruction; mismatches fail rather than guess.",
+    "Metadata/image request times omit hOCR parsing, local validation and frontend time; tiny sample, not full-corpus projection.",
+    "No model vision experiment or patch application; this proves source access only.",
+    "HR004 users who inspect its scans may be image-assisted; do not call those judgments raw-OCR-only readability gold."
+  ],
+  "code_snapshots": {
+    "all_original_request_hashes_verified": true,
+    "current_formatted_source_ast_matches": true,
+    "note": "The gate collapsed two line wraps in scan_geometry.py. Exact pre-format request source is preserved separately; current executable AST is identical."
+  },
+  "gate": {
+    "command": "make gate",
+    "exit_code": 0,
+    "tests_passed": 241,
+    "log": "gate.log",
+    "log_format": "ANSI stripped and trailing whitespace removed; raw log retained in tmp/scan-poc/gate.log",
+    "raw_log_sha256": "b0b3cff05a73ad49994aea80e3c156dd7490d8572c48eab067912ae35e47611e"
+  },
+  "browser_check": {
+    "observed_at_utc": "2026-10-24T15:28:22.233467+00:00",
+    "url": "http://10.0.0.56:8501/?view=source-images",
+    "viewport_width": 390,
+    "document_scroll_width": 390,
+    "cached_petition_image_loaded": true,
+    "native_image_dimensions": [
+      1012,
+      191
+    ],
+    "no_login": true
+  }
+}

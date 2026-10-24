@@ -1,0 +1,91 @@
+{
+  "schema_version": "scan-bundle-v1",
+  "target": {
+    "item_identifier": "congressionalglo7392unit",
+    "part_number": 2,
+    "scan_leaf": 328,
+    "hocr_page_id": "page_000328",
+    "paragraph_id": "par_000328_000032",
+    "printed_page": "1176",
+    "raw_text": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American",
+    "raw_sha256": "773dfa49f6c469679cf0f5165730a597a9d10841d0e1904c17c091821ab2394e",
+    "hocr_sha256": "16ed248c75a5f2deb217794aeee6a0e63f73d2bbcb73ea33b2d6772a4e59cc67",
+    "page_map_sha256": "5817ab6ba9cb54c27b6e3d8b4eca257ba97afecbca08d552ff0cf0ed87c957f3",
+    "ocr_width": 3151,
+    "ocr_height": 4275,
+    "selection_start": 0,
+    "selection_end": 98,
+    "selection_text": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American",
+    "precision": "paragraph",
+    "max_width": 1600,
+    "regions": [
+      {
+        "bbox": {
+          "left": 2053,
+          "top": 1271,
+          "right": 3065,
+          "bottom": 1462
+        },
+        "line_ids": [
+          "line_000328_000222",
+          "line_000328_000223"
+        ],
+        "word_ids": [
+          "word_000328_001711",
+          "word_000328_001712",
+          "word_000328_001713",
+          "word_000328_001714",
+          "word_000328_001715",
+          "word_000328_001716",
+          "word_000328_001717",
+          "word_000328_001718",
+          "word_000328_001719",
+          "word_000328_001720",
+          "word_000328_001721",
+          "word_000328_001722",
+          "word_000328_001723",
+          "word_000328_001724",
+          "word_000328_001725"
+        ]
+      }
+    ]
+  },
+  "target_sha256": "34ea01a16e5a317b9f65eae15a2672c2d1e052b4f1da8599989b4a61526c3930",
+  "info_receipt": {
+    "requested_url": "https://iiif.archive.org/iiif/congressionalglo7392unit$328/info.json",
+    "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0328.jp2/info.json",
+    "retrieved_at_utc": "2026-10-24T15:14:59.372768+00:00",
+    "elapsed_seconds": 0.9219850411172956,
+    "bytes": 999,
+    "sha256": "578068dafef91af75b373f49a0b8249a7baaf54beff5273cc081c0511a9e96d3",
+    "content_type": "application/json;charset=utf-8"
+  },
+  "images": [
+    {
+      "file": "crop-01.jpg",
+      "width": 1012,
+      "height": 191,
+      "region": [
+        2053,
+        1271,
+        1012,
+        191
+      ],
+      "receipt": {
+        "requested_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0328.jp2/2053,1271,1012,191/1012,/0/default.jpg",
+        "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0328.jp2/2053,1271,1012,191/1012,/0/default.jpg",
+        "retrieved_at_utc": "2026-10-24T15:15:00.136162+00:00",
+        "elapsed_seconds": 0.7599282080773264,
+        "bytes": 53870,
+        "sha256": "8a125859cbddd83f7a4813c1348358ebe3865d19cab908c90269d71f54df8b61",
+        "content_type": "image/jpeg"
+      }
+    }
+  ],
+  "code_sha256": {
+    "scan_models.py": "8c099fc7068cbb216a40cf05a4241d48eb9218a789ddcb5b1fbbc344c77c46b1",
+    "scan_geometry.py": "f756a8cf2da45a515b913d9923cf243f8a1b770b197fededbc437a870aa2bc1a",
+    "scan_fetch.py": "7ce46f0afc70f860b99ff631eb3eb006885741e50608cf2dbeaac0fec3e25da2"
+  },
+  "registration": "exact dimensions; native pixel coordinates; no inferred scaling/rotation"
+}
