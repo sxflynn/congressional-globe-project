@@ -1,5 +1,7 @@
 # Agent entry point
 
+**This is the shared instruction entry point for Codex, Claude, OpenCode and other agent harnesses.**
+
 **Read [MASTER_PLAN.md](MASTER_PLAN.md) before doing project work.** It is the single authoritative source for the project goal, scope, architecture, ordered milestones, current progress, evidence, operator commands and engineering rules. New human instructions take precedence.
 
 **Any stateless Codex, OpenCode or other agent starts with the master's “Stateless startup and mid-flight recovery” procedure and shared live work record.** Also read [HUMAN_REVIEW.md](HUMAN_REVIEW.md) for new human responses and pending questions, and recent entries in [CHANGELOG.md](CHANGELOG.md) for completed work, before choosing work. Do not depend on chat history or another harness's terminal IDs. Inspect actual processes and durable results, record ownership/checkpoints, and keep P0—the still-open value of further OCR cleanup—part of the active plan.

@@ -1,6 +1,6 @@
 # Congressional Globe master plan
 
-Updated: 2026-10-23. **This is the single authoritative project plan and progress record.**
+Updated: 2026-10-24. **This is the single authoritative project plan and progress record.**
 
 Every engineering agent must read this document before working, use its ordered milestones, and update its current status and next action before handing off. New instructions from the human take precedence. `AGENTS.md` is the entry point; `README.md` is a short operator tutorial; [HUMAN_REVIEW.md](HUMAN_REVIEW.md) is the human-facing request/response desk. The master owns goals/status/accepted policy; the review desk preserves original human answers and readable evidence. Neither companion maintains a competing roadmap. Earlier planning files now point here; their original contents are preserved in the [historical archive](docs/archive/2026-10-22-pre-masterplan/README.md).
 
@@ -433,7 +433,7 @@ uv run python -m congressional_globe.role_runner --prepared artifacts/role-alias
 tail -f artifacts/role-new-run/events.jsonl
 ```
 
-The same compatible output directory resumes pending tasks and skips finished ones. Changed code, prompt/model/config or packets are rejected as incompatible; use a deliberate new run/version with recorded reason, not a hidden repeat. Unknown processing/token outcomes require inspection before more work. Existing two-case stores are terminal, so there is nothing currently running to resume. CLAUDE.md was absent; a short shared-workflow pointer has now been added, without introducing a separate plan.
+The same compatible output directory resumes pending tasks and skips finished ones. Changed code, prompt/model/config or packets are rejected as incompatible; use a deliberate new run/version with recorded reason, not a hidden repeat. Unknown processing/token outcomes require inspection before more work. Existing two-case stores are terminal, so there is nothing currently running to resume. All agent harnesses, including Claude, use AGENTS.md as their shared instruction entry point.
 
 ### Next bounded experiment: M1
 
