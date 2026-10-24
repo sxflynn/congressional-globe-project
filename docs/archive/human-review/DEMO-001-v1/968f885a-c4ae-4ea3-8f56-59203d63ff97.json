@@ -1,0 +1,59 @@
+{
+  "packet_snapshot": {
+    "packet_json": "{\"blind\":true,\"id\":\"DEMO-001\",\"instructions\":\"This is invented practice text, not Congressional Globe evidence. Try saving a draft and submitting it. Your practice answer does not change project policy or historical data. Agents must never use DEMO reviews as research labels.\",\"questions\":[{\"evidence\":[{\"label\":\"Invented practice passage\",\"text\":\"A petition asks Congress to secure the right of voting for the petitioners.\",\"url\":null}],\"id\":\"topic\",\"options\":[\"Voting rights\",\"Military affairs\",\"Uncertain / need more context\"],\"prompt\":\"What subject does this invented petition explicitly request action on?\",\"required\":true},{\"evidence\":[],\"id\":\"notes\",\"options\":[],\"prompt\":\"Optional notes about this practice review\",\"required\":false}],\"title\":\"Practice review — synthetic example\",\"version\":1}",
+    "packet_sha256": "0377c5bce6703e0905e74c8edb8b002b1dad71db7d847502632d8279b1d7223c"
+  },
+  "packet": {
+    "blind": true,
+    "id": "DEMO-001",
+    "instructions": "This is invented practice text, not Congressional Globe evidence. Try saving a draft and submitting it. Your practice answer does not change project policy or historical data. Agents must never use DEMO reviews as research labels.",
+    "questions": [
+      {
+        "evidence": [
+          {
+            "label": "Invented practice passage",
+            "text": "A petition asks Congress to secure the right of voting for the petitioners.",
+            "url": null
+          }
+        ],
+        "id": "topic",
+        "options": [
+          "Voting rights",
+          "Military affairs",
+          "Uncertain / need more context"
+        ],
+        "prompt": "What subject does this invented petition explicitly request action on?",
+        "required": true
+      },
+      {
+        "evidence": [],
+        "id": "notes",
+        "options": [],
+        "prompt": "Optional notes about this practice review",
+        "required": false
+      }
+    ],
+    "title": "Practice review — synthetic example",
+    "version": 1
+  },
+  "submission": {
+    "submission_id": "968f885a-c4ae-4ea3-8f56-59203d63ff97",
+    "packet_id": "DEMO-001",
+    "version": 1,
+    "packet_sha256": "0377c5bce6703e0905e74c8edb8b002b1dad71db7d847502632d8279b1d7223c",
+    "reviewer": "Stephen Flynn",
+    "answers": {
+      "notes": "This is my practice answer. ",
+      "topic": "Voting rights"
+    },
+    "notes": null,
+    "payload_sha256": "e44fe997e86f0a42f9d1fafe58e19fa7bac0f802185dd8772ffdb12750af7e6e",
+    "revision": 1,
+    "superseded": false,
+    "created_at": "2026-10-24 14:50:17",
+    "applied": false,
+    "applied_reference": null,
+    "applied_at": null
+  },
+  "applied_receipt": null
+}
