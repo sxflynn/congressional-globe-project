@@ -319,15 +319,41 @@ def _store_data() -> tuple[ReviewStore, list[dict[str, Any]], list[dict[str, Any
         return None
 
 
-def main() -> None:
-    st.set_page_config(page_title="Human review desk", layout="centered")
+def _masthead() -> None:
     st.markdown(
-        "<style>.source-card{border-radius:.5rem;padding:.7rem;background:#f2f4f7;color:#202124}"
-        ".source-card pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;margin:0}"
-        "@media(prefers-color-scheme:dark){.source-card{background:#25282c;color:#f1f3f4}}</style>",
+        """
+        <style>
+        .globe-masthead{padding:1.2rem .25rem 1rem;margin:0 0 1.5rem;
+          text-align:center;border-top:4px double currentColor;
+          border-bottom:4px double currentColor}
+        .globe-masthead h1{font-family:Georgia,'Times New Roman',serif;
+          font-size:clamp(2rem,7vw,3.3rem);font-weight:700;line-height:1.1;
+          letter-spacing:-.025em;margin:.35rem 0;padding:0}
+        .globe-masthead .globe-brand{font-family:Georgia,'Times New Roman',serif;
+          font-size:1rem;font-variant:small-caps;letter-spacing:.12em;margin:.4rem 0}
+        .globe-masthead .globe-edition{font-size:.75rem;letter-spacing:.05em;
+          opacity:.75;margin:.7rem 0 0}
+        .source-card{border-left:3px solid #9b7c4a;padding:.8rem 1rem;
+          background:rgba(124,99,58,.055);color:inherit}
+        .source-card pre{white-space:pre-wrap;overflow-wrap:anywhere;
+          font:1rem/1.7 Georgia,'Times New Roman',serif;margin:0}
+        @media(prefers-color-scheme:dark){.source-card{
+          border-color:#b59662;background:rgba(213,188,139,.06)}}
+        </style>
+        <header class="globe-masthead" aria-label="Congressional Globe Digital History Project">
+          <h1>The Congressional Globe</h1>
+          <p class="globe-brand">Digital History Project</p>
+          <p class="globe-edition">39th Congress &middot; First Session &middot; Primary Sources</p>
+        </header>
+        """,
         unsafe_allow_html=True,
     )
-    st.title("Human review desk")
+
+
+def main() -> None:
+    st.set_page_config(page_title="Congressional Globe · Human review", layout="centered")
+    _masthead()
+    st.subheader("Human review desk")
     data = _store_data()
     if data is None:
         return
