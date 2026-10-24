@@ -1,0 +1,123 @@
+{
+  "id": "HR-004",
+  "version": 1,
+  "title": "Two real passages: topics and OCR readability",
+  "instructions": "About 5–8 minutes. This is the first small source-only subject calibration packet: two unchanged OCR windows from parts 2 and 3. No model answers or suggested classifications are shown. Historical wording may be offensive. Read each excerpt, name its substantive subject(s), then rate whether OCR damage impairs understanding. Unknown or more context is a valid answer. An explicit petition request counts as substantive; a routine referral or passing mention alone does not. These judgments guide later matched raw-versus-cleaned tests; this is not a request to approve full processing, a general claim of accuracy, or a final decision about OCR cleanup. The sample is diagnostic: shortest already-prepared window from each of parts 2 and 3, not representative of all five parts and not certified held-out. Draft vocabulary (not compulsory; missing subjects are allowed):\n\nReconstruction: Postwar restoration, readmission, and political reorganization of the former Confederate states.\nCitizenship: National citizenship, legal status, naturalization, and incidents of citizenship.\nCivil rights: Equal civil or legal rights and their protection, including race-related rights.\nVoting rights: Suffrage, franchise, voter qualifications, access to voting, and the right to vote.\nConstitutional change: Constitutional amendment, interpretation, or federal and state constitutional power when materially discussed.\nTaxation: Tax policy, rates, collection, public revenue, and tax incidence.\nMilitary affairs: Armed forces, military administration and service, and demobilization.\nCongressional procedure: Chamber rules, debate, motions, jurisdiction, and the legislative process.\nInfrastructure: Public works, transport, communications, and their construction or operation.\nPublic compensation: Pay, allowances, and compensation for public officers or employees.",
+  "blind": true,
+  "questions": [
+    {
+      "id": "sample1-topics",
+      "prompt": "Sample 1: Which subjects are genuinely discussed here? Name the main subject(s), quote a few supporting words, and distinguish passing mentions. You may use the draft labels below or suggest a missing label. If the excerpt is insufficient, say uncertain or need more context. Do not guess the speaker or bill identity.",
+      "options": [],
+      "required": true,
+      "evidence": [
+        {
+          "label": "Part 2 · printed page 1857 · scan leaf 1009 · congressionalglo7392unit · par_001009_000037 · raw SHA-256 b5d1fa8a49564148b2637a4c71f884d7176b36adbcf38fafb0d0ca0f7d20db8e",
+          "text": "Sec. 8. A7id be it furjher enacted. That whenever the President of the United States shall have reason to believe that offenses have been or are likelj' to bo committed against the provisions of this act within any judicial district, it shall be lawful for him, in his discretion, to direct the judge, marshal, and district attorney of such district to attend at such place witiiin the district, and for such time as he may designate, for the purpose of the more speedy arrest and trial of persons charged with a violation of this act: and it shall be the duty of every Judge or other officer, when any such requisition shall be received by him, to attend at the place and for the time therein desig- nated.",
+          "url": "https://archive.org/details/congressionalglo7392unit/page/n1009/mode/1up"
+        },
+        {
+          "label": "Part 2 · printed page 1857 · scan leaf 1009 · congressionalglo7392unit · par_001009_000038 · raw SHA-256 0f75282e7dc1d592d20d3bde1161b8e075b55a357ec3af3201d1d25c68ad72e1",
+          "text": "Sec. 9. And be it further enacted. That it shall bo lawful for the President of the United States, or such person as he may empower for that purpose, to em- ploy^such part of tho land or naval forces of the Uni- ted States, or of the militia, as shall be necessary to prevent the violation and enforce the due execution of this act.",
+          "url": "https://archive.org/details/congressionalglo7392unit/page/n1009/mode/1up"
+        },
+        {
+          "label": "Part 2 · printed page 1857 · scan leaf 1009 · congressionalglo7392unit · par_001009_000039 · raw SHA-256 0bcc39f1ac480e1aa87b9a16373618be9a4955e2301d4dcbcc89e71aa1006cdc",
+          "text": "Sec. 10. And be it further enacted, That upon all questions of law arising in any cause under the pro- visions of this act a final appeal may be taken to tha Supreme Court of the United States.",
+          "url": "https://archive.org/details/congressionalglo7392unit/page/n1009/mode/1up"
+        },
+        {
+          "label": "Part 2 · printed page 1857 · scan leaf 1009 · congressionalglo7392unit · par_001009_000040 · raw SHA-256 8d316644052371e6a94d1e322a2f1e02c80c668939fbf324115c1a17ceabae43",
+          "text": "The Clerk read the message of the President, as follows :",
+          "url": "https://archive.org/details/congressionalglo7392unit/page/n1009/mode/1up"
+        },
+        {
+          "label": "Part 2 · printed page 1857 · scan leaf 1009 · congressionalglo7392unit · par_001009_000041 · raw SHA-256 2d9e1fef7653c92fa825f53b22c3e8c9a9dc58e9c11d22abd6d132cc55c838f4",
+          "text": "To the Senate of the United States :",
+          "url": "https://archive.org/details/congressionalglo7392unit/page/n1009/mode/1up"
+        },
+        {
+          "label": "Part 2 · printed page 1857 · scan leaf 1009 · congressionalglo7392unit · par_001009_000042 · raw SHA-256 5f649d554b54ff7d78ebe97147cfb869744cf6ab46d65632fbd16d5b98bc0207",
+          "text": "I regret that the bill which has passed botli Houses of Congress, entitled \"An act to pro- tect all persons in the United States in their civil rights, and furnish the means for their vindication,\" contains provisions which I can- not approve, consistently with my sense of duty to the whole people and ra}' obligations to the Constitution of the United States. I am there- fore constrained to return it to the Senate, the House in which it originated, with my objec- tions to its becoming a law.",
+          "url": "https://archive.org/details/congressionalglo7392unit/page/n1009/mode/1up"
+        },
+        {
+          "label": "Part 2 · printed page 1857 · scan leaf 1009 · congressionalglo7392unit · par_001009_000043 · raw SHA-256 9844cb18b8b5ae1741aa642737109fa2eeb17b95c14b29d3481b196b143691b1",
+          "text": "By the first section of the bill, all persona born in the United States, and not subject to an}' foreign Power, excluding Indians not taxed, are declared to be citizens of the [Tnited States. Thi.'? provision comprehends the Chinese of the",
+          "url": "https://archive.org/details/congressionalglo7392unit/page/n1009/mode/1up"
+        }
+      ]
+    },
+    {
+      "id": "sample1-readability",
+      "prompt": "Sample 1: How much does the OCR damage affect your ability to understand the subject?",
+      "options": [
+        "I can understand the subject despite the OCR errors",
+        "Some wording needs repair, but the subject is clear",
+        "OCR damage prevents me from understanding the subject",
+        "The excerpt needs more surrounding context; OCR repair alone may not help",
+        "Uncertain"
+      ],
+      "required": true,
+      "evidence": []
+    },
+    {
+      "id": "sample2-topics",
+      "prompt": "Sample 2: Which subjects are genuinely discussed here? Name the main subject(s), quote a few supporting words, and distinguish passing mentions. You may use the draft labels below or suggest a missing label. If the excerpt is insufficient, say uncertain or need more context. Do not guess the speaker or bill identity.",
+      "options": [],
+      "required": true,
+      "evidence": [
+        {
+          "label": "Part 3 · printed page 2355 · scan leaf 545 · congressionalglo7393unit · par_000545_000051 · raw SHA-256 aa1d5d055b18bf523e1503c3253d98056f0d4ea28b12668e05f6716f00157736",
+          "text": "Mr. SUMNER. I have heard that suggested, and still again I have heard it doubted. I merely throw that out as something which of course the committee or the authorities who have it in charge must most carefully consider, for we should all start with the idea that the State Department must be placed in a fire-proof building. There are all the archives of the Government from the beginning except some few, and they are in reasonably good preserva- tion. There are also the original treaties, and with regard to these I have often thought my- self, and have sometimes thought of introducing a joint resolution to that effect, that it would be advisable to have them transferred to the mu- seum at the Patent Office. They are essentially curiosities. As they are now published in the Statutes-at-Large, they are not of essential im- portance as records, but they are very curious, for instance, for a visitor or a traveler who comes to Washington. They ought, however, all will see, to be in some place that is fire-proof. I therefore assume that the building which we shall have must be fire-proof, and the practical question will be, whether the President's Man- sion could be put in such condition. I do not know whether it could or not; but if it could, it certainly would be very favorable for the purposes of the State Department, central, ac- cessible ; but as the Senator from Maine says, that of course would entail the building of a Mansion for the President himself. I think all have foreseen that we must do that very soon, and I am very glad that attention is called to the question.",
+          "url": "https://archive.org/details/congressionalglo7393unit/page/n545/mode/1up"
+        },
+        {
+          "label": "Part 3 · printed page 2355 · scan leaf 545 · congressionalglo7393unit · par_000545_000052 · raw SHA-256 8e6b665f07e58b334db2e22f22d1c11aa6c59d90efe7c612e9d75e45e86baa12",
+          "text": "The resolution was agreed to.",
+          "url": "https://archive.org/details/congressionalglo7393unit/page/n545/mode/1up"
+        },
+        {
+          "label": "Part 3 · printed page 2355 · scan leaf 545 · congressionalglo7393unit · par_000545_000053 · raw SHA-256 e4b7166326ec995bfec92326f599d5575de99a16c4af265670871f48a0e6135c",
+          "text": "PACIFIC RAILROAD SIOUX CITY BRANCH.",
+          "url": "https://archive.org/details/congressionalglo7393unit/page/n545/mode/1up"
+        },
+        {
+          "label": "Part 3 · printed page 2355 · scan leaf 545 · congressionalglo7393unit · par_000545_000054 · raw SHA-256 f59084b1ea0dbc3490d582f35edb48f89af55d884e2a496c819205783b4800cb",
+          "text": "Mr. HOWARD. I move to. take up Senate bill No. 109, relating to the Sioux City branch ofthe Pacific railroad.",
+          "url": "https://archive.org/details/congressionalglo7393unit/page/n545/mode/1up"
+        },
+        {
+          "label": "Part 3 · printed page 2355 · scan leaf 545 · congressionalglo7393unit · par_000545_000055 · raw SHA-256 5d9f3d4be3c52db6c1fcb718acdfd272dd6c854d91fde10f506da876f239e446",
+          "text": "The motion was agreed to: and the Senate resumed the consideration of the bill (S. No. 109) to rescind the order of the President desig- nating the Sioux City and Pacific Railroad Company to construct the branch of the Union Pacific railroad from Sioux City; the pend- ing question being on the amendment of Mi'. Grimes.",
+          "url": "https://archive.org/details/congressionalglo7393unit/page/n545/mode/1up"
+        },
+        {
+          "label": "Part 3 · printed page 2355 · scan leaf 545 · congressionalglo7393unit · par_000545_000056 · raw SHA-256 29b572e9e4e5c01e6f69fa08265f0d49470836172c4e3fbf72c932ce7fa22d3d",
+          "text": "Mr. SUMNER. I see that the Senator from Iowa [Mr. Kirkwood] who was to speak on",
+          "url": "https://archive.org/details/congressionalglo7393unit/page/n545/mode/1up"
+        }
+      ]
+    },
+    {
+      "id": "sample2-readability",
+      "prompt": "Sample 2: How much does the OCR damage affect your ability to understand the subject?",
+      "options": [
+        "I can understand the subject despite the OCR errors",
+        "Some wording needs repair, but the subject is clear",
+        "OCR damage prevents me from understanding the subject",
+        "The excerpt needs more surrounding context; OCR repair alone may not help",
+        "Uncertain"
+      ],
+      "required": true,
+      "evidence": []
+    },
+    {
+      "id": "optional-notes",
+      "prompt": "Optional: identify a damaged word that matters, a subject the draft vocabulary is missing, or anything else we should change.",
+      "options": [],
+      "required": false,
+      "evidence": []
+    }
+  ]
+}

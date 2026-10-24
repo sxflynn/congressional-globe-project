@@ -4,7 +4,9 @@ Use the browser desk for new reviews. This page links prior answers and explains
 
 ## Needs your attention
 
-**Nothing currently awaiting your response.** HR-005-v1 and HR-008-v1 are answered and incorporated. HR-003 standards, HR-004 blind grading, and any new role/date calibration set have not yet been presented.
+**Ready in the browser: HR-004 · Two real passages: topics and OCR readability.** About 5–8 minutes: read two unchanged Congressional Globe excerpts (parts 2 and 3), identify the subjects, and tell us whether OCR damage prevents understanding. No model answers are shown. Open [the desk](http://127.0.0.1:8501), select **HR-004**, and submit your answers there. You do not need to edit this file.
+
+HR-005-v1 and HR-008-v1 are already answered and incorporated; no repeat review is needed. HR-003 standards and new role/date samples have not been requested.
 
 ## Completed reviews
 
