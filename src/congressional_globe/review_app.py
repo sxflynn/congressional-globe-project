@@ -75,7 +75,7 @@ def _answer_widget(question: Any, current: str, key_prefix: str, glossary: list[
     if options:
         choices = ["", *list(options)]
         index = choices.index(current) if current in choices else 0
-        return st.selectbox("Choose an answer", choices, index=index, key=key)
+        return st.selectbox("Choose an answer", choices, index=index, key=key, filter_mode=None)
     return st.text_area("Your answer", value=current, key=key)
 
 
