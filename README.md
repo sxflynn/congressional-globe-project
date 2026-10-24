@@ -22,9 +22,9 @@ Original corpus source files and most generated artifacts are not bundled in Git
 make review
 ```
 
-Open [the review desk](http://127.0.0.1:8501). Choose a pending review, enter your name, read the source excerpts, and answer the questions. **Save draft** saves unfinished answers; **Submit review** sends a completed review to the agent inbox. Unsaved typing is not preserved. Submitted answers appear under **Submitted**, then **History** after an agent applies them. You can submit a revision without erasing your previous answer.
+Open [the review desk on this Mac](http://127.0.0.1:8501), or [from another device on the same network](http://10.0.0.56:8501). Enter the project access code, then choose a pending review, enter your name, read the source excerpts, and answer the questions. **Save draft** saves unfinished answers; **Submit review** sends a completed review to the agent inbox. Unsaved typing is not preserved. Submitted answers appear under **Submitted**, then **History** after an agent applies them. You can submit a revision without erasing your previous answer.
 
-To try an invented practice example first, use `make review-demo`. It does not call a model or change historical data. Stop the server with Ctrl+C. The desk starts on this computer only; phone/LAN access is not configured in this first version.
+To try an invented practice example first, use `make review-demo`. It does not call a model or change historical data. Stop the server with Ctrl+C. The desk is available on your local network. This Mac is configured with an access code in ignored `.streamlit/secrets.toml`. On a fresh machine, create that file containing `review_access_code = "your-chosen-code"` (or set `GLOBE_REVIEW_ACCESS_CODE`) before using the desk. Network mode refuses to show reviews without a configured code. The LAN IP may change when your network changes.
 
 Saved reviews live in `artifacts/human-review/reviews.sqlite`, outside Git. Stop the desk before copying that file as a backup or transferring it to another machine. Agents archive submitted answers as portable JSON alongside plan updates. Existing paper reviews are linked from [HUMAN_REVIEW.md](HUMAN_REVIEW.md).
 

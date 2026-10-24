@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import hmac
 import html
 import os
 import sqlite3
@@ -350,10 +351,52 @@ def _masthead() -> None:
     )
 
 
+def _local_only() -> bool:
+    return st.get_option("server.address") in ("127.0.0.1", "localhost", "::1")
+
+
+def _access_code() -> str:
+    configured = os.environ.get("GLOBE_REVIEW_ACCESS_CODE", "")
+    if configured:
+        return configured
+    try:
+        return str(st.secrets.get("review_access_code", ""))
+    except FileNotFoundError:
+        return ""
+
+
+def _authorize() -> bool:
+    if _local_only():
+        return True
+    code = _access_code()
+    if not code:
+        st.error("Set review_access_code in .streamlit/secrets.toml before network access.")
+        return False
+    grant = hashlib.sha256(code.encode()).hexdigest()
+    if st.session_state.get("review_access_grant") == grant:
+        return True
+    return _access_form(code, grant)
+
+
+def _access_form(code: str, grant: str) -> bool:
+    st.caption("Enter your project access code to open the review desk.")
+    with st.form("review-access"):
+        entered = st.text_input("Access code", type="password")
+        opened = st.form_submit_button("Open review desk")
+    if opened:
+        if hmac.compare_digest(entered.encode(), code.encode()):
+            st.session_state["review_access_grant"] = grant
+            st.rerun()
+        st.error("That access code did not match.")
+    return False
+
+
 def main() -> None:
     st.set_page_config(page_title="Congressional Globe · Human review", layout="centered")
     _masthead()
     st.subheader("Human review desk")
+    if not _authorize():
+        return
     data = _store_data()
     if data is None:
         return

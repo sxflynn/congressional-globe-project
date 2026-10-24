@@ -4,7 +4,7 @@ Use the browser desk for new reviews. This page links prior answers and explains
 
 ## Needs your attention
 
-**Ready in the browser: HR-004 · Two real passages: topics and OCR readability.** About 5–8 minutes: read two unchanged Congressional Globe excerpts (parts 2 and 3), identify the subjects, and tell us whether OCR damage prevents understanding. No model answers are shown. Open [the desk](http://127.0.0.1:8501), select **HR-004**, and submit your answers there. You do not need to edit this file.
+**Ready in the browser: HR-004 · Two real passages: topics and OCR readability.** About 5–8 minutes: read two unchanged Congressional Globe excerpts (parts 2 and 3), identify the subjects, and tell us whether OCR damage prevents understanding. No model answers are shown. Open [the desk](http://10.0.0.56:8501), select **HR-004**, and submit your answers there. You do not need to edit this file.
 
 HR-005-v1 and HR-008-v1 are already answered and incorporated; no repeat review is needed. HR-003 standards and new role/date samples have not been requested.
 
@@ -25,9 +25,9 @@ From this project folder, run:
 make review
 ```
 
-Open [the review desk](http://127.0.0.1:8501). Enter your name, review the evidence, and choose **Save draft** or **Submit review**. Submitted reviews wait for an agent to apply them; you do not need to edit Markdown or announce completion in chat. Agents check the inbox at their next work turn. This is not an always-running background agent.
+Open [the review desk](http://10.0.0.56:8501). Enter your name, review the evidence, and choose **Save draft** or **Submit review**. Submitted reviews wait for an agent to apply them; you do not need to edit Markdown or announce completion in chat. Agents check the inbox at their next work turn. This is not an always-running background agent.
 
-Try `make review-demo` for an invented practice example. Practice answers are not historical labels or project decisions. The app supports your system's light/dark preference and a narrow phone-sized screen, but this first version listens only on this computer. Network access from a phone is deferred.
+Try `make review-demo` for an invented practice example. Practice answers are not historical labels or project decisions. The app supports system light/dark preference and phone screens. Open the LAN address above from a device on the same network and enter your project access code; it is stored locally in ignored `.streamlit/secrets.toml`. The IP may change with your network.
 
 Saved drafts and submissions are in `artifacts/human-review/reviews.sqlite`. Unsaved typing can be lost on reload. Stop the server before copying this file for backup or moving it to another machine; agents also commit exact JSON submissions/receipts when applying decisions.
 
