@@ -14,6 +14,7 @@ from congressional_globe.ai import prepare_batch, reconcile_batch, submit_batch
 from congressional_globe.benchmarking import run_benchmark
 from congressional_globe.cleanup import export_results, run_database, run_jobs
 from congressional_globe.inventory import PARTS
+from congressional_globe.ollama_log_cli import add_ollama_log_commands, run_ollama_logs
 from congressional_globe.pipeline import (
     build_rag,
     build_rag_from_pages,
@@ -60,6 +61,7 @@ def _commands() -> dict[str, CommandHandler]:
         "inventory": _inventory,
         "review": run_review,
         "scan": run_scan,
+        "ollama": run_ollama_logs,
         "extract": _extract,
         "build-rag": _build_rag,
         "benchmark": _benchmark,
@@ -282,6 +284,7 @@ def _parser() -> argparse.ArgumentParser:
     commands = parser.add_subparsers(dest="command", required=True)
     add_review_commands(commands)
     add_scan_commands(commands)
+    add_ollama_log_commands(commands)
     _inventory_command(commands)
     _extract_command(commands)
     _build_command(commands)
