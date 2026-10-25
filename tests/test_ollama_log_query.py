@@ -8,9 +8,16 @@ from zoneinfo import ZoneInfo
 
 import pytest
 
+from congressional_globe import ollama_log_query as log_query
 from congressional_globe.cli import _parser
 from congressional_globe.ollama_log_cli import run_ollama_logs
-from congressional_globe.ollama_log_query import LogQuery, LogQueryError, _zone, query_log
+from congressional_globe.ollama_log_query import (
+    LogQuery,
+    LogQueryError,
+    _zone,
+    query_log,
+    serialize_report,
+)
 
 
 def _write(path: Path, lines: list[str]) -> Path:
@@ -99,7 +106,7 @@ def test_real_slog_gin_and_json_formats_are_parsed(tmp_path: Path) -> None:
     }
     assert report.events[3]["fields"] == {"model": "qwen"}
     assert report.counts.by_parse_status == {"parsed": 4}
-    assert report.parser_version == "ollama-log-query-v1"
+    assert report.parser_version == "ollama-log-query-v2"
 
 
 def test_gin_without_brackets_and_malformed_pipe_count(tmp_path: Path) -> None:
@@ -351,9 +358,10 @@ def test_output_byte_cap_paginates_without_losing_events(tmp_path: Path) -> None
         include=("match",),
         limit=50,
         raw_bytes=100,
-        max_output_bytes=1_024,
+        max_output_bytes=4_096,
     )
 
+    assert all(len(serialize_report(page).encode()) <= 4_096 for page in pages)
     lines = [event["line"] for page in pages for event in page.events]
     assert lines == [1, 2, 3, 4, 5, 6]
     assert all(page.completeness.output_limit_reached for page in pages[:-1])
@@ -513,3 +521,135 @@ def test_cli_missing_subcommand_is_json_on_stderr(tmp_path: Path, capsys) -> Non
     error = json.loads(capsys.readouterr().err)
     assert exit_info.value.code == 2
     assert error["error"]["code"] == "invalid_query"
+
+
+@pytest.mark.parametrize("kind", ["message", "field", "malformed"])
+def test_large_parsed_content_cannot_escape_output_cap(tmp_path: Path, kind: str) -> None:
+    large = "é" * 100_000
+    lines = {
+        "message": _slog("2026-10-25T00:00:00Z", large),
+        "field": _slog("2026-10-25T00:00:00Z", detail=large),
+        "malformed": large,
+    }
+    path = _write(tmp_path / "server.log", [lines[kind]])
+    with pytest.raises(LogQueryError) as error:
+        _query(path, raw_bytes=0, include_raw=False, max_output_bytes=1_024)
+    assert error.value.code == "event_too_large"
+    assert len(str(error.value).encode()) < 200
+
+
+def test_metadata_alone_must_fit_output_budget(tmp_path: Path) -> None:
+    path = tmp_path / "server.log"
+    path.write_bytes(b"")
+    with pytest.raises(LogQueryError) as error:
+        _query(path, max_output_bytes=1_024)
+    assert error.value.code == "output_budget_too_small"
+
+
+def test_oversized_line_is_terminal_instead_of_repeating_cursor(tmp_path: Path) -> None:
+    path = tmp_path / "server.log"
+    path.write_bytes(b"x" * (log_query.MAX_LINE_BYTES + 1) + b"\nvalid later\n")
+    with pytest.raises(LogQueryError) as error:
+        _query(path)
+    assert error.value.code == "record_too_large"
+
+
+def test_scan_budget_cannot_return_no_progress_cursor(tmp_path: Path) -> None:
+    path = _write(tmp_path / "server.log", ["x" * 2_000, "later"])
+    with pytest.raises(LogQueryError) as error:
+        _query(path, max_scan_bytes=1_024)
+    assert error.value.code == "scan_budget_too_small"
+
+
+@pytest.mark.parametrize("change", ["append", "rotate", "rewrite", "remove"])
+def test_in_query_source_changes_return_error_not_mixed_evidence(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, change: str
+) -> None:
+    path = _write(
+        tmp_path / "server.log",
+        [
+            _slog("2026-10-25T00:00:00Z", "original"),
+            _slog("2026-10-25T00:00:01Z", "old context"),
+        ],
+    )
+    consume = log_query._consume
+
+    def changed(scan, raw, offset, consumed, line):
+        consume(scan, raw, offset, consumed, line)
+        if line == 1:
+            _change_source(path, change)
+
+    monkeypatch.setattr(log_query, "_consume", changed)
+    with pytest.raises(LogQueryError) as error:
+        _query(path, context=1, limit=1)
+    assert error.value.code == "source_changed"
+
+
+def _change_source(path: Path, change: str) -> None:
+    if change == "append":
+        with path.open("a") as handle:
+            handle.write(_slog("2026-10-25T00:00:02Z", "appended") + "\n")
+        return
+    if change == "rotate":
+        path.rename(path.with_name("server-1.log"))
+        _write(path, ["replacement", "new context"])
+        return
+    if change == "remove":
+        path.unlink()
+        return
+    path.write_text(path.read_text().replace("original", "modified"))
+
+
+def test_rotation_before_context_never_reads_replacement(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    path = _write(
+        tmp_path / "server.log", [_slog("2026-10-25T00:00:00Z", "original"), "old context"]
+    )
+    context = log_query._context
+    observed = []
+
+    def rotated(scan, event, end_offset):
+        _change_source(path, "rotate")
+        result = context(scan, event, end_offset)
+        observed.extend(result)
+        return result
+
+    monkeypatch.setattr(log_query, "_context", rotated)
+    with pytest.raises(LogQueryError) as error:
+        _query(path, include=("original",), context=1)
+    assert error.value.code == "source_changed"
+    assert observed[0]["raw"] == "old context"
+
+
+def test_cli_never_prints_over_budget_response(tmp_path: Path, capsys) -> None:
+    path = _write(tmp_path / "server.log", [_slog("2026-10-25T00:00:00Z", "x" * 100_000)])
+    arguments = _parser().parse_args(
+        [
+            "ollama",
+            "logs",
+            "query",
+            "--path",
+            str(path),
+            "--max-output-bytes",
+            "1024",
+            "--raw-bytes",
+            "0",
+        ]
+    )
+    with pytest.raises(SystemExit) as error:
+        run_ollama_logs(arguments, tmp_path)
+    captured = capsys.readouterr()
+    assert error.value.code == 2
+    assert captured.out == ""
+    assert len(captured.err.encode()) <= 1024
+    assert json.loads(captured.err)["error"]["code"] == "event_too_large"
+
+
+def test_indented_serialization_also_obeys_total_cap(tmp_path: Path) -> None:
+    path = _write(tmp_path / "server.log", [_slog("2026-10-25T00:00:00Z")])
+    report = _query(path, max_output_bytes=2_500)
+    assert len(serialize_report(report).encode()) <= 2_500
+    with pytest.raises(LogQueryError) as error:
+        serialize_report(report, indent=8)
+    assert error.value.code == "output_budget_too_small"

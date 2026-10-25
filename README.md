@@ -70,6 +70,16 @@ This reads the existing cleanup queue. If you deliberately want to prepare or re
 
 Optional `make run-qwen`, `make run-gemma` and `make run-openai` resume **OCR cleanup**, for up to one hour/1,000 requests. They do not run the future tagging/search workflow. Run one worker at a time. Local workers need the configured Ollama server/models; OpenAI needs `OPENAI_API_KEY` in ignored `.env` and incurs API charges. See the master plan before starting or resuming a job.
 
+## Query Ollama logs
+
+Retrieve only matching events, with a hard8KB JSON response limit:
+
+```bash
+uv run globe ollama logs query --include "context canceled" --limit 3 --raw-bytes 160 --max-output-bytes 8192
+```
+
+Add ISO8601 `--since` / `--until` bounds, or `--status 500`, to narrow the query. Pass `--cursor` from `next_cursor` with the same filters for the next page. The tool is read-only. If one event cannot fit, it returns a small error; it never overrides the output cap. A change during a query returns `source_changed`; retry deliberately when the log is stable. Oversized-record errors are terminal, not cursors to repeat. Full options: `uv run globe ollama logs query --help`.
+
 ## Check changes
 
 ```bash

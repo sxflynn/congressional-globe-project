@@ -17,6 +17,7 @@ from congressional_globe.ollama_log_query import (
     LogQueryError,
     ParseStatus,
     query_log,
+    serialize_report,
 )
 
 
@@ -45,7 +46,10 @@ class OllamaLogQueryCommand(BaseModel):
     field: list[str] = Field(default_factory=list, description="Exact parsed field match KEY=VALUE")
     limit: int = Field(default=50, ge=1, le=500, description="Maximum returned events")
     max_output_bytes: int = Field(
-        default=262_144, ge=1_024, le=4_194_304, description="Returned-event byte cap"
+        default=262_144,
+        ge=1_024,
+        le=4_194_304,
+        description="Hard serialized JSON response byte cap",
     )
     max_scan_bytes: int = Field(
         default=67_108_864, ge=1_024, le=536_870_912, description="Maximum bytes scanned"
@@ -56,11 +60,11 @@ class OllamaLogQueryCommand(BaseModel):
     raw: bool = Field(default=True, description="Include raw log lines in results")
     context: int = Field(default=0, ge=0, le=5, description="Surrounding lines per event")
     cursor: str | None = Field(default=None, description="Opaque continuation token")
-    indent: int | None = Field(default=None, description="JSON indentation")
+    indent: int | None = Field(default=None, ge=0, le=8, description="JSON indentation (0-8)")
 
     def cli_cmd(self) -> None:
         report = query_log(self._query(), self.cursor)
-        print(json.dumps(report.model_dump(), indent=self.indent))
+        print(serialize_report(report, self.indent), end="")
 
     def _query(self) -> LogQuery:
         return LogQuery(
@@ -151,5 +155,5 @@ def _validation_message(error: ValidationError) -> str:
 
 
 def _fail(error: LogQueryError) -> None:
-    print(json.dumps({"error": {"code": error.code, "message": str(error)}}), file=sys.stderr)
+    print(json.dumps({"error": {"code": error.code, "message": str(error)[:128]}}), file=sys.stderr)
     raise SystemExit(2) from error

@@ -16,7 +16,7 @@ from zoneinfo import ZoneInfo
 
 from pydantic import BaseModel, ConfigDict, Field
 
-PARSER_VERSION = "ollama-log-query-v1"
+PARSER_VERSION = "ollama-log-query-v2"
 DEFAULT_PATH = "~/.ollama/logs/server.log"
 MAX_LINE_BYTES = 1_048_576
 HEAD_BYTES = 65_536
@@ -167,6 +167,8 @@ class _Scan:
     until: datetime | None
     zone: Any
     path: Path
+    handle: Any
+    snapshot_size: int
     start_offset: int
     start_line: int
     events: list[dict[str, Any]] = field(default_factory=list)
@@ -204,11 +206,61 @@ def query_log(query: LogQuery, cursor_token: str | None = None) -> QueryReport:
             until=_normalize(query.until, query.assume_tz),
             zone=_zone(query.assume_tz),
             path=path,
+            handle=handle,
+            snapshot_size=snapshot.size,
             start_offset=start_offset,
             start_line=start_line,
         )
         _scan(handle, scan)
-        next_cursor = _next_cursor(scan, snapshot, query_hash, path)
+        report = _bounded_report(scan, snapshot, query_hash, path, appended)
+        _check_snapshot(handle, path, snapshot)
+        return report
+
+
+def _bounded_report(
+    scan: _Scan, snapshot: _Snapshot, query_hash: str, path: Path, appended: bool
+) -> QueryReport:
+    while True:
+        cursor = _next_cursor(scan, snapshot, query_hash, path)
+        report = _report(scan, snapshot, query_hash, path, appended, cursor)
+        if len((json.dumps(report.model_dump()) + "\n").encode()) <= scan.query.max_output_bytes:
+            return report
+        _reduce_output(scan)
+
+
+def _reduce_output(scan: _Scan) -> None:
+    if not scan.events:
+        raise LogQueryError(
+            "output_budget_too_small", "Increase max_output_bytes for query metadata"
+        )
+    if len(scan.events) == 1:
+        raise LogQueryError(
+            "event_too_large", "Event exceeds output budget; increase max_output_bytes"
+        )
+    event = scan.events.pop()
+    scan.returned -= 1
+    scan.output_full = True
+    _hold(scan, event["byte_offset"], event["line"])
+
+
+def serialize_report(report: QueryReport, indent: int | None = None) -> str:
+    text = json.dumps(report.model_dump(), indent=indent) + "\n"
+    if len(text.encode()) > report.query["max_output_bytes"]:
+        raise LogQueryError(
+            "output_budget_too_small", "Serialized response exceeds max_output_bytes"
+        )
+    return text
+
+
+def _report(
+    scan: _Scan,
+    snapshot: _Snapshot,
+    query_hash: str,
+    path: Path,
+    appended: bool,
+    next_cursor: str | None,
+) -> QueryReport:
+    query = scan.query
     return QueryReport(
         parser_version=PARSER_VERSION,
         query=_query_payload(query, path),
@@ -223,7 +275,7 @@ def query_log(query: LogQuery, cursor_token: str | None = None) -> QueryReport:
             rotation_siblings=_rotation_siblings(path),
             scanned_bytes=scan.scanned_bytes,
             scanned_lines=scan.scanned_lines,
-            start_offset=start_offset,
+            start_offset=scan.start_offset,
         ),
         counts=Counts(
             matched=scan.matched,
@@ -281,6 +333,19 @@ def _snapshot(handle: Any, path: Path) -> _Snapshot:
         head_bytes=len(head),
         head_sha256=_sha256(head),
     )
+
+
+def _check_snapshot(handle: Any, path: Path, snapshot: _Snapshot) -> None:
+    current = os.fstat(handle.fileno())
+    try:
+        named = path.stat()
+    except OSError as error:
+        raise LogQueryError("source_changed", "Log changed during query; retry") from error
+    identity = (named.st_dev, named.st_ino)
+    expected = (snapshot.device, snapshot.inode)
+    changed = (current.st_size, current.st_mtime_ns) != (snapshot.size, snapshot.mtime_ns)
+    if identity != expected or changed:
+        raise LogQueryError("source_changed", "Log changed during query; retry")
 
 
 def _rotation_siblings(path: Path) -> list[str]:
@@ -418,9 +483,7 @@ def _sha256(payload: bytes) -> str:
 def _read_pairs(text: str) -> dict[str, str]:
     pairs: dict[str, str] = {}
     position = 0
-    for match in _PAIR_PATTERN.finditer(text, position):
-        if match.start() != position:
-            break
+    while match := _PAIR_PATTERN.match(text, position):
         token = match.group(2)
         value = _unescape(token[1:-1]) if token.startswith('"') else token
         pairs[match.group(1)] = value
@@ -765,25 +828,36 @@ def _scan(handle: Any, scan: _Scan) -> None:
 
 def _read_record(handle: Any, scan: _Scan, line: int) -> tuple[str, int, int] | None:
     remaining = scan.query.max_scan_bytes - scan.scanned_bytes
-    cap = min(MAX_LINE_BYTES, remaining)
     offset = handle.tell()
+    available = scan.snapshot_size - offset
+    if available <= 0:
+        return None
+    cap = min(MAX_LINE_BYTES, remaining, available)
     payload = handle.readline(cap)
     if not payload:
         return None
-    if payload.endswith(b"\n") or len(payload) < cap:
+    if _record_complete(payload, cap, offset, scan.snapshot_size):
         return payload.decode("utf-8", "replace").rstrip("\r\n"), offset, len(payload)
+    _incomplete_record(scan, payload, offset, line)
+    return None
+
+
+def _record_complete(payload: bytes, cap: int, offset: int, size: int) -> bool:
+    return payload.endswith(b"\n") or len(payload) < cap or offset + len(payload) >= size
+
+
+def _incomplete_record(scan: _Scan, payload: bytes, offset: int, line: int) -> None:
     if len(payload) >= MAX_LINE_BYTES:
-        _stop_for_limit(scan, offset, line, oversized=True)
-        return None
-    if handle.read(1):
-        _stop_for_limit(scan, offset, line, oversized=False)
-        return None
-    return payload.decode("utf-8", "replace").rstrip("\r\n"), offset, len(payload)
+        raise LogQueryError(
+            "record_too_large",
+            f"Record at byte {offset} exceeds the per-line byte cap; cannot paginate past it",
+        )
+    _stop_for_limit(scan, offset, line)
 
 
 def _finish_scan_budget(handle: Any, scan: _Scan, line: int) -> None:
     offset = handle.tell()
-    if not handle.read(1):
+    if offset >= scan.snapshot_size:
         return
     scan.scan_limit = True
     scan.stopped_at_eof = False
@@ -791,14 +865,15 @@ def _finish_scan_budget(handle: Any, scan: _Scan, line: int) -> None:
     _warn(scan, "Scan budget ended at a line boundary; results are incomplete")
 
 
-def _stop_for_limit(scan: _Scan, offset: int, line: int, *, oversized: bool) -> None:
+def _stop_for_limit(scan: _Scan, offset: int, line: int) -> None:
+    if offset == scan.start_offset:
+        raise LogQueryError(
+            "scan_budget_too_small", "Increase max_scan_bytes to fit the next record"
+        )
     scan.scan_limit = True
     scan.stopped_at_eof = False
     _hold(scan, offset, line)
-    if oversized:
-        _warn(scan, "A log line exceeded the per-line byte cap; scan stopped before it")
-    else:
-        _warn(scan, "Scan budget ended mid-line; scan stopped before it")
+    _warn(scan, "Scan budget ended mid-line; scan stopped before it")
 
 
 def _warn(scan: _Scan, message: str) -> None:
@@ -830,8 +905,7 @@ def _matched(scan: _Scan, event: LogEvent, line: int, offset: int, consumed: int
     if scan.events:
         _hold(scan, offset, line)
         return
-    _keep(scan, rendered)
-    _warn(scan, "The single returned event exceeds max_output_bytes")
+    raise LogQueryError("event_too_large", "Event exceeds output budget; increase max_output_bytes")
 
 
 def _hold(scan: _Scan, offset: int, line: int) -> None:
@@ -881,7 +955,7 @@ def _context(scan: _Scan, event: LogEvent, end_offset: int) -> list[dict[str, An
 
 def _before(scan: _Scan, event: LogEvent) -> list[dict[str, Any]]:
     start = max(0, event.byte_offset - CONTEXT_WINDOW_BYTES)
-    payload = _read_range(scan.path, start, event.byte_offset)
+    payload = _read_range(scan.handle, start, event.byte_offset)
     lines = payload.split(b"\n")
     if start > 0:
         lines = lines[1:]
@@ -896,7 +970,9 @@ def _before(scan: _Scan, event: LogEvent) -> list[dict[str, Any]]:
 
 
 def _after(scan: _Scan, event: LogEvent, end_offset: int) -> list[dict[str, Any]]:
-    payload = _read_range(scan.path, end_offset, end_offset + CONTEXT_WINDOW_BYTES)
+    payload = _read_range(
+        scan.handle, end_offset, min(scan.snapshot_size, end_offset + CONTEXT_WINDOW_BYTES)
+    )
     selected = payload.split(b"\n")[: scan.query.context]
     return [
         _context_line(raw, event.line + 1 + index, "after", scan.query.raw_bytes)
@@ -904,10 +980,8 @@ def _after(scan: _Scan, event: LogEvent, end_offset: int) -> list[dict[str, Any]
     ]
 
 
-def _read_range(path: Path, start: int, end: int) -> bytes:
-    with path.open("rb") as handle:
-        handle.seek(start)
-        return handle.read(max(0, end - start))
+def _read_range(handle: Any, start: int, end: int) -> bytes:
+    return os.pread(handle.fileno(), max(0, end - start), start)
 
 
 def _context_line(raw: bytes, line: int, role: str, cap: int) -> dict[str, Any]:
@@ -948,16 +1022,15 @@ def _next_cursor(scan: _Scan, snapshot: _Snapshot, query_hash: str, path: Path) 
     if scan.next_offset is None:
         return None
     prefix_start = max(0, scan.next_offset - HEAD_BYTES)
-    prefix = _read_range(path, prefix_start, scan.next_offset)
-    current = path.stat()
+    prefix = _read_range(scan.handle, prefix_start, scan.next_offset)
     cursor = CursorState(
         parser_version=PARSER_VERSION,
         query_hash=query_hash,
         path=str(path),
-        device=current.st_dev,
-        inode=current.st_ino,
-        size=current.st_size,
-        mtime_ns=current.st_mtime_ns,
+        device=snapshot.device,
+        inode=snapshot.inode,
+        size=snapshot.size,
+        mtime_ns=snapshot.mtime_ns,
         head_bytes=snapshot.head_bytes,
         head_sha256=snapshot.head_sha256,
         prefix_sha256=_sha256(prefix),
