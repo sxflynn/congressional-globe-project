@@ -1,0 +1,173 @@
+{
+  "created": "2026-10-25",
+  "scope": "Read-only runtime/tokenizer/renderer parity research for the three installed MLX models. No model/API request, warmup, package install, model download, service change, or image inspection was performed.",
+  "runtime": {
+    "path": "/Applications/Ollama.app/Contents/Resources/ollama",
+    "sha256": "e5c7c0ffa50d23d0f0e59cbf325f689b0010ee5563be89b73b05f08844e19e6b",
+    "reported_version": "0.40.8",
+    "go_build_info": {
+      "module": "github.com/ollama/ollama v0.40.8+dirty",
+      "go": "go1.26.0",
+      "revision": "f580b5484a58c8370c35d669555bf887783a3f68",
+      "revision_time": "2026-10-21T14:45:50Z",
+      "modified": true,
+      "platform": "darwin/amd64"
+    },
+    "source_revision_url": "https://github.com/ollama/ollama/tree/f580b5484a58c8370c35d669555bf887783a3f68",
+    "revision_caveat": "The binary identifies the upstream source revision but says vcs.modified=true, so an exact source checkout at that commit is not proven byte-for-byte to reproduce this installed binary. The installed binary SHA-256 is the strongest local runtime identity.",
+    "local_version_evidence": {
+      "path": "artifacts/reading-preflight-20261024-01/current-runtime/version.json",
+      "sha256": "4e5e44006d2c958466f542bdbf939244a1bc78d917a6d7f794d3fe480bda72f6",
+      "value": "0.40.8"
+    }
+  },
+  "models": [
+    {
+      "tag": "qwen3.8:27b-mlx",
+      "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+      "runner": "mlx",
+      "ollama_renderer": "qwen3.8",
+      "ollama_parser": "qwen3.5",
+      "tokenizer_class_from_installed_tokenizer_config": "Qwen2Tokenizer",
+      "processor_class": "Qwen3VLProcessor",
+      "image_processor_type": "Qwen2VLImageProcessorFast",
+      "tokenizer_json_sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+      "tokenizer_config_sha256": "5a205aa76328f59df93a9091d0496aeda4615c6b0c495cbd37e14c79c0cd0f94",
+      "preprocessor_config_sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+      "image_count_unknown": true
+    },
+    {
+      "tag": "gemma4:31b-mlx",
+      "model_digest": "637cc0ff15709212de4aa694be67e3af5e80533ca538c86ad69c53c511e40840",
+      "runner": "mlx",
+      "ollama_renderer": "gemma4-large",
+      "ollama_parser": "gemma4",
+      "tokenizer_class_from_installed_tokenizer_config": "GemmaTokenizer",
+      "processor_class": "Gemma4Processor",
+      "tokenizer_json_sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+      "tokenizer_config_sha256": "a284d1243b62be31faa9c13e1c28cece940c4abaa7bd9ad87b94f61b40687200",
+      "processor_config_sha256": "32bdf45d2ad4cc29a0822ddd157a182de76644f0419a6228d151495256e9813c",
+      "image_count_unknown": true
+    },
+    {
+      "tag": "muse-glimmer:30b-mlx",
+      "model_digest": "015fa21845bead56096c2f8773aff7a2047063507fe82897e662ad544c5b2fa6",
+      "runner": "mlx",
+      "ollama_renderer": "glimmer",
+      "ollama_parser": "glimmer",
+      "tokenizer_class_from_installed_tokenizer_config": "PreTrainedTokenizerFast",
+      "tokenizer_json_sha256": "8a25643f212b3e81a410b8afd0538b02ad30db4b22de863bde2e5006603afa2d",
+      "tokenizer_config_sha256": "2c49783174e680e3a7f41d40bc7a611affa67cb3e05d41acffb97d44f023283a",
+      "image_processor_asset": "No preprocessor/processor config asset was recorded for this exact tag in the prior inventory.",
+      "image_count_unknown": true
+    }
+  ],
+  "tokenize_route": {
+    "route": "POST /v1/tokenize",
+    "classification": "Private MLX runner endpoint in the pinned Ollama source; not a public Ollama API contract. Exact parity with the installed binary is not proven because its embedded Go build says vcs.modified=true.",
+    "local_binary_evidence": "The installed executable contains the route literal and the runner client URL http://127.0.0.1:%d/v1/tokenize; Go symbols name github.com/ollama/ollama/mlxrunner/server.go and tokenizer implementation types. These strings establish route presence, not handler behavior.",
+    "upstream_code_evidence": {
+      "path_at_runtime_revision": "mlxrunner/server.go",
+      "revision_url": "https://raw.githubusercontent.com/ollama/ollama/f580b5484a58c8370c35d669555bf887783a3f68/mlxrunner/server.go",
+      "primary_source_lines": "Pinned server.go lines 62-67 initialize runner.Load(modelName) before the server routes are registered. Lines 185-198 define POST /v1/tokenize, read the body as text, and call runner.Tokenizer.Encode(body, runner.Tokenizer.AddBOS()). No request rendering or media parsing occurs in this handler.",
+      "parity_caveat": "This is primary source for the binary-reported Git revision, but vcs.modified=true prevents claiming byte-for-byte equivalence to the installed executable."
+    },
+    "loading_semantics": "For the pinned upstream revision, the runner loads the named model before serving, and the tokenizer is initialized inside Runner.loadModel from the loaded model. Therefore this endpoint is not a no-load tokenizer-only route. Installed-binary parity remains unverified because the binary is vcs.modified=true.",
+    "decision": "Do not call this private route. Pinned source establishes that it tokenizes a raw text body with model tokenizer BOS policy, not a rendered chat request or multimodal image expansion. It cannot establish complete request fit."
+  },
+  "safest_exact_counting_path": [
+    "Bind claims to the exact installed model digests and Ollama binary SHA-256. The binary reports source revision f580b5484a58c8370c35d669555bf887783a3f68 but also vcs.modified=true, so treat the tagged source as a strong reference, not a proof of exact binary parity.",
+    "For text-only prompts, the pinned MLX implementation tokenizes the prompt as passed to the runner with its model tokenizer and AddBOS policy. The private /v1/tokenize endpoint exercises that tokenizer only after model loading; do not call it or warm/load a model just to count.",
+    "For the exact request, reproduce the Ollama request construction and model-specific renderer/parser behavior, including prompt format, system/user boundaries, thinking, schema/format, stop/suffix tokens, and image placeholders. `ollama show` template {{ .Prompt }} is not itself the rendered chat prompt when renderer_parser supplies a renderer.",
+    "Pinned MLX Prepare code chooses a text-only encode path when no media is present, and a MediaModel.expandMedia path for media; resulting prepared tokens are then context-checked. Exact image expansion requires matching model-specific processor/media implementation and exact image bytes.",
+    "Qwen and Gemma have model-specific processor assets; Muse Glimmer has no preprocessor/processor config asset in the recorded manifest inventory. Keep image token contribution and total multimodal fit unknown until each model processor path is identified and independently validated.",
+    "Record per-unit request/rendered-input hashes, image payload SHA-256s, model digest, renderer/parser/tokenizer/processor source versions, text token IDs/count, image token contribution, context length, output reserve, and fit result."
+  ],
+  "provenance": [
+    {
+      "path": "artifacts/reading-preflight-20261024-01/findings.md",
+      "sha256": "056a945df8e3a32763710df640700a6f871e8a4ca60c1c849b2199040547038e"
+    },
+    {
+      "path": "artifacts/reading-preflight-20261024-01/current-runtime/model-assets.json",
+      "sha256": "8e0a30bd01f25fb0cb9d3274bee02d5eadb6ec784854c72768b76d25bb981870"
+    },
+    {
+      "path": "artifacts/reading-preflight-20261024-01/current-runtime/show-qwen3.8-27b-mlx.json",
+      "sha256": "7c43b6e77cba2b06a86025d8f9d5d59030cc34852d54487960a708ed803e6a1a"
+    },
+    {
+      "path": "artifacts/reading-preflight-20261024-01/current-runtime/show-gemma4-31b-mlx.json",
+      "sha256": "b18b6835a75eb07c721294fb163125c721c0b4e878b6af441258a59f462dc9f8"
+    },
+    {
+      "path": "artifacts/reading-preflight-20261024-01/current-runtime/show-muse-glimmer-30b-mlx.json",
+      "sha256": "1f74affa7062571c9a7d4e7c1aa64b41be650485dde0fdf725f43c02ee1c8047"
+    },
+    {
+      "path": "/Applications/Ollama.app/Contents/Resources/ollama",
+      "sha256": "e5c7c0ffa50d23d0f0e59cbf325f689b0010ee5563be89b73b05f08844e19e6b"
+    }
+  ],
+  "current_runtime_state": {
+    "fresh_observation": "Parent reported fresh elevated read-only process inspection at 2026-10-25 09:47 UTC: Ollama PID 87597 and review desk PID 68381 exist; no inference worker matched.",
+    "loaded_models": "Unknown: process existence and no matching inference worker do not establish Ollama /api/ps loaded-model state; no API was called for this update.",
+    "impact": "No model call was made. Recheck loaded-model/queue state with an authorized read-only method before any future model work."
+  },
+  "limitations": [
+    "No exact per-unit text token counts were obtained.",
+    "No image token counts or image processor parity were established.",
+    "The installed binary reports the pinned source revision but vcs.modified=true, so source-to-binary parity is not exact/proven.",
+    "No model call, tokenization call, warmup, package install, model download, or image inspection occurred.",
+    "Pinned source paths for Qwen 3.8 and Gemma 4 renderers were inspected; Glimmer path is indicated by the installed binary but its pinned file could not be retrieved. Exact per-model image preprocessing source paths remain unverified."
+  ],
+  "upstream_sources": [
+    "https://raw.githubusercontent.com/ollama/ollama/f580b5484a58c8370c35d669555bf887783a3f68/mlxrunner/server.go",
+    "https://raw.githubusercontent.com/ollama/ollama/f580b5484a58c8370c35d669555bf887783a3f68/mlxrunner/runner.go",
+    "https://raw.githubusercontent.com/ollama/ollama/f580b5484a58c8370c35d669555bf887783a3f68/mlxrunner/pipeline.go",
+    "https://raw.githubusercontent.com/ollama/ollama/f580b5484a58c8370c35d669555bf887783a3f68/model/renderers/qwen35.go",
+    "https://raw.githubusercontent.com/ollama/ollama/f580b5484a58c8370c35d669555bf887783a3f68/model/renderers/gemma4.go",
+    "https://raw.githubusercontent.com/ollama/ollama/f580b5484a58c8370c35d669555bf887783a3f68/model/renderers/glimmer.go",
+    "https://github.com/ollama/ollama/tree/f580b5484a58c8370c35d669555bf887783a3f68"
+  ],
+  "implementation_paths": {
+    "runtime_revision": "f580b5484a58c8370c35d669555bf887783a3f68",
+    "qwen_renderer": {
+      "source_path": "model/renderers/qwen35.go",
+      "source_url": "https://raw.githubusercontent.com/ollama/ollama/f580b5484a58c8370c35d669555bf887783a3f68/model/renderers/qwen35.go",
+      "note": "Pinned primary source declares a Qwen 3.8 renderer variant (`newQwen38Renderer`) in Qwen35Renderer; saved `ollama show` reports selected renderer name qwen3.8 and parser qwen3.5.",
+      "verified_source_lines": "qwen35.go lines 41-64 define the Qwen 3.8 renderer variant and constructor; Render begins at line 187. The saved model metadata selects name qwen3.8/parser qwen3.5."
+    },
+    "gemma_renderer": {
+      "source_path": "model/renderers/gemma4.go",
+      "source_url": "https://raw.githubusercontent.com/ollama/ollama/f580b5484a58c8370c35d669555bf887783a3f68/model/renderers/gemma4.go",
+      "note": "Pinned source path is verified; saved `ollama show` reports renderer gemma4-large/parser gemma4. The source implements Gemma 4 framing and explicit BOS behavior.",
+      "verified_source_lines": "gemma4.go lines 11-31 identify Gemma4Renderer and explicit <bos> behavior; Render begins at line 26. The saved model metadata selects name gemma4-large/parser gemma4."
+    },
+    "glimmer_renderer": {
+      "selected_name": "glimmer",
+      "binary_embedded_source_path": "github.com/ollama/ollama/model/renderers/glimmer.go",
+      "pinned_source_url": "https://raw.githubusercontent.com/ollama/ollama/f580b5484a58c8370c35d669555bf887783a3f68/model/renderers/glimmer.go",
+      "note": "The installed binary contains this Go source path and saved `ollama show` reports renderer/parser glimmer. The raw pinned source file was not retrievable in this session, so source contents/version parity are not independently verified."
+    },
+    "mlx_tokenizer_implementation": {
+      "binary_embedded_source_paths": [
+        "github.com/ollama/ollama/mlxrunner/tokenizer/tokenizer.go",
+        "github.com/ollama/ollama/mlxrunner/tokenizer/tokenizer_added.go",
+        "github.com/ollama/ollama/mlxrunner/tokenizer/tokenizer_bpe.go",
+        "github.com/ollama/ollama/mlxrunner/tokenizer/tokenizer_decode.go",
+        "github.com/ollama/ollama/mlxrunner/tokenizer/tokenizer_encode.go",
+        "github.com/ollama/ollama/mlxrunner/tokenizer/tokenizer_load.go",
+        "github.com/ollama/ollama/mlxrunner/tokenizer/tokenizer_pretokenizer.go"
+      ],
+      "source_revision": "f580b5484a58c8370c35d669555bf887783a3f68",
+      "note": "These paths are embedded in the installed binary; tokenizer implementation source body was not independently inspected here. Model-specific tokenizer blobs and hashes are separately listed per model."
+    },
+    "media_path": {
+      "source_path": "mlxrunner/pipeline.go",
+      "source_url": "https://raw.githubusercontent.com/ollama/ollama/f580b5484a58c8370c35d669555bf887783a3f68/mlxrunner/pipeline.go",
+      "verified_behavior": "Prepare uses Tokenizer.Encode(prompt, AddBOS()) for text-only; with media it requires model.MediaModel and calls expandMedia, then checks resulting token length against context. This is generic runner flow; exact per-model image preprocessing/expansion implementation still needs identification for each model.",
+      "verified_source_lines": "pipeline.go lines 24-63 select text tokenizer path versus model.MediaModel.expandMedia; lines 68-80 enforce context length and set output reserve."
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unit": "reading-fit-20261025-01",
+  "request_count": 54,
+  "verified_exact_roundtrips": 54,
+  "primary_units": 18,
+  "models": 3,
+  "tests_passed": 312,
+  "provider_calls": 0,
+  "image_fetches": 0,
+  "package_installs": 0,
+  "model_downloads": 0,
+  "launch_ready": false,
+  "text_tokens": null,
+  "image_tokens": null,
+  "limits": "No dispatch; frozen primary candidates and cached image set only.",
+  "next_action": "Match pinned runtime renderer/tokenizer/media implementations to exact request bytes; complete source expectations and revised human review effort before inference.",
+  "evidence": {
+    "artifacts/reading-fit-20261025-01/requests.json": "fc7f4445fb02ef6510368f3151c3d1ca0c575cceba6636b03bffb7d8d3d13f6f",
+    "artifacts/reading-fit-20261025-01/requests-first-build.json": "85ad204f5a418d0e974a0181543fad8446be58e52c9fe37c7ce433267158163e",
+    "artifacts/reading-fit-20261025-01/source-first-build.py": "27b2588f984507013180edacabc1c46ffed227da0c4ba350f397fb46caf4ce58",
+    "artifacts/reading-fit-20261025-01/parity-research.json": "a09f3915485f3b98a45ddde71416a7f9855956ba802e7b6b36ce670fea222ba6",
+    "artifacts/reading-fit-20261025-01/gate.log.gz": "db13a9a41b334828d562ab17157dff00a2021b7f343e937fc1d3b3facda7aaa2",
+    "src/congressional_globe/reading_requests.py": "fefa6f34afc510f1c3d2f6d7f5a0c8764fb70e3da239c765df47486a50a21041",
+    "tests/test_reading_requests.py": "7116d484cf5376f681c513b9863a02fb35bc3655116232fd392fcf190ffd38f2"
+  }
+}
