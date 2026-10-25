@@ -41,8 +41,55 @@ def test_stale_or_busy_process_proof_cannot_launch(tmp_path):
 
 
 def test_offline_prepare_never_touches_transport(monkeypatch, tmp_path):
-    monkeypatch.setattr(launch, "prepare", lambda: ([], {}, {}, {"test": "synthetic"}))
+    monkeypatch.setattr(launch, "prepare", lambda *args: ([], {}, {}, {"test": "synthetic"}))
     monkeypatch.setattr(
         launch, "verify_runtime", lambda *args: pytest.fail("offline run contacted runtime")
     )
     assert launch.launch(tmp_path, tmp_path / "not-present.json")["provider_calls"] == 0
+
+
+def test_launch_passes_tighter_bounds_and_cooperative_stop_to_dispatch(monkeypatch, tmp_path):
+    from congressional_globe.reading_dispatch import RuntimeCheck
+
+    monkeypatch.setattr(launch, "prepare", lambda *args: ([], {}, {}, {}))
+    runtime = RuntimeCheck(
+        checked_at=datetime.now(UTC),
+        runtime_version="test",
+        process_state_verified=False,
+        process_observation_sha256="0" * 64,
+        model_digests={},
+    )
+    monkeypatch.setattr(launch, "verify_runtime", lambda *args: runtime)
+    seen = {}
+
+    def capture(*args, **kwargs):
+        seen.update(kwargs)
+        return []
+
+    monkeypatch.setattr(launch, "dispatch", capture)
+    proof = tmp_path / "proof.json"
+    proof.write_text(
+        json.dumps(
+            dict(
+                observed_utc=datetime.now(UTC).isoformat(),
+                no_competing_worker=True,
+                cleanup_claimed=0,
+            )
+        )
+    )
+    stop = tmp_path / "STOP"
+    launch.launch(
+        tmp_path,
+        proof,
+        execute=True,
+        max_calls=6,
+        total_seconds=1200,
+        per_model_seconds=360,
+        stop_file=stop,
+    )
+    assert (
+        seen["max_calls"],
+        seen["total_seconds"],
+        seen["per_model_seconds"],
+        seen["stop_file"],
+    ) == (6, 1200, 360, stop)

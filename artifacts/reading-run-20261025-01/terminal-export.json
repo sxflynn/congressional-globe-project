@@ -1,0 +1,121 @@
+{
+  "attempts_started": 6,
+  "completed_invalid": 5,
+  "interrupted_reconciled_failed": 1,
+  "unattempted": 54,
+  "completed_input_count_matches": 5,
+  "provider_usage_unknown_attempts": 1,
+  "valid": 0,
+  "corpus_edits": 0,
+  "decision": "Stop this contract after repeated coordinate failures. All failed results remain unchanged; use separately versioned6callquote-anchor diagnostic, not a silent repair or model-winner claim.",
+  "attempts": [
+    {
+      "attempt_id": "a854c98d-ca1d-4f83-9384-14af32aa92ba",
+      "task_id": "qwen3.8:27b-mlx::reading-d1964b2fd88da0df3db2",
+      "status": "invalid",
+      "raw_reply": "{\"model\":\"qwen3.8:27b-mlx\",\"created_at\":\"2026-10-25T10:17:04.876612Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"unit_id\\\":\\\"reading-d1964b2fd88da0df3db2\\\",\\\"status\\\":\\\"proposed\\\",\\\"patches\\\":[{\\\"source_id\\\":\\\"congressionalg7391unit:576:par_000576_000032\\\",\\\"start\\\":108,\\\"end\\\":112,\\\"old\\\":\\\"anxl\\\",\\\"new\\\":\\\"and\\\",\\\"image_ids\\\":[\\\"reading-d1964b2fd88da0df3db2-leaf-576\\\"],\\\"reason\\\":\\\"The image shows the word 'and' at that position; the OCR 'anxl' is a misread of the ligature/letters.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:576:par_000576_000038\\\",\\\"start\\\":0,\\\"end\\\":10,\\\"old\\\":\\\"liesolved\\\",\\\"new\\\":\\\"Resolved\\\",\\\"image_ids\\\":[\\\"reading-d1964b2fd88da0df3db2-leaf-576\\\"],\\\"reason\\\":\\\"The image shows 'Resolved' (italicized) at the start of the paragraph; the OCR 'liesolved' is a misread.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:576:par_000576_000038\\\",\\\"start\\\":300,\\\"end\\\":302,\\\"old\\\":\\\"oJf\\\",\\\"new\\\":\\\"of\\\",\\\"image_ids\\\":[\\\"reading-d1964b2fd88da0df3db2-leaf-576\\\"],\\\"reason\\\":\\\"The image shows 'of' in the phrase 'and of recommending'; the OCR 'oJf' is a misread.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:576:par_000576_000038\\\",\\\"start\\\":330,\\\"end\\\":339,\\\"old\\\":\\\"suflioient\\\",\\\"new\\\":\\\"sufficient\\\",\\\"image_ids\\\":[\\\"reading-d1964b2fd88da0df3db2-leaf-576\\\"],\\\"reason\\\":\\\"The image shows 'sufficient' at the end of the paragraph; the OCR 'suflioient' is a misread.\\\"}],\\\"uncertain\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":53233487250,\"load_duration\":6734377292,\"prompt_eval_count\":3872,\"prompt_eval_cached_count\":0,\"prompt_eval_duration\":31635392750,\"eval_count\":481,\"eval_duration\":14788800958}",
+      "detail": null,
+      "started_at": "2026-10-25 10:16:11",
+      "elapsed_seconds": 53.24089345801622,
+      "finished_at": "2026-10-25 10:17:04",
+      "request_sha256": "9de36ac8cb73d705bea5848e47946bc57aff6df7d78c021ca2708f950cfe9b67",
+      "usage": {
+        "eval_count": 481,
+        "load_duration": 6734377292,
+        "prompt_eval_count": 3872,
+        "total_duration": 53233487250
+      },
+      "input_count_parity": true,
+      "replayed_validation_error": "patch old text mismatch"
+    },
+    {
+      "attempt_id": "2227ac1c-adc3-4a31-ada0-8effae2c46cc",
+      "task_id": "qwen3.8:27b-mlx::reading-5f378add7e1f64ea69ba",
+      "status": "invalid",
+      "raw_reply": "{\"model\":\"qwen3.8:27b-mlx\",\"created_at\":\"2026-10-25T10:18:45.758603Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"unit_id\\\":\\\"reading-5f378add7e1f64ea69ba\\\",\\\"status\\\":\\\"proposed\\\",\\\"patches\\\":[{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000036\\\",\\\"start\\\":23,\\\"end\\\":29,\\\"old\\\":\\\"pcnds\\\",\\\"new\\\":\\\"pends\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'pends' in the phrase 'The same question that pends before us'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000036\\\",\\\"start\\\":34,\\\"end\\\":40,\\\"old\\\":\\\"liangs\\\",\\\"new\\\":\\\"hangs\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'hangs' in the phrase 'hangs upon a hair'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000036\\\",\\\"start\\\":103,\\\"end\\\":105,\\\"old\\\":\\\"wc\\\",\\\"new\\\":\\\"we\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'we' in the phrase 'what we too fondly call'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000036\\\",\\\"start\\\":303,\\\"end\\\":309,\\\"old\\\":\\\"oeean\\\",\\\"new\\\":\\\"ocean\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'ocean' in the phrase 'across the ocean'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000036\\\",\\\"start\\\":480,\\\"end\\\":488,\\\"old\\\":\\\"repuljlic\\\",\\\"new\\\":\\\"republic\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'republic' in the phrase 'democratic republic country'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000036\\\",\\\"start\\\":494,\\\"end\\\":498,\\\"old\\\":\\\"lias\\\",\\\"new\\\":\\\"has\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'has' in the phrase 'country has had the question'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000037\\\",\\\"start\\\":6,\\\"end\\\":10,\\\"old\\\":\\\"tlie\\\",\\\"new\\\":\\\"the\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'the' in the phrase '[Here the hammer fell.]'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000038\\\",\\\"start\\\":28,\\\"end\\\":34,\\\"old\\\":\\\"Ayords\\\",\\\"new\\\":\\\"words\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'words' in the phrase 'a few words more'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000038\\\",\\\"start\\\":35,\\\"end\\\":39,\\\"old\\\":\\\"lAore\\\",\\\"new\\\":\\\"more\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'more' in the phrase 'a few words more'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000039\\\",\\\"start\\\":33,\\\"end\\\":36,\\\"old\\\":\\\"tke\\\",\\\"new\\\":\\\"the\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'the' in the phrase 'time of the gentleman'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000039\\\",\\\"start\\\":73,\\\"end\\\":79,\\\"old\\\":\\\"Kelley\\\",\\\"new\\\":\\\"KELLEY\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the name 'KELLEY' in all capital letters within the bracket.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000039\\\",\\\"start\\\":88,\\\"end\\\":94,\\\"old\\\":\\\"enal)le\\\",\\\"new\\\":\\\"enable\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'enable' in the phrase 'so as to enable him'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000041\\\",\\\"start\\\":43,\\\"end\\\":44,\\\"old\\\":\\\"f\\\",\\\"new\\\":\\\"I\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the capital letter 'I' in the phrase 'I will continue'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000041\\\",\\\"start\\\":63,\\\"end\\\":68,\\\"old\\\":\\\"jnin-\\\",\\\"new\\\":\\\"min-\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'min-' as part of the hyphenated word 'minutes'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000041\\\",\\\"start\\\":88,\\\"end\\\":93,\\\"old\\\":\\\"lauds\\\",\\\"new\\\":\\\"lands\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'lands' in the phrase 'oppressed of all lands'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000041\\\",\\\"start\\\":103,\\\"end\\\":111,\\\"old\\\":\\\"S^jeaker\\\",\\\"new\\\":\\\"Speaker\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'Speaker' in the phrase 'Mr. Speaker'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000041\\\",\\\"start\\\":153,\\\"end\\\":160,\\\"old\\\":\\\"peojile\\\",\\\"new\\\":\\\"people\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'people' in the phrase 'laboring people'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000041\\\",\\\"start\\\":203,\\\"end\\\":210,\\\"old\\\":\\\"siDcecha\\\",\\\"new\\\":\\\"speech a\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the words 'speech a' in the phrase 'recent speech a deputation'.\\\"},{\\\"source_id\\\":\\\"congressionalg7391unit:299:par_000299_000041\\\",\\\"start\\\":480,\\\"end\\\":487,\\\"old\\\":\\\"Amei-ican\\\",\\\"new\\\":\\\"American\\\",\\\"image_ids\\\":[\\\"reading-5f378add7e1f64ea69ba-leaf-299\\\"],\\\"reason\\\":\\\"The image shows the word 'American' in the phrase 'American Congressmen'.\\\"}],\\\"uncertain\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":100857376209,\"load_duration\":18888417,\"prompt_eval_count\":4682,\"prompt_eval_cached_count\":0,\"prompt_eval_duration\":41326518333,\"eval_count\":2004,\"eval_duration\":59410351750}",
+      "detail": null,
+      "started_at": "2026-10-25 10:17:04",
+      "elapsed_seconds": 100.86486083292402,
+      "finished_at": "2026-10-25 10:18:45",
+      "request_sha256": "674bcefe6f649329af48b917ccc1fdd5f8b4411f90dd4e7f04d1e361603d114d",
+      "usage": {
+        "eval_count": 2004,
+        "load_duration": 18888417,
+        "prompt_eval_count": 4682,
+        "total_duration": 100857376209
+      },
+      "input_count_parity": true,
+      "replayed_validation_error": "patch old text mismatch"
+    },
+    {
+      "attempt_id": "1b624014-7f02-4de2-b3ac-0b7283ed37d8",
+      "task_id": "qwen3.8:27b-mlx::reading-3077c2e0a49061bbcf29",
+      "status": "invalid",
+      "raw_reply": "{\"model\":\"qwen3.8:27b-mlx\",\"created_at\":\"2026-10-25T10:19:39.411565Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"unit_id\\\": \\\"reading-3077c2e0a49061bbcf29\\\",\\n  \\\"status\\\": \\\"proposed\\\",\\n  \\\"patches\\\": [\\n    {\\n      \\\"source_id\\\": \\\"congressionalg7391unit:207:par_000207_000040\\\",\\n      \\\"start\\\": 10,\\n      \\\"end\\\": 20,\\n      \\\"old\\\": \\\"furilier\\\",\\n      \\\"new\\\": \\\"further\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-3077c2e0a49061bbcf29-leaf-207\\\"\\n      ],\\n      \\\"reason\\\": \\\"OCR misread 'further' as 'furilier'; image shows 'further'.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalg7391unit:207:par_000207_000040\\\",\\n      \\\"start\\\": 118,\\n      \\\"end\\\": 126,\\n      \\\"old\\\": \\\"slavei-y\\\",\\n      \\\"new\\\": \\\"slavery\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-3077c2e0a49061bbcf29-leaf-207\\\"\\n      ],\\n      \\\"reason\\\": \\\"OCR misread 'slavery' as 'slavei-y'; image shows 'slavery'.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalg7391unit:207:par_000207_000040\\\",\\n      \\\"start\\\": 330,\\n      \\\"end\\\": 333,\\n      \\\"old\\\": \\\"arc\\\",\\n      \\\"new\\\": \\\"are\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-3077c2e0a49061bbcf29-leaf-207\\\"\\n      ],\\n      \\\"reason\\\": \\\"OCR misread 'are' as 'arc'; image shows 'are'.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalg7391unit:207:par_000207_000040\\\",\\n      \\\"start\\\": 450,\\n      \\\"end\\\": 453,\\n      \\\"old\\\": \\\"arc\\\",\\n      \\\"new\\\": \\\"are\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-3077c2e0a49061bbcf29-leaf-207\\\"\\n      ],\\n      \\\"reason\\\": \\\"OCR misread 'are' as 'arc'; image shows 'are'.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalg7391unit:207:par_000207_000041\\\",\\n      \\\"start\\\": 180,\\n      \\\"end\\\": 189,\\n      \\\"old\\\": \\\"commitU\\\\\\\"d\\\",\\n      \\\"new\\\": \\\"committed\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-3077c2e0a49061bbcf29-leaf-207\\\"\\n      ],\\n      \\\"reason\\\": \\\"OCR misread 'committed' as 'commitU\\\\\\\"d'; image shows 'committed'.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalg7391unit:207:par_000207_000041\\\",\\n      \\\"start\\\": 230,\\n      \\\"end\\\": 238,\\n      \\\"old\\\": \\\"ofl'enses\\\",\\n      \\\"new\\\": \\\"offenses\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-3077c2e0a49061bbcf29-leaf-207\\\"\\n      ],\\n      \\\"reason\\\": \\\"OCR misread 'offenses' as 'ofl'enses'; image shows 'offenses'.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalg7391unit:207:par_000207_000041\\\",\\n      \\\"start\\\": 530,\\n      \\\"end\\\": 535,\\n      \\\"old\\\": \\\"eases\\\",\\n      \\\"new\\\": \\\"cases\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-3077c2e0a49061bbcf29-leaf-207\\\"\\n      ],\\n      \\\"reason\\\": \\\"OCR misread 'cases' as 'eases'; image shows 'cases'.\\\"\\n    }\\n  ],\\n  \\\"uncertain\\\": []\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":53631567166,\"load_duration\":8193000,\"prompt_eval_count\":3266,\"prompt_eval_cached_count\":588,\"prompt_eval_duration\":24012054375,\"eval_count\":1070,\"eval_duration\":29541147167}",
+      "detail": null,
+      "started_at": "2026-10-25 10:18:45",
+      "elapsed_seconds": 53.63604399980977,
+      "finished_at": "2026-10-25 10:19:39",
+      "request_sha256": "4d20bfc435feeff8b9a1b4241dcda72a797dd88278c455de1d3ef395a81af0de",
+      "usage": {
+        "eval_count": 1070,
+        "load_duration": 8193000,
+        "prompt_eval_count": 3266,
+        "total_duration": 53631567166
+      },
+      "input_count_parity": true,
+      "replayed_validation_error": "patch old text mismatch"
+    },
+    {
+      "attempt_id": "00d2efd7-b3ce-435b-846a-1659d59a1310",
+      "task_id": "qwen3.8:27b-mlx::reading-845d5b7741ad057cdf8d",
+      "status": "invalid",
+      "raw_reply": "{\"model\":\"qwen3.8:27b-mlx\",\"created_at\":\"2026-10-25T10:20:15.454734Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"unit_id\\\": \\\"reading-845d5b7741ad057cdf8d\\\",\\n  \\\"status\\\": \\\"proposed\\\",\\n  \\\"patches\\\": [\\n    {\\n      \\\"source_id\\\": \\\"congressionalglo7392unit:408:par_000408_000021\\\",\\n      \\\"start\\\": 230,\\n      \\\"end\\\": 236,\\n      \\\"old\\\": \\\"gi-eat\\\",\\n      \\\"new\\\": \\\"great\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-845d5b7741ad057cdf8d-leaf-408\\\"\\n      ],\\n      \\\"reason\\\": \\\"The image shows the word 'great' without hyphens or line-break artifacts.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalglo7392unit:408:par_000408_000021\\\",\\n      \\\"start\\\": 530,\\n      \\\"end\\\": 536,\\n      \\\"old\\\": \\\"appi-e-\\\",\\n      \\\"new\\\": \\\"appre-\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-845d5b7741ad057cdf8d-leaf-408\\\"\\n      ],\\n      \\\"reason\\\": \\\"The image shows 'appre-' at the end of the line, not 'appi-e-'. The 'i' was likely a misread of 'r'.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalglo7392unit:408:par_000408_000022\\\",\\n      \\\"start\\\": 155,\\n      \\\"end\\\": 162,\\n      \\\"old\\\": \\\"countiy\\\",\\n      \\\"new\\\": \\\"country\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-845d5b7741ad057cdf8d-leaf-408\\\"\\n      ],\\n      \\\"reason\\\": \\\"The image clearly shows 'country', not 'countiy'.\\\"\\n    }\\n  ],\\n  \\\"uncertain\\\": []\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":36022368708,\"load_duration\":12745083,\"prompt_eval_count\":2991,\"prompt_eval_cached_count\":588,\"prompt_eval_duration\":21322532333,\"eval_count\":501,\"eval_duration\":14619473917}",
+      "detail": null,
+      "started_at": "2026-10-25 10:19:39",
+      "elapsed_seconds": 36.02728754119016,
+      "finished_at": "2026-10-25 10:20:15",
+      "request_sha256": "d2bdc6ef70368f1f24d0107266226d90058ef86d678bb9e8f2a12ed1124d8ab5",
+      "usage": {
+        "eval_count": 501,
+        "load_duration": 12745083,
+        "prompt_eval_count": 2991,
+        "total_duration": 36022368708
+      },
+      "input_count_parity": true,
+      "replayed_validation_error": "patch old text mismatch"
+    },
+    {
+      "attempt_id": "2bdc0dec-66b3-4216-b555-05994d6a6574",
+      "task_id": "qwen3.8:27b-mlx::reading-cfb03841eb9003d161df",
+      "status": "invalid",
+      "raw_reply": "{\"model\":\"qwen3.8:27b-mlx\",\"created_at\":\"2026-10-25T10:21:18.158899Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"unit_id\\\":\\\"reading-cfb03841eb9003d161df\\\",\\\"status\\\":\\\"proposed\\\",\\\"patches\\\":[{\\\"source_id\\\":\\\"congressionalglo7392unit:397:par_000397_000018\\\",\\\"start\\\":4,\\\"end\\\":11,\\\"old\\\":\\\"ol)ject\\\",\\\"new\\\":\\\"object\\\",\\\"image_ids\\\":[\\\"reading-cfb03841eb9003d161df-leaf-397\\\"],\\\"reason\\\":\\\"The image shows the word 'object' without a stray parenthesis; the OCR introduced an erroneous character.\\\"},{\\\"source_id\\\":\\\"congressionalglo7392unit:397:par_000397_000018\\\",\\\"start\\\":183,\\\"end\\\":191,\\\"old\\\":\\\"ai-gument\\\",\\\"new\\\":\\\"argument\\\",\\\"image_ids\\\":[\\\"reading-cfb03841eb9003d161df-leaf-397\\\"],\\\"reason\\\":\\\"The image shows 'argument' as a single word; the OCR inserted an erroneous 'i' and hyphen.\\\"},{\\\"source_id\\\":\\\"congressionalglo7392unit:397:par_000397_000018\\\",\\\"start\\\":233,\\\"end\\\":243,\\\"old\\\":\\\"argu- mentof\\\",\\\"new\\\":\\\"argument of\\\",\\\"image_ids\\\":[\\\"reading-cfb03841eb9003d161df-leaf-397\\\"],\\\"reason\\\":\\\"The image shows 'argument of' with a space and no hyphen; the OCR merged the words and added a hyphen.\\\"},{\\\"source_id\\\":\\\"congressionalglo7392unit:397:par_000397_000019\\\",\\\"start\\\":333,\\\"end\\\":339,\\\"old\\\":\\\"agreat\\\",\\\"new\\\":\\\"a great\\\",\\\"image_ids\\\":[\\\"reading-cfb03841eb9003d161df-leaf-397\\\"],\\\"reason\\\":\\\"The image shows 'a great' as two separate words; the OCR merged them.\\\"},{\\\"source_id\\\":\\\"congressionalglo7392unit:397:par_000397_000019\\\",\\\"start\\\":403,\\\"end\\\":408,\\\"old\\\":\\\"Avith\\\",\\\"new\\\":\\\"with\\\",\\\"image_ids\\\":[\\\"reading-cfb03841eb9003d161df-leaf-397\\\"],\\\"reason\\\":\\\"The image shows 'with'; the OCR introduced an erroneous 'A'.\\\"},{\\\"source_id\\\":\\\"congressionalglo7392unit:397:par_000397_000020\\\",\\\"start\\\":103,\\\"end\\\":113,\\\"old\\\":\\\"}iossible\\\",\\\"new\\\":\\\"possible\\\",\\\"image_ids\\\":[\\\"reading-cfb03841eb9003d161df-leaf-397\\\"],\\\"reason\\\":\\\"The image shows 'possible'; the OCR introduced an erroneous '}' and 'i'.\\\"},{\\\"source_id\\\":\\\"congressionalglo7392unit:397:par_000397_000020\\\",\\\"start\\\":133,\\\"end\\\":141,\\\"old\\\":\\\"pro- tection\\\",\\\"new\\\":\\\"protection\\\",\\\"image_ids\\\":[\\\"reading-cfb03841eb9003d161df-leaf-397\\\"],\\\"reason\\\":\\\"The image shows 'protection' as a single word; the OCR inserted a hyphen and space.\\\"},{\\\"source_id\\\":\\\"congressionalglo7392unit:397:par_000397_000020\\\",\\\"start\\\":1333,\\\"end\\\":1343,\\\"old\\\":\\\"extx'aneous\\\",\\\"new\\\":\\\"extraneous\\\",\\\"image_ids\\\":[\\\"reading-cfb03841eb9003d161df-leaf-397\\\"],\\\"reason\\\":\\\"The image shows 'extraneous'; the OCR introduced an erroneous 'x' and apostrophe.\\\"}],\\\"uncertain\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":62674114916,\"load_duration\":19237000,\"prompt_eval_count\":4448,\"prompt_eval_cached_count\":588,\"prompt_eval_duration\":35279075958,\"eval_count\":896,\"eval_duration\":27245404084}",
+      "detail": null,
+      "started_at": "2026-10-25 10:20:15",
+      "elapsed_seconds": 62.680372749920934,
+      "finished_at": "2026-10-25 10:21:18",
+      "request_sha256": "0f292b57241a53f9f782384b3ba9d6e1a66e62b94409541c3b47ef4f1c53465f",
+      "usage": {
+        "eval_count": 896,
+        "load_duration": 19237000,
+        "prompt_eval_count": 4448,
+        "total_duration": 62674114916
+      },
+      "input_count_parity": true,
+      "replayed_validation_error": "patch old text mismatch"
+    },
+    {
+      "attempt_id": "37aef1ba-b1b4-4be2-846d-6a4e6700ebf6",
+      "task_id": "qwen3.8:27b-mlx::reading-50a8872c9b2dda1a90bf",
+      "status": "failed",
+      "raw_reply": null,
+      "usage_json": null,
+      "detail": "Explicit root reconciliation: own Python worker interrupted after repeated v1 offset failures; worker20972/20975 exited; server log records HTTP500 then context-canceled termination at2026-10-25T10:21:54Z. Provider usage unknown, not zero. Never retry this task.",
+      "started_at": "2026-10-25 10:21:18",
+      "elapsed_seconds": 91.01797342300415,
+      "finished_at": "2026-10-25 10:22:49",
+      "request_sha256": "4edb39fdf1debf543d86e7aaac699f9a71b9a82907af6b15f4a4a5d7fd6c79a3",
+      "usage": null
+    }
+  ]
+}

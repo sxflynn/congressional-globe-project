@@ -7,6 +7,7 @@ import time
 from collections.abc import Callable
 from contextlib import nullcontext
 from datetime import UTC, datetime
+from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
@@ -22,6 +23,7 @@ from congressional_globe.reading_contracts import (
     validate_reply,
 )
 from congressional_globe.reading_controls import control_passes
+from congressional_globe.reading_quotes import QuoteReadingReply, validate_quote_reply
 from congressional_globe.reading_requests import materialize_record
 from congressional_globe.reading_run_store import ReadingRunStore
 
@@ -174,7 +176,7 @@ def _send(store, attempt_id, task_id, base_url, request_body, timeout, opener, s
 
 def _invalid_reply(store, attempt_id, task_id, raw, detail, started, is_control=False):
     store.record_reply(attempt_id, raw, None)
-    store.complete(attempt_id, "invalid")
+    store.complete(attempt_id, "invalid", detail)
     result = {
         "task_id": task_id,
         "status": "invalid",
@@ -231,16 +233,25 @@ def _validate_saved_reply(store, attempt_id, task_id, record, unit, reply, usage
 def _parse_and_derive(record, unit, reply):
     expected = record["expected_input_tokens"]
     _validate_response(reply, record, expected)
-    parsed = ReadingReply.model_validate_json(_response_content(reply))
     coverage = {} if record.get("control_kind") else _coverage(record)
-    derived = validate_reply(unit, parsed, coverage)
+    parsed, derived = _derive_response(record, unit, _response_content(reply), coverage)
     if record.get("control_kind") and not control_passes(unit, parsed):
         raise ValueError("source-evidence control did not preserve uncertainty across targets")
     return parsed, derived
 
 
+def _derive_response(record, unit, content, coverage):
+    contract = record.get("response_contract", "offset-v1")
+    if contract == "quote-v2":
+        return validate_quote_reply(unit, QuoteReadingReply.model_validate_json(content), coverage)
+    if contract != "offset-v1":
+        raise ValueError("unknown reading response contract")
+    parsed = ReadingReply.model_validate_json(content)
+    return parsed, validate_reply(unit, parsed, coverage)
+
+
 def _invalid_saved_reply(store, attempt_id, task_id, record, error, started):
-    store.complete(attempt_id, "invalid")
+    store.complete(attempt_id, "invalid", str(error))
     result = _invalid_result(task_id, attempt_id, str(error), started)
     if isinstance(error, _InputParityError):
         result["halt_batch"] = True
@@ -314,6 +325,7 @@ def dispatch(
     total_seconds: int = MAX_TOTAL_SECONDS,
     per_model_seconds: int = MAX_MODEL_SECONDS,
     call_seconds: int = MAX_CALL_SECONDS,
+    stop_file: str | Path | None = None,
 ) -> list[dict[str, Any]]:
     """Dispatch in manifest order; never resumes an unresolved request or retries."""
     proof = RuntimeCheck.model_validate(runtime)
@@ -341,6 +353,7 @@ def dispatch(
         per_model_seconds,
         call_seconds,
         max_calls,
+        Path(stop_file) if stop_file is not None else None,
     )
 
 
@@ -399,28 +412,72 @@ def _run_pending(
     per_model_seconds,
     call_seconds,
     max_calls,
+    stop_file,
 ):
-    results = []
     by_id = {_task_id(record): record for record in records}
     timing = store.timing_summary()
     deadline = time.monotonic() + max(0, total_seconds - timing["seconds"])
     lock_context = lock_factory() if lock_factory else nullcontext()
     with lock_context:
-        while _has_dispatch_time(store, deadline):
-            result = _dispatch_next(
-                store,
-                by_id,
-                units,
-                base_url,
-                opener,
-                deadline,
-                per_model_seconds,
-                call_seconds,
-                max_calls,
-            )
-            if not _record_and_continue(results, result):
-                break
+        return _dispatch_loop(
+            store,
+            by_id,
+            units,
+            base_url,
+            opener,
+            deadline,
+            per_model_seconds,
+            call_seconds,
+            max_calls,
+            stop_file,
+        )
+
+
+def _dispatch_loop(
+    store,
+    by_id,
+    units,
+    base_url,
+    opener,
+    deadline,
+    per_model_seconds,
+    call_seconds,
+    max_calls,
+    stop_file,
+):
+    results = []
+    while _has_dispatch_time(store, deadline):
+        stopped = _stop_requested(store, stop_file)
+        if stopped is not None:
+            results.append(stopped)
+            break
+        result = _dispatch_next(
+            store,
+            by_id,
+            units,
+            base_url,
+            opener,
+            deadline,
+            per_model_seconds,
+            call_seconds,
+            max_calls,
+        )
+        if not _record_and_continue(results, result):
+            break
     return results
+
+
+def _stop_requested(store, stop_file: Path | None) -> dict | None:
+    if stop_file is None or not stop_file.exists():
+        return None
+    pending = store.summary()["pending"]
+    store.record_stop_report(str(stop_file), pending)
+    return {
+        "status": "stopped",
+        "reason": "stop_file_present",
+        "stop_file": str(stop_file),
+        "pending_tasks": pending,
+    }
 
 
 def _has_dispatch_time(store, deadline) -> bool:

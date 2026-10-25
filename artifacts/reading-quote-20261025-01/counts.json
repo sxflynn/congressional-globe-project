@@ -1,0 +1,162 @@
+{
+  "schema_version": "reading-count-results-v1",
+  "method": "Offline pure-Go implementation of pinned Ollama tokenizer and the pinned model renderer/media-expansion code paths for the frozen request shape. Counts are source-derived; no Ollama route, API/model request, model loading, GPU, or inference occurred.",
+  "pinned_ollama_commit": "f580b5484a58c8370c35d669555bf887783a3f68",
+  "runtime_binary_sha256": "e5c7c0ffa50d23d0f0e59cbf325f689b0010ee5563be89b73b05f08844e19e6b",
+  "runtime_binary_source_parity": "not proven; binary reports vcs.modified=true",
+  "options_checked": {
+    "num_ctx": 16384,
+    "num_predict": 4096,
+    "envelope_rule": "total_input_tokens + num_predict <= num_ctx"
+  },
+  "counts": [
+    {
+      "model": "qwen3.8:27b-mlx",
+      "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+      "unit_id": "reading-d1964b2fd88da0df3db2",
+      "request_sha256": "8dc07272c438eeb59bd3d902d0951588a8d01f1094ded48431dbac3f2e6c3d62",
+      "rendered_prompt_sha256": "4b905340f70ca14ded315818a22d01bb6e349a2ae2f3e3054cea0b5961858ca7",
+      "text_tokens": 2813,
+      "image_tokens": 1142,
+      "total_input_tokens": 3955,
+      "requested_num_ctx": 16384,
+      "requested_num_predict": 4096,
+      "fits_requested_context_with_output_reserve": true,
+      "images": [
+        {
+          "id": "reading-d1964b2fd88da0df3db2-leaf-576",
+          "path": "artifacts/reading-images-20261024-01/reading-d1964b2fd88da0df3db2-leaf-576/crop.jpg",
+          "sha256": "9cdacca2052d0ed5d100584323efdc456bcc4b685c443d1198d6c44ae20f1f7f",
+          "width": 947,
+          "height": 1229,
+          "expanded_tokens": 1142
+        }
+      ]
+    },
+    {
+      "model": "qwen3.8:27b-mlx",
+      "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+      "unit_id": "reading-3077c2e0a49061bbcf29",
+      "request_sha256": "2c74cad62131928eb0a732ffe94bce2ef2dfbc570fb5c01466a61d0b45e632e9",
+      "rendered_prompt_sha256": "908bffd7b2cb254b51c83259edcd32a233daacb653a00714e96222076b2d9964",
+      "text_tokens": 2237,
+      "image_tokens": 1112,
+      "total_input_tokens": 3349,
+      "requested_num_ctx": 16384,
+      "requested_num_predict": 4096,
+      "fits_requested_context_with_output_reserve": true,
+      "images": [
+        {
+          "id": "reading-3077c2e0a49061bbcf29-leaf-207",
+          "path": "artifacts/reading-images-20261024-01/reading-3077c2e0a49061bbcf29-leaf-207/crop.jpg",
+          "sha256": "b3d0dd264a160017eb18dc2305e10f76452a4e258d21ebf476b4de62fe9ba2c5",
+          "width": 953,
+          "height": 1169,
+          "expanded_tokens": 1112
+        }
+      ]
+    },
+    {
+      "model": "gemma4:31b-mlx",
+      "model_digest": "637cc0ff15709212de4aa694be67e3af5e80533ca538c86ad69c53c511e40840",
+      "unit_id": "reading-d1964b2fd88da0df3db2",
+      "request_sha256": "dc820cc6df29d47063aa305b82b612571de2ea7631934a3f7bc77eb7ef74dcbd",
+      "rendered_prompt_sha256": "c428e83d746087597a3f5705e9fa82600eb747ca2a510305695eb858af173731",
+      "text_tokens": 2855,
+      "image_tokens": 522,
+      "total_input_tokens": 3377,
+      "requested_num_ctx": 16384,
+      "requested_num_predict": 4096,
+      "fits_requested_context_with_output_reserve": true,
+      "images": [
+        {
+          "id": "reading-d1964b2fd88da0df3db2-leaf-576",
+          "path": "artifacts/reading-images-20261024-01/reading-d1964b2fd88da0df3db2-leaf-576/crop.jpg",
+          "sha256": "9cdacca2052d0ed5d100584323efdc456bcc4b685c443d1198d6c44ae20f1f7f",
+          "width": 947,
+          "height": 1229,
+          "expanded_tokens": 522
+        }
+      ]
+    },
+    {
+      "model": "gemma4:31b-mlx",
+      "model_digest": "637cc0ff15709212de4aa694be67e3af5e80533ca538c86ad69c53c511e40840",
+      "unit_id": "reading-3077c2e0a49061bbcf29",
+      "request_sha256": "b2f8b2c322cfad4b23eb01276cdabcdb0299714738cd039d61ccfe17e5fdf990",
+      "rendered_prompt_sha256": "f062a866420d3cb944c8efb07aff57e85a9d71006ecfd3d67e24324d3661e4dc",
+      "text_tokens": 2269,
+      "image_tokens": 548,
+      "total_input_tokens": 2817,
+      "requested_num_ctx": 16384,
+      "requested_num_predict": 4096,
+      "fits_requested_context_with_output_reserve": true,
+      "images": [
+        {
+          "id": "reading-3077c2e0a49061bbcf29-leaf-207",
+          "path": "artifacts/reading-images-20261024-01/reading-3077c2e0a49061bbcf29-leaf-207/crop.jpg",
+          "sha256": "b3d0dd264a160017eb18dc2305e10f76452a4e258d21ebf476b4de62fe9ba2c5",
+          "width": 953,
+          "height": 1169,
+          "expanded_tokens": 548
+        }
+      ]
+    },
+    {
+      "model": "muse-glimmer:30b-mlx",
+      "model_digest": "015fa21845bead56096c2f8773aff7a2047063507fe82897e662ad544c5b2fa6",
+      "unit_id": "reading-d1964b2fd88da0df3db2",
+      "request_sha256": "36140d4f108a02c787c136043bbb80a7ae010c56755355cb90000e9b84378152",
+      "rendered_prompt_sha256": "f412215f09d2884e3e72f80167cedefb69612c6b6066f5385cd39b2230436080",
+      "text_tokens": 2213,
+      "image_tokens": 1498,
+      "total_input_tokens": 3711,
+      "requested_num_ctx": 16384,
+      "requested_num_predict": 4096,
+      "fits_requested_context_with_output_reserve": true,
+      "images": [
+        {
+          "id": "reading-d1964b2fd88da0df3db2-leaf-576",
+          "path": "artifacts/reading-images-20261024-01/reading-d1964b2fd88da0df3db2-leaf-576/crop.jpg",
+          "sha256": "9cdacca2052d0ed5d100584323efdc456bcc4b685c443d1198d6c44ae20f1f7f",
+          "width": 947,
+          "height": 1229,
+          "expanded_tokens": 1498
+        }
+      ]
+    },
+    {
+      "model": "muse-glimmer:30b-mlx",
+      "model_digest": "015fa21845bead56096c2f8773aff7a2047063507fe82897e662ad544c5b2fa6",
+      "unit_id": "reading-3077c2e0a49061bbcf29",
+      "request_sha256": "375d38deba5dfca542cc0c794fd2700609a6911f3be4c5d0dc455854fec128b3",
+      "rendered_prompt_sha256": "c57e2ba3c92491b2fa9d53a7a8ba9f7c707e7cccd7faee1bb9be7a762a2803b6",
+      "text_tokens": 1890,
+      "image_tokens": 1430,
+      "total_input_tokens": 3320,
+      "requested_num_ctx": 16384,
+      "requested_num_predict": 4096,
+      "fits_requested_context_with_output_reserve": true,
+      "images": [
+        {
+          "id": "reading-3077c2e0a49061bbcf29-leaf-207",
+          "path": "artifacts/reading-images-20261024-01/reading-3077c2e0a49061bbcf29-leaf-207/crop.jpg",
+          "sha256": "b3d0dd264a160017eb18dc2305e10f76452a4e258d21ebf476b4de62fe9ba2c5",
+          "width": 953,
+          "height": 1169,
+          "expanded_tokens": 1430
+        }
+      ]
+    }
+  ],
+  "request_manifest": {
+    "path": "artifacts/reading-quote-20261025-01/requests.json",
+    "sha256": "f4c2c92b3549f63fd8521234bdbb167bfd741cc8c4d892cb27926e10a9a89116",
+    "request_count": 6
+  },
+  "counter_provenance": "artifacts/reading-count-20261025-01/provenance.json",
+  "summary": {
+    "all6fit": true,
+    "max_input_tokens": 3955
+  }
+}

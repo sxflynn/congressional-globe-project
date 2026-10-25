@@ -109,6 +109,11 @@ class ReadingRunStore:
                  started_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
                  elapsed_seconds REAL,
                  finished_at TEXT
+               );
+               CREATE TABLE IF NOT EXISTS stop_reports (
+                 report_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 report_json TEXT NOT NULL,
+                 created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
                );"""
         )
         columns = {row["name"] for row in self._db.execute("PRAGMA table_info(attempts)")}
@@ -214,15 +219,30 @@ class ReadingRunStore:
         )
         return _collect_timing(rows)
 
+    def record_stop_report(self, stop_file: str, pending_tasks: int) -> None:
+        report = _json(
+            {"reason": "stop_file_present", "stop_file": stop_file, "pending_tasks": pending_tasks}
+        )
+        with self._write_transaction():
+            self._db.execute("INSERT INTO stop_reports (report_json) VALUES (?)", (report,))
+
+    def stop_reports(self) -> list[dict]:
+        return [
+            json.loads(row["report_json"])
+            for row in self._db.execute("SELECT report_json FROM stop_reports ORDER BY report_id")
+        ]
+
     @staticmethod
     def _timing_values(row: sqlite3.Row) -> tuple[str | None, float | None]:
         request = json.loads(row["request_json"])
         return request.get("model"), row["elapsed_seconds"]
 
-    def complete(self, attempt_id: str, status: Literal["valid", "invalid"]) -> None:
+    def complete(
+        self, attempt_id: str, status: Literal["valid", "invalid"], detail: str | None = None
+    ) -> None:
         if status not in {"valid", "invalid"}:
             raise ValueError("completion status must be valid or invalid")
-        self._terminal(attempt_id, status, None, require_reply=True)
+        self._terminal(attempt_id, status, detail, require_reply=True)
 
     def fail(self, attempt_id: str, status: Literal["failed", "timeout"], detail: str) -> None:
         if status not in {"failed", "timeout"}:

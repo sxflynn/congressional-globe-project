@@ -36,9 +36,13 @@ def _sha(path):
     return digest(path.read_bytes())
 
 
-def prepare() -> tuple[list[dict], dict, dict, dict]:
-    manifest, counts, protocol, review = map(_json, [MANIFEST, COUNTS, PROTOCOL, REVIEW])
-    if counts["request_manifest"]["sha256"] != _sha(MANIFEST):
+def prepare(
+    manifest_path=MANIFEST, counts_path=COUNTS, protocol_path=PROTOCOL
+) -> tuple[list[dict], dict, dict, dict]:
+    manifest, counts, protocol, review = map(
+        _json, [manifest_path, counts_path, protocol_path, REVIEW]
+    )
+    if counts["request_manifest"]["sha256"] != _sha(manifest_path):
         raise ValueError("count evidence does not match launch request manifest")
     if counts["runtime_binary_sha256"] != _sha(BINARY):
         raise ValueError("runtime binary differs from counted source/build evidence")
@@ -46,9 +50,12 @@ def prepare() -> tuple[list[dict], dict, dict, dict]:
     units = {u.id: u for u in _units()}
     verify_index(IMAGES, list(units.values()))
     rows = _counted_records(manifest, counts)
-    evidence = _readiness(rows, counts)
+    evidence = _readiness(rows, counts, counts_path, protocol_path)
     config = dict(
-        files={str(p): _sha(p) for p in [MANIFEST, COUNTS, PROTOCOL, REVIEW, CANDIDATES, IMAGES]},
+        files={
+            str(p): _sha(p)
+            for p in [manifest_path, counts_path, protocol_path, REVIEW, CANDIDATES, IMAGES]
+        },
         code={
             str(p): _sha(p) for p in sorted(Path("src/congressional_globe").glob("reading_*.py"))
         },
@@ -106,14 +113,14 @@ def _check_count(record, count):
     return {**record, "token_fit": "verified", "launch_ready": True}
 
 
-def _readiness(rows, counts):
+def _readiness(rows, counts, counts_path=COUNTS, protocol_path=PROTOCOL):
     by_hash = {row["request_sha256"]: row for row in counts["counts"]}
     return {
         _task_id(record): RequestReadiness(
             request_sha256=record["request_sha256"],
             model_digest=record["model_digest"],
-            token_fit_sha256=_sha(COUNTS),
-            source_expectation_sha256=_sha(PROTOCOL),
+            token_fit_sha256=_sha(counts_path),
+            source_expectation_sha256=_sha(protocol_path),
             review_effort_sha256=_sha(REVIEW),
             expected_input_tokens=by_hash[record["request_sha256"]]["total_input_tokens"],
             token_fit_verified=True,
@@ -134,8 +141,23 @@ def _process_proof(path: Path):
     return proof
 
 
-def launch(output: Path, process_proof: Path, *, execute=False) -> dict:
-    rows, units, evidence, config = prepare()
+def launch(
+    output: Path,
+    process_proof: Path,
+    *,
+    execute=False,
+    manifest_path=MANIFEST,
+    counts_path=COUNTS,
+    protocol_path=PROTOCOL,
+    stop_file=None,
+    max_calls=60,
+    total_seconds=7200,
+    per_model_seconds=2400,
+) -> dict:
+    rows, units, evidence, config = prepare(manifest_path, counts_path, protocol_path)
+    config.update(
+        max_calls=max_calls, total_seconds=total_seconds, per_model_seconds=per_model_seconds
+    )
     output.mkdir(exist_ok=True, parents=True)
     if not execute:
         return dict(status="offline_ready", requests=len(rows), config=config, provider_calls=0)
@@ -155,7 +177,17 @@ def launch(output: Path, process_proof: Path, *, execute=False) -> dict:
     store = ReadingRunStore(output / "attempts.sqlite", config, tasks)
     try:
         results = dispatch(
-            store, rows, units, evidence, runtime, "http://127.0.0.1:11434", opt_in=True
+            store,
+            rows,
+            units,
+            evidence,
+            runtime,
+            "http://127.0.0.1:11434",
+            opt_in=True,
+            max_calls=max_calls,
+            total_seconds=total_seconds,
+            per_model_seconds=per_model_seconds,
+            stop_file=stop_file,
         )
         report = dict(summary=store.summary(), results=results, config=config)
         (output / f"results-{uuid.uuid4()}.json").write_text(
@@ -171,8 +203,30 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--process-proof", type=Path)
     parser.add_argument("--execute", action="store_true")
+    parser.add_argument("--manifest", type=Path, default=MANIFEST)
+    parser.add_argument("--counts", type=Path, default=COUNTS)
+    parser.add_argument("--protocol", type=Path, default=PROTOCOL)
+    parser.add_argument("--stop-file", type=Path)
+    parser.add_argument("--max-calls", type=int, default=60)
+    parser.add_argument("--total-seconds", type=int, default=7200)
+    parser.add_argument("--per-model-seconds", type=int, default=2400)
     args = parser.parse_args()
-    print(json.dumps(launch(args.output, args.process_proof, execute=args.execute)))
+    print(
+        json.dumps(
+            launch(
+                args.output,
+                args.process_proof,
+                execute=args.execute,
+                manifest_path=args.manifest,
+                counts_path=args.counts,
+                protocol_path=args.protocol,
+                stop_file=args.stop_file,
+                max_calls=args.max_calls,
+                total_seconds=args.total_seconds,
+                per_model_seconds=args.per_model_seconds,
+            )
+        )
+    )
 
 
 if __name__ == "__main__":

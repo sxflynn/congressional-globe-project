@@ -1,0 +1,68 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/reading_launch.py", line 179, in <module>
+    main()
+    ~~~~^^
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/reading_launch.py", line 175, in main
+    print(json.dumps(launch(args.output, args.process_proof, execute=args.execute)))
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/reading_launch.py", line 157, in launch
+    results = dispatch(
+        store, rows, units, evidence, runtime, "http://127.0.0.1:11434", opt_in=True
+    )
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/reading_dispatch.py", line 325, in dispatch
+    return _run_pending(
+        store,
+    ...<16 lines>...
+        max_calls,
+    )
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/reading_dispatch.py", line 410, in _run_pending
+    result = _dispatch_next(
+        store,
+    ...<7 lines>...
+        max_calls,
+    )
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/reading_dispatch.py", line 461, in _dispatch_next
+    return _attempt(
+        store,
+    ...<4 lines>...
+        opener,
+    )
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/reading_dispatch.py", line 148, in _attempt
+    raw_or_error = _send(
+        store, attempt_id, task_id, base_url, request_body, timeout, opener, started
+    )
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/reading_dispatch.py", line 158, in _send
+    return _post_raw(base_url.rstrip("/") + "/api/chat", request_body, timeout, opener)
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/reading_dispatch.py", line 87, in _post_raw
+    with opener(request, timeout=timeout) as response:
+         ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 487, in open
+    response = self._open(req, data)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 1349, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 1324, in do_open
+    r = h.getresponse()
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 1478, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 343, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 304, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 729, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+KeyboardInterrupt

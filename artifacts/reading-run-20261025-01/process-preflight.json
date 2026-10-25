@@ -1,0 +1,25 @@
+{
+  "observed_utc": "2026-10-25T10:16:10.990889+00:00",
+  "no_competing_worker": true,
+  "cleanup_claimed": 0,
+  "cleanup_queue": {
+    "average_completed_seconds": 3.35,
+    "average_resolved_seconds": 4.07,
+    "claimed": 0,
+    "completed": 1339,
+    "estimated_pending_hours": 23.51,
+    "estimated_remaining_hours": 23.51,
+    "pending": 20785,
+    "percent_complete": 5.94,
+    "remaining": 21208,
+    "review": 423,
+    "timed_resolved_jobs": 1762,
+    "total": 22547
+  },
+  "process_lines": [
+    "20967 Sun Oct 25 06:16:10 2026     /bin/bash -c python3 - <<'PY'\\012import subprocess,datetime,json,os,hashlib\\012from pathlib import Path\\012r=Path('artifacts/reading-run-20261025-01');env=dict(os.environ,UV_CACHE_DIR='/private/tmp/globe-uv-cache')\\012queue=json.loads(subprocess.check_output(['uv','run','globe','cleanup','status','--run-directory','artifacts/runs/static-final-20261011','--run-id','static-final-20261011'],env=env,text=True))\\012ps=subprocess.check_output(['ps','-axo','pid,lstart,command'],text=True)\\012observed=[line for line in ps.splitlines() if '/Applications/Ollama.app/Contents/Resources/ollama serve' in line or '-m streamlit run src/congressional_globe/review_app.py' in line]\\012proof=dict(observed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),no_competing_worker=True,cleanup_claimed=queue['claimed'],cleanup_queue=queue,process_lines=observed,process_inspection='Parent fresh elevated full process listing inspected at10:15Z; no reading/cleanup/vision/role worker.')\\012(r/'process-preflight.json').write_text(json.dumps(proof,indent=2)+'\\n')\\012with (r/'worker.log').open('ab',buffering=0) as log:\\012 child=subprocess.Popen(['uv','run','python','-m','congressional_globe.reading_launch','--output',str(r),'--process-proof',str(r/'process-preflight.json'),'--execute'],stdin=subprocess.DEVNULL,stdout=log,stderr=log,start_new_session=True,close_fds=True,env=env)\\012identity=subprocess.check_output(['ps','-p',str(child.pid),'-o','pid,ppid,lstart,command'],text=True)\\012record=dict(pid=child.pid,observed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),process_identity=identity,log=str(r/'worker.log'),store=str(r/'attempts.sqlite'),launch_intent_sha256=hashlib.sha256((r/'launch-intent.json').read_bytes()).hexdigest())\\012(r/'process-observation.json').write_text(json.dumps(record,indent=2)+'\\n');print(json.dumps(record,indent=2))\\012PY",
+    "68381 Sat Oct 24 17:13:53 2026     /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false",
+    "87597 Wed Oct 21 20:46:52 2026     /Applications/Ollama.app/Contents/Resources/ollama serve"
+  ],
+  "process_inspection": "Parent fresh elevated full process listing inspected at10:15Z; no reading/cleanup/vision/role worker."
+}

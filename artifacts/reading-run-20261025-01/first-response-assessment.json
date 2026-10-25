@@ -1,0 +1,16 @@
+{
+  "task_id": "qwen3.8:27b-mlx::reading-d1964b2fd88da0df3db2",
+  "host_status": "invalid",
+  "raw_reply_sha256": "576a1b216079000d8b3b7691d2a4a53880a1fc867f301a74d97a445c682e456c",
+  "expected_input_tokens": 3872,
+  "observed_input_tokens": 3872,
+  "input_count_parity": true,
+  "elapsed_seconds": 53.24089345801622,
+  "observations": "Four proposed replacements (anxl→and, liesolved→Resolved, oJf→of, suflioient→sufficient) agree with the inspected source crop. Every supplied raw offset is wrong; host rejects the full reply. No offsets repaired or changes applied.",
+  "scope": "AI source-image diagnostic on one completed response, not human grading or general accuracy claim.",
+  "source_image": "artifacts/reading-images-20261024-01/reading-d1964b2fd88da0df3db2-leaf-576/crop.jpg",
+  "source_image_sha256": "9cdacca2052d0ed5d100584323efdc456bcc4b685c443d1198d6c44ae20f1f7f",
+  "critical_supported_readings": 4,
+  "invalid_coordinate_patches": 4,
+  "accepted_corpus_edits": 0
+}

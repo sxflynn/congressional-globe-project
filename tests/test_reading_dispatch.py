@@ -148,7 +148,7 @@ def _reply(record):
     return json.dumps(payload)
 
 
-def _call(store, unit, record, ready, runtime, opener):
+def _call(store, unit, record, ready, runtime, opener, stop_file=None):
     return dispatch(
         store=store,
         records=[record],
@@ -159,6 +159,7 @@ def _call(store, unit, record, ready, runtime, opener):
         opt_in=True,
         opener=opener,
         lock_factory=lambda: _response("unused"),
+        stop_file=stop_file,
     )
 
 
@@ -291,6 +292,61 @@ def test_prompt_token_mismatch_is_saved_and_halts_batch(tmp_path):
     attempt = store.attempt(result[0]["attempt_id"])
     assert attempt["raw_reply"] == raw
     assert attempt["usage"]["prompt_eval_count"] == 13
+    assert "parity mismatch" in attempt["detail"]
+    store.close()
+
+
+def test_stop_file_after_response_prevents_next_call_and_persists_report(tmp_path):
+    unit, first, first_ready, runtime, store = _setup(tmp_path)
+    store.close()
+    second = _other_request(tmp_path, unit, first)
+    second.update(token_fit="verified", launch_ready=True)
+    paragraph = unit.target[0].model_copy(update={"paragraph_id": "unrelated-source"})
+    second_unit = unit.model_copy(update={"id": second["unit_id"], "target": [paragraph]})
+    second_ready = first_ready.model_copy(update={"request_sha256": second["request_sha256"]})
+    records = [first, second]
+    units = {unit.id: unit, second_unit.id: second_unit}
+    readiness = {
+        _task_id(first): first_ready,
+        _task_id(second): second_ready,
+    }
+    tasks = [
+        {
+            "task_id": _task_id(record),
+            "request_sha256": record["request_sha256"],
+            "model_digest": record["model_digest"],
+        }
+        for record in records
+    ]
+    store = ReadingRunStore(
+        tmp_path / "stop-run.sqlite", {"run_id": "stop-test", "model": first["model"]}, tasks
+    )
+    stop_file = tmp_path / "STOP"
+    calls = []
+
+    def opener(request, timeout):
+        calls.append(request.full_url)
+        stop_file.write_text("stop after this response")
+        return _response(_reply(first))
+
+    result = dispatch(
+        store,
+        records,
+        units,
+        readiness,
+        runtime,
+        "http://localhost:11434",
+        opt_in=True,
+        opener=opener,
+        lock_factory=lambda: _response("unused"),
+        stop_file=stop_file,
+    )
+    assert [item["status"] for item in result] == ["valid", "stopped"]
+    assert len(calls) == 1
+    assert store.summary()["pending"] == 1
+    assert store.stop_reports() == [
+        {"reason": "stop_file_present", "stop_file": str(stop_file), "pending_tasks": 1}
+    ]
     store.close()
 
 
@@ -408,3 +464,31 @@ def test_output_truncation_cannot_mask_input_count_mismatch():
     )
     with pytest.raises(dispatcher._InputParityError, match="parity"):
         dispatcher._validate_response(reply, record, 20)
+
+
+def test_quote_v2_derives_positions_then_uses_unchanged_host_guards(tmp_path):
+    unit, record, ready, runtime, store = _setup(tmp_path)
+    record["response_contract"] = "quote-v2"
+    response = json.loads(_reply(record))
+    response["message"]["content"] = json.dumps(
+        dict(
+            unit_id=unit.id,
+            status="proposed",
+            patches=[
+                dict(
+                    source_id=unit.target[0].source_id,
+                    old="short",
+                    new="brief",
+                    image_ids=["crop"],
+                    reason="Synthetic test",
+                )
+            ],
+            uncertain=[],
+        )
+    )
+    results = _call(
+        store, unit, record, ready, runtime, lambda *args, **kwargs: _response(json.dumps(response))
+    )
+    assert results[0]["status"] == "valid"
+    assert results[0]["reply"]["patches"][0]["start"] == 2
+    store.close()
