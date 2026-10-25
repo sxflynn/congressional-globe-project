@@ -33,6 +33,35 @@ def _hash(value: Any) -> str:
     return hashlib.sha256(_json(value).encode("utf-8")).hexdigest()
 
 
+def _add_model_time(totals: dict, model: str, elapsed: float) -> None:
+    bucket = totals.setdefault(model, {"calls": 0, "seconds": 0.0})
+    bucket["calls"] += 1
+    bucket["seconds"] += elapsed
+
+
+def _collect_timing(rows) -> dict:
+    totals: dict[str, dict[str, float | int]] = {}
+    unknown_elapsed = unknown_model = call_count = 0
+    total_seconds = 0.0
+    for row in rows:
+        model, elapsed = ReadingRunStore._timing_values(row)
+        call_count += 1
+        unknown_model += not bool(model)
+        if elapsed is None:
+            unknown_elapsed += 1
+            continue
+        total_seconds += elapsed
+        if model:
+            _add_model_time(totals, model, elapsed)
+    return {
+        "calls": call_count,
+        "seconds": total_seconds,
+        "models": totals,
+        "unknown_elapsed_attempts": unknown_elapsed,
+        "unknown_model_attempts": unknown_model,
+    }
+
+
 class ReadingRunStore:
     """Immutable run identity and exactly-once task claims (not a scheduler).
 
@@ -78,9 +107,13 @@ class ReadingRunStore:
                  status TEXT NOT NULL, request_json TEXT NOT NULL,
                  raw_reply TEXT, usage_json TEXT, detail TEXT,
                  started_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                 elapsed_seconds REAL,
                  finished_at TEXT
                );"""
         )
+        columns = {row["name"] for row in self._db.execute("PRAGMA table_info(attempts)")}
+        if "elapsed_seconds" not in columns:
+            self._db.execute("ALTER TABLE attempts ADD COLUMN elapsed_seconds REAL")
 
     @contextmanager
     def _write_transaction(self) -> Generator[None]:
@@ -154,6 +187,38 @@ class ReadingRunStore:
                 (raw_reply, usage_json, attempt_id),
             )
 
+    def record_elapsed(self, attempt_id: str, elapsed_seconds: float) -> None:
+        """Durably save measured attempt time before terminal validation."""
+        if elapsed_seconds < 0:
+            raise ValueError("elapsed seconds cannot be negative")
+        self._update_inflight(
+            "UPDATE attempts SET elapsed_seconds=? WHERE attempt_id=? AND status='inflight'",
+            (elapsed_seconds, attempt_id),
+        )
+
+    def record_transport_error(self, attempt_id: str, error: str, elapsed_seconds: float) -> None:
+        """Record an ambiguous transport outcome while keeping the attempt inflight."""
+        if elapsed_seconds < 0:
+            raise ValueError("elapsed seconds cannot be negative")
+        detail = _json({"transport_error": error, "usage": None})
+        self._update_inflight(
+            "UPDATE attempts SET detail=?, elapsed_seconds=? "
+            "WHERE attempt_id=? AND status='inflight'",
+            (detail, elapsed_seconds, attempt_id),
+        )
+
+    def timing_summary(self) -> dict:
+        """Return durable elapsed-time and call totals grouped by model."""
+        rows = self._db.execute(
+            "SELECT request_json, elapsed_seconds FROM attempts ORDER BY started_at"
+        )
+        return _collect_timing(rows)
+
+    @staticmethod
+    def _timing_values(row: sqlite3.Row) -> tuple[str | None, float | None]:
+        request = json.loads(row["request_json"])
+        return request.get("model"), row["elapsed_seconds"]
+
     def complete(self, attempt_id: str, status: Literal["valid", "invalid"]) -> None:
         if status not in {"valid", "invalid"}:
             raise ValueError("completion status must be valid or invalid")
@@ -185,7 +250,10 @@ class ReadingRunStore:
             if require_reply and row["raw_reply"] is None:
                 raise ValueError("cannot complete before raw reply is recorded")
             self._db.execute(
-                "UPDATE attempts SET status=?, detail=?, finished_at=CURRENT_TIMESTAMP "
+                "UPDATE attempts SET status=?, detail=?, "
+                "elapsed_seconds=COALESCE(elapsed_seconds, "
+                "MAX(0, (julianday('now') - julianday(started_at)) * 86400)), "
+                "finished_at=CURRENT_TIMESTAMP "
                 "WHERE attempt_id=?",
                 (status, detail, attempt_id),
             )

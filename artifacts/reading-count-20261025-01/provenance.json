@@ -1,0 +1,178 @@
+{
+  "source_repository": "https://github.com/ollama/ollama",
+  "pinned_commit": "f580b5484a58c8370c35d669555bf887783a3f68",
+  "retrieval_base": "https://raw.githubusercontent.com/ollama/ollama/f580b5484a58c8370c35d669555bf887783a3f68/",
+  "retrieved_source_bytes": 501759,
+  "retrieval_cap_bytes": 1000000,
+  "archived_source_files": [
+    {
+      "path": "upstream/api/types.go",
+      "bytes": 44562,
+      "sha256": "9754c38dcde72d04339bdc2f2a851ad87c963bc83d2b8515cc90c2b4ae914145"
+    },
+    {
+      "path": "upstream/go.mod",
+      "bytes": 3858,
+      "sha256": "c8330ba5f762c4bded1401cc8ecadbe85ebe8e5d159fd81da122da986b26cda5"
+    },
+    {
+      "path": "upstream/mlxrunner/client.go",
+      "bytes": 18200,
+      "sha256": "8e73c6e47f74e9907b40466c935ee489d08f6371bf898c12893b95477e84186a"
+    },
+    {
+      "path": "upstream/mlxrunner/media.go",
+      "bytes": 7155,
+      "sha256": "460ad6dabd8606aa4272b7c636d8efdbc0095fff3aa1cf0fb8b3bff601f9e2b2"
+    },
+    {
+      "path": "upstream/mlxrunner/model/gemma4/gemma4.go",
+      "bytes": 55213,
+      "sha256": "03d38dbd09017172db75e1e33321e45d678d96d8d17d6f8f3dc471a8d57acb94"
+    },
+    {
+      "path": "upstream/mlxrunner/model/gemma4/media.go",
+      "bytes": 10245,
+      "sha256": "9ac38ca121e3b60e74f19344ef3bba95a08765cc49ac498e03d9cb707f53d10f"
+    },
+    {
+      "path": "upstream/mlxrunner/model/gemma4/process_image.go",
+      "bytes": 6856,
+      "sha256": "4903ea991f8d36a8579287b7abc65c62fefd0843df136a0ca977d249d6a21b30"
+    },
+    {
+      "path": "upstream/mlxrunner/model/gemma4/vision.go",
+      "bytes": 15965,
+      "sha256": "8a0955f87c5813a72e64c04ababc70b5acc131f10d11b3566e740cda45bc4af9"
+    },
+    {
+      "path": "upstream/mlxrunner/model/glimmer/glimmer.go",
+      "bytes": 24933,
+      "sha256": "529cba8747b0fa0bbf8fdf226d57fd5ac19e3b0e130fb15a4f7001b023d5ba0a"
+    },
+    {
+      "path": "upstream/mlxrunner/model/glimmer/media.go",
+      "bytes": 6703,
+      "sha256": "fdb2e1a8ffe381b7b0da6058e655a688dcd0a8a5192a23eed694013e062e8b64"
+    },
+    {
+      "path": "upstream/mlxrunner/model/glimmer/vision.go",
+      "bytes": 13927,
+      "sha256": "971e82e9675ffc5091f1b2071da1ff052b7d4040b16e49ab715b1479b3e3aed8"
+    },
+    {
+      "path": "upstream/mlxrunner/model/qwen3_5/process_image.go",
+      "bytes": 6270,
+      "sha256": "5b644ec3bbae78292eae2e2d18101024654b3c9766c811145f4fb7d1826251e6"
+    },
+    {
+      "path": "upstream/mlxrunner/model/qwen3_5/qwen3_5.go",
+      "bytes": 45679,
+      "sha256": "55a1136734d0cb82c5dfc078ba70c7232f9e3aa0fe1200bcb0227258afce78fe"
+    },
+    {
+      "path": "upstream/mlxrunner/model/qwen3_5/vision.go",
+      "bytes": 18818,
+      "sha256": "7b473c80f0522ad38ded235bd19f549f3d31b991052703cbb70b1f964ee31423"
+    },
+    {
+      "path": "upstream/mlxrunner/pipeline.go",
+      "bytes": 18462,
+      "sha256": "21e6756dcaa9f25569e5c9e18dedb32a89ecdcbdad443d0e5d65c6bf2a84abec"
+    },
+    {
+      "path": "upstream/mlxrunner/runner.go",
+      "bytes": 9771,
+      "sha256": "1eb36e0905f8100065af9cc27bfb844cc9029d46f79e3b9d54ab9f9d3a600527"
+    },
+    {
+      "path": "upstream/mlxrunner/tokenizer/tokenizer.go",
+      "bytes": 3147,
+      "sha256": "8254b20b50e8c321b5dc6bbc4f376740c30c315db560ef7449aa196efa9d9f51"
+    },
+    {
+      "path": "upstream/mlxrunner/tokenizer/tokenizer_added.go",
+      "bytes": 1532,
+      "sha256": "8c1fdae6c30337f3318113356cf61f09f1162fe951ba2d4bdc866df9f7ad4569"
+    },
+    {
+      "path": "upstream/mlxrunner/tokenizer/tokenizer_bpe.go",
+      "bytes": 4326,
+      "sha256": "661d7b4f51762c46b3e444f5d6aa4235131e9193e3fe4e915b82df54617df752"
+    },
+    {
+      "path": "upstream/mlxrunner/tokenizer/tokenizer_encode.go",
+      "bytes": 5484,
+      "sha256": "e6705da8a686638f6fd7fd538b732b3756e9dd5f2abfd955158d60449419ace4"
+    },
+    {
+      "path": "upstream/mlxrunner/tokenizer/tokenizer_load.go",
+      "bytes": 12185,
+      "sha256": "ceaa537486a76acbbb81f0c5d71482ffc17cd340d7657c17b1085f563630d3e8"
+    },
+    {
+      "path": "upstream/mlxrunner/tokenizer/tokenizer_pretokenizer.go",
+      "bytes": 8753,
+      "sha256": "439c2134ac4c76d1b75c017380d8e2913080517b56cd4252e57d178802acdbb7"
+    },
+    {
+      "path": "upstream/model/renderers/gemma4.go",
+      "bytes": 20508,
+      "sha256": "17d9bd5e43a641c0383504474520f92beef0fde25030467215c60425647bb7ed"
+    },
+    {
+      "path": "upstream/model/renderers/glimmer.go",
+      "bytes": 10167,
+      "sha256": "6b243d720b35012124fa1ac3ad40fe0e2598c4fb3a4d31a5bf6e93459b4e21ad"
+    },
+    {
+      "path": "upstream/model/renderers/image_tags.go",
+      "bytes": 1019,
+      "sha256": "4a94f0ba425516f5393d7c613d6a6b40ab0b126bedf52cbdfa8a473699069607"
+    },
+    {
+      "path": "upstream/model/renderers/qwen35.go",
+      "bytes": 11201,
+      "sha256": "69bca99b53a3db8d599bb9ec8eadf65ce9a72868566a89bfac44d31fe3b565e0"
+    },
+    {
+      "path": "upstream/model/renderers/renderer.go",
+      "bytes": 3759,
+      "sha256": "18a4dc9173eb655ae5ee11779aa74e14a8172154dcf33780598d2f68c032a3fb"
+    },
+    {
+      "path": "upstream/server/prompt.go",
+      "bytes": 4362,
+      "sha256": "79411c4e15ff27fb8bac4dcd96076407e035ec407c0ab1a1840035f9668b4654"
+    },
+    {
+      "path": "upstream/server/routes.go",
+      "bytes": 107641,
+      "sha256": "b8528f189140afc0e4c9389e0c5a220a0dc535ab2b54f8f1ee146fd3974065e6"
+    }
+  ],
+  "licenses": [
+    {
+      "path": "OLLAMA-LICENSE",
+      "sha256": "5934ed2ce0d15154bcdb9c85203210abac0da4314af34081e36df4599f90b226"
+    },
+    {
+      "path": "counter/X-TEXT-LICENSE",
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+    }
+  ],
+  "dependency": {
+    "module": "golang.org/x/text",
+    "version": "v0.27.0",
+    "go_sum": "golang.org/x/text v0.27.0 h1:4fGWRpyh641NLlecmyl4LOe6yDdfaYNrGb2zdfo4JV4=\ngolang.org/x/text v0.27.0/go.mod h1:1D28KMCvyooCX9hBiosv5Tz/+YLxj0j7XhWjpSUF7CU=",
+    "go_sum_sha256": "24588930434a3efc675f5e55428d4e387c3745a9c814b9a38665df2bc1a4bf12",
+    "source": "preexisting local Go module cache; no network/package install during build"
+  },
+  "helper": {
+    "path": "counter/main.go",
+    "sha256": "2de76e2dabae7f06a6ffcb2e52b201c602578b68d53360eabc43e36d461fbfc4",
+    "go_mod_sha256": "7893355814dc04c2cb87e25f7916dcd31b2386b9c60f0e50ff8463f06d019988"
+  },
+  "model_assets": "Referenced by existing model-assets.json paths/digests; large tokenizer/config assets not copied into this artifact and no model weight tensors were read.",
+  "archived_source_bytes": 501759
+}

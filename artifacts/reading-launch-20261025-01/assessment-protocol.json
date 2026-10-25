@@ -1,0 +1,46 @@
+{
+  "schema_version": "reading-assessment-protocol-v1",
+  "stage": "frozen before new model outputs",
+  "human_policy": "HR-003 provisional quality/coverage/resources; HR-009 at most3fixed outputs/10minutes",
+  "source_expectations": {
+    "path": "artifacts/reading-expectations-20261025-01/observations.json",
+    "sha256": "2ff6c3617b47c48dd98baf08f46d071d935922cbcc634e192f20df0df54b3095",
+    "scope": "70raw-span anchors and18boundary/layout notes over18primary passages/19regions; diagnostic AI expectations, not exhaustive references or human gold"
+  },
+  "whole_output_assessment": [
+    "Host validates raw offsets, disjoint edits, target/source-image bindings and preserves all failures; no automatic repair of invalid outputs.",
+    "Root compares every proposed changed span to its actual source image, including substitutions, deletions and insertions. Unsupported critical changes fail fidelity.",
+    "Root reviews each whole derived passage against the source for omissions, residual OCR damage, names/numbers/negations, speaker/quotation boundaries, accidental neighbor inclusion and truncated endings. Unchecked passages remain ungraded, not passed.",
+    "Assess reading flow and pronunciation-relevant text separately from exact fidelity. Preserve historical spelling/grammar; no synthesized speech or listening claim.",
+    "Evaluate70pre-output anchors on raw, static and derived text using exact source mappings; report as diagnostic anchor outcomes, never full character/word error rate.",
+    "Keep invalid/timeout/unknown cases in20-attempt model denominator; report real18 and control2 denominators separately.",
+    "Controls must preserve every unsupported target unchanged and mark every whole target uncertain; wrong-image payload keeps its true foreign source descriptors. No fabricated source binding.",
+    "Freeze each visual assessment with source/image/request/reply hashes and explicit AI reviewer identity before human review.",
+    "Human sees only3cases assigned in HR009selection, with model names hidden; do not substitute a successful case for a failed selected output. Stop at10minutes or sooner and label remaining outputs AI-only."
+  ],
+  "no_full_reference_transcription": true,
+  "source_expectations_frozen": true,
+  "quality_standards_changed": false,
+  "acceptance": "Only provisional pilot criteria from HR003; no P0 closure, automatic corpus adoption or full-run authorization. Human unreviewed coverage is always explicit.",
+  "output_fields": [
+    "unit_id",
+    "model",
+    "request_sha256",
+    "raw_reply_sha256",
+    "source_image_sha256",
+    "schema_and_patch_valid",
+    "anchor_outcomes",
+    "unsupported_critical_changes",
+    "residual_errors",
+    "usable_reading",
+    "needs_review",
+    "visual_scope_and_uncertainties",
+    "reviewer",
+    "review_minutes"
+  ],
+  "evidence": {
+    "docs/archive/human-review/HR-009-v1/applied.json": "32a6ae7d8d8ecf156b650d32726afac2d1072bdfd2c58ca62cc6fd6a4b420dbb",
+    "docs/archive/human-review/HR-009-v1/selection.json": "752a3b141dc3a103d1872cdf05ce952a26c4f20a4fdf5bcfde9f465dd29b89d3",
+    "docs/archive/human-review/HR-003-v1/d02da43f-cba3-4654-be1f-b9f3c72de125.json": "39a5b48858d575789d0cb58f98cf5ffae08597e2c0dc1f086cff7d00f957792b"
+  }
+}

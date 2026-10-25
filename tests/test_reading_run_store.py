@@ -1,3 +1,4 @@
+import json
 import os
 import subprocess
 import sys
@@ -53,6 +54,48 @@ def test_reply_is_write_once_with_identical_idempotent_save(tmp_path):
     assert store.attempt(attempt)["raw_reply"] == "raw"
     assert store.attempt(attempt)["usage"] == usage
     store.close()
+
+
+def test_attempt_elapsed_time_and_model_usage_survive_reopen(tmp_path):
+    path = tmp_path / "timing.sqlite"
+    store = _store(path)
+    attempt = store.claim("a", {"model": "qwen-test", "prompt": "fixed"})
+    store.record_elapsed(attempt, 12.5)
+    store.record_reply(attempt, "{}", {"prompt_eval_count": 3})
+    store.complete(attempt, "valid")
+    summary = store.timing_summary()
+    assert summary["calls"] == 1
+    assert summary["seconds"] == 12.5
+    assert summary["models"]["qwen-test"] == {"calls": 1, "seconds": 12.5}
+    store.close()
+
+    reopened = _store(path)
+    assert reopened.timing_summary() == summary
+    reopened.close()
+
+
+def test_transport_failure_keeps_unknown_attempt_inflight_with_unknown_usage(tmp_path):
+    path = tmp_path / "timeout.sqlite"
+    store = _store(path)
+    attempt = store.claim("a", {"model": "qwen-test", "prompt": "fixed"})
+    store.record_transport_error(attempt, "read timed out", 120.0)
+    store.close()
+
+    reopened = _store(path)
+    saved = reopened.attempt(attempt)
+    assert saved["status"] == "inflight"
+    assert saved["raw_reply"] is None
+    assert saved["usage"] is None
+    assert json.loads(saved["detail"]) == {
+        "transport_error": "read timed out",
+        "usage": None,
+    }
+    assert reopened.timing_summary()["models"]["qwen-test"]["seconds"] == 120.0
+    with pytest.raises(ValueError, match="unresolved"):
+        reopened.claim("b", {"model": "qwen-test", "prompt": "must wait"})
+    reopened.reconcile(attempt, "timeout", "operator confirmed timeout")
+    assert reopened.timing_summary()["seconds"] == 120.0
+    reopened.close()
 
 
 def test_completion_requires_raw_reply(tmp_path):

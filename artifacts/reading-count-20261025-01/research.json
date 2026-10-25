@@ -1,0 +1,204 @@
+{
+  "schema_version": "reading-count-research-v1",
+  "created": "2026-10-25",
+  "scope": "Offline exact source-derived input-fit counts for the final frozen 60-request launch manifest; no model/API/tokenization endpoint call, model load, download, package install, or source-image visual review in this unit.",
+  "image_capability": "This harness can inspect local images using image viewing tools; visual inspection was outside this bounded input-fit unit.",
+  "request_manifest": {
+    "path": "artifacts/reading-launch-20261025-01/requests.json",
+    "sha256": "c61cf64223f6aeefe51d02ed42b182bfb71e7dfa94f504f262b6fa79e083033e",
+    "request_count": 60,
+    "summary_by_model": {
+      "gemma4:31b-mlx": {
+        "request_count": 20,
+        "all_fit_16384_context_plus_4096_output": true,
+        "text_tokens_min_max": [
+          1725,
+          8149
+        ],
+        "image_tokens_min_max": [
+          0,
+          2162
+        ],
+        "total_input_tokens_min_max": [
+          1725,
+          9232
+        ],
+        "max_total_plus_requested_output": 13328
+      },
+      "muse-glimmer:30b-mlx": {
+        "request_count": 20,
+        "all_fit_16384_context_plus_4096_output": true,
+        "text_tokens_min_max": [
+          1496,
+          5698
+        ],
+        "image_tokens_min_max": [
+          0,
+          5149
+        ],
+        "total_input_tokens_min_max": [
+          1496,
+          8457
+        ],
+        "max_total_plus_requested_output": 12553
+      },
+      "qwen3.8:27b-mlx": {
+        "request_count": 20,
+        "all_fit_16384_context_plus_4096_output": true,
+        "text_tokens_min_max": [
+          1698,
+          8129
+        ],
+        "image_tokens_min_max": [
+          0,
+          5052
+        ],
+        "total_input_tokens_min_max": [
+          1698,
+          9931
+        ],
+        "max_total_plus_requested_output": 14027
+      }
+    },
+    "request_contract": "Frozen request bytes, text/image payloads, model digests, options, and response schema are bound in the launch manifest. Counts are source-derived from pinned tokenizer/renderer/media code and recorded separately in counts.json."
+  },
+  "environment": {
+    "go_version": "go1.23.4 darwin/arm64 (local build differs from binary Go1.26.0; pure tokenizer can be compiled in an isolated module using cached x/text if API compatibility holds)",
+    "runtime_reported_go_version": "go1.26.0",
+    "tokenizers_python_module": "not installed",
+    "ollama_tokenizer_go_package_source": "not available in local Go module cache or checked-in project source",
+    "network_source_fetch": "primary raw.githubusercontent URLs returned cache-miss; no source was fetched",
+    "installed_tokenizer_assets": "present as Ollama blob files per model-assets.json; Qwen tokenizer.json 12,809,320 bytes, Gemma 32,169,626 bytes, Glimmer 36,050,120 bytes; presence alone does not provide the exact Ollama tokenizer implementation.",
+    "ollama_tokenizer_source": "retrieved at pinned commit; pure Go source uses standard library plus golang.org/x/text/unicode/norm",
+    "go_module_cache": "golang.org/x/text v0.31.0 and other x/text versions are locally cached; no package installation required",
+    "source_fetch_status": "resolved; earlier cache-miss finding superseded"
+  },
+  "source_findings": {
+    "pinned_commit": "f580b5484a58c8370c35d669555bf887783a3f68",
+    "runtime_binary_sha256": "e5c7c0ffa50d23d0f0e59cbf325f689b0010ee5563be89b73b05f08844e19e6b",
+    "binary_build_vcs_modified": true,
+    "parity_research_path": "artifacts/reading-fit-20261025-01/parity-research.json",
+    "parity_research_sha256": "a09f3915485f3b98a45ddde71416a7f9855956ba802e7b6b36ce670fea222ba6",
+    "pinned_private_tokenize_route": {
+      "path": "mlxrunner/server.go",
+      "finding": "POST /v1/tokenize invokes runner.Load before routes are registered and tokenizes the raw text body with the model tokenizer/BOS policy; it does not render the chat request or expand media. It is also a model-loading route.",
+      "decision": "Rejected for this task: it violates no model loading/call, and does not yield request-fit parity."
+    },
+    "pinned_prepare_path": {
+      "path": "mlxrunner/pipeline.go",
+      "finding": "Text-only inputs use tokenizer encoding; multimodal inputs call model.MediaModel.expandMedia. The resulting tokens are checked against context and output reserve.",
+      "alternative": "Potential fail-closed runtime guard after media expansion: runner checks context before generation, so oversized input should be rejected instead of silently truncated on this source revision.",
+      "limits": "The installed binary reports vcs.modified=true; source behavior is not proven byte-for-byte identical. No request was made, so the actual installed runtime guard was not exercised. This is not an offline fit count."
+    },
+    "pinned_tokenizer": {
+      "paths": [
+        "mlxrunner/tokenizer/tokenizer.go",
+        "mlxrunner/tokenizer/tokenizer_load.go",
+        "mlxrunner/tokenizer/tokenizer_encode.go",
+        "mlxrunner/tokenizer/tokenizer_added.go",
+        "mlxrunner/tokenizer/tokenizer_bpe.go",
+        "mlxrunner/tokenizer/tokenizer_pretokenizer.go"
+      ],
+      "finding": "Exact Ollama tokenizer source is pure Go with only external import golang.org/x/text/unicode/norm. A temporary isolated offline Go helper compiled the pinned package and counted all frozen request prompts with exact renderer segmentation/BOS behavior.",
+      "limit": "Tokenizer text counts alone are not full multimodal counts. Full counts are now computed by adding source-derived model-specific image expansion token counts from CPU geometry; binary parity caveat remains."
+    },
+    "server_chat_truncation": {
+      "paths": [
+        "server/routes.go",
+        "server/prompt.go",
+        "api/types.go"
+      ],
+      "finding": "The chat route defaults Truncate to true but forcibly sets it false for m.IsMLX() before chatPrompt. API type comments define Truncate as chat-history truncation. For these MLX models, the approximate 768-token-per-image chatPrompt trimming branch is bypassed; current frozen requests have one system and one user message, and the entire rendered request proceeds to the runner.",
+      "source_lines": "routes.go around 3260-3265; prompt.go 23-85; api/types.go 114-116"
+    },
+    "mlx_context_guard": {
+      "paths": [
+        "mlxrunner/runner.go",
+        "mlxrunner/pipeline.go",
+        "mlxrunner/client.go",
+        "server/routes.go"
+      ],
+      "finding": "Runner sets contextLength from model.MaxContextLength() at load. Prepare tokenizes or calls model.MediaModel.PrepareMedia via expandMedia, rejects empty prompt and rejects len(expanded tokens) >= contextLength before generation. On success it sets PromptEvalCount to len(request.Tokens), the exact rendered-plus-expanded prompt token count, in the completion response.",
+      "source_lines": "runner.go 139-142; pipeline.go 26-84 and ~282; client.go 133, 254",
+      "requested_num_ctx": "The source does not apply per-request Options.NumCtx in Prepare. The guard is against model maximum context, not frozen request option num_ctx=16384. Saved model metadata reports 262144 for Qwen/Gemma and 131072 for Muse. Do not claim the 16384 target is enforced.",
+      "output_reserve": "Prepare caps NumPredict to model_context_length-len(tokens). Therefore the requested4096 output budget may be silently reduced when less than4096 tokens remain. For a successful future request, PromptEvalCount plus4096 <= confirmed model context proves at least4096 tokens fit after the input; a larger count proves the requested reserve was capped. This is post-request evidence, not offline preflight.",
+      "source_to_binary_caveat": "The installed binary reports vcs.modified=true; pinned behavior is verified at source revision but not byte-for-byte matched to the binary. No model/API request was run to exercise this guard."
+    },
+    "media_expansion": {
+      "paths": [
+        "mlxrunner/media.go",
+        "mlxrunner/model/qwen3_5/vision.go",
+        "mlxrunner/model/qwen3_5/process_image.go",
+        "mlxrunner/model/gemma4/media.go",
+        "mlxrunner/model/gemma4/process_image.go",
+        "mlxrunner/model/glimmer/media.go"
+      ],
+      "finding": "expandMedia splits exact [img-N] tags, tokenizes text segments with BOS only on first segment, and calls PrepareMedia. Model PrepareMedia decodes/resizes/patchifies on CPU; token expansion length is derived from image geometry. Qwen emits vision-start + merged H/W patch grid + vision-end; Gemma emits BOI + NumSoftTokens + EOI; Glimmer emits image-start + outputTokens patch markers + image-end. The pure-Go helper reproduced these lengths from config and image dimensions, without loading weights or invoking MLX.",
+      "source_to_binary_caveat": "Counts are pinned-source derived, not verified against the modified installed binary.",
+      "limitations": "Image preprocessing executes CPU decode/resize/patchify when the server handles the request, but only the geometry-derived placeholder lengths are needed by this offline counter; no model weights, MLX encoder, GPU, or inference are involved."
+    }
+  },
+  "feasibility": {
+    "exact_offline_counting_now": "Feasible for all 60 frozen requests using pinned pure-Go Ollama tokenizer plus exact fixed-shape renderer and per-model media expansion token geometry. Counts include rendered text tokenization and image placeholder expansion. The source path also performs CPU decode/resize/patchify, but token count depends on resized geometry and requires no model weights, MLX encoder, GPU, or inference.",
+    "limits": [
+      "Pinned Ollama source commit differs from the installed executable provenance: binary reports vcs.modified=true; source-to-binary byte parity is not established.",
+      "The requested 16384 context and 4096 generation envelope is checked offline against source-derived input counts, not validated in a live run.",
+      "No model/API request, model loading, private tokenization route, or GPU work was performed."
+    ],
+    "not_attempted": [
+      "No model/API request, tokenizer private route, warmup, MLX load, or inference.",
+      "No dependency installation or model download.",
+      "No text/character/byte heuristic reported as token count."
+    ]
+  },
+  "actionable_next_path": [
+    "Use counts.json as the offline source-derived input-fit evidence for the frozen launch manifest; all 60 satisfy total_input_tokens+4096<=16384.",
+    "Before any separately authorized launch, verify the installed Ollama binary is the intended build/revision or explicitly accept the recorded source-to-binary caveat. Do not rely on its model-max context guard to enforce request num_ctx=16384: pinned Prepare uses the model maximum and may reduce NumPredict.",
+    "A future runtime validation, if authorized by the master plan, can compare response PromptEvalCount to the offline count and confirm output-budget handling. No runtime request was made in this unit."
+  ],
+  "decision": "All 60 frozen requests have offline source-derived complete input counts; every request fits the requested 16384 context plus 4096 output reserve under the pinned renderer/tokenizer/media rules. This closes offline fit uncertainty for this manifest, but does not prove installed-binary parity or exercise the runtime. P0 and launch readiness remain as recorded in MASTER_PLAN.md.",
+  "pinned_source_retrieval": {
+    "commit": "f580b5484a58c8370c35d669555bf887783a3f68",
+    "aggregate_bytes_retrieved": 501759,
+    "cap_bytes": 1000000,
+    "manifests": [
+      "artifacts/reading-count-20261025-01/manifest.json",
+      "artifacts/reading-count-20261025-01/additional-manifest.json",
+      "artifacts/reading-count-20261025-01/api-source-manifest.json",
+      "artifacts/reading-count-20261025-01/media-source-manifest.json",
+      "artifacts/reading-count-20261025-01/model-config-source-manifest.json"
+    ],
+    "source_paths": [
+      "mlxrunner/tokenizer/tokenizer.go",
+      "mlxrunner/tokenizer/tokenizer_load.go",
+      "mlxrunner/tokenizer/tokenizer_encode.go",
+      "mlxrunner/tokenizer/tokenizer_added.go",
+      "mlxrunner/tokenizer/tokenizer_bpe.go",
+      "mlxrunner/tokenizer/tokenizer_pretokenizer.go",
+      "mlxrunner/media.go",
+      "mlxrunner/pipeline.go",
+      "mlxrunner/runner.go",
+      "mlxrunner/client.go",
+      "server/prompt.go",
+      "server/routes.go",
+      "api/types.go",
+      "model/renderers/renderer.go",
+      "model/renderers/qwen35.go",
+      "model/renderers/gemma4.go",
+      "model/renderers/glimmer.go"
+    ],
+    "source_fetch_method": "bounded pinned raw.githubusercontent fetch under authorized 1 MB cap; no model assets retrieved",
+    "archival_path": "artifacts/reading-count-20261025-01/upstream/",
+    "license_path": "artifacts/reading-count-20261025-01/OLLAMA-LICENSE"
+  },
+  "counter": {
+    "implementation": "isolated temporary Go helper; source files copied from pinned tokenizer package, exact renderer/media geometry port, x/text v0.27.0 from local Go module cache; no network dependency at build/run",
+    "results_path": "artifacts/reading-count-20261025-01/counts.json",
+    "results_sha256": "99231d4aa000bbf2cfbdced237ab7787ac55365e32face31bef4d0b2bd3faa77",
+    "helper_path": "artifacts/reading-count-20261025-01/counter/main.go",
+    "build": "Go 1.23.4 darwin/arm64; local cached module; GOPROXY=off; GOSUMDB=off",
+    "helper_sha256": "2de76e2dabae7f06a6ffcb2e52b201c602578b68d53360eabc43e36d461fbfc4",
+    "provenance_path": "artifacts/reading-count-20261025-01/provenance.json",
+    "reproducibility": "Rebuilt and reran from archived counter sources with GOPROXY=off/GOSUMDB=off; reproduced 60-entry result JSON exactly."
+  }
+}
