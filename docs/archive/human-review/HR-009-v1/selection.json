@@ -1,0 +1,19 @@
+{
+  "rule": "Sort exact model names by SHA-256 of UTF-8 HR-009-v1:MODEL; zip sorted models with the three packet cases in listed order. Frozen before output; never substitute failed/invalid cases.",
+  "max_review_minutes": 10,
+  "max_outputs": 3,
+  "assignments": [
+    {
+      "unit_id": "reading-e05d33cb21bb773191dc",
+      "model": "gemma4:31b-mlx"
+    },
+    {
+      "unit_id": "reading-50a8872c9b2dda1a90bf",
+      "model": "qwen3.8:27b-mlx"
+    },
+    {
+      "unit_id": "reading-637a8b4b8fe245aa6d6b",
+      "model": "muse-glimmer:30b-mlx"
+    }
+  ]
+}

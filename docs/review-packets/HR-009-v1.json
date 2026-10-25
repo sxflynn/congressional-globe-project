@@ -1,0 +1,60 @@
+{
+  "id": "HR-009",
+  "version": 1,
+  "title": "A shorter review for the clean reading experiment",
+  "instructions": "One choice, about one minute now. This replaces only the unapproved 60-minute review proposal in HR-003. Your approved sample, provisional standards and local resource limits remain in effect. No model outputs appear here. The experiment still requires source, complete-input and recovery checks before starting.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "review-effort",
+      "prompt": "Would this smaller review commitment work for you?",
+      "options": [
+        "Use the 10-minute review plan",
+        "Run an exploratory comparison with no human grading commitment",
+        "Request a different review plan"
+      ],
+      "required": true,
+      "evidence": [
+        {
+          "label": "Concrete shorter review proposal; policy choice, no historical accuracy claim",
+          "text": "The agent checks every completed output against its source images, validates every edit, and reports all invalid, timed-out and uncertain cases. You review at most three anonymized outputs, with a hard combined limit of 10 minutes; you can stop sooner. The three cases are fixed before outputs: an ordinary tariff passage with a dollar amount (part4, reading-e05d33cb21bb773191dc), an index with page-number errors (part2, reading-50a8872c9b2dda1a90bf), and the long Grimes/Van Winkle pension exchange (part3, reading-637a8b4b8fe245aa6d6b). One different model per case, assigned by a frozen hash order before outputs. Each card shows the original scan, unchanged OCR, proposed changes and any uncertainty. Failed/invalid selected outputs stay visible and are not replaced by a better-looking example. No extra rounds, confirmation sample or full run without a new request. Unreviewed outputs remain AI-assessed only. If the time runs out, no human acceptance is inferred for the rest.",
+          "url": null
+        },
+        {
+          "label": "Pre-output source observation record: artifacts/reading-expectations-20261025-01/observations.json; UTF-8 SHA-256 2ff6c3617b47c48dd98baf08f46d071d935922cbcc634e192f20df0df54b3095",
+          "text": "All 18 primary passages have cached source images. Seventy exact source-span checks and passage-boundary notes have been recorded before new model output. They are AI observations, not complete verified transcriptions or human labels. Human grading would assess only the selected three cases, never certify the remaining cases.",
+          "url": null
+        },
+        {
+          "label": "Alternative: exploratory comparison without human grading commitment",
+          "text": "If you choose this option, the bounded comparison can proceed after the same source/input/recovery checks, but all quality assessments stay AI-provisional. No claim that the pilot passes human acceptance standards, no automatic corpus changes, no full-run decision, and no later grading commitment is inferred. The agent reports the quality uncertainty explicitly.",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "changes",
+      "prompt": "Optional: describe another review limit or approach.",
+      "options": [],
+      "required": false,
+      "evidence": []
+    }
+  ],
+  "glossary": [
+    {
+      "term": "anonymized",
+      "definition": "The model name is hidden while you judge the text.",
+      "aliases": []
+    },
+    {
+      "term": "AI-provisional",
+      "definition": "An AI assessment that has not been confirmed by a human.",
+      "aliases": []
+    },
+    {
+      "term": "complete-input",
+      "definition": "A check that all intended text and images reach the model without being cut off.",
+      "aliases": []
+    }
+  ]
+}

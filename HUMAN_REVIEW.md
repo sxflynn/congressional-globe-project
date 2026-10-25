@@ -4,11 +4,11 @@ Use the browser desk for new reviews. This page links prior answers and explains
 
 ## Needs your attention
 
-**HR-003 received and applied.** You approved the sample, provisional quality standards and conditional local resource limits. You requested less review or a different review plan; that follow-up remains open. No repeat of the approved questions is needed.
+**HR-003 received and applied.** You approved the sample, provisional quality standards and conditional local resource limits. You requested less review; HR-009 is now answered in chat: at most three fixed anonymized outputs and ten minutes total. No repeat HR-009 browser submission is needed. No repeat of the approved questions is needed.
 
 **Ready in the browser: HR-004 · Two real passages: topics and OCR readability.** About 5–8 minutes: read two unchanged Congressional Globe excerpts (parts 2 and 3), identify the subjects, and tell us whether OCR damage prevents understanding. No model answers are shown. Open [the desk](http://10.0.0.56:8501), select **HR-004**, and submit your answers there. You do not need to edit this file.
 
-HR-005-v1 and HR-008-v1 are already answered and incorporated; no repeat review is needed. HR-003 standards/resources are approved; review effort needs revision; new role/date samples have not been requested.
+HR-005-v1 and HR-008-v1 are already answered and incorporated; no repeat review is needed. HR-003 standards/resources are approved; review effort revised by HR-009; new role/date samples have not been requested.
 
 ## Definitions while reviewing
 
