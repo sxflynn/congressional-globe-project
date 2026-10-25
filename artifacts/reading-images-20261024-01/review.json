@@ -1,0 +1,68 @@
+{
+  "unit": "reading-images-20261024-01",
+  "recovered_utc": "2026-10-25T09:44:05.787795+00:00",
+  "status": "image coverage complete; exact model input fit unresolved",
+  "primary_units": 18,
+  "provider_image_regions": 19,
+  "new_crops": 18,
+  "total_image_files_in_shared_budget": 20,
+  "total_transfer_bytes": 10749240,
+  "shared_cap_bytes": 12000000,
+  "remaining_bytes": 1250760,
+  "remaining_image_files": 4,
+  "cache_replay": {
+    "provider_calls": 0,
+    "new_network_requests": 0,
+    "verified_cached_downloads": 36,
+    "run_new_transfer_bytes": 0,
+    "total_transfer_bytes": 10749240,
+    "coverage_units": 18,
+    "coverage_images": 19
+  },
+  "visual_check": "Three high-risk regions spot-checked; not complete reference transcriptions or human labels. See visual-registration.json.",
+  "runtime_snapshot_utc": "2026-10-24T21:48:41.503817+00:00",
+  "inference_requests": 0,
+  "model_downloads": 0,
+  "corpus_corrections": 0,
+  "validation": {
+    "gate": "passed",
+    "tests": 303,
+    "code_changed_since_gate": false
+  },
+  "remaining": [
+    "Pin exact runtime renderer and tokenizer parity for each per-unit request.",
+    "Match each model image processor and count actual image tokens.",
+    "Complete source expectations and resolve requested reduced human review effort."
+  ],
+  "evidence": {
+    "artifacts/reading-images-20261024-01/index.json": {
+      "sha256": "fb3dbe6e925f1f557be11c9eecbeae32737064bc8c8d1a07cbee4537e7f17aaf",
+      "bytes": 30579
+    },
+    "artifacts/reading-images-20261024-01/coverage-proof.json": {
+      "sha256": "b6b0df52cb76fc8a59a687e952fb9e2bfcf5810c7a53f2329f4280da9180647c",
+      "bytes": 36189
+    },
+    "artifacts/reading-preflight-20261024-01/report.json": {
+      "sha256": "907163619a34790f8366fd898c3d626a1f717ba29eaa01d2d0de63d7bd49b959",
+      "bytes": 19516
+    },
+    "artifacts/reading-preflight-20261024-01/findings.md": {
+      "sha256": "056a945df8e3a32763710df640700a6f871e8a4ca60c1c849b2199040547038e",
+      "bytes": 6914
+    },
+    "src/congressional_globe/reading_images.py": {
+      "sha256": "bccc0e6838b5958ed833485a65893bfe38a6649bc3723a125218abdbcab4efcb",
+      "bytes": 19450
+    },
+    "src/congressional_globe/reading_preflight.py": {
+      "sha256": "5a15a26e718f55fe26de484a2f0b6a318b13502ffe262ad7abf386ef96a3c217",
+      "bytes": 19432
+    },
+    "artifacts/reading-images-20261024-01/gate.log.gz": {
+      "sha256": "9479fd5eb9fb5757fe99fa9792c927588577960b01fc6ae1ffa7dbd8dfaf9ab9",
+      "bytes": 13823,
+      "encoding": "gzip; exact original log bytes"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "observed_utc": "2026-10-24T21:48:31Z",
+  "command": "ps -axo pid,lstart,etime,command",
+  "filtered_command": "ps -axo pid,lstart,etime,command | rg -i 'ollama serve|streamlit run|cleanup|vision_probe|reading_run|role_run'",
+  "method": "elevated read-only process inspection",
+  "ollama_server": {
+    "pid": 87597,
+    "started": "Wed Oct 21 20:46:52 2026",
+    "elapsed": "02-21:01:40",
+    "command": "/Applications/Ollama.app/Contents/Resources/ollama serve"
+  },
+  "review_desk": {
+    "pid": 68381,
+    "started": "Sat Oct 24 17:13:53 2026",
+    "elapsed": "00:34:39",
+    "command": "python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false"
+  },
+  "matching_inference_workers": [],
+  "worker_state": "no cleanup, reading, vision, or role worker matched at observation time",
+  "limitations": "Process listing is a point-in-time observation; runtime /api/ps was also empty at 21:48:41Z."
+}

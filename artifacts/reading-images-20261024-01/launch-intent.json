@@ -1,0 +1,12 @@
+{
+  "run_id": "reading-images-20261024-01",
+  "state": "launch_intent",
+  "at": "2026-10-24T21:51:13.339558+00:00",
+  "provider_calls": 0,
+  "max_new_images": 18,
+  "prior_bytes": 1114498,
+  "max_total_bytes": 12000000,
+  "max_new_bytes": 10885502,
+  "command": "uv run python -m congressional_globe.reading_images --prepared artifacts/reading-prepare-20261024-03 --source-manifest artifacts/runs/static-final-20261011/workflow_manifest.json --output artifacts/reading-images-20261024-01 --fetch",
+  "code_sha256": "a2dcdf1558a4523d6ce9f3b407a00b6fb02bd5f47b94055e66fd2eed8560d0b9"
+}

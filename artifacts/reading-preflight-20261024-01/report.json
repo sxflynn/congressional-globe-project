@@ -1,0 +1,418 @@
+{
+  "schema_version": "reading-preflight-v1",
+  "status": "blocked",
+  "created_utc": "2026-10-24T21:59:44Z",
+  "process_inspection": {
+    "status": "confirmed",
+    "method": "ps -axo pid,lstart,etime,command (elevated)",
+    "result": "Ollama PID 87597; no cleanup, reading, vision, or role worker; /api/ps empty."
+  },
+  "runtime_api_calls": 6,
+  "inference_calls": 0,
+  "warmup_calls": 0,
+  "downloads": 0,
+  "frozen_inputs": {
+    "candidate_file": {
+      "path": "artifacts/reading-prepare-20261024-03/candidates.jsonl",
+      "sha256": "9358e8e4cb7b4cd22f7423671aa8f336e82f04336d6df5ef261ab904585ee51a",
+      "bytes": 296090
+    },
+    "prompt_file": {
+      "path": "artifacts/reading-prepare-20261024-03/prompt.txt",
+      "sha256": "d9b0f44f3819f3fff01dedf59916e7d638e9cc884150e17028c7724b2b0a10ff",
+      "bytes": 1182
+    },
+    "reply_schema_file": {
+      "path": "artifacts/reading-prepare-20261024-03/reply.schema.json",
+      "sha256": "dbefe41dff014e8fb27cd4835bdbe6a0bf1c0bbeaa186ce4981e04c8503ea749",
+      "bytes": 2572
+    },
+    "candidate_count": 23,
+    "primary_count": 18,
+    "confirmation_count": 5,
+    "primary_word_count": 6367,
+    "candidate_ids": [
+      "reading-d1964b2fd88da0df3db2",
+      "reading-5f378add7e1f64ea69ba",
+      "reading-3077c2e0a49061bbcf29",
+      "reading-845d5b7741ad057cdf8d",
+      "reading-cfb03841eb9003d161df",
+      "reading-50a8872c9b2dda1a90bf",
+      "reading-86b5b62922afc4c5b6bd",
+      "reading-3e3d5d225bf885a2e7f5",
+      "reading-29781311671c9158bbd8",
+      "reading-e05d33cb21bb773191dc",
+      "reading-0572e0c61a75ab370e67",
+      "reading-4fc8caf8f1dfb06d6938",
+      "reading-5500247fc23992050e37",
+      "reading-1cf618a5ce887cee79b1",
+      "reading-74d01b9894f76563d519",
+      "reading-db4cc1bed5fc9ba20489",
+      "reading-5e7e1b38c53e488454eb",
+      "reading-637a8b4b8fe245aa6d6b",
+      "reading-162c60e6646f1078579f",
+      "reading-f896fcb1ac226dcc9b59",
+      "reading-d7daf235550258f18d78",
+      "reading-34026afac6d3a05e8424",
+      "reading-dc912b6ebed702911f5d"
+    ]
+  },
+  "tokenizer_finding": "Ollama manifests include model-specific tokenizer.json/config assets and Qwen's preprocessor config. The installed binary contains internal MLX tokenizer code. Installed Python lacks `tokenizers`, `transformers`, `mlx`, and `sentencepiece`. Binary strings expose an internal runner POST /v1/tokenize route, but it is not documented as a public Ollama endpoint; its load/state semantics are not established. No tokenizer-only request was made. No documented no-inference path for full chat-plus-image fit was verified. Actual text and image token fit remain unknown.",
+  "tokenizer_assets": [
+    {
+      "model": "qwen3.8:27b-mlx",
+      "name": "preprocessor_config.json",
+      "manifest_digest": "sha256:27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+      "size_bytes": 390,
+      "blob_sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+      "blob_path": "/Users/sflynn/.ollama/models/blobs/sha256-27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+      "exists": true
+    },
+    {
+      "model": "qwen3.8:27b-mlx",
+      "name": "tokenizer.json",
+      "manifest_digest": "sha256:0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+      "size_bytes": 12809320,
+      "blob_sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+      "blob_path": "/Users/sflynn/.ollama/models/blobs/sha256-0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+      "exists": true
+    },
+    {
+      "model": "qwen3.8:27b-mlx",
+      "name": "tokenizer_config.json",
+      "manifest_digest": "sha256:5a205aa76328f59df93a9091d0496aeda4615c6b0c495cbd37e14c79c0cd0f94",
+      "size_bytes": 17927,
+      "blob_sha256": "5a205aa76328f59df93a9091d0496aeda4615c6b0c495cbd37e14c79c0cd0f94",
+      "blob_path": "/Users/sflynn/.ollama/models/blobs/sha256-5a205aa76328f59df93a9091d0496aeda4615c6b0c495cbd37e14c79c0cd0f94",
+      "exists": true
+    },
+    {
+      "model": "gemma4:31b-mlx",
+      "name": "processor_config.json",
+      "manifest_digest": "sha256:32bdf45d2ad4cc29a0822ddd157a182de76644f0419a6228d151495256e9813c",
+      "size_bytes": 1689,
+      "blob_sha256": "32bdf45d2ad4cc29a0822ddd157a182de76644f0419a6228d151495256e9813c",
+      "blob_path": "/Users/sflynn/.ollama/models/blobs/sha256-32bdf45d2ad4cc29a0822ddd157a182de76644f0419a6228d151495256e9813c",
+      "exists": true
+    },
+    {
+      "model": "gemma4:31b-mlx",
+      "name": "tokenizer.json",
+      "manifest_digest": "sha256:cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+      "size_bytes": 32169626,
+      "blob_sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+      "blob_path": "/Users/sflynn/.ollama/models/blobs/sha256-cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+      "exists": true
+    },
+    {
+      "model": "gemma4:31b-mlx",
+      "name": "tokenizer_config.json",
+      "manifest_digest": "sha256:a284d1243b62be31faa9c13e1c28cece940c4abaa7bd9ad87b94f61b40687200",
+      "size_bytes": 2741,
+      "blob_sha256": "a284d1243b62be31faa9c13e1c28cece940c4abaa7bd9ad87b94f61b40687200",
+      "blob_path": "/Users/sflynn/.ollama/models/blobs/sha256-a284d1243b62be31faa9c13e1c28cece940c4abaa7bd9ad87b94f61b40687200",
+      "exists": true
+    },
+    {
+      "model": "muse-glimmer:30b-mlx",
+      "name": "special_tokens_map.json",
+      "manifest_digest": "sha256:7bada0a11ae93ee016e399ef87d82b1a1863b9ebc1b70c0054da27d8b0e53552",
+      "size_bytes": 78672,
+      "blob_sha256": "7bada0a11ae93ee016e399ef87d82b1a1863b9ebc1b70c0054da27d8b0e53552",
+      "blob_path": "/Users/sflynn/.ollama/models/blobs/sha256-7bada0a11ae93ee016e399ef87d82b1a1863b9ebc1b70c0054da27d8b0e53552",
+      "exists": true
+    },
+    {
+      "model": "muse-glimmer:30b-mlx",
+      "name": "tokenizer.json",
+      "manifest_digest": "sha256:8a25643f212b3e81a410b8afd0538b02ad30db4b22de863bde2e5006603afa2d",
+      "size_bytes": 36050120,
+      "blob_sha256": "8a25643f212b3e81a410b8afd0538b02ad30db4b22de863bde2e5006603afa2d",
+      "blob_path": "/Users/sflynn/.ollama/models/blobs/sha256-8a25643f212b3e81a410b8afd0538b02ad30db4b22de863bde2e5006603afa2d",
+      "exists": true
+    },
+    {
+      "model": "muse-glimmer:30b-mlx",
+      "name": "tokenizer_config.json",
+      "manifest_digest": "sha256:2c49783174e680e3a7f41d40bc7a611affa67cb3e05d41acffb97d44f023283a",
+      "size_bytes": 483005,
+      "blob_sha256": "2c49783174e680e3a7f41d40bc7a611affa67cb3e05d41acffb97d44f023283a",
+      "blob_path": "/Users/sflynn/.ollama/models/blobs/sha256-2c49783174e680e3a7f41d40bc7a611affa67cb3e05d41acffb97d44f023283a",
+      "exists": true
+    }
+  ],
+  "image_evidence": {
+    "index_path": "artifacts/reading-images-20261024-01/index.json",
+    "index_sha256": "fb3dbe6e925f1f557be11c9eecbeae32737064bc8c8d1a07cbee4537e7f17aaf",
+    "coverage_proof_path": "artifacts/reading-images-20261024-01/coverage-proof.json",
+    "coverage_proof_sha256": "b6b0df52cb76fc8a59a687e952fb9e2bfcf5810c7a53f2329f4280da9180647c",
+    "coverage_proof_index_sha256": "fb3dbe6e925f1f557be11c9eecbeae32737064bc8c8d1a07cbee4537e7f17aaf",
+    "proof_matches_index": true,
+    "counts_match": true,
+    "no_provider_calls": true,
+    "primary_units": 18,
+    "images": 19,
+    "total_transfer_bytes": 10749240,
+    "provider_calls": 0,
+    "geometry_coverage_complete": true
+  },
+  "supported_models": [
+    {
+      "model": "qwen3.8:27b-mlx",
+      "expected_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+      "observed_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+      "runner": "mlx",
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "runtime_version": "0.40.8",
+      "model_context_limit": 262144,
+      "prior_probe_config": {
+        "model": "qwen3.8:27b-mlx",
+        "expected_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+        "response_format": "json",
+        "base_url": "http://127.0.0.1:11434",
+        "request_timeout_seconds": 90,
+        "batch_deadline_seconds": 600,
+        "max_output_tokens": 256,
+        "num_ctx": 8192,
+        "temperature": 0,
+        "think": false,
+        "keep_alive": "5m",
+        "stream": false
+      },
+      "prior_loaded_models": [
+        {
+          "name": "qwen3.8:27b-mlx",
+          "model": "qwen3.8:27b-mlx",
+          "size": 20493188872,
+          "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+          "details": {
+            "parent_model": "",
+            "format": "safetensors",
+            "family": "",
+            "families": null,
+            "parameter_size": "",
+            "quantization_level": "nvfp4"
+          },
+          "expires_at": "2026-10-24T11:50:07.024592-04:00",
+          "size_vram": 20493188872,
+          "context_length": 8192,
+          "runner": "mlx"
+        }
+      ],
+      "prior_ps_snapshot_sha256": "f59b84f41146bbc8c3463242e1044bfc47d6817c9344d7760402eaef4f84eb7d",
+      "text_tokens": null,
+      "image_tokens": null,
+      "token_fit_status": "unknown",
+      "runtime_state": "idle",
+      "current_loaded_models": [],
+      "current_ps_snapshot_sha256": "c8cdda2058dfad73596cb9baef30bb2a825485859ad54c8d9cf5a10a457b0c8c",
+      "runtime_evidence_files": {
+        "artifacts/reading-preflight-20261024-01/current-runtime/tags.json": "a8c2c031c1eb43d433c9e78ec4d4dbd534449996845f740630b7157baddc85b7",
+        "artifacts/reading-preflight-20261024-01/current-runtime/version.json": "4e5e44006d2c958466f542bdbf939244a1bc78d917a6d7f794d3fe480bda72f6",
+        "artifacts/reading-preflight-20261024-01/current-runtime/ps.json": "c8cdda2058dfad73596cb9baef30bb2a825485859ad54c8d9cf5a10a457b0c8c",
+        "artifacts/reading-preflight-20261024-01/current-runtime/show-qwen3.8-27b-mlx.json": "7c43b6e77cba2b06a86025d8f9d5d59030cc34852d54487960a708ed803e6a1a"
+      },
+      "process_observation": {
+        "observed_utc": "2026-10-24T21:48:31Z",
+        "command": "ps -axo pid,lstart,etime,command",
+        "filtered_command": "ps -axo pid,lstart,etime,command | rg -i 'ollama serve|streamlit run|cleanup|vision_probe|reading_run|role_run'",
+        "method": "elevated read-only process inspection",
+        "ollama_server": {
+          "pid": 87597,
+          "started": "Wed Oct 21 20:46:52 2026",
+          "elapsed": "02-21:01:40",
+          "command": "/Applications/Ollama.app/Contents/Resources/ollama serve"
+        },
+        "review_desk": {
+          "pid": 68381,
+          "started": "Sat Oct 24 17:13:53 2026",
+          "elapsed": "00:34:39",
+          "command": "python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false"
+        },
+        "matching_inference_workers": [],
+        "worker_state": "no cleanup, reading, vision, or role worker matched at observation time",
+        "limitations": "Process listing is a point-in-time observation; runtime /api/ps was also empty at 21:48:41Z."
+      },
+      "launch_ready": false,
+      "blockers": [
+        "exact_text_token_fit_unknown",
+        "image_token_fit_unknown",
+        "source_expectations_and_human_review_effort_pending"
+      ],
+      "source_snapshot": "artifacts/reading-preflight-20261024-01/current-runtime/show-qwen3.8-27b-mlx.json",
+      "source_snapshot_sha256": "7c43b6e77cba2b06a86025d8f9d5d59030cc34852d54487960a708ed803e6a1a"
+    },
+    {
+      "model": "gemma4:31b-mlx",
+      "expected_digest": "637cc0ff15709212de4aa694be67e3af5e80533ca538c86ad69c53c511e40840",
+      "observed_digest": "637cc0ff15709212de4aa694be67e3af5e80533ca538c86ad69c53c511e40840",
+      "runner": "mlx",
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "runtime_version": "0.40.8",
+      "model_context_limit": 262144,
+      "prior_probe_config": {
+        "model": "gemma4:31b-mlx",
+        "expected_digest": "637cc0ff15709212de4aa694be67e3af5e80533ca538c86ad69c53c511e40840",
+        "response_format": "json",
+        "base_url": "http://127.0.0.1:11434",
+        "request_timeout_seconds": 90,
+        "batch_deadline_seconds": 600,
+        "max_output_tokens": 256,
+        "num_ctx": 8192,
+        "temperature": 0,
+        "think": false,
+        "keep_alive": "5m",
+        "stream": false
+      },
+      "prior_loaded_models": [],
+      "prior_ps_snapshot_sha256": "a6fe9ec6e26a38d99fca418b69826e0238b7a2bb319ff05eb153a6fcfd1fa28d",
+      "text_tokens": null,
+      "image_tokens": null,
+      "token_fit_status": "unknown",
+      "runtime_state": "idle",
+      "current_loaded_models": [],
+      "current_ps_snapshot_sha256": "c8cdda2058dfad73596cb9baef30bb2a825485859ad54c8d9cf5a10a457b0c8c",
+      "runtime_evidence_files": {
+        "artifacts/reading-preflight-20261024-01/current-runtime/tags.json": "a8c2c031c1eb43d433c9e78ec4d4dbd534449996845f740630b7157baddc85b7",
+        "artifacts/reading-preflight-20261024-01/current-runtime/version.json": "4e5e44006d2c958466f542bdbf939244a1bc78d917a6d7f794d3fe480bda72f6",
+        "artifacts/reading-preflight-20261024-01/current-runtime/ps.json": "c8cdda2058dfad73596cb9baef30bb2a825485859ad54c8d9cf5a10a457b0c8c",
+        "artifacts/reading-preflight-20261024-01/current-runtime/show-gemma4-31b-mlx.json": "b18b6835a75eb07c721294fb163125c721c0b4e878b6af441258a59f462dc9f8"
+      },
+      "process_observation": {
+        "observed_utc": "2026-10-24T21:48:31Z",
+        "command": "ps -axo pid,lstart,etime,command",
+        "filtered_command": "ps -axo pid,lstart,etime,command | rg -i 'ollama serve|streamlit run|cleanup|vision_probe|reading_run|role_run'",
+        "method": "elevated read-only process inspection",
+        "ollama_server": {
+          "pid": 87597,
+          "started": "Wed Oct 21 20:46:52 2026",
+          "elapsed": "02-21:01:40",
+          "command": "/Applications/Ollama.app/Contents/Resources/ollama serve"
+        },
+        "review_desk": {
+          "pid": 68381,
+          "started": "Sat Oct 24 17:13:53 2026",
+          "elapsed": "00:34:39",
+          "command": "python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false"
+        },
+        "matching_inference_workers": [],
+        "worker_state": "no cleanup, reading, vision, or role worker matched at observation time",
+        "limitations": "Process listing is a point-in-time observation; runtime /api/ps was also empty at 21:48:41Z."
+      },
+      "launch_ready": false,
+      "blockers": [
+        "exact_text_token_fit_unknown",
+        "image_token_fit_unknown",
+        "source_expectations_and_human_review_effort_pending"
+      ],
+      "source_snapshot": "artifacts/reading-preflight-20261024-01/current-runtime/show-gemma4-31b-mlx.json",
+      "source_snapshot_sha256": "b18b6835a75eb07c721294fb163125c721c0b4e878b6af441258a59f462dc9f8"
+    },
+    {
+      "model": "muse-glimmer:30b-mlx",
+      "expected_digest": "015fa21845bead56096c2f8773aff7a2047063507fe82897e662ad544c5b2fa6",
+      "observed_digest": "015fa21845bead56096c2f8773aff7a2047063507fe82897e662ad544c5b2fa6",
+      "runner": "mlx",
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "runtime_version": "0.40.8",
+      "model_context_limit": 131072,
+      "prior_probe_config": {
+        "model": "muse-glimmer:30b-mlx",
+        "expected_digest": "015fa21845bead56096c2f8773aff7a2047063507fe82897e662ad544c5b2fa6",
+        "response_format": "json",
+        "base_url": "http://127.0.0.1:11434",
+        "request_timeout_seconds": 90,
+        "batch_deadline_seconds": 600,
+        "max_output_tokens": 256,
+        "num_ctx": 8192,
+        "temperature": 0,
+        "think": false,
+        "keep_alive": "5m",
+        "stream": false
+      },
+      "prior_loaded_models": [
+        {
+          "name": "gemma4:31b-mlx",
+          "model": "gemma4:31b-mlx",
+          "size": 22838813316,
+          "digest": "637cc0ff15709212de4aa694be67e3af5e80533ca538c86ad69c53c511e40840",
+          "details": {
+            "parent_model": "",
+            "format": "safetensors",
+            "family": "",
+            "families": null,
+            "parameter_size": "",
+            "quantization_level": ""
+          },
+          "expires_at": "2026-10-24T12:09:24.142765-04:00",
+          "size_vram": 22838813316,
+          "context_length": 8192,
+          "runner": "mlx"
+        }
+      ],
+      "prior_ps_snapshot_sha256": "3c44b5f7739fd39004a5b7fe3fd9c7bd1b95f6874602669503c3bc811fd5dcf2",
+      "text_tokens": null,
+      "image_tokens": null,
+      "token_fit_status": "unknown",
+      "runtime_state": "idle",
+      "current_loaded_models": [],
+      "current_ps_snapshot_sha256": "c8cdda2058dfad73596cb9baef30bb2a825485859ad54c8d9cf5a10a457b0c8c",
+      "runtime_evidence_files": {
+        "artifacts/reading-preflight-20261024-01/current-runtime/tags.json": "a8c2c031c1eb43d433c9e78ec4d4dbd534449996845f740630b7157baddc85b7",
+        "artifacts/reading-preflight-20261024-01/current-runtime/version.json": "4e5e44006d2c958466f542bdbf939244a1bc78d917a6d7f794d3fe480bda72f6",
+        "artifacts/reading-preflight-20261024-01/current-runtime/ps.json": "c8cdda2058dfad73596cb9baef30bb2a825485859ad54c8d9cf5a10a457b0c8c",
+        "artifacts/reading-preflight-20261024-01/current-runtime/show-muse-glimmer-30b-mlx.json": "1f74affa7062571c9a7d4e7c1aa64b41be650485dde0fdf725f43c02ee1c8047"
+      },
+      "process_observation": {
+        "observed_utc": "2026-10-24T21:48:31Z",
+        "command": "ps -axo pid,lstart,etime,command",
+        "filtered_command": "ps -axo pid,lstart,etime,command | rg -i 'ollama serve|streamlit run|cleanup|vision_probe|reading_run|role_run'",
+        "method": "elevated read-only process inspection",
+        "ollama_server": {
+          "pid": 87597,
+          "started": "Wed Oct 21 20:46:52 2026",
+          "elapsed": "02-21:01:40",
+          "command": "/Applications/Ollama.app/Contents/Resources/ollama serve"
+        },
+        "review_desk": {
+          "pid": 68381,
+          "started": "Sat Oct 24 17:13:53 2026",
+          "elapsed": "00:34:39",
+          "command": "python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false"
+        },
+        "matching_inference_workers": [],
+        "worker_state": "no cleanup, reading, vision, or role worker matched at observation time",
+        "limitations": "Process listing is a point-in-time observation; runtime /api/ps was also empty at 21:48:41Z."
+      },
+      "launch_ready": false,
+      "blockers": [
+        "exact_text_token_fit_unknown",
+        "image_token_fit_unknown",
+        "source_expectations_and_human_review_effort_pending"
+      ],
+      "source_snapshot": "artifacts/reading-preflight-20261024-01/current-runtime/show-muse-glimmer-30b-mlx.json",
+      "source_snapshot_sha256": "1f74affa7062571c9a7d4e7c1aa64b41be650485dde0fdf725f43c02ee1c8047"
+    }
+  ],
+  "launch_ready": false,
+  "global_blockers": [
+    "live_process_and_queue_observation_must_be_rechecked_before_model_execution",
+    "exact_per_unit_text_and_image_token_fit_unknown_for_every_model",
+    "source_expectations_and_human_review_effort_pending"
+  ]
+}
