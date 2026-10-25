@@ -1,0 +1,907 @@
+{
+  "summary": {
+    "pending": 1,
+    "inflight": 1,
+    "timeout": 0,
+    "valid": 4,
+    "failed": 0,
+    "invalid": 0
+  },
+  "results": [
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-d1964b2fd88da0df3db2",
+      "status": "valid",
+      "reply": {
+        "unit_id": "reading-d1964b2fd88da0df3db2",
+        "status": "proposed",
+        "patches": [
+          {
+            "source_id": "congressionalg7391unit:576:par_000576_000032",
+            "start": 119,
+            "end": 123,
+            "old": "anxl",
+            "new": "and",
+            "image_ids": [
+              "reading-d1964b2fd88da0df3db2-leaf-576"
+            ],
+            "reason": "The image shows the word 'and' where the OCR produced 'anxl'."
+          },
+          {
+            "source_id": "congressionalg7391unit:576:par_000576_000036",
+            "start": 36,
+            "end": 47,
+            "old": "sub- mitted",
+            "new": "submitted",
+            "image_ids": [
+              "reading-d1964b2fd88da0df3db2-leaf-576"
+            ],
+            "reason": "The image shows the word 'submitted' without a hyphen or space, correcting the OCR line-break artifact."
+          },
+          {
+            "source_id": "congressionalg7391unit:576:par_000576_000037",
+            "start": 245,
+            "end": 257,
+            "old": "oc- currence",
+            "new": "occurrence",
+            "image_ids": [
+              "reading-d1964b2fd88da0df3db2-leaf-576"
+            ],
+            "reason": "The image shows the word 'occurrence' without a hyphen or space, correcting the OCR line-break artifact."
+          },
+          {
+            "source_id": "congressionalg7391unit:576:par_000576_000037",
+            "start": 602,
+            "end": 613,
+            "old": "Terri- tory",
+            "new": "Territory",
+            "image_ids": [
+              "reading-d1964b2fd88da0df3db2-leaf-576"
+            ],
+            "reason": "The image shows the word 'Territory' without a hyphen or space, correcting the OCR line-break artifact."
+          },
+          {
+            "source_id": "congressionalg7391unit:576:par_000576_000038",
+            "start": 0,
+            "end": 9,
+            "old": "liesolved",
+            "new": "Resolved",
+            "image_ids": [
+              "reading-d1964b2fd88da0df3db2-leaf-576"
+            ],
+            "reason": "The image shows the word 'Resolved' in italics, correcting the OCR misreading of the capital R as a lowercase l."
+          },
+          {
+            "source_id": "congressionalg7391unit:576:par_000576_000038",
+            "start": 293,
+            "end": 296,
+            "old": "oJf",
+            "new": "of",
+            "image_ids": [
+              "reading-d1964b2fd88da0df3db2-leaf-576"
+            ],
+            "reason": "The image shows the word 'of', correcting the OCR misreading of 'f' as 'J'."
+          },
+          {
+            "source_id": "congressionalg7391unit:576:par_000576_000038",
+            "start": 327,
+            "end": 337,
+            "old": "suflioient",
+            "new": "sufficient",
+            "image_ids": [
+              "reading-d1964b2fd88da0df3db2-leaf-576"
+            ],
+            "reason": "The image shows the word 'sufficient', correcting the OCR misreading of 'c' as 'l'."
+          }
+        ],
+        "uncertain": []
+      },
+      "derived": {
+        "congressionalg7391unit:576:par_000576_000032": {
+          "text": "The bill was ordered to be engrossed for a third reading; and being engrossed, it was accordingly read the third time, and passed.",
+          "sha256": "65ca08c829ee9115eb820980557a287e48588b500ff017463af3c986c4bec9ba",
+          "raw_sha256": "77eae8d15d2645ec2c2e29fe9370bda913a38206350b7fdec7d4491b6907ca54",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 119,
+              "clean_start": 0,
+              "clean_end": 119,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 119,
+              "raw_end": 123,
+              "clean_start": 119,
+              "clean_end": 122,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 123,
+              "raw_end": 131,
+              "clean_start": 122,
+              "clean_end": 130,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:576:par_000576_000033": {
+          "text": "Mr. BROOKS moved to reconsider the vote by which the bill was passed ; and also moved that the motion to reconsider be laid upon the table.",
+          "sha256": "a019a311a3f26e3b0070016818b4956068a9f6f3752dd46093767ec0143a96c1",
+          "raw_sha256": "a019a311a3f26e3b0070016818b4956068a9f6f3752dd46093767ec0143a96c1",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 139,
+              "clean_start": 0,
+              "clean_end": 139,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:576:par_000576_000034": {
+          "text": "The latter motion was agreed to.",
+          "sha256": "01cf86e28102bd2bba4337ff394bba94095601f313c69161711e249e050d5b4b",
+          "raw_sha256": "01cf86e28102bd2bba4337ff394bba94095601f313c69161711e249e050d5b4b",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 32,
+              "clean_start": 0,
+              "clean_end": 32,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:576:par_000576_000035": {
+          "text": "INDIANS IN DAKOTA TERRITORY.",
+          "sha256": "276c1aad3c61179d467168271a1cede32c12b7b7c4a3889ee0f2849e57f4b42f",
+          "raw_sha256": "276c1aad3c61179d467168271a1cede32c12b7b7c4a3889ee0f2849e57f4b42f",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 28,
+              "clean_start": 0,
+              "clean_end": 28,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:576:par_000576_000036": {
+          "text": "Mr. BURLEIGH, by unanimous consent, submitted the following preamble and resolution ; which were read, considered, and agreed to :",
+          "sha256": "baf0a8be7b26eacfe96bf1083a23a4a837fc2f9674d6c49edd4ae6933d4ae582",
+          "raw_sha256": "ba222fec07e37c0c169da4eab2930616762bec2b2950a27177bbab5582b4baf5",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 36,
+              "clean_start": 0,
+              "clean_end": 36,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 36,
+              "raw_end": 47,
+              "clean_start": 36,
+              "clean_end": 45,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 47,
+              "raw_end": 132,
+              "clean_start": 45,
+              "clean_end": 130,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:576:par_000576_000037": {
+          "text": "Whereas several citizens of Dakota Territory have been either murdered or maimed and had their property stolen and destroyed by the hostile Sioux Indians who were concerned in the late Minnesota massacre, either at the time of or since that sad occurrence; and whereas the hostile bands of Indians known as the Sisseton, Wah-pa-ton, Medawakanton, and Wah-pa-koota bands of Dakota Indians were, in opposition to the wishes of the citizens of Dakota Territory, forced into said Territory, in consequence of which act those outrages have been committed upon the unarmed and defenseless citizens of that Territory: Therefore,",
+          "sha256": "e6b8f997a4f4d9b5a873e18818022ef1b9c89bb15e13aa9e6a4a95fa31973941",
+          "raw_sha256": "fc7cc19563f38b8beefa18ed41a9e6b86ccbe4d370706155cf838e1042f4d147",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 245,
+              "clean_start": 0,
+              "clean_end": 245,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 245,
+              "raw_end": 257,
+              "clean_start": 245,
+              "clean_end": 255,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 257,
+              "raw_end": 602,
+              "clean_start": 255,
+              "clean_end": 600,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 602,
+              "raw_end": 613,
+              "clean_start": 600,
+              "clean_end": 609,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 613,
+              "raw_end": 625,
+              "clean_start": 609,
+              "clean_end": 621,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:576:par_000576_000038": {
+          "text": "Resolved, That the Committee on Indian Affairs be instructed to inquire into the justice and propriety of reporting a bill providing for the appointment of a commissioner, whose duty it shall be to determine the amount of depredations by said Indians upon the citizens of said Territory, and of recommending an appropriation sufficient to pay the same.",
+          "sha256": "acccc7211dc73138a2e491148d2d4cd9685efc9695940d12acf6ee8b1f31d8b3",
+          "raw_sha256": "95e551d621297383574b58b70275185b5ef7f564972e5db7f9d353190bfc739b",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 9,
+              "clean_start": 0,
+              "clean_end": 8,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 9,
+              "raw_end": 293,
+              "clean_start": 8,
+              "clean_end": 292,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 293,
+              "raw_end": 296,
+              "clean_start": 292,
+              "clean_end": 294,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 296,
+              "raw_end": 327,
+              "clean_start": 294,
+              "clean_end": 325,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 327,
+              "raw_end": 337,
+              "clean_start": 325,
+              "clean_end": 335,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 337,
+              "raw_end": 354,
+              "clean_start": 335,
+              "clean_end": 352,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        }
+      },
+      "attempt_id": "161e1fd1-0d83-4198-a09a-eb7500ce11ee",
+      "elapsed_seconds": 64.26040312508121,
+      "usage": {
+        "prompt_eval_count": 3955,
+        "eval_count": 943,
+        "total_duration": 64249780500,
+        "load_duration": 5017772625
+      }
+    },
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-3077c2e0a49061bbcf29",
+      "status": "valid",
+      "reply": {
+        "unit_id": "reading-3077c2e0a49061bbcf29",
+        "status": "proposed",
+        "patches": [
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000040",
+            "start": 0,
+            "end": 676,
+            "old": "Sec. 3. And be it furilier enacted. That in further enforcement of the provision of the Constitution pro- hibiting slavei-y, and in order to remove all relics of this wrong from the States where this constitutional prohibition takes effect, it is hereby declared that all laws or customs in such States establishing any oli- garchical privileges and any distinction of rights on account of color or race arc hereby annulled, and all persons in such States are recognized as equal be- fore the law; and the penalties provided in the last section arc hereby made applicable to any violation of this provision, which is made in pursuance of the Constitution of the United States.",
+            "new": "Sec. 3. And be it further enacted, That in further enforcement of the provision of the Constitution prohibiting slavery, and in order to remove all relics of this wrong from the States where this constitutional prohibition takes effect, it is hereby declared that all laws or customs in such States establishing any oligarchical privileges and any distinction of rights on account of color or race are hereby annulled, and all persons in such States are recognized as equal before the law; and the penalties provided in the last section are hereby made applicable to any violation of this provision, which is made in pursuance of the Constitution of the United States.",
+            "image_ids": [
+              "reading-3077c2e0a49061bbcf29-leaf-207"
+            ],
+            "reason": "Corrected OCR errors: 'furilier' to 'further', 'enacted.' to 'enacted,', 'pro- hibiting' to 'prohibiting', 'slavei-y' to 'slavery', 'oli- garchical' to 'oligarchical', 'arc' to 'are' (twice), and 'be- fore' to 'before'."
+          },
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000041",
+            "start": 0,
+            "end": 584,
+            "old": "Sec. 4. And be it further enacted, That in further enforcement of the provision of the Constitution aforesaid, the courts of the United States in the States aforesaid shall have exclusive jurisdiction of all of- fenses commitU\"d by persons not of African descent upon persons of African descent; also of all ofl'enses committed by persons of African descent; and also of all causes, suits, and demands to which any person of African descent shall be a party; and it is hereby declared that all such cases are to be treated as eases arising under the Constitution of the United States.",
+            "new": "Sec. 4. And be it further enacted, That in further enforcement of the provision of the Constitution aforesaid, the courts of the United States in the States aforesaid shall have exclusive jurisdiction of all offenses committed by persons not of African descent upon persons of African descent; also of all offenses committed by persons of African descent; and also of all causes, suits, and demands to which any person of African descent shall be a party; and it is hereby declared that all such cases are to be treated as cases arising under the Constitution of the United States.",
+            "image_ids": [
+              "reading-3077c2e0a49061bbcf29-leaf-207"
+            ],
+            "reason": "Corrected OCR errors: 'of- fenses' to 'offenses', 'commitU\"d' to 'committed', 'ofl'enses' to 'offenses', and 'eases' to 'cases'."
+          }
+        ],
+        "uncertain": []
+      },
+      "derived": {
+        "congressionalg7391unit:207:par_000207_000038": {
+          "text": "There are measures of my own, already in- troduced by me, now on your table, looking to the same result as the pending bill, which pro- ceed specifically on the two latter grounds.",
+          "sha256": "7f3a6dd3399b6e3595e58bf8494cfc9bbd3c7d1a8f00087cfb0c0e4e2dc7a979",
+          "raw_sha256": "7f3a6dd3399b6e3595e58bf8494cfc9bbd3c7d1a8f00087cfb0c0e4e2dc7a979",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 180,
+              "clean_start": 0,
+              "clean_end": 180,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:207:par_000207_000039": {
+          "text": "One of these is entitled \"A bill supplying appropriate legislation to enforce the amend- ment of the Constitution.\" From this bill I read two sections :",
+          "sha256": "3afe7683cfba94882c2236d17cd2e335577353994c260c3e8ee6738b7533adde",
+          "raw_sha256": "3afe7683cfba94882c2236d17cd2e335577353994c260c3e8ee6738b7533adde",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 152,
+              "clean_start": 0,
+              "clean_end": 152,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:207:par_000207_000040": {
+          "text": "Sec. 3. And be it further enacted, That in further enforcement of the provision of the Constitution prohibiting slavery, and in order to remove all relics of this wrong from the States where this constitutional prohibition takes effect, it is hereby declared that all laws or customs in such States establishing any oligarchical privileges and any distinction of rights on account of color or race are hereby annulled, and all persons in such States are recognized as equal before the law; and the penalties provided in the last section are hereby made applicable to any violation of this provision, which is made in pursuance of the Constitution of the United States.",
+          "sha256": "0fc3ebf5f18adbf2f385f3c3efad3ccc28186848027ff75a4a6c14f1f80bee86",
+          "raw_sha256": "bc6151d6157b4d29fdce9ed755e45533d17650f5643afe7ecaf9c185c442d9d9",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 676,
+              "clean_start": 0,
+              "clean_end": 668,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 676,
+              "raw_end": 676,
+              "clean_start": 668,
+              "clean_end": 668,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:207:par_000207_000041": {
+          "text": "Sec. 4. And be it further enacted, That in further enforcement of the provision of the Constitution aforesaid, the courts of the United States in the States aforesaid shall have exclusive jurisdiction of all offenses committed by persons not of African descent upon persons of African descent; also of all offenses committed by persons of African descent; and also of all causes, suits, and demands to which any person of African descent shall be a party; and it is hereby declared that all such cases are to be treated as cases arising under the Constitution of the United States.",
+          "sha256": "dd9a29d5b9f88870904b93bcba1c3d44481afd9d0d748a608be55800a41ea530",
+          "raw_sha256": "38d2f22a86cec65697ec72ade93c1e505aab7e7f4a156a87a6cb0f374cef4912",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 584,
+              "clean_start": 0,
+              "clean_end": 581,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 584,
+              "raw_end": 584,
+              "clean_start": 581,
+              "clean_end": 581,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        }
+      },
+      "attempt_id": "f743b400-9c66-4738-a340-bad282e70fd0",
+      "elapsed_seconds": 55.243189834058285,
+      "usage": {
+        "prompt_eval_count": 3349,
+        "eval_count": 886,
+        "total_duration": 55236466541,
+        "load_duration": 24391916
+      }
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-d1964b2fd88da0df3db2",
+      "status": "valid",
+      "reply": {
+        "unit_id": "reading-d1964b2fd88da0df3db2",
+        "status": "proposed",
+        "patches": [
+          {
+            "source_id": "congressionalg7391unit:576:par_000576_000032",
+            "start": 86,
+            "end": 131,
+            "old": "accordingly read the third time, anxl passed.",
+            "new": "accordingly read the third time, and passed.",
+            "image_ids": [
+              "reading-d1964b2fd88da0df3db2-leaf-576"
+            ],
+            "reason": "Correct OCR error 'anxl' to 'and'."
+          },
+          {
+            "source_id": "congressionalg7391unit:576:par_000576_000036",
+            "start": 36,
+            "end": 47,
+            "old": "sub- mitted",
+            "new": "submitted",
+            "image_ids": [
+              "reading-d1964b2fd88da0df3db2-leaf-576"
+            ],
+            "reason": "Remove erroneous space in hyphenated word."
+          },
+          {
+            "source_id": "congressionalg7391unit:576:par_000576_000038",
+            "start": 0,
+            "end": 354,
+            "old": "liesolved, That the Committee on Indian Affairs be instructed to inquire into the justice and propriety of reporting a bill providing for the appointment of a commissioner, whose duty it shall be to determine the amount of depredations by said Indians upon the citizens of said Territory, and oJf recommending an appropriation suflioient to pay the same.",
+            "new": "Resolved, That the Committee on Indian Affairs be instructed to inquire into the justice and propriety of reporting a bill providing for the appointment of a commissioner, whose duty it shall be to determine the amount of depredations by said Indians upon the citizens of said Territory, and of recommending an appropriation sufficient to pay the same.",
+            "image_ids": [
+              "reading-d1964b2fd88da0df3db2-leaf-576"
+            ],
+            "reason": "Correct OCR errors: 'liesolved' to 'Resolved', 'oJf' to 'of', and 'suflioient' to 'sufficient'."
+          }
+        ],
+        "uncertain": []
+      },
+      "derived": {
+        "congressionalg7391unit:576:par_000576_000032": {
+          "text": "The bill was ordered to be engrossed for a third reading; and being engrossed, it was accordingly read the third time, and passed.",
+          "sha256": "65ca08c829ee9115eb820980557a287e48588b500ff017463af3c986c4bec9ba",
+          "raw_sha256": "77eae8d15d2645ec2c2e29fe9370bda913a38206350b7fdec7d4491b6907ca54",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 86,
+              "clean_start": 0,
+              "clean_end": 86,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 86,
+              "raw_end": 131,
+              "clean_start": 86,
+              "clean_end": 130,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 131,
+              "raw_end": 131,
+              "clean_start": 130,
+              "clean_end": 130,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:576:par_000576_000033": {
+          "text": "Mr. BROOKS moved to reconsider the vote by which the bill was passed ; and also moved that the motion to reconsider be laid upon the table.",
+          "sha256": "a019a311a3f26e3b0070016818b4956068a9f6f3752dd46093767ec0143a96c1",
+          "raw_sha256": "a019a311a3f26e3b0070016818b4956068a9f6f3752dd46093767ec0143a96c1",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 139,
+              "clean_start": 0,
+              "clean_end": 139,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:576:par_000576_000034": {
+          "text": "The latter motion was agreed to.",
+          "sha256": "01cf86e28102bd2bba4337ff394bba94095601f313c69161711e249e050d5b4b",
+          "raw_sha256": "01cf86e28102bd2bba4337ff394bba94095601f313c69161711e249e050d5b4b",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 32,
+              "clean_start": 0,
+              "clean_end": 32,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:576:par_000576_000035": {
+          "text": "INDIANS IN DAKOTA TERRITORY.",
+          "sha256": "276c1aad3c61179d467168271a1cede32c12b7b7c4a3889ee0f2849e57f4b42f",
+          "raw_sha256": "276c1aad3c61179d467168271a1cede32c12b7b7c4a3889ee0f2849e57f4b42f",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 28,
+              "clean_start": 0,
+              "clean_end": 28,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:576:par_000576_000036": {
+          "text": "Mr. BURLEIGH, by unanimous consent, submitted the following preamble and resolution ; which were read, considered, and agreed to :",
+          "sha256": "baf0a8be7b26eacfe96bf1083a23a4a837fc2f9674d6c49edd4ae6933d4ae582",
+          "raw_sha256": "ba222fec07e37c0c169da4eab2930616762bec2b2950a27177bbab5582b4baf5",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 36,
+              "clean_start": 0,
+              "clean_end": 36,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 36,
+              "raw_end": 47,
+              "clean_start": 36,
+              "clean_end": 45,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 47,
+              "raw_end": 132,
+              "clean_start": 45,
+              "clean_end": 130,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:576:par_000576_000037": {
+          "text": "Whereas several citizens of Dakota Territory have been either murdered or maimed and had their property stolen and destroyed by the hostile Sioux Indians who were concerned in the late Minnesota massacre, either at the time of or since that sad oc- currence; and whereas the hostile bands of Indians known as the Sisseton, Wah-pa-ton, Medawakanton, and Wah-pa-koota bands of Dakota Indians were, in opposition to the wishes of the citizens of Dakota Territory, forced into said Territory, in consequence of which act those outrages have been committed upon the unarmed and defenseless citizens of that Terri- tory: Therefore,",
+          "sha256": "fc7cc19563f38b8beefa18ed41a9e6b86ccbe4d370706155cf838e1042f4d147",
+          "raw_sha256": "fc7cc19563f38b8beefa18ed41a9e6b86ccbe4d370706155cf838e1042f4d147",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 625,
+              "clean_start": 0,
+              "clean_end": 625,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:576:par_000576_000038": {
+          "text": "Resolved, That the Committee on Indian Affairs be instructed to inquire into the justice and propriety of reporting a bill providing for the appointment of a commissioner, whose duty it shall be to determine the amount of depredations by said Indians upon the citizens of said Territory, and of recommending an appropriation sufficient to pay the same.",
+          "sha256": "acccc7211dc73138a2e491148d2d4cd9685efc9695940d12acf6ee8b1f31d8b3",
+          "raw_sha256": "95e551d621297383574b58b70275185b5ef7f564972e5db7f9d353190bfc739b",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 354,
+              "clean_start": 0,
+              "clean_end": 352,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 354,
+              "raw_end": 354,
+              "clean_start": 352,
+              "clean_end": 352,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        }
+      },
+      "attempt_id": "45f9f614-034e-41c5-894f-79852d0d25ff",
+      "elapsed_seconds": 62.895934333093464,
+      "usage": {
+        "prompt_eval_count": 3377,
+        "eval_count": 560,
+        "total_duration": 62879888166,
+        "load_duration": 4526579625
+      }
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-3077c2e0a49061bbcf29",
+      "status": "valid",
+      "reply": {
+        "unit_id": "reading-3077c2e0a49061bbcf29",
+        "status": "proposed",
+        "patches": [
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000040",
+            "start": 0,
+            "end": 123,
+            "old": "Sec. 3. And be it furilier enacted. That in further enforcement of the provision of the Constitution pro- hibiting slavei-y",
+            "new": "Sec. 3. And be it further enacted, That in further enforcement of the provision of the Constitution pro- hibiting slavery",
+            "image_ids": [
+              "reading-3077c2e0a49061bbcf29-leaf-207"
+            ],
+            "reason": "Correct OCR errors: 'furilier' to 'further', '.' to ',', and 'slavei-y' to 'slavery'."
+          },
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000040",
+            "start": 379,
+            "end": 423,
+            "old": "account of color or race arc hereby annulled",
+            "new": "account of color or race are hereby annulled",
+            "image_ids": [
+              "reading-3077c2e0a49061bbcf29-leaf-207"
+            ],
+            "reason": "Correct OCR error: 'arc' to 'are'."
+          },
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000040",
+            "start": 537,
+            "end": 571,
+            "old": "section arc hereby made applicable",
+            "new": "section are hereby made applicable",
+            "image_ids": [
+              "reading-3077c2e0a49061bbcf29-leaf-207"
+            ],
+            "reason": "Correct OCR error: 'arc' to 'are'."
+          },
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000041",
+            "start": 212,
+            "end": 327,
+            "old": "fenses commitU\"d by persons not of African descent upon persons of African descent; also of all ofl'enses committed",
+            "new": "fenses committed by persons not of African descent upon persons of African descent; also of all offenses committed",
+            "image_ids": [
+              "reading-3077c2e0a49061bbcf29-leaf-207"
+            ],
+            "reason": "Correct OCR errors: 'commitU\"d' to 'committed' and 'ofl'enses' to 'offenses'."
+          },
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000041",
+            "start": 515,
+            "end": 545,
+            "old": "treated as eases arising under",
+            "new": "treated as cases arising under",
+            "image_ids": [
+              "reading-3077c2e0a49061bbcf29-leaf-207"
+            ],
+            "reason": "Correct OCR error: 'eases' to 'cases'."
+          }
+        ],
+        "uncertain": []
+      },
+      "derived": {
+        "congressionalg7391unit:207:par_000207_000038": {
+          "text": "There are measures of my own, already in- troduced by me, now on your table, looking to the same result as the pending bill, which pro- ceed specifically on the two latter grounds.",
+          "sha256": "7f3a6dd3399b6e3595e58bf8494cfc9bbd3c7d1a8f00087cfb0c0e4e2dc7a979",
+          "raw_sha256": "7f3a6dd3399b6e3595e58bf8494cfc9bbd3c7d1a8f00087cfb0c0e4e2dc7a979",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 180,
+              "clean_start": 0,
+              "clean_end": 180,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:207:par_000207_000039": {
+          "text": "One of these is entitled \"A bill supplying appropriate legislation to enforce the amend- ment of the Constitution.\" From this bill I read two sections :",
+          "sha256": "3afe7683cfba94882c2236d17cd2e335577353994c260c3e8ee6738b7533adde",
+          "raw_sha256": "3afe7683cfba94882c2236d17cd2e335577353994c260c3e8ee6738b7533adde",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 152,
+              "clean_start": 0,
+              "clean_end": 152,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:207:par_000207_000040": {
+          "text": "Sec. 3. And be it further enacted, That in further enforcement of the provision of the Constitution pro- hibiting slavery, and in order to remove all relics of this wrong from the States where this constitutional prohibition takes effect, it is hereby declared that all laws or customs in such States establishing any oli- garchical privileges and any distinction of rights on account of color or race are hereby annulled, and all persons in such States are recognized as equal be- fore the law; and the penalties provided in the last section are hereby made applicable to any violation of this provision, which is made in pursuance of the Constitution of the United States.",
+          "sha256": "72c405d683abb45e428ef00164fff6f435c9bd24dc7f3f7d88612cae1e3c4aa1",
+          "raw_sha256": "bc6151d6157b4d29fdce9ed755e45533d17650f5643afe7ecaf9c185c442d9d9",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 123,
+              "clean_start": 0,
+              "clean_end": 121,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 123,
+              "raw_end": 379,
+              "clean_start": 121,
+              "clean_end": 377,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 379,
+              "raw_end": 423,
+              "clean_start": 377,
+              "clean_end": 421,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 423,
+              "raw_end": 537,
+              "clean_start": 421,
+              "clean_end": 535,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 537,
+              "raw_end": 571,
+              "clean_start": 535,
+              "clean_end": 569,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 571,
+              "raw_end": 676,
+              "clean_start": 569,
+              "clean_end": 674,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:207:par_000207_000041": {
+          "text": "Sec. 4. And be it further enacted, That in further enforcement of the provision of the Constitution aforesaid, the courts of the United States in the States aforesaid shall have exclusive jurisdiction of all of- fenses committed by persons not of African descent upon persons of African descent; also of all offenses committed by persons of African descent; and also of all causes, suits, and demands to which any person of African descent shall be a party; and it is hereby declared that all such cases are to be treated as cases arising under the Constitution of the United States.",
+          "sha256": "c5c35b542f17c6ccd39056972fc4f4054c41d3e1633e99b1ced9c981015c5d91",
+          "raw_sha256": "38d2f22a86cec65697ec72ade93c1e505aab7e7f4a156a87a6cb0f374cef4912",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 212,
+              "clean_start": 0,
+              "clean_end": 212,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 212,
+              "raw_end": 327,
+              "clean_start": 212,
+              "clean_end": 326,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 327,
+              "raw_end": 515,
+              "clean_start": 326,
+              "clean_end": 514,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 515,
+              "raw_end": 545,
+              "clean_start": 514,
+              "clean_end": 544,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 545,
+              "raw_end": 584,
+              "clean_start": 544,
+              "clean_end": 583,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        }
+      },
+      "attempt_id": "f3356fcc-635a-49fb-ac3a-c90642808c6e",
+      "elapsed_seconds": 60.04409545799717,
+      "usage": {
+        "prompt_eval_count": 2817,
+        "eval_count": 804,
+        "total_duration": 60030864833,
+        "load_duration": 19571125
+      }
+    },
+    {
+      "task_id": "muse-glimmer:30b-mlx::reading-d1964b2fd88da0df3db2",
+      "status": "timeout",
+      "attempt_id": "62541382-14d1-4ba3-83bb-ad67e832ed6a"
+    }
+  ],
+  "config": {
+    "files": {
+      "artifacts/reading-quote-20261025-01/requests.json": "f4c2c92b3549f63fd8521234bdbb167bfd741cc8c4d892cb27926e10a9a89116",
+      "artifacts/reading-quote-20261025-01/counts.json": "dcea848310f5f9eb03df06006f7e3ee8e4e74a19d9e06c1588518259b0fb414f",
+      "artifacts/reading-quote-20261025-01/assessment-protocol.json": "961eeb96c30be047f1e34b2ba66ca354faa340ef00445ef702973cdc0ca94c34",
+      "docs/archive/human-review/HR-009-v1/applied.json": "32a6ae7d8d8ecf156b650d32726afac2d1072bdfd2c58ca62cc6fd6a4b420dbb",
+      "artifacts/reading-prepare-20261024-03/candidates.jsonl": "9358e8e4cb7b4cd22f7423671aa8f336e82f04336d6df5ef261ab904585ee51a",
+      "artifacts/reading-images-20261024-01/index.json": "fb3dbe6e925f1f557be11c9eecbeae32737064bc8c8d1a07cbee4537e7f17aaf"
+    },
+    "code": {
+      "src/congressional_globe/reading_contracts.py": "e0a5520d8b87a9e67842842df69e249404017474bd203610b6724d84d1a826d9",
+      "src/congressional_globe/reading_controls.py": "0f26e068dbf06b3877968958f6f158873ed4ba27152bb2285dc6953787ba814d",
+      "src/congressional_globe/reading_dispatch.py": "cfd53e41692cf0520fe1432fb0ee3631fbc1f1ad803fe4f397d30c239359aef5",
+      "src/congressional_globe/reading_images.py": "bccc0e6838b5958ed833485a65893bfe38a6649bc3723a125218abdbcab4efcb",
+      "src/congressional_globe/reading_launch.py": "45def8fb8016c1147da2d486dc07f86259e2cd009799e7c635dbbe5f58e911f6",
+      "src/congressional_globe/reading_preflight.py": "5a15a26e718f55fe26de484a2f0b6a318b13502ffe262ad7abf386ef96a3c217",
+      "src/congressional_globe/reading_preparation.py": "a10d717e55f3558e22542c7f53cb65b1a8ff00a978707ea8137732b1a2d370d7",
+      "src/congressional_globe/reading_quotes.py": "e4fd7bff53e6928fdd7bf3167161af015b59ff8bd656c073af5028d01e7d0064",
+      "src/congressional_globe/reading_requests.py": "fefa6f34afc510f1c3d2f6d7f5a0c8764fb70e3da239c765df47486a50a21041",
+      "src/congressional_globe/reading_run_store.py": "bb9f462e15a6ae3944788fab54adf679322e0c73cec5ac34efdf2604e7f1da7e",
+      "src/congressional_globe/reading_source_check.py": "1e84c70eff043434722b27adb5798c8f8caa014414f888c70e3e521a38c9ef6e"
+    },
+    "max_calls": 6,
+    "total_seconds": 1200,
+    "per_model_seconds": 360,
+    "call_seconds": 120,
+    "source_derived_fit": true,
+    "runtime_count_must_match": true
+  }
+}

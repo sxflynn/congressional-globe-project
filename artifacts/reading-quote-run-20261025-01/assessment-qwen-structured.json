@@ -1,0 +1,175 @@
+{
+  "task_id": "qwen3.8:27b-mlx::reading-3077c2e0a49061bbcf29",
+  "request_sha256": "2c74cad62131928eb0a732ffe94bce2ef2dfbc570fb5c01466a61d0b45e632e9",
+  "raw_reply_sha256": "b91bd27b13ce9daf67dbbd6d547c78898418dc40e3d8abc4594f48836d02132b",
+  "host_status": "valid",
+  "input_count_parity": true,
+  "AI_visual_scope": "Root compared both entire proposed replacement paragraphs with the inspected source crop; non-replaced opening narrative also checked for scope.",
+  "patch_count": 2,
+  "patch_assessments": [
+    {
+      "source_id": "congressionalg7391unit:207:par_000207_000040",
+      "start": 0,
+      "end": 676,
+      "small_edits": [
+        {
+          "old": "ili",
+          "new": "th"
+        },
+        {
+          "old": ".",
+          "new": ","
+        },
+        {
+          "old": "- ",
+          "new": ""
+        },
+        {
+          "old": "i-",
+          "new": "r"
+        },
+        {
+          "old": "- ",
+          "new": ""
+        },
+        {
+          "old": "c",
+          "new": "e"
+        },
+        {
+          "old": "- ",
+          "new": ""
+        },
+        {
+          "old": "c",
+          "new": "e"
+        }
+      ],
+      "source_supported": true
+    },
+    {
+      "source_id": "congressionalg7391unit:207:par_000207_000041",
+      "start": 0,
+      "end": 584,
+      "small_edits": [
+        {
+          "old": "- ",
+          "new": ""
+        },
+        {
+          "old": "U\"",
+          "new": "te"
+        },
+        {
+          "old": "l'",
+          "new": "f"
+        },
+        {
+          "old": "e",
+          "new": "c"
+        }
+      ],
+      "source_supported": true
+    }
+  ],
+  "unsupported_substantive_changes": 0,
+  "pre_output_anchor_checks": "All4specific anchors corrected: further, slavery, committed, cases.",
+  "reading_assessment": "Quoted sections3and4 improve over raw and static OCR without changing the racial/jurisdiction distinctions. Opening narrative still retains in- troduced/pro- ceed line-wrap artifacts; not a claim of perfectly cleaned full text.",
+  "preserved": "Section numbers3/4, courts of United States, not of African descent versus of African descent, all causes/suits/demands, final Constitution sentence and all selected paragraphs preserved.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "derived": {
+    "congressionalg7391unit:207:par_000207_000038": {
+      "text": "There are measures of my own, already in- troduced by me, now on your table, looking to the same result as the pending bill, which pro- ceed specifically on the two latter grounds.",
+      "sha256": "7f3a6dd3399b6e3595e58bf8494cfc9bbd3c7d1a8f00087cfb0c0e4e2dc7a979",
+      "raw_sha256": "7f3a6dd3399b6e3595e58bf8494cfc9bbd3c7d1a8f00087cfb0c0e4e2dc7a979",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 180,
+          "clean_start": 0,
+          "clean_end": 180,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:207:par_000207_000039": {
+      "text": "One of these is entitled \"A bill supplying appropriate legislation to enforce the amend- ment of the Constitution.\" From this bill I read two sections :",
+      "sha256": "3afe7683cfba94882c2236d17cd2e335577353994c260c3e8ee6738b7533adde",
+      "raw_sha256": "3afe7683cfba94882c2236d17cd2e335577353994c260c3e8ee6738b7533adde",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 152,
+          "clean_start": 0,
+          "clean_end": 152,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:207:par_000207_000040": {
+      "text": "Sec. 3. And be it further enacted, That in further enforcement of the provision of the Constitution prohibiting slavery, and in order to remove all relics of this wrong from the States where this constitutional prohibition takes effect, it is hereby declared that all laws or customs in such States establishing any oligarchical privileges and any distinction of rights on account of color or race are hereby annulled, and all persons in such States are recognized as equal before the law; and the penalties provided in the last section are hereby made applicable to any violation of this provision, which is made in pursuance of the Constitution of the United States.",
+      "sha256": "0fc3ebf5f18adbf2f385f3c3efad3ccc28186848027ff75a4a6c14f1f80bee86",
+      "raw_sha256": "bc6151d6157b4d29fdce9ed755e45533d17650f5643afe7ecaf9c185c442d9d9",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 0,
+          "clean_start": 0,
+          "clean_end": 0,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 0,
+          "raw_end": 676,
+          "clean_start": 0,
+          "clean_end": 668,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 676,
+          "raw_end": 676,
+          "clean_start": 668,
+          "clean_end": 668,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:207:par_000207_000041": {
+      "text": "Sec. 4. And be it further enacted, That in further enforcement of the provision of the Constitution aforesaid, the courts of the United States in the States aforesaid shall have exclusive jurisdiction of all offenses committed by persons not of African descent upon persons of African descent; also of all offenses committed by persons of African descent; and also of all causes, suits, and demands to which any person of African descent shall be a party; and it is hereby declared that all such cases are to be treated as cases arising under the Constitution of the United States.",
+      "sha256": "dd9a29d5b9f88870904b93bcba1c3d44481afd9d0d748a608be55800a41ea530",
+      "raw_sha256": "38d2f22a86cec65697ec72ade93c1e505aab7e7f4a156a87a6cb0f374cef4912",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 0,
+          "clean_start": 0,
+          "clean_end": 0,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 0,
+          "raw_end": 584,
+          "clean_start": 0,
+          "clean_end": 581,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 584,
+          "raw_end": 584,
+          "clean_start": 581,
+          "clean_end": 581,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "task_id": "gemma4:31b-mlx::reading-d1964b2fd88da0df3db2",
+  "request_sha256": "dc820cc6df29d47063aa305b82b612571de2ea7631934a3f7bc77eb7ef74dcbd",
+  "raw_reply_sha256": "4d0cdddd937da34fae6cc4b181d92478df8ea8e43bf9fecbf7ae3e8105d3dab8",
+  "host_status": "valid",
+  "input_count_parity": true,
+  "AI_visual_scope": "Root compared every change with inspected source crop and reviewed whole derived target; no human grading.",
+  "patch_count": 3,
+  "patch_assessments": [
+    {
+      "source_id": "congressionalg7391unit:576:par_000576_000032",
+      "start": 86,
+      "end": 131,
+      "small_edits": [
+        {
+          "old": "xl",
+          "new": "d"
+        }
+      ],
+      "source_supported": true
+    },
+    {
+      "source_id": "congressionalg7391unit:576:par_000576_000036",
+      "start": 36,
+      "end": 47,
+      "small_edits": [
+        {
+          "old": "- ",
+          "new": ""
+        }
+      ],
+      "source_supported": true
+    },
+    {
+      "source_id": "congressionalg7391unit:576:par_000576_000038",
+      "start": 0,
+      "end": 354,
+      "small_edits": [
+        {
+          "old": "li",
+          "new": "R"
+        },
+        {
+          "old": "J",
+          "new": ""
+        },
+        {
+          "old": "l",
+          "new": "f"
+        },
+        {
+          "old": "o",
+          "new": "c"
+        }
+      ],
+      "source_supported": true
+    }
+  ],
+  "unsupported_substantive_changes": 0,
+  "pre_output_anchor_checks": "All3specific anchors corrected: and, Resolved, sufficient; also oJf→of.",
+  "reading_assessment": "Source-supported4OCR repairs and1line-wrap join. Residual oc- currence/Terri- tory line-wrap artifacts remain in raw-derived preamble; static baseline had already removed these. No assertion of perfect full text or universal improvement over static on all typography.",
+  "preserved": "Brooks motion, Dakota heading/preamble/resolution, band names, all target paragraphs and end of resolution; no neighboring heading imported.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "derived": {
+    "congressionalg7391unit:576:par_000576_000032": {
+      "text": "The bill was ordered to be engrossed for a third reading; and being engrossed, it was accordingly read the third time, and passed.",
+      "sha256": "65ca08c829ee9115eb820980557a287e48588b500ff017463af3c986c4bec9ba",
+      "raw_sha256": "77eae8d15d2645ec2c2e29fe9370bda913a38206350b7fdec7d4491b6907ca54",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 86,
+          "clean_start": 0,
+          "clean_end": 86,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 86,
+          "raw_end": 131,
+          "clean_start": 86,
+          "clean_end": 130,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 131,
+          "raw_end": 131,
+          "clean_start": 130,
+          "clean_end": 130,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:576:par_000576_000033": {
+      "text": "Mr. BROOKS moved to reconsider the vote by which the bill was passed ; and also moved that the motion to reconsider be laid upon the table.",
+      "sha256": "a019a311a3f26e3b0070016818b4956068a9f6f3752dd46093767ec0143a96c1",
+      "raw_sha256": "a019a311a3f26e3b0070016818b4956068a9f6f3752dd46093767ec0143a96c1",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 139,
+          "clean_start": 0,
+          "clean_end": 139,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:576:par_000576_000034": {
+      "text": "The latter motion was agreed to.",
+      "sha256": "01cf86e28102bd2bba4337ff394bba94095601f313c69161711e249e050d5b4b",
+      "raw_sha256": "01cf86e28102bd2bba4337ff394bba94095601f313c69161711e249e050d5b4b",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 32,
+          "clean_start": 0,
+          "clean_end": 32,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:576:par_000576_000035": {
+      "text": "INDIANS IN DAKOTA TERRITORY.",
+      "sha256": "276c1aad3c61179d467168271a1cede32c12b7b7c4a3889ee0f2849e57f4b42f",
+      "raw_sha256": "276c1aad3c61179d467168271a1cede32c12b7b7c4a3889ee0f2849e57f4b42f",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 28,
+          "clean_start": 0,
+          "clean_end": 28,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:576:par_000576_000036": {
+      "text": "Mr. BURLEIGH, by unanimous consent, submitted the following preamble and resolution ; which were read, considered, and agreed to :",
+      "sha256": "baf0a8be7b26eacfe96bf1083a23a4a837fc2f9674d6c49edd4ae6933d4ae582",
+      "raw_sha256": "ba222fec07e37c0c169da4eab2930616762bec2b2950a27177bbab5582b4baf5",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 36,
+          "clean_start": 0,
+          "clean_end": 36,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 36,
+          "raw_end": 47,
+          "clean_start": 36,
+          "clean_end": 45,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 47,
+          "raw_end": 132,
+          "clean_start": 45,
+          "clean_end": 130,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:576:par_000576_000037": {
+      "text": "Whereas several citizens of Dakota Territory have been either murdered or maimed and had their property stolen and destroyed by the hostile Sioux Indians who were concerned in the late Minnesota massacre, either at the time of or since that sad oc- currence; and whereas the hostile bands of Indians known as the Sisseton, Wah-pa-ton, Medawakanton, and Wah-pa-koota bands of Dakota Indians were, in opposition to the wishes of the citizens of Dakota Territory, forced into said Territory, in consequence of which act those outrages have been committed upon the unarmed and defenseless citizens of that Terri- tory: Therefore,",
+      "sha256": "fc7cc19563f38b8beefa18ed41a9e6b86ccbe4d370706155cf838e1042f4d147",
+      "raw_sha256": "fc7cc19563f38b8beefa18ed41a9e6b86ccbe4d370706155cf838e1042f4d147",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 625,
+          "clean_start": 0,
+          "clean_end": 625,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:576:par_000576_000038": {
+      "text": "Resolved, That the Committee on Indian Affairs be instructed to inquire into the justice and propriety of reporting a bill providing for the appointment of a commissioner, whose duty it shall be to determine the amount of depredations by said Indians upon the citizens of said Territory, and of recommending an appropriation sufficient to pay the same.",
+      "sha256": "acccc7211dc73138a2e491148d2d4cd9685efc9695940d12acf6ee8b1f31d8b3",
+      "raw_sha256": "95e551d621297383574b58b70275185b5ef7f564972e5db7f9d353190bfc739b",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 0,
+          "clean_start": 0,
+          "clean_end": 0,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 0,
+          "raw_end": 354,
+          "clean_start": 0,
+          "clean_end": 352,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 354,
+          "raw_end": 354,
+          "clean_start": 352,
+          "clean_end": 352,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    }
+  }
+}

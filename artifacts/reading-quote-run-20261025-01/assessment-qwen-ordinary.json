@@ -1,0 +1,320 @@
+{
+  "task_id": "qwen3.8:27b-mlx::reading-d1964b2fd88da0df3db2",
+  "request_sha256": "8dc07272c438eeb59bd3d902d0951588a8d01f1094ded48431dbac3f2e6c3d62",
+  "raw_reply_sha256": "bddd8c326de5ab9b1ecc625134e8e7ccef35244316603db266b76c810bef86fe",
+  "input_count_parity": true,
+  "host_status": "valid",
+  "AI_visual_scope": "Root reviewed every proposed changed span and whole derived target against the previously inspected hash-bound source crop; no human grading.",
+  "patch_count": 7,
+  "patch_assessments": [
+    {
+      "source_id": "congressionalg7391unit:576:par_000576_000032",
+      "start": 119,
+      "end": 123,
+      "old": "anxl",
+      "new": "and",
+      "image_ids": [
+        "reading-d1964b2fd88da0df3db2-leaf-576"
+      ],
+      "source_supported": true,
+      "kind": "OCR_character_repair",
+      "old_still_present_in_static": true
+    },
+    {
+      "source_id": "congressionalg7391unit:576:par_000576_000036",
+      "start": 36,
+      "end": 47,
+      "old": "sub- mitted",
+      "new": "submitted",
+      "image_ids": [
+        "reading-d1964b2fd88da0df3db2-leaf-576"
+      ],
+      "source_supported": true,
+      "kind": "line_wrap_join",
+      "old_still_present_in_static": false
+    },
+    {
+      "source_id": "congressionalg7391unit:576:par_000576_000037",
+      "start": 245,
+      "end": 257,
+      "old": "oc- currence",
+      "new": "occurrence",
+      "image_ids": [
+        "reading-d1964b2fd88da0df3db2-leaf-576"
+      ],
+      "source_supported": true,
+      "kind": "line_wrap_join",
+      "old_still_present_in_static": false
+    },
+    {
+      "source_id": "congressionalg7391unit:576:par_000576_000037",
+      "start": 602,
+      "end": 613,
+      "old": "Terri- tory",
+      "new": "Territory",
+      "image_ids": [
+        "reading-d1964b2fd88da0df3db2-leaf-576"
+      ],
+      "source_supported": true,
+      "kind": "line_wrap_join",
+      "old_still_present_in_static": false
+    },
+    {
+      "source_id": "congressionalg7391unit:576:par_000576_000038",
+      "start": 0,
+      "end": 9,
+      "old": "liesolved",
+      "new": "Resolved",
+      "image_ids": [
+        "reading-d1964b2fd88da0df3db2-leaf-576"
+      ],
+      "source_supported": true,
+      "kind": "OCR_character_repair",
+      "old_still_present_in_static": true
+    },
+    {
+      "source_id": "congressionalg7391unit:576:par_000576_000038",
+      "start": 293,
+      "end": 296,
+      "old": "oJf",
+      "new": "of",
+      "image_ids": [
+        "reading-d1964b2fd88da0df3db2-leaf-576"
+      ],
+      "source_supported": true,
+      "kind": "OCR_character_repair",
+      "old_still_present_in_static": true
+    },
+    {
+      "source_id": "congressionalg7391unit:576:par_000576_000038",
+      "start": 327,
+      "end": 337,
+      "old": "suflioient",
+      "new": "sufficient",
+      "image_ids": [
+        "reading-d1964b2fd88da0df3db2-leaf-576"
+      ],
+      "source_supported": true,
+      "kind": "OCR_character_repair",
+      "old_still_present_in_static": true
+    }
+  ],
+  "unsupported_substantive_changes": 0,
+  "pre_output_anchor_checks": "anxl→and, liesolved→Resolved, suflioient→sufficient all achieved",
+  "reading_assessment": "Usable in this diagnostic observation; joins line wraps and repairs OCR while preserving section heading, quoted resolution, band names, numbers and preceding Brooks turn. No context/neighbor import observed.",
+  "reason_caveat": "Model reasons say print has no hyphen for joined words, although the scan visibly prints end-of-line hyphens; the joins are a reading-layer line-wrap normalization, not literal facsimile typography.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "derived": {
+    "congressionalg7391unit:576:par_000576_000032": {
+      "text": "The bill was ordered to be engrossed for a third reading; and being engrossed, it was accordingly read the third time, and passed.",
+      "sha256": "65ca08c829ee9115eb820980557a287e48588b500ff017463af3c986c4bec9ba",
+      "raw_sha256": "77eae8d15d2645ec2c2e29fe9370bda913a38206350b7fdec7d4491b6907ca54",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 119,
+          "clean_start": 0,
+          "clean_end": 119,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 119,
+          "raw_end": 123,
+          "clean_start": 119,
+          "clean_end": 122,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 123,
+          "raw_end": 131,
+          "clean_start": 122,
+          "clean_end": 130,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:576:par_000576_000033": {
+      "text": "Mr. BROOKS moved to reconsider the vote by which the bill was passed ; and also moved that the motion to reconsider be laid upon the table.",
+      "sha256": "a019a311a3f26e3b0070016818b4956068a9f6f3752dd46093767ec0143a96c1",
+      "raw_sha256": "a019a311a3f26e3b0070016818b4956068a9f6f3752dd46093767ec0143a96c1",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 139,
+          "clean_start": 0,
+          "clean_end": 139,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:576:par_000576_000034": {
+      "text": "The latter motion was agreed to.",
+      "sha256": "01cf86e28102bd2bba4337ff394bba94095601f313c69161711e249e050d5b4b",
+      "raw_sha256": "01cf86e28102bd2bba4337ff394bba94095601f313c69161711e249e050d5b4b",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 32,
+          "clean_start": 0,
+          "clean_end": 32,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:576:par_000576_000035": {
+      "text": "INDIANS IN DAKOTA TERRITORY.",
+      "sha256": "276c1aad3c61179d467168271a1cede32c12b7b7c4a3889ee0f2849e57f4b42f",
+      "raw_sha256": "276c1aad3c61179d467168271a1cede32c12b7b7c4a3889ee0f2849e57f4b42f",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 28,
+          "clean_start": 0,
+          "clean_end": 28,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:576:par_000576_000036": {
+      "text": "Mr. BURLEIGH, by unanimous consent, submitted the following preamble and resolution ; which were read, considered, and agreed to :",
+      "sha256": "baf0a8be7b26eacfe96bf1083a23a4a837fc2f9674d6c49edd4ae6933d4ae582",
+      "raw_sha256": "ba222fec07e37c0c169da4eab2930616762bec2b2950a27177bbab5582b4baf5",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 36,
+          "clean_start": 0,
+          "clean_end": 36,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 36,
+          "raw_end": 47,
+          "clean_start": 36,
+          "clean_end": 45,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 47,
+          "raw_end": 132,
+          "clean_start": 45,
+          "clean_end": 130,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:576:par_000576_000037": {
+      "text": "Whereas several citizens of Dakota Territory have been either murdered or maimed and had their property stolen and destroyed by the hostile Sioux Indians who were concerned in the late Minnesota massacre, either at the time of or since that sad occurrence; and whereas the hostile bands of Indians known as the Sisseton, Wah-pa-ton, Medawakanton, and Wah-pa-koota bands of Dakota Indians were, in opposition to the wishes of the citizens of Dakota Territory, forced into said Territory, in consequence of which act those outrages have been committed upon the unarmed and defenseless citizens of that Territory: Therefore,",
+      "sha256": "e6b8f997a4f4d9b5a873e18818022ef1b9c89bb15e13aa9e6a4a95fa31973941",
+      "raw_sha256": "fc7cc19563f38b8beefa18ed41a9e6b86ccbe4d370706155cf838e1042f4d147",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 245,
+          "clean_start": 0,
+          "clean_end": 245,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 245,
+          "raw_end": 257,
+          "clean_start": 245,
+          "clean_end": 255,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 257,
+          "raw_end": 602,
+          "clean_start": 255,
+          "clean_end": 600,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 602,
+          "raw_end": 613,
+          "clean_start": 600,
+          "clean_end": 609,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 613,
+          "raw_end": 625,
+          "clean_start": 609,
+          "clean_end": 621,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:576:par_000576_000038": {
+      "text": "Resolved, That the Committee on Indian Affairs be instructed to inquire into the justice and propriety of reporting a bill providing for the appointment of a commissioner, whose duty it shall be to determine the amount of depredations by said Indians upon the citizens of said Territory, and of recommending an appropriation sufficient to pay the same.",
+      "sha256": "acccc7211dc73138a2e491148d2d4cd9685efc9695940d12acf6ee8b1f31d8b3",
+      "raw_sha256": "95e551d621297383574b58b70275185b5ef7f564972e5db7f9d353190bfc739b",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 0,
+          "clean_start": 0,
+          "clean_end": 0,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 0,
+          "raw_end": 9,
+          "clean_start": 0,
+          "clean_end": 8,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 9,
+          "raw_end": 293,
+          "clean_start": 8,
+          "clean_end": 292,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 293,
+          "raw_end": 296,
+          "clean_start": 292,
+          "clean_end": 294,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 296,
+          "raw_end": 327,
+          "clean_start": 294,
+          "clean_end": 325,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 327,
+          "raw_end": 337,
+          "clean_start": 325,
+          "clean_end": 335,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 337,
+          "raw_end": 354,
+          "clean_start": 335,
+          "clean_end": 352,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    }
+  }
+}

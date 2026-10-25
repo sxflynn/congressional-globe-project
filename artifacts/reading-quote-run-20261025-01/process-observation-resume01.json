@@ -1,0 +1,7 @@
+{
+  "pid": 30975,
+  "observed_utc": "2026-10-25T10:37:06.127669+00:00",
+  "process_identity": "  PID  PPID STARTED                      COMMAND\n30975 30958 Sun Oct 25 06:37:06 2026     uv run python -m congressional_globe.reading_launch --output artifacts/reading-quote-run-20261025-01 --manifest artifacts/reading-quote-20261025-01/requests.json --counts artifacts/reading-quote-20261025-01/counts.json --protocol artifacts/reading-quote-20261025-01/assessment-protocol.json --max-calls 6 --total-seconds 1200 --per-model-seconds 360 --stop-file artifacts/reading-quote-run-20261025-01/STOP --process-proof artifacts/reading-quote-run-20261025-01/process-preflight-resume01.json --execute\n",
+  "log": "artifacts/reading-quote-run-20261025-01/resume01.log",
+  "store": "artifacts/reading-quote-run-20261025-01/attempts.sqlite"
+}

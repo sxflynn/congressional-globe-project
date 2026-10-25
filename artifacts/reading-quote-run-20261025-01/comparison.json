@@ -1,0 +1,80 @@
+{
+  "scope": "Two previously exposed part1diagnostic passages;4completed outputs assessed by root AI against images, not held-out or human gold. No missing/wrong-image controls in this cause-specific diagnostic.",
+  "contract_change": "v1model-authored numeric offsets failed5/5completed replies; quote-v2requires exact unique old-source substring and host-derived positions. Original failures remain unchanged.",
+  "summary": {
+    "pending": 0,
+    "inflight": 0,
+    "timeout": 2,
+    "failed": 0,
+    "invalid": 0,
+    "valid": 4
+  },
+  "models": {
+    "qwen3.8:27b-mlx": {
+      "attempted": 2,
+      "valid": 2,
+      "timeouts": 0,
+      "source_assessed_completed": 2,
+      "input_count_matches": 2,
+      "patches": 9,
+      "pre_output_anchor_checks_correct": 7,
+      "pre_output_anchor_check_denominator": 7,
+      "raw_line_wrap_patterns": 10,
+      "static_line_wrap_patterns": 0,
+      "AI_line_wrap_patterns": 3,
+      "elapsed_seconds": 119.49671241710894
+    },
+    "gemma4:31b-mlx": {
+      "attempted": 2,
+      "valid": 2,
+      "timeouts": 0,
+      "source_assessed_completed": 2,
+      "input_count_matches": 2,
+      "patches": 8,
+      "pre_output_anchor_checks_correct": 7,
+      "pre_output_anchor_check_denominator": 7,
+      "raw_line_wrap_patterns": 10,
+      "static_line_wrap_patterns": 0,
+      "AI_line_wrap_patterns": 9,
+      "elapsed_seconds": 122.92752224998549
+    },
+    "muse-glimmer:30b-mlx": {
+      "attempted": 2,
+      "valid": 0,
+      "timeouts": 2,
+      "source_assessed_completed": 0,
+      "input_count_matches": 0,
+      "patches": 0,
+      "pre_output_anchor_checks_correct": null,
+      "pre_output_anchor_check_denominator": null,
+      "raw_line_wrap_patterns": 10,
+      "static_line_wrap_patterns": 0,
+      "AI_line_wrap_patterns": null,
+      "elapsed_seconds": 240.0034150420688
+    }
+  },
+  "observed_unsupported_substantive_changes": 0,
+  "human_reviewed_outputs": 0,
+  "canonical_edits": 0,
+  "quality_limits": [
+    "Only2distinct source passages, bothpart1; priorQwen exposure.",
+    "No large-run policy, general model ranking, fullpilot17/18quality conclusion or P0closure.",
+    "Some line-wrap artifacts remain, especially Gemma; raw-derived AItext does not dominate static formatting.",
+    "Muse timed out on both planned requests at120seconds incl loading; no response or provider usage recovered, and no retry."
+  ],
+  "software_tests": 347,
+  "offline_replayed_completed_outputs": 4,
+  "cumulative_attempts_this_session": 12,
+  "source_derived_runtime_matches": 9,
+  "known_provider_usage_attempts": 9,
+  "unknown_provider_usage_attempts": 3,
+  "human_review_policy": "HR009at most3fixed outputs/10minutes, selection unchanged; no new grading request for this diagnostic.",
+  "baseline_anchor_observation": "All7pre-output erroneous raw quotes persist in the frozen static text; both completed models resolve all7. This is a source-checked diagnostic anchor count, not whole-text error rate.",
+  "evidence": {
+    "artifacts/reading-quote-run-20261025-01/terminal-export.json": "112ebd95ac129591eac79d8e826db37d686f3c420328534bc5c38fec302cbb34",
+    "artifacts/reading-quote-run-20261025-01/assessment-gemma-ordinary.json": "bef3d4346d3f8b45240dce1eac88db43b6bf3d7c2d0facf5e39c406a66b2b1c2",
+    "artifacts/reading-quote-run-20261025-01/assessment-gemma-structured.json": "092a7a871002b9238286c7262c58e33564207efbae1f016ccfb0088d8b141735",
+    "artifacts/reading-quote-run-20261025-01/assessment-qwen-ordinary.json": "0610db33b5d219710369a2b1c766cf4933585b604d29645108ec51f06071d161",
+    "artifacts/reading-quote-run-20261025-01/assessment-qwen-structured.json": "7b676eeb5c40d88abc39900d2965c63ae2c97046a2f4eba57ad4bd9952de68c1"
+  }
+}

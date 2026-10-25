@@ -1,0 +1,224 @@
+{
+  "task_id": "gemma4:31b-mlx::reading-3077c2e0a49061bbcf29",
+  "request_sha256": "b2f8b2c322cfad4b23eb01276cdabcdb0299714738cd039d61ccfe17e5fdf990",
+  "raw_reply_sha256": "15cbb6ede998ed2450079ca22d065f4018c28106d0623a527bb57828774d24ec",
+  "host_status": "valid",
+  "input_count_parity": true,
+  "AI_visual_scope": "Root compared each changed phrase with source crop and checked complete derived target scope; no human grading.",
+  "patch_count": 5,
+  "patch_assessments": [
+    {
+      "source_id": "congressionalg7391unit:207:par_000207_000040",
+      "start": 0,
+      "end": 123,
+      "small_edits": [
+        {
+          "old": "ili",
+          "new": "th"
+        },
+        {
+          "old": ".",
+          "new": ","
+        },
+        {
+          "old": "i-",
+          "new": "r"
+        }
+      ],
+      "source_supported": true
+    },
+    {
+      "source_id": "congressionalg7391unit:207:par_000207_000040",
+      "start": 379,
+      "end": 423,
+      "small_edits": [
+        {
+          "old": "c",
+          "new": "e"
+        }
+      ],
+      "source_supported": true
+    },
+    {
+      "source_id": "congressionalg7391unit:207:par_000207_000040",
+      "start": 537,
+      "end": 571,
+      "small_edits": [
+        {
+          "old": "c",
+          "new": "e"
+        }
+      ],
+      "source_supported": true
+    },
+    {
+      "source_id": "congressionalg7391unit:207:par_000207_000041",
+      "start": 212,
+      "end": 327,
+      "small_edits": [
+        {
+          "old": "U\"",
+          "new": "te"
+        },
+        {
+          "old": "l'",
+          "new": "f"
+        }
+      ],
+      "source_supported": true
+    },
+    {
+      "source_id": "congressionalg7391unit:207:par_000207_000041",
+      "start": 515,
+      "end": 545,
+      "small_edits": [
+        {
+          "old": "e",
+          "new": "c"
+        }
+      ],
+      "source_supported": true
+    }
+  ],
+  "unsupported_substantive_changes": 0,
+  "pre_output_anchor_checks": "All4anchors corrected: further, slavery, committed, cases.",
+  "reading_assessment": "Repairs source-supported OCR characters and enacted punctuation, preserving racial/jurisdiction distinctions. Most line-wrap artifacts remain, including pro- hibiting/oli- garchical/be- fore/of- fenses and opening narrative; static baseline removes these. Valid reading improvement in specific words, not fully polished TTS text.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "derived": {
+    "congressionalg7391unit:207:par_000207_000038": {
+      "text": "There are measures of my own, already in- troduced by me, now on your table, looking to the same result as the pending bill, which pro- ceed specifically on the two latter grounds.",
+      "sha256": "7f3a6dd3399b6e3595e58bf8494cfc9bbd3c7d1a8f00087cfb0c0e4e2dc7a979",
+      "raw_sha256": "7f3a6dd3399b6e3595e58bf8494cfc9bbd3c7d1a8f00087cfb0c0e4e2dc7a979",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 180,
+          "clean_start": 0,
+          "clean_end": 180,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:207:par_000207_000039": {
+      "text": "One of these is entitled \"A bill supplying appropriate legislation to enforce the amend- ment of the Constitution.\" From this bill I read two sections :",
+      "sha256": "3afe7683cfba94882c2236d17cd2e335577353994c260c3e8ee6738b7533adde",
+      "raw_sha256": "3afe7683cfba94882c2236d17cd2e335577353994c260c3e8ee6738b7533adde",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 152,
+          "clean_start": 0,
+          "clean_end": 152,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:207:par_000207_000040": {
+      "text": "Sec. 3. And be it further enacted, That in further enforcement of the provision of the Constitution pro- hibiting slavery, and in order to remove all relics of this wrong from the States where this constitutional prohibition takes effect, it is hereby declared that all laws or customs in such States establishing any oli- garchical privileges and any distinction of rights on account of color or race are hereby annulled, and all persons in such States are recognized as equal be- fore the law; and the penalties provided in the last section are hereby made applicable to any violation of this provision, which is made in pursuance of the Constitution of the United States.",
+      "sha256": "72c405d683abb45e428ef00164fff6f435c9bd24dc7f3f7d88612cae1e3c4aa1",
+      "raw_sha256": "bc6151d6157b4d29fdce9ed755e45533d17650f5643afe7ecaf9c185c442d9d9",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 0,
+          "clean_start": 0,
+          "clean_end": 0,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 0,
+          "raw_end": 123,
+          "clean_start": 0,
+          "clean_end": 121,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 123,
+          "raw_end": 379,
+          "clean_start": 121,
+          "clean_end": 377,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 379,
+          "raw_end": 423,
+          "clean_start": 377,
+          "clean_end": 421,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 423,
+          "raw_end": 537,
+          "clean_start": 421,
+          "clean_end": 535,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 537,
+          "raw_end": 571,
+          "clean_start": 535,
+          "clean_end": 569,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 571,
+          "raw_end": 676,
+          "clean_start": 569,
+          "clean_end": 674,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    },
+    "congressionalg7391unit:207:par_000207_000041": {
+      "text": "Sec. 4. And be it further enacted, That in further enforcement of the provision of the Constitution aforesaid, the courts of the United States in the States aforesaid shall have exclusive jurisdiction of all of- fenses committed by persons not of African descent upon persons of African descent; also of all offenses committed by persons of African descent; and also of all causes, suits, and demands to which any person of African descent shall be a party; and it is hereby declared that all such cases are to be treated as cases arising under the Constitution of the United States.",
+      "sha256": "c5c35b542f17c6ccd39056972fc4f4054c41d3e1633e99b1ced9c981015c5d91",
+      "raw_sha256": "38d2f22a86cec65697ec72ade93c1e505aab7e7f4a156a87a6cb0f374cef4912",
+      "mapping": [
+        {
+          "raw_start": 0,
+          "raw_end": 212,
+          "clean_start": 0,
+          "clean_end": 212,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 212,
+          "raw_end": 327,
+          "clean_start": 212,
+          "clean_end": 326,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 327,
+          "raw_end": 515,
+          "clean_start": 326,
+          "clean_end": 514,
+          "kind": "unchanged"
+        },
+        {
+          "raw_start": 515,
+          "raw_end": 545,
+          "clean_start": 514,
+          "clean_end": 544,
+          "kind": "replacement"
+        },
+        {
+          "raw_start": 545,
+          "raw_end": 584,
+          "clean_start": 544,
+          "clean_end": 583,
+          "kind": "unchanged"
+        }
+      ],
+      "uncertain": [],
+      "status": "model_proposal"
+    }
+  }
+}

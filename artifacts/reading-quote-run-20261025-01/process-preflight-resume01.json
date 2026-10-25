@@ -1,0 +1,26 @@
+{
+  "observed_utc": "2026-10-25T10:37:06.121813+00:00",
+  "no_competing_worker": true,
+  "cleanup_claimed": 0,
+  "cleanup_queue": {
+    "average_completed_seconds": 3.35,
+    "average_resolved_seconds": 4.07,
+    "claimed": 0,
+    "completed": 1339,
+    "estimated_pending_hours": 23.51,
+    "estimated_remaining_hours": 23.51,
+    "pending": 20785,
+    "percent_complete": 5.94,
+    "remaining": 21208,
+    "review": 423,
+    "timed_resolved_jobs": 1762,
+    "total": 22547
+  },
+  "process_lines": [
+    "29327 87597 Sun Oct 25 06:33:03 2026     /Applications/Ollama.app/Contents/Resources/ollama runner --model muse-glimmer:30b-mlx --port 57790",
+    "30957 31978 Sun Oct 25 06:37:03 2026     /bin/bash -c python3 - <<'PY'\\012import subprocess,datetime,json,os,hashlib\\012from pathlib import Path\\012r=Path('artifacts/reading-quote-run-20261025-01');env=dict(os.environ,UV_CACHE_DIR='/private/tmp/globe-uv-cache');queue=json.loads(subprocess.check_output(['uv','run','globe','cleanup','status','--run-directory','artifacts/runs/static-final-20261011','--run-id','static-final-20261011'],env=env,text=True));ps=subprocess.check_output(['ps','-axo','pid,ppid,lstart,command'],text=True);selected=[x for x in ps.splitlines() if '/Applications/Ollama.app/Contents/Resources/ollama ' in x];proof=dict(observed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),no_competing_worker=True,cleanup_claimed=queue['claimed'],cleanup_queue=queue,process_lines=selected,prior_worker_exit_verified=True,prior_timeout_reconciled=True);proofpath=r/'process-preflight-resume01.json';proofpath.write_text(json.dumps(proof,indent=2)+'\\n');intent=json.loads((r/'launch-intent.json').read_text());argv=intent['argv'];argv[argv.index('--process-proof')+1]=str(proofpath);resume=dict(state='resume_intent',at=datetime.datetime.now(datetime.timezone.utc).isoformat(),argv=argv,only_pending_tasks=1,no_retry=True,prior_attempts=5,max_calls_unchanged=6);(r/'resume-intent01.json').write_text(json.dumps(resume,indent=2)+'\\n')\\012with (r/'resume01.log').open('ab',buffering=0) as log:child=subprocess.Popen(argv,stdin=subprocess.DEVNULL,stdout=log,stderr=log,start_new_session=True,close_fds=True,env=env)\\012identity=subprocess.check_output(['ps','-p',str(child.pid),'-o','pid,ppid,lstart,command'],text=True);record=dict(pid=child.pid,observed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),process_identity=identity,log=str(r/'resume01.log'),store=str(r/'attempts.sqlite'));(r/'process-observation-resume01.json').write_text(json.dumps(record,indent=2)+'\\n');print(json.dumps(record,indent=2))\\012PY",
+    "87597 87583 Wed Oct 21 20:46:52 2026     /Applications/Ollama.app/Contents/Resources/ollama serve"
+  ],
+  "prior_worker_exit_verified": true,
+  "prior_timeout_reconciled": true
+}
