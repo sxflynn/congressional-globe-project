@@ -1,0 +1,32 @@
+{
+  "schema_version": "role-result-protocol-v2",
+  "purpose": "Permit source-paragraph evidence for an unknown role while preventing a candidate assignment without a supplied speaker/person cue.",
+  "contract": {
+    "proposed": "candidate_id must be a supplied speaker/person cue alias; evidence_ids must be nonempty supplied paragraph or cue aliases; target_ids must be supplied paragraph aliases.",
+    "unknown": "candidate_id must be null; evidence_ids may be empty or contain only supplied paragraph aliases; target_ids must be supplied paragraph aliases.",
+    "all_statuses": "Role and status must be in the frozen request vocabulary. Unknown evidence can describe why attribution remains unknown, but cannot resolve or name the person."
+  },
+  "generic_example": {
+    "speaker_roles": [
+      {
+        "candidate_id": null,
+        "evidence_ids": ["P1"],
+        "target_ids": ["P1"],
+        "role": "floor_speaker",
+        "status": "unknown",
+        "basis": "The paragraph is a speaking turn, but the supplied passage contains no supported speaker identity."
+      }
+    ]
+  },
+  "validation_layers": {
+    "transport_schema": "Constrains status/candidate shape, nonempty proposed evidence, paragraph-only unknown evidence, and paragraph-shaped target aliases.",
+    "host_validation": "Binds all aliases and controlled role/status values to the exact frozen request; candidate aliases must be supplied person/speaker cues."
+  },
+  "compatibility": "Version 1 schemas, prompts, run stores and comparison results remain unchanged. This is an offline v2 contract and revalidation only; it does not change canonical labels or authorize new model calls.",
+  "revalidation": {
+    "path": "revalidation.json",
+    "scope": "Four exact saved replies from the Mini/Qwen two-case comparison, validated against their frozen provider inputs without provider calls.",
+    "counts": {"v2_valid": 3, "v2_invalid": 1},
+    "interpretation": "Qwen's unknown attribution with paragraph evidence is structurally valid under v2. Mini's two proposed person-mention rows with null candidates remain invalid; no partial salvage. Structural validity is not semantic correctness or human approval."
+  }
+}
