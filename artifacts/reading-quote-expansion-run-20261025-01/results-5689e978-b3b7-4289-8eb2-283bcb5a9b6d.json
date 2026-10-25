@@ -1,0 +1,741 @@
+{
+  "summary": {
+    "pending": 28,
+    "inflight": 1,
+    "invalid": 1,
+    "failed": 0,
+    "timeout": 1,
+    "valid": 5
+  },
+  "results": [
+    {
+      "task_id": "gemma4:31b-mlx::missing_image::reading-3077c2e0a49061bbcf29",
+      "status": "valid",
+      "reply": {
+        "unit_id": "reading-3077c2e0a49061bbcf29",
+        "status": "needs_review",
+        "patches": [],
+        "uncertain": [
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000038",
+            "start": 0,
+            "end": 180,
+            "reason": "Missing images to verify text."
+          },
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000039",
+            "start": 0,
+            "end": 152,
+            "reason": "Missing images to verify text."
+          },
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000040",
+            "start": 0,
+            "end": 676,
+            "reason": "Missing images to verify text."
+          },
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000041",
+            "start": 0,
+            "end": 584,
+            "reason": "Missing images to verify text."
+          }
+        ]
+      },
+      "derived": {
+        "congressionalg7391unit:207:par_000207_000038": {
+          "text": "There are measures of my own, already in- troduced by me, now on your table, looking to the same result as the pending bill, which pro- ceed specifically on the two latter grounds.",
+          "sha256": "7f3a6dd3399b6e3595e58bf8494cfc9bbd3c7d1a8f00087cfb0c0e4e2dc7a979",
+          "raw_sha256": "7f3a6dd3399b6e3595e58bf8494cfc9bbd3c7d1a8f00087cfb0c0e4e2dc7a979",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 180,
+              "clean_start": 0,
+              "clean_end": 180,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [
+            {
+              "source_id": "congressionalg7391unit:207:par_000207_000038",
+              "start": 0,
+              "end": 180,
+              "reason": "Missing images to verify text."
+            }
+          ],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:207:par_000207_000039": {
+          "text": "One of these is entitled \"A bill supplying appropriate legislation to enforce the amend- ment of the Constitution.\" From this bill I read two sections :",
+          "sha256": "3afe7683cfba94882c2236d17cd2e335577353994c260c3e8ee6738b7533adde",
+          "raw_sha256": "3afe7683cfba94882c2236d17cd2e335577353994c260c3e8ee6738b7533adde",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 152,
+              "clean_start": 0,
+              "clean_end": 152,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [
+            {
+              "source_id": "congressionalg7391unit:207:par_000207_000039",
+              "start": 0,
+              "end": 152,
+              "reason": "Missing images to verify text."
+            }
+          ],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:207:par_000207_000040": {
+          "text": "Sec. 3. And be it furilier enacted. That in further enforcement of the provision of the Constitution pro- hibiting slavei-y, and in order to remove all relics of this wrong from the States where this constitutional prohibition takes effect, it is hereby declared that all laws or customs in such States establishing any oli- garchical privileges and any distinction of rights on account of color or race arc hereby annulled, and all persons in such States are recognized as equal be- fore the law; and the penalties provided in the last section arc hereby made applicable to any violation of this provision, which is made in pursuance of the Constitution of the United States.",
+          "sha256": "bc6151d6157b4d29fdce9ed755e45533d17650f5643afe7ecaf9c185c442d9d9",
+          "raw_sha256": "bc6151d6157b4d29fdce9ed755e45533d17650f5643afe7ecaf9c185c442d9d9",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 676,
+              "clean_start": 0,
+              "clean_end": 676,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [
+            {
+              "source_id": "congressionalg7391unit:207:par_000207_000040",
+              "start": 0,
+              "end": 676,
+              "reason": "Missing images to verify text."
+            }
+          ],
+          "status": "model_proposal"
+        },
+        "congressionalg7391unit:207:par_000207_000041": {
+          "text": "Sec. 4. And be it further enacted, That in further enforcement of the provision of the Constitution aforesaid, the courts of the United States in the States aforesaid shall have exclusive jurisdiction of all of- fenses commitU\"d by persons not of African descent upon persons of African descent; also of all ofl'enses committed by persons of African descent; and also of all causes, suits, and demands to which any person of African descent shall be a party; and it is hereby declared that all such cases are to be treated as eases arising under the Constitution of the United States.",
+          "sha256": "38d2f22a86cec65697ec72ade93c1e505aab7e7f4a156a87a6cb0f374cef4912",
+          "raw_sha256": "38d2f22a86cec65697ec72ade93c1e505aab7e7f4a156a87a6cb0f374cef4912",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 584,
+              "clean_start": 0,
+              "clean_end": 584,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [
+            {
+              "source_id": "congressionalg7391unit:207:par_000207_000041",
+              "start": 0,
+              "end": 584,
+              "reason": "Missing images to verify text."
+            }
+          ],
+          "status": "model_proposal"
+        }
+      },
+      "attempt_id": "9ec0a091-f275-4f34-bfac-b2555ea2ceba",
+      "elapsed_seconds": 20.89830879215151,
+      "usage": {
+        "prompt_eval_count": 1810,
+        "eval_count": 222,
+        "total_duration": 20892774958,
+        "load_duration": 9307500
+      },
+      "control_result": "passed"
+    },
+    {
+      "task_id": "gemma4:31b-mlx::unrelated_image::reading-3077c2e0a49061bbcf29",
+      "status": "invalid",
+      "detail": "4 validation errors for QuoteReadingReply\nuncertain.0.uncertainty_type\n  Extra inputs are not permitted [type=extra_forbidden, input_value='missing_image_content', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/extra_forbidden\nuncertain.1.uncertainty_type\n  Extra inputs are not permitted [type=extra_forbidden, input_value='missing_image_content', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/extra_forbidden\nuncertain.2.uncertainty_type\n  Extra inputs are not permitted [type=extra_forbidden, input_value='missing_image_content', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/extra_forbidden\nuncertain.3.uncertainty_type\n  Extra inputs are not permitted [type=extra_forbidden, input_value='missing_image_content', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/extra_forbidden",
+      "attempt_id": "a69f68b6-4bc6-4cfa-9102-dd623d588c36",
+      "elapsed_seconds": 80.87485208315775,
+      "control_result": "failed"
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-3e3d5d225bf885a2e7f5",
+      "status": "valid",
+      "reply": {
+        "unit_id": "reading-3e3d5d225bf885a2e7f5",
+        "status": "proposed",
+        "patches": [
+          {
+            "source_id": "congressionalglo7393unit:769:par_000769_000012",
+            "start": 0,
+            "end": 31,
+            "old": "Mr. CHANLER, Will the gentleman",
+            "new": "Mr. CHANLER. Will the gentleman",
+            "image_ids": [
+              "reading-3e3d5d225bf885a2e7f5-leaf-769"
+            ],
+            "reason": "Correct punctuation after speaker name"
+          }
+        ],
+        "uncertain": []
+      },
+      "derived": {
+        "congressionalglo7393unit:769:par_000769_000010": {
+          "text": "I hope my amendment will meet with the approval of the chairman of the Committee of Ways and Means, [Mr. Morrill;] or, if it does not, that he will at least explain that it is not necessary under the law.",
+          "sha256": "09c226d74ac911541f163ff3d1d37af4f5c1fe435a7a56bfe12f61ea2eb2ee4b",
+          "raw_sha256": "09c226d74ac911541f163ff3d1d37af4f5c1fe435a7a56bfe12f61ea2eb2ee4b",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 204,
+              "clean_start": 0,
+              "clean_end": 204,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo7393unit:769:par_000769_000011": {
+          "text": "Mr. MORRILL. I do not, perhaps, fully understand the amendment of the gentleman from New York, [Mr. Chanler,] as I was un- able to hear it all when it was read at the Clerk's desk. But so far as I do understand it, I am opposed to it, and hope it will not be adopted, for I think the public notice in the courts where cases of forfeiture are tried is sufficient, and where certainly all the persons who are interested would learn the cause of such forfeiture.",
+          "sha256": "1522e2e84855d0e87a86830b4f7b570ec6ddd9fae504b4e6b2da15894bb90016",
+          "raw_sha256": "1522e2e84855d0e87a86830b4f7b570ec6ddd9fae504b4e6b2da15894bb90016",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 459,
+              "clean_start": 0,
+              "clean_end": 459,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo7393unit:769:par_000769_000012": {
+          "text": "Mr. CHANLER. Will the gentleman from Vermont [Mr. Morrill] allow me to ask him if there is any provision in the law regulating the internal revenue to enable the citizen, whose property has been seized by the as- sessor, to obtain speedy redress from the supe- rior of that officer ? As the law now stands, is not the person whose property has been seized completely at the mercy of the assessor? And is it not due to the citizen that he should have some means provided by which his property can be released if he is an innocent party? Does the law provide any such means now? I understand that the gentleman does not know, and still he opposes a good, sound rem- edy because he individually does not know whether that is the law or not. It certainly",
+          "sha256": "5793842b06ad929288874579cf979316eb0154a6543acbb25cbe538a8da91807",
+          "raw_sha256": "fe85739c3c7f08f85e6de285ff335bb212428b4f5ab432eb1c934f537e54b2ad",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 31,
+              "clean_start": 0,
+              "clean_end": 31,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 31,
+              "raw_end": 750,
+              "clean_start": 31,
+              "clean_end": 750,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        }
+      },
+      "attempt_id": "33e4e932-4bbb-4d9b-acbb-e9ca21709dd2",
+      "elapsed_seconds": 39.4202605409082,
+      "usage": {
+        "prompt_eval_count": 3166,
+        "eval_count": 183,
+        "total_duration": 39410362250,
+        "load_duration": 48674542
+      }
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-4fc8caf8f1dfb06d6938",
+      "status": "valid",
+      "reply": {
+        "unit_id": "reading-4fc8caf8f1dfb06d6938",
+        "status": "proposed",
+        "patches": [
+          {
+            "source_id": "congressionalglo00unit:110:par_000110_000002",
+            "start": 0,
+            "end": 26,
+            "old": "West Virginia — Continued.",
+            "new": "West Virginia—Continued.",
+            "image_ids": [
+              "reading-4fc8caf8f1dfb06d6938-leaf-110"
+            ],
+            "reason": "Correct punctuation to em-dash without spaces."
+          },
+          {
+            "source_id": "congressionalglo00unit:110:par_000110_000003",
+            "start": 0,
+            "end": 80,
+            "old": "bill granting lands to the State of, to aid in the construction of railroads 286",
+            "new": "bill granting lands to the State of, to aid in the construction of railroads.........286",
+            "image_ids": [
+              "reading-4fc8caf8f1dfb06d6938-leaf-110"
+            ],
+            "reason": "Restore leader dots."
+          },
+          {
+            "source_id": "congressionalglo00unit:110:par_000110_000004",
+            "start": 0,
+            "end": 132,
+            "old": "joint resolution donating certain i:>roperty of the United States to boards of edu- cation of certain townships of Taylor county 580",
+            "new": "joint resolution donating certain property of the United States to boards of edu- cation of certain townships of Taylor county ........................580",
+            "image_ids": [
+              "reading-4fc8caf8f1dfb06d6938-leaf-110"
+            ],
+            "reason": "Correct OCR error 'i:>roperty' to 'property' and restore leader dots."
+          },
+          {
+            "source_id": "congressionalglo00unit:110:par_000110_000005",
+            "start": 124,
+            "end": 365,
+            "old": "July 4, 18G4, to restrict the jurisdiction of the Court of Claims and to provide for the payment of certain demands for quarter- master's stores and subsistence supplies furnished to the Army of the United States 2182, 3166, 3195, 320G, 3298",
+            "new": "July 4, 1864, to restrict the jurisdiction of the Court of Claims and to provide for the payment of certain demands for quarter- master's stores and subsistence supplies furnished to the Army of the United States..........2182, 3166, 3195, 3206, 3298",
+            "image_ids": [
+              "reading-4fc8caf8f1dfb06d6938-leaf-110"
+            ],
+            "reason": "Correct OCR errors '18G4' to '1864' and '320G' to '3206', and restore leader dots."
+          },
+          {
+            "source_id": "congressionalglo00unit:110:par_000110_000006",
+            "start": 171,
+            "end": 195,
+            "old": "bellion 2377, 2597, 3240",
+            "new": "bellion..........................2377, 2597, 3240",
+            "image_ids": [
+              "reading-4fc8caf8f1dfb06d6938-leaf-110"
+            ],
+            "reason": "Restore leader dots."
+          },
+          {
+            "source_id": "congressionalglo00unit:110:par_000110_000007",
+            "start": 0,
+            "end": 89,
+            "old": "joint resolution (S. No. 90) to suspend tem- porarily the collection of the direct tax in",
+            "new": "joint resolution (S. No. 90) to suspend tem- porarily the collection of the direct tax in ",
+            "image_ids": [
+              "reading-4fc8caf8f1dfb06d6938-leaf-110"
+            ],
+            "reason": "Add trailing space to match image."
+          },
+          {
+            "source_id": "congressionalglo00unit:110:par_000110_000008",
+            "start": 0,
+            "end": 23,
+            "old": "the State of 2634, 4248",
+            "new": "the State of...................2634, 4248",
+            "image_ids": [
+              "reading-4fc8caf8f1dfb06d6938-leaf-110"
+            ],
+            "reason": "Restore leader dots."
+          },
+          {
+            "source_id": "congressionalglo00unit:110:par_000110_000011",
+            "start": 0,
+            "end": 46,
+            "old": "3197 Whaley, Kellian V., a Representative from",
+            "new": "3197\nWhaley, Kellian V., a Representative from",
+            "image_ids": [
+              "reading-4fc8caf8f1dfb06d6938-leaf-110"
+            ],
+            "reason": "Correct line break."
+          },
+          {
+            "source_id": "congressionalglo00unit:110:par_000110_000012",
+            "start": 0,
+            "end": 27,
+            "old": "West Virginia 353,694, 811,",
+            "new": "West Virginia...................353, 694, 811,",
+            "image_ids": [
+              "reading-4fc8caf8f1dfb06d6938-leaf-110"
+            ],
+            "reason": "Restore leader dots and space in numbers."
+          }
+        ],
+        "uncertain": []
+      },
+      "derived": {
+        "congressionalglo00unit:110:par_000110_000000": {
+          "text": "CIV",
+          "sha256": "3e95140d544f2d2f7c352b63c1cd6a5d454acacfcfbf4dc85d244385e461d7a5",
+          "raw_sha256": "3e95140d544f2d2f7c352b63c1cd6a5d454acacfcfbf4dc85d244385e461d7a5",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 3,
+              "clean_start": 0,
+              "clean_end": 3,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo00unit:110:par_000110_000001": {
+          "text": "INDEX TO",
+          "sha256": "56a62be05dcdadd182a92025bb164032fc60926cde9f370a1189d46f9a83fec4",
+          "raw_sha256": "56a62be05dcdadd182a92025bb164032fc60926cde9f370a1189d46f9a83fec4",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 8,
+              "clean_start": 0,
+              "clean_end": 8,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo00unit:110:par_000110_000002": {
+          "text": "West Virginia—Continued.",
+          "sha256": "4699e5252ff09cfdab0fdf0e1d43c180447dbd9bd8a0c43239b0c6d36ecd36ec",
+          "raw_sha256": "35ce1f24ac9d5090ccd6157867ef4580b8688149aff381623c93270bbbc5f9c9",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 26,
+              "clean_start": 0,
+              "clean_end": 24,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 26,
+              "raw_end": 26,
+              "clean_start": 24,
+              "clean_end": 24,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo00unit:110:par_000110_000003": {
+          "text": "bill granting lands to the State of, to aid in the construction of railroads.........286",
+          "sha256": "0eb9eb4e974c29b586e53531fafc97134fbdb3d5b5bd1115d9276402856258c9",
+          "raw_sha256": "ec81af147bc29d3ecc69e29bdaeca567901d4118fa5d25bbd2995ae474bf3414",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 80,
+              "clean_start": 0,
+              "clean_end": 88,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 80,
+              "raw_end": 80,
+              "clean_start": 88,
+              "clean_end": 88,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo00unit:110:par_000110_000004": {
+          "text": "joint resolution donating certain property of the United States to boards of edu- cation of certain townships of Taylor county ........................580",
+          "sha256": "5a2e4125cbcfa7051aa36d120cb65503f6f5c4c5975efff1e8cc6f7c4c24e5db",
+          "raw_sha256": "21b696ee18e6de92db237ab484558e630366020bf1290e16cb0cc862dc3bcf79",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 132,
+              "clean_start": 0,
+              "clean_end": 154,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 132,
+              "raw_end": 132,
+              "clean_start": 154,
+              "clean_end": 154,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo00unit:110:par_000110_000005": {
+          "text": "joint resolution (H. R. No. 120) to extend to the counties of Berkeley and Jefferson, in, the provisions of an act approved July 4, 1864, to restrict the jurisdiction of the Court of Claims and to provide for the payment of certain demands for quarter- master's stores and subsistence supplies furnished to the Army of the United States..........2182, 3166, 3195, 3206, 3298",
+          "sha256": "b49e76f5bd1e3592fe359f3d252c500624818f7fc2725714ea7c7a0195a33779",
+          "raw_sha256": "f9690dd80bc2225bb2b641871b7d1cd0eb8cd5a6231ffa811b83da1a04f211ce",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 124,
+              "clean_start": 0,
+              "clean_end": 124,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 124,
+              "raw_end": 365,
+              "clean_start": 124,
+              "clean_end": 374,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 365,
+              "raw_end": 365,
+              "clean_start": 374,
+              "clean_end": 374,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo00unit:110:par_000110_000006": {
+          "text": "bill (S. No. 230) to reimburse the State of, for moneys expended for the United States in enrolling, equipping, and paying mili- tary forces to aid in suppressing the re- bellion..........................2377, 2597, 3240",
+          "sha256": "a84d664c933cf74aa7c652b602fda38291f97da549a330bc5d27cfdaa14089f7",
+          "raw_sha256": "9f6c00dd7846e5673eccf85ed4617b62369a33f775ad9db82c14ba0829313e3c",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 171,
+              "clean_start": 0,
+              "clean_end": 171,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 171,
+              "raw_end": 195,
+              "clean_start": 171,
+              "clean_end": 220,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 195,
+              "raw_end": 195,
+              "clean_start": 220,
+              "clean_end": 220,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo00unit:110:par_000110_000007": {
+          "text": "joint resolution (S. No. 90) to suspend tem- porarily the collection of the direct tax in ",
+          "sha256": "1bf310257800e4d2cf5bbd2488d328cad5846f6e72b42d12260afe658df86878",
+          "raw_sha256": "b3cf1f74b00afc4881e4cb5b9c7cead36dd04e45d938730141f2ac1b17231a71",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 89,
+              "clean_start": 0,
+              "clean_end": 90,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 89,
+              "raw_end": 89,
+              "clean_start": 90,
+              "clean_end": 90,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo00unit:110:par_000110_000008": {
+          "text": "the State of...................2634, 4248",
+          "sha256": "1375243339278f8bc4b1145ed76fdc6479be784834fc04c89591739a90fac987",
+          "raw_sha256": "2de7b3ea0c8dd40ea0b336028b69478c098b8b50cec3b0ed0b928556f0fbc6e7",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 23,
+              "clean_start": 0,
+              "clean_end": 41,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 23,
+              "raw_end": 23,
+              "clean_start": 41,
+              "clean_end": 41,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo00unit:110:par_000110_000009": {
+          "text": "West, William A., bill for the relief of..... 1147",
+          "sha256": "1768d617836a21f8a8049a8fd4332593ccf64313bbb7353f6b53e0219dffb666",
+          "raw_sha256": "1768d617836a21f8a8049a8fd4332593ccf64313bbb7353f6b53e0219dffb666",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 50,
+              "clean_start": 0,
+              "clean_end": 50,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo00unit:110:par_000110_000010": {
+          "text": "joint resolution authorizing the Secretary of the Interior to settle the accounts of, as marshal of the Territory of Nebraska,",
+          "sha256": "e253c32a6e60a256e4ba021e9edf19d9da2ba0cfe9402225ffd00ee7622d0ab4",
+          "raw_sha256": "e253c32a6e60a256e4ba021e9edf19d9da2ba0cfe9402225ffd00ee7622d0ab4",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 126,
+              "clean_start": 0,
+              "clean_end": 126,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo00unit:110:par_000110_000011": {
+          "text": "3197\nWhaley, Kellian V., a Representative from",
+          "sha256": "c4f878a0c4a805f66fae17e583eddc00b3afc634a46b08e2f3598d496bc5acbf",
+          "raw_sha256": "3d5cdaff4bbbc4b42765ab5de5fa3363118da69ffc9ab5fa0d3c3c99b4c3ae73",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 46,
+              "clean_start": 0,
+              "clean_end": 46,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 46,
+              "raw_end": 46,
+              "clean_start": 46,
+              "clean_end": 46,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        },
+        "congressionalglo00unit:110:par_000110_000012": {
+          "text": "West Virginia...................353, 694, 811,",
+          "sha256": "2ae75f558f63c27050066713f3d763b2d91a70b1ca746ecf7e5c8926a4c4628f",
+          "raw_sha256": "a4e4679b1b11ecd923d8adb32e41eb407536abfcbb463948ced7a5fb982f4ee1",
+          "mapping": [
+            {
+              "raw_start": 0,
+              "raw_end": 0,
+              "clean_start": 0,
+              "clean_end": 0,
+              "kind": "unchanged"
+            },
+            {
+              "raw_start": 0,
+              "raw_end": 27,
+              "clean_start": 0,
+              "clean_end": 46,
+              "kind": "replacement"
+            },
+            {
+              "raw_start": 27,
+              "raw_end": 27,
+              "clean_start": 46,
+              "clean_end": 46,
+              "kind": "unchanged"
+            }
+          ],
+          "uncertain": [],
+          "status": "model_proposal"
+        }
+      },
+      "attempt_id": "d6cbb91b-4091-4ccd-8231-b7512166ce4e",
+      "elapsed_seconds": 105.65165275009349,
+      "usage": {
+        "prompt_eval_count": 4989,
+        "eval_count": 1474,
+        "total_duration": 105635142250,
+        "load_duration": 49879333
+      }
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-50a8872c9b2dda1a90bf",
+      "status": "timeout",
+      "attempt_id": "b128a8c3-f3f0-4bed-9cc8-aa4b88f813d7"
+    }
+  ],
+  "config": {
+    "files": {
+      "artifacts/reading-quote-expansion-20261025-01/requests.json": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61",
+      "artifacts/reading-quote-expansion-20261025-01/counts.json": "72676f2108b697ab87f7066b92cb548e20d43164eaf0072503c9524e819ce073",
+      "artifacts/reading-quote-expansion-20261025-01/assessment-protocol.json": "0c324af8a3d6296c6d89e3628542396199c0aeeaf845aaccdda9bb314731fbf9",
+      "docs/archive/human-review/HR-009-v1/applied.json": "32a6ae7d8d8ecf156b650d32726afac2d1072bdfd2c58ca62cc6fd6a4b420dbb",
+      "artifacts/reading-prepare-20261024-03/candidates.jsonl": "9358e8e4cb7b4cd22f7423671aa8f336e82f04336d6df5ef261ab904585ee51a",
+      "artifacts/reading-images-20261024-01/index.json": "fb3dbe6e925f1f557be11c9eecbeae32737064bc8c8d1a07cbee4537e7f17aaf"
+    },
+    "code": {
+      "src/congressional_globe/reading_contracts.py": "e0a5520d8b87a9e67842842df69e249404017474bd203610b6724d84d1a826d9",
+      "src/congressional_globe/reading_controls.py": "0f26e068dbf06b3877968958f6f158873ed4ba27152bb2285dc6953787ba814d",
+      "src/congressional_globe/reading_dispatch.py": "cfd53e41692cf0520fe1432fb0ee3631fbc1f1ad803fe4f397d30c239359aef5",
+      "src/congressional_globe/reading_images.py": "bccc0e6838b5958ed833485a65893bfe38a6649bc3723a125218abdbcab4efcb",
+      "src/congressional_globe/reading_launch.py": "45def8fb8016c1147da2d486dc07f86259e2cd009799e7c635dbbe5f58e911f6",
+      "src/congressional_globe/reading_preflight.py": "5a15a26e718f55fe26de484a2f0b6a318b13502ffe262ad7abf386ef96a3c217",
+      "src/congressional_globe/reading_preparation.py": "a10d717e55f3558e22542c7f53cb65b1a8ff00a978707ea8137732b1a2d370d7",
+      "src/congressional_globe/reading_quote_expansion.py": "bf3278020841ce6600f0cfc13e0ac82d47ee41aa9cab5c3878e3e3e3bdad362b",
+      "src/congressional_globe/reading_quotes.py": "e4fd7bff53e6928fdd7bf3167161af015b59ff8bd656c073af5028d01e7d0064",
+      "src/congressional_globe/reading_requests.py": "fefa6f34afc510f1c3d2f6d7f5a0c8764fb70e3da239c765df47486a50a21041",
+      "src/congressional_globe/reading_run_store.py": "bb9f462e15a6ae3944788fab54adf679322e0c73cec5ac34efdf2604e7f1da7e",
+      "src/congressional_globe/reading_source_check.py": "1e84c70eff043434722b27adb5798c8f8caa014414f888c70e3e521a38c9ef6e"
+    },
+    "max_calls": 36,
+    "total_seconds": 6291,
+    "per_model_seconds": 1854,
+    "call_seconds": 120,
+    "source_derived_fit": true,
+    "runtime_count_must_match": true
+  }
+}

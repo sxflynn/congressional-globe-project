@@ -1,0 +1,231 @@
+{
+  "task_id": "gemma4:31b-mlx::reading-e05d33cb21bb773191dc",
+  "attempt_id": "0734cd2d-70a2-4ff6-8d97-82f445f4f4a1",
+  "unit_id": "reading-e05d33cb21bb773191dc",
+  "model": "gemma4:31b-mlx",
+  "request_sha256": "f5a6080064618bef87e51f8a9cc95130e1407ea570681b8b48939420395aa216",
+  "raw_reply_sha256": "5523e3b10eb26bbfa609905ee86c53cdd6d508d0dd8647b3c66b03d248dde2e7",
+  "source_images": [
+    {
+      "id": "reading-e05d33cb21bb773191dc-leaf-873",
+      "sha256": "75200af1eb768b8cdf81283edeb847ba329cf9f799447de37ff7b972d04b9d15"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 2801,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-e05d33cb21bb773191dc",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo00unit:873:par_000873_000006",
+          "start": 139,
+          "end": 161,
+          "old": "hardly ever befn known",
+          "new": "hardly ever been known",
+          "image_ids": [
+            "reading-e05d33cb21bb773191dc-leaf-873"
+          ],
+          "reason": "Correction of OCR error 'befn' to 'been'."
+        },
+        {
+          "source_id": "congressionalglo00unit:873:par_000873_000006",
+          "start": 432,
+          "end": 452,
+          "old": "this ^ubject a great",
+          "new": "this subject a great",
+          "image_ids": [
+            "reading-e05d33cb21bb773191dc-leaf-873"
+          ],
+          "reason": "Correction of OCR error '^ubject' to 'subject'."
+        },
+        {
+          "source_id": "congressionalglo00unit:873:par_000873_000009",
+          "start": 178,
+          "end": 243,
+          "old": "duty on iron Irora the present rates.- I hope it ■will be allowed",
+          "new": "duty on iron from the present rates. I hope it will be allowed",
+          "image_ids": [
+            "reading-e05d33cb21bb773191dc-leaf-873"
+          ],
+          "reason": "Correction of OCR errors 'Irora' to 'from', removal of stray hyphen and symbol."
+        },
+        {
+          "source_id": "congressionalglo00unit:873:par_000873_000009",
+          "start": 433,
+          "end": 461,
+          "old": "over $109,000,000 in revenue",
+          "new": "over $169,000,000 in revenue",
+          "image_ids": [
+            "reading-e05d33cb21bb773191dc-leaf-873"
+          ],
+          "reason": "Correction of digit '0' to '6' in $169,000,000."
+        },
+        {
+          "source_id": "congressionalglo00unit:873:par_000873_000009",
+          "start": 481,
+          "end": 522,
+          "old": "the declaration. 1 withdraw my amendment.",
+          "new": "the declaration. I withdraw my amendment.",
+          "image_ids": [
+            "reading-e05d33cb21bb773191dc-leaf-873"
+          ],
+          "reason": "Correction of digit '1' to pronoun 'I'."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo00unit:873:par_000873_000006": {
+        "text": "I know that in the latter part of the bill they have thrown a tub to the whale, and protected broom corn and the article of corn which has hardly ever been known to be imported in this country. All that to the agricultural interest is a mere blind. Merchants in New York re- gard this present law as a prohibitory tariff to some extent, and the proposition here is to increase it; and a Republican paper in Chicago, which has given this subject a great deal of consideration, has stated that under this bill we will lose about one hundred and thirty-seven million dollars. I ask whether you are willing to lose that for protection alone.",
+        "sha256": "62d7f586d2375e68ca9af98fbd01a271001b7f999cfa810588f3019176581b6a",
+        "raw_sha256": "86728a521280b61d8bee81b14b5085dde53f63ab9bf9c0a49fc0e0bdf83a5c37",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 139,
+            "clean_start": 0,
+            "clean_end": 139,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 139,
+            "raw_end": 161,
+            "clean_start": 139,
+            "clean_end": 161,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 161,
+            "raw_end": 432,
+            "clean_start": 161,
+            "clean_end": 432,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 432,
+            "raw_end": 452,
+            "clean_start": 432,
+            "clean_end": 452,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 452,
+            "raw_end": 637,
+            "clean_start": 452,
+            "clean_end": 637,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:873:par_000873_000007": {
+        "text": "[Here the hammer fell.]",
+        "sha256": "42641e430e0060ec06561d5dc2ad29ba1854ee5e26dc44089947da821226f1ef",
+        "raw_sha256": "42641e430e0060ec06561d5dc2ad29ba1854ee5e26dc44089947da821226f1ef",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 23,
+            "clean_start": 0,
+            "clean_end": 23,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:873:par_000873_000008": {
+        "text": "The amendment of Mr. Radford was not agreed to.",
+        "sha256": "e56c786c52729592525b560f2fd30189a8d13e2f9e844e2550766ad690d2701d",
+        "raw_sha256": "e56c786c52729592525b560f2fd30189a8d13e2f9e844e2550766ad690d2701d",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 47,
+            "clean_start": 0,
+            "clean_end": 47,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:873:par_000873_000009": {
+        "text": "Mr. MORRILL. I move to reduce it to forty-nine, for the purpose of saying that the committee raised the duty from forty to fifty per cent, for the reason that we have raised the duty on iron from the present rates. I hope it will be allowed to remain as we have reported it. The gentleman from Ohio says that New York importers declare our existing tariff is prohibitory, when the fact is we have received under it this last year over $169,000,000 in revenue, which contradicts the declaration. I withdraw my amendment.",
+        "sha256": "87bdc1a5e401f5447e75d284826a85a463afc5b7543cd519a41b229802e8c4b4",
+        "raw_sha256": "d60dfaf370e761ba47a694614ca8c6f312e7c37f5017f0cea2db92fa67f3c3ab",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 178,
+            "clean_start": 0,
+            "clean_end": 178,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 178,
+            "raw_end": 243,
+            "clean_start": 178,
+            "clean_end": 240,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 243,
+            "raw_end": 433,
+            "clean_start": 240,
+            "clean_end": 430,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 433,
+            "raw_end": 461,
+            "clean_start": 430,
+            "clean_end": 458,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 461,
+            "raw_end": 481,
+            "clean_start": 458,
+            "clean_end": 478,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 481,
+            "raw_end": 522,
+            "clean_start": 478,
+            "clean_end": 519,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 522,
+            "raw_end": 522,
+            "clean_start": 519,
+            "clean_end": 519,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "patch_level_source_review": null,
+  "visual_assessment": "Root compared every changed span and whole derived target with hash-bound crop. All5patches supported, including material amount $109,000,000 to printed $169,000,000. Separate one hundred and thirty-seven million claim, Radford rejection and Morrill withdrawal preserved.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "All4recorded repair anchors achieved.",
+  "residual_errors": [
+    "New York re- gard remains split."
+  ],
+  "usable_reading": "Word/number repairs supported; raw formatting artifacts remain.",
+  "needs_review": false,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Whole target/changed-span comparison, not exhaustive reference transcription. No human grade.",
+  "review_minutes": null
+}

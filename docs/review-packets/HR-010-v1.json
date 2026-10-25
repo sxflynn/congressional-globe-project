@@ -1,0 +1,122 @@
+{
+  "id": "HR-010",
+  "version": 1,
+  "title": "A short source check of selected reading proposals",
+  "instructions": "Output-informed diagnostic review. The source of each proposal is not identified. Compare each available proposed text with its original scan and unchanged OCR. There are two actual selected outputs: Sample A has a complete proposed reading; Sample B is rejected by automated validation because one of eight proposals makes no text change, so it has no complete proposed reading. Sample B’s eight old/new proposals are shown exactly as returned and none is salvaged or applied. The third fixed selection has no produced output and is shown as unavailable; no substitute is used. Please judge only whether the shown text agrees with the print, and note uncertainty where needed. The packet shows at most two actual output cards plus the unavailable status and has a hard combined review limit of 10 minutes. No additional review round, full run, corpus change, or broader policy decision is requested. Stop after 10 minutes or sooner; for any unfinished sample, select Not reviewed — time limit reached. No judgment is inferred for an unfinished sample.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "sample-a-grade",
+      "prompt": "Sample A · ordinary tariff passage. Does the proposed reading preserve the printed text and its paragraph boundaries?",
+      "options": [
+        "Accept as faithful",
+        "Needs fixes",
+        "Unclear / need more context",
+        "Not reviewed — time limit reached"
+      ],
+      "required": true,
+      "evidence": [
+        {
+          "label": "Part 4 · printed page 3641 · scan leaf 873 · congressionalglo00unit:873:par_000873_000006 · raw SHA-256 86728a521280b61d8bee81b14b5085dde53f63ab9bf9c0a49fc0e0bdf83a5c37",
+          "text": "Original OCR (unchanged source text):\nI know that in the latter part of the bill they have thrown a tub to the whale, and protected broom corn and the article of corn which has hardly ever befn known to be imported in this country. All that to the agricultural interest is a mere blind. Merchants in New York re- gard this present law as a prohibitory tariff to some extent, and the proposition here is to increase it; and a Republican paper in Chicago, which has given this ^ubject a great deal of consideration, has stated that under this bill we will lose about one hundred and thirty-seven million dollars. I ask whether you are willing to lose that for protection alone.\n\nProposed reading (same source paragraph):\nI know that in the latter part of the bill they have thrown a tub to the whale, and protected broom corn and the article of corn which has hardly ever been known to be imported in this country. All that to the agricultural interest is a mere blind. Merchants in New York re- gard this present law as a prohibitory tariff to some extent, and the proposition here is to increase it; and a Republican paper in Chicago, which has given this subject a great deal of consideration, has stated that under this bill we will lose about one hundred and thirty-seven million dollars. I ask whether you are willing to lose that for protection alone.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0873.jp2/8,1734,948,1283/948,/0/default.jpg"
+        },
+        {
+          "label": "Part 4 · printed page 3641 · scan leaf 873 · congressionalglo00unit:873:par_000873_000007 · raw SHA-256 42641e430e0060ec06561d5dc2ad29ba1854ee5e26dc44089947da821226f1ef",
+          "text": "Original OCR (unchanged source text):\n[Here the hammer fell.]\n\nProposed reading (same source paragraph):\n[Here the hammer fell.]",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0873.jp2/8,1734,948,1283/948,/0/default.jpg"
+        },
+        {
+          "label": "Part 4 · printed page 3641 · scan leaf 873 · congressionalglo00unit:873:par_000873_000008 · raw SHA-256 e56c786c52729592525b560f2fd30189a8d13e2f9e844e2550766ad690d2701d",
+          "text": "Original OCR (unchanged source text):\nThe amendment of Mr. Radford was not agreed to.\n\nProposed reading (same source paragraph):\nThe amendment of Mr. Radford was not agreed to.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0873.jp2/8,1734,948,1283/948,/0/default.jpg"
+        },
+        {
+          "label": "Part 4 · printed page 3641 · scan leaf 873 · congressionalglo00unit:873:par_000873_000009 · raw SHA-256 d60dfaf370e761ba47a694614ca8c6f312e7c37f5017f0cea2db92fa67f3c3ab",
+          "text": "Original OCR (unchanged source text):\nMr. MORRILL. I move to reduce it to forty-nine, for the purpose of saying that the committee raised the duty from forty to fifty per cent, for the reason that we have raised the duty on iron Irora the present rates.- I hope it ■will be allowed to remain as we have reported it. The gentleman from Ohio says that New York importers declare our existing tariff is prohibitory, when the fact is we have received under it this last year over $109,000,000 in revenue, which contradicts the declaration. 1 withdraw my amendment.\n\nProposed reading (same source paragraph):\nMr. MORRILL. I move to reduce it to forty-nine, for the purpose of saying that the committee raised the duty from forty to fifty per cent, for the reason that we have raised the duty on iron from the present rates. I hope it will be allowed to remain as we have reported it. The gentleman from Ohio says that New York importers declare our existing tariff is prohibitory, when the fact is we have received under it this last year over $169,000,000 in revenue, which contradicts the declaration. I withdraw my amendment.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0873.jp2/8,1734,948,1283/948,/0/default.jpg"
+        },
+        {
+          "label": "Source image and response provenance · Part 4 · scan leaf 873 · source image SHA-256 75200af1eb768b8cdf81283edeb847ba329cf9f799447de37ff7b972d04b9d15",
+          "text": "Scan crop URL resolved from the cached IIIF metadata receipt; crop SHA-256 75200af1eb768b8cdf81283edeb847ba329cf9f799447de37ff7b972d04b9d15; metadata receipt SHA-256 211320cceeb84fa892fd80d57da55a89dd62458697f6d5c089336098fbbd2d81; image receipt SHA-256 75200af1eb768b8cdf81283edeb847ba329cf9f799447de37ff7b972d04b9d15. Archive page citation: https://archive.org/details/congressionalglo00unit/page/n873/mode/1up. Frozen request SHA-256 f5a6080064618bef87e51f8a9cc95130e1407ea570681b8b48939420395aa216; raw reply SHA-256 5523e3b10eb26bbfa609905ee86c53cdd6d508d0dd8647b3c66b03d248dde2e7. These identify the source and saved response; they do not certify the proposed wording.",
+          "url": "https://archive.org/details/congressionalglo00unit/page/n873/mode/1up"
+        }
+      ]
+    },
+    {
+      "id": "sample-b-grade",
+      "prompt": "Sample B · index with page-number errors. Looking at the scan, do the proposed old/new text changes match the print? One item has identical old and new text and remains shown for transparency. Judge the proposed changes against the source; this is not a question about software validation.",
+      "options": [
+        "Accept as faithful",
+        "Needs fixes",
+        "Unclear / need more context",
+        "Not reviewed — time limit reached"
+      ],
+      "required": true,
+      "evidence": [
+        {
+          "label": "Part 2 · scan leaf 74 · unchanged OCR source input · composite IDs and raw SHA-256 values included per paragraph",
+          "text": "Context before\n\n[congressionalglo7392unit:74:par_000074_000070 · raw SHA-256 6d6613c0bcad86ea0f282ab721666d42f4b280d4fbba641ffa4ed87d424cd961]\nFortifications, bill (H. R. No. 225) making ap- propriations for the construction, preser- vation, and repairs of certain, and other works of defense, for the year ending 30th June, 1866... .688, 1346, 1348, 1349, 1368, 2727, 2734, 2877, 3051, 3055, 3086, 3144 remarks on the, by —\n\nTarget OCR, unchanged\n\n[congressionalglo7392unit:74:par_000074_000071 · raw SHA-256 6ef71488bd410518dc587cd04a2df857a365b2336599df858d1357267b967d48]\nMr. Beaman 1346\n\n[congressionalglo7392unit:74:par_000074_000072 · raw SHA-256 bf5965f3305eba22865042338a11569b1e8cd13e23592f4a3d41e3da1ad8e139]\nMr. Bergen 1348\n\n[congressionalglo7392unit:74:par_000074_000073 · raw SHA-256 b9ac8cda46b65bbac2d1f741359cbfe63211534b9cc11b7939ade7fbb407e91e]\nMr. Bidwell 1346\n\n[congressionalglo7392unit:74:par_000074_000074 · raw SHA-256 11a0df3b53f70cfbaa537f1c1fea9e35bba89275bc68a771d6d0efcc0d9f3102]\nMr. Brooks 1346, 1368\n\n[congressionalglo7392unit:74:par_000074_000075 · raw SHA-256 a4a0d4fd4f830a20764a3add7ddf969f6e6405ae76e0ec65a920ed4f1dbf53fe]\nMr. Chanler 1348\n\n[congressionalglo7392unit:74:par_000074_000076 · raw SHA-256 db32732245db264c1af8025e8347e15c2883fe3531d3379783725dc3a17d5d8d]\nMr. Davis 1369\n\n[congressionalglo7392unit:74:par_000074_000077 · raw SHA-256 21cba90e6a018a4451b45910b312f04563b88d5590782e14d30643ea9343c395]\nMr. Deming 1370\n\n[congressionalglo7392unit:74:par_000074_000078 · raw SHA-256 dee06a7df688c5949607c8cbd60fda81fcbd076575d782438b21e446b1661874]\nMr. Farnsworth 1346, 1348\n\n[congressionalglo7392unit:74:par_000074_000079 · raw SHA-256 c9b6c1bae6b0419ff10c0066c32333a82961475bb5bfffbf00ec617a4e781d0c]\nMr. Holmes 1369\n\n[congressionalglo7392unit:74:par_000074_000080 · raw SHA-256 61aed2e424bdc7ae60e0727bbcd2baf4975568e49f7e960719320835886628b0]\nMr. Lynch 1348\n\n[congressionalglo7392unit:74:par_000074_000081 · raw SHA-256 1f1a5c9f8c09c21cb0dae2c7cf7d9574df3219f848ec2b5e0421ecbef238372c]\nMr. Randall, of Pennsylvania 1347\n\n[congressionalglo7392unit:74:par_000074_000082 · raw SHA-256 7b00396fb2f12c990a8a588e5f702cf2a5f73ff7f901b34156377b07082e6809]\nMr. Ross 1348\n\n[congressionalglo7392unit:74:par_000074_000083 · raw SHA-256 764110232ac893458b53cbe0b1f658bce41ad45564f96ff8c90b9dd4833431ff]\nMr. Schenck 1347, 1369, 1870\n\n[congressionalglo7392unit:74:par_000074_000084 · raw SHA-256 7089838ea4c1786608a71fe0bb43eaa95e500c1894f16bd0b4483bf93cb438e2]\nMr. Spalding 1847\n\n[congressionalglo7392unit:74:par_000074_000085 · raw SHA-256 3f2a409f7d9f827d4f5158087b99e132f5e3ff9ca4052f542e8e9e49ee2b8f2e]\nMr. Stevens 1346, 1348, 1369\n\n[congressionalglo7392unit:74:par_000074_000086 · raw SHA-256 750332807830ef2923739eba7836660f7ccfc006092c3432419cd53503edd446]\nMr. Trowbridge 1347\n\n[congressionalglo7392unit:74:par_000074_000087 · raw SHA-256 5ce5f666c5b7f2dcb692c52ccd894884faf39c05ae1202d99d3159ccfed08e1a]\nMr. Washburne, of Illinois 1846\n\n[congressionalglo7392unit:74:par_000074_000088 · raw SHA-256 92cab4a2a4c4cc5d61532302bbe06b0b607a23c0b1626602f12075492124d0fd]\nMr. Winfield 1849\n\n[congressionalglo7392unit:74:par_000074_000089 · raw SHA-256 18c6b800b4752ed09bb1fe8ca52ed352ecaf53e9ac7af9ea856bfffcd47eecc1]\njr., resolution (H. R. No.\n\n[congressionalglo7392unit:74:par_000074_000090 · raw SHA-256 0266bf833676c184d29394abf3cb2fe228ae1a194614ae022d560c1a77826104]\n164) for the relief of 8196, 4249\n\n[congressionalglo7392unit:74:par_000074_000091 · raw SHA-256 4de91c282c4cb1a96f0965ebc2d03dbf8e4218aedc9d662f3571b392665d3fe3]\nFrank, George R., bill (H. R. No. 472) for the\n\n[congressionalglo7392unit:74:par_000074_000092 · raw SHA-256 972436266262eb7f4706f906331563ae8f6e73525c830300bab8edbcbff33f18]\nrelief of 1869, 2130, 2148, 2316\n\n[congressionalglo7392unit:74:par_000074_000093 · raw SHA-256 ef951aaf975bf153ccce74c85e898219bd2f6c3d150992ce94c9876bebb9e58e]\nFranking privilege, bill (S. No. 86) granting\n\n[congressionalglo7392unit:74:par_000074_000094 · raw SHA-256 e7e8f467f0faa55ee5a9e6404396ad6ec2431d45cd6ffd0870383f917c466703]\nthe, to Mrs. Mary Lincoln. ..349, 719, 735\n\n[congressionalglo7392unit:74:par_000074_000095 · raw SHA-256 688c7c0adcb19a5d4b457d8e03d34acdd69f1cbab9e7c40b03d1d959e2163716]\nbill conferring the, on ex-Presidents of the\n\n[congressionalglo7392unit:74:par_000074_000096 · raw SHA-256 380925803af37077401770c7c83feefdc5a6ed30b11f446cc93e39346069381a]\nUnited States 1719\n\n[congressionalglo7392unit:74:par_000074_000097 · raw SHA-256 8477fed0ecfcc20696a43c94aae6d002e353340f69a8b2016603c0b2d016a8a6]\nFranklin, Benjamin, bill (S. No. 339) granting\n\n[congressionalglo7392unit:74:par_000074_000098 · raw SHA-256 257f7f233ec95755d0f47b64d162d8e9b1755f2b329b17b70eee5655e5f86ba3]\na pension to 2859, 2876_, 3353, 3404\n\n[congressionalglo7392unit:74:par_000074_000099 · raw SHA-256 3074ffc80473dd531cfb071f5deb5a153d395898d48de9fc2fdc64c56f207ad2]\nFreedmen, bill to secure the writ of habeas corpus to persons held in slavery or invol- untary servitude contrary to the Constitu- tion of the United States 135\n\n[congressionalglo7392unit:74:par_000074_000100 · raw SHA-256 0648ec1fd5841cd9541d5727dc1f8013bca76506b8250bae21354c51b4f167ab]\nbills to continue in force and to amend an act to establish a Bureau for the Relief of, and\n\n[congressionalglo7392unit:74:par_000074_000101 · raw SHA-256 56964660c987b08db569f4f9fa9fdbb6485351808e2b169ec299092856d9011b]\nRefugees, and for other purposes 1031,\n\n[congressionalglo7392unit:74:par_000074_000102 · raw SHA-256 bf8b73d0dbddf1d77310a0210a6e5f6dcb0344a7045d14cbda853d3dd33530a4]\n1238 resolution that the Secretary of War be di- rected to communicate all orders issued from time to time by the assistant com- missioners of the Bureau of, in their dis- tricts, and of the Commissioner of the Bu- reau, and such other papers and informa- tion as to the condition of, not heretofore communicated as maybe in the possession\n\nContext after\n\n[congressionalglo7392unit:74:par_000074_000103 · raw SHA-256 9c0229c5d81414aeedf7238d57ae7f0386c116ab59ea112810914ebad768f6d2]\nof the bureau.... 1259",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0074.jp2/1198,729,945,1921/945,/0/default.jpg"
+        },
+        {
+          "label": "Part 2 · scan leaf 74 · eight returned old/new proposals · crop SHA-256 553abad18265c6f2fc1b6360fb21dc550eb5a3256e5d91948f6b9b96a81f87cd",
+          "text": "Validation status: rejected as invalid because one proposal repeats identical old and new text, so no complete proposed reading was created. The other proposals are shown exactly as returned and were not replayed, salvaged, or applied.\n\n1. congressionalglo7392unit:74:par_000074_000083 · raw SHA-256 764110232ac893458b53cbe0b1f658bce41ad45564f96ff8c90b9dd4833431ff\nOLD: Mr. Schenck 1347, 1369, 1870\nNEW: Mr. Schenck 1347, 1369, 1370\n\n2. congressionalglo7392unit:74:par_000074_000084 · raw SHA-256 7089838ea4c1786608a71fe0bb43eaa95e500c1894f16bd0b4483bf93cb438e2\nOLD: Mr. Spalding 1847\nNEW: Mr. Spalding 1347\n\n3. congressionalglo7392unit:74:par_000074_000087 · raw SHA-256 5ce5f666c5b7f2dcb692c52ccd894884faf39c05ae1202d99d3159ccfed08e1a\nOLD: Mr. Washburne, of Illinois 1846\nNEW: Mr. Washburne, of Illinois 1346\n\n4. congressionalglo7392unit:74:par_000074_000088 · raw SHA-256 92cab4a2a4c4cc5d61532302bbe06b0b607a23c0b1626602f12075492124d0fd\nOLD: Mr. Winfield 1849\nNEW: Mr. Winfield 1349\n\n5. congressionalglo7392unit:74:par_000074_000090 · raw SHA-256 0266bf833676c184d29394abf3cb2fe228ae1a194614ae022d560c1a77826104\nOLD: 164) for the relief of 8196, 4249\nNEW: 164) for the relief of 3196, 4249\n\n6. congressionalglo7392unit:74:par_000074_000092 · raw SHA-256 972436266262eb7f4706f906331563ae8f6e73525c830300bab8edbcbff33f18\nOLD: relief of 1869, 2130, 2148, 2316\nNEW: relief of 1869, 2130, 2148, 2316\n\n7. congressionalglo7392unit:74:par_000074_000094 · raw SHA-256 e7e8f467f0faa55ee5a9e6404396ad6ec2431d45cd6ffd0870383f917c466703\nOLD: the, to Mrs. Mary Lincoln. ..349, 719, 735\nNEW: the, to Mrs. Mary Lincoln...349, 719, 735\n\n8. congressionalglo7392unit:74:par_000074_000098 · raw SHA-256 257f7f233ec95755d0f47b64d162d8e9b1755f2b329b17b70eee5655e5f86ba3\nOLD: a pension to 2859, 2876_, 3353, 3404\nNEW: a pension to 2859, 2876, 3353, 3404",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0074.jp2/1198,729,945,1921/945,/0/default.jpg"
+        },
+        {
+          "label": "Source and response citation · https://archive.org/details/congressionalglo7392unit/page/n74/mode/1up",
+          "text": "Hash-bound crop URL resolved from cached IIIF metadata: https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0074.jp2/1198,729,945,1921/945,/0/default.jpg\nCached crop SHA-256: 553abad18265c6f2fc1b6360fb21dc550eb5a3256e5d91948f6b9b96a81f87cd\nIIIF info-receipt SHA-256: a65043911441a0e1fca07a6448c7fab8b1ba7402447f5dbd4c3023873fd22cbc\nImage plan SHA-256: 103474e268aa7173cc28406835ca49c554c5f05c90cc0158f212a7c83075996e\nFrozen request SHA-256: f53ed9200517f9cf92c8597cbb2ae121900763e7b8e3824662e52936539f5a00\nSaved raw reply SHA-256: 36c937336071f8785d29aeee88b6eeb7bc6c81cc4991fa929946b5c8413768f3\nSource paragraph hashes are listed beside each unchanged paragraph above. This citation identifies the material shown; it does not assess correctness.",
+          "url": "https://archive.org/details/congressionalglo7392unit/page/n74/mode/1up"
+        }
+      ]
+    },
+    {
+      "id": "review-notes",
+      "prompt": "Optional notes for either sample: identify the sample and exact word, number or source-boundary issue, or describe what remains uncertain.",
+      "options": [],
+      "required": false,
+      "evidence": []
+    },
+    {
+      "id": "sample-c-status",
+      "prompt": "Status of the third fixed selection; it is unavailable and not offered for grading.",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "Sample C · Part 3 · long pension exchange · selected output unavailable; no substitute",
+          "text": "The selected output for this case was not produced. No other output is substituted. The case remains in the fixed selection as unavailable, not as a completed grade.",
+          "url": null
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "OCR",
+      "definition": "Text recognized automatically from a scanned page; errors can remain in the recognized text.",
+      "aliases": []
+    },
+    {
+      "term": "scan leaf",
+      "definition": "The numbered scanned page image in the digitized volume.",
+      "aliases": []
+    },
+    {
+      "term": "source ID",
+      "definition": "A stable identifier for a paragraph in a particular volume part and scan leaf.",
+      "aliases": []
+    },
+    {
+      "term": "proposed reading",
+      "definition": "A suggested correction of the OCR, shown alongside the unchanged OCR and source scan. It is not an accepted transcript.",
+      "aliases": []
+    },
+    {
+      "term": "tariff",
+      "definition": "A tax on goods brought into a country.",
+      "aliases": []
+    }
+  ]
+}

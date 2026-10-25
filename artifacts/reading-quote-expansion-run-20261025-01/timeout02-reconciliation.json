@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-25T16:07:21.137638+00:00",
+  "attempt_id": "b128a8c3-f3f0-4bed-9cc8-aa4b88f813d7",
+  "task_id": "gemma4:31b-mlx::reading-50a8872c9b2dda1a90bf",
+  "usage": null,
+  "retry": false,
+  "server_events_sha256": "e2e53c1db85d68aac54d52aa744bb4a22cf5999ce5efd3eeba1432bde2f01bc5",
+  "summary": {
+    "pending": 28,
+    "inflight": 0,
+    "valid": 5,
+    "failed": 0,
+    "timeout": 2,
+    "invalid": 1
+  },
+  "timing": {
+    "calls": 8,
+    "seconds": 676.9421753343195,
+    "models": {
+      "gemma4:31b-mlx": {
+        "calls": 8,
+        "seconds": 676.9421753343195
+      }
+    },
+    "unknown_elapsed_attempts": 0,
+    "unknown_model_attempts": 0
+  }
+}

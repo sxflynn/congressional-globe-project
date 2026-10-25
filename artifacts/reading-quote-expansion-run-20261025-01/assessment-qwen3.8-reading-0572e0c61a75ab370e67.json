@@ -1,0 +1,410 @@
+{
+  "schema_version": "reading-expansion-ungraded-assessment-v1",
+  "task_id": "qwen3.8:27b-mlx::reading-0572e0c61a75ab370e67",
+  "attempt_id": "1549e481-644e-4462-ad64-21976a70b141",
+  "unit_id": "reading-0572e0c61a75ab370e67",
+  "model": "qwen3.8:27b-mlx",
+  "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+  "request_sha256": "527f508b9316e95cff177603beee22a82f136d50a3652384f011a1acaef742b6",
+  "raw_reply_sha256": "0f3d6aa33371d597ac70ba49b59db39b38575500dc2196591a218e2e8c3ea3ed",
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 4873,
+  "prompt_eval_count": 4873,
+  "elapsed_seconds": 86.39548095804639,
+  "usage": {
+    "eval_count": 1278,
+    "load_duration": 3895258541,
+    "prompt_eval_count": 4873,
+    "total_duration": 86388582000
+  },
+  "source_images": [
+    {
+      "id": "reading-0572e0c61a75ab370e67-leaf-488",
+      "path": "artifacts/reading-images-20261024-01/reading-0572e0c61a75ab370e67-leaf-488/crop.jpg",
+      "sha256": "1a8c1dcb1a1b06404c5ad2f25c7a1032c9fb1fe338ce29308830fa66b80b7ca8",
+      "sources": [
+        {
+          "end": 85,
+          "raw_sha256": "b1d7620c901af1daf8869c7a45d85c293ef9372a5d4da50d818a752d30dfb589",
+          "source_id": "congressionalglo00unit:488:par_000488_000015",
+          "start": 0
+        },
+        {
+          "end": 142,
+          "raw_sha256": "23c614270ac649fb5107f0266227d78a1af20fbc7cccad4f7b62eb1817a5ef1b",
+          "source_id": "congressionalglo00unit:488:par_000488_000016",
+          "start": 0
+        },
+        {
+          "end": 172,
+          "raw_sha256": "31f4f8400c4b570f298d377c509b08adc02825bbe166a0c93062ed921344628d",
+          "source_id": "congressionalglo00unit:488:par_000488_000017",
+          "start": 0
+        },
+        {
+          "end": 198,
+          "raw_sha256": "4c5cab831ef8ea25b0698251cf87878ac51a9bcfbe3b0bda44e25c942654f04f",
+          "source_id": "congressionalglo00unit:488:par_000488_000018",
+          "start": 0
+        },
+        {
+          "end": 32,
+          "raw_sha256": "e54f68f130396b4f84e33fa63ca3acfb6d1dabff02858b257fe00a2fed6acc93",
+          "source_id": "congressionalglo00unit:488:par_000488_000019",
+          "start": 0
+        },
+        {
+          "end": 17,
+          "raw_sha256": "e3baf10ee1c5d797b97e369a15b176487d291a54d6d7441586dd9c30814d9672",
+          "source_id": "congressionalglo00unit:488:par_000488_000020",
+          "start": 0
+        },
+        {
+          "end": 54,
+          "raw_sha256": "93cf01aa4c09b2eed98e6eef98a84db4469a9aab41ac5d639398b082cfde9eb5",
+          "source_id": "congressionalglo00unit:488:par_000488_000021",
+          "start": 0
+        },
+        {
+          "end": 439,
+          "raw_sha256": "f26e7608724a2c1aec4037e18822319b8952486c8efd3ca30d8255d24d58c52e",
+          "source_id": "congressionalglo00unit:488:par_000488_000022",
+          "start": 0
+        },
+        {
+          "end": 401,
+          "raw_sha256": "17213ff996af4169922dbc7a1e6ccb883ee7dcb7c87312adbe3d52d49d4997cd",
+          "source_id": "congressionalglo00unit:488:par_000488_000023",
+          "start": 0
+        }
+      ]
+    }
+  ],
+  "raw_reply": "{\"model\":\"qwen3.8:27b-mlx\",\"created_at\":\"2026-10-25T16:24:03.959706Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"unit_id\\\": \\\"reading-0572e0c61a75ab370e67\\\",\\n  \\\"status\\\": \\\"proposed\\\",\\n  \\\"patches\\\": [\\n    {\\n      \\\"source_id\\\": \\\"congressionalglo00unit:488:par_000488_000015\\\",\\n      \\\"old\\\": \\\"resulted — yeas 14, nays 17 ; as follows :\\\",\\n      \\\"new\\\": \\\"resulted—yeas 14, nays 17; as follows:\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-0572e0c61a75ab370e67-leaf-488\\\"\\n      ],\\n      \\\"reason\\\": \\\"Corrected spacing around the em dash and semicolon to match the source image.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalglo00unit:488:par_000488_000016\\\",\\n      \\\"old\\\": \\\"YEAS — Messrs. Anthony, Pcsscndcn, Foster, Grimes, Harris, Howe. Kirkwood, Morgan, Morrill, Spra.gue, Trumbull, AVadc, Wilson, and Yates — 14.\\\",\\n      \\\"new\\\": \\\"YEAS—Messrs. Anthony, Fessenden, Foster, Grimes, Harris, Howe, Kirkwood, Morgan, Morrill, Sprague, Trumbull, Wade, Wilson, and Yates—14.\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-0572e0c61a75ab370e67-leaf-488\\\"\\n      ],\\n      \\\"reason\\\": \\\"Corrected OCR errors in names (Fessenden, Sprague, Wade) and punctuation (em dashes, comma after Howe) to match the source image.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalglo00unit:488:par_000488_000017\\\",\\n      \\\"old\\\": \\\"NAYS — Messrs. Brown, Conncss,Cragin, Edmunds, Guthrie, Henderson, Hendricks, Howard, Nosmith, Nye, Poland, Ramsey, Sherman, Stewart, Van Win- kle. Willey, and Williams-17.\\\",\\n      \\\"new\\\": \\\"NAYS—Messrs. Brown, Conness, Cragin, Edmunds, Guthrie, Henderson, Hendricks, Howard, Nesmith, Nye, Poland, Ramsey, Sherman, Stewart, Van Win- kle, Willey, and Williams—17.\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-0572e0c61a75ab370e67-leaf-488\\\"\\n      ],\\n      \\\"reason\\\": \\\"Corrected OCR errors in names (Conness, Nesmith) and punctuation (em dashes, comma after Cragin and Van Win- kle) to match the source image.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalglo00unit:488:par_000488_000018\\\",\\n      \\\"old\\\": \\\"ABSENT — Messrs. Buckalcw, Chandler. Clark, Cowan, Creswell, Davis, Dixon, Doolittle, Johnson, Lane of Indiana, Lane of Kansas, McDougall, Norton, Pomeroy, Riddle, Saulsbury, Sumner, and Wright— 18.\\\",\\n      \\\"new\\\": \\\"ABSENT—Messrs. Buckalew, Chandler, Clark, Cowan, Creswell, Davis, Dixon, Doolittle, Johnson, Lane of Indiana, Lane of Kansas, McDougall, Norton, Pomeroy, Riddle, Saulsbury, Sumner, and Wright—18.\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-0572e0c61a75ab370e67-leaf-488\\\"\\n      ],\\n      \\\"reason\\\": \\\"Corrected OCR errors in name (Buckalew) and punctuation (em dash, comma after Chandler, space before 18) to match the source image.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalglo00unit:488:par_000488_000022\\\",\\n      \\\"old\\\": \\\"approved July 2, 18G4.\\\",\\n      \\\"new\\\": \\\"approved July 2, 1864.\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-0572e0c61a75ab370e67-leaf-488\\\"\\n      ],\\n      \\\"reason\\\": \\\"Corrected OCR error in the year (1864 instead of 18G4) to match the source image.\\\"\\n    },\\n    {\\n      \\\"source_id\\\": \\\"congressionalglo00unit:488:par_000488_000023\\\",\\n      \\\"old\\\": \\\"1 Clo not desire to press it against the wishes of the friends of this measure; and of our rail- roads.\\\",\\n      \\\"new\\\": \\\"I do not desire to press it against the wishes of the friends of this measure and of our rail- roads.\\\",\\n      \\\"image_ids\\\": [\\n        \\\"reading-0572e0c61a75ab370e67-leaf-488\\\"\\n      ],\\n      \\\"reason\\\": \\\"Corrected OCR errors in the sentence (I do not instead of 1 Clo not, removed semicolon) to match the source image.\\\"\\n    }\\n  ],\\n  \\\"uncertain\\\": []\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":86388582000,\"load_duration\":3895258541,\"prompt_eval_count\":4873,\"prompt_eval_cached_count\":0,\"prompt_eval_duration\":43792101625,\"eval_count\":1278,\"eval_duration\":38564705000}",
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-0572e0c61a75ab370e67",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo00unit:488:par_000488_000015",
+          "start": 43,
+          "end": 85,
+          "old": "resulted — yeas 14, nays 17 ; as follows :",
+          "new": "resulted—yeas 14, nays 17; as follows:",
+          "image_ids": [
+            "reading-0572e0c61a75ab370e67-leaf-488"
+          ],
+          "reason": "Corrected spacing around the em dash and semicolon to match the source image."
+        },
+        {
+          "source_id": "congressionalglo00unit:488:par_000488_000016",
+          "start": 0,
+          "end": 142,
+          "old": "YEAS — Messrs. Anthony, Pcsscndcn, Foster, Grimes, Harris, Howe. Kirkwood, Morgan, Morrill, Spra.gue, Trumbull, AVadc, Wilson, and Yates — 14.",
+          "new": "YEAS—Messrs. Anthony, Fessenden, Foster, Grimes, Harris, Howe, Kirkwood, Morgan, Morrill, Sprague, Trumbull, Wade, Wilson, and Yates—14.",
+          "image_ids": [
+            "reading-0572e0c61a75ab370e67-leaf-488"
+          ],
+          "reason": "Corrected OCR errors in names (Fessenden, Sprague, Wade) and punctuation (em dashes, comma after Howe) to match the source image."
+        },
+        {
+          "source_id": "congressionalglo00unit:488:par_000488_000017",
+          "start": 0,
+          "end": 172,
+          "old": "NAYS — Messrs. Brown, Conncss,Cragin, Edmunds, Guthrie, Henderson, Hendricks, Howard, Nosmith, Nye, Poland, Ramsey, Sherman, Stewart, Van Win- kle. Willey, and Williams-17.",
+          "new": "NAYS—Messrs. Brown, Conness, Cragin, Edmunds, Guthrie, Henderson, Hendricks, Howard, Nesmith, Nye, Poland, Ramsey, Sherman, Stewart, Van Win- kle, Willey, and Williams—17.",
+          "image_ids": [
+            "reading-0572e0c61a75ab370e67-leaf-488"
+          ],
+          "reason": "Corrected OCR errors in names (Conness, Nesmith) and punctuation (em dashes, comma after Cragin and Van Win- kle) to match the source image."
+        },
+        {
+          "source_id": "congressionalglo00unit:488:par_000488_000018",
+          "start": 0,
+          "end": 198,
+          "old": "ABSENT — Messrs. Buckalcw, Chandler. Clark, Cowan, Creswell, Davis, Dixon, Doolittle, Johnson, Lane of Indiana, Lane of Kansas, McDougall, Norton, Pomeroy, Riddle, Saulsbury, Sumner, and Wright— 18.",
+          "new": "ABSENT—Messrs. Buckalew, Chandler, Clark, Cowan, Creswell, Davis, Dixon, Doolittle, Johnson, Lane of Indiana, Lane of Kansas, McDougall, Norton, Pomeroy, Riddle, Saulsbury, Sumner, and Wright—18.",
+          "image_ids": [
+            "reading-0572e0c61a75ab370e67-leaf-488"
+          ],
+          "reason": "Corrected OCR errors in name (Buckalew) and punctuation (em dash, comma after Chandler, space before 18) to match the source image."
+        },
+        {
+          "source_id": "congressionalglo00unit:488:par_000488_000022",
+          "start": 417,
+          "end": 439,
+          "old": "approved July 2, 18G4.",
+          "new": "approved July 2, 1864.",
+          "image_ids": [
+            "reading-0572e0c61a75ab370e67-leaf-488"
+          ],
+          "reason": "Corrected OCR error in the year (1864 instead of 18G4) to match the source image."
+        },
+        {
+          "source_id": "congressionalglo00unit:488:par_000488_000023",
+          "start": 261,
+          "end": 364,
+          "old": "1 Clo not desire to press it against the wishes of the friends of this measure; and of our rail- roads.",
+          "new": "I do not desire to press it against the wishes of the friends of this measure and of our rail- roads.",
+          "image_ids": [
+            "reading-0572e0c61a75ab370e67-leaf-488"
+          ],
+          "reason": "Corrected OCR errors in the sentence (I do not instead of 1 Clo not, removed semicolon) to match the source image."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo00unit:488:par_000488_000015": {
+        "text": "The question being taken by yeas and nays, resulted—yeas 14, nays 17; as follows:",
+        "sha256": "066062810a8327def06729652b76472cf064aa4ef69444f8d796b70aeb42135e",
+        "raw_sha256": "b1d7620c901af1daf8869c7a45d85c293ef9372a5d4da50d818a752d30dfb589",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 43,
+            "clean_start": 0,
+            "clean_end": 43,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 43,
+            "raw_end": 85,
+            "clean_start": 43,
+            "clean_end": 81,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 85,
+            "raw_end": 85,
+            "clean_start": 81,
+            "clean_end": 81,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:488:par_000488_000016": {
+        "text": "YEAS—Messrs. Anthony, Fessenden, Foster, Grimes, Harris, Howe, Kirkwood, Morgan, Morrill, Sprague, Trumbull, Wade, Wilson, and Yates—14.",
+        "sha256": "98e957c3983ed9eecca19e86a4a3e4b00d021f2a4cd9533bc37487bdc2e9fc25",
+        "raw_sha256": "23c614270ac649fb5107f0266227d78a1af20fbc7cccad4f7b62eb1817a5ef1b",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 142,
+            "clean_start": 0,
+            "clean_end": 136,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 142,
+            "raw_end": 142,
+            "clean_start": 136,
+            "clean_end": 136,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:488:par_000488_000017": {
+        "text": "NAYS—Messrs. Brown, Conness, Cragin, Edmunds, Guthrie, Henderson, Hendricks, Howard, Nesmith, Nye, Poland, Ramsey, Sherman, Stewart, Van Win- kle, Willey, and Williams—17.",
+        "sha256": "0cd0ccc4367c383f9d53ba2b816a11700e536dcaeb5eb2a59a39b823e692903e",
+        "raw_sha256": "31f4f8400c4b570f298d377c509b08adc02825bbe166a0c93062ed921344628d",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 172,
+            "clean_start": 0,
+            "clean_end": 171,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 172,
+            "raw_end": 172,
+            "clean_start": 171,
+            "clean_end": 171,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:488:par_000488_000018": {
+        "text": "ABSENT—Messrs. Buckalew, Chandler, Clark, Cowan, Creswell, Davis, Dixon, Doolittle, Johnson, Lane of Indiana, Lane of Kansas, McDougall, Norton, Pomeroy, Riddle, Saulsbury, Sumner, and Wright—18.",
+        "sha256": "c03540344e66e04aba5915cc1243affe16a2b90e0587d673d3cccc9d13f8b06a",
+        "raw_sha256": "4c5cab831ef8ea25b0698251cf87878ac51a9bcfbe3b0bda44e25c942654f04f",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 198,
+            "clean_start": 0,
+            "clean_end": 195,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 198,
+            "raw_end": 198,
+            "clean_start": 195,
+            "clean_end": 195,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:488:par_000488_000019": {
+        "text": "So the motion was not agreed to.",
+        "sha256": "e54f68f130396b4f84e33fa63ca3acfb6d1dabff02858b257fe00a2fed6acc93",
+        "raw_sha256": "e54f68f130396b4f84e33fa63ca3acfb6d1dabff02858b257fe00a2fed6acc93",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 32,
+            "clean_start": 0,
+            "clean_end": 32,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:488:par_000488_000020": {
+        "text": "PACIFIC RAILROAD.",
+        "sha256": "e3baf10ee1c5d797b97e369a15b176487d291a54d6d7441586dd9c30814d9672",
+        "raw_sha256": "e3baf10ee1c5d797b97e369a15b176487d291a54d6d7441586dd9c30814d9672",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 17,
+            "clean_start": 0,
+            "clean_end": 17,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:488:par_000488_000021": {
+        "text": "Mr. HOWARD. I now move to take up Senate bill No. 317.",
+        "sha256": "93cf01aa4c09b2eed98e6eef98a84db4469a9aab41ac5d639398b082cfde9eb5",
+        "raw_sha256": "93cf01aa4c09b2eed98e6eef98a84db4469a9aab41ac5d639398b082cfde9eb5",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 54,
+            "clean_start": 0,
+            "clean_end": 54,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:488:par_000488_000022": {
+        "text": "The motion was agreed to ; and the Senate, as in Committee of the Whole, resumed the consideration of the bill (S. No. 317) to amend an act entitled \"An act to amend an act enti- tled 'An act to aid in the construction of a railroad and telegraph line from the Missouri river to the Pacific ocean, and to secure to the Government the use of the same for postal, military, and other purposes,' approved July 1, 1862,\" approved July 2, 1864.",
+        "sha256": "fbea25be3c36bcdea07ef468775e01fe7233489d4d8d1f143f1f31329da51f09",
+        "raw_sha256": "f26e7608724a2c1aec4037e18822319b8952486c8efd3ca30d8255d24d58c52e",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 417,
+            "clean_start": 0,
+            "clean_end": 417,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 417,
+            "raw_end": 439,
+            "clean_start": 417,
+            "clean_end": 439,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 439,
+            "raw_end": 439,
+            "clean_start": 439,
+            "clean_end": 439,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:488:par_000488_000023": {
+        "text": "Mr. POMEROY. I believe the pending question is on the amendment that I submit- ted. I have conversed with very many of the members of the Pacific Railroad Committee, and as they desire to report upon this proposi- tion separately, not connected with this bill, I do not desire to press it against the wishes of the friends of this measure and of our rail- roads. I will therefore withdraw the amend-",
+        "sha256": "cc0ea53de5f75a84ed90d54364042f46a36cb07155c83db6347d50ca4edc0211",
+        "raw_sha256": "17213ff996af4169922dbc7a1e6ccb883ee7dcb7c87312adbe3d52d49d4997cd",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 261,
+            "clean_start": 0,
+            "clean_end": 261,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 261,
+            "raw_end": 364,
+            "clean_start": 261,
+            "clean_end": 362,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 364,
+            "raw_end": 401,
+            "clean_start": 362,
+            "clean_end": 399,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "host_replay_error": null,
+  "visual_assessment": "Root compared all6changed spans and whole derived targets to hash-bound roll-call/Pacific Railroad crop. Name/1864/I do repairs supported. 14yeas/17nays/18absent, Howard/Pomeroy turns and final amend- preserved; no unsupported substantive change observed.",
+  "human_review": false,
+  "parent_review_context": {
+    "patch_level_source_review": "Parent reports patch wording is source-supported; this delegate did not independently inspect images.",
+    "whole_derived_text_review": "pending",
+    "assessment_status": "snapshot only; not a new visual or human grade"
+  },
+  "image_policy": "Image payloads omitted; source image paths, hashes, IDs and bound source spans retained.",
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "All4repair anchors achieved and tally preserved.",
+  "residual_errors": [
+    "Van Win- kle, enti- tled, submit- ted, proposi- tion, rail- roads remain split."
+  ],
+  "usable_reading": "Word/name/number improvements supported; line-wrap normalization incomplete.",
+  "needs_review": false,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "human_reviewed": false,
+  "review_minutes": null,
+  "corpus_edits": 0
+}

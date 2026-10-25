@@ -1,0 +1,98 @@
+{
+  "id": "HR-010",
+  "version": 1,
+  "title": "A short source check of selected reading proposals",
+  "instructions": "Output-informed diagnostic review. The source of each proposal is not identified. Please compare each complete proposed reading with the original scan and unchanged OCR. For the available sample, choose one response: accept as faithful, needs fixes, or unclear / need more context. Use the optional notes field to identify a specific word, number, punctuation mark, layout or source-boundary issue. The proposed reading is not an accepted transcript. The draft includes one complete output; one fixed selected output is pending and not ready for grading; the third fixed selection has no output and is shown as unavailable. No substitute is used. The completed packet will show at most three selected output cards and has a hard combined review limit of 10 minutes; stop sooner if you wish. This review asks only about these selected outputs; it does not authorize extra review, a full run, broader model or corpus policy, or a decision on whether OCR cleanup is worth continuing.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "sample-a-grade",
+      "prompt": "Sample A · ordinary tariff passage. Does the proposed reading preserve the printed text and its paragraph boundaries?",
+      "options": [
+        "Accept as faithful",
+        "Needs fixes",
+        "Unclear / need more context"
+      ],
+      "required": true,
+      "evidence": [
+        {
+          "label": "Part 4 · printed page 3641 · scan leaf 873 · congressionalglo00unit:873:par_000873_000006 · raw SHA-256 86728a521280b61d8bee81b14b5085dde53f63ab9bf9c0a49fc0e0bdf83a5c37",
+          "text": "Original OCR (unchanged source text):\nI know that in the latter part of the bill they have thrown a tub to the whale, and protected broom corn and the article of corn which has hardly ever befn known to be imported in this country. All that to the agricultural interest is a mere blind. Merchants in New York re- gard this present law as a prohibitory tariff to some extent, and the proposition here is to increase it; and a Republican paper in Chicago, which has given this ^ubject a great deal of consideration, has stated that under this bill we will lose about one hundred and thirty-seven million dollars. I ask whether you are willing to lose that for protection alone.\n\nProposed reading (same source paragraph):\nI know that in the latter part of the bill they have thrown a tub to the whale, and protected broom corn and the article of corn which has hardly ever been known to be imported in this country. All that to the agricultural interest is a mere blind. Merchants in New York re- gard this present law as a prohibitory tariff to some extent, and the proposition here is to increase it; and a Republican paper in Chicago, which has given this subject a great deal of consideration, has stated that under this bill we will lose about one hundred and thirty-seven million dollars. I ask whether you are willing to lose that for protection alone.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0873.jp2/8,1734,948,1283/948,/0/default.jpg"
+        },
+        {
+          "label": "Part 4 · printed page 3641 · scan leaf 873 · congressionalglo00unit:873:par_000873_000007 · raw SHA-256 42641e430e0060ec06561d5dc2ad29ba1854ee5e26dc44089947da821226f1ef",
+          "text": "Original OCR (unchanged source text):\n[Here the hammer fell.]\n\nProposed reading (same source paragraph):\n[Here the hammer fell.]",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0873.jp2/8,1734,948,1283/948,/0/default.jpg"
+        },
+        {
+          "label": "Part 4 · printed page 3641 · scan leaf 873 · congressionalglo00unit:873:par_000873_000008 · raw SHA-256 e56c786c52729592525b560f2fd30189a8d13e2f9e844e2550766ad690d2701d",
+          "text": "Original OCR (unchanged source text):\nThe amendment of Mr. Radford was not agreed to.\n\nProposed reading (same source paragraph):\nThe amendment of Mr. Radford was not agreed to.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0873.jp2/8,1734,948,1283/948,/0/default.jpg"
+        },
+        {
+          "label": "Part 4 · printed page 3641 · scan leaf 873 · congressionalglo00unit:873:par_000873_000009 · raw SHA-256 d60dfaf370e761ba47a694614ca8c6f312e7c37f5017f0cea2db92fa67f3c3ab",
+          "text": "Original OCR (unchanged source text):\nMr. MORRILL. I move to reduce it to forty-nine, for the purpose of saying that the committee raised the duty from forty to fifty per cent, for the reason that we have raised the duty on iron Irora the present rates.- I hope it ■will be allowed to remain as we have reported it. The gentleman from Ohio says that New York importers declare our existing tariff is prohibitory, when the fact is we have received under it this last year over $109,000,000 in revenue, which contradicts the declaration. 1 withdraw my amendment.\n\nProposed reading (same source paragraph):\nMr. MORRILL. I move to reduce it to forty-nine, for the purpose of saying that the committee raised the duty from forty to fifty per cent, for the reason that we have raised the duty on iron from the present rates. I hope it will be allowed to remain as we have reported it. The gentleman from Ohio says that New York importers declare our existing tariff is prohibitory, when the fact is we have received under it this last year over $169,000,000 in revenue, which contradicts the declaration. I withdraw my amendment.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0873.jp2/8,1734,948,1283/948,/0/default.jpg"
+        },
+        {
+          "label": "Source image and response provenance · Part 4 · scan leaf 873 · source image SHA-256 75200af1eb768b8cdf81283edeb847ba329cf9f799447de37ff7b972d04b9d15",
+          "text": "Scan crop URL resolved from the cached IIIF metadata receipt; crop SHA-256 75200af1eb768b8cdf81283edeb847ba329cf9f799447de37ff7b972d04b9d15; metadata receipt SHA-256 211320cceeb84fa892fd80d57da55a89dd62458697f6d5c089336098fbbd2d81; image receipt SHA-256 75200af1eb768b8cdf81283edeb847ba329cf9f799447de37ff7b972d04b9d15. Archive page citation: https://archive.org/details/congressionalglo00unit/page/n873/mode/1up. Frozen request SHA-256 f5a6080064618bef87e51f8a9cc95130e1407ea570681b8b48939420395aa216; raw reply SHA-256 5523e3b10eb26bbfa609905ee86c53cdd6d508d0dd8647b3c66b03d248dde2e7. These identify the source and saved response; they do not certify the proposed wording.",
+          "url": "https://archive.org/details/congressionalglo00unit/page/n873/mode/1up"
+        }
+      ]
+    },
+    {
+      "id": "optional-notes",
+      "prompt": "Optional notes: if you selected “Needs fixes” or “Unclear,” point to the exact word or passage and describe the issue. You may also note any typography or layout detail that matters.",
+      "options": [],
+      "required": false,
+      "evidence": []
+    },
+    {
+      "id": "selected-case-status",
+      "prompt": "Status of the other two fixed selections; these are not ready for grading in this draft.",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "Sample B · Part 2 · index with page-number errors · selected output pending; card incomplete",
+          "text": "No output is available yet for this fixed selection, so there is no proposed reading to grade. This placeholder is not a failure judgment and must be completed only from the selected output if it is later produced. Source case: reading-50a8872c9b2dda1a90bf. Request SHA-256 f53ed9200517f9cf92c8597cbb2ae121900763e7b8e3824662e52936539f5a00. Original scan will be linked from its hash-bound metadata when the card is completed.",
+          "url": null
+        },
+        {
+          "label": "Sample C · Part 3 · long pension exchange · selected output unavailable; no substitute",
+          "text": "The selected output for this case was not produced. No other output is substituted. Source case: reading-637a8b4b8fe245aa6d6b. The case remains in the fixed selection as unavailable, not as a completed grade.",
+          "url": null
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "OCR",
+      "definition": "Text recognized automatically from a scanned page; errors can remain in the recognized text.",
+      "aliases": []
+    },
+    {
+      "term": "scan leaf",
+      "definition": "The numbered scanned page image in the digitized volume.",
+      "aliases": []
+    },
+    {
+      "term": "source ID",
+      "definition": "A stable identifier for a paragraph in a particular volume part and scan leaf.",
+      "aliases": []
+    },
+    {
+      "term": "proposed reading",
+      "definition": "A suggested correction of the OCR, shown alongside the unchanged OCR and source scan. It is not an accepted transcript.",
+      "aliases": []
+    },
+    {
+      "term": "tariff",
+      "definition": "A tax on goods brought into a country.",
+      "aliases": []
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "task_id": "gemma4:31b-mlx::reading-3e3d5d225bf885a2e7f5",
+  "attempt_id": "33e4e932-4bbb-4d9b-acbb-e9ca21709dd2",
+  "unit_id": "reading-3e3d5d225bf885a2e7f5",
+  "model": "gemma4:31b-mlx",
+  "control_kind": null,
+  "request_sha256": "0ceaf66b5962d983372ac9a0ff95cefa84411e931422b56ef35220e84ac00f11",
+  "raw_reply_sha256": "97d19b2a2ea5aa0329fff0dad1e4a34ed18d8a0eb1f7a85e91b0aa2103a12e3f",
+  "source_images": [
+    {
+      "id": "reading-3e3d5d225bf885a2e7f5-leaf-769",
+      "sha256": "b46d969045c6cc849e685a73ffcb7804d9efaa1f9083830568cdc15ff2bc5671"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 3166,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-3e3d5d225bf885a2e7f5",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo7393unit:769:par_000769_000012",
+          "start": 0,
+          "end": 31,
+          "old": "Mr. CHANLER, Will the gentleman",
+          "new": "Mr. CHANLER. Will the gentleman",
+          "image_ids": [
+            "reading-3e3d5d225bf885a2e7f5-leaf-769"
+          ],
+          "reason": "Correct punctuation after speaker name"
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo7393unit:769:par_000769_000010": {
+        "text": "I hope my amendment will meet with the approval of the chairman of the Committee of Ways and Means, [Mr. Morrill;] or, if it does not, that he will at least explain that it is not necessary under the law.",
+        "sha256": "09c226d74ac911541f163ff3d1d37af4f5c1fe435a7a56bfe12f61ea2eb2ee4b",
+        "raw_sha256": "09c226d74ac911541f163ff3d1d37af4f5c1fe435a7a56bfe12f61ea2eb2ee4b",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 204,
+            "clean_start": 0,
+            "clean_end": 204,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7393unit:769:par_000769_000011": {
+        "text": "Mr. MORRILL. I do not, perhaps, fully understand the amendment of the gentleman from New York, [Mr. Chanler,] as I was un- able to hear it all when it was read at the Clerk's desk. But so far as I do understand it, I am opposed to it, and hope it will not be adopted, for I think the public notice in the courts where cases of forfeiture are tried is sufficient, and where certainly all the persons who are interested would learn the cause of such forfeiture.",
+        "sha256": "1522e2e84855d0e87a86830b4f7b570ec6ddd9fae504b4e6b2da15894bb90016",
+        "raw_sha256": "1522e2e84855d0e87a86830b4f7b570ec6ddd9fae504b4e6b2da15894bb90016",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 459,
+            "clean_start": 0,
+            "clean_end": 459,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7393unit:769:par_000769_000012": {
+        "text": "Mr. CHANLER. Will the gentleman from Vermont [Mr. Morrill] allow me to ask him if there is any provision in the law regulating the internal revenue to enable the citizen, whose property has been seized by the as- sessor, to obtain speedy redress from the supe- rior of that officer ? As the law now stands, is not the person whose property has been seized completely at the mercy of the assessor? And is it not due to the citizen that he should have some means provided by which his property can be released if he is an innocent party? Does the law provide any such means now? I understand that the gentleman does not know, and still he opposes a good, sound rem- edy because he individually does not know whether that is the law or not. It certainly",
+        "sha256": "5793842b06ad929288874579cf979316eb0154a6543acbb25cbe538a8da91807",
+        "raw_sha256": "fe85739c3c7f08f85e6de285ff335bb212428b4f5ab432eb1c934f537e54b2ad",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 31,
+            "clean_start": 0,
+            "clean_end": 31,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 31,
+            "raw_end": 750,
+            "clean_start": 31,
+            "clean_end": 750,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "control_semantics": {
+    "control_kind": null,
+    "host_control_validation": null,
+    "required_behavior": null,
+    "assessment": "host contract only; no visual grade"
+  },
+  "visual_assessment": "Root compared the single proposed comma-to-period patch after Mr. CHANLER and whole derived target text to the hash-bound crop. Supported. Morrill and Chanler turns remain distinct; final It certainly is not completed. No unsupported substantive change observed.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "CHANLER punctuation repaired; speedy redress and incomplete It certainly preserved.",
+  "residual_errors": [
+    "Raw line-wrap splits remain, including un- able and other wraps."
+  ],
+  "usable_reading": "Faithful wording in inspected target; residual wrap formatting limits reading flow.",
+  "needs_review": false,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Whole target comparison and changed-span review; not exhaustive character reference transcription."
+}

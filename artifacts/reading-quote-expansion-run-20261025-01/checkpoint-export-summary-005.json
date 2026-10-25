@@ -1,0 +1,110 @@
+{
+  "schema_version": "reading-expansion-nonvisual-checkpoint-v1",
+  "checkpoint_sequence": 5,
+  "parent_checkpoint": "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-004.json",
+  "manifest_sha256": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61",
+  "task_statuses": {
+    "inflight": 1,
+    "invalid": 1,
+    "pending": 23,
+    "timeout": 3,
+    "valid": 8
+  },
+  "attempt_statuses": {
+    "inflight": 1,
+    "invalid": 1,
+    "timeout": 3,
+    "valid": 8
+  },
+  "new_terminal_attempts": [
+    {
+      "task_id": "gemma4:31b-mlx::reading-5e7e1b38c53e488454eb",
+      "attempt_id": "2e62b60f-1131-4c7b-96b1-73e8b39e666b",
+      "host_status": "timeout",
+      "input_count_parity": null,
+      "request_sha256": "30ffff2c9f2b089e2c5699503b904cb43141eaab6571dd2ae5cfc5fe6028bc93",
+      "raw_reply_sha256": null,
+      "patch_count": 0,
+      "elapsed_seconds": 120.00310429092497,
+      "assessment_state": "third timeout reconciled; usage unknown; no retry"
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-5f378add7e1f64ea69ba",
+      "attempt_id": "df6f2273-ba14-4f44-a81f-7c87e7254789",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "bb4ae21d66176c2aab12960c9953cd3fe56df6adb3104798edefe0190c0a2264",
+      "raw_reply_sha256": "b3b873ddf2e26af273f87c54d1dc1ebde43e18f9c7570bdf7e55adb95f7d8a37",
+      "patch_count": 12,
+      "elapsed_seconds": 107.2904342089314,
+      "assessment_state": "host-valid; visual assessment pending"
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-637a8b4b8fe245aa6d6b",
+      "attempt_id": "14dea096-d8d3-4360-a2db-484e05becff9",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "50b467dcd82aef65d3f3411d0a10fd8a295f2c24dc7e03005c529e709ecada08",
+      "raw_reply_sha256": "15a2194179ab7d350b497e28eaef8a2913923e3fb211d666a5c968e4717f833d",
+      "patch_count": 5,
+      "elapsed_seconds": 60.28554533282295,
+      "assessment_state": "host-valid; visual assessment pending"
+    }
+  ],
+  "current_inflight_attempts": [
+    {
+      "task_id": "gemma4:31b-mlx::reading-74d01b9894f76563d519",
+      "attempt_id": "bf1b003c-2cf2-41c8-8b44-703062d6d4c0",
+      "started_at": "2026-10-25 16:14:24",
+      "elapsed_seconds": null,
+      "usage_known": false
+    }
+  ],
+  "per_model_budget": {
+    "gemma4:31b-mlx": {
+      "expansion_task_statuses": {
+        "inflight": 1,
+        "invalid": 1,
+        "pending": 5,
+        "timeout": 3,
+        "valid": 8
+      },
+      "expansion_attempt_rows": 13,
+      "expansion_attempt_statuses": {
+        "inflight": 1,
+        "invalid": 1,
+        "timeout": 3,
+        "valid": 8
+      },
+      "recorded_elapsed_seconds": 1047.967663,
+      "attempts_without_elapsed": 1,
+      "per_model_run_cap_seconds": 1854,
+      "headroom_after_recorded_elapsed_seconds": 806.032337,
+      "prior_conservative_seconds": 122.927522,
+      "cumulative_attempt_rows_including_prior": 15,
+      "note": "Recorded elapsed includes completed and timed-out requests; current in-flight elapsed, if null, is not treated as free."
+    },
+    "qwen3.8:27b-mlx": {
+      "expansion_task_statuses": {
+        "pending": 18
+      },
+      "expansion_attempt_rows": 0,
+      "expansion_attempt_statuses": {},
+      "recorded_elapsed_seconds": 0,
+      "attempts_without_elapsed": 0,
+      "per_model_run_cap_seconds": 1854,
+      "headroom_after_recorded_elapsed_seconds": 1854,
+      "prior_conservative_seconds": 545.946171,
+      "cumulative_attempt_rows_including_prior": 8,
+      "note": "Recorded elapsed includes completed and timed-out requests; current in-flight elapsed, if null, is not treated as free."
+    }
+  },
+  "root_visual_scope_note": "Root reports inspecting 16 expansion primary units across 17 regions this turn. Two prior diagnostic units/four reused outputs retain prior source assessments; do not describe this as 19 fresh inspections.",
+  "interpretation_limit": "Host replay only; new 5f378 and any other ungraded output require root review. No human label or corpus edit.",
+  "artifacts": [
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-005.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-summary-005.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-5f378add7e1f64ea69ba.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-637a8b4b8fe245aa6d6b.json"
+  ]
+}

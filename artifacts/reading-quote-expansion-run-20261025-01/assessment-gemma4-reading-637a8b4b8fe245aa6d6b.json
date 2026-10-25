@@ -1,0 +1,181 @@
+{
+  "task_id": "gemma4:31b-mlx::reading-637a8b4b8fe245aa6d6b",
+  "attempt_id": "14dea096-d8d3-4360-a2db-484e05becff9",
+  "unit_id": "reading-637a8b4b8fe245aa6d6b",
+  "model": "gemma4:31b-mlx",
+  "request_sha256": "50b467dcd82aef65d3f3411d0a10fd8a295f2c24dc7e03005c529e709ecada08",
+  "raw_reply_sha256": "15a2194179ab7d350b497e28eaef8a2913923e3fb211d666a5c968e4717f833d",
+  "source_images": [
+    {
+      "id": "reading-637a8b4b8fe245aa6d6b-leaf-126",
+      "sha256": "71b9c1d5ee2e519fc20d39fbbda9d555286b5fe58856dc53ea8bcba7d6bc9694"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 3192,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-637a8b4b8fe245aa6d6b",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo7393unit:126:par_000126_000010",
+          "start": 1453,
+          "end": 1475,
+          "old": "service ; • he employs",
+          "new": "service ; he employs",
+          "image_ids": [
+            "reading-637a8b4b8fe245aa6d6b-leaf-126"
+          ],
+          "reason": "Remove stray dot character not present in source image."
+        },
+        {
+          "source_id": "congressionalglo7393unit:126:par_000126_000010",
+          "start": 2109,
+          "end": 2146,
+          "old": "contended for here. \\ Mr. VAN WINKLE.",
+          "new": "contended for here.\n\nMr. VAN WINKLE.",
+          "image_ids": [
+            "reading-637a8b4b8fe245aa6d6b-leaf-126"
+          ],
+          "reason": "Correct paragraph break and remove stray backslash."
+        },
+        {
+          "source_id": "congressionalglo7393unit:126:par_000126_000010",
+          "start": 2670,
+          "end": 2702,
+          "old": "occasionally, andlamhapjDytoknow",
+          "new": "occasionally, and I am happy to know",
+          "image_ids": [
+            "reading-637a8b4b8fe245aa6d6b-leaf-126"
+          ],
+          "reason": "Correct OCR errors in phrase 'and I am happy to know'."
+        },
+        {
+          "source_id": "congressionalglo7393unit:126:par_000126_000010",
+          "start": 3089,
+          "end": 3105,
+          "old": "law iutended for",
+          "new": "law intended for",
+          "image_ids": [
+            "reading-637a8b4b8fe245aa6d6b-leaf-126"
+          ],
+          "reason": "Correct typo 'iutended' to 'intended'."
+        },
+        {
+          "source_id": "congressionalglo7393unit:126:par_000126_000010",
+          "start": 3801,
+          "end": 3817,
+          "old": "sense Of justice",
+          "new": "sense of justice",
+          "image_ids": [
+            "reading-637a8b4b8fe245aa6d6b-leaf-126"
+          ],
+          "reason": "Correct capitalization of 'of'."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo7393unit:126:par_000126_000010": {
+        "text": "Mr. GRIMES. I am not speaking now in regard to this case particularly ; but if we are to be governed by those humane motives to which the Senator from West Virginia alludes, I want to have the principle apply to other cases as well as this particular one, and I want the Senator, as a member of the Committee on Pensions, to allow other soldiers or the widows of other soldiers to recover their pensions be- tween the time that they may claim that they attempted to secure their pensions and the time they actually did secure them. We give to this woman three or four hundred dollars, as I understand it, by this bill ; that is a mere baga- telle ; but we settle a principle that we must be governed by in the future, contrary to the pre- cedent that has hitherto existed and by which we have been governed before. I do not under- stand that the Senator from West Virginia con- troverts that fact ; but simply upon the ground that this deceased soldier made an attempt to secure his pension but was unsuccessful, we are to make the allowance. Is the Senator prepared to say that whenever a case shall be presented here where the widow claims that her deceased husband has attempted to secure a pension and has failed in being able to do it, she shall be allowed, as in this instance? Here is a man from my State ; he applies ; he has not got the requisite testimony ; he has just as meritorious a case as this ; a man who has suf- fered and bled in the service ; he employs an agent ; the agent is not competent to transact the business ; he sends on his papers, and the papers are found to be defective ; whose fault is it? Does not that present just as much merit as this case? While they are making that effort to secure a pension, but are refused, the man dies. If we settle this rule for this case in the way that it is proposed by the Commit- tee on Pensions to settle it, would not that per- son from my State be entitled to a pension between the time that the man made the abor- tive attempt to secure the pension and the time his widow actually did secure it? Certainly, according to the principle contended for here.\n\nMr. VAN WINKLE. The cases are not similar. In this case a particular application is made for which the proofs must be perfected or no pension will be allowed. The widow subsequently makes application, the proofs are perfected, and the pension allowed, showing that this man most certainly would have got his pension if his application had been made and he had survived until it was disposed of at the Pension Office. The Senator is also mis- taken in supposing that I put this upon humane grounds. There are such cases that come before us occasionally, and I am happy to know that they have been responded to when they come distinctly on that ground. But I men- tioned the sickness of the man as showing his inability to do more than he did do ; that while he was taking steps to have his application made, and was prevented giving it his personal supervision, he died, and simply because he died a few days sooner his widow is to lose the compensation that the law intended for her, as I think. If every case was to be decided, when it comes here, strictly according to law, there would be nothing that I know of for the Pension Committee to do. All, or pretty much all, the cases that come before us are excep- tional cases, and we have to examine the testi- mony, and generally speaking, where we believe there has been no laches, no neglect, no mis- conduct, nothing wrong on the part of the applicant, but there is only a technical diffi- culty or something of this kind, where the time has expired a little too soon, the committee have been in the habit of reporting and both Houses of passing such bills. I think this addresses itself not to the humanity, but to the sense of justice of the Senate.",
+        "sha256": "95e57ce9a3333cfa151ec94e6fc8bebf217e666192864b91270170b91ead799a",
+        "raw_sha256": "72c608f93fc6e64fcdf5b49d3fa4b59a3691576aba3154783e59df5709c1a473",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 1453,
+            "clean_start": 0,
+            "clean_end": 1453,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 1453,
+            "raw_end": 1475,
+            "clean_start": 1453,
+            "clean_end": 1473,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 1475,
+            "raw_end": 2109,
+            "clean_start": 1473,
+            "clean_end": 2107,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 2109,
+            "raw_end": 2146,
+            "clean_start": 2107,
+            "clean_end": 2143,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 2146,
+            "raw_end": 2670,
+            "clean_start": 2143,
+            "clean_end": 2667,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 2670,
+            "raw_end": 2702,
+            "clean_start": 2667,
+            "clean_end": 2703,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 2702,
+            "raw_end": 3089,
+            "clean_start": 2703,
+            "clean_end": 3090,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 3089,
+            "raw_end": 3105,
+            "clean_start": 3090,
+            "clean_end": 3106,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 3105,
+            "raw_end": 3801,
+            "clean_start": 3106,
+            "clean_end": 3802,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 3801,
+            "raw_end": 3817,
+            "clean_start": 3802,
+            "clean_end": 3818,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 3817,
+            "raw_end": 3832,
+            "clean_start": 3818,
+            "clean_end": 3833,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "visual_assessment": "Root compared each changed span and whole derived passage to hash-bound source crop. All5patches supported. Whole derived target preserves Grimes then Van Winkle, their humane-versus-justice distinction, three or four hundred dollars and laches. Newline makes an existing intra-paragraph speaker turn visible; no word moved between source IDs or neighboring Grimes turn imported.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "All3repair anchors achieved and laches preserved.",
+  "residual_errors": [
+    "Unjoined raw line wraps remain: be- tween, baga- telle, pre- cedent, excep- tional"
+  ],
+  "usable_reading": "Material OCR repairs supported; word-wrap formatting still limits smooth reading/audio text.",
+  "needs_review": false,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Whole target/changed-span comparison, not exhaustive character reference transcription. No human grade."
+}

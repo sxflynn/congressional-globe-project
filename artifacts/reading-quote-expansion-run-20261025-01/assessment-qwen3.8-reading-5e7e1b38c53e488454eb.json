@@ -1,0 +1,215 @@
+{
+  "task_id": "qwen3.8:27b-mlx::reading-5e7e1b38c53e488454eb",
+  "attempt_id": "2af99067-2def-4ba5-be03-a716f719236b",
+  "unit_id": "reading-5e7e1b38c53e488454eb",
+  "model": "qwen3.8:27b-mlx",
+  "request_sha256": "e8fbbffa82287cd4e38d970b43c5b44f588422d8e2115a895c537db4da995f63",
+  "raw_reply_sha256": "21440fee719b2fd0c7103cbc57eef9586ef998114b5397cfe6af726f3617cf56",
+  "source_images": [
+    {
+      "id": "reading-5e7e1b38c53e488454eb-leaf-569",
+      "sha256": "f8e3b8ca71e046dda0f13db620df99310759a76ca4b451b8aba4f1f04876b7b2"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 5703,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-5e7e1b38c53e488454eb",
+      "status": "needs_review",
+      "patches": [],
+      "uncertain": [
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 457,
+          "end": 482,
+          "reason": "OCR shows 'tho' but the image clearly shows 'the'."
+        },
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 484,
+          "end": 514,
+          "reason": "OCR shows 'caslis otlier' but the image clearly shows 'casks other'."
+        },
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 748,
+          "end": 771,
+          "reason": "OCR shows 'boraeic' but the image clearly shows 'boracic'."
+        },
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 1092,
+          "end": 1129,
+          "reason": "OCR shows 'Hags' but the image clearly shows 'flags'."
+        },
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 2667,
+          "end": 2707,
+          "reason": "OCR shows 'S^lOO' but the image clearly shows '$100'."
+        },
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 2708,
+          "end": 2811,
+          "reason": "OCR shows 'PcouitZerf' and 'jsublic' but the image clearly shows 'Provided' and 'public'."
+        },
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 3405,
+          "end": 3430,
+          "reason": "OCR shows 'parafiine' but the image clearly shows 'paraffine'."
+        },
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 3469,
+          "end": 3506,
+          "reason": "OCR shows 'Baumo's' but the image clearly shows 'Baume's'."
+        },
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 3646,
+          "end": 3686,
+          "reason": "OCR shows '13aume\"s' but the image clearly shows 'Baume's'."
+        },
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 3709,
+          "end": 3767,
+          "reason": "OCR shows 'tho' but the image clearly shows 'the'."
+        },
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 4140,
+          "end": 4174,
+          "reason": "OCR shows 'barf' but the image clearly shows 'bar; blooms'."
+        },
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 4228,
+          "end": 4325,
+          "reason": "OCR shows '^ccd-drins, horso- rakos, gr;iin-cr;ulles' but the image clearly shows 'seed-drills, horse- rakes, grain-cradles'."
+        },
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "start": 4327,
+          "end": 5564,
+          "reason": "The OCR text is severely corrupted in this section, with many words and characters incorrectly transcribed. The image shows 'productions of stereotypers, lithographers, engravers, and electro- typers; putty; quinine, morphine, and other vege- table alkaloids, and phosphorus; railroad iron, and railroad iron rerolled; railroad chairs; railroad, boat, and ship spikes; ax polls; iron axles; shoes for horses, mules, and oxen; rivets, horseshoe nails, nuts, washers, and bolts; vises, iron chains, and anchors, when such articles are made of wrought iron which has previously paid the tax or duty assessed thereon; reapers, mowers, threshing-machines, and separators; corn-shellers and wooden-ware; repairs of articles of all kinds; Roman and water cements, and lime; roof- ing slate, slabs, and tiles; saleratus, sal soda, caustic soda, crude soda, alumino-silicate of soda; aluminate of soda; bicarbonate of soda; and silicate of soda; sails, tents, awnings, and bags made by sewing from fabrics or other articles upon which a duty or tax has been paid; and bags made of paper; salts of tin; silex used in the manufacture of glass; soap, valued at not above three cents per pound; spelter; spindles and castings of all descriptions made specially for locks or for machinery, and not sold or used for any'."
+        }
+      ]
+    },
+    "derived": {
+      "congressionalglo00unit:569:par_000569_000051": {
+        "text": "Sec. 11. And be it further enacted, That from and after the passage of this act the articles and prod- ucts hereinafter enumerated shall be exempt from internal tax or duty: alum; aluminum; aluminous cake, patent alum, sulphate of alumina, and cobalt; aniline and aniline colors; animal charcoal, or car- bon; anvils; articles manufactured in institutions for the blind, and in institutions for the deaf and dumb, which are sold to aid in their support, or tho support of the pupils; barrels and caslis otlier than those used for the reception of fluids; packing boxes made of wood; and boxes of wood or paper for fric- tion matches, cigar-lights, and wax tapers; beeswax, crude or unrefined; bichromate of potash; bleaching powders; blue vitriol; borax, and boraeic acid; brass not more advanced than rods or sheets; brick, fire- brick, draining-tiles, cement, drain and sewer pipes, and earthen and stone water-pipes; bristles; brooms made from corn, brush, or palm-leaf; building stone of all kinds, including slate, marble, freestone, and soapstone, and rock, ground and calcined gypsum; bunting and Hags of the United States, and banners made of bunting of domestic manufacture; burr- stones, millstones, and grindstones, rough or wrought ; candle wicking; coffins and burial cases; copperas; copper, lead, and tin, in ingots, pigs, or bars; copper and yellow sheathing metal, not more advanced than rods or sheets; crates, and grain or farm baskets made of splints; crucibles of all kinds; crutches and artificial limbs, eyes, and teeth; deer skins, dressed or smoked; feather beds, mattresses, palliases, bol- sters, and pillows; fertilizers of all kinds; flasks and patterns used by founders; flavoring extracts solely for cooking purposes; german silver in bars or sheets; gold leaf and gold foil; hemp and jute prepared for textile or felting purposes; hulls of ships and other vessels; illuminating gas manufactured by educa- tional institutions for their own use exclusively ; iron bridges, and castings for iron bridges; keys, actions, and strings for musical instruments; lith- arge and orange mineral; machines driven by horse power and used exclusively for cutting fire-wood, staves, and shingle bolts, and hand saws ; magne- sium, calcined magnesia, and carbonate of magne- sia; malleable iron castings, unfinished; manganese; masts; spars, ship and vessel blocks, and treenail wedges, and deck plugs; medicinal and mineral waters, of all kinds, sold in bottles or from fountains; mills and machinery for the manufacture of sugar, sirup, and molasses from sorghum, imphce, beets, and corn; mineral coal of all kinds; monuments of stone of all kinds, not exceeding in value the sum of S^lOO: PcouitZerf, That monuments exceeding the value afore- said, erected by jsublic or private contributions to commemorate the service of Union soldiers who have fallen in battle, shall be exempt from taxation ; mould- ings for looking-glasses and picture frames ; muriatic, nitric, and acetic acids; nickel, quicksilver, and so- dium; nitrate of lead; oakum; original paintings, statues, and groups of statuary and casts made thereof by the artist from the original designs ; oxide of zinc: paints, painter's and paper stainer's colors; paper of all descriptions, except such as is manufactured and used exclusively for wearing apparel; books, maps, charts, and all printed matter, and book-binding; parafiine ; parafiine oil, not exceeding in specific gr.av- ity thirty-six degrees Baumo's hydrometer, the prod- uct of a residuum of distillation ; lubricating oil made from crude petroleum, coal, or shale not exceeding in specific gravity thirty-six degrees 13aume\"s hydrom- eter; crude petroleum, and crude oil tho product of the first and single distillation of coal, shale, as- phaltum, peat, or other bituminous substances; pho- tographs or any other sun picture, being copies of engravings or works of art, when the same are sold by the producer at wholesale at a price not exceed- ing fifteen cents each, or are used for the illustration of books; pickles when sold by the gallon and not contained in glass packages; pig-iron; muck barf blooms, slabs, and loops; plows, cultivators, harrows, straw and hay cutters, planters, ^ccd-drins, horso- rakos, hand-rakes, cotton-gins, gr;iin-cr;ulles, and winnowing-mills; pot and pearl ashes; ]n-oduction3 of stercotypers, litluigraphers, engravers, and olectro- typcrs; putty; iiuiniuc, uuirpliuio, and otUcr VL'i;eta- blc alkaloids, and phospliorus; railroad iron, and railroad iron reroUed; railroad oniurs; railroad, boat, and ship spikes; ax iiolls; iron axles; shoes for horses, mules, and oxen ; rivets, horseshoe nails, nuts, w'ashera, and bolts; vises, iron chains, and anchors, when such articles are made of wrought iron which has previously paid the taxor duty assessed thereon; reapers, nu)wers,tlireshing-uuvchines.andsoparators; corn -sh oilers and wooden- ware; repairs of articles of all kinds; Ronian ;ind water cements, ami linu-; root- ing slate, slabs, and tiles ; saleratus, sal soda, oa^ustio soda, crude soda, alumino-silicate ofsoila ; .-(luminato of soda; bicarbonate of soda; and silii'ate of soda; sails, tents, awnings, and bugs made by sowing Irom lUbrics or other articles vipou which a duty or tax has been paid; and bass made of paper: siMn ot tui; silex used in the nianutaeiure of f-'lass; soap, valued at not above three cents per |>ound ; speller : spindles and ca,-;|in,-s of all de,-.eri|. lions made s|.eei;illy lor locks or for machinery, and not sold or used lor luiy",
+        "sha256": "13aae54c7d1c8b942bb75cc40b015678920796d7b838febb630f13944b7746d7",
+        "raw_sha256": "13aae54c7d1c8b942bb75cc40b015678920796d7b838febb630f13944b7746d7",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 5564,
+            "clean_start": 0,
+            "clean_end": 5564,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 457,
+            "end": 482,
+            "reason": "OCR shows 'tho' but the image clearly shows 'the'."
+          },
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 484,
+            "end": 514,
+            "reason": "OCR shows 'caslis otlier' but the image clearly shows 'casks other'."
+          },
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 748,
+            "end": 771,
+            "reason": "OCR shows 'boraeic' but the image clearly shows 'boracic'."
+          },
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 1092,
+            "end": 1129,
+            "reason": "OCR shows 'Hags' but the image clearly shows 'flags'."
+          },
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 2667,
+            "end": 2707,
+            "reason": "OCR shows 'S^lOO' but the image clearly shows '$100'."
+          },
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 2708,
+            "end": 2811,
+            "reason": "OCR shows 'PcouitZerf' and 'jsublic' but the image clearly shows 'Provided' and 'public'."
+          },
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 3405,
+            "end": 3430,
+            "reason": "OCR shows 'parafiine' but the image clearly shows 'paraffine'."
+          },
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 3469,
+            "end": 3506,
+            "reason": "OCR shows 'Baumo's' but the image clearly shows 'Baume's'."
+          },
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 3646,
+            "end": 3686,
+            "reason": "OCR shows '13aume\"s' but the image clearly shows 'Baume's'."
+          },
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 3709,
+            "end": 3767,
+            "reason": "OCR shows 'tho' but the image clearly shows 'the'."
+          },
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 4140,
+            "end": 4174,
+            "reason": "OCR shows 'barf' but the image clearly shows 'bar; blooms'."
+          },
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 4228,
+            "end": 4325,
+            "reason": "OCR shows '^ccd-drins, horso- rakos, gr;iin-cr;ulles' but the image clearly shows 'seed-drills, horse- rakes, grain-cradles'."
+          },
+          {
+            "source_id": "congressionalglo00unit:569:par_000569_000051",
+            "start": 4327,
+            "end": 5564,
+            "reason": "The OCR text is severely corrupted in this section, with many words and characters incorrectly transcribed. The image shows 'productions of stereotypers, lithographers, engravers, and electro- typers; putty; quinine, morphine, and other vege- table alkaloids, and phosphorus; railroad iron, and railroad iron rerolled; railroad chairs; railroad, boat, and ship spikes; ax polls; iron axles; shoes for horses, mules, and oxen; rivets, horseshoe nails, nuts, washers, and bolts; vises, iron chains, and anchors, when such articles are made of wrought iron which has previously paid the tax or duty assessed thereon; reapers, mowers, threshing-machines, and separators; corn-shellers and wooden-ware; repairs of articles of all kinds; Roman and water cements, and lime; roof- ing slate, slabs, and tiles; saleratus, sal soda, caustic soda, crude soda, alumino-silicate of soda; aluminate of soda; bicarbonate of soda; and silicate of soda; sails, tents, awnings, and bags made by sewing from fabrics or other articles upon which a duty or tax has been paid; and bags made of paper; salts of tin; silex used in the manufacture of glass; soap, valued at not above three cents per pound; spelter; spindles and castings of all descriptions made specially for locks or for machinery, and not sold or used for any'."
+          }
+        ],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "patch_level_source_review": "No patches; 13 uncertainty spans retained. Root reports no improvement over unchanged raw text and no asserted chemistry corrections accepted.",
+  "visual_assessment": "No edits;13uncertainty spans retained over damaged OCR. Root checked the whole unchanged target against the existing crop: this is conservative review routing, not a clean reading or achieved correction. Claimed chemical-word readings in reasons are not accepted patches.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "All5repair anchors remain uncorrected in derived raw text.",
+  "residual_errors": [
+    "Extensive residual OCR corruption and line-wrap artifacts."
+  ],
+  "usable_reading": false,
+  "needs_review": true,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Human review remains open; this snapshot preserves host replay and only the explicitly supplied root source notes.",
+  "review_minutes": null
+}

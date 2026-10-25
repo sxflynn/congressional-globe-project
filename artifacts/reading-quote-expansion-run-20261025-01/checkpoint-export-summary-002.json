@@ -1,0 +1,95 @@
+{
+  "schema_version": "reading-expansion-nonvisual-checkpoint-v1",
+  "checkpoint_sequence": 2,
+  "parent_checkpoint": "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-001.json",
+  "manifest_sha256": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61",
+  "task_statuses": {
+    "inflight": 1,
+    "invalid": 1,
+    "pending": 29,
+    "timeout": 1,
+    "valid": 4
+  },
+  "attempt_statuses": {
+    "inflight": 1,
+    "invalid": 1,
+    "timeout": 1,
+    "valid": 4
+  },
+  "new_terminal_attempts": [
+    {
+      "task_id": "gemma4:31b-mlx::reading-29781311671c9158bbd8",
+      "attempt_id": "a715df25-103d-49b5-8f27-8090e333fb95",
+      "host_status": "timeout",
+      "control_kind": null,
+      "input_count_parity": null,
+      "request_sha256": "c099421388cce728bd324f970b86011cd0d26fe08fdc9a79bdd62cd69c8552b7",
+      "raw_reply_sha256": null,
+      "control_semantics": null,
+      "assessment_state": "timeout; usage unknown"
+    },
+    {
+      "task_id": "gemma4:31b-mlx::missing_image::reading-3077c2e0a49061bbcf29",
+      "attempt_id": "9ec0a091-f275-4f34-bfac-b2555ea2ceba",
+      "host_status": "valid",
+      "control_kind": "missing_image",
+      "input_count_parity": true,
+      "request_sha256": "6c9a6b45555a6f8646e53c23153dbc28768e249fb0e24560f4f0c2fe796e63b7",
+      "raw_reply_sha256": "45b69d5ee97b4ae0eac623fab5a4f2ed1dc31c6e8642fc93573357ec77b7c91e",
+      "control_semantics": {
+        "control_kind": "missing_image",
+        "host_control_validation": "passed",
+        "required_behavior": "unchanged targets and whole-target uncertainty",
+        "assessment": "host contract only; no visual grade"
+      },
+      "assessment_state": "host-valid; ungraded snapshot"
+    },
+    {
+      "task_id": "gemma4:31b-mlx::unrelated_image::reading-3077c2e0a49061bbcf29",
+      "attempt_id": "a69f68b6-4bc6-4cfa-9102-dd623d588c36",
+      "host_status": "invalid",
+      "control_kind": "unrelated_image",
+      "input_count_parity": true,
+      "request_sha256": "c71d505e45c2a7a2373570f125e55d799af8bc9692b4ceeb2994273201a15290",
+      "raw_reply_sha256": "acdee5795a5ab46f8b0858aa90c57c70a91ee3c32e4ec78cdd2e1a960f760785",
+      "control_semantics": {
+        "control_kind": "unrelated_image",
+        "expected_behavior": "no patches and whole-target uncertainty",
+        "raw_reply_structural_observation": {
+          "target_count": 4,
+          "uncertain_source_count": 4,
+          "uncertain_sources_cover_targets": true,
+          "patch_count": 0
+        },
+        "host_control_validation": "failed because reply schema validation failed",
+        "disposition": "invalid; not salvaged or counted as passed"
+      },
+      "assessment_state": "invalid; no salvage"
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-3e3d5d225bf885a2e7f5",
+      "attempt_id": "33e4e932-4bbb-4d9b-acbb-e9ca21709dd2",
+      "host_status": "valid",
+      "control_kind": null,
+      "input_count_parity": true,
+      "request_sha256": "0ceaf66b5962d983372ac9a0ff95cefa84411e931422b56ef35220e84ac00f11",
+      "raw_reply_sha256": "97d19b2a2ea5aa0329fff0dad1e4a34ed18d8a0eb1f7a85e91b0aa2103a12e3f",
+      "control_semantics": {
+        "control_kind": null,
+        "host_control_validation": null,
+        "required_behavior": null,
+        "assessment": "host contract only; no visual grade"
+      },
+      "assessment_state": "host-valid; ungraded snapshot"
+    }
+  ],
+  "valid_control_pass_count": 1,
+  "invalid_control_count": 1,
+  "interpretation_limit": "Host validation and raw structural observations only. No image-grounded assessment or human grade is implied.",
+  "artifacts": [
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-002.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-summary-002.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-missing_image-reading-3077c2e0a49061bbcf29.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-3e3d5d225bf885a2e7f5.json"
+  ]
+}

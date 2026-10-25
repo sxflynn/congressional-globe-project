@@ -1,0 +1,133 @@
+{
+  "task_id": "qwen3.8:27b-mlx::reading-637a8b4b8fe245aa6d6b",
+  "attempt_id": "a2551a31-771a-4b22-8679-4986c230a46c",
+  "unit_id": "reading-637a8b4b8fe245aa6d6b",
+  "model": "qwen3.8:27b-mlx",
+  "request_sha256": "bfcd0b918392a5abfd25d46df46bfdc153a60765ac0ca6f1541fec836ad72b24",
+  "raw_reply_sha256": "61895ffd42824f308b01872efc4b74496cb1b834dd3c88cc9a96fd582184f143",
+  "source_images": [
+    {
+      "id": "reading-637a8b4b8fe245aa6d6b-leaf-126",
+      "sha256": "71b9c1d5ee2e519fc20d39fbbda9d555286b5fe58856dc53ea8bcba7d6bc9694"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 5460,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-637a8b4b8fe245aa6d6b",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo7393unit:126:par_000126_000010",
+          "start": 2684,
+          "end": 2702,
+          "old": "andlamhapjDytoknow",
+          "new": "and I am happy to know",
+          "image_ids": [
+            "reading-637a8b4b8fe245aa6d6b-leaf-126"
+          ],
+          "reason": "The image shows the words 'and I am happy to know' in that location; the OCR produced a garbled concatenation."
+        },
+        {
+          "source_id": "congressionalglo7393unit:126:par_000126_000010",
+          "start": 3093,
+          "end": 3101,
+          "old": "iutended",
+          "new": "intended",
+          "image_ids": [
+            "reading-637a8b4b8fe245aa6d6b-leaf-126"
+          ],
+          "reason": "The image shows 'intended'; the OCR misread the 'n' as 'u'."
+        },
+        {
+          "source_id": "congressionalglo7393unit:126:par_000126_000010",
+          "start": 3801,
+          "end": 3817,
+          "old": "sense Of justice",
+          "new": "sense of justice",
+          "image_ids": [
+            "reading-637a8b4b8fe245aa6d6b-leaf-126"
+          ],
+          "reason": "The image shows lowercase 'of'; the OCR capitalized it incorrectly."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo7393unit:126:par_000126_000010": {
+        "text": "Mr. GRIMES. I am not speaking now in regard to this case particularly ; but if we are to be governed by those humane motives to which the Senator from West Virginia alludes, I want to have the principle apply to other cases as well as this particular one, and I want the Senator, as a member of the Committee on Pensions, to allow other soldiers or the widows of other soldiers to recover their pensions be- tween the time that they may claim that they attempted to secure their pensions and the time they actually did secure them. We give to this woman three or four hundred dollars, as I understand it, by this bill ; that is a mere baga- telle ; but we settle a principle that we must be governed by in the future, contrary to the pre- cedent that has hitherto existed and by which we have been governed before. I do not under- stand that the Senator from West Virginia con- troverts that fact ; but simply upon the ground that this deceased soldier made an attempt to secure his pension but was unsuccessful, we are to make the allowance. Is the Senator prepared to say that whenever a case shall be presented here where the widow claims that her deceased husband has attempted to secure a pension and has failed in being able to do it, she shall be allowed, as in this instance? Here is a man from my State ; he applies ; he has not got the requisite testimony ; he has just as meritorious a case as this ; a man who has suf- fered and bled in the service ; • he employs an agent ; the agent is not competent to transact the business ; he sends on his papers, and the papers are found to be defective ; whose fault is it? Does not that present just as much merit as this case? While they are making that effort to secure a pension, but are refused, the man dies. If we settle this rule for this case in the way that it is proposed by the Commit- tee on Pensions to settle it, would not that per- son from my State be entitled to a pension between the time that the man made the abor- tive attempt to secure the pension and the time his widow actually did secure it? Certainly, according to the principle contended for here. \\ Mr. VAN WINKLE. The cases are not similar. In this case a particular application is made for which the proofs must be perfected or no pension will be allowed. The widow subsequently makes application, the proofs are perfected, and the pension allowed, showing that this man most certainly would have got his pension if his application had been made and he had survived until it was disposed of at the Pension Office. The Senator is also mis- taken in supposing that I put this upon humane grounds. There are such cases that come before us occasionally, and I am happy to know that they have been responded to when they come distinctly on that ground. But I men- tioned the sickness of the man as showing his inability to do more than he did do ; that while he was taking steps to have his application made, and was prevented giving it his personal supervision, he died, and simply because he died a few days sooner his widow is to lose the compensation that the law intended for her, as I think. If every case was to be decided, when it comes here, strictly according to law, there would be nothing that I know of for the Pension Committee to do. All, or pretty much all, the cases that come before us are excep- tional cases, and we have to examine the testi- mony, and generally speaking, where we believe there has been no laches, no neglect, no mis- conduct, nothing wrong on the part of the applicant, but there is only a technical diffi- culty or something of this kind, where the time has expired a little too soon, the committee have been in the habit of reporting and both Houses of passing such bills. I think this addresses itself not to the humanity, but to the sense of justice of the Senate.",
+        "sha256": "f23898ee8fdde01919d470973a725e5e5e21e3d76d4dd87f6fada052b5526c7c",
+        "raw_sha256": "72c608f93fc6e64fcdf5b49d3fa4b59a3691576aba3154783e59df5709c1a473",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 2684,
+            "clean_start": 0,
+            "clean_end": 2684,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 2684,
+            "raw_end": 2702,
+            "clean_start": 2684,
+            "clean_end": 2706,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 2702,
+            "raw_end": 3093,
+            "clean_start": 2706,
+            "clean_end": 3097,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 3093,
+            "raw_end": 3101,
+            "clean_start": 3097,
+            "clean_end": 3105,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 3101,
+            "raw_end": 3801,
+            "clean_start": 3105,
+            "clean_end": 3805,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 3801,
+            "raw_end": 3817,
+            "clean_start": 3805,
+            "clean_end": 3821,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 3817,
+            "raw_end": 3832,
+            "clean_start": 3821,
+            "clean_end": 3836,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "patch_level_source_review": null,
+  "visual_assessment": "All3patches supported. Whole derived text compared to crop via complete diff with source-reviewed Gemma; mixed Grimes/Van Winkle arguments, amount and laches preserved.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "All3repair anchors achieved, laches preserved.",
+  "residual_errors": [
+    "Raw bullet and backslash before Van Winkle remain; many split words."
+  ],
+  "usable_reading": true,
+  "needs_review": false,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Human review remains open; this snapshot preserves host replay and only the explicitly supplied root source notes.",
+  "review_minutes": null
+}

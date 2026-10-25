@@ -4,6 +4,8 @@ Use the browser desk for new reviews. This page links prior answers and explains
 
 ## Needs your attention
 
+**Ready: HR-010 · Short source check of selected reading proposals.** Open [the desk](http://10.0.0.56:8501), choose **HR-010**, and compare the two fixed anonymized results with their scans. One full proposed reading and one rejected reply are shown; the unavailable third selection is retained without substitution. This is the already-approved review round, at most10minutes total. Stop sooner and use **Not reviewed — time limit reached** for unfinished samples. No broader approval is requested.
+
 **HR-003 received and applied.** You approved the sample, provisional quality standards and conditional local resource limits. You requested less review; HR-009 is now answered in chat: at most three fixed anonymized outputs and ten minutes total. No repeat HR-009 browser submission is needed. No repeat of the approved questions is needed.
 
 **Ready in the browser: HR-004 · Two real passages: topics and OCR readability.** About 5–8 minutes: read two unchanged Congressional Globe excerpts (parts 2 and 3), identify the subjects, and tell us whether OCR damage prevents understanding. No model answers are shown. Open [the desk](http://10.0.0.56:8501), select **HR-004**, and submit your answers there. You do not need to edit this file.

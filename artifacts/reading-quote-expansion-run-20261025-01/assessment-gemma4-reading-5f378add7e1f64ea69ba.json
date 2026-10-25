@@ -1,0 +1,436 @@
+{
+  "task_id": "gemma4:31b-mlx::reading-5f378add7e1f64ea69ba",
+  "attempt_id": "df6f2273-ba14-4f44-a81f-7c87e7254789",
+  "unit_id": "reading-5f378add7e1f64ea69ba",
+  "model": "gemma4:31b-mlx",
+  "request_sha256": "bb4ae21d66176c2aab12960c9953cd3fe56df6adb3104798edefe0190c0a2264",
+  "raw_reply_sha256": "b3b873ddf2e26af273f87c54d1dc1ebde43e18f9c7570bdf7e55adb95f7d8a37",
+  "source_images": [
+    {
+      "id": "reading-5f378add7e1f64ea69ba-leaf-299",
+      "sha256": "f4ee5be5a3a60085a31e93c42d951bc7382a974d54aa86866b8eebf7cab5ba65"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 4088,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-5f378add7e1f64ea69ba",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "start": 0,
+          "end": 45,
+          "old": "The same question that pcnds before us liangs",
+          "new": "The same question that pends before us hangs",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Correct OCR errors 'pcnds' to 'pends' and 'liangs' to 'hangs'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "start": 105,
+          "end": 131,
+          "old": "of what wc too fondly call",
+          "new": "of what we too fondly call",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Correct OCR error 'wc' to 'we'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "start": 285,
+          "end": 313,
+          "old": "send across the oeean an en-",
+          "new": "send across the ocean an en-",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Correct OCR error 'oeean' to 'ocean'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "start": 497,
+          "end": 544,
+          "old": "democratic repuljlic country lias had the ques-",
+          "new": "democratic republic country has had the ques-",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Correct OCR errors 'repuljlic' to 'republic' and 'lias' to 'has'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "start": 664,
+          "end": 686,
+          "old": "right of suffrage ?' '",
+          "new": "right of suffrage?\"",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Correct punctuation from '?' ' ' to '?\"'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000037",
+          "start": 0,
+          "end": 24,
+          "old": "[Here tlie hammer fell.]",
+          "new": "[Here the hammer fell.]",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Correct OCR error 'tlie' to 'the'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000038",
+          "start": 0,
+          "end": 49,
+          "old": "Mr. KELLEY. I have but a few Ayords lAore to say.",
+          "new": "Mr. KELLEY. I have but a few words more to say.",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Correct OCR errors 'Ayords lAore' to 'words more'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000039",
+          "start": 26,
+          "end": 112,
+          "old": "time of tke gentleman from Pennsylvania [Mr. Kelley] be extended, so as to enal)le him",
+          "new": "time of the gentleman from Pennsylvania [Mr. Kelley] be extended, so as to enable him",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Correct OCR errors 'tke' to 'the' and 'enal)le' to 'enable'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000041",
+          "start": 45,
+          "end": 141,
+          "old": "courtesy, f will continue for a few jnin- utes to plead the cause of the oppressed of all lauds.",
+          "new": "courtesy, I will continue for a few min- utes to plead the cause of the oppressed of all lands.",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Correct OCR errors 'f' to 'I', 'jnin-' to 'min-', and 'lauds' to 'lands'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000041",
+          "start": 142,
+          "end": 276,
+          "old": "I plead, Mr. S^jeaker, and members of the American Congress, with you, to help to enfranchise the laboring peojile of Great Brit- ain.",
+          "new": "I plead, Mr. Speaker, and members of the American Congress, with you, to help to enfranchise the laboring people of Great Brit- ain.",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Correct OCR errors 'S^jeaker' to 'Speaker' and 'peojile' to 'people'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000041",
+          "start": 277,
+          "end": 355,
+          "old": "When John Bright uttered his recent siDcecha deputation of them sat before him",
+          "new": "When John Bright uttered his recent speech a deputation of them sat before him",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Correct OCR error 'siDcecha' to 'speech a'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000041",
+          "start": 562,
+          "end": 627,
+          "old": "descendants of the kings of Dahomey and of Amei-ican Congressmen,",
+          "new": "descendants of the kings of Dahomey and of American Congressmen,",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Correct OCR error 'Amei-ican' to 'American'."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalg7391unit:299:par_000299_000036": {
+        "text": "The same question that pends before us hangs upon a hair in the entranced gaze of the labor- ing masses of what we too fondly call \"the mother country.\" I ask my colleague, who spoke so kindly of the German, the English- man, the Scotchman, and the Irishman, whether he is willing to send across the ocean an en- couraging word to the despots of the British Government, and to set an example which will justify them in saying, \"We will withhold from the laboring people this right, for the great democratic republic country has had the ques- tion under discussion, and has decided that people poor and ignorant as are our laboring classes ought not to have the right of suffrage?\" If gentlemen on the other side do, they will hear songs that were not sung in the \" Groves of Blarney.\"",
+        "sha256": "bee6df8a575c6ea968ae0beb6f28925f77ae28f84c1fafb802404b33a8266ee5",
+        "raw_sha256": "c5f0faeec0ccdf54c8a834efe809cfac9d47ab1754ee7b3d0a54b6e254716697",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 45,
+            "clean_start": 0,
+            "clean_end": 44,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 45,
+            "raw_end": 105,
+            "clean_start": 44,
+            "clean_end": 104,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 105,
+            "raw_end": 131,
+            "clean_start": 104,
+            "clean_end": 130,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 131,
+            "raw_end": 285,
+            "clean_start": 130,
+            "clean_end": 284,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 285,
+            "raw_end": 313,
+            "clean_start": 284,
+            "clean_end": 312,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 313,
+            "raw_end": 497,
+            "clean_start": 312,
+            "clean_end": 496,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 497,
+            "raw_end": 544,
+            "clean_start": 496,
+            "clean_end": 541,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 544,
+            "raw_end": 664,
+            "clean_start": 541,
+            "clean_end": 661,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 664,
+            "raw_end": 686,
+            "clean_start": 661,
+            "clean_end": 680,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 686,
+            "raw_end": 790,
+            "clean_start": 680,
+            "clean_end": 784,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:299:par_000299_000037": {
+        "text": "[Here the hammer fell.]",
+        "sha256": "42641e430e0060ec06561d5dc2ad29ba1854ee5e26dc44089947da821226f1ef",
+        "raw_sha256": "d3f19e6d4d53f568aadaff45dab13e793f458d0ab96aa950782494cf73587043",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 24,
+            "clean_start": 0,
+            "clean_end": 23,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 24,
+            "raw_end": 24,
+            "clean_start": 23,
+            "clean_end": 23,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:299:par_000299_000038": {
+        "text": "Mr. KELLEY. I have but a few words more to say.",
+        "sha256": "f659e0b772c57cb3157f7721114e897f1c5b4ba7ca331af7f3c2f9ebb4c16db7",
+        "raw_sha256": "68c13bbe5bb93fe646ff1f353f798a445aecec085ba4a788089ca3e2a42343ab",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 49,
+            "clean_start": 0,
+            "clean_end": 47,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 49,
+            "raw_end": 49,
+            "clean_start": 47,
+            "clean_end": 47,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:299:par_000299_000039": {
+        "text": "Mr. ORTH. I move that the time of the gentleman from Pennsylvania [Mr. Kelley] be extended, so as to enable him to conclude his remarks on this subject.",
+        "sha256": "ff9df6ccff3950318a736ed00e722434aa112c9ca04dfb32a301c7a9b01f3ec5",
+        "raw_sha256": "0b407de6dcf3bb5feac993cb1fc7e14362b007cc0df5b1bc480a88f07a12a028",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 26,
+            "clean_start": 0,
+            "clean_end": 26,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 26,
+            "raw_end": 112,
+            "clean_start": 26,
+            "clean_end": 111,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 112,
+            "raw_end": 153,
+            "clean_start": 111,
+            "clean_end": 152,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:299:par_000299_000040": {
+        "text": "No objection was made.",
+        "sha256": "a426b22bced06ab886c8aaefe09f52ca50a90cb175a07aae941dbbbf3305bdc3",
+        "raw_sha256": "a426b22bced06ab886c8aaefe09f52ca50a90cb175a07aae941dbbbf3305bdc3",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 22,
+            "clean_start": 0,
+            "clean_end": 22,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:299:par_000299_000041": {
+        "text": "Mr. KELLEY. With thanks to the House for its courtesy, I will continue for a few min- utes to plead the cause of the oppressed of all lands. I plead, Mr. Speaker, and members of the American Congress, with you, to help to enfranchise the laboring people of Great Brit- ain. When John Bright uttered his recent speech a deputation of them sat before him and he alluded to them. And I point around these galleries to the maimed and wounded soldiers of the armies of America, whose skin is not colored like our own. I point to intelligent men, black and yellow, descendants of the kings of Dahomey and of American Congressmen, Senators, Presidents, and Cabinet ministers, and ask you to give them, as laboring people and republican soldiers, the rights of citizen- ship. John Bright said :",
+        "sha256": "0154b4ae7d3f2ac9cd66cc236cf2a6f7015c2c77a20af491cd45c3147fc50ba6",
+        "raw_sha256": "8b0f103884991459bb0d5ae10c2e6e69f9c070994b899ac0d0f96e334ada4288",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 45,
+            "clean_start": 0,
+            "clean_end": 45,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 45,
+            "raw_end": 141,
+            "clean_start": 45,
+            "clean_end": 140,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 141,
+            "raw_end": 142,
+            "clean_start": 140,
+            "clean_end": 141,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 142,
+            "raw_end": 276,
+            "clean_start": 141,
+            "clean_end": 273,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 276,
+            "raw_end": 277,
+            "clean_start": 273,
+            "clean_end": 274,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 277,
+            "raw_end": 355,
+            "clean_start": 274,
+            "clean_end": 352,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 355,
+            "raw_end": 562,
+            "clean_start": 352,
+            "clean_end": 559,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 562,
+            "raw_end": 627,
+            "clean_start": 559,
+            "clean_end": 623,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 627,
+            "raw_end": 790,
+            "clean_start": 623,
+            "clean_end": 786,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "visual_assessment": "Root compared each changed span and whole derived passage to hash-bound source crop. All12patches supported: damaged OCR words, speaker/stage wording and quote punctuation repaired. Whole derived targets preserve Kelley/Orth/Kelley turns, hammer-fell stage direction, suffrage quotation and final John Bright said without importing following quotation.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "All3repair anchors achieved.",
+  "residual_errors": [
+    "Unjoined raw line wraps remain: labor- ing, English- man, Great Brit- ain, citizen- ship"
+  ],
+  "usable_reading": "Material OCR repairs supported; word-wrap formatting still limits smooth reading/audio text.",
+  "needs_review": false,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Whole target/changed-span comparison, not exhaustive character reference transcription. No human grade."
+}

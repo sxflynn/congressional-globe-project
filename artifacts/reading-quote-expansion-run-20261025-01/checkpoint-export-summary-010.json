@@ -1,0 +1,139 @@
+{
+  "schema_version": "reading-expansion-nonvisual-checkpoint-v1",
+  "checkpoint_sequence": 10,
+  "parent_checkpoint": "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-009.json",
+  "manifest_sha256": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61",
+  "task_statuses": {
+    "inflight": 1,
+    "invalid": 3,
+    "pending": 8,
+    "timeout": 5,
+    "valid": 19
+  },
+  "attempt_statuses": {
+    "inflight": 1,
+    "invalid": 3,
+    "timeout": 5,
+    "valid": 19
+  },
+  "new_terminal_attempts": [
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-3e3d5d225bf885a2e7f5",
+      "attempt_id": "00b18311-a847-491b-aee6-64ee2d5f892c",
+      "host_status": "valid",
+      "request_sha256": "a4fecf494f6a6c761c0699823f88925bf1a8f75fc4fca78370924ee358c41449",
+      "raw_reply_sha256": "d11cc36636fe0f7f48813075048206fc6afec5aa5dd739726ee3a92b93c8ce61",
+      "input_count_parity": true,
+      "expected_input_tokens": 3454,
+      "elapsed_seconds": 48.53883162513375,
+      "raw_reply_patch_count": 7,
+      "host_replay_error": null,
+      "visual_assessment": "ungraded"
+    },
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-4fc8caf8f1dfb06d6938",
+      "attempt_id": "c88bcfab-cc9b-41e1-a052-9977a4b5764d",
+      "host_status": "valid",
+      "request_sha256": "300e78824d90e0a5240fb9b65ec8ae0a22caa3ebeb65b085a1937fc73dccc41a",
+      "raw_reply_sha256": "0f765b6e8b7020e344d6c1b63b481f6b122d952fe0bd3745ce9385022e637d2d",
+      "input_count_parity": true,
+      "expected_input_tokens": 6176,
+      "elapsed_seconds": 72.09444775013253,
+      "raw_reply_patch_count": 5,
+      "host_replay_error": null,
+      "visual_assessment": "ungraded"
+    },
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-50a8872c9b2dda1a90bf",
+      "attempt_id": "54b99611-4aa7-4661-aab0-57cbef624cd9",
+      "host_status": "invalid",
+      "request_sha256": "f53ed9200517f9cf92c8597cbb2ae121900763e7b8e3824662e52936539f5a00",
+      "raw_reply_sha256": "36c937336071f8785d29aeee88b6eeb7bc6c81cc4991fa929946b5c8413768f3",
+      "input_count_parity": true,
+      "expected_input_tokens": 10014,
+      "elapsed_seconds": 118.94143012515269,
+      "raw_reply_patch_count": null,
+      "host_replay_error": "Host-invalid saved reply; raw output preserved without salvage or accepted derived text.",
+      "visual_assessment": "ungraded"
+    },
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-5500247fc23992050e37",
+      "attempt_id": "06c9493a-c6de-4c9e-8147-77c1373e191c",
+      "host_status": "valid",
+      "request_sha256": "ea7dd67dc96b1f84ae44d5cd757d64fa550cbd698b8c46cf1a025b8aa328943b",
+      "raw_reply_sha256": "5b92fbf64a62659775abbfa9c548173967cd425d04cb347eecf19bc6a417f22c",
+      "input_count_parity": true,
+      "expected_input_tokens": 5565,
+      "elapsed_seconds": 78.7822797500994,
+      "raw_reply_patch_count": 9,
+      "host_replay_error": null,
+      "visual_assessment": "ungraded"
+    }
+  ],
+  "current_inflight_attempts": [
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-5e7e1b38c53e488454eb",
+      "attempt_id": "2af99067-2def-4ba5-be03-a716f719236b",
+      "request_sha256": "e8fbbffa82287cd4e38d970b43c5b44f588422d8e2115a895c537db4da995f63",
+      "started_at": "2026-10-25 16:36:21",
+      "elapsed_seconds": null,
+      "usage_known": false,
+      "model": "qwen3.8:27b-mlx",
+      "unit_id": "reading-5e7e1b38c53e488454eb"
+    }
+  ],
+  "per_model_budget": {
+    "gemma4:31b-mlx": {
+      "expansion_task_statuses": {
+        "invalid": 1,
+        "timeout": 4,
+        "valid": 13
+      },
+      "expansion_attempt_rows": 18,
+      "expansion_attempt_statuses": {
+        "invalid": 1,
+        "timeout": 4,
+        "valid": 13
+      },
+      "recorded_elapsed_seconds": 1462.945093,
+      "attempts_without_elapsed": 0,
+      "per_model_run_cap_seconds": 1854,
+      "headroom_after_recorded_elapsed_seconds": 391.054907,
+      "prior_conservative_seconds": 122.927522,
+      "cumulative_attempt_rows_including_prior": 20,
+      "note": "Elapsed is summed from persisted attempt durations. Null elapsed for in-flight attempts is not treated as free."
+    },
+    "qwen3.8:27b-mlx": {
+      "expansion_task_statuses": {
+        "inflight": 1,
+        "invalid": 2,
+        "pending": 8,
+        "timeout": 1,
+        "valid": 6
+      },
+      "expansion_attempt_rows": 10,
+      "expansion_attempt_statuses": {
+        "inflight": 1,
+        "invalid": 2,
+        "timeout": 1,
+        "valid": 6
+      },
+      "recorded_elapsed_seconds": 666.754638,
+      "attempts_without_elapsed": 1,
+      "per_model_run_cap_seconds": 1854,
+      "headroom_after_recorded_elapsed_seconds": 1187.245362,
+      "prior_conservative_seconds": 545.946171,
+      "cumulative_attempt_rows_including_prior": 18,
+      "note": "Elapsed is summed from persisted attempt durations. Null elapsed for in-flight attempts is not treated as free."
+    }
+  },
+  "interpretation_limit": "Persisted host validation/replay is structural. New Qwen real snapshots remain ungraded; root owns image-based and whole-derived review. Invalid output is not salvaged or accepted. Human review is false.",
+  "artifacts": [
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-010.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-summary-010.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-real-reading-3e3d5d225bf885a2e7f5-UNIT.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-real-reading-4fc8caf8f1dfb06d6938-UNIT.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-real-reading-50a8872c9b2dda1a90bf-UNIT.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-real-reading-5500247fc23992050e37-UNIT.json"
+  ]
+}

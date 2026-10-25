@@ -1,0 +1,33 @@
+{
+  "observed_utc": "2026-10-25T15:53:53.642460+00:00",
+  "no_competing_worker": true,
+  "cleanup_claimed": 0,
+  "processes": [
+    "68381 Sat Oct 24 17:13:53 2026        18:40:00 /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false",
+    "87597 Wed Oct 21 20:46:52 2026     03-15:07:01 /Applications/Ollama.app/Contents/Resources/ollama serve"
+  ],
+  "runtime_ps": {
+    "models": []
+  },
+  "queue": {
+    "average_completed_seconds": 3.35,
+    "average_resolved_seconds": 4.07,
+    "claimed": 0,
+    "completed": 1339,
+    "estimated_pending_hours": 23.51,
+    "estimated_remaining_hours": 23.51,
+    "pending": 20785,
+    "percent_complete": 5.94,
+    "remaining": 21208,
+    "review": 423,
+    "timed_resolved_jobs": 1762,
+    "total": 22547
+  },
+  "owner": "Codex root, vision capable",
+  "limits": {
+    "max_calls": 36,
+    "total_seconds": 6291,
+    "per_model_seconds": 1854,
+    "call_seconds": 120
+  }
+}

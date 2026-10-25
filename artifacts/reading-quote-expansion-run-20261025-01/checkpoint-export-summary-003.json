@@ -1,0 +1,78 @@
+{
+  "schema_version": "reading-expansion-nonvisual-checkpoint-v1",
+  "checkpoint_sequence": 3,
+  "parent_checkpoint": "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-002.json",
+  "manifest_sha256": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61",
+  "task_statuses": {
+    "inflight": 1,
+    "invalid": 1,
+    "pending": 28,
+    "timeout": 1,
+    "valid": 5
+  },
+  "attempt_statuses": {
+    "inflight": 1,
+    "invalid": 1,
+    "timeout": 1,
+    "valid": 5
+  },
+  "new_terminal_attempts": [
+    {
+      "task_id": "gemma4:31b-mlx::reading-4fc8caf8f1dfb06d6938",
+      "attempt_id": "d6cbb91b-4091-4ccd-8231-b7512166ce4e",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "ff7f25a33bcb2608384f7f829a7bb3af86df09db0debdc64295319dce8b8cd0a",
+      "raw_reply_sha256": "9b320893f0b3f28edbdaf28a4dac53abc9a4567b42c67b9e7321163f1f331ea7",
+      "patch_count": 9,
+      "assessment_state": "host-valid; visual assessment pending"
+    }
+  ],
+  "per_model_budget": {
+    "gemma4:31b-mlx": {
+      "expansion_manifest_tasks": 18,
+      "expansion_task_statuses": {
+        "inflight": 1,
+        "invalid": 1,
+        "pending": 10,
+        "timeout": 1,
+        "valid": 5
+      },
+      "expansion_attempt_rows": 8,
+      "expansion_attempt_statuses": {
+        "inflight": 1,
+        "invalid": 1,
+        "timeout": 1,
+        "valid": 5
+      },
+      "recorded_elapsed_seconds": 556.938853,
+      "attempts_missing_elapsed": 1,
+      "run_per_model_seconds_cap": 1854,
+      "run_cap_headroom_before_unsettled_attempts_seconds": 1297.061147,
+      "prior_conservative_seconds": 122.927522,
+      "cumulative_calls_including_prior_and_expansion_attempt_rows": 10,
+      "usage_note": "Elapsed is summed from persisted attempt elapsed_seconds, including timed-out calls; an in-flight attempt with no elapsed value is excluded and must not be treated as free."
+    },
+    "qwen3.8:27b-mlx": {
+      "expansion_manifest_tasks": 18,
+      "expansion_task_statuses": {
+        "pending": 18
+      },
+      "expansion_attempt_rows": 0,
+      "expansion_attempt_statuses": {},
+      "recorded_elapsed_seconds": 0,
+      "attempts_missing_elapsed": 0,
+      "run_per_model_seconds_cap": 1854,
+      "run_cap_headroom_before_unsettled_attempts_seconds": 1854,
+      "prior_conservative_seconds": 545.946171,
+      "cumulative_calls_including_prior_and_expansion_attempt_rows": 8,
+      "usage_note": "Elapsed is summed from persisted attempt elapsed_seconds, including timed-out calls; an in-flight attempt with no elapsed value is excluded and must not be treated as free."
+    }
+  },
+  "interpretation_limit": "Host replay only. Exact source typography and visual fidelity remain ungraded; no human grade or image-grounded certification is implied.",
+  "artifacts": [
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-003.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-summary-003.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-4fc8caf8f1dfb06d6938.json"
+  ]
+}

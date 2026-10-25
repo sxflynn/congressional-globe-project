@@ -1,0 +1,6 @@
+time=2026-10-25T12:26:24.275-04:00 level=INFO source=pipeline.go:228 msg="Prompt processing progress" processed=9021 total=9022
+[GIN] 2026/10/25 - 12:27:02 | 500 |          2m0s |       127.0.0.1 | POST     "/api/chat"
+time=2026-10-25T12:27:02.651-04:00 level=INFO source=server.go:252 msg=ServeHTTP method=POST path=/v1/completions took=1m59.971008333s status="200 OK"
+time=2026-10-25T12:27:02.693-04:00 level=INFO source=speculate_stats.go:62 msg="speculative decode stats" iterations=276 drafted=1081 accepted=1030 acceptance=0.95 avg_draft=3.92 max_draft=5 avg_accepted=3.73 depth_over_time="3.2/4 4.1/5 4.0/5 4.0/4 4.0/5 4.0/4 4.0/4 4.0/4"
+time=2026-10-25T12:27:02.704-04:00 level=INFO source=pipeline.go:110 msg=memory peak="22.49 GiB" held="19.51 GiB"
+time=2026-10-25T12:27:02.705-04:00 level=INFO source=runner.go:300 msg="Request terminated" error="context canceled"

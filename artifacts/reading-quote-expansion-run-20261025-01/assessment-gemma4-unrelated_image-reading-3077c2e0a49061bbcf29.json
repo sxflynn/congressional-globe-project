@@ -1,0 +1,56 @@
+{
+  "task_id": "gemma4:31b-mlx::unrelated_image::reading-3077c2e0a49061bbcf29",
+  "attempt_id": "a69f68b6-4bc6-4cfa-9102-dd623d588c36",
+  "unit_id": "reading-3077c2e0a49061bbcf29",
+  "model": "gemma4:31b-mlx",
+  "control_kind": "unrelated_image",
+  "request_sha256": "c71d505e45c2a7a2373570f125e55d799af8bc9692b4ceeb2994273201a15290",
+  "raw_reply_sha256": "acdee5795a5ab46f8b0858aa90c57c70a91ee3c32e4ec78cdd2e1a960f760785",
+  "source_images": [
+    {
+      "id": "reading-50a8872c9b2dda1a90bf-leaf-74",
+      "sha256": "553abad18265c6f2fc1b6360fb21dc550eb5a3256e5d91948f6b9b96a81f87cd"
+    }
+  ],
+  "host_status": "invalid",
+  "detail": "4 validation errors for QuoteReadingReply\nuncertain.0.uncertainty_type\n  Extra inputs are not permitted [type=extra_forbidden, input_value='missing_image_content', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/extra_forbidden\nuncertain.1.uncertainty_type\n  Extra inputs are not permitted [type=extra_forbidden, input_value='missing_image_content', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/extra_forbidden\nuncertain.2.uncertainty_type\n  Extra inputs are not permitted [type=extra_forbidden, input_value='missing_image_content', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/extra_forbidden\nuncertain.3.uncertainty_type\n  Extra inputs are not permitted [type=extra_forbidden, input_value='missing_image_content', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/extra_forbidden",
+  "input_count_parity": true,
+  "raw_proposal": {
+    "patches": [],
+    "status": "needs_review",
+    "uncertain": [
+      {
+        "source_id": "congressionalg7391unit:207:par_000207_000038",
+        "old": "",
+        "reason": "The target text is not present in the provided image. The image contains an index of names and bills, while the target text consists of speech paragraphs.",
+        "uncertainty_type": "missing_image_content"
+      },
+      {
+        "source_id": "congressionalg7391unit:207:par_000207_000039",
+        "old": "",
+        "reason": "The target text is not present in the provided image. The image contains an index of names and bills, while the target text consists of speech paragraphs.",
+        "uncertainty_type": "missing_image_content"
+      },
+      {
+        "source_id": "congressionalg7391unit:207:par_000207_000040",
+        "old": "",
+        "reason": "The target text is not present in the provided image. The image contains an index of names and bills, while the target text consists of speech paragraphs.",
+        "uncertainty_type": "missing_image_content"
+      },
+      {
+        "source_id": "congressionalg7391unit:207:par_000207_000041",
+        "old": "",
+        "reason": "The target text is not present in the provided image. The image contains an index of names and bills, while the target text consists of speech paragraphs.",
+        "uncertainty_type": "missing_image_content"
+      }
+    ],
+    "unit_id": "reading-3077c2e0a49061bbcf29"
+  },
+  "visual_assessment": "Control review, not target-image grading. Supplied image has true unrelated source bindings; model makes0patches and marks all4targets uncertain, but extra uncertainty_type fields violate frozen schema. Reply remains invalid; no fields stripped and no accepted derived reading.",
+  "control_result": "failed",
+  "semantic_abstention_observed": true,
+  "human_reviewed": false,
+  "reviewer": "Codex root GPT-6; exact reply and frozen control bindings inspected",
+  "review_minutes": null,
+  "corpus_edits": 0
+}

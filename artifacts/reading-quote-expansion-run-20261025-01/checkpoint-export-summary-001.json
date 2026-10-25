@@ -1,0 +1,41 @@
+{
+  "schema_version": "reading-expansion-nonvisual-checkpoint-v1",
+  "manifest_sha256": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61",
+  "task_statuses": {
+    "inflight": 1,
+    "pending": 33,
+    "valid": 2
+  },
+  "attempt_statuses": {
+    "inflight": 1,
+    "valid": 2
+  },
+  "completed_outputs": [
+    {
+      "task_id": "gemma4:31b-mlx::reading-0572e0c61a75ab370e67",
+      "attempt_id": "29f59ae2-b662-4cae-a31a-cd908428fb29",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "c5493c533ae1968e057cf14f301228311f127ee86d1531bc24bb931c6b39ff63",
+      "raw_reply_sha256": "3f289e0e9e01cccf8237c82ba6a8d4f62a20c700fb09227f0711ca3e0553c7cf",
+      "patch_count": 6,
+      "assessment_state": "existing root visual assessment preserved"
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-1cf618a5ce887cee79b1",
+      "attempt_id": "a13dda84-448f-43c2-8097-ed9032333fac",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "7453d7fc085f91234ea1f743c9c8e6221120be6095aa22ad9d9b3d120f1518e0",
+      "raw_reply_sha256": "58dd470f509145d621120b65645857069a928fef1de2e5c1547565face6c8951",
+      "patch_count": 4,
+      "assessment_state": "host-valid; visual assessment ungraded in assessment snapshot"
+    }
+  ],
+  "controls_completed": 0,
+  "interpretation_limit": "Host parsing/validation only; no image-grounded assessment or human grade is implied.",
+  "artifacts": [
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-001.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-1cf618a5ce887cee79b1.json"
+  ]
+}

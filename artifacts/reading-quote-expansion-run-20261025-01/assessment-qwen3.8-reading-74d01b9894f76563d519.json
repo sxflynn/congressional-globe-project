@@ -1,0 +1,215 @@
+{
+  "task_id": "qwen3.8:27b-mlx::reading-74d01b9894f76563d519",
+  "attempt_id": "2b70a797-7aeb-47f8-af69-3e784e8730eb",
+  "unit_id": "reading-74d01b9894f76563d519",
+  "model": "qwen3.8:27b-mlx",
+  "request_sha256": "b8d41fed8ed0f700420d88b03679675527bb87246f2e5d19494fd9128b8bb49b",
+  "raw_reply_sha256": "37bf61d7a82cd53f855fafab5d7d684201fc1607291e37db57ff22450502d9a6",
+  "source_images": [
+    {
+      "id": "reading-74d01b9894f76563d519-leaf-1060",
+      "sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 7715,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-74d01b9894f76563d519",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+          "start": 0,
+          "end": 41,
+          "old": "Chap. CCCXL — An Act to remove tte Office",
+          "new": "Chap. CCCXLI.—An Act to remove the Office",
+          "image_ids": [
+            "reading-74d01b9894f76563d519-leaf-1060"
+          ],
+          "reason": "The image shows the chapter number as CCCXLI and the word 'the' instead of 'tte'."
+        },
+        {
+          "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+          "start": 336,
+          "end": 354,
+          "old": "as maybe, to cause",
+          "new": "as may be, to cause",
+          "image_ids": [
+            "reading-74d01b9894f76563d519-leaf-1060"
+          ],
+          "reason": "The image shows 'as may be' with a space, not 'maybe'."
+        },
+        {
+          "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+          "start": 398,
+          "end": 423,
+          "old": "Wiscon- sin to.be removed",
+          "new": "Wisconsin to be removed",
+          "image_ids": [
+            "reading-74d01b9894f76563d519-leaf-1060"
+          ],
+          "reason": "The image shows 'Wisconsin' as a single word and 'to be' without a period."
+        },
+        {
+          "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+          "start": 774,
+          "end": 817,
+          "old": "Sec. 2. And be it further enacted. That all",
+          "new": "Sec. 2. And be it further enacted, That all",
+          "image_ids": [
+            "reading-74d01b9894f76563d519-leaf-1060"
+          ],
+          "reason": "The image shows a comma after 'enacted', not a period."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo7395unit:1060:par_001060_000025": {
+        "text": "Sec. 2. And be it further enacted, That in case suits or proceedings are pending in said provisional court which could not have been instituted in said circuit or district court, the record shall remain in said district court with- out further action therein.",
+        "sha256": "8afdad05fdde58558f1cf5a973e281e1247e086cfad7af139eba0a6dbecacbbf",
+        "raw_sha256": "8afdad05fdde58558f1cf5a973e281e1247e086cfad7af139eba0a6dbecacbbf",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 259,
+            "clean_start": 0,
+            "clean_end": 259,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:1060:par_001060_000026": {
+        "text": "Sec. 3. And be it further enacted, That all judgments, orders, decrees, and decisions of the United States provisional court for the State of Louisiana, relating to the causes hereby transferred to the district court of the eastern",
+        "sha256": "d3d297fc4b96c5e77591cd5c98530462be7a5a3381ff6cf300a1dfb440e3e411",
+        "raw_sha256": "d3d297fc4b96c5e77591cd5c98530462be7a5a3381ff6cf300a1dfb440e3e411",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 231,
+            "clean_start": 0,
+            "clean_end": 231,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:1060:par_001060_000027": {
+        "text": "district of Louisiana, or to the circuit court held in said district, shall at once become the judgments, orders, decrees, and decisions of said district court, or said circuit court, unless the same are inconsistent with the rules and proceedings thereof; and may be enforced, pleaded, and proved, as the judgments, orders, decrees, or decisions of said district court, or said circuit court. Approved, July 28, 1866.",
+        "sha256": "42f077531ceac77b40857983d727226ea24ac857994913b82909af411e485eb5",
+        "raw_sha256": "42f077531ceac77b40857983d727226ea24ac857994913b82909af411e485eb5",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 418,
+            "clean_start": 0,
+            "clean_end": 418,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:1060:par_001060_000028": {
+        "text": "Chap. CCCXLI.—An Act to remove the Office of Surveyor General of the States of Iowa and Wisconsin to Plattsmouth, Nebraska. Be it enacted by the Senate and House of Rep- resentatives of the United States of America in Congress assembled, That it shall be the duty of the Secretary of the Interior, as soon after the passage of this act as may be, to cause the office of surveyor general of Iowa and Wisconsin to be removed to Plattsmouth in the Ter- ritory of Nebraska, and to make the necessary provisions for immediate and effective opera- tions ; and when so removed the duties and jurisdiction of said surveyor general shall be coextensive with the limits of the Territory of Nebraska, and include the State of Iowa, and the same shall constitute a surveying district. Sec. 2. And be it further enacted, That all acts and parts of acts inconsistent with the provisions of this act, be, and the same are hereby, repealed. Approved, July 28, 1866.",
+        "sha256": "67e5a5a414ffa9791ee4b3a739444366318ddd8ecb40bab8947dcca952cd4d90",
+        "raw_sha256": "38df69ac13782c2367417d4c8807e27539bd6edd36e7c19758163967681efcfc",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 41,
+            "clean_start": 0,
+            "clean_end": 41,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 41,
+            "raw_end": 336,
+            "clean_start": 41,
+            "clean_end": 336,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 336,
+            "raw_end": 354,
+            "clean_start": 336,
+            "clean_end": 355,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 354,
+            "raw_end": 398,
+            "clean_start": 355,
+            "clean_end": 399,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 398,
+            "raw_end": 423,
+            "clean_start": 399,
+            "clean_end": 422,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 423,
+            "raw_end": 774,
+            "clean_start": 422,
+            "clean_end": 773,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 774,
+            "raw_end": 817,
+            "clean_start": 773,
+            "clean_end": 816,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 817,
+            "raw_end": 950,
+            "clean_start": 816,
+            "clean_end": 949,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "patch_level_source_review": null,
+  "visual_assessment": "Root checked all4patches and whole derived targets against original-resolution crop. Three wording/spacing repairs supported, but chapter CCCXLI is wrong: print plainly reads CCCXI. This is an unsupported critical legislative-number change, not merely typography. Cross-column order, separate acts/dates otherwise preserved.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 1,
+  "anchor_outcomes": "the Office repaired; CCCXI anchor failed (output CCCXLI), Plattsmouth preserved.",
+  "residual_errors": [
+    "Wrong chapter number CCCXLI.",
+    "Other raw line wraps remain."
+  ],
+  "usable_reading": false,
+  "needs_review": true,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Human review remains open; this snapshot preserves host replay and only the explicitly supplied root source notes.",
+  "review_minutes": null,
+  "critical_fidelity_issue": {
+    "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+    "raw": "CCCXL",
+    "proposal": "CCCXLI",
+    "source_print": "CCCXI",
+    "image_id": "reading-74d01b9894f76563d519-leaf-1060",
+    "basis": "Visible heading in exact cached source crop, re-inspected at original resolution; also frozen before output. No inference from adjacent numbering."
+  }
+}

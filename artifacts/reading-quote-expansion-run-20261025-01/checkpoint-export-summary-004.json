@@ -1,0 +1,95 @@
+{
+  "schema_version": "reading-expansion-nonvisual-checkpoint-v1",
+  "checkpoint_sequence": 4,
+  "parent_checkpoint": "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-003.json",
+  "manifest_sha256": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61",
+  "task_statuses": {
+    "inflight": 1,
+    "invalid": 1,
+    "pending": 26,
+    "timeout": 2,
+    "valid": 6
+  },
+  "attempt_statuses": {
+    "inflight": 1,
+    "invalid": 1,
+    "timeout": 2,
+    "valid": 6
+  },
+  "new_terminal_attempts": [
+    {
+      "task_id": "gemma4:31b-mlx::reading-50a8872c9b2dda1a90bf",
+      "attempt_id": "b128a8c3-f3f0-4bed-9cc8-aa4b88f813d7",
+      "host_status": "timeout",
+      "input_count_parity": null,
+      "request_sha256": "730b6f38a98d79dc58967c21168419048f3143bc879057567437e1774de90829",
+      "raw_reply_sha256": null,
+      "patch_count": 0,
+      "assessment_state": "timeout reconciled; usage unknown; no retry"
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-5500247fc23992050e37",
+      "attempt_id": "332c8e20-6083-472d-be6d-eb6721a997df",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "3067d6fa8cae7a92f2322026127c5278addfa6348e4f0ba07bfdb47a4554ac5d",
+      "raw_reply_sha256": "a24d48b5bcfc46e0d4e4bc44780bda0bd1acf205cf7bf84c7586150fe489eec3",
+      "patch_count": 5,
+      "assessment_state": "host-valid; root source-mapping note pending, exact typography ungraded"
+    }
+  ],
+  "current_inflight_attempts": [
+    {
+      "task_id": "gemma4:31b-mlx::reading-5e7e1b38c53e488454eb",
+      "attempt_id": "2e62b60f-1131-4c7b-96b1-73e8b39e666b",
+      "started_at": "2026-10-25 16:08:51",
+      "elapsed_seconds": 120.00310429092497,
+      "usage_known": false
+    }
+  ],
+  "per_model_budget": {
+    "gemma4:31b-mlx": {
+      "task_statuses": {
+        "inflight": 1,
+        "invalid": 1,
+        "pending": 8,
+        "timeout": 2,
+        "valid": 6
+      },
+      "attempt_rows": 10,
+      "attempt_statuses": {
+        "inflight": 1,
+        "invalid": 1,
+        "timeout": 2,
+        "valid": 6
+      },
+      "recorded_elapsed_seconds": 880.391684,
+      "attempts_without_elapsed": 0,
+      "run_per_model_seconds_cap": 1854,
+      "prior_conservative_seconds": 122.927522,
+      "cumulative_attempt_rows_including_prior": 12,
+      "note": "Recorded elapsed includes the current in-flight attempt to this snapshot; budget continues to accrue until it settles.",
+      "headroom_after_recorded_elapsed_seconds": 973.608316
+    },
+    "qwen3.8:27b-mlx": {
+      "task_statuses": {
+        "pending": 18
+      },
+      "attempt_rows": 0,
+      "attempt_statuses": {},
+      "recorded_elapsed_seconds": 0,
+      "attempts_without_elapsed": 0,
+      "run_per_model_seconds_cap": 1854,
+      "prior_conservative_seconds": 545.946171,
+      "cumulative_attempt_rows_including_prior": 8,
+      "note": "Recorded elapsed includes the current in-flight attempt to this snapshot; budget continues to accrue until it settles.",
+      "headroom_after_recorded_elapsed_seconds": 1854
+    }
+  },
+  "interpretation_limit": "Host replay only. Root source review is separately attributed; exact dot-count/source typography certification remains absent.",
+  "artifacts": [
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-004.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-summary-004.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-5500247fc23992050e37.json"
+  ]
+}

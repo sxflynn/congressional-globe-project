@@ -1,0 +1,110 @@
+{
+  "schema_version": "reading-expansion-nonvisual-checkpoint-v1",
+  "checkpoint_sequence": 6,
+  "parent_checkpoint": "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-005.json",
+  "manifest_sha256": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61",
+  "task_statuses": {
+    "inflight": 1,
+    "invalid": 1,
+    "pending": 20,
+    "timeout": 3,
+    "valid": 11
+  },
+  "attempt_statuses": {
+    "inflight": 1,
+    "invalid": 1,
+    "timeout": 3,
+    "valid": 11
+  },
+  "new_terminal_attempts": [
+    {
+      "task_id": "gemma4:31b-mlx::reading-74d01b9894f76563d519",
+      "attempt_id": "bf1b003c-2cf2-41c8-8b44-703062d6d4c0",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "d49bf8ce2cf9abedd84aaa66e33790cba281fdc0c93cd5b98f355c7b8f329cdd",
+      "raw_reply_sha256": "8995e6031d3139c3442e15332c9ceb14291367a6dfb669b1241e3481de888e19",
+      "patch_count": 5,
+      "elapsed_seconds": 69.91322225006297,
+      "patch_level_source_review": "root reports patches supported; whole derived text review pending"
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-845d5b7741ad057cdf8d",
+      "attempt_id": "b8c00d17-b3c1-460a-9fd3-69168eef8952",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "0da2704a18759bbe1a7d144ba3fdc6851137f5ee098295bea47ef71ec2dc5df8",
+      "raw_reply_sha256": "2ec80d37bc40ae4214754f8eb5c757eb41c462cf7875fa281391ccee514950a6",
+      "patch_count": 4,
+      "elapsed_seconds": 41.51275433297269,
+      "patch_level_source_review": "root reports patches supported; whole derived text review pending"
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-86b5b62922afc4c5b6bd",
+      "attempt_id": "edfbd7ed-6bcc-4fa0-97e0-07d3fcd6245d",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "9c01f36b17f4909d4f826006a1070549aae83e4f3d518289963fbd09b8b52dad",
+      "raw_reply_sha256": "5dfbf1b5515d252d3afa997e1cad46f43f2094c2ad57a500f7eacbb88d6c7d4a",
+      "patch_count": 5,
+      "elapsed_seconds": 66.52758062491193,
+      "patch_level_source_review": "no root visual review reported yet"
+    }
+  ],
+  "current_inflight_attempts": [
+    {
+      "task_id": "gemma4:31b-mlx::reading-cfb03841eb9003d161df",
+      "attempt_id": "07d9156c-5f9a-44be-8e21-e6b5918a998a",
+      "started_at": "2026-10-25 16:17:22",
+      "elapsed_seconds": null,
+      "usage_known": false
+    }
+  ],
+  "per_model_budget": {
+    "gemma4:31b-mlx": {
+      "expansion_task_statuses": {
+        "inflight": 1,
+        "invalid": 1,
+        "pending": 2,
+        "timeout": 3,
+        "valid": 11
+      },
+      "expansion_attempt_rows": 16,
+      "expansion_attempt_statuses": {
+        "inflight": 1,
+        "invalid": 1,
+        "timeout": 3,
+        "valid": 11
+      },
+      "recorded_elapsed_seconds": 1225.92122,
+      "attempts_without_elapsed": 1,
+      "per_model_run_cap_seconds": 1854,
+      "headroom_after_recorded_elapsed_seconds": 628.07878,
+      "prior_conservative_seconds": 122.927522,
+      "cumulative_attempt_rows_including_prior": 18,
+      "note": "Elapsed includes all persisted attempt durations; an in-flight attempt with null elapsed is not treated as free."
+    },
+    "qwen3.8:27b-mlx": {
+      "expansion_task_statuses": {
+        "pending": 18
+      },
+      "expansion_attempt_rows": 0,
+      "expansion_attempt_statuses": {},
+      "recorded_elapsed_seconds": 0,
+      "attempts_without_elapsed": 0,
+      "per_model_run_cap_seconds": 1854,
+      "headroom_after_recorded_elapsed_seconds": 1854,
+      "prior_conservative_seconds": 545.946171,
+      "cumulative_attempt_rows_including_prior": 8,
+      "note": "Elapsed includes all persisted attempt durations; an in-flight attempt with null elapsed is not treated as free."
+    }
+  },
+  "interpretation_limit": "Patch-level source review is separately attributed; whole-derived-text and human assessments remain open.",
+  "artifacts": [
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-006.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-summary-006.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-74d01b9894f76563d519.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-845d5b7741ad057cdf8d.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-86b5b62922afc4c5b6bd.json"
+  ]
+}

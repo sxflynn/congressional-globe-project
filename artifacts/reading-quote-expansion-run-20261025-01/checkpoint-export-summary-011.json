@@ -1,0 +1,175 @@
+{
+  "schema_version": "reading-expansion-nonvisual-checkpoint-v1",
+  "checkpoint_sequence": 11,
+  "parent_checkpoint": "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-010.json",
+  "manifest_sha256": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61",
+  "task_statuses": {
+    "valid": 26,
+    "timeout": 5,
+    "invalid": 3,
+    "inflight": 1,
+    "pending": 1
+  },
+  "attempt_statuses": {
+    "valid": 26,
+    "timeout": 5,
+    "invalid": 3,
+    "inflight": 1
+  },
+  "prior_terminal_attempt_ids_union_from_checkpoints_001_to_010": 27,
+  "new_terminal_attempts": [
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-5e7e1b38c53e488454eb",
+      "attempt_id": "2af99067-2def-4ba5-be03-a716f719236b",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "e8fbbffa82287cd4e38d970b43c5b44f588422d8e2115a895c537db4da995f63",
+      "raw_reply_sha256": "21440fee719b2fd0c7103cbc57eef9586ef998114b5397cfe6af726f3617cf56",
+      "patch_count": 0,
+      "uncertain_count": 13,
+      "elapsed_seconds": 101.53582270792685,
+      "root_source_review": true
+    },
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-5f378add7e1f64ea69ba",
+      "attempt_id": "1526741d-537f-4452-9685-bf01690a129d",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "230c6cc5ef14b8290ebb6bb6f06fee11b23bf5bd3a50c386fa885104cf8bf2e8",
+      "raw_reply_sha256": "eb5bffb299aa3e187d948c3c7e29a13ff67e668b0b1223e277095b11a78c2172",
+      "patch_count": 19,
+      "uncertain_count": 0,
+      "elapsed_seconds": 101.40082695800811,
+      "root_source_review": true
+    },
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-637a8b4b8fe245aa6d6b",
+      "attempt_id": "a2551a31-771a-4b22-8679-4986c230a46c",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "bfcd0b918392a5abfd25d46df46bfdc153a60765ac0ca6f1541fec836ad72b24",
+      "raw_reply_sha256": "61895ffd42824f308b01872efc4b74496cb1b834dd3c88cc9a96fd582184f143",
+      "patch_count": 3,
+      "uncertain_count": 0,
+      "elapsed_seconds": 56.838971791090444,
+      "root_source_review": false
+    },
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-74d01b9894f76563d519",
+      "attempt_id": "2b70a797-7aeb-47f8-af69-3e784e8730eb",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "b8d41fed8ed0f700420d88b03679675527bb87246f2e5d19494fd9128b8bb49b",
+      "raw_reply_sha256": "37bf61d7a82cd53f855fafab5d7d684201fc1607291e37db57ff22450502d9a6",
+      "patch_count": 4,
+      "uncertain_count": 0,
+      "elapsed_seconds": 89.79817587486468,
+      "root_source_review": false
+    },
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-845d5b7741ad057cdf8d",
+      "attempt_id": "a25e0bbc-daae-427a-be1a-a557d68916f3",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "c20fb050b1ba133c7c949e4008005c333ea5c176183607ae9169b12c2082b11d",
+      "raw_reply_sha256": "65a9694c79e346502b1eef2540e01616b702985e363974da0a7586a950d9e249",
+      "patch_count": 3,
+      "uncertain_count": 0,
+      "elapsed_seconds": 33.48361670807935,
+      "root_source_review": false
+    },
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-86b5b62922afc4c5b6bd",
+      "attempt_id": "f84a89af-d60f-49e1-a9db-c071e716aadf",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "614fedd02a9b89219eeec0e0098cba64bb5d629e445d78090cefe53aa97326b0",
+      "raw_reply_sha256": "92a5072a9634b604a59a83221d6a0aad341ef813e6e0eb7ce614ac7f4a121959",
+      "patch_count": 3,
+      "uncertain_count": 0,
+      "elapsed_seconds": 43.29831449990161,
+      "root_source_review": false
+    },
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-cfb03841eb9003d161df",
+      "attempt_id": "9c30a9d3-42fc-4219-a914-d22b64cebfe4",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "629e38b58e00ff47dfab88d0c6d2b5ed70391c9775a852b91db187442c276e7a",
+      "raw_reply_sha256": "56a1350bbff6096129e5bd624cc20b6f2e6b69f87bfc4e5acb035bb4f4357154",
+      "patch_count": 7,
+      "uncertain_count": 0,
+      "elapsed_seconds": 61.39658287493512,
+      "root_source_review": false
+    }
+  ],
+  "current_inflight_attempts": [
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-db4cc1bed5fc9ba20489",
+      "attempt_id": "71bfe946-3bd3-4be5-9003-c493ca73b098",
+      "request_sha256": "1891bea9657c0415fe45342235247cb73c9c032b51c82661d65650bc20c22d67",
+      "started_at": "2026-10-25 16:44:30",
+      "elapsed_seconds": null,
+      "usage_known": false,
+      "model": "qwen3.8:27b-mlx",
+      "unit_id": "reading-db4cc1bed5fc9ba20489"
+    }
+  ],
+  "per_model_budget": {
+    "gemma4:31b-mlx": {
+      "expansion_task_statuses": {
+        "valid": 13,
+        "timeout": 4,
+        "invalid": 1
+      },
+      "expansion_attempt_rows": 18,
+      "expansion_attempt_statuses": {
+        "valid": 13,
+        "timeout": 4,
+        "invalid": 1
+      },
+      "recorded_elapsed_seconds": 1462.945093,
+      "attempts_without_elapsed": 0,
+      "per_model_run_cap_seconds": 1854,
+      "headroom_after_recorded_elapsed_seconds": 391.054907,
+      "prior_conservative_seconds": 122.927522,
+      "cumulative_attempt_rows_including_prior": 20,
+      "note": "Elapsed is summed from persisted attempt durations. Null elapsed for in-flight attempts is not treated as free."
+    },
+    "qwen3.8:27b-mlx": {
+      "expansion_task_statuses": {
+        "valid": 13,
+        "invalid": 2,
+        "timeout": 1,
+        "inflight": 1,
+        "pending": 1
+      },
+      "expansion_attempt_rows": 17,
+      "expansion_attempt_statuses": {
+        "valid": 13,
+        "invalid": 2,
+        "timeout": 1,
+        "inflight": 1
+      },
+      "recorded_elapsed_seconds": 1154.506949,
+      "attempts_without_elapsed": 1,
+      "per_model_run_cap_seconds": 1854,
+      "headroom_after_recorded_elapsed_seconds": 699.493051,
+      "prior_conservative_seconds": 545.946171,
+      "cumulative_attempt_rows_including_prior": 25,
+      "note": "Elapsed is summed from persisted attempt durations. Null elapsed for in-flight attempts is not treated as free."
+    }
+  },
+  "interpretation_limit": "Host validity, source review and human grade are distinct. Only root notes explicitly supplied for 5e7 and 5f378 are recorded; other new valid outputs remain unassessed. No canonical edits.",
+  "artifacts": [
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-011.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-summary-011.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-5e7e1b38c53e488454eb.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-5f378add7e1f64ea69ba.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-637a8b4b8fe245aa6d6b.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-74d01b9894f76563d519.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-845d5b7741ad057cdf8d.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-86b5b62922afc4c5b6bd.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-cfb03841eb9003d161df.json"
+  ]
+}

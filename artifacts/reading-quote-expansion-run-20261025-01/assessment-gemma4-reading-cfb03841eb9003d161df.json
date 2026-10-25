@@ -1,0 +1,265 @@
+{
+  "task_id": "gemma4:31b-mlx::reading-cfb03841eb9003d161df",
+  "attempt_id": "07d9156c-5f9a-44be-8e21-e6b5918a998a",
+  "unit_id": "reading-cfb03841eb9003d161df",
+  "model": "gemma4:31b-mlx",
+  "request_sha256": "249b11e01678129b24aba1a0335faceaaed9c8386c88e2c8696cebb91e13edd8",
+  "raw_reply_sha256": "22836604f2633d6820510572acd98267f01acd66573583e1c0b1c2aaedadcc58",
+  "source_images": [
+    {
+      "id": "reading-cfb03841eb9003d161df-leaf-397",
+      "sha256": "e529c76f0ea72110a7eb8dcdcabda232c1eb36a088a661f6ed98fe0bee14c26b"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 3415,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-cfb03841eb9003d161df",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo7392unit:397:par_000397_000018",
+          "start": 0,
+          "end": 34,
+          "old": "Sir, I ol)ject at the present time",
+          "new": "Sir, I object at the present time",
+          "image_ids": [
+            "reading-cfb03841eb9003d161df-leaf-397"
+          ],
+          "reason": "Correct OCR error 'ol)ject' to 'object'."
+        },
+        {
+          "source_id": "congressionalglo7392unit:397:par_000397_000018",
+          "start": 181,
+          "end": 214,
+          "old": "necessity of an ai-gument upon it",
+          "new": "necessity of an argument upon it",
+          "image_ids": [
+            "reading-cfb03841eb9003d161df-leaf-397"
+          ],
+          "reason": "Correct OCR error 'ai-gument' to 'argument'."
+        },
+        {
+          "source_id": "congressionalglo7392unit:397:par_000397_000018",
+          "start": 254,
+          "end": 293,
+          "old": "as yet in the argu- mentof the chairman",
+          "new": "as yet in the argument of the chairman",
+          "image_ids": [
+            "reading-cfb03841eb9003d161df-leaf-397"
+          ],
+          "reason": "Correct OCR error 'argu- mentof' to 'argument of'."
+        },
+        {
+          "source_id": "congressionalglo7392unit:397:par_000397_000019",
+          "start": 215,
+          "end": 256,
+          "old": "The island of Cuba is not agreat distance",
+          "new": "The island of Cuba is not a great distance",
+          "image_ids": [
+            "reading-cfb03841eb9003d161df-leaf-397"
+          ],
+          "reason": "Correct spacing 'agreat' to 'a great'."
+        },
+        {
+          "source_id": "congressionalglo7392unit:397:par_000397_000019",
+          "start": 389,
+          "end": 421,
+          "old": "world Avith which we have trade?",
+          "new": "world with which we have trade?",
+          "image_ids": [
+            "reading-cfb03841eb9003d161df-leaf-397"
+          ],
+          "reason": "Correct OCR error 'Avith' to 'with'."
+        },
+        {
+          "source_id": "congressionalglo7392unit:397:par_000397_000020",
+          "start": 110,
+          "end": 139,
+          "old": "it is not }iossible to afford",
+          "new": "it is not possible to afford",
+          "image_ids": [
+            "reading-cfb03841eb9003d161df-leaf-397"
+          ],
+          "reason": "Correct OCR error '}iossible' to 'possible'."
+        },
+        {
+          "source_id": "congressionalglo7392unit:397:par_000397_000020",
+          "start": 1440,
+          "end": 1480,
+          "old": "lug extx'aneous matters into this debate",
+          "new": "lug extraneous matters into this debate",
+          "image_ids": [
+            "reading-cfb03841eb9003d161df-leaf-397"
+          ],
+          "reason": "Correct OCR error 'extx'aneous' to 'extraneous'."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo7392unit:397:par_000397_000018": {
+        "text": "Sir, I object at the present time to this whole system of legislation, and the very sensible remarks submitted by the gentleman from Illi- nois [Mr. Wentworth] relieve me from the necessity of an argument upon it. I simply say that I can see no reason as yet in the argument of the chairman of the Committee of Ways and Means or in the remarks from any other quarter of the House for making a distinction between the Canadas and the British Provinces generally, and any other foreign country, in regulating our national tariff.",
+        "sha256": "275aa2cdef84f08657eafc461469063289f1f8278af3b3a8bb95bac90067339f",
+        "raw_sha256": "84bcaa6551c4b9ca15e126c65128c2627853ccc3174cfc1f4757df4b16edb22c",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 34,
+            "clean_start": 0,
+            "clean_end": 33,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 34,
+            "raw_end": 181,
+            "clean_start": 33,
+            "clean_end": 180,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 181,
+            "raw_end": 214,
+            "clean_start": 180,
+            "clean_end": 212,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 214,
+            "raw_end": 254,
+            "clean_start": 212,
+            "clean_end": 252,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 254,
+            "raw_end": 293,
+            "clean_start": 252,
+            "clean_end": 290,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 293,
+            "raw_end": 530,
+            "clean_start": 290,
+            "clean_end": 527,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7392unit:397:par_000397_000019": {
+        "text": "Mr. Chairman, why do we not have a spe- cial tariff between the United States and the island of Cuba? That may be claimed with the same urgency as a special tariff for the Canadas. The Canadas are upon our borders. The island of Cuba is not a great distance from the coast of Florida or the coast of Louisiana. Why not, then, have a special tariff for Cuba, or for any other portion of the world with which we have trade?",
+        "sha256": "1d7afc16c97fb5ff49014e58c7374d5595abd63e34ae0545efce6b8f991fe09f",
+        "raw_sha256": "567f7b16fa7455871196820c797ece6bc34f97af0dc4359ab6d973c0fa25e918",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 215,
+            "clean_start": 0,
+            "clean_end": 215,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 215,
+            "raw_end": 256,
+            "clean_start": 215,
+            "clean_end": 257,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 256,
+            "raw_end": 389,
+            "clean_start": 257,
+            "clean_end": 390,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 389,
+            "raw_end": 421,
+            "clean_start": 390,
+            "clean_end": 421,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 421,
+            "raw_end": 421,
+            "clean_start": 421,
+            "clean_end": 421,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7392unit:397:par_000397_000020": {
+        "text": "Mr. Chairman, I object to this legislation for the reason that it is not possible — I will not say probable — it is not possible to afford pro- tection by specific legislation unless you afford it to the whole country. Now, I concede to the learned Committee of Ways and Means, and especially to the chairman of that com- mittee, as much disinterestedness as to any gentlemen upon this floor, and more than I claim for myself, because I know that in our legislation here I do feel moved whenever it touches my particular district of country. It must be so to some extent with my learned friend, the chairman of the Committee of Ways and Means ; and on looking at his bill I find that some of the important interests of Vermont are very well taken care of, not per- haps so much in this bill as in the general tariff bill of the country. I find, for instance, that the marble of Vermont — and I suppose there is marble enough in their quarries to sup- ply the whole United States, and I am very glad that they have that capacity — is protected against Italian marble to the tune, I believe, of about fifty per cent. Am I not right in this ? Fifty cents on the cubic foot, and in addition thereto twenty per cent, ad valorem. That is the tariff now upon Italian marble. _ Mr. MORRILL. Mr. Chairman, this is en- tirely foreign to the subject before the com- mittee. I am really surprised that so good a logician as my friend from Ohio should lug extraneous matters into this debate. I am",
+        "sha256": "a92c2a6c252b8c0313b976f06258c4a7acc6c25dcacf52c02d706f8d8a7a405f",
+        "raw_sha256": "5653f3597b4a8b21e19d66eca3a0a4e67eaa2d575588fbbf7fd264f3608e9d71",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 110,
+            "clean_start": 0,
+            "clean_end": 110,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 110,
+            "raw_end": 139,
+            "clean_start": 110,
+            "clean_end": 138,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 139,
+            "raw_end": 1440,
+            "clean_start": 138,
+            "clean_end": 1439,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 1440,
+            "raw_end": 1480,
+            "clean_start": 1439,
+            "clean_end": 1478,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 1480,
+            "raw_end": 1486,
+            "clean_start": 1478,
+            "clean_end": 1484,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "patch_level_source_review": "Root reports proposed patch wording supported; whole derived text review pending.",
+  "visual_assessment": "Root compared every changed span and whole derived target with hash-bound crop. All7patches supported. Distinct fifty-cents/cubic-foot and twenty-per-cent ad-valorem claims preserved, along with Morrill turn and final I am.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "object/extraneous repaired; Fifty cents on the cubic foot preserved.",
+  "residual_errors": [
+    "Unjoined line wraps and a raw underscore before Mr. MORRILL remain."
+  ],
+  "usable_reading": "Word/number repairs supported; raw formatting artifacts remain.",
+  "needs_review": false,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Whole target/changed-span comparison, not exhaustive reference transcription. No human grade.",
+  "review_minutes": null
+}

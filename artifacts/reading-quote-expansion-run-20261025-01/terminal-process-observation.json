@@ -1,0 +1,47 @@
+{
+  "observed_utc": "2026-10-25T16:51:26.041045+00:00",
+  "no_owned_reading_worker": true,
+  "processes": [
+    "68381     1 Sat Oct 24 17:13:53 2026        19:37:33 /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false",
+    "87597 87583 Wed Oct 21 20:46:52 2026     03-16:04:34 /Applications/Ollama.app/Contents/Resources/ollama serve",
+    "93591 87597 Sun Oct 25 12:22:37 2026           28:49 /Applications/Ollama.app/Contents/Resources/ollama runner --model qwen3.8:27b-mlx --port 62508"
+  ],
+  "runtime_ps": {
+    "models": [
+      {
+        "name": "qwen3.8:27b-mlx",
+        "model": "qwen3.8:27b-mlx",
+        "size": 27966902008,
+        "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+        "details": {
+          "parent_model": "",
+          "format": "safetensors",
+          "family": "",
+          "families": null,
+          "parameter_size": "",
+          "quantization_level": "nvfp4"
+        },
+        "expires_at": "2026-10-25T12:53:44.168999-04:00",
+        "size_vram": 27966902008,
+        "context_length": 16384,
+        "runner": "mlx"
+      }
+    ]
+  },
+  "review_inbox": [],
+  "cleanup_queue": {
+    "average_completed_seconds": 3.35,
+    "average_resolved_seconds": 4.07,
+    "claimed": 0,
+    "completed": 1339,
+    "estimated_pending_hours": 23.51,
+    "estimated_remaining_hours": 23.51,
+    "pending": 20785,
+    "percent_complete": 5.94,
+    "remaining": 21208,
+    "review": 423,
+    "timed_resolved_jobs": 1762,
+    "total": 22547
+  },
+  "note": "Qwen runner is loaded; loaded state alone does not imply an active request. Reading worker session16624 exited0 and store has0pending/0inflight. No retry or unload requested."
+}

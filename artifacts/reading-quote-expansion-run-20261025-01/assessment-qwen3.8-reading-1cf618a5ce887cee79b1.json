@@ -1,0 +1,103 @@
+{
+  "schema_version": "reading-expansion-ungraded-assessment-v1",
+  "task_id": "qwen3.8:27b-mlx::reading-1cf618a5ce887cee79b1",
+  "attempt_id": "d527d996-5afc-423f-b63c-8aea86678dd2",
+  "unit_id": "reading-1cf618a5ce887cee79b1",
+  "model": "qwen3.8:27b-mlx",
+  "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+  "request_sha256": "29b7cfd4ca91149cde3f1f1546362c9c7789d1053bf56958a3fe1226b6b0b2ac",
+  "raw_reply_sha256": "04e49e777c1eff68a408382af544754ec679bc37b06174273cdcfe707f88a009",
+  "host_status": "invalid",
+  "input_count_parity": true,
+  "expected_input_tokens": 4752,
+  "prompt_eval_count": 4752,
+  "elapsed_seconds": 58.55179137503728,
+  "usage": {
+    "eval_count": 530,
+    "load_duration": 22483750,
+    "prompt_eval_count": 4752,
+    "total_duration": 58542619167
+  },
+  "source_images": [
+    {
+      "id": "reading-1cf618a5ce887cee79b1-leaf-741",
+      "path": "artifacts/reading-images-20261024-01/reading-1cf618a5ce887cee79b1-leaf-741/crop.jpg",
+      "sha256": "53373dc3ef8ff554cda84c138db9c24b5f5753710114a2594bae75e06b150555",
+      "sources": [
+        {
+          "end": 6,
+          "raw_sha256": "3c89cf88ad28b89626ab1a7db707fc19b4e746d4660b8e4ddcc1bc7d19eb640e",
+          "source_id": "congressionalglo7395unit:741:par_000741_000000",
+          "start": 0
+        },
+        {
+          "end": 36,
+          "raw_sha256": "50ee316d262b71092086457b1186df53f5eec73c6ed695c79787db0bff79a2f5",
+          "source_id": "congressionalglo7395unit:741:par_000741_000001",
+          "start": 0
+        },
+        {
+          "end": 3,
+          "raw_sha256": "3346f2bbf6c34bd2dbe28bd1bb657d0e9c37392a1d5ec9929e6a5df4763ddc2d",
+          "source_id": "congressionalglo7395unit:741:par_000741_000002",
+          "start": 0
+        },
+        {
+          "end": 24,
+          "raw_sha256": "a11ebf3d10ee7348d5a2d69e360512f5a51e183dc728273391516fb51c5d2e81",
+          "source_id": "congressionalglo7395unit:741:par_000741_000003",
+          "start": 0
+        },
+        {
+          "end": 48,
+          "raw_sha256": "df52dd6a1e8214ac764d3abb387adcae88465e2b92f0127dd010fce7d7fb3659",
+          "source_id": "congressionalglo7395unit:741:par_000741_000004",
+          "start": 0
+        },
+        {
+          "end": 7,
+          "raw_sha256": "b51915008655401f5b78157cfc0480d0282c0f8db8ca2238b3a07a5362b9c3d1",
+          "source_id": "congressionalglo7395unit:741:par_000741_000005",
+          "start": 0
+        },
+        {
+          "end": 582,
+          "raw_sha256": "f77d6de4e79ea615bc7c3a4823987f768a829a9c452386c87a3605007eb2b678",
+          "source_id": "congressionalglo7395unit:741:par_000741_000006",
+          "start": 0
+        },
+        {
+          "end": 356,
+          "raw_sha256": "b4f4cd8ccce9ffb5f813c7435c7ff3cff6b6056c74c42378c418b40a9e01821b",
+          "source_id": "congressionalglo7395unit:741:par_000741_000007",
+          "start": 0
+        },
+        {
+          "end": 500,
+          "raw_sha256": "31abb50be6f0b3553bdca7e9b8103b0ada437fd2cb57e49d22db61ab40c2646e",
+          "source_id": "congressionalglo7395unit:741:par_000741_000008",
+          "start": 0
+        }
+      ]
+    }
+  ],
+  "raw_reply": "{\"model\":\"qwen3.8:27b-mlx\",\"created_at\":\"2026-10-25T16:25:02.57341Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"patches\\\":[{\\\"new\\\":\\\"Apportionment of Representation—Mr. Henderson.\\\",\\\"old\\\":\\\"Apportionment of Bepresentation — Mr. Henderson.\\\",\\\"reason\\\":\\\"Image shows 'Representation' with a single em dash; OCR misread 'R' as 'B' and added spaces around the dash.\\\",\\\"source_id\\\":\\\"congressionalglo7395unit:741:par_000741_000004\\\",\\\"image_ids\\\":[\\\"reading-1cf618a5ce887cee79b1-leaf-741\\\"]},{\\\"new\\\":\\\"amnesty. I must admit\\\",\\\"old\\\":\\\"amnestj\\\\\\\\ I must admit\\\",\\\"reason\\\":\\\"Image shows 'amnesty.' with a period; OCR produced 'amnestj\\\\\\\\' instead of the period.\\\",\\\"source_id\\\":\\\"congressionalglo7395unit:741:par_000741_000006\\\",\\\"image_ids\\\":[\\\"reading-1cf618a5ce887cee79b1-leaf-741\\\"]},{\\\"new\\\":\\\"\\\\\\\"Sec. 13. And be it further enacted, That the President is hereby authorized, at any time hereafter, by proclamation, to extend to persons who may have participated in the existing rebellion in any State or part thereof, pardon and amnesty, with such exceptions and at such time and on such conditions as he may deem expedient for the public welfare.\\\\\\\"\\\",\\\"old\\\":\\\"\\\\\\\"Sec. 13. And he it further enacted. That the Presi- dent is hereby .authorized, at any time hereafter, by proclamation, to extend to persons who may have participated in the existing rebellion in any State or part thereof, pardon and amnesty, with such excep- tions and at such time and on such conditions as he may deem expedient for the public welfare.\\\\\\\"\\\",\\\"reason\\\":\\\"Image shows 'be it further enacted,' with a comma, 'President' unhyphenated, 'hereby authorized' without stray period, and 'exceptions' unhyphenated.\\\",\\\"source_id\\\":\\\"congressionalglo7395unit:741:par_000741_000007\\\",\\\"image_ids\\\":[\\\"reading-1cf618a5ce887cee79b1-leaf-741\\\"]}],\\\"status\\\":\\\"proposed\\\",\\\"uncertain\\\":[],\\\"unit_id\\\":\\\"reading-1cf618a5ce887cee79b1-leaf-741\\\"}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":58542619167,\"load_duration\":22483750,\"prompt_eval_count\":4752,\"prompt_eval_cached_count\":0,\"prompt_eval_duration\":41577884666,\"eval_count\":530,\"eval_duration\":16864992875}",
+  "host_replay": null,
+  "host_replay_error": "ValueError: reply unit ID mismatch",
+  "visual_assessment": "Invalid response: returned unit ID differs from exact requested unit. Root compared3raw proposed changed spans to same source crop: Representation/amnesty/be it/line-wrap repairs are supported, but response remains invalid, no repaired ID or accepted derived text. No whole valid output is available.",
+  "human_review": false,
+  "parent_review_context": {
+    "patch_level_source_review": "Parent reports patch wording is source-supported; this delegate did not independently inspect images.",
+    "whole_derived_text_review": "pending",
+    "assessment_status": "snapshot only; not a new visual or human grade"
+  },
+  "image_policy": "Image payloads omitted; source image paths, hashes, IDs and bound source spans retained.",
+  "unsupported_critical_changes": null,
+  "anchor_outcomes": "Not scored as valid output. Raw proposal misses18G2 correction; that that wording not removed in proposed spans.",
+  "usable_reading": false,
+  "needs_review": true,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "human_reviewed": false,
+  "review_minutes": null,
+  "corpus_edits": 0
+}

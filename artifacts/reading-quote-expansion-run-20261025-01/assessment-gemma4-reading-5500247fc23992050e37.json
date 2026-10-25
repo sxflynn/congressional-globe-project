@@ -1,0 +1,400 @@
+{
+  "task_id": "gemma4:31b-mlx::reading-5500247fc23992050e37",
+  "attempt_id": "332c8e20-6083-472d-be6d-eb6721a997df",
+  "unit_id": "reading-5500247fc23992050e37",
+  "model": "gemma4:31b-mlx",
+  "request_sha256": "3067d6fa8cae7a92f2322026127c5278addfa6348e4f0ba07bfdb47a4554ac5d",
+  "raw_reply_sha256": "a24d48b5bcfc46e0d4e4bc44780bda0bd1acf205cf7bf84c7586150fe489eec3",
+  "source_images": [
+    {
+      "id": "reading-5500247fc23992050e37-leaf-330",
+      "sha256": "3a368c4223d4b6b5a961687efcba2937b3430dd8021ae5e3f9eac7cb9fcb9a57"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 5289,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-5500247fc23992050e37",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000012",
+          "start": 0,
+          "end": 45,
+          "old": "Mr. MORRILL. I will say day after to- morrow.",
+          "new": "Mr. MORRILL. I will say day after to-morrow.",
+          "image_ids": [
+            "reading-5500247fc23992050e37-leaf-330"
+          ],
+          "reason": "Fix hyphenation of 'to-morrow'."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000016",
+          "start": 0,
+          "end": 3,
+          "old": "Mr.",
+          "new": "Mr. LOAN.",
+          "image_ids": [
+            "reading-5500247fc23992050e37-leaf-330"
+          ],
+          "reason": "Combine fragmented speaker name."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000017",
+          "start": 0,
+          "end": 15,
+          "old": "LOAN. I object.",
+          "new": "I object.",
+          "image_ids": [
+            "reading-5500247fc23992050e37-leaf-330"
+          ],
+          "reason": "Remove redundant name after combining with previous paragraph."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000023",
+          "start": 0,
+          "end": 168,
+          "old": "The bill was ordered to be engrossed and read a third time ; and being engrossed, it was accordingly read the third time and passed. COMMITTEE ON PACIFIC RAILROAD, ETC.",
+          "new": "The bill was ordered to be engrossed and read a third time ; and being engrossed, it was accordingly read the third time and passed.\n\nCOMMITTEE ON PACIFIC RAILROAD, ETC.",
+          "image_ids": [
+            "reading-5500247fc23992050e37-leaf-330"
+          ],
+          "reason": "Separate section header from paragraph."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000025",
+          "start": 103,
+          "end": 154,
+          "old": "Committee on Public Lands be eacli allowed one hour",
+          "new": "Committee on Public Lands be each allowed one hour",
+          "image_ids": [
+            "reading-5500247fc23992050e37-leaf-330"
+          ],
+          "reason": "Correct OCR error 'eacli' to 'each'."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo7395unit:330:par_000330_000012": {
+        "text": "Mr. MORRILL. I will say day after to-morrow.",
+        "sha256": "37bd7d92a3b06ea18ac63277627d9e866fa4d9a8f49fdf7634d6f7b75ffb20b2",
+        "raw_sha256": "3be8fb4dce80a084ba504869452d3fd3cf8ced018af6a253d1e8951d534cff39",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 45,
+            "clean_start": 0,
+            "clean_end": 44,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 45,
+            "raw_end": 45,
+            "clean_start": 44,
+            "clean_end": 44,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000013": {
+        "text": "Mr. ELDRIDGE. I object. I would not object to giving to-morrow. The evident pur- pose is to continue the session.",
+        "sha256": "bd3ddec36fae5816352b4818edaa47df91428866aca7c0c240120fd0d6be61fe",
+        "raw_sha256": "bd3ddec36fae5816352b4818edaa47df91428866aca7c0c240120fd0d6be61fe",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 113,
+            "clean_start": 0,
+            "clean_end": 113,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000014": {
+        "text": "Mr. MORRILL. I suggest to-morrow even-",
+        "sha256": "bae15feacf815006eb10278c980fd638c3d1745c841d6ec89ed382caeb7078e0",
+        "raw_sha256": "bae15feacf815006eb10278c980fd638c3d1745c841d6ec89ed382caeb7078e0",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 38,
+            "clean_start": 0,
+            "clean_end": 38,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000015": {
+        "text": "ing.",
+        "sha256": "6a19f097035d31fa0fa78263325890693aad1f8574cf96cd3c4e8299c5311a52",
+        "raw_sha256": "6a19f097035d31fa0fa78263325890693aad1f8574cf96cd3c4e8299c5311a52",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 4,
+            "clean_start": 0,
+            "clean_end": 4,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000016": {
+        "text": "Mr. LOAN.",
+        "sha256": "bd67bcf5c2eb1c5acece59a2b6118ded9688f03a9e2a991869aea948f5ab5056",
+        "raw_sha256": "1a24b7688c199c24d87b5984d152b37d1d528911ec852d9cdf98c3ef29b916ea",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 3,
+            "clean_start": 0,
+            "clean_end": 9,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 3,
+            "raw_end": 3,
+            "clean_start": 9,
+            "clean_end": 9,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000017": {
+        "text": "I object.",
+        "sha256": "30719507c5cc307e64a7f548d7511b5db740f51fd43036f91a35805da6edf017",
+        "raw_sha256": "4190d193323eeec170d5399d555ba1c9ed6b3f3f3710cf72528a4e257a07779b",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 15,
+            "clean_start": 0,
+            "clean_end": 9,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 15,
+            "raw_end": 15,
+            "clean_start": 9,
+            "clean_end": 9,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000018": {
+        "text": "FRANCIS COLGEN.",
+        "sha256": "bbbbe3e0b1c95221d6a6eccea6bb785b67cc6ae7f63df3fc1b2e7b92501ec9b9",
+        "raw_sha256": "bbbbe3e0b1c95221d6a6eccea6bb785b67cc6ae7f63df3fc1b2e7b92501ec9b9",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 15,
+            "clean_start": 0,
+            "clean_end": 15,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000019": {
+        "text": "Mr. BAKER. I ask not exceeding two minutes for a report from the Committee on Invalid Pensions in behalf of a blind soldier.",
+        "sha256": "7936e680783e76dafbd2b397ba317638ccec7addfe0c6de98632a94d9886849a",
+        "raw_sha256": "7936e680783e76dafbd2b397ba317638ccec7addfe0c6de98632a94d9886849a",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 124,
+            "clean_start": 0,
+            "clean_end": 124,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000020": {
+        "text": "Mr. ANCONA. I withdraw the call for the regular order of business for that purpose.",
+        "sha256": "2bad6d579582eb8d53de0dc00df5c41ba6fe19d9ebccd1a04e7fc90da5835f80",
+        "raw_sha256": "2bad6d579582eb8d53de0dc00df5c41ba6fe19d9ebccd1a04e7fc90da5835f80",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 83,
+            "clean_start": 0,
+            "clean_end": 83,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000021": {
+        "text": "Mr. VAN AERNAM, from the Committee on Invalid Pensions, reported a bill for the relief of Francis Colgen.; which was read a first and second time.",
+        "sha256": "1a271b7be4fa9e77550f8b53b39f8444560e014376d828790eea4cb961e02fd5",
+        "raw_sha256": "1a271b7be4fa9e77550f8b53b39f8444560e014376d828790eea4cb961e02fd5",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 146,
+            "clean_start": 0,
+            "clean_end": 146,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000022": {
+        "text": "It provides that Francis Colgen shall be placed upon the pension-rolls at the same rate allowed to soldiers and seamen who have lost the sight of both eyes in the military and naval service.",
+        "sha256": "83a18dae4b1768a26aa26897514cba30f8323c10df387cc20b8129f1274d82a3",
+        "raw_sha256": "83a18dae4b1768a26aa26897514cba30f8323c10df387cc20b8129f1274d82a3",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 190,
+            "clean_start": 0,
+            "clean_end": 190,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000023": {
+        "text": "The bill was ordered to be engrossed and read a third time ; and being engrossed, it was accordingly read the third time and passed.\n\nCOMMITTEE ON PACIFIC RAILROAD, ETC.",
+        "sha256": "52503df9cd2898fe52ab5f89e86a6b62abac652ce3deb3e26fb809691e4cf091",
+        "raw_sha256": "cb85d7698400988de0d42eee835a69046e6786541686378fdbd41159fd7df17e",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 168,
+            "clean_start": 0,
+            "clean_end": 169,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 168,
+            "raw_end": 168,
+            "clean_start": 169,
+            "clean_end": 169,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000024": {
+        "text": "Mr. PRICE. I move to suspend the rules to enable me to submit the following resolu- tion:",
+        "sha256": "11c73827a1e2fcb7f4910424602043e51ba78b3fd2ee71e15a2814f756eefa82",
+        "raw_sha256": "11c73827a1e2fcb7f4910424602043e51ba78b3fd2ee71e15a2814f756eefa82",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 89,
+            "clean_start": 0,
+            "clean_end": 89,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7395unit:330:par_000330_000025": {
+        "text": "Resolved, That all other business be postponed, and that the Committee on the Pacific Railroad and the Committee on Public Lands be each allowed one hour of this evening's session for reports.",
+        "sha256": "f7c142324c48025a773cad370d35d0869330376eb4a813941de29c71b62729b4",
+        "raw_sha256": "d555658ede7984a9273e1474be7e1c85a391babc560692f4eaede2d3b629cc05",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 103,
+            "clean_start": 0,
+            "clean_end": 103,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 103,
+            "raw_end": 154,
+            "clean_start": 103,
+            "clean_end": 153,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 154,
+            "raw_end": 193,
+            "clean_start": 153,
+            "clean_end": 192,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "visual_assessment": "Root compared every changed span and whole derived target to the hash-bound pension/resolution crop. to-morrow/each and heading separation are supported. LOAN moved from paragraph17 into16, contrary to frozen boundary expectation; combined reading remains but provenance is relocated without explicit move mapping.",
+  "source_assessment_note_pending": "Root reports visual source review found LOAN moved from raw paragraph 17 to paragraph 16 while joined text is unchanged; root will record the source-mapping issue. Exact dot-count/source typography certification remains absent.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "source_mapping_violations": [
+    {
+      "source_from": "congressionalglo7395unit:330:par_000330_000017",
+      "source_to": "congressionalglo7395unit:330:par_000330_000016",
+      "text": "LOAN.",
+      "problem": "Two independent patches relocate a word between source records; no cross-record relocation mapping."
+    }
+  ],
+  "anchor_outcomes": "each repaired; Francis Colgen heading preserved; Colgen.; punctuation remains.",
+  "residual_errors": [
+    "Line-wrap splits remain.",
+    "Evening still split across records.",
+    "Colgen.; punctuation artifact remains."
+  ],
+  "usable_reading": "Improved joined wording but source-mapping review required.",
+  "needs_review": true,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Whole target comparison; relocation is not an accepted canonical correction."
+}

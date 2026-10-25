@@ -1,0 +1,477 @@
+{
+  "task_id": "gemma4:31b-mlx::reading-4fc8caf8f1dfb06d6938",
+  "attempt_id": "d6cbb91b-4091-4ccd-8231-b7512166ce4e",
+  "unit_id": "reading-4fc8caf8f1dfb06d6938",
+  "model": "gemma4:31b-mlx",
+  "control_kind": null,
+  "request_sha256": "ff7f25a33bcb2608384f7f829a7bb3af86df09db0debdc64295319dce8b8cd0a",
+  "raw_reply_sha256": "9b320893f0b3f28edbdaf28a4dac53abc9a4567b42c67b9e7321163f1f331ea7",
+  "source_images": [
+    {
+      "id": "reading-4fc8caf8f1dfb06d6938-leaf-110",
+      "sha256": "ac98e9465ad39373f4d26f81094b7507ead18158059beb5bdf9d8c8682692396"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 4989,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-4fc8caf8f1dfb06d6938",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo00unit:110:par_000110_000002",
+          "start": 0,
+          "end": 26,
+          "old": "West Virginia — Continued.",
+          "new": "West Virginia—Continued.",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "reason": "Correct punctuation to em-dash without spaces."
+        },
+        {
+          "source_id": "congressionalglo00unit:110:par_000110_000003",
+          "start": 0,
+          "end": 80,
+          "old": "bill granting lands to the State of, to aid in the construction of railroads 286",
+          "new": "bill granting lands to the State of, to aid in the construction of railroads.........286",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "reason": "Restore leader dots."
+        },
+        {
+          "source_id": "congressionalglo00unit:110:par_000110_000004",
+          "start": 0,
+          "end": 132,
+          "old": "joint resolution donating certain i:>roperty of the United States to boards of edu- cation of certain townships of Taylor county 580",
+          "new": "joint resolution donating certain property of the United States to boards of edu- cation of certain townships of Taylor county ........................580",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "reason": "Correct OCR error 'i:>roperty' to 'property' and restore leader dots."
+        },
+        {
+          "source_id": "congressionalglo00unit:110:par_000110_000005",
+          "start": 124,
+          "end": 365,
+          "old": "July 4, 18G4, to restrict the jurisdiction of the Court of Claims and to provide for the payment of certain demands for quarter- master's stores and subsistence supplies furnished to the Army of the United States 2182, 3166, 3195, 320G, 3298",
+          "new": "July 4, 1864, to restrict the jurisdiction of the Court of Claims and to provide for the payment of certain demands for quarter- master's stores and subsistence supplies furnished to the Army of the United States..........2182, 3166, 3195, 3206, 3298",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "reason": "Correct OCR errors '18G4' to '1864' and '320G' to '3206', and restore leader dots."
+        },
+        {
+          "source_id": "congressionalglo00unit:110:par_000110_000006",
+          "start": 171,
+          "end": 195,
+          "old": "bellion 2377, 2597, 3240",
+          "new": "bellion..........................2377, 2597, 3240",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "reason": "Restore leader dots."
+        },
+        {
+          "source_id": "congressionalglo00unit:110:par_000110_000007",
+          "start": 0,
+          "end": 89,
+          "old": "joint resolution (S. No. 90) to suspend tem- porarily the collection of the direct tax in",
+          "new": "joint resolution (S. No. 90) to suspend tem- porarily the collection of the direct tax in ",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "reason": "Add trailing space to match image."
+        },
+        {
+          "source_id": "congressionalglo00unit:110:par_000110_000008",
+          "start": 0,
+          "end": 23,
+          "old": "the State of 2634, 4248",
+          "new": "the State of...................2634, 4248",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "reason": "Restore leader dots."
+        },
+        {
+          "source_id": "congressionalglo00unit:110:par_000110_000011",
+          "start": 0,
+          "end": 46,
+          "old": "3197 Whaley, Kellian V., a Representative from",
+          "new": "3197\nWhaley, Kellian V., a Representative from",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "reason": "Correct line break."
+        },
+        {
+          "source_id": "congressionalglo00unit:110:par_000110_000012",
+          "start": 0,
+          "end": 27,
+          "old": "West Virginia 353,694, 811,",
+          "new": "West Virginia...................353, 694, 811,",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "reason": "Restore leader dots and space in numbers."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo00unit:110:par_000110_000000": {
+        "text": "CIV",
+        "sha256": "3e95140d544f2d2f7c352b63c1cd6a5d454acacfcfbf4dc85d244385e461d7a5",
+        "raw_sha256": "3e95140d544f2d2f7c352b63c1cd6a5d454acacfcfbf4dc85d244385e461d7a5",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 3,
+            "clean_start": 0,
+            "clean_end": 3,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:110:par_000110_000001": {
+        "text": "INDEX TO",
+        "sha256": "56a62be05dcdadd182a92025bb164032fc60926cde9f370a1189d46f9a83fec4",
+        "raw_sha256": "56a62be05dcdadd182a92025bb164032fc60926cde9f370a1189d46f9a83fec4",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 8,
+            "clean_start": 0,
+            "clean_end": 8,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:110:par_000110_000002": {
+        "text": "West Virginia—Continued.",
+        "sha256": "4699e5252ff09cfdab0fdf0e1d43c180447dbd9bd8a0c43239b0c6d36ecd36ec",
+        "raw_sha256": "35ce1f24ac9d5090ccd6157867ef4580b8688149aff381623c93270bbbc5f9c9",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 26,
+            "clean_start": 0,
+            "clean_end": 24,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 26,
+            "raw_end": 26,
+            "clean_start": 24,
+            "clean_end": 24,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:110:par_000110_000003": {
+        "text": "bill granting lands to the State of, to aid in the construction of railroads.........286",
+        "sha256": "0eb9eb4e974c29b586e53531fafc97134fbdb3d5b5bd1115d9276402856258c9",
+        "raw_sha256": "ec81af147bc29d3ecc69e29bdaeca567901d4118fa5d25bbd2995ae474bf3414",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 80,
+            "clean_start": 0,
+            "clean_end": 88,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 80,
+            "raw_end": 80,
+            "clean_start": 88,
+            "clean_end": 88,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:110:par_000110_000004": {
+        "text": "joint resolution donating certain property of the United States to boards of edu- cation of certain townships of Taylor county ........................580",
+        "sha256": "5a2e4125cbcfa7051aa36d120cb65503f6f5c4c5975efff1e8cc6f7c4c24e5db",
+        "raw_sha256": "21b696ee18e6de92db237ab484558e630366020bf1290e16cb0cc862dc3bcf79",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 132,
+            "clean_start": 0,
+            "clean_end": 154,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 132,
+            "raw_end": 132,
+            "clean_start": 154,
+            "clean_end": 154,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:110:par_000110_000005": {
+        "text": "joint resolution (H. R. No. 120) to extend to the counties of Berkeley and Jefferson, in, the provisions of an act approved July 4, 1864, to restrict the jurisdiction of the Court of Claims and to provide for the payment of certain demands for quarter- master's stores and subsistence supplies furnished to the Army of the United States..........2182, 3166, 3195, 3206, 3298",
+        "sha256": "b49e76f5bd1e3592fe359f3d252c500624818f7fc2725714ea7c7a0195a33779",
+        "raw_sha256": "f9690dd80bc2225bb2b641871b7d1cd0eb8cd5a6231ffa811b83da1a04f211ce",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 124,
+            "clean_start": 0,
+            "clean_end": 124,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 124,
+            "raw_end": 365,
+            "clean_start": 124,
+            "clean_end": 374,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 365,
+            "raw_end": 365,
+            "clean_start": 374,
+            "clean_end": 374,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:110:par_000110_000006": {
+        "text": "bill (S. No. 230) to reimburse the State of, for moneys expended for the United States in enrolling, equipping, and paying mili- tary forces to aid in suppressing the re- bellion..........................2377, 2597, 3240",
+        "sha256": "a84d664c933cf74aa7c652b602fda38291f97da549a330bc5d27cfdaa14089f7",
+        "raw_sha256": "9f6c00dd7846e5673eccf85ed4617b62369a33f775ad9db82c14ba0829313e3c",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 171,
+            "clean_start": 0,
+            "clean_end": 171,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 171,
+            "raw_end": 195,
+            "clean_start": 171,
+            "clean_end": 220,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 195,
+            "raw_end": 195,
+            "clean_start": 220,
+            "clean_end": 220,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:110:par_000110_000007": {
+        "text": "joint resolution (S. No. 90) to suspend tem- porarily the collection of the direct tax in ",
+        "sha256": "1bf310257800e4d2cf5bbd2488d328cad5846f6e72b42d12260afe658df86878",
+        "raw_sha256": "b3cf1f74b00afc4881e4cb5b9c7cead36dd04e45d938730141f2ac1b17231a71",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 89,
+            "clean_start": 0,
+            "clean_end": 90,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 89,
+            "raw_end": 89,
+            "clean_start": 90,
+            "clean_end": 90,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:110:par_000110_000008": {
+        "text": "the State of...................2634, 4248",
+        "sha256": "1375243339278f8bc4b1145ed76fdc6479be784834fc04c89591739a90fac987",
+        "raw_sha256": "2de7b3ea0c8dd40ea0b336028b69478c098b8b50cec3b0ed0b928556f0fbc6e7",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 23,
+            "clean_start": 0,
+            "clean_end": 41,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 23,
+            "raw_end": 23,
+            "clean_start": 41,
+            "clean_end": 41,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:110:par_000110_000009": {
+        "text": "West, William A., bill for the relief of..... 1147",
+        "sha256": "1768d617836a21f8a8049a8fd4332593ccf64313bbb7353f6b53e0219dffb666",
+        "raw_sha256": "1768d617836a21f8a8049a8fd4332593ccf64313bbb7353f6b53e0219dffb666",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 50,
+            "clean_start": 0,
+            "clean_end": 50,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:110:par_000110_000010": {
+        "text": "joint resolution authorizing the Secretary of the Interior to settle the accounts of, as marshal of the Territory of Nebraska,",
+        "sha256": "e253c32a6e60a256e4ba021e9edf19d9da2ba0cfe9402225ffd00ee7622d0ab4",
+        "raw_sha256": "e253c32a6e60a256e4ba021e9edf19d9da2ba0cfe9402225ffd00ee7622d0ab4",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 126,
+            "clean_start": 0,
+            "clean_end": 126,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:110:par_000110_000011": {
+        "text": "3197\nWhaley, Kellian V., a Representative from",
+        "sha256": "c4f878a0c4a805f66fae17e583eddc00b3afc634a46b08e2f3598d496bc5acbf",
+        "raw_sha256": "3d5cdaff4bbbc4b42765ab5de5fa3363118da69ffc9ab5fa0d3c3c99b4c3ae73",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 46,
+            "clean_start": 0,
+            "clean_end": 46,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 46,
+            "raw_end": 46,
+            "clean_start": 46,
+            "clean_end": 46,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo00unit:110:par_000110_000012": {
+        "text": "West Virginia...................353, 694, 811,",
+        "sha256": "2ae75f558f63c27050066713f3d763b2d91a70b1ca746ecf7e5c8926a4c4628f",
+        "raw_sha256": "a4e4679b1b11ecd923d8adb32e41eb407536abfcbb463948ced7a5fb982f4ee1",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 27,
+            "clean_start": 0,
+            "clean_end": 46,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 27,
+            "raw_end": 27,
+            "clean_start": 46,
+            "clean_end": 46,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "control_semantics": null,
+  "visual_assessment": "Root compared every proposed patch and whole derived target to the hash-bound West Virginia/West/Whaley left-column index crop. Wording and number repairs are supported. Model adds leader dots/trailing space and a newline before Whaley; dot counts are presentation choices and not certified as literal facsimile. No substantive wording change unsupported by print observed.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "property/1864/3206 repaired and CIV preserved.",
+  "residual_errors": [
+    "Many line-wrap splits remain.",
+    "3197 still belongs to previous West entry; newline improves display but canonical paragraph spans unchanged.",
+    "Leader-dot inflation and trailing-space patch add formatting churn, with no demonstrated reading/TTS benefit."
+  ],
+  "usable_reading": "Improved index character accuracy, but paragraph/index association and formatting still need care.",
+  "needs_review": true,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Whole target/index-entry comparison; neighboring Wilson column excluded. Exact dot counts/case typography not certified."
+}

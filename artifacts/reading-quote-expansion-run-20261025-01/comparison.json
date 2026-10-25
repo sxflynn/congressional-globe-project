@@ -1,0 +1,509 @@
+{
+  "schema_version": "reading-quote-expansion-comparison-v1",
+  "created_utc": "2026-10-25T16:57:32.753551+00:00",
+  "terminal_export": {
+    "path": "artifacts/reading-quote-expansion-run-20261025-01/terminal-export.json",
+    "sha256": "b95d7113f2c0347076af9077c123981d93503cdef064ee00d8344d513b0da04e"
+  },
+  "anchor_evaluation": {
+    "path": "artifacts/reading-quote-expansion-run-20261025-01/anchor-checkpoint-002.json",
+    "sha256": "d0ca2b3a5f201e1890c8194eedaf157bf14ab0b3d8a332081f2d68968681c629"
+  },
+  "frozen_protocol": {
+    "path": "artifacts/reading-quote-expansion-20261025-01/assessment-protocol.json",
+    "sha256": "0c324af8a3d6296c6d89e3628542396199c0aeeaf845aaccdda9bb314731fbf9"
+  },
+  "summary": {
+    "task_count": 36,
+    "attempt_count": 36,
+    "task_statuses": {
+      "valid": 27,
+      "timeout": 6,
+      "invalid": 3
+    },
+    "attempt_statuses": {
+      "valid": 27,
+      "timeout": 6,
+      "invalid": 3
+    },
+    "valid_host_replay_count": 27,
+    "valid_input_count_parity_count": 27,
+    "invalid_count": 3,
+    "invalid_replay_errors_preserved": 3,
+    "timeout_count": 6,
+    "timeout_retries": 0,
+    "calls_with_prompt_token_count": 30,
+    "calls_without_prompt_token_count": 6,
+    "prompt_tokens_known_sum": 137216,
+    "output_tokens_known_sum": 25692,
+    "elapsed_seconds_total": 2784.912768,
+    "attempts_without_elapsed": 0,
+    "model_stats": {
+      "gemma4:31b-mlx": {
+        "task_statuses": {
+          "valid": 13,
+          "timeout": 4,
+          "invalid": 1
+        },
+        "attempt_statuses": {
+          "valid": 13,
+          "timeout": 4,
+          "invalid": 1
+        },
+        "attempt_count": 18,
+        "recorded_elapsed_seconds": 1462.945093,
+        "attempts_without_elapsed": 0,
+        "calls_with_usage_counts": 14,
+        "calls_without_prompt_token_count": 4,
+        "prompt_tokens_known_sum": 54621,
+        "output_tokens_known_sum": 11294,
+        "prompt_token_counts_known_calls": 14,
+        "output_token_counts_known_calls": 14,
+        "per_model_run_cap_seconds": 1854,
+        "headroom_after_recorded_elapsed_seconds": 391.054907,
+        "prior_conservative_seconds": 122.927522,
+        "cumulative_attempt_rows_including_prior": 20
+      },
+      "qwen3.8:27b-mlx": {
+        "task_statuses": {
+          "valid": 14,
+          "invalid": 2,
+          "timeout": 2
+        },
+        "attempt_statuses": {
+          "valid": 14,
+          "invalid": 2,
+          "timeout": 2
+        },
+        "attempt_count": 18,
+        "recorded_elapsed_seconds": 1321.967675,
+        "attempts_without_elapsed": 0,
+        "calls_with_usage_counts": 16,
+        "calls_without_prompt_token_count": 2,
+        "prompt_tokens_known_sum": 82595,
+        "output_tokens_known_sum": 14398,
+        "prompt_token_counts_known_calls": 16,
+        "output_token_counts_known_calls": 16,
+        "per_model_run_cap_seconds": 1854,
+        "headroom_after_recorded_elapsed_seconds": 532.032325,
+        "prior_conservative_seconds": 545.946171,
+        "cumulative_attempt_rows_including_prior": 26
+      }
+    },
+    "exact_prior_reuse_link_count": 4
+  },
+  "models": {
+    "gemma4:31b-mlx": {
+      "task_statuses": {
+        "valid": 13,
+        "timeout": 4,
+        "invalid": 1
+      },
+      "attempt_statuses": {
+        "valid": 13,
+        "timeout": 4,
+        "invalid": 1
+      },
+      "attempt_count": 18,
+      "recorded_elapsed_seconds": 1462.945093,
+      "attempts_without_elapsed": 0,
+      "calls_with_usage_counts": 14,
+      "calls_without_prompt_token_count": 4,
+      "prompt_tokens_known_sum": 54621,
+      "output_tokens_known_sum": 11294,
+      "prompt_token_counts_known_calls": 14,
+      "output_token_counts_known_calls": 14,
+      "per_model_run_cap_seconds": 1854,
+      "headroom_after_recorded_elapsed_seconds": 391.054907,
+      "prior_conservative_seconds": 122.927522,
+      "cumulative_attempt_rows_including_prior": 20,
+      "real_valid_including_two_exact_reuses": 14,
+      "real_attempt_denominator_including_reuses": 18,
+      "new_real_valid": 12,
+      "new_real_invalid": 0,
+      "new_real_timeouts": 4,
+      "controls_passed": 1,
+      "control_denominator": 2,
+      "cumulative_conservative_seconds": 1585.8726152499855
+    },
+    "qwen3.8:27b-mlx": {
+      "task_statuses": {
+        "valid": 14,
+        "invalid": 2,
+        "timeout": 2
+      },
+      "attempt_statuses": {
+        "valid": 14,
+        "invalid": 2,
+        "timeout": 2
+      },
+      "attempt_count": 18,
+      "recorded_elapsed_seconds": 1321.967675,
+      "attempts_without_elapsed": 0,
+      "calls_with_usage_counts": 16,
+      "calls_without_prompt_token_count": 2,
+      "prompt_tokens_known_sum": 82595,
+      "output_tokens_known_sum": 14398,
+      "prompt_token_counts_known_calls": 16,
+      "output_token_counts_known_calls": 16,
+      "per_model_run_cap_seconds": 1854,
+      "headroom_after_recorded_elapsed_seconds": 532.032325,
+      "prior_conservative_seconds": 545.946171,
+      "cumulative_attempt_rows_including_prior": 26,
+      "real_valid_including_two_exact_reuses": 14,
+      "real_attempt_denominator_including_reuses": 18,
+      "new_real_valid": 12,
+      "new_real_invalid": 2,
+      "new_real_timeouts": 2,
+      "controls_passed": 2,
+      "control_denominator": 2,
+      "cumulative_conservative_seconds": 1867.9138459989701
+    }
+  },
+  "assessment_records": [
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-missing_image-reading-3077c2e0a49061bbcf29.json",
+      "sha256": "f53ab4868ec927e820379d435d97ed3df85c16bf840136c9df5bf0cfdbfd467f",
+      "task_id": "gemma4:31b-mlx::missing_image::reading-3077c2e0a49061bbcf29",
+      "host_status": "valid",
+      "critical_fidelity_changes": null,
+      "needs_review": null,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-0572e0c61a75ab370e67.json",
+      "sha256": "1a08367116d7dc5b39dd0bd989993dac34b64d22203da68d2eb179cb377254af",
+      "task_id": "gemma4:31b-mlx::reading-0572e0c61a75ab370e67",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": true,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-1cf618a5ce887cee79b1.json",
+      "sha256": "fcc11b87a68651ab16b8bb6579ae11279c226b85d6000cb1afec926479caf567",
+      "task_id": "gemma4:31b-mlx::reading-1cf618a5ce887cee79b1",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": true,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-3e3d5d225bf885a2e7f5.json",
+      "sha256": "25996093206eb8103787d3fe570ca0c6a1d145edfb14ffd8f410856cd91a366c",
+      "task_id": "gemma4:31b-mlx::reading-3e3d5d225bf885a2e7f5",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-4fc8caf8f1dfb06d6938.json",
+      "sha256": "838c02d38040ca4cc73579429cb1933b0d78a73dfdb8bfff997985846a0933e4",
+      "task_id": "gemma4:31b-mlx::reading-4fc8caf8f1dfb06d6938",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": true,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-5500247fc23992050e37.json",
+      "sha256": "96844bb5a1e3e3c30042a0b611548a6029e69da5336b35993dc4c575c743fce2",
+      "task_id": "gemma4:31b-mlx::reading-5500247fc23992050e37",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": true,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-5f378add7e1f64ea69ba.json",
+      "sha256": "852589e5de5066cad6374490510f185aa715e752df12349913ff1953bf88d301",
+      "task_id": "gemma4:31b-mlx::reading-5f378add7e1f64ea69ba",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-637a8b4b8fe245aa6d6b.json",
+      "sha256": "c38069ae407692ad3881d5f7dcd08fce8079cc9153d65250e7ddc60287bbf892",
+      "task_id": "gemma4:31b-mlx::reading-637a8b4b8fe245aa6d6b",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-74d01b9894f76563d519.json",
+      "sha256": "3333c58b773a80f7f45c3f0866adaac6e56c8d09218bcd8bbf4a1bbed04fe5ea",
+      "task_id": "gemma4:31b-mlx::reading-74d01b9894f76563d519",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-845d5b7741ad057cdf8d.json",
+      "sha256": "67d60d04adfffe52fc35bb28d328e74759651656b48124c2c55a53d610144aca",
+      "task_id": "gemma4:31b-mlx::reading-845d5b7741ad057cdf8d",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-86b5b62922afc4c5b6bd.json",
+      "sha256": "c997e1a2e88f05d6a1794f16b20290ecb2a901ee3ce97c9a79ccaff98f8350fb",
+      "task_id": "gemma4:31b-mlx::reading-86b5b62922afc4c5b6bd",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-cfb03841eb9003d161df.json",
+      "sha256": "88847f08734e64d81d9f8ba59b4daaecd14850e9d1d7adb6425840cb12dbbab2",
+      "task_id": "gemma4:31b-mlx::reading-cfb03841eb9003d161df",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-e05d33cb21bb773191dc.json",
+      "sha256": "ff9928617051389f473e3f3e5828286ad7db9012f05ff04ecb4ef0b3d3878529",
+      "task_id": "gemma4:31b-mlx::reading-e05d33cb21bb773191dc",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-unrelated_image-reading-3077c2e0a49061bbcf29.json",
+      "sha256": "317cda36c6bc46594967416c266addb518f1694e8e30a9d97b9eb159a84fc165",
+      "task_id": "gemma4:31b-mlx::unrelated_image::reading-3077c2e0a49061bbcf29",
+      "host_status": "invalid",
+      "critical_fidelity_changes": null,
+      "needs_review": null,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-missing_image-reading-3077c2e0a49061bbcf29-UNIT.json",
+      "sha256": "01dc8cf8ae663329b837a317a9ff22042ec5c5648786282077a808d4ee2fa459",
+      "task_id": "qwen3.8:27b-mlx::missing_image::reading-3077c2e0a49061bbcf29",
+      "host_status": "valid",
+      "critical_fidelity_changes": null,
+      "needs_review": true,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-0572e0c61a75ab370e67.json",
+      "sha256": "1ae97196e38723589fd24ec81daa7bc25cee945fccf784014d00933450f76abe",
+      "task_id": "qwen3.8:27b-mlx::reading-0572e0c61a75ab370e67",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-1cf618a5ce887cee79b1.json",
+      "sha256": "6157c2ac33548d46158f6e0861f0052c793d44209c312bc695d14e7cc335a7f7",
+      "task_id": "qwen3.8:27b-mlx::reading-1cf618a5ce887cee79b1",
+      "host_status": "invalid",
+      "critical_fidelity_changes": null,
+      "needs_review": true,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-5e7e1b38c53e488454eb.json",
+      "sha256": "7c252d29db3260e9accc6483a5fa360b2daa107bf0f161fff7a6aefce4487472",
+      "task_id": "qwen3.8:27b-mlx::reading-5e7e1b38c53e488454eb",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": true,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-5f378add7e1f64ea69ba.json",
+      "sha256": "728bd65ae64b0b6677efe4d55f4e207f6cd67141349803aba476a263ca4d147a",
+      "task_id": "qwen3.8:27b-mlx::reading-5f378add7e1f64ea69ba",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": true,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-637a8b4b8fe245aa6d6b.json",
+      "sha256": "0e3251f54ac5b98fae694c1eb63b69de5fdc077a257dfa52a1d1385effb9ddf7",
+      "task_id": "qwen3.8:27b-mlx::reading-637a8b4b8fe245aa6d6b",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-74d01b9894f76563d519.json",
+      "sha256": "8ef3b5bdfe71afc44ddbf8895dc3dbfa46e34135213c8bc15262560f4790a4b8",
+      "task_id": "qwen3.8:27b-mlx::reading-74d01b9894f76563d519",
+      "host_status": "valid",
+      "critical_fidelity_changes": 1,
+      "needs_review": true,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-845d5b7741ad057cdf8d.json",
+      "sha256": "ce557f0f6224c2039aab9ac78b688f2765fa965aefba2aa95602c45e119f6577",
+      "task_id": "qwen3.8:27b-mlx::reading-845d5b7741ad057cdf8d",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-86b5b62922afc4c5b6bd.json",
+      "sha256": "afc91e1187ff3600fafe30adf365bf3c68bdacbe699e08089413ea0c85261acb",
+      "task_id": "qwen3.8:27b-mlx::reading-86b5b62922afc4c5b6bd",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-cfb03841eb9003d161df.json",
+      "sha256": "4408b59a7a440cf9ccc2dbea6175180894872ebe86a24b529e7588a0673b3ebe",
+      "task_id": "qwen3.8:27b-mlx::reading-cfb03841eb9003d161df",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-e05d33cb21bb773191dc.json",
+      "sha256": "e7b1fa9379ff5928583e7ba8957c7c28ee96dcaf5cf2c4c6f48fc4cfd906a4be",
+      "task_id": "qwen3.8:27b-mlx::reading-e05d33cb21bb773191dc",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-real-reading-3e3d5d225bf885a2e7f5-UNIT.json",
+      "sha256": "b50da1c23297c31cedb8b61c085fb33495531b1b79ef2625c5bce6cc5131356d",
+      "task_id": "qwen3.8:27b-mlx::reading-3e3d5d225bf885a2e7f5",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": false,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-real-reading-4fc8caf8f1dfb06d6938-UNIT.json",
+      "sha256": "0a1a2d364e691e91672e202bc28bdbc459b2cb95dce2691a207631838070a449",
+      "task_id": "qwen3.8:27b-mlx::reading-4fc8caf8f1dfb06d6938",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": true,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-real-reading-50a8872c9b2dda1a90bf-UNIT.json",
+      "sha256": "0413b97e3464a653eabead48c341df4dfbf047a186edc8d44c966f4df25d2e40",
+      "task_id": "qwen3.8:27b-mlx::reading-50a8872c9b2dda1a90bf",
+      "host_status": "invalid",
+      "critical_fidelity_changes": null,
+      "needs_review": true,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-real-reading-5500247fc23992050e37-UNIT.json",
+      "sha256": "bdc6a526c169066b3289b6c637e1ed5c22c2567d0c13180e90e272af8bc1f614",
+      "task_id": "qwen3.8:27b-mlx::reading-5500247fc23992050e37",
+      "host_status": "valid",
+      "critical_fidelity_changes": 0,
+      "needs_review": true,
+      "human_reviewed": false
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-unrelated_image-reading-3077c2e0a49061bbcf29-UNIT.json",
+      "sha256": "492069a7648b6aff2707afbdde60bbac05d4bf580407c751cc46ea56b315114d",
+      "task_id": "qwen3.8:27b-mlx::unrelated_image::reading-3077c2e0a49061bbcf29",
+      "host_status": "valid",
+      "critical_fidelity_changes": null,
+      "needs_review": true,
+      "human_reviewed": false
+    }
+  ],
+  "sample_scope": {
+    "primary_units": 18,
+    "new_calls": 36,
+    "exact_prior_reuses": 4,
+    "model_attempt_denominator_including_reuses": 20,
+    "diagnostic_not_held_out": true,
+    "new_valid_real_outputs_AI_source_reviewed": 24,
+    "reused_valid_real_outputs_prior_AI_source_assessments": 4,
+    "new_returned_responses_assessed_including_controls_and_invalids": 30,
+    "current_root_image_scope": "16 expansion primary units /17 cached regions; two prior diagnostic units retain earlier source assessments. Chapter crop additionally re-inspected at original resolution.",
+    "full_reference_transcriptions": false,
+    "human_grades": 0
+  },
+  "critical_fidelity_issue": {
+    "model": "qwen3.8:27b-mlx",
+    "unit_id": "reading-74d01b9894f76563d519",
+    "raw": "CCCXL",
+    "proposal": "CCCXLI",
+    "source_print": "CCCXI",
+    "critical_changes": 1,
+    "assessment": "artifacts/reading-quote-expansion-run-20261025-01/assessment-qwen3.8-reading-74d01b9894f76563d519.json"
+  },
+  "other_material_findings": [
+    "Gemma removes a printed repeated that without source support.",
+    "Both models relocate LOAN between paragraph records; Qwen also relocates evening and empties its former split-word record. Joined reading can match print while source mapping is not a validated relocation.",
+    "Qwen dense exemption list is valid needs_review with0patches/13uncertainties; derived text remains damaged raw OCR.",
+    "Qwen rejected responses retain a mismatched unit ID and a no-op patch; neither repaired or salvaged.",
+    "Gemma unrelated-image control abstains semantically but is invalid due extra fields; Qwen both controls pass.",
+    "Residual line-wraps, punctuation artifacts and an incomplete Amer-ican repair remain.",
+    "Qwen final amount edit is correct but its digit-place explanation is inaccurate; explanations are not source evidence."
+  ],
+  "diagnostic_success": {
+    "gemma4:31b-mlx": "not_met: strict unrelated-image control failed; wording/source-mapping issues remain",
+    "qwen3.8:27b-mlx": "not_met: unsupported critical chapter-number change; other source-mapping/transport/reading issues remain"
+  },
+  "budget": {
+    "prior_calls": 12,
+    "new_calls": 36,
+    "cumulative_calls": 48,
+    "approved_call_cap": 60,
+    "unused_calls_not_automatically_queued": 12,
+    "new_recorded_seconds": 2784.912768,
+    "primary_conservative_seconds": 3693.7898762910245,
+    "approved_primary_seconds": 7200,
+    "reduced_new_run_seconds_cap": 6291,
+    "reduced_new_model_seconds_cap": 1854,
+    "per_call_seconds_cap": 120,
+    "new_unknown_usage_attempts": 6,
+    "prior_unknown_usage_attempts": 3,
+    "new_paid_API_cost_USD": 0,
+    "compute_energy_cost_estimate": null
+  },
+  "reading_and_review_limits": {
+    "root_review_minutes": null,
+    "review_burden_not_quantified": true,
+    "tts_scope": "text suitability only; no speech synthesized or listened to",
+    "no_canonical_edits": true,
+    "no_new_scan_fetches": true,
+    "no_model_downloads": true,
+    "no_full_run_authorized": true,
+    "P0_decision": "open"
+  },
+  "human_review": {
+    "id": "HR-010-v1",
+    "state": "awaiting_human",
+    "packet_path": "docs/review-packets/HR-010-v1.json",
+    "canonical_sha256": "35527290c324015753b62c2a0640e8199e6430133ec520ed277f70e51882cc19",
+    "max_minutes_total": 10,
+    "fixed_cases": 3,
+    "actual_outputs": 2,
+    "one_output_host_invalid": true,
+    "unavailable_fixed_case_not_substituted": true
+  },
+  "runtime_audit_limit": "Final resume06 OS PID was not captured before its short worker exited; exact command/session16624 exit0, store timestamps, server completion and terminal process observation are retained. Earlier worker identities/cancellation receipts preserved. No cross-harness arbitrary-crash recovery claim."
+}

@@ -1,0 +1,152 @@
+{
+  "task_id": "gemma4:31b-mlx::missing_image::reading-3077c2e0a49061bbcf29",
+  "attempt_id": "9ec0a091-f275-4f34-bfac-b2555ea2ceba",
+  "unit_id": "reading-3077c2e0a49061bbcf29",
+  "model": "gemma4:31b-mlx",
+  "control_kind": "missing_image",
+  "request_sha256": "6c9a6b45555a6f8646e53c23153dbc28768e249fb0e24560f4f0c2fe796e63b7",
+  "raw_reply_sha256": "45b69d5ee97b4ae0eac623fab5a4f2ed1dc31c6e8642fc93573357ec77b7c91e",
+  "source_images": [],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 1810,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-3077c2e0a49061bbcf29",
+      "status": "needs_review",
+      "patches": [],
+      "uncertain": [
+        {
+          "source_id": "congressionalg7391unit:207:par_000207_000038",
+          "start": 0,
+          "end": 180,
+          "reason": "Missing images to verify text."
+        },
+        {
+          "source_id": "congressionalg7391unit:207:par_000207_000039",
+          "start": 0,
+          "end": 152,
+          "reason": "Missing images to verify text."
+        },
+        {
+          "source_id": "congressionalg7391unit:207:par_000207_000040",
+          "start": 0,
+          "end": 676,
+          "reason": "Missing images to verify text."
+        },
+        {
+          "source_id": "congressionalg7391unit:207:par_000207_000041",
+          "start": 0,
+          "end": 584,
+          "reason": "Missing images to verify text."
+        }
+      ]
+    },
+    "derived": {
+      "congressionalg7391unit:207:par_000207_000038": {
+        "text": "There are measures of my own, already in- troduced by me, now on your table, looking to the same result as the pending bill, which pro- ceed specifically on the two latter grounds.",
+        "sha256": "7f3a6dd3399b6e3595e58bf8494cfc9bbd3c7d1a8f00087cfb0c0e4e2dc7a979",
+        "raw_sha256": "7f3a6dd3399b6e3595e58bf8494cfc9bbd3c7d1a8f00087cfb0c0e4e2dc7a979",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 180,
+            "clean_start": 0,
+            "clean_end": 180,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000038",
+            "start": 0,
+            "end": 180,
+            "reason": "Missing images to verify text."
+          }
+        ],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:207:par_000207_000039": {
+        "text": "One of these is entitled \"A bill supplying appropriate legislation to enforce the amend- ment of the Constitution.\" From this bill I read two sections :",
+        "sha256": "3afe7683cfba94882c2236d17cd2e335577353994c260c3e8ee6738b7533adde",
+        "raw_sha256": "3afe7683cfba94882c2236d17cd2e335577353994c260c3e8ee6738b7533adde",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 152,
+            "clean_start": 0,
+            "clean_end": 152,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000039",
+            "start": 0,
+            "end": 152,
+            "reason": "Missing images to verify text."
+          }
+        ],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:207:par_000207_000040": {
+        "text": "Sec. 3. And be it furilier enacted. That in further enforcement of the provision of the Constitution pro- hibiting slavei-y, and in order to remove all relics of this wrong from the States where this constitutional prohibition takes effect, it is hereby declared that all laws or customs in such States establishing any oli- garchical privileges and any distinction of rights on account of color or race arc hereby annulled, and all persons in such States are recognized as equal be- fore the law; and the penalties provided in the last section arc hereby made applicable to any violation of this provision, which is made in pursuance of the Constitution of the United States.",
+        "sha256": "bc6151d6157b4d29fdce9ed755e45533d17650f5643afe7ecaf9c185c442d9d9",
+        "raw_sha256": "bc6151d6157b4d29fdce9ed755e45533d17650f5643afe7ecaf9c185c442d9d9",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 676,
+            "clean_start": 0,
+            "clean_end": 676,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000040",
+            "start": 0,
+            "end": 676,
+            "reason": "Missing images to verify text."
+          }
+        ],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:207:par_000207_000041": {
+        "text": "Sec. 4. And be it further enacted, That in further enforcement of the provision of the Constitution aforesaid, the courts of the United States in the States aforesaid shall have exclusive jurisdiction of all of- fenses commitU\"d by persons not of African descent upon persons of African descent; also of all ofl'enses committed by persons of African descent; and also of all causes, suits, and demands to which any person of African descent shall be a party; and it is hereby declared that all such cases are to be treated as eases arising under the Constitution of the United States.",
+        "sha256": "38d2f22a86cec65697ec72ade93c1e505aab7e7f4a156a87a6cb0f374cef4912",
+        "raw_sha256": "38d2f22a86cec65697ec72ade93c1e505aab7e7f4a156a87a6cb0f374cef4912",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 584,
+            "clean_start": 0,
+            "clean_end": 584,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [
+          {
+            "source_id": "congressionalg7391unit:207:par_000207_000041",
+            "start": 0,
+            "end": 584,
+            "reason": "Missing images to verify text."
+          }
+        ],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "control_semantics": {
+    "control_kind": "missing_image",
+    "host_control_validation": "passed",
+    "required_behavior": "unchanged targets and whole-target uncertainty",
+    "assessment": "host contract only; no visual grade"
+  },
+  "visual_assessment": "Control review, no target image available. Frozen no-image request verified; zero patches and full-target uncertainty for all4targets satisfy host control policy. No clean-reading or image-certification claim.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "control_result": "passed",
+  "reviewer": "Codex root GPT-6; exact reply and frozen control bindings inspected",
+  "review_minutes": null
+}

@@ -1,0 +1,192 @@
+{
+  "task_id": "gemma4:31b-mlx::reading-845d5b7741ad057cdf8d",
+  "attempt_id": "b8c00d17-b3c1-460a-9fd3-69168eef8952",
+  "unit_id": "reading-845d5b7741ad057cdf8d",
+  "model": "gemma4:31b-mlx",
+  "request_sha256": "0da2704a18759bbe1a7d144ba3fdc6851137f5ee098295bea47ef71ec2dc5df8",
+  "raw_reply_sha256": "2ec80d37bc40ae4214754f8eb5c757eb41c462cf7875fa281391ccee514950a6",
+  "source_images": [
+    {
+      "id": "reading-845d5b7741ad057cdf8d-leaf-408",
+      "sha256": "4c12ec29fec9b1af212fec3304bbdebde4d9ff02d7318c586fec1b25c86092ad"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 2575,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-845d5b7741ad057cdf8d",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo7392unit:408:par_000408_000021",
+          "start": 213,
+          "end": 255,
+          "old": "you may go to the gi-eat State of New York",
+          "new": "you may go to the great State of New York",
+          "image_ids": [
+            "reading-845d5b7741ad057cdf8d-leaf-408"
+          ],
+          "reason": "Correct OCR error 'gi-eat' to 'great'."
+        },
+        {
+          "source_id": "congressionalglo7392unit:408:par_000408_000021",
+          "start": 493,
+          "end": 511,
+          "old": "but I appi-e- hend",
+          "new": "but I apprehend",
+          "image_ids": [
+            "reading-845d5b7741ad057cdf8d-leaf-408"
+          ],
+          "reason": "Correct OCR error 'appi-e- hend' to 'apprehend'."
+        },
+        {
+          "source_id": "congressionalglo7392unit:408:par_000408_000022",
+          "start": 89,
+          "end": 110,
+          "old": "proposition. New York",
+          "new": "proposition New York",
+          "image_ids": [
+            "reading-845d5b7741ad057cdf8d-leaf-408"
+          ],
+          "reason": "Remove erroneous period after 'proposition'."
+        },
+        {
+          "source_id": "congressionalglo7392unit:408:par_000408_000022",
+          "start": 166,
+          "end": 186,
+          "old": "rest of the countiy.",
+          "new": "rest of the country.",
+          "image_ids": [
+            "reading-845d5b7741ad057cdf8d-leaf-408"
+          ],
+          "reason": "Correct OCR error 'countiy' to 'country'."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo7392unit:408:par_000408_000021": {
+        "text": "It may be best to make this sacrifice, to take fifteen Representatives from the loyal States and add them to the strength of the rebel States ; you may be able to go before the people and prove that it is right ; you may go to the great State of New York and get her to agree to a constitutional amendment basing repre- sentation on the number of voters by which she will be unable to count half a million of un- naturalized foreigners for whom she now has four Representatives in Congress ; but I apprehend that it will lead to discussion, to division, to opposition, if it ever passes; and if it is done I apprehend it will be whispered in the ears of the immigrants from the Old World that for the sake of the negro we have counted them out of the basis of representation.",
+        "sha256": "33eb39bdebc41d126778ba6d9d8afe179bc6f677e8860acbe202d14a69e6d49a",
+        "raw_sha256": "886e2be5beee4e10ea0780dfec2d9be68cb10f7a1e60fefc9e86fe71686e9601",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 213,
+            "clean_start": 0,
+            "clean_end": 213,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 213,
+            "raw_end": 255,
+            "clean_start": 213,
+            "clean_end": 254,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 255,
+            "raw_end": 493,
+            "clean_start": 254,
+            "clean_end": 492,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 493,
+            "raw_end": 511,
+            "clean_start": 492,
+            "clean_end": 507,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 511,
+            "raw_end": 779,
+            "clean_start": 507,
+            "clean_end": 775,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7392unit:408:par_000408_000022": {
+        "text": "Mr. STEWART. I should like to inquire of the Senator how he makes it out that under that proposition New York would lose four Repre- sentatives as compared with the rest of the country.",
+        "sha256": "26d0e2b5bf44c2e1dec7329ba72bfa7eeb099b2ddebc829688454465645e2739",
+        "raw_sha256": "90196e5ed1551be13e036a1d38686ef773bd5fe4db5f545327e22dd95f01ce9c",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 89,
+            "clean_start": 0,
+            "clean_end": 89,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 89,
+            "raw_end": 110,
+            "clean_start": 89,
+            "clean_end": 109,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 110,
+            "raw_end": 166,
+            "clean_start": 109,
+            "clean_end": 165,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 166,
+            "raw_end": 186,
+            "clean_start": 165,
+            "clean_end": 185,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 186,
+            "raw_end": 186,
+            "clean_start": 185,
+            "clean_end": 185,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7392unit:408:par_000408_000023": {
+        "text": "Mr. WILSON. I will answer in this way : that New York to-day has four Representatives in the other House who are there by reason of her",
+        "sha256": "42a33a5d41f8065d92a513e3eaeb1d4bae2319cb0d4c0d3cfd7b828d45fc3e1c",
+        "raw_sha256": "42a33a5d41f8065d92a513e3eaeb1d4bae2319cb0d4c0d3cfd7b828d45fc3e1c",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 135,
+            "clean_start": 0,
+            "clean_end": 135,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "patch_level_source_review": {
+    "reviewer": "root agent",
+    "reported_result": "all proposed patch wordings supported against prior source images; whole-derived-text review pending"
+  },
+  "visual_assessment": "Root compared all changed spans and whole derived targets with hash-bound source crop. All4patches supported. Stewart question and Wilson reply remain separate; fifteen/four Representatives and half a million preserved. Final by reason of her remains incomplete.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "great/country repaired, half a million preserved.",
+  "residual_errors": [
+    "repre- sentation, un- naturalized and Repre- sentatives remain split."
+  ],
+  "usable_reading": "Wording repairs supported; residual line-wrap formatting limits reading/audio flow.",
+  "needs_review": false,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Whole target/changed-span comparison, not exhaustive reference transcription. No human grade."
+}

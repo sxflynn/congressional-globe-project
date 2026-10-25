@@ -1,0 +1,245 @@
+{
+  "task_id": "qwen3.8:27b-mlx::reading-86b5b62922afc4c5b6bd",
+  "attempt_id": "f84a89af-d60f-49e1-a9db-c071e716aadf",
+  "unit_id": "reading-86b5b62922afc4c5b6bd",
+  "model": "qwen3.8:27b-mlx",
+  "request_sha256": "614fedd02a9b89219eeec0e0098cba64bb5d629e445d78090cefe53aa97326b0",
+  "raw_reply_sha256": "92a5072a9634b604a59a83221d6a0aad341ef813e6e0eb7ce614ac7f4a121959",
+  "source_images": [
+    {
+      "id": "reading-86b5b62922afc4c5b6bd-leaf-823",
+      "sha256": "66cd40ac48461ceb9b12b095fc9e30f6518aa98ec1fe038760980441e50a39ea"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 4299,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-86b5b62922afc4c5b6bd",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo7393unit:823:par_000823_000023",
+          "start": 36,
+          "end": 52,
+          "old": "shall bo classi-",
+          "new": "shall be classi-",
+          "image_ids": [
+            "reading-86b5b62922afc4c5b6bd-leaf-823"
+          ],
+          "reason": "OCR misread 'be' as 'bo'; image shows 'be'."
+        },
+        {
+          "source_id": "congressionalglo7393unit:823:par_000823_000025",
+          "start": 73,
+          "end": 82,
+          "old": "pay tax.-",
+          "new": "pay tax.",
+          "image_ids": [
+            "reading-86b5b62922afc4c5b6bd-leaf-823"
+          ],
+          "reason": "OCR added a stray hyphen after the period; image shows a period only."
+        },
+        {
+          "source_id": "congressionalglo7393unit:823:par_000823_000029",
+          "start": 0,
+          "end": 14,
+          "old": "; Mr. STEVENS.",
+          "new": "Mr. STEVENS.",
+          "image_ids": [
+            "reading-86b5b62922afc4c5b6bd-leaf-823"
+          ],
+          "reason": "Leading semicolon is not present in the image; remove it."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo7393unit:823:par_000823_000022": {
+        "text": "So that the clause will read:",
+        "sha256": "24ed7c088efc4463489a5e800674816ffac44ef2aee184098ce99df00ae221db",
+        "raw_sha256": "24ed7c088efc4463489a5e800674816ffac44ef2aee184098ce99df00ae221db",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 29,
+            "clean_start": 0,
+            "clean_end": 29,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7393unit:823:par_000823_000023": {
+        "text": "Keepers of hotels, inns, or taverns shall be classi- fied and rated according to the yearly rental, or, if not rented, according to the charge per diem, &c.",
+        "sha256": "79d94cf89c724703b5a4625b741111ac04baada4a34c6d5e5c2605493ca867a9",
+        "raw_sha256": "de383eef40de521169dafcfcc844aa3f49f5fd93b2738db0ae4d52dd7ecb6111",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 36,
+            "clean_start": 0,
+            "clean_end": 36,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 36,
+            "raw_end": 52,
+            "clean_start": 36,
+            "clean_end": 52,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 52,
+            "raw_end": 156,
+            "clean_start": 52,
+            "clean_end": 156,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7393unit:823:par_000823_000024": {
+        "text": "Mr. PIKE. I move to amend the amend- ment by adding the following:",
+        "sha256": "bc37abe855dc058db9184a38f08e43c92de5caf41e7cb36579ec47de6d4deac5",
+        "raw_sha256": "bc37abe855dc058db9184a38f08e43c92de5caf41e7cb36579ec47de6d4deac5",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 66,
+            "clean_start": 0,
+            "clean_end": 66,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7393unit:823:par_000823_000025": {
+        "text": "And when they charge $1 50 or less per day they shall not be required to pay tax.",
+        "sha256": "8f3a15b9487e7f53f2c481c914fe19c851260cba4bf407ac7569c5c50079b48c",
+        "raw_sha256": "173420b0fc5d48abd39a662b28d1f92dff6cf623c3b72c67a80424cdaa264056",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 73,
+            "clean_start": 0,
+            "clean_end": 73,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 73,
+            "raw_end": 82,
+            "clean_start": 73,
+            "clean_end": 81,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 82,
+            "raw_end": 82,
+            "clean_start": 81,
+            "clean_end": 81,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7393unit:823:par_000823_000026": {
+        "text": "The amendment to the amendment was not agreed to. The amendment was not agreed to.",
+        "sha256": "967c058b14515f8c06c8439ba1eed60d2e916f12a7cea8e82b619bbef1ac0570",
+        "raw_sha256": "967c058b14515f8c06c8439ba1eed60d2e916f12a7cea8e82b619bbef1ac0570",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 82,
+            "clean_start": 0,
+            "clean_end": 82,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7393unit:823:par_000823_000027": {
+        "text": "The Clerk read as follows :",
+        "sha256": "a2c5d0c74abe2cc43f2ae0575c740082eb5537762b9cbaabe6af0d8c4194bb49",
+        "raw_sha256": "a2c5d0c74abe2cc43f2ae0575c740082eb5537762b9cbaabe6af0d8c4194bb49",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 27,
+            "clean_start": 0,
+            "clean_end": 27,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7393unit:823:par_000823_000028": {
+        "text": "21. Keepers of eating-houses shall pay ten dollars Every place where food or refreshments of any kind, not including spirits, wines, ale, beer, or malt liquors, are provided for casual visitors and sold for con- sumption therein, shall be regarded as an eating- house under this act. But the keeper of an eating- house having paid the tax therefor shall not be required to pay a tax as a confectioner, anything in this act to the contrary notwithstanding.",
+        "sha256": "eec3de622025d9580935612ebfed13328ac0f4cde868ffd4f6b6e6e8ad86c9da",
+        "raw_sha256": "eec3de622025d9580935612ebfed13328ac0f4cde868ffd4f6b6e6e8ad86c9da",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 455,
+            "clean_start": 0,
+            "clean_end": 455,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7393unit:823:par_000823_000029": {
+        "text": "Mr. STEVENS. I move to strike out in line eleven hundred and fifty-two these words, \"not including spirits, wines.\" An eating- house, as we understand it, includes the sale of oysters and fermented liquors, ale, beer, and other malt liquors. The words I have mentioned ought of course to be stricken out, and the section ought then to remain so that these eating-houses shall be allowed to sell, as they have always heretofore, ale, beer, and other malt liquors.",
+        "sha256": "868e7d2de501937ae4072716955d4cdacee8cc1cecec56ba3205d822cb5ec410",
+        "raw_sha256": "5f1b3afe479f0075ea91ed6e810ae965624ea1d98ba18b82594d62d4001f072f",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 14,
+            "clean_start": 0,
+            "clean_end": 12,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 14,
+            "raw_end": 464,
+            "clean_start": 12,
+            "clean_end": 462,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "patch_level_source_review": null,
+  "visual_assessment": "All3patches supported. Whole derived target compared to crop/source-reviewed counterpart: two amendment rejections remain distinct sentences; quoted clause is not edited according to Stevens proposal. Dollar amounts preserved.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "shall be repaired, $1 50 and rejection preserved.",
+  "residual_errors": [
+    "Raw line wraps and joined rejection-paragraph display remain."
+  ],
+  "usable_reading": true,
+  "needs_review": false,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Human review remains open; this snapshot preserves host replay and only the explicitly supplied root source notes.",
+  "review_minutes": null
+}

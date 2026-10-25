@@ -1,0 +1,65 @@
+{
+  "schema_version": "reading-expansion-human-review-private-bindings-v1",
+  "packet_id": "HR-010",
+  "version": 1,
+  "draft_sha256": "a100ef821f6257ac7b0eddeabdbb077424496a114efadfcf8bd3415cdf8f9d6a",
+  "selection_source": "Existing frozen HR-009-v1 human choice; fixed sample identities and model assignment. No replacement selection.",
+  "human_limit_minutes_total": 10,
+  "maximum_selected_cases": 3,
+  "actual_output_cards_in_this_draft": 1,
+  "bindings": [
+    {
+      "sample": "A",
+      "unit_id": "reading-e05d33cb21bb773191dc",
+      "selected_model": "gemma4:31b-mlx",
+      "status": "valid completed output",
+      "attempt_id": "0734cd2d-70a2-4ff6-8d97-82f445f4f4a1",
+      "request_sha256": "f5a6080064618bef87e51f8a9cc95130e1407ea570681b8b48939420395aa216",
+      "raw_reply_sha256": "5523e3b10eb26bbfa609905ee86c53cdd6d508d0dd8647b3c66b03d248dde2e7",
+      "source_ids": [
+        "congressionalglo00unit:873:par_000873_000006",
+        "congressionalglo00unit:873:par_000873_000007",
+        "congressionalglo00unit:873:par_000873_000008",
+        "congressionalglo00unit:873:par_000873_000009"
+      ],
+      "raw_sha256_by_source": {
+        "congressionalglo00unit:873:par_000873_000006": "86728a521280b61d8bee81b14b5085dde53f63ab9bf9c0a49fc0e0bdf83a5c37",
+        "congressionalglo00unit:873:par_000873_000007": "42641e430e0060ec06561d5dc2ad29ba1854ee5e26dc44089947da821226f1ef",
+        "congressionalglo00unit:873:par_000873_000008": "e56c786c52729592525b560f2fd30189a8d13e2f9e844e2550766ad690d2701d",
+        "congressionalglo00unit:873:par_000873_000009": "d60dfaf370e761ba47a694614ca8c6f312e7c37f5017f0cea2db92fa67f3c3ab"
+      },
+      "image_id": "reading-e05d33cb21bb773191dc-leaf-873",
+      "crop_sha256": "75200af1eb768b8cdf81283edeb847ba329cf9f799447de37ff7b972d04b9d15",
+      "image_metadata_receipt_sha256": "211320cceeb84fa892fd80d57da55a89dd62458697f6d5c089336098fbbd2d81",
+      "image_receipt_sha256": "75200af1eb768b8cdf81283edeb847ba329cf9f799447de37ff7b972d04b9d15",
+      "image_url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0873.jp2/8,1734,948,1283/948,/0/default.jpg",
+      "archive_page_url": "https://archive.org/details/congressionalglo00unit/page/n873/mode/1up",
+      "human_payload_contains_model_name": false
+    },
+    {
+      "sample": "B",
+      "unit_id": "reading-50a8872c9b2dda1a90bf",
+      "selected_model": "qwen3.8:27b-mlx",
+      "status": "pending at draft capture; no output included",
+      "request_sha256": "f53ed9200517f9cf92c8597cbb2ae121900763e7b8e3824662e52936539f5a00",
+      "image_bindings": [
+        {
+          "id": "reading-50a8872c9b2dda1a90bf-leaf-74",
+          "sha256": "553abad18265c6f2fc1b6360fb21dc550eb5a3256e5d91948f6b9b96a81f87cd"
+        }
+      ],
+      "human_payload_contains_model_name": false
+    },
+    {
+      "sample": "C",
+      "unit_id": "reading-637a8b4b8fe245aa6d6b",
+      "selected_model": "muse:30b-mlx",
+      "status": "selected case output not produced; no substitute",
+      "prior_timeout_note": "Two timeout events occurred on other cases; this selected case has no produced output.",
+      "source_request_in_current_manifest": false,
+      "human_payload_contains_model_name": false
+    }
+  ],
+  "unavailable_status_semantics": "No output was produced for the fixed selected case. It is not a grade, and no substitute is allowed.",
+  "registration_status": "draft only; not registered or submitted"
+}

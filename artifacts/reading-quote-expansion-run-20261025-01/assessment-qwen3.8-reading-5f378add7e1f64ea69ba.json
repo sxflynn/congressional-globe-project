@@ -1,0 +1,614 @@
+{
+  "task_id": "qwen3.8:27b-mlx::reading-5f378add7e1f64ea69ba",
+  "attempt_id": "1526741d-537f-4452-9685-bf01690a129d",
+  "unit_id": "reading-5f378add7e1f64ea69ba",
+  "model": "qwen3.8:27b-mlx",
+  "request_sha256": "230c6cc5ef14b8290ebb6bb6f06fee11b23bf5bd3a50c386fa885104cf8bf2e8",
+  "raw_reply_sha256": "eb5bffb299aa3e187d948c3c7e29a13ff67e668b0b1223e277095b11a78c2172",
+  "source_images": [
+    {
+      "id": "reading-5f378add7e1f64ea69ba-leaf-299",
+      "sha256": "f4ee5be5a3a60085a31e93c42d951bc7382a974d54aa86866b8eebf7cab5ba65"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 4765,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-5f378add7e1f64ea69ba",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "start": 23,
+          "end": 28,
+          "old": "pcnds",
+          "new": "pends",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'p' as 'pc' in 'pends'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "start": 39,
+          "end": 45,
+          "old": "liangs",
+          "new": "hangs",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'h' as 'li' in 'hangs'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "start": 113,
+          "end": 115,
+          "old": "wc",
+          "new": "we",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'we' as 'wc'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "start": 301,
+          "end": 306,
+          "old": "oeean",
+          "new": "ocean",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'ocean' as 'oeean'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "start": 508,
+          "end": 517,
+          "old": "repuljlic",
+          "new": "republic",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'republic' as 'repuljlic'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "start": 526,
+          "end": 530,
+          "old": "lias",
+          "new": "has",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'h' as 'li' in 'has'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "start": 673,
+          "end": 686,
+          "old": "suffrage ?' '",
+          "new": "suffrage?\"",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Corrected punctuation to match standard quotation style and image."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000037",
+          "start": 6,
+          "end": 10,
+          "old": "tlie",
+          "new": "the",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'the' as 'tlie'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000038",
+          "start": 29,
+          "end": 41,
+          "old": "Ayords lAore",
+          "new": "words more",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'words more' as 'Ayords lAore'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000039",
+          "start": 34,
+          "end": 37,
+          "old": "tke",
+          "new": "the",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'the' as 'tke'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000039",
+          "start": 71,
+          "end": 77,
+          "old": "Kelley",
+          "new": "KELLEY",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "Corrected capitalization to match the name style used elsewhere in the text."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000039",
+          "start": 101,
+          "end": 108,
+          "old": "enal)le",
+          "new": "enable",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'enable' as 'enal)le'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000041",
+          "start": 55,
+          "end": 61,
+          "old": "f will",
+          "new": "I will",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'I' as 'f'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000041",
+          "start": 81,
+          "end": 91,
+          "old": "jnin- utes",
+          "new": "min- utes",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'min' as 'jnin'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000041",
+          "start": 135,
+          "end": 140,
+          "old": "lauds",
+          "new": "lands",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'lands' as 'lauds'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000041",
+          "start": 155,
+          "end": 163,
+          "old": "S^jeaker",
+          "new": "Speaker",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'Speaker' as 'S^jeaker'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000041",
+          "start": 249,
+          "end": 256,
+          "old": "peojile",
+          "new": "people",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'people' as 'peojile'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000041",
+          "start": 313,
+          "end": 321,
+          "old": "siDcecha",
+          "new": "speech a",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'speech a' as 'siDcecha'."
+        },
+        {
+          "source_id": "congressionalg7391unit:299:par_000299_000041",
+          "start": 605,
+          "end": 614,
+          "old": "Amei-ican",
+          "new": "Amer-ican",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "reason": "OCR misread 'Amer' as 'Amei'."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalg7391unit:299:par_000299_000036": {
+        "text": "The same question that pends before us hangs upon a hair in the entranced gaze of the labor- ing masses of what we too fondly call \"the mother country.\" I ask my colleague, who spoke so kindly of the German, the English- man, the Scotchman, and the Irishman, whether he is willing to send across the ocean an en- couraging word to the despots of the British Government, and to set an example which will justify them in saying, \"We will withhold from the laboring people this right, for the great democratic republic country has had the ques- tion under discussion, and has decided that people poor and ignorant as are our laboring classes ought not to have the right of suffrage?\" If gentlemen on the other side do, they will hear songs that were not sung in the \" Groves of Blarney.\"",
+        "sha256": "bee6df8a575c6ea968ae0beb6f28925f77ae28f84c1fafb802404b33a8266ee5",
+        "raw_sha256": "c5f0faeec0ccdf54c8a834efe809cfac9d47ab1754ee7b3d0a54b6e254716697",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 23,
+            "clean_start": 0,
+            "clean_end": 23,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 23,
+            "raw_end": 28,
+            "clean_start": 23,
+            "clean_end": 28,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 28,
+            "raw_end": 39,
+            "clean_start": 28,
+            "clean_end": 39,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 39,
+            "raw_end": 45,
+            "clean_start": 39,
+            "clean_end": 44,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 45,
+            "raw_end": 113,
+            "clean_start": 44,
+            "clean_end": 112,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 113,
+            "raw_end": 115,
+            "clean_start": 112,
+            "clean_end": 114,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 115,
+            "raw_end": 301,
+            "clean_start": 114,
+            "clean_end": 300,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 301,
+            "raw_end": 306,
+            "clean_start": 300,
+            "clean_end": 305,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 306,
+            "raw_end": 508,
+            "clean_start": 305,
+            "clean_end": 507,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 508,
+            "raw_end": 517,
+            "clean_start": 507,
+            "clean_end": 515,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 517,
+            "raw_end": 526,
+            "clean_start": 515,
+            "clean_end": 524,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 526,
+            "raw_end": 530,
+            "clean_start": 524,
+            "clean_end": 527,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 530,
+            "raw_end": 673,
+            "clean_start": 527,
+            "clean_end": 670,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 673,
+            "raw_end": 686,
+            "clean_start": 670,
+            "clean_end": 680,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 686,
+            "raw_end": 790,
+            "clean_start": 680,
+            "clean_end": 784,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:299:par_000299_000037": {
+        "text": "[Here the hammer fell.]",
+        "sha256": "42641e430e0060ec06561d5dc2ad29ba1854ee5e26dc44089947da821226f1ef",
+        "raw_sha256": "d3f19e6d4d53f568aadaff45dab13e793f458d0ab96aa950782494cf73587043",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 6,
+            "clean_start": 0,
+            "clean_end": 6,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 6,
+            "raw_end": 10,
+            "clean_start": 6,
+            "clean_end": 9,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 10,
+            "raw_end": 24,
+            "clean_start": 9,
+            "clean_end": 23,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:299:par_000299_000038": {
+        "text": "Mr. KELLEY. I have but a few words more to say.",
+        "sha256": "f659e0b772c57cb3157f7721114e897f1c5b4ba7ca331af7f3c2f9ebb4c16db7",
+        "raw_sha256": "68c13bbe5bb93fe646ff1f353f798a445aecec085ba4a788089ca3e2a42343ab",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 29,
+            "clean_start": 0,
+            "clean_end": 29,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 29,
+            "raw_end": 41,
+            "clean_start": 29,
+            "clean_end": 39,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 41,
+            "raw_end": 49,
+            "clean_start": 39,
+            "clean_end": 47,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:299:par_000299_000039": {
+        "text": "Mr. ORTH. I move that the time of the gentleman from Pennsylvania [Mr. KELLEY] be extended, so as to enable him to conclude his remarks on this subject.",
+        "sha256": "11f1f54e015205868ac0df66ddfcd33602efb18969311465e38e59c9677ffb42",
+        "raw_sha256": "0b407de6dcf3bb5feac993cb1fc7e14362b007cc0df5b1bc480a88f07a12a028",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 34,
+            "clean_start": 0,
+            "clean_end": 34,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 34,
+            "raw_end": 37,
+            "clean_start": 34,
+            "clean_end": 37,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 37,
+            "raw_end": 71,
+            "clean_start": 37,
+            "clean_end": 71,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 71,
+            "raw_end": 77,
+            "clean_start": 71,
+            "clean_end": 77,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 77,
+            "raw_end": 101,
+            "clean_start": 77,
+            "clean_end": 101,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 101,
+            "raw_end": 108,
+            "clean_start": 101,
+            "clean_end": 107,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 108,
+            "raw_end": 153,
+            "clean_start": 107,
+            "clean_end": 152,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:299:par_000299_000040": {
+        "text": "No objection was made.",
+        "sha256": "a426b22bced06ab886c8aaefe09f52ca50a90cb175a07aae941dbbbf3305bdc3",
+        "raw_sha256": "a426b22bced06ab886c8aaefe09f52ca50a90cb175a07aae941dbbbf3305bdc3",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 22,
+            "clean_start": 0,
+            "clean_end": 22,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalg7391unit:299:par_000299_000041": {
+        "text": "Mr. KELLEY. With thanks to the House for its courtesy, I will continue for a few min- utes to plead the cause of the oppressed of all lands. I plead, Mr. Speaker, and members of the American Congress, with you, to help to enfranchise the laboring people of Great Brit- ain. When John Bright uttered his recent speech a deputation of them sat before him and he alluded to them. And I point around these galleries to the maimed and wounded soldiers of the armies of America, whose skin is not colored like our own. I point to intelligent men, black and yellow, descendants of the kings of Dahomey and of Amer-ican Congressmen, Senators, Presidents, and Cabinet ministers, and ask you to give them, as laboring people and republican soldiers, the rights of citizen- ship. John Bright said :",
+        "sha256": "188695ddb2840eea71a5e0c5a21f21493f0eceec88b3a7954d3dd9d8f6d220d0",
+        "raw_sha256": "8b0f103884991459bb0d5ae10c2e6e69f9c070994b899ac0d0f96e334ada4288",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 55,
+            "clean_start": 0,
+            "clean_end": 55,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 55,
+            "raw_end": 61,
+            "clean_start": 55,
+            "clean_end": 61,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 61,
+            "raw_end": 81,
+            "clean_start": 61,
+            "clean_end": 81,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 81,
+            "raw_end": 91,
+            "clean_start": 81,
+            "clean_end": 90,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 91,
+            "raw_end": 135,
+            "clean_start": 90,
+            "clean_end": 134,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 135,
+            "raw_end": 140,
+            "clean_start": 134,
+            "clean_end": 139,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 140,
+            "raw_end": 155,
+            "clean_start": 139,
+            "clean_end": 154,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 155,
+            "raw_end": 163,
+            "clean_start": 154,
+            "clean_end": 161,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 163,
+            "raw_end": 249,
+            "clean_start": 161,
+            "clean_end": 247,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 249,
+            "raw_end": 256,
+            "clean_start": 247,
+            "clean_end": 253,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 256,
+            "raw_end": 313,
+            "clean_start": 253,
+            "clean_end": 310,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 313,
+            "raw_end": 321,
+            "clean_start": 310,
+            "clean_end": 318,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 321,
+            "raw_end": 605,
+            "clean_start": 318,
+            "clean_end": 602,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 605,
+            "raw_end": 614,
+            "clean_start": 602,
+            "clean_end": 611,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 614,
+            "raw_end": 790,
+            "clean_start": 611,
+            "clean_end": 787,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "patch_level_source_review": "Root reports most word repairs source-supported; residual 'Amer-ican' hyphenation is unsupported against print. Whole-derived-text review pending.",
+  "visual_assessment": "Root checked19patches and whole derived text against crop, using full diff with source-reviewed Gemma. Eighteen repairs supported; Amei-ican→Amer-ican only partly repairs the printed American and retains an unsupported raw hyphen. Speaker turns, stage direction and truncated Bright lead-in preserved.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "All3recorded repair anchors achieved.",
+  "residual_errors": [
+    "Amer-ican should read American in print; residual error in changed span.",
+    "Raw line wraps remain."
+  ],
+  "usable_reading": true,
+  "needs_review": true,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Human review remains open; this snapshot preserves host replay and only the explicitly supplied root source notes.",
+  "review_minutes": null
+}

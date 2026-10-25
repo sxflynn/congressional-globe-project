@@ -1,0 +1,109 @@
+{
+  "schema_version": "reading-expansion-nonvisual-checkpoint-v1",
+  "checkpoint_sequence": 7,
+  "parent_checkpoint": "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-006.json",
+  "manifest_sha256": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61",
+  "task_statuses": {
+    "valid": 13,
+    "timeout": 4,
+    "invalid": 1,
+    "inflight": 1,
+    "pending": 17
+  },
+  "attempt_statuses": {
+    "valid": 13,
+    "timeout": 4,
+    "invalid": 1,
+    "inflight": 1
+  },
+  "new_terminal_attempts": [
+    {
+      "task_id": "gemma4:31b-mlx::reading-cfb03841eb9003d161df",
+      "attempt_id": "07d9156c-5f9a-44be-8e21-e6b5918a998a",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "249b11e01678129b24aba1a0335faceaaed9c8386c88e2c8696cebb91e13edd8",
+      "raw_reply_sha256": "22836604f2633d6820510572acd98267f01acd66573583e1c0b1c2aaedadcc58",
+      "patch_count": 7,
+      "elapsed_seconds": 67.33142458298244,
+      "patch_level_source_review": "Root reports patch wording supported; whole derived text review pending."
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-db4cc1bed5fc9ba20489",
+      "attempt_id": "bde5fe56-c93b-4c22-a819-e084b3af1235",
+      "host_status": "timeout",
+      "input_count_parity": false,
+      "request_sha256": "a57e02b214661c672860b8bd67cb9964494ee30b91ee15b510173bc2c8d90932",
+      "raw_reply_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_count": 0,
+      "elapsed_seconds": 120.00214166613296,
+      "patch_level_source_review": "No visual review reported."
+    },
+    {
+      "task_id": "gemma4:31b-mlx::reading-e05d33cb21bb773191dc",
+      "attempt_id": "0734cd2d-70a2-4ff6-8d97-82f445f4f4a1",
+      "host_status": "valid",
+      "input_count_parity": true,
+      "request_sha256": "f5a6080064618bef87e51f8a9cc95130e1407ea570681b8b48939420395aa216",
+      "raw_reply_sha256": "5523e3b10eb26bbfa609905ee86c53cdd6d508d0dd8647b3c66b03d248dde2e7",
+      "patch_count": 5,
+      "elapsed_seconds": 49.69030595803633,
+      "patch_level_source_review": "No root source-image review reported as of this checkpoint."
+    }
+  ],
+  "current_inflight_attempts": [
+    {
+      "task_id": "qwen3.8:27b-mlx::reading-0572e0c61a75ab370e67",
+      "attempt_id": "1549e481-644e-4462-ad64-21976a70b141",
+      "started_at": "2026-10-25 16:22:37",
+      "elapsed_seconds": null,
+      "usage_known": false
+    }
+  ],
+  "per_model_budget": {
+    "gemma4:31b-mlx": {
+      "expansion_task_statuses": {
+        "valid": 13,
+        "timeout": 4,
+        "invalid": 1
+      },
+      "expansion_attempt_rows": 18,
+      "expansion_attempt_statuses": {
+        "valid": 13,
+        "timeout": 4,
+        "invalid": 1
+      },
+      "recorded_elapsed_seconds": 1462.945093,
+      "attempts_without_elapsed": 0,
+      "per_model_run_cap_seconds": 1854,
+      "headroom_after_recorded_elapsed_seconds": 391.054907,
+      "prior_conservative_seconds": 122.927522,
+      "cumulative_attempt_rows_including_prior": 20,
+      "note": "Elapsed includes all persisted attempt durations; null elapsed is not treated as free."
+    },
+    "qwen3.8:27b-mlx": {
+      "expansion_task_statuses": {
+        "inflight": 1,
+        "pending": 17
+      },
+      "expansion_attempt_rows": 1,
+      "expansion_attempt_statuses": {
+        "inflight": 1
+      },
+      "recorded_elapsed_seconds": 0,
+      "attempts_without_elapsed": 1,
+      "per_model_run_cap_seconds": 1854,
+      "headroom_after_recorded_elapsed_seconds": 1854,
+      "prior_conservative_seconds": 545.946171,
+      "cumulative_attempt_rows_including_prior": 9,
+      "note": "Elapsed includes all persisted attempt durations; null elapsed is not treated as free."
+    }
+  },
+  "interpretation_limit": "Host replay validity, control semantics and patch-level source review are distinct. Whole-derived-text and human assessments remain open.",
+  "artifacts": [
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-007.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/checkpoint-export-summary-007.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-cfb03841eb9003d161df.json",
+    "artifacts/reading-quote-expansion-run-20261025-01/assessment-gemma4-reading-e05d33cb21bb773191dc.json"
+  ]
+}

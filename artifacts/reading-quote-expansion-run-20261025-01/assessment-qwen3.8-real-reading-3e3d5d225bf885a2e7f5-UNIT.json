@@ -1,0 +1,294 @@
+{
+  "schema_version": "reading-expansion-ungraded-assessment-v1",
+  "task_id": "qwen3.8:27b-mlx::reading-3e3d5d225bf885a2e7f5",
+  "attempt_id": "00b18311-a847-491b-aee6-64ee2d5f892c",
+  "unit_id": "reading-3e3d5d225bf885a2e7f5",
+  "model": "qwen3.8:27b-mlx",
+  "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+  "request_sha256": "a4fecf494f6a6c761c0699823f88925bf1a8f75fc4fca78370924ee358c41449",
+  "raw_reply_sha256": "d11cc36636fe0f7f48813075048206fc6afec5aa5dd739726ee3a92b93c8ce61",
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 3454,
+  "prompt_eval_count": 3454,
+  "elapsed_seconds": 48.53883162513375,
+  "usage": {
+    "eval_count": 789,
+    "load_duration": 24128166,
+    "prompt_eval_count": 3454,
+    "total_duration": 48533880166
+  },
+  "source_targets": [
+    {
+      "source_id": "congressionalglo7393unit:769:par_000769_000010",
+      "raw_sha256": "09c226d74ac911541f163ff3d1d37af4f5c1fe435a7a56bfe12f61ea2eb2ee4b",
+      "raw": "I hope my amendment will meet with the approval of the chairman of the Committee of Ways and Means, [Mr. Morrill;] or, if it does not, that he will at least explain that it is not necessary under the law."
+    },
+    {
+      "source_id": "congressionalglo7393unit:769:par_000769_000011",
+      "raw_sha256": "1522e2e84855d0e87a86830b4f7b570ec6ddd9fae504b4e6b2da15894bb90016",
+      "raw": "Mr. MORRILL. I do not, perhaps, fully understand the amendment of the gentleman from New York, [Mr. Chanler,] as I was un- able to hear it all when it was read at the Clerk's desk. But so far as I do understand it, I am opposed to it, and hope it will not be adopted, for I think the public notice in the courts where cases of forfeiture are tried is sufficient, and where certainly all the persons who are interested would learn the cause of such forfeiture."
+    },
+    {
+      "source_id": "congressionalglo7393unit:769:par_000769_000012",
+      "raw_sha256": "fe85739c3c7f08f85e6de285ff335bb212428b4f5ab432eb1c934f537e54b2ad",
+      "raw": "Mr. CHANLER, Will the gentleman from Vermont [Mr. Morrill] allow me to ask him if there is any provision in the law regulating the internal revenue to enable the citizen, whose property has been seized by the as- sessor, to obtain speedy redress from the supe- rior of that officer ? As the law now stands, is not the person whose property has been seized completely at the mercy of the assessor? And is it not due to the citizen that he should have some means provided by which his property can be released if he is an innocent party? Does the law provide any such means now? I understand that the gentleman does not know, and still he opposes a good, sound rem- edy because he individually does not know whether that is the law or not. It certainly"
+    }
+  ],
+  "raw_reply": "{\"model\":\"qwen3.8:27b-mlx\",\"created_at\":\"2026-10-25T16:31:51.669796Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"unit_id\\\":\\\"reading-3e3d5d225bf885a2e7f5\\\",\\\"status\\\":\\\"proposed\\\",\\\"patches\\\":[{\\\"source_id\\\":\\\"congressionalglo7393unit:769:par_000769_000010\\\",\\\"old\\\":\\\"[Mr. Morrill;]\\\",\\\"new\\\":\\\"[Mr. MORRILL;]\\\",\\\"image_ids\\\":[\\\"reading-3e3d5d225bf885a2e7f5-leaf-769\\\"],\\\"reason\\\":\\\"The image shows the name in all caps, matching the document's style for bracketed names.\\\"},{\\\"source_id\\\":\\\"congressionalglo7393unit:769:par_000769_000011\\\",\\\"old\\\":\\\"[Mr. Chanler,]\\\",\\\"new\\\":\\\"[Mr. CHANLER,]\\\",\\\"image_ids\\\":[\\\"reading-3e3d5d225bf885a2e7f5-leaf-769\\\"],\\\"reason\\\":\\\"The image shows the name in all caps, matching the document's style for bracketed names.\\\"},{\\\"source_id\\\":\\\"congressionalglo7393unit:769:par_000769_000012\\\",\\\"old\\\":\\\"Mr. CHANLER, Will\\\",\\\"new\\\":\\\"Mr. CHANLER. Will\\\",\\\"image_ids\\\":[\\\"reading-3e3d5d225bf885a2e7f5-leaf-769\\\"],\\\"reason\\\":\\\"The image shows a period after the speaker's name, consistent with the other speaker turns in the text.\\\"},{\\\"source_id\\\":\\\"congressionalglo7393unit:769:par_000769_000012\\\",\\\"old\\\":\\\"[Mr. Morrill]\\\",\\\"new\\\":\\\"[Mr. MORRILL]\\\",\\\"image_ids\\\":[\\\"reading-3e3d5d225bf885a2e7f5-leaf-769\\\"],\\\"reason\\\":\\\"The image shows the name in all caps, matching the document's style for bracketed names.\\\"},{\\\"source_id\\\":\\\"congressionalglo7393unit:769:par_000769_000012\\\",\\\"old\\\":\\\"supe- rior\\\",\\\"new\\\":\\\"superior\\\",\\\"image_ids\\\":[\\\"reading-3e3d5d225bf885a2e7f5-leaf-769\\\"],\\\"reason\\\":\\\"The word 'superior' is not hyphenated in the image; the line break falls between 'supe' and 'rior' but no hyphen is present.\\\"},{\\\"source_id\\\":\\\"congressionalglo7393unit:769:par_000769_000012\\\",\\\"old\\\":\\\"officer ?\\\",\\\"new\\\":\\\"officer?\\\",\\\"image_ids\\\":[\\\"reading-3e3d5d225bf885a2e7f5-leaf-769\\\"],\\\"reason\\\":\\\"The image shows no space before the question mark.\\\"},{\\\"source_id\\\":\\\"congressionalglo7393unit:769:par_000769_000012\\\",\\\"old\\\":\\\"rem- edy\\\",\\\"new\\\":\\\"remedy\\\",\\\"image_ids\\\":[\\\"reading-3e3d5d225bf885a2e7f5-leaf-769\\\"],\\\"reason\\\":\\\"The word 'remedy' is not hyphenated in the image; the line break falls between 'rem' and 'edy' but no hyphen is present.\\\"}],\\\"uncertain\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":48533880166,\"load_duration\":24128166,\"prompt_eval_count\":3454,\"prompt_eval_cached_count\":671,\"prompt_eval_duration\":25078066458,\"eval_count\":789,\"eval_duration\":23339859666}",
+  "raw_reply_patch_count": 7,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-3e3d5d225bf885a2e7f5",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo7393unit:769:par_000769_000010",
+          "start": 100,
+          "end": 114,
+          "old": "[Mr. Morrill;]",
+          "new": "[Mr. MORRILL;]",
+          "image_ids": [
+            "reading-3e3d5d225bf885a2e7f5-leaf-769"
+          ],
+          "reason": "The image shows the name in all caps, matching the document's style for bracketed names."
+        },
+        {
+          "source_id": "congressionalglo7393unit:769:par_000769_000011",
+          "start": 95,
+          "end": 109,
+          "old": "[Mr. Chanler,]",
+          "new": "[Mr. CHANLER,]",
+          "image_ids": [
+            "reading-3e3d5d225bf885a2e7f5-leaf-769"
+          ],
+          "reason": "The image shows the name in all caps, matching the document's style for bracketed names."
+        },
+        {
+          "source_id": "congressionalglo7393unit:769:par_000769_000012",
+          "start": 0,
+          "end": 17,
+          "old": "Mr. CHANLER, Will",
+          "new": "Mr. CHANLER. Will",
+          "image_ids": [
+            "reading-3e3d5d225bf885a2e7f5-leaf-769"
+          ],
+          "reason": "The image shows a period after the speaker's name, consistent with the other speaker turns in the text."
+        },
+        {
+          "source_id": "congressionalglo7393unit:769:par_000769_000012",
+          "start": 45,
+          "end": 58,
+          "old": "[Mr. Morrill]",
+          "new": "[Mr. MORRILL]",
+          "image_ids": [
+            "reading-3e3d5d225bf885a2e7f5-leaf-769"
+          ],
+          "reason": "The image shows the name in all caps, matching the document's style for bracketed names."
+        },
+        {
+          "source_id": "congressionalglo7393unit:769:par_000769_000012",
+          "start": 255,
+          "end": 265,
+          "old": "supe- rior",
+          "new": "superior",
+          "image_ids": [
+            "reading-3e3d5d225bf885a2e7f5-leaf-769"
+          ],
+          "reason": "The word 'superior' is not hyphenated in the image; the line break falls between 'supe' and 'rior' but no hyphen is present."
+        },
+        {
+          "source_id": "congressionalglo7393unit:769:par_000769_000012",
+          "start": 274,
+          "end": 283,
+          "old": "officer ?",
+          "new": "officer?",
+          "image_ids": [
+            "reading-3e3d5d225bf885a2e7f5-leaf-769"
+          ],
+          "reason": "The image shows no space before the question mark."
+        },
+        {
+          "source_id": "congressionalglo7393unit:769:par_000769_000012",
+          "start": 659,
+          "end": 667,
+          "old": "rem- edy",
+          "new": "remedy",
+          "image_ids": [
+            "reading-3e3d5d225bf885a2e7f5-leaf-769"
+          ],
+          "reason": "The word 'remedy' is not hyphenated in the image; the line break falls between 'rem' and 'edy' but no hyphen is present."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo7393unit:769:par_000769_000010": {
+        "text": "I hope my amendment will meet with the approval of the chairman of the Committee of Ways and Means, [Mr. MORRILL;] or, if it does not, that he will at least explain that it is not necessary under the law.",
+        "sha256": "6427a56cbe9cebf062bb438995fc00020482d602c87014d8e1aa6bc5b17b475b",
+        "raw_sha256": "09c226d74ac911541f163ff3d1d37af4f5c1fe435a7a56bfe12f61ea2eb2ee4b",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 100,
+            "clean_start": 0,
+            "clean_end": 100,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 100,
+            "raw_end": 114,
+            "clean_start": 100,
+            "clean_end": 114,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 114,
+            "raw_end": 204,
+            "clean_start": 114,
+            "clean_end": 204,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7393unit:769:par_000769_000011": {
+        "text": "Mr. MORRILL. I do not, perhaps, fully understand the amendment of the gentleman from New York, [Mr. CHANLER,] as I was un- able to hear it all when it was read at the Clerk's desk. But so far as I do understand it, I am opposed to it, and hope it will not be adopted, for I think the public notice in the courts where cases of forfeiture are tried is sufficient, and where certainly all the persons who are interested would learn the cause of such forfeiture.",
+        "sha256": "782ef162c87d3dda452e5164f77d5ee7296ca452d7e9f44b738fc51d579be762",
+        "raw_sha256": "1522e2e84855d0e87a86830b4f7b570ec6ddd9fae504b4e6b2da15894bb90016",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 95,
+            "clean_start": 0,
+            "clean_end": 95,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 95,
+            "raw_end": 109,
+            "clean_start": 95,
+            "clean_end": 109,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 109,
+            "raw_end": 459,
+            "clean_start": 109,
+            "clean_end": 459,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7393unit:769:par_000769_000012": {
+        "text": "Mr. CHANLER. Will the gentleman from Vermont [Mr. MORRILL] allow me to ask him if there is any provision in the law regulating the internal revenue to enable the citizen, whose property has been seized by the as- sessor, to obtain speedy redress from the superior of that officer? As the law now stands, is not the person whose property has been seized completely at the mercy of the assessor? And is it not due to the citizen that he should have some means provided by which his property can be released if he is an innocent party? Does the law provide any such means now? I understand that the gentleman does not know, and still he opposes a good, sound remedy because he individually does not know whether that is the law or not. It certainly",
+        "sha256": "ff9a6c23baf1b77d7f7e58fddeeb2d3b803add9651f93ae573d4884627a41bc8",
+        "raw_sha256": "fe85739c3c7f08f85e6de285ff335bb212428b4f5ab432eb1c934f537e54b2ad",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 0,
+            "clean_start": 0,
+            "clean_end": 0,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 0,
+            "raw_end": 17,
+            "clean_start": 0,
+            "clean_end": 17,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 17,
+            "raw_end": 45,
+            "clean_start": 17,
+            "clean_end": 45,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 45,
+            "raw_end": 58,
+            "clean_start": 45,
+            "clean_end": 58,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 58,
+            "raw_end": 255,
+            "clean_start": 58,
+            "clean_end": 255,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 255,
+            "raw_end": 265,
+            "clean_start": 255,
+            "clean_end": 263,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 265,
+            "raw_end": 274,
+            "clean_start": 263,
+            "clean_end": 272,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 274,
+            "raw_end": 283,
+            "clean_start": 272,
+            "clean_end": 280,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 283,
+            "raw_end": 659,
+            "clean_start": 280,
+            "clean_end": 656,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 659,
+            "raw_end": 667,
+            "clean_start": 656,
+            "clean_end": 662,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 667,
+            "raw_end": 750,
+            "clean_start": 662,
+            "clean_end": 745,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "host_replay_error": null,
+  "visual_assessment": "Root compared all proposed changed spans and whole derived target to hash-bound source crop. All7patches supported. Bracketed names, CHANLER punctuation, superior/remedy and spacing match print; complete derived target preserves distinct turns and final It certainly.",
+  "human_review": false,
+  "parent_review_context": {
+    "patch_level_review": "Root reports 3e3d/4fc patches source-supported; 50a five page fixes source-supported and exact noop present in raw 8-patch reply.",
+    "whole_derived_text_review": "pending",
+    "assessment_status": "root annotation retained as context; this delegate did not inspect images or create a visual grade."
+  },
+  "assessment_note": "Snapshot only. Host status controls acceptance; invalid raw reply is retained without salvage and no derived output is accepted. Root owns actual visual/semantic review.",
+  "reviewer": "Codex root GPT-6, vision capable",
+  "human_reviewed": false,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "Allrecordedanchorsachieved/preserved.",
+  "residual_errors": [
+    "un- able and as- sessor remain."
+  ],
+  "usable_reading": "Source-supported repairs; some wraps remain.",
+  "needs_review": false,
+  "review_minutes": null,
+  "corpus_edits": 0
+}

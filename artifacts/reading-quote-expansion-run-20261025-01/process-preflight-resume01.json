@@ -1,0 +1,48 @@
+{
+  "observed_utc": "2026-10-25T16:00:23.226784+00:00",
+  "no_competing_worker": true,
+  "cleanup_claimed": 0,
+  "processes": [
+    "68381 Sat Oct 24 17:13:53 2026        18:46:28 /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false",
+    "78471 Sun Oct 25 11:54:00 2026           06:21 /Applications/Ollama.app/Contents/Resources/ollama runner --model gemma4:31b-mlx --port 60412",
+    "87597 Wed Oct 21 20:46:52 2026     03-15:13:29 /Applications/Ollama.app/Contents/Resources/ollama serve"
+  ],
+  "runtime_ps": {
+    "models": [
+      {
+        "name": "gemma4:31b-mlx",
+        "model": "gemma4:31b-mlx",
+        "size": 25789866628,
+        "digest": "637cc0ff15709212de4aa694be67e3af5e80533ca538c86ad69c53c511e40840",
+        "details": {
+          "parent_model": "",
+          "format": "safetensors",
+          "family": "",
+          "families": null,
+          "parameter_size": "",
+          "quantization_level": ""
+        },
+        "expires_at": "2026-10-25T12:04:10.82623-04:00",
+        "size_vram": 25789866628,
+        "context_length": 16384,
+        "runner": "mlx"
+      }
+    ]
+  },
+  "queue": {
+    "average_completed_seconds": 3.35,
+    "average_resolved_seconds": 4.07,
+    "claimed": 0,
+    "completed": 1339,
+    "estimated_pending_hours": 23.51,
+    "estimated_remaining_hours": 23.51,
+    "pending": 20785,
+    "percent_complete": 5.94,
+    "remaining": 21208,
+    "review": 423,
+    "timed_resolved_jobs": 1762,
+    "total": 22547
+  },
+  "scope": "resume33 untouched pending; timeout not retried; same immutable store/config and aggregate budgets",
+  "prior_cancellation": "timeout01-reconciliation.json"
+}

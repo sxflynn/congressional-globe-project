@@ -1,0 +1,165 @@
+{
+  "task_id": "qwen3.8:27b-mlx::reading-845d5b7741ad057cdf8d",
+  "attempt_id": "a25e0bbc-daae-427a-be1a-a557d68916f3",
+  "unit_id": "reading-845d5b7741ad057cdf8d",
+  "model": "qwen3.8:27b-mlx",
+  "request_sha256": "c20fb050b1ba133c7c949e4008005c333ea5c176183607ae9169b12c2082b11d",
+  "raw_reply_sha256": "65a9694c79e346502b1eef2540e01616b702985e363974da0a7586a950d9e249",
+  "source_images": [
+    {
+      "id": "reading-845d5b7741ad057cdf8d-leaf-408",
+      "sha256": "4c12ec29fec9b1af212fec3304bbdebde4d9ff02d7318c586fec1b25c86092ad"
+    }
+  ],
+  "host_status": "valid",
+  "input_count_parity": true,
+  "expected_input_tokens": 3074,
+  "host_replay": {
+    "reply": {
+      "unit_id": "reading-845d5b7741ad057cdf8d",
+      "status": "proposed",
+      "patches": [
+        {
+          "source_id": "congressionalglo7392unit:408:par_000408_000021",
+          "start": 231,
+          "end": 237,
+          "old": "gi-eat",
+          "new": "great",
+          "image_ids": [
+            "reading-845d5b7741ad057cdf8d-leaf-408"
+          ],
+          "reason": "OCR misread the word 'great' as 'gi-eat' due to a ligature or scan artifact."
+        },
+        {
+          "source_id": "congressionalglo7392unit:408:par_000408_000021",
+          "start": 499,
+          "end": 511,
+          "old": "appi-e- hend",
+          "new": "apprehend",
+          "image_ids": [
+            "reading-845d5b7741ad057cdf8d-leaf-408"
+          ],
+          "reason": "OCR misread the word 'apprehend' as 'appi-e- hend' due to a ligature or scan artifact."
+        },
+        {
+          "source_id": "congressionalglo7392unit:408:par_000408_000022",
+          "start": 178,
+          "end": 185,
+          "old": "countiy",
+          "new": "country",
+          "image_ids": [
+            "reading-845d5b7741ad057cdf8d-leaf-408"
+          ],
+          "reason": "OCR misread the word 'country' as 'countiy'."
+        }
+      ],
+      "uncertain": []
+    },
+    "derived": {
+      "congressionalglo7392unit:408:par_000408_000021": {
+        "text": "It may be best to make this sacrifice, to take fifteen Representatives from the loyal States and add them to the strength of the rebel States ; you may be able to go before the people and prove that it is right ; you may go to the great State of New York and get her to agree to a constitutional amendment basing repre- sentation on the number of voters by which she will be unable to count half a million of un- naturalized foreigners for whom she now has four Representatives in Congress ; but I apprehend that it will lead to discussion, to division, to opposition, if it ever passes; and if it is done I apprehend it will be whispered in the ears of the immigrants from the Old World that for the sake of the negro we have counted them out of the basis of representation.",
+        "sha256": "33eb39bdebc41d126778ba6d9d8afe179bc6f677e8860acbe202d14a69e6d49a",
+        "raw_sha256": "886e2be5beee4e10ea0780dfec2d9be68cb10f7a1e60fefc9e86fe71686e9601",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 231,
+            "clean_start": 0,
+            "clean_end": 231,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 231,
+            "raw_end": 237,
+            "clean_start": 231,
+            "clean_end": 236,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 237,
+            "raw_end": 499,
+            "clean_start": 236,
+            "clean_end": 498,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 499,
+            "raw_end": 511,
+            "clean_start": 498,
+            "clean_end": 507,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 511,
+            "raw_end": 779,
+            "clean_start": 507,
+            "clean_end": 775,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7392unit:408:par_000408_000022": {
+        "text": "Mr. STEWART. I should like to inquire of the Senator how he makes it out that under that proposition. New York would lose four Repre- sentatives as compared with the rest of the country.",
+        "sha256": "7bf7712c50b0c8f9da7c7e62d505ed02b565be0bab63a73dd95c9c5c7558b914",
+        "raw_sha256": "90196e5ed1551be13e036a1d38686ef773bd5fe4db5f545327e22dd95f01ce9c",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 178,
+            "clean_start": 0,
+            "clean_end": 178,
+            "kind": "unchanged"
+          },
+          {
+            "raw_start": 178,
+            "raw_end": 185,
+            "clean_start": 178,
+            "clean_end": 185,
+            "kind": "replacement"
+          },
+          {
+            "raw_start": 185,
+            "raw_end": 186,
+            "clean_start": 185,
+            "clean_end": 186,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      },
+      "congressionalglo7392unit:408:par_000408_000023": {
+        "text": "Mr. WILSON. I will answer in this way : that New York to-day has four Representatives in the other House who are there by reason of her",
+        "sha256": "42a33a5d41f8065d92a513e3eaeb1d4bae2319cb0d4c0d3cfd7b828d45fc3e1c",
+        "raw_sha256": "42a33a5d41f8065d92a513e3eaeb1d4bae2319cb0d4c0d3cfd7b828d45fc3e1c",
+        "mapping": [
+          {
+            "raw_start": 0,
+            "raw_end": 135,
+            "clean_start": 0,
+            "clean_end": 135,
+            "kind": "unchanged"
+          }
+        ],
+        "uncertain": [],
+        "status": "model_proposal"
+      }
+    }
+  },
+  "patch_level_source_review": null,
+  "visual_assessment": "All3patches supported. Whole derived target compared to source-reviewed counterpart and crop; Stewart/Wilson turns, fifteen/four/half-a-million claims and final by reason of her preserved.",
+  "human_reviewed": false,
+  "corpus_edits": 0,
+  "unsupported_critical_changes": 0,
+  "anchor_outcomes": "Bothrepairanchors achieved, half a million preserved.",
+  "residual_errors": [
+    "Raw period after proposition and line wraps remain."
+  ],
+  "usable_reading": true,
+  "needs_review": false,
+  "reviewer": "Codex root GPT-6, vision capable",
+  "visual_scope_and_uncertainties": "Human review remains open; this snapshot preserves host replay and only the explicitly supplied root source notes.",
+  "review_minutes": null
+}

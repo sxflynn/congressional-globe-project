@@ -1,0 +1,10 @@
+{
+  "observed_utc": "2026-10-25T16:23:44.890531+00:00",
+  "processes": [
+    "92787 92786 Sun Oct 25 12:21:47 2026           01:57 uv run python -m congressional_globe.reading_launch --output artifacts/reading-quote-expansion-run-20261025-01 --manifest artifacts/reading-quote-expansion-20261025-01/requests.json --counts artifacts/reading-quote-expansion-20261025-01/counts.json --protocol artifacts/reading-quote-expansion-20261025-01/assessment-protocol.json --max-calls 36 --total-seconds 6291 --per-model-seconds 1854 --stop-file artifacts/reading-quote-expansion-run-20261025-01/STOP --process-proof artifacts/reading-quote-expansion-run-20261025-01/process-preflight-resume04.json --execute",
+    "92788 92787 Sun Oct 25 12:21:47 2026           01:57 /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m congressional_globe.reading_launch --output artifacts/reading-quote-expansion-run-20261025-01 --manifest artifacts/reading-quote-expansion-20261025-01/requests.json --counts artifacts/reading-quote-expansion-20261025-01/counts.json --protocol artifacts/reading-quote-expansion-20261025-01/assessment-protocol.json --max-calls 36 --total-seconds 6291 --per-model-seconds 1854 --stop-file artifacts/reading-quote-expansion-run-20261025-01/STOP --process-proof artifacts/reading-quote-expansion-run-20261025-01/process-preflight-resume04.json --execute"
+  ],
+  "session": 3644,
+  "log": "resume04.log",
+  "store": "attempts.sqlite"
+}
