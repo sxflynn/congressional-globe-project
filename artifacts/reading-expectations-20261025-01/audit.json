@@ -1,0 +1,1766 @@
+{
+  "schema_version": "reading-expectations-audit-v1",
+  "audit_scope": "Offline nonvisual integrity and claim-scope audit; no pixel-level opinion or historical transcription adjudication.",
+  "inspector_capability": "No image inspection performed by this auditor.",
+  "inputs": {
+    "inventory.json": {
+      "path": "artifacts/reading-expectations-20261025-01/inventory.json",
+      "sha256": "8a2307215c827c2efd9371db53f215d7f80d6bd5dfea889fa78c8828f77beeec"
+    },
+    "observations.json": {
+      "path": "artifacts/reading-expectations-20261025-01/observations.json",
+      "sha256": "2ff6c3617b47c48dd98baf08f46d071d935922cbcc634e192f20df0df54b3095"
+    },
+    "requests.json": {
+      "path": "artifacts/reading-fit-20261025-01/requests.json",
+      "sha256": "fc7f4445fb02ef6510368f3151c3d1ca0c575cceba6636b03bffb7d8d3d13f6f"
+    },
+    "candidates.jsonl": {
+      "path": "artifacts/reading-prepare-20261024-03/candidates.jsonl",
+      "sha256": "9358e8e4cb7b4cd22f7423671aa8f336e82f04336d6df5ef261ab904585ee51a"
+    },
+    "image_index.json": {
+      "path": "artifacts/reading-images-20261024-01/index.json",
+      "sha256": "fb3dbe6e925f1f557be11c9eecbeae32737064bc8c8d1a07cbee4537e7f17aaf"
+    }
+  },
+  "result": "passed",
+  "verified_counts": {
+    "primary_units": 18,
+    "unique_images": 19,
+    "anchor_checks_seen": 70,
+    "raw_span_coverage_rows": 150,
+    "checks": 345
+  },
+  "checks": [
+    {
+      "check": "source_hash:candidates_jsonl",
+      "status": "passed",
+      "detail": "artifacts/reading-prepare-20261024-03/candidates.jsonl"
+    },
+    {
+      "check": "source_hash:requests_json",
+      "status": "passed",
+      "detail": "artifacts/reading-fit-20261025-01/requests.json"
+    },
+    {
+      "check": "source_hash:image_index_json",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/index.json"
+    },
+    {
+      "check": "source_hash:preparation_manifest_json",
+      "status": "passed",
+      "detail": "artifacts/reading-prepare-20261024-03/manifest.json"
+    },
+    {
+      "check": "exactly_18_inventory_units",
+      "status": "passed",
+      "detail": "found 18"
+    },
+    {
+      "check": "exactly_19_inventory_images",
+      "status": "passed",
+      "detail": "found 19"
+    },
+    {
+      "check": "all_primary_units_have_one_selected_request",
+      "status": "passed",
+      "detail": "requests=18"
+    },
+    {
+      "check": "candidate_line_hash:reading-d1964b2fd88da0df3db2",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "primary_candidate:reading-d1964b2fd88da0df3db2",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "target_context_disjoint:reading-d1964b2fd88da0df3db2",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-d1964b2fd88da0df3db2",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-d1964b2fd88da0df3db2",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "image_payload_hash:reading-d1964b2fd88da0df3db2-leaf-576",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-d1964b2fd88da0df3db2-leaf-576/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-d1964b2fd88da0df3db2",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "candidate_line_hash:reading-5f378add7e1f64ea69ba",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "primary_candidate:reading-5f378add7e1f64ea69ba",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "target_context_disjoint:reading-5f378add7e1f64ea69ba",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-5f378add7e1f64ea69ba",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-5f378add7e1f64ea69ba",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "image_payload_hash:reading-5f378add7e1f64ea69ba-leaf-299",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-5f378add7e1f64ea69ba-leaf-299/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-5f378add7e1f64ea69ba",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "candidate_line_hash:reading-3077c2e0a49061bbcf29",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "primary_candidate:reading-3077c2e0a49061bbcf29",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "target_context_disjoint:reading-3077c2e0a49061bbcf29",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-3077c2e0a49061bbcf29",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-3077c2e0a49061bbcf29",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "image_payload_hash:reading-3077c2e0a49061bbcf29-leaf-207",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-3077c2e0a49061bbcf29-leaf-207/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-3077c2e0a49061bbcf29",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "candidate_line_hash:reading-845d5b7741ad057cdf8d",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "primary_candidate:reading-845d5b7741ad057cdf8d",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "target_context_disjoint:reading-845d5b7741ad057cdf8d",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-845d5b7741ad057cdf8d",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-845d5b7741ad057cdf8d",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "image_payload_hash:reading-845d5b7741ad057cdf8d-leaf-408",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-845d5b7741ad057cdf8d-leaf-408/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-845d5b7741ad057cdf8d",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "candidate_line_hash:reading-cfb03841eb9003d161df",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "primary_candidate:reading-cfb03841eb9003d161df",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "target_context_disjoint:reading-cfb03841eb9003d161df",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-cfb03841eb9003d161df",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-cfb03841eb9003d161df",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "image_payload_hash:reading-cfb03841eb9003d161df-leaf-397",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-cfb03841eb9003d161df-leaf-397/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-cfb03841eb9003d161df",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "candidate_line_hash:reading-50a8872c9b2dda1a90bf",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "primary_candidate:reading-50a8872c9b2dda1a90bf",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "target_context_disjoint:reading-50a8872c9b2dda1a90bf",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-50a8872c9b2dda1a90bf",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-50a8872c9b2dda1a90bf",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "image_payload_hash:reading-50a8872c9b2dda1a90bf-leaf-74",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-50a8872c9b2dda1a90bf-leaf-74/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-50a8872c9b2dda1a90bf",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "candidate_line_hash:reading-86b5b62922afc4c5b6bd",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "primary_candidate:reading-86b5b62922afc4c5b6bd",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "target_context_disjoint:reading-86b5b62922afc4c5b6bd",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-86b5b62922afc4c5b6bd",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-86b5b62922afc4c5b6bd",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "image_payload_hash:reading-86b5b62922afc4c5b6bd-leaf-823",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-86b5b62922afc4c5b6bd-leaf-823/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-86b5b62922afc4c5b6bd",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "candidate_line_hash:reading-3e3d5d225bf885a2e7f5",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "primary_candidate:reading-3e3d5d225bf885a2e7f5",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "target_context_disjoint:reading-3e3d5d225bf885a2e7f5",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-3e3d5d225bf885a2e7f5",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-3e3d5d225bf885a2e7f5",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "image_payload_hash:reading-3e3d5d225bf885a2e7f5-leaf-769",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-3e3d5d225bf885a2e7f5-leaf-769/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-3e3d5d225bf885a2e7f5",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "candidate_line_hash:reading-29781311671c9158bbd8",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "primary_candidate:reading-29781311671c9158bbd8",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "target_context_disjoint:reading-29781311671c9158bbd8",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-29781311671c9158bbd8",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-29781311671c9158bbd8",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "image_payload_hash:reading-29781311671c9158bbd8-leaf-44",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-29781311671c9158bbd8-leaf-44/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-29781311671c9158bbd8",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "candidate_line_hash:reading-e05d33cb21bb773191dc",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "primary_candidate:reading-e05d33cb21bb773191dc",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "target_context_disjoint:reading-e05d33cb21bb773191dc",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-e05d33cb21bb773191dc",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-e05d33cb21bb773191dc",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "image_payload_hash:reading-e05d33cb21bb773191dc-leaf-873",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-e05d33cb21bb773191dc-leaf-873/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-e05d33cb21bb773191dc",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "candidate_line_hash:reading-0572e0c61a75ab370e67",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "primary_candidate:reading-0572e0c61a75ab370e67",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "target_context_disjoint:reading-0572e0c61a75ab370e67",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-0572e0c61a75ab370e67",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-0572e0c61a75ab370e67",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "image_payload_hash:reading-0572e0c61a75ab370e67-leaf-488",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-0572e0c61a75ab370e67-leaf-488/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-0572e0c61a75ab370e67",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "candidate_line_hash:reading-4fc8caf8f1dfb06d6938",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "primary_candidate:reading-4fc8caf8f1dfb06d6938",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "target_context_disjoint:reading-4fc8caf8f1dfb06d6938",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-4fc8caf8f1dfb06d6938",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-4fc8caf8f1dfb06d6938",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "image_payload_hash:reading-4fc8caf8f1dfb06d6938-leaf-110",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-4fc8caf8f1dfb06d6938-leaf-110/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-4fc8caf8f1dfb06d6938",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "candidate_line_hash:reading-5500247fc23992050e37",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "primary_candidate:reading-5500247fc23992050e37",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "target_context_disjoint:reading-5500247fc23992050e37",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-5500247fc23992050e37",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-5500247fc23992050e37",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "image_payload_hash:reading-5500247fc23992050e37-leaf-330",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-5500247fc23992050e37-leaf-330/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-5500247fc23992050e37",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "candidate_line_hash:reading-1cf618a5ce887cee79b1",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "primary_candidate:reading-1cf618a5ce887cee79b1",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "target_context_disjoint:reading-1cf618a5ce887cee79b1",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-1cf618a5ce887cee79b1",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-1cf618a5ce887cee79b1",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "image_payload_hash:reading-1cf618a5ce887cee79b1-leaf-741",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-1cf618a5ce887cee79b1-leaf-741/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-1cf618a5ce887cee79b1",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "candidate_line_hash:reading-74d01b9894f76563d519",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "primary_candidate:reading-74d01b9894f76563d519",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "target_context_disjoint:reading-74d01b9894f76563d519",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-74d01b9894f76563d519",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-74d01b9894f76563d519",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "image_payload_hash:reading-74d01b9894f76563d519-leaf-1060",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-74d01b9894f76563d519-leaf-1060/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-74d01b9894f76563d519",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "candidate_line_hash:reading-db4cc1bed5fc9ba20489",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "primary_candidate:reading-db4cc1bed5fc9ba20489",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "target_context_disjoint:reading-db4cc1bed5fc9ba20489",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-db4cc1bed5fc9ba20489",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-db4cc1bed5fc9ba20489",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "image_payload_hash:reading-db4cc1bed5fc9ba20489-leaf-267",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-db4cc1bed5fc9ba20489-leaf-267/crop.jpg"
+    },
+    {
+      "check": "image_payload_hash:reading-db4cc1bed5fc9ba20489-leaf-268",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-db4cc1bed5fc9ba20489-leaf-268/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-db4cc1bed5fc9ba20489",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "candidate_line_hash:reading-5e7e1b38c53e488454eb",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "primary_candidate:reading-5e7e1b38c53e488454eb",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "target_context_disjoint:reading-5e7e1b38c53e488454eb",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-5e7e1b38c53e488454eb",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-5e7e1b38c53e488454eb",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "image_payload_hash:reading-5e7e1b38c53e488454eb-leaf-569",
+      "status": "passed",
+      "detail": "artifacts/reading-images-20261024-01/reading-5e7e1b38c53e488454eb-leaf-569/crop.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-5e7e1b38c53e488454eb",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "candidate_line_hash:reading-637a8b4b8fe245aa6d6b",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "primary_candidate:reading-637a8b4b8fe245aa6d6b",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "target_context_disjoint:reading-637a8b4b8fe245aa6d6b",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "ordered_image_ids_match_request:reading-637a8b4b8fe245aa6d6b",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "ordered_image_ids_match_inventory:reading-637a8b4b8fe245aa6d6b",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "image_payload_hash:reading-637a8b4b8fe245aa6d6b-leaf-126",
+      "status": "passed",
+      "detail": "artifacts/scans/reading-source-20261024-01/long/crop-01.jpg"
+    },
+    {
+      "check": "raw_span_coverage_matches_request:reading-637a8b4b8fe245aa6d6b",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "observations_request_manifest_hash",
+      "status": "passed",
+      "detail": "observations request hash should match inventory requests.json"
+    },
+    {
+      "check": "exactly_18_observation_units",
+      "status": "passed",
+      "detail": "found 18"
+    },
+    {
+      "check": "observation_units_match_inventory",
+      "status": "passed"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-d1964b2fd88da0df3db2",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "observation_image_binding:reading-d1964b2fd88da0df3db2:reading-d1964b2fd88da0df3db2-leaf-576",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2-leaf-576"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-5f378add7e1f64ea69ba",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "observation_image_binding:reading-5f378add7e1f64ea69ba:reading-5f378add7e1f64ea69ba-leaf-299",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba-leaf-299"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-3077c2e0a49061bbcf29",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "observation_image_binding:reading-3077c2e0a49061bbcf29:reading-3077c2e0a49061bbcf29-leaf-207",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29-leaf-207"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-845d5b7741ad057cdf8d",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "observation_image_binding:reading-845d5b7741ad057cdf8d:reading-845d5b7741ad057cdf8d-leaf-408",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d-leaf-408"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-cfb03841eb9003d161df",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "observation_image_binding:reading-cfb03841eb9003d161df:reading-cfb03841eb9003d161df-leaf-397",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df-leaf-397"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-50a8872c9b2dda1a90bf",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "observation_image_binding:reading-50a8872c9b2dda1a90bf:reading-50a8872c9b2dda1a90bf-leaf-74",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf-leaf-74"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-86b5b62922afc4c5b6bd",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "observation_image_binding:reading-86b5b62922afc4c5b6bd:reading-86b5b62922afc4c5b6bd-leaf-823",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd-leaf-823"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-3e3d5d225bf885a2e7f5",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "observation_image_binding:reading-3e3d5d225bf885a2e7f5:reading-3e3d5d225bf885a2e7f5-leaf-769",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5-leaf-769"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-29781311671c9158bbd8",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "observation_image_binding:reading-29781311671c9158bbd8:reading-29781311671c9158bbd8-leaf-44",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8-leaf-44"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-e05d33cb21bb773191dc",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "observation_image_binding:reading-e05d33cb21bb773191dc:reading-e05d33cb21bb773191dc-leaf-873",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc-leaf-873"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-0572e0c61a75ab370e67",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "observation_image_binding:reading-0572e0c61a75ab370e67:reading-0572e0c61a75ab370e67-leaf-488",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67-leaf-488"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-4fc8caf8f1dfb06d6938",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "observation_image_binding:reading-4fc8caf8f1dfb06d6938:reading-4fc8caf8f1dfb06d6938-leaf-110",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938-leaf-110"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-5500247fc23992050e37",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "observation_image_binding:reading-5500247fc23992050e37:reading-5500247fc23992050e37-leaf-330",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37-leaf-330"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-1cf618a5ce887cee79b1",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "observation_image_binding:reading-1cf618a5ce887cee79b1:reading-1cf618a5ce887cee79b1-leaf-741",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1-leaf-741"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-74d01b9894f76563d519",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "observation_image_binding:reading-74d01b9894f76563d519:reading-74d01b9894f76563d519-leaf-1060",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519-leaf-1060"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-db4cc1bed5fc9ba20489",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "observation_image_binding:reading-db4cc1bed5fc9ba20489:reading-db4cc1bed5fc9ba20489-leaf-267",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489-leaf-267"
+    },
+    {
+      "check": "observation_image_binding:reading-db4cc1bed5fc9ba20489:reading-db4cc1bed5fc9ba20489-leaf-268",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489-leaf-268"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-5e7e1b38c53e488454eb",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "observation_image_binding:reading-5e7e1b38c53e488454eb:reading-5e7e1b38c53e488454eb-leaf-569",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb-leaf-569"
+    },
+    {
+      "check": "observation_image_ids_match_inventory:reading-637a8b4b8fe245aa6d6b",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "observation_image_binding:reading-637a8b4b8fe245aa6d6b:reading-637a8b4b8fe245aa6d6b-leaf-126",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b-leaf-126"
+    },
+    {
+      "check": "inventory_declares_no_visual_claim",
+      "status": "passed"
+    },
+    {
+      "check": "observations_are_not_launch_ready",
+      "status": "passed"
+    },
+    {
+      "check": "observation_run_has_no_calls_or_corpus_edits",
+      "status": "passed"
+    },
+    {
+      "check": "observation_scope_counts",
+      "status": "passed",
+      "detail": "counted anchors=70"
+    },
+    {
+      "check": "saved_request_source_binding:reading-d1964b2fd88da0df3db2:target",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-d1964b2fd88da0df3db2",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "saved_request_source_binding:reading-d1964b2fd88da0df3db2:context_before",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "saved_request_source_binding:reading-d1964b2fd88da0df3db2:context_after",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "one_boundary_note:reading-d1964b2fd88da0df3db2",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "not_human_reviewed:reading-d1964b2fd88da0df3db2",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-d1964b2fd88da0df3db2:0",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-d1964b2fd88da0df3db2:1",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-d1964b2fd88da0df3db2:2",
+      "status": "passed",
+      "detail": "reading-d1964b2fd88da0df3db2"
+    },
+    {
+      "check": "saved_request_source_binding:reading-5f378add7e1f64ea69ba:target",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-5f378add7e1f64ea69ba",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "saved_request_source_binding:reading-5f378add7e1f64ea69ba:context_before",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "saved_request_source_binding:reading-5f378add7e1f64ea69ba:context_after",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "one_boundary_note:reading-5f378add7e1f64ea69ba",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "not_human_reviewed:reading-5f378add7e1f64ea69ba",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-5f378add7e1f64ea69ba:0",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-5f378add7e1f64ea69ba:1",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-5f378add7e1f64ea69ba:2",
+      "status": "passed",
+      "detail": "reading-5f378add7e1f64ea69ba"
+    },
+    {
+      "check": "saved_request_source_binding:reading-3077c2e0a49061bbcf29:target",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-3077c2e0a49061bbcf29",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "saved_request_source_binding:reading-3077c2e0a49061bbcf29:context_before",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "saved_request_source_binding:reading-3077c2e0a49061bbcf29:context_after",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "one_boundary_note:reading-3077c2e0a49061bbcf29",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "not_human_reviewed:reading-3077c2e0a49061bbcf29",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-3077c2e0a49061bbcf29:0",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-3077c2e0a49061bbcf29:1",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-3077c2e0a49061bbcf29:2",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-3077c2e0a49061bbcf29:3",
+      "status": "passed",
+      "detail": "reading-3077c2e0a49061bbcf29"
+    },
+    {
+      "check": "saved_request_source_binding:reading-845d5b7741ad057cdf8d:target",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-845d5b7741ad057cdf8d",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "saved_request_source_binding:reading-845d5b7741ad057cdf8d:context_before",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "saved_request_source_binding:reading-845d5b7741ad057cdf8d:context_after",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "one_boundary_note:reading-845d5b7741ad057cdf8d",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "not_human_reviewed:reading-845d5b7741ad057cdf8d",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-845d5b7741ad057cdf8d:0",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-845d5b7741ad057cdf8d:1",
+      "status": "passed",
+      "detail": "reading-845d5b7741ad057cdf8d"
+    },
+    {
+      "check": "saved_request_source_binding:reading-cfb03841eb9003d161df:target",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-cfb03841eb9003d161df",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "saved_request_source_binding:reading-cfb03841eb9003d161df:context_before",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "saved_request_source_binding:reading-cfb03841eb9003d161df:context_after",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "one_boundary_note:reading-cfb03841eb9003d161df",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "not_human_reviewed:reading-cfb03841eb9003d161df",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-cfb03841eb9003d161df:0",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-cfb03841eb9003d161df:1",
+      "status": "passed",
+      "detail": "reading-cfb03841eb9003d161df"
+    },
+    {
+      "check": "saved_request_source_binding:reading-50a8872c9b2dda1a90bf:target",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-50a8872c9b2dda1a90bf",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "saved_request_source_binding:reading-50a8872c9b2dda1a90bf:context_before",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "saved_request_source_binding:reading-50a8872c9b2dda1a90bf:context_after",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "one_boundary_note:reading-50a8872c9b2dda1a90bf",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "not_human_reviewed:reading-50a8872c9b2dda1a90bf",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-50a8872c9b2dda1a90bf:0",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-50a8872c9b2dda1a90bf:1",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-50a8872c9b2dda1a90bf:2",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-50a8872c9b2dda1a90bf:3",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-50a8872c9b2dda1a90bf:4",
+      "status": "passed",
+      "detail": "reading-50a8872c9b2dda1a90bf"
+    },
+    {
+      "check": "saved_request_source_binding:reading-86b5b62922afc4c5b6bd:target",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-86b5b62922afc4c5b6bd",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "saved_request_source_binding:reading-86b5b62922afc4c5b6bd:context_before",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "saved_request_source_binding:reading-86b5b62922afc4c5b6bd:context_after",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "one_boundary_note:reading-86b5b62922afc4c5b6bd",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "not_human_reviewed:reading-86b5b62922afc4c5b6bd",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-86b5b62922afc4c5b6bd:0",
+      "status": "passed",
+      "detail": "reading-86b5b62922afc4c5b6bd"
+    },
+    {
+      "check": "saved_request_source_binding:reading-3e3d5d225bf885a2e7f5:target",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-3e3d5d225bf885a2e7f5",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "saved_request_source_binding:reading-3e3d5d225bf885a2e7f5:context_before",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "saved_request_source_binding:reading-3e3d5d225bf885a2e7f5:context_after",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "one_boundary_note:reading-3e3d5d225bf885a2e7f5",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "not_human_reviewed:reading-3e3d5d225bf885a2e7f5",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-3e3d5d225bf885a2e7f5:0",
+      "status": "passed",
+      "detail": "reading-3e3d5d225bf885a2e7f5"
+    },
+    {
+      "check": "saved_request_source_binding:reading-29781311671c9158bbd8:target",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-29781311671c9158bbd8",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "saved_request_source_binding:reading-29781311671c9158bbd8:context_before",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "saved_request_source_binding:reading-29781311671c9158bbd8:context_after",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "one_boundary_note:reading-29781311671c9158bbd8",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "not_human_reviewed:reading-29781311671c9158bbd8",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-29781311671c9158bbd8:0",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-29781311671c9158bbd8:1",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-29781311671c9158bbd8:2",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-29781311671c9158bbd8:3",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-29781311671c9158bbd8:4",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-29781311671c9158bbd8:5",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-29781311671c9158bbd8:6",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-29781311671c9158bbd8:7",
+      "status": "passed",
+      "detail": "reading-29781311671c9158bbd8"
+    },
+    {
+      "check": "saved_request_source_binding:reading-e05d33cb21bb773191dc:target",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-e05d33cb21bb773191dc",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "saved_request_source_binding:reading-e05d33cb21bb773191dc:context_before",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "saved_request_source_binding:reading-e05d33cb21bb773191dc:context_after",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "one_boundary_note:reading-e05d33cb21bb773191dc",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "not_human_reviewed:reading-e05d33cb21bb773191dc",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-e05d33cb21bb773191dc:0",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-e05d33cb21bb773191dc:1",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-e05d33cb21bb773191dc:2",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-e05d33cb21bb773191dc:3",
+      "status": "passed",
+      "detail": "reading-e05d33cb21bb773191dc"
+    },
+    {
+      "check": "saved_request_source_binding:reading-0572e0c61a75ab370e67:target",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-0572e0c61a75ab370e67",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "saved_request_source_binding:reading-0572e0c61a75ab370e67:context_before",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "saved_request_source_binding:reading-0572e0c61a75ab370e67:context_after",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "one_boundary_note:reading-0572e0c61a75ab370e67",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "not_human_reviewed:reading-0572e0c61a75ab370e67",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-0572e0c61a75ab370e67:0",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-0572e0c61a75ab370e67:1",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-0572e0c61a75ab370e67:2",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-0572e0c61a75ab370e67:3",
+      "status": "passed",
+      "detail": "reading-0572e0c61a75ab370e67"
+    },
+    {
+      "check": "saved_request_source_binding:reading-4fc8caf8f1dfb06d6938:target",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-4fc8caf8f1dfb06d6938",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "saved_request_source_binding:reading-4fc8caf8f1dfb06d6938:context_before",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "saved_request_source_binding:reading-4fc8caf8f1dfb06d6938:context_after",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "one_boundary_note:reading-4fc8caf8f1dfb06d6938",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "not_human_reviewed:reading-4fc8caf8f1dfb06d6938",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-4fc8caf8f1dfb06d6938:0",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-4fc8caf8f1dfb06d6938:1",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-4fc8caf8f1dfb06d6938:2",
+      "status": "passed",
+      "detail": "reading-4fc8caf8f1dfb06d6938"
+    },
+    {
+      "check": "saved_request_source_binding:reading-5500247fc23992050e37:target",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-5500247fc23992050e37",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "saved_request_source_binding:reading-5500247fc23992050e37:context_before",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "saved_request_source_binding:reading-5500247fc23992050e37:context_after",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "one_boundary_note:reading-5500247fc23992050e37",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "not_human_reviewed:reading-5500247fc23992050e37",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-5500247fc23992050e37:0",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-5500247fc23992050e37:1",
+      "status": "passed",
+      "detail": "reading-5500247fc23992050e37"
+    },
+    {
+      "check": "saved_request_source_binding:reading-1cf618a5ce887cee79b1:target",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-1cf618a5ce887cee79b1",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "saved_request_source_binding:reading-1cf618a5ce887cee79b1:context_before",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "saved_request_source_binding:reading-1cf618a5ce887cee79b1:context_after",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "one_boundary_note:reading-1cf618a5ce887cee79b1",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "not_human_reviewed:reading-1cf618a5ce887cee79b1",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-1cf618a5ce887cee79b1:0",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-1cf618a5ce887cee79b1:1",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-1cf618a5ce887cee79b1:2",
+      "status": "passed",
+      "detail": "reading-1cf618a5ce887cee79b1"
+    },
+    {
+      "check": "saved_request_source_binding:reading-74d01b9894f76563d519:target",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-74d01b9894f76563d519",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "saved_request_source_binding:reading-74d01b9894f76563d519:context_before",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "saved_request_source_binding:reading-74d01b9894f76563d519:context_after",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "one_boundary_note:reading-74d01b9894f76563d519",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "not_human_reviewed:reading-74d01b9894f76563d519",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-74d01b9894f76563d519:0",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-74d01b9894f76563d519:1",
+      "status": "passed",
+      "detail": "reading-74d01b9894f76563d519"
+    },
+    {
+      "check": "saved_request_source_binding:reading-db4cc1bed5fc9ba20489:target",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-db4cc1bed5fc9ba20489",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "saved_request_source_binding:reading-db4cc1bed5fc9ba20489:context_before",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "saved_request_source_binding:reading-db4cc1bed5fc9ba20489:context_after",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "one_boundary_note:reading-db4cc1bed5fc9ba20489",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "not_human_reviewed:reading-db4cc1bed5fc9ba20489",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-db4cc1bed5fc9ba20489:0",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-db4cc1bed5fc9ba20489:1",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-db4cc1bed5fc9ba20489:2",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-db4cc1bed5fc9ba20489:3",
+      "status": "passed",
+      "detail": "reading-db4cc1bed5fc9ba20489"
+    },
+    {
+      "check": "saved_request_source_binding:reading-5e7e1b38c53e488454eb:target",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-5e7e1b38c53e488454eb",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "saved_request_source_binding:reading-5e7e1b38c53e488454eb:context_before",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "saved_request_source_binding:reading-5e7e1b38c53e488454eb:context_after",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "one_boundary_note:reading-5e7e1b38c53e488454eb",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "not_human_reviewed:reading-5e7e1b38c53e488454eb",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-5e7e1b38c53e488454eb:0",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-5e7e1b38c53e488454eb:1",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-5e7e1b38c53e488454eb:2",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-5e7e1b38c53e488454eb:3",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-5e7e1b38c53e488454eb:4",
+      "status": "passed",
+      "detail": "reading-5e7e1b38c53e488454eb"
+    },
+    {
+      "check": "saved_request_source_binding:reading-637a8b4b8fe245aa6d6b:target",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "saved_request_exact_target_text:reading-637a8b4b8fe245aa6d6b",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "saved_request_source_binding:reading-637a8b4b8fe245aa6d6b:context_before",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "saved_request_source_binding:reading-637a8b4b8fe245aa6d6b:context_after",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "one_boundary_note:reading-637a8b4b8fe245aa6d6b",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "not_human_reviewed:reading-637a8b4b8fe245aa6d6b",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-637a8b4b8fe245aa6d6b:0",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-637a8b4b8fe245aa6d6b:1",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    },
+    {
+      "check": "expected_reading_separate_from_source:reading-637a8b4b8fe245aa6d6b:2",
+      "status": "passed",
+      "detail": "reading-637a8b4b8fe245aa6d6b"
+    }
+  ],
+  "errors": [],
+  "claims": {
+    "source_expectations_are_diagnostic_only": true,
+    "human_gold_established": false,
+    "complete_transcriptions": 0,
+    "launch_ready": false,
+    "expected_readings_applied_to_source": false
+  }
+}

@@ -1,0 +1,1224 @@
+{
+  "schema_version": "reading-source-expectations-v1",
+  "created": "2026-10-25",
+  "observer": "Codex root GPT-6 with image capability",
+  "stage": "pre-new-local-model-output",
+  "exposure": "Prior source preparation inspected two crops and three high-risk regions. This is diagnostic, not held-out gold; no new local reading outputs exist.",
+  "request_manifest_sha256": "fc7f4445fb02ef6510368f3151c3d1ca0c575cceba6636b03bffb7d8d3d13f6f",
+  "scope": {
+    "primary_units": 18,
+    "inspected_regions": 19,
+    "anchor_checks": 70,
+    "source_expectations_complete": false,
+    "complete_reference_transcriptions": 0
+  },
+  "units": [
+    {
+      "unit_id": "reading-d1964b2fd88da0df3db2",
+      "inspected_images": [
+        {
+          "id": "reading-d1964b2fd88da0df3db2-leaf-576",
+          "path": "artifacts/reading-images-20261024-01/reading-d1964b2fd88da0df3db2-leaf-576/crop.jpg",
+          "sha256": "9cdacca2052d0ed5d100584323efdc456bcc4b685c443d1198d6c44ae20f1f7f"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Resolution is preceded by bill passage and Brooks reconsideration; keep separate headings/acts. Preserve printed band names; do not infer historical identities from spelling.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:576:par_000576_000032",
+          "raw_sha256": "77eae8d15d2645ec2c2e29fe9370bda913a38206350b7fdec7d4491b6907ca54",
+          "start": 119,
+          "end": 123,
+          "raw": "anxl",
+          "expected_reading": "and",
+          "image_ids": [
+            "reading-d1964b2fd88da0df3db2-leaf-576"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:576:par_000576_000038",
+          "raw_sha256": "95e551d621297383574b58b70275185b5ef7f564972e5db7f9d353190bfc739b",
+          "start": 0,
+          "end": 9,
+          "raw": "liesolved",
+          "expected_reading": "Resolved",
+          "image_ids": [
+            "reading-d1964b2fd88da0df3db2-leaf-576"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:576:par_000576_000038",
+          "raw_sha256": "95e551d621297383574b58b70275185b5ef7f564972e5db7f9d353190bfc739b",
+          "start": 327,
+          "end": 337,
+          "raw": "suflioient",
+          "expected_reading": "sufficient",
+          "image_ids": [
+            "reading-d1964b2fd88da0df3db2-leaf-576"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-5f378add7e1f64ea69ba",
+      "inspected_images": [
+        {
+          "id": "reading-5f378add7e1f64ea69ba-leaf-299",
+          "path": "artifacts/reading-images-20261024-01/reading-5f378add7e1f64ea69ba-leaf-299/crop.jpg",
+          "sha256": "f4ee5be5a3a60085a31e93c42d951bc7382a974d54aa86866b8eebf7cab5ba65"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Preserve Kelley/Orth/Kelley turns, hammer-fell stage direction, quoted suffrage question and John Bright lead-in. Target stops at John Bright said; do not import the following quotation from image padding.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:299:par_000299_000036",
+          "raw_sha256": "c5f0faeec0ccdf54c8a834efe809cfac9d47ab1754ee7b3d0a54b6e254716697",
+          "start": 23,
+          "end": 28,
+          "raw": "pcnds",
+          "expected_reading": "pends",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:299:par_000299_000038",
+          "raw_sha256": "68c13bbe5bb93fe646ff1f353f798a445aecec085ba4a788089ca3e2a42343ab",
+          "start": 29,
+          "end": 41,
+          "raw": "Ayords lAore",
+          "expected_reading": "words more",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:299:par_000299_000041",
+          "raw_sha256": "8b0f103884991459bb0d5ae10c2e6e69f9c070994b899ac0d0f96e334ada4288",
+          "start": 313,
+          "end": 332,
+          "raw": "siDcecha deputation",
+          "expected_reading": "speech a deputation",
+          "image_ids": [
+            "reading-5f378add7e1f64ea69ba-leaf-299"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-3077c2e0a49061bbcf29",
+      "inspected_images": [
+        {
+          "id": "reading-3077c2e0a49061bbcf29-leaf-207",
+          "path": "artifacts/reading-images-20261024-01/reading-3077c2e0a49061bbcf29-leaf-207/crop.jpg",
+          "sha256": "b3d0dd264a160017eb18dc2305e10f76452a4e258d21ebf476b4de62fe9ba2c5"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Section 3 and section 4 are quoted legislation, not narrator paraphrase. Preserve prohibiting slavery, African descent, equal before the law and jurisdiction distinctions. Historical spelling/grammar must not be modernized.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:207:par_000207_000040",
+          "raw_sha256": "bc6151d6157b4d29fdce9ed755e45533d17650f5643afe7ecaf9c185c442d9d9",
+          "start": 18,
+          "end": 26,
+          "raw": "furilier",
+          "expected_reading": "further",
+          "image_ids": [
+            "reading-3077c2e0a49061bbcf29-leaf-207"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:207:par_000207_000040",
+          "raw_sha256": "bc6151d6157b4d29fdce9ed755e45533d17650f5643afe7ecaf9c185c442d9d9",
+          "start": 115,
+          "end": 123,
+          "raw": "slavei-y",
+          "expected_reading": "slavery",
+          "image_ids": [
+            "reading-3077c2e0a49061bbcf29-leaf-207"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:207:par_000207_000041",
+          "raw_sha256": "38d2f22a86cec65697ec72ade93c1e505aab7e7f4a156a87a6cb0f374cef4912",
+          "start": 219,
+          "end": 228,
+          "raw": "commitU\"d",
+          "expected_reading": "committed",
+          "image_ids": [
+            "reading-3077c2e0a49061bbcf29-leaf-207"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:207:par_000207_000041",
+          "raw_sha256": "38d2f22a86cec65697ec72ade93c1e505aab7e7f4a156a87a6cb0f374cef4912",
+          "start": 526,
+          "end": 531,
+          "raw": "eases",
+          "expected_reading": "cases",
+          "image_ids": [
+            "reading-3077c2e0a49061bbcf29-leaf-207"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-845d5b7741ad057cdf8d",
+      "inspected_images": [
+        {
+          "id": "reading-845d5b7741ad057cdf8d-leaf-408",
+          "path": "artifacts/reading-images-20261024-01/reading-845d5b7741ad057cdf8d-leaf-408/crop.jpg",
+          "sha256": "4c12ec29fec9b1af212fec3304bbdebde4d9ff02d7318c586fec1b25c86092ad"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Stewart asks and Wilson answers. Final target ends by reason of her; no completion from context or memory. Four Representatives and half a million are printed claims, not independently verified facts.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7392unit:408:par_000408_000021",
+          "raw_sha256": "886e2be5beee4e10ea0780dfec2d9be68cb10f7a1e60fefc9e86fe71686e9601",
+          "start": 231,
+          "end": 237,
+          "raw": "gi-eat",
+          "expected_reading": "great",
+          "image_ids": [
+            "reading-845d5b7741ad057cdf8d-leaf-408"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7392unit:408:par_000408_000022",
+          "raw_sha256": "90196e5ed1551be13e036a1d38686ef773bd5fe4db5f545327e22dd95f01ce9c",
+          "start": 178,
+          "end": 185,
+          "raw": "countiy",
+          "expected_reading": "country",
+          "image_ids": [
+            "reading-845d5b7741ad057cdf8d-leaf-408"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "preserve",
+          "source_id": "congressionalglo7392unit:408:par_000408_000021",
+          "raw_sha256": "886e2be5beee4e10ea0780dfec2d9be68cb10f7a1e60fefc9e86fe71686e9601",
+          "start": 392,
+          "end": 406,
+          "raw": "half a million",
+          "expected_reading": "half a million",
+          "image_ids": [
+            "reading-845d5b7741ad057cdf8d-leaf-408"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-cfb03841eb9003d161df",
+      "inspected_images": [
+        {
+          "id": "reading-cfb03841eb9003d161df-leaf-397",
+          "path": "artifacts/reading-images-20261024-01/reading-cfb03841eb9003d161df-leaf-397/crop.jpg",
+          "sha256": "e529c76f0ea72110a7eb8dcdcabda232c1eb36a088a661f6ed98fe0bee14c26b"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Tariff remarks switch to Morrill. Preserve ad valorem and distinction between fifty cents and twenty per cent. Target ends I am; do not invent remainder.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7392unit:397:par_000397_000018",
+          "raw_sha256": "84bcaa6551c4b9ca15e126c65128c2627853ccc3174cfc1f4757df4b16edb22c",
+          "start": 7,
+          "end": 14,
+          "raw": "ol)ject",
+          "expected_reading": "object",
+          "image_ids": [
+            "reading-cfb03841eb9003d161df-leaf-397"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7392unit:397:par_000397_000020",
+          "raw_sha256": "5653f3597b4a8b21e19d66eca3a0a4e67eaa2d575588fbbf7fd264f3608e9d71",
+          "start": 1444,
+          "end": 1455,
+          "raw": "extx'aneous",
+          "expected_reading": "extraneous",
+          "image_ids": [
+            "reading-cfb03841eb9003d161df-leaf-397"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "preserve",
+          "source_id": "congressionalglo7392unit:397:par_000397_000020",
+          "raw_sha256": "5653f3597b4a8b21e19d66eca3a0a4e67eaa2d575588fbbf7fd264f3608e9d71",
+          "start": 1141,
+          "end": 1170,
+          "raw": "Fifty cents on the cubic foot",
+          "expected_reading": "Fifty cents on the cubic foot",
+          "image_ids": [
+            "reading-cfb03841eb9003d161df-leaf-397"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-50a8872c9b2dda1a90bf",
+      "inspected_images": [
+        {
+          "id": "reading-50a8872c9b2dda1a90bf-leaf-74",
+          "path": "artifacts/reading-images-20261024-01/reading-50a8872c9b2dda1a90bf-leaf-74/crop.jpg",
+          "sha256": "553abad18265c6f2fc1b6360fb21dc550eb5a3256e5d91948f6b9b96a81f87cd"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Index rows associate each speaker with page numbers, not continuous prose. Cropped print includes Fox, Fontaine T., jr. while raw selection begins jr.; do not silently broaden selected source spans. Last target truncates a Freedmen entry at possession; no completion from visible padding without explicit mapping review.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7392unit:74:par_000074_000083",
+          "raw_sha256": "764110232ac893458b53cbe0b1f658bce41ad45564f96ff8c90b9dd4833431ff",
+          "start": 24,
+          "end": 28,
+          "raw": "1870",
+          "expected_reading": "1370",
+          "image_ids": [
+            "reading-50a8872c9b2dda1a90bf-leaf-74"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7392unit:74:par_000074_000084",
+          "raw_sha256": "7089838ea4c1786608a71fe0bb43eaa95e500c1894f16bd0b4483bf93cb438e2",
+          "start": 13,
+          "end": 17,
+          "raw": "1847",
+          "expected_reading": "1347",
+          "image_ids": [
+            "reading-50a8872c9b2dda1a90bf-leaf-74"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7392unit:74:par_000074_000087",
+          "raw_sha256": "5ce5f666c5b7f2dcb692c52ccd894884faf39c05ae1202d99d3159ccfed08e1a",
+          "start": 27,
+          "end": 31,
+          "raw": "1846",
+          "expected_reading": "1346",
+          "image_ids": [
+            "reading-50a8872c9b2dda1a90bf-leaf-74"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7392unit:74:par_000074_000088",
+          "raw_sha256": "92cab4a2a4c4cc5d61532302bbe06b0b607a23c0b1626602f12075492124d0fd",
+          "start": 13,
+          "end": 17,
+          "raw": "1849",
+          "expected_reading": "1349",
+          "image_ids": [
+            "reading-50a8872c9b2dda1a90bf-leaf-74"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7392unit:74:par_000074_000090",
+          "raw_sha256": "0266bf833676c184d29394abf3cb2fe228ae1a194614ae022d560c1a77826104",
+          "start": 23,
+          "end": 27,
+          "raw": "8196",
+          "expected_reading": "3196",
+          "image_ids": [
+            "reading-50a8872c9b2dda1a90bf-leaf-74"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-86b5b62922afc4c5b6bd",
+      "inspected_images": [
+        {
+          "id": "reading-86b5b62922afc4c5b6bd-leaf-823",
+          "path": "artifacts/reading-images-20261024-01/reading-86b5b62922afc4c5b6bd-leaf-823/crop.jpg",
+          "sha256": "66cd40ac48461ceb9b12b095fc9e30f6518aa98ec1fe038760980441e50a39ea"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Two distinct amendment rejections precede numbered clause21; do not collapse them. Preserve dollar notation $1 50 and ten dollars. Stevens discusses deleting words from clause; do not delete them from the quoted clause itself.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:823:par_000823_000023",
+          "raw_sha256": "de383eef40de521169dafcfcc844aa3f49f5fd93b2738db0ae4d52dd7ecb6111",
+          "start": 36,
+          "end": 44,
+          "raw": "shall bo",
+          "expected_reading": "shall be",
+          "image_ids": [
+            "reading-86b5b62922afc4c5b6bd-leaf-823"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "preserve",
+          "source_id": "congressionalglo7393unit:823:par_000823_000025",
+          "raw_sha256": "173420b0fc5d48abd39a662b28d1f92dff6cf623c3b72c67a80424cdaa264056",
+          "start": 21,
+          "end": 26,
+          "raw": "$1 50",
+          "expected_reading": "$1 50",
+          "image_ids": [
+            "reading-86b5b62922afc4c5b6bd-leaf-823"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "preserve",
+          "source_id": "congressionalglo7393unit:823:par_000823_000026",
+          "raw_sha256": "967c058b14515f8c06c8439ba1eed60d2e916f12a7cea8e82b619bbef1ac0570",
+          "start": 0,
+          "end": 49,
+          "raw": "The amendment to the amendment was not agreed to.",
+          "expected_reading": "The amendment to the amendment was not agreed to.",
+          "image_ids": [
+            "reading-86b5b62922afc4c5b6bd-leaf-823"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-3e3d5d225bf885a2e7f5",
+      "inspected_images": [
+        {
+          "id": "reading-3e3d5d225bf885a2e7f5-leaf-769",
+          "path": "artifacts/reading-images-20261024-01/reading-3e3d5d225bf885a2e7f5-leaf-769/crop.jpg",
+          "sha256": "b46d969045c6cc849e685a73ffcb7804d9efaa1f9083830568cdc15ff2bc5671"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Morrill and Chanler disagree about revenue seizures and forfeiture; preserve question/answer turns and do not add a legal conclusion. Final target It certainly is intentionally incomplete.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:769:par_000769_000012",
+          "raw_sha256": "fe85739c3c7f08f85e6de285ff335bb212428b4f5ab432eb1c934f537e54b2ad",
+          "start": 0,
+          "end": 12,
+          "raw": "Mr. CHANLER,",
+          "expected_reading": "Mr. CHANLER.",
+          "image_ids": [
+            "reading-3e3d5d225bf885a2e7f5-leaf-769"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "preserve",
+          "source_id": "congressionalglo7393unit:769:par_000769_000012",
+          "raw_sha256": "fe85739c3c7f08f85e6de285ff335bb212428b4f5ab432eb1c934f537e54b2ad",
+          "start": 231,
+          "end": 245,
+          "raw": "speedy redress",
+          "expected_reading": "speedy redress",
+          "image_ids": [
+            "reading-3e3d5d225bf885a2e7f5-leaf-769"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "preserve",
+          "source_id": "congressionalglo7393unit:769:par_000769_000012",
+          "raw_sha256": "fe85739c3c7f08f85e6de285ff335bb212428b4f5ab432eb1c934f537e54b2ad",
+          "start": 738,
+          "end": 750,
+          "raw": "It certainly",
+          "expected_reading": "It certainly",
+          "image_ids": [
+            "reading-3e3d5d225bf885a2e7f5-leaf-769"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-29781311671c9158bbd8",
+      "inspected_images": [
+        {
+          "id": "reading-29781311671c9158bbd8-leaf-44",
+          "path": "artifacts/reading-images-20261024-01/reading-29781311671c9158bbd8-leaf-44/crop.jpg",
+          "sha256": "9dd076856a1f874889bda04c0eef56fd2cc94c53dc375e417e764062e10c47a3"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Header and left-column revenue index are targets; right column is neighboring material. Preserve each bill/resolution-number/page-list association. Final target ends and; do not merge a new index row or finish the entry from image padding.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:44:par_000044_000003",
+          "raw_sha256": "1306b4bb71d224f43d5be79ffb5ab6b62cf0646a9cc3b04179911b2ddae2835c",
+          "start": 32,
+          "end": 36,
+          "raw": "dutv",
+          "expected_reading": "duty",
+          "image_ids": [
+            "reading-29781311671c9158bbd8-leaf-44"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:44:par_000044_000004",
+          "raw_sha256": "3cf60528741a9afc2b1655c3a5002b46dd1f3a37c245e3466fc8fefaeb6fffde",
+          "start": 8,
+          "end": 13,
+          "raw": "213ft",
+          "expected_reading": "2130",
+          "image_ids": [
+            "reading-29781311671c9158bbd8-leaf-44"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:44:par_000044_000008",
+          "raw_sha256": "30ef29948fbb86cf4860182cabe5937e3f396f77a66b8568aa538ba471b741ae",
+          "start": 19,
+          "end": 23,
+          "raw": "2301",
+          "expected_reading": "2304",
+          "image_ids": [
+            "reading-29781311671c9158bbd8-leaf-44"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:44:par_000044_000008",
+          "raw_sha256": "30ef29948fbb86cf4860182cabe5937e3f396f77a66b8568aa538ba471b741ae",
+          "start": 31,
+          "end": 35,
+          "raw": "2111",
+          "expected_reading": "2414",
+          "image_ids": [
+            "reading-29781311671c9158bbd8-leaf-44"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:44:par_000044_000009",
+          "raw_sha256": "c4d8e6a3eac8bdb5663c99837ec8e9a3b0d17d87fbbd77212c71d1a5414c5f9a",
+          "start": 112,
+          "end": 116,
+          "raw": "1117",
+          "expected_reading": "4117",
+          "image_ids": [
+            "reading-29781311671c9158bbd8-leaf-44"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:44:par_000044_000019",
+          "raw_sha256": "3ae3b72a8656e3060f826fe0ce5e33cc33a2c7d9a14f06c8cfa3f318f84bf5b3",
+          "start": 26,
+          "end": 30,
+          "raw": "2182",
+          "expected_reading": "2482",
+          "image_ids": [
+            "reading-29781311671c9158bbd8-leaf-44"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:44:par_000044_000022",
+          "raw_sha256": "0bd34045478b88e2a7a31140ff400d070da373baed29fb1f2c15de3cc2f0ecf0",
+          "start": 0,
+          "end": 4,
+          "raw": "2012",
+          "expected_reading": "2612",
+          "image_ids": [
+            "reading-29781311671c9158bbd8-leaf-44"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:44:par_000044_000018",
+          "raw_sha256": "cbbbe9270df21be64300682085c92b5f10eebe3373a3dc987bb5def0b0bfea79",
+          "start": 18,
+          "end": 31,
+          "raw": "U. R. No. 137",
+          "expected_reading": "H. R. No. 137",
+          "image_ids": [
+            "reading-29781311671c9158bbd8-leaf-44"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-e05d33cb21bb773191dc",
+      "inspected_images": [
+        {
+          "id": "reading-e05d33cb21bb773191dc-leaf-873",
+          "path": "artifacts/reading-images-20261024-01/reading-e05d33cb21bb773191dc-leaf-873/crop.jpg",
+          "sha256": "75200af1eb768b8cdf81283edeb847ba329cf9f799447de37ff7b972d04b9d15"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Preserve Radford amendment rejection and Morrill withdrawal. Revenue dollar amount is a material OCR error; no conversion to modern dollars or rounding. One hundred and thirty-seven million is a separate claim from $169,000,000.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:873:par_000873_000006",
+          "raw_sha256": "86728a521280b61d8bee81b14b5085dde53f63ab9bf9c0a49fc0e0bdf83a5c37",
+          "start": 151,
+          "end": 155,
+          "raw": "befn",
+          "expected_reading": "been",
+          "image_ids": [
+            "reading-e05d33cb21bb773191dc-leaf-873"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:873:par_000873_000006",
+          "raw_sha256": "86728a521280b61d8bee81b14b5085dde53f63ab9bf9c0a49fc0e0bdf83a5c37",
+          "start": 437,
+          "end": 444,
+          "raw": "^ubject",
+          "expected_reading": "subject",
+          "image_ids": [
+            "reading-e05d33cb21bb773191dc-leaf-873"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:873:par_000873_000009",
+          "raw_sha256": "d60dfaf370e761ba47a694614ca8c6f312e7c37f5017f0cea2db92fa67f3c3ab",
+          "start": 438,
+          "end": 450,
+          "raw": "$109,000,000",
+          "expected_reading": "$169,000,000",
+          "image_ids": [
+            "reading-e05d33cb21bb773191dc-leaf-873"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:873:par_000873_000009",
+          "raw_sha256": "d60dfaf370e761ba47a694614ca8c6f312e7c37f5017f0cea2db92fa67f3c3ab",
+          "start": 191,
+          "end": 196,
+          "raw": "Irora",
+          "expected_reading": "from",
+          "image_ids": [
+            "reading-e05d33cb21bb773191dc-leaf-873"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-0572e0c61a75ab370e67",
+      "inspected_images": [
+        {
+          "id": "reading-0572e0c61a75ab370e67-leaf-488",
+          "path": "artifacts/reading-images-20261024-01/reading-0572e0c61a75ab370e67-leaf-488/crop.jpg",
+          "sha256": "1a8c1dcb1a1b06404c5ad2f25c7a1032c9fb1fe338ce29308830fa66b80b7ca8"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Preserve three roll-call groups:14yeas/17nays/18absent, then Pacific Railroad heading and Howard/Pomeroy turns. Target ends amend-; do not supply remainder. Names must be read from print, not reconstructed from a roster.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:488:par_000488_000016",
+          "raw_sha256": "23c614270ac649fb5107f0266227d78a1af20fbc7cccad4f7b62eb1817a5ef1b",
+          "start": 24,
+          "end": 33,
+          "raw": "Pcsscndcn",
+          "expected_reading": "Fessenden",
+          "image_ids": [
+            "reading-0572e0c61a75ab370e67-leaf-488"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:488:par_000488_000016",
+          "raw_sha256": "23c614270ac649fb5107f0266227d78a1af20fbc7cccad4f7b62eb1817a5ef1b",
+          "start": 112,
+          "end": 117,
+          "raw": "AVadc",
+          "expected_reading": "Wade",
+          "image_ids": [
+            "reading-0572e0c61a75ab370e67-leaf-488"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:488:par_000488_000017",
+          "raw_sha256": "31f4f8400c4b570f298d377c509b08adc02825bbe166a0c93062ed921344628d",
+          "start": 86,
+          "end": 93,
+          "raw": "Nosmith",
+          "expected_reading": "Nesmith",
+          "image_ids": [
+            "reading-0572e0c61a75ab370e67-leaf-488"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:488:par_000488_000022",
+          "raw_sha256": "f26e7608724a2c1aec4037e18822319b8952486c8efd3ca30d8255d24d58c52e",
+          "start": 434,
+          "end": 438,
+          "raw": "18G4",
+          "expected_reading": "1864",
+          "image_ids": [
+            "reading-0572e0c61a75ab370e67-leaf-488"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "preserve",
+          "source_id": "congressionalglo00unit:488:par_000488_000015",
+          "raw_sha256": "b1d7620c901af1daf8869c7a45d85c293ef9372a5d4da50d818a752d30dfb589",
+          "start": 54,
+          "end": 70,
+          "raw": "yeas 14, nays 17",
+          "expected_reading": "yeas 14, nays 17",
+          "image_ids": [
+            "reading-0572e0c61a75ab370e67-leaf-488"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-4fc8caf8f1dfb06d6938",
+      "inspected_images": [
+        {
+          "id": "reading-4fc8caf8f1dfb06d6938-leaf-110",
+          "path": "artifacts/reading-images-20261024-01/reading-4fc8caf8f1dfb06d6938-leaf-110/crop.jpg",
+          "sha256": "ac98e9465ad39373f4d26f81094b7507ead18158059beb5bdf9d8c8682692396"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Targets are left-column West Virginia/West/Whaley index plus page headers, not the long neighboring Wilson index. The 3197 at start of the next raw paragraph belongs to the preceding West entry in print; do not attribute it to Whaley or silently reassign canonical paragraph IDs. Whaley list truncates after811.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:110:par_000110_000004",
+          "raw_sha256": "21b696ee18e6de92db237ab484558e630366020bf1290e16cb0cc862dc3bcf79",
+          "start": 34,
+          "end": 44,
+          "raw": "i:>roperty",
+          "expected_reading": "property",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:110:par_000110_000005",
+          "raw_sha256": "f9690dd80bc2225bb2b641871b7d1cd0eb8cd5a6231ffa811b83da1a04f211ce",
+          "start": 132,
+          "end": 136,
+          "raw": "18G4",
+          "expected_reading": "1864",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:110:par_000110_000005",
+          "raw_sha256": "f9690dd80bc2225bb2b641871b7d1cd0eb8cd5a6231ffa811b83da1a04f211ce",
+          "start": 355,
+          "end": 359,
+          "raw": "320G",
+          "expected_reading": "3206",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "preserve",
+          "source_id": "congressionalglo00unit:110:par_000110_000000",
+          "raw_sha256": "3e95140d544f2d2f7c352b63c1cd6a5d454acacfcfbf4dc85d244385e461d7a5",
+          "start": 0,
+          "end": 3,
+          "raw": "CIV",
+          "expected_reading": "CIV",
+          "image_ids": [
+            "reading-4fc8caf8f1dfb06d6938-leaf-110"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-5500247fc23992050e37",
+      "inspected_images": [
+        {
+          "id": "reading-5500247fc23992050e37-leaf-330",
+          "path": "artifacts/reading-images-20261024-01/reading-5500247fc23992050e37-leaf-330/crop.jpg",
+          "sha256": "3a368c4223d4b6b5a961687efcba2937b3430dd8021ae5e3f9eac7cb9fcb9a57"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Morrill, Eldridge, Loan, Baker, Ancona, Van Aernam and Price are distinct turns. OCR splits evening and Mr. Loan across paragraph records; do not merge/relabel source IDs. Preserve Francis Colgen spelling, pension provision, heading and resolution.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7395unit:330:par_000330_000025",
+          "raw_sha256": "d555658ede7984a9273e1474be7e1c85a391babc560692f4eaede2d3b629cc05",
+          "start": 132,
+          "end": 137,
+          "raw": "eacli",
+          "expected_reading": "each",
+          "image_ids": [
+            "reading-5500247fc23992050e37-leaf-330"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7395unit:330:par_000330_000021",
+          "raw_sha256": "1a271b7be4fa9e77550f8b53b39f8444560e014376d828790eea4cb961e02fd5",
+          "start": 98,
+          "end": 106,
+          "raw": "Colgen.;",
+          "expected_reading": "Colgen;",
+          "image_ids": [
+            "reading-5500247fc23992050e37-leaf-330"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "preserve",
+          "source_id": "congressionalglo7395unit:330:par_000330_000018",
+          "raw_sha256": "bbbbe3e0b1c95221d6a6eccea6bb785b67cc6ae7f63df3fc1b2e7b92501ec9b9",
+          "start": 0,
+          "end": 15,
+          "raw": "FRANCIS COLGEN.",
+          "expected_reading": "FRANCIS COLGEN.",
+          "image_ids": [
+            "reading-5500247fc23992050e37-leaf-330"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-1cf618a5ce887cee79b1",
+      "inspected_images": [
+        {
+          "id": "reading-1cf618a5ce887cee79b1-leaf-741",
+          "path": "artifacts/reading-images-20261024-01/reading-1cf618a5ce887cee79b1-leaf-741/crop.jpg",
+          "sha256": "53373dc3ef8ff554cda84c138db9c24b5f5753710114a2594bae75e06b150555"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Printed page107, Appendix,39thCongress1stsession, Senate and Henderson title are target headers. Prose target is left column only; center/right columns are neighboring argument. Preserve act dateJuly17,1862 and quoted section13; do not import other columns or identify every paragraph solely from the running header.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7395unit:741:par_000741_000004",
+          "raw_sha256": "df52dd6a1e8214ac764d3abb387adcae88465e2b92f0127dd010fce7d7fb3659",
+          "start": 17,
+          "end": 31,
+          "raw": "Bepresentation",
+          "expected_reading": "Representation",
+          "image_ids": [
+            "reading-1cf618a5ce887cee79b1-leaf-741"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7395unit:741:par_000741_000006",
+          "raw_sha256": "f77d6de4e79ea615bc7c3a4823987f768a829a9c452386c87a3605007eb2b678",
+          "start": 300,
+          "end": 304,
+          "raw": "18G2",
+          "expected_reading": "1862",
+          "image_ids": [
+            "reading-1cf618a5ce887cee79b1-leaf-741"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7395unit:741:par_000741_000007",
+          "raw_sha256": "b4f4cd8ccce9ffb5f813c7435c7ff3cff6b6056c74c42378c418b40a9e01821b",
+          "start": 10,
+          "end": 35,
+          "raw": "And he it further enacted",
+          "expected_reading": "And be it further enacted",
+          "image_ids": [
+            "reading-1cf618a5ce887cee79b1-leaf-741"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-74d01b9894f76563d519",
+      "inspected_images": [
+        {
+          "id": "reading-74d01b9894f76563d519-leaf-1060",
+          "path": "artifacts/reading-images-20261024-01/reading-74d01b9894f76563d519-leaf-1060/crop.jpg",
+          "sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Section2 starts at bottom-left; section3 crosses from bottom-left to top-right. Preserve provisional court then separate surveyor-general actCCCXI, two sections and two approval dates. Other acts shown elsewhere in crop are neighbors. Chapter-number correction is based on visible heading, not inference from adjacent numbering.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+          "raw_sha256": "38df69ac13782c2367417d4c8807e27539bd6edd36e7c19758163967681efcfc",
+          "start": 6,
+          "end": 11,
+          "raw": "CCCXL",
+          "expected_reading": "CCCXI",
+          "image_ids": [
+            "reading-74d01b9894f76563d519-leaf-1060"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+          "raw_sha256": "38df69ac13782c2367417d4c8807e27539bd6edd36e7c19758163967681efcfc",
+          "start": 31,
+          "end": 41,
+          "raw": "tte Office",
+          "expected_reading": "the Office",
+          "image_ids": [
+            "reading-74d01b9894f76563d519-leaf-1060"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "preserve",
+          "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+          "raw_sha256": "38df69ac13782c2367417d4c8807e27539bd6edd36e7c19758163967681efcfc",
+          "start": 98,
+          "end": 123,
+          "raw": "to Plattsmouth, Nebraska.",
+          "expected_reading": "to Plattsmouth, Nebraska.",
+          "image_ids": [
+            "reading-74d01b9894f76563d519-leaf-1060"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-db4cc1bed5fc9ba20489",
+      "inspected_images": [
+        {
+          "id": "reading-db4cc1bed5fc9ba20489-leaf-267",
+          "path": "artifacts/reading-images-20261024-01/reading-db4cc1bed5fc9ba20489-leaf-267/crop.jpg",
+          "sha256": "8d78f5644c61b3578f354a0d8d0797d798634765819beb4171bdded87eaaa650"
+        },
+        {
+          "id": "reading-db4cc1bed5fc9ba20489-leaf-268",
+          "path": "artifacts/reading-images-20261024-01/reading-db4cc1bed5fc9ba20489-leaf-268/crop.jpg",
+          "sha256": "c965762093c7c36ad1d19a427f91df7ed5d5fb47840546018d905d3da86814dc"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Two images contain two consecutive target paragraphs; keep leaf267before268. Printed rhetoric contains a blind Samson reference; preserve it without paraphrase. Neither visible continuation nor topic alone certifies speaker identity. Stop before the next paragraph beginning What was the wish.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:267:par_000267_000014",
+          "raw_sha256": "1da1e73d9b13bf3d0f9d7ed27f89ddfe40328818bc2ba8bb75e995e5a252dce3",
+          "start": 43,
+          "end": 46,
+          "raw": "t^e",
+          "expected_reading": "the",
+          "image_ids": [
+            "reading-db4cc1bed5fc9ba20489-leaf-267"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:268:par_000268_000003",
+          "raw_sha256": "f3361235695093b87424117e49f0725a15017ab2ad48a0cf63b78d65146312da",
+          "start": 93,
+          "end": 98,
+          "raw": "bliud",
+          "expected_reading": "blind",
+          "image_ids": [
+            "reading-db4cc1bed5fc9ba20489-leaf-268"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:268:par_000268_000003",
+          "raw_sha256": "f3361235695093b87424117e49f0725a15017ab2ad48a0cf63b78d65146312da",
+          "start": 1830,
+          "end": 1843,
+          "raw": "blotting ottt",
+          "expected_reading": "blotting out",
+          "image_ids": [
+            "reading-db4cc1bed5fc9ba20489-leaf-268"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalg7391unit:268:par_000268_000003",
+          "raw_sha256": "f3361235695093b87424117e49f0725a15017ab2ad48a0cf63b78d65146312da",
+          "start": 1336,
+          "end": 1351,
+          "raw": "erne Government",
+          "expected_reading": "one Government",
+          "image_ids": [
+            "reading-db4cc1bed5fc9ba20489-leaf-268"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-5e7e1b38c53e488454eb",
+      "inspected_images": [
+        {
+          "id": "reading-5e7e1b38c53e488454eb-leaf-569",
+          "path": "artifacts/reading-images-20261024-01/reading-5e7e1b38c53e488454eb-leaf-569/crop.jpg",
+          "sha256": "f8e3b8ca71e046dda0f13db620df99310759a76ca4b451b8aba4f1f04876b7b2"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "Dense section11 exemption list contains extensive OCR damage, not only the recorded anchor errors. Preserve semicolons/list items and the $100 proviso, domestic-manufacture qualification and tax conditions. Target ends any; do not complete it. No full gold transcription or exhaustive chemical-term certification in this review.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "raw_sha256": "13aae54c7d1c8b942bb75cc40b015678920796d7b838febb630f13944b7746d7",
+          "start": 496,
+          "end": 502,
+          "raw": "caslis",
+          "expected_reading": "casks",
+          "image_ids": [
+            "reading-5e7e1b38c53e488454eb-leaf-569"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "raw_sha256": "13aae54c7d1c8b942bb75cc40b015678920796d7b838febb630f13944b7746d7",
+          "start": 1104,
+          "end": 1108,
+          "raw": "Hags",
+          "expected_reading": "flags",
+          "image_ids": [
+            "reading-5e7e1b38c53e488454eb-leaf-569"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "raw_sha256": "13aae54c7d1c8b942bb75cc40b015678920796d7b838febb630f13944b7746d7",
+          "start": 2701,
+          "end": 2706,
+          "raw": "S^lOO",
+          "expected_reading": "$100",
+          "image_ids": [
+            "reading-5e7e1b38c53e488454eb-leaf-569"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "raw_sha256": "13aae54c7d1c8b942bb75cc40b015678920796d7b838febb630f13944b7746d7",
+          "start": 2708,
+          "end": 2718,
+          "raw": "PcouitZerf",
+          "expected_reading": "Provided",
+          "image_ids": [
+            "reading-5e7e1b38c53e488454eb-leaf-569"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "raw_sha256": "13aae54c7d1c8b942bb75cc40b015678920796d7b838febb630f13944b7746d7",
+          "start": 4549,
+          "end": 4564,
+          "raw": "railroad oniurs",
+          "expected_reading": "railroad chairs",
+          "image_ids": [
+            "reading-5e7e1b38c53e488454eb-leaf-569"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    },
+    {
+      "unit_id": "reading-637a8b4b8fe245aa6d6b",
+      "inspected_images": [
+        {
+          "id": "reading-637a8b4b8fe245aa6d6b-leaf-126",
+          "path": "artifacts/scans/reading-source-20261024-01/long/crop-01.jpg",
+          "sha256": "71b9c1d5ee2e519fc20d39fbbda9d555286b5fe58856dc53ea8bcba7d6bc9694"
+        }
+      ],
+      "visual_scope": "Anchor readings and boundary/layout inspection; not full character-by-character reference transcription.",
+      "boundary_observation": "One raw paragraph contains Grimes then Van Winkle. Preserve both speaker labels, humane/justice argument distinction, three or four hundred dollars, and historical term laches. Next Grimes turn at bottom is padding, not a target. Not a single-speaker paragraph.",
+      "checks": [
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:126:par_000126_000010",
+          "raw_sha256": "72c608f93fc6e64fcdf5b49d3fa4b59a3691576aba3154783e59df5709c1a473",
+          "start": 2684,
+          "end": 2702,
+          "raw": "andlamhapjDytoknow",
+          "expected_reading": "and I am happy to know",
+          "image_ids": [
+            "reading-637a8b4b8fe245aa6d6b-leaf-126"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:126:par_000126_000010",
+          "raw_sha256": "72c608f93fc6e64fcdf5b49d3fa4b59a3691576aba3154783e59df5709c1a473",
+          "start": 3093,
+          "end": 3101,
+          "raw": "iutended",
+          "expected_reading": "intended",
+          "image_ids": [
+            "reading-637a8b4b8fe245aa6d6b-leaf-126"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "source_reading",
+          "source_id": "congressionalglo7393unit:126:par_000126_000010",
+          "raw_sha256": "72c608f93fc6e64fcdf5b49d3fa4b59a3691576aba3154783e59df5709c1a473",
+          "start": 3801,
+          "end": 3817,
+          "raw": "sense Of justice",
+          "expected_reading": "sense of justice",
+          "image_ids": [
+            "reading-637a8b4b8fe245aa6d6b-leaf-126"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        },
+        {
+          "kind": "preserve",
+          "source_id": "congressionalglo7393unit:126:par_000126_000010",
+          "raw_sha256": "72c608f93fc6e64fcdf5b49d3fa4b59a3691576aba3154783e59df5709c1a473",
+          "start": 3453,
+          "end": 3459,
+          "raw": "laches",
+          "expected_reading": "laches",
+          "image_ids": [
+            "reading-637a8b4b8fe245aa6d6b-leaf-126"
+          ],
+          "status": "AI_visual_observation_not_accepted_patch"
+        }
+      ],
+      "remaining": "Other characters/wording remain ungraded; full clean-reading quality needs independent output-to-image assessment.",
+      "human_reviewed": false
+    }
+  ],
+  "provider_calls": 0,
+  "image_fetches": 0,
+  "corpus_edits": 0,
+  "launch_ready": false
+}
