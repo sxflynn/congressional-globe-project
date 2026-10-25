@@ -1,4 +1,5 @@
 import pytest
+from jsonschema import Draft202012Validator
 
 from congressional_globe.role_v2 import role_result_schema, validate_role_result_v2
 
@@ -12,7 +13,7 @@ def packet() -> dict:
             {"id": "C1", "kind": "speaker_cue"},
         ],
         "controlled_role_ids": ["floor_speaker", "person_mentioned"],
-        "statuses": ["proposed", "unknown"],
+        "statuses": ["proposed", "unknown", "mixed", "needs_review"],
     }
 
 
@@ -60,11 +61,34 @@ def test_proposed_requires_real_candidate_and_evidence() -> None:
         )
 
 
-def test_generic_transport_schema_expresses_unknown_relationships() -> None:
-    schema = role_result_schema()
-    branches = schema["properties"]["speaker_roles"]["items"]["oneOf"]
-    assert len(branches) == 2
-    serialized = str(branches)
-    assert "proposed" in serialized and "unknown" in serialized
-    assert "P[1-9]" in serialized
-    assert "C[1-9]" in serialized
+def test_schema_and_host_agree_on_all_frozen_statuses() -> None:
+    validator = Draft202012Validator(role_result_schema())
+    valid = [
+        record(candidate_id="C1", evidence_ids=["C1"], status="proposed"),
+        record(status="unknown"),
+        record(candidate_id="C1", evidence_ids=["P1", "C1"], status="mixed"),
+        record(candidate_id=None, evidence_ids=[], status="needs_review"),
+    ]
+    for result in valid:
+        assert validator.is_valid(result)
+        assert validate_role_result_v2(result, packet())
+
+    invalid = [
+        (record(candidate_id=None, evidence_ids=["P1"], status="proposed"), False),
+        (record(candidate_id="C1", evidence_ids=["P1"], status="unknown"), False),
+        (record(candidate_id="C9", evidence_ids=["P1"], status="mixed"), True),
+        (record(candidate_id="C1", evidence_ids=["C9"], status="needs_review"), True),
+        (record(status="future_status"), False),
+    ]
+    for result, schema_valid in invalid:
+        assert validator.is_valid(result) is schema_valid
+        with pytest.raises(ValueError):
+            validate_role_result_v2(result, packet())
+
+
+def test_mixed_and_needs_review_keep_v1_permissive_shape() -> None:
+    validator = Draft202012Validator(role_result_schema())
+    for status in ("mixed", "needs_review"):
+        result = record(candidate_id=None, evidence_ids=[], status=status)
+        assert validator.is_valid(result)
+        assert validate_role_result_v2(result, packet())

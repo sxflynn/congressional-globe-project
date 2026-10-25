@@ -13,8 +13,8 @@ class SpeakerRoleV2(BaseModel):
     candidate_id: str | None
     evidence_ids: list[str]
     target_ids: list[str] = Field(min_length=1)
-    role: str
-    status: str
+    role: str = Field(min_length=1)
+    status: str = Field(min_length=1)
     basis: str = Field(min_length=1)
 
     @model_validator(mode="after")
@@ -47,42 +47,61 @@ def role_result_schema() -> dict[str, Any]:
                 "items": {"type": "string", "pattern": "^P[1-9][0-9]*$"},
             },
             "role": {"type": "string", "minLength": 1},
-            "status": {"type": "string", "enum": ["proposed", "unknown"]},
+            "status": {
+                "type": "string",
+                "enum": ["proposed", "unknown", "mixed", "needs_review"],
+            },
             "basis": {"type": "string", "minLength": 1},
         },
     }
-    proposed = {
-        "allOf": [
-            common,
-            {
-                "properties": {
-                    "candidate_id": {"type": "string", "pattern": "^C[1-9][0-9]*$"},
-                    "evidence_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
-                    "status": {"const": "proposed"},
-                }
+    proposed = _status_branch(
+        common,
+        "proposed",
+        {
+            "candidate_id": {"type": "string", "pattern": "^C[1-9][0-9]*$"},
+            "evidence_ids": {
+                "type": "array",
+                "minItems": 1,
+                "items": {"type": "string"},
             },
-        ]
-    }
-    unknown = {
-        "allOf": [
-            common,
-            {
-                "properties": {
-                    "candidate_id": {"type": "null"},
-                    "evidence_ids": {
-                        "type": "array",
-                        "items": {"type": "string", "pattern": "^P[1-9][0-9]*$"},
-                    },
-                    "status": {"const": "unknown"},
-                }
+        },
+    )
+    unknown = _status_branch(
+        common,
+        "unknown",
+        {
+            "candidate_id": {"type": "null"},
+            "evidence_ids": {
+                "type": "array",
+                "items": {"type": "string", "pattern": "^P[1-9][0-9]*$"},
             },
-        ]
-    }
+        },
+    )
+    # v1 imposed no status-specific shape for these values. Keep that behavior;
+    # host validation still binds non-null candidates/evidence to supplied aliases.
+    mixed = _status_branch(common, "mixed", {})
+    needs_review = _status_branch(common, "needs_review", {})
     return {
         "type": "object",
         "additionalProperties": False,
         "required": ["speaker_roles"],
-        "properties": {"speaker_roles": {"type": "array", "items": {"oneOf": [proposed, unknown]}}},
+        "properties": {
+            "speaker_roles": {
+                "type": "array",
+                "items": {"oneOf": [proposed, unknown, mixed, needs_review]},
+            }
+        },
+    }
+
+
+def _status_branch(
+    common: dict[str, Any], status: str, properties: dict[str, Any]
+) -> dict[str, Any]:
+    return {
+        "allOf": [
+            common,
+            {"properties": {**properties, "status": {"const": status}}},
+        ]
     }
 
 

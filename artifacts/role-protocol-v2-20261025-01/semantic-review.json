@@ -1,0 +1,131 @@
+{
+  "schema_version": "role-v2-semantic-review-v1",
+  "scope": "Text-only semantic audit of the four exact saved Mini/Qwen replies against their complete frozen raw provider inputs, incorporating the narrow HR-005-v1 adjudication.",
+  "reviewer_capability": "No raster image inspection in this audit. Findings compare reply claims to frozen OCR/context and do not certify printed wording or scan-grounded readings.",
+  "source_hashes": {
+    "provider_inputs_jsonl": "220898f3e12b0bb77132b65e365c94520df56ab92d855798cc36f228fb744a0f",
+    "frozen_ai_source_expectations": "dbd254631a69592c0660829d129f7fec8de971847ea962b3cdf0a26f811a41b2",
+    "mini_summary": "9b018d2e4a38e3a98fac6d95282bac899c3805c47d7949bb2bdc020d8035a189",
+    "qwen_summary": "46e22d274547f6b42f3b8585959b064b1dc698cd5eaafd98ce2d3966d9b17bf5",
+    "hr005_receipt": "30ca61814065387ce6ee259110547ce0f3cbb3740ecccfadbc8f3510b05074b0"
+  },
+  "human_overlay": {
+    "packet": "HR-005-v1",
+    "decision": "Stephen confirms the AI's Mr. Wade attribution for this specific reply and following paragraph.",
+    "source_targets": ["P15", "P16"],
+    "source_paragraph_hashes": [
+      "b5eec275bb456f57b8ad8436254143b92295921cf33d9b2ff3b03de2090bde0b",
+      "2cfb28fd7b912272156336ada28b296f5ac3780e2c29c0b51a70f4fe880edf87"
+    ],
+    "scope_limit": "Output-informed case-specific adjudication only; no blanket contextual OCR-name repair rule, authority/person ID, or general accuracy claim. No re-ask."
+  },
+  "reply_reviews": [
+    {
+      "model": "mini",
+      "window_id": "hr008-cross-page-p5-403-404-v1",
+      "reply_sha256": "31cbf8d428ca6fed90032a386b39daaccb3ce94ef89672e4134c2fb5f66baedb",
+      "source": "part 5, leaves 403-404; frozen input includes last 8 paragraphs of leaf 403 and first 8 of leaf 404",
+      "v1_status": "valid",
+      "v2_status": "valid",
+      "source_backed_correct": [
+        "P2 names Mr. WADE and introduces the amendment; P6 names Mr. JOHNSON; P7 names Mr. WADE; P14 names Mr. SUMNER.",
+        "P8 ends mid-sentence with 'The' and P12 begins 'House', supporting continuity across the page break for P12-P13.",
+        "The reply keeps P9-P11, which are printed-page/header material, outside speaker assignments.",
+        "HR-005-v1 overlays P15-P16 as Mr. Wade for this specific reviewed case, superseding the earlier unknown expectation for those targets only."
+      ],
+      "unsupported": [],
+      "omissions": [
+        "P1 ('The amendment was agreed to') receives no attribution, consistent with a procedural result rather than a named speaking turn."
+      ],
+      "uncertainty_or_role_confusion": [
+        "P3-P5 are proposed statutory sections introduced by Wade. The output assigns them to Wade's floor-speaker turn; this may mean he presents/reads the amendment, but the role vocabulary does not distinguish speaker from the embedded legislative text. Treat as scope ambiguity, not a demonstrated factual error.",
+        "One output block uses candidate C1 while citing cue C3 for P7-P13 and P15-P16. Both C1 and C3 contain the raw name Mr. WADE, but cue aliases are not person authority IDs; the output does not express a durable identity resolution. HR-005 supports only P15-P16."
+      ],
+      "structural_status": "v1 and v2 whole reply valid; no salvage or schema failure."
+    },
+    {
+      "model": "qwen",
+      "window_id": "hr008-cross-page-p5-403-404-v1",
+      "reply_sha256": "17656fd7a1c20a8b258e8c79dc53267b68fbb1fc3ee989c88dba1ca3593a16d3",
+      "source": "part 5, leaves 403-404; same frozen ordered context as Mini",
+      "v1_status": "valid",
+      "v2_status": "valid",
+      "source_backed_correct": [
+        "The proposed assignments follow explicit Wade, Johnson, Wade, and Sumner cues at P2, P6, P7, and P14, and carry the P7 turn across the P8/P12 sentence continuation.",
+        "P9-P11 page/header material is excluded from speaker turns.",
+        "P15-P16 are assigned to Wade; HR-005-v1 supports that exact reviewed attribution and supersedes the prior unknown expectation for these two targets only."
+      ],
+      "unsupported": [],
+      "omissions": [
+        "P1 is unassigned, consistent with the passive procedural result line."
+      ],
+      "uncertainty_or_role_confusion": [
+        "P3-P5 are embedded amendment text grouped under Wade's floor-speaker turn; as with Mini, this is a speaker-versus-presented-text scope ambiguity.",
+        "The reply's phrase 'OCR error for WADE' on P15 is covered only by the narrow HR-005 human overlay here; this audit did not inspect the image and does not independently validate the letter-level correction or generalize it."
+      ],
+      "structural_status": "v1 and v2 whole reply valid; no salvage or schema failure."
+    },
+    {
+      "model": "mini",
+      "window_id": "t2-1-010",
+      "reply_sha256": "9c07c7e9c6c67f9282a69b4f25ed84baaa8f2ddd5c59a81c4abac500591ad4f6",
+      "source": "part 1, leaf 487, printed page 371; one supplied target paragraph",
+      "v1_status": "invalid",
+      "v2_status": "invalid",
+      "source_backed_correct": [
+        "The single supplied paragraph is first-person political speech, but it contains no explicit speaker-name cue; leaving the floor speaker unknown is supported by this limited input.",
+        "Davis and President appear as mentions/examples in the argument, not as floor speakers."
+      ],
+      "unsupported": [],
+      "omissions": [
+        "The OCR-derived cue fragment C3 ('uard') is not assigned; abstention is appropriate because it does not establish a named speaker."
+      ],
+      "uncertainty_or_role_confusion": [
+        "The two person_mentioned rows say the mentions are not speaking turns, but encode status proposed with candidate_id null. This is semantically cautious yet internally inconsistent under both contracts; the whole reply remains invalid and is not partially salvaged.",
+        "No authority identity is supported for the generic title 'President'; the model appropriately avoids naming an officeholder, but its null-candidate proposed row cannot be serialized as a valid assignment."
+      ],
+      "structural_status": "Invalid in v1 and v2 because two proposed mention rows have null candidate IDs. The unknown-speaker row itself is compatible with v2."
+    },
+    {
+      "model": "qwen",
+      "window_id": "t2-1-010",
+      "reply_sha256": "263f1a88793a79776fbee4172e002288c42dbb9a56cdbc803e2795b501e3d1b2",
+      "source": "part 1, leaf 487, printed page 371; same supplied target paragraph and cues",
+      "v1_status": "invalid",
+      "v2_status": "valid",
+      "source_backed_correct": [
+        "Unknown floor-speaker attribution cites P1 as evidence: the paragraph shows a speaking turn while providing no supported identity. This is the intended v2 behavior.",
+        "Davis and President are classified as mentioned people rather than the floor speaker, matching the raw paragraph."
+      ],
+      "unsupported": [],
+      "omissions": [
+        "The damaged cue fragment C3 ('uard') is not promoted to a person or speaker, appropriately preserving uncertainty."
+      ],
+      "uncertainty_or_role_confusion": [
+        "The President mention is generic in this passage; C2 remains a source cue alias, not a resolved individual or authority. The output does not supply a historical identity, which is appropriate.",
+        "P1 is an entire long paragraph containing mixed arguments and mentions. The unknown floor-speaker target is paragraph-scoped because no smaller evidence spans are available; this is not a claim that every subspan has identical role scope."
+      ],
+      "structural_status": "Invalid in v1 solely because unknown carried paragraph evidence; valid under v2. No semantic rows were edited or salvaged."
+    }
+  ],
+  "coverage_gaps": [
+    "Only two of six frozen windows have saved model outputs, both on parts 1 and 5. The other frozen windows, parts 2-4, and broader chapter/context diversity remain untested by these four replies.",
+    "No date-positive prediction was tested. Frozen 'may' cues are lexical false positives by source-review expectation, but these four role replies do not test date outputs; there is no date-positive/date-negative model result here.",
+    "Boundary behavior is tested only in the Wade continuation/interruption sample. No explicit boundary-stop case tests that a prior speaker/date/proceeding must not carry into a subsequent proceeding.",
+    "No scan images were inspected in this audit; OCR-grounded name/number correctness and print fidelity remain unassessed except for the narrow human HR-005 adjudication."
+  ],
+  "smallest_next_preparation": {
+    "decision": "Keep protocol v2 unchanged for now; prepare a two-window offline date/stop diagnostic before considering any further model call.",
+    "window_1_reuse": {
+      "case": "t2-4-053",
+      "use": "Reuse the frozen raw input unchanged as a date-negative plus boundary-stop case. Its 'may' cue is a lexical false positive; use explicit local turns (Kasson, Holmes, subsequent proceedings) to test stopping attribution at named turns and proceeding transitions. 'Mr. Speaker' remains a title, not a named identity.",
+      "source_review": "Existing frozen expectation says keep Kasson/Holmes/later turns local; mixed paragraphs need review."
+    },
+    "window_2_select": {
+      "use": "Select one short source window with an explicit printed full date in the text, plus the adjacent turn/proceeding needed to test date scope. Freeze exact raw context, date kind/precision, source anchors, and an expected non-propagation boundary before any output.",
+      "guardrail": "Do not infer a date from catalog metadata or select a source/date value until the exact source passage and provenance are frozen."
+    },
+    "next_decision": "After offline selection/source review, decide whether the date task should be a separate contract from speaker-role output. Do not spend calls on the four untouched cases until date-positive evidence and a concrete boundary-stop input are frozen; no human grade or launch approval is implied by this audit."
+  },
+  "conclusion": "The saved replies show structurally valid, text-supported role distinctions on the cross-page diagnostic, with HR-005 narrowly resolving P15-P16. The unnamed case shows v2 fixes Qwen's paragraph-evidence abstention; Mini remains invalid due to proposed rows without candidates. The sample supports the serialization change only and does not establish broad semantic accuracy, date behavior, or boundary-stop reliability."
+}
