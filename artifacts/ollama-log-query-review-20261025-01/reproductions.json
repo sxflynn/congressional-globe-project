@@ -1,0 +1,45 @@
+{
+  "output_cap": {
+    "requested_bytes": 1024,
+    "actual_report_bytes": 101987,
+    "message_bytes": 100000,
+    "raw": null,
+    "warnings": [
+      "The single returned event exceeds max_output_bytes"
+    ]
+  },
+  "oversized_line_resume": {
+    "first_events": 0,
+    "second_events": 0,
+    "first_start": 0,
+    "second_start": 0,
+    "same_cursor": true,
+    "warnings": [
+      "A log line exceeded the per-line byte cap; scan stopped before it"
+    ]
+  },
+  "append_during_scan": {
+    "reported_snapshot_size": 52,
+    "scanned_bytes": 104,
+    "returned_messages": [
+      "original",
+      "appended"
+    ],
+    "appended_reported": false,
+    "complete": true
+  },
+  "rotation_during_context": {
+    "event_message": "original",
+    "context": [
+      {
+        "line": 2,
+        "role": "after",
+        "raw": "time=2026-10-25T00:00:00Z level=INFO msg=\"new-context\"",
+        "raw_truncated": false
+      }
+    ],
+    "reported_inode": 170354789,
+    "current_inode": 170354790,
+    "complete": true
+  }
+}

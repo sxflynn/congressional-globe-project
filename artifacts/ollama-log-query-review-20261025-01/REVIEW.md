@@ -1,0 +1,21 @@
+# Independent retrospective review
+
+Reviewer: GPT-6 in Codex, at the human's explicit request on2026-10-25.
+Reviewed commit: `ac4a671919e5daa94e0684eb547f0eded3b9df17`.
+Verdict: **approve with changes**. The approach fits the request; three correctness issues must be corrected before claiming hard output bounds and deterministic snapshot evidence.
+
+## Findings
+
+1. **P1 — Hard output cap can be bypassed.** `ollama_log_query.py:819–834` deliberately keeps the first event even when it exceeds the configured cap. `_raw` truncates only the raw copy; parsed `message` and `fields` remain large. With one100,000-character slog message, `max_output_bytes=1024`, `raw_bytes=0` and `include_raw=False`, the report was101,987bytes, including the entire100,000-byte message. `_fits` also excludes report metadata/cursor and final serialization overhead. This defeats the central token-budget requirement. Enforce a hard serialized-response budget with explicit field truncation/projection or a bounded error, including metadata; preserve source offsets so omitted content is recoverable deliberately.
+2. **P2 — Oversized records prevent pagination progress.** `_read_record` at lines775–777 stops before any line above the fixed1MiB cap, and `_stop_for_limit` returns that same offset. A synthetic1MiB+1-byte line followed by a valid event returned zero events and an identical cursor on both calls. Raising the scan budget cannot bypass the fixed line cap. Return a clear terminal oversized-record error or a bounded, explicitly reported skip/continuation mechanism that can reach later records without silent loss. Do not tell agents to continue indefinitely with an unchanged cursor.
+3. **P2 — In-query file changes break reported snapshot consistency.** The opening size is recorded but never bounds `_scan`; `_context` and `_next_cursor` reopen/stat the pathname instead of using the original descriptor. A controlled append during first-record consumption returned two events/104scanned bytes against a52-byte opening snapshot while growth was false and completeness true. A controlled rotation before context extraction returned an original-file event with replacement-file context under the original inode. These are deterministic synthetic interleavings, not observed production incidents. Choose a documented snapshot policy, keep context/cursor evidence on the same descriptor, and detect incompatible changes before reporting coherent provenance.
+
+Exact small results are in [reproductions.json](reproductions.json). Synthetic inputs lived in a temporary directory; no actual Ollama log was read or modified. For the append case, a `unittest.mock.patch` wrapper around `_consume` appended one same-length timestamped line after consuming line1. For rotation, a wrapper around `_context` renamed the original file and wrote a replacement with same-length first line and a different second line before calling the original context function. The cap and oversized-line cases called `query_log` directly with the stated input sizes/options.
+
+## What worked and validation limits
+
+Independently ran `uv run pytest -q tests/test_ollama_log_query.py`: all28tests passed. Code review confirmed local read-only operation, useful literal/time/field filters, structured errors, explicit missing-data handling, byte-offset evidence and normal between-query rotation/cursor checks. OpenCode's saved full gate reports384tests plus static checks; this review did not rerun that full gate because production code was not changed. Existing tests check cap-related pagination and raw truncation but do not assert the complete serialized response bound or concurrent file-change guarantees.
+
+The existing demonstration returned3cancellation events in3,712bytes versus a143,061-byte source: useful selective retrieval, though verbose compared with the284-byte selected raw lines. A compact projection/count-only mode would improve the original token-saving goal. Keep the existing minimal CLI/API; fix the three defects before expanding into indexing, a CloudWatch query-language clone or an MCP service. Retain uncertainty about parser drift and request correlation; no model inference is needed to query logs.
+
+Required next work is recorded in MASTER_PLAN.md. This review changes no implementation and grants no model-workload or corpus-processing permission.
