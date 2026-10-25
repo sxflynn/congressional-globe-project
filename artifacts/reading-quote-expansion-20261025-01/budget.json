@@ -1,0 +1,102 @@
+{
+  "schema_version": "reading-quote-expansion-budget-v1",
+  "approved_bounds": {
+    "max_calls": 60,
+    "max_total_seconds": 7200,
+    "max_model_seconds": 2400,
+    "max_call_seconds": 120
+  },
+  "prior_usage": {
+    "calls": 12,
+    "attempts": {
+      "offset_v1": 6,
+      "quote_v2_diagnostic": 6
+    },
+    "total_seconds": 908.8771082910243,
+    "by_model": {
+      "qwen3.8:27b-mlx": {
+        "calls": 8,
+        "offset_v1_known_seconds": 397.46743200486526,
+        "offset_v1_conservative_seconds": 426.4494585818611,
+        "quote_v2_seconds": 119.49671241710894,
+        "conservative_total_seconds": 545.94617099897,
+        "basis": "Five known v1 attempts plus a full 120-second allowance for the interrupted/unknown attempt, plus two completed quote-v2 attempts."
+      },
+      "gemma4:31b-mlx": {
+        "calls": 2,
+        "quote_v2_seconds": 122.92752224998549,
+        "conservative_total_seconds": 122.92752224998549
+      },
+      "muse-glimmer:30b-mlx": {
+        "calls": 2,
+        "quote_v2_timeout_seconds": 240.0034150420688,
+        "conservative_total_seconds": 240.0034150420688,
+        "status": "Excluded from expansion; two observed timeouts, no retry."
+      }
+    }
+  },
+  "remaining_before_expansion": {
+    "total_seconds": 6291.122891708976,
+    "by_model": {
+      "qwen3.8:27b-mlx": 1854.05382900103,
+      "gemma4:31b-mlx": 2277.0724777500145,
+      "muse-glimmer:30b-mlx": 2159.996584957931
+    }
+  },
+  "expansion": {
+    "new_calls": 36,
+    "new_calls_by_model": {
+      "qwen3.8:27b-mlx": 18,
+      "gemma4:31b-mlx": 18
+    },
+    "reused_calls": 4,
+    "expected_quote_v2_attempts_by_model": 20,
+    "expected_real_by_model": 18,
+    "expected_controls_by_model": 2,
+    "run_caps": {
+      "max_calls": 36,
+      "total_seconds": 6291,
+      "per_model_seconds": 1854,
+      "call_seconds": 120
+    },
+    "run_cap_reason": "A single run-level per-model cap uses Qwen's smaller remaining allowance. Gemma is intentionally under-spent rather than risk exceeding the aggregate per-model bound. Floors keep the whole run inside the approved 7200-second total."
+  },
+  "projection": {
+    "observed_quote_v2_mean_seconds": {
+      "qwen3.8:27b-mlx": 59.74835620855447,
+      "gemma4:31b-mlx": 61.46376112499274
+    },
+    "observed_projection_for_18_new_calls_seconds": {
+      "qwen3.8:27b-mlx": 1075.4704117539805,
+      "gemma4:31b-mlx": 1106.3477002498693
+    },
+    "worst_case_for_18_new_calls_seconds": {
+      "qwen3.8:27b-mlx": 2160,
+      "gemma4:31b-mlx": 2160
+    },
+    "worst_case_note": "At 120 seconds per call, Qwen's 18 new calls alone would exceed its 1854.05-second remaining allowance. Dispatch must stop at the recorded cap; all 18 calls are not guaranteed under worst-case duration. Observed quote-v2 durations are about 60 seconds per call."
+  },
+  "cumulative_after_expansion": {
+    "calls": 48,
+    "calls_remaining": 12,
+    "worst_case_new_call_seconds": 4320,
+    "worst_case_total_seconds": 5228.877108291024,
+    "worst_case_total_remaining_seconds": 1971.122891708976
+  },
+  "caveats": [
+    "No model/provider inference call was made while preparing this expansion.",
+    "Muse's two timeouts are resource-failure evidence, not a general quality conclusion; they are not retried or substituted.",
+    "The four completed quote-v2 requests are reused exactly and are not charged as new calls.",
+    "A fresh process/queue observation and runtime check are required immediately before any launch.",
+    "Prior time is conservatively charged; three attempts have unknown provider usage but known conservative elapsed allowances."
+  ],
+  "sources": {
+    "artifacts/reading-launch-20261025-01/requests.json": "c61cf64223f6aeefe51d02ed42b182bfb71e7dfa94f504f262b6fa79e083033e",
+    "artifacts/reading-quote-20261025-01/requests.json": "f4c2c92b3549f63fd8521234bdbb167bfd741cc8c4d892cb27926e10a9a89116",
+    "artifacts/reading-quote-run-20261025-01/comparison.json": "3e14f9548e9f3890a1cac6c95f29ebfaa9f500a0a02ee6b20a54d3b1a86be99a",
+    "artifacts/reading-quote-run-20261025-01/terminal-export.json": "112ebd95ac129591eac79d8e826db37d686f3c420328534bc5c38fec302cbb34",
+    "artifacts/reading-quote-run-20261025-01/attempts.sqlite": "6a7d6041064a1f93eb76ffa8c60474a015e94d9012ad807422d34b90c47fd3bd",
+    "artifacts/reading-run-20261025-01/terminal-export.json": "6b945bc72754f92fb06e45042c9edec252d4f1526396ddbfa351798e2e3c1229",
+    "artifacts/reading-run-20261025-01/attempts.sqlite": "c5f1dae9ce8dbd239a1d2c1f9dbadd195c22da36bbd6b493f2ea1c5c36407ddb"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "checks": {
+    "all_materialize": true,
+    "controls_per_model_2": true,
+    "counts_all_fit": true,
+    "counts_manifest_hash_match": true,
+    "counts_match_36": true,
+    "launch_caps_match_budget": true,
+    "launch_prepare_rows_36": true,
+    "missing_controls_empty_images": [
+      true,
+      true
+    ],
+    "models_are_qwen_gemma": true,
+    "muse_absent": true,
+    "real_per_model_16_new": true,
+    "requests_36": true,
+    "reused_4_exact": true,
+    "source_expectations_hash_match": true,
+    "unique_task_ids": true,
+    "unrelated_controls_foreign": [
+      true,
+      true
+    ]
+  },
+  "counts_summary": {
+    "gemma4:31b-mlx": {
+      "all_fit_16384_context_plus_4096_output": true,
+      "image_tokens_min_max": [
+        0,
+        2162
+      ],
+      "max_total_plus_requested_output": 13413,
+      "min_headroom_tokens": 2971,
+      "request_count": 18,
+      "text_tokens_min_max": [
+        1810,
+        8234
+      ],
+      "total_input_tokens_min_max": [
+        1810,
+        9317
+      ]
+    },
+    "qwen3.8:27b-mlx": {
+      "all_fit_16384_context_plus_4096_output": true,
+      "image_tokens_min_max": [
+        0,
+        5052
+      ],
+      "max_total_plus_requested_output": 14110,
+      "min_headroom_tokens": 2274,
+      "request_count": 18,
+      "text_tokens_min_max": [
+        1781,
+        8212
+      ],
+      "total_input_tokens_min_max": [
+        1781,
+        10014
+      ]
+    }
+  },
+  "date": "2026-10-25",
+  "launch_intent": {
+    "caps": {
+      "call_seconds": 120,
+      "max_calls": 36,
+      "per_model_seconds": 1854,
+      "total_seconds": 6291
+    },
+    "path": "artifacts/reading-quote-expansion-20261025-01/launch-intent.json",
+    "requests": 36,
+    "sha256": "de9a6a4d7848a7ef6d4ee258d64c22abeeb5d763058e478f1a729734fde4cd73",
+    "status": "offline_ready_no_provider_call"
+  },
+  "manifest_sha256": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61",
+  "note": "Verification used only frozen local artifacts. No model/provider inference call occurred.",
+  "schema_version": "reading-quote-expansion-verification-v1"
+}

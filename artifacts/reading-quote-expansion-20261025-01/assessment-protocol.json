@@ -1,0 +1,78 @@
+{
+  "schema_version": "reading-quote-expansion-assessment-v1",
+  "stage": "Frozen after request freeze and before any new expansion provider output",
+  "human_policy": "HR-003 provisional quality/coverage/resources; HR-009 at most 3 fixed anonymized outputs and 10 minutes total, with no substitution",
+  "source_expectations": {
+    "path": "artifacts/reading-expectations-20261025-01/observations.json",
+    "sha256": "2ff6c3617b47c48dd98baf08f46d071d935922cbcc634e192f20df0df54b3095",
+    "scope": "70 raw-span anchors and 18 boundary/layout notes over 18 primary passages/19 regions; diagnostic AI expectations, not exhaustive references or human gold"
+  },
+  "scope": "Bounded quote-v2 expansion across the 16 remaining primary passages plus 2 controls per Qwen/Gemma model (36 new calls). The 2 already completed quote-v2 primary passages per model are reused by exact request/source/image/model identity, yielding 18 real and 2 control attempts per model. Muse is excluded from this expansion after two observed 120-second timeouts; it remains resource-failure evidence, not a general quality conclusion.",
+  "response_contract": "quote-v2 exact unique old-source quotes, host derives coordinates; all original source/image/patch guards retained",
+  "reuse_policy": "The four completed primary requests are not rerun and are not counted as new calls. Their exact request bytes, source/image bindings, model identity, prior attempt IDs and prior assessment hashes are retained. No fallback, offset repair or silent replay is permitted.",
+  "control_policy": "Each model's missing-image and unrelated-image controls must leave every target unchanged and mark every whole target uncertain. The unrelated-image payload retains its true foreign source bindings. No fabricated source binding or target edit may pass.",
+  "excluded": {
+    "model": "muse-glimmer:30b-mlx",
+    "reason": "Two observed 120-second timeouts in the quote-v2 diagnostic; excluded from expansion without retry. This is not a model-quality conclusion."
+  },
+  "whole_output_assessment": [
+    "Host validates exact source quotes, host-derived offsets, disjoint edits, target/source-image bindings and preserves all failures; no automatic repair of invalid outputs.",
+    "Root compares every proposed changed span to its actual source image, including substitutions, deletions and insertions. Unsupported critical changes fail fidelity.",
+    "Root reviews each whole derived passage against the source for omissions, residual OCR damage, names/numbers/negations, speaker/quotation boundaries, accidental neighbor inclusion and truncated endings. Unchecked passages remain ungraded, not passed.",
+    "Assess reading flow and pronunciation-relevant text separately from exact fidelity. Preserve historical spelling/grammar; no synthesized speech or listening claim.",
+    "Evaluate 70 pre-output anchors on raw, static and derived text using exact source mappings; report as diagnostic anchor outcomes, never full character/word error rate.",
+    "Keep every invalid, timeout or unknown case in the 20-attempt model denominator; report the 18 real and 2 control denominators separately. The four reused primary outputs remain in the denominator with their prior assessment.",
+    "Controls must preserve every unsupported target unchanged and mark every whole target uncertain; wrong-image payload keeps its true foreign source descriptors. No fabricated source binding.",
+    "Freeze each visual assessment with source/image/request/reply hashes and explicit AI reviewer identity before human review.",
+    "Human sees only the fixed HR-009 selection, with model names hidden. Do not substitute a successful case for a failed selected output. Stop at 10 minutes or sooner and label remaining outputs AI-only."
+  ],
+  "no_full_reference_transcription": true,
+  "source_expectations_frozen": true,
+  "quality_standards_changed": false,
+  "acceptance": "Only provisional pilot criteria from HR-003; no P0 closure, automatic corpus adoption or full-run authorization. Human unreviewed coverage is always explicit.",
+  "output_fields": [
+    "unit_id",
+    "model",
+    "request_sha256",
+    "raw_reply_sha256",
+    "source_image_sha256",
+    "schema_and_patch_valid",
+    "anchor_outcomes",
+    "unsupported_critical_changes",
+    "residual_errors",
+    "usable_reading",
+    "needs_review",
+    "visual_scope_and_uncertainties",
+    "reviewer",
+    "review_minutes"
+  ],
+  "human_selection": {
+    "policy": "HR-009 fixed selection; at most 3 anonymized outputs and 10 minutes; no substitution",
+    "available_from_this_expansion": [
+      {
+        "unit_id": "reading-e05d33cb21bb773191dc",
+        "model": "gemma4:31b-mlx"
+      },
+      {
+        "unit_id": "reading-50a8872c9b2dda1a90bf",
+        "model": "qwen3.8:27b-mlx"
+      }
+    ],
+    "not_produced": [
+      {
+        "unit_id": "reading-637a8b4b8fe245aa6d6b",
+        "model": "muse-glimmer:30b-mlx",
+        "reason": "Muse excluded after observed resource timeouts; do not substitute another case"
+      }
+    ]
+  },
+  "diagnostic_success": "Across the completed 18-passage real set, at least one valid replayable source-grounded improvement and no unsupported substantive change, with both controls behaving as specified and every invalid/timeout/unknown retained and reported. This is a bounded pilot assessment, not P0 closure, full-run authorization or a general model ranking.",
+  "evidence": {
+    "artifacts/reading-quote-expansion-20261025-01/requests.json": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61",
+    "artifacts/reading-quote-20261025-01/assessment-protocol.json": "961eeb96c30be047f1e34b2ba66ca354faa340ef00445ef702973cdc0ca94c34",
+    "artifacts/reading-quote-run-20261025-01/comparison.json": "3e14f9548e9f3890a1cac6c95f29ebfaa9f500a0a02ee6b20a54d3b1a86be99a",
+    "docs/archive/human-review/HR-009-v1/applied.json": "32a6ae7d8d8ecf156b650d32726afac2d1072bdfd2c58ca62cc6fd6a4b420dbb",
+    "docs/archive/human-review/HR-009-v1/selection.json": "752a3b141dc3a103d1872cdf05ce952a26c4f20a4fdf5bcfde9f465dd29b89d3",
+    "docs/archive/human-review/HR-003-v1/d02da43f-cba3-4654-be1f-b9f3c72de125.json": "39a5b48858d575789d0cb58f98cf5ffae08597e2c0dc1f086cff7d00f957792b"
+  }
+}

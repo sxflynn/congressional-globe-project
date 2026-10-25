@@ -1,0 +1,114 @@
+{
+  "$defs": {
+    "QuoteReadingPatch": {
+      "additionalProperties": false,
+      "description": "A proposed change anchored by exact source wording, never coordinates.",
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "old": {
+          "minLength": 1,
+          "title": "Old",
+          "type": "string"
+        },
+        "new": {
+          "title": "New",
+          "type": "string"
+        },
+        "image_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Image Ids",
+          "type": "array"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "old",
+        "new",
+        "image_ids",
+        "reason"
+      ],
+      "title": "QuoteReadingPatch",
+      "type": "object"
+    },
+    "QuoteUncertainReading": {
+      "additionalProperties": false,
+      "description": "An uncertainty anchor; empty old text denotes the whole paragraph.",
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "old": {
+          "title": "Old",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "old",
+        "reason"
+      ],
+      "title": "QuoteUncertainReading",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "v2 reply contract: source quotes replace model-authored offsets.",
+  "properties": {
+    "unit_id": {
+      "minLength": 1,
+      "title": "Unit Id",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "unchanged",
+        "proposed",
+        "needs_review"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "patches": {
+      "items": {
+        "$ref": "#/$defs/QuoteReadingPatch"
+      },
+      "title": "Patches",
+      "type": "array"
+    },
+    "uncertain": {
+      "items": {
+        "$ref": "#/$defs/QuoteUncertainReading"
+      },
+      "title": "Uncertain",
+      "type": "array"
+    }
+  },
+  "required": [
+    "unit_id",
+    "status",
+    "patches",
+    "uncertain"
+  ],
+  "title": "QuoteReadingReply",
+  "type": "object"
+}
