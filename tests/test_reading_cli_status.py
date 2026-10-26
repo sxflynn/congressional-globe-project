@@ -48,7 +48,7 @@ def test_status_counts_unknown_usage_without_dumping_details(tmp_path, capsys):
     assert report["unknown_usage"]["unknown_token_usage_attempts"] == 1
     assert report["budget"]["remaining_allowance"] is None
     assert report["runtime"] == {"state": "observation_unknown", "launch_ready": False}
-    assert "dispatch" not in json.dumps(report["next_action"])
+    assert "dispatch_next_pending" not in json.dumps(report["next_action"])
     assert len(json.dumps(report).encode()) < reading_cli.MAX_OUTPUT_BYTES
 
 

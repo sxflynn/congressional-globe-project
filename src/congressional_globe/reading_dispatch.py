@@ -176,6 +176,7 @@ def _send(store, attempt_id, task_id, base_url, request_body, timeout, opener, s
 
 def _invalid_reply(store, attempt_id, task_id, raw, detail, started, is_control=False):
     store.record_reply(attempt_id, raw, None)
+    store.record_elapsed(attempt_id, time.monotonic() - started)
     store.complete(attempt_id, "invalid", detail)
     result = {
         "task_id": task_id,

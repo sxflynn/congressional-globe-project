@@ -1,0 +1,749 @@
+{
+  "schema_version": "reading-recovery-proof-v1",
+  "source_kind": "synthetic requests/images/replies only",
+  "fixture_path": "artifacts/reading-recovery-20261026-01/fixture/fixture.json",
+  "fixture_sha256": "af7b7a997b96c75a70dd7527e375ab46875ae542feb8fa747393d17dee8b05df",
+  "traces": [
+    {
+      "phase": "claim",
+      "interrupted": {
+        "command": [
+          "/Users/sflynn/Downloads/congressional globe project/.venv/bin/python3",
+          "/Users/sflynn/Downloads/congressional globe project/tests/reading_recovery_worker.py",
+          "/var/folders/lf/05rwnwxs5n5f8pj438g9ts780000gn/T/globe-recovery-proof-gmmg9a8m/claim",
+          "interrupt",
+          "claim"
+        ],
+        "pid": 65527,
+        "checkpoint": "claim",
+        "returncode": -9,
+        "os_observation": {
+          "state": "observation_unknown",
+          "pid_start_command": null
+        }
+      },
+      "committed_rows_before_resume": [
+        {
+          "attempt_id": "faf2fc88-485d-4b89-a702-01761ea59361",
+          "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+          "status": "inflight",
+          "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+          "raw_reply": null,
+          "usage_json": null,
+          "detail": null,
+          "started_at": "2026-10-26 21:10:56",
+          "elapsed_seconds": null,
+          "finished_at": null
+        }
+      ],
+      "resumed": {
+        "pid": 65529,
+        "outcome": {
+          "state": "blocked",
+          "reason": "an attempt is unresolved; reconcile before dispatch"
+        },
+        "attempts": [
+          {
+            "attempt_id": "faf2fc88-485d-4b89-a702-01761ea59361",
+            "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+            "status": "inflight",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": null,
+            "usage_json": null,
+            "detail": null,
+            "started_at": "2026-10-26 21:10:56",
+            "elapsed_seconds": null,
+            "finished_at": null
+          }
+        ],
+        "summary": {
+          "pending": 1,
+          "inflight": 1,
+          "timeout": 0,
+          "valid": 0,
+          "failed": 0,
+          "invalid": 0
+        },
+        "timing": {
+          "calls": 1,
+          "seconds": 0.0,
+          "models": {},
+          "unknown_elapsed_attempts": 1,
+          "unknown_model_attempts": 0
+        },
+        "network_calls": 0
+      },
+      "fake_transport_calls": [],
+      "fixture_unchanged": true
+    },
+    {
+      "phase": "reply",
+      "interrupted": {
+        "command": [
+          "/Users/sflynn/Downloads/congressional globe project/.venv/bin/python3",
+          "/Users/sflynn/Downloads/congressional globe project/tests/reading_recovery_worker.py",
+          "/var/folders/lf/05rwnwxs5n5f8pj438g9ts780000gn/T/globe-recovery-proof-gmmg9a8m/reply",
+          "interrupt",
+          "reply"
+        ],
+        "pid": 65530,
+        "checkpoint": "reply",
+        "returncode": -9,
+        "os_observation": {
+          "state": "observation_unknown",
+          "pid_start_command": null
+        }
+      },
+      "committed_rows_before_resume": [
+        {
+          "attempt_id": "6099ec00-4622-4497-b455-fc91df88d980",
+          "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+          "status": "inflight",
+          "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+          "raw_reply": "{\"model\": \"qwen3.8:27b-mlx\", \"done\": true, \"done_reason\": \"stop\", \"message\": {\"role\": \"assistant\", \"content\": \"{\\\"unit_id\\\": \\\"dispatch-unit\\\", \\\"status\\\": \\\"unchanged\\\", \\\"patches\\\": [], \\\"uncertain\\\": []}\"}, \"prompt_eval_count\": 12, \"eval_count\": 8, \"total_duration\": 1000}",
+          "usage_json": "{\"eval_count\":8,\"prompt_eval_count\":12,\"total_duration\":1000}",
+          "detail": null,
+          "started_at": "2026-10-26 21:10:56",
+          "elapsed_seconds": null,
+          "finished_at": null
+        }
+      ],
+      "resumed": {
+        "pid": 65532,
+        "outcome": {
+          "state": "blocked",
+          "reason": "an attempt is unresolved; reconcile before dispatch"
+        },
+        "attempts": [
+          {
+            "attempt_id": "6099ec00-4622-4497-b455-fc91df88d980",
+            "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+            "status": "inflight",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": "{\"model\": \"qwen3.8:27b-mlx\", \"done\": true, \"done_reason\": \"stop\", \"message\": {\"role\": \"assistant\", \"content\": \"{\\\"unit_id\\\": \\\"dispatch-unit\\\", \\\"status\\\": \\\"unchanged\\\", \\\"patches\\\": [], \\\"uncertain\\\": []}\"}, \"prompt_eval_count\": 12, \"eval_count\": 8, \"total_duration\": 1000}",
+            "usage_json": "{\"eval_count\":8,\"prompt_eval_count\":12,\"total_duration\":1000}",
+            "detail": null,
+            "started_at": "2026-10-26 21:10:56",
+            "elapsed_seconds": null,
+            "finished_at": null
+          }
+        ],
+        "summary": {
+          "pending": 1,
+          "inflight": 1,
+          "failed": 0,
+          "invalid": 0,
+          "timeout": 0,
+          "valid": 0
+        },
+        "timing": {
+          "calls": 1,
+          "seconds": 0.0,
+          "models": {},
+          "unknown_elapsed_attempts": 1,
+          "unknown_model_attempts": 0
+        },
+        "network_calls": 0
+      },
+      "fake_transport_calls": [
+        {
+          "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+          "request_sha256": "4db3deec7193e7ff61ece1da208c9e155bf4a114797e8a283f9d2033d6e47555",
+          "pid": 65530
+        }
+      ],
+      "fixture_unchanged": true
+    },
+    {
+      "phase": "completion",
+      "interrupted": {
+        "command": [
+          "/Users/sflynn/Downloads/congressional globe project/.venv/bin/python3",
+          "/Users/sflynn/Downloads/congressional globe project/tests/reading_recovery_worker.py",
+          "/var/folders/lf/05rwnwxs5n5f8pj438g9ts780000gn/T/globe-recovery-proof-gmmg9a8m/completion",
+          "interrupt",
+          "completion"
+        ],
+        "pid": 65543,
+        "checkpoint": "completion",
+        "returncode": -9,
+        "os_observation": {
+          "state": "observation_unknown",
+          "pid_start_command": null
+        }
+      },
+      "committed_rows_before_resume": [
+        {
+          "attempt_id": "35d0a202-bf59-4970-bca9-476e5c0a08b6",
+          "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+          "status": "valid",
+          "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+          "raw_reply": "{\"model\": \"qwen3.8:27b-mlx\", \"done\": true, \"done_reason\": \"stop\", \"message\": {\"role\": \"assistant\", \"content\": \"{\\\"unit_id\\\": \\\"dispatch-unit\\\", \\\"status\\\": \\\"unchanged\\\", \\\"patches\\\": [], \\\"uncertain\\\": []}\"}, \"prompt_eval_count\": 12, \"eval_count\": 8, \"total_duration\": 1000}",
+          "usage_json": "{\"eval_count\":8,\"prompt_eval_count\":12,\"total_duration\":1000}",
+          "detail": null,
+          "started_at": "2026-10-26 21:10:57",
+          "elapsed_seconds": 0.0002699168398976326,
+          "finished_at": "2026-10-26 21:10:57"
+        }
+      ],
+      "resumed": {
+        "pid": 65558,
+        "outcome": {
+          "state": "returned",
+          "result_task_ids": [
+            "qwen3.8:27b-mlx::unrelated-unit"
+          ]
+        },
+        "attempts": [
+          {
+            "attempt_id": "35d0a202-bf59-4970-bca9-476e5c0a08b6",
+            "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+            "status": "valid",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": "{\"model\": \"qwen3.8:27b-mlx\", \"done\": true, \"done_reason\": \"stop\", \"message\": {\"role\": \"assistant\", \"content\": \"{\\\"unit_id\\\": \\\"dispatch-unit\\\", \\\"status\\\": \\\"unchanged\\\", \\\"patches\\\": [], \\\"uncertain\\\": []}\"}, \"prompt_eval_count\": 12, \"eval_count\": 8, \"total_duration\": 1000}",
+            "usage_json": "{\"eval_count\":8,\"prompt_eval_count\":12,\"total_duration\":1000}",
+            "detail": null,
+            "started_at": "2026-10-26 21:10:57",
+            "elapsed_seconds": 0.0002699168398976326,
+            "finished_at": "2026-10-26 21:10:57"
+          },
+          {
+            "attempt_id": "61e4cf6d-3d74-48cd-87a5-e0be995853c5",
+            "task_id": "qwen3.8:27b-mlx::unrelated-unit",
+            "status": "valid",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"unrelated-crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:unrelated-source\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:unrelated-source\\\"}],\\\"unit_id\\\":\\\"unrelated-unit\\\"}\",\"images\":[\"YW5vdGhlciB2ZXJpZmllZCBzb3VyY2UgaW1hZ2U=\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": "{\"model\": \"qwen3.8:27b-mlx\", \"done\": true, \"done_reason\": \"stop\", \"message\": {\"role\": \"assistant\", \"content\": \"{\\\"unit_id\\\": \\\"unrelated-unit\\\", \\\"status\\\": \\\"unchanged\\\", \\\"patches\\\": [], \\\"uncertain\\\": []}\"}, \"prompt_eval_count\": 12, \"eval_count\": 8, \"total_duration\": 1000}",
+            "usage_json": "{\"eval_count\":8,\"prompt_eval_count\":12,\"total_duration\":1000}",
+            "detail": null,
+            "started_at": "2026-10-26 21:10:57",
+            "elapsed_seconds": 0.0002855828497558832,
+            "finished_at": "2026-10-26 21:10:57"
+          }
+        ],
+        "summary": {
+          "pending": 0,
+          "inflight": 0,
+          "failed": 0,
+          "valid": 2,
+          "invalid": 0,
+          "timeout": 0
+        },
+        "timing": {
+          "calls": 2,
+          "seconds": 0.0005554996896535158,
+          "models": {
+            "qwen3.8:27b-mlx": {
+              "calls": 2,
+              "seconds": 0.0005554996896535158
+            }
+          },
+          "unknown_elapsed_attempts": 0,
+          "unknown_model_attempts": 0
+        },
+        "network_calls": 0
+      },
+      "fake_transport_calls": [
+        {
+          "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+          "request_sha256": "4db3deec7193e7ff61ece1da208c9e155bf4a114797e8a283f9d2033d6e47555",
+          "pid": 65543
+        },
+        {
+          "task_id": "qwen3.8:27b-mlx::unrelated-unit",
+          "request_sha256": "fb18a3e6aabcfe49331dd54f3121f9bcb67dfe8bbf041194b7a31eefe0a995c6",
+          "pid": 65558
+        }
+      ],
+      "fixture_unchanged": true
+    },
+    {
+      "phase": "transport_error",
+      "interrupted": {
+        "command": [
+          "/Users/sflynn/Downloads/congressional globe project/.venv/bin/python3",
+          "/Users/sflynn/Downloads/congressional globe project/tests/reading_recovery_worker.py",
+          "/var/folders/lf/05rwnwxs5n5f8pj438g9ts780000gn/T/globe-recovery-proof-gmmg9a8m/transport_error",
+          "interrupt",
+          "transport_error"
+        ],
+        "pid": 65560,
+        "checkpoint": "transport_error",
+        "returncode": -9,
+        "os_observation": {
+          "state": "observation_unknown",
+          "pid_start_command": null
+        }
+      },
+      "committed_rows_before_resume": [
+        {
+          "attempt_id": "21fd90db-b0ac-4926-a6ce-b9b50d6caf54",
+          "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+          "status": "inflight",
+          "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+          "raw_reply": null,
+          "usage_json": null,
+          "detail": "{\"transport_error\":\"synthetic unknown transport outcome\",\"usage\":null}",
+          "started_at": "2026-10-26 21:10:58",
+          "elapsed_seconds": 0.00023691589012742043,
+          "finished_at": null
+        }
+      ],
+      "resumed": {
+        "pid": 65563,
+        "outcome": {
+          "state": "blocked",
+          "reason": "an attempt is unresolved; reconcile before dispatch"
+        },
+        "attempts": [
+          {
+            "attempt_id": "21fd90db-b0ac-4926-a6ce-b9b50d6caf54",
+            "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+            "status": "inflight",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": null,
+            "usage_json": null,
+            "detail": "{\"transport_error\":\"synthetic unknown transport outcome\",\"usage\":null}",
+            "started_at": "2026-10-26 21:10:58",
+            "elapsed_seconds": 0.00023691589012742043,
+            "finished_at": null
+          }
+        ],
+        "summary": {
+          "pending": 1,
+          "inflight": 1,
+          "timeout": 0,
+          "invalid": 0,
+          "failed": 0,
+          "valid": 0
+        },
+        "timing": {
+          "calls": 1,
+          "seconds": 0.00023691589012742043,
+          "models": {
+            "qwen3.8:27b-mlx": {
+              "calls": 1,
+              "seconds": 0.00023691589012742043
+            }
+          },
+          "unknown_elapsed_attempts": 0,
+          "unknown_model_attempts": 0
+        },
+        "network_calls": 0
+      },
+      "fake_transport_calls": [
+        {
+          "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+          "request_sha256": "4db3deec7193e7ff61ece1da208c9e155bf4a114797e8a283f9d2033d6e47555",
+          "pid": 65560
+        }
+      ],
+      "fixture_unchanged": true
+    },
+    {
+      "phase": "invalid_reply",
+      "interrupted": {
+        "command": [
+          "/Users/sflynn/Downloads/congressional globe project/.venv/bin/python3",
+          "/Users/sflynn/Downloads/congressional globe project/tests/reading_recovery_worker.py",
+          "/var/folders/lf/05rwnwxs5n5f8pj438g9ts780000gn/T/globe-recovery-proof-gmmg9a8m/invalid_reply",
+          "interrupt",
+          "invalid_reply"
+        ],
+        "pid": 65564,
+        "checkpoint": "invalid_reply",
+        "returncode": -9,
+        "os_observation": {
+          "state": "observation_unknown",
+          "pid_start_command": null
+        }
+      },
+      "committed_rows_before_resume": [
+        {
+          "attempt_id": "9abcef1c-9624-4773-b44a-ff6dfa45fd77",
+          "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+          "status": "invalid",
+          "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+          "raw_reply": "not JSON; preserve exactly",
+          "usage_json": null,
+          "detail": "Expecting value: line 1 column 1 (char 0)",
+          "started_at": "2026-10-26 21:10:58",
+          "elapsed_seconds": 0.0003012081142514944,
+          "finished_at": "2026-10-26 21:10:58"
+        }
+      ],
+      "resumed": {
+        "pid": 65566,
+        "outcome": {
+          "state": "returned",
+          "result_task_ids": [
+            "qwen3.8:27b-mlx::unrelated-unit"
+          ]
+        },
+        "attempts": [
+          {
+            "attempt_id": "9abcef1c-9624-4773-b44a-ff6dfa45fd77",
+            "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+            "status": "invalid",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": "not JSON; preserve exactly",
+            "usage_json": null,
+            "detail": "Expecting value: line 1 column 1 (char 0)",
+            "started_at": "2026-10-26 21:10:58",
+            "elapsed_seconds": 0.0003012081142514944,
+            "finished_at": "2026-10-26 21:10:58"
+          },
+          {
+            "attempt_id": "12536942-39f1-4e42-8ec7-5c03fef87186",
+            "task_id": "qwen3.8:27b-mlx::unrelated-unit",
+            "status": "valid",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"unrelated-crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:unrelated-source\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:unrelated-source\\\"}],\\\"unit_id\\\":\\\"unrelated-unit\\\"}\",\"images\":[\"YW5vdGhlciB2ZXJpZmllZCBzb3VyY2UgaW1hZ2U=\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": "{\"model\": \"qwen3.8:27b-mlx\", \"done\": true, \"done_reason\": \"stop\", \"message\": {\"role\": \"assistant\", \"content\": \"{\\\"unit_id\\\": \\\"unrelated-unit\\\", \\\"status\\\": \\\"unchanged\\\", \\\"patches\\\": [], \\\"uncertain\\\": []}\"}, \"prompt_eval_count\": 12, \"eval_count\": 8, \"total_duration\": 1000}",
+            "usage_json": "{\"eval_count\":8,\"prompt_eval_count\":12,\"total_duration\":1000}",
+            "detail": null,
+            "started_at": "2026-10-26 21:10:58",
+            "elapsed_seconds": 0.00027462514117360115,
+            "finished_at": "2026-10-26 21:10:58"
+          }
+        ],
+        "summary": {
+          "pending": 0,
+          "inflight": 0,
+          "failed": 0,
+          "valid": 1,
+          "invalid": 1,
+          "timeout": 0
+        },
+        "timing": {
+          "calls": 2,
+          "seconds": 0.0005758332554250956,
+          "models": {
+            "qwen3.8:27b-mlx": {
+              "calls": 2,
+              "seconds": 0.0005758332554250956
+            }
+          },
+          "unknown_elapsed_attempts": 0,
+          "unknown_model_attempts": 0
+        },
+        "network_calls": 0
+      },
+      "fake_transport_calls": [
+        {
+          "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+          "request_sha256": "4db3deec7193e7ff61ece1da208c9e155bf4a114797e8a283f9d2033d6e47555",
+          "pid": 65564
+        },
+        {
+          "task_id": "qwen3.8:27b-mlx::unrelated-unit",
+          "request_sha256": "fb18a3e6aabcfe49331dd54f3121f9bcb67dfe8bbf041194b7a31eefe0a995c6",
+          "pid": 65566
+        }
+      ],
+      "fixture_unchanged": true
+    },
+    {
+      "phase": "http_failure",
+      "interrupted": {
+        "command": [
+          "/Users/sflynn/Downloads/congressional globe project/.venv/bin/python3",
+          "/Users/sflynn/Downloads/congressional globe project/tests/reading_recovery_worker.py",
+          "/var/folders/lf/05rwnwxs5n5f8pj438g9ts780000gn/T/globe-recovery-proof-gmmg9a8m/http_failure",
+          "interrupt",
+          "http_failure"
+        ],
+        "pid": 65568,
+        "checkpoint": "http_failure",
+        "returncode": -9,
+        "os_observation": {
+          "state": "observation_unknown",
+          "pid_start_command": null
+        }
+      },
+      "committed_rows_before_resume": [
+        {
+          "attempt_id": "3318c26d-7d9e-4550-8dc5-415b72ade797",
+          "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+          "status": "failed",
+          "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+          "raw_reply": "HTTP 503: synthetic service failure",
+          "usage_json": null,
+          "detail": "HTTP 503: synthetic service failure",
+          "started_at": "2026-10-26 21:10:59",
+          "elapsed_seconds": 0.0002840419765561819,
+          "finished_at": "2026-10-26 21:10:59"
+        }
+      ],
+      "resumed": {
+        "pid": 65582,
+        "outcome": {
+          "state": "returned",
+          "result_task_ids": [
+            "qwen3.8:27b-mlx::unrelated-unit"
+          ]
+        },
+        "attempts": [
+          {
+            "attempt_id": "3318c26d-7d9e-4550-8dc5-415b72ade797",
+            "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+            "status": "failed",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": "HTTP 503: synthetic service failure",
+            "usage_json": null,
+            "detail": "HTTP 503: synthetic service failure",
+            "started_at": "2026-10-26 21:10:59",
+            "elapsed_seconds": 0.0002840419765561819,
+            "finished_at": "2026-10-26 21:10:59"
+          },
+          {
+            "attempt_id": "4cff9d82-c91c-4654-862c-067228c168e7",
+            "task_id": "qwen3.8:27b-mlx::unrelated-unit",
+            "status": "valid",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"unrelated-crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:unrelated-source\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:unrelated-source\\\"}],\\\"unit_id\\\":\\\"unrelated-unit\\\"}\",\"images\":[\"YW5vdGhlciB2ZXJpZmllZCBzb3VyY2UgaW1hZ2U=\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": "{\"model\": \"qwen3.8:27b-mlx\", \"done\": true, \"done_reason\": \"stop\", \"message\": {\"role\": \"assistant\", \"content\": \"{\\\"unit_id\\\": \\\"unrelated-unit\\\", \\\"status\\\": \\\"unchanged\\\", \\\"patches\\\": [], \\\"uncertain\\\": []}\"}, \"prompt_eval_count\": 12, \"eval_count\": 8, \"total_duration\": 1000}",
+            "usage_json": "{\"eval_count\":8,\"prompt_eval_count\":12,\"total_duration\":1000}",
+            "detail": null,
+            "started_at": "2026-10-26 21:10:59",
+            "elapsed_seconds": 0.0002916250377893448,
+            "finished_at": "2026-10-26 21:10:59"
+          }
+        ],
+        "summary": {
+          "pending": 0,
+          "inflight": 0,
+          "invalid": 0,
+          "failed": 1,
+          "valid": 1,
+          "timeout": 0
+        },
+        "timing": {
+          "calls": 2,
+          "seconds": 0.0005756670143455267,
+          "models": {
+            "qwen3.8:27b-mlx": {
+              "calls": 2,
+              "seconds": 0.0005756670143455267
+            }
+          },
+          "unknown_elapsed_attempts": 0,
+          "unknown_model_attempts": 0
+        },
+        "network_calls": 0
+      },
+      "fake_transport_calls": [
+        {
+          "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+          "request_sha256": "4db3deec7193e7ff61ece1da208c9e155bf4a114797e8a283f9d2033d6e47555",
+          "pid": 65568
+        },
+        {
+          "task_id": "qwen3.8:27b-mlx::unrelated-unit",
+          "request_sha256": "fb18a3e6aabcfe49331dd54f3121f9bcb67dfe8bbf041194b7a31eefe0a995c6",
+          "pid": 65582
+        }
+      ],
+      "fixture_unchanged": true
+    },
+    {
+      "mode": "recover_reply",
+      "interrupted": {
+        "command": [
+          "/Users/sflynn/Downloads/congressional globe project/.venv/bin/python3",
+          "/Users/sflynn/Downloads/congressional globe project/tests/reading_recovery_worker.py",
+          "/var/folders/lf/05rwnwxs5n5f8pj438g9ts780000gn/T/globe-recovery-proof-gmmg9a8m/recover_reply",
+          "interrupt",
+          "reply"
+        ],
+        "pid": 65584,
+        "checkpoint": "reply",
+        "returncode": -9,
+        "os_observation": {
+          "state": "observation_unknown",
+          "pid_start_command": null
+        }
+      },
+      "recovered": {
+        "pid": 65586,
+        "outcome": {
+          "state": "returned",
+          "result_task_ids": []
+        },
+        "attempts": [
+          {
+            "attempt_id": "542ab347-ef35-4da6-834b-9bff00aea70f",
+            "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+            "status": "valid",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": "{\"model\": \"qwen3.8:27b-mlx\", \"done\": true, \"done_reason\": \"stop\", \"message\": {\"role\": \"assistant\", \"content\": \"{\\\"unit_id\\\": \\\"dispatch-unit\\\", \\\"status\\\": \\\"unchanged\\\", \\\"patches\\\": [], \\\"uncertain\\\": []}\"}, \"prompt_eval_count\": 12, \"eval_count\": 8, \"total_duration\": 1000}",
+            "usage_json": "{\"eval_count\":8,\"prompt_eval_count\":12,\"total_duration\":1000}",
+            "detail": null,
+            "started_at": "2026-10-26 21:11:00",
+            "elapsed_seconds": null,
+            "finished_at": "2026-10-26 21:11:00"
+          }
+        ],
+        "summary": {
+          "pending": 1,
+          "inflight": 0,
+          "invalid": 0,
+          "timeout": 0,
+          "failed": 0,
+          "valid": 1
+        },
+        "timing": {
+          "calls": 1,
+          "seconds": 0.0,
+          "models": {},
+          "unknown_elapsed_attempts": 1,
+          "unknown_model_attempts": 0
+        },
+        "network_calls": 0
+      },
+      "subsequent_dispatch": {
+        "pid": 65587,
+        "outcome": {
+          "state": "blocked",
+          "reason": "prior attempt time is unknown; reconcile the run budget before dispatch"
+        },
+        "attempts": [
+          {
+            "attempt_id": "542ab347-ef35-4da6-834b-9bff00aea70f",
+            "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+            "status": "valid",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": "{\"model\": \"qwen3.8:27b-mlx\", \"done\": true, \"done_reason\": \"stop\", \"message\": {\"role\": \"assistant\", \"content\": \"{\\\"unit_id\\\": \\\"dispatch-unit\\\", \\\"status\\\": \\\"unchanged\\\", \\\"patches\\\": [], \\\"uncertain\\\": []}\"}, \"prompt_eval_count\": 12, \"eval_count\": 8, \"total_duration\": 1000}",
+            "usage_json": "{\"eval_count\":8,\"prompt_eval_count\":12,\"total_duration\":1000}",
+            "detail": null,
+            "started_at": "2026-10-26 21:11:00",
+            "elapsed_seconds": null,
+            "finished_at": "2026-10-26 21:11:00"
+          }
+        ],
+        "summary": {
+          "pending": 1,
+          "inflight": 0,
+          "failed": 0,
+          "invalid": 0,
+          "timeout": 0,
+          "valid": 1
+        },
+        "timing": {
+          "calls": 1,
+          "seconds": 0.0,
+          "models": {},
+          "unknown_elapsed_attempts": 1,
+          "unknown_model_attempts": 0
+        },
+        "network_calls": 0
+      },
+      "fake_transport_calls": [
+        {
+          "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+          "request_sha256": "4db3deec7193e7ff61ece1da208c9e155bf4a114797e8a283f9d2033d6e47555",
+          "pid": 65584
+        }
+      ]
+    },
+    {
+      "mode": "reconcile",
+      "interrupted": {
+        "command": [
+          "/Users/sflynn/Downloads/congressional globe project/.venv/bin/python3",
+          "/Users/sflynn/Downloads/congressional globe project/tests/reading_recovery_worker.py",
+          "/var/folders/lf/05rwnwxs5n5f8pj438g9ts780000gn/T/globe-recovery-proof-gmmg9a8m/reconcile",
+          "interrupt",
+          "claim"
+        ],
+        "pid": 65588,
+        "checkpoint": "claim",
+        "returncode": -9,
+        "os_observation": {
+          "state": "observation_unknown",
+          "pid_start_command": null
+        }
+      },
+      "recovered": {
+        "pid": 65590,
+        "outcome": {
+          "state": "returned",
+          "result_task_ids": []
+        },
+        "attempts": [
+          {
+            "attempt_id": "a1ef6e11-ac49-48f2-96da-f464a2f9a435",
+            "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+            "status": "timeout",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": null,
+            "usage_json": null,
+            "detail": "Synthetic explicit reconciliation; elapsed and usage remain as recorded",
+            "started_at": "2026-10-26 21:11:00",
+            "elapsed_seconds": null,
+            "finished_at": "2026-10-26 21:11:01"
+          }
+        ],
+        "summary": {
+          "pending": 1,
+          "inflight": 0,
+          "failed": 0,
+          "invalid": 0,
+          "valid": 0,
+          "timeout": 1
+        },
+        "timing": {
+          "calls": 1,
+          "seconds": 0.0,
+          "models": {},
+          "unknown_elapsed_attempts": 1,
+          "unknown_model_attempts": 0
+        },
+        "network_calls": 0
+      },
+      "subsequent_dispatch": {
+        "pid": 65591,
+        "outcome": {
+          "state": "blocked",
+          "reason": "prior attempt time is unknown; reconcile the run budget before dispatch"
+        },
+        "attempts": [
+          {
+            "attempt_id": "a1ef6e11-ac49-48f2-96da-f464a2f9a435",
+            "task_id": "qwen3.8:27b-mlx::dispatch-unit",
+            "status": "timeout",
+            "request_json": "{\"format\":\"json\",\"messages\":[{\"content\":\"prompt\\nReply schema: {\\\"type\\\":\\\"object\\\"}\",\"role\":\"system\"},{\"content\":\"{\\\"context_after\\\":[],\\\"context_before\\\":[],\\\"image_order\\\":\\\"Attached images follow the images list in order.\\\",\\\"images\\\":[{\\\"id\\\":\\\"crop\\\",\\\"sources\\\":[{\\\"end\\\":27,\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\",\\\"start\\\":0}]}],\\\"target\\\":[{\\\"raw\\\":\\\"A short historical passage.\\\",\\\"raw_sha256\\\":\\\"6803883de95cdd752869b58fceab0a64e9a7c6a4563615422c75c4ed7a35e6ed\\\",\\\"source_id\\\":\\\"congressionalg7391unit:1:dispatch-target\\\"}],\\\"unit_id\\\":\\\"dispatch-unit\\\"}\",\"images\":[\"dmVyaWZpZWQgc3ludGhldGljIGltYWdl\"],\"role\":\"user\"}],\"model\":\"qwen3.8:27b-mlx\",\"options\":{\"num_ctx\":16384,\"num_predict\":4096,\"temperature\":0},\"stream\":false,\"think\":false}",
+            "raw_reply": null,
+            "usage_json": null,
+            "detail": "Synthetic explicit reconciliation; elapsed and usage remain as recorded",
+            "started_at": "2026-10-26 21:11:00",
+            "elapsed_seconds": null,
+            "finished_at": "2026-10-26 21:11:01"
+          }
+        ],
+        "summary": {
+          "pending": 1,
+          "inflight": 0,
+          "failed": 0,
+          "invalid": 0,
+          "timeout": 1,
+          "valid": 0
+        },
+        "timing": {
+          "calls": 1,
+          "seconds": 0.0,
+          "models": {},
+          "unknown_elapsed_attempts": 1,
+          "unknown_model_attempts": 0
+        },
+        "network_calls": 0
+      },
+      "fake_transport_calls": []
+    }
+  ],
+  "provider_calls": 0,
+  "network_requests": 0,
+  "limits": {
+    "checkpoint_seconds": 10,
+    "peer_seconds": 15,
+    "process_observation_seconds": 5
+  },
+  "scope": "SIGKILL at six committed checkpoints, then independent Python processes; not power-loss or distinct-agent-harness proof"
+}

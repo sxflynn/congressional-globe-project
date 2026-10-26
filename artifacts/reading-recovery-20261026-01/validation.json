@@ -1,0 +1,32 @@
+{
+  "schema_version": "reading-recovery-validation-v1",
+  "files_sha256": {
+    "src/congressional_globe/reading_run_store.py": "fdcccca9feb7c68cc6276d3de9ea1617fa8ae041d4f716f70978abd1b8ef30be",
+    "src/congressional_globe/reading_dispatch.py": "aa0a1198fc013135fc4dd33efe1c3041720e0732bb7bc553d38de81a5c776212",
+    "tests/test_reading_recovery.py": "fb152485a7b31df9202798d1cc42cc7d4e237e08822bd2c7e108addb15b46e1b",
+    "tests/reading_recovery_worker.py": "1f4b63513566ff9102ea0ed53d20326a0579546aaed2c10f3ab4343fe5b34a04",
+    "tests/test_reading_cli_status.py": "a2b7d9350291c48f3aad4bb9e1991f078f869c11a8796feedc0be3c4a17d67f1",
+    "artifacts/reading-recovery-20261026-01/fixture/fixture.json": "af7b7a997b96c75a70dd7527e375ab46875ae542feb8fa747393d17dee8b05df",
+    "artifacts/reading-recovery-20261026-01/fixture/builder/crop.jpg": "b2c3f19c420a0444fa0ebbfffac7629dd5a6d629e8061b82c6d7ee5b37a90e07",
+    "artifacts/reading-recovery-20261026-01/fixture/builder/unrelated.jpg": "a7f422a48781124021db3736bc776f65afc929744104c567f43ef1aa97b1a0a5"
+  },
+  "new_recovery_tests": 17,
+  "full_gate": {
+    "exit_code": 0,
+    "tests_passed": 497,
+    "ruff": "pass",
+    "ty": "pass",
+    "complexity_maximum": 5,
+    "markdown_formatter": "pass",
+    "log": "gate.log"
+  },
+  "final_proof": "final-proof.json",
+  "interruption_scenarios": 6,
+  "additional_saved_reply_and_reconciliation_scenarios": 2,
+  "provider_calls": 0,
+  "network_requests": 0,
+  "historical_or_corpus_writes": 0,
+  "distinct_process_pickup": true,
+  "independent_agent_harness": false,
+  "hardware_durability_certified": false
+}

@@ -82,10 +82,43 @@ class ReadingRunStore:
         self.tasks = tasks
         self._db = sqlite3.connect(self.path, timeout=30, isolation_level=None)
         self._db.row_factory = sqlite3.Row
+        try:
+            self._initialize()
+        except BaseException:
+            self._db.close()
+            raise
+
+    def _initialize(self) -> None:
+        version = self._db.execute("PRAGMA user_version").fetchone()[0]
+        if version != 0:
+            raise ValueError("unsupported reading journal schema version")
+        self._check_existing_identity()
         self._db.execute("PRAGMA journal_mode=WAL")
         self._db.execute("PRAGMA foreign_keys=ON")
         self._schema()
         self._identity()
+
+    def _check_existing_identity(self) -> None:
+        tables = {
+            row[0] for row in self._db.execute("SELECT name FROM sqlite_master WHERE type='table'")
+        }
+        if "run_identity" in tables:
+            self._check_required_tables(tables)
+            row = self._db.execute("SELECT 1 FROM run_identity WHERE singleton=1").fetchone()
+            if row is None:
+                raise ValueError("existing journal is missing run identity")
+            self._identity()
+            return
+        if tables:
+            raise ValueError("unrecognized existing reading journal schema")
+
+    @staticmethod
+    def _check_required_tables(tables: set[str]) -> None:
+        required = {"run_identity", "tasks", "attempts", "stop_reports"}
+        if not required <= tables:
+            raise ValueError(
+                "incomplete reading journal schema; refusing implicit table recreation"
+            )
 
     def _schema(self) -> None:
         self._db.executescript(
@@ -159,6 +192,7 @@ class ReadingRunStore:
         with self._write_transaction():
             if self._db.execute("SELECT 1 FROM attempts WHERE status='inflight'").fetchone():
                 raise ValueError("an attempt is unresolved; reconcile before dispatch")
+            self._check_request_identity(task_id, request)
             cur = self._db.execute(
                 "UPDATE tasks SET status='inflight' WHERE task_id=? AND status='pending'",
                 (task_id,),
@@ -171,6 +205,14 @@ class ReadingRunStore:
                 (attempt_id, task_id, _json(request)),
             )
             return attempt_id
+
+    def _check_request_identity(self, task_id: str, request: dict) -> None:
+        row = self._db.execute("SELECT task_json FROM tasks WHERE task_id=?", (task_id,)).fetchone()
+        if row is None:
+            raise ValueError("task is unknown")
+        expected = json.loads(row["task_json"]).get("request_sha256")
+        if expected is not None and expected != _hash(request):
+            raise ValueError("request does not match frozen task request_sha256")
 
     def record_reply(self, attempt_id: str, raw_reply: str, usage: dict | None) -> None:
         """Commit the provider's raw reply and usage before caller-side parsing."""
@@ -271,8 +313,6 @@ class ReadingRunStore:
                 raise ValueError("cannot complete before raw reply is recorded")
             self._db.execute(
                 "UPDATE attempts SET status=?, detail=?, "
-                "elapsed_seconds=COALESCE(elapsed_seconds, "
-                "MAX(0, (julianday('now') - julianday(started_at)) * 86400)), "
                 "finished_at=CURRENT_TIMESTAMP "
                 "WHERE attempt_id=?",
                 (status, detail, attempt_id),
