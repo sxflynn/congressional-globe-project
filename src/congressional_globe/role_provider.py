@@ -10,6 +10,7 @@ from openai import OpenAI
 from pydantic import BaseModel, ConfigDict, Field
 
 from congressional_globe.providers import LOCAL_API_KEY, _ollama_request_lock
+from congressional_globe.scoped_dates import DatePacket
 
 
 class _AdapterConfig(BaseModel):
@@ -54,10 +55,7 @@ class RoleProvider:
 
     def call(self, packet: dict, prompt: str, schema: dict) -> dict:
         request_schema = specialize_schema(schema, packet)
-        instruction = (
-            "Use only IDs allowed by the supplied schema enums. candidate_id is a C alias, "
-            "never a role label."
-        )
+        instruction = _scope_instruction(schema)
         scoped_prompt = f"{prompt}\n{instruction}"
         if self._config.provider == "ollama":
             with _ollama_request_lock():
@@ -120,6 +118,8 @@ def _schema_format(schema: dict) -> dict:
 def specialize_schema(schema: dict, packet: dict) -> dict:
     """Constrain reusable role schema enums to IDs present in one request packet."""
     result = deepcopy(schema)
+    if "dates" in result["properties"]:
+        return _specialize_dates(result, packet)
     properties = result["properties"]["speaker_roles"]["items"]["properties"]
     spans = packet["spans"]
     paragraphs = _ids_of_kinds(spans, {"paragraph"})
@@ -134,6 +134,28 @@ def specialize_schema(schema: dict, packet: dict) -> dict:
     properties["role"]["enum"] = list(packet["controlled_role_ids"])
     properties["status"]["enum"] = list(packet["statuses"])
     return result
+
+
+def _scope_instruction(schema: dict) -> str:
+    if "dates" in schema["properties"]:
+        return (
+            "Use only supplied paragraph aliases. Keep dates within host-declared regions. "
+            "Every paragraph needs a date proposal or explicit unknown; "
+            "do not infer from catalog context."
+        )
+    return (
+        "Use only IDs allowed by the supplied schema enums. candidate_id is a C alias, "
+        "never a role label."
+    )
+
+
+def _specialize_dates(schema: dict, packet: dict) -> dict:
+    source = DatePacket.model_validate(packet)
+    aliases = [paragraph.alias for paragraph in source.paragraphs]
+    definitions = schema["$defs"]
+    definitions["DateAssignment"]["properties"]["target_ids"]["items"]["enum"] = aliases
+    definitions["DateEvidence"]["properties"]["paragraph_id"]["enum"] = aliases
+    return schema
 
 
 def _ids_of_kinds(spans: list[dict], kinds: set[str]) -> list[str]:

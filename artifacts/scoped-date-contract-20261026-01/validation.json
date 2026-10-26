@@ -1,0 +1,41 @@
+{
+  "schema_version": "scoped-date-validation-v1",
+  "checks": [
+    {
+      "case_id": "t2-4-053",
+      "host_and_mapping": "pass"
+    },
+    {
+      "case_id": "house-opening-december-4-1865-v1",
+      "host_and_mapping": "pass"
+    }
+  ],
+  "new_date_tests": 34,
+  "files_sha256": {
+    "src/congressional_globe/scoped_dates.py": "6828fa5b7c3f83c37a7407beccd382575833b14c5669309f3f8e05635b4a57fb",
+    "src/congressional_globe/role_provider.py": "544be4408be48c0299bb366782ed91def0b02723df09130620de81f8909e5ab3",
+    "tests/test_scoped_dates.py": "091c3cc17e31507134c3bd96a6b7596603c291761478784a03bca4b507b3530e",
+    "artifacts/scoped-date-contract-20261026-01/fixtures.json": "878c2a3ed17a0e4581653d85f866e8f815e2a4271415e806ea8a5f0fbfbf9042",
+    "artifacts/scoped-date-contract-20261026-01/schema.json": "1a82971f65b66cf2a3cfdf3293d99a10b517105438225703cee14fd3d5309561"
+  },
+  "schema_host": "pass_with_additional_host_semantics",
+  "date_adapter_specialization": "pass",
+  "fake_clients": "both_adapter_envelopes_pass_no_service_calls",
+  "live_backend_compatibility": "blocked_unproved",
+  "ollama_native_schema_grammar": "not_used_existing_json_object_transport",
+  "role_v2_adapter_blocker": "KeyError: 'properties'",
+  "provider_calls": 0,
+  "network_requests": 0,
+  "source_edits": 0,
+  "human_labels_added": 0,
+  "source_fidelity": "not_image_certified_or_human_gold",
+  "full_gate": {
+    "exit_code": 0,
+    "tests_passed": 450,
+    "ruff": "pass",
+    "ty": "pass",
+    "complexity_maximum": 5,
+    "markdown_formatter": "pass",
+    "log": "gate.log"
+  }
+}
