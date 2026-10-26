@@ -11,8 +11,8 @@ from typing import Any
 import streamlit as st
 
 from congressional_globe.review_glossary import show_option_definitions, show_text, styles
+from congressional_globe.review_scans import show_inline_scan
 from congressional_globe.review_store import ReviewStore
-from congressional_globe.scan_review import show_source_images
 
 
 def _database_path() -> Path:
@@ -59,7 +59,7 @@ def _evidence(question: Any, scope: str, glossary: list[dict]) -> None:
         show_text(str(_value(item, "text", "")), f"{scope}-evidence-{index}", glossary, source=True)
         url = _safe_url(_value(item, "url"))
         if url:
-            st.markdown(f"[Open source]({url})")
+            show_inline_scan(url)
 
 
 def _answer_widget(question: Any, current: str, key_prefix: str, glossary: list[dict]) -> str:
@@ -339,6 +339,8 @@ def _masthead() -> None:
           font-size:1rem;font-variant:small-caps;letter-spacing:.12em;margin:.4rem 0}
         .globe-masthead .globe-edition{font-size:.75rem;letter-spacing:.05em;
           opacity:.75;margin:.7rem 0 0}
+        .globe-scan{margin:.5rem 0 1rem}
+        .globe-scan summary{cursor:pointer;padding:.75rem .25rem;min-height:44px}
         .source-card{border-left:3px solid #9b7c4a;padding:.8rem 1rem;
           background:rgba(124,99,58,.055);color:inherit}
         .source-card pre{white-space:pre-wrap;overflow-wrap:anywhere;
@@ -367,13 +369,9 @@ def main() -> None:
     store, packets, submissions = data
     section = st.radio(
         "View",
-        ["Pending", "Submitted", "History", "Source images"],
-        index=3 if st.query_params.get("view") == "source-images" else 0,
+        ["Pending", "Submitted", "History"],
         horizontal=True,
     )
-    if section == "Source images":
-        show_source_images()
-        return
     target = st.session_state.get("revision_target")
     if target:
         _revision_view(store, target)
