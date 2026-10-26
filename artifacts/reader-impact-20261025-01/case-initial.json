@@ -1,0 +1,48 @@
+{
+  "schema_version": "human-reader-impact-v1",
+  "case_id": "HR004-ra-token",
+  "review_ref": {
+    "path": "docs/archive/human-review/HR-004-v1/7d9635ca-6176-4971-b2e5-dfad247e439c.json",
+    "sha256": "66313ab4f1c27d1eb014c3d35242a7a802b51b73ad612a57adfc41dab38f3d14",
+    "submission_id": "7d9635ca-6176-4971-b2e5-dfad247e439c",
+    "revision": 1,
+    "payload_sha256": "66b9c45c1516c637b333ef0ed59b652575a662c7f2ad71cb44e928f12aa5831c"
+  },
+  "source_id": "congressionalglo7392unit:1009:par_001009_000042",
+  "raw": "I regret that the bill which has passed botli Houses of Congress, entitled \"An act to pro- tect all persons in the United States in their civil rights, and furnish the means for their vindication,\" contains provisions which I can- not approve, consistently with my sense of duty to the whole people and ra}' obligations to the Constitution of the United States. I am there- fore constrained to return it to the Senate, the House in which it originated, with my objec- tions to its becoming a law.",
+  "raw_sha256": "5f649d554b54ff7d78ebe97147cfb869744cf6ab46d65632fbd16d5b98bc0207",
+  "span": {
+    "start": 303,
+    "end": 307,
+    "old": "ra}'"
+  },
+  "human_feedback": {
+    "readability": "Some wording needs repair, but the subject is clear",
+    "word_impact_exact": "In Part 2 · printed page 1857 · scan leaf 1009 · congressionalglo7392unit · par_001009_000042 · raw SHA-256 5f649d554b54ff7d78ebe97147cfb869744cf6ab46d65632fbd16d5b98bc0207 i have absolutely no idea what ra}' is. That was damaged and hurt my comprehension. ",
+    "broader_impact_exact": "Honestly I was able to understand it, but the ocr damage kept throwing me off a bit. There were a few words that were right before important words which I could not decipher at all and that makes me unhappy when a damaged word is so damaged that I can’t even comprehend it. "
+  },
+  "prepared_target_sha256": "5f86a58605885824fba1b210274b3cde6d345089e76e52e34f079636aa24a399",
+  "cached_evidence_check": {
+    "verified_bundle": "artifacts/scans/scan-poc-20261024-01/civil-rights/bundle.json",
+    "paragraph_id": "par_001009_000037",
+    "crop_bbox": {
+      "left": 1924,
+      "top": 2373,
+      "right": 2939,
+      "bottom": 2943
+    },
+    "required_bbox": {
+      "left": 2436,
+      "top": 3658,
+      "right": 2556,
+      "bottom": 3736
+    },
+    "covers_reported_word": false
+  },
+  "printed_reading": null,
+  "source_verification": "unresolved: existing same-page cache covers a different paragraph; required word image absent",
+  "human_scope": "Comprehension harm is human-reported; no printed correction or accepted patch supplied by human.",
+  "corpus_edits": 0,
+  "model_calls": 0,
+  "new_image_fetches": 0
+}

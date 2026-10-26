@@ -1,0 +1,76 @@
+{
+  "schema_version": "reader-impact-source-assessment-v1",
+  "created_utc": "2026-10-26T02:45:07.028479+00:00",
+  "case_id": "HR004-ra-token",
+  "reviewer": "Codex root GPT-6; image-capable, crop actually inspected",
+  "source_id": "congressionalglo7392unit:1009:par_001009_000042",
+  "raw_sha256": "5f649d554b54ff7d78ebe97147cfb869744cf6ab46d65632fbd16d5b98bc0207",
+  "original_hocr_sha256": "16ed248c75a5f2deb217794aeee6a0e63f73d2bbcb73ea33b2d6772a4e59cc67",
+  "original_page_map_sha256": "5817ab6ba9cb54c27b6e3d8b4eca257ba97afecbca08d552ff0cf0ed87c957f3",
+  "source_image": {
+    "id": "HR004-ra-token-leaf1009-span303-307",
+    "file_ref": {
+      "path": "artifacts/reader-impact-20261025-01/word/crop-01.jpg",
+      "sha256": "ea58484a5c3866075a46087b01fcbe2903158cc0539f82464ee0403c7c49177e"
+    },
+    "width": 120,
+    "height": 78,
+    "region": [
+      2436,
+      3658,
+      120,
+      78
+    ],
+    "registration": "exact dimensions; native pixel coordinates; no inferred scaling/rotation",
+    "receipt": {
+      "requested_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_1009.jp2/2436,3658,120,78/120,/0/default.jpg",
+      "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_1009.jp2/2436,3658,120,78/120,/0/default.jpg",
+      "retrieved_at_utc": "2026-10-26T02:43:09.985327+00:00",
+      "elapsed_seconds": 0.6671269580256194,
+      "bytes": 3242,
+      "sha256": "ea58484a5c3866075a46087b01fcbe2903158cc0539f82464ee0403c7c49177e",
+      "content_type": "image/jpeg"
+    }
+  },
+  "target_ref": {
+    "path": "artifacts/reader-impact-20261025-01/word/target.json",
+    "sha256": "5f86a58605885824fba1b210274b3cde6d345089e76e52e34f079636aa24a399"
+  },
+  "bundle_ref": {
+    "path": "artifacts/reader-impact-20261025-01/word/bundle.json",
+    "sha256": "46009f1928209aadf92a0e082a673793d432abce228736ea16f4110698aa37fa"
+  },
+  "inherited_human_answer_ref": {
+    "path": "docs/archive/human-review/HR-004-v1/7d9635ca-6176-4971-b2e5-dfad247e439c.json",
+    "sha256": "66313ab4f1c27d1eb014c3d35242a7a802b51b73ad612a57adfc41dab38f3d14",
+    "submission_id": "7d9635ca-6176-4971-b2e5-dfad247e439c",
+    "revision": 1,
+    "payload_sha256": "66b9c45c1516c637b333ef0ed59b652575a662c7f2ad71cb44e928f12aa5831c"
+  },
+  "observation": {
+    "raw_span": {
+      "start": 303,
+      "end": 307,
+      "text": "ra}'"
+    },
+    "printed_word": "my",
+    "visible_context": "The crop visibly contains my with the preceding and and beginning of the following word; it does not show the whole paragraph.",
+    "raw_context": "sense of duty to the whole people and ra}' obligations to the Constitution of th",
+    "proposed_context": "sense of duty to the whole people and my obligations to the Constitution of th",
+    "whole_paragraph_certified": false,
+    "other_ocr_damage_unassessed": true
+  },
+  "source_grounding": "Official IA IIIF item/JP2 leaf, exact native dimensions3158x4290 and requested region verified by existing scan tool; not inferred from grammar or a model reply.",
+  "scope": {
+    "new_model_or_provider_calls": 0,
+    "image_http_requests": 2,
+    "image_count": 1,
+    "downloaded_bytes": 4241,
+    "download_seconds": 2.014933792175725,
+    "retries": 0,
+    "corpus_edits": 0,
+    "accepted_patches": 0,
+    "new_human_grade": false
+  },
+  "outcome": "source-supported proposed repair; the human reported comprehension harm, not this printed transcription; P0 remains open"
+}
