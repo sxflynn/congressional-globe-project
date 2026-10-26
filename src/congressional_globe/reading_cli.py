@@ -1,242 +1,320 @@
-"""Read-only reading run status and verification (explicit run/config only)."""
+"""Bounded, offline journal inspection; unresolved evidence fails verification."""
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import math
+import shutil
 import sqlite3
+import tempfile
+from contextlib import contextmanager
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from congressional_globe.reading_run_store import ReadingRunStore
+from pydantic import TypeAdapter
+
+MAX_OUTPUT_BYTES = 8192
+_UNRESOLVED = [
+    "cross_run_budget_provenance_and_deduplication",
+    "request_source_image_control_count_protocol_review_bindings",
+    "runtime_binary_and_counter_helper_separate_hashes",
+]
 
 
 def add_reading_commands(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
-    command = commands.add_parser("reading", help="Read-only reading run status/verification")
+    command = commands.add_parser("reading", help="Read-only reading journal inspection")
     actions = command.add_subparsers(dest="reading_action", required=True)
-    status = actions.add_parser("status", help="Report status for an explicit run")
-    status.add_argument("--run-dir", type=Path, required=True, help="Explicit run directory containing attempts.sqlite")
-    status.add_argument("--json", action="store_true", dest="json_out")
-    verify = actions.add_parser("verify", help="Verify run bindings for an explicit run")
-    verify.add_argument("--run-dir", type=Path, required=True, help="Explicit run directory containing attempts.sqlite")
-    verify.add_argument("--json", action="store_true", dest="json_out")
+    for name in ("status", "verify"):
+        action = actions.add_parser(name, help=f"Offline journal {name} for an explicit run")
+        action.add_argument("--run-dir", type=Path, required=True)
+        action.add_argument("--json", action="store_true", dest="json_out")
+
+
+def _encode(report: dict) -> str:
+    return json.dumps(report, ensure_ascii=False, sort_keys=True, allow_nan=False)
+
+
+def _emit(report: dict) -> None:
+    payload = _encode(report)
+    if len(payload.encode()) + 1 > MAX_OUTPUT_BYTES:
+        payload = _encode(
+            {"ok": False, "error": "output_limit_exceeded", "max_output_bytes": MAX_OUTPUT_BYTES}
+        )
+    print(payload)
+    if json.loads(payload).get("ok") is False:
+        raise SystemExit(1)
 
 
 def run_reading(arguments: argparse.Namespace, _: Path) -> None:
-    if arguments.reading_action == "status":
-        report = _reading_status(arguments.run_dir)
-        if getattr(arguments, "json_out", False):
-            print(json.dumps(report, ensure_ascii=False, sort_keys=True))
-            return
-        print(json.dumps(report, ensure_ascii=False, indent=2))
-        return
-    if arguments.reading_action == "verify":
-        report = _reading_verify(arguments.run_dir)
-        if getattr(arguments, "json_out", False):
-            print(json.dumps(report, ensure_ascii=False, sort_keys=True))
-            return
-        print(json.dumps(report, ensure_ascii=False, indent=2))
-        return
-    raise ValueError(f"Unknown reading action: {arguments.reading_action}")
+    actions = {"status": _reading_status, "verify": _reading_verify}
+    try:
+        report = actions[arguments.reading_action](arguments.run_dir)
+    except (OSError, ValueError, sqlite3.Error, KeyError, TypeError):
+        report = {
+            "ok": False,
+            "error": "journal_inspection_failed",
+            "detail": "Journal missing, changed or malformed; inspect explicit run evidence.",
+        }
+    _emit(report)
 
 
-def _open_readonly_store(run_dir: Path) -> sqlite3.Connection:
-    db_path = run_dir / "attempts.sqlite"
-    if not db_path.exists():
-        raise FileNotFoundError(f"attempts.sqlite not found in {run_dir}")
-    conn = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True, timeout=5)
-    conn.row_factory = sqlite3.Row
-    return conn
+def _fingerprints(paths: list[Path]) -> list:
+    return [
+        (p.exists(), p.stat().st_size, p.stat().st_mtime_ns) if p.exists() else (False, 0, 0)
+        for p in paths
+    ]
+
+
+@contextmanager
+def _open_readonly_store(run_dir: Path):
+    # Never open the original SQLite: even mode=ro can update/create WAL sidecars.
+    source = Path(run_dir) / "attempts.sqlite"
+    if not source.is_file():
+        raise FileNotFoundError("missing attempts.sqlite")
+    paths = [source, source.with_name(source.name + "-wal")]
+    before = _fingerprints(paths)
+    with tempfile.TemporaryDirectory(prefix="globe-reading-inspect-") as scratch:
+        copied = Path(scratch) / "attempts.sqlite"
+        for path in paths:
+            if path.exists():
+                shutil.copyfile(path, Path(scratch) / path.name)
+        if before != _fingerprints(paths):
+            raise ValueError("journal changed during snapshot; retry inspection")
+        conn = sqlite3.connect(copied.as_uri() + "?mode=ro", uri=True)
+        conn.row_factory = sqlite3.Row
+        try:
+            conn.execute("BEGIN")
+            yield conn
+        finally:
+            conn.close()
+
+
+def _hash(value: Any) -> str:
+    data = json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    return hashlib.sha256(data.encode()).hexdigest()
+
+
+def _identity(conn) -> tuple[dict, list, str]:
+    row = conn.execute("SELECT * FROM run_identity WHERE singleton=1").fetchone()
+    if row is None:
+        raise ValueError("missing run identity")
+    config = TypeAdapter(dict[str, Any]).validate_json(row["config_json"])
+    manifest = TypeAdapter(list[dict[str, str]]).validate_json(row["task_manifest_json"])
+    return config, manifest, row["config_sha256"]
+
+
+def _counts(conn, table: str) -> dict:
+    # Table names are internal constants, never caller input.
+    return {
+        row["status"]: row["n"]
+        for row in conn.execute(f"SELECT status, COUNT(*) AS n FROM {table} GROUP BY status")
+    }
+
+
+def _elapsed(value) -> float | None:
+    if value is None:
+        return None
+    number = float(value)
+    if not math.isfinite(number) or number < 0:
+        raise ValueError("invalid elapsed seconds")
+    return number
+
+
+def _usage_known(value) -> bool:
+    if not value:
+        return False
+    usage = json.loads(value)
+    if not isinstance(usage, dict):
+        return False
+    return all(
+        type(usage.get(k)) is int and usage[k] >= 0 for k in ("prompt_eval_count", "eval_count")
+    )
+
+
+def _timing(conn) -> dict:
+    summary: dict[str, Any] = {
+        "calls": 0,
+        "seconds": 0.0,
+        "unknown_elapsed_attempts": 0,
+        "unknown_token_usage_attempts": 0,
+        "models": {},
+    }
+    rows = conn.execute("SELECT request_json, elapsed_seconds, usage_json FROM attempts")
+    for row in rows:
+        request = TypeAdapter(dict[str, Any]).validate_json(row["request_json"])
+        elapsed = _elapsed(row["elapsed_seconds"])
+        summary["calls"] += 1
+        summary["unknown_elapsed_attempts"] += elapsed is None
+        summary["unknown_token_usage_attempts"] += not _usage_known(row["usage_json"])
+        summary["seconds"] += elapsed or 0
+        model = request.get("model") or "unknown"
+        bucket = summary["models"].setdefault(model, {"calls": 0, "seconds": 0.0})
+        bucket["calls"] += 1
+        bucket["seconds"] += elapsed or 0
+    return summary
+
+
+def _plan_state() -> dict:
+    path = Path(__file__).resolve().parents[2] / "MASTER_PLAN.md"
+    if not path.is_file():
+        return {"state": "unavailable", "path": str(path)}
+    data = path.read_bytes()
+    lines = [line for line in data.decode().splitlines() if line.startswith("**Next default:")]
+    return {
+        "path": str(path),
+        "sha256": hashlib.sha256(data).hexdigest(),
+        "next_action": lines[0] if lines else "unknown",
+    }
 
 
 def _reading_status(run_dir: Path) -> dict[str, Any]:
-    run_dir = Path(run_dir)
-    conn = _open_readonly_store(run_dir)
-    try:
-        identity = conn.execute("SELECT config_json, config_sha256, task_manifest_json FROM run_identity WHERE singleton=1").fetchone()
-        if identity is None:
-            raise ValueError("missing run identity")
-        config = json.loads(identity["config_json"])
-        task_manifest = json.loads(identity["task_manifest_json"])
-        
-        task_rows = list(conn.execute("SELECT status, COUNT(*) as n FROM tasks GROUP BY status"))
-        tasks_by_status = {row["status"]: int(row["n"]) for row in task_rows}
-        total_tasks = len(task_manifest)
-        
-        attempt_rows = list(conn.execute("SELECT attempt_id, task_id, status, request_json, raw_reply, usage_json, detail, elapsed_seconds, started_at, finished_at FROM attempts"))
-        attempts = []
-        unknown_elapsed = 0
-        unknown_model = 0
-        for row in attempt_rows:
-            req = json.loads(row["request_json"]) if row["request_json"] else {}
-            model = req.get("model") if isinstance(req, dict) else None
-            elapsed = row["elapsed_seconds"]
-            if elapsed is None:
-                unknown_elapsed += 1
-            if not model:
-                unknown_model += 1
-            usage = json.loads(row["usage_json"]) if row["usage_json"] else None
-            attempts.append({
-                "attempt_id": row["attempt_id"],
-                "task_id": row["task_id"],
-                "status": row["status"],
-                "model": model,
-                "elapsed_seconds": elapsed,
-                "has_raw_reply": row["raw_reply"] is not None,
-                "has_usage": usage is not None,
-                "detail": row["detail"],
-            })
-        
-        # Budget info from config
-        max_calls = config.get("max_calls")
-        total_seconds = config.get("total_seconds")
-        per_model_seconds = config.get("per_model_seconds")
-        
-        # Compute timing summary like store does
-        timing = {"calls": 0, "seconds": 0.0, "models": {}, "unknown_elapsed_attempts": unknown_elapsed, "unknown_model_attempts": unknown_model}
-        for att in attempts:
-            timing["calls"] += 1
-            if att["elapsed_seconds"] is not None:
-                timing["seconds"] += float(att["elapsed_seconds"])
-                if att["model"]:
-                    bucket = timing["models"].setdefault(att["model"], {"calls": 0, "seconds": 0.0})
-                    bucket["calls"] += 1
-                    bucket["seconds"] += float(att["elapsed_seconds"])
-        
-        stop_reports = []
-        for row in conn.execute("SELECT report_json, created_at FROM stop_reports ORDER BY report_id"):
-            try:
-                stop_reports.append({"report": json.loads(row["report_json"]), "created_at": row["created_at"]})
-            except Exception:
-                stop_reports.append({"report_json": row["report_json"], "created_at": row["created_at"]})
-        
+    with _open_readonly_store(run_dir) as conn:
+        config, manifest, config_hash = _identity(conn)
+        tasks = _counts(conn, "tasks")
+        timing = _timing(conn)
         return {
             "run_dir": str(run_dir),
-            "config_sha256": identity["config_sha256"],
-            "task_count": total_tasks,
-            "tasks_by_status": tasks_by_status,
-            "attempts": attempts,
+            "config_sha256": config_hash,
+            "observed_at": datetime.now(UTC).isoformat(),
+            "task_count": len(manifest),
+            "tasks_by_status": tasks,
             "journal_counts": {
-                "total_tasks": total_tasks,
-                "tasks_by_status": tasks_by_status,
-                "attempt_count": len(attempts),
-                "terminal": sum(tasks_by_status.get(s, 0) for s in ("valid", "invalid", "failed", "timeout")),
-                "pending": tasks_by_status.get("pending", 0),
-                "inflight": tasks_by_status.get("inflight", 0),
+                "total_tasks": sum(tasks.values()),
+                "tasks_by_status": tasks,
+                "attempts_by_status": _counts(conn, "attempts"),
+                "attempt_count": timing["calls"],
+                "terminal": sum(tasks.get(s, 0) for s in ("valid", "invalid", "failed", "timeout")),
+                "pending": tasks.get("pending", 0),
+                "inflight": tasks.get("inflight", 0),
             },
             "timing": timing,
             "budget": {
-                "max_calls": max_calls,
-                "total_seconds": total_seconds,
-                "per_model_seconds": per_model_seconds,
-                "prior/current evidence": {
-                    "recorded_seconds": timing["seconds"],
-                    "calls": timing["calls"],
-                    "by_model": timing["models"],
+                "current_recorded_seconds": timing["seconds"],
+                "current_calls": timing["calls"],
+                "configured_limits": {
+                    k: config.get(k)
+                    for k in ("max_calls", "total_seconds", "per_model_seconds", "call_seconds")
                 },
+                "prior_usage": "unknown_unverified",
+                "remaining_allowance": None,
             },
             "unknown_usage": {
-                "unknown_elapsed_attempts": unknown_elapsed,
-                "unknown_model_attempts": unknown_model,
-                "attempts_without_elapsed": unknown_elapsed,
+                k: timing[k] for k in ("unknown_elapsed_attempts", "unknown_token_usage_attempts")
             },
             "review/ownership_state": {
-                "stop_reports": stop_reports,
-                "inflight_blocking": tasks_by_status.get("inflight", 0) > 0,
+                "human_review": "not_queried",
+                "ownership": "see_MASTER_PLAN_active_work",
+                "stop_report_count": conn.execute("SELECT COUNT(*) FROM stop_reports").fetchone()[
+                    0
+                ],
             },
-            "next_action": _next_action(tasks_by_status, timing, max_calls),
+            "runtime": {"state": "observation_unknown", "launch_ready": False},
+            "next_action": _plan_state(),
             "bounded_output": True,
         }
-    finally:
-        conn.close()
 
 
-def _next_action(tasks_by_status: dict, timing: dict, max_calls: Any) -> str:
-    inflight = tasks_by_status.get("inflight", 0)
-    pending = tasks_by_status.get("pending", 0)
-    if inflight > 0:
-        return "reconcile_inflight_attempt_before_new_dispatch"
-    if pending > 0:
-        if max_calls is not None and timing.get("calls", 0) >= max_calls:
-            return "at_or_over_call_budget_no_new_dispatch"
-        return "dispatch_next_pending_from_explicit_run"
-    return "all_tasks_terminal_review_evidence"
+def _check_tasks(conn, manifest: list) -> list[str]:
+    actual = []
+    errors = []
+    for row in conn.execute("SELECT * FROM tasks ORDER BY ordinal"):
+        task = TypeAdapter(dict[str, Any]).validate_json(row["task_json"])
+        digest = _hash(task)
+        actual.append({"task_id": row["task_id"], "sha256": digest})
+        if digest != row["task_sha256"] or task.get("task_id") != row["task_id"]:
+            errors.append("task_identity_mismatch")
+    if actual != manifest:
+        errors.append("task_manifest_mismatch")
+    return errors
+
+
+def _check_attempt(row) -> list[str]:
+    task = json.loads(row["task_json"]) if row["task_json"] else {}
+    request = TypeAdapter(dict[str, Any]).validate_json(row["request_json"])
+    errors = []
+    if row["task_status"] != row["status"]:
+        errors.append("attempt_task_status_mismatch")
+    if task.get("request_sha256") != _hash(request):
+        errors.append("request_hash_missing_or_mismatch")
+    if row["status"] in ("valid", "invalid") and row["raw_reply"] is None:
+        errors.append("terminal_without_raw_reply")
+    return errors
+
+
+def _check_attempts(conn) -> list[str]:
+    errors = []
+    query = (
+        "SELECT a.*, t.task_json, t.status AS task_status "
+        "FROM attempts a LEFT JOIN tasks t USING(task_id)"
+    )
+    for row in conn.execute(query):
+        errors.extend(_check_attempt(row))
+    missing = conn.execute(
+        "SELECT COUNT(*) FROM tasks t LEFT JOIN attempts a USING(task_id) "
+        "WHERE t.status != 'pending' AND a.attempt_id IS NULL"
+    ).fetchone()[0]
+    if missing:
+        errors.append("claimed_task_without_attempt")
+    return errors
+
+
+def _limit_exceeded(actual, limit) -> bool:
+    if limit is None:
+        return False
+    number = _elapsed(limit)
+    return actual > number
+
+
+def _budget_errors(conn, config: dict, timing: dict) -> list[str]:
+    errors = []
+    for actual, key in ((timing["calls"], "max_calls"), (timing["seconds"], "total_seconds")):
+        if _limit_exceeded(actual, config.get(key)):
+            errors.append(f"exceeds_{key}")
+    errors.extend(_model_budget_errors(config, timing))
+    maximum = conn.execute("SELECT MAX(elapsed_seconds) FROM attempts").fetchone()[0] or 0
+    if _limit_exceeded(maximum, config.get("call_seconds")):
+        errors.append("exceeds_call_seconds")
+    return errors
+
+
+def _model_budget_errors(config: dict, timing: dict) -> list[str]:
+    errors = []
+    limits = config.get("per_model_seconds")
+    for model, values in timing["models"].items():
+        limit = limits.get(model) if isinstance(limits, dict) else limits
+        if _limit_exceeded(values["seconds"], limit):
+            errors.append("exceeds_per_model_seconds")
+    return errors
 
 
 def _reading_verify(run_dir: Path) -> dict[str, Any]:
-    run_dir = Path(run_dir)
-    conn = _open_readonly_store(run_dir)
-    try:
-        identity = conn.execute("SELECT config_json, config_sha256, task_manifest_json FROM run_identity WHERE singleton=1").fetchone()
-        if identity is None:
-            raise ValueError("missing run identity")
-        config = json.loads(identity["config_json"])
-        task_manifest = json.loads(identity["task_manifest_json"])
-        errors = []
-        warnings = []
-        # Check task manifest consistency
-        task_rows = list(conn.execute("SELECT task_id, task_sha256, status FROM tasks"))
-        if len(task_rows) != len(task_manifest):
-            errors.append("task_count_mismatch")
-        # Check attempts
-        attempt_rows = list(conn.execute("SELECT attempt_id, task_id, status, request_json, elapsed_seconds, usage_json, raw_reply FROM attempts"))
-        seen_task_ids = set()
-        for row in attempt_rows:
-            if row["task_id"] in seen_task_ids:
-                errors.append(f"duplicate_attempt_task:{row['task_id']}")
-            seen_task_ids.add(row["task_id"])
-            try:
-                req = json.loads(row["request_json"])
-            except Exception:
-                errors.append(f"bad_request_json:{row['attempt_id']}")
-                continue
-            if not isinstance(req, dict):
-                errors.append(f"bad_request_type:{row['attempt_id']}")
-                continue
-            # Check bindings
-            if not req.get("model") and not req.get("model_digest"):
-                warnings.append(f"missing_model_identity:{row['attempt_id']}")
-            if row["status"] in ("valid", "invalid") and row["raw_reply"] is None:
-                errors.append(f"terminal_without_raw_reply:{row['attempt_id']}")
-            if row["elapsed_seconds"] is None and row["status"] != "inflight":
-                warnings.append(f"unknown_elapsed_time:{row['attempt_id']}")
-        timing = {"calls": len(attempt_rows), "seconds": 0.0, "models": {}}
-        unknown_elapsed = 0
-        for row in attempt_rows:
-            if row["elapsed_seconds"] is None:
-                unknown_elapsed += 1
-            else:
-                timing["seconds"] += float(row["elapsed_seconds"])
-        if unknown_elapsed:
-            warnings.append(f"unknown_elapsed_attempts:{unknown_elapsed}")
-        # Conservative cross-run budget check
-        max_calls = config.get("max_calls")
-        if max_calls is not None and timing["calls"] > max_calls:
-            errors.append("call_count_exceeds_configured_max_calls")
+    with _open_readonly_store(run_dir) as conn:
+        config, manifest, config_hash = _identity(conn)
+        errors = _check_tasks(conn, manifest) + _check_attempts(conn)
+        if config_hash != _hash(config):
+            errors.append("config_hash_mismatch")
+        timing = _timing(conn)
+        errors.extend(_budget_errors(conn, config, timing))
+        unresolved = list(_UNRESOLVED)
+        if timing["unknown_elapsed_attempts"]:
+            unresolved.append("unknown_elapsed_time_requires_conservative_reservation")
+        if conn.execute("SELECT COUNT(*) FROM attempts WHERE status='inflight'").fetchone()[0]:
+            unresolved.append("inflight_attempt_requires_reconciliation")
         return {
             "run_dir": str(run_dir),
-            "ok": len(errors) == 0,
-            "errors": errors,
-            "warnings": warnings,
-            "checks": {
-                "identity_present": identity is not None,
-                "request_bindings_checked": len(attempt_rows),
-                "task_manifest_count": len(task_manifest),
-                "reuse_bindings_consistent": len(seen_task_ids) == len(attempt_rows),
-                "conservative_budgets": {
-                    "max_calls": max_calls,
-                    "total_seconds": config.get("total_seconds"),
-                    "per_model_seconds": config.get("per_model_seconds"),
-                    "recorded_seconds": timing["seconds"],
-                    "double_count_risk": False,
-                },
-            },
+            "ok": not errors and not unresolved,
+            "journal_checks_ok": not errors,
+            "errors": sorted(set(errors)),
+            "unresolved": unresolved,
+            "timing": timing,
+            "historical_integrity": "not_fully_verified",
+            "source_fidelity": "not_assessed",
+            "launch_ready": False,
             "bounded_output": True,
-            "no_writes": True,
             "no_network": True,
             "no_inference": True,
-            "sqlite_constructor_writes_avoided": True,
+            "original_store_opened": False,
         }
-    finally:
-        conn.close()
-

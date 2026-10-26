@@ -42,6 +42,7 @@ from congressional_globe.storage import (
 from congressional_globe.subject_exclusions import build_subject_exclusions
 from congressional_globe.subject_review import build_subject_review_template, import_subject_reviews
 from congressional_globe.subject_sampling import build_subject_review_sample
+from congressional_globe.subject_vocabulary import load_draft_vocabulary
 from congressional_globe.workflow import run_static_first
 
 

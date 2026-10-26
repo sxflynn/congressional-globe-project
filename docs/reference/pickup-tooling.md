@@ -2,7 +2,7 @@
 
 Read this only when your task needs it. [MASTER_PLAN.md](../../MASTER_PLAN.md) owns current tasks, ownership, progress and next actions; this file owns detailed reference material.
 
-**Design reference.** The minimal status/verify scope was independently evaluated at the human’s request; both commands are still unimplemented. The broader original proposal is not approved wholesale. Only the master queue selects and owns implementation work.
+**Design reference.** The minimal status/verify scope was independently evaluated at the human’s request. T1/T2 implemented commands; [T8 audit](../../artifacts/pickup-audit-20261026-01/README.md) rejected full acceptance and fixed safety defects. Verification fails closed on outstanding evidence checks. Historical “unimplemented” wording below describes the original evaluation, not current status. The broader original proposal is not approved wholesale. Only the master queue selects and owns implementation work.
 
 #### Agent pickup ergonomics and offline one-command flow (GPT-6: approve minimal status/verify with changes; unimplemented)
 
