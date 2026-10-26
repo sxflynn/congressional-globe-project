@@ -8,7 +8,7 @@ Use the browser desk for new reviews. This page links prior answers and explains
 
 **HR-003 received and applied.** You approved the sample, provisional quality standards and conditional local resource limits. You requested less review; HR-009 is now answered in chat: at most three fixed anonymized outputs and ten minutes total. No repeat HR-009 browser submission is needed. No repeat of the approved questions is needed.
 
-**Ready in the browser: HR-004 · Two real passages: topics and OCR readability.** About 5–8 minutes: read two unchanged Congressional Globe excerpts (parts 2 and 3), identify the subjects, and tell us whether OCR damage prevents understanding. No model answers are shown. Open [the desk](http://10.0.0.56:8501), select **HR-004**, and submit your answers there. You do not need to edit this file.
+**HR-004 received and applied.** Both passages need wording repair even though their subjects remain clear. You identified an incomprehensible damaged word (`ra}'`) that hurt reading, and named the sample2 topics: government-document preservation/fireproof storage and the Sioux City railroad branch. Your exact free-text answers are preserved; no repeat review is requested.
 
 HR-005-v1 and HR-008-v1 are already answered and incorporated; no repeat review is needed. HR-003 standards/resources are approved; review effort revised by HR-009; new role/date samples have not been requested.
 
@@ -18,7 +18,7 @@ Tap a dotted-underlined term to open a short, plain-language definition. Close i
 
 ## Original scan demonstration
 
-Open [Source images](http://10.0.0.56:8501/?view=source-images) for geometry-linked scan crops: the damaged petition, an exact word/number, and two more paragraphs. Original print and unchanged OCR are displayed together. This is read-only, not another request to regrade HR-008 or an automatic correction. HR-004 remains under Pending; if you consult its scans, note that in your response so image-assisted judgments are not treated as OCR-only readability evidence.
+Open [Source images](http://10.0.0.56:8501/?view=source-images) for geometry-linked scan crops: the damaged petition, an exact word/number, and two more paragraphs. Original print and unchanged OCR are displayed together. This is read-only, not another request to regrade HR-008 or an automatic correction. HR-004 is submitted; its original packet and answers remain unchanged. Future scan-assisted checks must be recorded separately from your submitted feedback.
 
 Two new clean-reading candidate crops are also available in Source images: a quoted bill section (part1, printed page91) and connected pension debate (part3, printed page1936). These are partial source checks for the pilot, not new grading requests or accepted corpus corrections.
 
@@ -26,6 +26,7 @@ Two new clean-reading candidate crops are also available in Source images: a quo
 
 | Review | Your decisions and resulting work | Original answers |
 | --- | --- | --- |
+| HR-004-v1 · Stephen Flynn · Submitted2026-10-26 02:16:06UTC · Applied | Both subjects clear but wording needs repair; damaged words disrupt comprehension. Sample2 free-text topics retained; sample1 supplied readability feedback rather than topic labels. | [Exact packet and answer](docs/archive/human-review/HR-004-v1/7d9635ca-6176-4971-b2e5-dfad247e439c.json) |
 | HR-003-v1 · Stephen Flynn · 10/24/2026 · Applied | First-pilot coverage, provisional quality and conditional local resources approved; less/different human review requested, revised effort still open. | [Exact packet and answers](docs/archive/human-review/HR-003-v1/d02da43f-cba3-4654-be1f-b9f3c72de125.json) · [Application receipt](docs/archive/human-review/HR-003-v1/d02da43f-cba3-4654-be1f-b9f3c72de125-applied.json) |
 | DEMO-001-v1 · Stephen Flynn · Practice acknowledged | Practice submission preserved and acknowledged; no historical labels or policy changes. | [Exact answer](docs/archive/human-review/DEMO-001-v1/968f885a-c4ae-4ea3-8f56-59203d63ff97.json) · [Applied receipt](docs/archive/human-review/DEMO-001-v1/968f885a-c4ae-4ea3-8f56-59203d63ff97-applied.json) |
 | HR-005-v1 · Stephen · 10/24/2026 · Applied | You confirmed the damaged-name reply is Mr. Wade in this specific context. Recorded as a human-reviewed attribution success; no blanket damaged-name rule or OCR rewrite. | [Full questions and your unchanged answer](docs/archive/human-review/HR-005-v1/original.md) · [Processing receipt and source-linked decision](docs/archive/human-review/HR-005-v1/receipt.json) |
