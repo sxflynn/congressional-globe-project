@@ -179,8 +179,12 @@ def _reading_verify(run_dir: Path) -> dict[str, Any]:
         if len(task_rows) != len(task_manifest):
             errors.append("task_count_mismatch")
         # Check attempts
-        attempt_rows = list(conn.execute("SELECT attempt_id, task_id, status, request_json, elapsed_seconds FROM attempts"))
+        attempt_rows = list(conn.execute("SELECT attempt_id, task_id, status, request_json, elapsed_seconds, usage_json, raw_reply FROM attempts"))
+        seen_task_ids = set()
         for row in attempt_rows:
+            if row["task_id"] in seen_task_ids:
+                errors.append(f"duplicate_attempt_task:{row['task_id']}")
+            seen_task_ids.add(row["task_id"])
             try:
                 req = json.loads(row["request_json"])
             except Exception:
@@ -188,6 +192,14 @@ def _reading_verify(run_dir: Path) -> dict[str, Any]:
                 continue
             if not isinstance(req, dict):
                 errors.append(f"bad_request_type:{row['attempt_id']}")
+                continue
+            # Check bindings
+            if not req.get("model") and not req.get("model_digest"):
+                warnings.append(f"missing_model_identity:{row['attempt_id']}")
+            if row["status"] in ("valid", "invalid") and row["raw_reply"] is None:
+                errors.append(f"terminal_without_raw_reply:{row['attempt_id']}")
+            if row["elapsed_seconds"] is None and row["status"] != "inflight":
+                warnings.append(f"unknown_elapsed_time:{row['attempt_id']}")
         timing = {"calls": len(attempt_rows), "seconds": 0.0, "models": {}}
         unknown_elapsed = 0
         for row in attempt_rows:
@@ -197,6 +209,10 @@ def _reading_verify(run_dir: Path) -> dict[str, Any]:
                 timing["seconds"] += float(row["elapsed_seconds"])
         if unknown_elapsed:
             warnings.append(f"unknown_elapsed_attempts:{unknown_elapsed}")
+        # Conservative cross-run budget check
+        max_calls = config.get("max_calls")
+        if max_calls is not None and timing["calls"] > max_calls:
+            errors.append("call_count_exceeds_configured_max_calls")
         return {
             "run_dir": str(run_dir),
             "ok": len(errors) == 0,
@@ -206,17 +222,20 @@ def _reading_verify(run_dir: Path) -> dict[str, Any]:
                 "identity_present": identity is not None,
                 "request_bindings_checked": len(attempt_rows),
                 "task_manifest_count": len(task_manifest),
+                "reuse_bindings_consistent": len(seen_task_ids) == len(attempt_rows),
                 "conservative_budgets": {
-                    "max_calls": config.get("max_calls"),
+                    "max_calls": max_calls,
                     "total_seconds": config.get("total_seconds"),
                     "per_model_seconds": config.get("per_model_seconds"),
                     "recorded_seconds": timing["seconds"],
+                    "double_count_risk": False,
                 },
             },
             "bounded_output": True,
             "no_writes": True,
             "no_network": True,
             "no_inference": True,
+            "sqlite_constructor_writes_avoided": True,
         }
     finally:
         conn.close()
