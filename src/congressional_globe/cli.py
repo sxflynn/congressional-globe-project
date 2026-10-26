@@ -28,6 +28,7 @@ from congressional_globe.providers import (
     OllamaProvider,
     OpenAIResponsesProvider,
 )
+from congressional_globe.reading_cli import add_reading_commands, run_reading
 from congressional_globe.review_cli import add_review_commands, run_review
 from congressional_globe.scan_cli import add_scan_commands, run_scan
 from congressional_globe.static_cleanup import normalize_jsonl
@@ -41,7 +42,6 @@ from congressional_globe.storage import (
 from congressional_globe.subject_exclusions import build_subject_exclusions
 from congressional_globe.subject_review import build_subject_review_template, import_subject_reviews
 from congressional_globe.subject_sampling import build_subject_review_sample
-from congressional_globe.subject_vocabulary import load_draft_vocabulary
 from congressional_globe.workflow import run_static_first
 
 
@@ -62,6 +62,7 @@ def _commands() -> dict[str, CommandHandler]:
         "review": run_review,
         "scan": run_scan,
         "ollama": run_ollama_logs,
+        "reading": run_reading,
         "extract": _extract,
         "build-rag": _build_rag,
         "benchmark": _benchmark,
@@ -285,6 +286,7 @@ def _parser() -> argparse.ArgumentParser:
     add_review_commands(commands)
     add_scan_commands(commands)
     add_ollama_log_commands(commands)
+    add_reading_commands(commands)
     _inventory_command(commands)
     _extract_command(commands)
     _build_command(commands)
