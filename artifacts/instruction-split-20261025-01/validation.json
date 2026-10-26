@@ -1,0 +1,74 @@
+{
+  "schema_version": "instruction-split-validation-v1",
+  "original_snapshot_checks": [
+    {
+      "path": "docs/archive/2026-10-25-instruction-split/AGENTS.md",
+      "sha256": "bdfa2fe90ae4ff6b5bdbee40bcd0ec76b9e5e6a80825e22eaa65a8c19bdaabdb",
+      "exact_original_bytes": true
+    },
+    {
+      "path": "docs/archive/2026-10-25-instruction-split/MASTER_PLAN.md",
+      "sha256": "00363e60065a4a1a767536c9da20bb4e88514ef6075b9f07e71621f6e3ac04d6",
+      "exact_original_bytes": true
+    }
+  ],
+  "startup_words_before": 24872,
+  "startup_words_after": 2543,
+  "startup_word_reduction_percent": 89.8,
+  "policy_checks": {
+    "one_current_queue": true,
+    "explicit_default_task": true,
+    "claim_before_edits": true,
+    "source_immutability": true,
+    "no_secret_or_performance_edits": true,
+    "human_revision_archive_commit_then_applied": true,
+    "blind_packets_no_model_leakage": true,
+    "p0_open_no_full_run": true,
+    "review_time_limit_preserved": true,
+    "readonly_pickup_scope_approved_not_wholesale": true,
+    "model_calls_sequential_and_bounded": true,
+    "unknown_outcomes_preserved": true,
+    "completed_pilot_no_repeat": true,
+    "image_capability_scope": true,
+    "review_desk_no_auth": true,
+    "gate_complexity_and_model_commit": true,
+    "automation_independent_review_and_human_override": true,
+    "decision_ids_not_renumbered": true
+  },
+  "walkthrough": {
+    "method": "Structured local walkthrough, not an independent fresh-agent/model trial.",
+    "prompt": "work in this codebase",
+    "required_initial_documents": [
+      "AGENTS.md",
+      "MASTER_PLAN.md"
+    ],
+    "first_actionable_unowned_task": "T1",
+    "other_independent_ready_tasks": [
+      "T3",
+      "T4"
+    ],
+    "blocked_tasks": [
+      "T2 depends on T1 contract",
+      "T5 depends on actual human submissions"
+    ],
+    "claim_location": "MASTER_PLAN.md active-work table and task row",
+    "additional_implementation_reading": [
+      "docs/reference/engineering.md",
+      "docs/reference/pickup-tooling.md"
+    ],
+    "completion_checks": "T1 Done when cell; code gate; update same master rows/changelog; commit",
+    "historical_800_line_plan_required": false,
+    "provider_call_needed": false
+  },
+  "scope": {
+    "production_code_changes": false,
+    "model_calls": 0,
+    "new_commands_or_scripts_adopted": 0,
+    "corpus_changes": 0
+  },
+  "local_link_check": {
+    "active_files": 12,
+    "local_paths_and_anchors_checked": 114,
+    "errors": 0
+  }
+}

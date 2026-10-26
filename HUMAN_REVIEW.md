@@ -1,6 +1,6 @@
 # Human review desk
 
-Use the browser desk for new reviews. This page links prior answers and explains how to start it; [MASTER_PLAN.md](MASTER_PLAN.md) owns policy, progress and next work.
+Use the browser desk for new reviews. This page links prior answers and explains how to start it; [MASTER_PLAN.md](MASTER_PLAN.md) owns current decisions, progress and next work; the [review protocol](docs/reference/human-review-protocol.md) contains detailed agent procedures.
 
 ## Needs your attention
 
@@ -49,7 +49,7 @@ Saved drafts and submissions are in `artifacts/human-review/reviews.sqlite`. Uns
 
 ## Agent procedure
 
-1. Follow [AGENTS.md](AGENTS.md) and the master plan's browser review protocol. At startup run `uv run globe review inbox`; new submissions do not require a separate human chat message.
+1. Follow [AGENTS.md](AGENTS.md) and the [review protocol](docs/reference/human-review-protocol.md). At startup run `uv run globe review inbox`; new submissions do not require a separate human chat message.
 2. Author a versioned packet using `uv run globe review schema`; register it with `uv run globe review register docs/review-packets/PACKET.json`. Preserve source excerpts, citations, question IDs and appropriate context. Leave choices unanswered. Blind packets contain no model outputs or recommendations anywhere in their payload.
 3. Export the submitted packet and exact human answers, inspect revisions and apply the latest judgment narrowly to the master plan. Commit the archive and plan, then record the applied commit reference and archive the application receipt in a second new file. Never overwrite originals, equate free-text grading with validated structured subject labels, or expand a sample judgment into a full-run approval.
 4. Historical Markdown archives above remain immutable. If a human explicitly answers in chat or an old Markdown packet, preserve its exact wording and origin using the legacy archive/receipt procedure; do not manufacture a browser submission.

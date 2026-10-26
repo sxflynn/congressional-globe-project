@@ -2,7 +2,7 @@
 
 Prepare the five parts of the 39th Congress, first session for keyword, OCR-tolerant and semantic search, with historical filters and precise source citations. The data/backend workflow is under development; a complete research search service or public research interface is not shipped yet.
 
-**[MASTER_PLAN.md](MASTER_PLAN.md)** contains the goal, current results, remaining milestones, commands and progress. All agents follow and update that one document.
+**[MASTER_PLAN.md](MASTER_PLAN.md)** is the short current workboard: goal, results, ordered tasks, ownership and milestones. Agents start at [AGENTS.md](AGENTS.md); detailed policies and commands are linked by task, not required reading for everyone.
 
 Use the browser review desk below to answer questions and grade samples. Agents pick up submitted answers when they next work on the project.
 
@@ -14,7 +14,7 @@ Install **uv** and **make**, then run from this folder:
 uv sync --all-groups
 ```
 
-Original corpus source files and most generated artifacts are not bundled in Git. The small Wikipedia authority-candidate bundle below is included. On another machine, copy the sources and required resources or follow the [setup and operator notes](MASTER_PLAN.md#8-operator-commands-and-current-limitations). The prepared machine already has the canonical files and experiment evidence.
+Original corpus source files and most generated artifacts are not bundled in Git. The small Wikipedia authority-candidate bundle below is included. On another machine, copy the sources and required resources or follow the [setup and operator notes](docs/reference/commands.md). The prepared machine already has the canonical files and experiment evidence.
 
 ## Review samples
 
@@ -38,7 +38,7 @@ To retrieve another paragraph from the local OCR sources:
 uv run globe scan crop --item congressionalglo7392unit --leaf 328 --paragraph par_000328_000032 --output artifacts/my-scan --fetch
 ```
 
-Without `--fetch`, this only prepares an offline plan. Repeating the same command verifies and reuses cached files. A different target needs a new output directory. For a precise word/patch, add `--start 34 --end 37 --expected GCO --padding 16`; offsets refer to the **original OCR**, not corrected text. The tool downloads only requested image regions and records source identity, hashes and geometry. An image view does not apply a correction. Details and limits are in the master plan's **S0** section. A tiny local Qwen vision test also corrected the damaged number and recovered a missing word from the scan; results, repeatable commands and limitations are in **S1**. This is a review experiment, not automatic corpus correction.
+Without `--fetch`, this only prepares an offline plan. Repeating the same command verifies and reuses cached files. A different target needs a new output directory. For a precise word/patch, add `--start 34 --end 37 --expected GCO --padding 16`; offsets refer to the **original OCR**, not corrected text. The tool downloads only requested image regions and records source identity, hashes and geometry. An image view does not apply a correction. Details and limits are in the [scan reference](docs/reference/scans.md). A tiny local Qwen vision test also corrected the damaged number and recovered a missing word from the scan; results and limitations are in that same reference. This is a review experiment, not automatic corpus correction.
 
 ## Read the current data
 
@@ -58,7 +58,7 @@ A small, source-linked Wikipedia dataset is included for member and district loo
 uv run python -m congressional_globe.wikipedia query artifacts/authorities/wikipedia-39th-20261022/dataset/records.jsonl --where name=Stevens
 ```
 
-It contains unverified source-derived candidates, not completed speaker attribution. [Replay commands and limitations](MASTER_PLAN.md#query-and-rebuild-the-wikipedia-mini-dataset) are in the master plan.
+It contains unverified source-derived candidates, not completed speaker attribution. [Replay commands and limitations](docs/reference/commands.md#query-and-rebuild-the-wikipedia-mini-dataset) are in the master plan.
 
 ## Existing cleanup commands
 
