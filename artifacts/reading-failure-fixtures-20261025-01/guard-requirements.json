@@ -1,0 +1,76 @@
+{
+  "schema_version": "reading-failure-guard-requirements-v1",
+  "status": "diagnostic design only; no automated policy implemented or approved",
+  "requirements": [
+    {
+      "id": "G01",
+      "cases": [
+        "F01-critical-chapter",
+        "F10-correct-chapter-comparator"
+      ],
+      "gap": "Critical identifier changes are structurally valid whether source-correct or source-incorrect.",
+      "minimum_requirement": "Separate source-fidelity risk from structural validity; require explicit source checking for chapter/section/amount/name changes before readiness. Preserve exact old/new/source/evidence.",
+      "must_not": "Infer printed CCCXI from OCR CCCXL alone, trust the model explanation, or ban every numeral change.",
+      "counterexample": "Gemma CCCXL to CCCXI is source-backed in the inherited assessment; Qwen CCCXL to CCCXLI is not. Both need the same risk flag before evidence resolves them.",
+      "status": "unimplemented semantic review requirement"
+    },
+    {
+      "id": "G02",
+      "cases": [
+        "F02-printed-repetition"
+      ],
+      "gap": "A broad otherwise useful patch can smooth away authentic repeated wording.",
+      "minimum_requirement": "Flag adjacent repeated-word deletion with exact raw/new spans and route to source-fidelity review; retain whole original reply and other changes without auto-salvage.",
+      "must_not": "Assume every repetition is authentic or every repetition is OCR duplication. Token/grammar heuristics identify risk, not truth.",
+      "counterexample": "The same patch also fixes 18G2 to1862 and amnestj to amnesty; do not label the whole patch supported just because those repairs are supported.",
+      "status": "unimplemented semantic review requirement"
+    },
+    {
+      "id": "G03",
+      "cases": [
+        "F03-loan-relocation",
+        "F04-evening-and-loan-relocation"
+      ],
+      "gap": "Per-record replacements can move text between records while retaining fluent joined wording and apparently valid image coverage.",
+      "minimum_requirement": "Detect/review cross-record insertion/deletion or reconstruction candidates. Require explicit many-to-many source-span provenance before treating relocated words as correctly mapped; otherwise keep them unresolved.",
+      "must_not": "Use joined-string equality or one-record replacement mapping as proof that LOAN/evening originated in the receiving record.",
+      "counterexample": "Within-record dehyphenation can remain valid without moving source attribution; movement matching can be ambiguous and is only a review cue.",
+      "status": "unimplemented source-mapping review requirement"
+    },
+    {
+      "id": "G04",
+      "cases": [
+        "F05-wrong-unit-id",
+        "F06-noop-patch"
+      ],
+      "gap": "No new validator gap: both exact replies are already rejected.",
+      "minimum_requirement": "Retain unit-ID and no-op rejection, original envelope, complete error and absent accepted-derived text under future contract changes.",
+      "must_not": "Fix the ID, drop the no-op, or relabel invalid output as accepted without a separately versioned protocol/experiment.",
+      "counterexample": "The rejected index reply contains source-supported number repairs; useful content does not reverse transport rejection.",
+      "status": "existing guard verified"
+    },
+    {
+      "id": "G05",
+      "cases": [
+        "F07-unresolved-dense-list"
+      ],
+      "gap": "A valid needs_review reply can contain zero improvements and leave the entire raw target unchanged.",
+      "minimum_requirement": "Keep schema validity, unresolved coverage, fidelity review and reading readiness distinct in any future readiness calculation/export. Preserve13uncertainties and raw hashes.",
+      "must_not": "Count this reply as a completed clean reading or silently clear uncertainty because validation passed.",
+      "counterexample": "Valid abstention is desirable when evidence is insufficient, but cannot be counted as an improved transcription.",
+      "status": "readiness requirement; no new acceptance implementation"
+    },
+    {
+      "id": "G06",
+      "cases": [
+        "F08-abstention-extra-fields",
+        "F09-valid-abstention-control"
+      ],
+      "gap": "Semantic abstention and schema validity are separate; extra fields invalidate an otherwise appropriate abstention.",
+      "minimum_requirement": "Retain strict output schema and evidence-control checks; report semantic behavior separately from structural status. Keep the valid control unchanged with four explicit uncertainties.",
+      "must_not": "Strip extra fields silently or treat the unrelated image as evidence that source text is unreadable.",
+      "counterexample": "Qwen abstains within schema; Gemma adds four uncertainty_type fields and is rejected.",
+      "status": "existing guard verified; reporting requirement"
+    }
+  ]
+}

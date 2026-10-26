@@ -1,0 +1,58 @@
+{
+  "schema_version": "reading-failure-portable-replay-v1",
+  "fixture_sha256": "6d290330bc4d4186c72275df4331b87118cf01729fafb93361477414b2fbdfbc",
+  "source": "Only fixture JSON and existing validator modules; no original corpus, request manifest or image files accessed by replay.",
+  "rows": [
+    {
+      "case": "F01-critical-chapter",
+      "status": "valid",
+      "exact_match": true
+    },
+    {
+      "case": "F02-printed-repetition",
+      "status": "valid",
+      "exact_match": true
+    },
+    {
+      "case": "F03-loan-relocation",
+      "status": "valid",
+      "exact_match": true
+    },
+    {
+      "case": "F04-evening-and-loan-relocation",
+      "status": "valid",
+      "exact_match": true
+    },
+    {
+      "case": "F05-wrong-unit-id",
+      "status": "invalid",
+      "exact_match": true
+    },
+    {
+      "case": "F06-noop-patch",
+      "status": "invalid",
+      "exact_match": true
+    },
+    {
+      "case": "F07-unresolved-dense-list",
+      "status": "valid",
+      "exact_match": true
+    },
+    {
+      "case": "F08-abstention-extra-fields",
+      "status": "invalid",
+      "exact_match": true
+    },
+    {
+      "case": "F09-valid-abstention-control",
+      "status": "valid",
+      "exact_match": true
+    },
+    {
+      "case": "F10-correct-chapter-comparator",
+      "status": "valid",
+      "exact_match": true
+    }
+  ],
+  "provider_calls": 0
+}

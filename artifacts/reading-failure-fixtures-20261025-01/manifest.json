@@ -1,0 +1,45 @@
+{
+  "schema_version": "reading-failure-fixture-manifest-v1",
+  "files": [
+    {
+      "path": "artifacts/reading-failure-fixtures-20261025-01/README.md",
+      "sha256": "efa3e2b1e3a4d5fdd878905eae7de3a9b3466699e3d915474ee82b6b01f97472",
+      "bytes": 5211
+    },
+    {
+      "path": "artifacts/reading-failure-fixtures-20261025-01/existing-guard-tests.log",
+      "sha256": "a4ba55c7ec7daeede2ecfea3dda9a793665ee142066911215af4f033a9e8412a",
+      "bytes": 80
+    },
+    {
+      "path": "artifacts/reading-failure-fixtures-20261025-01/fixtures.json",
+      "sha256": "6d290330bc4d4186c72275df4331b87118cf01729fafb93361477414b2fbdfbc",
+      "bytes": 428207
+    },
+    {
+      "path": "artifacts/reading-failure-fixtures-20261025-01/guard-requirements.json",
+      "sha256": "ffc62a1d480ae53f508a82cda0b926268402191d081a8f8312852b270c14e1da",
+      "bytes": 4879
+    },
+    {
+      "path": "artifacts/reading-failure-fixtures-20261025-01/portable-replay-proof.json",
+      "sha256": "960f37c8504626f20f75512a17edede2005b827e358e5bae7ea86836bc59520a",
+      "bytes": 1384
+    },
+    {
+      "path": "artifacts/reading-failure-fixtures-20261025-01/replay.json",
+      "sha256": "479ec78d6454c08ab849bd51ce4f8b46ebb4fcdea7b1548a5cca78ec7ffc08f7",
+      "bytes": 4640
+    }
+  ],
+  "limits": {
+    "provider_calls": 0,
+    "image_fetches": 0,
+    "new_visual_certifications": 0,
+    "corpus_edits": 0,
+    "new_scripts_or_commands": 0
+  },
+  "cases": 10,
+  "replay_matches": 10,
+  "existing_guard_tests_passed": 28
+}

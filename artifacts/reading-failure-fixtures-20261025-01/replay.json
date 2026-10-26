@@ -1,0 +1,134 @@
+{
+  "schema_version": "reading-failure-fixture-replay-v1",
+  "fixture_ref": {
+    "path": "artifacts/reading-failure-fixtures-20261025-01/fixtures.json",
+    "sha256": "6d290330bc4d4186c72275df4331b87118cf01729fafb93361477414b2fbdfbc"
+  },
+  "cases": [
+    {
+      "id": "F01-critical-chapter",
+      "task_id": "qwen3.8:27b-mlx::reading-74d01b9894f76563d519",
+      "guard_requirement": "G01",
+      "diagnostic_disposition": "source_fidelity_review_required",
+      "host_status": "valid",
+      "reply_status": "proposed",
+      "patch_count": 4,
+      "uncertain_count": 0,
+      "all_targets_unchanged": false,
+      "error_first_line": null
+    },
+    {
+      "id": "F02-printed-repetition",
+      "task_id": "gemma4:31b-mlx::reading-1cf618a5ce887cee79b1",
+      "guard_requirement": "G02",
+      "diagnostic_disposition": "source_fidelity_review_required",
+      "host_status": "valid",
+      "reply_status": "proposed",
+      "patch_count": 4,
+      "uncertain_count": 0,
+      "all_targets_unchanged": false,
+      "error_first_line": null
+    },
+    {
+      "id": "F03-loan-relocation",
+      "task_id": "gemma4:31b-mlx::reading-5500247fc23992050e37",
+      "guard_requirement": "G03",
+      "diagnostic_disposition": "source_mapping_review_required",
+      "host_status": "valid",
+      "reply_status": "proposed",
+      "patch_count": 5,
+      "uncertain_count": 0,
+      "all_targets_unchanged": false,
+      "error_first_line": null
+    },
+    {
+      "id": "F04-evening-and-loan-relocation",
+      "task_id": "qwen3.8:27b-mlx::reading-5500247fc23992050e37",
+      "guard_requirement": "G03",
+      "diagnostic_disposition": "source_mapping_review_required",
+      "host_status": "valid",
+      "reply_status": "proposed",
+      "patch_count": 9,
+      "uncertain_count": 0,
+      "all_targets_unchanged": false,
+      "error_first_line": null
+    },
+    {
+      "id": "F05-wrong-unit-id",
+      "task_id": "qwen3.8:27b-mlx::reading-1cf618a5ce887cee79b1",
+      "guard_requirement": "G04",
+      "diagnostic_disposition": "retain_rejected_transport",
+      "host_status": "invalid",
+      "reply_status": null,
+      "patch_count": null,
+      "uncertain_count": null,
+      "all_targets_unchanged": null,
+      "error_first_line": "reply unit ID mismatch"
+    },
+    {
+      "id": "F06-noop-patch",
+      "task_id": "qwen3.8:27b-mlx::reading-50a8872c9b2dda1a90bf",
+      "guard_requirement": "G04",
+      "diagnostic_disposition": "retain_rejected_transport",
+      "host_status": "invalid",
+      "reply_status": null,
+      "patch_count": null,
+      "uncertain_count": null,
+      "all_targets_unchanged": null,
+      "error_first_line": "no-op patch"
+    },
+    {
+      "id": "F07-unresolved-dense-list",
+      "task_id": "qwen3.8:27b-mlx::reading-5e7e1b38c53e488454eb",
+      "guard_requirement": "G05",
+      "diagnostic_disposition": "unresolved_not_ready",
+      "host_status": "valid",
+      "reply_status": "needs_review",
+      "patch_count": 0,
+      "uncertain_count": 13,
+      "all_targets_unchanged": true,
+      "error_first_line": null
+    },
+    {
+      "id": "F08-abstention-extra-fields",
+      "task_id": "gemma4:31b-mlx::unrelated_image::reading-3077c2e0a49061bbcf29",
+      "guard_requirement": "G06",
+      "diagnostic_disposition": "retain_rejected_transport",
+      "host_status": "invalid",
+      "reply_status": null,
+      "patch_count": null,
+      "uncertain_count": null,
+      "all_targets_unchanged": null,
+      "error_first_line": "4 validation errors for QuoteReadingReply"
+    },
+    {
+      "id": "F09-valid-abstention-control",
+      "task_id": "qwen3.8:27b-mlx::unrelated_image::reading-3077c2e0a49061bbcf29",
+      "guard_requirement": "G06",
+      "diagnostic_disposition": "valid_abstention_not_clean_reading",
+      "host_status": "valid",
+      "reply_status": "needs_review",
+      "patch_count": 0,
+      "uncertain_count": 4,
+      "all_targets_unchanged": true,
+      "error_first_line": null
+    },
+    {
+      "id": "F10-correct-chapter-comparator",
+      "task_id": "gemma4:31b-mlx::reading-74d01b9894f76563d519",
+      "guard_requirement": "G01",
+      "diagnostic_disposition": "source_backed_comparator_not_autoapproval",
+      "host_status": "valid",
+      "reply_status": "proposed",
+      "patch_count": 5,
+      "uncertain_count": 0,
+      "all_targets_unchanged": false,
+      "error_first_line": null
+    }
+  ],
+  "status_counts": {
+    "valid": 7,
+    "invalid": 3
+  },
+  "identity_checks": "Manifest and candidate file hashes; exact requests reconstructed locally; raw reply hashes; target bytes; image file hashes; saved host replay equality; all matched."
+}
