@@ -2,7 +2,7 @@
 
 Prepare the five parts of the 39th Congress, first session for keyword, OCR-tolerant and semantic search, with historical filters and precise source citations. The data/backend workflow is under development; a complete research search service or public research interface is not shipped yet.
 
-**[MASTER_PLAN.md](MASTER_PLAN.md)** is the short current workboard: goal, results, ordered tasks, ownership and milestones. Agents start at [AGENTS.md](AGENTS.md); detailed policies and commands are linked by task, not required reading for everyone.
+**[MASTER_PLAN.md](MASTER_PLAN.md)** connects the destination and pilot acceptance checks to seven engineering stages, their subtasks, current progress and the next executable task. Agents start at [AGENTS.md](AGENTS.md); detailed policies and commands are linked by task, not required reading for everyone.
 
 Use the browser review desk below to answer questions and grade samples. Agents pick up submitted answers when they next work on the project.
 

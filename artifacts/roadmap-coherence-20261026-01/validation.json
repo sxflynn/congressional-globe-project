@@ -1,0 +1,56 @@
+{
+  "schema_version": "roadmap-coherence-validation-v1",
+  "date_local": "2026-10-26",
+  "scope": "Documentation only; no production code, model calls or source/corpus changes.",
+  "checks": {
+    "seven_core_stages": true,
+    "one_core_stage_done_only_m0": true,
+    "m7_human_gate_separate": true,
+    "p0_evidence_distinct_from_stage_count": true,
+    "human_decision_register_unchanged": true,
+    "runtime_bounds_unchanged": true,
+    "p0_readiness_rows_unchanged": true,
+    "historical_task_ids_0_through_9_retained": true,
+    "t10_fills_unimplemented_date_contract_not_duplicate_design": true,
+    "draft_implementation_and_acceptance_distinguished": true,
+    "task_to_parent_to_stage_update_rule": true,
+    "no_new_quality_thresholds_or_provider_authorization": true
+  },
+  "stage_count": {
+    "engineering_stages": 7,
+    "fully_complete": 1,
+    "complete_stage": "M0",
+    "not_an_effort_percentage": true
+  },
+  "walkthroughs": [
+    {
+      "input": "work in this codebase",
+      "current_position": "M0 complete; metadata/workflow/authorities/benchmark preparation partial",
+      "chosen_task": "T8",
+      "parent": "M2.2",
+      "reason": "First unowned READY bounded execution task",
+      "after_completion": "Update T8 and M2.2; M2 remains partial unless its remaining recovery exit evidence passes"
+    },
+    {
+      "input": "work in this codebase; T8 already owned",
+      "chosen_task": "T10",
+      "parent": "M1.3",
+      "reason": "Independent READY offline date-contract implementation, after completed M1.2 design",
+      "does_not_repeat": "T4 draft preparation or previous provider calls"
+    },
+    {
+      "input": "all currently READY tasks owned or blocked",
+      "behavior": "Record exact dependencies, inspect stage prerequisites to bound the next useful unit; do not relaunch completed pilots, invent human acceptance or declare the whole project finished"
+    }
+  ],
+  "local_links": {
+    "active_files": 12,
+    "checked": 127,
+    "errors": 0
+  },
+  "limitations": [
+    "Structured local walkthrough only; no independent fresh model/harness test performed.",
+    "Stage count summarizes evidence recorded in the project, not a new code/source audit.",
+    "Document checks do not establish historical quality or close any human gate."
+  ]
+}

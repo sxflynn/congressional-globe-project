@@ -7,7 +7,7 @@ Read this before implementation or worker recovery. [MASTER_PLAN.md](../../MASTE
 1. Inspect actual Git/files and durable evidence. Claim the task, owner, paths, bounds and checkpoint in the master before editing. Record the decision/proof the unit advances.
 2. Implement the smallest change that satisfies the task's checks. Use uv and Pydantic v2 at external-data boundaries; stream large corpus files. Keep cyclomatic complexity≤5 and tests focused on meaningful success/failure cases.
 3. Preserve source/hash/span evidence, original OCR, accepted text/ledgers, prior proposals and failed experiments. Derived work goes under `artifacts/`; disposable scratch under `tmp/`. Never touch the separate `tmp/performance/` investigation or expose ignored `.env` secrets.
-4. Run the checks below. Update the existing master rows/status/next action, append a compact dated changelog entry, and commit. Report result, checks, limits and what remains. Never leave completion evidence only in chat.
+4. Run the checks below. Update the master execution task, its parent work-package/subtask and the stage status in that order; keep dependencies and next eligible action synchronized. A stage closes only when its exit evidence is satisfied. Append a compact dated changelog entry and commit. Report result, checks, limits and what remains. Never leave completion evidence only in chat.
 
 Use Luna delegates for bounded preparation/review when available, as requested by the human; name ownership and inspect their findings. If the harness cannot provide that model, do not invent delegation or model identity. AI review is not a human grade.
 
@@ -35,7 +35,7 @@ The generalized arbitrary-crash/cross-harness recovery guarantee is still an M2 
 
 State whether this harness can inspect raster images. A no-vision agent can implement contracts, audit raw text, check hashes, replay saved outputs and prepare fixtures. It cannot certify source print. A vision-capable agent can inspect a bounded hash-bound cached crop after checking ownership; this does not authorize fetching more images, re-running models or editing canonical OCR. Missing vision alone is not a project blocker.
 
-Keep structural validity, source fidelity, provenance, uncertainty, review status and historical truth distinct. Never claim full readiness from schema passes, fluent output, a tiny winning sample or unchanged raw text returned as `needs_review`.
+Keep structural validity, source fidelity, provenance, uncertainty, review status and historical truth distinct. Never claim full readiness from schema passes, fluent output, a tiny winning sample or unchanged raw text returned as `needs_review`. Distinguish requirements drafted, implementation complete, checks passed, source/quality reviewed and human acceptance. Each DONE claim names which of these it proves; a design draft cannot satisfy an implementation/backend-compatibility exit check.
 
 ## Automation and ergonomics review
 

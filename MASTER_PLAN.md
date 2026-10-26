@@ -1,78 +1,113 @@
-# Congressional Globe: current work
+# Congressional Globe: plan, progress and next work
 
-Updated 2026-10-25. **This is the only current goal, task queue, ownership and progress record.** [AGENTS.md](AGENTS.md) is the short entry point. Detailed policies are split into [task-specific references](#reference-map); they contain no competing task queues. Historical snapshots and experiment notes are evidence, never instructions to restart work. New human instructions take precedence.
+Updated 2026-10-26. **This is the only current roadmap, subtask queue, ownership and progress record.** Start at [AGENTS.md](AGENTS.md); read detailed [references](#reference-map) only for the selected task. Historical experiment notes are evidence, not instructions to repeat work. New human instructions take precedence.
 
-## Goal and current result
+## What we are working toward
 
-Build a source-preserving foundation for researching the five parts of the 39th Congress, first session: useful search, trustworthy speaker/date/topic/legislation filters and cited answers. A production research search/enrichment service is not complete. Agents build and prove bounded workflows; the human chooses and launches full workloads.
+A trustworthy, portable research foundation for **all five parts of the 39th Congress, first session**. A researcher or future AI tool should find passages by words or meaning, combine supported speaker/date/topic/legislation filters, inspect surrounding context and follow precise primary-source citations. Reading, quotation and text-to-speech access must preserve uncertain/disputed wording and original OCR.
 
-**P0 remains open:** is further image-grounded OCR cleanup worth its total cost for reading, text-to-speech, retrieval and annotation? Do not infer skip/selective/broad-cleanup policy or full-run approval from a successful diagnostic.
+**Next acceptance point: M6, a reviewed portable backend/data pilot with explicit supported scope and measured limits.** A polished website is deferred. A full-corpus production run/release is the separate human decision M7; completing a pilot does not authorize it. [Detailed capabilities and scope](docs/reference/research-design.md#what-the-finished-foundation-must-support).
 
-- Canonical snapshot: 5,412 pages / 296,995 paragraphs / 19,803 page-bounded chunks; saved export is older than later SQLite cleanup results.
-- Reading comparison is **finished**:36 new calls plus 4 exact reused replies;27 new valid / 3 invalid / 6 timeouts. All 30 returned input counts match. Both models fail frozen pilot criteria: wrong chapter numeral, removed printed repetition, cross-record relocation and residual damage. [Comparison](artifacts/reading-quote-expansion-run-20261025-01/comparison.md).
-- **HR-004 human readability feedback received:** both source windows need wording repair despite clear subjects; damaged words interrupt comprehension, specifically `ra}'` in part2/page1857/leaf1009. Sample2 free-text topics: preservation of State Department government documents in a fireproof building, and the Sioux City railroad branch. Sample1 supplies readability feedback, not usable topic labels. No structured-label import or blanket cleanup approval. [Exact answer](docs/archive/human-review/HR-004-v1/7d9635ca-6176-4971-b2e5-dfad247e439c.json).
-- **Human reader-impact case source-checked:** `ra}'` is printed **my**. One source-bound120×78crop and separate proposal/replay preserve all surrounding text;40existing scan tests and browser check pass. [Evidence](artifacts/reader-impact-20261025-01/README.md). No accepted correction or general readability claim.
-- Ten exact failure/comparator fixtures are **finished**:7 valid / 3 invalid; full and portable replays match. Valid transport can still carry fidelity/mapping failures. [Fixtures and six guard requirements](artifacts/reading-failure-fixtures-20261025-01/README.md).
-- M1 role protocol v2 and saved-output audit are **finished**; scoped-date contract/inference remains unimplemented. [Role evidence](artifacts/role-protocol-v2-20261025-02/README.md), [two frozen date/boundary cases](artifacts/role-date-boundary-preparation-20261025-01/preparation.json).
-- Ollama log-query CLI is **finished**, including all three review corrections. [Usage and limits](docs/reference/log-query.md).
-- Latest code gate: 397 tests plus Ruff, ty and complexity≤5. [Exact log](artifacts/ollama-log-query-fixes-20261025-01/gate.log.gz). The later fixture unit passed 28 existing guard tests; instruction restructuring changes no code.
+**Where we are:** source foundation complete; metadata, durable workflow, authorities and benchmark preparation partial; production retrieval, end-to-end proof and portable pilot still ahead. **1 of 7 engineering stages is fully complete.** This counts completed gates, not effort or “14% finished.” Local experiments, tools and documents can be done without completing their parent stage.
 
-## Pick up work in five steps
-
-1. Run `uv run globe review inbox`; inspect `git status --short`, `git log -5 --oneline` and `tail -n 20 CHANGELOG.md`. Read the [review protocol](docs/reference/human-review-protocol.md) only if answers arrived or your task handles reviews. Apply actual answers before dependent work; continue independent work while reviews are pending.
-2. Read the active-work table below. Do not depend on another harness's chat/session IDs. For offline/documentation work, inspect its files and ownership; investigate runtime only if the task will touch workers or recovery.
-3. State image capability. Choose the first **READY** task below that you can do and that is unowned. Generic “work in this codebase” means make that choice autonomously. If blocked by missing inputs, record the exact blocker and take the next independent READY task; do not invent sources or ask the human to choose among available routine tasks.
-4. Change its row to **ACTIVE** and add/update the active-work row: owner, files, bounds and checkpoint. Read only that row's input/reference links, plus [engineering rules](docs/reference/engineering.md) before implementation. Do the listed steps and checks.
-5. Update the same task row to **DONE** with commit/evidence, or **BLOCKED** with its precise dependency. Update the compact result/milestone if changed; append one dated changelog entry and commit. Keep a single next action. A task can be done while its research milestone remains open.
-
-Statuses: **READY** = actionable now; **ACTIVE** = claimed; **BLOCKED** = named dependency; **DONE** = evidence exists. A pending human review blocks only its dependent decision, not the whole project.
-
-## Active work
-
-| Task | Owner / paths | Bounds and checkpoint | Next action |
-| --- | --- | --- | --- |
-| None | Unclaimed | T6/T7 complete: exact human reader-impact case and separately verified source word. One120×78crop,2requests/4,241bytes;40existing scan tests and browser proof pass. No model calls or corpus edits. | First unowned READY task is T8; HR-010 remains pending. |
-
-Before launching model work add its actual process start time/full command, run/config hashes, budgets, journal path and checkpoint here. No owned reading worker is carried forward. Prior process observations are historical; recheck reality before any worker action.
-
-## Ordered task queue
-
-The first unowned READY row is the default next task. Do not create a second backlog. Supporting references specify how; only this table specifies what is next.
-
-| ID / status | Concrete unit and steps | Inputs / references | Done when |
-| --- | --- | --- | --- |
-| T0 DONE | Make stateless pickup easy: shorten entry instructions, split references, expose ordered tasks/ownership, preserve decisions and historical evidence. | Explicit current human request; [exact original snapshot](docs/archive/2026-10-25-instruction-split/manifest.json) | Completed: active links/policies checked; documented entry walkthrough selects T1 from AGENTS/master alone. Original snapshots verified. [Validation receipt](artifacts/instruction-split-20261025-01/validation.json). |
-| T1 DONE | Implement minimal read-only `reading status --json`: define explicit run/config input; report journal counts, prior/current budget evidence, unknown usage, review/ownership state and next action with bounded output. No “latest directory” guessing. | [Approved scope and pitfalls](docs/reference/pickup-tooling.md); `reading_run_store.py`, terminal export and [comparison](artifacts/reading-quote-expansion-run-20261025-01/comparison.json) | Done: added `reading` CLI (`status`/`verify`) reading explicit `--run-dir` only via read-only SQLite; bounded JSON with journal/budget/unknown/review/next action; tests pass; no writes/network/inference. Implementation commit `0e745c9`; independent acceptance audit is T8. |
-| T2 DONE | Add read-only `reading verify` for the same explicit run identity; check request/reuse/source/image/count/protocol/review bindings and conservative cross-run budgets. Reuse pure validators. | [Approved scope](docs/reference/pickup-tooling.md); `reading_launch.py`, `reading_dispatch.py`, `reading_requests.py` | Done: enhanced `globe reading verify` checks bindings/reuse/budgets/unknowns, avoids store constructor writes (read-only SQLite), no model calls; tested on expansion run. |
-| T3 DONE | Evaluate a minimal **risk-only** contract for G01–G03: identifier edits, repeated-word deletions and cross-record provenance. Use exact failures and legitimate comparators; distinguish flags from source truth. Freeze proposed output/expected cases before any implementation. | [Ten cases and requirements](artifacts/reading-failure-fixtures-20261025-01/README.md); `reading_quotes.py`, `reading_contracts.py`; [research design](docs/reference/research-design.md) | Done: frozen risk-only contract (G01–G03) with flags from source truth, comparator F10 preserved for review (not auto-blocked), unresolved states for cross-record moves, no guards implemented or model runs. [Evidence](artifacts/reading-risk-contract-20261025-01/README.md). |
-| T4 DONE | Define scoped-date contract and source mapping from the two frozen cases: explicit date, date-negative verb “may”, and boundary stops. Preserve role-v2 semantics; prove schema/backend compatibility before any inference. | [Frozen cases](artifacts/role-date-boundary-preparation-20261025-01/preparation.json); [role v2](artifacts/role-protocol-v2-20261025-02/README.md); `role_aliases.py`; [metadata semantics](docs/reference/research-design.md#required-metadata-semantics) | Done: frozen scoped-date contract with typed fields (date/date_kind/precision/scope/evidence/unknowns), date-negative "may" handling, boundary stops, source mapping from frozen cases; schema/backend compatibility noted, no inference calls. [Evidence](artifacts/role-date-contract-20261025-01/README.md). |
-| T5 BLOCKED on HR-010; HR-004 DONE | Consume HR-010/004 answers if they appear; archive exact latest revisions, apply narrowly, commit, mark applied, export separate receipt and commit again. | [Human decisions](#human-decisions); [review protocol](docs/reference/human-review-protocol.md) | HR-004 revision1 applied in `658c238`; [separate receipt](docs/archive/human-review/HR-004-v1/7d9635ca-6176-4971-b2e5-dfad247e439c-applied.json) preserves exact hashes/answer. HR-010 still needs an actual submission. Do not fabricate answers. |
-| T6 DONE; exact case frozen | Freeze the human-reported `ra}'` comprehension failure and surrounding important-word context as a reader-impact case. Preserve exact source/hash and original answer; inspect only the matching cached source crop if available, otherwise record the missing-image dependency. A source-supported correction stays a proposal, never a canonical edit. | [HR-004 answer](docs/archive/human-review/HR-004-v1/7d9635ca-6176-4971-b2e5-dfad247e439c.json); source `congressionalglo7392unit:1009:par_001009_000042`, raw SHA-256 `5f649d554b54ff7d78ebe97147cfb869744cf6ab46d65632fbd16d5b98bc0207`; [scan rules](docs/reference/scans.md) | [Initial frozen case](artifacts/reader-impact-20261025-01/case-initial.json) retains exact source/review hashes and span303:307. Existing same-page cache is paragraph37 at y2373–2943; reported word in paragraph42 is y3658–3736 and absent. Printed reading explicitly unresolved; no guessed repair, model call or corpus change. |
-| T7 DONE | Resolve only the missing source-word image using existing bounded S0 retrieval, then visually verify the printed reading. Keep T6 initial record immutable; any supported change is a separate proposal. | Prepared target `artifacts/reader-impact-20261025-01/word/target.json`; [existing bounded retrieval authorization](docs/reference/scans.md) | [Source check and proposal](artifacts/reader-impact-20261025-01/README.md): printed word is **my**; exact span303:307 replay changes no other text. Official source/hash/dimensions verified;2requests/4,241bytes,40existing tests and browser proof pass. Visible in source-image desk; no corpus edit or new human grade. |
-| T8 READY; independent pickup-tool review | Audit recently added T1/T2 CLI against the approved bounded/read-only contract before relying on its summaries. Check an actual named run and adversarial fixtures for output caps, evidence/unknown budgets, no writes/network and correct next-action reporting. Fix reproducible defects within the approved scope; preserve prior evidence. | Commits `0e745c9`, `cd960ce`; [reading_cli.py](src/congressional_globe/reading_cli.py), [CLI tests](tests/test_reading_cli_status.py) and `cli.py` registration; [approved scope](docs/reference/pickup-tooling.md) | Findings and reproduction evidence recorded; any fixes have meaningful regression coverage and full gate. Status/verify must not claim more source fidelity or launch readiness than evidence proves. No new inference. |
-
-The startup path is now AGENTS + this workboard; reference/history reading is task-specific. A structured walkthrough was checked locally, not by an independent fresh model.
-
-Completed supporting units: log-query fixes `c1d53f6`; failure fixtures `be04156`; pickup evaluation `96f5079`. Full history is in [CHANGELOG.md](CHANGELOG.md), not more “latest next steps” paragraphs here.
+**P0 runs alongside these stages:** decide whether raw/search-normalized, targeted or broader source-grounded OCR cleanup earns its total cost for reading/TTS/retrieval/annotation. P0 is OPEN; its human decision is required before M6 acceptance. The finished primary comparison exposed fidelity failures; it did not select a winning workflow or close P0.
 
 ## Milestone progress
 
-| Milestone | State | Evidence needed to advance |
+Read this as the sequence of **acceptance gates**. Independent preparation may overlap; the dependency column says what must be proved before a stage can close. Keep existing IDs stable.
+
+| Stage / state | Deliverable and what closes the stage | Dependencies / human gate |
 | --- | --- | --- |
-| P0 cleanup value | OPEN; primary comparison and failure fixtures complete | Representative fidelity/reading/TTS/retrieval/annotation/cost evidence and actual human policy decision; readiness below. |
-| M0 source foundation | Foundation complete; preserve | Portable identities/release packaging; immutable raw sources and provenance. |
-| S0/S1 scans/vision | Bounded feasibility complete | Supporting source access only; not a scan-hunting workstream or production correction approval. [Evidence](docs/reference/scans.md). |
-| M1 metadata contracts | Partial; role-v2 complete | T4 froze a scoped-date design; implementation/backend compatibility and broader reviewed role/date coverage still require verification. |
-| M2 durable workflow | Partial; journals/timeout recoveries exist | Arbitrary-crash and second-harness recovery proof, no lost/duplicated compatible results. |
-| M3 authorities/subjects | Partial; candidate data and diagnostics | Cited people/place/bill resolution, temporal service links, curated vocabulary and quality labels. |
-| M4 retrieval | Pending production implementation | Source-preserving lexical/hybrid search with reliable metadata/boundary filters. |
-| M5 benchmark | Pending | Fresh reviewed end-to-end results, negatives/abstentions and declared acceptance standards. |
-| M6 portable pilot | Pending | Another client can consume the backend/export and reproduce setup/recovery with realistic cost estimates. |
-| M7 full workload/release | Human decision; NOT authorized | Concrete provider/configuration/budget/recovery/release packet after pilot acceptance. |
+| **M0 DONE — source foundation** | Immutable five-part sources, canonical raw/static baseline, source identities/geometry and verified replay/export. [Foundation proof](artifacts/runs/static-final-20261011/independent_verification.json). Preserve it. | Foundation for every later stage; portability packaging remains M6 work. |
+| **M1 PARTIAL — trustworthy metadata** | Typed, source-mapped speaker/role/date/boundary assertions and unknowns; validated contracts plus reviewed real/negative cases establishing supported scope. Current: role-v2 exists; date design only. | M0. H2/H3 for material new labels/policies; one Wade adjudication is not broad attribution accuracy. |
+| **M2 PARTIAL — durable repeated workflow** | Bounded stages with exact input/result journals, reuse, failures/budgets and demonstrated interruption/second-harness recovery without lost or duplicated compatible work. Current: journals/timeout recovery and tools exist; general recovery/acceptance proof incomplete. | M0 and the M1 contract needed by each stage. Engineering can proceed before all M1 quality questions close. |
+| **M3 PARTIAL — authorities and subjects** | Cited people/place/bill/subject links, time-scoped service/affiliations and controlled vocabulary, with evidence/ambiguity preserved. Candidate extraction exists; verified linking does not. | M0 and relevant M1 schemas; M2 required before repeated provider processing. H3 for authority/vocabulary policy. |
+| **M4 PLANNED — usable retrieval** | Source-preserving lexical/OCR-tolerant and semantic/hybrid queries; compatible combined metadata filters; matching spans/context/citations and explicit coverage. Existing prototypes are not a production release. | Selected M1/M3 metadata and M2 processing contract. Lexical prototyping can start earlier; trusted-filter acceptance cannot. |
+| **M5 PARTIAL — benchmark preparation; end-to-end results ahead** | Frozen representative benchmark and agreed criteria; matched raw/static/clean evidence for retrieval, enrichment, grounded answers, reading/TTS and full costs; negatives/abstentions and disagreements retained. | M4 for end-to-end results; sample/criteria design and human labels can proceed now. H1/H2; no invented quality thresholds. |
+| **M6 PLANNED — accepted portable pilot** | Another client can reproduce/use the declared backend/data/query release, with evidence, recovery instructions, measured estimates and all acceptance checks below. | M1–M5 exit evidence plus the P0 cleanup-policy decision. Prepare the concrete pilot before H6 human acceptance. |
+| **M7 HUMAN DECISION — full run/release** | Explicitly select provider/configuration/budget and authorize the full workload; afterwards validate coverage/failures/release manifests. | Accepted M6 pilot plus H4/H6 authorization. **Not part of the seven completed-engineering-stage count; not authorized now.** |
+
+Main route: **M0 → M1/M2/M3 → M4 → M5 → M6**. P0 uses evidence gathered through M1–M5 and feeds the M6 decision. S0/S1 scan/vision feasibility and agent ergonomics are supporting work, not extra research acceptance stages.
+
+## What “accepted pilot” means
+
+These are the existing release requirements made explicit, not newly invented numerical quality standards. Detailed rubrics/scope limits still need the applicable human checkpoints. M6 cannot close just because tests pass.
+
+- [ ] **Research use:** the declared scope demonstrates exact names/quotes/numbers, OCR-tolerant and semantic discovery, and supported combined filters; returns matching spans, context and citations to primary sources.
+- [ ] **Historical integrity:** raw text stays accessible; derived readings/search views map back to source hashes/spans; people/roles/dates/legislation are not inferred across unsupported boundaries; unknowns and review provenance remain visible.
+- [ ] **Quality evidence:** a frozen, appropriately reviewed benchmark covers relevant alternatives, failures and unanswerable cases; source fidelity and metadata/retrieval/answer quality meet explicitly agreed criteria. Existing diagnostics are not held-out gold.
+- [ ] **Reading/cleanup decision:** paired reading/TTS and downstream evidence plus total costs support the human-selected raw/targeted/broad policy, including unresolved wording and exception scope. No automatic canonical rewriting.
+- [ ] **Durable execution:** interruption and another harness/process recover compatible results without loss/duplicate paid work; ambiguous outcomes and unknown usage are retained; repeated stages respect recorded budgets.
+- [ ] **Portable handoff:** schemas, source/data/index manifests, query contract and required artifacts are documented; a separate consumer reproduces the pilot without undisclosed local/ignored dependencies; relevant full code gate passes.
+- [ ] **Human acceptance:** H6 records acceptance of the concrete scoped pilot and remaining limits. H4/H6 separately govern M7; neither silence nor diagnostic grades authorize a full run.
+
+## Work-package progress inside the stages
+
+This is the stable parent/subtask map. The [execution queue](#ordered-task-queue) below selects the next bounded unit; it is not a second roadmap. **DONE requires evidence for the stated subtask only.** PLANNED means not yet an executable assignment; promote a bounded unit to READY only when its inputs, scope and completion checks are specified.
+
+| Subtask / state | What is done or still required | Next dependency / evidence |
+| --- | --- | --- |
+| **M0.1 DONE** sources/baseline | 5,412 pages /296,995paragraphs /19,803page-bounded chunks; verified immutable baseline. Export predates later SQLite results. | [Foundation proof](artifacts/runs/static-final-20261011/independent_verification.json). |
+| **M1.1 DONE** role-contract diagnostic | Role-v2 schema/host consistency and exact saved-reply revalidation exist. This is contract engineering, not calibrated all-corpus roles. | [Role evidence](artifacts/role-protocol-v2-20261025-02/README.md). |
+| **M1.2 DONE** scoped-date preparation | Two date/boundary inputs and a draft requirements document are frozen. T4 completed this design scope only. | [Frozen cases](artifacts/role-date-boundary-preparation-20261025-01/preparation.json), [design draft](artifacts/role-date-contract-20261025-01/README.md). |
+| **M1.3 READY** executable date contract | Implement typed scoped-date/source mappings and real schema/host/backend-compatibility checks; tests for ordinary-verb “may,” explicit date and boundary stops. | T10; requires M1.1/M1.2. No inference required for this unit. |
+| **M1.4 PLANNED** broader metadata evidence | Review bounded supported/unsupported/unknown roles/dates and propagation/omission cases under the implemented contract. | After M1.3; freeze any new call limits and source expectations before inference; H2/H3 as applicable. |
+| **M2.1 DONE** journal/transport slice | Raw-first persistence, exact compatible reuse, budgets and six actual timeout recoveries are recorded. Not an arbitrary-crash guarantee. | [Terminal export](artifacts/reading-quote-expansion-run-20261025-01/terminal-export.json). |
+| **M2.2 PARTIAL** trustworthy pickup | Status/verify CLI implementation exists (T1/T2); independent acceptance against hard bounds/read-only/evidence/unknown budgets remains. | T8 next. [Approved contract](docs/reference/pickup-tooling.md). |
+| **M2.3 PLANNED** general recovery proof | Controlled interruption plus second-process/harness recovery, failure/migration cases and no silent duplicate work. | M2.1; design a bounded fixture-backed proof before any live workload. |
+| **M3.1 DONE** authority candidates | A cited Wikipedia candidate dataset and subject diagnostics exist; candidate is not resolved identity. | [Evidence index](docs/reference/evidence.md); accepted vocabulary/linking remains M3.2. |
+| **M3.2 PLANNED** verified links/vocabulary | Resolve bounded people/service/place/bill/topic cases, including ambiguous and missing-authority negatives. | Relevant M1 semantics and cited sources; H3 policy decisions. |
+| **M4.1 PLANNED** retrieval release | Implement source-mapped lexical/semantic query contract and correctly scoped metadata filters; preserve turn/date boundaries. | M1/M3 versions and M2 repeated-work proof; prototype evidence alone does not close it. |
+| **M5.1 PARTIAL** benchmark/criteria | Provisional HR-003 standards, frozen samples and HR-004 readability feedback exist; HR-010 and representative labels/criteria remain incomplete. | Human register and P0 readiness below. Do not ask answered questions again. |
+| **M5.2 PLANNED** matched evaluation | Produce paired retrieval/annotation/answer/reading/TTS results, actual costs and independent confirmation. | M4 output, M5.1 criteria and P0-A–G evidence; obey finite stopping rule. |
+| **M6.1 PLANNED** handoff/acceptance | Package the selected pilot, run a separate-consumer proof and prepare H6 acceptance with explicit limits. | M1–M5 + human P0 decision; finish-line checklist above. |
+
+P0-A–G below track the cross-cutting decision evidence. T3 froze risk-only design requirements, T6/T7 resolved one human-reported word, and the primary reading comparison is terminal; none is a complete transcription benchmark or a human-selected cleanup policy.
+
+## Pick up work in five steps
+
+1. Read the destination, stage states and parent/subtask map above. Check `uv run globe review inbox`, `git status --short`, `git log -5 --oneline` and `tail -n 20 CHANGELOG.md`. Apply actual new answers before dependent work, using the [review protocol](docs/reference/human-review-protocol.md); keep independent work moving.
+2. Check active ownership below. State image capability. Generic “work in this codebase” means choose the first unowned **READY** execution task you can perform; do not choose a new priority, restart a spent run or ask the human to select an already-actionable task. An explicit new human task takes priority.
+3. Claim its task and parent subtask with owner, paths, bounds and checkpoint. Read only the task's inputs/references plus [engineering rules](docs/reference/engineering.md) before implementation. Inspect runtime only if touching workers/recovery.
+4. Complete the listed steps/checks. If blocked by a concrete missing input, mark that dependency and take another independent READY row. No vision capability alone does not block offline work.
+5. Update **task → parent subtask → stage** in place. A stage becomes DONE only when its exit evidence and prerequisites pass, never because one child finished. Link result/checks/limits, update the next eligible action, append one compact changelog entry and commit. Unmet human criteria stay open.
+
+States: **READY** actionable/unclaimed; **ACTIVE** owned; **BLOCKED** named dependency; **PLANNED** future work not yet bounded; **PARTIAL** evidence exists but exit checks remain; **DONE** stated scope proven. Do not derive a project percentage by counting local task IDs or checked boxes. Unknown/missing evidence never counts as success.
+
+## Active work
+
+| Task / parent | Owner / paths | Bounds and checkpoint | Next action |
+| --- | --- | --- | --- |
+| None | Unclaimed | T9 roadmap hierarchy complete: stage exits/dependencies, scoped child progress and final acceptance checks are explicit. Documentation only; no model/corpus/code changes. | First unowned READY task: T8 (M2.2); independent fallback: T10 (M1.3). HR-010 remains pending. |
+
+Before model work add actual PID/start time/full command, run/config hashes, budgets, journal path and checkpoint here. No owned model worker is carried forward; historical process observations must be rechecked before worker actions.
+
+## Ordered task queue
+
+**Next default: T8 → T10.** T10 is an independent offline lane if T8 is owned or blocked. HR-010 gates only its dependent human-review conclusions. Later work packages become executable queue rows when their predecessor evidence is ready; preserve existing IDs and add new IDs rather than renumber history.
+
+| Task / status | Parent and steps | Inputs | Done when / unlocks |
+| --- | --- | --- | --- |
+| **T9 DONE** explicit human priority | Project-coordination workstream supporting M2/M6: connect destination, ordered acceptance stages, honest child progress, dependencies and stateless pickup. | Current human request; existing research goals/evidence. | Stage/task IDs, dependencies, child completion and human decisions checked;127 active local links pass. Local stateless walkthrough selects T8 then T10; no independent-model trial or code change. [Validation](artifacts/roadmap-coherence-20261026-01/validation.json). |
+| **T8 READY** pickup-tool review | **M2.2:** audit T1/T2 against bounded/read-only contract. Check actual named run and adversarial output/evidence/budget/unknown/no-write/network/next-action cases; fix reproducible defects within approved scope. | `0e745c9`, `cd960ce`; [reading_cli.py](src/congressional_globe/reading_cli.py), [tests](tests/test_reading_cli_status.py), `cli.py`; [approved scope](docs/reference/pickup-tooling.md). | Findings/reproduction evidence; any fixes have meaningful regression tests and full gate. Historical verification cannot imply source fidelity or fresh launch readiness. Advances M2.2, not all M2. |
+| **T10 READY** executable scoped dates | **M1.3:** review the frozen date draft against exact cases; implement Pydantic/schema/source-map validation, precision/kind/scope/evidence/unknown behavior and boundary-stop tests; prove schema compatibility for intended transport before calls. | [Cases](artifacts/role-date-boundary-preparation-20261025-01/preparation.json), [draft](artifacts/role-date-contract-20261025-01/README.md), [role v2](artifacts/role-protocol-v2-20261025-02/README.md), `role_aliases.py`; [metadata rules](docs/reference/research-design.md#required-metadata-semantics). | Real typed contract and exact source-mapped positive/negative/boundary fixtures pass; unsupported backend requirements remain blocked, not “noted as compatible.” Full gate for code. No new inference authorized. Unlocks bounded M1.4 design. |
+| **T5 BLOCKED on HR-010**; HR-004 done | **M5.1 / P0-B:** consume actual HR-010 answer when submitted; archive exact latest revision, apply narrowly, commit, mark applied and export separate receipt. | [Human register](#human-decisions), [review protocol](docs/reference/human-review-protocol.md). HR-004 applied in `658c238`; [receipt](docs/archive/human-review/HR-004-v1/7d9635ca-6176-4971-b2e5-dfad247e439c-applied.json). | Exact original and receipt committed, scope/limits retained. Never fabricate a submission or reopen HR-004. Unblocks only selected-output human findings. |
+
+### Completed execution units — scoped results, not completed stages
+
+| Tasks / parent | Completed scope and evidence | Still not established |
+| --- | --- | --- |
+| T0 / M2,M6 support | Short startup and reference split `76c633b`; [validation](artifacts/instruction-split-20261025-01/validation.json). | Independent fresh-agent trial and portable M6 acceptance. |
+| T1,T2 / M2.2 | Explicit-run read-only status/verify implementations `0e745c9`, `cd960ce`. | Independent acceptance is T8; implementation alone is not an M2 exit. |
+| T3 / P0-B,M2 source integrity | [Risk-only draft](artifacts/reading-risk-contract-20261025-01/README.md) using [ten cases](artifacts/reading-failure-fixtures-20261025-01/README.md). | Automated guards/adoption, calibrated risk policy or source-truth certification. |
+| T4 / M1.2 | [Scoped-date requirements draft](artifacts/role-date-contract-20261025-01/README.md), using two frozen source cases. | It explicitly says no implementation/schema changes; executable schema and backend proof are T10. |
+| T6,T7 / P0-B,M5.1 | [Reader-impact case](artifacts/reader-impact-20261025-01/README.md) `7cbe8a9`: `ra}'` is printed **my**; exact crop/proposal replay,40existing tests and browser proof. | Accepted corpus correction, whole-paragraph transcription, general reading/TTS improvement or P0 policy. |
+
+Supporting completed log-query corrections: `c1d53f6`, [usage/limits](docs/reference/log-query.md). Dates, detailed results and previous task definitions remain in [CHANGELOG.md](CHANGELOG.md), evidence and Git history; do not grow another parallel backlog.
 
 ### P0 decision readiness
 
-**0 of 7 fully ready.** This is evidence readiness, not project percentage. Existing diagnostics remain useful partial evidence. Detailed criteria, matched raw/static/clean arms and stopping rules: [research design](docs/reference/research-design.md#p0-is-a-clean-reading-layer-worth-broad-ocr-cleanup).
+**0 of 7 fully ready.** These A–G requirements concern the cleanup-policy decision, not the M0–M6 engineering-stage count or a project percentage. Existing diagnostics remain useful partial evidence. Detailed criteria, matched raw/static/clean arms and stopping rules: [research design](docs/reference/research-design.md#p0-is-a-clean-reading-layer-worth-broad-ocr-cleanup).
 
 | ID | State / remaining evidence |
 | --- | --- |

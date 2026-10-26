@@ -2,6 +2,8 @@
 
 Read this only when your task needs it. [MASTER_PLAN.md](../../MASTER_PLAN.md) owns current tasks, ownership, progress and next actions; this file owns detailed reference material.
 
+The master’s [stage sequence](../../MASTER_PLAN.md#milestone-progress), [acceptance checks](../../MASTER_PLAN.md#what-accepted-pilot-means) and [parent/subtask map](../../MASTER_PLAN.md#work-package-progress-inside-the-stages) connect these detailed requirements to executable work. This reference is not another task queue. Quality thresholds and scope limitations must be explicitly agreed through the existing human checkpoints; the roadmap does not invent them.
+
 ## 1. Goal and division of responsibility
 
 Build a trustworthy, portable historical research and search foundation from **all five locally collected parts of the 39th Congress, first session of The Congressional Globe**. A researcher or future AI assistant must be able to find relevant passages, apply historically meaningful filters, read surrounding context, and follow precise citations back to the primary documents.
