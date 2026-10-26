@@ -1,0 +1,34 @@
+{
+  "schema_version": "pickup-evidence-validation-v1",
+  "files_sha256": {
+    "src/congressional_globe/reading_cli.py": "a11dfd023950edcfe48fad54b57fa85d1e02a2f88eb10e5783129ac4b8f9f479",
+    "src/congressional_globe/reading_evidence.py": "d5883f57c6496b97587396564c7be62fea5333bdf7b7e38dabfa87d543bb1bd4",
+    "src/congressional_globe/reading_budget_audit.py": "746e95689598a3c21628e95ab795c37ad4f5546dbd82bcf04e0166e166a8b7c4",
+    "src/congressional_globe/reading_pickup_audit.py": "4f120c3efda2a27e1a1b3d5701165ac3aff93cd29076a65d0c3d05a7afb71e8f",
+    "tests/test_reading_evidence.py": "12aa2f44bebe2c482c14b9ea7fa395cf304a5d73415c146ad725e861c9ccd502",
+    "artifacts/pickup-evidence-20261026-01/inspection.json": "42f61483528186f19f21e5cb5665594beca38cd8d97f5c4834728e0679153908",
+    "artifacts/pickup-evidence-20261026-01/inspection.schema.json": "5be43cc1d514217f9a6398b16aa2185d5bafbae2fbd9230fd8159626ae75804b"
+  },
+  "new_portable_tests": 30,
+  "focused_tests": 49,
+  "original_file_count": 286,
+  "original_files_unchanged": true,
+  "named_run_expected_failures": [
+    "counter_binary_hash_missing_or_mismatch",
+    "exceeds_call_seconds"
+  ],
+  "runtime_process_observation": "unknown",
+  "launch_ready": false,
+  "source_fidelity": "not_assessed",
+  "inference_calls": 0,
+  "network_requests": 0,
+  "full_gate": {
+    "exit_code": 0,
+    "tests_passed": 480,
+    "ruff": "pass",
+    "ty": "pass",
+    "complexity_maximum": 5,
+    "markdown_formatter": "pass",
+    "log": "gate.log"
+  }
+}

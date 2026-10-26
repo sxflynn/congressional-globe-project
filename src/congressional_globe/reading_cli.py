@@ -16,6 +16,9 @@ from typing import Any
 
 from pydantic import TypeAdapter
 
+from congressional_globe.reading_budget_audit import token_usage
+from congressional_globe.reading_pickup_audit import inspect_evidence
+
 MAX_OUTPUT_BYTES = 8192
 _UNRESOLVED = [
     "cross_run_budget_provenance_and_deduplication",
@@ -31,6 +34,11 @@ def add_reading_commands(commands: argparse._SubParsersAction[argparse.ArgumentP
         action = actions.add_parser(name, help=f"Offline journal {name} for an explicit run")
         action.add_argument("--run-dir", type=Path, required=True)
         action.add_argument("--json", action="store_true", dest="json_out")
+        action.add_argument(
+            "--evidence",
+            type=Path,
+            help="Explicit hash-bound inspection recipe; never a launch configuration",
+        )
 
 
 def _encode(report: dict) -> str:
@@ -51,7 +59,8 @@ def _emit(report: dict) -> None:
 def run_reading(arguments: argparse.Namespace, _: Path) -> None:
     actions = {"status": _reading_status, "verify": _reading_verify}
     try:
-        report = actions[arguments.reading_action](arguments.run_dir)
+        evidence = getattr(arguments, "evidence", None)
+        report = actions[arguments.reading_action](arguments.run_dir, evidence)
     except (OSError, ValueError, sqlite3.Error, KeyError, TypeError):
         report = {
             "ok": False,
@@ -69,15 +78,15 @@ def _fingerprints(paths: list[Path]) -> list:
 
 
 @contextmanager
-def _open_readonly_store(run_dir: Path):
+def _open_readonly_store(run_dir: Path, filename: str = "attempts.sqlite"):
     # Never open the original SQLite: even mode=ro can update/create WAL sidecars.
-    source = Path(run_dir) / "attempts.sqlite"
+    source = Path(run_dir) / filename
     if not source.is_file():
         raise FileNotFoundError("missing attempts.sqlite")
     paths = [source, source.with_name(source.name + "-wal")]
     before = _fingerprints(paths)
     with tempfile.TemporaryDirectory(prefix="globe-reading-inspect-") as scratch:
-        copied = Path(scratch) / "attempts.sqlite"
+        copied = Path(scratch) / filename
         for path in paths:
             if path.exists():
                 shutil.copyfile(path, Path(scratch) / path.name)
@@ -137,6 +146,8 @@ def _usage_known(value) -> bool:
 def _timing(conn) -> dict:
     summary: dict[str, Any] = {
         "calls": 0,
+        "known_input_tokens": 0,
+        "known_output_tokens": 0,
         "seconds": 0.0,
         "unknown_elapsed_attempts": 0,
         "unknown_token_usage_attempts": 0,
@@ -146,6 +157,9 @@ def _timing(conn) -> dict:
     for row in rows:
         request = TypeAdapter(dict[str, Any]).validate_json(row["request_json"])
         elapsed = _elapsed(row["elapsed_seconds"])
+        tokens = token_usage(row["usage_json"])
+        summary["known_input_tokens"] += tokens["known_input_tokens"]
+        summary["known_output_tokens"] += tokens["known_output_tokens"]
         summary["calls"] += 1
         summary["unknown_elapsed_attempts"] += elapsed is None
         summary["unknown_token_usage_attempts"] += not _usage_known(row["usage_json"])
@@ -167,15 +181,52 @@ def _plan_state() -> dict:
         "path": str(path),
         "sha256": hashlib.sha256(data).hexdigest(),
         "next_action": lines[0] if lines else "unknown",
+        "ownership": _active_work(data.decode()),
+        "plan_file_age_seconds": max(0, datetime.now(UTC).timestamp() - path.stat().st_mtime),
+        "checkpoint_age": "unknown_no_machine_timestamp",
     }
 
 
-def _reading_status(run_dir: Path) -> dict[str, Any]:
+def _active_work(text: str) -> list[str]:
+    section = text.split("## Active work\n", 1)
+    if len(section) != 2:
+        return []
+    lines = section[1].split("\n## ", 1)[0].splitlines()
+    return [line for line in lines if line.startswith("| ")][2:6]
+
+
+def _review_state(path: str | None) -> dict:
+    if path is None:
+        return {"state": "unavailable_not_supplied"}
+    source = Path(path)
+    with _open_readonly_store(source.parent, source.name) as conn:
+        pending = conn.execute(
+            "SELECT COUNT(*) FROM submissions s LEFT JOIN applied_receipts r "
+            "USING(submission_id) WHERE r.submission_id IS NULL AND s.revision = "
+            "(SELECT MAX(n.revision) FROM submissions n WHERE n.packet_id=s.packet_id "
+            "AND n.version=s.version AND n.reviewer=s.reviewer)"
+        ).fetchone()[0]
+        unanswered = conn.execute(
+            "SELECT COUNT(*) FROM packets p WHERE p.version = "
+            "(SELECT MAX(n.version) FROM packets n WHERE n.packet_id=p.packet_id) "
+            "AND NOT EXISTS (SELECT 1 FROM submissions s WHERE "
+            "s.packet_id=p.packet_id AND s.version=p.version)"
+        ).fetchone()[0]
+    return {
+        "state": "observed_readonly",
+        "database": path,
+        "pending_unapplied_submissions": pending,
+        "packets_without_submission": unanswered,
+        "observed_at": datetime.now(UTC).isoformat(),
+    }
+
+
+def _reading_status(run_dir: Path, evidence: Path | None = None) -> dict[str, Any]:
     with _open_readonly_store(run_dir) as conn:
         config, manifest, config_hash = _identity(conn)
         tasks = _counts(conn, "tasks")
         timing = _timing(conn)
-        return {
+        report = {
             "run_dir": str(run_dir),
             "config_sha256": config_hash,
             "observed_at": datetime.now(UTC).isoformat(),
@@ -215,6 +266,22 @@ def _reading_status(run_dir: Path) -> dict[str, Any]:
             "next_action": _plan_state(),
             "bounded_output": True,
         }
+        if evidence is not None:
+            verification = _verify_connection(conn, run_dir, evidence)
+            _attach_evidence(report, verification)
+        return report
+
+
+def _attach_evidence(report: dict, verification: dict) -> None:
+    report["evidence_verification"] = verification
+    extra = verification["evidence"]
+    if extra is not None:
+        report["review/ownership_state"]["human_review"] = extra["current_review"]
+        report["budget"]["prior_usage"] = (
+            "recomputed_see_evidence_verification"
+            if extra["budget"] is not None
+            else "unknown_evidence_failed"
+        )
 
 
 def _check_tasks(conn, manifest: list) -> list[str]:
@@ -290,31 +357,63 @@ def _model_budget_errors(config: dict, timing: dict) -> list[str]:
     return errors
 
 
-def _reading_verify(run_dir: Path) -> dict[str, Any]:
+def _reading_verify(run_dir: Path, evidence: Path | None = None) -> dict[str, Any]:
     with _open_readonly_store(run_dir) as conn:
-        config, manifest, config_hash = _identity(conn)
-        errors = _check_tasks(conn, manifest) + _check_attempts(conn)
-        if config_hash != _hash(config):
-            errors.append("config_hash_mismatch")
-        timing = _timing(conn)
-        errors.extend(_budget_errors(conn, config, timing))
-        unresolved = list(_UNRESOLVED)
-        if timing["unknown_elapsed_attempts"]:
-            unresolved.append("unknown_elapsed_time_requires_conservative_reservation")
-        if conn.execute("SELECT COUNT(*) FROM attempts WHERE status='inflight'").fetchone()[0]:
-            unresolved.append("inflight_attempt_requires_reconciliation")
-        return {
-            "run_dir": str(run_dir),
-            "ok": not errors and not unresolved,
-            "journal_checks_ok": not errors,
-            "errors": sorted(set(errors)),
-            "unresolved": unresolved,
-            "timing": timing,
-            "historical_integrity": "not_fully_verified",
-            "source_fidelity": "not_assessed",
-            "launch_ready": False,
-            "bounded_output": True,
-            "no_network": True,
-            "no_inference": True,
-            "original_store_opened": False,
-        }
+        return _verify_connection(conn, run_dir, evidence)
+
+
+def _verify_connection(conn, run_dir: Path, evidence: Path | None) -> dict:
+    current = _journal_snapshot(conn)
+    journal_ok = not current["errors"]
+    errors = list(current["errors"])
+    timing = _timing(conn)
+    errors.extend(_budget_errors(conn, current["config"], timing))
+    extra = None
+    if evidence is not None:
+        extra = inspect_evidence(evidence, current, conn, _load_run_snapshot, _review_state)
+        errors.extend(extra["errors"])
+    unresolved = _unresolved_evidence(conn, timing, extra)
+    ok = not errors and not unresolved
+    return {
+        "run_dir": str(run_dir),
+        "ok": ok,
+        "journal_checks_ok": journal_ok,
+        "errors": sorted(set(errors)),
+        "unresolved": unresolved,
+        "timing": timing,
+        "evidence": extra,
+        "historical_integrity": "verified_bindings_only" if ok else "not_fully_verified",
+        "source_fidelity": "not_assessed",
+        "launch_ready": False,
+        "bounded_output": True,
+        "no_network": True,
+        "no_inference": True,
+        "original_store_opened": False,
+    }
+
+
+def _unresolved_evidence(conn, timing: dict, extra: dict | None) -> list:
+    unresolved = list(_UNRESOLVED) if extra is None else []
+    if timing["unknown_elapsed_attempts"] and extra is None:
+        unresolved.append("unknown_elapsed_time_requires_conservative_reservation")
+    if conn.execute("SELECT COUNT(*) FROM attempts WHERE status='inflight'").fetchone()[0]:
+        unresolved.append("inflight_attempt_requires_reconciliation")
+    return unresolved
+
+
+def _journal_snapshot(conn) -> dict:
+    config, manifest, config_hash = _identity(conn)
+    errors = _check_tasks(conn, manifest) + _check_attempts(conn)
+    if config_hash != _hash(config):
+        errors.append("config_hash_mismatch")
+    return {
+        "config": config,
+        "config_sha256": config_hash,
+        "rows": [dict(row) for row in conn.execute("SELECT * FROM attempts")],
+        "errors": errors,
+    }
+
+
+def _load_run_snapshot(run_dir: Path) -> dict:
+    with _open_readonly_store(run_dir) as conn:
+        return _journal_snapshot(conn)

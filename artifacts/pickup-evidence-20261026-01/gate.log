@@ -1,0 +1,2072 @@
+uv run ruff format .
+161 files left unchanged
+npx prettier@3.9.10 --prose-wrap never --write "**/*.md"
+.complexipy_cache/README.md 9ms (unchanged)
+.pytest_cache/README.md 2ms (unchanged)
+AGENTS.md 8ms (unchanged)
+CHANGELOG.md 43ms (unchanged)
+docs/holistic-cleanup-investigation-scorecard.md 16ms (unchanged)
+docs/reference/commands.md 10ms (unchanged)
+docs/reference/engineering.md 6ms (unchanged)
+docs/reference/evidence.md 17ms (unchanged)
+docs/reference/human-review-protocol.md 13ms (unchanged)
+docs/reference/log-query.md 6ms (unchanged)
+docs/reference/pickup-tooling.md 6ms (unchanged)
+docs/reference/research-design.md 22ms (unchanged)
+docs/reference/scans.md 8ms (unchanged)
+HAPPY_PATH.md 1ms (unchanged)
+HUMAN_REVIEW.md 5ms (unchanged)
+MASTER_PLAN.md 20ms (unchanged)
+PROGRESS.md 1ms (unchanged)
+PROJECT_GOAL.md 1ms (unchanged)
+README.md 4ms (unchanged)
+RUNBOOK.md 1ms (unchanged)
+TAG_ARM_PROMPT.md 1ms (unchanged)
+V2_EMBEDDING_MODELS.md 1ms (unchanged)
+V2_HANDOFF.md 1ms (unchanged)
+V2_PIVOT.md 1ms (unchanged)
+V2_TAGGING_EVAL.md 1ms (unchanged)
+V2_TAGGING_RETRY.md 1ms (unchanged)
+uv run ruff format --check .
+161 files already formatted
+uv run ruff check .
+All checks passed!
+uv run ty check
+All checks passed!
+uv run complexipy src tests --max-complexity-allowed 5
+[92m──────────────────────────────── [39m🐙 complexipy[92m ─────────────────────────────────[39m
+[1msrc/congressional_globe/ai.py[0m
+    _write_request [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_review [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _has_api_error [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _json_line [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _normalized_record [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reconcile_line [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _response_text [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraphs_by_id [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    submit_batch [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    prepare_batch [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    reconcile_batch [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _output_text [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/benchmarking.py[0m
+    _empty_counts [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _make_summary [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_run_options [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _exception_raw_response [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _exception_text [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _exception_usage [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _is_token_count [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _limit_reached [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    run_benchmark [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parse_case [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_limit [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_provider_identity [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_run_id [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _count_usage [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _iter_nonempty_lines [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _provider_usage [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _count_record [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _load_cases [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _run_case [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/chunking.py[0m
+    _paragraph_source [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _chunk [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _citation [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _group_length [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph_text [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _has_relevant_review_hint [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _fact_value [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    chunk_page [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _consistent_fact [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph_groups [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/cleanup.py[0m
+    _ai_provenance [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _duration [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _event [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _process_claimed_job [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _raw_response_path [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_retry [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    run_database [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _combined_ledger [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _export_payload [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _heartbeat [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_provider_review [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _start_heartbeat [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _worker_lock [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    export_results [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    materialize_all [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _claim_before_deadline [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _compose_completed [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _provider [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_completion [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _review_payload [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_static_input [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reject_materialize_alias [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    run_jobs [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _compose_record [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _drain_jobs [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _process_job [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_review [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _result_event [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validated_completed_result [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_materialized [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/cli.py[0m
+    _benchmark [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _benchmark_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _build_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _build_rag [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_export [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_export_results [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_handlers [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_init [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_inspect [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_inspect_job [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_retry [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_retry_review [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_run [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_run_jobs [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_shared [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_show_status [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_status [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _commands [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _estimate [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _estimate_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _export_rag [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _export_rag_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _extract [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _extract_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _inventory [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _inventory_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parser [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _prepare_ai [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _prepare_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reconcile_ai [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reconcile_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _root_argument [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _static_cleanup [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _static_cleanup_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _static_first [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _static_first_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _subject_exclusions_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _subject_review_commands [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _subject_review_import [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _subject_review_template [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _subject_sample [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _subject_sample_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _subject_sample_progress [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _submit_batch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _submit_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    main [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _benchmark_provider [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_init_run [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _job_payload [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _subject_exclusions [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _positive_float [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reject_cli_output_aliases [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/embeddings.py[0m
+    EmbeddingBatch::validate_vectors [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    EmbeddingConfig::digest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    EmbeddingProvider::config [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    EmbeddingProvider::embed [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    OllamaEmbeddingProvider::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    OllamaEmbeddingProvider::config [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    PassageMetadata::validate_known_values [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _l2_normalize [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _request_json [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_status_value [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    Passage::validate_text_hash [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _prefix [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_vector_batch [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _normalize [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_vector [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    OllamaEmbeddingProvider::embed [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/extraction.py[0m
+    _has_class [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _is_hocr_page [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _page_record [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _text [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _word_record [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _bbox [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _dimensions [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _float_match [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _int_match [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _ordered [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _printed_page [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    load_page_map [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _line_record [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph_record [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraphs [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _release_page [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    iter_pages [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/inventory.py[0m
+    _inventory_part [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    expected_paths [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    inventory [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    sha256_file [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _source_file [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/models.py[0m
+    strict_json_schema [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    BoundingBox::validate_order [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _require_object_properties [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _require_all_properties [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/normalization.py[0m
+    _matches_source [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _punctuation_only [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _allowed_separator_repair [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _hyphen_join [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _is_numeric_only [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _numeric_only_pair [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _resolve_edit [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_edits [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_expected_text [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_order [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _whitespace_only [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    apply_edits [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    resolve_edits [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    validate_edit_shapes [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_span [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _without_punctuation [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _dedupe_and_sort [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _unique_position [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_edit_shape [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/ollama_log_cli.py[0m
+    OllamaCommand::cli_cmd [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    OllamaLogQueryCommand::_query [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    OllamaLogQueryCommand::cli_cmd [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    OllamaLogsCommand::cli_cmd [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _fail [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    add_ollama_log_commands [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validation_message [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _field [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    run_ollama_logs [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/ollama_log_query.py[0m
+    LogQueryError::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _context [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _context_line [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _gin_request [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _keep [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matches_fields [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _query_hash [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _query_payload [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_range [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _report [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sha256 [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _snapshot [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_cursor [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _after [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_head [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _component [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _decode_cursor [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _direct_event_value [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _event [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _field_match [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _finish_scan_budget [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _fits [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _fold [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _gin_event [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _incomplete_record [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _iso_or_none [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _local_zone_name [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _next_cursor [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parse_gin_timestamp [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parse_status_match [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_complete [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _render [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _resume [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _selection_payload [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _stop_for_limit [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _stringify [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _try_zone [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _unescape [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _warn [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    query_log [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    serialize_report [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_cursor_context [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_cursor_position [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_prefix [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _consume [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matches [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _method_match [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _normalize [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reduce_output [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _require_source [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _slog_event [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _status_code [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _status_match [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _truncate_bytes [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _unparsed_status [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _bounded_report [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_file_identity [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_snapshot [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _count_dimensions [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _event_value [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _first_present [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _gin_prefix [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _http_event_value [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _in_set [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _in_window [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matched [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matches_time [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _raw [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_pairs [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_record [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _rotation_siblings [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _scan [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _zone [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    parse_event [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _before [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _gin_fields [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _gin_parts [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _hold [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _local_zone [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _notes [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parse_timestamp [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _slog_http [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _json_event [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matches_text [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/pipeline.py[0m
+    _paragraph_payload [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _temporary_output [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_line [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    merge_normalized_paragraphs [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _lookup_normalized [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _merge_page_paragraphs [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _merge_paragraph [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reject_unmatched_paragraphs [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _source_file_payload [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_chunks [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_single_json [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph_identity [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_static_ledger [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_manifest [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    build_rag [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _index_normalized_paragraphs [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _merge_pages [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _normalized_paragraph [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_jsonl [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validated_normalized [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_ai_stage [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_chunks_from_page_file [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_page_file [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    build_rag_from_pages [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    extract_identifier [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    write_inventory [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reject_output_aliases [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/planning.py[0m
+    _has_complete_usage [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _require_cloud_usage [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_jobs [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _limitations [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _nonnegative_integer [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _pricing_label [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _realized_sample_cost [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _total_tokens [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_request [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_retry [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_usage_coverage [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _add_usage [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _projected_api_cost [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _usage_from_results [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_measurements [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_rate_values [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_rates [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    estimate [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    load_summary [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/providers.py[0m
+    CleanupProvider::clean [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    OllamaProvider::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    OllamaProvider::clean [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    OpenAIResponsesProvider::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ProviderOutputError::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _format [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _local_prompt [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _ollama_request_lock [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validated_result [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    OllamaProvider::_clean [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    OpenAIResponsesProvider::clean [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parse_cleanup [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reject_incomplete_status [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reject_truncated [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_budget_audit.py[0m
+    _cap [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _insert_attempt [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _same_attempt [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _totals [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _budget_sources [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _call_limit_errors [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _model_limit_errors [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _over_call_limit [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _prior_claim_errors [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reserved_seconds [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reuse_export [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _token [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    token_usage [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _add_attempt [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _export_matches [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _limit_errors [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _number [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _unique_attempts [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    audit_budget [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _charge [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_reuse [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _collect_runs [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _known_usage [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _prior_model_claim_errors [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _one_reuse [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_cli.py[0m
+    _encode [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _hash [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _load_run_snapshot [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reading_verify [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _active_work [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _counts [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _identity [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _limit_exceeded [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _review_state [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    add_reading_commands [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    run_reading [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_attempts [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _emit [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _journal_snapshot [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _attach_evidence [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _elapsed [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _fingerprints [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_connection [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _plan_state [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reading_status [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _timing [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _unresolved_evidence [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _usage_known [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _budget_errors [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_attempt [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_tasks [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _model_budget_errors [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _open_readonly_store [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_contracts.py[0m
+    ReadingParagraph::source_id [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _mapping [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    text_hash [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingReply::_proposed [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingReply::_unchanged [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingReply::consistent_status [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _covered [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    replay_paragraph [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_uncertainty [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _overlaps [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_reply_anchors [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_patch [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    validate_reply [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingCandidate::verify_sources [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingParagraph::verify_texts [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _derived [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_patch_anchor [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_disputed [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_controls.py[0m
+    _body [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    make_control [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _control_images [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    control_passes [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_unrelated_sources [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_dispatch.py[0m
+    _check_launch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _get_json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _invalid_result [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _post_raw [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _attempt [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_opt_in [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_record_images [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_unresolved [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _covers_all_targets [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _guard_readiness [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _has_dispatch_time [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _invalid_missing_image [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _invalid_reply [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _remaining_budget [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _require_complete_readiness [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_local_url [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_request_token_fit [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _derive_response [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _invalid_saved_reply [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _invalid_unrelated_image [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_and_continue [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _require_token_counts [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _response_content [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _run_pending [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _save_and_validate [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _spans_match_targets [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _stop_requested [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_context_envelope [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_response [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_saved_reply [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    dispatch [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_limits [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_record [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_runtime_observation [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _coverage [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _dispatch_next [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _guard_manifest [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parse_and_derive [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _send [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _task_id [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _usage [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_reply_identity [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_store_tasks [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    verify_runtime [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_control_images [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_image_coverage [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_prior_budget [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _dispatch_loop [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_evidence.py[0m
+    _image_identity [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    binary_bindings [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    file_hash [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_count [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _code_bindings [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _one_request [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    checked_file [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    evidence_bindings [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    load_json [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    load_spec [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_count_envelope [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    binary_binding [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _anchored_files [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _saved_valid_replies [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _units [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_count_arithmetic [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _count_image_bindings [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _exact_reused_records [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _journal_bindings [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_reused_manifest [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _request_bindings [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _source_message [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_images.py[0m
+    _saved_bytes [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _source_span [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _union [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _url [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verified_binding [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_receipt [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    fetch_plan [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _plans_for_page [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _single_target [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _target_ids [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    contains [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    TransferBudget::__init__ [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_reused_region [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _covered_ids [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _dimensions [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verified_reuse [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_plan [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    main [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    prepare_plans [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingImagePlan::bounds [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    TransferBudget::download [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _box [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _fetch_remaining [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _page_targets [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph_box [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _plan [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _registered [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _require_complete [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reuse_long [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    run [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    validate_binding [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _item_plans [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_span [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    plan_page [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    verify_index [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _add_coverage [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_complete [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _group_units [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _run_locked [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_reuse [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    evidence_coverage [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_launch.py[0m
+    _json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sha [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    main [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _units [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_count [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _readiness [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_source_and_review [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _counted_records [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _process_proof [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_evidence_files [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    launch [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    prepare [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_pickup_audit.py[0m
+    _check [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _binding_summary [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _binary_errors [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    inspect_evidence [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_preflight.py[0m
+    _assess [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _current_snapshot_values [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _file_record [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _frozen_inputs [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _pending_blockers [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _process_inspection [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_runtime_snapshot [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _runtime_folder [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sha [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _tokenizer_assets [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _tokenizer_finding [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    build_report [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    write_report [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _snapshot_values [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _candidate_rows [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _candidate_split_counts [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _image_evidence [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_runtime_values [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _runtime_state [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matching_tag [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _runtime_blockers [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _runtime_files [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _context_length [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _historical_snapshot_fallback [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _token_fit_status [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _identity_blockers [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _snapshot_files [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_preparation.py[0m
+    _Reservoirs::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _manifest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    main [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    source_paragraph [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _candidate [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _candidate_pages [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _damage_cue [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _join_pages [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _low_word [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _page_candidates [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_candidates [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _Reservoirs::add [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _body_paragraphs [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_source_coverage [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _consider [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _direct_anchor [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _part [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _replace [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _select_one [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _selection_counts [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _structured [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    prepare_candidates [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _anchor_pages [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _choose [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _low_count [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph_damage_cue [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_source [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _continuation [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _leaf_numbers [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _selection_groups [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _short_stratum [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _stratum [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _groups [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _select [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _select_long [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sized_candidates [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _source_bindings [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    exposure_pages [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_quote_expansion.py[0m
+    build_from_paths [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    main [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    quote_system [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    to_quote_record [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_count [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _controls [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _is_unrelated_control [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    task_id [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_request_set [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _completed_models [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _control_records [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reuse_one [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reused [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    refresh_request [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    write_report [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _is_primary_with_images [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _new_real [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    build_expansion [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _unrelated_source [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_quotes.py[0m
+    _derive_patch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _target [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reject_uncertainty_overlaps [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _unique_quote [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _derive_uncertainty [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    validate_quote_reply [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_requests.py[0m
+    describe_request [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    digest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    main [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    paragraph_input [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    source_message [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    wire_bytes [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ImageInput::payload [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_span [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    request_body [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _image_spans [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    build_report [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    write_report [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_image_ids [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _describe_all [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_record_metadata [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_images [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    image_inputs [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    materialize_record [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_run_store.py[0m
+    ReadingRunStore::_timing_values [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::close [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::record_stop_report [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::timing_summary [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _add_model_time [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _hash [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::_update_inflight [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::_write_transaction [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::complete [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::fail [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::next_pending [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::reconcile [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::record_elapsed [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::record_transport_error [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::stop_reports [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::_schema [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::attempt [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::claim [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::summary [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::__init__ [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::_terminal [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::_identity [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReadingRunStore::record_reply [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _collect_timing [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/reading_source_check.py[0m
+    _selected_page [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_paragraph [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _selected_pages [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_files [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_page [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_item [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    verify_candidate_sources [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/review_app.py[0m
+    _legacy_history [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _masthead [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _widget_prefix [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _database_path [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _is_latest_packet [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _packet_label [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _render_submissions [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _revision_view [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _store_data [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _submission_message [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _value [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _safe_url [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _show_revision_target [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _submission_card [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _evidence [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _legacy_downloads [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _review_form [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _show_packet [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _show_submission [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _submission_views [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _visible_submissions [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _answer_history [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _answer_widget [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _pending_view [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reviewer [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _save_result [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _baseline [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    main [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/review_cli.py[0m
+    _dispatch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _export [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _print [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    add_review_commands [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    database_path [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    run_review [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/review_glossary.py[0m
+    _button [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    styles [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    show_text [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    definitions [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    annotated_html [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    show_option_definitions [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/review_models.py[0m
+    ReviewPacket::compatible_payload [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewQuestion::unique_options [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewPacket::unique_question_ids [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewPacket::unique_glossary_terms [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/review_store.py[0m
+    ReviewStore::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::_connect [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::_connection [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::_delete_draft [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::_draft_dict [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::_latest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::_packet_dict [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::save_draft [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _canonical [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _digest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::_check_known_questions [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::get_draft [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::packets [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::_submission_dict [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::export [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::get_packet [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::register [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::submissions [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::submit [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::_missing_required [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::_validate_answers [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::_check_answer_values [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::_packet_row [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewStore::mark_applied [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/role_aliases.py[0m
+    SpeakerRole::status_matches_assignment [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_assignment_status [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_reference_set [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_candidate [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_role_references [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    FrozenInput::verify_frozen_content [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_proposed [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_span [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_spans [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_unknown [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    prepare_aliases [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    validate_alias_result [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/role_preparation.py[0m
+    _sha [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _span [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    main [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _append_cues [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _append_paragraph [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_context_pages [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    prepare [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _context_row [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _manifest [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_outputs [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_predecessors [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _select_page [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/role_provider.py[0m
+    _openai_finish_reason [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _schema_format [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleProvider::call [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _has_refusal [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _result [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _scope_instruction [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _specialize_dates [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    specialize_schema [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleProvider::_call_openai [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _ids_of_kinds [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _output_has_refusal [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _response_status [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleProvider::_call_ollama [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _evidence_ids [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _usage [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleProvider::__init__ [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/role_run_io.py[0m
+    digest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    write_json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_review [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    read_prepared [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_selection [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_jsonl [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_file [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    reservation [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    run_config [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_packets [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    select_cases [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/role_run_store.py[0m
+    RoleRunStore::_create_schema [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleRunStore::close [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _digest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleRunStore::_insert_run [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleRunStore::mark_interrupted [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleRunStore::next_pending [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleRunStore::results [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleRunStore::_initialize [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleRunStore::_verify_identity [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleRunStore::start [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleRunStore::summary [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleRunStore::__init__ [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    RoleRunStore::finish [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/role_runner.py[0m
+    _call_one [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _event [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _exclusive [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _public_argv [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _summary [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _work [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _attempt [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _default_url [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _execute_live [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _worker_identity [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    main [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _require_no_unknown [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cost_one [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parse_result [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _progress [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _wait_call [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    execute [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cost [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _work_store [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/role_v2.py[0m
+    _status_branch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    role_result_schema [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    validate_role_result_v2 [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _aliases [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _aliases_by_suffix [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_refs [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    SpeakerRoleV2::status_relationships [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_item [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/role_v2_revalidate.py[0m
+    _failed_record [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sha256_bytes [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sha256_file [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    main [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    revalidate_saved_replies [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _attempt_record [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _collect_records [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _model_records [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_provider_inputs [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_base [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _revalidation_document [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_record [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/scan_cli.py[0m
+    add_scan_commands [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    run_scan [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_expected [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/scan_fetch.py[0m
+    ArchiveRedirect::redirect_request [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _event [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    digest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _code_hashes [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _fetch_bundle [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    fetch_bundle [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _crop_image [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _download_once [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    download [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_download [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _registered_info [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _allowed_url [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    read_bundle [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _verify_cached_image [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    prepare_bundle [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/scan_geometry.py[0m
+    _file_sha256 [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _padded_box [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph_region [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _union [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _line_region [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _frame [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _regions_by_line [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_page_identity [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_selection [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _find_paragraph [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_limits [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _position_line_words [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _selection_bounds [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _word_positions [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _word_regions [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    prepare_target [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _line_words [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_box [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    target_from_page [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/scan_models.py[0m
+    _inside_frame [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _positive_crop [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _valid_crop [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ScanTarget::validate_source_integrity [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/scan_review.py[0m
+    _show_bundle [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _show_catalog [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _show_details [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    show_source_images [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/scoped_dates.py[0m
+    DateAssignment::check_assignment [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    DatePacket::check_identity [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _day_value [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _month_value [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    date_result_schema [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    text_hash [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    DateParagraph::check_hash [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_iso [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _supports_month [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    source_mapped_dates [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    DateValue::check_interval [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_refs [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_known [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_scope [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_support [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_unknown [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _supports [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _bound_evidence [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_item [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_known_state [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_unknown_state [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _unique_paragraphs [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_direction [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _contiguous_regions [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    validate_date_result [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/static_cleanup.py[0m
+    normalize_line_wraps [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _file_sha256 [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _line_wrap_edits [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _positioned_pair_edit [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reject_output_alias [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _same_file [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _unresolved_hints [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _known_word [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _unresolved_hint [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _normalized_record [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    normalize_jsonl [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _line_positions [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _pair_edit [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/storage.py[0m
+    _engine [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _now [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _pending_jobs [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _summary_timing [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    completed_jobs [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    composite_identity [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    create_run [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    progress [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    retry_job [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    review_job [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    review_job_result [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _add_jobs [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _composite_identity [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _create_lookup_indexes [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _ensure_empty_run [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _job_from_payload [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _jobs [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _limited [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matches_id [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matches_leaf [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _mean [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _rounded_hours [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _rounded_seconds [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    claim_next [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    complete_job [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    iter_jobs_for_run [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    job_by_id [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    jobs_for_run [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    release_claimed [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    retry_review_jobs [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _pending_estimate [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matching_payloads [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _payloads [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _resolved_durations [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _update_job [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    run_summary [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _migrate_schema [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    materialization_lookup [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/structure.py[0m
+    _is_running_header [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _month_number [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _valid_bbox [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _add_review_hint [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _clear_derived_facts [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _is_low_confidence [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _line_near_top [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matches_printed_page [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _near_top [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parse_date [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _weekday_conflicts [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    classify_page [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _add_chamber_fact [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _add_date_fact [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_fact [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _classify_paragraph [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _copy_fact_fields [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _handle_repeated_fact [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _header_candidates [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _header_date [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _low_confidence_hint [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _near_edge [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_date [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _valid_box [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _visible_facts [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _weekday_date_prefix [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    needs_model [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _page_facts [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph_role [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _strip_combined_chamber [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _chamber_header_text [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/subject_exclusions.py[0m
+    _source_sort_key [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _database_state [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _path_state [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sha256_file [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_new_file [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _database_digest [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _jsonl_anchors [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_sample_file [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validated_id_leaf [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _database_exclusion [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _expand_anchor [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _json_anchors [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_attempted_jobs [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    build_subject_exclusions [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/subject_matching.py[0m
+    _evidence [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _proposal [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _proposal_id [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _proposal_order [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _source_key [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _basis [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _word_character [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph_matches [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _has_boundaries [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph_proposals [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    match_subject_cues [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _alias_matches [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matching_view [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/subject_review.py[0m
+    _validate_decision [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _import_subjects [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraphs [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sha256 [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewPacket::unique_paragraph_ids [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ReviewPacketParagraph::hash_checked [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    WindowDecision::require_timezone [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _require_unchanged_inputs [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_known_subjects [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_subject_ids [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_subject_scopes [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    build_subject_review_template [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    import_subject_reviews [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _load_decisions [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _load_frozen_inputs [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _load_packet_map [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parse_decisions [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parse_packets [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _evidence [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _import_window [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_outcome [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/subject_sampling.py[0m
+    _build_files [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _key [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_exclusion [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _scan_page [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _scan_source [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sha256_file [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sort_reservoirs [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _window_id [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_packets [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    build_subject_review_sample [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _consider_window [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _flatten_reservoirs [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _notify_progress [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parse_page [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _require_full_sample [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reservoir_add [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_request [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _append_window [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _manifest [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _collect_windows [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _page_windows [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _window_record [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/subject_vocabulary.py[0m
+    load_draft_vocabulary [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/subjects.py[0m
+    SubjectEvidence::validate_against [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    SubjectVocabulary::digest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _review_state_is_valid [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _same_identity [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _source_identity [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    SubjectEvidence::validate_span_order [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_proposal_evidence [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    validate_subject_proposals [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    EvidenceParagraph::validate_hash [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    SubjectDefinition::reject_blank_terms [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    SubjectProposal::validate_review [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    SubjectVocabulary::validate_references [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _method_version_is_valid [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_evidence_anchors [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_evidence_quote [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_proposal_ids [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_source_identities [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matching_paragraph [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    reviewed_in_scope_subject_ids [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    LooseDiscoveryTag::validate_method_version [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_proposal_vocabulary [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/vision_probe.py[0m
+    _atomic_write [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _canonical [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _case_dir [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _emit [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _invalid_result [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parser [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _preflight [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sha [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _summary [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _transport_failure [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_preflight [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ProbeCase::matching_image_hash [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _basis [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _config [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _event [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _get_json [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _launch [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _preflight_summary [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _request [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _run_case [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_vision [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    ProbePacket::unique_case_ids [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _load_image [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _load_packet [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _recover_or_block [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _request_payload [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _saved_results [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_judgment [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    main [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _brief_preflight [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _summary_status [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    VisionJudgment::uncertain_has_no_transcription [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _prepare_output [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _recover_case [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _result_from_raw [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _run_pending [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _select_tag [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    run_probe [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/wiki_districts.py[0m
+    _section_records [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _section_list [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _district_item [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    extract_districts [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/wiki_house.py[0m
+    _text [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _person_page [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _rank [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _valid_headers [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _data_rows [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _row_cells [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _table_kind [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    extract_house [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _headers [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _seniority_parts [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _table_records [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_fields [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _row_record [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/wiki_records.py[0m
+    _identity [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    district_record [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    member_record [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _district_code [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/wiki_senate.py[0m
+    _person_name [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _text [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _integer [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _party_state [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    extract_senate [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _active_cells [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _logical_cells [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _name_and_href [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_for_row [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _place_cell [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _roster_table [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/wiki_sources.py[0m
+    write_json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    fetch_sources [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _fetch_one [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    read_snapshot [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/wikipedia.py[0m
+    _actions [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _extract_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _fetch_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _parser [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _query_command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _source_manifest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _code_hashes [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _contains [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _matches [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    main [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _check_counts [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _condition [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _manifest [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _records [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    extract [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    query [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1msrc/congressional_globe/workflow.py[0m
+    _base_report [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _empty_status [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _export_final_outputs [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _prepare_text_stages [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _save_manifest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sha256_text [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _stage [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_final_outputs [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_options [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _workflow_lock [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_preflight [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    run_static_first [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _canonical_page_counts [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _cleanup_is_complete [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _count_jsonl [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _execute_workflow [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _extract_classify [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _load_or_create_manifest [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _manual_review_payload [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _output_hashes [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_artifacts [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _sha256_file [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _source_parts [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_ai_options [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_chunks [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_run_id [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_page_paragraphs [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_residual [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _artifacts_valid [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _extract_part [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _initialize_queue [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _metadata_source [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _prepare_extraction_stage [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _processing_fingerprint [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _review_reasons [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _run_ai_and_export [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _source_part [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _stage_and_publish_outputs [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_existing_queue [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_output_counts [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _append_manual_hints [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _count_page_metadata_gaps [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _prepare_residual_stage [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _prepare_static_stage [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _preserve_metadata [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _residual_identities [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _run_selected_jobs [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _scope_name [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_existing_manifest [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_manual_review [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _count_manual_review [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _match_existing_queue [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_benchmark_match [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_residuals [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _job_identity [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _preflight [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_backend [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _validate_input_paths [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_benchmarking.py[0m
+    FakeProvider::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    FakeProvider::clean [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_benchmark_rejects_punctuation_only_patch_with_ocr_edit [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _result [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_benchmark_keeps_provider_parse_failure_metadata [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_benchmark_keeps_raw_response_when_patch_validation_fails [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_benchmark_validates_limited_cases_before_calling_provider [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_benchmark_counts_review_response_separately_and_keeps_usage [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_benchmark_records_exact_agreement_controls_usage_and_summary [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_chunking.py[0m
+    _facts [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_chunk_suppresses_conflicting_or_reviewed_context_facts [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_legacy_rag_chunk_defaults_allow_missing_provenance [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _page [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_chunk_preserves_paragraph_source_cleanup_and_consistent_context_facts [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_cli.py[0m
+    test_cleanup_run_accepts_optional_positive_time_budget [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_core.py[0m
+    _clear_duration [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _hocr [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _hocr_with_words [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_chunk_keeps_page_bounded_citation [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cleanup_prompt_authorizes_clear_line_wrap_repairs [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cleanup_queue_is_resumable [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_connection_failure_is_retryable_but_review_requires_explicit_retry [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_edit_shape_validator_allows_word_repairs_and_hyphen_joins [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_edit_shape_validator_rejects_punctuation_and_numeric_only_changes [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_patch_application_is_reversible_and_rejects_bad_source [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_prepare_ai_writes_stable_batch_request [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_reconcile_ai_applies_validated_patch_and_queues_invalid_result [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_run_summary_reports_progress_and_eta [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_static_cleanup_cli_payload_preserves_source_and_page_metadata [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_static_cleanup_joins_only_lexicon_supported_line_wraps [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_strict_schema_requires_every_property_for_openai [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unique_source_anchor_recovers_an_inaccurate_model_offset [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_extraction_preserves_hocr_ids_geometry_and_page_map [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_extraction_retains_word_geometry_and_confidence [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_run_summary_handles_zero_and_missing_timings_and_no_pending [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_run_summary_uses_timed_resolved_jobs_for_pending_estimate [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_run_summary_without_resolved_timings_cannot_estimate_pending [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_embeddings.py[0m
+    _NullContext::__enter__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _NullContext::__exit__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _passage [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_batch_rejects_count_dimension_and_nonfinite [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_passage_hashes_text_and_keeps_unknowns_explicit [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_passage_metadata_rejects_inconsistent_status [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_passage_rejects_mismatched_hash_and_invalid_part [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_provider_hashes_prefixed_query_and_validates_returned_vectors [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_provider_rejects_malformed_identity_and_vectors [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_provider_sends_explicit_dimensions_and_no_truncation [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_export.py[0m
+    _normalized_payload [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _page_payload [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_build_rag_uses_normalized_text_and_cites_source_anchors [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_chunk_limit_counts_emitted_normalized_text [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_invalid_static_ledger_keeps_existing_output_unchanged [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_merge_normalized_paragraphs_preserves_raw_and_static_ledger [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_merge_rejects_hard_link_output_alias [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _read_jsonl [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_jsonl [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_merge_rejects_incomplete_or_inconsistent_inputs [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_ollama_log_query.py[0m
+    _cursor_page [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _gin [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _query [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _serve_http [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cli_errors_are_json_on_stderr_with_exit_two [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cli_invalid_field_filter_is_json_on_stderr [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cli_missing_subcommand_is_json_on_stderr [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cli_never_prints_over_budget_response [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cli_returns_json_with_exit_zero_for_no_matches [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cli_validation_errors_are_json_on_stderr [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cursor_is_bound_to_its_query [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cursor_rejects_a_modified_prefix [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cursor_rejects_a_shrunk_file [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_gin_without_brackets_and_malformed_pipe_count [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_indented_serialization_also_obeys_total_cap [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_invalid_cursor_token_is_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_large_parsed_content_cannot_escape_output_cap [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_level_component_status_method_and_field_filters [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_local_timezone_uses_configured_iana_zone [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_metadata_alone_must_fit_output_budget [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_missing_timestamps_are_excluded_from_a_window_but_counted [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_naive_bounds_use_assume_tz_then_compare_in_utc [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_oversized_line_is_terminal_instead_of_repeating_cursor [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_rotation_before_context_never_reads_replacement [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_rotation_siblings_are_reported [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_scan_budget_cannot_return_no_progress_cursor [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_scan_budget_ending_exactly_at_eof_is_complete [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_combined_output_and_scan_caps_resume_at_first_unreturned_event [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cursor_rejects_rotation_to_a_new_file [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_limit_caps_returned_events_and_reports_more [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_mixed_malformed_continuation_and_blank_lines_are_counted [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_real_slog_gin_and_json_formats_are_parsed [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_scan_byte_cap_reports_incomplete_scan [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_time_window_is_inclusive_since_and_exclusive_until [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_appending_after_a_cursor_is_allowed_and_reported [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_in_query_source_changes_return_error_not_mixed_evidence [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_include_exclude_and_ignore_case_are_literal [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_raw_and_context_are_truncated_by_utf8_bytes [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _change_source [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _pages [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_pagination_is_stable_and_does_not_duplicate_events [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _slog [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_output_byte_cap_paginates_without_losing_events [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_planning.py[0m
+    _summary [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cloud_estimate_rejects_partial_usage_and_unknown_cost_stays_unknown [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_estimate_rejects_empty_sample_and_partial_rates [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_local_estimate_cost_is_zero_and_usage_can_be_unavailable [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cloud_estimate_uses_sample_rates_and_explicit_retry_fraction [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_load_summary_recovers_usage_coverage_from_adjacent_records [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_providers.py[0m
+    test_ollama_preserves_raw_output_and_metadata_on_rejection [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_ollama_success_returns_finish_metadata [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_responses_provider_rejects_noncompleted_status_and_keeps_metadata [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_ollama_requests_from_separate_providers_are_serialized [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_cli_status.py[0m
+    _run [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_inflight_and_unknown_time_are_not_launch_permission [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_invalid_elapsed_never_becomes_budget_credit [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_journal_tampering_is_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_missing_run_does_not_create_files_and_exits_nonzero [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_no_original_changes_store_constructor_or_network [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_status_counts_unknown_usage_without_dumping_details [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_status_next_action_matches_current_master [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_time_overruns_fail_verification_and_cli_exit [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unresolved_bindings_prevent_false_success [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_utf8_hard_cap_including_newline [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_wal_snapshot_includes_committed_uncheckpointed_data [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _files [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _fixture [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_snapshot_change_is_rejected [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_contracts.py[0m
+    coverage [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    paragraph [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    patch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_bad_patch_offsets_text_and_noop_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_deletions_insertions_and_overlaps_have_explicit_mappings [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_status_contradictions_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_uncertainty_keeps_raw_text_and_disallows_overlapping_repair [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unicode_replay_maps_raw_and_clean_without_offset_guessing [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    unit [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_context_patch_and_unbound_or_wrong_image_rejected [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_static_raw_hash_and_part_identity_guard [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_controls.py[0m
+    test_missing_image_control_preserves_exact_target_text [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unrelated_control_keeps_foreign_sources_without_forging_coverage [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unrelated_control_retains_true_foreign_image_source_bindings [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_controls_require_uncertainty_for_every_target [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_dispatch.py[0m
+    _call [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _other_request [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _response [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _setup [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_dispatch_persists_exact_request_and_raw_full_reply_before_reopen [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_dispatch_requires_opt_in_and_every_readiness_dimension [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_inflight_attempt_blocks_dispatch_before_transport [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_output_truncation_cannot_mask_input_count_mismatch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_prompt_token_mismatch_is_saved_and_halts_batch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_quote_v2_derives_positions_then_uses_unchanged_host_guards [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_second_process_blocks_unknown_timeout_without_duplicate_call [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_stale_or_unverified_runtime_blocks_dispatch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_timeout_is_inflight_and_never_retried_on_resume [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reply [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_controls_require_full_target_uncertainty_and_never_receive_coverage [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_stop_file_after_response_prevents_next_call_and_persists_report [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_evidence.py[0m
+    _counts_fixture [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _protocol_fixture [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _ref [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _rewrite_role [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _save_spec [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _source_fixture [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _store [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    inspection [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_changed_context_or_control_cannot_rebind_to_target [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_conflicting_duplicate_attempt_id_is_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_corrupt_valid_reply_fails_but_recorded_invalid_reply_is_preserved [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cumulative_budget_overrun_detected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_duplicate_prior_references_do_not_double_charge [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_failed_explicit_verification_returns_nonzero_json [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_inflight_work_stays_unresolved_even_with_complete_evidence [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_missing_binary_reports_expected_and_actual [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_missing_evidence_cannot_pass [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_reuse_must_match_saved_attempt [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_review_database_is_copied_without_initializing_store [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_stale_prior_narrative_is_detected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_status_provenance_reports_unknown_process_age [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_token_count_arithmetic_and_identity_fail [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unknown_elapsed_and_tokens_reserve_full_call_cap [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_wrong_run_recipe_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _prior_fixture [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_complete_synthetic_evidence_passes_without_launch_permission [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_no_network_or_original_writes_and_bounded_cli [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _tree_hashes [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_each_binary_checked_against_its_own_hash [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_malformed_budget_authority_cannot_pass [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_images.py[0m
+    test_clipped_region_and_wrong_raw_binding_are_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_downloaded_binding_validates_bytes_dimensions_and_saved_plan [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_resume_budget_rejects_false_receipt_byte_counts [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_resumed_receipts_count_cumulative_bytes_and_zero_new_transfer [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_transfer_cap_exhaustion_refuses_network [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    fixture [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _fake_download [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_union_covers_every_paragraph_and_word_without_fabricated_source_id [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_launch.py[0m
+    test_count_evidence_rejects_different_model [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_count_evidence_rejects_output_reserve_overflow [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_launch_passes_tighter_bounds_and_cooperative_stop_to_dispatch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_offline_prepare_never_touches_transport [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_stale_or_busy_process_proof_cannot_launch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_preflight.py[0m
+    _runtime [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_current_snapshot_does_not_fall_back_to_historical_identity [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_image_capability_absent_is_blocked [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_loaded_model_listing_alone_does_not_claim_runtime_busy [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_measured_request_over_context_is_blocked [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_missing_exact_digest_is_blocked [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_report_binds_completed_geometry_coverage_proof [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_report_uses_frozen_candidates_and_current_runtime_evidence [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unknown_text_and_image_fit_never_launch_ready [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unsupported_model_is_blocked [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_report_preserves_process_and_call_evidence [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_report_preserves_unknown_token_fit_and_never_launches [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_preparation.py[0m
+    _page [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_exposure_context_pages_are_excluded_and_ranges_resolve [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_tampered_static_text_stops_preparation [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_original_source_fingerprints_are_checked [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_deterministic_offline_candidates_and_explicit_missing_coverage [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_quote_expansion.py[0m
+    _record [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _unit [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_expansion_refuses_unreproducible_reuse [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _completed [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _control_records [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_expansion_reuses_four_completed_requests_and_adds_36 [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_quote_record_reproduces_system_suffix_and_marks_launch_not_ready [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record_for [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _manifest [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_quotes.py[0m
+    coverage [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    paragraph [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    patch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_coordinate_fields_are_forbidden_and_noop_and_duplicate_quotes_fail [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_missing_or_ambiguous_quotes_are_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_overlapping_uncertainty_quotes_are_rejected_without_deduplication [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_patch_image_source_and_unit_guards_are_preserved [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_quote_anchor_derives_unicode_offset_and_reuses_v1_validation [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_status_consistency_matches_existing_v1_contract [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_uncertainty_quotes_derive_spans_and_block_overlapping_patches [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    unit [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_out_of_order_quotes_are_sorted_by_raw_offsets_before_v1_replay [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    reply [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_requests.py[0m
+    _input [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _record [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_changed_image_bytes_are_rejected_before_materialization [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_image_order_is_part_of_exact_request_identity [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_incomplete_and_wrong_source_images_are_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_request_manifest_refuses_different_replacement [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_request_roundtrip_preserves_whole_raw_context_and_image_binding [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_saved_image_metadata_cannot_disagree_with_wire_bindings [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_saved_request_rejects_changed_configuration [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_run_store.py[0m
+    test_abrupt_subprocess_leaves_unknown_attempt_and_blocks_other_process [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_attempt_elapsed_time_and_model_usage_survive_reopen [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_completion_requires_raw_reply [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_incompatible_reuse_is_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_reconcile_rejects_non_failure_status_at_runtime [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_reply_is_write_once_with_identical_idempotent_save [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_request_and_raw_reply_are_durable_before_terminal_parse [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_transport_failure_keeps_unknown_attempt_inflight_with_unknown_usage [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _store [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_terminal_statuses_replay_without_reclaim [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_concurrent_connections_cannot_claim_two_tasks [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_reading_source_check.py[0m
+    test_original_hocr_checks_text_and_geometry_not_just_file_hashes [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_residual_cleanup.py[0m
+    _Provider::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _Provider::clean [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _ai_result [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _run_provider [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _static_row [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_live_worker_lock_prevents_claim_recovery [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_materializer_keeps_existing_output_on_invalid_input [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_materializer_keeps_pending_static_row [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_materializer_moves_legacy_unsafe_completed_job_to_review [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_materializer_preserves_empty_static_normalized_text [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_materializer_rejects_static_input_alias [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_storage_refuses_to_complete_image_review_result [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _write_rows [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_image_review_response_is_not_completed_and_materializes_static [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_rejected_punctuation_edit_routes_entire_response_to_review [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_run_jobs_does_not_claim_after_wall_clock_budget [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_materializer_matches_repeated_paragraph_ids_by_composite_identity [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_noop_completion_records_unchanged_text_and_source_citation [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_completed_ai_result_materializes_against_static_input [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_provider_parse_failure_persists_raw_usage_and_review_result_event [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_run_jobs_does_not_retry_connection_failure_in_same_drain [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_queue_uses_static_text_and_composite_identity [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_review_app.py[0m
+    _app [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _reviewer [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _store [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_draft_survives_new_app_session [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_duplicate_of_applied_submission_keeps_applied_receipt [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_review_opens_directly_without_access_code [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_revision_draft_restores_after_new_app_session [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_same_question_ids_on_two_packets_have_separate_widget_state [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_history_submission_can_open_revision_form [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_packet_definitions_render_in_prompts_evidence_and_choice_help [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_required_validation_and_free_text_submission [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _question_widget [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_revision_appends_and_history_keeps_previous_answer [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_review_cli.py[0m
+    _command [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_review_cli_register_inbox_export_and_apply [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_review_schema_does_not_open_database [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_review_glossary.py[0m
+    test_custom_definitions_are_escaped_and_override_shared_meaning [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_literal_matching_longest_phrase_case_and_escaped_content [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_repeated_terms_have_distinct_targets_across_fields [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_old_registered_packets_keep_their_exact_hashes [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_packet_glossary_is_validated_hashed_and_exported [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_shared_catalog_names_are_unambiguous_and_definitions_are_nonblank [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_review_store.py[0m
+    _packet [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_applied_receipt_is_immutable_idempotent_and_pending_filters [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_draft_persists_partial_answers_and_validates_question_options [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_export_contains_exact_packet_snapshot_submission_and_receipt [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_submit_clears_draft_and_later_draft_remains_independent [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_concurrent_identical_submissions_create_one_revision [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_packet_registration_is_hashed_immutable_and_versioned [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_reverting_to_earlier_answers_appends_new_current_revision [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_submit_is_idempotent_and_changed_answer_appends_revision [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_revised_submission_supersedes_old_in_pending_inbox [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_role_aliases.py[0m
+    frozen_row [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_prepare_uses_short_ids_and_keeps_full_host_mapping [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_role_output_requires_cue_evidence_and_unknown_stays_anonymous [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_rejects_malformed_frozen_rows [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_role_preparation.py[0m
+    test_existing_output_is_rejected_before_reading_inputs [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _page [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_context_preserves_page_breaks_without_false_name_prefixes [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_role_provider.py[0m
+    _NullLock::__enter__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _NullLock::__exit__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _dump_response [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_invalid_provider_configuration_is_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_ollama_length_finish_reason_is_incomplete [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_ollama_uses_lock_contract_and_normalizes_chat_usage [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_openai_preserves_raw_incomplete_response_and_unknown_usage [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_openai_refusal_is_exposed_without_parsing [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_schema_specialization_allows_only_null_when_no_person_cues [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_schema_specialization_limits_aliases_and_preserves_base_schema [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_role_run_store.py[0m
+    test_compatible_resume_skips_finished_task [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_incompatible_resume_is_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_only_current_inflight_attempt_can_finish [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unresolved_interrupted_attempt_is_never_pending [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _store [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_role_runner.py[0m
+    _options [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_invalid_reference_keeps_raw_provider_response [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_keyboard_interrupt_keeps_attempt_inflight_and_blocks_resume [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_offline_plan_does_not_create_output_or_call_provider [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_timeout_is_unresolved_and_resume_requires_review [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_valid_run_is_reused_without_another_provider_call [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _response [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_role_v2.py[0m
+    packet [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    record [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_proposed_requires_real_candidate_and_evidence [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unknown_evidence_must_be_a_supplied_paragraph [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unknown_identity_can_cite_paragraph_without_naming_candidate [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unknown_identity_rejects_named_or_invented_candidate [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_mixed_and_needs_review_keep_v1_permissive_shape [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_schema_and_host_agree_on_all_frozen_statuses [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_scan_cli.py[0m
+    _arguments [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _forbid_fetch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _target [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_expected_text_mismatch_stops_before_output_or_fetch [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_scan_cli_fetch_requires_explicit_flag [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_scan_cli_plans_without_network [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_scan_fetch.py[0m
+    FakeOpener::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    FakeResponse::__enter__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    FakeResponse::__exit__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    FakeResponse::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _BlockingOpener::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _BlockingOpener::open [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _NoNetworkOpener::open [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _info [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _install_opener [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _jpeg [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _target [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cached_fetch_rejects_tampered_image_hash [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_download_rejects_empty_and_over_limit_bodies [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_fetch_rejects_malformed_jpeg_payload [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_output_directory_rejects_a_different_frozen_target [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_read_bundle_binds_manifest_to_separate_frozen_target [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_read_bundle_verifies_target_info_and_image_hashes [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_rejects_service_item_leaf_and_dimension_mismatches [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_rejects_unexpected_redirect_host [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    FakeOpener::open [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    FakeResponse::read [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_fetches_one_info_and_one_exact_crop_with_audit_receipts [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _fetcher [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_compatible_cached_fetch_uses_no_network [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_concurrent_fetch_cannot_overlap_for_one_output_directory [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_read_bundle_rejects_image_manifest_mismatch [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_scan_geometry.py[0m
+    _box [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _page [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _target [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _word [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_full_paragraph_uses_one_clamped_paragraph_region [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_invalid_or_whitespace_only_spans_are_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_missing_frame_or_invalid_bounding_boxes_are_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_padding_limits_and_unpaired_span_endpoints_are_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_prepare_target_hashes_local_sources_and_resolves_requested_page [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_prepare_target_rejects_unsupported_item [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_scan_target_rejects_invalid_crop_frame [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_scan_target_validates_text_integrity [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_selected_word_rejects_zero_or_out_of_frame_geometry [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_selected_word_requires_valid_geometry [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_span_ignores_whitespace_only_word_spans [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_word_spans_require_exact_paragraph_reconstruction [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_word_span_groups_selected_words_by_line_and_pads_each_region [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_scoped_dates.py[0m
+    _synthetic [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    cases [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_conflicting_alternative_remains_unresolved_and_source_bound [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_continuation_requires_scoped_method_and_source [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_evidence_tampering_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_existing_role_v2_transport_remains_blocked [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_generic_schema_does_not_claim_source_semantic_validation [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_house_date_cannot_cross_back_into_senate [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_impossible_dates_and_overstated_precision_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_may_as_verb_cannot_supply_a_date [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_packet_rejects_changed_raw_text_and_repeated_region [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_supported_points_ranges_and_partial_precision [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_wrong_target_scope_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_date_transport_specialization_binds_aliases_without_mutation [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_frozen_cases_validate_with_schema_and_host [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_same_region_still_cannot_date_earlier_passage [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_date_request_through_existing_adapter_with_fake_client [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_frozen_fixture_hashes_match_exact_preparation [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_omission_overlap_and_unearned_certainty_rejected [32m5[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_static_cleanup.py[0m
+    test_cleanup_handles_multiword_line_before_wrapped_word [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cleanup_keeps_unknown_boundary_wrap_as_residual_hint [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cleanup_rejects_hard_link_output_alias [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cleanup_rejects_input_output_alias_before_truncation [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cleanup_rejects_lexicon_output_alias [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cleanup_requires_hyphen_at_end_of_left_line [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_cleanup_resolves_repeated_line_pairs_in_order [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_structure.py[0m
+    _paragraph [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_combined_header_on_anchored_top_line_attaches_facts_without_body_match [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_conflicting_explicit_header_dates_are_not_propagated [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_empty_normalized_text_is_used_instead_of_falling_back_to_ocr [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_explicit_calendar_date_and_chamber_keep_source_on_page_context [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_index_header_at_bottom_is_excluded_only_with_valid_geometry [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_invalid_or_weekday_conflicting_date_becomes_review_hint [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_model_routing_only_flags_unresolved_wraps_and_suspicious_glyphs [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _page [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_bad_weekday_or_corrupt_year_is_reviewed_and_date_not_attached [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_known_running_headers_and_matching_edge_page_number_are_classified [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_low_confidence_is_a_review_hint_without_automatic_model_routing [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_page_facts_start_at_header_reading_order_and_keep_first_source [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_subject_exclusions.py[0m
+    _sample [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_attempted_database_jobs_are_read_only_and_pending_jobs_are_skipped [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_attempted_job_row_id_must_match_source_json_id [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_invalid_manifest_boundaries_are_rejected [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_sample_exclusions_are_composite_and_always_incomplete [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_unknown_or_range_inconsistent_paragraph_ids_fail [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_subject_matching.py[0m
+    paragraph [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_duplicate_source_identity_is_rejected_without_cue_hits [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_hyphenated_line_wrap_maps_to_exact_raw_span [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_proposal_id_binds_vocabulary_content_digest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_proposals_are_pending_mention_only_and_source_is_unchanged [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    vocabulary [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_proposal_identity_includes_source_identity [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_alias_free_vocabulary_is_empty_and_results_are_deterministic [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_casefold_expansion_keeps_original_unicode_offsets [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_word_boundaries_reject_substrings_but_allow_whole_phrase [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_subject_review.py[0m
+    _fixture [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _review [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_import_emits_separate_bound_human_labels [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_no_subject_can_record_incidental_mention_only [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_oov_can_coexist_with_in_scope_subject_and_exact_evidence [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_rejects_incomplete_review_set [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_rejects_invalid_raw_paragraph_hash_before_no_subject_import [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_rejects_mismatched_or_invalid_human_decisions [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_template_and_import_outputs_refuse_overwrite [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_subject_sampling.py[0m
+    _page [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_null_part_fails_without_completed_manifest [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_sample_count_cap_is_enforced [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _inputs [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_exclusion_drops_entire_window_and_output_is_no_overwrite [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_sampling_is_reproducible_and_blinded [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_subject_vocabulary.py[0m
+    test_schema_rejects_invalid_resource_boundaries [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_packaged_vocabulary_has_expected_draft_identity_and_ids [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_candidate_cues_have_scope_boundaries_and_no_generic_amendment_alias [32m4[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_subjects.py[0m
+    _evidence [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _vocabulary [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_evidence_requires_matching_identity_hash_and_exact_unicode_span [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_model_proposal_requires_versions_and_review_record [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_only_human_reviewed_in_scope_known_subjects_are_returned [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_paragraph_hash_is_derived_from_exact_text [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_proposal_validation_binds_vocabulary_and_all_source_anchors [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_same_local_paragraph_id_is_safe_across_distinct_sources [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_vocabulary_digest_tracks_content_not_just_version [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_vocabulary_rejects_blank_aliases [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_vocabulary_rejects_duplicate_ids [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_vision_probe.py[0m
+    FakeOllama::_chat [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    Response::__enter__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    Response::__exit__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    Response::__init__ [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    Response::read [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _judgment [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_completed_compatible_run_resumes_without_network [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_digest_mismatch_stops_before_chat_and_records_raw_preflight [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_input_image_hash_mismatch_is_rejected_before_http [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_json_mode_uses_prompt_schema_and_is_part_of_resume_basis [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_live_saves_preflight_request_raw_response_and_expected_stays_out_of_request [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_offline_default_validates_without_network_or_output [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    FakeOllama::__call__ [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    FakeOllama::__init__ [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    FakeOllama::_tags [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _expected_only [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _packet [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_interrupted_intent_without_response_blocks_replay [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_invalid_judgment_continues_and_preserves_usage [32m2[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    FakeOllama::_api_value [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_transport_failure_stops_without_retry_and_returns_failure [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_wiki_districts.py[0m
+    test_ignores_unrelated_links_and_nonarticle_duplicate_headings [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_extracts_state_district_labels_and_preserves_temporal_notes [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_wiki_house.py[0m
+    test_extracts_representatives_and_delegates_without_reinterpreting_service [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_ignores_unrelated_tables_and_header_rows [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_wiki_senate.py[0m
+    test_extracts_source_rows_without_conflating_seniority_and_service [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_preserves_other_factor_remarks_and_missing_fields [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_expands_seniority_date_rowspan_and_retains_its_source_row [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_raises_when_roster_table_is_missing [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_wikipedia.py[0m
+    test_member_query_preserves_unknowns_and_filters [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_snapshot_rejects_modified_source [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1mtests/test_workflow.py[0m
+    _page [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _paragraph [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_ai_execution_requires_explicit_model [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_resume_rejects_changed_lexicon_or_page_limit [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_resume_rejects_changed_processing_code_fingerprint [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_resume_rejects_mismatched_existing_queue_payload [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_resume_reuses_verified_extraction_and_static_artifacts [32m0[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _jsonl [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    _source_fixture [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_backend_none_materializes_pending_static_rows_without_provider [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_bounded_ai_run_keeps_pending_jobs_and_writes_static_canonical_output [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_plan_only_prepares_all_parts_and_writes_residuals_without_provider [32m1[39m  ✅ [1m[30;42m PASSED [0m[0m 
+    test_start_leaf_is_applied_before_page_limit [32m3[39m  ✅ [1m[30;42m PASSED [0m[0m 
+
+[1m[32mAll functions are within the allowed complexity.[39m[0m
+[92m────────────────────────── [39m🎉 Analysis completed! 🎉[92m ───────────────────────────[39m
+uv run pytest
+........................................................................ [ 15%]
+........................................................................ [ 30%]
+........................................................................ [ 45%]
+........................................................................ [ 60%]
+........................................................................ [ 75%]
+........................................................................ [ 90%]
+................................................                         [100%]
+480 passed in 2.79s

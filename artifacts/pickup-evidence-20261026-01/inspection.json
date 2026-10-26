@@ -1,0 +1,49 @@
+{
+  "schema_version": "reading-inspection-v1",
+  "config_sha256": "24103bc02ae6c3013d55449948282d1e04693b53c14ca911550426361866e685",
+  "requests": {
+    "path": "artifacts/reading-quote-expansion-20261025-01/requests.json",
+    "sha256": "f5b7a8e325c91ded2a61290324b8b2ed1124b4b66c02384840866169b72fcf61"
+  },
+  "counts": {
+    "path": "artifacts/reading-quote-expansion-20261025-01/counts.json",
+    "sha256": "72676f2108b697ab87f7066b92cb548e20d43164eaf0072503c9524e819ce073"
+  },
+  "protocol": {
+    "path": "artifacts/reading-quote-expansion-20261025-01/assessment-protocol.json",
+    "sha256": "0c324af8a3d6296c6d89e3628542396199c0aeeaf845aaccdda9bb314731fbf9"
+  },
+  "review": {
+    "path": "docs/archive/human-review/HR-009-v1/applied.json",
+    "sha256": "32a6ae7d8d8ecf156b650d32726afac2d1072bdfd2c58ca62cc6fd6a4b420dbb"
+  },
+  "candidates": {
+    "path": "artifacts/reading-prepare-20261024-03/candidates.jsonl",
+    "sha256": "9358e8e4cb7b4cd22f7423671aa8f336e82f04336d6df5ef261ab904585ee51a"
+  },
+  "images": {
+    "path": "artifacts/reading-images-20261024-01/index.json",
+    "sha256": "fb3dbe6e925f1f557be11c9eecbeae32737064bc8c8d1a07cbee4537e7f17aaf"
+  },
+  "reuse": {
+    "path": "artifacts/reading-quote-expansion-20261025-01/reused-requests.json",
+    "sha256": "c5e9bdb28f57759bd5d3fa6b2abfe650da38d7ad1094c65b24baa60466faa4ce"
+  },
+  "budget": {
+    "path": "artifacts/reading-quote-expansion-20261025-01/budget.json",
+    "sha256": "5e083ebdb85987ea0fef2438a43a18b6ceb8e3df3358d74aea2c90017daa4635"
+  },
+  "prior_runs": [
+    {
+      "run_dir": "artifacts/reading-run-20261025-01",
+      "config_sha256": "363253a9cc40a2cc300785297827c5afd8216bd52e71b1c17f1fbc36ccb2ceb2"
+    },
+    {
+      "run_dir": "artifacts/reading-quote-run-20261025-01",
+      "config_sha256": "3cd8fd044f8cf2216f7ebdff7e0d45f82aa3e3c3cbd18ec2de16acaea19af31b"
+    }
+  ],
+  "runtime_binary": "/Applications/Ollama.app/Contents/Resources/ollama",
+  "counter_binary": "/tmp/globe-reading-fit-counter/count",
+  "review_database": "artifacts/human-review/reviews.sqlite"
+}

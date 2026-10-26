@@ -1,0 +1,135 @@
+{
+  "$defs": {
+    "FileRef": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "title": "FileRef",
+      "type": "object"
+    },
+    "StoreRef": {
+      "additionalProperties": false,
+      "properties": {
+        "run_dir": {
+          "minLength": 1,
+          "title": "Run Dir",
+          "type": "string"
+        },
+        "config_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Config Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "run_dir",
+        "config_sha256"
+      ],
+      "title": "StoreRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Inspection recipe only: no provider settings, dispatch or authorization.",
+  "properties": {
+    "schema_version": {
+      "const": "reading-inspection-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "config_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Config Sha256",
+      "type": "string"
+    },
+    "requests": {
+      "$ref": "#/$defs/FileRef"
+    },
+    "counts": {
+      "$ref": "#/$defs/FileRef"
+    },
+    "protocol": {
+      "$ref": "#/$defs/FileRef"
+    },
+    "review": {
+      "$ref": "#/$defs/FileRef"
+    },
+    "candidates": {
+      "$ref": "#/$defs/FileRef"
+    },
+    "images": {
+      "$ref": "#/$defs/FileRef"
+    },
+    "reuse": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/FileRef"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "budget": {
+      "$ref": "#/$defs/FileRef"
+    },
+    "prior_runs": {
+      "items": {
+        "$ref": "#/$defs/StoreRef"
+      },
+      "title": "Prior Runs",
+      "type": "array"
+    },
+    "runtime_binary": {
+      "title": "Runtime Binary",
+      "type": "string"
+    },
+    "counter_binary": {
+      "title": "Counter Binary",
+      "type": "string"
+    },
+    "review_database": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Review Database"
+    }
+  },
+  "required": [
+    "schema_version",
+    "config_sha256",
+    "requests",
+    "counts",
+    "protocol",
+    "review",
+    "candidates",
+    "images",
+    "reuse",
+    "budget",
+    "prior_runs",
+    "runtime_binary",
+    "counter_binary",
+    "review_database"
+  ],
+  "title": "InspectionEvidence",
+  "type": "object"
+}
