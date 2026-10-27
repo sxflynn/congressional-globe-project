@@ -1,0 +1,38 @@
+{
+  "observed": "2026-10-27T11:28:41.839376+00:00",
+  "version": {
+    "version": "0.40.8"
+  },
+  "selected": {
+    "name": "qwen3.8:27b-mlx",
+    "model": "qwen3.8:27b-mlx",
+    "modified_at": "2026-09-24T01:45:09.355713619-04:00",
+    "size": 18174721847,
+    "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "details": {
+      "parent_model": "",
+      "format": "safetensors",
+      "family": "",
+      "families": null,
+      "parameter_size": "",
+      "quantization_level": "nvfp4",
+      "runner": "mlx"
+    },
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools",
+      "thinking"
+    ]
+  },
+  "loaded": {
+    "models": []
+  },
+  "processes": [
+    "70732 Tue Oct 27 07:28:41 2026           00:00 /bin/bash -c UV_CACHE_DIR=tmp/uv-cache uv run python - <<'PY'\\012import json,hashlib,subprocess,urllib.request,fcntl,tempfile\\012from pathlib import Path\\012from datetime import datetime,timezone\\012r=Path('artifacts/quote-date-live-readiness-20261026-01'); o=Path('artifacts/quote-date-live-20261027-01'); m=json.loads((r/'readiness.json').read_text())\\012for name,h in m['code_and_input_identity']['code_hashes'].items():\\012 assert hashlib.sha256((Path('src/congressional_globe')/name).read_bytes()).hexdigest()==h,name\\012for name,h in m['code_and_input_identity']['input_hashes'].items():\\012 assert hashlib.sha256((r/'prepared'/name).read_bytes()).hexdigest()==h,name\\012assert not (r/'run').exists()\\012def get(path):\\012 return json.load(urllib.request.urlopen('http://127.0.0.1:11434'+path,timeout=10))\\012v=get('/api/version'); models=get('/api/tags'); loaded=get('/api/ps')\\012selected=next(x for x in models['models'] if x['name']==m['backend_recheck']['model'])\\012assert selected['digest']==m['backend_recheck']['digest']; assert v['version']=='0.40.8'\\012ps=subprocess.check_output(['ps','-axo','pid,lstart,etime,command'],text=True)\\012matching=[x for x in ps.splitlines() if any(t in x for t in ['ollama serve','role_runner','reading_runner','cleanup run'])]\\012with open(tempfile.gettempdir()+'/congressional-globe-ollama-request.lock','a') as f:\\012 fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB); fcntl.flock(f,fcntl.LOCK_UN)\\012(o/'preflight.json').write_text(json.dumps(dict(observed=datetime.now(timezone.utc).isoformat(),version=v,selected=selected,loaded=loaded,processes=matching,lock='free',code_inputs='all frozen hashes match',authorization='Human yes in this chat to exact one-request T36 check'),indent=2))\\012print('Frozen hashes, model identity and shared lock verified.');print('\\n'.join(matching))\\012PY",
+    "87597 Wed Oct 21 20:46:52 2026     05-10:41:49 /Applications/Ollama.app/Contents/Resources/ollama serve"
+  ],
+  "lock": "free",
+  "code_inputs": "all frozen hashes match",
+  "authorization": "Human yes in this chat to exact one-request T36 check"
+}

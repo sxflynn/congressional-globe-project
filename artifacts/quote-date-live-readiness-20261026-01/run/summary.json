@@ -1,0 +1,262 @@
+{
+  "statuses": {
+    "unresolved": 0,
+    "error": 0,
+    "valid": 1,
+    "invalid": 0,
+    "pending": 0,
+    "inflight": 0
+  },
+  "attempts": 1,
+  "cumulative_usage": {
+    "calls": 1,
+    "seconds": 41.502,
+    "unknown_elapsed": 0,
+    "input_tokens": 2336,
+    "output_tokens": 540,
+    "unknown_usage": 0,
+    "output_limit_exceeded": false
+  },
+  "results": [
+    {
+      "window_id": "house-opening-december-4-1865-v1",
+      "status": "valid",
+      "result": {
+        "date_proposals": {
+          "dates": [
+            {
+              "alternatives": [],
+              "basis": "P1 and P2 contain no date words. The scope basis restricts the date in P3 to P3-P6 only, preventing backward propagation to the Senate ending region.",
+              "context_kind": "unknown",
+              "date_kind": "none",
+              "evidence": [],
+              "method": "no_supported_date",
+              "status": "unknown",
+              "target_ids": [
+                "P1",
+                "P2"
+              ],
+              "unknowns": [
+                "No explicit date is present in P1 or P2.",
+                "The scope basis explicitly freezes P1/P2 as Senate close and prohibits carrying the date from P3 backward across the chamber boundary."
+              ],
+              "value": null
+            },
+            {
+              "alternatives": [],
+              "basis": "P3 explicitly states the date 'Monday, December 4, 1865' as the heading for the House of Representatives session. P4, P5, and P6 are contiguous paragraphs within the same 'house-opening' region and describe the immediate procedural steps (reading the roll, calling members) that constitute the continuation of this specific session. The scope basis confirms this bounded context.",
+              "context_kind": "proceeding",
+              "date_kind": "implicit",
+              "evidence": [
+                {
+                  "end": 51,
+                  "paragraph_id": "P3",
+                  "quote": "Monday, December 4, 1865.",
+                  "raw_sha256": "3c5d292b3b691dc82d4232da79bab3d1dd4ffce1943ab1e7a0c042e1eabbaa38",
+                  "start": 26
+                }
+              ],
+              "method": "scoped_continuation",
+              "status": "proposed",
+              "target_ids": [
+                "P3",
+                "P4",
+                "P5",
+                "P6"
+              ],
+              "unknowns": [],
+              "value": {
+                "end": "1865-12-04",
+                "extent": "point",
+                "precision": "day",
+                "start": "1865-12-04"
+              }
+            }
+          ]
+        },
+        "elapsed_seconds": 41.502,
+        "finish_reason": "stop",
+        "output_text": "{\n  \"dates\": [\n    {\n      \"target_ids\": [\n        \"P1\",\n        \"P2\"\n      ],\n      \"value\": null,\n      \"date_kind\": \"none\",\n      \"context_kind\": \"unknown\",\n      \"status\": \"unknown\",\n      \"method\": \"no_supported_date\",\n      \"evidence\": [],\n      \"alternatives\": [],\n      \"unknowns\": [\n        \"No explicit date is present in P1 or P2.\",\n        \"The scope basis explicitly freezes P1/P2 as Senate close and prohibits carrying the date from P3 backward across the chamber boundary.\"\n      ],\n      \"basis\": \"P1 and P2 contain no date words. The scope basis restricts the date in P3 to P3-P6 only, preventing backward propagation to the Senate ending region.\"\n    },\n    {\n      \"target_ids\": [\n        \"P3\",\n        \"P4\",\n        \"P5\",\n        \"P6\"\n      ],\n      \"value\": {\n        \"start\": \"1865-12-04\",\n        \"end\": \"1865-12-04\",\n        \"precision\": \"day\",\n        \"extent\": \"point\"\n      },\n      \"date_kind\": \"implicit\",\n      \"context_kind\": \"proceeding\",\n      \"status\": \"proposed\",\n      \"method\": \"scoped_continuation\",\n      \"evidence\": [\n        {\n          \"paragraph_id\": \"P3\",\n          \"raw_sha256\": \"3c5d292b3b691dc82d4232da79bab3d1dd4ffce1943ab1e7a0c042e1eabbaa38\",\n          \"quote\": \"Monday, December 4, 1865.\"\n        }\n      ],\n      \"alternatives\": [],\n      \"unknowns\": [],\n      \"basis\": \"P3 explicitly states the date 'Monday, December 4, 1865' as the heading for the House of Representatives session. P4, P5, and P6 are contiguous paragraphs within the same 'house-opening' region and describe the immediate procedural steps (reading the roll, calling members) that constitute the continuation of this specific session. The scope basis confirms this bounded context.\"\n    }\n  ]\n}",
+        "provider_request_id": "chatcmpl-455",
+        "raw_response": "{\"id\": \"chatcmpl-455\", \"choices\": [{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"{\\n  \\\"dates\\\": [\\n    {\\n      \\\"target_ids\\\": [\\n        \\\"P1\\\",\\n        \\\"P2\\\"\\n      ],\\n      \\\"value\\\": null,\\n      \\\"date_kind\\\": \\\"none\\\",\\n      \\\"context_kind\\\": \\\"unknown\\\",\\n      \\\"status\\\": \\\"unknown\\\",\\n      \\\"method\\\": \\\"no_supported_date\\\",\\n      \\\"evidence\\\": [],\\n      \\\"alternatives\\\": [],\\n      \\\"unknowns\\\": [\\n        \\\"No explicit date is present in P1 or P2.\\\",\\n        \\\"The scope basis explicitly freezes P1/P2 as Senate close and prohibits carrying the date from P3 backward across the chamber boundary.\\\"\\n      ],\\n      \\\"basis\\\": \\\"P1 and P2 contain no date words. The scope basis restricts the date in P3 to P3-P6 only, preventing backward propagation to the Senate ending region.\\\"\\n    },\\n    {\\n      \\\"target_ids\\\": [\\n        \\\"P3\\\",\\n        \\\"P4\\\",\\n        \\\"P5\\\",\\n        \\\"P6\\\"\\n      ],\\n      \\\"value\\\": {\\n        \\\"start\\\": \\\"1865-12-04\\\",\\n        \\\"end\\\": \\\"1865-12-04\\\",\\n        \\\"precision\\\": \\\"day\\\",\\n        \\\"extent\\\": \\\"point\\\"\\n      },\\n      \\\"date_kind\\\": \\\"implicit\\\",\\n      \\\"context_kind\\\": \\\"proceeding\\\",\\n      \\\"status\\\": \\\"proposed\\\",\\n      \\\"method\\\": \\\"scoped_continuation\\\",\\n      \\\"evidence\\\": [\\n        {\\n          \\\"paragraph_id\\\": \\\"P3\\\",\\n          \\\"raw_sha256\\\": \\\"3c5d292b3b691dc82d4232da79bab3d1dd4ffce1943ab1e7a0c042e1eabbaa38\\\",\\n          \\\"quote\\\": \\\"Monday, December 4, 1865.\\\"\\n        }\\n      ],\\n      \\\"alternatives\\\": [],\\n      \\\"unknowns\\\": [],\\n      \\\"basis\\\": \\\"P3 explicitly states the date 'Monday, December 4, 1865' as the heading for the House of Representatives session. P4, P5, and P6 are contiguous paragraphs within the same 'house-opening' region and describe the immediate procedural steps (reading the roll, calling members) that constitute the continuation of this specific session. The scope basis confirms this bounded context.\\\"\\n    }\\n  ]\\n}\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": null}}], \"created\": 1793100578, \"model\": \"qwen3.8:27b-mlx\", \"object\": \"chat.completion\", \"metadata\": null, \"moderation\": null, \"service_tier\": null, \"system_fingerprint\": \"fp_ollama\", \"usage\": {\"completion_tokens\": 540, \"prompt_tokens\": 2336, \"total_tokens\": 2876, \"completion_tokens_details\": null, \"prompt_tokens_details\": {\"audio_tokens\": null, \"cache_write_tokens\": null, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null}}}",
+        "source_mapped_proposals": {
+          "coordinate_binding": "host_unique_exact_quote_in_declared_raw_paragraph",
+          "dates": [
+            {
+              "alternatives": [],
+              "basis": "P1 and P2 contain no date words. The scope basis restricts the date in P3 to P3-P6 only, preventing backward propagation to the Senate ending region.",
+              "context_kind": "unknown",
+              "date_kind": "none",
+              "evidence": [],
+              "method": "no_supported_date",
+              "status": "unknown",
+              "target_ids": [
+                "P1",
+                "P2"
+              ],
+              "unknowns": [
+                "No explicit date is present in P1 or P2.",
+                "The scope basis explicitly freezes P1/P2 as Senate close and prohibits carrying the date from P3 backward across the chamber boundary."
+              ],
+              "value": null
+            },
+            {
+              "alternatives": [],
+              "basis": "P3 explicitly states the date 'Monday, December 4, 1865' as the heading for the House of Representatives session. P4, P5, and P6 are contiguous paragraphs within the same 'house-opening' region and describe the immediate procedural steps (reading the roll, calling members) that constitute the continuation of this specific session. The scope basis confirms this bounded context.",
+              "context_kind": "proceeding",
+              "date_kind": "implicit",
+              "evidence": [
+                {
+                  "end": 51,
+                  "paragraph_id": "P3",
+                  "quote": "Monday, December 4, 1865.",
+                  "raw_sha256": "3c5d292b3b691dc82d4232da79bab3d1dd4ffce1943ab1e7a0c042e1eabbaa38",
+                  "start": 26
+                }
+              ],
+              "method": "scoped_continuation",
+              "status": "proposed",
+              "target_ids": [
+                "P3",
+                "P4",
+                "P5",
+                "P6"
+              ],
+              "unknowns": [],
+              "value": {
+                "end": "1865-12-04",
+                "extent": "point",
+                "precision": "day",
+                "start": "1865-12-04"
+              }
+            }
+          ],
+          "derived_contract": "scoped-date-v1",
+          "historical_status": "proposal_only_not_human_reviewed",
+          "model_contract": "scoped-date-quotes-v1",
+          "model_proposals": {
+            "dates": [
+              {
+                "alternatives": [],
+                "basis": "P1 and P2 contain no date words. The scope basis restricts the date in P3 to P3-P6 only, preventing backward propagation to the Senate ending region.",
+                "context_kind": "unknown",
+                "date_kind": "none",
+                "evidence": [],
+                "method": "no_supported_date",
+                "status": "unknown",
+                "target_ids": [
+                  "P1",
+                  "P2"
+                ],
+                "unknowns": [
+                  "No explicit date is present in P1 or P2.",
+                  "The scope basis explicitly freezes P1/P2 as Senate close and prohibits carrying the date from P3 backward across the chamber boundary."
+                ],
+                "value": null
+              },
+              {
+                "alternatives": [],
+                "basis": "P3 explicitly states the date 'Monday, December 4, 1865' as the heading for the House of Representatives session. P4, P5, and P6 are contiguous paragraphs within the same 'house-opening' region and describe the immediate procedural steps (reading the roll, calling members) that constitute the continuation of this specific session. The scope basis confirms this bounded context.",
+                "context_kind": "proceeding",
+                "date_kind": "implicit",
+                "evidence": [
+                  {
+                    "paragraph_id": "P3",
+                    "quote": "Monday, December 4, 1865.",
+                    "raw_sha256": "3c5d292b3b691dc82d4232da79bab3d1dd4ffce1943ab1e7a0c042e1eabbaa38"
+                  }
+                ],
+                "method": "scoped_continuation",
+                "status": "proposed",
+                "target_ids": [
+                  "P3",
+                  "P4",
+                  "P5",
+                  "P6"
+                ],
+                "unknowns": [],
+                "value": {
+                  "end": "1865-12-04",
+                  "extent": "point",
+                  "precision": "day",
+                  "start": "1865-12-04"
+                }
+              }
+            ]
+          },
+          "offset_convention": "unicode_codepoints_half_open_within_raw_paragraph",
+          "schema_version": "source-mapped-scoped-date-quotes-v1",
+          "scope_basis": "Frozen P1/P2 Senate close; P3 House heading and date through P6 only. AI-provisional bounded context; no continuation beyond this packet.",
+          "scope_evidence_sha256": "197bd2076d9ba12a0603e63b908a69d700fe5a18f9e93f706a1e10189b9c2316",
+          "sources": [
+            {
+              "alias": "P1",
+              "item_identifier": "congressionalg7391unit",
+              "raw_sha256": "be43ef90360edb07db3ee9dbb7e1b80bca1d81c5506ba974d4b680e7aaf2e871",
+              "raw_text": "Mr. FOOT. I now repeat the motion to adjourn.",
+              "region_id": "senate-ending",
+              "scan_leaf": 117,
+              "source_paragraph_id": "ia:congressionalg7391unit:leaf:117::par_000117_000006"
+            },
+            {
+              "alias": "P2",
+              "item_identifier": "congressionalg7391unit",
+              "raw_sha256": "cd745a7465c7eefb05e27101ae34bc1a22174d7ad88700c7d64ac80580c3450e",
+              "raw_text": "The motion was agreed to ; and the Senate adjourned.",
+              "region_id": "senate-ending",
+              "scan_leaf": 117,
+              "source_paragraph_id": "ia:congressionalg7391unit:leaf:117::par_000117_000007"
+            },
+            {
+              "alias": "P3",
+              "item_identifier": "congressionalg7391unit",
+              "raw_sha256": "3c5d292b3b691dc82d4232da79bab3d1dd4ffce1943ab1e7a0c042e1eabbaa38",
+              "raw_text": "HOUSE OF REPRESENTATIVES. Monday, December 4, 1865. This being the day prescribed by the Consti- tution for the meeting of Congress, the mem- bers of the House of Representatives assembled in their Hall, aud at twelve o'clock, m., were called to order by Hon. Edward McPherson, Clerk' of the last House of Representatives. OllGANIZATION OF THE HOUSE.",
+              "region_id": "house-opening",
+              "scan_leaf": 117,
+              "source_paragraph_id": "ia:congressionalg7391unit:leaf:117::par_000117_000008"
+            },
+            {
+              "alias": "P4",
+              "item_identifier": "congressionalg7391unit",
+              "raw_sha256": "3da13457944ea15599558563fed47f9852a22faf54f1e83e8e2d1b10f4e69006",
+              "raw_text": "The CLERK said: The hour having arrived for the meeting of the Thii'ty-Ninth Congress, the Clerk of the last House of Representatives will proceed, as required by law, to read by States the roll of members-elect. Gentlemen are requested to respond as their names are called.",
+              "region_id": "house-opening",
+              "scan_leaf": 117,
+              "source_paragraph_id": "ia:congressionalg7391unit:leaf:117::par_000117_000009"
+            },
+            {
+              "alias": "P5",
+              "item_identifier": "congressionalg7391unit",
+              "raw_sha256": "ed6ace2f3e19588c7b6e6feb19bf4eb94e34a156b75fc378d558822b75b57a7f",
+              "raw_text": "The roll was then called, and the following members answered to their names :",
+              "region_id": "house-opening",
+              "scan_leaf": 117,
+              "source_paragraph_id": "ia:congressionalg7391unit:leaf:117::par_000117_000010"
+            },
+            {
+              "alias": "P6",
+              "item_identifier": "congressionalg7391unit",
+              "raw_sha256": "92e079a62590cd30a05bc511cda65a13e23febd796dd7fd1602ccaef9ba9a253",
+              "raw_text": "MAINE. John Lynch, John H. Rice,",
+              "region_id": "house-opening",
+              "scan_leaf": 117,
+              "source_paragraph_id": "ia:congressionalg7391unit:leaf:117::par_000117_000011"
+            }
+          ],
+          "window_id": "house-opening-december-4-1865-v1"
+        },
+        "status": "completed",
+        "usage": {
+          "cached_input_tokens": 0,
+          "input_tokens": 2336,
+          "output_tokens": 540
+        },
+        "validation_scope": "host contract/source bindings; historical accuracy unreviewed"
+      }
+    }
+  ],
+  "api_cost_usd_estimate": 0.0,
+  "quality": "Schema/reference validity only; semantic/human review pending",
+  "recovery": "No automatic retries; unknown outcomes block resume"
+}

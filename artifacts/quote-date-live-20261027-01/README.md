@@ -1,0 +1,11 @@
+# One real quote-only date check
+
+T41, 2026-10-27, follows T36 and the human's explicit “yes” to its exact single request. No retries or further requests are authorized.
+
+A researcher looking for the House opening on December 4, 1865 gets a proposal tied to the exact words “Monday, December 4, 1865.” in paragraph P3. Software found those words uniquely at positions 26–51. The proposal covers P3–P6 and leaves the preceding Senate closing paragraphs P1–P2 unknown. This matches the frozen preparation expectation for date and coverage; that expectation is AI-provisional, not human gold or page-image verification.
+
+The installed Qwen model returned one complete JSON-object reply. Existing software accepted the quote, source fingerprints, date and declared boundary rules. The model supplied no character positions. One call took 41.502 seconds, with 2,336 input and 540 output tokens; no retries, unknown usage or output overrun. The local API charge estimate is $0; hardware, energy and human review costs are unmeasured.
+
+The model grouped P3–P6 as `implicit` / `scoped_continuation` even though P3 contains an explicit date. This passed the current software contract but remains a semantic distinction needing review. The supplied packet already declared the House/Senate boundary: this does not demonstrate independent boundary discovery. It proves one real backend result on the quote-only path, not general date accuracy, role extraction, native schema enforcement, independent-consumer recovery, human approval or P0 closure. M1/M2 remain PARTIAL. No original OCR or prior failed result was changed.
+
+[Launch and authorization](launch.json), [fresh preflight](preflight.json), [queue](queue.json), [bounded recent logs](recent-logs.json), [terminal result with original response](terminal.json), [mechanical validation and run fingerprints](validation.json). The exact request and SQLite journal remain in [the frozen request directory](../quote-date-live-readiness-20261026-01/run/summary.json); its preparation files retain their hashes. Existing offline recovery checks remain the prior evidence; no extra live recovery request was sent. Last full code gate: 579 tests (T40); no source code changed in T41.

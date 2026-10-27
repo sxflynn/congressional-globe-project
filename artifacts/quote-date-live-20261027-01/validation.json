@@ -1,0 +1,28 @@
+{
+  "attempts": 1,
+  "host_valid": true,
+  "exact_quote_positions": [
+    26,
+    51
+  ],
+  "no_model_offsets": true,
+  "senate_unknown": true,
+  "house_date": "1865-12-04",
+  "frozen_inputs_unchanged": true,
+  "usage": {
+    "calls": 1,
+    "seconds": 41.502,
+    "unknown_elapsed": 0,
+    "input_tokens": 2336,
+    "output_tokens": 540,
+    "unknown_usage": 0,
+    "output_limit_exceeded": false
+  },
+  "run_files": {
+    "artifacts/quote-date-live-readiness-20261026-01/run/summary.json": "4f6019e38c6b58ac14c4fbee6546f2cf67264aa31bc3e0942573316198fa6764",
+    "artifacts/quote-date-live-readiness-20261026-01/run/proposals.json": "821eda08a393d6120e24cf729dcc2ded406eead6d2ca2c8cb67be22fdc399977",
+    "artifacts/quote-date-live-readiness-20261026-01/run/events.jsonl": "e233259b386c63d5a1e3cb485ee01fdd8993b8e11245e486a96cf22354912336",
+    "artifacts/quote-date-live-readiness-20261026-01/run/jobs.sqlite": "ff553e13effe00a67241ad794513a1ac6b22c4892d39117be415767f53fede6e"
+  },
+  "semantic_caveat": "Whole P3-P6 group labeled implicit/scoped_continuation although P3 date is explicit; no human quality acceptance."
+}

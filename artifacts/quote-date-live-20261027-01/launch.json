@@ -1,0 +1,31 @@
+{
+  "task": "T41",
+  "authorization": "User yes to exact frozen T36 single request",
+  "started": "2026-10-27T11:28:56.546644+00:00",
+  "pid": 70837,
+  "os_identity": "  PID STARTED                      COMMAND\n70837 Tue Oct 27 07:28:56 2026     /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -\n",
+  "options": {
+    "prepared": "artifacts/quote-date-live-readiness-20261026-01/prepared",
+    "output": "artifacts/quote-date-live-readiness-20261026-01/run",
+    "provider": "ollama",
+    "model": "qwen3.8:27b-mlx",
+    "base_url": "http://127.0.0.1:11434/v1",
+    "contract": "scoped-date-quotes-v1",
+    "cases": [
+      "house-opening-december-4-1865-v1"
+    ],
+    "limit": 1,
+    "timeout": 120.0,
+    "max_seconds": 150.0,
+    "max_output_tokens": 2000,
+    "budget_usd": 0.01
+  },
+  "journal": "artifacts/quote-date-live-readiness-20261026-01/run/jobs.sqlite",
+  "bounds": {
+    "calls": 1,
+    "timeout": 120,
+    "wall": 150,
+    "output_tokens": 2000,
+    "retries": 0
+  }
+}
