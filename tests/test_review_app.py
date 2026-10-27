@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from lxml import html
 from streamlit.testing.v1 import AppTest
 
 from congressional_globe import review_app
@@ -175,4 +176,25 @@ def test_packet_definitions_render_in_prompts_evidence_and_choice_help(tmp_path,
     assert rendered.count("A small invented test object.") == 4
     assert "Answer terms:" in rendered
     assert app.selectbox[-1].options == ["", "widget", "other"]
+    assert not app.exception
+
+
+def test_packet_title_and_version_offer_definitions(tmp_path, monkeypatch):
+    store = _store(tmp_path, monkeypatch)
+    store.register(
+        {
+            "id": "DEMO-TEST",
+            "version": 2,
+            "title": "Provenance check",
+            "instructions": "Keep the original wording.",
+            "questions": [{"id": "choice", "prompt": "Pick one", "options": ["A", "B"]}],
+        }
+    )
+    app = _app()
+    rendered = "\n".join(item.value for item in app.markdown)
+    tree = html.fragment_fromstring(rendered, create_parent="div")
+    heading = tree.xpath('.//*[@role="heading"]')[0]
+    assert heading.get("aria-level") == "3"
+    assert heading.xpath('.//button[@aria-label="Define: Provenance"]')
+    assert tree.xpath('.//button[@aria-label="Define: version"]')
     assert not app.exception

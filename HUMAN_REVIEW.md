@@ -14,7 +14,7 @@ HR-005-v1 and HR-008-v1 are already answered and incorporated; no repeat review 
 
 ## Definitions while reviewing
 
-Tap a dotted-underlined term to open a short, plain-language definition. Close it, tap outside it, or press Escape to return to the review. Opening definitions keeps your unsaved answers in place. Instructions, questions and evidence use the same glossary; terms that occur only in answer choices are explained just above the choices.
+Tap a dotted-underlined term to open a short, plain-language definition. Close it, tap outside it, or press Escape to return to the review. Opening definitions keeps your unsaved answers in place. Definitions now cover more ordinary-looking phrases used in a special way, such as “faithful,” “paragraph boundaries,” “raw reply,” “fixed selection” and “provenance,” plus historical terms such as “broom corn.” Review titles have definitions too. Instructions, questions and evidence use the same glossary; terms that occur only in answer choices are explained just above the choices.
 
 ## Original scan demonstration
 

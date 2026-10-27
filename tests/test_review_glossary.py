@@ -89,3 +89,39 @@ def test_shared_catalog_names_are_unambiguous_and_definitions_are_nonblank():
     names = [name.casefold() for entry in catalog.terms for name in [entry.term, *entry.aliases]]
     assert len(names) == len(set(names))
     assert all(len(entry.definition) > 30 for entry in catalog.terms)
+
+
+def test_review_vocabulary_and_historical_phrases_have_neutral_help():
+    entries = definitions()
+    text = (
+        "Paragraph boundaries; fixed selection; raw reply; provenance; faithful; "
+        "automated validation; complete proposed reading; source-boundary issue; "
+        "prohibitory tariff; broom corn; tub to the whale; the hammer fell; "
+        "franking privilege; H. R. No.; S. No."
+    )
+    tree = html.fragment_fromstring(annotated_html(text, entries, "expanded"), create_parent="div")
+    labels = tree.xpath('.//button[@class="glossary-term"]/text()')
+    assert labels == text.split("; ")
+    assert "without changing its wording or meaning" in entries["faithful"].definition
+    assert "not" in entries["automated validation"].definition
+
+
+def test_distinct_meanings_and_longest_phrase_preserve_source_words():
+    entries = definitions()
+    assert entries["json"] != entries["schema"]
+    assert entries["imports"] != entries["importers"]
+    assert entries["habeas corpus"] != entries["corpus"]
+    source = "Imports and importers; habeas corpus. [Here the hammer fell.] A mere blind."
+    tree = html.fragment_fromstring(annotated_html(source, entries, "source"), create_parent="div")
+    assert tree.xpath('.//button[@class="glossary-term"]/text()') == [
+        "Imports",
+        "importers",
+        "habeas corpus",
+        "Here the hammer fell",
+        "mere blind",
+    ]
+    for popup in tree.xpath(".//*[@popover]"):
+        popup.drop_tree()
+    assert tree.text_content() == source
+    assert "blind" not in entries
+    assert "blind review" in entries

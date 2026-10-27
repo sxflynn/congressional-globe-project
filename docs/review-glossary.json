@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "terms": [
     {
       "term": "static cleanup",
@@ -13,7 +13,8 @@
       "term": "selected outputs",
       "definition": "The particular saved model responses chosen for evaluation or for a proposed reading version. Other responses, failed attempts and alternatives remain saved; selection alone does not mean a person has approved them.",
       "aliases": [
-        "selected output"
+        "selected output",
+        "selected reading proposals"
       ]
     },
     {
@@ -46,7 +47,11 @@
       "term": "raw OCR",
       "definition": "The original machine-read text, preserved exactly as collected, including its errors.",
       "aliases": [
-        "raw text"
+        "raw text",
+        "unchanged OCR",
+        "original OCR",
+        "unchanged source text",
+        "original machine-read text"
       ]
     },
     {
@@ -66,7 +71,7 @@
     },
     {
       "term": "source expectations",
-      "definition": "A record of what a reviewer can read in the scan, prepared before looking at the new model answers. Unclear readings stay unresolved.",
+      "definition": "Recorded expectations about what the source supports, prepared for a check. They may be provisional AI observations or human judgments; the record must say which. They are not automatically verified history.",
       "aliases": [
         "source expectation"
       ]
@@ -75,8 +80,7 @@
       "term": "source packet",
       "definition": "A saved collection of the exact passages, context, image references and settings to be used in a test.",
       "aliases": [
-        "frozen packet",
-        "source-bound design"
+        "frozen packet"
       ]
     },
     {
@@ -202,7 +206,8 @@
       "term": "manual review",
       "definition": "A person examines the passage and source to resolve an uncertainty or check a proposed change.",
       "aliases": [
-        "human review"
+        "human review",
+        "review"
       ]
     },
     {
@@ -237,7 +242,9 @@
     {
       "term": "context",
       "definition": "Surrounding text and other information supplied with a passage. It can help interpretation but must not be used to invent missing wording.",
-      "aliases": []
+      "aliases": [
+        "surrounding context"
+      ]
     },
     {
       "term": "output tokens",
@@ -274,7 +281,9 @@
     {
       "term": "replay",
       "definition": "Reproduce a saved transformation or result from the same recorded inputs, without asking a model again.",
-      "aliases": []
+      "aliases": [
+        "replayed"
+      ]
     },
     {
       "term": "cache",
@@ -289,7 +298,8 @@
       "aliases": [
         "crop",
         "crops",
-        "source crops"
+        "source crops",
+        "scan crop"
       ]
     },
     {
@@ -312,7 +322,6 @@
       "term": "schema",
       "definition": "The required structure and fields of a saved record or model reply. Passing this check shows correct structure, not historical correctness.",
       "aliases": [
-        "JSON",
         "structured output"
       ]
     },
@@ -320,7 +329,11 @@
       "term": "validation",
       "definition": "Automatic checks that data follows required rules, such as correct fields and matching source text. These checks alone do not establish historical truth.",
       "aliases": [
-        "validated"
+        "validated",
+        "automated validation",
+        "software validation",
+        "automatic checks",
+        "validates"
       ]
     },
     {
@@ -432,6 +445,822 @@
       "aliases": [
         "abbreviation"
       ]
+    },
+    {
+      "term": "source",
+      "definition": "The original material being checked, such as a printed page or its saved image. A proposed AI answer is separate from that original material.",
+      "aliases": [
+        "sources"
+      ]
+    },
+    {
+      "term": "evidence",
+      "definition": "The words, images or records offered to support an answer. You still need to check whether they actually support the particular claim.",
+      "aliases": []
+    },
+    {
+      "term": "provenance",
+      "definition": "The record of where material came from and what happened to it: its original page, saved versions, transformations and reviews.",
+      "aliases": [
+        "response provenance"
+      ]
+    },
+    {
+      "term": "source ID",
+      "definition": "A label identifying the particular source passage, including its volume part, scanned page and paragraph. It is a reference, not a correctness grade.",
+      "aliases": [
+        "source IDs",
+        "source identifier",
+        "source identifiers"
+      ]
+    },
+    {
+      "term": "composite ID",
+      "definition": "An identifier made from several pieces, such as volume, scanned-page number and paragraph number, so passages from different volumes are not confused.",
+      "aliases": [
+        "composite IDs",
+        "composite source ID",
+        "composite source IDs"
+      ]
+    },
+    {
+      "term": "source-bound",
+      "definition": "Tied to a specific recorded source passage, page or image. That connection can be checked; it does not by itself prove an interpretation correct.",
+      "aliases": [
+        "source-bound design",
+        "source-mapped"
+      ]
+    },
+    {
+      "term": "source boundary",
+      "definition": "The point where one source passage or region ends and another begins. A proposed change must not accidentally include words from a different passage.",
+      "aliases": [
+        "source boundaries",
+        "source-boundary",
+        "source-boundary issue"
+      ]
+    },
+    {
+      "term": "paragraph boundaries",
+      "definition": "The points where one paragraph begins and ends. Preserving them means keeping separate paragraphs separate rather than joining or splitting them without support.",
+      "aliases": [
+        "paragraph boundary",
+        "passage boundaries",
+        "passage boundary"
+      ]
+    },
+    {
+      "term": "source paragraph",
+      "definition": "The particular paragraph from the original material. Nearby paragraphs provide context but are not interchangeable with the paragraph being checked.",
+      "aliases": [
+        "source paragraphs"
+      ]
+    },
+    {
+      "term": "paragraph",
+      "definition": "A block of connected text, usually separated from the next block by a new line or indentation. The review keeps its original source identity.",
+      "aliases": [
+        "paragraphs"
+      ]
+    },
+    {
+      "term": "passage",
+      "definition": "The piece of text selected for reading or checking. It can be part of a paragraph or several connected paragraphs.",
+      "aliases": [
+        "passages"
+      ]
+    },
+    {
+      "term": "source image",
+      "definition": "An image of the original printed page, or a recorded portion of that page, used to compare the printed words with machine-read text.",
+      "aliases": [
+        "source images",
+        "original scan",
+        "source scan",
+        "scan",
+        "scans",
+        "image",
+        "images"
+      ]
+    },
+    {
+      "term": "scan leaf",
+      "definition": "The numbered page image in the scanned volume. Its number can differ from the page number printed on the original paper.",
+      "aliases": [
+        "scan leaves",
+        "leaf"
+      ]
+    },
+    {
+      "term": "printed page",
+      "definition": "The page number printed on the original paper. It is distinct from the scanned-image number, which may also count covers and blank pages.",
+      "aliases": [
+        "printed pages",
+        "printed-page"
+      ]
+    },
+    {
+      "term": "printed text",
+      "definition": "The words and numbers visible on the original paper, as distinct from the machine-read text or a proposed corrected version.",
+      "aliases": [
+        "print"
+      ]
+    },
+    {
+      "term": "source citation",
+      "definition": "A reference telling you where to find the original passage or page. A precise citation makes a claim checkable; it does not automatically make it correct.",
+      "aliases": [
+        "citation",
+        "citations",
+        "archive page citation"
+      ]
+    },
+    {
+      "term": "paragraph hash",
+      "definition": "A fingerprint for the exact saved text of one paragraph. A matching fingerprint identifies the same text version, including any OCR errors.",
+      "aliases": [
+        "paragraph hashes",
+        "source paragraph hashes",
+        "raw hash"
+      ]
+    },
+    {
+      "term": "hash-bound",
+      "definition": "Connected to saved text or image bytes using a recorded fingerprint, so a different file or text version can be detected.",
+      "aliases": [
+        "hash-bound crop"
+      ]
+    },
+    {
+      "term": "metadata",
+      "definition": "Information describing a file or passage, such as its page number, source, format or recorded date. Each field needs its own stated basis.",
+      "aliases": [
+        "metadata receipt"
+      ]
+    },
+    {
+      "term": "receipt",
+      "definition": "A saved record that something was received or recorded, such as an image download or a submitted review. It is not a judgment that the content is correct.",
+      "aliases": [
+        "receipts",
+        "image receipt",
+        "info-receipt"
+      ]
+    },
+    {
+      "term": "IIIF",
+      "definition": "An image-sharing standard that lets a link request a full scanned page or a specific area of it. Here it is used to show the original print.",
+      "aliases": [
+        "IIIF metadata"
+      ]
+    },
+    {
+      "term": "URL",
+      "definition": "A web address pointing to a page or file. A source URL helps you open the material; it is different from a fingerprint of the saved file.",
+      "aliases": [
+        "URLs"
+      ]
+    },
+    {
+      "term": "UTF-8",
+      "definition": "A common way computers store text as bytes, including accented letters and other symbols. A file fingerprint refers to those exact stored bytes.",
+      "aliases": []
+    },
+    {
+      "term": "JSON",
+      "definition": "A plain-text format for saving named pieces of data and lists. A schema specifies what a particular JSON record must contain; the two are different things.",
+      "aliases": []
+    },
+    {
+      "term": "model",
+      "definition": "The AI system that produces a response from supplied text or images. A model answer is a proposal until its evidence and accuracy have been checked.",
+      "aliases": [
+        "models",
+        "language model",
+        "language models"
+      ]
+    },
+    {
+      "term": "AI",
+      "definition": "Artificial intelligence. Here it usually means software that generates a proposed answer or reading, which can still contain mistakes.",
+      "aliases": []
+    },
+    {
+      "term": "agent",
+      "definition": "The AI assistant doing project work, such as preparing evidence or checking results. Its judgment is not a substitute for your own answer.",
+      "aliases": [
+        "agents"
+      ]
+    },
+    {
+      "term": "input",
+      "definition": "The material supplied to a program or AI, such as the passage, instructions and source image. Missing input can change what the answer can support.",
+      "aliases": [
+        "inputs",
+        "source input"
+      ]
+    },
+    {
+      "term": "output",
+      "definition": "The answer or text produced by a program or AI, including responses later rejected. Producing an output does not mean it is correct.",
+      "aliases": [
+        "outputs",
+        "model output",
+        "model outputs",
+        "produced output"
+      ]
+    },
+    {
+      "term": "raw reply",
+      "definition": "The saved response exactly as the model returned it, before accepting, changing or interpreting it. A failed response is still retained.",
+      "aliases": [
+        "raw response",
+        "saved raw reply",
+        "model response",
+        "model responses"
+      ]
+    },
+    {
+      "term": "request",
+      "definition": "The particular material, instructions and settings sent to a program or AI for one response. Requests can be saved so later work is traceable.",
+      "aliases": [
+        "requests",
+        "frozen request",
+        "model request"
+      ]
+    },
+    {
+      "term": "prompt",
+      "definition": "The instructions given to an AI about what to do and how to answer. Changing the prompt can change the answer.",
+      "aliases": [
+        "prompts"
+      ]
+    },
+    {
+      "term": "settings",
+      "definition": "The recorded choices controlling a run, such as the selected model, time limit and maximum reply length. Matching text alone does not mean settings match.",
+      "aliases": [
+        "configuration",
+        "configurations"
+      ]
+    },
+    {
+      "term": "run",
+      "definition": "One recorded execution of a particular set of tasks with stated inputs, settings and limits. A run may stop with failures or unfinished work.",
+      "aliases": [
+        "runs"
+      ]
+    },
+    {
+      "term": "full run",
+      "definition": "Processing the entire agreed collection, rather than a small test. A limited review or test does not itself authorize this larger job.",
+      "aliases": [
+        "full-run",
+        "corpus-wide job",
+        "corpus-wide run"
+      ]
+    },
+    {
+      "term": "workflow",
+      "definition": "The sequence of steps used to prepare material, ask for answers, check them, save them and handle failures.",
+      "aliases": [
+        "workflows"
+      ]
+    },
+    {
+      "term": "batch",
+      "definition": "A group of passages or tasks processed together under stated limits. Completing a batch does not prove the method works for the whole collection.",
+      "aliases": [
+        "batches"
+      ]
+    },
+    {
+      "term": "sample",
+      "definition": "The particular example or group of examples selected for examination. A small selected sample may not represent the entire collection.",
+      "aliases": [
+        "samples"
+      ]
+    },
+    {
+      "term": "fixed selection",
+      "definition": "Examples chosen in advance and kept in the review, including failed or unavailable results. They are not replaced with better-looking examples.",
+      "aliases": [
+        "fixed sample",
+        "fixed examples"
+      ]
+    },
+    {
+      "term": "anonymized",
+      "definition": "With identifying information hidden. In these model reviews, the model name is hidden while you judge the proposed text.",
+      "aliases": []
+    },
+    {
+      "term": "blind review",
+      "definition": "A review that hides specified information to reduce its influence on the judgment. Source-only grading hides model answers; hiding names alone is a different kind of review.",
+      "aliases": [
+        "source-only"
+      ]
+    },
+    {
+      "term": "output-informed",
+      "definition": "You can see a proposed model answer while judging it. This differs from recording your own expectations before seeing the answer.",
+      "aliases": [
+        "output-informed review"
+      ]
+    },
+    {
+      "term": "AI-provisional",
+      "definition": "A working AI assessment that has not been confirmed by a human. It stays separate from an actual human judgment.",
+      "aliases": [
+        "AI-assessed",
+        "AI observations"
+      ]
+    },
+    {
+      "term": "complete-input",
+      "definition": "A check that all intended text and images reach the model. A saved plan is not enough if the actual request leaves material out.",
+      "aliases": [
+        "complete input",
+        "complete-input checks"
+      ]
+    },
+    {
+      "term": "proposal",
+      "definition": "A suggested answer, rule or text change that has not automatically been accepted. Displaying a proposal does not apply it to the original text.",
+      "aliases": [
+        "proposals",
+        "proposed changes",
+        "proposed change"
+      ]
+    },
+    {
+      "term": "proposed reading",
+      "definition": "A suggested version of the text, shown for comparison with the source. It is not automatically an accepted transcription.",
+      "aliases": [
+        "reading proposal",
+        "reading proposals"
+      ]
+    },
+    {
+      "term": "complete proposed reading",
+      "definition": "A full proposed text for the selected passage, rather than only a list of individual suggested changes. It still needs checking against the source.",
+      "aliases": []
+    },
+    {
+      "term": "transcription",
+      "definition": "A written rendering of the words on the original page. It may be made by a person or software; its accuracy still needs checking.",
+      "aliases": [
+        "transcriptions",
+        "transcript",
+        "transcripts",
+        "verified transcription",
+        "verified transcriptions"
+      ]
+    },
+    {
+      "term": "verbatim",
+      "definition": "Using the exact words as given, without rewriting them. Verbatim copying of OCR can still preserve OCR mistakes.",
+      "aliases": []
+    },
+    {
+      "term": "faithful",
+      "definition": "Matching what the original print says without changing its wording or meaning. Clearer or smoother writing alone is not enough.",
+      "aliases": [
+        "accept as faithful"
+      ]
+    },
+    {
+      "term": "repair",
+      "definition": "A correction to damaged or mistaken text. The source must support the correction; readability alone does not establish the original wording.",
+      "aliases": [
+        "repairs",
+        "wording repair",
+        "needs fixes"
+      ]
+    },
+    {
+      "term": "rejected",
+      "definition": "Not accepted under the stated check. A response can be rejected for a mechanical or formatting problem without every suggested word being historically wrong.",
+      "aliases": [
+        "invalid"
+      ]
+    },
+    {
+      "term": "accepted",
+      "definition": "Approved under a stated check or review. The desk should say whether approval came from software or a person; software approval alone is not historical verification.",
+      "aliases": []
+    },
+    {
+      "term": "applied",
+      "definition": "A decision or approved change has actually been incorporated into the project records. Merely showing a proposal does not mean it has been applied.",
+      "aliases": []
+    },
+    {
+      "term": "salvaged",
+      "definition": "Keeping or reusing selected parts of an otherwise rejected response. If nothing was salvaged, the visible suggestions were not used as accepted changes.",
+      "aliases": [
+        "salvage"
+      ]
+    },
+    {
+      "term": "unavailable",
+      "definition": "The selected result was not produced or cannot be supplied for this review. It is a missing result, not a passing or failing historical grade.",
+      "aliases": []
+    },
+    {
+      "term": "substitute",
+      "definition": "A different example or result used in place of the originally chosen one. The fixed review does not silently replace missing results this way.",
+      "aliases": [
+        "substitution"
+      ]
+    },
+    {
+      "term": "uncertainty",
+      "definition": "What the available evidence does not settle. The review should leave it visible rather than force a confident answer.",
+      "aliases": [
+        "uncertain",
+        "unclear"
+      ]
+    },
+    {
+      "term": "unreviewed",
+      "definition": "Not examined for the particular judgment being requested. No approval or rejection should be inferred from an unfinished review.",
+      "aliases": [
+        "unfinished sample",
+        "not reviewed"
+      ]
+    },
+    {
+      "term": "grading",
+      "definition": "Judging an answer or proposed reading using the stated criteria. A software format check is different from a person checking the historical source.",
+      "aliases": [
+        "grade",
+        "grades",
+        "human grading"
+      ]
+    },
+    {
+      "term": "criteria",
+      "definition": "The rules used to judge whether a result is acceptable, such as preserving names and numbers. They must be stated rather than silently assumed.",
+      "aliases": [
+        "criterion",
+        "standards"
+      ]
+    },
+    {
+      "term": "policy",
+      "definition": "A rule governing how the project handles a class of cases. Agreeing with one example is not necessarily agreement to a general rule.",
+      "aliases": [
+        "policies",
+        "policy decision"
+      ]
+    },
+    {
+      "term": "exploratory comparison",
+      "definition": "An investigation used to learn what happens, with conclusions kept tentative. It does not automatically satisfy final acceptance standards.",
+      "aliases": [
+        "exploratory"
+      ]
+    },
+    {
+      "term": "acceptance standards",
+      "definition": "The agreed requirements that must be met before a result or method is treated as acceptable for its stated use.",
+      "aliases": [
+        "human acceptance standards",
+        "human acceptance"
+      ]
+    },
+    {
+      "term": "review commitment",
+      "definition": "The amount and kind of checking you agree to do. It does not imply a promise to keep grading later examples or to approve a larger run.",
+      "aliases": [
+        "grading commitment"
+      ]
+    },
+    {
+      "term": "review round",
+      "definition": "One specifically requested set of review work. Completing it does not automatically commit you to another set.",
+      "aliases": [
+        "review rounds",
+        "additional review round"
+      ]
+    },
+    {
+      "term": "combined review limit",
+      "definition": "The maximum time for all the samples together, rather than that much time for each sample. You can stop earlier.",
+      "aliases": [
+        "hard combined limit",
+        "hard combined review limit"
+      ]
+    },
+    {
+      "term": "review packet",
+      "definition": "A saved set of questions and supporting material for you to examine. Registering it does not record a human answer.",
+      "aliases": [
+        "packet",
+        "packets"
+      ]
+    },
+    {
+      "term": "draft",
+      "definition": "Answers saved so you can return to them later. A draft has not been submitted as a completed review.",
+      "aliases": [
+        "save draft",
+        "saved draft"
+      ]
+    },
+    {
+      "term": "submit review",
+      "definition": "Send your answers as a recorded review for an agent to read and apply within their scope. Opening a definition does not submit anything.",
+      "aliases": [
+        "submitted"
+      ]
+    },
+    {
+      "term": "revision",
+      "definition": "A later recorded version of an answer or document. Earlier submitted answers remain preserved rather than silently overwritten.",
+      "aliases": [
+        "revisions",
+        "version"
+      ]
+    },
+    {
+      "term": "pending",
+      "definition": "Still waiting for the relevant action, such as your review or an agent applying it. A pending website entry may already have been answered in chat.",
+      "aliases": []
+    },
+    {
+      "term": "history",
+      "definition": "Saved earlier reviews and decisions. These are records to consult, not a request to answer the same questions again.",
+      "aliases": []
+    },
+    {
+      "term": "reviewer ID",
+      "definition": "The name or label you enter to identify your review. It is not a password or proof of your historical expertise.",
+      "aliases": [
+        "reviewer"
+      ]
+    },
+    {
+      "term": "supporting evidence",
+      "definition": "The particular words, images or records offered to justify an answer. Check that they support that answer, not merely a related topic.",
+      "aliases": [
+        "supporting text"
+      ]
+    },
+    {
+      "term": "source-span",
+      "definition": "A specific stretch of original text identified within its source paragraph or passage. It must preserve the exact words and source reference.",
+      "aliases": [
+        "source span",
+        "source spans",
+        "source-span checks",
+        "span",
+        "spans"
+      ]
+    },
+    {
+      "term": "offset",
+      "definition": "A position counted from the beginning of a specified text. For text evidence here, positions count Unicode characters, not printed page numbers.",
+      "aliases": [
+        "offsets",
+        "character positions",
+        "character position"
+      ]
+    },
+    {
+      "term": "provenance record",
+      "definition": "The saved details connecting material to its origin, versions and processing steps. It helps reconstruct what was actually shown or changed.",
+      "aliases": []
+    },
+    {
+      "term": "index",
+      "definition": "Here, a list of names or subjects followed by page references. The numbers point to other pages; they are not necessarily years.",
+      "aliases": [
+        "index entry",
+        "index entries"
+      ]
+    },
+    {
+      "term": "tariff",
+      "definition": "A tax on goods imported into a country. A speaker may support or oppose a tariff; the definition does not judge that argument.",
+      "aliases": [
+        "tariffs"
+      ]
+    },
+    {
+      "term": "prohibitory tariff",
+      "definition": "A tariff described as high enough to discourage or prevent imports. The phrase alone does not prove that a particular tariff had that effect.",
+      "aliases": [
+        "prohibitive tariff",
+        "prohibitory"
+      ]
+    },
+    {
+      "term": "duty",
+      "definition": "In a tariff discussion, a tax charged on goods. Elsewhere the same word can mean a responsibility; the surrounding passage determines the meaning.",
+      "aliases": [
+        "duties",
+        "import duty",
+        "import duties"
+      ]
+    },
+    {
+      "term": "imports",
+      "definition": "Goods brought into a country from abroad, or the act of bringing them in. This is different from goods sent out of the country.",
+      "aliases": [
+        "imported"
+      ]
+    },
+    {
+      "term": "revenue",
+      "definition": "Money received by a government, often from taxes or duties. The definition does not verify any particular amount claimed in a speech.",
+      "aliases": []
+    },
+    {
+      "term": "per cent",
+      "definition": "An older spelling of percent: an amount out of every hundred. For example, fifty per cent means fifty out of a hundred.",
+      "aliases": [
+        "percent"
+      ]
+    },
+    {
+      "term": "broom corn",
+      "definition": "A type of sorghum grown for its long, branched fibers, which are used to make brooms. It is not ordinary maize grown for eating.",
+      "aliases": [
+        "broomcorn"
+      ]
+    },
+    {
+      "term": "tub to the whale",
+      "definition": "An old expression for a distraction that draws attention away from a larger issue. Explaining the expression does not establish whether the speaker is right.",
+      "aliases": [
+        "tub to a whale",
+        "thrown a tub to the whale"
+      ]
+    },
+    {
+      "term": "the hammer fell",
+      "definition": "A printed stage direction referring to the presiding officer’s gavel. It can mark a procedural signal, such as the end of a speaking turn; the surrounding passage supplies its meaning.",
+      "aliases": [
+        "here the hammer fell"
+      ]
+    },
+    {
+      "term": "bill",
+      "definition": "In congressional proceedings, a proposal to create, change or repeal a law. A bill being discussed is not necessarily an enacted law.",
+      "aliases": [
+        "bills"
+      ]
+    },
+    {
+      "term": "amendment",
+      "definition": "A proposed change to a bill or other text. A statement that an amendment was not agreed to means that proposed change was not adopted.",
+      "aliases": [
+        "amendments"
+      ]
+    },
+    {
+      "term": "committee",
+      "definition": "A smaller group of legislators assigned to consider particular subjects or carry out specific work for their chamber.",
+      "aliases": [
+        "committees"
+      ]
+    },
+    {
+      "term": "appropriation",
+      "definition": "Legislative provision of public money for a specified purpose. It concerns permission to spend funds, not proof that every listed payment occurred.",
+      "aliases": [
+        "appropriations",
+        "ap- propriations"
+      ]
+    },
+    {
+      "term": "fortifications",
+      "definition": "Defensive structures or works, such as forts. An index entry about them points to discussion elsewhere in the volume.",
+      "aliases": [
+        "fortification"
+      ]
+    },
+    {
+      "term": "pension",
+      "definition": "A payment made under stated eligibility rules, often for military service, disability or a dependent. A proposed pension is not proof that someone received it.",
+      "aliases": [
+        "pensions"
+      ]
+    },
+    {
+      "term": "resolution",
+      "definition": "A formal proposal for action or a statement by a legislative body. Its legal effect depends on the kind of resolution and what was adopted.",
+      "aliases": [
+        "resolutions"
+      ]
+    },
+    {
+      "term": "proceeding",
+      "definition": "The recorded business of a legislative body, including speeches, motions and votes. Nearby proceedings may concern different subjects or speakers.",
+      "aliases": [
+        "proceedings"
+      ]
+    },
+    {
+      "term": "chamber",
+      "definition": "One of the two houses of Congress—the House of Representatives or the Senate—or the room where that body meets.",
+      "aliases": [
+        "chambers"
+      ]
+    },
+    {
+      "term": "adjournment",
+      "definition": "The ending of a legislative meeting or session. It marks a proceeding boundary but does not by itself supply a date.",
+      "aliases": [
+        "adjourned",
+        "adjourn"
+      ]
+    },
+    {
+      "term": "Clerk",
+      "definition": "An official who handles legislative records and procedural duties. The title alone does not always identify the particular person holding it.",
+      "aliases": [
+        "clerks"
+      ]
+    },
+    {
+      "term": "habeas corpus",
+      "definition": "A legal procedure for asking a court to review whether a person is being held lawfully. Here the whole phrase has this meaning, unlike the project term corpus.",
+      "aliases": []
+    },
+    {
+      "term": "importers",
+      "definition": "People or businesses that bring goods into a country from abroad. Their statements in a speech still need to be checked against the source.",
+      "aliases": [
+        "importer"
+      ]
+    },
+    {
+      "term": "synthetic",
+      "definition": "Made up for a test or demonstration. A synthetic passage is not an original historical source and cannot become a historical label.",
+      "aliases": [
+        "artificial"
+      ]
+    },
+    {
+      "term": "scope",
+      "definition": "The particular material, question and limits covered by a task or decision. Approval within one scope does not automatically apply to other work.",
+      "aliases": []
+    },
+    {
+      "term": "bounded",
+      "definition": "Limited in advance, for example by the number of examples, requests, minutes or permitted actions. Unused capacity is not permission to expand the work.",
+      "aliases": []
+    },
+    {
+      "term": "cumulative",
+      "definition": "Added together across the stated group or period, including earlier counted work. Restarting does not make already-used time or requests disappear.",
+      "aliases": []
+    },
+    {
+      "term": "frozen hash order",
+      "definition": "An order fixed in advance using recorded fingerprints. It keeps selection consistent; it is not a ranking of which answers are better.",
+      "aliases": []
+    },
+    {
+      "term": "pre-output",
+      "definition": "Recorded before the new model answer was seen. This timing alone does not establish whether the observation is accurate.",
+      "aliases": []
+    },
+    {
+      "term": "source observation",
+      "definition": "A recorded note about what someone or an AI sees in source material. The record must say who checked it and what remains uncertain.",
+      "aliases": [
+        "source observations",
+        "source observation record"
+      ]
+    },
+    {
+      "term": "franking privilege",
+      "definition": "Permission, under specified rules, to send certain mail without the sender paying ordinary postage. Who had this permission and what mail it covered depended on the law at the time.",
+      "aliases": []
+    },
+    {
+      "term": "House measure number",
+      "definition": "An identifying number for legislation from the House of Representatives. In these old index entries, read the printed prefix with the nearby word bill or resolution; the prefix alone does not show the measure’s type or whether it became law.",
+      "aliases": [
+        "H. R. No.",
+        "H.R. No."
+      ]
+    },
+    {
+      "term": "Senate measure number",
+      "definition": "An identifying number for legislation from the Senate. Read the prefix with the surrounding entry to identify the measure; its number alone does not show whether it became law.",
+      "aliases": [
+        "S. No."
+      ]
+    },
+    {
+      "term": "mere blind",
+      "definition": "In this historical expression, a distraction or pretext that hides the real purpose. It is unrelated to the project’s phrase blind review. The definition explains the speaker’s expression without endorsing the claim.",
+      "aliases": []
     }
   ]
 }

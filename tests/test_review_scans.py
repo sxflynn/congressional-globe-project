@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import pytest
+from lxml import html
 from test_review_app import _app, _store
 
 from congressional_globe.review_scans import scan_disclosure, scan_image_url
@@ -61,5 +62,6 @@ def test_passage_precedes_inline_scan_and_source_tab_removed(tmp_path, monkeypat
     assert not app.exception
     assert app.radio[0].options == ["Pending", "Submitted", "History"]
     rendered = "\n".join(item.value for item in app.markdown)
-    assert rendered.index("Text before image.") < rendered.index("Show original scan")
+    visible_text = html.fragment_fromstring(rendered, create_parent="div").text_content()
+    assert visible_text.index("Text before image.") < visible_text.index("Show original scan")
     assert 'target="_blank"' in rendered

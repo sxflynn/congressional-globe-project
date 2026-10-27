@@ -10,7 +10,13 @@ from typing import Any
 
 import streamlit as st
 
-from congressional_globe.review_glossary import show_option_definitions, show_text, styles
+from congressional_globe.review_glossary import (
+    annotated_html,
+    definitions,
+    show_option_definitions,
+    show_text,
+    styles,
+)
 from congressional_globe.review_scans import show_inline_scan
 from congressional_globe.review_store import ReviewStore
 
@@ -118,9 +124,13 @@ def _show_packet(
     reviewer_default: str = "",
 ) -> None:
     packet_id, version = _value(packet, "id"), _value(packet, "version")
-    st.subheader(_value(packet, "title"))
-    st.caption(f"{packet_id} · version {version}" + (" · revision" if revision else ""))
     glossary = _value(packet, "glossary", [])
+    _packet_heading(str(_value(packet, "title")), f"{packet_id}-{version}-title", glossary)
+    show_text(
+        f"{packet_id} · version {version}" + (" · revision" if revision else ""),
+        f"{packet_id}-{version}-version",
+        glossary,
+    )
     show_text(str(_value(packet, "instructions")), f"{packet_id}-{version}-instructions", glossary)
     st.caption("Tap a dotted-underlined term for its definition. Close it to keep reading.")
     reviewer = _reviewer(packet_id, version, store, revision_id, revision, reviewer_default)
@@ -132,6 +142,16 @@ def _show_packet(
     answers, save, submit = _review_form(packet, questions, baseline, key_prefix, revision)
     if save or submit:
         _save_result(store, packet, reviewer, answers, submit, revision)
+
+
+def _packet_heading(text: str, scope: str, glossary: list[dict]) -> None:
+    content = annotated_html(text, definitions(glossary), scope)
+    st.markdown(
+        '<div role="heading" aria-level="3" class="glossary-copy" '
+        'style="font-size:1.4rem;font-weight:600;line-height:1.35">'
+        f"{content}</div>",
+        unsafe_allow_html=True,
+    )
 
 
 def _reviewer(
