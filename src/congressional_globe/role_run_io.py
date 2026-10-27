@@ -9,7 +9,11 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from congressional_globe.role_aliases import prepare_aliases
+from congressional_globe.metadata_results import (
+    MetadataContract,
+    metadata_schema,
+    verify_metadata_packet,
+)
 
 
 class RunOptions(BaseModel):
@@ -19,6 +23,7 @@ class RunOptions(BaseModel):
     provider: Literal["openai", "ollama"]
     model: str = Field(min_length=1)
     base_url: str
+    contract: MetadataContract = "role-v1"
     cases: list[str] = Field(default_factory=list)
     limit: int = Field(default=6, ge=1, le=6)
     timeout: float = Field(default=120, gt=0, le=120)
@@ -40,23 +45,38 @@ def write_json(path: Path, value: object) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
 
 
-def read_prepared(options: RunOptions) -> tuple[list[dict], str, dict, dict]:
+def read_prepared(options: RunOptions) -> tuple[list[dict], str, dict, dict, dict]:
     base = options.prepared
     manifest = _Manifest.model_validate_json((base / "manifest.json").read_text())
+    _required_files(manifest)
     for filename, expected in manifest.files_sha256.items():
         _verify_file(base, filename, expected)
     _verify_review(base)
     packets = _read_jsonl(base / "provider-inputs.jsonl")
     frozen = _read_jsonl(base / "frozen-inputs.jsonl")
-    _verify_packets(packets, frozen)
+    _verify_packets(packets, frozen, options.contract)
     packets = select_cases(packets, options.cases, options.limit)
-    hashes = {**manifest.files_sha256, "source-review.json": digest(base / "source-review.json")}
+    schema = json.loads((base / "output.schema.json").read_text())
+    if schema != metadata_schema(options.contract):
+        raise ValueError("Prepared output schema does not match selected contract")
+    hashes = {
+        **manifest.files_sha256,
+        "source-review.json": digest(base / "source-review.json"),
+        "checks.json": digest(base / "checks.json"),
+    }
     return (
         packets,
         (base / "prompt.txt").read_text(),
-        json.loads((base / "output.schema.json").read_text()),
+        schema,
         hashes,
+        {row["window_id"]: row for row in frozen},
     )
+
+
+def _required_files(manifest: _Manifest) -> None:
+    required = {"provider-inputs.jsonl", "frozen-inputs.jsonl", "prompt.txt", "output.schema.json"}
+    if not required <= manifest.files_sha256.keys():
+        raise ValueError("Prepared manifest is missing required file hashes")
 
 
 def _verify_file(base: Path, filename: str, expected: str) -> None:
@@ -74,12 +94,11 @@ def _read_jsonl(path: Path) -> list[dict]:
     return [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
 
 
-def _verify_packets(packets: list[dict], frozen: list[dict]) -> None:
+def _verify_packets(packets: list[dict], frozen: list[dict], contract: MetadataContract) -> None:
     if not 1 <= len(packets) <= 6:
         raise ValueError("Expected one to six frozen diagnostic inputs")
     for packet, row in zip(packets, frozen, strict=True):
-        if prepare_aliases(row)["input"] != packet:
-            raise ValueError("Short packet does not match validated raw source")
+        verify_metadata_packet(packet, row, contract)
 
 
 def select_cases(packets: list[dict], cases: list[str], limit: int) -> list[dict]:
@@ -108,6 +127,9 @@ def run_config(options: RunOptions, hashes: dict, packets: list[dict]) -> dict:
         "role_run_store.py",
         "role_run_io.py",
         "role_runner.py",
+        "metadata_results.py",
+        "role_v2.py",
+        "scoped_dates.py",
     )
     return {
         **fields,

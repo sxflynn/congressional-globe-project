@@ -19,7 +19,12 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from congressional_globe.role_aliases import validate_alias_result
+from congressional_globe.metadata_results import (
+    MetadataContract,
+    mapped_metadata,
+    packet_text,
+    validated_metadata,
+)
 from congressional_globe.role_provider import RoleProvider
 from congressional_globe.role_run_io import (
     RunOptions,
@@ -96,12 +101,19 @@ def _wait_call(
         return future.result()
 
 
-def _parse_result(response: dict, packet: dict) -> tuple[str, dict]:
+def _parse_result(
+    response: dict, packet: dict, frozen: dict, contract: MetadataContract
+) -> tuple[str, dict]:
     if response["status"] != "completed" or response["finish_reason"] == "length":
         return "invalid", {"validation_error": "Provider response incomplete or refused"}
     try:
-        parsed = validate_alias_result(json.loads(response["output_text"]), packet)
-        return "valid", {"role_proposals": parsed, "validation_scope": "schema/reference only"}
+        parsed = json.loads(response["output_text"])
+        validated = validated_metadata(parsed, packet, contract)
+        return "valid", {
+            **validated,
+            "source_mapped_proposals": mapped_metadata(parsed, packet, frozen, contract),
+            "validation_scope": "host contract/source bindings; historical accuracy unreviewed",
+        }
     except ValueError as error:
         return "invalid", {"validation_error": str(error)}
 
@@ -114,11 +126,13 @@ def _attempt(
     output: Path,
     store: RoleRunStore,
     started: float,
+    frozen: dict,
+    contract: MetadataContract,
 ) -> tuple[str, dict]:
     tick = time.monotonic()
     try:
         response = _wait_call(caller, packet, prompt, schema, output, store, started)
-        status, validation = _parse_result(response, packet)
+        status, validation = _parse_result(response, packet, frozen, contract)
         result = {**response, **validation}
     except Exception as error:
         status = "unresolved"
@@ -140,6 +154,8 @@ def _call_one(
     output: Path,
     store: RoleRunStore,
     started: float,
+    frozen: dict,
+    contract: MetadataContract,
 ) -> str:
     attempt_id = store.start(packet["window_id"])
     _event(
@@ -147,10 +163,12 @@ def _call_one(
         "request_started",
         window_id=packet["window_id"],
         attempt_id=attempt_id,
-        input_text=packet["raw_text"],
+        input_text=packet_text(packet, contract),
         **_progress(store, started),
     )
-    status, result = _attempt(caller, packet, prompt, schema, output, store, started)
+    status, result = _attempt(
+        caller, packet, prompt, schema, output, store, started, frozen, contract
+    )
     store.finish(attempt_id, result, status)
     _event(
         output,
@@ -171,11 +189,12 @@ def _work(
     prompt: str,
     schema: dict,
     config: dict,
+    sources: dict,
 ) -> dict:
     started = time.monotonic()
     store = RoleRunStore(options.output / "jobs.sqlite", config, packets)
     try:
-        return _work_store(options, caller, prompt, schema, store, started)
+        return _work_store(options, caller, prompt, schema, store, started, sources)
     finally:
         store.close()
 
@@ -187,6 +206,7 @@ def _work_store(
     schema: dict,
     store: RoleRunStore,
     started: float,
+    sources: dict,
 ) -> dict:
     _require_no_unknown(store)
     _event(options.output, "worker_started", pid=os.getpid(), **_progress(store, started))
@@ -194,14 +214,45 @@ def _work_store(
     while packet is not None:
         if time.monotonic() - started + options.timeout > options.max_seconds:
             break
-        status = _call_one(caller, packet, prompt, schema, options.output, store, started)
+        status = _call_one(
+            caller,
+            packet,
+            prompt,
+            schema,
+            options.output,
+            store,
+            started,
+            sources[packet["window_id"]],
+            options.contract,
+        )
         if status != "valid":
             break
         packet = store.next_pending()
     summary = _summary(store, options.provider)
     write_json(options.output / "summary.json", summary)
+    write_json(options.output / "proposals.json", _proposal_export(summary, options.contract))
     _event(options.output, "worker_stopped", summary=summary, **_progress(store, started))
     return summary
+
+
+def _proposal_export(summary: dict, contract: MetadataContract) -> dict:
+    return {
+        "contract": contract,
+        "historical_status": "proposal_only_not_human_reviewed",
+        "results": [_proposal_row(row) for row in summary["results"]],
+        "raw_results": "summary.json and jobs.sqlite retain raw provider responses and usage",
+    }
+
+
+def _proposal_row(row: dict) -> dict:
+    result = row["result"]
+    return {
+        "window_id": row["window_id"],
+        "status": row["status"],
+        "source_mapped_proposals": result.get("source_mapped_proposals"),
+        "validation_error": result.get("validation_error"),
+        "error": result.get("error"),
+    }
 
 
 def _require_no_unknown(store: RoleRunStore) -> None:
@@ -242,7 +293,7 @@ def _cost_one(usage: dict | None) -> float | None:
 
 
 def execute(options: RunOptions, live: bool = False, caller: Caller | None = None) -> dict:
-    packets, prompt, schema, hashes = read_prepared(options)
+    packets, prompt, schema, hashes, sources = read_prepared(options)
     envelope = sum(reservation(p, prompt, schema, options) for p in packets)
     if envelope > options.budget_usd:
         raise ValueError("Conservative token-cost planning envelope exceeds POC budget")
@@ -250,7 +301,7 @@ def execute(options: RunOptions, live: bool = False, caller: Caller | None = Non
     if not live:
         return {"mode": "offline plan", "config": config, "planning_cost_envelope_usd": envelope}
     with _exclusive(options.output):
-        return _execute_live(options, caller, packets, prompt, schema, config, envelope)
+        return _execute_live(options, caller, packets, prompt, schema, config, envelope, sources)
 
 
 def _execute_live(
@@ -261,6 +312,7 @@ def _execute_live(
     schema: dict,
     config: dict,
     envelope: float,
+    sources: dict,
 ) -> dict:
     _event(
         options.output,
@@ -280,7 +332,7 @@ def _execute_live(
             options.timeout,
             options.max_output_tokens,
         ).call
-    return _work(options, caller, packets, prompt, schema, config)
+    return _work(options, caller, packets, prompt, schema, config, sources)
 
 
 def _public_argv() -> list[str]:
@@ -295,6 +347,9 @@ def main() -> None:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--provider", choices=["openai", "ollama"], required=True)
     parser.add_argument("--model", required=True)
+    parser.add_argument(
+        "--contract", choices=["role-v1", "role-v2", "scoped-date-v1"], default="role-v1"
+    )
     parser.add_argument("--base-url")
     parser.add_argument("--case", action="append", dest="cases", default=[])
     parser.add_argument("--limit", type=int, default=6)

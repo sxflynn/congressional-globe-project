@@ -1,0 +1,30 @@
+{
+  "statuses": {
+    "error": 0,
+    "unresolved": 0,
+    "pending": 0,
+    "valid": 0,
+    "invalid": 1,
+    "inflight": 0
+  },
+  "attempts": 1,
+  "results": [
+    {
+      "window_id": "house-opening-december-4-1865-v1",
+      "status": "invalid",
+      "result": {
+        "elapsed_seconds": 0.0,
+        "finish_reason": null,
+        "output_text": "{\"dates\": [{\"target_ids\": [\"P1\", \"P2\"], \"value\": null, \"date_kind\": \"none\", \"context_kind\": \"unknown\", \"status\": \"unknown\", \"method\": \"no_supported_date\", \"evidence\": [], \"alternatives\": [], \"unknowns\": [\"No supported date in this bounded scope.\"], \"basis\": \"Frozen raw-text diagnostic; not a human label.\"}, {\"target_ids\": [\"P1\", \"P2\", \"P3\", \"P4\", \"P5\", \"P6\"], \"value\": {\"start\": \"1865-12-04\", \"end\": \"1865-12-04\", \"precision\": \"day\", \"extent\": \"point\"}, \"date_kind\": \"explicit\", \"context_kind\": \"proceeding\", \"status\": \"proposed\", \"method\": \"explicit_text\", \"evidence\": [{\"paragraph_id\": \"P3\", \"raw_sha256\": \"3c5d292b3b691dc82d4232da79bab3d1dd4ffce1943ab1e7a0c042e1eabbaa38\", \"start\": 26, \"end\": 50, \"quote\": \"Monday, December 4, 1865\"}], \"alternatives\": [], \"unknowns\": [\"OCR and printed layout not image-certified; continuation after P6 untested.\"], \"basis\": \"Frozen House-opening date in P3; bounded roll-call context through P6 only.\"}]}",
+        "provider_request_id": "offline-fixture",
+        "raw_response": "{\"fixture_output\": {\"dates\": [{\"target_ids\": [\"P1\", \"P2\"], \"value\": null, \"date_kind\": \"none\", \"context_kind\": \"unknown\", \"status\": \"unknown\", \"method\": \"no_supported_date\", \"evidence\": [], \"alternatives\": [], \"unknowns\": [\"No supported date in this bounded scope.\"], \"basis\": \"Frozen raw-text diagnostic; not a human label.\"}, {\"target_ids\": [\"P1\", \"P2\", \"P3\", \"P4\", \"P5\", \"P6\"], \"value\": {\"start\": \"1865-12-04\", \"end\": \"1865-12-04\", \"precision\": \"day\", \"extent\": \"point\"}, \"date_kind\": \"explicit\", \"context_kind\": \"proceeding\", \"status\": \"proposed\", \"method\": \"explicit_text\", \"evidence\": [{\"paragraph_id\": \"P3\", \"raw_sha256\": \"3c5d292b3b691dc82d4232da79bab3d1dd4ffce1943ab1e7a0c042e1eabbaa38\", \"start\": 26, \"end\": 50, \"quote\": \"Monday, December 4, 1865\"}], \"alternatives\": [], \"unknowns\": [\"OCR and printed layout not image-certified; continuation after P6 untested.\"], \"basis\": \"Frozen House-opening date in P3; bounded roll-call context through P6 only.\"}]}}",
+        "status": "completed",
+        "usage": null,
+        "validation_error": "date scope crosses a host-declared boundary"
+      }
+    }
+  ],
+  "api_cost_usd_estimate": null,
+  "quality": "Schema/reference validity only; semantic/human review pending",
+  "recovery": "No automatic retries; unknown outcomes block resume"
+}
