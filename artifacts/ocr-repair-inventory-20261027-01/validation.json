@@ -1,0 +1,28 @@
+{
+  "task": "T47",
+  "checks": {
+    "explicit_file_hashes": true,
+    "explicit_files_at_most20": true,
+    "five_parts": true,
+    "paragraph_projections_at_most100": true,
+    "word_counts": true,
+    "indexed_image_hashes": true,
+    "reused_image_hash": true,
+    "raw_reply_hashes": true,
+    "terminal_summary_parity": true,
+    "attempt_status_counts": true,
+    "prior_links_count": true,
+    "vocabulary_identity": true,
+    "six_saved_pairs_replay": true,
+    "scope_breach_disclosed": true,
+    "local_file_links": true
+  },
+  "check_count": 15,
+  "all_passed": true,
+  "session_scope_compliant": false,
+  "scope_exception": "Accidental broad rg search disclosed; explicit inventory bounds only are mechanically checked.",
+  "missing_links": [],
+  "last_full_code_gate": "T44,643tests; documentation-only unit; not rerun",
+  "provider_calls": 0,
+  "source_fetches": 0
+}
