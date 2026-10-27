@@ -1,0 +1,129 @@
+[
+  {
+    "id": "name",
+    "query": "McPherson",
+    "expected_paragraphs": [
+      "P3"
+    ],
+    "expected_occurrences": [
+      {
+        "alias": "P3",
+        "start": 267,
+        "end": 276,
+        "quote": "McPherson"
+      }
+    ]
+  },
+  {
+    "id": "date",
+    "query": "December 4, 1865",
+    "expected_paragraphs": [
+      "P3"
+    ],
+    "expected_occurrences": [
+      {
+        "alias": "P3",
+        "start": 34,
+        "end": 50,
+        "quote": "December 4, 1865"
+      }
+    ]
+  },
+  {
+    "id": "number",
+    "query": "1865",
+    "expected_paragraphs": [
+      "P3"
+    ],
+    "expected_occurrences": [
+      {
+        "alias": "P3",
+        "start": 46,
+        "end": 50,
+        "quote": "1865"
+      }
+    ]
+  },
+  {
+    "id": "senate",
+    "query": "Senate adjourned",
+    "expected_paragraphs": [
+      "P2"
+    ],
+    "expected_occurrences": [
+      {
+        "alias": "P2",
+        "start": 35,
+        "end": 51,
+        "quote": "Senate adjourned"
+      }
+    ]
+  },
+  {
+    "id": "repeated",
+    "query": "House",
+    "expected_paragraphs": [
+      "P3",
+      "P4"
+    ],
+    "expected_occurrences": [
+      {
+        "alias": "P3",
+        "start": 154,
+        "end": 159,
+        "quote": "House"
+      },
+      {
+        "alias": "P3",
+        "start": 297,
+        "end": 302,
+        "quote": "House"
+      },
+      {
+        "alias": "P4",
+        "start": 109,
+        "end": 114,
+        "quote": "House"
+      }
+    ]
+  },
+  {
+    "id": "absent",
+    "query": "Freedmen",
+    "expected_paragraphs": [],
+    "expected_occurrences": []
+  },
+  {
+    "id": "raw-split",
+    "query": "Constitution",
+    "expected_paragraphs": [],
+    "expected_occurrences": []
+  },
+  {
+    "id": "literal-split",
+    "query": "Consti- tution",
+    "expected_paragraphs": [
+      "P3"
+    ],
+    "expected_occurrences": [
+      {
+        "alias": "P3",
+        "start": 89,
+        "end": 103,
+        "quote": "Consti- tution"
+      }
+    ]
+  },
+  {
+    "id": "case",
+    "query": "mcpherson",
+    "expected_paragraphs": [],
+    "expected_occurrences": []
+  },
+  {
+    "id": "cross-paragraph",
+    "query": "adjourned. HOUSE",
+    "expected_paragraphs": [],
+    "expected_occurrences": []
+  }
+]

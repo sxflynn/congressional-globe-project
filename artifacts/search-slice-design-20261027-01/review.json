@@ -1,0 +1,17 @@
+{
+  "reviewer": "gpt-6-luna",
+  "scope": "Bounded preparation review; not human-run adoption verdict",
+  "findings": [
+    "Specify overlapping match behavior",
+    "Specify first-N cap versus pagination",
+    "Define exact collection fingerprint bytes and trusted value",
+    "Confirm page-to-leaf mapping before URL acceptance"
+  ],
+  "resolution": [
+    "Overlapping occurrences count; advance one codepoint",
+    "First N only; no pagination/offset/cursor",
+    "SHA-256 exact paragraphs.json bytes pinned in manifest; changed manifest not silently accepted",
+    "Mapping remains explicit pre-acceptance check; URL marked unverified until confirmed"
+  ],
+  "query_count_correction": "Reviewer final said six queries; actual fixture has ten queries over six paragraphs; inspected directly."
+}
