@@ -82,7 +82,7 @@ States: **READY** actionable/unclaimed; **ACTIVE** owned; **BLOCKED** named depe
 
 | Task / parent | Owner / paths | Bounds and checkpoint | Next action |
 | --- | --- | --- | --- |
-| None | No active owner | T44 completes bounded source-mapped static search; full gate643 | Broader T34 needs compatible AI-clean evidence and reviewed criteria; T15 remains PLANNED. No model calls authorized. |
+| None | No active owner | T45 captured the human OCR-repair/scoring discussion in HUMAN_DIALOGUE.md | Dialogue remains open; no new sample/model/scoring run authorized and no final cleanup policy selected. |
 
 Before model work add actual PID/start time/full command, run/config hashes, budgets, journal path and checkpoint here. No owned model worker is carried forward; historical process observations must be rechecked before worker actions.
 
@@ -124,6 +124,8 @@ T21 recommends deferring the current limited neighbor-tool prototype. The existi
 | **T27 BLOCKED on T26 terminal evidence** benefit and adoption decision | **M2.5/M6 support:** compare matched outcomes and total work; recommend current path, deterministic enrichment or optional agent path. | T21 criteria, T25 manifest, T26 terminal results and actual reviewed expectations. | Report supported corrections, new errors, appropriate unknowns, unchanged cases, elapsed/calls/tokens/review effort and integration burden; document stop/adopt/defer with scope/limits. Missing human judgments stay unresolved. Further implementation gets separately bounded tasks only if warranted; no automatic requirement for another experiment or full-run authorization. |
 
 ### Completed execution-task history
+
+T45 DONE / M5.1,P0 planning support: [Human dialogue notes](HUMAN_DIALOGUE.md) capture the explicit request to steer efficacy measurement toward deterministic detection/repair with image-AI fallback, random sampling, dictionaries/names/places, number verification and validated page/local risk scoring. Human proposals, assistant suggestions and unresolved decisions are distinguished. Notes only; no sample, scoring/model run, review expansion or final policy authorized. M5/P0 states unchanged.
 
 T43 DONE / T34 preparation, M5.2/P0: [six pairs and limits](artifacts/raw-clean-readiness-20261027-01/README.md), one changed paragraph/two saved edits replay exactly;12literal query outcomes show mechanical differences. Named primary36requests+4reuse records/150unique sources contain zero matching clean sources; absence scope bounded. Static offsets explicitly not raw citations; T44 was then READY for derived mapping and is now complete. No model calls, new labels, historical grade or completed raw/static/clean evaluation. At T43 completion M5.2 remained PLANNED; T44 now advances it to PARTIAL. P0-C stays partial and other P0 gaps are unchanged.
 
@@ -194,6 +196,8 @@ Reading/TTS remains part of P0 scope: the primary comparison exposes fidelity/ma
 - Keep Ollama sequential. Full-corpus processing, model downloads and recurring jobs are not authorized. Review desk is intentionally an unauthenticated single-user LAN tool; do not reintroduce auth without a changed human deployment request.
 
 ## Human decisions
+
+The 2026-10-27 [OCR-repair dialogue](HUMAN_DIALOGUE.md) records the human’s desired investigation direction and open design questions. The human requested discussion before final decisions, then explicitly authorized taking notes. This is not a final P0 policy, a changed review allowance or full-corpus/model-run authorization.
 
 At startup consume new inbox answers without waiting for chat notification. These are the current decision states; [HUMAN_REVIEW.md](HUMAN_REVIEW.md) gives the human interface and archive links. Full H1–H6 rules and immutable submission/application procedure: [review protocol](docs/reference/human-review-protocol.md).
 
