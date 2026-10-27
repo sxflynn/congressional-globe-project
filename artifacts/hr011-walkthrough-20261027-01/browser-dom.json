@@ -1,0 +1,113 @@
+{
+  "images": [
+    {
+      "src": "http://127.0.0.1:8501/media/0b4d53a09a24c1b59469c84872930dd7.jpg",
+      "naturalWidth": 1012,
+      "width": 672
+    },
+    {
+      "src": "http://127.0.0.1:8501/media/3c6ec7a891bdb7d0c0a4c7157b0831a3.jpg",
+      "naturalWidth": 90,
+      "width": 270
+    }
+  ],
+  "help": 139,
+  "plain": [
+    {
+      "cls": "glossary-copy source-card glossary-source",
+      "text": "This is a real saved source crop, not a generated image. The petition sits between nearby printed lines, which provide context. Compare its count with the raw OCR below. You can open the full source page or enlarge the image.source cropA small image cut from an original scanned page. Its recorded page and position connect it to the text being checked.Close definitionsource imageAn image of the original printed page, or a recorded portion of that page, used to compare the printed words with machine-read text.Close definitioncontextSurrounding text and other information supplied with a passage. It can help interpretation but must not be used to invent missing wording.Close definitionraw OCRThe original machine-read text, preserved exactly as collected, including its errors.Close definitionsourceThe original material being checked, such as a printed page or its saved image. A proposed AI answer is separate from that original material.Close definitionsource imageAn image of the original printed page, or a recorded portion of that page, used to compare the printed words with machine-read text.Close definition",
+      "buttons": 12
+    },
+    {
+      "cls": "glossary-copy source-card glossary-source",
+      "text": "This smaller source crop shows the count more clearly. It comes from the same page and same source paragraph; it is not a different example.source cropA small image cut from an original scanned page. Its recorded page and position connect it to the text being checked.Close definitionsource paragraphThe particular paragraph from the original material. Nearby paragraphs provide context but are not interchangeable with the paragraph being checked.Close definition",
+      "buttons": 4
+    },
+    {
+      "cls": "glossary-copy source-card glossary-source",
+      "text": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American",
+      "buttons": 0
+    },
+    {
+      "cls": "review-source-text",
+      "text": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American",
+      "buttons": 0
+    },
+    {
+      "cls": "glossary-copy source-card glossary-source",
+      "text": "The AI receives the source image and a short label identifying the target. It is asked to read the target print and mark uncertainty. It does not receive the raw OCR displayed above: that text is here for you, the human reader.\nFor this short walkthrough, the output fragment below focuses only on the count. A real study request must still account for every word in its assigned target.AIArtificial intelligence. Here it usually means software that generates a proposed answer or reading, which can still contain mistakes.Close definitionsource imageAn image of the original printed page, or a recorded portion of that page, used to compare the printed words with machine-read text.Close definitionprinted textThe words and numbers visible on the original paper, as distinct from the machine-read text or a proposed corrected version.Close definitionuncertaintyWhat the available evidence does not settle. The review should leave it visible rather than force a confident answer.Close definitionraw OCRThe original machine-read text, preserved exactly as collected, including its errors.Close definitionwalkthroughA step-by-step example showing how a process works.Close definitionoutput fragmentOnly part of a response, shown to explain a particular detail.Close definitionrequestThe particular material, instructions and settings sent to a program or AI for one response. Requests can be saved so later work is traceable.Close definition",
+      "buttons": 16
+    },
+    {
+      "cls": "glossary-copy source-card glossary-source",
+      "text": "Illustrative reading fragment, written to explain the proposed format; this is not a new AI response:\nillustrativeWritten to explain a possible format or behavior, rather than presented as an observed result.Close definitionoutput fragmentOnly part of a response, shown to explain a particular detail.Close definitionAIArtificial intelligence. Here it usually means software that generates a proposed answer or reading, which can still contain mistakes.Close definition660\nThis fragment is not a full transcription or a human-approved reference. If the image were unclear or the wrong image, the AI should report uncertainty instead of guessing.transcriptionA written rendering of the words on the original page. It may be made by a person or software; its accuracy still needs checking.Close definitionsource imageAn image of the original printed page, or a recorded portion of that page, used to compare the printed words with machine-read text.Close definitionuncertaintyWhat the available evidence does not settle. The review should leave it visible rather than force a confident answer.Close definitionsource imageAn image of the original printed page, or a recorded portion of that page, used to compare the printed words with machine-read text.Close definitionAIArtificial intelligence. Here it usually means software that generates a proposed answer or reading, which can still contain mistakes.Close definitionuncertaintyWhat the available evidence does not settle. The review should leave it visible rather than force a confident answer.Close definition",
+      "buttons": 18
+    },
+    {
+      "cls": "review-source-text",
+      "text": "660",
+      "buttons": 0
+    },
+    {
+      "cls": "glossary-copy source-card glossary-source",
+      "text": "The separate combined repair and audit request receives:\n• The same source image.\n• The unchanged raw OCR in step 2.\n• Any exact static cleanup edits and detector signals.\n• Instructions to check the print, propose source-bound repairs and report uncertainty.\nFor this illustration, imagine that the count has been flagged for checking and the raw OCR is otherwise supplied unchanged. That flag is an illustrative input, not the result of a detector run. The earlier image-only reading is withheld from this second request.combined repair and auditOne AI response that proposes corrections and reports problems it notices in the supplied text. It is a single response, not a second independent check.Close definitionrequestThe particular material, instructions and settings sent to a program or AI for one response. Requests can be saved so later work is traceable.Close definitionsource imageAn image of the original printed page, or a recorded portion of that page, used to compare the printed words with machine-read text.Close definitionraw OCRThe original machine-read text, preserved exactly as collected, including its errors.Close definitionstatic cleanupText changes made by fixed rules and word lists, without asking a language model. Here it means the existing saved version of the OCR after those rules; it can still contain mistakes.Close definitiondetectorSoftware that marks text for further checking when specified patterns or signals are present.Close definitionprinted textThe words and numbers visible on the original paper, as distinct from the machine-read text or a proposed corrected version.Close definitionsource-boundTied to a specific recorded source passage, page or image. That connection can be checked; it does not by itself prove an interpretation correct.Close definitionrepairA correction to damaged or mistaken text. The source must support the correction; readability alone does not establish the original wording.Close definitionuncertaintyWhat the available evidence does not settle. The review should leave it visible rather than force a confident answer.Close definitionillustrativeWritten to explain a possible format or behavior, rather than presented as an observed result.Close definitionflagged for checkingMarked for further inspection; the mark alone does not establish an error.Close definitionraw OCRThe original machine-read text, preserved exactly as collected, including its errors.Close definitionillustrativeWritten to explain a possible format or behavior, rather than presented as an observed result.Close definitiondetectorSoftware that marks text for further checking when specified patterns or signals are present.Close definitionrunOne recorded execution of a particular set of tasks with stated inputs, settings and limits. A run may stop with failures or unfinished work.Close definitionimage-only readingAn AI reading made from a page image without showing it the OCR or proposed corrections.Close definitionrequestThe particular material, instructions and settings sent to a program or AI for one response. Requests can be saved so later work is traceable.Close definition",
+      "buttons": 36
+    },
+    {
+      "cls": "glossary-copy source-card glossary-source",
+      "text": "Illustrative fields, not a new returned AI result:\nOriginal quote:\nillustrativeWritten to explain a possible format or behavior, rather than presented as an observed result.Close definitionAIArtificial intelligence. Here it usually means software that generates a proposed answer or reading, which can still contain mistakes.Close definitionGCO\nProposed reading:\nproposed readingA suggested version of the text, shown for comparison with the source. It is not automatically an accepted transcription.Close definition660\nStatus: proposed and unreviewed.\nExample reason: the printed count appears to be 660.\nThe software would check that the exact quote occurs once in the stated original paragraph, calculate its positions, and keep the original OCR unchanged. A plausible number must be checked against print; a dictionary cannot settle it.unreviewedNot examined for the particular judgment being requested. No approval or rejection should be inferred from an unfinished review.Close definitionexact quoteA sequence of characters copied exactly from the identified text.Close definitionparagraphA block of connected text, usually separated from the next block by a new line or indentation. The review keeps its original source identity.Close definitionraw OCRThe original machine-read text, preserved exactly as collected, including its errors.Close definitionprinted textThe words and numbers visible on the original paper, as distinct from the machine-read text or a proposed corrected version.Close definition",
+      "buttons": 16
+    },
+    {
+      "cls": "review-source-text",
+      "text": "GCO",
+      "buttons": 0
+    },
+    {
+      "cls": "review-source-text",
+      "text": "660",
+      "buttons": 0
+    },
+    {
+      "cls": "glossary-copy source-card glossary-source",
+      "text": "Illustrative preview with only that one count replaced:\nillustrativeWritten to explain a possible format or behavior, rather than presented as an observed result.Close definitionBy Mr. MOORHEAD: Tlie petition of 660 citizens of Pennsylvania, praying for protection to American\nOther possible OCR errors have deliberately not been repaired here. The image includes neighboring print, while the original OCR record stops at its own boundary; this example does not append nearby words. This is an explanation of a possible output, not an accepted correction or a fresh model result.OCROptical character recognition: software that turns a scanned page into searchable text. Its output can misread letters, numbers and layout.Close definitionsource imageAn image of the original printed page, or a recorded portion of that page, used to compare the printed words with machine-read text.Close definitionprinted textThe words and numbers visible on the original paper, as distinct from the machine-read text or a proposed corrected version.Close definitionraw OCRThe original machine-read text, preserved exactly as collected, including its errors.Close definitionoutputThe answer or text produced by a program or AI, including responses later rejected. Producing an output does not mean it is correct.Close definitionacceptedApproved under a stated check or review. The desk should say whether approval came from software or a person; software approval alone is not historical verification.Close definitionmodelThe AI system that produces a response from supplied text or images. A model answer is a proposal until its evidence and accuracy have been checked.Close definition",
+      "buttons": 16
+    },
+    {
+      "cls": "review-source-text",
+      "text": "By Mr. MOORHEAD: Tlie petition of 660 citizens of Pennsylvania, praying for protection to American",
+      "buttons": 0
+    },
+    {
+      "cls": "glossary-copy source-card glossary-source",
+      "text": "No finding means no problem was reported within the inspected scope. Incomplete inspection means some assigned material was not fully checked. Unresolved evidence means the available image or text does not settle the reading. These states remain visible; missing images, names or numbers do not become automatic acceptance. Original OCR, saved proposals and human answers stay separate from new proposals.no findingNo problem was reported within the part that was inspected.Close definitionscopeThe particular material, question and limits covered by a task or decision. Approval within one scope does not automatically apply to other work.Close definitionincomplete inspectionSome of the assigned material was not fully examined.Close definitionunresolved evidenceThe available evidence does not settle a reading or claim.Close definitionsource imageAn image of the original printed page, or a recorded portion of that page, used to compare the printed words with machine-read text.Close definitionsource imageAn image of the original printed page, or a recorded portion of that page, used to compare the printed words with machine-read text.Close definitionraw OCRThe original machine-read text, preserved exactly as collected, including its errors.Close definitionsaved proposalAn earlier proposed result retained so it can be inspected without changing its original bytes.Close definitionproposalA suggested answer, rule or text change that has not automatically been accepted. Displaying a proposal does not apply it to the original text.Close definition",
+      "buttons": 18
+    },
+    {
+      "cls": "glossary-copy source-card glossary-source",
+      "text": "The whole study proceeds in small fixed experiments, with about 30 minutes of computer work as a per-experiment target. The first proposed chunk uses five random paragraphs plus two saved failure cases; this already-exposed petition is an explanatory walkthrough, not an added sample or another model request. Costs and uncertainty accumulate across chunks. Same-model agreement can contain correlated errors; these AI comparisons remain provisional, not independent truth.paragraphA block of connected text, usually separated from the next block by a new line or indentation. The review keeps its original source identity.Close definitionwalkthroughA step-by-step example showing how a process works.Close definitionsampleThe particular example or group of examples selected for examination. A small selected sample may not represent the entire collection.Close definitionrequestThe particular material, instructions and settings sent to a program or AI for one response. Requests can be saved so later work is traceable.Close definitionuncertaintyWhat the available evidence does not settle. The review should leave it visible rather than force a confident answer.Close definitionsame-model agreementMatching responses produced by the same AI model.Close definitioncorrelated errorsMistakes that can occur together because two answers share a model, method or other influence.Close definitionAIArtificial intelligence. Here it usually means software that generates a proposed answer or reading, which can still contain mistakes.Close definitionprovisionalA working proposal or judgment that may change after review or more evidence. It has not been adopted as a final standard.Close definition",
+      "buttons": 18
+    },
+    {
+      "cls": "glossary-copy source-card glossary-source",
+      "text": "Please judge whether the explanation is clear and whether the proposed handling of images, OCR and results matches your intent. You are not being asked to grade this historical passage or approve its illustrative correction. Design feedback is separate from an independent workflow evaluation and from live-run, cleanup-policy or full-corpus authorization. Existing HR-010 remains separate.source imageAn image of the original printed page, or a recorded portion of that page, used to compare the printed words with machine-read text.Close definitionOCROptical character recognition: software that turns a scanned page into searchable text. Its output can misread letters, numbers and layout.Close definitiongradingJudging an answer or proposed reading using the stated criteria. A software format check is different from a person checking the historical source.Close definitionpassageThe piece of text selected for reading or checking. It can be part of a paragraph or several connected paragraphs.Close definitionillustrativeWritten to explain a possible format or behavior, rather than presented as an observed result.Close definitiondesign reviewReading a proposed approach and giving feedback before it is used.Close definitionindependent workflow evaluationA separate technical evaluation of the proposed process, performed outside the work being evaluated.Close definitionrunOne recorded execution of a particular set of tasks with stated inputs, settings and limits. A run may stop with failures or unfinished work.Close definitionpolicyA rule governing how the project handles a class of cases. Agreeing with one example is not necessarily agreement to a general rule.Close definitioncorpusThe complete collection being studied: here, the five collected parts of the 39th Congress, first session.Close definition",
+      "buttons": 20
+    },
+    {
+      "cls": "glossary-copy source-card glossary-source",
+      "text": "Leave this field blank unless you already have a separate independent workflow evaluation. If you do, include its verdict, risks, evaluator details and any limits. Ordinary design feedback does not supply that separate technical evaluation. Offline deterministic-only library work can continue while software integration review remains outstanding.independent workflow evaluationA separate technical evaluation of the proposed process, performed outside the work being evaluated.Close definitionverdictThe conclusion of an evaluation, with its stated scope and limits.Close definitiondesign reviewReading a proposed approach and giving feedback before it is used.Close definitiondeterministic-only libraryReusable code that applies specified rules without asking an AI model.Close definitionsoftware integrationConnecting previously separate program parts so they work together.Close definitionmanual reviewA person examines the passage and source to resolve an uncertainty or check a proposed change.Close definition",
+      "buttons": 12
+    }
+  ],
+  "errors": 0,
+  "textareas": [
+    {
+      "id": ":r2u:",
+      "value": ""
+    },
+    {
+      "id": ":r2v:",
+      "value": ""
+    }
+  ]
+}

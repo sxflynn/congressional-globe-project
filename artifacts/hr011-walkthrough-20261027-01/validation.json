@@ -1,0 +1,56 @@
+{
+  "task": "T63",
+  "packet": "HR-011-v2",
+  "packet_sha256": "51de1f4035e46f4fcef093c9fa3749694b40f5e2ec7e194ca7402985ea8f9e9f",
+  "captured_at_utc": "2026-10-27T20:44:18.411551+00:00",
+  "checks": {
+    "full_gate_660": true,
+    "old_rows_preserved": true,
+    "new_packet_only": true,
+    "raw_98_characters_exact": true,
+    "two_hash_verified_cached_images_from_one_source": true,
+    "five_plain_spans_zero_buttons": true,
+    "live_local_images_loaded": true,
+    "desktop_mobile_screenshots_inspected": true,
+    "mouse_keyboard_popovers_preserve_unsaved_note": true,
+    "temporary_note_cleared_no_save_submit": true
+  },
+  "all_passed": true,
+  "browser": {
+    "help_buttons": 139,
+    "viewport_mobile": [
+      375,
+      812
+    ],
+    "document_width": 375,
+    "popup_bounds": [
+      16,
+      359
+    ],
+    "natural_image_widths": [
+      1012,
+      90
+    ],
+    "mobile_image_widths": [
+      311,
+      270
+    ],
+    "errors": 0,
+    "physical_ios_checked": false
+  },
+  "desk": {
+    "pid": 18761,
+    "started_local": "2026-10-27 16:41:54",
+    "command": "streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false",
+    "restarted": true,
+    "previous_pid": 68381,
+    "localhost": "http://127.0.0.1:8501",
+    "LAN": "http://10.0.0.56:8501",
+    "http_status": 200
+  },
+  "new_model_calls": 0,
+  "new_source_downloads": 0,
+  "new_historical_grades": 0,
+  "outputs_are_illustrative": true,
+  "T51_verdict_obtained": false
+}

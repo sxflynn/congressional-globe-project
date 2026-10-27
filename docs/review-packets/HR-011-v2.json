@@ -1,0 +1,97 @@
+{
+  "id": "HR-011",
+  "version": 2,
+  "title": "Small OCR studies: image, raw text, inputs and possible outputs",
+  "instructions": "Start with the numbered walkthrough: a real source image and its unchanged raw OCR, followed by clearly labelled possible inputs and outputs. The output examples explain the proposed format; they are not new AI results or accepted corrections. Read at your own pace, then give design feedback. Tap dotted-underlined terms for definitions. Historical writing, raw OCR and proposed readings remain plain. Optional notes and any existing independent workflow evaluation can be left blank; choose Not reviewed if you prefer to stop. This replaces the earlier design summary, while preserving version 1 and all earlier answers.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "design-feedback",
+      "prompt": "Is the image → raw OCR → inputs → possible outputs walkthrough clear, and does the proposed process match your intent?",
+      "options": [
+        "Design matches my intent",
+        "Needs changes — see notes",
+        "Need a clearer explanation",
+        "Not reviewed"
+      ],
+      "required": true,
+      "evidence": [
+        {
+          "label": "1 · Look at the original page image — Part 2, printed page 1176",
+          "text": "This is a real saved source crop, not a generated image. The petition sits between nearby printed lines, which provide context. Compare its count with the raw OCR below. You can open the full source page or enlarge the image.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0328.jp2/2053,1271,1012,191/1012,/0/default.jpg"
+        },
+        {
+          "label": "1a · A closer look at the printed count",
+          "text": "This smaller source crop shows the count more clearly. It comes from the same page and same source paragraph; it is not a different example.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0328.jp2/2799,1320,90,58/90,/0/default.jpg"
+        },
+        {
+          "label": "2 · Actual raw OCR — copied unchanged",
+          "text": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American",
+          "url": null
+        },
+        {
+          "label": "3 · Possible input A — image-only reading",
+          "text": "The AI receives the source image and a short label identifying the target. It is asked to read the target print and mark uncertainty. It does not receive the raw OCR displayed above: that text is here for you, the human reader.\n\nFor this short walkthrough, the output fragment below focuses only on the count. A real study request must still account for every word in its assigned target.",
+          "url": null
+        },
+        {
+          "label": "4 · Possible output A — illustrative reading fragment",
+          "text": "Illustrative reading fragment, written to explain the proposed format; this is not a new AI response:\n\n660\n\nThis fragment is not a full transcription or a human-approved reference. If the image were unclear or the wrong image, the AI should report uncertainty instead of guessing.",
+          "url": null
+        },
+        {
+          "label": "5 · Possible input B — image plus raw OCR and checks",
+          "text": "The separate combined repair and audit request receives:\n• The same source image.\n• The unchanged raw OCR in step 2.\n• Any exact static cleanup edits and detector signals.\n• Instructions to check the print, propose source-bound repairs and report uncertainty.\n\nFor this illustration, imagine that the count has been flagged for checking and the raw OCR is otherwise supplied unchanged. That flag is an illustrative input, not the result of a detector run. The earlier image-only reading is withheld from this second request.",
+          "url": null
+        },
+        {
+          "label": "6 · Possible output B — one illustrative proposed repair",
+          "text": "Illustrative fields, not a new returned AI result:\n\nOriginal quote:\nGCO\n\nProposed reading:\n660\n\nStatus: proposed and unreviewed.\nExample reason: the printed count appears to be 660.\n\nThe software would check that the exact quote occurs once in the stated original paragraph, calculate its positions, and keep the original OCR unchanged. A plausible number must be checked against print; a dictionary cannot settle it.",
+          "url": null
+        },
+        {
+          "label": "7 · What the proposed reading preview might look like",
+          "text": "Illustrative preview with only that one count replaced:\n\nBy Mr. MOORHEAD: Tlie petition of 660 citizens of Pennsylvania, praying for protection to American\n\nOther possible OCR errors have deliberately not been repaired here. The image includes neighboring print, while the original OCR record stops at its own boundary; this example does not append nearby words. This is an explanation of a possible output, not an accepted correction or a fresh model result.",
+          "url": null
+        },
+        {
+          "label": "8 · What happens if the evidence is insufficient?",
+          "text": "No finding means no problem was reported within the inspected scope. Incomplete inspection means some assigned material was not fully checked. Unresolved evidence means the available image or text does not settle the reading. These states remain visible; missing images, names or numbers do not become automatic acceptance. Original OCR, saved proposals and human answers stay separate from new proposals.",
+          "url": null
+        },
+        {
+          "label": "How this fits the small study chunks",
+          "text": "The whole study proceeds in small fixed experiments, with about 30 minutes of computer work as a per-experiment target. The first proposed chunk uses five random paragraphs plus two saved failure cases; this already-exposed petition is an explanatory walkthrough, not an added sample or another model request. Costs and uncertainty accumulate across chunks. Same-model agreement can contain correlated errors; these AI comparisons remain provisional, not independent truth.",
+          "url": null
+        },
+        {
+          "label": "What your feedback covers",
+          "text": "Please judge whether the explanation is clear and whether the proposed handling of images, OCR and results matches your intent. You are not being asked to grade this historical passage or approve its illustrative correction. Design feedback is separate from an independent workflow evaluation and from live-run, cleanup-policy or full-corpus authorization. Existing HR-010 remains separate.",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "design-notes",
+      "prompt": "Optional notes: what should change, or what remains uncertain?",
+      "options": [],
+      "required": false,
+      "evidence": []
+    },
+    {
+      "id": "independent-evaluation",
+      "prompt": "Optional: if you already have an independent workflow evaluation, paste its verdict, risks and evaluator details here. Otherwise leave this blank.",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "Optional: an existing independent technical evaluation",
+          "text": "Leave this field blank unless you already have a separate independent workflow evaluation. If you do, include its verdict, risks, evaluator details and any limits. Ordinary design feedback does not supply that separate technical evaluation. Offline deterministic-only library work can continue while software integration review remains outstanding.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}

@@ -8,6 +8,8 @@ from urllib.parse import urlsplit
 
 import streamlit as st
 
+from congressional_globe.review_cached_scans import show_cached_scan
+
 
 def scan_image_url(source_url: str) -> str | None:
     """Resolve only explicit Archive page citations or official IIIF image URLs."""
@@ -43,6 +45,13 @@ def scan_disclosure(source_url: str) -> str | None:
 
 
 def show_inline_scan(source_url: str) -> None:
+    try:
+        if show_cached_scan(source_url):
+            return
+    except (OSError, ValueError, KeyError):
+        st.warning("The saved image could not be verified. Use the original image link.")
+        st.link_button("Open original image", source_url)
+        return
     disclosure = scan_disclosure(source_url)
     if disclosure:
         st.markdown(disclosure, unsafe_allow_html=True)
