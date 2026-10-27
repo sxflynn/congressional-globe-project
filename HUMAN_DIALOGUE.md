@@ -79,3 +79,8 @@ No answers or thresholds are invented here. The previously recorded six-paragrap
 - On the eventual bounded sample: calculate the candidate score **before** cleanup, run the selected cleanup approach, then check results against the source images. Test whether the score predicts correct repairs, missed errors, newly introduced errors and need for human review.
 - Use predictive scoring only if measured results show it helps forecast cleanup reliability or review workload across the intended collection. If it does not, defer further investment.
 - Scoring is optional and should be tested alongside cleanup; it is not a prerequisite that delays the cleanup experiment. Exact evaluation design and independent reference readings remain to be agreed.
+
+### Open discussion — “negative testing” and false reassurance
+
+- The human emphasized a preference for “negative testing,” citing text the system thinks is clean but actually is not, and asked the assistant to interpret the intended meaning.
+- Provisional assistant interpretation, awaiting confirmation: deliberately test failure cases and false reassurance, especially important errors left in apparently clean/high-confidence text. Distinguish missed damage from unnecessary or harmful changes to genuinely correct text. No test suite or final evaluation design has been selected by this exchange.

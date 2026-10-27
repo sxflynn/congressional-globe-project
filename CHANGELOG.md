@@ -179,3 +179,5 @@ Historical record of completed work. [MASTER_PLAN.md](MASTER_PLAN.md) remains th
 - 2026-10-27: T45 dialogue follow-up records the human’s desired all-text cleanup destination and question whether scoring should predict cleanup accuracy rather than only prioritize damaged pages. Exploratory discussion, not a final scoring design or full-run authorization; documentation-only.
 
 - 2026-10-27: T45 dialogue notes add requested tentative agreement to test optional pre-cleanup scoring against image-checked repair outcomes and review needs, alongside rather than before cleanup testing. No algorithm/sample/budget/model-run approval inferred.
+
+- 2026-10-27: T45 captures the human’s negative-testing question and provisional interpretation of detecting false reassurance in apparently clean text; confirmation/design remain open.
