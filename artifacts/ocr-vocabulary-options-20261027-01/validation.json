@@ -1,0 +1,27 @@
+{
+  "task": "T48",
+  "checks": {
+    "local_input_hashes": true,
+    "exact_recipe_parity": true,
+    "candidate_bound": true,
+    "auxiliary_bound": true,
+    "eight_url_bound": true,
+    "success_failure_counts": true,
+    "source_identity_version_limits": true,
+    "signal_categories": true,
+    "negative_controls_and_unknowns": true,
+    "historical_gap_and_no_adoption": true,
+    "review_record": true,
+    "queue_dependencies": true,
+    "local_file_links": true
+  },
+  "all_passed": true,
+  "check_count": 13,
+  "web_url_count_policy": "Eight unique attempted pages including404; repeat opens/finds only on same pages. No new pages opened during validation.",
+  "last_full_code_gate": "T44,643tests; documentation-only work; no rerun",
+  "missing_links": [],
+  "dataset_downloads": 0,
+  "dependency_installs": 0,
+  "provider_inference_calls": 0,
+  "authority_expansion": false
+}

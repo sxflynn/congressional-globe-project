@@ -1,0 +1,68 @@
+{
+  "task": "T48",
+  "local_inputs": [
+    {
+      "path": "/usr/share/dict/README",
+      "resolved_path": "/usr/share/dict/README",
+      "bytes": 1311,
+      "sha256": "0bebe63be8ea1263c04c9ef40fbb1a88c242b0b53db32bd6c8d27ad5afffb183",
+      "lines": 33
+    },
+    {
+      "path": "/usr/share/dict/words",
+      "resolved_path": "/usr/share/dict/web2",
+      "bytes": 2493885,
+      "sha256": "be41ad97963bf8dabedd5871d5d691596175269d540956b0f9965a885c2bbab9",
+      "lines": 235976
+    },
+    {
+      "path": "/usr/share/dict/web2a",
+      "resolved_path": "/usr/share/dict/web2a",
+      "bytes": 1012731,
+      "sha256": "9313e251fee3e56204db2b284346d61c3a80ce613d7a077c5674f15f9cb33ab3",
+      "lines": 76205
+    },
+    {
+      "path": "/usr/share/dict/propernames",
+      "resolved_path": "/usr/share/dict/propernames",
+      "bytes": 8546,
+      "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+      "lines": 1308
+    },
+    {
+      "path": "resources/static-lexicon-supplement.txt",
+      "resolved_path": "/Users/sflynn/Downloads/congressional globe project/resources/static-lexicon-supplement.txt",
+      "bytes": 448,
+      "sha256": "217a6df5f9ccc1e3971b8bda5def49eaeca888d081058e15b4300d5fc9f4cbbd",
+      "lines": 44
+    },
+    {
+      "path": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+      "resolved_path": "/Users/sflynn/Downloads/congressional globe project/artifacts/static-audit-20261011/supplemented-lexicon.txt",
+      "bytes": 3507065,
+      "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+      "lines": 312226
+    },
+    {
+      "path": "src/congressional_globe/static_cleanup.py",
+      "resolved_path": "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/static_cleanup.py",
+      "bytes": 6598,
+      "sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+      "lines": 188
+    },
+    {
+      "path": "docs/reference/commands.md",
+      "resolved_path": "/Users/sflynn/Downloads/congressional globe project/docs/reference/commands.md",
+      "bytes": 14700,
+      "sha256": "813cb9f938474214ec92a3b73ca8e5e5acd161876cc5085640b0d1f8f6bbf74b",
+      "lines": 124
+    }
+  ],
+  "in_memory_reconstruction": {
+    "method": "Bytewise sorted unique lines from blank line + words + web2a + propernames + project supplement, matching documented LC_ALL=C recipe. No files rewritten.",
+    "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+    "matches_saved_bytes": true
+  },
+  "license_limit": "Local README reports supplier assertion about expired 1934 copyright; it is not an independently established portable redistribution license. No legal clearance claimed.",
+  "period_limit": "Local README explicitly describes current American spelling maintenance and removal of some archaic forms. Not an 1865\u20131866 reference."
+}

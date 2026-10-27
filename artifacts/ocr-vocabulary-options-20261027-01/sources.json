@@ -1,0 +1,74 @@
+{
+  "task": "T48",
+  "checked_date": "2026-10-27",
+  "unique_primary_urls_attempted": 8,
+  "successful_pages": 7,
+  "dictionary_algorithm_candidates": [
+    "ESDB",
+    "symspellpy",
+    "Gutenberg Webster catalogue29765"
+  ],
+  "name_place_resources": [
+    "congress-legislators",
+    "GeoNames"
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://github.com/en-wl/wordlist",
+      "title": "ESDB project README",
+      "status": "read",
+      "version_limit": "v2 branch observed; exact commit/release not pinned"
+    },
+    {
+      "id": "S2",
+      "url": "https://raw.githubusercontent.com/en-wl/wordlist/master/Copyright",
+      "title": "Obsolete branch copyright URL",
+      "status": "404",
+      "version_limit": "No content used; counted against eight-URL bound"
+    },
+    {
+      "id": "S3",
+      "url": "https://github.com/mammothb/symspellpy",
+      "title": "symspellpy project README",
+      "status": "read",
+      "version_limit": "README identifies port of SymSpell v6.7.2; package release not pinned"
+    },
+    {
+      "id": "S4",
+      "url": "https://raw.githubusercontent.com/mammothb/symspellpy/master/LICENSE",
+      "title": "symspellpy license",
+      "status": "read",
+      "version_limit": "MIT notice observed 2026-10-27; branch mutable"
+    },
+    {
+      "id": "S5",
+      "url": "https://raw.githubusercontent.com/en-wl/wordlist/v2/Copyright",
+      "title": "ESDB copyright",
+      "status": "read",
+      "version_limit": "2026 copyright text; branch mutable"
+    },
+    {
+      "id": "S6",
+      "url": "https://www.gutenberg.org/ebooks/29765",
+      "title": "Webster dictionary catalogue",
+      "status": "read",
+      "version_limit": "eBook29765, release2009-08-22, update2025-07-07; original print edition not verified"
+    },
+    {
+      "id": "S7",
+      "url": "https://github.com/unitedstates/congress-legislators",
+      "title": "congress-legislators README",
+      "status": "read",
+      "version_limit": "main branch observed; exact commit not pinned"
+    },
+    {
+      "id": "S8",
+      "url": "https://www.geonames.org/about.html",
+      "title": "GeoNames about",
+      "status": "read",
+      "version_limit": "Live about page/daily-export documentation; snapshot not acquired"
+    }
+  ],
+  "limits": "Documentation/license/catalogue browsing only. No datasets or packages downloaded/installed, no authority expansion or provider inference. Repeat reads/finds stayed on these same URLs. Web page bytes/commits were not frozen; no reproducible upstream dataset identity is claimed."
+}
