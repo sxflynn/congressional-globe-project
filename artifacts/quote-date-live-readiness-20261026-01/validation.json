@@ -1,0 +1,82 @@
+{
+  "task": "T36",
+  "status": "offline freeze verified; zero provider calls",
+  "checks": {
+    "offline_plan_mode": "offline plan",
+    "offline_plan_validated_manifest_and_schema": true,
+    "contract_selected": "scoped-date-quotes-v1",
+    "options_calls_limit": 1,
+    "options_timeout": 120.0,
+    "options_max_seconds": 150.0,
+    "options_max_output_tokens": 2000,
+    "schema_evidence_properties": [
+      "paragraph_id",
+      "quote",
+      "raw_sha256"
+    ],
+    "schema_evidence_required": [
+      "paragraph_id",
+      "raw_sha256",
+      "quote"
+    ],
+    "schema_has_no_evidence_offsets": true,
+    "prompt_forbids_model_positions": true,
+    "prompt_has_no_offset_instruction": true,
+    "request_temperature": 0,
+    "request_reasoning_effort": "none",
+    "request_response_format": {
+      "type": "json_object"
+    },
+    "request_system_starts_with_frozen_prompt": true,
+    "request_user_is_frozen_packet": true,
+    "specialized_aliases": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6"
+    ],
+    "specialized_evidence_properties": [
+      "paragraph_id",
+      "quote",
+      "raw_sha256"
+    ],
+    "readiness_request_hash_matches_plan": true,
+    "readiness_code_hashes_match_plan": true,
+    "dispatch_authorized": false,
+    "run_directory_created": false,
+    "worker_journal_created": false
+  },
+  "old_artifacts_unchanged": {
+    "artifacts/metadata-live-20261026-01/readiness.json": "2f121fceb646a9a0576774d25573c706189c4b4e5c1d751fff63001f54052f7a",
+    "artifacts/metadata-live-20261026-01/terminal-evidence.json": "2017ad6d1aa84a3c61402418087257b868375ea67f8216bcf22f6a80ab537fbd",
+    "artifacts/metadata-live-20261026-01/compatibility/run/summary.json": "638f74ab6f5b19a6ea9e310a21e96f9ff8a6490d2e6358360dff9197a6cc7dc3",
+    "artifacts/scoped-date-contract-20261026-01/fixtures.json": "878c2a3ed17a0e4581653d85f866e8f815e2a4271415e806ea8a5f0fbfbf9042",
+    "artifacts/quote-date-binding-20261026-01/proof.json": "d296f9b29906babb105279ac81b0426afe1d8dadbe9458bb1d6405abf86d2cfe",
+    "fixtures_match_T35_record": true,
+    "t32_terminal_evidence_match_T35_record": true,
+    "t32_summary_match_T35_record": true
+  },
+  "new_artifact_hashes": {
+    "readiness.json": "ddd8072b1429c48fad544b1aab1b281f3380a30649e0fd0b4b6c47d7c59917f2",
+    "options.json": "7e4d8974ef1ccc853b02e816c0d45b86e685383ff6bb477b97fd3817c108b41c",
+    "offline-plan.json": "e24f07057e0b1ed55c443ae10d6648d9afd5e710685bdd1ea4b621fc8df3ec25",
+    "intended-api-request.json": "7645a66feb74d411bf42d75da5c5929117d7559050939c4969e2baff6096682f",
+    "preflight.json": "223ea2aef63954cde20714d680a2fb079be891b36256947d2958db2a6fce1f0e",
+    "prepared/manifest.json": "f164086916552f4c3f485178f6460533030bd1ee586e6f2350f7a44eb4625b5d",
+    "prepared/checks.json": "e3dcf27c25dfdb92fbc35ac93e53ba7f72783fd462a6a7e232cdebc26939e307",
+    "prepared/source-review.json": "5611223200ca712db9d9ee66b5055f34e188a0c2372f0369a0e8e8ee05429df6",
+    "prepared/prompt.txt": "e01837b64eba28360b64e61256d64fd4b8c1e1819d23005c50c4705cf0a15cef",
+    "prepared/output.schema.json": "081f32bb81ffa555bbc18083150d729c0ee7ec4de4322ac871f43a7b56387c96",
+    "prepared/provider-inputs.jsonl": "20dd9080b3a11a6b77a107174220318e5d4b24a3cda0f20ee3fac539332abc30",
+    "prepared/frozen-inputs.jsonl": "20dd9080b3a11a6b77a107174220318e5d4b24a3cda0f20ee3fac539332abc30",
+    "README.md": "6d8fc99c44de3b49ca28fde5b477c64990e6d7af98375197e2341ac21a8c5e2c"
+  },
+  "limits": "Artifact/identity checks only. No real backend call, native schema acceptance, historical accuracy or human review is claimed.",
+  "reproduction": {
+    "command": "uv run python -m congressional_globe.role_runner --prepared artifacts/quote-date-live-readiness-20261026-01/prepared --output artifacts/quote-date-live-readiness-20261026-01/run --provider ollama --model qwen3.8:27b-mlx --base-url http://127.0.0.1:11434/v1 --contract scoped-date-quotes-v1 --case house-opening-december-4-1865-v1 --limit 1 --timeout 120 --max-seconds 150 --max-output-tokens 2000 --budget-usd 0.01",
+    "result": "offline plan reproduced identically (no --live flag; no output directory created)",
+    "provider_calls": 0
+  }
+}

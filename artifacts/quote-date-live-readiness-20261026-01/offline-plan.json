@@ -1,0 +1,46 @@
+{
+  "mode": "offline plan",
+  "config": {
+    "provider": "ollama",
+    "model": "qwen3.8:27b-mlx",
+    "base_url": "http://127.0.0.1:11434/v1",
+    "contract": "scoped-date-quotes-v1",
+    "cases": [
+      "house-opening-december-4-1865-v1"
+    ],
+    "limit": 1,
+    "timeout": 120.0,
+    "max_seconds": 150.0,
+    "max_output_tokens": 2000,
+    "budget_usd": 0.01,
+    "input_hashes": {
+      "provider-inputs.jsonl": "20dd9080b3a11a6b77a107174220318e5d4b24a3cda0f20ee3fac539332abc30",
+      "frozen-inputs.jsonl": "20dd9080b3a11a6b77a107174220318e5d4b24a3cda0f20ee3fac539332abc30",
+      "prompt.txt": "e01837b64eba28360b64e61256d64fd4b8c1e1819d23005c50c4705cf0a15cef",
+      "output.schema.json": "081f32bb81ffa555bbc18083150d729c0ee7ec4de4322ac871f43a7b56387c96",
+      "source-review.json": "5611223200ca712db9d9ee66b5055f34e188a0c2372f0369a0e8e8ee05429df6",
+      "checks.json": "e3dcf27c25dfdb92fbc35ac93e53ba7f72783fd462a6a7e232cdebc26939e307"
+    },
+    "case_ids": [
+      "house-opening-december-4-1865-v1"
+    ],
+    "code_hashes": {
+      "role_aliases.py": "8f4ff097c8fce2f8843124e48547fc1fdddf6c8b84b28e2662f9cc536d615b5d",
+      "role_provider.py": "064d5911750e2df2735c298f308e64695140969b20c9b2b0a3210801b195f754",
+      "role_run_store.py": "e20526e1211219e0390443504b11f54fbe6ac6aec038cbd2d724070e74dd138a",
+      "role_run_io.py": "3ddc42cabefa33d25c7023fa12ac607238dc9b884c400190c9a2df6019dbfda5",
+      "role_runner.py": "d0202ee7816908f12af7c5700e5272ef69adf17f0a5ec7b6f9e80c051b3c1fff",
+      "metadata_results.py": "f43b09c1d473d3014a135cefd668ce96ee694a43cddad5f89370d8d10d682fc0",
+      "role_v2.py": "47dcccbd8439a67c3590e13e67acc114c2f33780e80ff2dca685163c713ed078",
+      "scoped_dates.py": "6828fa5b7c3f83c37a7407beccd382575833b14c5669309f3f8e05635b4a57fb",
+      "quote_dates.py": "d528f08cb29a7c7a6f90e70c029023172f6905085d1b7615b23c238f0755ee21"
+    },
+    "request_hashes": {
+      "house-opening-december-4-1865-v1": "3eef6bf033e88ffc8b94e59f1428bf603ae91cfb80c667cda2955e116ca677ff"
+    },
+    "request_reservations_usd": {
+      "house-opening-december-4-1865-v1": 0.0
+    }
+  },
+  "planning_cost_envelope_usd": 0.0
+}

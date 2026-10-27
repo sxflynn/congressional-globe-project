@@ -1,0 +1,153 @@
+{
+  "task": "T36",
+  "parent": "M1.3 / M2.4",
+  "status": "frozen before any inference; not dispatched",
+  "user_authorization": {
+    "dispatch_authorized": false,
+    "current_instruction": "Generic 'perform work' chat instruction, not a scoped model-call authorization.",
+    "consumed_prior_authority": "T31 recorded 'Do it' for one small real check; T32 spent one call and stopped on the invalid source coordinates. That authority and its unused second slot are not reused.",
+    "requirement": "A new explicit human authorization naming this frozen request, or a new bounded task that records one, is required before dispatch."
+  },
+  "capability": {
+    "can_inspect_images": true,
+    "images_used": false
+  },
+  "contract": {
+    "name": "scoped-date-quotes-v1",
+    "definition": "src/congressional_globe/quote_dates.py",
+    "model_supplies": "paragraph_id, exact raw_sha256 and an exact quote; value.start/end are date endpoints only",
+    "host_derives": "half-open Unicode codepoint start/end by unique exact quote search in the declared hash-matched raw paragraph",
+    "unchanged_downstream": "scoped-date-v1 support, coverage, region/direction, alternatives and unknown checks",
+    "not_a_fallback": "Offset-bearing scoped-date-v1 replies are rejected; the saved T32 reply stays invalid."
+  },
+  "bounds": {
+    "maximum_provider_calls_total": 1,
+    "maximum_request_seconds_each": 120,
+    "maximum_total_provider_seconds": 120,
+    "maximum_total_dispatch_wall_seconds": 150,
+    "maximum_output_tokens_each": 2000,
+    "maximum_total_output_tokens": 2000,
+    "maximum_logical_request_bytes_each": 16000,
+    "retries": 0,
+    "concurrency": 1,
+    "api_charge_usd": 0,
+    "measured_request_bytes": {
+      "system_prompt_and_schema_utf8": 4935,
+      "user_packet_utf8": 2872,
+      "compact_serialized_request_utf8": 8644,
+      "stored_pretty_request_file_utf8": 8734
+    },
+    "local_compute_and_review_cost": "Time/tokens measurable; energy, hardware and human-review effort unmeasured."
+  },
+  "backend_recheck": {
+    "provider": "ollama",
+    "base_url": "http://127.0.0.1:11434/v1",
+    "server_version": "0.40.8",
+    "model": "qwen3.8:27b-mlx",
+    "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "openai_python_version": "3.28.0",
+    "thinking_request": "none (maps to disabled thinking per current Ollama documentation)",
+    "supported_path": "JSON-object mode with schema instructions and local host validation; native constrained-schema enforcement not claimed",
+    "observed_at_utc": "2026-10-27T02:34:13.224336+00:00",
+    "model_and_server_unchanged_since_T31T32": true,
+    "evidence": "preflight.json"
+  },
+  "requests": [
+    {
+      "id": "house-opening-quote-only",
+      "window_id": "house-opening-december-4-1865-v1",
+      "role": "single authorized real House passage with the new explicit contract; replaces the stopped synthetic compatibility step rather than repeating it",
+      "options_path": "artifacts/quote-date-live-readiness-20261026-01/options.json",
+      "options_sha256": "7e4d8974ef1ccc853b02e816c0d45b86e685383ff6bb477b97fd3817c108b41c",
+      "prepared_manifest_sha256": "f164086916552f4c3f485178f6460533030bd1ee586e6f2350f7a44eb4625b5d",
+      "offline_plan_path": "artifacts/quote-date-live-readiness-20261026-01/offline-plan.json",
+      "offline_plan_sha256": "e24f07057e0b1ed55c443ae10d6648d9afd5e710685bdd1ea4b621fc8df3ec25",
+      "intended_api_request_path": "artifacts/quote-date-live-readiness-20261026-01/intended-api-request.json",
+      "intended_api_request_sha256": "7645a66feb74d411bf42d75da5c5929117d7559050939c4969e2baff6096682f",
+      "prompt_sha256": "e01837b64eba28360b64e61256d64fd4b8c1e1819d23005c50c4705cf0a15cef",
+      "schema_sha256": "081f32bb81ffa555bbc18083150d729c0ee7ec4de4322ac871f43a7b56387c96",
+      "packet_sha256": "20dd9080b3a11a6b77a107174220318e5d4b24a3cda0f20ee3fac539332abc30",
+      "source_fixture_sha256": "878c2a3ed17a0e4581653d85f866e8f815e2a4271415e806ea8a5f0fbfbf9042",
+      "request_hash": "3eef6bf033e88ffc8b94e59f1428bf603ae91cfb80c667cda2955e116ca677ff",
+      "journal_path": "artifacts/quote-date-live-readiness-20261026-01/run/jobs.sqlite (not created; zero calls)",
+      "expectations": {
+        "status": "AI-provisional frozen source expectations; not human gold or image-certified",
+        "expected": "P3 explicit House opening date 1865-12-04 supports P3-P6; P1/P2 prior Senate date unknown; no backward or cross-region propagation. Date scope independent of speaker."
+      },
+      "launch_only_after": "New explicit authorization for this exact request; fresh PID/start/command, queue, lock, model digest and bounded recent log checks; no competing worker or changed code/inputs."
+    }
+  ],
+  "cumulative_prior_usage": {
+    "this_task_before_dispatch": {
+      "attempts": 0,
+      "seconds": 0,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    "T32_actual_stopped_run": {
+      "attempts": 1,
+      "seconds": 24.436,
+      "input_tokens": 1283,
+      "output_tokens": 296,
+      "retries": 0,
+      "unknown_usage": 0,
+      "status": "invalid reply preserved; historical request unsent"
+    },
+    "primary_reading_investigation_immutable": {
+      "attempts": 48,
+      "conservative_request_seconds": 3693.79,
+      "allowance_is_not_used_for_this_task": true
+    },
+    "prior_role_and_topic_calls": "Retained as separate historical evidence; not replayed as new requests."
+  },
+  "code_and_input_identity": {
+    "code_hashes": {
+      "role_aliases.py": "8f4ff097c8fce2f8843124e48547fc1fdddf6c8b84b28e2662f9cc536d615b5d",
+      "role_provider.py": "064d5911750e2df2735c298f308e64695140969b20c9b2b0a3210801b195f754",
+      "role_run_store.py": "e20526e1211219e0390443504b11f54fbe6ac6aec038cbd2d724070e74dd138a",
+      "role_run_io.py": "3ddc42cabefa33d25c7023fa12ac607238dc9b884c400190c9a2df6019dbfda5",
+      "role_runner.py": "d0202ee7816908f12af7c5700e5272ef69adf17f0a5ec7b6f9e80c051b3c1fff",
+      "metadata_results.py": "f43b09c1d473d3014a135cefd668ce96ee694a43cddad5f89370d8d10d682fc0",
+      "role_v2.py": "47dcccbd8439a67c3590e13e67acc114c2f33780e80ff2dca685163c713ed078",
+      "scoped_dates.py": "6828fa5b7c3f83c37a7407beccd382575833b14c5669309f3f8e05635b4a57fb",
+      "quote_dates.py": "d528f08cb29a7c7a6f90e70c029023172f6905085d1b7615b23c238f0755ee21"
+    },
+    "input_hashes": {
+      "provider-inputs.jsonl": "20dd9080b3a11a6b77a107174220318e5d4b24a3cda0f20ee3fac539332abc30",
+      "frozen-inputs.jsonl": "20dd9080b3a11a6b77a107174220318e5d4b24a3cda0f20ee3fac539332abc30",
+      "prompt.txt": "e01837b64eba28360b64e61256d64fd4b8c1e1819d23005c50c4705cf0a15cef",
+      "output.schema.json": "081f32bb81ffa555bbc18083150d729c0ee7ec4de4322ac871f43a7b56387c96",
+      "source-review.json": "5611223200ca712db9d9ee66b5055f34e188a0c2372f0369a0e8e8ee05429df6",
+      "checks.json": "e3dcf27c25dfdb92fbc35ac93e53ba7f72783fd462a6a7e232cdebc26939e307"
+    },
+    "case_ids": [
+      "house-opening-december-4-1865-v1"
+    ],
+    "planning_cost_envelope_usd": 0.0,
+    "schema_evidence_fields": [
+      "paragraph_id",
+      "quote",
+      "raw_sha256"
+    ],
+    "schema_evidence_required": [
+      "paragraph_id",
+      "raw_sha256",
+      "quote"
+    ]
+  },
+  "interpretation_limits": [
+    "One six-paragraph House opening; not accuracy evidence for the corpus, chamber boundaries in general, roles or topics.",
+    "A valid host result proves only that the model supplied a uniquely matchable quote in the declared paragraph and that date/boundary rules accepted the proposal. It is not human review or historical truth.",
+    "A JSON-object reply proves transport acceptance only; native schema enforcement, role-v2 live compatibility and general date quality remain unproved.",
+    "The T32 failed reply stays invalid and unchanged; this task does not retry or repair it.",
+    "Even a correct result is a proposal, and remains part of M1/M2/P0 open work."
+  ],
+  "stop_rules": [
+    "Stop on transport error, timeout, refusal/truncation, invalid output, unknown usage/time, model or runtime identity change, or insufficient context.",
+    "No retry, no sample/prompt/settings change, no model substitution and no second request in this frozen run.",
+    "Do not repair returned JSON or salvage an offset-bearing reply.",
+    "Do not reuse the stopped T32 journal or its unused slot."
+  ],
+  "fresh_checks_required_before_dispatch": "Record launch intent and OS identity; re-verify processes with PID/start/full command, cleanup claims, shared Ollama lock, /api/ps and model digest, and a bounded recent POST log query.",
+  "historical_exposure_and_reuse": "Same packet as the unsent T31 house-opening request; that request was never sent, so the passage has no prior provider answer. The saved date result is hand-authored. This is a new request/task identity with a new contract."
+}

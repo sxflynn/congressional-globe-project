@@ -1,0 +1,16 @@
+{
+  "prepared": "artifacts/quote-date-live-readiness-20261026-01/prepared",
+  "output": "artifacts/quote-date-live-readiness-20261026-01/run",
+  "provider": "ollama",
+  "model": "qwen3.8:27b-mlx",
+  "base_url": "http://127.0.0.1:11434/v1",
+  "contract": "scoped-date-quotes-v1",
+  "cases": [
+    "house-opening-december-4-1865-v1"
+  ],
+  "limit": 1,
+  "timeout": 120.0,
+  "max_seconds": 150.0,
+  "max_output_tokens": 2000,
+  "budget_usd": 0.01
+}

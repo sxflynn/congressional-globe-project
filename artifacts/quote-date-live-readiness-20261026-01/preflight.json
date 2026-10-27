@@ -1,0 +1,63 @@
+{
+  "task": "T36",
+  "label": "before-dispatch-recheck (no dispatch performed)",
+  "observed_utc": "2026-10-27T02:34:13.224336+00:00",
+  "server": {
+    "version": "0.40.8"
+  },
+  "models_loaded": {
+    "models": []
+  },
+  "selected_model": {
+    "name": "qwen3.8:27b-mlx",
+    "model": "qwen3.8:27b-mlx",
+    "modified_at": "2026-09-24T01:45:09.355713619-04:00",
+    "size": 18174721847,
+    "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "details": {
+      "parent_model": "",
+      "format": "safetensors",
+      "family": "",
+      "families": null,
+      "parameter_size": "",
+      "quantization_level": "nvfp4",
+      "runner": "mlx"
+    },
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools",
+      "thinking"
+    ]
+  },
+  "matching_processes": [
+    "68381 Sat Oct 24 17:13:53 2026     02-05:20:30 /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false",
+    "87583 Wed Oct 21 20:46:50 2026     05-01:47:33 /Applications/Ollama.app/Contents/MacOS/Ollama",
+    "87597 Wed Oct 21 20:46:52 2026     05-01:47:31 /Applications/Ollama.app/Contents/Resources/ollama serve"
+  ],
+  "shared_request_lock": "acquired nonblocking and released",
+  "cleanup_queue": {
+    "average_completed_seconds": 3.35,
+    "average_resolved_seconds": 4.07,
+    "claimed": 0,
+    "completed": 1339,
+    "estimated_pending_hours": 23.51,
+    "estimated_remaining_hours": 23.51,
+    "pending": 20785,
+    "percent_complete": 5.94,
+    "remaining": 21208,
+    "review": 423,
+    "timed_resolved_jobs": 1762,
+    "total": 22547
+  },
+  "recent_inference_posts": {
+    "tool": "uv run globe ollama logs query",
+    "query": "--since 2026-10-25T00:00:00 --include chat/completions",
+    "matched": 1,
+    "returned": 1,
+    "only_event": "2026-10-27T01:09:01+00:00 POST /v1/chat/completions 200 24.387s (T32)",
+    "note": "No inference POST after the T32 terminal call; /api/show metadata posts only."
+  },
+  "log_query_source": "bounded tool query, not a whole-log dump",
+  "interpretation": "Observed read-only backend facts at freeze time. A later dispatch must recheck them; this does not authorize dispatch."
+}
