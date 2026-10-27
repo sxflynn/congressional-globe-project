@@ -1,0 +1,100 @@
+{
+  "task": "T62",
+  "packet": "HR-011-v1",
+  "captured_at_utc": "2026-10-27T20:23:49.241527+00:00",
+  "checks": {
+    "registered_identity_matches_authored_packet": true,
+    "registered_body_matches_authored_packet": true,
+    "full_gate_649": true,
+    "before_after_preservation": true,
+    "six_bodies_classified": true,
+    "single_required_feedback_no_default": true,
+    "separate_optional_independent_evaluation": true,
+    "local_links": true
+  },
+  "all_passed": true,
+  "packet_sha256": "997fb2e645446a25543c9763eee254d7abc28bb875d5bac9e475e09ebc226ac9",
+  "desk": {
+    "pid": 68381,
+    "started_as_reported": "Sat Oct24 17:13:53 2026",
+    "command": "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false",
+    "localhost": "http://127.0.0.1:8501",
+    "LAN": "http://10.0.0.56:8501",
+    "http_status_both": 200,
+    "restarted": false
+  },
+  "browser": {
+    "final_help_buttons": 148,
+    "shared_glossary_entries": 219,
+    "shared_spellings": 492,
+    "new_entries": 41,
+    "plain_reading_spans": 2,
+    "source_span_buttons": 0,
+    "desktop_mouse_popup": "no finding opened; correct neutral definition visible",
+    "keyboard_popup": "Tab/Enter opened scope; Escape closed",
+    "normal_text_decoration": "underline dotted",
+    "unsaved_note_survived_mouse_keyboard_and_resize": true,
+    "temporary_note_cleared": true,
+    "reviewer_field_left_blank": true,
+    "saved_or_submitted_test_answers": false,
+    "phone_viewport": [
+      375,
+      812
+    ],
+    "phone_document_width": 375,
+    "phone_popup_bounds": {
+      "left": 16,
+      "right": 359,
+      "width": 343
+    },
+    "physical_iOS_device_checked": false,
+    "screenshots_visually_inspected": true,
+    "final_render_errors": 0,
+    "displayed_aliases_checked": [
+      "proposed readings",
+      "audited",
+      "Same-model agreement",
+      "independent reference reading"
+    ]
+  },
+  "tests": {
+    "focused_glossary_evidence_cases": 28,
+    "new_regression_cases": 6,
+    "full_gate": 649,
+    "status": "passed"
+  },
+  "new_model_calls": 0,
+  "new_historical_grades": 0,
+  "T51_independent_verdict_obtained": false,
+  "HR010_scope_changed": false,
+  "files": [
+    {
+      "path": "docs/review-packets/HR-011-v1.json",
+      "sha256": "8a80297c393828ea19b682a672dd7ccbeff10e700fb70d455b1b0ce44351d3a8"
+    },
+    {
+      "path": "docs/review-glossary.json",
+      "sha256": "a16fe302f9240157f88afd99941b9276c17b2ec4095074ca44953894e26b0a4e"
+    },
+    {
+      "path": "docs/review-source-spans.json",
+      "sha256": "e4abfea8f09dd23e1c717405f7595249aab0858146ae7abe4e6c4d91e3dae2a3"
+    },
+    {
+      "path": "tests/test_review_packet_hr011.py",
+      "sha256": "aebe3ab12d35c5e39044726c542331f97f1d601c1e2bb74809a8549184532384"
+    },
+    {
+      "path": "artifacts/hr011-desk-20261027-01/desktop-definition.png",
+      "sha256": "c83b36c1480eae1bbcf728c211569e680d3a863daf5406cbe8499ca138e3d16b"
+    },
+    {
+      "path": "artifacts/hr011-desk-20261027-01/mobile-definition.png",
+      "sha256": "6882b198e3b034bc5108c3369c9304ac5d9ab7c808f12370ad51d3582205d3ba"
+    },
+    {
+      "path": "artifacts/hr011-desk-20261027-01/gate.raw.log.gz",
+      "sha256": "cb85aea223da656ac1c62369a343f78319ffe973b686e0ca203ca5c21e9f84f4"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "HR-011",
+  "version": 1,
+  "title": "Small OCR study chunks: design review",
+  "instructions": "Requested design review: read the short explanation, then give design feedback. Allow about three minutes for the summary; optional technical detail and notes can be left blank. Stop whenever you need to and choose Not reviewed if appropriate. Tap dotted-underlined terms for definitions. The existing small-chunk direction is already recorded; you are reviewing the proposed handling of image readings, repairs and evidence, not being asked to reapprove that direction. Save draft preserves your work; Submit review records your answer for later application.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "design-feedback",
+      "prompt": "Does the proposed handling of image readings, repairs and evidence match your intent?",
+      "options": [
+        "Design matches my intent",
+        "Needs changes — see notes",
+        "Need a clearer explanation",
+        "Not reviewed"
+      ],
+      "required": true,
+      "evidence": [
+        {
+          "label": "One study chunk at a time",
+          "text": "Each study chunk answers one question on a fixed selection. About 30 minutes of computer work is the target for each proposed experiment, not a limit for the entire study or the eventual full run. The first proposal uses five random paragraphs, one from each part, and two saved failure cases. Findings, failures, uncertainty and cumulative costs are saved before choosing the next chunk. No recurring run is set up.",
+          "url": null
+        },
+        {
+          "label": "Separate image readings, repairs and audits",
+          "text": "An image-only reading sees the source image without the original OCR, dictionaries, detector flags or proposed readings. A separate stateless request then sees the same image, original OCR, static cleanup edits and diagnostics for a combined repair and audit. That later request does not see the earlier image-only reading. A saved proposal can be audited without rewriting its stored response. Same-model agreement can contain correlated errors; it is provisional AI evidence, not an independent reference transcription.",
+          "url": null
+        },
+        {
+          "label": "Source binding and honest inspection outcomes",
+          "text": "Input and output contracts require an inspection record for every target paragraph. A repair uses an exact quote from the original OCR; software-generated positions locate it, rather than asking the AI to count characters. Original and derived text positions remain separate. No finding means no problem was reported in the inspected scope. Incomplete inspection or unresolved evidence stays explicit. Missing or wrong images, uncertain names or numbers, and an apparent successful repair do not become automatic acceptance. Original OCR, earlier proposals and human answers remain unchanged.",
+          "url": null
+        },
+        {
+          "label": "Synthetic example only: a plausible wrong year",
+          "text": "This is a synthetic example of the proposed record format, not historical writing or an actual AI result.\n\nOriginal OCR:\nThe year was 1866.\n\nProposed reading:\nThe year was 1865.\n\nAn exact quote anchors the proposal to its original wording. That source binding does not establish which year the printed text actually contains; a verified source image would still be needed.",
+          "url": null
+        },
+        {
+          "label": "What your design feedback covers",
+          "text": "This is a design review, not grading of historical passages. Your choice records whether these proposed checks match your intent. It is separate from an independent workflow evaluation. The current draft has schema checks and synthetic examples; host checks and software integration still need implementation and verification. No live run, cleanup policy, independent reference reading or full-corpus approval follows from this form. Existing HR-010 grading stays separate.",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "design-notes",
+      "prompt": "Optional notes: what should change, or what remains uncertain?",
+      "options": [],
+      "required": false,
+      "evidence": []
+    },
+    {
+      "id": "independent-evaluation",
+      "prompt": "Optional: if you already have an independent workflow evaluation, paste its verdict, risks and evaluator details here. Otherwise leave this blank.",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "Optional technical detail for a separate evaluation",
+          "text": "Recommended software integration: extend the existing reading runner and raw-first persistence journal using strict input and output contracts, role-specific allowlists and the shared lock. Use the existing dependencies; no new scheduler, SDK, provider, model download or command is proposed.\n\nThe roles are image-only reading, combined repair and audit, and audit of a saved proposal. Short aliases map back to frozen source hashes. Host checks verify exact unique original quotes, raw and derived positions, image registration, complete target accounting and inconsistent status fields. Preserve ambiguous replies, source disagreements, raw responses and unknown usage; reuse only compatible saved results without repeating a request.\n\nThe first proposed finite budget has 12 sequential requests, at most 120 seconds each: 24 request-minutes plus six minutes for setup and reporting. Input, output and image limits still need actual preflight verification. A client timeout does not prove backend cancellation. Missing evidence, invalid or incomplete replies, unknown costs and deadline failures stop further dispatch without retries or easier substitutes.\n\nThe independent workflow evaluation should state its verdict, risks, recommended scope and remaining conditions. In particular, assess leakage into the image-only reading, source binding and derived mappings, state consistency, raw-first persistence and recovery, cumulative finite budgets, and cancellation versus merely stopping the wait. An alternative is to defer software integration while continuing the already-authorized deterministic-only library work. This proposal does not itself supply an independent verdict or model-run authorization.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}

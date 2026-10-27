@@ -798,7 +798,8 @@
       "definition": "A suggested version of the text, shown for comparison with the source. It is not automatically an accepted transcription.",
       "aliases": [
         "reading proposal",
-        "reading proposals"
+        "reading proposals",
+        "proposed readings"
       ]
     },
     {
@@ -1260,6 +1261,272 @@
     {
       "term": "mere blind",
       "definition": "In this historical expression, a distraction or pretext that hides the real purpose. It is unrelated to the project’s phrase blind review. The definition explains the speaker’s expression without endorsing the claim.",
+      "aliases": []
+    },
+    {
+      "term": "design review",
+      "definition": "Reading a proposed approach and giving feedback before it is used.",
+      "aliases": [
+        "design feedback"
+      ]
+    },
+    {
+      "term": "study chunk",
+      "definition": "One small, fixed experiment aimed at answering one question.",
+      "aliases": [
+        "study chunks"
+      ]
+    },
+    {
+      "term": "image-only reading",
+      "definition": "An AI reading made from a page image without showing it the OCR or proposed corrections.",
+      "aliases": [
+        "image-only readings"
+      ]
+    },
+    {
+      "term": "combined repair and audit",
+      "definition": "One AI response that proposes corrections and reports problems it notices in the supplied text. It is a single response, not a second independent check.",
+      "aliases": []
+    },
+    {
+      "term": "audit",
+      "definition": "A check for discrepancies between supplied material and the evidence it is meant to represent.",
+      "aliases": [
+        "audits",
+        "audited",
+        "auditing"
+      ]
+    },
+    {
+      "term": "saved proposal",
+      "definition": "An earlier proposed result retained so it can be inspected without changing its original bytes.",
+      "aliases": [
+        "saved proposals"
+      ]
+    },
+    {
+      "term": "no finding",
+      "definition": "No problem was reported within the part that was inspected.",
+      "aliases": [
+        "no findings",
+        "no-finding"
+      ]
+    },
+    {
+      "term": "incomplete inspection",
+      "definition": "Some of the assigned material was not fully examined.",
+      "aliases": [
+        "incomplete inspections"
+      ]
+    },
+    {
+      "term": "unresolved evidence",
+      "definition": "The available evidence does not settle a reading or claim.",
+      "aliases": []
+    },
+    {
+      "term": "exact quote",
+      "definition": "A sequence of characters copied exactly from the identified text.",
+      "aliases": [
+        "exact quotes"
+      ]
+    },
+    {
+      "term": "software-generated positions",
+      "definition": "Locations in text calculated by software from a matching quote.",
+      "aliases": [
+        "software-generated position"
+      ]
+    },
+    {
+      "term": "input and output contracts",
+      "definition": "Rules specifying the information a program receives and the response it may return.",
+      "aliases": [
+        "input and output contract"
+      ]
+    },
+    {
+      "term": "independent workflow evaluation",
+      "definition": "A separate technical evaluation of the proposed process, performed outside the work being evaluated.",
+      "aliases": [
+        "independent workflow evaluations"
+      ]
+    },
+    {
+      "term": "correlated errors",
+      "definition": "Mistakes that can occur together because two answers share a model, method or other influence.",
+      "aliases": []
+    },
+    {
+      "term": "stateless request",
+      "definition": "A request sent without carrying conversation history from an earlier request.",
+      "aliases": [
+        "stateless requests"
+      ]
+    },
+    {
+      "term": "image registration",
+      "definition": "Checking that an image region lines up with its intended location in the correct source page.",
+      "aliases": []
+    },
+    {
+      "term": "source binding",
+      "definition": "Linking a result to the specific source material and positions that support it.",
+      "aliases": [
+        "source bindings"
+      ]
+    },
+    {
+      "term": "finite budget",
+      "definition": "A fixed limit on resources such as request count, time, tokens or image bytes.",
+      "aliases": [
+        "finite budgets"
+      ]
+    },
+    {
+      "term": "semantic checks",
+      "definition": "Checks that fields and evidence agree in meaning, beyond whether the response has the required format.",
+      "aliases": []
+    },
+    {
+      "term": "raw-first persistence",
+      "definition": "Saving the original response before interpreting or validating it.",
+      "aliases": []
+    },
+    {
+      "term": "backend cancellation",
+      "definition": "Stopping the model service from continuing a request, rather than only stopping the client from waiting.",
+      "aliases": []
+    },
+    {
+      "term": "host checks",
+      "definition": "Checks performed by the surrounding software using frozen inputs and evidence.",
+      "aliases": [
+        "host check"
+      ]
+    },
+    {
+      "term": "alias",
+      "definition": "A short label used to refer to a particular record.",
+      "aliases": [
+        "aliases"
+      ]
+    },
+    {
+      "term": "invariant",
+      "definition": "A condition that must stay true throughout a process.",
+      "aliases": [
+        "invariants"
+      ]
+    },
+    {
+      "term": "software integration",
+      "definition": "Connecting previously separate program parts so they work together.",
+      "aliases": []
+    },
+    {
+      "term": "verdict",
+      "definition": "The conclusion of an evaluation, with its stated scope and limits.",
+      "aliases": [
+        "verdicts"
+      ]
+    },
+    {
+      "term": "detector",
+      "definition": "Software that marks text for further checking when specified patterns or signals are present.",
+      "aliases": [
+        "detector flags"
+      ]
+    },
+    {
+      "term": "diagnostics",
+      "definition": "Recorded signals or checks that describe a program input, result or problem.",
+      "aliases": [
+        "diagnostic signals"
+      ]
+    },
+    {
+      "term": "allowlist",
+      "definition": "An explicit list of fields or actions that a process permits.",
+      "aliases": [
+        "allowlists"
+      ]
+    },
+    {
+      "term": "derived text",
+      "definition": "Text produced from an original through recorded edits or transformations.",
+      "aliases": []
+    },
+    {
+      "term": "independent reference transcription",
+      "definition": "A reading of the source recorded separately from the output being evaluated. Its trust depends on who read it, the evidence and any uncertainty.",
+      "aliases": [
+        "reference transcription",
+        "reference transcriptions",
+        "independent reference reading"
+      ]
+    },
+    {
+      "term": "journal",
+      "definition": "A durable record of attempts, replies and state changes.",
+      "aliases": [
+        "journals"
+      ]
+    },
+    {
+      "term": "dependency",
+      "definition": "A software package or component another program needs.",
+      "aliases": [
+        "dependencies"
+      ]
+    },
+    {
+      "term": "scheduler",
+      "definition": "Software that decides when queued work should run.",
+      "aliases": [
+        "schedulers"
+      ]
+    },
+    {
+      "term": "SDK",
+      "definition": "Software development kit: a collection of tools or libraries used to build software.",
+      "aliases": []
+    },
+    {
+      "term": "source hash",
+      "definition": "A fingerprint calculated from exact source bytes, used to detect changes rather than establish historical truth.",
+      "aliases": [
+        "source hashes"
+      ]
+    },
+    {
+      "term": "deterministic-only library",
+      "definition": "Reusable code that applies specified rules without asking an AI model.",
+      "aliases": [
+        "deterministic-only library work"
+      ]
+    },
+    {
+      "term": "input leakage",
+      "definition": "Information appearing in an input where the study design says it should be withheld.",
+      "aliases": [
+        "leakage"
+      ]
+    },
+    {
+      "term": "state consistency",
+      "definition": "Agreement between a result’s declared status and the information it contains.",
+      "aliases": []
+    },
+    {
+      "term": "cancellation",
+      "definition": "An attempt to stop requested work; evidence is needed to determine which work actually stopped.",
+      "aliases": []
+    },
+    {
+      "term": "same-model agreement",
+      "definition": "Matching responses produced by the same AI model.",
       "aliases": []
     }
   ]

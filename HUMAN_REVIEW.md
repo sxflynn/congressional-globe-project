@@ -4,9 +4,11 @@ Use the browser desk for new reviews. This page links prior answers and explains
 
 ## OCR-repair study preparation
 
-The human requested operationalizing the cleanup discussion. [The evaluation method](docs/reference/ocr-repair-evaluation.md) and the master now define sample preparation, independent source-image references, deterministic repair/detection, structured image audits of apparent successes, negative tests and cost measurement. These are preparation tasks, not a newly registered review or an expanded review allowance. Concrete new criteria/reference-reading requests must show their exact evidence, time and scope before approval; existing answered questions are not repeated. Model audit feedback is not a human grade.
+The human requested operationalizing the cleanup discussion. [The evaluation method](docs/reference/ocr-repair-evaluation.md) and the master now define sample preparation, independent source-image references, deterministic repair/detection, structured image audits of apparent successes, negative tests and cost measurement. HR-011 is now registered at your explicit request to review the proposed process; it is design feedback, not grading of historical passages or an expansion of HR-010. Concrete new criteria/reference-reading requests must show their exact evidence, time and scope before approval; existing answered questions are not repeated. Model audit feedback is not a human grade.
 
 ## Needs your attention
+
+**Ready: HR-011 · Small OCR study chunks: design review.** Open [the desk](http://10.0.0.56:8501), choose **HR-011**, and read the short explanation of image-only readings, proposed repairs and evidence checks. The summary is about three minutes; optional notes and the field for an existing independent technical evaluation can be left blank. Dotted-underlined terms open definitions; illustrative readings stay plain. This is the new desk item you requested. Ordinary design feedback does not supply T51’s independent verdict or authorize a model run.
 
 **Ready: HR-010 · Short source check of selected reading proposals.** Open [the desk](http://10.0.0.56:8501), choose **HR-010**, and compare the two fixed anonymized results with their scans. One full proposed reading and one rejected reply are shown; the unavailable third selection is retained without substitution. This is the already-approved review round, at most10minutes total. Stop sooner and use **Not reviewed — time limit reached** for unfinished samples. No broader approval is requested.
 
