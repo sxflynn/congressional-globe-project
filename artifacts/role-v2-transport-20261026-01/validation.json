@@ -1,0 +1,42 @@
+{
+  "schema_version": "role-v2-transport-validation-v1",
+  "files_sha256": {
+    "src/congressional_globe/role_provider.py": "27f1ba6bfd937aa1957ccf5b760c0b78a14671769b9c20b5b5b3f0579955097f",
+    "tests/test_role_provider.py": "d1a333b5a635c76d0b8807e70b884c7db1619b0f5234af25de445b4a12ed1277",
+    "tests/test_scoped_dates.py": "d2569887fdd629933f4dbe7a85b67cc9ca108416bbe128f510935c07a9eb278c",
+    "artifacts/role-protocol-v2-20261025-02/schema.json": "46c801910131d2cee2b2e6828ee14f90178c0b4172229649535f4504759559dd",
+    "artifacts/role-protocol-v2-20261025-02/protocol.json": "150cde2ab44935b9eec16935659f0c50d89136ed1085093dfd272fac1958cb15",
+    "artifacts/role-v2-transport-20261026-01/gate.log": "5ae264b5e31ccece8291d4aa4c2ddcfc03c83ed00d4453b85f089675b857dc20"
+  },
+  "frozen_schema_matches_generated": true,
+  "status_examples": {
+    "proposed": "pass",
+    "unknown": "pass",
+    "mixed": "pass",
+    "needs_review": "pass"
+  },
+  "host_and_json_schema": "pass",
+  "wrong_kind_unknown_and_duplicate_aliases": "rejected_by_host; duplicate schema-valid_by_design",
+  "serialized_schema_branches": "pass",
+  "fake_clients": "both_adapter_envelopes_pass_no_service_calls",
+  "raw_incomplete_refusal": "preserved",
+  "role_v1_and_date_specialization": "unchanged_existing_tests_pass",
+  "live_backend_compatibility": "blocked_unproved",
+  "ollama_native_schema_grammar": "not_used_existing_json_object_transport",
+  "role_v2_historical_revalidation": "not_rerun_unchanged",
+  "new_tests": 6,
+  "focused_tests": 53,
+  "provider_calls": 0,
+  "network_requests": 0,
+  "source_edits": 0,
+  "human_labels_added": 0,
+  "full_gate": {
+    "exit_code": 0,
+    "tests_passed": 511,
+    "ruff": "pass",
+    "ty": "pass",
+    "complexity_maximum": 5,
+    "markdown_formatter": "pass",
+    "log": "gate.log"
+  }
+}

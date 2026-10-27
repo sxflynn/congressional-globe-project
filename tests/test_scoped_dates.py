@@ -260,10 +260,16 @@ def test_date_transport_specialization_binds_aliases_without_mutation(cases):
     assert not Draft202012Validator(schema).is_valid(invalid)
 
 
-def test_existing_role_v2_transport_remains_blocked():
-    # Existing role-v2 transport incompatibility is preserved as an explicit blocker.
-    with pytest.raises(KeyError, match="properties"):
-        specialize_schema(role_result_schema(), {})
+def test_role_v2_transport_specialization_no_longer_raises():
+    original = role_result_schema()
+    packet = {
+        "spans": [{"id": "P1", "kind": "paragraph"}],
+        "controlled_role_ids": ["floor_speaker"],
+        "statuses": ["unknown"],
+    }
+    schema = specialize_schema(original, packet)
+    assert schema["properties"]["speaker_roles"]["items"]["oneOf"]
+    assert original == role_result_schema()
 
 
 @pytest.mark.parametrize("provider", ["ollama", "openai"])

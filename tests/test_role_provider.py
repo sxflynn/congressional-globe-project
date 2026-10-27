@@ -1,11 +1,15 @@
 """Focused contract tests for the role-only provider adapter."""
 
+import json
+from copy import deepcopy
 from types import SimpleNamespace as NS
 
 import pytest
+from jsonschema import Draft202012Validator
 
 from congressional_globe import role_provider
 from congressional_globe.role_aliases import ROLE_RESULT_SCHEMA
+from congressional_globe.role_v2 import role_result_schema, validate_role_result_v2
 
 
 def _dump_response(**values):
@@ -212,3 +216,198 @@ class _NullLock:
 
     def __exit__(self, *args):
         return False
+
+
+def _v2_packet() -> dict:
+    return {
+        "window_id": "w1",
+        "spans": [
+            {"id": "P1", "kind": "paragraph"},
+            {"id": "P2", "kind": "paragraph"},
+            {"id": "C1", "kind": "speaker_cue"},
+        ],
+        "controlled_role_ids": ["floor_speaker", "person_mentioned"],
+        "statuses": ["proposed", "unknown", "mixed", "needs_review"],
+    }
+
+
+def _v2_result(status: str) -> dict:
+    row = {
+        "candidate_id": None,
+        "evidence_ids": ["P1"],
+        "target_ids": ["P1"],
+        "role": "floor_speaker",
+        "status": status,
+        "basis": "Synthetic bounded example.",
+    }
+    if status == "proposed":
+        row.update(candidate_id="C1", evidence_ids=["C1"])
+    elif status == "mixed":
+        row.update(candidate_id="C1", evidence_ids=["P1", "C1"])
+    elif status == "needs_review":
+        row.update(evidence_ids=[])
+    return {"speaker_roles": [row]}
+
+
+def _v2_with(status: str, **overrides) -> dict:
+    return {"speaker_roles": [{**_v2_result(status)["speaker_roles"][0], **overrides}]}
+
+
+def _v2_branch_fields(schema: dict) -> dict:
+    branches = schema["properties"]["speaker_roles"]["items"]["oneOf"]
+    return branches[0]["allOf"][0]["properties"]
+
+
+def test_role_v2_specialization_binds_every_status_branch_without_mutation():
+    packet = _v2_packet()
+    original = deepcopy(role_result_schema())
+    schema = role_provider.specialize_schema(role_result_schema(), packet)
+    Draft202012Validator.check_schema(schema)
+    validator = Draft202012Validator(schema)
+    for status in packet["statuses"]:
+        result = _v2_result(status)
+        assert validator.is_valid(result), list(validator.iter_errors(result))
+        assert validate_role_result_v2(result, packet)["speaker_roles"][0]["status"] == status
+    branches = schema["properties"]["speaker_roles"]["items"]["oneOf"]
+    assert len(branches) == 4
+    for branch in branches:
+        fields = branch["allOf"][0]["properties"]
+        assert fields["candidate_id"]["enum"] == ["C1", None]
+        assert fields["target_ids"]["items"]["enum"] == ["P1", "P2"]
+        assert fields["evidence_ids"]["items"]["enum"] == ["P1", "P2", "C1"]
+        assert fields["role"]["enum"] == packet["controlled_role_ids"]
+        assert fields["status"]["enum"] == packet["statuses"]
+    assert original == role_result_schema()
+
+
+def test_role_v2_specialization_supports_serialized_schema_branches():
+    frozen = json.loads(json.dumps(role_result_schema()))
+    schema = role_provider.specialize_schema(frozen, _v2_packet())
+    Draft202012Validator.check_schema(schema)
+    for branch in schema["properties"]["speaker_roles"]["items"]["oneOf"]:
+        assert branch["allOf"][0]["properties"]["target_ids"]["items"]["enum"] == ["P1", "P2"]
+
+
+def test_role_v2_specialization_rejects_unbound_wrong_kind_and_duplicate_aliases():
+    packet = _v2_packet()
+    validator = Draft202012Validator(role_provider.specialize_schema(role_result_schema(), packet))
+    cases = [
+        (_v2_with("proposed", candidate_id="C9"), False, "supplied speaker/person cue"),
+        (_v2_with("mixed", target_ids=["P9"]), False, "wrong kind or an unknown alias"),
+        (_v2_with("mixed", evidence_ids=["C9"]), False, "wrong kind or an unknown alias"),
+        (_v2_with("unknown", candidate_id="C1"), False, "cannot name"),
+        (_v2_with("unknown", evidence_ids=["C1"]), False, "wrong kind or an unknown alias"),
+        (_v2_with("mixed", target_ids=["P1", "P1"]), True, "duplicate aliases"),
+    ]
+    for result, schema_valid, message in cases:
+        assert validator.is_valid(result) is schema_valid
+        with pytest.raises(ValueError, match=message):
+            validate_role_result_v2(result, packet)
+
+
+def test_role_v2_openai_request_sends_specialized_schema_and_validates(monkeypatch):
+    captured = {}
+    packet = _v2_packet()
+    output = json.dumps(_v2_result("unknown"))
+    response = _dump_response(
+        id="v2-openai",
+        status="completed",
+        output_text=output,
+        output=[],
+        usage=None,
+        incomplete_details=None,
+    )
+
+    class Client:
+        def __init__(self, **kwargs):
+            captured["client"] = kwargs
+            self.responses = NS(create=self.create)
+
+        def create(self, **kwargs):
+            captured["request"] = kwargs
+            return response
+
+    monkeypatch.setattr(role_provider, "OpenAI", Client)
+    result = role_provider.RoleProvider("openai", "model").call(
+        packet, "classify", role_result_schema()
+    )
+    sent = captured["request"]["text"]["format"]["schema"]
+    assert _v2_branch_fields(sent)["candidate_id"]["enum"] == ["C1", None]
+    assert captured["request"]["text"]["format"]["strict"] is True
+    assert result["status"] == "completed"
+    assert result["raw_response"] == '{"id": "v2-openai", "status": "completed"}'
+    assert validate_role_result_v2(json.loads(result["output_text"]), packet)
+
+
+def test_role_v2_ollama_request_sends_specialized_schema_and_validates(monkeypatch):
+    captured = {}
+    packet = _v2_packet()
+    output = json.dumps(_v2_result("unknown"))
+    response = NS(
+        id="v2-ollama",
+        choices=[NS(message=NS(content=output, refusal=None), finish_reason="stop")],
+        usage=None,
+    )
+    response.model_dump = lambda mode: {"id": response.id, "choices": []}
+
+    class Client:
+        def __init__(self, **kwargs):
+            captured["client"] = kwargs
+            self.chat = NS(completions=NS(create=self.create))
+
+        def create(self, **kwargs):
+            captured["request"] = kwargs
+            return response
+
+    monkeypatch.setattr(role_provider, "OpenAI", Client)
+    monkeypatch.setattr(role_provider, "_ollama_request_lock", lambda: _NullLock())
+    result = role_provider.RoleProvider("ollama", "qwen", "http://localhost").call(
+        packet, "classify", role_result_schema()
+    )
+    sent = json.loads(
+        captured["request"]["messages"][0]["content"].split(
+            "Output JSON matching this schema: ", 1
+        )[1]
+    )
+    assert _v2_branch_fields(sent)["candidate_id"]["enum"] == ["C1", None]
+    assert result["status"] == "completed"
+    assert validate_role_result_v2(json.loads(result["output_text"]), packet)
+
+
+def test_role_v2_incomplete_and_refusal_keep_raw_response_behavior(monkeypatch):
+    packet = _v2_packet()
+    incomplete = _dump_response(
+        id="v2-incomplete",
+        status="incomplete",
+        output_text='{"speaker_roles": [',
+        output=[],
+        usage=None,
+        incomplete_details=NS(reason="max_output_tokens"),
+    )
+    refusal = _dump_response(
+        id="v2-refusal",
+        status="completed",
+        output_text="I cannot help",
+        output=[NS(type="message", content=[NS(type="refusal")])],
+        usage=None,
+        incomplete_details=None,
+    )
+
+    class Client:
+        def __init__(self, **kwargs):
+            self.responses = NS(create=self.create)
+            self.calls = 0
+
+        def create(self, **kwargs):
+            self.calls += 1
+            return (incomplete, refusal)[self.calls - 1]
+
+    monkeypatch.setattr(role_provider, "OpenAI", Client)
+    provider = role_provider.RoleProvider("openai", "model")
+    first = provider.call(packet, "classify", role_result_schema())
+    second = provider.call(packet, "classify", role_result_schema())
+    assert first["status"] == "incomplete"
+    assert first["output_text"] == '{"speaker_roles": ['
+    assert first["raw_response"] == '{"id": "v2-incomplete", "status": "incomplete"}'
+    assert second["status"] == "refusal"
+    assert second["output_text"] == "I cannot help"

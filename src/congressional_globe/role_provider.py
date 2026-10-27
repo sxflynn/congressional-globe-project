@@ -116,11 +116,25 @@ def _schema_format(schema: dict) -> dict:
 
 
 def specialize_schema(schema: dict, packet: dict) -> dict:
-    """Constrain reusable role schema enums to IDs present in one request packet."""
+    """Constrain reusable result schemas to IDs present in one request packet."""
     result = deepcopy(schema)
     if "dates" in result["properties"]:
         return _specialize_dates(result, packet)
-    properties = result["properties"]["speaker_roles"]["items"]["properties"]
+    _specialize_role(result, packet)
+    return result
+
+
+def _specialize_role(schema: dict, packet: dict) -> None:
+    """Specialize role-v1 fields or every status branch of the role-v2 oneOf."""
+    items = schema["properties"]["speaker_roles"]["items"]
+    if "oneOf" in items:
+        for branch in items["oneOf"]:
+            _specialize_role_fields(branch["allOf"][0]["properties"], packet)
+        return
+    _specialize_role_fields(items["properties"], packet)
+
+
+def _specialize_role_fields(properties: dict, packet: dict) -> None:
     spans = packet["spans"]
     paragraphs = _ids_of_kinds(spans, {"paragraph"})
     cues = _ids_of_kinds(spans, {"speaker_cue", "person_cue"})
@@ -133,7 +147,6 @@ def specialize_schema(schema: dict, packet: dict) -> dict:
     properties["evidence_ids"]["items"]["description"] = "A supplied paragraph or cue alias."
     properties["role"]["enum"] = list(packet["controlled_role_ids"])
     properties["status"]["enum"] = list(packet["statuses"])
-    return result
 
 
 def _scope_instruction(schema: dict) -> str:
