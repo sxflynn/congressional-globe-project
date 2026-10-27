@@ -4,6 +4,8 @@ Prepare the five parts of the 39th Congress, first session for keyword, OCR-tole
 
 **[MASTER_PLAN.md](MASTER_PLAN.md)** connects the destination and pilot acceptance checks to seven engineering stages, their subtasks, current progress and the next executable task. Agents start at [AGENTS.md](AGENTS.md); detailed policies and commands are linked by task, not required reading for everyone.
 
+The immediate investigation measures how accurately and efficiently damaged OCR can be repaired with deterministic processing and image-grounded AI, including audits of text that appears clean. The [evaluation contract](docs/reference/ocr-repair-evaluation.md) explains the method; the master contains the actionable tasks and current permission bounds. Optional predictive scoring must not delay cleanup evaluation.
+
 Use the browser review desk below to answer questions and grade samples. Agents pick up submitted answers when they next work on the project.
 
 ## Get started
@@ -68,7 +70,7 @@ make status
 
 This reads the existing cleanup queue. If you deliberately want to prepare or refresh the existing static export, run `make run-static`. It makes no model requests but can update generated files.
 
-Optional `make run-qwen`, `make run-gemma` and `make run-openai` resume **OCR cleanup**, for up to one hour/1,000 requests. They do not run the future tagging/search workflow. Run one worker at a time. Local workers need the configured Ollama server/models; OpenAI needs `OPENAI_API_KEY` in ignored `.env` and incurs API charges. See the master plan before starting or resuming a job.
+Historical operator targets `make run-qwen`, `make run-gemma` and `make run-openai` resume **OCR cleanup**, for up to one hour/1,000 requests. They do not run the future tagging/search workflow. Run one worker at a time. Local workers need the configured Ollama server/models; OpenAI needs `OPENAI_API_KEY` in ignored `.env` and incurs API charges. These targets are not authorization to run now. The efficacy study uses a separately frozen finite task and actual permission; see the master before starting or resuming any job.
 
 ## Query Ollama logs
 

@@ -2,6 +2,10 @@
 
 Use the browser desk for new reviews. This page links prior answers and explains how to start it; [MASTER_PLAN.md](MASTER_PLAN.md) owns current decisions, progress and next work; the [review protocol](docs/reference/human-review-protocol.md) contains detailed agent procedures.
 
+## OCR-repair study preparation
+
+The human requested operationalizing the cleanup discussion. [The evaluation method](docs/reference/ocr-repair-evaluation.md) and the master now define sample preparation, independent source-image references, deterministic repair/detection, structured image audits of apparent successes, negative tests and cost measurement. These are preparation tasks, not a newly registered review or an expanded review allowance. Concrete new criteria/reference-reading requests must show their exact evidence, time and scope before approval; existing answered questions are not repeated. Model audit feedback is not a human grade.
+
 ## Needs your attention
 
 **Ready: HR-010 · Short source check of selected reading proposals.** Open [the desk](http://10.0.0.56:8501), choose **HR-010**, and compare the two fixed anonymized results with their scans. One full proposed reading and one rejected reply are shown; the unavailable third selection is retained without substitution. This is the already-approved review round, at most10minutes total. Stop sooner and use **Not reviewed — time limit reached** for unfinished samples. No broader approval is requested.
