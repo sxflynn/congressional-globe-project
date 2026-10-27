@@ -72,3 +72,10 @@ No answers or thresholds are invented here. The previously recorded six-paragrap
 - The human clarified that the desired destination is to clean everything, so prioritizing a subset may not be the main reason to develop a score. This expresses the intended destination, not authorization to launch a full-corpus run.
 - The human is questioning whether a confidence score is worthwhile and suggested its purpose may instead be **predicting accuracy before processing**. This remains exploratory, not a selected scoring method.
 - Distinguish two possible targets for discussion: how damaged the input OCR is versus how reliably the proposed cleanup workflow will repair it. These are different measurements; no validated relationship or probability estimate exists yet.
+
+### Tentative agreement — test predictive scoring alongside cleanup
+
+- The human said “I'm kind of on board” and explicitly asked to add the proposal to this document. Record this as tentative agreement to the investigation idea, not final approval of a scoring algorithm, sample, budget or model run.
+- On the eventual bounded sample: calculate the candidate score **before** cleanup, run the selected cleanup approach, then check results against the source images. Test whether the score predicts correct repairs, missed errors, newly introduced errors and need for human review.
+- Use predictive scoring only if measured results show it helps forecast cleanup reliability or review workload across the intended collection. If it does not, defer further investment.
+- Scoring is optional and should be tested alongside cleanup; it is not a prerequisite that delays the cleanup experiment. Exact evaluation design and independent reference readings remain to be agreed.
