@@ -48,6 +48,12 @@ Try `make review-demo` for an invented practice example. Practice answers are no
 
 Saved drafts and submissions are in `artifacts/human-review/reviews.sqlite`. Unsaved typing can be lost on reload. Stop the server before copying this file for backup or moving it to another machine; agents also commit exact JSON submissions/receipts when applying decisions.
 
+## If the desk will not open
+
+On this computer, open [the local desk](http://127.0.0.1:8501). On your phone or tablet, use [the Wi-Fi address](http://10.0.0.56:8501) while connected to the same network. The computer running the desk must be awake, and its Wi-Fi address can change.
+
+If a previously open tab shows an error, reopen the address in a fresh tab. Saved drafts and submitted reviews stay in the database; unsaved typing may be lost. If neither address opens, ask an agent to check the running server before restarting it. Do not delete or replace the saved-review database to fix a connection problem.
+
 ## Agent procedure
 
 1. Follow [AGENTS.md](AGENTS.md) and the [review protocol](docs/reference/human-review-protocol.md). At startup run `uv run globe review inbox`; new submissions do not require a separate human chat message.

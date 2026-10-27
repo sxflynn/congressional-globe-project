@@ -1,0 +1,75 @@
+{
+  "task": "T39",
+  "reported_problem": "Review desk is down",
+  "image_inspection_available": true,
+  "existing_server": {
+    "pid": 68381,
+    "ppid": 1,
+    "start_local": "2026-10-24 17:13:53 America/New_York",
+    "observed_elapsed": "02-04:40:18",
+    "command": "Python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false",
+    "listen": "0.0.0.0:8501",
+    "log": "tmp/review-glossary/detached-server.log"
+  },
+  "health": {
+    "http://127.0.0.1:8501/_stcore/health": {
+      "status": 200,
+      "body": "ok"
+    },
+    "http://10.0.0.56:8501/_stcore/health": {
+      "status": 200,
+      "body": "ok"
+    }
+  },
+  "local_browser": {
+    "title": "Congressional Globe · Human review",
+    "packet": "HR-010 v1",
+    "exceptions": [],
+    "alerts": [],
+    "help_buttons": 275,
+    "form_available": true
+  },
+  "earlier_log_error": {
+    "local_timestamp": "2026-10-26 21:39:30.393",
+    "error": "TypeError: show_text() got an unexpected keyword argument heading",
+    "status": "Earlier transient glossary-edit error; corrected committed code already renders fresh sessions successfully. Not reproduced now."
+  },
+  "database_counts": {
+    "packets": 5,
+    "submissions": 4,
+    "drafts": 0,
+    "applied_receipts": 4
+  },
+  "database_content_sha256": {
+    "packets": "e36fb1fcc08e5b18892631f5ba06b6cfc5b0dfb79828c6dbab32df545a41d539",
+    "submissions": "c25b39536320f7a40123d8fe46b15c5f4346e5c88ff89e033be4b649a1ecf28e",
+    "drafts": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "applied_receipts": "404796ec57bcafd16334826891be28ad1664724a40d895196310ea5f95a3825c"
+  },
+  "mutations": {
+    "server_restarted": false,
+    "database_modified": false,
+    "form_saved_or_submitted": false,
+    "application_code_changed": false
+  },
+  "limits": [
+    "Original client/device state was not inspected; stale error page is a possible explanation, not a confirmed device diagnosis.",
+    "LAN address checked from this computer, not a separate phone/tablet.",
+    "No automatic restart/recurring monitor installed."
+  ],
+  "lan_browser": {
+    "url": "http://10.0.0.56:8501/",
+    "title": "Congressional Globe · Human review",
+    "packet": "HR-010 v1",
+    "exceptions": [],
+    "alerts": [],
+    "help_buttons": 275,
+    "form_available": true
+  },
+  "persisted_database_unchanged_after_checks": true,
+  "independent_review": {
+    "model": "gpt-6-luna",
+    "scope": "bounded read-only evidence and guide review",
+    "verdict": "No blocker; evidence proves same-computer access only, not the original user device."
+  }
+}
