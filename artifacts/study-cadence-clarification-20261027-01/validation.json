@@ -1,0 +1,26 @@
+{
+  "task": "T61",
+  "human_clarification": "Small finite chunks apply to the whole study; full-corpus processing duration is separate.",
+  "checks": {
+    "whole_study_scope_explicit": true,
+    "per_experiment_not_total_cap": true,
+    "full_processing_separate": true,
+    "question_sample_budget_result_decision": true,
+    "cumulative_and_confirmation_protected": true,
+    "next_task_and_completion": true,
+    "T49_T60_immutable_files_preserved": true,
+    "local_links": true
+  },
+  "all_passed": true,
+  "last_full_code_gate": "T44,643tests; documentation only; not rerun",
+  "new_provider_calls": 0,
+  "new_image_fetches": 0,
+  "new_human_review": false,
+  "preparation_review": {
+    "reviewer": "GPT-6 Luna delegate",
+    "scope": "Only method small-chunk section and master clarification/T61/next-task text",
+    "findings": [],
+    "conclusion": "No contradiction: per-experiment target, cumulative evidence/costs, reserved confirmation and quality/reference needs preserved; T50 still next.",
+    "human_or_source_grade": false
+  }
+}
