@@ -1,0 +1,564 @@
+{
+  "schema_version": "ocr-small-pilot-design-v1",
+  "task": "T60",
+  "status": "Human-requested small-pilot design, no launch/criterion approval",
+  "human_direction": "Design something smaller that might need about30minutes of computer AI runtime. Interpreted conservatively as proposed whole-session ceiling, not30minutes of extra calls or launch authorization.",
+  "scope": {
+    "primary_units": 5,
+    "parts": 5,
+    "primary_per_part": 1,
+    "challenge_units": 2,
+    "units_total": 7,
+    "new_provider_calls_maximum": 12,
+    "new_image_only_observation_calls": 5,
+    "new_combined_repair_audit_calls": 5,
+    "new_saved_failure_audit_calls": 2,
+    "fresh_confirmation_calls": 0,
+    "human_review_minutes_required_for_this_diagnostic": 0,
+    "tts_audio_calls": 0
+  },
+  "selection": {
+    "rule": "First (lowest frozen priority) T49 primary per part; do not inspect scores or reselect. These remain the original top1 of the same full frame.",
+    "primary_frame": {
+      "identity_sha256": "94b6d2f886b4e170bbd3c73ac744f759fa6b4fc204f2e049e695d8b94da38624",
+      "encoding": "source-order compact sorted-key UTF8 JSON metadata rows + newline; row fields are selection-record fields before split/priority additions",
+      "nonempty_paragraphs": 296993,
+      "per_part": [
+        {
+          "part_number": 1,
+          "pages": 1086,
+          "blank_ocr_pages": 12,
+          "all_paragraphs": 54945,
+          "empty_ocr_paragraphs": 0,
+          "eligible_nonempty_paragraphs": 54945,
+          "raw_codepoints": 12832813,
+          "static_codepoints": 12743219,
+          "confirmation_conditional_frame": 52848
+        },
+        {
+          "part_number": 2,
+          "pages": 1080,
+          "blank_ocr_pages": 5,
+          "all_paragraphs": 59206,
+          "empty_ocr_paragraphs": 2,
+          "eligible_nonempty_paragraphs": 59204,
+          "raw_codepoints": 12744549,
+          "static_codepoints": 12661119,
+          "confirmation_conditional_frame": 57190
+        },
+        {
+          "part_number": 3,
+          "pages": 1076,
+          "blank_ocr_pages": 3,
+          "all_paragraphs": 59437,
+          "empty_ocr_paragraphs": 0,
+          "eligible_nonempty_paragraphs": 59437,
+          "raw_codepoints": 12633264,
+          "static_codepoints": 12553146,
+          "confirmation_conditional_frame": 56864
+        },
+        {
+          "part_number": 4,
+          "pages": 1080,
+          "blank_ocr_pages": 8,
+          "all_paragraphs": 57261,
+          "empty_ocr_paragraphs": 0,
+          "eligible_nonempty_paragraphs": 57261,
+          "raw_codepoints": 12668501,
+          "static_codepoints": 12586697,
+          "confirmation_conditional_frame": 54751
+        },
+        {
+          "part_number": 5,
+          "pages": 1090,
+          "blank_ocr_pages": 15,
+          "all_paragraphs": 66146,
+          "empty_ocr_paragraphs": 0,
+          "eligible_nonempty_paragraphs": 66146,
+          "raw_codepoints": 12258401,
+          "static_codepoints": 12174129,
+          "confirmation_conditional_frame": 64092
+        }
+      ],
+      "population_limit": "Nonempty OCR paragraphs only; missing print outside OCR is unmeasured. Blank pages counted, not assigned to nonempty-paragraph estimates."
+    },
+    "subset_inclusion": "1/N_h under the original uniform-priority model; N_h expansion weight. One unit per part cannot estimate within-part design variance. Only descriptive provisional counts, no corpus accuracy/safety/recall inference.",
+    "confirmation": "All10 T49 confirmation identities remain unused, text withheld. No new confirmation selected.",
+    "exposure": "T49 primary was already materialized; known/unknown exposure carried forward. Two challenge audits deliberately exposed. No fresh/held-out evidence claim.",
+    "larger_design": "T49 bytes and prospective two-reader reference design preserved unchanged; deferred as an initial-runtime requirement, not erased or treated as approved."
+  },
+  "runtime": {
+    "total_session_seconds_proposed_maximum": 1800,
+    "cumulative_request_wait_seconds_maximum": 1440,
+    "setup_and_report_reserve_seconds": 360,
+    "request_seconds_maximum": 120,
+    "calls_maximum": 12,
+    "output_tokens_per_call_proposed_maximum": 1500,
+    "output_tokens_total_proposed_maximum": 18000,
+    "input_tokens_per_call_proposed_maximum_including_images": 6000,
+    "input_tokens_total_proposed_maximum_including_images": 72000,
+    "hard_input_accounting": "Actual model/image token fit must be measured or rigorously bounded in T55; unknown input/image usage blocks launch. These proposed limits are not measured counts.",
+    "local_provider": "Preferred installed image-capable Qwen candidate only, exact runtime/model digest and capability rechecked in T55; no model substitution/download. Same model for both primary passes avoids switching but creates correlated errors.",
+    "retry_count": 0,
+    "parallel_requests": 1,
+    "compatibility_warmup_calls": "Included in the12-call/time envelope, never additional. Any necessary unscheduled call needs revised frozen readiness; no free trial.",
+    "deadline": "Start clock before fresh checks/model loading/image acquisition. Before each send require remaining global time≥120seconds+30seconds terminal/report reserve, remaining request budget≥120seconds, and a free fixed slot. Use minimum120/global/request remaining timeout. Stop on deadline,budget,invalid/refusal/incomplete response,timeout,unknown usage,wrong/missing image or incompatible identity; no replacements/retries.",
+    "setup_overrun": "If readiness/images/token fit consume more than360seconds, do not launch a reduced/adaptive request list; mark session not_ready and stop. If overhead/processing later consumes deadline reserve, stop with partial coverage.",
+    "cancellation_limit": "Client deadlines/transport timeout are not proven server-compute cancellation. T53/T55 must establish owned-request stop/observation behavior before claiming a hard30minute computer shutdown. On ambiguous timeout do not launch another request; retain unknown backend consumption and reconcile logs/process state. Current design is a bounded dispatch/wait proposal, not proof of backend cancellation.",
+    "completion": "A partial/nonready terminal report is a valid feasibility outcome, not a completed seven-unit quality evaluation."
+  },
+  "materials": {
+    "target_codepoints_per_unit_each_layer_maximum": 6000,
+    "context_codepoints_per_unit_each_layer_maximum": 2000,
+    "target_crop_bindings_maximum": 7,
+    "per_unit_crop_bindings_maximum": 1,
+    "image_payload_bytes_total_maximum": 16777216,
+    "image_downloads_in_T60": 0,
+    "source_passes_in_T60": 0,
+    "text_policy": "Whole targets only; primary context included complete under2000codepoints or omitted, never silently clipped. Reuse exact T49 source text/static hashes and frozen saved challenge source/proposal identities. Oversize/missing/unclear image =>unresolved and stop; no easier replacement.",
+    "images": "Five probability targets currently have no bound image. Two historical challenge bindings are recorded but must be reverified. New fetches,if separately authorized in readiness, count against total session/bytes and have no automatic retries. More than one required crop per unit blocks this small design; do not silently weaken coverage.",
+    "manifest_bytes_maximum": 1048576
+  },
+  "units": [
+    {
+      "id": "S1",
+      "kind": "primary_probability_subset",
+      "source_id": "congressionalg7391unit:526:par_000526_000021",
+      "part_number": 1,
+      "scan_leaf": 526,
+      "raw_sha256": "c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8",
+      "static_sha256": "7232477948a863ee16c02ae4c837d5caffac4e177f60d8729633f531d29b7c9a",
+      "raw_codepoints": 709,
+      "static_codepoints": 699,
+      "input_ref": {
+        "path": "artifacts/ocr-sample-design-20261027-01/sample.json",
+        "sha256": "d460f3410be9905f4cf5fe42ee8eaa7e5a1174b9cde74d5d1be14a30395083b1",
+        "selector": "primary source_id=congressionalg7391unit:526:par_000526_000021"
+      },
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 54945
+      },
+      "expansion_weight": 54945,
+      "image_sha256": null,
+      "image_status": "not_bound; future target coverage/registration/legibility check required",
+      "reference_status": "no actual reading; future image-only AI observation is provisional",
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      }
+    },
+    {
+      "id": "S2",
+      "kind": "primary_probability_subset",
+      "source_id": "congressionalglo7392unit:716:par_000716_000020",
+      "part_number": 2,
+      "scan_leaf": 716,
+      "raw_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+      "static_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+      "raw_codepoints": 58,
+      "static_codepoints": 58,
+      "input_ref": {
+        "path": "artifacts/ocr-sample-design-20261027-01/sample.json",
+        "sha256": "d460f3410be9905f4cf5fe42ee8eaa7e5a1174b9cde74d5d1be14a30395083b1",
+        "selector": "primary source_id=congressionalglo7392unit:716:par_000716_000020"
+      },
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 59204
+      },
+      "expansion_weight": 59204,
+      "image_sha256": null,
+      "image_status": "not_bound; future target coverage/registration/legibility check required",
+      "reference_status": "no actual reading; future image-only AI observation is provisional",
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      }
+    },
+    {
+      "id": "S3",
+      "kind": "primary_probability_subset",
+      "source_id": "congressionalglo7393unit:1055:par_001055_000071",
+      "part_number": 3,
+      "scan_leaf": 1055,
+      "raw_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+      "static_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+      "raw_codepoints": 19,
+      "static_codepoints": 19,
+      "input_ref": {
+        "path": "artifacts/ocr-sample-design-20261027-01/sample.json",
+        "sha256": "d460f3410be9905f4cf5fe42ee8eaa7e5a1174b9cde74d5d1be14a30395083b1",
+        "selector": "primary source_id=congressionalglo7393unit:1055:par_001055_000071"
+      },
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 59437
+      },
+      "expansion_weight": 59437,
+      "image_sha256": null,
+      "image_status": "not_bound; future target coverage/registration/legibility check required",
+      "reference_status": "no actual reading; future image-only AI observation is provisional",
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      }
+    },
+    {
+      "id": "S4",
+      "kind": "primary_probability_subset",
+      "source_id": "congressionalglo00unit:83:par_000083_000042",
+      "part_number": 4,
+      "scan_leaf": 83,
+      "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "static_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "raw_codepoints": 33,
+      "static_codepoints": 33,
+      "input_ref": {
+        "path": "artifacts/ocr-sample-design-20261027-01/sample.json",
+        "sha256": "d460f3410be9905f4cf5fe42ee8eaa7e5a1174b9cde74d5d1be14a30395083b1",
+        "selector": "primary source_id=congressionalglo00unit:83:par_000083_000042"
+      },
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 57261
+      },
+      "expansion_weight": 57261,
+      "image_sha256": null,
+      "image_status": "not_bound; future target coverage/registration/legibility check required",
+      "reference_status": "no actual reading; future image-only AI observation is provisional",
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      }
+    },
+    {
+      "id": "S5",
+      "kind": "primary_probability_subset",
+      "source_id": "congressionalglo7395unit:529:par_000529_000006",
+      "part_number": 5,
+      "scan_leaf": 529,
+      "raw_sha256": "7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426",
+      "static_sha256": "cf488fd916ff03460b78a1f419241dba41abda055b7304de5144808fe0f304d7",
+      "raw_codepoints": 63,
+      "static_codepoints": 61,
+      "input_ref": {
+        "path": "artifacts/ocr-sample-design-20261027-01/sample.json",
+        "sha256": "d460f3410be9905f4cf5fe42ee8eaa7e5a1174b9cde74d5d1be14a30395083b1",
+        "selector": "primary source_id=congressionalglo7395unit:529:par_000529_000006"
+      },
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 66146
+      },
+      "expansion_weight": 66146,
+      "image_sha256": null,
+      "image_status": "not_bound; future target coverage/registration/legibility check required",
+      "reference_status": "no actual reading; future image-only AI observation is provisional",
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      }
+    },
+    {
+      "id": "D1",
+      "kind": "exposed_challenge_audit",
+      "challenge_ref": {
+        "path": "artifacts/ocr-sample-design-20261027-01/challenges.json",
+        "sha256": "441a9972d0a05ca86a9ad7a04ee330bad2fa46677ef9a7e26456c592f081cf1d",
+        "id": "K01"
+      },
+      "purpose": "Consequential Roman numeral harm; F10 legitimate-correction comparator shares this diagnostic source.",
+      "fixture_ref": {
+        "path": "artifacts/reading-failure-fixtures-20261025-01/fixtures.json",
+        "sha256": "6d290330bc4d4186c72275df4331b87118cf01729fafb93361477414b2fbdfbc",
+        "case_id": "F01-critical-chapter"
+      },
+      "target_paragraph_count": 4,
+      "raw_codepoints": 1858,
+      "static_codepoints": 1848,
+      "image_bindings_as_recorded": [
+        {
+          "id": "reading-74d01b9894f76563d519-leaf-1060",
+          "path": "artifacts/reading-images-20261024-01/reading-74d01b9894f76563d519-leaf-1060/crop.jpg",
+          "sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+          "sources": [
+            {
+              "end": 259,
+              "raw_sha256": "8afdad05fdde58558f1cf5a973e281e1247e086cfad7af139eba0a6dbecacbbf",
+              "source_id": "congressionalglo7395unit:1060:par_001060_000025",
+              "start": 0
+            },
+            {
+              "end": 231,
+              "raw_sha256": "d3d297fc4b96c5e77591cd5c98530462be7a5a3381ff6cf300a1dfb440e3e411",
+              "source_id": "congressionalglo7395unit:1060:par_001060_000026",
+              "start": 0
+            },
+            {
+              "end": 418,
+              "raw_sha256": "42f077531ceac77b40857983d727226ea24ac857994913b82909af411e485eb5",
+              "source_id": "congressionalglo7395unit:1060:par_001060_000027",
+              "start": 0
+            },
+            {
+              "end": 950,
+              "raw_sha256": "38df69ac13782c2367417d4c8807e27539bd6edd36e7c19758163967681efcfc",
+              "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+              "start": 0
+            }
+          ]
+        }
+      ],
+      "reference_status": "Inherited provisional source assessment; not new independent truth",
+      "inclusion_probability": null,
+      "weight": null
+    },
+    {
+      "id": "D2",
+      "kind": "exposed_challenge_audit",
+      "challenge_ref": {
+        "path": "artifacts/ocr-sample-design-20261027-01/challenges.json",
+        "sha256": "441a9972d0a05ca86a9ad7a04ee330bad2fa46677ef9a7e26456c592f081cf1d",
+        "id": "K02"
+      },
+      "purpose": "Printed repeated word removed by fluent repair.",
+      "fixture_ref": {
+        "path": "artifacts/reading-failure-fixtures-20261025-01/fixtures.json",
+        "sha256": "6d290330bc4d4186c72275df4331b87118cf01729fafb93361477414b2fbdfbc",
+        "case_id": "F02-printed-repetition"
+      },
+      "target_paragraph_count": 9,
+      "raw_codepoints": 1562,
+      "static_codepoints": 1552,
+      "image_bindings_as_recorded": [
+        {
+          "id": "reading-1cf618a5ce887cee79b1-leaf-741",
+          "path": "artifacts/reading-images-20261024-01/reading-1cf618a5ce887cee79b1-leaf-741/crop.jpg",
+          "sha256": "53373dc3ef8ff554cda84c138db9c24b5f5753710114a2594bae75e06b150555",
+          "sources": [
+            {
+              "end": 6,
+              "raw_sha256": "3c89cf88ad28b89626ab1a7db707fc19b4e746d4660b8e4ddcc1bc7d19eb640e",
+              "source_id": "congressionalglo7395unit:741:par_000741_000000",
+              "start": 0
+            },
+            {
+              "end": 36,
+              "raw_sha256": "50ee316d262b71092086457b1186df53f5eec73c6ed695c79787db0bff79a2f5",
+              "source_id": "congressionalglo7395unit:741:par_000741_000001",
+              "start": 0
+            },
+            {
+              "end": 3,
+              "raw_sha256": "3346f2bbf6c34bd2dbe28bd1bb657d0e9c37392a1d5ec9929e6a5df4763ddc2d",
+              "source_id": "congressionalglo7395unit:741:par_000741_000002",
+              "start": 0
+            },
+            {
+              "end": 24,
+              "raw_sha256": "a11ebf3d10ee7348d5a2d69e360512f5a51e183dc728273391516fb51c5d2e81",
+              "source_id": "congressionalglo7395unit:741:par_000741_000003",
+              "start": 0
+            },
+            {
+              "end": 48,
+              "raw_sha256": "df52dd6a1e8214ac764d3abb387adcae88465e2b92f0127dd010fce7d7fb3659",
+              "source_id": "congressionalglo7395unit:741:par_000741_000004",
+              "start": 0
+            },
+            {
+              "end": 7,
+              "raw_sha256": "b51915008655401f5b78157cfc0480d0282c0f8db8ca2238b3a07a5362b9c3d1",
+              "source_id": "congressionalglo7395unit:741:par_000741_000005",
+              "start": 0
+            },
+            {
+              "end": 582,
+              "raw_sha256": "f77d6de4e79ea615bc7c3a4823987f768a829a9c452386c87a3605007eb2b678",
+              "source_id": "congressionalglo7395unit:741:par_000741_000006",
+              "start": 0
+            },
+            {
+              "end": 356,
+              "raw_sha256": "b4f4cd8ccce9ffb5f813c7435c7ff3cff6b6056c74c42378c418b40a9e01821b",
+              "source_id": "congressionalglo7395unit:741:par_000741_000007",
+              "start": 0
+            },
+            {
+              "end": 500,
+              "raw_sha256": "31abb50be6f0b3553bdca7e9b8103b0ada437fd2cb57e49d22db61ab40c2646e",
+              "source_id": "congressionalglo7395unit:741:par_000741_000008",
+              "start": 0
+            }
+          ]
+        }
+      ],
+      "reference_status": "Inherited provisional source assessment; not new independent truth",
+      "inclusion_probability": null,
+      "weight": null
+    }
+  ],
+  "fixed_request_sequence": [
+    {
+      "ordinal": 1,
+      "unit_id": "S1",
+      "role": "image_only_observation",
+      "input": "Verified target/context crop + unit/image identity; no OCR/static/lexicon/detector/proposal/prior-output text",
+      "output": "Image-grounded transcription, completeness/uncertainty/image suitability; no raw-source quote requirement in this blind role",
+      "seconds_maximum": 120
+    },
+    {
+      "ordinal": 2,
+      "unit_id": "S1",
+      "role": "combined_repair_and_audit",
+      "input": "Same verified image, frozen original/static text, exact deterministic edits/diagnostics; separate stateless conversation, no image-only observation shown",
+      "output": "Exact-quote-bound proposed patches plus structured discrepancies/inspected scope/unresolved findings, including apparent successes and unflagged text",
+      "seconds_maximum": 120
+    },
+    {
+      "ordinal": 3,
+      "unit_id": "S2",
+      "role": "image_only_observation",
+      "input": "Verified target/context crop + unit/image identity; no OCR/static/lexicon/detector/proposal/prior-output text",
+      "output": "Image-grounded transcription, completeness/uncertainty/image suitability; no raw-source quote requirement in this blind role",
+      "seconds_maximum": 120
+    },
+    {
+      "ordinal": 4,
+      "unit_id": "S2",
+      "role": "combined_repair_and_audit",
+      "input": "Same verified image, frozen original/static text, exact deterministic edits/diagnostics; separate stateless conversation, no image-only observation shown",
+      "output": "Exact-quote-bound proposed patches plus structured discrepancies/inspected scope/unresolved findings, including apparent successes and unflagged text",
+      "seconds_maximum": 120
+    },
+    {
+      "ordinal": 5,
+      "unit_id": "S3",
+      "role": "image_only_observation",
+      "input": "Verified target/context crop + unit/image identity; no OCR/static/lexicon/detector/proposal/prior-output text",
+      "output": "Image-grounded transcription, completeness/uncertainty/image suitability; no raw-source quote requirement in this blind role",
+      "seconds_maximum": 120
+    },
+    {
+      "ordinal": 6,
+      "unit_id": "S3",
+      "role": "combined_repair_and_audit",
+      "input": "Same verified image, frozen original/static text, exact deterministic edits/diagnostics; separate stateless conversation, no image-only observation shown",
+      "output": "Exact-quote-bound proposed patches plus structured discrepancies/inspected scope/unresolved findings, including apparent successes and unflagged text",
+      "seconds_maximum": 120
+    },
+    {
+      "ordinal": 7,
+      "unit_id": "S4",
+      "role": "image_only_observation",
+      "input": "Verified target/context crop + unit/image identity; no OCR/static/lexicon/detector/proposal/prior-output text",
+      "output": "Image-grounded transcription, completeness/uncertainty/image suitability; no raw-source quote requirement in this blind role",
+      "seconds_maximum": 120
+    },
+    {
+      "ordinal": 8,
+      "unit_id": "S4",
+      "role": "combined_repair_and_audit",
+      "input": "Same verified image, frozen original/static text, exact deterministic edits/diagnostics; separate stateless conversation, no image-only observation shown",
+      "output": "Exact-quote-bound proposed patches plus structured discrepancies/inspected scope/unresolved findings, including apparent successes and unflagged text",
+      "seconds_maximum": 120
+    },
+    {
+      "ordinal": 9,
+      "unit_id": "S5",
+      "role": "image_only_observation",
+      "input": "Verified target/context crop + unit/image identity; no OCR/static/lexicon/detector/proposal/prior-output text",
+      "output": "Image-grounded transcription, completeness/uncertainty/image suitability; no raw-source quote requirement in this blind role",
+      "seconds_maximum": 120
+    },
+    {
+      "ordinal": 10,
+      "unit_id": "S5",
+      "role": "combined_repair_and_audit",
+      "input": "Same verified image, frozen original/static text, exact deterministic edits/diagnostics; separate stateless conversation, no image-only observation shown",
+      "output": "Exact-quote-bound proposed patches plus structured discrepancies/inspected scope/unresolved findings, including apparent successes and unflagged text",
+      "seconds_maximum": 120
+    },
+    {
+      "ordinal": 11,
+      "unit_id": "D1",
+      "role": "audit_saved_proposal",
+      "input": "Previously recorded source image, exact original/static text/edits and fixed saved proposal for numeral harm or printed repetition; new audit contract, no repeat of old repair request",
+      "output": "Structured discrepancy/uncertainty/coverage observations; compare with inherited provisional failure description only",
+      "seconds_maximum": 120
+    },
+    {
+      "ordinal": 12,
+      "unit_id": "D2",
+      "role": "audit_saved_proposal",
+      "input": "Previously recorded source image, exact original/static text/edits and fixed saved proposal for numeral harm or printed repetition; new audit contract, no repeat of old repair request",
+      "output": "Structured discrepancy/uncertainty/coverage observations; compare with inherited provisional failure description only",
+      "seconds_maximum": 120
+    }
+  ],
+  "historical_timing": {
+    "path": "artifacts/reading-quote-expansion-run-20261025-01/terminal-export.json",
+    "sha256": "b95d7113f2c0347076af9077c123981d93503cdef064ee00d8344d513b0da04e",
+    "qwen_requests": 18,
+    "seconds_total": 1321.9676754153334,
+    "seconds_median": 69.22773885400966,
+    "seconds_min": 17.085941541939974,
+    "seconds_max": 120.00340462499298,
+    "status_counts": {
+      "valid": 14,
+      "invalid": 2,
+      "timeout": 2
+    },
+    "interpretation": "Earlier different-input calls only. Median~69seconds suggests12calls may fit24request-minutes, but two prior timeouts and changed images/prompts prohibit a completion guarantee. Loading/preparation were not fully included in those per-attempt durations."
+  },
+  "reference_and_claims": {
+    "AI_comparison": "Image-only observation frozen before repair/audit pass; second request receives no first response. Host compares raw/static/derived text against provisional observation and preserves disagreement/uncertainty. Combined repair/audit is one configuration, not a separately validated auditor.",
+    "independence": "Separate prompts do not make same-model errors independent. Agreement is not gold. No human reading is required/requested for this diagnostic, and no AI answer becomes human-approved text.",
+    "measure_now_if_later_run": "Actual valid/invalid/timeout/partial counts; exact proposal anchors/edits; provisional name/number/word discrepancies and disagreements; apparent-success/negative-text coverage; detection/repair/audit work; calls,time,tokens,image bytes,unknown usage and setup/report costs.",
+    "unavailable_without_independent_references": [
+      "Actual transcription correctness",
+      "Population detector/auditor recall and false-alarm rates",
+      "Verified repair efficacy/harm rates",
+      "General safety or full-run suitability",
+      "Human readability/TTS and downstream quality acceptance"
+    ],
+    "human_effort": "Zero new human review requested; preserve HR-009/010 unchanged. Larger independent reference effort is deferred, not silently approved or performed. Escalate a future small decision-changing dispute only through separately authorized concrete review scope.",
+    "stop_decision": "Use outcome to choose specific contract/runtime/grounding fix or whether an independently checked larger sample is worthwhile. Do not choose final P0 method or authorize full corpus cleanup."
+  },
+  "authorization": {
+    "live_requests": 0,
+    "new_image_fetches": 0,
+    "new_human_review": 0,
+    "criteria_accepted": false,
+    "next_steps": "T50 contracts must support image-only observation versus quote-bound combined repair/audit; T51 workflow adoption if applicable; T52/T53 fake/offline implementation; T55 exact finite readiness and actual authorization before T56."
+  },
+  "inputs": [
+    {
+      "path": "artifacts/ocr-sample-design-20261027-01/sample.json",
+      "sha256": "d460f3410be9905f4cf5fe42ee8eaa7e5a1174b9cde74d5d1be14a30395083b1"
+    },
+    {
+      "path": "artifacts/ocr-sample-design-20261027-01/challenges.json",
+      "sha256": "441a9972d0a05ca86a9ad7a04ee330bad2fa46677ef9a7e26456c592f081cf1d"
+    },
+    {
+      "path": "artifacts/ocr-sample-design-20261027-01/design.json",
+      "sha256": "ecb540a15502550e6f12c45ca76230240ca43dc7a0cd34b3de8fed4ebb4ae31b"
+    },
+    {
+      "path": "artifacts/reading-quote-expansion-run-20261025-01/terminal-export.json",
+      "sha256": "b95d7113f2c0347076af9077c123981d93503cdef064ee00d8344d513b0da04e"
+    }
+  ]
+}

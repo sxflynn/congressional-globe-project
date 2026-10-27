@@ -1,0 +1,29 @@
+{
+  "task": "T60",
+  "checks": {
+    "input_fingerprints": true,
+    "T49_preserved": true,
+    "five_parts_and_two_challenges": true,
+    "frozen_top_priority_subset": true,
+    "reweighted_to_one_per_part": true,
+    "text_bounds": true,
+    "thirty_minute_accounting": true,
+    "request_roles_and_order": true,
+    "no_hidden_calls_or_retries": true,
+    "proposed_token_arithmetic": true,
+    "zero_authorized_launch_fetch_review": true,
+    "reference_limits_explicit": true,
+    "backend_stop_not_claimed": true,
+    "reserved_confirmation_untouched": true,
+    "manifest_bounded": true,
+    "local_file_links": true,
+    "master_smaller_scope": true
+  },
+  "check_count": 17,
+  "all_passed": true,
+  "limits": "Design checks only; no live timing/token/image fit/cancellation/quality proof. Input T49 fingerprints unchanged.",
+  "last_full_code_gate": "T44,643tests; no production code changes, not rerun",
+  "new_provider_calls": 0,
+  "new_image_fetches": 0,
+  "new_human_review_minutes": 0
+}

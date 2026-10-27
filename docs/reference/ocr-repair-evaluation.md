@@ -14,6 +14,12 @@ Inventory the existing static rules and lexicons, source word geometry/confidenc
 
 The previous primary comparison is terminal. A new diagnostic must name the unresolved failure it discriminates, the changed method, finite scope and a stopping rule. Do not reconstruct its48attempt allowance as permission or repeat its spent requests. The six-paragraph raw/static pairs are useful software fixtures, not a representative evaluation sample or a substitute for an absent clean arm.
 
+## Small AI-only feasibility diagnostic
+
+The human's later2026-10-27 direction asks for an initial option taking about30minutes of computer AI runtime. T60 in the master narrows the first diagnostic to5probability paragraphs plus2exposed failure audits, at most12sequential requests/24request-minutes plus6minutes setup/report, with zero required newhuman review. Preserve T49's larger sample/reference design; it is deferred as an initial-runtime requirement, not accepted or erased. This is a design envelope, not live authority or proof of backend cancellation.
+
+An image-only observation followed by a separate combined repair/audit request can expose discrepancies without newhuman grading. Keep the first observation hidden from the second request; same-model agreement remains correlated AI evidence, not independent truth. Report feasibility, source bindings, provisional disagreements/failures and actual consumption. Actual efficacy/recall/harm-rate claims, human gold, P0 acceptance and full-run decisions still need their applicable independent evidence/criteria. Do not make the larger independent-reading plan a prerequisite for this clearly provisional diagnostic. Unknown/missing/timeout outcomes remain visible, and a client deadline does not prove server work stopped.
+
 ## Sample and independent references
 
 Prepare a reproducible probability sample from the whole five-part collection, with an explicit page or paragraph unit, eligible frame, selection algorithm/seed, inclusion probabilities, allocation and hashes. Freeze selected IDs before observing new model outcomes. Propose finite size and image/text budgets with rationale; no number is human-approved merely because it appears in a plan. Account for blank/unusable pages without silently replacing difficult material. A content-type oversample needs explicit weights or separate reporting; a random sample spanning five parts does not automatically guarantee every rare document type.
