@@ -1,0 +1,748 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "contract": {
+      "type": "string",
+      "const": "source-bound-ocr-repair-audit-v1"
+    },
+    "host_packet_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "provider_request_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "raw_reply_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "model_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "response_schema_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "host_binding_version": {
+      "type": "string",
+      "const": "ocr-repair-audit-binding-v1"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "image_only_observation",
+        "combined_repair_and_audit",
+        "audit_saved_proposal"
+      ]
+    },
+    "unit_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "valid_observation",
+        "valid_findings",
+        "valid_no_finding",
+        "valid_incomplete",
+        "valid_unresolved",
+        "invalid"
+      ]
+    },
+    "rejection_reason": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "provider_reply": {
+      "anyOf": [
+        {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/blind_reply"
+            },
+            {
+              "$ref": "#/$defs/audit_reply"
+            }
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "bindings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/position"
+      },
+      "minItems": 0,
+      "maxItems": 128
+    },
+    "derived_proposals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/derived"
+      },
+      "minItems": 0,
+      "maxItems": 32
+    },
+    "acceptance_state": {
+      "type": "string",
+      "const": "unreviewed_ai_evidence"
+    },
+    "image_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "diagnostics_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_layers_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "raw_reply_text": {
+      "type": "string"
+    },
+    "provider_usage_json": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "elapsed_seconds": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "contract",
+    "host_packet_sha256",
+    "provider_request_sha256",
+    "raw_reply_sha256",
+    "model_digest",
+    "response_schema_sha256",
+    "host_binding_version",
+    "role",
+    "unit_id",
+    "outcome",
+    "rejection_reason",
+    "provider_reply",
+    "bindings",
+    "derived_proposals",
+    "acceptance_state",
+    "image_sha256",
+    "diagnostics_sha256",
+    "source_layers_sha256",
+    "raw_reply_text",
+    "provider_usage_json",
+    "elapsed_seconds"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "blind_reply": {
+      "type": "object",
+      "properties": {
+        "contract": {
+          "type": "string",
+          "const": "ocr-image-observation-v1"
+        },
+        "unit_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "complete",
+            "incomplete",
+            "unresolved"
+          ]
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "paragraph_alias": {
+                "type": "string",
+                "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+              },
+              "image_alias": {
+                "type": "string",
+                "const": "I1"
+              },
+              "completeness": {
+                "type": "string",
+                "enum": [
+                  "complete",
+                  "partial",
+                  "not_inspected"
+                ]
+              },
+              "image_suitability": {
+                "type": "string",
+                "enum": [
+                  "clear",
+                  "unclear",
+                  "missing",
+                  "irrelevant"
+                ]
+              },
+              "transcription": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "uncertainties": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "transcript_quote": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "reason": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "transcript_quote",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0,
+                "maxItems": 32
+              },
+              "reason": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "paragraph_alias",
+              "image_alias",
+              "completeness",
+              "image_suitability",
+              "transcription",
+              "uncertainties",
+              "reason"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 32
+        }
+      },
+      "required": [
+        "contract",
+        "unit_id",
+        "status",
+        "observations"
+      ],
+      "additionalProperties": false
+    },
+    "audit_reply": {
+      "type": "object",
+      "properties": {
+        "contract": {
+          "type": "string",
+          "const": "ocr-repair-audit-reply-v1"
+        },
+        "unit_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "combined_repair_and_audit",
+            "audit_saved_proposal"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "findings",
+            "no_finding",
+            "incomplete",
+            "unresolved"
+          ]
+        },
+        "inspections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "paragraph_alias": {
+                "type": "string",
+                "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+              },
+              "image_alias": {
+                "type": "string",
+                "const": "I1"
+              },
+              "completeness": {
+                "type": "string",
+                "enum": [
+                  "complete",
+                  "partial",
+                  "not_inspected"
+                ]
+              },
+              "image_suitability": {
+                "type": "string",
+                "enum": [
+                  "clear",
+                  "unclear",
+                  "missing",
+                  "irrelevant"
+                ]
+              },
+              "reason": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "paragraph_alias",
+              "image_alias",
+              "completeness",
+              "image_suitability",
+              "reason"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "anchor": {
+                "type": "object",
+                "properties": {
+                  "paragraph_alias": {
+                    "type": "string",
+                    "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "quote",
+                      "whole_paragraph"
+                    ]
+                  },
+                  "raw_quote": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "paragraph_alias",
+                  "scope",
+                  "raw_quote"
+                ],
+                "additionalProperties": false
+              },
+              "affected_layer": {
+                "type": "string",
+                "enum": [
+                  "raw",
+                  "static",
+                  "saved_proposal"
+                ]
+              },
+              "affected_quote": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "category": {
+                "type": "string",
+                "enum": [
+                  "detector_missed_damage",
+                  "incorrect_static_edit",
+                  "name_place_concern",
+                  "number_concern",
+                  "unsupported_saved_proposal",
+                  "source_uncertainty",
+                  "other_damage"
+                ]
+              },
+              "resolution": {
+                "type": "string",
+                "enum": [
+                  "proposed",
+                  "unresolved"
+                ]
+              },
+              "proposed_reading": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "image_alias": {
+                "type": "string",
+                "const": "I1"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "visible_print",
+                  "image_unclear",
+                  "image_unavailable",
+                  "image_irrelevant"
+                ]
+              },
+              "explanation": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "finding_id",
+              "anchor",
+              "affected_layer",
+              "affected_quote",
+              "category",
+              "resolution",
+              "proposed_reading",
+              "image_alias",
+              "basis",
+              "explanation"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "patches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "paragraph_alias": {
+                "type": "string",
+                "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+              },
+              "raw_quote": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "replacement": {
+                "type": "string"
+              },
+              "image_alias": {
+                "type": "string",
+                "const": "I1"
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "finding_id",
+              "paragraph_alias",
+              "raw_quote",
+              "replacement",
+              "image_alias",
+              "reason"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "contract",
+        "unit_id",
+        "role",
+        "status",
+        "inspections",
+        "findings",
+        "patches",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "position": {
+      "type": "object",
+      "properties": {
+        "paragraph_alias": {
+          "type": "string",
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "raw_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "raw_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "raw_end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "raw_quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "unique_exact_raw_quote",
+            "declared_whole_paragraph"
+          ]
+        },
+        "layer": {
+          "type": "string",
+          "enum": [
+            "raw",
+            "static",
+            "saved_proposal"
+          ]
+        },
+        "layer_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "layer_start": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "layer_end": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "image_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "finding_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "paragraph_alias",
+        "source_id",
+        "raw_sha256",
+        "raw_start",
+        "raw_end",
+        "raw_quote",
+        "method",
+        "layer",
+        "layer_sha256",
+        "layer_start",
+        "layer_end",
+        "image_sha256",
+        "finding_id"
+      ],
+      "additionalProperties": false
+    },
+    "derived": {
+      "type": "object",
+      "properties": {
+        "paragraph_alias": {
+          "type": "string",
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "raw_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "text": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "mapping": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "raw_start": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "raw_end": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "derived_start": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "derived_end": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "unchanged",
+                  "replacement"
+                ]
+              }
+            },
+            "required": [
+              "raw_start",
+              "raw_end",
+              "derived_start",
+              "derived_end",
+              "kind"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 256
+        },
+        "state": {
+          "type": "string",
+          "const": "unreviewed_model_proposal"
+        }
+      },
+      "required": [
+        "paragraph_alias",
+        "source_id",
+        "raw_sha256",
+        "text",
+        "sha256",
+        "mapping",
+        "state"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

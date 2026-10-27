@@ -1,0 +1,75 @@
+{
+  "task": "T50",
+  "checks": {
+    "six_schema_drafts_valid": true,
+    "all_object_keys_required_extra_fields_forbidden": true,
+    "local_schema_refs_resolve": true,
+    "six_synthetic_examples_only": true,
+    "eighteen_illustrative_role_shapes_validate": true,
+    "blind_projection_forbidden_fields_rejected": true,
+    "offset_wrong_image_alias_wrong_role_schema_rejections": true,
+    "schema_valid_status_contradiction_reserved_for_host": true,
+    "semantic_rules_explicitly_unimplemented": true,
+    "packet_hash_not_recursive": true,
+    "adoption_not_fabricated": true,
+    "strict_pydantic_mapping_drafted_only": true,
+    "statuses_and_coverage_rules": true,
+    "exact_raw_and_inverse_layer_rules": true,
+    "runtime_and_unknown_recovery_limits": true,
+    "local_file_links": true,
+    "prior_frozen_inputs_preserved": true,
+    "master_dependencies": true
+  },
+  "check_count": 18,
+  "all_passed": true,
+  "schemas": [
+    "repair-audit-input.schema.json",
+    "image-only-input.schema.json",
+    "host-export.schema.json",
+    "host-input.schema.json",
+    "repair-audit-reply.schema.json",
+    "image-only-reply.schema.json"
+  ],
+  "illustrative_shape_validations": 18,
+  "schema_negative_mutations": 15,
+  "inspected_inputs": [
+    {
+      "path": "src/congressional_globe/reading_contracts.py",
+      "sha256": "e0a5520d8b87a9e67842842df69e249404017474bd203610b6724d84d1a826d9"
+    },
+    {
+      "path": "src/congressional_globe/reading_quotes.py",
+      "sha256": "e4fd7bff53e6928fdd7bf3167161af015b59ff8bd656c073af5028d01e7d0064"
+    },
+    {
+      "path": "artifacts/reading-risk-contract-20261025-01/README.md",
+      "sha256": "10486b10f2b9c8c55fcb28de0745cfb3c1de678b0a33403c8713e9b41d04c140"
+    },
+    {
+      "path": "artifacts/quote-date-binding-20261026-01/README.md",
+      "sha256": "4deebceec3237942ddfd299ff8d433013427bb23a1c91a21ebdf38ad75c0f23e"
+    },
+    {
+      "path": "artifacts/ocr-small-pilot-design-20261027-01/design.json",
+      "sha256": "e53cbe06f852e966c2523981642b7426f6cbe807c3c6732986aafe2101ecfd9f"
+    },
+    {
+      "path": "docs/reference/ocr-repair-evaluation.md",
+      "sha256": "3907db0b1881fb29bc2e7ec36f2ed53b421bf0407d7f1ba3d601ae7648ad7383"
+    },
+    {
+      "path": "docs/reference/engineering.md",
+      "sha256": "3966105c9f239a9d7c60dd851f6269660342cbf1764df4871a033e44a4fdf4f3"
+    }
+  ],
+  "semantic_validator_implemented": false,
+  "semantic_host_checks_executed": false,
+  "backend_compatibility_proved": false,
+  "source_correctness_proved": false,
+  "production_code_changes": false,
+  "provider_calls": 0,
+  "image_fetches": 0,
+  "reference_readings": 0,
+  "last_full_code_gate": "T44,643tests; documentation/schema drafts only; not rerun",
+  "missing_links": []
+}

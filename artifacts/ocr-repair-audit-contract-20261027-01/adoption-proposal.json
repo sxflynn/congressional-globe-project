@@ -1,0 +1,29 @@
+{
+  "task": "T50",
+  "status": "Concrete proposal for T51 human-run independent workflow evaluation; not an actual verdict or adoption",
+  "question": "Can the existing bounded reading runner safely support the three new roles for T60 without a new scheduler, CLI, SDK or implicit result acceptance?",
+  "recommended_scope": [
+    "Add strict Pydantic v2 models matching the drafted input/projection/reply/export schemas and explicit role-aware projection/binding helpers; existing reading v1/quote-v2/date contracts remain unchanged.",
+    "Reuse the exact existing transport lock, frozen request materialization, raw-first ReadingRunStore checkpoints and terminal export. Add explicit new contract adapters instead of repurposing an old run or silently salvaging a failed reply.",
+    "Represent each of T60's12fixed slots with its full role, source/image/prompt/schema/code/diagnostic/model/budget identity. The image-only observation is recorded before the separate repair request, and is forbidden from that later request's serialized messages.",
+    "T52 deterministic-only library work is independently allowed after this draft; it must not install a new orchestrated command. T53 integrated role dispatch/recovery and deadline changes wait for T51's actual adopted scope."
+  ],
+  "dependencies": "Existing uv/Pydantic v2, JSON serialization, source-mapping and journal libraries only. No new SDK, scheduler, provider, package installation or model download recommended.",
+  "risks_and_alternatives": [
+    "Three roles increase parser/projection/state surface: use separate role schemas and exact allowlists; contract-shape success does not prove actual source correctness.",
+    "Image-only text must not leak through OCR labels, diagnostics, previous messages or expected-answer metadata. Freeze and inspect actual provider-message bytes, not just a prompt saying blind.",
+    "Same-model correlation remains despite isolated prompts. Alternative independent human/model readings would require their own bounded resources; no new reference effort is implicitly added here.",
+    "Derived-layer quote positions can differ after static/model edits. Reuse explicit inverse raw support and reject ambiguity rather than fuzzy matching, first occurrence or model character counts.",
+    "Late responses, ambiguous sends, unknown token/image usage and backend continuation after timeout can violate budgets. Adopt only explicit stop/reconcile semantics with fresh-process fake-client proof and a concrete backend-observation/cancellation policy before a strict30minute claim.",
+    "Alternative: defer live integration and use existing saved failures plus deterministic-only T52 diagnostics until readiness is concrete. Do not repeat spent primary requests or create a generic agent/tool loop."
+  ],
+  "required_offline_checks": [
+    "Unique/missing/repeated/overlapping Unicode quote anchors; wrong raw/static/proposal/image/resource hashes; unsupported image regions; context/target/alias duplication and out-of-scope edits.",
+    "Full target inspection accounting, no_finding versus incomplete/unresolved, preserved rare correct names, hidden valid-number/real-word damage, harmful static join and repeated-word/saved-proposal cases.",
+    "Image-only projection excludes original/static/diagnostic/proposal text and first-pass observations never appear in combined/audit requests. Prove request fingerprints and portable exports, not source truth.",
+    "Raw-first persistence, saved-reply recovery without another send, ambiguous in-flight and unknown cumulative usage block all new sends; per-chunk and study-wide costs both retained.",
+    "Session/request/output/image bounds, stop/refusal/truncation, no retries/substitution, backend cancellation versus mere client timeout distinguished; full repository code gate for implementation."
+  ],
+  "later_checks": "T55 must verify actual provider/image capability, model/runtime/digests, exact serialized packets/prompts/schemas/images, token fit and finite authorization. Fake callers and JSON Schema checks are not backend compatibility or historical quality evidence.",
+  "review_protocol": "The human runs the independent GPT-6 adoption evaluation unless explicitly delegated. T50 Luna preparation review is not that verdict. Record actual verdict and risks in the master; no reviewer was automatically invoked for adoption, and no permission question is raised while this draft/offline work remains available."
+}

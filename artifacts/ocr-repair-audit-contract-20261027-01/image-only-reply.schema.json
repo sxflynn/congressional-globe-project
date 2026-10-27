@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "contract": {
+      "type": "string",
+      "const": "ocr-image-observation-v1"
+    },
+    "unit_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "incomplete",
+        "unresolved"
+      ]
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "paragraph_alias": {
+            "type": "string",
+            "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+          },
+          "image_alias": {
+            "type": "string",
+            "const": "I1"
+          },
+          "completeness": {
+            "type": "string",
+            "enum": [
+              "complete",
+              "partial",
+              "not_inspected"
+            ]
+          },
+          "image_suitability": {
+            "type": "string",
+            "enum": [
+              "clear",
+              "unclear",
+              "missing",
+              "irrelevant"
+            ]
+          },
+          "transcription": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "uncertainties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "transcript_quote": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "transcript_quote",
+                "reason"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 32
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "paragraph_alias",
+          "image_alias",
+          "completeness",
+          "image_suitability",
+          "transcription",
+          "uncertainties",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 32
+    }
+  },
+  "required": [
+    "contract",
+    "unit_id",
+    "status",
+    "observations"
+  ],
+  "additionalProperties": false
+}

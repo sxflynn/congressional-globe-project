@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "contract": {
+      "type": "string",
+      "const": "ocr-image-observation-v1"
+    },
+    "unit_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "image_alias": {
+      "type": "string",
+      "const": "I1"
+    },
+    "target_regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "paragraph_alias": {
+            "type": "string",
+            "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+          },
+          "crop_region": {
+            "type": "object",
+            "properties": {
+              "left": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "top": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "right": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "bottom": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "left",
+              "top",
+              "right",
+              "bottom"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "paragraph_alias",
+          "crop_region"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 32
+    },
+    "context_regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "paragraph_alias": {
+            "type": "string",
+            "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+          },
+          "crop_region": {
+            "type": "object",
+            "properties": {
+              "left": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "top": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "right": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "bottom": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "left",
+              "top",
+              "right",
+              "bottom"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "paragraph_alias",
+          "crop_region"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 32
+    }
+  },
+  "required": [
+    "contract",
+    "unit_id",
+    "image_alias",
+    "target_regions",
+    "context_regions"
+  ],
+  "additionalProperties": false
+}

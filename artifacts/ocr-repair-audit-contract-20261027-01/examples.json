@@ -1,0 +1,526 @@
+{
+  "contract_draft": "ocr-repair-audit-v1",
+  "count": 6,
+  "cases": [
+    {
+      "id": "EX1",
+      "kind": "synthetic_contract_illustration",
+      "raw_text": "The year was 1866.",
+      "raw_sha256": "e6b8e7cef67ebdc198861ca6afef8f718670911c42d73f67c7205d9edaddbe24",
+      "static_text": "The year was 1866.",
+      "static_sha256": "e6b8e7cef67ebdc198861ca6afef8f718670911c42d73f67c7205d9edaddbe24",
+      "constructed_print": "The year was 1865.",
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "Synthetic imagined print only; no image exists, no host-ready request or historical reading",
+      "provider_reply": {
+        "contract": "ocr-repair-audit-reply-v1",
+        "unit_id": "EX1",
+        "role": "combined_repair_and_audit",
+        "status": "findings",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "reason": null
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "F1",
+            "anchor": {
+              "paragraph_alias": "P1",
+              "scope": "quote",
+              "raw_quote": "The year was 1866."
+            },
+            "affected_layer": "raw",
+            "affected_quote": "The year was 1866.",
+            "category": "number_concern",
+            "resolution": "proposed",
+            "proposed_reading": "The year was 1865.",
+            "image_alias": "I1",
+            "basis": "visible_print",
+            "explanation": "A plausible number is wrong in the constructed print. Bind the exact raw quote and preserve proposed1865 separately; dictionary success is irrelevant."
+          }
+        ],
+        "patches": [
+          {
+            "finding_id": "F1",
+            "paragraph_alias": "P1",
+            "raw_quote": "The year was 1866.",
+            "replacement": "The year was 1865.",
+            "image_alias": "I1",
+            "reason": "A plausible number is wrong in the constructed print. Bind the exact raw quote and preserve proposed1865 separately; dictionary success is irrelevant."
+          }
+        ],
+        "reason": null
+      },
+      "expected_host_behavior": "A plausible number is wrong in the constructed print. Bind the exact raw quote and preserve proposed1865 separately; dictionary success is irrelevant.",
+      "image_only_provider_input": {
+        "contract": "ocr-image-observation-v1",
+        "unit_id": "EX1",
+        "image_alias": "I1",
+        "target_regions": [
+          {
+            "paragraph_alias": "P1",
+            "crop_region": {
+              "left": 0,
+              "top": 0,
+              "right": 10,
+              "bottom": 10
+            }
+          }
+        ],
+        "context_regions": []
+      },
+      "image_only_reply": {
+        "contract": "ocr-image-observation-v1",
+        "unit_id": "EX1",
+        "status": "complete",
+        "observations": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "transcription": "The year was 1865.",
+            "uncertainties": [],
+            "reason": null
+          }
+        ]
+      },
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof."
+    },
+    {
+      "id": "EX2",
+      "kind": "synthetic_contract_illustration",
+      "raw_text": "Mr. Fessenden spoke of Sioux City.",
+      "raw_sha256": "2bea8da39ea1062565c079b423c689a23473cb8b5befb73c7794996e9df811f9",
+      "static_text": "Mr. Fessenden spoke of Sioux City.",
+      "static_sha256": "2bea8da39ea1062565c079b423c689a23473cb8b5befb73c7794996e9df811f9",
+      "constructed_print": "Mr. Fessenden spoke of Sioux City.",
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "No actual image; constructed correct-name control only",
+      "provider_reply": {
+        "contract": "ocr-repair-audit-reply-v1",
+        "unit_id": "EX2",
+        "role": "combined_repair_and_audit",
+        "status": "no_finding",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "reason": null
+          }
+        ],
+        "findings": [],
+        "patches": [],
+        "reason": null
+      },
+      "expected_host_behavior": "No finding is a limited report, not source certification. Rare-name dictionary miss does not justify change.",
+      "image_only_provider_input": {
+        "contract": "ocr-image-observation-v1",
+        "unit_id": "EX2",
+        "image_alias": "I1",
+        "target_regions": [
+          {
+            "paragraph_alias": "P1",
+            "crop_region": {
+              "left": 0,
+              "top": 0,
+              "right": 10,
+              "bottom": 10
+            }
+          }
+        ],
+        "context_regions": []
+      },
+      "image_only_reply": {
+        "contract": "ocr-image-observation-v1",
+        "unit_id": "EX2",
+        "status": "complete",
+        "observations": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "transcription": "Mr. Fessenden spoke of Sioux City.",
+            "uncertainties": [],
+            "reason": null
+          }
+        ]
+      },
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof."
+    },
+    {
+      "id": "EX3",
+      "kind": "synthetic_contract_illustration",
+      "raw_text": "A well- known rule.",
+      "raw_sha256": "14074182f0071839acf7caea381ba702aa508205317ea60bed03f6d382aa6150",
+      "static_text": "A wellknown rule.",
+      "static_sha256": "253d438a621c8a9320ba3338d0225a15cea421add1b3c349e92aa933cde04835",
+      "constructed_print": "A well-known rule.",
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "Synthetic imagined print only; no image exists, no host-ready request or historical reading",
+      "provider_reply": {
+        "contract": "ocr-repair-audit-reply-v1",
+        "unit_id": "EX3",
+        "role": "combined_repair_and_audit",
+        "status": "findings",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "reason": null
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "F1",
+            "anchor": {
+              "paragraph_alias": "P1",
+              "scope": "quote",
+              "raw_quote": "A well- known rule."
+            },
+            "affected_layer": "static",
+            "affected_quote": "A wellknown rule.",
+            "category": "incorrect_static_edit",
+            "resolution": "proposed",
+            "proposed_reading": "A well-known rule.",
+            "image_alias": "I1",
+            "basis": "visible_print",
+            "explanation": "The constructed static join removes a meaningful hyphen. Bind derived quote through the frozen static edit map; proposed repair is applied to raw, not static offsets."
+          }
+        ],
+        "patches": [
+          {
+            "finding_id": "F1",
+            "paragraph_alias": "P1",
+            "raw_quote": "A well- known rule.",
+            "replacement": "A well-known rule.",
+            "image_alias": "I1",
+            "reason": "The constructed static join removes a meaningful hyphen. Bind derived quote through the frozen static edit map; proposed repair is applied to raw, not static offsets."
+          }
+        ],
+        "reason": null
+      },
+      "expected_host_behavior": "The constructed static join removes a meaningful hyphen. Bind derived quote through the frozen static edit map; proposed repair is applied to raw, not static offsets.",
+      "image_only_provider_input": {
+        "contract": "ocr-image-observation-v1",
+        "unit_id": "EX3",
+        "image_alias": "I1",
+        "target_regions": [
+          {
+            "paragraph_alias": "P1",
+            "crop_region": {
+              "left": 0,
+              "top": 0,
+              "right": 10,
+              "bottom": 10
+            }
+          }
+        ],
+        "context_regions": []
+      },
+      "image_only_reply": {
+        "contract": "ocr-image-observation-v1",
+        "unit_id": "EX3",
+        "status": "complete",
+        "observations": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "transcription": "A well-known rule.",
+            "uncertainties": [],
+            "reason": null
+          }
+        ]
+      },
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof."
+    },
+    {
+      "id": "EX4",
+      "kind": "synthetic_contract_illustration",
+      "raw_text": "The amount is $10,000.",
+      "raw_sha256": "d62859d48792edd247b0df6f3aac92858f672c99a8e4ddd6577a3fd13147a48d",
+      "static_text": "The amount is $10,000.",
+      "static_sha256": "d62859d48792edd247b0df6f3aac92858f672c99a8e4ddd6577a3fd13147a48d",
+      "constructed_print": null,
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "Synthetic imagined print only; no image exists, no host-ready request or historical reading",
+      "provider_reply": {
+        "contract": "ocr-repair-audit-reply-v1",
+        "unit_id": "EX4",
+        "role": "combined_repair_and_audit",
+        "status": "incomplete",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "not_inspected",
+            "image_suitability": "missing",
+            "reason": "Missing or irrelevant image prevents inspection. Host preflight blocks actual send; a synthetic incomplete reply proves no source reading."
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "F1",
+            "anchor": {
+              "paragraph_alias": "P1",
+              "scope": "whole_paragraph",
+              "raw_quote": null
+            },
+            "affected_layer": "raw",
+            "affected_quote": "The amount is $10,000.",
+            "category": "source_uncertainty",
+            "resolution": "unresolved",
+            "proposed_reading": null,
+            "image_alias": "I1",
+            "basis": "image_unavailable",
+            "explanation": "Missing or irrelevant image prevents inspection. Host preflight blocks actual send; a synthetic incomplete reply proves no source reading."
+          }
+        ],
+        "patches": [],
+        "reason": "Missing or irrelevant image prevents inspection. Host preflight blocks actual send; a synthetic incomplete reply proves no source reading."
+      },
+      "expected_host_behavior": "Missing or irrelevant image prevents inspection. Host preflight blocks actual send; a synthetic incomplete reply proves no source reading.",
+      "negative_variants": [
+        "image=null: preflight blocks; no paid request",
+        "image with wrong source/hash: host rejects even if model says clear",
+        "image_suitability=irrelevant: explicit unresolved/incomplete; no patch"
+      ],
+      "image_only_provider_input": {
+        "contract": "ocr-image-observation-v1",
+        "unit_id": "EX4",
+        "image_alias": "I1",
+        "target_regions": [
+          {
+            "paragraph_alias": "P1",
+            "crop_region": {
+              "left": 0,
+              "top": 0,
+              "right": 10,
+              "bottom": 10
+            }
+          }
+        ],
+        "context_regions": []
+      },
+      "image_only_reply": {
+        "contract": "ocr-image-observation-v1",
+        "unit_id": "EX4",
+        "status": "incomplete",
+        "observations": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "not_inspected",
+            "image_suitability": "missing",
+            "transcription": null,
+            "uncertainties": [
+              {
+                "transcript_quote": null,
+                "reason": "No usable image in this synthetic case."
+              }
+            ],
+            "reason": "No usable image in this synthetic case."
+          }
+        ]
+      },
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof."
+    },
+    {
+      "id": "EX5",
+      "kind": "synthetic_contract_illustration",
+      "raw_text": "We know that that is correct.",
+      "raw_sha256": "b1c7cc58fd4bd1c326e0bb5fc9a2429ba62dad474a8e89e60f5cfce69db0ba69",
+      "static_text": "We know that that is correct.",
+      "static_sha256": "b1c7cc58fd4bd1c326e0bb5fc9a2429ba62dad474a8e89e60f5cfce69db0ba69",
+      "constructed_print": "We know that that is correct.",
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "Synthetic imagined print only; no image exists, no host-ready request or historical reading",
+      "provider_reply": {
+        "contract": "ocr-repair-audit-reply-v1",
+        "unit_id": "EX5",
+        "role": "audit_saved_proposal",
+        "status": "findings",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "reason": null
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "F1",
+            "anchor": {
+              "paragraph_alias": "P1",
+              "scope": "quote",
+              "raw_quote": "We know that that is correct."
+            },
+            "affected_layer": "saved_proposal",
+            "affected_quote": "We know that is correct.",
+            "category": "unsupported_saved_proposal",
+            "resolution": "proposed",
+            "proposed_reading": "We know that that is correct.",
+            "image_alias": "I1",
+            "basis": "visible_print",
+            "explanation": "Saved proposed wording deletes a printed repeated word. Audit the frozen saved proposal; do not silently replace it or convert a finding into an accepted correction."
+          }
+        ],
+        "patches": [],
+        "reason": null
+      },
+      "expected_host_behavior": "Saved proposed wording deletes a printed repeated word. Audit the frozen saved proposal; do not silently replace it or convert a finding into an accepted correction.",
+      "image_only_provider_input": {
+        "contract": "ocr-image-observation-v1",
+        "unit_id": "EX5",
+        "image_alias": "I1",
+        "target_regions": [
+          {
+            "paragraph_alias": "P1",
+            "crop_region": {
+              "left": 0,
+              "top": 0,
+              "right": 10,
+              "bottom": 10
+            }
+          }
+        ],
+        "context_regions": []
+      },
+      "image_only_reply": {
+        "contract": "ocr-image-observation-v1",
+        "unit_id": "EX5",
+        "status": "complete",
+        "observations": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "transcription": "We know that that is correct.",
+            "uncertainties": [],
+            "reason": null
+          }
+        ]
+      },
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof."
+    },
+    {
+      "id": "EX6",
+      "kind": "synthetic_contract_illustration",
+      "raw_text": "The public doubt remains.",
+      "raw_sha256": "5ada2a01fa4479c319e96eb2aed77a25b6bfaa66c807904f8f5ca5cc3328dc25",
+      "static_text": "The public doubt remains.",
+      "static_sha256": "5ada2a01fa4479c319e96eb2aed77a25b6bfaa66c807904f8f5ca5cc3328dc25",
+      "constructed_print": "The public debt remains.",
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "Synthetic imagined print only; no image exists, no host-ready request or historical reading",
+      "provider_reply": {
+        "contract": "ocr-repair-audit-reply-v1",
+        "unit_id": "EX6",
+        "role": "combined_repair_and_audit",
+        "status": "findings",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "reason": null
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "F1",
+            "anchor": {
+              "paragraph_alias": "P1",
+              "scope": "quote",
+              "raw_quote": "The public doubt remains."
+            },
+            "affected_layer": "raw",
+            "affected_quote": "The public doubt remains.",
+            "category": "detector_missed_damage",
+            "resolution": "proposed",
+            "proposed_reading": "The public debt remains.",
+            "image_alias": "I1",
+            "basis": "visible_print",
+            "explanation": "An apparent no-error unit hides a real-word substitution in constructed print. Whole-target inspection must include detector-negative text."
+          }
+        ],
+        "patches": [
+          {
+            "finding_id": "F1",
+            "paragraph_alias": "P1",
+            "raw_quote": "The public doubt remains.",
+            "replacement": "The public debt remains.",
+            "image_alias": "I1",
+            "reason": "An apparent no-error unit hides a real-word substitution in constructed print. Whole-target inspection must include detector-negative text."
+          }
+        ],
+        "reason": null
+      },
+      "expected_host_behavior": "An apparent no-error unit hides a real-word substitution in constructed print. Whole-target inspection must include detector-negative text.",
+      "negative_variants": [
+        "Change status to no_finding while findings/patches remain: semantic host rejection",
+        "Return raw_quote absent or repeated/overlapping within target: no guessed coordinate; reject",
+        "OmitP1 inspection or claimP2 context as target: reject coverage",
+        "Supply model start/end fields: strict schema rejects; no salvaged old response",
+        "Fully inspected clear/no findings is valid_no_finding only, never actual error-free proof"
+      ],
+      "image_only_provider_input": {
+        "contract": "ocr-image-observation-v1",
+        "unit_id": "EX6",
+        "image_alias": "I1",
+        "target_regions": [
+          {
+            "paragraph_alias": "P1",
+            "crop_region": {
+              "left": 0,
+              "top": 0,
+              "right": 10,
+              "bottom": 10
+            }
+          }
+        ],
+        "context_regions": []
+      },
+      "image_only_reply": {
+        "contract": "ocr-image-observation-v1",
+        "unit_id": "EX6",
+        "status": "complete",
+        "observations": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "transcription": "The public debt remains.",
+            "uncertainties": [],
+            "reason": null
+          }
+        ]
+      },
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof."
+    }
+  ],
+  "limits": "Synthetic shapes only. Missing images intentionally prevent dispatch; no provider output, image reading, new reference label or accepted correction."
+}

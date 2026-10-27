@@ -1,0 +1,584 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "packet_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "payload": {
+      "type": "object",
+      "properties": {
+        "contract": {
+          "type": "string",
+          "const": "ocr-repair-audit-input-v1"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "image_only_observation",
+            "combined_repair_and_audit",
+            "audit_saved_proposal"
+          ]
+        },
+        "unit_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/paragraph"
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "image": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/image"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "diagnostics": {
+          "$ref": "#/$defs/diagnostics"
+        },
+        "saved_proposal": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/proposal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "prompt_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "response_schema_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "code_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "model_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "sampling_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "bounds_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "contract",
+        "role",
+        "unit_id",
+        "paragraphs",
+        "image",
+        "diagnostics",
+        "saved_proposal",
+        "prompt_sha256",
+        "response_schema_sha256",
+        "code_sha256",
+        "model_digest",
+        "sampling_manifest_sha256",
+        "bounds_sha256"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "packet_sha256",
+    "payload"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "box": {
+      "type": "object",
+      "properties": {
+        "left": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "top": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "right": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "bottom": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "left",
+        "top",
+        "right",
+        "bottom"
+      ],
+      "additionalProperties": false
+    },
+    "edit": {
+      "type": "object",
+      "properties": {
+        "edit_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "raw_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "raw_end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "expected": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "replacement": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "edit_id",
+        "raw_start",
+        "raw_end",
+        "expected",
+        "replacement",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "layer": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "text",
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "static": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "edits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/edit"
+          },
+          "minItems": 0,
+          "maxItems": 128
+        },
+        "rule_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "lexicon_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "text",
+        "sha256",
+        "edits",
+        "rule_sha256",
+        "lexicon_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "paragraph": {
+      "type": "object",
+      "properties": {
+        "alias": {
+          "type": "string",
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "part_number": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "scan_leaf": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "target",
+            "context"
+          ]
+        },
+        "raw": {
+          "$ref": "#/$defs/layer"
+        },
+        "static": {
+          "$ref": "#/$defs/static"
+        }
+      },
+      "required": [
+        "alias",
+        "source_id",
+        "part_number",
+        "scan_leaf",
+        "role",
+        "raw",
+        "static"
+      ],
+      "additionalProperties": false
+    },
+    "binding": {
+      "type": "object",
+      "properties": {
+        "paragraph_alias": {
+          "type": "string",
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+        },
+        "raw_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "raw_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "raw_end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "crop_region": {
+          "$ref": "#/$defs/box"
+        }
+      },
+      "required": [
+        "paragraph_alias",
+        "raw_sha256",
+        "raw_start",
+        "raw_end",
+        "crop_region"
+      ],
+      "additionalProperties": false
+    },
+    "image": {
+      "type": "object",
+      "properties": {
+        "alias": {
+          "type": "string",
+          "const": "I1"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "mime": {
+          "type": "string",
+          "enum": [
+            "image/jpeg",
+            "image/png"
+          ]
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/binding"
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "registration_status": {
+          "type": "string",
+          "enum": [
+            "verified",
+            "unknown"
+          ]
+        },
+        "legibility_status": {
+          "type": "string",
+          "enum": [
+            "checked",
+            "unknown"
+          ]
+        },
+        "source_item_identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_scan_leaf": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hocr_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "page_map_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "binding_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "registration_evidence_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "alias",
+        "sha256",
+        "mime",
+        "width",
+        "height",
+        "bindings",
+        "registration_status",
+        "legibility_status",
+        "source_item_identifier",
+        "source_scan_leaf",
+        "hocr_sha256",
+        "page_map_sha256",
+        "binding_manifest_sha256",
+        "registration_evidence_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "signal": {
+      "type": "object",
+      "properties": {
+        "signal_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paragraph_alias": {
+          "type": "string",
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+        },
+        "raw_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "raw_end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "raw_quote": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "word",
+            "name_place",
+            "number",
+            "mixed",
+            "split",
+            "other"
+          ]
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "maxItems": 16
+        },
+        "route_reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "signal_id",
+        "paragraph_alias",
+        "raw_start",
+        "raw_end",
+        "raw_quote",
+        "category",
+        "flags",
+        "route_reason"
+      ],
+      "additionalProperties": false
+    },
+    "diagnostics": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_run",
+            "frozen"
+          ]
+        },
+        "detector_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "configuration_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "signals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/signal"
+          },
+          "minItems": 0,
+          "maxItems": 128
+        },
+        "negative_targets": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        }
+      },
+      "required": [
+        "status",
+        "detector_sha256",
+        "configuration_sha256",
+        "signals",
+        "negative_targets"
+      ],
+      "additionalProperties": false
+    },
+    "proposal_paragraph": {
+      "type": "object",
+      "properties": {
+        "paragraph_alias": {
+          "type": "string",
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+        },
+        "text": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "raw_edits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/edit"
+          },
+          "minItems": 0,
+          "maxItems": 128
+        }
+      },
+      "required": [
+        "paragraph_alias",
+        "text",
+        "sha256",
+        "raw_edits"
+      ],
+      "additionalProperties": false
+    },
+    "proposal": {
+      "type": "object",
+      "properties": {
+        "record_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "prior_request_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "prior_raw_reply_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/proposal_paragraph"
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "review_state": {
+          "type": "string",
+          "const": "unreviewed_model_proposal"
+        }
+      },
+      "required": [
+        "record_sha256",
+        "prior_request_sha256",
+        "prior_raw_reply_sha256",
+        "paragraphs",
+        "review_state"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
