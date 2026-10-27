@@ -1,0 +1,53 @@
+{
+  "task": "T49",
+  "schema_version": "ocr-sample-evidence-manifest-v1",
+  "files": [
+    {
+      "path": "design.json",
+      "bytes": 7645,
+      "sha256": "ecb540a15502550e6f12c45ca76230240ca43dc7a0cd34b3de8fed4ebb4ae31b"
+    },
+    {
+      "path": "sample.json",
+      "bytes": 130873,
+      "sha256": "d460f3410be9905f4cf5fe42ee8eaa7e5a1174b9cde74d5d1be14a30395083b1"
+    },
+    {
+      "path": "exposure.json",
+      "bytes": 36455,
+      "sha256": "115ec944d45ee1f6e406b4fe9044aa96ffc9388a9d1541c96c18df567fc349ff"
+    },
+    {
+      "path": "challenges.json",
+      "bytes": 45865,
+      "sha256": "441a9972d0a05ca86a9ad7a04ee330bad2fa46677ef9a7e26456c592f081cf1d"
+    },
+    {
+      "path": "scorecard.json",
+      "bytes": 5567,
+      "sha256": "6e2213e96e86e4bcd96fa1f698a20a9a7cb38b70675a9be61c360373e8892c7d"
+    },
+    {
+      "path": "preparation-source.txt",
+      "bytes": 9573,
+      "sha256": "f41d367d102e59618e4381e9ab48651a9e66cadfbeb1a4c93ffa2f61079c04ff"
+    },
+    {
+      "path": "README.md",
+      "bytes": 14735,
+      "sha256": "35857491ecf1db5923ffbf12992b2504f775cb57452ba3a170873acb4c813ee5"
+    },
+    {
+      "path": "review.json",
+      "bytes": 750,
+      "sha256": "bec38b42869a62f0e2c3a04193f9f06a82da5599e458326a6f5c2536c5374cb6"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 1400,
+      "sha256": "5d8377219c579b0cc6480cb414791bcd30aaa6ee7262bf720222c8b892bcfce0"
+    }
+  ],
+  "purpose": "Design/data snapshot only; no production command or reference labels",
+  "last_full_code_gate": "T44,643tests; not repeated for documentation/data preparation"
+}

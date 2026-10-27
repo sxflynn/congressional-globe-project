@@ -1,0 +1,552 @@
+{
+  "schema_version": "ocr-challenge-specs-v1",
+  "task": "T49",
+  "count": 8,
+  "cases": [
+    {
+      "id": "K01",
+      "kind": "exposed_historical_fixture",
+      "fixture_case_id": "F01-critical-chapter",
+      "fixture_path": "artifacts/reading-failure-fixtures-20261025-01/fixtures.json",
+      "fixture_file_sha256": "6d290330bc4d4186c72275df4331b87118cf01729fafb93361477414b2fbdfbc",
+      "fixture_case_sha256": "177d0bcad0fb231df1576227c88ccf0e3a80d4de8e3cb7a10aa16d03f0eb9ce0",
+      "unit_id": "reading-74d01b9894f76563d519",
+      "purpose": "Consequential Roman numeral harm; F10 legitimate-correction comparator shares this diagnostic source.",
+      "target_paragraph_count": 4,
+      "raw_codepoints": 1858,
+      "static_codepoints": 1848,
+      "text_status": "within_budget",
+      "targets": [
+        {
+          "source_id": "congressionalglo7395unit:1060:par_001060_000025",
+          "raw_sha256": "8afdad05fdde58558f1cf5a973e281e1247e086cfad7af139eba0a6dbecacbbf",
+          "static_sha256": "d59b0cbaf22fafc3c1ada8d0555e76dd1b52e2709fbfd8154b26b181fb494a6e",
+          "raw": "Sec. 2. And be it further enacted, That in case suits or proceedings are pending in said provisional court which could not have been instituted in said circuit or district court, the record shall remain in said district court with- out further action therein.",
+          "static": "Sec. 2. And be it further enacted, That in case suits or proceedings are pending in said provisional court which could not have been instituted in said circuit or district court, the record shall remain in said district court without further action therein."
+        },
+        {
+          "source_id": "congressionalglo7395unit:1060:par_001060_000026",
+          "raw_sha256": "d3d297fc4b96c5e77591cd5c98530462be7a5a3381ff6cf300a1dfb440e3e411",
+          "static_sha256": "d3d297fc4b96c5e77591cd5c98530462be7a5a3381ff6cf300a1dfb440e3e411",
+          "raw": "Sec. 3. And be it further enacted, That all judgments, orders, decrees, and decisions of the United States provisional court for the State of Louisiana, relating to the causes hereby transferred to the district court of the eastern",
+          "static": "Sec. 3. And be it further enacted, That all judgments, orders, decrees, and decisions of the United States provisional court for the State of Louisiana, relating to the causes hereby transferred to the district court of the eastern"
+        },
+        {
+          "source_id": "congressionalglo7395unit:1060:par_001060_000027",
+          "raw_sha256": "42f077531ceac77b40857983d727226ea24ac857994913b82909af411e485eb5",
+          "static_sha256": "42f077531ceac77b40857983d727226ea24ac857994913b82909af411e485eb5",
+          "raw": "district of Louisiana, or to the circuit court held in said district, shall at once become the judgments, orders, decrees, and decisions of said district court, or said circuit court, unless the same are inconsistent with the rules and proceedings thereof; and may be enforced, pleaded, and proved, as the judgments, orders, decrees, or decisions of said district court, or said circuit court. Approved, July 28, 1866.",
+          "static": "district of Louisiana, or to the circuit court held in said district, shall at once become the judgments, orders, decrees, and decisions of said district court, or said circuit court, unless the same are inconsistent with the rules and proceedings thereof; and may be enforced, pleaded, and proved, as the judgments, orders, decrees, or decisions of said district court, or said circuit court. Approved, July 28, 1866."
+        },
+        {
+          "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+          "raw_sha256": "38df69ac13782c2367417d4c8807e27539bd6edd36e7c19758163967681efcfc",
+          "static_sha256": "c33bf22948014eff905f35a861f8454b4bf239af0007f0358f34a86a0ab14575",
+          "raw": "Chap. CCCXL — An Act to remove tte Office of Surveyor General of the States of Iowa and Wisconsin to Plattsmouth, Nebraska. Be it enacted by the Senate and House of Rep- resentatives of the United States of America in Congress assembled, That it shall be the duty of the Secretary of the Interior, as soon after the passage of this act as maybe, to cause the office of surveyor general of Iowa and Wiscon- sin to.be removed to Plattsmouth in the Ter- ritory of Nebraska, and to make the necessary provisions for immediate and effective opera- tions ; and when so removed the duties and jurisdiction of said surveyor general shall be coextensive with the limits of the Territory of Nebraska, and include the State of Iowa, and the same shall constitute a surveying district. Sec. 2. And be it further enacted. That all acts and parts of acts inconsistent with the provisions of this act, be, and the same are hereby, repealed. Approved, July 28, 1866.",
+          "static": "Chap. CCCXL — An Act to remove tte Office of Surveyor General of the States of Iowa and Wisconsin to Plattsmouth, Nebraska. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, That it shall be the duty of the Secretary of the Interior, as soon after the passage of this act as maybe, to cause the office of surveyor general of Iowa and Wisconsin to.be removed to Plattsmouth in the Territory of Nebraska, and to make the necessary provisions for immediate and effective operations ; and when so removed the duties and jurisdiction of said surveyor general shall be coextensive with the limits of the Territory of Nebraska, and include the State of Iowa, and the same shall constitute a surveying district. Sec. 2. And be it further enacted. That all acts and parts of acts inconsistent with the provisions of this act, be, and the same are hereby, repealed. Approved, July 28, 1866."
+        }
+      ],
+      "image_bindings_as_previously_recorded": [
+        {
+          "id": "reading-74d01b9894f76563d519-leaf-1060",
+          "path": "artifacts/reading-images-20261024-01/reading-74d01b9894f76563d519-leaf-1060/crop.jpg",
+          "sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+          "sources": [
+            {
+              "end": 259,
+              "raw_sha256": "8afdad05fdde58558f1cf5a973e281e1247e086cfad7af139eba0a6dbecacbbf",
+              "source_id": "congressionalglo7395unit:1060:par_001060_000025",
+              "start": 0
+            },
+            {
+              "end": 231,
+              "raw_sha256": "d3d297fc4b96c5e77591cd5c98530462be7a5a3381ff6cf300a1dfb440e3e411",
+              "source_id": "congressionalglo7395unit:1060:par_001060_000026",
+              "start": 0
+            },
+            {
+              "end": 418,
+              "raw_sha256": "42f077531ceac77b40857983d727226ea24ac857994913b82909af411e485eb5",
+              "source_id": "congressionalglo7395unit:1060:par_001060_000027",
+              "start": 0
+            },
+            {
+              "end": 950,
+              "raw_sha256": "38df69ac13782c2367417d4c8807e27539bd6edd36e7c19758163967681efcfc",
+              "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+              "start": 0
+            }
+          ]
+        }
+      ],
+      "reference_status": "not_requested; inherited AI-provisional observations are exposed, not independent gold",
+      "image_status": "cached identities inherited; coverage/legibility not revalidated in T49",
+      "human_reviewed_as_recorded": false
+    },
+    {
+      "id": "K02",
+      "kind": "exposed_historical_fixture",
+      "fixture_case_id": "F02-printed-repetition",
+      "fixture_path": "artifacts/reading-failure-fixtures-20261025-01/fixtures.json",
+      "fixture_file_sha256": "6d290330bc4d4186c72275df4331b87118cf01729fafb93361477414b2fbdfbc",
+      "fixture_case_sha256": "f763f26bda35ec7ca7c4785000f4215e3b43bb2942d8d9ac1b3d2b9f2d9167f9",
+      "unit_id": "reading-1cf618a5ce887cee79b1",
+      "purpose": "Printed repeated word removed by fluent repair.",
+      "target_paragraph_count": 9,
+      "raw_codepoints": 1562,
+      "static_codepoints": 1552,
+      "text_status": "within_budget",
+      "targets": [
+        {
+          "source_id": "congressionalglo7395unit:741:par_000741_000000",
+          "raw_sha256": "3c89cf88ad28b89626ab1a7db707fc19b4e746d4660b8e4ddcc1bc7d19eb640e",
+          "static_sha256": "3c89cf88ad28b89626ab1a7db707fc19b4e746d4660b8e4ddcc1bc7d19eb640e",
+          "raw": "1866.]",
+          "static": "1866.]"
+        },
+        {
+          "source_id": "congressionalglo7395unit:741:par_000741_000001",
+          "raw_sha256": "50ee316d262b71092086457b1186df53f5eec73c6ed695c79787db0bff79a2f5",
+          "static_sha256": "50ee316d262b71092086457b1186df53f5eec73c6ed695c79787db0bff79a2f5",
+          "raw": "APPENDIX TO THE CONGRESSIONAL GLOBE.",
+          "static": "APPENDIX TO THE CONGRESSIONAL GLOBE."
+        },
+        {
+          "source_id": "congressionalglo7395unit:741:par_000741_000002",
+          "raw_sha256": "3346f2bbf6c34bd2dbe28bd1bb657d0e9c37392a1d5ec9929e6a5df4763ddc2d",
+          "static_sha256": "3346f2bbf6c34bd2dbe28bd1bb657d0e9c37392a1d5ec9929e6a5df4763ddc2d",
+          "raw": "107",
+          "static": "107"
+        },
+        {
+          "source_id": "congressionalglo7395unit:741:par_000741_000003",
+          "raw_sha256": "a11ebf3d10ee7348d5a2d69e360512f5a51e183dc728273391516fb51c5d2e81",
+          "static_sha256": "a11ebf3d10ee7348d5a2d69e360512f5a51e183dc728273391516fb51c5d2e81",
+          "raw": "39th Cong. ... 1st Sess.",
+          "static": "39th Cong. ... 1st Sess."
+        },
+        {
+          "source_id": "congressionalglo7395unit:741:par_000741_000004",
+          "raw_sha256": "df52dd6a1e8214ac764d3abb387adcae88465e2b92f0127dd010fce7d7fb3659",
+          "static_sha256": "df52dd6a1e8214ac764d3abb387adcae88465e2b92f0127dd010fce7d7fb3659",
+          "raw": "Apportionment of Bepresentation — Mr. Henderson.",
+          "static": "Apportionment of Bepresentation — Mr. Henderson."
+        },
+        {
+          "source_id": "congressionalglo7395unit:741:par_000741_000005",
+          "raw_sha256": "b51915008655401f5b78157cfc0480d0282c0f8db8ca2238b3a07a5362b9c3d1",
+          "static_sha256": "b51915008655401f5b78157cfc0480d0282c0f8db8ca2238b3a07a5362b9c3d1",
+          "raw": "Senate.",
+          "static": "Senate."
+        },
+        {
+          "source_id": "congressionalglo7395unit:741:par_000741_000006",
+          "raw_sha256": "f77d6de4e79ea615bc7c3a4823987f768a829a9c452386c87a3605007eb2b678",
+          "static_sha256": "f8112d954cc61248d321cd82910e2c74919a47a48f867abcbeb4f393c470f1a4",
+          "raw": "He cannot give a license or indulgence to com- mit crime ; but after a crime is committed, all he has to do in his certificate is to specify par- ticularly the crime that has been committed and for which the pardon is granted. But it may well be denied that but for the act of Con- gress of July 17, 18G2, of which my friend from New Hampshire before me [Mr. Clark] was perhaps the chief draughtsman, the President would have any authority to grant a general pardon or amnestj\\ I must admit that that act is quite full. Let me refer to it. The thirteenth section is in these words :",
+          "static": "He cannot give a license or indulgence to commit crime ; but after a crime is committed, all he has to do in his certificate is to specify particularly the crime that has been committed and for which the pardon is granted. But it may well be denied that but for the act of Congress of July 17, 18G2, of which my friend from New Hampshire before me [Mr. Clark] was perhaps the chief draughtsman, the President would have any authority to grant a general pardon or amnestj\\ I must admit that that act is quite full. Let me refer to it. The thirteenth section is in these words :"
+        },
+        {
+          "source_id": "congressionalglo7395unit:741:par_000741_000007",
+          "raw_sha256": "b4f4cd8ccce9ffb5f813c7435c7ff3cff6b6056c74c42378c418b40a9e01821b",
+          "static_sha256": "e126433fd4a404760fb5aafa4a1cf6593288e8a1c8e639ea4a0d3baf745ef811",
+          "raw": "\"Sec. 13. And he it further enacted. That the Presi- dent is hereby .authorized, at any time hereafter, by proclamation, to extend to persons who may have participated in the existing rebellion in any State or part thereof, pardon and amnesty, with such excep- tions and at such time and on such conditions as he may deem expedient for the public welfare.\"",
+          "static": "\"Sec. 13. And he it further enacted. That the President is hereby .authorized, at any time hereafter, by proclamation, to extend to persons who may have participated in the existing rebellion in any State or part thereof, pardon and amnesty, with such exceptions and at such time and on such conditions as he may deem expedient for the public welfare.\""
+        },
+        {
+          "source_id": "congressionalglo7395unit:741:par_000741_000008",
+          "raw_sha256": "31abb50be6f0b3553bdca7e9b8103b0ada437fd2cb57e49d22db61ab40c2646e",
+          "static_sha256": "31abb50be6f0b3553bdca7e9b8103b0ada437fd2cb57e49d22db61ab40c2646e",
+          "raw": "It will not be disputed that by virtue of that authority the President had power to issue his proclamation of general amnesty. But disputes may arise on other questions connected with this proclamation. What was the condition upon which the pardon was to inure to the benefit of the party pardoned? It was first that he should file the oath named and in the manner to be prescribed. But this is not of itself sufficient. There is something more necessary that the benefits of the pardon should inure.",
+          "static": "It will not be disputed that by virtue of that authority the President had power to issue his proclamation of general amnesty. But disputes may arise on other questions connected with this proclamation. What was the condition upon which the pardon was to inure to the benefit of the party pardoned? It was first that he should file the oath named and in the manner to be prescribed. But this is not of itself sufficient. There is something more necessary that the benefits of the pardon should inure."
+        }
+      ],
+      "image_bindings_as_previously_recorded": [
+        {
+          "id": "reading-1cf618a5ce887cee79b1-leaf-741",
+          "path": "artifacts/reading-images-20261024-01/reading-1cf618a5ce887cee79b1-leaf-741/crop.jpg",
+          "sha256": "53373dc3ef8ff554cda84c138db9c24b5f5753710114a2594bae75e06b150555",
+          "sources": [
+            {
+              "end": 6,
+              "raw_sha256": "3c89cf88ad28b89626ab1a7db707fc19b4e746d4660b8e4ddcc1bc7d19eb640e",
+              "source_id": "congressionalglo7395unit:741:par_000741_000000",
+              "start": 0
+            },
+            {
+              "end": 36,
+              "raw_sha256": "50ee316d262b71092086457b1186df53f5eec73c6ed695c79787db0bff79a2f5",
+              "source_id": "congressionalglo7395unit:741:par_000741_000001",
+              "start": 0
+            },
+            {
+              "end": 3,
+              "raw_sha256": "3346f2bbf6c34bd2dbe28bd1bb657d0e9c37392a1d5ec9929e6a5df4763ddc2d",
+              "source_id": "congressionalglo7395unit:741:par_000741_000002",
+              "start": 0
+            },
+            {
+              "end": 24,
+              "raw_sha256": "a11ebf3d10ee7348d5a2d69e360512f5a51e183dc728273391516fb51c5d2e81",
+              "source_id": "congressionalglo7395unit:741:par_000741_000003",
+              "start": 0
+            },
+            {
+              "end": 48,
+              "raw_sha256": "df52dd6a1e8214ac764d3abb387adcae88465e2b92f0127dd010fce7d7fb3659",
+              "source_id": "congressionalglo7395unit:741:par_000741_000004",
+              "start": 0
+            },
+            {
+              "end": 7,
+              "raw_sha256": "b51915008655401f5b78157cfc0480d0282c0f8db8ca2238b3a07a5362b9c3d1",
+              "source_id": "congressionalglo7395unit:741:par_000741_000005",
+              "start": 0
+            },
+            {
+              "end": 582,
+              "raw_sha256": "f77d6de4e79ea615bc7c3a4823987f768a829a9c452386c87a3605007eb2b678",
+              "source_id": "congressionalglo7395unit:741:par_000741_000006",
+              "start": 0
+            },
+            {
+              "end": 356,
+              "raw_sha256": "b4f4cd8ccce9ffb5f813c7435c7ff3cff6b6056c74c42378c418b40a9e01821b",
+              "source_id": "congressionalglo7395unit:741:par_000741_000007",
+              "start": 0
+            },
+            {
+              "end": 500,
+              "raw_sha256": "31abb50be6f0b3553bdca7e9b8103b0ada437fd2cb57e49d22db61ab40c2646e",
+              "source_id": "congressionalglo7395unit:741:par_000741_000008",
+              "start": 0
+            }
+          ]
+        }
+      ],
+      "reference_status": "not_requested; inherited AI-provisional observations are exposed, not independent gold",
+      "image_status": "cached identities inherited; coverage/legibility not revalidated in T49",
+      "human_reviewed_as_recorded": false
+    },
+    {
+      "id": "K03",
+      "kind": "exposed_historical_fixture",
+      "fixture_case_id": "F03-loan-relocation",
+      "fixture_path": "artifacts/reading-failure-fixtures-20261025-01/fixtures.json",
+      "fixture_file_sha256": "6d290330bc4d4186c72275df4331b87118cf01729fafb93361477414b2fbdfbc",
+      "fixture_case_sha256": "f6cbc66291ead28826d37a4f1fad3a6a3f022655572bff6cece55ea3d39fe557",
+      "unit_id": "reading-5500247fc23992050e37",
+      "purpose": "Words moved between paragraph records without supported relocation.",
+      "target_paragraph_count": 14,
+      "raw_codepoints": 1226,
+      "static_codepoints": 1220,
+      "text_status": "within_budget",
+      "targets": [
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000012",
+          "raw_sha256": "3be8fb4dce80a084ba504869452d3fd3cf8ced018af6a253d1e8951d534cff39",
+          "static_sha256": "824b0a9bafa22cc468e054f809d8a873f3c4a43d0d93319e64d92003aa63d848",
+          "raw": "Mr. MORRILL. I will say day after to- morrow.",
+          "static": "Mr. MORRILL. I will say day after tomorrow."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000013",
+          "raw_sha256": "bd3ddec36fae5816352b4818edaa47df91428866aca7c0c240120fd0d6be61fe",
+          "static_sha256": "55af95c612e6a7accd167e76d47c521f2cd9b4a84ed05489852ee680b7bc1458",
+          "raw": "Mr. ELDRIDGE. I object. I would not object to giving to-morrow. The evident pur- pose is to continue the session.",
+          "static": "Mr. ELDRIDGE. I object. I would not object to giving to-morrow. The evident purpose is to continue the session."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000014",
+          "raw_sha256": "bae15feacf815006eb10278c980fd638c3d1745c841d6ec89ed382caeb7078e0",
+          "static_sha256": "bae15feacf815006eb10278c980fd638c3d1745c841d6ec89ed382caeb7078e0",
+          "raw": "Mr. MORRILL. I suggest to-morrow even-",
+          "static": "Mr. MORRILL. I suggest to-morrow even-"
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000015",
+          "raw_sha256": "6a19f097035d31fa0fa78263325890693aad1f8574cf96cd3c4e8299c5311a52",
+          "static_sha256": "6a19f097035d31fa0fa78263325890693aad1f8574cf96cd3c4e8299c5311a52",
+          "raw": "ing.",
+          "static": "ing."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000016",
+          "raw_sha256": "1a24b7688c199c24d87b5984d152b37d1d528911ec852d9cdf98c3ef29b916ea",
+          "static_sha256": "1a24b7688c199c24d87b5984d152b37d1d528911ec852d9cdf98c3ef29b916ea",
+          "raw": "Mr.",
+          "static": "Mr."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000017",
+          "raw_sha256": "4190d193323eeec170d5399d555ba1c9ed6b3f3f3710cf72528a4e257a07779b",
+          "static_sha256": "4190d193323eeec170d5399d555ba1c9ed6b3f3f3710cf72528a4e257a07779b",
+          "raw": "LOAN. I object.",
+          "static": "LOAN. I object."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000018",
+          "raw_sha256": "bbbbe3e0b1c95221d6a6eccea6bb785b67cc6ae7f63df3fc1b2e7b92501ec9b9",
+          "static_sha256": "bbbbe3e0b1c95221d6a6eccea6bb785b67cc6ae7f63df3fc1b2e7b92501ec9b9",
+          "raw": "FRANCIS COLGEN.",
+          "static": "FRANCIS COLGEN."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000019",
+          "raw_sha256": "7936e680783e76dafbd2b397ba317638ccec7addfe0c6de98632a94d9886849a",
+          "static_sha256": "7936e680783e76dafbd2b397ba317638ccec7addfe0c6de98632a94d9886849a",
+          "raw": "Mr. BAKER. I ask not exceeding two minutes for a report from the Committee on Invalid Pensions in behalf of a blind soldier.",
+          "static": "Mr. BAKER. I ask not exceeding two minutes for a report from the Committee on Invalid Pensions in behalf of a blind soldier."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000020",
+          "raw_sha256": "2bad6d579582eb8d53de0dc00df5c41ba6fe19d9ebccd1a04e7fc90da5835f80",
+          "static_sha256": "2bad6d579582eb8d53de0dc00df5c41ba6fe19d9ebccd1a04e7fc90da5835f80",
+          "raw": "Mr. ANCONA. I withdraw the call for the regular order of business for that purpose.",
+          "static": "Mr. ANCONA. I withdraw the call for the regular order of business for that purpose."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000021",
+          "raw_sha256": "1a271b7be4fa9e77550f8b53b39f8444560e014376d828790eea4cb961e02fd5",
+          "static_sha256": "1a271b7be4fa9e77550f8b53b39f8444560e014376d828790eea4cb961e02fd5",
+          "raw": "Mr. VAN AERNAM, from the Committee on Invalid Pensions, reported a bill for the relief of Francis Colgen.; which was read a first and second time.",
+          "static": "Mr. VAN AERNAM, from the Committee on Invalid Pensions, reported a bill for the relief of Francis Colgen.; which was read a first and second time."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000022",
+          "raw_sha256": "83a18dae4b1768a26aa26897514cba30f8323c10df387cc20b8129f1274d82a3",
+          "static_sha256": "83a18dae4b1768a26aa26897514cba30f8323c10df387cc20b8129f1274d82a3",
+          "raw": "It provides that Francis Colgen shall be placed upon the pension-rolls at the same rate allowed to soldiers and seamen who have lost the sight of both eyes in the military and naval service.",
+          "static": "It provides that Francis Colgen shall be placed upon the pension-rolls at the same rate allowed to soldiers and seamen who have lost the sight of both eyes in the military and naval service."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000023",
+          "raw_sha256": "cb85d7698400988de0d42eee835a69046e6786541686378fdbd41159fd7df17e",
+          "static_sha256": "cb85d7698400988de0d42eee835a69046e6786541686378fdbd41159fd7df17e",
+          "raw": "The bill was ordered to be engrossed and read a third time ; and being engrossed, it was accordingly read the third time and passed. COMMITTEE ON PACIFIC RAILROAD, ETC.",
+          "static": "The bill was ordered to be engrossed and read a third time ; and being engrossed, it was accordingly read the third time and passed. COMMITTEE ON PACIFIC RAILROAD, ETC."
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000024",
+          "raw_sha256": "11c73827a1e2fcb7f4910424602043e51ba78b3fd2ee71e15a2814f756eefa82",
+          "static_sha256": "86b37415fc87a77e44f44fd60ebb14fbcbd76eefcd559317c28fa0487088daa4",
+          "raw": "Mr. PRICE. I move to suspend the rules to enable me to submit the following resolu- tion:",
+          "static": "Mr. PRICE. I move to suspend the rules to enable me to submit the following resolution:"
+        },
+        {
+          "source_id": "congressionalglo7395unit:330:par_000330_000025",
+          "raw_sha256": "d555658ede7984a9273e1474be7e1c85a391babc560692f4eaede2d3b629cc05",
+          "static_sha256": "d555658ede7984a9273e1474be7e1c85a391babc560692f4eaede2d3b629cc05",
+          "raw": "Resolved, That all other business be postponed, and that the Committee on the Pacific Railroad and the Committee on Public Lands be eacli allowed one hour of this evening's session for reports.",
+          "static": "Resolved, That all other business be postponed, and that the Committee on the Pacific Railroad and the Committee on Public Lands be eacli allowed one hour of this evening's session for reports."
+        }
+      ],
+      "image_bindings_as_previously_recorded": [
+        {
+          "id": "reading-5500247fc23992050e37-leaf-330",
+          "path": "artifacts/reading-images-20261024-01/reading-5500247fc23992050e37-leaf-330/crop.jpg",
+          "sha256": "3a368c4223d4b6b5a961687efcba2937b3430dd8021ae5e3f9eac7cb9fcb9a57",
+          "sources": [
+            {
+              "end": 45,
+              "raw_sha256": "3be8fb4dce80a084ba504869452d3fd3cf8ced018af6a253d1e8951d534cff39",
+              "source_id": "congressionalglo7395unit:330:par_000330_000012",
+              "start": 0
+            },
+            {
+              "end": 113,
+              "raw_sha256": "bd3ddec36fae5816352b4818edaa47df91428866aca7c0c240120fd0d6be61fe",
+              "source_id": "congressionalglo7395unit:330:par_000330_000013",
+              "start": 0
+            },
+            {
+              "end": 38,
+              "raw_sha256": "bae15feacf815006eb10278c980fd638c3d1745c841d6ec89ed382caeb7078e0",
+              "source_id": "congressionalglo7395unit:330:par_000330_000014",
+              "start": 0
+            },
+            {
+              "end": 4,
+              "raw_sha256": "6a19f097035d31fa0fa78263325890693aad1f8574cf96cd3c4e8299c5311a52",
+              "source_id": "congressionalglo7395unit:330:par_000330_000015",
+              "start": 0
+            },
+            {
+              "end": 3,
+              "raw_sha256": "1a24b7688c199c24d87b5984d152b37d1d528911ec852d9cdf98c3ef29b916ea",
+              "source_id": "congressionalglo7395unit:330:par_000330_000016",
+              "start": 0
+            },
+            {
+              "end": 15,
+              "raw_sha256": "4190d193323eeec170d5399d555ba1c9ed6b3f3f3710cf72528a4e257a07779b",
+              "source_id": "congressionalglo7395unit:330:par_000330_000017",
+              "start": 0
+            },
+            {
+              "end": 15,
+              "raw_sha256": "bbbbe3e0b1c95221d6a6eccea6bb785b67cc6ae7f63df3fc1b2e7b92501ec9b9",
+              "source_id": "congressionalglo7395unit:330:par_000330_000018",
+              "start": 0
+            },
+            {
+              "end": 124,
+              "raw_sha256": "7936e680783e76dafbd2b397ba317638ccec7addfe0c6de98632a94d9886849a",
+              "source_id": "congressionalglo7395unit:330:par_000330_000019",
+              "start": 0
+            },
+            {
+              "end": 83,
+              "raw_sha256": "2bad6d579582eb8d53de0dc00df5c41ba6fe19d9ebccd1a04e7fc90da5835f80",
+              "source_id": "congressionalglo7395unit:330:par_000330_000020",
+              "start": 0
+            },
+            {
+              "end": 146,
+              "raw_sha256": "1a271b7be4fa9e77550f8b53b39f8444560e014376d828790eea4cb961e02fd5",
+              "source_id": "congressionalglo7395unit:330:par_000330_000021",
+              "start": 0
+            },
+            {
+              "end": 190,
+              "raw_sha256": "83a18dae4b1768a26aa26897514cba30f8323c10df387cc20b8129f1274d82a3",
+              "source_id": "congressionalglo7395unit:330:par_000330_000022",
+              "start": 0
+            },
+            {
+              "end": 168,
+              "raw_sha256": "cb85d7698400988de0d42eee835a69046e6786541686378fdbd41159fd7df17e",
+              "source_id": "congressionalglo7395unit:330:par_000330_000023",
+              "start": 0
+            },
+            {
+              "end": 89,
+              "raw_sha256": "11c73827a1e2fcb7f4910424602043e51ba78b3fd2ee71e15a2814f756eefa82",
+              "source_id": "congressionalglo7395unit:330:par_000330_000024",
+              "start": 0
+            },
+            {
+              "end": 193,
+              "raw_sha256": "d555658ede7984a9273e1474be7e1c85a391babc560692f4eaede2d3b629cc05",
+              "source_id": "congressionalglo7395unit:330:par_000330_000025",
+              "start": 0
+            }
+          ]
+        }
+      ],
+      "reference_status": "not_requested; inherited AI-provisional observations are exposed, not independent gold",
+      "image_status": "cached identities inherited; coverage/legibility not revalidated in T49",
+      "human_reviewed_as_recorded": false
+    },
+    {
+      "id": "K04",
+      "kind": "exposed_historical_fixture",
+      "fixture_case_id": "F07-unresolved-dense-list",
+      "fixture_path": "artifacts/reading-failure-fixtures-20261025-01/fixtures.json",
+      "fixture_file_sha256": "6d290330bc4d4186c72275df4331b87118cf01729fafb93361477414b2fbdfbc",
+      "fixture_case_sha256": "d08e424f569455c6f70e05b870373de4a2c47278010fb82efd075cc663c38575",
+      "unit_id": "reading-5e7e1b38c53e488454eb",
+      "purpose": "Software-valid needs_review leaves damaged text unchanged; no automatic success grade.",
+      "target_paragraph_count": 1,
+      "raw_codepoints": 5564,
+      "static_codepoints": 5530,
+      "text_status": "within_budget",
+      "targets": [
+        {
+          "source_id": "congressionalglo00unit:569:par_000569_000051",
+          "raw_sha256": "13aae54c7d1c8b942bb75cc40b015678920796d7b838febb630f13944b7746d7",
+          "static_sha256": "7d385997e29abdecb6f1537bd84b0f356c83d39247b89b74386928a2db6a1d7f",
+          "raw": "Sec. 11. And be it further enacted, That from and after the passage of this act the articles and prod- ucts hereinafter enumerated shall be exempt from internal tax or duty: alum; aluminum; aluminous cake, patent alum, sulphate of alumina, and cobalt; aniline and aniline colors; animal charcoal, or car- bon; anvils; articles manufactured in institutions for the blind, and in institutions for the deaf and dumb, which are sold to aid in their support, or tho support of the pupils; barrels and caslis otlier than those used for the reception of fluids; packing boxes made of wood; and boxes of wood or paper for fric- tion matches, cigar-lights, and wax tapers; beeswax, crude or unrefined; bichromate of potash; bleaching powders; blue vitriol; borax, and boraeic acid; brass not more advanced than rods or sheets; brick, fire- brick, draining-tiles, cement, drain and sewer pipes, and earthen and stone water-pipes; bristles; brooms made from corn, brush, or palm-leaf; building stone of all kinds, including slate, marble, freestone, and soapstone, and rock, ground and calcined gypsum; bunting and Hags of the United States, and banners made of bunting of domestic manufacture; burr- stones, millstones, and grindstones, rough or wrought ; candle wicking; coffins and burial cases; copperas; copper, lead, and tin, in ingots, pigs, or bars; copper and yellow sheathing metal, not more advanced than rods or sheets; crates, and grain or farm baskets made of splints; crucibles of all kinds; crutches and artificial limbs, eyes, and teeth; deer skins, dressed or smoked; feather beds, mattresses, palliases, bol- sters, and pillows; fertilizers of all kinds; flasks and patterns used by founders; flavoring extracts solely for cooking purposes; german silver in bars or sheets; gold leaf and gold foil; hemp and jute prepared for textile or felting purposes; hulls of ships and other vessels; illuminating gas manufactured by educa- tional institutions for their own use exclusively ; iron bridges, and castings for iron bridges; keys, actions, and strings for musical instruments; lith- arge and orange mineral; machines driven by horse power and used exclusively for cutting fire-wood, staves, and shingle bolts, and hand saws ; magne- sium, calcined magnesia, and carbonate of magne- sia; malleable iron castings, unfinished; manganese; masts; spars, ship and vessel blocks, and treenail wedges, and deck plugs; medicinal and mineral waters, of all kinds, sold in bottles or from fountains; mills and machinery for the manufacture of sugar, sirup, and molasses from sorghum, imphce, beets, and corn; mineral coal of all kinds; monuments of stone of all kinds, not exceeding in value the sum of S^lOO: PcouitZerf, That monuments exceeding the value afore- said, erected by jsublic or private contributions to commemorate the service of Union soldiers who have fallen in battle, shall be exempt from taxation ; mould- ings for looking-glasses and picture frames ; muriatic, nitric, and acetic acids; nickel, quicksilver, and so- dium; nitrate of lead; oakum; original paintings, statues, and groups of statuary and casts made thereof by the artist from the original designs ; oxide of zinc: paints, painter's and paper stainer's colors; paper of all descriptions, except such as is manufactured and used exclusively for wearing apparel; books, maps, charts, and all printed matter, and book-binding; parafiine ; parafiine oil, not exceeding in specific gr.av- ity thirty-six degrees Baumo's hydrometer, the prod- uct of a residuum of distillation ; lubricating oil made from crude petroleum, coal, or shale not exceeding in specific gravity thirty-six degrees 13aume\"s hydrom- eter; crude petroleum, and crude oil tho product of the first and single distillation of coal, shale, as- phaltum, peat, or other bituminous substances; pho- tographs or any other sun picture, being copies of engravings or works of art, when the same are sold by the producer at wholesale at a price not exceed- ing fifteen cents each, or are used for the illustration of books; pickles when sold by the gallon and not contained in glass packages; pig-iron; muck barf blooms, slabs, and loops; plows, cultivators, harrows, straw and hay cutters, planters, ^ccd-drins, horso- rakos, hand-rakes, cotton-gins, gr;iin-cr;ulles, and winnowing-mills; pot and pearl ashes; ]n-oduction3 of stercotypers, litluigraphers, engravers, and olectro- typcrs; putty; iiuiniuc, uuirpliuio, and otUcr VL'i;eta- blc alkaloids, and phospliorus; railroad iron, and railroad iron reroUed; railroad oniurs; railroad, boat, and ship spikes; ax iiolls; iron axles; shoes for horses, mules, and oxen ; rivets, horseshoe nails, nuts, w'ashera, and bolts; vises, iron chains, and anchors, when such articles are made of wrought iron which has previously paid the taxor duty assessed thereon; reapers, nu)wers,tlireshing-uuvchines.andsoparators; corn -sh oilers and wooden- ware; repairs of articles of all kinds; Ronian ;ind water cements, ami linu-; root- ing slate, slabs, and tiles ; saleratus, sal soda, oa^ustio soda, crude soda, alumino-silicate ofsoila ; .-(luminato of soda; bicarbonate of soda; and silii'ate of soda; sails, tents, awnings, and bugs made by sowing Irom lUbrics or other articles vipou which a duty or tax has been paid; and bass made of paper: siMn ot tui; silex used in the nianutaeiure of f-'lass; soap, valued at not above three cents per |>ound ; speller : spindles and ca,-;|in,-s of all de,-.eri|. lions made s|.eei;illy lor locks or for machinery, and not sold or used lor luiy",
+          "static": "Sec. 11. And be it further enacted, That from and after the passage of this act the articles and products hereinafter enumerated shall be exempt from internal tax or duty: alum; aluminum; aluminous cake, patent alum, sulphate of alumina, and cobalt; aniline and aniline colors; animal charcoal, or carbon; anvils; articles manufactured in institutions for the blind, and in institutions for the deaf and dumb, which are sold to aid in their support, or tho support of the pupils; barrels and caslis otlier than those used for the reception of fluids; packing boxes made of wood; and boxes of wood or paper for friction matches, cigar-lights, and wax tapers; beeswax, crude or unrefined; bichromate of potash; bleaching powders; blue vitriol; borax, and boraeic acid; brass not more advanced than rods or sheets; brick, firebrick, draining-tiles, cement, drain and sewer pipes, and earthen and stone water-pipes; bristles; brooms made from corn, brush, or palm-leaf; building stone of all kinds, including slate, marble, freestone, and soapstone, and rock, ground and calcined gypsum; bunting and Hags of the United States, and banners made of bunting of domestic manufacture; burr- stones, millstones, and grindstones, rough or wrought ; candle wicking; coffins and burial cases; copperas; copper, lead, and tin, in ingots, pigs, or bars; copper and yellow sheathing metal, not more advanced than rods or sheets; crates, and grain or farm baskets made of splints; crucibles of all kinds; crutches and artificial limbs, eyes, and teeth; deer skins, dressed or smoked; feather beds, mattresses, palliases, bolsters, and pillows; fertilizers of all kinds; flasks and patterns used by founders; flavoring extracts solely for cooking purposes; german silver in bars or sheets; gold leaf and gold foil; hemp and jute prepared for textile or felting purposes; hulls of ships and other vessels; illuminating gas manufactured by educational institutions for their own use exclusively ; iron bridges, and castings for iron bridges; keys, actions, and strings for musical instruments; litharge and orange mineral; machines driven by horse power and used exclusively for cutting fire-wood, staves, and shingle bolts, and hand saws ; magnesium, calcined magnesia, and carbonate of magnesia; malleable iron castings, unfinished; manganese; masts; spars, ship and vessel blocks, and treenail wedges, and deck plugs; medicinal and mineral waters, of all kinds, sold in bottles or from fountains; mills and machinery for the manufacture of sugar, sirup, and molasses from sorghum, imphce, beets, and corn; mineral coal of all kinds; monuments of stone of all kinds, not exceeding in value the sum of S^lOO: PcouitZerf, That monuments exceeding the value aforesaid, erected by jsublic or private contributions to commemorate the service of Union soldiers who have fallen in battle, shall be exempt from taxation ; mould- ings for looking-glasses and picture frames ; muriatic, nitric, and acetic acids; nickel, quicksilver, and sodium; nitrate of lead; oakum; original paintings, statues, and groups of statuary and casts made thereof by the artist from the original designs ; oxide of zinc: paints, painter's and paper stainer's colors; paper of all descriptions, except such as is manufactured and used exclusively for wearing apparel; books, maps, charts, and all printed matter, and book-binding; parafiine ; parafiine oil, not exceeding in specific gr.av- ity thirty-six degrees Baumo's hydrometer, the product of a residuum of distillation ; lubricating oil made from crude petroleum, coal, or shale not exceeding in specific gravity thirty-six degrees 13aume\"s hydrometer; crude petroleum, and crude oil tho product of the first and single distillation of coal, shale, asphaltum, peat, or other bituminous substances; photographs or any other sun picture, being copies of engravings or works of art, when the same are sold by the producer at wholesale at a price not exceeding fifteen cents each, or are used for the illustration of books; pickles when sold by the gallon and not contained in glass packages; pig-iron; muck barf blooms, slabs, and loops; plows, cultivators, harrows, straw and hay cutters, planters, ^ccd-drins, horso- rakos, hand-rakes, cotton-gins, gr;iin-cr;ulles, and winnowing-mills; pot and pearl ashes; ]n-oduction3 of stercotypers, litluigraphers, engravers, and olectro- typcrs; putty; iiuiniuc, uuirpliuio, and otUcr VL'i;eta- blc alkaloids, and phospliorus; railroad iron, and railroad iron reroUed; railroad oniurs; railroad, boat, and ship spikes; ax iiolls; iron axles; shoes for horses, mules, and oxen ; rivets, horseshoe nails, nuts, w'ashera, and bolts; vises, iron chains, and anchors, when such articles are made of wrought iron which has previously paid the taxor duty assessed thereon; reapers, nu)wers,tlireshing-uuvchines.andsoparators; corn -sh oilers and wooden- ware; repairs of articles of all kinds; Ronian ;ind water cements, ami linu-; rooting slate, slabs, and tiles ; saleratus, sal soda, oa^ustio soda, crude soda, alumino-silicate ofsoila ; .-(luminato of soda; bicarbonate of soda; and silii'ate of soda; sails, tents, awnings, and bugs made by sowing Irom lUbrics or other articles vipou which a duty or tax has been paid; and bass made of paper: siMn ot tui; silex used in the nianutaeiure of f-'lass; soap, valued at not above three cents per |>ound ; speller : spindles and ca,-;|in,-s of all de,-.eri|. lions made s|.eei;illy lor locks or for machinery, and not sold or used lor luiy"
+        }
+      ],
+      "image_bindings_as_previously_recorded": [
+        {
+          "id": "reading-5e7e1b38c53e488454eb-leaf-569",
+          "path": "artifacts/reading-images-20261024-01/reading-5e7e1b38c53e488454eb-leaf-569/crop.jpg",
+          "sha256": "f8e3b8ca71e046dda0f13db620df99310759a76ca4b451b8aba4f1f04876b7b2",
+          "sources": [
+            {
+              "end": 5564,
+              "raw_sha256": "13aae54c7d1c8b942bb75cc40b015678920796d7b838febb630f13944b7746d7",
+              "source_id": "congressionalglo00unit:569:par_000569_000051",
+              "start": 0
+            }
+          ]
+        }
+      ],
+      "reference_status": "not_requested; inherited AI-provisional observations are exposed, not independent gold",
+      "image_status": "cached identities inherited; coverage/legibility not revalidated in T49",
+      "human_reviewed_as_recorded": false
+    },
+    {
+      "id": "K05",
+      "kind": "synthetic_control",
+      "source_id": "synthetic:T49:K05",
+      "raw_text": "The amount was $10,000.",
+      "raw_sha256": "f4d1870bb6de005121885089b86ffa9262165d421055ad177c6f6f508beafda7",
+      "constructed_reference_text": "The amount was $10,000.",
+      "constructed_reference_sha256": "f4d1870bb6de005121885089b86ffa9262165d421055ad177c6f6f508beafda7",
+      "purpose": "Missing and irrelevant-image variants must remain unresolved rather than issue a clean certificate.",
+      "image_sha256": null,
+      "reference_status": "constructed by design, not a reading of historical print",
+      "target_paragraph_count": 1,
+      "raw_codepoints": 23,
+      "static_codepoints": 23,
+      "static_policy": "unchanged constructed raw unless separately versioned test edit",
+      "historical_accuracy_evidence": false
+    },
+    {
+      "id": "K06",
+      "kind": "synthetic_control",
+      "source_id": "synthetic:T49:K06",
+      "raw_text": "Mr. Fessenden discussed Sioux City and the freedmen.",
+      "raw_sha256": "b15599d1e1273bb9a4cf066c47fa7d5c95d4914c078580916e5af2f5d39c0c6d",
+      "constructed_reference_text": "Mr. Fessenden discussed Sioux City and the freedmen.",
+      "constructed_reference_sha256": "b15599d1e1273bb9a4cf066c47fa7d5c95d4914c078580916e5af2f5d39c0c6d",
+      "purpose": "Constructed correct name/place/period-word control; dictionary absence is not damage or nonexistence.",
+      "image_sha256": null,
+      "reference_status": "constructed by design, not a reading of historical print",
+      "target_paragraph_count": 1,
+      "raw_codepoints": 52,
+      "static_codepoints": 52,
+      "static_policy": "unchanged constructed raw unless separately versioned test edit",
+      "historical_accuracy_evidence": false
+    },
+    {
+      "id": "K07",
+      "kind": "synthetic_control",
+      "source_id": "synthetic:T49:K07",
+      "raw_text": "The public doubt was $10,000 in 1866.",
+      "raw_sha256": "f2938680369e625be0d9de3b26c40f9e9dd0a2f7130061e4f135e75483deddcf",
+      "constructed_reference_text": "The public debt was $10,000 in 1865.",
+      "constructed_reference_sha256": "a927a5f68ce5afc8b6e3a234b1d0f520b9dba717f8e8be1bf2a4d3c8610d8fe9",
+      "purpose": "Constructed real-word and plausible-year substitutions; lexical/syntax success does not verify the value.",
+      "image_sha256": null,
+      "reference_status": "constructed by design, not a reading of historical print",
+      "target_paragraph_count": 1,
+      "raw_codepoints": 37,
+      "static_codepoints": 37,
+      "static_policy": "unchanged constructed raw unless separately versioned test edit",
+      "historical_accuracy_evidence": false
+    },
+    {
+      "id": "K08",
+      "kind": "synthetic_control",
+      "source_id": "synthetic:T49:K08",
+      "raw_text": "The well-known delegate discussed manufactur1ng.",
+      "raw_sha256": "2c976e8d255a245ef8a988ad584d92fa783cb61547b31bd337260df74ff87eb5",
+      "constructed_reference_text": "The well-known delegate discussed manufacturing.",
+      "constructed_reference_sha256": "8f301c9aa5b3ab2b6c5b896336bff5be5fa90e9320dd2b90c86fe9d06c832679",
+      "purpose": "Constructed mixed-glyph error plus meaningful-hyphen negative control; no indiscriminate joining or substitution.",
+      "image_sha256": null,
+      "reference_status": "constructed by design, not a reading of historical print",
+      "target_paragraph_count": 1,
+      "raw_codepoints": 48,
+      "static_codepoints": 48,
+      "static_policy": "unchanged constructed raw unless separately versioned test edit",
+      "historical_accuracy_evidence": false
+    }
+  ],
+  "limits": "Purposive exposed/synthetic controls only; no inclusion probability or population prevalence. Missing-image controls must not be used for transcription-quality denominators. Actual new image readings/provider calls remain unauthorized."
+}

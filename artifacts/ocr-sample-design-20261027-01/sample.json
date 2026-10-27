@@ -1,0 +1,2886 @@
+{
+  "schema_version": "ocr-sample-manifest-v1",
+  "task": "T49",
+  "design_sha256": "ecb540a15502550e6f12c45ca76230240ca43dc7a0cd34b3de8fed4ebb4ae31b",
+  "source": {
+    "path": "artifacts/runs/static-final-20261011/canonical_pages.jsonl",
+    "bytes": 2231301433,
+    "sha256": "4ab8ef6b325b650a0db002a94d690989f02d82333e977e5fed05c8f651772eeb",
+    "passes": 2,
+    "both_passes_hash_match": true
+  },
+  "frame": {
+    "identity_sha256": "94b6d2f886b4e170bbd3c73ac744f759fa6b4fc204f2e049e695d8b94da38624",
+    "encoding": "source-order compact sorted-key UTF8 JSON metadata rows + newline; row fields are selection-record fields before split/priority additions",
+    "nonempty_paragraphs": 296993,
+    "per_part": [
+      {
+        "part_number": 1,
+        "pages": 1086,
+        "blank_ocr_pages": 12,
+        "all_paragraphs": 54945,
+        "empty_ocr_paragraphs": 0,
+        "eligible_nonempty_paragraphs": 54945,
+        "raw_codepoints": 12832813,
+        "static_codepoints": 12743219,
+        "confirmation_conditional_frame": 52848
+      },
+      {
+        "part_number": 2,
+        "pages": 1080,
+        "blank_ocr_pages": 5,
+        "all_paragraphs": 59206,
+        "empty_ocr_paragraphs": 2,
+        "eligible_nonempty_paragraphs": 59204,
+        "raw_codepoints": 12744549,
+        "static_codepoints": 12661119,
+        "confirmation_conditional_frame": 57190
+      },
+      {
+        "part_number": 3,
+        "pages": 1076,
+        "blank_ocr_pages": 3,
+        "all_paragraphs": 59437,
+        "empty_ocr_paragraphs": 0,
+        "eligible_nonempty_paragraphs": 59437,
+        "raw_codepoints": 12633264,
+        "static_codepoints": 12553146,
+        "confirmation_conditional_frame": 56864
+      },
+      {
+        "part_number": 4,
+        "pages": 1080,
+        "blank_ocr_pages": 8,
+        "all_paragraphs": 57261,
+        "empty_ocr_paragraphs": 0,
+        "eligible_nonempty_paragraphs": 57261,
+        "raw_codepoints": 12668501,
+        "static_codepoints": 12586697,
+        "confirmation_conditional_frame": 54751
+      },
+      {
+        "part_number": 5,
+        "pages": 1090,
+        "blank_ocr_pages": 15,
+        "all_paragraphs": 66146,
+        "empty_ocr_paragraphs": 0,
+        "eligible_nonempty_paragraphs": 66146,
+        "raw_codepoints": 12258401,
+        "static_codepoints": 12174129,
+        "confirmation_conditional_frame": 64092
+      }
+    ],
+    "population_limit": "Nonempty OCR paragraphs only; missing print outside OCR is unmeasured. Blank pages counted, not assigned to nonempty-paragraph estimates."
+  },
+  "primary": [
+    {
+      "source_id": "congressionalg7391unit:526:par_000526_000021",
+      "item_identifier": "congressionalg7391unit",
+      "part_number": 1,
+      "scan_leaf": 526,
+      "paragraph_id": "par_000526_000021",
+      "raw_sha256": "c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8",
+      "static_sha256": "7232477948a863ee16c02ae4c837d5caffac4e177f60d8729633f531d29b7c9a",
+      "raw_codepoints": 709,
+      "static_codepoints": 699,
+      "page_line_number": 527,
+      "reading_order": 21,
+      "split": "primary",
+      "priority_sha256": "0000f055aa12d6d137abe3f7594dfd94cf83d42c5275e609361551dcf103d0a7",
+      "frame_size": 54945,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 54945
+      },
+      "expansion_weight": {
+        "numerator": 54945,
+        "denominator": 5
+      },
+      "page_line_sha256": "5b183a56e701d8b4bb29f729c69fceb66a45bcc2057add9e5e21c8d911376e81",
+      "hocr_page_id": "page_000526",
+      "printed_page": {
+        "detected": "410",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3114,
+        4298
+      ],
+      "bbox": {
+        "left": 2050,
+        "top": 2549,
+        "right": 2950,
+        "bottom": 3226
+      },
+      "line_ids": [
+        "line_000526_000237",
+        "line_000526_000238",
+        "line_000526_000239",
+        "line_000526_000240",
+        "line_000526_000241",
+        "line_000526_000242",
+        "line_000526_000243",
+        "line_000526_000244",
+        "line_000526_000245",
+        "line_000526_000246",
+        "line_000526_000247",
+        "line_000526_000248",
+        "line_000526_000249",
+        "line_000526_000250",
+        "line_000526_000251",
+        "line_000526_000252"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "We have now, as I believe, the golden oppor- tunity to remedy this evil which will never come again to the men of this generation. The sys- tem of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on recon- struction having reported this amendment, I infer that they will, if this amendment is sub- mitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+      "static_text": "We have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+      "static_edits": [
+        {
+          "start_char": 38,
+          "end_char": 51,
+          "expected": "oppor- tunity",
+          "replacement": "opportunity",
+          "reason": "adjacent-line wrap; lexicon form opportunity",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 135,
+          "end_char": 143,
+          "expected": "sys- tem",
+          "replacement": "system",
+          "reason": "adjacent-line wrap; lexicon form system",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 354,
+          "end_char": 370,
+          "expected": "recon- struction",
+          "replacement": "reconstruction",
+          "reason": "adjacent-line wrap; lexicon form reconstruction",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 448,
+          "end_char": 459,
+          "expected": "sub- mitted",
+          "replacement": "submitted",
+          "reason": "adjacent-line wrap; lexicon form submitted",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 592,
+          "end_char": 602,
+          "expected": "in- sisted",
+          "replacement": "insisted",
+          "reason": "adjacent-line wrap; lexicon form insisted",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalg7391unit:526:par_000526_000020",
+          "raw_text": "If gentlemen on the other side desire to make this issue to the country I hope that it will be promptly accepted by us. Let this issue be joined, and let us go to the country upon it. I can see and appreciate the reason why gentle- men on the other side of this Hall oppose this amendment. The men elected on this un- equal basis are their allies, from whom they are now anxiously looking for reenforcements to enable them to regain the ascendency in this House and in the national Government which they lost when those allies deserted them.",
+          "raw_sha256": "806ab7cd82f90ef2a91090f66fb8edd9b5e6d83920f35a0023e013722bcc72bf",
+          "static_text": "If gentlemen on the other side desire to make this issue to the country I hope that it will be promptly accepted by us. Let this issue be joined, and let us go to the country upon it. I can see and appreciate the reason why gentlemen on the other side of this Hall oppose this amendment. The men elected on this unequal basis are their allies, from whom they are now anxiously looking for reenforcements to enable them to regain the ascendency in this House and in the national Government which they lost when those allies deserted them.",
+          "static_sha256": "fb47c1fc0bdd40f3e7e1cc7c31b4cc0be042d6d50a613f93341fd7a810bbcd48",
+          "bbox": {
+            "left": 2050,
+            "top": 2053,
+            "right": 2933,
+            "bottom": 2554
+          },
+          "reading_order": 20
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalg7391unit:526:par_000526_000022",
+          "raw_text": "Suppose we refuse to pass this proposition now. Is there any probability that it can be passed when the rebel States are again repre- sented upon this floor with their unequal repre- sentation ? And if it can, is it not certain that it will not be adopted by the States who are ben- efited by it, unless it is made a condition prece- dent to their reconstruction ? The honorable gentleman from New York [Mr. Brooks] said that this question was pressed merely for the sake of agitation, (that argument has always been used to protect wrong and injustice,) and he said that it was only folly to believe it would be successful. I believe that it is folly to be- lieve that it will ever be successful unless it is successful now. Some of the State Legisla- tures are now in session which will -not again meet for two years. If we are going to pass this measure at all it must be passed now.",
+          "raw_sha256": "97d2923a80500ab0348727b86a4893321f972101d5e7dffe3b09447901ef6eb8",
+          "static_text": "Suppose we refuse to pass this proposition now. Is there any probability that it can be passed when the rebel States are again represented upon this floor with their unequal representation ? And if it can, is it not certain that it will not be adopted by the States who are benefited by it, unless it is made a condition precedent to their reconstruction ? The honorable gentleman from New York [Mr. Brooks] said that this question was pressed merely for the sake of agitation, (that argument has always been used to protect wrong and injustice,) and he said that it was only folly to believe it would be successful. I believe that it is folly to believe that it will ever be successful unless it is successful now. Some of the State Legislatures are now in session which will -not again meet for two years. If we are going to pass this measure at all it must be passed now.",
+          "static_sha256": "24d44155fa998364017672dfae898c45d9a6ef20235c344ae934ba942432114f",
+          "bbox": {
+            "left": 2047,
+            "top": 3227,
+            "right": 2927,
+            "bottom": 4019
+          },
+          "reading_order": 22
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalg7391unit:79:par_000079_000075",
+      "item_identifier": "congressionalg7391unit",
+      "part_number": 1,
+      "scan_leaf": 79,
+      "paragraph_id": "par_000079_000075",
+      "raw_sha256": "28a200f3c4cf42896f685bddfa152e97bfe17988d39f4da4fcde8b78b2bdf90d",
+      "static_sha256": "822ebb2d4b56cbce035db2ffd72918306b5f0d09d45ed763b56c02eb8d37ce88",
+      "raw_codepoints": 63,
+      "static_codepoints": 61,
+      "page_line_number": 80,
+      "reading_order": 75,
+      "split": "primary",
+      "priority_sha256": "000109eb84a6b191a8eb11f94e0d706ae6aa0ff0ab10fee8fdd0a61d4cb011a2",
+      "frame_size": 54945,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 54945
+      },
+      "expansion_weight": {
+        "numerator": 54945,
+        "denominator": 5
+      },
+      "page_line_sha256": "713397b997d3024f999d33887a987a0501c22a066f24696c8d06c342980321a8",
+      "hocr_page_id": "page_000079",
+      "printed_page": {
+        "detected": "LXXI",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 67
+      },
+      "image_dimensions": [
+        3127,
+        4298
+      ],
+      "bbox": {
+        "left": 1059,
+        "top": 1296,
+        "right": 1942,
+        "bottom": 1380
+      },
+      "line_ids": [
+        "line_000079_000116",
+        "line_000079_000117"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "Hill, Ralph, a Representative from Indi- ana 71, 105, 135, 138,",
+      "static_text": "Hill, Ralph, a Representative from Indiana 71, 105, 135, 138,",
+      "static_edits": [
+        {
+          "start_char": 35,
+          "end_char": 44,
+          "expected": "Indi- ana",
+          "replacement": "Indiana",
+          "reason": "adjacent-line wrap; lexicon form indiana",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalg7391unit:79:par_000079_000074",
+          "raw_text": "Wiard 4286",
+          "raw_sha256": "b391c6d443b0dfb74bf90cc3758909061f223a28d38ef9ee50aa8ec5abb774e1",
+          "static_text": "Wiard 4286",
+          "static_sha256": "b391c6d443b0dfb74bf90cc3758909061f223a28d38ef9ee50aa8ec5abb774e1",
+          "bbox": {
+            "left": 1146,
+            "top": 1254,
+            "right": 1943,
+            "bottom": 1285
+          },
+          "reading_order": 74
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalg7391unit:79:par_000079_000076",
+          "raw_text": "172, 194, 242, 257, 287, 300, 327, 386, 427, 428, 435, 446, 481, 482, 531, -535, 626, 644, 773, 774, 857, 858, 1154, 1200, 1271, 1319, 1345, 1346, 1367, 1468, 1469, 1470, 1471, 1472, 1530, 1-585, 1660, 1661, 1686, 1728, 1811, 1861, 1898, 1919, 1968",
+          "raw_sha256": "a41d108678e3d868ca9beae540d0906cef31cad32478b5963496f60b4ad9a7b4",
+          "static_text": "172, 194, 242, 257, 287, 300, 327, 386, 427, 428, 435, 446, 481, 482, 531, -535, 626, 644, 773, 774, 857, 858, 1154, 1200, 1271, 1319, 1345, 1346, 1367, 1468, 1469, 1470, 1471, 1472, 1530, 1-585, 1660, 1661, 1686, 1728, 1811, 1861, 1898, 1919, 1968",
+          "static_sha256": "a41d108678e3d868ca9beae540d0906cef31cad32478b5963496f60b4ad9a7b4",
+          "bbox": {
+            "left": 1185,
+            "top": 1382,
+            "right": 1945,
+            "bottom": 1634
+          },
+          "reading_order": 76
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalg7391unit:150:par_000150_000094",
+      "item_identifier": "congressionalg7391unit",
+      "part_number": 1,
+      "scan_leaf": 150,
+      "paragraph_id": "par_000150_000094",
+      "raw_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+      "static_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+      "raw_codepoints": 185,
+      "static_codepoints": 185,
+      "page_line_number": 151,
+      "reading_order": 94,
+      "split": "primary",
+      "priority_sha256": "0002277857543f6fcef601ebaee95695d2994405caec4dafdc2377f58557823d",
+      "frame_size": 54945,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 54945
+      },
+      "expansion_weight": {
+        "numerator": 54945,
+        "denominator": 5
+      },
+      "page_line_sha256": "185132ca0504843c65d732c299f49fb968c6a371a2d3f497ccf402cfb8031bd1",
+      "hocr_page_id": "page_000150",
+      "printed_page": {
+        "detected": "34",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3199,
+        4298
+      ],
+      "bbox": {
+        "left": 2158,
+        "top": 3661,
+        "right": 3041,
+        "bottom": 3866
+      },
+      "line_ids": [
+        "line_000150_000263",
+        "line_000150_000264",
+        "line_000150_000265",
+        "line_000150_000266",
+        "line_000150_000267"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+      "static_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalg7391unit:150:par_000150_000093",
+          "raw_text": "Joint resolution",
+          "raw_sha256": "7b2b3b623b251c7a417773e97a8154c48f5e5894a4530973ca0ced80dec18152",
+          "static_text": "Joint resolution",
+          "static_sha256": "7b2b3b623b251c7a417773e97a8154c48f5e5894a4530973ca0ced80dec18152",
+          "bbox": {
+            "left": 2190,
+            "top": 3618,
+            "right": 2521,
+            "bottom": 3646
+          },
+          "reading_order": 93
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalg7391unit:150:par_000150_000095",
+          "raw_text": "Mr. GUTHRIE. I take it for granted there is no just objection to it although it is addressed to Jacob Barker. The delegation from Louisi- ana request that I shall file it here. Agreeably",
+          "raw_sha256": "a625858db71344f738ea691f798a0def89040269cee931b524c911bc75da3220",
+          "static_text": "Mr. GUTHRIE. I take it for granted there is no just objection to it although it is addressed to Jacob Barker. The delegation from Louisiana request that I shall file it here. Agreeably",
+          "static_sha256": "0a6910cb0d54608cc6758b9fab702e619f4c66a1f3cee7d9c6fe5fbfa8cacd03",
+          "bbox": {
+            "left": 2158,
+            "top": 3869,
+            "right": 3035,
+            "bottom": 4039
+          },
+          "reading_order": 95
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalg7391unit:40:par_000040_000066",
+      "item_identifier": "congressionalg7391unit",
+      "part_number": 1,
+      "scan_leaf": 40,
+      "paragraph_id": "par_000040_000066",
+      "raw_sha256": "5f5e3972a69ed4757c1af14ead03e9b7dcce2a42eac8aa59131a374586b522db",
+      "static_sha256": "5f5e3972a69ed4757c1af14ead03e9b7dcce2a42eac8aa59131a374586b522db",
+      "raw_codepoints": 34,
+      "static_codepoints": 34,
+      "page_line_number": 41,
+      "reading_order": 66,
+      "split": "primary",
+      "priority_sha256": "00026e8d31b0faa1f374a8b4abe0454a32b40adadff13c5c86ee29aa9e42d06c",
+      "frame_size": 54945,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 54945
+      },
+      "expansion_weight": {
+        "numerator": 54945,
+        "denominator": 5
+      },
+      "page_line_sha256": "437156f8622f5303b07c2dbe2fa7656a4ae354fca3456a61e47df7315cfdc9fd",
+      "hocr_page_id": "page_000040",
+      "printed_page": {
+        "detected": "XXXIV",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": null
+      },
+      "image_dimensions": [
+        3199,
+        4298
+      ],
+      "bbox": {
+        "left": 408,
+        "top": 3926,
+        "right": 1195,
+        "bottom": 3971
+      },
+      "line_ids": [
+        "line_000040_000088"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "sound 3430, 3431, 3574, 4037, 4072",
+      "static_text": "sound 3430, 3431, 3574, 4037, 4072",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalg7391unit:40:par_000040_000065",
+          "raw_text": "bill (H. R. No. 729) to change the, in Puget",
+          "raw_sha256": "ccdf19c945bcbdc68088ac4653a26199e531c0445b43ee119d1aebbda98c87eb",
+          "static_text": "bill (H. R. No. 729) to change the, in Puget",
+          "static_sha256": "ccdf19c945bcbdc68088ac4653a26199e531c0445b43ee119d1aebbda98c87eb",
+          "bbox": {
+            "left": 364,
+            "top": 3883,
+            "right": 1198,
+            "bottom": 3929
+          },
+          "reading_order": 65
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalg7391unit:40:par_000040_000067",
+          "raw_text": "Ports of delivery, bill (H. R. No. 609) to consti- tute Omaha and Nebraska City, Nebraska,",
+          "raw_sha256": "4c7893c35cecea8f27afae821b923912c9ae0ba0ddd3de4ec19010f082e23e69",
+          "static_text": "Ports of delivery, bill (H. R. No. 609) to constitute Omaha and Nebraska City, Nebraska,",
+          "static_sha256": "4555d9cfeb178af5b535dd2b16e70223d5e77fe20bf27c987b31b07d55f6011a",
+          "bbox": {
+            "left": 323,
+            "top": 3966,
+            "right": 1197,
+            "bottom": 4054
+          },
+          "reading_order": 67
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalg7391unit:278:par_000278_000024",
+      "item_identifier": "congressionalg7391unit",
+      "part_number": 1,
+      "scan_leaf": 278,
+      "paragraph_id": "par_000278_000024",
+      "raw_sha256": "6abc0d63f74869ff6e901e2158c177e8bc6753b92dab6ef874f5a29e3cc8ce96",
+      "static_sha256": "be20b6ed847d900d21b45a25865a57013c75fe44aad213af62bafa03b40c84a8",
+      "raw_codepoints": 184,
+      "static_codepoints": 182,
+      "page_line_number": 279,
+      "reading_order": 24,
+      "split": "primary",
+      "priority_sha256": "00041882f27986bfc9157966cc2062218513f10cfb612f5cc4c76489c55c4677",
+      "frame_size": 54945,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 54945
+      },
+      "expansion_weight": {
+        "numerator": 54945,
+        "denominator": 5
+      },
+      "page_line_sha256": "c5c77e9e83619da76dfea589810e7b50724aaf652b9560b06e1f58d20b18d911",
+      "hocr_page_id": "page_000278",
+      "printed_page": {
+        "detected": "162",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3114,
+        4298
+      ],
+      "bbox": {
+        "left": 1204,
+        "top": 1845,
+        "right": 2088,
+        "bottom": 2045
+      },
+      "line_ids": [
+        "line_000278_000131",
+        "line_000278_000132",
+        "line_000278_000133",
+        "line_000278_000134",
+        "line_000278_000135"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the refer- ence of the amendments and the bill to the committee.",
+      "static_text": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+      "static_edits": [
+        {
+          "start_char": 124,
+          "end_char": 135,
+          "expected": "refer- ence",
+          "replacement": "reference",
+          "reason": "adjacent-line wrap; lexicon form reference",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalg7391unit:278:par_000278_000023",
+          "raw_text": "The second is, that I have my doubts whether we ought to require reading and writing at all. There is a class of people that we have legis- lated away from the spelling-book and the Bible, whom we have legislated out of school; and now, as we are introducing a new order of things, a new civilization, emancipation having taken place and havinghad effect everywhere, we come to these people and tell them, ■ ' Xow. if you can read and write, you shall have the franchise.\" It might do verywell to apply it to persons who have always had educational opportunities, white men who havehad schools open to them all their lives and have not availed themselves of them. It would not be as hard to deprive them of the franchise for that reason ; but here is a class of persons that by a systematic course of legisla- tion have been prevented from learning to read and write. If we intend to do anything for them we had better just do the fair thing, and let them ■^ote. But after having legislated them away from schools and science and everything else, to thrust in their faces a law saying. \"If you can read and write, you can vote,\" I think is adding insult to injury.",
+          "raw_sha256": "550842b304275ac99e148775f2cc51bcb427e5575f7a75814e84f50bb072a0b8",
+          "static_text": "The second is, that I have my doubts whether we ought to require reading and writing at all. There is a class of people that we have legis- lated away from the spelling-book and the Bible, whom we have legislated out of school; and now, as we are introducing a new order of things, a new civilization, emancipation having taken place and havinghad effect everywhere, we come to these people and tell them, ■ ' Xow. if you can read and write, you shall have the franchise.\" It might do verywell to apply it to persons who have always had educational opportunities, white men who havehad schools open to them all their lives and have not availed themselves of them. It would not be as hard to deprive them of the franchise for that reason ; but here is a class of persons that by a systematic course of legislation have been prevented from learning to read and write. If we intend to do anything for them we had better just do the fair thing, and let them ■^ote. But after having legislated them away from schools and science and everything else, to thrust in their faces a law saying. \"If you can read and write, you can vote,\" I think is adding insult to injury.",
+          "static_sha256": "2b2aa97e385c873fd821c79e09cd58c3cb2b575907ca1ff1a6030fda96328a92",
+          "bbox": {
+            "left": 1203,
+            "top": 798,
+            "right": 2094,
+            "bottom": 1844
+          },
+          "reading_order": 23
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalg7391unit:278:par_000278_000025",
+          "raw_text": "Mr. MORRILL. I appeal to my friend from Dlinois to allow the bill to be considered in other respects. I understand his objection to lie to this amendment. There are other amend- ments to- the bill which I am very anxious should be perfected, and I would like to have the Senate consent informally to pass over this amendment and consider the other amend- ments to which there may be no objection. Then I shall not resist the motion to recommit.",
+          "raw_sha256": "3637aedcafbc4a9111668ad45915e1f6b516a21f9637ee8e06d16e59062e6190",
+          "static_text": "Mr. MORRILL. I appeal to my friend from Dlinois to allow the bill to be considered in other respects. I understand his objection to lie to this amendment. There are other amendments to- the bill which I am very anxious should be perfected, and I would like to have the Senate consent informally to pass over this amendment and consider the other amendments to which there may be no objection. Then I shall not resist the motion to recommit.",
+          "static_sha256": "2240f37ceaef6b9a0abd4ef48946a099e560488971f7930bc0a3d731c382fed4",
+          "bbox": {
+            "left": 1203,
+            "top": 2055,
+            "right": 2088,
+            "bottom": 2466
+          },
+          "reading_order": 25
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7392unit:716:par_000716_000020",
+      "item_identifier": "congressionalglo7392unit",
+      "part_number": 2,
+      "scan_leaf": 716,
+      "paragraph_id": "par_000716_000020",
+      "raw_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+      "static_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+      "raw_codepoints": 58,
+      "static_codepoints": 58,
+      "page_line_number": 1803,
+      "reading_order": 20,
+      "split": "primary",
+      "priority_sha256": "00000486137003f43b8426d83cbbfcf8f6ed4032ae8cb6da116fa8972ada22a3",
+      "frame_size": 59204,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 59204
+      },
+      "expansion_weight": {
+        "numerator": 59204,
+        "denominator": 5
+      },
+      "page_line_sha256": "dfa777e6d41f8a5925d66b760eba66b9ae610d571e0d227d3319e62c99cf5615",
+      "hocr_page_id": "page_000716",
+      "printed_page": {
+        "detected": "1564",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3158,
+        4290
+      ],
+      "bbox": {
+        "left": 1219,
+        "top": 344,
+        "right": 2095,
+        "bottom": 428
+      },
+      "line_ids": [
+        "line_000716_000101",
+        "line_000716_000102"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "Mr. BROWN. The navigable channel is not private propei-ty.",
+      "static_text": "Mr. BROWN. The navigable channel is not private propei-ty.",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7392unit:716:par_000716_000019",
+          "raw_text": "gress of the United States can authorize the construction of a bridge across private prop- erty.",
+          "raw_sha256": "d6816bbb3e176be1e0c2ec5e00d517b70a6b446b8e72d6fd27ee77b3d25d7af7",
+          "static_text": "gress of the United States can authorize the construction of a bridge across private property.",
+          "static_sha256": "b147dcf8913fc8b514c2724a4e3ac5ad0feb2411b8de6fe72532f56aef235f7f",
+          "bbox": {
+            "left": 1219,
+            "top": 217,
+            "right": 2095,
+            "bottom": 342
+          },
+          "reading_order": 19
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7392unit:716:par_000716_000021",
+          "raw_text": "_ Mr. TRUMB'ULL. The sloiigU on the east side of the channel is not a navigable channel at all. It is a turnpike now. We have a trav- eled road from the main Illinois shore on to the island, and Bloody Island is a tract of land em- bracing several thousand acres at the present time, and owned byprivate individuals. I am not prepared to say at this moment what the effect of authorizing a bridge over private prop- erty might be. I see by the provisions of this bill that the State of Illinois has passed an act which in conjunction with an act passed by the State of Missouri authoi'izes the construction of this bridge. I have not seen the Illinois act ; I do not know what its provisions are ; but I presume that act will make the necessary pro- vision for the construction of any part of the bridge that is not over the waters of the Mis- sissippi.",
+          "raw_sha256": "380e8172c47b0d3d38d77e327cc792f080709d22d77d49bdc2a640c2b45d5036",
+          "static_text": "_ Mr. TRUMB'ULL. The sloiigU on the east side of the channel is not a navigable channel at all. It is a turnpike now. We have a traveled road from the main Illinois shore on to the island, and Bloody Island is a tract of land embracing several thousand acres at the present time, and owned byprivate individuals. I am not prepared to say at this moment what the effect of authorizing a bridge over private property might be. I see by the provisions of this bill that the State of Illinois has passed an act which in conjunction with an act passed by the State of Missouri authoi'izes the construction of this bridge. I have not seen the Illinois act ; I do not know what its provisions are ; but I presume that act will make the necessary provision for the construction of any part of the bridge that is not over the waters of the Mississippi.",
+          "static_sha256": "b16cb1f9670ee4de94845c89a090e2e23e3ca4b3340d7c30a94c2dbf460f5cf2",
+          "bbox": {
+            "left": 1218,
+            "top": 422,
+            "right": 2096,
+            "bottom": 1227
+          },
+          "reading_order": 21
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7392unit:406:par_000406_000009",
+      "item_identifier": "congressionalglo7392unit",
+      "part_number": 2,
+      "scan_leaf": 406,
+      "paragraph_id": "par_000406_000009",
+      "raw_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+      "static_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+      "raw_codepoints": 211,
+      "static_codepoints": 211,
+      "page_line_number": 1493,
+      "reading_order": 9,
+      "split": "primary",
+      "priority_sha256": "00000e06aab08711a122626b76d278bff12e09caa8de9aa6cf52b9a4377e4fca",
+      "frame_size": 59204,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 59204
+      },
+      "expansion_weight": {
+        "numerator": 59204,
+        "denominator": 5
+      },
+      "page_line_sha256": "529a1424cb5378f461ba024a5d21174c66ac789f9a1fd513a7b34be7bf24be81",
+      "hocr_page_id": "page_000406",
+      "printed_page": {
+        "detected": "1254",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3158,
+        4290
+      ],
+      "bbox": {
+        "left": 294,
+        "top": 1443,
+        "right": 1174,
+        "bottom": 1655
+      },
+      "line_ids": [
+        "line_000406_000032",
+        "line_000406_000033",
+        "line_000406_000034",
+        "line_000406_000035",
+        "line_000406_000036"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+      "static_text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7392unit:406:par_000406_000008",
+          "raw_text": "Mr. CLARK. That does not identify the man. There can be no harm in laying the bill aside until we can ascertain the fact.",
+          "raw_sha256": "eafb5445ceed75e1f30ccf92c548a86ed7d4040de0f4f9a5b190fe8f10d9c681",
+          "static_text": "Mr. CLARK. That does not identify the man. There can be no harm in laying the bill aside until we can ascertain the fact.",
+          "static_sha256": "eafb5445ceed75e1f30ccf92c548a86ed7d4040de0f4f9a5b190fe8f10d9c681",
+          "bbox": {
+            "left": 295,
+            "top": 1316,
+            "right": 1174,
+            "bottom": 1435
+          },
+          "reading_order": 8
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7392unit:406:par_000406_000010",
+          "raw_text": "Mr. CLARK. It may be all right, but we certainly have a man by the name of Johnson, who was wounded in the Mexican war, who has not the use of his limbs, who has a claim for tobacco, and he asserts that he went through our lines to do service for us and lost that to- bacco. I think we had better determine this question of identity before proceeding further. I have no hostility to the claim.",
+          "raw_sha256": "81f009e0019a50f6f8d67e64152f5d1c7df395a65d74d922fe311a66a2ab5bd0",
+          "static_text": "Mr. CLARK. It may be all right, but we certainly have a man by the name of Johnson, who was wounded in the Mexican war, who has not the use of his limbs, who has a claim for tobacco, and he asserts that he went through our lines to do service for us and lost that tobacco. I think we had better determine this question of identity before proceeding further. I have no hostility to the claim.",
+          "static_sha256": "461283ee26844d8fafcbfeb8d5dc4c1d3435e11c3c0aebfdb71b3f7438437f9e",
+          "bbox": {
+            "left": 294,
+            "top": 1655,
+            "right": 1174,
+            "bottom": 2033
+          },
+          "reading_order": 10
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7392unit:848:par_000848_000078",
+      "item_identifier": "congressionalglo7392unit",
+      "part_number": 2,
+      "scan_leaf": 848,
+      "paragraph_id": "par_000848_000078",
+      "raw_sha256": "09b214fef529767b0e83a1b7933559900c96b71762ef90e1023762a653b1ddaa",
+      "static_sha256": "e608639c4ee7a72096caf631b17fe15167e68e8728dc696520f9a2084b2418cd",
+      "raw_codepoints": 56,
+      "static_codepoints": 54,
+      "page_line_number": 1935,
+      "reading_order": 78,
+      "split": "primary",
+      "priority_sha256": "0000b5d21fddbce76be880d8a12aa20975dfa387a7327aa7a7bb0cf6bde0013f",
+      "frame_size": 59204,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 59204
+      },
+      "expansion_weight": {
+        "numerator": 59204,
+        "denominator": 5
+      },
+      "page_line_sha256": "9f869bacc37e738804abe9ad6c7f79202ed3917cdfb7ba632b2850ae2a64121d",
+      "hocr_page_id": "page_000848",
+      "printed_page": {
+        "detected": "1696",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3158,
+        4290
+      ],
+      "bbox": {
+        "left": 2186,
+        "top": 3258,
+        "right": 3060,
+        "bottom": 3343
+      },
+      "line_ids": [
+        "line_000848_000267",
+        "line_000848_000268"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "The SPEAKER. The gentleman from Illi- nois has objected.",
+      "static_text": "The SPEAKER. The gentleman from Illinois has objected.",
+      "static_edits": [
+        {
+          "start_char": 32,
+          "end_char": 42,
+          "expected": "Illi- nois",
+          "replacement": "Illinois",
+          "reason": "adjacent-line wrap; lexicon form illinois",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7392unit:848:par_000848_000077",
+          "raw_text": "Mr. SCHENCK. I want to have it under- stood that I am willing to withdraw my ob- jection and allow the gentleman from Rhode Island to manage his bill.",
+          "raw_sha256": "2181d45a7a2f708eeef6d09ab808460ba8b022501c0784aad750aa9ece3b3b99",
+          "static_text": "Mr. SCHENCK. I want to have it understood that I am willing to withdraw my objection and allow the gentleman from Rhode Island to manage his bill.",
+          "static_sha256": "89d4b1583976345cc13a7e39d7ec97cea6b44826084ec2bf53bdf0aed29bf48f",
+          "bbox": {
+            "left": 2187,
+            "top": 3090,
+            "right": 3062,
+            "bottom": 3258
+          },
+          "reading_order": 77
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7392unit:848:par_000848_000079",
+          "raw_text": "Mr. JENCKES. Mr. Speaker, the bill upon which I now ask the vote of this House rests upon no doubtful authority ; no question can arise in regard to the constitutional power of this Congress to pass it. The language of the Constitution of the United States is plain and explicit that Congress shall have power to pass uniform laws upon the subject of bankruptcies throughoutthe United States. Looking through the debates that have arisen upon previous laws relating to this subject, I have found no ques- tion raised as to the power of Congress ; the entire and absolute power of Congress over the whole subject Is conceded and acknowl- edged.",
+          "raw_sha256": "2486e283c9c975fd7d3c5f9ccda8f2c78cc6109fbc0c48632b453ebc09944166",
+          "static_text": "Mr. JENCKES. Mr. Speaker, the bill upon which I now ask the vote of this House rests upon no doubtful authority ; no question can arise in regard to the constitutional power of this Congress to pass it. The language of the Constitution of the United States is plain and explicit that Congress shall have power to pass uniform laws upon the subject of bankruptcies throughoutthe United States. Looking through the debates that have arisen upon previous laws relating to this subject, I have found no question raised as to the power of Congress ; the entire and absolute power of Congress over the whole subject Is conceded and acknowledged.",
+          "static_sha256": "fef65bff0e06f22ed1e4b51d66543bf538f8d53f57b005556d8b1dd14d4a7aeb",
+          "bbox": {
+            "left": 2183,
+            "top": 3343,
+            "right": 3061,
+            "bottom": 3974
+          },
+          "reading_order": 79
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7392unit:96:par_000096_000041",
+      "item_identifier": "congressionalglo7392unit",
+      "part_number": 2,
+      "scan_leaf": 96,
+      "paragraph_id": "par_000096_000041",
+      "raw_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+      "static_sha256": "345f84e792eeeaaa241dd36aac719084677a0a93d5b0e0d851d425d597c5bbad",
+      "raw_codepoints": 165,
+      "static_codepoints": 163,
+      "page_line_number": 1183,
+      "reading_order": 41,
+      "split": "primary",
+      "priority_sha256": "0002f6047c932ba2f4d841b613b99e23c58e2247a4423da0f49568c47de31a1e",
+      "frame_size": 59204,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 59204
+      },
+      "expansion_weight": {
+        "numerator": 59204,
+        "denominator": 5
+      },
+      "page_line_sha256": "5283ddb322430c5ab3177f551a88b6cedbae2625c79d073eb9b071b2f1a0ff51",
+      "hocr_page_id": "page_000096",
+      "printed_page": {
+        "detected": "XC",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": null
+      },
+      "image_dimensions": [
+        3151,
+        4275
+      ],
+      "bbox": {
+        "left": 295,
+        "top": 3869,
+        "right": 1132,
+        "bottom": 4043
+      },
+      "line_ids": [
+        "line_000096_000089",
+        "line_000096_000090",
+        "line_000096_000091",
+        "line_000096_000092"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter- nate sections to aid in the construction of, in said State 1893, 1921, 3464",
+      "static_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State 1893, 1921, 3464",
+      "static_edits": [
+        {
+          "start_char": 83,
+          "end_char": 94,
+          "expected": "alter- nate",
+          "replacement": "alternate",
+          "reason": "adjacent-line wrap; lexicon form alternate",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7392unit:96:par_000096_000040",
+          "raw_text": "postal, and commercial roads 1857",
+          "raw_sha256": "b24211fe322f1f73719b5950a9426e7ef9b1b19e91e5b58933282980b32711e8",
+          "static_text": "postal, and commercial roads 1857",
+          "static_sha256": "b24211fe322f1f73719b5950a9426e7ef9b1b19e91e5b58933282980b32711e8",
+          "bbox": {
+            "left": 336,
+            "top": 3828,
+            "right": 1129,
+            "bottom": 3869
+          },
+          "reading_order": 40
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7392unit:96:par_000096_000042",
+          "raw_text": "Railroads — Continued. bill (H. R. No. 527) to promote the construc- tion of a line of, between the cltyof Wash- ingtonaudthe Northwest for national pur- poses 2282, 2928",
+          "raw_sha256": "dc3b304b052822ca4b1b9529ddfbb0b8bf49fc43332f465a023e9f3f6a274d0d",
+          "static_text": "Railroads — Continued. bill (H. R. No. 527) to promote the construction of a line of, between the cltyof Wash- ingtonaudthe Northwest for national purposes 2282, 2928",
+          "static_sha256": "a1f2ffa6e71ca9d0f90a58cba5a806e7f8876f1bf5fc02769451f9261398efdd",
+          "bbox": {
+            "left": 1178,
+            "top": 201,
+            "right": 2056,
+            "bottom": 411
+          },
+          "reading_order": 42
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7392unit:185:par_000185_000049",
+      "item_identifier": "congressionalglo7392unit",
+      "part_number": 2,
+      "scan_leaf": 185,
+      "paragraph_id": "par_000185_000049",
+      "raw_sha256": "1c57fb427a1c96781754640c3cfcce90423aef6c70970fee90bcee65af70b210",
+      "static_sha256": "1c57fb427a1c96781754640c3cfcce90423aef6c70970fee90bcee65af70b210",
+      "raw_codepoints": 162,
+      "static_codepoints": 162,
+      "page_line_number": 1272,
+      "reading_order": 49,
+      "split": "primary",
+      "priority_sha256": "00032da6e01741db6c673e3755d6194dd03580e813bac48a3e3ac33f5c08b127",
+      "frame_size": 59204,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 59204
+      },
+      "expansion_weight": {
+        "numerator": 59204,
+        "denominator": 5
+      },
+      "page_line_sha256": "1b51e77e78fefaa2ed7361d1acbe8715b7a522a0e94d5bfb61ae4a2f4c79a935",
+      "hocr_page_id": "page_000185",
+      "printed_page": {
+        "detected": "1033",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3151,
+        4275
+      ],
+      "bbox": {
+        "left": 1053,
+        "top": 3275,
+        "right": 1940,
+        "bottom": 3445
+      },
+      "line_ids": [
+        "line_000185_000172",
+        "line_000185_000173",
+        "line_000185_000174",
+        "line_000185_000175"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "The SPEAKER. That committee may not be again called for two months, as it has just been passed, and the other committees are proceeding with their reports slowly.",
+      "static_text": "The SPEAKER. That committee may not be again called for two months, as it has just been passed, and the other committees are proceeding with their reports slowly.",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7392unit:185:par_000185_000048",
+          "raw_text": "Mr. FARNSWORTH. I would ask when the Committee on the Post Office and Post Roads will probably be called again.",
+          "raw_sha256": "c34c671b28353af63f3e1eb8b6c3ea034a442fb4f370b176fdf3c01a1605bb20",
+          "static_text": "Mr. FARNSWORTH. I would ask when the Committee on the Post Office and Post Roads will probably be called again.",
+          "static_sha256": "c34c671b28353af63f3e1eb8b6c3ea034a442fb4f370b176fdf3c01a1605bb20",
+          "bbox": {
+            "left": 1053,
+            "top": 3148,
+            "right": 1942,
+            "bottom": 3274
+          },
+          "reading_order": 48
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7392unit:185:par_000185_000050",
+          "raw_text": "The question was then takeir on suspending the rules, and two thirds voting in the affirma- tive, they were suspended ; and the petition was accordingly referred.",
+          "raw_sha256": "ed4729e78c35f8b7d058eca5b13dba3bea8c707daa9badd1a0893b67c6c78919",
+          "static_text": "The question was then takeir on suspending the rules, and two thirds voting in the affirmative, they were suspended ; and the petition was accordingly referred.",
+          "static_sha256": "c8f8e76d0ca8e73458e21663b56d9aea5c1e56b5f8572366a98ac1829425a93a",
+          "bbox": {
+            "left": 1053,
+            "top": 3446,
+            "right": 1941,
+            "bottom": 3615
+          },
+          "reading_order": 50
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7393unit:1055:par_001055_000071",
+      "item_identifier": "congressionalglo7393unit",
+      "part_number": 3,
+      "scan_leaf": 1055,
+      "paragraph_id": "par_001055_000071",
+      "raw_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+      "static_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+      "raw_codepoints": 19,
+      "static_codepoints": 19,
+      "page_line_number": 3222,
+      "reading_order": 71,
+      "split": "primary",
+      "priority_sha256": "0000d707282263e8ca1a875e9ea4f297f2f521209cb121ac0cb61524ca37344a",
+      "frame_size": 59437,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 59437
+      },
+      "expansion_weight": {
+        "numerator": 59437,
+        "denominator": 5
+      },
+      "page_line_sha256": "6b11e4358d240877054d01014e7340cd4c59fc5b6940809f3e75bd82e4069571",
+      "hocr_page_id": "page_001055",
+      "printed_page": {
+        "detected": "2865",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3101,
+        4340
+      ],
+      "bbox": {
+        "left": 2052,
+        "top": 3293,
+        "right": 2399,
+        "bottom": 3327
+      },
+      "line_ids": [
+        "line_001055_000277"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "It was so referred.",
+      "static_text": "It was so referred.",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7393unit:1055:par_001055_000070",
+          "raw_text": "Mr. SUMNER. I also offer the petition of Edward Jenkins, of Hagerstown, Maryland, in which besets forth that lie was a soldier in the Army of the Union, having volunteered in Au- gust, 1863, and served in the Army until he Avas wounded and discharged for disability: that the Government gave all the soldiers in his regiment $100 bounty, but they withheld it from him because he was at one time a slave, and he asks for a remedy on account of the withholding of that bounty. I ask the refer- ence of this petition to the Committee on Mil- itary Affairs and. the Militia.",
+          "raw_sha256": "6f4291388bb7df9a4e69d4aac7736fdeaa9c9b933bb61c8928ce9424c8f87b69",
+          "static_text": "Mr. SUMNER. I also offer the petition of Edward Jenkins, of Hagerstown, Maryland, in which besets forth that lie was a soldier in the Army of the Union, having volunteered in August, 1863, and served in the Army until he Avas wounded and discharged for disability: that the Government gave all the soldiers in his regiment $100 bounty, but they withheld it from him because he was at one time a slave, and he asks for a remedy on account of the withholding of that bounty. I ask the reference of this petition to the Committee on Military Affairs and. the Militia.",
+          "static_sha256": "e8f197b784ae05aed4681b64fd0f7818e96db98f01a00b0e5dfe9474f5b6b866",
+          "bbox": {
+            "left": 2007,
+            "top": 2738,
+            "right": 2896,
+            "bottom": 3293
+          },
+          "reading_order": 70
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7393unit:1055:par_001055_000072",
+          "raw_text": "Mr. WILSON presented the petition of Mary E. Walker, M. D., praying for compen- sation for services rendered by her to the Gov- ernment during the late rebellion ; which was referred to the Committee on Claims.",
+          "raw_sha256": "72869467f28a021b2cc571958f79e9f1368e7b35a325671eed4280ad55e72de7",
+          "static_text": "Mr. WILSON presented the petition of Mary E. Walker, M. D., praying for compensation for services rendered by her to the Government during the late rebellion ; which was referred to the Committee on Claims.",
+          "static_sha256": "fd7feb3131e44d65cd58e9085ef70962d8bdbd8dc26cb1b801e6885344d9b382",
+          "bbox": {
+            "left": 2009,
+            "top": 3333,
+            "right": 2892,
+            "bottom": 3539
+          },
+          "reading_order": 72
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7393unit:719:par_000719_000027",
+      "item_identifier": "congressionalglo7393unit",
+      "part_number": 3,
+      "scan_leaf": 719,
+      "paragraph_id": "par_000719_000027",
+      "raw_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+      "static_sha256": "061c83852778f5507fa9f69e1e356de3e64f3d119ed35b24333a0aac8e67eb06",
+      "raw_codepoints": 133,
+      "static_codepoints": 131,
+      "page_line_number": 2886,
+      "reading_order": 27,
+      "split": "primary",
+      "priority_sha256": "0001166e7db13f84d87db3503e034025d78c4481e52a7ebcd3011abfd68c1114",
+      "frame_size": 59437,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 59437
+      },
+      "expansion_weight": {
+        "numerator": 59437,
+        "denominator": 5
+      },
+      "page_line_sha256": "c27ddf8a771072513b89c86564d3bc7a32d7c5abd8f8dea261b955b22c10d330",
+      "hocr_page_id": "page_000719",
+      "printed_page": {
+        "detected": "2529",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3101,
+        4340
+      ],
+      "bbox": {
+        "left": 1912,
+        "top": 3681,
+        "right": 2793,
+        "bottom": 3815
+      },
+      "line_ids": [
+        "line_000719_000267",
+        "line_000719_000268",
+        "line_000719_000269"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+      "static_text": "Mr. CONNESS. If the Senator from Michigan will give way I will move that the Senate proceed to the consideration of executive busi-",
+      "static_edits": [
+        {
+          "start_char": 33,
+          "end_char": 43,
+          "expected": "Michi- gan",
+          "replacement": "Michigan",
+          "reason": "adjacent-line wrap; lexicon form michigan",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7393unit:719:par_000719_000026",
+          "raw_text": "Mr. HOWARD. Mr. President",
+          "raw_sha256": "08de758f8aaacde1ed95d69326b4137da09b68cf36c7347825538c915314ad41",
+          "static_text": "Mr. HOWARD. Mr. President",
+          "static_sha256": "08de758f8aaacde1ed95d69326b4137da09b68cf36c7347825538c915314ad41",
+          "bbox": {
+            "left": 1956,
+            "top": 3645,
+            "right": 2665,
+            "bottom": 3678
+          },
+          "reading_order": 26
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7393unit:719:par_000719_000028",
+          "raw_text": "I16SS.",
+          "raw_sha256": "3160eae68082e3d652abcc2c115008136d180acab1f2ba3d954a136e6db04e22",
+          "static_text": "I16SS.",
+          "static_sha256": "3160eae68082e3d652abcc2c115008136d180acab1f2ba3d954a136e6db04e22",
+          "bbox": {
+            "left": 1913,
+            "top": 3827,
+            "right": 2001,
+            "bottom": 3849
+          },
+          "reading_order": 28
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7393unit:988:par_000988_000008",
+      "item_identifier": "congressionalglo7393unit",
+      "part_number": 3,
+      "scan_leaf": 988,
+      "paragraph_id": "par_000988_000008",
+      "raw_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+      "static_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+      "raw_codepoints": 255,
+      "static_codepoints": 255,
+      "page_line_number": 3155,
+      "reading_order": 8,
+      "split": "primary",
+      "priority_sha256": "00030e46180ba4238c7a500d8277092f4fe59c53a0e4f8d40dacab4ad77dd064",
+      "frame_size": 59437,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 59437
+      },
+      "expansion_weight": {
+        "numerator": 59437,
+        "denominator": 5
+      },
+      "page_line_sha256": "4cc9aef972b5faf2049641947a3efd1e7dd9b38d602b6806b68d2ddf5439edc3",
+      "hocr_page_id": "page_000988",
+      "printed_page": {
+        "detected": "2798",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3117,
+        4290
+      ],
+      "bbox": {
+        "left": 201,
+        "top": 2242,
+        "right": 1080,
+        "bottom": 2488
+      },
+      "line_ids": [
+        "line_000988_000054",
+        "line_000988_000055",
+        "line_000988_000056",
+        "line_000988_000057",
+        "line_000988_000058",
+        "line_000988_000059"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.",
+      "static_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7393unit:988:par_000988_000007",
+          "raw_text": "I ask leave to withdraw the original petition with a view of sending it to the gentlemen who forwarded it to me that they may protect them- selves, as far as this will enable them to do so, against the accusations which have been brought upon them; and I regret it is not in my power to propose some measure that shall protect them from the ignominy and persecu- tion that is brought upon them for no cause save their loyalty to the country and the exer- cise of a constitutional right belonging to the humblest citizen in the land of petitioning Con- gress for a redress of grievances. A copy of the petition can be left with the committee, which I suppose will answer every purpose. I ask leave to withdraw the original petition, leaving a copy with the committee.",
+          "raw_sha256": "e64a5c7f2f7456aea8b4125614374b4254b01b64ffaee0fe4084aecd0fd19381",
+          "static_text": "I ask leave to withdraw the original petition with a view of sending it to the gentlemen who forwarded it to me that they may protect themselves, as far as this will enable them to do so, against the accusations which have been brought upon them; and I regret it is not in my power to propose some measure that shall protect them from the ignominy and persecution that is brought upon them for no cause save their loyalty to the country and the exercise of a constitutional right belonging to the humblest citizen in the land of petitioning Congress for a redress of grievances. A copy of the petition can be left with the committee, which I suppose will answer every purpose. I ask leave to withdraw the original petition, leaving a copy with the committee.",
+          "static_sha256": "eada3d728a9afac3d1aa9393492f2f75a70ba03fa2f5b3a092006ab5aab3705d",
+          "bbox": {
+            "left": 199,
+            "top": 1523,
+            "right": 1080,
+            "bottom": 2241
+          },
+          "reading_order": 7
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7393unit:988:par_000988_000009",
+          "raw_text": "Mr. HOWARD. I beg to say that some weeks ago I received a letter from agentleman of my acquaintance residing in Staunton, Vir- ginia, requesting me to procure a copy of the petition to which the honorable Senator from Illinois has referred and forward it to him, he alleging in his communication to me that he had strong reason to believe that the signatures, or many of them, attached to the petition were forged, and that it was impossible to ascertain in Staunton or in the vicinity any person who had set his name to the petition. The letter which I received was written in a spirit quite hostile to the signers of the petitions orto those who sympathized with the object of the peti- tion. 1 immediately resorted to the commit- tee-room of the Committee on Military Affairs and made a personal examination of the peti- tions ; there were two or three of them 1 be- lieve. I examined the signatures with con- siderable care and ascertained that there was a certificate of authenticity attached to each one of the petitions, setting forth that the sig- natures were genuine and identifying the indi- viduals who had signed them.",
+          "raw_sha256": "70d7bace2f35c87bbdea3a94fe0f2aaf09f10f9e1740f4230e0ca312c349549f",
+          "static_text": "Mr. HOWARD. I beg to say that some weeks ago I received a letter from agentleman of my acquaintance residing in Staunton, Virginia, requesting me to procure a copy of the petition to which the honorable Senator from Illinois has referred and forward it to him, he alleging in his communication to me that he had strong reason to believe that the signatures, or many of them, attached to the petition were forged, and that it was impossible to ascertain in Staunton or in the vicinity any person who had set his name to the petition. The letter which I received was written in a spirit quite hostile to the signers of the petitions orto those who sympathized with the object of the petition. 1 immediately resorted to the committee-room of the Committee on Military Affairs and made a personal examination of the petitions ; there were two or three of them 1 believe. I examined the signatures with considerable care and ascertained that there was a certificate of authenticity attached to each one of the petitions, setting forth that the signatures were genuine and identifying the individuals who had signed them.",
+          "static_sha256": "d38a62cc6920c676a13be1cabe6ba1d52c8f812f0b7a23c1e8dc2d0093a6ea33",
+          "bbox": {
+            "left": 200,
+            "top": 2495,
+            "right": 1080,
+            "bottom": 3549
+          },
+          "reading_order": 9
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7393unit:1027:par_001027_000029",
+      "item_identifier": "congressionalglo7393unit",
+      "part_number": 3,
+      "scan_leaf": 1027,
+      "paragraph_id": "par_001027_000029",
+      "raw_sha256": "a2c5d0c74abe2cc43f2ae0575c740082eb5537762b9cbaabe6af0d8c4194bb49",
+      "static_sha256": "a2c5d0c74abe2cc43f2ae0575c740082eb5537762b9cbaabe6af0d8c4194bb49",
+      "raw_codepoints": 27,
+      "static_codepoints": 27,
+      "page_line_number": 3194,
+      "reading_order": 29,
+      "split": "primary",
+      "priority_sha256": "00040916b92d85d2afa6868e530099f113c21936364e04bd7472b587f17e136d",
+      "frame_size": 59437,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 59437
+      },
+      "expansion_weight": {
+        "numerator": 59437,
+        "denominator": 5
+      },
+      "page_line_sha256": "75a97f22c3f18634f2b44ac5cec870bf9b616200b0da8139f88eb29bf3b04231",
+      "hocr_page_id": "page_001027",
+      "printed_page": {
+        "detected": "2837",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3101,
+        4340
+      ],
+      "bbox": {
+        "left": 1118,
+        "top": 3794,
+        "right": 1628,
+        "bottom": 3828
+      },
+      "line_ids": [
+        "line_001027_000187"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": true,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "The Clerk read as follows :",
+      "static_text": "The Clerk read as follows :",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7393unit:1027:par_001027_000028",
+          "raw_text": "The amendment was not agreed to.",
+          "raw_sha256": "9cdd51da0adcd42d98266614bc176e0e9dd4c07a07fcb08110d9699fe4c0efd5",
+          "static_text": "The amendment was not agreed to.",
+          "static_sha256": "9cdd51da0adcd42d98266614bc176e0e9dd4c07a07fcb08110d9699fe4c0efd5",
+          "bbox": {
+            "left": 1119,
+            "top": 3741,
+            "right": 1785,
+            "bottom": 3782
+          },
+          "reading_order": 28
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7393unit:1027:par_001027_000030",
+          "raw_text": "Sue. 41. And be it further enacted, That every owner, agent, or superintendent of any distillery shall, at all times when required, supply all assistance, lights, ladders, tools, staging, or other things necessary for inspecting the promises, stock, tools, and apparatus belonging to such person or persons having paid the special tax aforesaid, and shall open all doors, and open for examination all boxes packages, and all",
+          "raw_sha256": "57e6756f0bebcc3e4752f07c57d8abb8350aebab6f517ceedd72bf8b0465e1b1",
+          "static_text": "Sue. 41. And be it further enacted, That every owner, agent, or superintendent of any distillery shall, at all times when required, supply all assistance, lights, ladders, tools, staging, or other things necessary for inspecting the promises, stock, tools, and apparatus belonging to such person or persons having paid the special tax aforesaid, and shall open all doors, and open for examination all boxes packages, and all",
+          "static_sha256": "57e6756f0bebcc3e4752f07c57d8abb8350aebab6f517ceedd72bf8b0465e1b1",
+          "bbox": {
+            "left": 1076,
+            "top": 3841,
+            "right": 1962,
+            "bottom": 4095
+          },
+          "reading_order": 30
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7393unit:97:par_000097_000159",
+      "item_identifier": "congressionalglo7393unit",
+      "part_number": 3,
+      "scan_leaf": 97,
+      "paragraph_id": "par_000097_000159",
+      "raw_sha256": "74eff09234ebf96333656e3fa0b6fbde739755cc65d499c3f761a7bdd87435c8",
+      "static_sha256": "74eff09234ebf96333656e3fa0b6fbde739755cc65d499c3f761a7bdd87435c8",
+      "raw_codepoints": 16,
+      "static_codepoints": 16,
+      "page_line_number": 2264,
+      "reading_order": 159,
+      "split": "primary",
+      "priority_sha256": "00042f9d903e3339d670a88a313b463c1a26213e380546d2eb35105e1aa0bb9d",
+      "frame_size": 59437,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 59437
+      },
+      "expansion_weight": {
+        "numerator": 59437,
+        "denominator": 5
+      },
+      "page_line_sha256": "d57c3f0fa0cced2214e3bee4da7b8d2570b8ab478616cd2509caeef54c61e254",
+      "hocr_page_id": "page_000097",
+      "printed_page": {
+        "detected": "XCIII",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": null
+      },
+      "image_dimensions": [
+        3130,
+        4347
+      ],
+      "bbox": {
+        "left": 2116,
+        "top": 2585,
+        "right": 2869,
+        "bottom": 2625
+      },
+      "line_ids": [
+        "line_000097_000240"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "Mr. Kelley 2658,",
+      "static_text": "Mr. Kelley 2658,",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7393unit:97:par_000097_000158",
+          "raw_text": "Mr. Kasson 2474, 2475, 2477",
+          "raw_sha256": "7848a9d6612181a1012a2298df3a1a46b27658b1500b6f748c127287aeb3f4a3",
+          "static_text": "Mr. Kasson 2474, 2475, 2477",
+          "static_sha256": "7848a9d6612181a1012a2298df3a1a46b27658b1500b6f748c127287aeb3f4a3",
+          "bbox": {
+            "left": 2116,
+            "top": 2542,
+            "right": 2872,
+            "bottom": 2582
+          },
+          "reading_order": 158
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7393unit:97:par_000097_000160",
+          "raw_text": "2729, 2746, 2781, 2782, 2828, 2829",
+          "raw_sha256": "5438d8418ca543604a1e5bc756e8f5ba2a74697fcd7d37a89b19cf1773d8fbfe",
+          "static_text": "2729, 2746, 2781, 2782, 2828, 2829",
+          "static_sha256": "5438d8418ca543604a1e5bc756e8f5ba2a74697fcd7d37a89b19cf1773d8fbfe",
+          "bbox": {
+            "left": 2223,
+            "top": 2627,
+            "right": 2873,
+            "bottom": 2668
+          },
+          "reading_order": 160
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo00unit:83:par_000083_000042",
+      "item_identifier": "congressionalglo00unit",
+      "part_number": 4,
+      "scan_leaf": 83,
+      "paragraph_id": "par_000083_000042",
+      "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "static_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "raw_codepoints": 33,
+      "static_codepoints": 33,
+      "page_line_number": 3326,
+      "reading_order": 42,
+      "split": "primary",
+      "priority_sha256": "0001a05a34fd81364a09a8df049c893e9acde301a14aa5be33a32bafad71c360",
+      "frame_size": 57261,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 57261
+      },
+      "expansion_weight": {
+        "numerator": 57261,
+        "denominator": 5
+      },
+      "page_line_sha256": "c6df49629169fcfb42df8ab652dd2654189a1c1f6e619e05a521bfbe80b983d7",
+      "hocr_page_id": "page_000083",
+      "printed_page": {
+        "detected": "LXXVII",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": null
+      },
+      "image_dimensions": [
+        3057,
+        4269
+      ],
+      "bbox": {
+        "left": 186,
+        "top": 2907,
+        "right": 978,
+        "bottom": 2951
+      },
+      "line_ids": [
+        "line_000083_000066"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "No. 703) for the relief of. 2794,",
+      "static_text": "No. 703) for the relief of. 2794,",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo00unit:83:par_000083_000041",
+          "raw_text": "Lynch, Lieutenant Colonel Frank, bill (H. R.",
+          "raw_sha256": "53c20017149cba7eb2bca8f5d168bc4adbb856883b460cf1d933b22fb7f5810e",
+          "static_text": "Lynch, Lieutenant Colonel Frank, bill (H. R.",
+          "static_sha256": "53c20017149cba7eb2bca8f5d168bc4adbb856883b460cf1d933b22fb7f5810e",
+          "bbox": {
+            "left": 101,
+            "top": 2863,
+            "right": 978,
+            "bottom": 2909
+          },
+          "reading_order": 41
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo00unit:83:par_000083_000043",
+          "raw_text": "2945, 3353, 3644, 3683",
+          "raw_sha256": "c5ed064af66419fb5b7a6ef4af91f9b4054500fadb302a1154f6d90872b4a364",
+          "static_text": "2945, 3353, 3644, 3683",
+          "static_sha256": "c5ed064af66419fb5b7a6ef4af91f9b4054500fadb302a1154f6d90872b4a364",
+          "bbox": {
+            "left": 560,
+            "top": 2953,
+            "right": 981,
+            "bottom": 2994
+          },
+          "reading_order": 43
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo00unit:87:par_000087_000094",
+      "item_identifier": "congressionalglo00unit",
+      "part_number": 4,
+      "scan_leaf": 87,
+      "paragraph_id": "par_000087_000094",
+      "raw_sha256": "58a18fedf9381fa42ce5a05557e5e613ced6e5346af01fda58bfe941da8ea21c",
+      "static_sha256": "58a18fedf9381fa42ce5a05557e5e613ced6e5346af01fda58bfe941da8ea21c",
+      "raw_codepoints": 31,
+      "static_codepoints": 31,
+      "page_line_number": 3330,
+      "reading_order": 94,
+      "split": "primary",
+      "priority_sha256": "000259e187da6d55f99a64c1a6955f3f9bfe65d8951f092d22c9edd17bb1fd41",
+      "frame_size": 57261,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 57261
+      },
+      "expansion_weight": {
+        "numerator": 57261,
+        "denominator": 5
+      },
+      "page_line_sha256": "259c4df067f62de4f81581eabe759015d2ebb63746bb06afc0013d97eced45aa",
+      "hocr_page_id": "page_000087",
+      "printed_page": {
+        "detected": "LXXXI",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 68
+      },
+      "image_dimensions": [
+        3057,
+        4269
+      ],
+      "bbox": {
+        "left": 1063,
+        "top": 3212,
+        "right": 1864,
+        "bottom": 3254
+      },
+      "line_ids": [
+        "line_000087_000163"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "yeas and nays on the 2741, 2742",
+      "static_text": "yeas and nays on the 2741, 2742",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo00unit:87:par_000087_000093",
+          "raw_text": "Mr. Rice, of Massachusetts 2734",
+          "raw_sha256": "db406fc22af0c0d2c1e958f39a43796b3a3364e7d4331e5a8e3a3cd215e4d5d5",
+          "static_text": "Mr. Rice, of Massachusetts 2734",
+          "static_sha256": "db406fc22af0c0d2c1e958f39a43796b3a3364e7d4331e5a8e3a3cd215e4d5d5",
+          "bbox": {
+            "left": 1107,
+            "top": 3169,
+            "right": 1864,
+            "bottom": 3210
+          },
+          "reading_order": 93
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo00unit:87:par_000087_000095",
+          "raw_text": "bill to punish attorneys and others for with- holding moneys collected for officers, sol- diers, and sailors 2743",
+          "raw_sha256": "140c88dd9374151a4e464abb7500063c5fffae1dea7c10aaaaefc180dac462e1",
+          "static_text": "bill to punish attorneys and others for withholding moneys collected for officers, soldiers, and sailors 2743",
+          "static_sha256": "4359166017e6fab9ab54fcd12f4f409fef4b730365f92a9158ca8650f364db7e",
+          "bbox": {
+            "left": 1021,
+            "top": 3255,
+            "right": 1863,
+            "bottom": 3379
+          },
+          "reading_order": 95
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo00unit:88:par_000088_000052",
+      "item_identifier": "congressionalglo00unit",
+      "part_number": 4,
+      "scan_leaf": 88,
+      "paragraph_id": "par_000088_000052",
+      "raw_sha256": "4ebdc68b09d3e7e946389254551af84754a380f19fdfcefda32142fe975d74d6",
+      "static_sha256": "4ebdc68b09d3e7e946389254551af84754a380f19fdfcefda32142fe975d74d6",
+      "raw_codepoints": 23,
+      "static_codepoints": 23,
+      "page_line_number": 3331,
+      "reading_order": 52,
+      "split": "primary",
+      "priority_sha256": "0003396a31345124fba243c5f191649bdf5057a83361f66e330c84b2daeaa574",
+      "frame_size": 57261,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 57261
+      },
+      "expansion_weight": {
+        "numerator": 57261,
+        "denominator": 5
+      },
+      "page_line_sha256": "6702f4c11e618679c8efdde051609bb3434eb08031db7c297467aa564eaf19b2",
+      "hocr_page_id": "page_000088",
+      "printed_page": {
+        "detected": "LXXXII",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 78
+      },
+      "image_dimensions": [
+        3120,
+        4292
+      ],
+      "bbox": {
+        "left": 1239,
+        "top": 485,
+        "right": 2034,
+        "bottom": 527
+      },
+      "line_ids": [
+        "line_000088_000098"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "Marine corps 1744, 1775",
+      "static_text": "Marine corps 1744, 1775",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo00unit:88:par_000088_000051",
+          "raw_text": "remarks on the bill to create the grade of brigadier general commandant in the",
+          "raw_sha256": "18026b8d35351e5c49555694d09168e3d98fed41404c2e843a18df4f826860b5",
+          "static_text": "remarks on the bill to create the grade of brigadier general commandant in the",
+          "static_sha256": "18026b8d35351e5c49555694d09168e3d98fed41404c2e843a18df4f826860b5",
+          "bbox": {
+            "left": 1195,
+            "top": 401,
+            "right": 2034,
+            "bottom": 484
+          },
+          "reading_order": 51
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo00unit:88:par_000088_000053",
+          "raw_text": "remarks on the bill (H. R. No. 361) to reor- ganize the Army 2346, 2347",
+          "raw_sha256": "8bb33e882f57e7738de249a10000792cabd09494ef0371ae963a1ae375bc90c6",
+          "static_text": "remarks on the bill (H. R. No. 361) to reorganize the Army 2346, 2347",
+          "static_sha256": "e13f09b6597ef3de9a1dd8e63322d4b03abbb960af26e42829f834ead62090d3",
+          "bbox": {
+            "left": 1195,
+            "top": 527,
+            "right": 2033,
+            "bottom": 612
+          },
+          "reading_order": 53
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo00unit:648:par_000648_000009",
+      "item_identifier": "congressionalglo00unit",
+      "part_number": 4,
+      "scan_leaf": 648,
+      "paragraph_id": "par_000648_000009",
+      "raw_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+      "static_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+      "raw_codepoints": 185,
+      "static_codepoints": 185,
+      "page_line_number": 3891,
+      "reading_order": 9,
+      "split": "primary",
+      "priority_sha256": "000526821d88005c6f14fbc183127713ccaeb0139a8b15c80d40aaf96997a314",
+      "frame_size": 57261,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 57261
+      },
+      "expansion_weight": {
+        "numerator": 57261,
+        "denominator": 5
+      },
+      "page_line_sha256": "a2e272c96937dbf1bfe5fee7ce7c43433a764b37d499b1122136e8d13d68b52e",
+      "hocr_page_id": "page_000648",
+      "printed_page": {
+        "detected": "3416",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": null
+      },
+      "image_dimensions": [
+        3120,
+        4292
+      ],
+      "bbox": {
+        "left": 238,
+        "top": 2343,
+        "right": 1119,
+        "bottom": 2505
+      },
+      "line_ids": [
+        "line_000648_000054",
+        "line_000648_000055",
+        "line_000648_000056",
+        "line_000648_000057"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the tim-;) the men were mustered in.",
+      "static_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the tim-;) the men were mustered in.",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo00unit:648:par_000648_000008",
+          "raw_text": "\"This was fully understood by the State authori- ties of Iowa, and was made known to the men enlist- ing in the organization, under telegram dated Ooto- ber 10, 1S32, a copy of which was furnished the United States mustering officer at Davenport, as follows.\"",
+          "raw_sha256": "82a7ce9ee6862bf4241efac20ea3588afbb9a55a6d29d78d5bdcba912e09df06",
+          "static_text": "\"This was fully understood by the State authorities of Iowa, and was made known to the men enlisting in the organization, under telegram dated Ooto- ber 10, 1S32, a copy of which was furnished the United States mustering officer at Davenport, as follows.\"",
+          "static_sha256": "c1733e50de776fe62f7c7a5dd34f4842d492f9f58bdbb6681907b9597e2c1d4a",
+          "bbox": {
+            "left": 238,
+            "top": 2176,
+            "right": 1121,
+            "bottom": 2335
+          },
+          "reading_order": 8
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo00unit:648:par_000648_000010",
+          "raw_text": "Now, whether there has been any deception practiced or not I have nothing to say. We have only this authority from the War Depart- ment. What I was going on to say was that no injustice was intended to be done to these men. And unless the men of this regiment prefer the $100 bounty to what they would receive from the operation of the equalization bounty bill, it seems to me it would be just as well to leave them where we left the hundred days' men, amounting to some sixty-odd thou- sand in number of the eighty-five thousand who were enlisted, and others who entered the service for short periods of time, and who have thus far received no bounty, but depe-nd upon the general equalization bounty bill to get bounties for the time they served.",
+          "raw_sha256": "10fb5c5eec05280fa1615cbf8dcd2d1f5ab5796fd89058ae12bb73f516d4a095",
+          "static_text": "Now, whether there has been any deception practiced or not I have nothing to say. We have only this authority from the War Department. What I was going on to say was that no injustice was intended to be done to these men. And unless the men of this regiment prefer the $100 bounty to what they would receive from the operation of the equalization bounty bill, it seems to me it would be just as well to leave them where we left the hundred days' men, amounting to some sixty-odd thousand in number of the eighty-five thousand who were enlisted, and others who entered the service for short periods of time, and who have thus far received no bounty, but depe-nd upon the general equalization bounty bill to get bounties for the time they served.",
+          "static_sha256": "c9585c20993c24ebe673e953000e258282549d7ccc93267f879ae4edc2d5b210",
+          "bbox": {
+            "left": 239,
+            "top": 2511,
+            "right": 1120,
+            "bottom": 3231
+          },
+          "reading_order": 10
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo00unit:717:par_000717_000026",
+      "item_identifier": "congressionalglo00unit",
+      "part_number": 4,
+      "scan_leaf": 717,
+      "paragraph_id": "par_000717_000026",
+      "raw_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+      "static_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+      "raw_codepoints": 56,
+      "static_codepoints": 56,
+      "page_line_number": 3960,
+      "reading_order": 26,
+      "split": "primary",
+      "priority_sha256": "0007fc9132ae562374e5654fad28a1c3eb1a41c31a4cc998061b59b3418733fc",
+      "frame_size": 57261,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 57261
+      },
+      "expansion_weight": {
+        "numerator": 57261,
+        "denominator": 5
+      },
+      "page_line_sha256": "c1bcbbc76148786696872988a847e9cc4c40acda30a410eea709332b6cb629c3",
+      "hocr_page_id": "page_000717",
+      "printed_page": {
+        "detected": "3485",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3057,
+        4269
+      ],
+      "bbox": {
+        "left": 1044,
+        "top": 2568,
+        "right": 1923,
+        "bottom": 2653
+      },
+      "line_ids": [
+        "line_000717_000149",
+        "line_000717_000150"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+      "static_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo00unit:717:par_000717_000025",
+          "raw_text": "Mr. SHERMAN. The bill referred to is not the bill that we reported back.",
+          "raw_sha256": "b12259bd818deb5da7cc6222c45edbec70f362252658968349ebba7a1aa143b2",
+          "static_text": "Mr. SHERMAN. The bill referred to is not the bill that we reported back.",
+          "static_sha256": "b12259bd818deb5da7cc6222c45edbec70f362252658968349ebba7a1aa143b2",
+          "bbox": {
+            "left": 1043,
+            "top": 2482,
+            "right": 1924,
+            "bottom": 2566
+          },
+          "reading_order": 25
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo00unit:717:par_000717_000027",
+          "raw_text": "Mr. SHERMAN. _ Not at all. That bill was referred to the special committee of which I was chairman, and we reported back another bill. The Senator has been talking about a bill that is not before us.",
+          "raw_sha256": "6ba54f9b11103b01f6390a24262c12e3d3f10998961d8a6c8d2cd23a79ad082b",
+          "static_text": "Mr. SHERMAN. _ Not at all. That bill was referred to the special committee of which I was chairman, and we reported back another bill. The Senator has been talking about a bill that is not before us.",
+          "static_sha256": "6ba54f9b11103b01f6390a24262c12e3d3f10998961d8a6c8d2cd23a79ad082b",
+          "bbox": {
+            "left": 1043,
+            "top": 2651,
+            "right": 1924,
+            "bottom": 2855
+          },
+          "reading_order": 27
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7395unit:529:par_000529_000006",
+      "item_identifier": "congressionalglo7395unit",
+      "part_number": 5,
+      "scan_leaf": 529,
+      "paragraph_id": "par_000529_000006",
+      "raw_sha256": "7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426",
+      "static_sha256": "cf488fd916ff03460b78a1f419241dba41abda055b7304de5144808fe0f304d7",
+      "raw_codepoints": 63,
+      "static_codepoints": 61,
+      "page_line_number": 4852,
+      "reading_order": 6,
+      "split": "primary",
+      "priority_sha256": "0000884fd9e25aa7d1d25d6931db68cd86d0caa8e197e5b3b353453f7a79f0ad",
+      "frame_size": 66146,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 66146
+      },
+      "expansion_weight": {
+        "numerator": 66146,
+        "denominator": 5
+      },
+      "page_line_sha256": "5a9d247b8023c2844b89028f586aa65bec3e170f24e2a8179de82d8c94fa976f",
+      "hocr_page_id": "page_000529",
+      "printed_page": {
+        "detected": "4257",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3115,
+        4275
+      ],
+      "bbox": {
+        "left": 97,
+        "top": 702,
+        "right": 968,
+        "bottom": 780
+      },
+      "line_ids": [
+        "line_000529_000017",
+        "line_000529_000018"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "The Committee on- Appropriations recom- mended non-concurrence.",
+      "static_text": "The Committee on- Appropriations recommended non-concurrence.",
+      "static_edits": [
+        {
+          "start_char": 33,
+          "end_char": 46,
+          "expected": "recom- mended",
+          "replacement": "recommended",
+          "reason": "adjacent-line wrap; lexicon form recommended",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7395unit:529:par_000529_000005",
+          "raw_text": "For the purpose of aiding in the erection of an ad- ditional building to the Providence Hospital, in the city of Washington, §30,000: Prodded, That if the said property should ever be sold or diverted from the uses expressed in the act of Congress entitled \"An act to incorporate Providence Hospital, of the city of Washington, District of Columbia,\" approved April 8, 186t, then the sum of :if30,000 shall be first paid out of the proceeds thereof into the United States Treasury to reimburse the sum hereby appro- priated.",
+          "raw_sha256": "6a38fe4fe069a353aea7a4f8f46708ae1f950756a3c659447800aca13ccb1f67",
+          "static_text": "For the purpose of aiding in the erection of an additional building to the Providence Hospital, in the city of Washington, §30,000: Prodded, That if the said property should ever be sold or diverted from the uses expressed in the act of Congress entitled \"An act to incorporate Providence Hospital, of the city of Washington, District of Columbia,\" approved April 8, 186t, then the sum of :if30,000 shall be first paid out of the proceeds thereof into the United States Treasury to reimburse the sum hereby appropriated.",
+          "static_sha256": "34cf9f22842a319d2a8f3a59653ab84112728546191026572db435756e621e8a",
+          "bbox": {
+            "left": 94,
+            "top": 336,
+            "right": 973,
+            "bottom": 688
+          },
+          "reading_order": 5
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7395unit:529:par_000529_000007",
+          "raw_text": "The amendment was non-concurred in. Twenty-sixth amendment :",
+          "raw_sha256": "8354c3bbe43fbeb7a563ba5eb9ad7dce47cd8ea9742152eaf3ce262adb9adc8a",
+          "static_text": "The amendment was non-concurred in. Twenty-sixth amendment :",
+          "static_sha256": "8354c3bbe43fbeb7a563ba5eb9ad7dce47cd8ea9742152eaf3ce262adb9adc8a",
+          "bbox": {
+            "left": 137,
+            "top": 787,
+            "right": 875,
+            "bottom": 880
+          },
+          "reading_order": 7
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7395unit:833:par_000833_000000",
+      "item_identifier": "congressionalglo7395unit",
+      "part_number": 5,
+      "scan_leaf": 833,
+      "paragraph_id": "par_000833_000000",
+      "raw_sha256": "3c89cf88ad28b89626ab1a7db707fc19b4e746d4660b8e4ddcc1bc7d19eb640e",
+      "static_sha256": "3c89cf88ad28b89626ab1a7db707fc19b4e746d4660b8e4ddcc1bc7d19eb640e",
+      "raw_codepoints": 6,
+      "static_codepoints": 6,
+      "page_line_number": 5156,
+      "reading_order": 0,
+      "split": "primary",
+      "priority_sha256": "000325d1f6166ab67d0a108f9d9b28ba298f337358e83178a23a14a0f24a426a",
+      "frame_size": 66146,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 66146
+      },
+      "expansion_weight": {
+        "numerator": 66146,
+        "denominator": 5
+      },
+      "page_line_sha256": "86144482d90bcfea61593a532b7df764560cc2c0d04f1b0e1c598555b0e3eb6e",
+      "hocr_page_id": "page_000833",
+      "printed_page": {
+        "detected": "199",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3115,
+        4275
+      ],
+      "bbox": {
+        "left": 143,
+        "top": 95,
+        "right": 285,
+        "bottom": 149
+      },
+      "line_ids": [
+        "line_000833_000000"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": true,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "1866.]",
+      "static_text": "1866.]",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "after",
+          "source_id": "congressionalglo7395unit:833:par_000833_000001",
+          "raw_text": "APPENDIX TO THE CONGRESSIONAL GLOBE.",
+          "raw_sha256": "50ee316d262b71092086457b1186df53f5eec73c6ed695c79787db0bff79a2f5",
+          "static_text": "APPENDIX TO THE CONGRESSIONAL GLOBE.",
+          "static_sha256": "50ee316d262b71092086457b1186df53f5eec73c6ed695c79787db0bff79a2f5",
+          "bbox": {
+            "left": 857,
+            "top": 90,
+            "right": 2182,
+            "bottom": 134
+          },
+          "reading_order": 1
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7395unit:147:par_000147_000006",
+      "item_identifier": "congressionalglo7395unit",
+      "part_number": 5,
+      "scan_leaf": 147,
+      "paragraph_id": "par_000147_000006",
+      "raw_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+      "static_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+      "raw_codepoints": 94,
+      "static_codepoints": 94,
+      "page_line_number": 4470,
+      "reading_order": 6,
+      "split": "primary",
+      "priority_sha256": "0004dbeddd51edf0a970fd74cbfd2aed6423a0c7a3060c0e65216b6081622edb",
+      "frame_size": 66146,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 66146
+      },
+      "expansion_weight": {
+        "numerator": 66146,
+        "denominator": 5
+      },
+      "page_line_sha256": "86a805c9f09c7cf50e3d490e537e150d00a81274187f2384f741068245293b81",
+      "hocr_page_id": "page_000147",
+      "printed_page": {
+        "detected": "3875",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3108,
+        4308
+      ],
+      "bbox": {
+        "left": 106,
+        "top": 1195,
+        "right": 996,
+        "bottom": 1313
+      },
+      "line_ids": [
+        "line_000147_000028",
+        "line_000147_000029",
+        "line_000147_000030"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "On the 5th of February the member from. Iowa replied to that language in the following words :",
+      "static_text": "On the 5th of February the member from. Iowa replied to that language in the following words :",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7395unit:147:par_000147_000005",
+          "raw_text": "Now, sir, we have nothing to do in this dis- cussion with the sentiment embodied in that declaration ; it may be just, or it. may be un- just; it maybe right, or it may be wrong. That is not the question now. The question is one of parliamentary propriety, and I do not see that there was anything in it in viola- tion of parliamentary order, or of the privi- leges or rights of any member of this House.",
+          "raw_sha256": "526a65101d95bb2036c5e6873f933c857658ecd283cc88f411862bd8e970350d",
+          "static_text": "Now, sir, we have nothing to do in this discussion with the sentiment embodied in that declaration ; it may be just, or it. may be unjust; it maybe right, or it may be wrong. That is not the question now. The question is one of parliamentary propriety, and I do not see that there was anything in it in violation of parliamentary order, or of the privileges or rights of any member of this House.",
+          "static_sha256": "5e42af942d2802f65285d4a0ec6b7b28a61677dfd78f91a9a59cde4607bc2c2e",
+          "bbox": {
+            "left": 105,
+            "top": 814,
+            "right": 985,
+            "bottom": 1195
+          },
+          "reading_order": 5
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7395unit:147:par_000147_000007",
+          "raw_text": "\"The honorable gentleman from Kentucky [Mr. Rousseau] declared on Saturday, as I caught his lajiguage, that if ho were arrested on the complaint of a negro and brought before one of the agents of this bureau, when he became free he would shoot him.\"",
+          "raw_sha256": "cc2ea1dca513ced9caf4aea131c46a1bb4acbd085bfb87b9796ef9833389e8d4",
+          "static_text": "\"The honorable gentleman from Kentucky [Mr. Rousseau] declared on Saturday, as I caught his lajiguage, that if ho were arrested on the complaint of a negro and brought before one of the agents of this bureau, when he became free he would shoot him.\"",
+          "static_sha256": "cc2ea1dca513ced9caf4aea131c46a1bb4acbd085bfb87b9796ef9833389e8d4",
+          "bbox": {
+            "left": 103,
+            "top": 1338,
+            "right": 984,
+            "bottom": 1524
+          },
+          "reading_order": 7
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7395unit:302:par_000302_000012",
+      "item_identifier": "congressionalglo7395unit",
+      "part_number": 5,
+      "scan_leaf": 302,
+      "paragraph_id": "par_000302_000012",
+      "raw_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+      "static_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+      "raw_codepoints": 82,
+      "static_codepoints": 82,
+      "page_line_number": 4625,
+      "reading_order": 12,
+      "split": "primary",
+      "priority_sha256": "0004de56b76bfbeea72cef59b675d3924e61da0ebc051ddfcf6e7b16612606a6",
+      "frame_size": 66146,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 66146
+      },
+      "expansion_weight": {
+        "numerator": 66146,
+        "denominator": 5
+      },
+      "page_line_sha256": "2d0cbc5e5122d6c882024f343be99e192ef56cf24a33687c627b65a9cf2d01fc",
+      "hocr_page_id": "page_000302",
+      "printed_page": {
+        "detected": "4030",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3115,
+        4275
+      ],
+      "bbox": {
+        "left": 215,
+        "top": 3930,
+        "right": 1086,
+        "bottom": 4015
+      },
+      "line_ids": [
+        "line_000302_000092",
+        "line_000302_000093"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+      "static_text": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7395unit:302:par_000302_000011",
+          "raw_text": "Mr. SHERMAN. They are not banks; they are United States depositories ; the cashiers of these depositories get less than your clerks who are suffering so much.",
+          "raw_sha256": "ffa9c6114e0f7982c45b4139993bbf6c22f9361c7e2ac057f23fb05f696de718",
+          "static_text": "Mr. SHERMAN. They are not banks; they are United States depositories ; the cashiers of these depositories get less than your clerks who are suffering so much.",
+          "static_sha256": "ffa9c6114e0f7982c45b4139993bbf6c22f9361c7e2ac057f23fb05f696de718",
+          "bbox": {
+            "left": 214,
+            "top": 3762,
+            "right": 1088,
+            "bottom": 3929
+          },
+          "reading_order": 11
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7395unit:302:par_000302_000013",
+          "raw_text": "I simply follow his lead. He knows very well how happy I am, and proud, always to follow his distinguished lead. I follow it now, and I simply ask that he should do by these servants of the Government in the State Department what he has done for other servants of the Government elsevv'here.",
+          "raw_sha256": "07a0be8d9940cc34e73619ab35bcddd9717ab84fa2769bc65ea3c2566dd2534a",
+          "static_text": "I simply follow his lead. He knows very well how happy I am, and proud, always to follow his distinguished lead. I follow it now, and I simply ask that he should do by these servants of the Government in the State Department what he has done for other servants of the Government elsevv'here.",
+          "static_sha256": "07a0be8d9940cc34e73619ab35bcddd9717ab84fa2769bc65ea3c2566dd2534a",
+          "bbox": {
+            "left": 1139,
+            "top": 180,
+            "right": 2015,
+            "bottom": 464
+          },
+          "reading_order": 13
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    },
+    {
+      "source_id": "congressionalglo7395unit:713:par_000713_000018",
+      "item_identifier": "congressionalglo7395unit",
+      "part_number": 5,
+      "scan_leaf": 713,
+      "paragraph_id": "par_000713_000018",
+      "raw_sha256": "6ca65d086b0a520fcb6388f415a379953f012c9b8bc513284dea19363f26acef",
+      "static_sha256": "6ca65d086b0a520fcb6388f415a379953f012c9b8bc513284dea19363f26acef",
+      "raw_codepoints": 7,
+      "static_codepoints": 7,
+      "page_line_number": 5036,
+      "reading_order": 17,
+      "split": "primary",
+      "priority_sha256": "0005d4110f611fdabcd174212d5cbc511f1a90a25532657e98d32fa812c37661",
+      "frame_size": 66146,
+      "inclusion_probability": {
+        "numerator": 5,
+        "denominator": 66146
+      },
+      "expansion_weight": {
+        "numerator": 66146,
+        "denominator": 5
+      },
+      "page_line_sha256": "06594b1382741d330c69f7b612e92af5a2aab65bcd7f0d2213eac42db5e53abb",
+      "hocr_page_id": "page_000713",
+      "printed_page": {
+        "detected": "79",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3115,
+        4275
+      ],
+      "bbox": {
+        "left": 549,
+        "top": 1215,
+        "right": 655,
+        "bottom": 1245
+      },
+      "line_ids": [
+        "line_000713_000028"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_text_budget",
+      "raw_text": "309,456",
+      "static_text": "309,456",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7395unit:713:par_000713_000017",
+          "raw_text": "420 217",
+          "raw_sha256": "aa7b53f7d8ab76e830b894e127f4beba8b78415a417cff14ddd239f3c60aa4ea",
+          "static_text": "420 217",
+          "static_sha256": "aa7b53f7d8ab76e830b894e127f4beba8b78415a417cff14ddd239f3c60aa4ea",
+          "bbox": {
+            "left": 609,
+            "top": 1057,
+            "right": 657,
+            "bottom": 1148
+          },
+          "reading_order": 16
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7395unit:713:par_000713_000019",
+          "raw_text": "11,766 2,913",
+          "raw_sha256": "7ccaa98c03cca84e5e1d5ae577aff921c1e58ee6280f789e095add32027ee055",
+          "static_text": "11,766 2,913",
+          "static_sha256": "7ccaa98c03cca84e5e1d5ae577aff921c1e58ee6280f789e095add32027ee055",
+          "bbox": {
+            "left": 565,
+            "top": 1278,
+            "right": 656,
+            "bottom": 1340
+          },
+          "reading_order": 18
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified"
+    }
+  ],
+  "confirmation": [
+    {
+      "source_id": "congressionalg7391unit:422:par_000422_000000",
+      "item_identifier": "congressionalg7391unit",
+      "part_number": 1,
+      "scan_leaf": 422,
+      "paragraph_id": "par_000422_000000",
+      "raw_sha256": "f87a42bb0e57da1ac0543fb0c72545b9cebaeff3a75f394f14ae206c0de1ee31",
+      "static_sha256": "f87a42bb0e57da1ac0543fb0c72545b9cebaeff3a75f394f14ae206c0de1ee31",
+      "raw_codepoints": 3,
+      "static_codepoints": 3,
+      "page_line_number": 423,
+      "reading_order": 0,
+      "split": "confirmation",
+      "priority_sha256": "0000f1a30148d65deb6d24222c292426a8df645bed041c923096ee4ab3b21a50",
+      "conditional_frame_size": 52848,
+      "conditional_inclusion_probability": {
+        "numerator": 2,
+        "denominator": 52848
+      },
+      "conditional_expansion_weight": {
+        "numerator": 52848,
+        "denominator": 2
+      },
+      "target_text_withheld": true,
+      "reference_status": "not_requested",
+      "prior_exposure": "not_in_named_exposure_pages_or_raw_hashes; broader exposure unknown"
+    },
+    {
+      "source_id": "congressionalg7391unit:772:par_000772_000000",
+      "item_identifier": "congressionalg7391unit",
+      "part_number": 1,
+      "scan_leaf": 772,
+      "paragraph_id": "par_000772_000000",
+      "raw_sha256": "92a6a32f99def322d70ea1167a99c6859ab4e8bbc593b997ec5994d244a82475",
+      "static_sha256": "92a6a32f99def322d70ea1167a99c6859ab4e8bbc593b997ec5994d244a82475",
+      "raw_codepoints": 3,
+      "static_codepoints": 3,
+      "page_line_number": 773,
+      "reading_order": 0,
+      "split": "confirmation",
+      "priority_sha256": "0001fa4f9fa0f910eb988065a90953db95b06e9f881a6a97fe44b331397e6522",
+      "conditional_frame_size": 52848,
+      "conditional_inclusion_probability": {
+        "numerator": 2,
+        "denominator": 52848
+      },
+      "conditional_expansion_weight": {
+        "numerator": 52848,
+        "denominator": 2
+      },
+      "target_text_withheld": true,
+      "reference_status": "not_requested",
+      "prior_exposure": "not_in_named_exposure_pages_or_raw_hashes; broader exposure unknown"
+    },
+    {
+      "source_id": "congressionalglo7392unit:81:par_000081_000068",
+      "item_identifier": "congressionalglo7392unit",
+      "part_number": 2,
+      "scan_leaf": 81,
+      "paragraph_id": "par_000081_000068",
+      "raw_sha256": "cf52153692084ca3f5fa44f5066b462ad28e48ea207b882fd4ac1c0ac3df316a",
+      "static_sha256": "cf52153692084ca3f5fa44f5066b462ad28e48ea207b882fd4ac1c0ac3df316a",
+      "raw_codepoints": 208,
+      "static_codepoints": 208,
+      "page_line_number": 1168,
+      "reading_order": 68,
+      "split": "confirmation",
+      "priority_sha256": "00005374bc833179f7c6c3d3d141f70c7b394c5d6a76781abf204491513f9ee1",
+      "conditional_frame_size": 57190,
+      "conditional_inclusion_probability": {
+        "numerator": 2,
+        "denominator": 57190
+      },
+      "conditional_expansion_weight": {
+        "numerator": 57190,
+        "denominator": 2
+      },
+      "target_text_withheld": true,
+      "reference_status": "not_requested",
+      "prior_exposure": "not_in_named_exposure_pages_or_raw_hashes; broader exposure unknown"
+    },
+    {
+      "source_id": "congressionalglo7392unit:75:par_000075_000129",
+      "item_identifier": "congressionalglo7392unit",
+      "part_number": 2,
+      "scan_leaf": 75,
+      "paragraph_id": "par_000075_000129",
+      "raw_sha256": "74935e162b8b44022baf264d82603e81a4313731a9e85584ac0ae93c5184bec5",
+      "static_sha256": "74935e162b8b44022baf264d82603e81a4313731a9e85584ac0ae93c5184bec5",
+      "raw_codepoints": 30,
+      "static_codepoints": 30,
+      "page_line_number": 1162,
+      "reading_order": 129,
+      "split": "confirmation",
+      "priority_sha256": "00027c8c451c77f04b942f8d18e96db6bc463cbdd3ba1583b4796fd94ac5f5c3",
+      "conditional_frame_size": 57190,
+      "conditional_inclusion_probability": {
+        "numerator": 2,
+        "denominator": 57190
+      },
+      "conditional_expansion_weight": {
+        "numerator": 57190,
+        "denominator": 2
+      },
+      "target_text_withheld": true,
+      "reference_status": "not_requested",
+      "prior_exposure": "not_in_named_exposure_pages_or_raw_hashes; broader exposure unknown"
+    },
+    {
+      "source_id": "congressionalglo7393unit:815:par_000815_000018",
+      "item_identifier": "congressionalglo7393unit",
+      "part_number": 3,
+      "scan_leaf": 815,
+      "paragraph_id": "par_000815_000018",
+      "raw_sha256": "ea4977fb92a5990a767ba9dc30e8cfc598f9e870306dfd7d8478ae0442287b3e",
+      "static_sha256": "ea4977fb92a5990a767ba9dc30e8cfc598f9e870306dfd7d8478ae0442287b3e",
+      "raw_codepoints": 58,
+      "static_codepoints": 58,
+      "page_line_number": 2982,
+      "reading_order": 18,
+      "split": "confirmation",
+      "priority_sha256": "000036bf2ba825e155ae0368199157f66e884840b7520552d50c2c47e2e94960",
+      "conditional_frame_size": 56864,
+      "conditional_inclusion_probability": {
+        "numerator": 2,
+        "denominator": 56864
+      },
+      "conditional_expansion_weight": {
+        "numerator": 56864,
+        "denominator": 2
+      },
+      "target_text_withheld": true,
+      "reference_status": "not_requested",
+      "prior_exposure": "not_in_named_exposure_pages_or_raw_hashes; broader exposure unknown"
+    },
+    {
+      "source_id": "congressionalglo7393unit:637:par_000637_000040",
+      "item_identifier": "congressionalglo7393unit",
+      "part_number": 3,
+      "scan_leaf": 637,
+      "paragraph_id": "par_000637_000040",
+      "raw_sha256": "cfa6e225a2d875cf007063dfa0aded3f0b47bcddee84904ae5ba75e2dfa8ec0d",
+      "static_sha256": "cfa6e225a2d875cf007063dfa0aded3f0b47bcddee84904ae5ba75e2dfa8ec0d",
+      "raw_codepoints": 41,
+      "static_codepoints": 41,
+      "page_line_number": 2804,
+      "reading_order": 40,
+      "split": "confirmation",
+      "priority_sha256": "00003ad34144beef35bf55a072d850c3cc1f19b197d97da85493a816f03abfe1",
+      "conditional_frame_size": 56864,
+      "conditional_inclusion_probability": {
+        "numerator": 2,
+        "denominator": 56864
+      },
+      "conditional_expansion_weight": {
+        "numerator": 56864,
+        "denominator": 2
+      },
+      "target_text_withheld": true,
+      "reference_status": "not_requested",
+      "prior_exposure": "not_in_named_exposure_pages_or_raw_hashes; broader exposure unknown"
+    },
+    {
+      "source_id": "congressionalglo00unit:855:par_000855_000008",
+      "item_identifier": "congressionalglo00unit",
+      "part_number": 4,
+      "scan_leaf": 855,
+      "paragraph_id": "par_000855_000008",
+      "raw_sha256": "bcf3af6d00e421f18d4ccc229963a948a8c19e5de2542d795b9c841378d7f106",
+      "static_sha256": "bcf3af6d00e421f18d4ccc229963a948a8c19e5de2542d795b9c841378d7f106",
+      "raw_codepoints": 77,
+      "static_codepoints": 77,
+      "page_line_number": 4098,
+      "reading_order": 8,
+      "split": "confirmation",
+      "priority_sha256": "0001e8560d3c60b83a9fe9acefe0139bb2f9c9c35d5ee0c68881f9e94a5587d2",
+      "conditional_frame_size": 54751,
+      "conditional_inclusion_probability": {
+        "numerator": 2,
+        "denominator": 54751
+      },
+      "conditional_expansion_weight": {
+        "numerator": 54751,
+        "denominator": 2
+      },
+      "target_text_withheld": true,
+      "reference_status": "not_requested",
+      "prior_exposure": "not_in_named_exposure_pages_or_raw_hashes; broader exposure unknown"
+    },
+    {
+      "source_id": "congressionalglo00unit:964:par_000964_000012",
+      "item_identifier": "congressionalglo00unit",
+      "part_number": 4,
+      "scan_leaf": 964,
+      "paragraph_id": "par_000964_000012",
+      "raw_sha256": "8147a0ad261d39830fea3c4550a06b1527ce28a9d0c2994d495a3d6c8a624e8e",
+      "static_sha256": "c6e2933af81cd1e1a51a46d8207da737238ac9ed0dd767f7aef0735fc9b0c6ae",
+      "raw_codepoints": 906,
+      "static_codepoints": 894,
+      "page_line_number": 4207,
+      "reading_order": 12,
+      "split": "confirmation",
+      "priority_sha256": "00040487c26806b858c3f586e7880dbc97f1a8723662df4bc144518413360aca",
+      "conditional_frame_size": 54751,
+      "conditional_inclusion_probability": {
+        "numerator": 2,
+        "denominator": 54751
+      },
+      "conditional_expansion_weight": {
+        "numerator": 54751,
+        "denominator": 2
+      },
+      "target_text_withheld": true,
+      "reference_status": "not_requested",
+      "prior_exposure": "not_in_named_exposure_pages_or_raw_hashes; broader exposure unknown"
+    },
+    {
+      "source_id": "congressionalglo7395unit:816:par_000816_000021",
+      "item_identifier": "congressionalglo7395unit",
+      "part_number": 5,
+      "scan_leaf": 816,
+      "paragraph_id": "par_000816_000021",
+      "raw_sha256": "c553b5f3e6b344d8a75a7a1c88b425b3121b200c56c827567292f97b352532d9",
+      "static_sha256": "132afe8b72cc987e25dc764b9a697c43895ce43b5c9b70c61e331267f2934e60",
+      "raw_codepoints": 676,
+      "static_codepoints": 668,
+      "page_line_number": 5139,
+      "reading_order": 21,
+      "split": "confirmation",
+      "priority_sha256": "0002f1ab5bef65a9248ed2f7471f0a7c1f4cbc2beaee816d3b46d56b31a8edab",
+      "conditional_frame_size": 64092,
+      "conditional_inclusion_probability": {
+        "numerator": 2,
+        "denominator": 64092
+      },
+      "conditional_expansion_weight": {
+        "numerator": 64092,
+        "denominator": 2
+      },
+      "target_text_withheld": true,
+      "reference_status": "not_requested",
+      "prior_exposure": "not_in_named_exposure_pages_or_raw_hashes; broader exposure unknown"
+    },
+    {
+      "source_id": "congressionalglo7395unit:103:par_000103_000120",
+      "item_identifier": "congressionalglo7395unit",
+      "part_number": 5,
+      "scan_leaf": 103,
+      "paragraph_id": "par_000103_000120",
+      "raw_sha256": "3934a67299d6cc42257f58a4aae652481be7b3d2ee3d650d2321aa03a2926dd2",
+      "static_sha256": "3934a67299d6cc42257f58a4aae652481be7b3d2ee3d650d2321aa03a2926dd2",
+      "raw_codepoints": 36,
+      "static_codepoints": 36,
+      "page_line_number": 4426,
+      "reading_order": 120,
+      "split": "confirmation",
+      "priority_sha256": "0002fbf292014deef7e4b0421a755b21e9a5cebf1e12d963558b072819cb1847",
+      "conditional_frame_size": 64092,
+      "conditional_inclusion_probability": {
+        "numerator": 2,
+        "denominator": 64092
+      },
+      "conditional_expansion_weight": {
+        "numerator": 64092,
+        "denominator": 2
+      },
+      "target_text_withheld": true,
+      "reference_status": "not_requested",
+      "prior_exposure": "not_in_named_exposure_pages_or_raw_hashes; broader exposure unknown"
+    }
+  ],
+  "challenge_specs_path": "challenges.json",
+  "exposure_sha256": "115ec944d45ee1f6e406b4fe9044aa96ffc9388a9d1541c96c18df567fc349ff",
+  "zero_model_calls": true,
+  "zero_image_fetches": true,
+  "zero_reference_readings": true,
+  "offline_preparation_elapsed_seconds": 18.442684
+}

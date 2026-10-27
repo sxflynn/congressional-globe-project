@@ -1,0 +1,80 @@
+import hashlib,json,time
+from collections import Counter
+from pathlib import Path
+start=time.monotonic();out=Path('artifacts/ocr-sample-design-20261027-01')
+def h(b):return hashlib.sha256(b).hexdigest()
+def enc(d):return json.dumps(d,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()
+def load(p):return json.loads(Path(p).read_bytes())
+design=load(out/'design.json');design_hash=h((out/'design.json').read_bytes());inputs=[]
+def record(p):
+ b=Path(p).read_bytes();inputs.append({'path':str(p),'sha256':h(b),'bytes':len(b)});return b
+known_pages=set();known_hashes=set();known_ids=set()
+def expose(p):
+ item=p['item_identifier'];leaf=p['scan_leaf'];pid=p.get('paragraph_id',p.get('id'));known_pages.add((item,leaf))
+ if pid:known_ids.add(f'{item}:{leaf}:{pid}')
+ raw=p.get('raw',p.get('raw_text'));sha=p.get('raw_sha256')
+ if raw is not None:known_hashes.add(h(raw.encode()))
+ elif sha:known_hashes.add(sha)
+for line in record(design['exposure_inputs'][0]).splitlines():
+ c=json.loads(line)
+ for p in c['target']+c['context_before']+c['context_after']:expose(p)
+inv=json.loads(record(design['exposure_inputs'][1]))
+for p in inv['pages']:
+ known_pages.add((p['item_identifier'],p['scan_leaf']))
+ for par in p['paragraphs']:known_hashes.add(par['raw_sha256']);known_ids.add(f"{p['item_identifier']}:{p['scan_leaf']}:{par['id']}")
+for pair in json.loads(record(design['exposure_inputs'][2])):
+ p=pair['source'];known_pages.add((p['item_identifier'],p['scan_leaf']));known_hashes.add(p['raw_sha256'])
+fixtures=json.loads(record(design['exposure_inputs'][3]))
+for c in fixtures['cases']:
+ for p in c['candidate']['target']+c['candidate']['context_before']+c['candidate']['context_after']:expose(p)
+workflow_path='artifacts/runs/static-final-20261011/workflow_manifest.json';workflow=json.loads(record(workflow_path));parts={p['identifier']:p['part_number'] for p in workflow['parts']}
+source=Path('artifacts/runs/static-final-20261011/canonical_pages.jsonl');filehash=hashlib.sha256();framehash=hashlib.sha256();frame=[];ids=set();pages=Counter();empty=Counter();paragraphs=Counter();blankpages=Counter();rawlength=Counter();staticlength=Counter()
+with source.open('rb') as f:
+ for lineno,line in enumerate(f,1):
+  filehash.update(line);page=json.loads(line);item=page['item_identifier'];part=page['part_number'];leaf=page['scan_leaf'];assert parts[item]==part;pages[part]+=1
+  if not page['text_ocr'].strip():blankpages[part]+=1
+  for p in page['paragraphs']:
+   paragraphs[part]+=1;raw=p['text_ocr'];static=p.get('text_normalized');static=raw if static is None else static
+   if not raw.strip():empty[part]+=1;continue
+   sid=f"{item}:{leaf}:{p['id']}";assert sid not in ids;ids.add(sid)
+   rec={'source_id':sid,'item_identifier':item,'part_number':part,'scan_leaf':leaf,'paragraph_id':p['id'],'raw_sha256':h(raw.encode()),'static_sha256':h(static.encode()),'raw_codepoints':len(raw),'static_codepoints':len(static),'page_line_number':lineno,'reading_order':p['reading_order']}
+   framehash.update(enc(rec)+b'\n');frame.append(rec);rawlength[part]+=len(raw);staticlength[part]+=len(static)
+assert len(frame)==len(ids)
+primary=[]
+def priority(seed,r):return h((seed+'\0'+r['source_id']).encode())
+Ns={p:sum(r['part_number']==p for r in frame) for p in range(1,6)}
+for part in range(1,6):
+ group=[r for r in frame if r['part_number']==part];group.sort(key=lambda r:(priority(design['seeds']['primary'],r),r['source_id']))
+ for r in group[:5]:primary.append({**r,'split':'primary','priority_sha256':priority(design['seeds']['primary'],r),'frame_size':Ns[part],'inclusion_probability':{'numerator':5,'denominator':Ns[part]},'expansion_weight':{'numerator':Ns[part],'denominator':5}})
+primary_pages={(r['item_identifier'],r['scan_leaf']) for r in primary};primary_hashes={r['raw_sha256'] for r in primary};forbidden_pages=known_pages|primary_pages;forbidden_hashes=known_hashes|primary_hashes
+confirmation=[];Ms={}
+for part in range(1,6):
+ group=[r for r in frame if r['part_number']==part and (r['item_identifier'],r['scan_leaf']) not in forbidden_pages and r['raw_sha256'] not in forbidden_hashes];Ms[part]=len(group);assert len(group)>=2;group.sort(key=lambda r:(priority(design['seeds']['confirmation'],r),r['source_id']))
+ for r in group[:2]:confirmation.append({**r,'split':'confirmation','priority_sha256':priority(design['seeds']['confirmation'],r),'conditional_frame_size':Ms[part],'conditional_inclusion_probability':{'numerator':2,'denominator':Ms[part]},'conditional_expansion_weight':{'numerator':Ms[part],'denominator':2},'target_text_withheld':True,'reference_status':'not_requested','prior_exposure':'not_in_named_exposure_pages_or_raw_hashes; broader exposure unknown'})
+selected={r['source_id']:r for r in primary};targetpages={(r['item_identifier'],r['scan_leaf']) for r in primary};secondhash=hashlib.sha256();found=set()
+with source.open('rb') as f:
+ for lineno,line in enumerate(f,1):
+  secondhash.update(line)
+  if lineno not in {r['page_line_number'] for r in primary}:continue
+  page=json.loads(line);pars=page['paragraphs']
+  for i,p in enumerate(pars):
+   sid=f"{page['item_identifier']}:{page['scan_leaf']}:{p['id']}"
+   if sid not in selected:continue
+   r=selected[sid];raw=p['text_ocr'];static=p.get('text_normalized');static=raw if static is None else static;assert h(raw.encode())==r['raw_sha256'];assert h(static.encode())==r['static_sha256'];found.add(sid)
+   r.update(page_line_sha256=h(line),hocr_page_id=page['hocr_page_id'],printed_page=page['printed_page'],image_dimensions=[page.get('image_width_px'),page.get('image_height_px')],bbox=p.get('bbox'),line_ids=p['line_ids'],reference_status='not_requested',image_status='not_bound_or_verified_for_this_target',image_sha256=None,prior_exposure={'exact_id_known':sid in known_ids,'page_known':(page['item_identifier'],page['scan_leaf']) in known_pages,'exact_raw_hash_known':r['raw_sha256'] in known_hashes,'broader_history':'unknown'},target_status='within_text_budget' if max(len(raw),len(static))<=12000 else 'over_budget_unresolved')
+   if r['target_status']=='within_text_budget':r.update(raw_text=raw,static_text=static,static_edits=p.get('static_edits',[]),static_cleanup_provenance=p.get('static_cleanup_provenance'))
+   context=[]
+   for j in [i-1,i+1]:
+    if not 0<=j<len(pars):continue
+    q=pars[j];qr=q['text_ocr'];qs=q.get('text_normalized');qs=qr if qs is None else qs
+    context.append({'position':'before' if j<i else 'after','source_id':f"{page['item_identifier']}:{page['scan_leaf']}:{q['id']}",'raw_text':qr,'raw_sha256':h(qr.encode()),'static_text':qs,'static_sha256':h(qs.encode()),'bbox':q.get('bbox'),'reading_order':q['reading_order']})
+   if max(sum(len(c[k]) for c in context) for k in ['raw_text','static_text'])<=4000:r['context']=context;r['context_status']='same_page_only; metadata continuity unverified'
+   else:r['context']=[];r['context_status']='over_budget_context_omitted; target retained'
+assert secondhash.hexdigest()==filehash.hexdigest();assert found==set(selected)
+assert set(selected).isdisjoint(r['source_id'] for r in confirmation)
+assert primary_pages.isdisjoint((r['item_identifier'],r['scan_leaf']) for r in confirmation)
+exposure={'schema_version':'ocr-exposure-record-v1','inputs':inputs,'known_pages':[{'item_identifier':i,'scan_leaf':l} for i,l in sorted(known_pages)],'known_raw_hashes':sorted(known_hashes),'known_source_ids':sorted(known_ids),'completeness':'incomplete; named inputs only; unknown broader role/subject/search/operator/model-training exposure','confirmation_excludes_primary_pages_and_raw_hashes':True,'confirmation_excludes_named_historical_pages_and_raw_hashes':True}
+(out/'exposure.json').write_text(json.dumps(exposure,indent=2)+'\n')
+manifest={'schema_version':'ocr-sample-manifest-v1','task':'T49','design_sha256':design_hash,'source':{'path':str(source),'bytes':source.stat().st_size,'sha256':filehash.hexdigest(),'passes':2,'both_passes_hash_match':True},'frame':{'identity_sha256':framehash.hexdigest(),'encoding':'source-order compact sorted-key UTF8 JSON metadata rows + newline; row fields are selection-record fields before split/priority additions','nonempty_paragraphs':len(frame),'per_part':[{'part_number':p,'pages':pages[p],'blank_ocr_pages':blankpages[p],'all_paragraphs':paragraphs[p],'empty_ocr_paragraphs':empty[p],'eligible_nonempty_paragraphs':Ns[p],'raw_codepoints':rawlength[p],'static_codepoints':staticlength[p],'confirmation_conditional_frame':Ms[p]} for p in range(1,6)],'population_limit':'Nonempty OCR paragraphs only; missing print outside OCR is unmeasured. Blank pages counted, not assigned to nonempty-paragraph estimates.'},'primary':primary,'confirmation':confirmation,'challenge_specs_path':'challenges.json','exposure_sha256':h((out/'exposure.json').read_bytes()),'zero_model_calls':True,'zero_image_fetches':True,'zero_reference_readings':True,'offline_preparation_elapsed_seconds':round(time.monotonic()-start,6)}
+b=json.dumps(manifest,indent=2,ensure_ascii=False).encode()+b'\n';assert len(b)<=design['bounds']['manifest_bytes_maximum'];(out/'sample.json').write_bytes(b)
+print(json.dumps({'primary':len(primary),'confirmation':len(confirmation),'manifest_bytes':len(b),'per_part':manifest['frame']['per_part'],'primary_raw_codepoints':sum(r['raw_codepoints'] for r in primary),'primary_pages_already_exposed':sum(r['prior_exposure']['page_known'] for r in primary),'oversize_primary':sum(r['target_status']!='within_text_budget' for r in primary),'source_sha256':filehash.hexdigest(),'elapsed_seconds':manifest['offline_preparation_elapsed_seconds']},indent=2))

@@ -1,0 +1,75 @@
+{
+  "schema_version": "ocr-sample-design-v1",
+  "task": "T49",
+  "status": "frozen offline design; numerical criteria/reference effort proposed, not human-approved",
+  "freeze_precedes_selection": true,
+  "unit": "Whole nonempty canonical OCR paragraph; challenge fixtures may contain multiple paragraphs and synthetic cases are separate.",
+  "frame": "All paragraphs with text_ocr.strip() nonempty in artifacts/runs/static-final-20261011/canonical_pages.jsonl, five declared parts; no content/detector/confidence/image/length/exposure exclusions for primary. Preserve blank-page/empty-paragraph counts outside nonempty-paragraph estimand.",
+  "seeds": {
+    "primary": "globe-T49-20261027-primary-v1",
+    "confirmation": "globe-T49-20261027-confirmation-v1"
+  },
+  "priority": "SHA256(UTF8(seed + NUL + source_id)); ascending hex digest, source_id tie break; source_id=item_identifier:scan_leaf:paragraph_id. Hash priority is a reproducible pseudorandom permutation, not evidence of random hardware entropy.",
+  "allocation": {
+    "primary_per_part": 5,
+    "confirmation_per_part": 2,
+    "parts": 5,
+    "primary_total": 25,
+    "confirmation_total": 10,
+    "challenge_specs": 8,
+    "maximum_units": 43
+  },
+  "probability": {
+    "primary": "5/N_h under uniform-priority sampling model in part h; weight=N_h/5. Estimate totals by sum(weight*y), ratios as ratio of weighted totals.",
+    "confirmation": "After primary freeze: exclude selected primary pages, exact primary raw-text hashes, and known exposed pages/text hashes from named exposure inputs. Select2 by separate seed in each remaining part; conditional pi=2/M_h, weight=M_h/2. This estimates only that restricted confirmation frame, not all corpus text.",
+    "not_allowed": "Do not pool challenge cases with probability sample; do not use equal-part average as corpus estimate; do not claim word/page representativeness from paragraph allocation."
+  },
+  "bounds": {
+    "source_passes_maximum": 2,
+    "target_codepoints_per_unit": 12000,
+    "context_codepoints_per_unit_total": 4000,
+    "maximum_target_codepoints": 516000,
+    "maximum_context_codepoints": 172000,
+    "manifest_bytes_maximum": 16777216,
+    "prospective_crop_bindings_maximum": 86,
+    "prospective_crop_bytes_total_maximum": 67108864,
+    "crop_bindings_per_unit_maximum": 2,
+    "human_readers_proposed": 2,
+    "minutes_per_reader_per_unit_maximum": 5,
+    "reference_minutes_primary_maximum": 250,
+    "reference_minutes_confirmation_maximum": 100,
+    "reference_minutes_challenges_maximum": 80,
+    "adjudication_minutes_per_unit_maximum": 2,
+    "adjudication_minutes_total_maximum": 86,
+    "proposed_reference_and_adjudication_minutes_total_maximum": 516,
+    "provider_calls_authorized": 0,
+    "image_fetches_authorized": 0,
+    "independent_reference_readings_authorized": 0,
+    "maximum_source_codepoints_each_layer": 688000,
+    "maximum_raw_plus_static_codepoints": 1376000,
+    "codepoint_accounting": "Target and context bounds apply separately to raw and static layers; maximum688000codepoints per layer,1376000combined across43units."
+  },
+  "oversize": "Retain selected identity,lengths,full hashes and over_budget_unresolved; never truncate target for correctness/recall or replace it. Emit text only when whole raw AND whole static each fit12000codepoints; context omitted if over4000. Report missing coverage; budgets are ceilings, not permission.",
+  "exposure_inputs": [
+    "artifacts/reading-prepare-20261024-03/candidates.jsonl",
+    "artifacts/ocr-repair-inventory-20261027-01/inventory.json",
+    "artifacts/raw-clean-readiness-20261027-01/pairs.json",
+    "artifacts/reading-failure-fixtures-20261025-01/fixtures.json"
+  ],
+  "exposure_limit": "Known exposure includes earlier primary/confirmation/context, T47 inventoried pages and T43 pairs. Broader prior search/role/subject/operator exposure inventory incomplete. Unknown exposure remains unknown; no never-seen/held-out-gold claim. No adaptive substitutions.",
+  "context": "At most one preceding and one following paragraph on the SAME page, serialized complete in existing order if combined raw/static lengths each fit4000. Context is supplied evidence, excluded from scored target denominator. Unknown chamber/turn/date continuity remains unknown; do not propagate metadata. No next-page discovery.",
+  "reference_plan": "Two separately recorded image-first whole-unit readings before revealing OCR/static/model/detector outputs; images may include frozen context. Record reader identity/type, prior exposure, image/target hashes, exact transcriptions, uncertainty spans, coverage and time. Freeze readings separately, compare alignments later, adjudicate disagreements from image without guessing. Two AI readers are provisional AI evidence, not two humans or gold. No actual readings/review request made here.",
+  "image_policy": "Use at most2new or reused verified crops per unit and64MiB total if later explicitly authorized. No cache match equals adequate coverage. Missing/wrong/unreadable/too-large crops =>unresolved, no replacement/fetch in T49. Image hashes remain null until actual bytes exist and registration/legibility are checked.",
+  "confirmation_policy": "Reserve selected confirmation targets before new outcomes; do not inspect their text/images for tuning. Manifest contains source identities/hashes and lengths only for confirmation. Target text not emitted to report/provider. Mechanical frame generation handles bytes but is disclosed as preparation exposure. If confirmation content leaks into tuning, invalidate confirmatory status and seek separate bounded redesign, no substitute now.",
+  "challenge_policy": "Eight fixed exposed/synthetic specifications: numeral harm/correct comparator, printed repetition, cross-record relocation, unchanged damaged needs_review, missing/irrelevant evidence, correct rare name/place/historical form, plausible wrong number/real word, mixed glyphs/meaningful hyphen. No challenge prevalence estimates and no new model runs.",
+  "criteria_status": "All below are proposals for H1/H2 agreement before acceptance scoring; no accepted numeric quality threshold.",
+  "proposed_standards": {
+    "source_binding": "All host identity/span/hash/coverage checks must pass before accepting software output; failure records retained.",
+    "harm": "Any independently confirmed new name/place/number/value/citation change unsupported by print triggers hold and investigation; never average it away. Proposed gate is zero observed consequential harmful edits; absence in tiny sample is not safety proof.",
+    "misses": "Report every known missed discrepancy; propose no tolerated observed consequential miss in fully inspected challenge cases. Population recall has no accepted target until sample/reference feasibility and H1 agreement.",
+    "coverage": "Require two complete whole-unit readings for a unit to enter resolved efficacy ratios; report all missing/partial/over-budget selected units separately. Do not silently condition population claims on successful images.",
+    "unknowns": "No maximum acceptable unresolved rate adopted; report numerator/denominator and weighted missing mass plus best/worst outcome bounds. Incomplete references block recall claim for those units.",
+    "cost": "No numerical provider/time/dollar limit adopted. Record CPU elapsed,model+image+failure usage,reference/adjudication minutes and unknown hardware cost separately; T55 freezes actual launch budget.",
+    "downstream": "Matched search/metadata/answer/reading checks remain required; audio/TTS unmeasured unless actual authorized audio assessment exists."
+  }
+}

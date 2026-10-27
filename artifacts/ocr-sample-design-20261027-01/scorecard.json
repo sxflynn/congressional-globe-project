@@ -1,0 +1,101 @@
+{
+  "schema_version": "ocr-repair-scorecard-design-v1",
+  "task": "T49",
+  "status": "Unscored proposed rubric; H1/H2 standards not approved",
+  "row_fields": [
+    "unit_id",
+    "split",
+    "source_sha256",
+    "image_sha256",
+    "reference_record_ids",
+    "reference_completeness",
+    "reference_provenance",
+    "arm",
+    "rule_resource_request_hashes",
+    "category",
+    "raw_count",
+    "denominator",
+    "weighted_total",
+    "unresolved_count",
+    "elapsed_or_cost",
+    "uncertainty_note"
+  ],
+  "metrics": [
+    {
+      "id": "detector_recall",
+      "numerator": "Independently established error spans that detector flags",
+      "denominator": "All independent reference error spans in fully inspected targets",
+      "limits": "Misses in detector-negative units; unavailable for incomplete references"
+    },
+    {
+      "id": "detector_false_flags",
+      "numerator": "Flagged reference-correct token opportunities",
+      "denominator": "All reference-correct token opportunities in fully inspected targets",
+      "limits": "Also report false alarms per complete unit; categories can overlap"
+    },
+    {
+      "id": "repair_benefit",
+      "numerator": "Reference errors fully corrected",
+      "denominator": "All reference error spans in fully inspected targets",
+      "limits": "Unchanged,missed,partial,abstained separate; attempts are not successes"
+    },
+    {
+      "id": "attempt_precision",
+      "numerator": "Correct attempted repairs",
+      "denominator": "All adjudicable attempted repairs",
+      "limits": "Unresolved attempts separate,not automatically correct"
+    },
+    {
+      "id": "repair_harm",
+      "numerator": "Previously correct readings made incorrect",
+      "denominator": "All reference-correct target token opportunities",
+      "limits": "Also harmful edits/all attempted edits; report number,name,place and meaning changes"
+    },
+    {
+      "id": "auditor_recall",
+      "numerator": "Independent confirmed discrepancies reported by auditor",
+      "denominator": "All independent discrepancies after deterministic/repair path in whole inspected target",
+      "limits": "Report detector-negative/apparent-success misses separately"
+    },
+    {
+      "id": "auditor_false_alarms",
+      "numerator": "Unsupported or contradicted audit findings",
+      "denominator": "All adjudicable audit findings",
+      "limits": "Uncertain findings separate; audit agreement never defines truth"
+    },
+    {
+      "id": "uncertainty",
+      "numerator": "Selected units/spans unresolved,unreadable,missing or over budget",
+      "denominator": "All selected units; token/span denominators only where defined",
+      "limits": "Report weighted unresolved unit mass; do not impute no-error"
+    },
+    {
+      "id": "names_and_numbers",
+      "numerator": "Above outcomes by name/place/year/other-number and real-word category",
+      "denominator": "Same independently classified category opportunities",
+      "limits": "Classification from image reference/context,not detector labels alone"
+    },
+    {
+      "id": "reading_tts",
+      "numerator": "Preserved wording,reading usability,actual audio findings if authorized",
+      "denominator": "Same matched independently inspected target scope",
+      "limits": "No audio produced/listened =>TTS unmeasured; fluent text is not print fidelity"
+    },
+    {
+      "id": "search_metadata_answers",
+      "numerator": "Matched query hits/raw support,metadata assertions,claims/citations/abstentions",
+      "denominator": "Frozen identical questions/contexts/targets and reviewable source support",
+      "limits": "T49 defines endpoint only; no new query labels or accepted task benchmark"
+    },
+    {
+      "id": "cost",
+      "numerator": "CPU elapsed;calls/model seconds;input/output/image tokens+bytes;failures;review/adjudication minutes",
+      "denominator": "Per selected,processed,resolved unit and repaired error,with coverage",
+      "limits": "Known zero API charges !=zero compute; hardware/energy unknown remain null"
+    }
+  ],
+  "error_unit": "Minimal connected discrepancy between aligned reference and OCR at character spans; adjacent/overlapping manifestations of same defect merged by independent adjudication. Keep original and derived coordinates separate. Token opportunity intervals use frozen versioned tokenizer selected in T52; unscorable segmentation stays unknown. Do not choose units after seeing which metric improves.",
+  "sampling_analysis": "Primary totals use N_h/5; uncertainty respects five strata and paragraph clustering of token errors. Use finite-population sampling variance for totals when defined; state ratio uncertainty method before scoring. With5primary paragraphs/part or2confirmation/part, precision is weak; no corpus safety guarantee. Challenge counts have no weights. Confirmation uses its restricted conditional frame only.",
+  "missing_outcomes": "For unit-level error incidence report lower weighted rate treating unresolved units as error-free and upper treating them as error-containing, without treating either as actual truth. Error-count/word-level bounds require finite specified opportunities; if unknown, bounds unavailable. Resolved-subset estimates labelled conditional on evaluability, not population recall.",
+  "proposed_pause_rule": "Hold method recommendation on any independently confirmed consequential harmful edit; report unresolved harm/miss evidence and criteria disagreements. Zero observed events is not proof of absence; H1/H2 must agree criteria before acceptance scoring."
+}

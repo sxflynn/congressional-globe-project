@@ -1,0 +1,16 @@
+{
+  "reviewer": "GPT-6 Luna delegate",
+  "scope": [
+    "design.json",
+    "README.md",
+    "sample.json",
+    "exposure.json",
+    "challenges.json",
+    "scorecard.json"
+  ],
+  "mode": "Bounded preparation review; no browsing/corpus discovery/source readings",
+  "findings": [],
+  "conclusion": "Counts, bounds, primary/conditional confirmation sampling weights, exposure limits, reference/cost proposal, missing outcomes, challenge distinction and unapproved standards reconcile. No required fixes.",
+  "corrected_observation": "Initial reviewer claim that confirmation weights were null was retracted. Root inspected metadata and validated all10 nonnull conditional probabilities/weights; reviewer confirmed.",
+  "source_or_human_grade": false
+}
