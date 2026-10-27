@@ -1,0 +1,297 @@
+{
+  "schema_version": "agentic-case-manifest-draft-v1",
+  "task": "T20",
+  "status": "offline preparation complete; no implementation or live authorization",
+  "selection_limit": 4,
+  "unique_window_count": 4,
+  "source_artifacts": [
+    {
+      "path": "artifacts/role-date-boundary-preparation-20261025-01/preparation.json",
+      "sha256": "197bd2076d9ba12a0603e63b908a69d700fe5a18f9e93f706a1e10189b9c2316",
+      "size_bytes": 118092
+    },
+    {
+      "path": "artifacts/scoped-date-contract-20261026-01/fixtures.json",
+      "sha256": "878c2a3ed17a0e4581653d85f866e8f815e2a4271415e806ea8a5f0fbfbf9042",
+      "size_bytes": 53482
+    },
+    {
+      "path": "artifacts/role-alias-preparation-20261023-02/provider-inputs.jsonl",
+      "sha256": "220898f3e12b0bb77132b65e365c94520df56ab92d855798cc36f228fb744a0f",
+      "size_bytes": 56813
+    },
+    {
+      "path": "artifacts/role-alias-preparation-20261023-02/alias-maps.json",
+      "sha256": "088150f8ed34883e8143168e03ababebaecd9c3058f3d584b85755e7ea6909ca",
+      "size_bytes": 692576
+    },
+    {
+      "path": "artifacts/v2-tagging-retry-20261022/runs/topic-mini-20261022-02/frozen-inputs.json",
+      "sha256": "dd671899477e2254f75e6c679c288b263803f7e811eb7d8b34ddf7ab48f2d339",
+      "size_bytes": 78797
+    },
+    {
+      "path": "artifacts/v2-tagging-retry-20261022/runs/topic-qwen-20261022-01/frozen-inputs.json",
+      "sha256": "e66ed188242aa68e3aaa594e11286d0b7f3735fa2c21b3bf9faf188c1b040b5f",
+      "size_bytes": 78800
+    },
+    {
+      "path": "artifacts/role-protocol-v2-20261025-02/revalidation.json",
+      "sha256": "6f749733d1ba8603e28442a55f92976f3101d3a9c884fa33f559c4d36fbc3099",
+      "size_bytes": 16486
+    },
+    {
+      "path": "docs/archive/human-review/HR-008-v1/original.md",
+      "sha256": "07571d77209d5aebc27952dd8dadfa2829915872470429db12a2390559d5e3a4",
+      "size_bytes": 15072
+    },
+    {
+      "path": "docs/archive/human-review/HR-008-v1/receipt.json",
+      "sha256": "31d55dc74809440146f6f4ee6a82c393571d00cb79d4d358c01026a6a6a9a9b9",
+      "size_bytes": 1394
+    },
+    {
+      "path": "artifacts/v2-tagging-retry-20261022/runs/topic-mini-20261022-02/results.jsonl",
+      "sha256": "12a0a12958f22341491a06367ae8b1395aebb2342c5a7697726f71f69fa207fb",
+      "size_bytes": 118073
+    },
+    {
+      "path": "artifacts/v2-tagging-retry-20261022/runs/topic-qwen-20261022-01/results.jsonl",
+      "sha256": "fb50507369a407a8f03bb31f9c4c32cbb96ddf585aca437983bbd1efa7272ed3",
+      "size_bytes": 78879
+    },
+    {
+      "path": "artifacts/agentic-design-20261026-01/README.md",
+      "sha256": "3b2468d297a7e20511d4405c4ec59dbc7592bd39c09da9c776b22a207b646208",
+      "size_bytes": 10346
+    }
+  ],
+  "snapshots": [
+    {
+      "path": "artifacts/agentic-cases-20261026-01/role-inputs.jsonl",
+      "sha256": "be6fb838ba984a3854f5d9f621ecceca77a4f8156c31584e9fc9d0962bcfbef0",
+      "size_bytes": 27737
+    },
+    {
+      "path": "artifacts/agentic-cases-20261026-01/date-fixtures.json",
+      "sha256": "2034794e01b2740489326d99eedd287ca3b475c765d32c63d6d396e83f285835"
+    },
+    {
+      "path": "artifacts/agentic-cases-20261026-01/role-source-maps.json",
+      "sha256": "3603b7cc18393483efd33576126eb7d09aecd81f06dc9d23db3cd3379b1c1a86"
+    },
+    {
+      "path": "artifacts/agentic-cases-20261026-01/topic-window.json",
+      "sha256": "581b5c5c4ed9b48984038f9a4e650a72d8c949ac4d3dd6a3a55a2b63a3fc6ab8"
+    },
+    {
+      "path": "artifacts/agentic-cases-20261026-01/frozen-expectations.json",
+      "sha256": "fe0869a57bb7ac82852fed2ce4893bfb8b7752bd83d3ae5a3f7a44b01dd69be6"
+    },
+    {
+      "path": "artifacts/agentic-cases-20261026-01/saved-role-replies.json",
+      "sha256": "0c924a55357e68dbe17e38496fc1ff2743f04aca91af2edd085dd9c210336df4"
+    },
+    {
+      "path": "artifacts/agentic-cases-20261026-01/saved-topic-results.json",
+      "sha256": "471fa2df7c69dd3a6bbf0eaf1d9dd4198e103be43a58e56c2a6ffc5f8309aedc"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "t2-4-053",
+      "purpose": [
+        "ordinary_explicit_cue",
+        "useful_immediate_preceding_context",
+        "date_negative"
+      ],
+      "input": {
+        "path": "artifacts/agentic-cases-20261026-01/role-inputs.jsonl",
+        "record_window_id": "t2-4-053",
+        "exact_line_sha256": "4e608a356cbfb663f74c4b9e5420061304765c8d2ff549a23d0efcc52a959398"
+      },
+      "source_maps": {
+        "path": "artifacts/agentic-cases-20261026-01/role-source-maps.json",
+        "sha256": "3603b7cc18393483efd33576126eb7d09aecd81f06dc9d23db3cd3379b1c1a86"
+      },
+      "date_fixture": {
+        "path": "artifacts/agentic-cases-20261026-01/date-fixtures.json",
+        "sha256": "2034794e01b2740489326d99eedd287ca3b475c765d32c63d6d396e83f285835"
+      },
+      "targets": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "expectations": [
+        {
+          "outcome": "P1 explicitly supplies Mr. KASSON; P2 is a possible local continuation, with exact P1 obtainable by preceding 1 from P2.",
+          "authority": "AI-provisional raw-text design expectation, not a new historical label; speaker continuity must be host-supported before tool release."
+        },
+        {
+          "outcome": "Do not carry Kasson into P3, which begins Mr. HOLMES. Modal may in P2 supplies no date; all date targets unknown.",
+          "authority": "Frozen preparation source_expectations; T10 hand-authored date fixture."
+        }
+      ],
+      "context_availability": {
+        "P2_preceding_1": [
+          "P1"
+        ],
+        "cross_page": false,
+        "continuity_policy": "T10 intentionally gives each paragraph its own date region. Speaker-turn continuity is not supplied by those regions and remains a T21/T22 design issue."
+      },
+      "saved_results": [
+        {
+          "path": "artifacts/agentic-cases-20261026-01/date-fixtures.json",
+          "kind": "hand-authored offline date result, not provider reply",
+          "compatibility": "Exact frozen date packet only; not a tool-loop result."
+        }
+      ],
+      "prior_exposure": "Existing role input and date fixture; development-exposed, not held out. No matching provider role reply in the inspected four-record revalidation inventory."
+    },
+    {
+      "case_id": "hr008-cross-page-p5-403-404-v1",
+      "purpose": [
+        "cross_page_context_need",
+        "context_reach_limit"
+      ],
+      "input": {
+        "path": "artifacts/agentic-cases-20261026-01/role-inputs.jsonl",
+        "record_window_id": "hr008-cross-page-p5-403-404-v1",
+        "exact_line_sha256": "f5a291943a57e42968a1843c2c6dc2103edf9687bb6bcb3f2deaeb31c9856c4c"
+      },
+      "source_maps": {
+        "path": "artifacts/agentic-cases-20261026-01/role-source-maps.json",
+        "sha256": "3603b7cc18393483efd33576126eb7d09aecd81f06dc9d23db3cd3379b1c1a86"
+      },
+      "targets": [
+        "P12",
+        "P13"
+      ],
+      "expectations": [
+        {
+          "outcome": "Preserve human-reported need for preceding-page speaker context. Do not assign a named speaker merely from that general instruction.",
+          "authority": "HR-008 overall guidance; output-informed human calibration."
+        },
+        {
+          "outcome": "P7 has Mr. WADE; P8 continues; P9-P11 are page/header/date fragments before P12. Saved model attributions are proposals, not new human confirmation.",
+          "authority": "Exact prepared packet and two historical role-v2 revalidated replies."
+        }
+      ],
+      "context_availability": {
+        "same_prepared_window_previous_page_available": true,
+        "P12_preceding_2": [
+          "P10",
+          "P11"
+        ],
+        "P13_preceding_2": [
+          "P11",
+          "P12"
+        ],
+        "gap": "T19 cannot reach P7 from these fixed anchors within two paragraphs; repeated calls cannot re-anchor. No header skipping or budget expansion is authorized. Cross-page adjacency/source geometry are frozen; supported turn-edge policy still needs explicit design."
+      },
+      "saved_results": [
+        {
+          "path": "artifacts/agentic-cases-20261026-01/saved-role-replies.json",
+          "records": 2,
+          "kind": "historical mini/qwen role replies",
+          "compatibility": "Same exact complete historical role packet; not matched baseline for reduced target-only/new tool requests. Inputs/prompts/backend identities must match before any reuse as a result."
+        }
+      ],
+      "prior_exposure": "Already processed by Mini and Qwen and exposed in human topic review; not blind or held out. HR-005 is not imported as a blanket confirmation of P12/P13."
+    },
+    {
+      "case_id": "house-opening-december-4-1865-v1",
+      "purpose": [
+        "ordinary_date_positive",
+        "chamber_boundary_stop"
+      ],
+      "input": {
+        "path": "artifacts/agentic-cases-20261026-01/date-fixtures.json",
+        "sha256": "2034794e01b2740489326d99eedd287ca3b475c765d32c63d6d396e83f285835"
+      },
+      "targets": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "expectations": [
+        {
+          "outcome": "Explicit December 4, 1865 in P3 supports proposed date 1865-12-04 for P3-P6; P1/P2 stay unknown.",
+          "authority": "Frozen AI-provisional preparation and T10 offline fixture, not human gold."
+        },
+        {
+          "outcome": "Stop at Senate/House transition; do not carry FOOT into House or date backward. Clerk identity remains unsupported by the date fixture.",
+          "authority": "Frozen preparation role_boundary_stop and T10 host-region assertions."
+        }
+      ],
+      "context_availability": {
+        "P3_preceding_1": "P2 exists but crosses frozen Senate/House boundary; unavailable/boundary_stop",
+        "scope_limit": "No continuation after P6 established."
+      },
+      "saved_results": [
+        {
+          "path": "artifacts/agentic-cases-20261026-01/date-fixtures.json",
+          "kind": "hand-authored offline date result",
+          "compatibility": "Exact frozen date packet only; no live provider reply inspected."
+        }
+      ],
+      "prior_exposure": "Prepared T4/T10 cases and tests; development-exposed, no held-out accuracy estimate."
+    },
+    {
+      "case_id": "rawstatic-distractor-p2-01",
+      "purpose": [
+        "missing_evidence",
+        "unsupported_subject_negative"
+      ],
+      "input": {
+        "path": "artifacts/agentic-cases-20261026-01/topic-window.json",
+        "sha256": "581b5c5c4ed9b48984038f9a4e650a72d8c949ac4d3dd6a3a55a2b63a3fc6ab8"
+      },
+      "targets": [
+        "par_000328_000032"
+      ],
+      "expectations": [
+        {
+          "outcome": "Fragment stops at American; military-affairs inference is rejected. Preserve petition discovery and unknown object.",
+          "authority": "HR-008 S2 human judgment applied to plan, plus exact frozen raw fragment."
+        },
+        {
+          "outcome": "Human separately reports 660 and American labor; preserve as human-reported reading, not supplied raw context or a newly validated correction.",
+          "authority": "HR-008 S2 original response; not an image inspection in T20."
+        }
+      ],
+      "context_availability": {
+        "missing_object": "Absent from target raw text; next paragraph begins another petition. Neighbor access cannot fabricate labor.",
+        "tool_scope": "Scan/roster tools excluded by T19. Any synthetic missing-source transport scenario must be labelled synthetic and cannot become a fifth historical case."
+      },
+      "saved_results": [
+        {
+          "path": "artifacts/agentic-cases-20261026-01/saved-topic-results.json",
+          "records": 2,
+          "kind": "historical topic outputs",
+          "compatibility": "Exact historical raw topic windows match Mini/Qwen frozen windows. Different schema/task from role/date/tool requests; evidence only, not a compatible tool-loop result."
+        }
+      ],
+      "prior_exposure": "Mini/Qwen proposals, paired AI review and HR-008 human output-informed review; fully exposed diagnostic, not blind gold."
+    }
+  ],
+  "compatibility_policy": "Copies preserve exact historical inputs/results. No saved result is a T19 tool-loop result. Exact original request/prompt/schema/provider/config and target/source hashes must match before result reuse; shared text alone is insufficient. No spent call is rerun.",
+  "limitations": [
+    "Not representative or held out; no corpus accuracy or cost estimate.",
+    "No fresh corpus search, download, scan inspection, experiment provider call, source correction or human label import.",
+    "T19 context reach and missing turn-edge policies remain design constraints for T21; case preparation does not certify supported edges.",
+    "Synthetic tool responses/argument failures belong to later offline transport tests, not historical findings."
+  ],
+  "checks": {
+    "frozen_t2_exact_line_hash": true,
+    "date_paragraph_hashes": true,
+    "topic_raw_and_static_hashes": true,
+    "role_span_offsets_and_text": true,
+    "historical_role_reply_hashes": true,
+    "topic_windows_equal_across_saved_providers": true
+  }
+}

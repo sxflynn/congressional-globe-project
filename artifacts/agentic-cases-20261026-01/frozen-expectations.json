@@ -1,0 +1,66 @@
+{
+  "cases": [
+    {
+      "case_id": "t2-4-053",
+      "source_expectations": {
+        "status": "AI-provisional, copied from frozen source review and raw-context inspection; not human gold",
+        "date_negative": {
+          "cue_alias": "C20",
+          "quote": "may",
+          "offset_convention": "Unicode codepoints, half-open within P2",
+          "expected": "Do not assign a date from the modal “may”; the frozen source review explicitly marks lexical may cues as not dates. No date is evidenced by the supplied passage."
+        },
+        "boundary_stop": [
+          {
+            "from": "P1-P2 Mr. KASSON",
+            "through": "P3 Mr. HOLMES",
+            "expected": "Do not carry Kasson across Holmes’s explicit new speaker cue."
+          },
+          {
+            "from": "P5 Mr. HOLMES",
+            "through": "P6-P8 procedural outcome and heading",
+            "expected": "Do not carry Holmes as speaker into procedural result/next section."
+          },
+          {
+            "from": "P9 LAND TITLES IN CALIFORNIA / P10 Mr. JULIAN",
+            "through": "later turns and TERRITORY OF LINCOLN section",
+            "expected": "Keep Julian, Bidwell, the SPEAKER title, Ashley and Alley local; Mr. Speaker is a title, not a named identity; do not carry an earlier named person through the proceeding change."
+          }
+        ],
+        "unknowns": [
+          "The case does not establish any date for this passage.",
+          "No image-level confirmation of OCR or layout was performed."
+        ]
+      }
+    },
+    {
+      "case_id": "house-opening-december-4-1865-v1",
+      "source_expectations": {
+        "status": "AI-provisional raw-text expectations; not human gold and not image-certified",
+        "date_positive": {
+          "value": "1865-12-04",
+          "precision": "day",
+          "kind": "House proceeding/opening date",
+          "target_scope": [
+            "P3",
+            "P4",
+            "P5",
+            "P6"
+          ],
+          "method": "Explicit text “Monday, December 4, 1865” in P3, tied by the same paragraph to the House opening and followed by the Clerk’s roll call."
+        },
+        "role_boundary_stop": {
+          "previous_turn": "P1 Mr. FOOT, followed by P2 “the Senate adjourned.”",
+          "new_section": "P3 begins HOUSE OF REPRESENTATIVES and gives its own complete date; P4 begins “The CLERK said”.",
+          "expected": "Do not attribute the new House Clerk/roll-call sequence to Mr. FOOT. Keep date assignment independent of speaker identity and role."
+        },
+        "scope_unknowns": [
+          "Do not infer the Clerk’s role/identity from the date packet; role and date evidence remain separate.",
+          "Do not propagate this House header backward to prior Senate text solely from this record; any date on the prior Senate turn needs its own anchor.",
+          "Date continuation after P6 is untested; do not treat this tiny window as evidence for a corpus-wide propagation rule.",
+          "OCR reading and printed layout are not visually checked."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "records": [
+    {
+      "model": "mini",
+      "window_id": "hr008-cross-page-p5-403-404-v1",
+      "v1_status": "valid",
+      "v1_validation_error": null,
+      "source_summary": "artifacts/role-comparison-20261023-02/mini/summary.json",
+      "raw_reply": "{\"speaker_roles\":[{\"candidate_id\":null,\"evidence_ids\":[],\"target_ids\":[\"P1\"],\"role\":\"other\",\"status\":\"unknown\",\"basis\":\"Narration/result line with no speaker attribution.\"},{\"candidate_id\":\"C1\",\"evidence_ids\":[\"C1\",\"P2\",\"P3\",\"P4\",\"P5\"],\"target_ids\":[\"P2\",\"P3\",\"P4\",\"P5\"],\"role\":\"floor_speaker\",\"status\":\"proposed\",\"basis\":\"Mr. WADE is the named floor speaker introducing and defending the amendment across the contiguous passage.\"},{\"candidate_id\":\"C2\",\"evidence_ids\":[\"C2\",\"P6\"],\"target_ids\":[\"P6\"],\"role\":\"floor_speaker\",\"status\":\"proposed\",\"basis\":\"Mr. JOHNSON asks a question from the floor.\"},{\"candidate_id\":\"C1\",\"evidence_ids\":[\"C3\",\"P7\",\"P8\",\"P12\",\"P13\",\"P15\",\"P16\"],\"target_ids\":[\"P7\",\"P8\",\"P12\",\"P13\",\"P15\",\"P16\"],\"role\":\"floor_speaker\",\"status\":\"proposed\",\"basis\":\"Mr. WADE resumes and continues the floor speech after Johnson's interruption.\"},{\"candidate_id\":null,\"evidence_ids\":[],\"target_ids\":[\"P9\",\"P10\",\"P11\"],\"role\":\"other\",\"status\":\"unknown\",\"basis\":\"Page/header text, not attributed speech.\"},{\"candidate_id\":\"C4\",\"evidence_ids\":[\"C4\",\"P14\"],\"target_ids\":[\"P14\"],\"role\":\"floor_speaker\",\"status\":\"proposed\",\"basis\":\"Mr. SUMNER interjects with a brief question.\"}]}",
+      "raw_reply_sha256": "31cbf8d428ca6fed90032a386b39daaccb3ce94ef89672e4134c2fb5f66baedb",
+      "provider_response_sha256": "1206257178253cdac23cbe65850e74a507a00d1f527a2c58ff71d6e47dc2c74e",
+      "v2_status": "valid",
+      "v2_result": {
+        "speaker_roles": [
+          {
+            "candidate_id": null,
+            "evidence_ids": [],
+            "target_ids": [
+              "P1"
+            ],
+            "role": "other",
+            "status": "unknown",
+            "basis": "Narration/result line with no speaker attribution."
+          },
+          {
+            "candidate_id": "C1",
+            "evidence_ids": [
+              "C1",
+              "P2",
+              "P3",
+              "P4",
+              "P5"
+            ],
+            "target_ids": [
+              "P2",
+              "P3",
+              "P4",
+              "P5"
+            ],
+            "role": "floor_speaker",
+            "status": "proposed",
+            "basis": "Mr. WADE is the named floor speaker introducing and defending the amendment across the contiguous passage."
+          },
+          {
+            "candidate_id": "C2",
+            "evidence_ids": [
+              "C2",
+              "P6"
+            ],
+            "target_ids": [
+              "P6"
+            ],
+            "role": "floor_speaker",
+            "status": "proposed",
+            "basis": "Mr. JOHNSON asks a question from the floor."
+          },
+          {
+            "candidate_id": "C1",
+            "evidence_ids": [
+              "C3",
+              "P7",
+              "P8",
+              "P12",
+              "P13",
+              "P15",
+              "P16"
+            ],
+            "target_ids": [
+              "P7",
+              "P8",
+              "P12",
+              "P13",
+              "P15",
+              "P16"
+            ],
+            "role": "floor_speaker",
+            "status": "proposed",
+            "basis": "Mr. WADE resumes and continues the floor speech after Johnson's interruption."
+          },
+          {
+            "candidate_id": null,
+            "evidence_ids": [],
+            "target_ids": [
+              "P9",
+              "P10",
+              "P11"
+            ],
+            "role": "other",
+            "status": "unknown",
+            "basis": "Page/header text, not attributed speech."
+          },
+          {
+            "candidate_id": "C4",
+            "evidence_ids": [
+              "C4",
+              "P14"
+            ],
+            "target_ids": [
+              "P14"
+            ],
+            "role": "floor_speaker",
+            "status": "proposed",
+            "basis": "Mr. SUMNER interjects with a brief question."
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen",
+      "window_id": "hr008-cross-page-p5-403-404-v1",
+      "v1_status": "valid",
+      "v1_validation_error": null,
+      "source_summary": "artifacts/role-comparison-20261023-02/qwen/summary.json",
+      "raw_reply": "{\n  \"speaker_roles\": [\n    {\n      \"candidate_id\": \"C1\",\n      \"evidence_ids\": [\n        \"C1\",\n        \"P2\"\n      ],\n      \"target_ids\": [\n        \"P2\",\n        \"P3\",\n        \"P4\",\n        \"P5\"\n      ],\n      \"role\": \"floor_speaker\",\n      \"status\": \"proposed\",\n      \"basis\": \"Cue C1 'Mr. WADE' introduces P2 where he renews an amendment and presents the text of additional sections in P3-P5.\"\n    },\n    {\n      \"candidate_id\": \"C2\",\n      \"evidence_ids\": [\n        \"C2\",\n        \"P6\"\n      ],\n      \"target_ids\": [\n        \"P6\"\n      ],\n      \"role\": \"floor_speaker\",\n      \"status\": \"proposed\",\n      \"basis\": \"Cue C2 'Mr. JOHNSON' introduces P6 where he asks a question regarding the aggregate increase in appropriations.\"\n    },\n    {\n      \"candidate_id\": \"C3\",\n      \"evidence_ids\": [\n        \"C3\",\n        \"P7\",\n        \"P8\",\n        \"P12\",\n        \"P13\"\n      ],\n      \"target_ids\": [\n        \"P7\",\n        \"P8\",\n        \"P12\",\n        \"P13\"\n      ],\n      \"role\": \"floor_speaker\",\n      \"status\": \"proposed\",\n      \"basis\": \"Cue C3 'Mr. WADE' introduces P7. P8 continues his argument. P9-P11 are page headers. P12 and P13 continue his speech, discussing the House's resolution and the Sergeant-at-Arms, interrupted by P14.\"\n    },\n    {\n      \"candidate_id\": \"C4\",\n      \"evidence_ids\": [\n        \"C4\",\n        \"P14\"\n      ],\n      \"target_ids\": [\n        \"P14\"\n      ],\n      \"role\": \"floor_speaker\",\n      \"status\": \"proposed\",\n      \"basis\": \"Cue C4 'Mr. SUMNER' introduces P14 where he asks 'Who is that?' interrupting the previous speaker.\"\n    },\n    {\n      \"candidate_id\": \"C1\",\n      \"evidence_ids\": [\n        \"P15\",\n        \"P16\"\n      ],\n      \"target_ids\": [\n        \"P15\",\n        \"P16\"\n      ],\n      \"role\": \"floor_speaker\",\n      \"status\": \"proposed\",\n      \"basis\": \"P15 begins with 'Mr. Yv'ADE' (OCR error for WADE) and answers Sumner's question, continuing the argument from P13. P16 continues this speech.\"\n    }\n  ]\n}",
+      "raw_reply_sha256": "17656fd7a1c20a8b258e8c79dc33267b68fbb1fc3ee989c88dba1ca3593a16d3",
+      "provider_response_sha256": "b8f18457cf8eaa1fa306df44cdba980b608e42c5f192b1472ea9800f11715fd6",
+      "v2_status": "valid",
+      "v2_result": {
+        "speaker_roles": [
+          {
+            "candidate_id": "C1",
+            "evidence_ids": [
+              "C1",
+              "P2"
+            ],
+            "target_ids": [
+              "P2",
+              "P3",
+              "P4",
+              "P5"
+            ],
+            "role": "floor_speaker",
+            "status": "proposed",
+            "basis": "Cue C1 'Mr. WADE' introduces P2 where he renews an amendment and presents the text of additional sections in P3-P5."
+          },
+          {
+            "candidate_id": "C2",
+            "evidence_ids": [
+              "C2",
+              "P6"
+            ],
+            "target_ids": [
+              "P6"
+            ],
+            "role": "floor_speaker",
+            "status": "proposed",
+            "basis": "Cue C2 'Mr. JOHNSON' introduces P6 where he asks a question regarding the aggregate increase in appropriations."
+          },
+          {
+            "candidate_id": "C3",
+            "evidence_ids": [
+              "C3",
+              "P7",
+              "P8",
+              "P12",
+              "P13"
+            ],
+            "target_ids": [
+              "P7",
+              "P8",
+              "P12",
+              "P13"
+            ],
+            "role": "floor_speaker",
+            "status": "proposed",
+            "basis": "Cue C3 'Mr. WADE' introduces P7. P8 continues his argument. P9-P11 are page headers. P12 and P13 continue his speech, discussing the House's resolution and the Sergeant-at-Arms, interrupted by P14."
+          },
+          {
+            "candidate_id": "C4",
+            "evidence_ids": [
+              "C4",
+              "P14"
+            ],
+            "target_ids": [
+              "P14"
+            ],
+            "role": "floor_speaker",
+            "status": "proposed",
+            "basis": "Cue C4 'Mr. SUMNER' introduces P14 where he asks 'Who is that?' interrupting the previous speaker."
+          },
+          {
+            "candidate_id": "C1",
+            "evidence_ids": [
+              "P15",
+              "P16"
+            ],
+            "target_ids": [
+              "P15",
+              "P16"
+            ],
+            "role": "floor_speaker",
+            "status": "proposed",
+            "basis": "P15 begins with 'Mr. Yv'ADE' (OCR error for WADE) and answers Sumner's question, continuing the argument from P13. P16 continues this speech."
+          }
+        ]
+      }
+    }
+  ]
+}
