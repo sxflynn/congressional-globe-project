@@ -66,3 +66,9 @@ These are discussion notes, not a verbatim transcript, final cleanup policy, tas
 - Which existing deterministic rules, dictionaries, source confidence fields and saved evidence can be reused without rerunning spent experiments?
 
 No answers or thresholds are invented here. The previously recorded six-paragraph date result and raw/static search results remain small engineering/diagnostic evidence, not validation of this newly discussed detector-and-repair workflow. Final cleanup policy and full-corpus processing remain separate human decisions.
+
+### Follow-up — what the score is for
+
+- The human clarified that the desired destination is to clean everything, so prioritizing a subset may not be the main reason to develop a score. This expresses the intended destination, not authorization to launch a full-corpus run.
+- The human is questioning whether a confidence score is worthwhile and suggested its purpose may instead be **predicting accuracy before processing**. This remains exploratory, not a selected scoring method.
+- Distinguish two possible targets for discussion: how damaged the input OCR is versus how reliably the proposed cleanup workflow will repair it. These are different measurements; no validated relationship or probability estimate exists yet.
