@@ -22,4 +22,4 @@ Shared entry point for Codex, Claude, OpenCode and other agents. New human instr
 - Read [engineering rules](docs/reference/engineering.md) before implementation. Use uv/Pydantic v2, complexity≤5 and `make gate` for code. Markdown edits in Codex require elevated `npx prettier@3.9.10 --prose-wrap never --write "**/*.md"`; check `git diff --check`.
 - Commit completed units with `[model: ACTUAL KNOWN MODEL]` at the end of a single-line message; use `unknown` if unavailable.
 
-Detailed rules and commands are linked by task in the master. Do not read the archive or every reference file at startup. Compatibility pointers (`PROGRESS.md`, `V2_*`, etc.) are not instructions or separate backlogs.
+Detailed rules and commands are linked by task in the master. Do not read the archive or every reference file at startup. Superseded planning files were removed after consolidation. Historical copies under `docs/archive/` are evidence, not current instructions or separate backlogs.
