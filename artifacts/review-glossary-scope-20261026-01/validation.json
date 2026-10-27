@@ -1,0 +1,90 @@
+{
+  "task": "T40",
+  "request": "Glossary definitions only for AI-written review-desk sentences; no vocabulary underlining in original1800s writing.",
+  "presentation_catalog_sha256": "de09bff53aa0bcaf689ea8b34008b4c8832e694e45b32f6c031d96a5c2126ca7",
+  "classified_evidence_bodies": 30,
+  "source_bodies": 20,
+  "source_spans": 72,
+  "explicit_ai_only_bodies": 10,
+  "render_audit": {
+    "DEMO-001": {
+      "evidence_bodies": 1,
+      "source_bodies": 1,
+      "plain_spans": 1,
+      "source_buttons": 0,
+      "explanation_buttons": 0
+    },
+    "HR-003": {
+      "evidence_bodies": 4,
+      "source_bodies": 0,
+      "plain_spans": 0,
+      "source_buttons": 0,
+      "explanation_buttons": 63
+    },
+    "HR-004": {
+      "evidence_bodies": 13,
+      "source_bodies": 13,
+      "plain_spans": 13,
+      "source_buttons": 0,
+      "explanation_buttons": 0
+    },
+    "HR-009": {
+      "evidence_bodies": 3,
+      "source_bodies": 0,
+      "plain_spans": 0,
+      "source_buttons": 0,
+      "explanation_buttons": 53
+    },
+    "HR-010": {
+      "evidence_bodies": 9,
+      "source_bodies": 6,
+      "plain_spans": 58,
+      "source_buttons": 0,
+      "explanation_buttons": 114
+    }
+  },
+  "unknown_or_changed_body_behavior": "Escaped plain text; no glossary buttons. Only explicitly classified AI prose is annotated.",
+  "immutable_packet_files_unchanged": true,
+  "database_content_unchanged": true,
+  "before_evidence": "before.json",
+  "rendered_evidence_text_matches_original_character_for_character": true,
+  "live_browser": {
+    "url": "http://10.0.0.56:8501/",
+    "packet": "HR-010 v1",
+    "exceptions": [],
+    "plain_source_spans": 58,
+    "buttons_inside_source_spans": 0,
+    "historical_term_buttons": [],
+    "ai_paragraph_boundaries_help": true,
+    "ai_rejected_help": true,
+    "ai_raw_reply_help": true,
+    "help_buttons": 217,
+    "mouse_definition_open": true,
+    "keyboard_Enter_open_Escape_close": true,
+    "same_input_and_unsaved_note_preserved": true,
+    "submit_events": 0,
+    "synthetic_note_cleared": true,
+    "saved_or_submitted": false,
+    "screenshot_visually_inspected": "plain-source-ai-help.png",
+    "physical_ios_test": false
+  },
+  "independent_review": {
+    "model": "gpt-6-luna",
+    "verdict": "No remaining blocker",
+    "first_finding": "Unknown evidence initially defaulted to annotation.",
+    "resolution": "Unknown/changed bodies now plain by default; explicit AI classification required and tested."
+  },
+  "checks": {
+    "focused_tests": 40,
+    "full_gate_tests": 579,
+    "gate_exit_code": 0,
+    "markdown_formatter_passed": true,
+    "local_file_links_checked": true,
+    "git_diff_check_passed": true
+  },
+  "limits": [
+    "This change concerns review presentation, not historical accuracy or human grading.",
+    "Current source spans were explicitly inspected; newly authored evidence requires its own explicit classification.",
+    "No physical phone/tablet test or new historical/model inference."
+  ]
+}

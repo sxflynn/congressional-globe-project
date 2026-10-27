@@ -10,6 +10,7 @@ from typing import Any
 
 import streamlit as st
 
+from congressional_globe.review_evidence import show_evidence
 from congressional_globe.review_glossary import (
     annotated_html,
     definitions,
@@ -62,7 +63,7 @@ def _widget_prefix(packet_id: str, version: int, reviewer: str, revision_id: str
 def _evidence(question: Any, scope: str, glossary: list[dict]) -> None:
     for index, item in enumerate(_value(question, "evidence", [])):
         show_text(str(_value(item, "label", "Evidence")), f"{scope}-label-{index}", glossary)
-        show_text(str(_value(item, "text", "")), f"{scope}-evidence-{index}", glossary, source=True)
+        show_evidence(str(_value(item, "text", "")), f"{scope}-evidence-{index}", glossary)
         url = _safe_url(_value(item, "url"))
         if url:
             show_inline_scan(url)

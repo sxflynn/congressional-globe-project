@@ -62,7 +62,7 @@ def annotated_html(text: str, entries: dict[str, GlossaryTerm], scope: str) -> s
 def show_text(
     text: str, scope: str, custom: list[dict] | None = None, *, source: bool = False
 ) -> None:
-    content = annotated_html(text, definitions(custom), scope)
+    content = html.escape(text) if source else annotated_html(text, definitions(custom), scope)
     card = " source-card glossary-source" if source else ""
     st.markdown(f'<div class="glossary-copy{card}">{content}</div>', unsafe_allow_html=True)
 

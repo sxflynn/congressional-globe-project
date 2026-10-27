@@ -1,9 +1,12 @@
 from __future__ import annotations
 
+import hashlib
+import json
+
 from lxml import html
 from streamlit.testing.v1 import AppTest
 
-from congressional_globe import review_app
+from congressional_globe import review_app, review_evidence
 from congressional_globe.review_store import ReviewStore
 
 
@@ -154,6 +157,11 @@ def test_review_opens_directly_without_access_code(tmp_path, monkeypatch) -> Non
 
 def test_packet_definitions_render_in_prompts_evidence_and_choice_help(tmp_path, monkeypatch):
     store = _store(tmp_path, monkeypatch)
+    presentation = json.loads(review_evidence.SOURCE_PRESENTATION.read_text())
+    presentation["source_spans"][hashlib.sha256(b"One widget.").hexdigest()] = []
+    classified = tmp_path / "presentation.json"
+    classified.write_text(json.dumps(presentation))
+    monkeypatch.setattr(review_evidence, "SOURCE_PRESENTATION", classified)
     store.register(
         {
             "id": "DEMO-TEST",
