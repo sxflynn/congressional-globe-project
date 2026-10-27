@@ -1,0 +1,22 @@
+{
+  "task": "T30",
+  "full_gate_passed": true,
+  "pytest_passed": 535,
+  "new_recovery_cases": 15,
+  "actual_process_cases_retained": 13,
+  "controlled_sigkill_points": 5,
+  "local_links_checked": 99,
+  "master_states_and_table_checked": true,
+  "live_provider_requests": 0,
+  "sha256": {
+    "src/congressional_globe/role_run_store.py": "e20526e1211219e0390443504b11f54fbe6ac6aec038cbd2d724070e74dd138a",
+    "src/congressional_globe/role_run_io.py": "93cdd128e762b56244e8631e20ed5baa47b61a4cbda04702d64244581c02a357",
+    "src/congressional_globe/role_runner.py": "3b37bf66845a9efb2041a59863396a462963f28c712aa00b20e794a090e3b37c",
+    "tests/test_metadata_recovery.py": "011df8126ab44533eeaf28c2530693799bbcabf89f0d9047b78c5550ba099a95",
+    "tests/test_metadata_runner.py": "a49dab89c87da46d51b61b924318607640b99ec0447fd08839a4881203140517",
+    "artifacts/metadata-recovery-20261026-01/proof.json": "bb1bc8deb94418d14ee9fefe0c8a31f3e5ea6c77beee6fcc82b94eb8bd346fe7",
+    "artifacts/metadata-recovery-20261026-01/review.json": "45c3121103f469a1d0ae6547d3460ed7160285f74aa07cbad54d7849f25e93be",
+    "artifacts/metadata-recovery-20261026-01/gate-final.log": "c579a34a465041663340bb1300b6467008544df7e7e1dc1110435e7592e53508"
+  },
+  "scope": "Offline metadata recovery and conservative per-run accounting; real backend/stage acceptance unproved"
+}

@@ -16,8 +16,10 @@ from concurrent.futures import TimeoutError as FutureTimeout
 from contextlib import contextmanager
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Any
 
 from dotenv import load_dotenv
+from pydantic import BaseModel, ConfigDict
 
 from congressional_globe.metadata_results import (
     MetadataContract,
@@ -28,6 +30,7 @@ from congressional_globe.metadata_results import (
 from congressional_globe.role_provider import RoleProvider
 from congressional_globe.role_run_io import (
     RunOptions,
+    frozen_request,
     read_prepared,
     reservation,
     run_config,
@@ -36,6 +39,15 @@ from congressional_globe.role_run_io import (
 from congressional_globe.role_run_store import RoleRunStore
 
 Caller = Callable[[dict, str, dict], dict]
+
+
+class _ProviderReply(BaseModel):
+    model_config = ConfigDict(extra="allow", strict=True)
+    raw_response: str
+    output_text: str
+    status: str
+    finish_reason: str | None
+    usage: dict | None
 
 
 @contextmanager
@@ -63,8 +75,8 @@ def _progress(store: RoleRunStore, started: float) -> dict:
     statuses = summary["statuses"]
     total = sum(statuses.values())
     completed = total - statuses["pending"] - statuses["inflight"]
-    durations = [row["result"].get("elapsed_seconds", 0) for row in store.results()]
-    mean = sum(durations) / len(durations) if durations else None
+    durations = [row["result"].get("elapsed_seconds") for row in store.results()]
+    mean = _mean_duration(durations)
     return {
         **summary,
         "total": total,
@@ -75,6 +87,12 @@ def _progress(store: RoleRunStore, started: float) -> dict:
         else round(mean * statuses["pending"], 1),
         "eta_basis": "mean completed request duration; unknown until first result",
     }
+
+
+def _mean_duration(durations: list) -> float | None:
+    if not durations or None in durations:
+        return None
+    return sum(durations) / len(durations)
 
 
 def _wait_call(
@@ -104,9 +122,10 @@ def _wait_call(
 def _parse_result(
     response: dict, packet: dict, frozen: dict, contract: MetadataContract
 ) -> tuple[str, dict]:
-    if response["status"] != "completed" or response["finish_reason"] == "length":
-        return "invalid", {"validation_error": "Provider response incomplete or refused"}
     try:
+        reply = _ProviderReply.model_validate(response)
+        if reply.status != "completed" or reply.finish_reason == "length":
+            return "invalid", {"validation_error": "Provider response incomplete or refused"}
         parsed = json.loads(response["output_text"])
         validated = validated_metadata(parsed, packet, contract)
         return "valid", {
@@ -130,8 +149,11 @@ def _attempt(
     contract: MetadataContract,
 ) -> tuple[str, dict]:
     tick = time.monotonic()
+    elapsed = None
     try:
         response = _wait_call(caller, packet, prompt, schema, output, store, started)
+        elapsed = round(time.monotonic() - tick, 3)
+        store.record_response(store.inflight_id(packet["window_id"]), response, elapsed)
         status, validation = _parse_result(response, packet, frozen, contract)
         result = {**response, **validation}
     except Exception as error:
@@ -143,7 +165,8 @@ def _attempt(
             "usage": None,
             "outcome": "No usable response; processing/usage unknown. Do not auto-retry.",
         }
-    return status, {**result, "elapsed_seconds": round(time.monotonic() - tick, 3)}
+    measured = round(time.monotonic() - tick, 3) if elapsed is None else elapsed
+    return status, {**result, "elapsed_seconds": measured}
 
 
 def _call_one(
@@ -156,8 +179,9 @@ def _call_one(
     started: float,
     frozen: dict,
     contract: MetadataContract,
+    request: dict,
 ) -> str:
-    attempt_id = store.start(packet["window_id"])
+    attempt_id = store.start(packet["window_id"], request)
     _event(
         output,
         "request_started",
@@ -208,11 +232,19 @@ def _work_store(
     started: float,
     sources: dict,
 ) -> dict:
+    _recover_saved(store, sources, options.contract)
     _require_no_unknown(store)
+    prior_seconds = store.budget_summary()["seconds"]
     _event(options.output, "worker_started", pid=os.getpid(), **_progress(store, started))
-    packet = store.next_pending()
+    packet = _eligible_pending(store)
     while packet is not None:
-        if time.monotonic() - started + options.timeout > options.max_seconds:
+        if not _has_budget(options, store, started, prior_seconds):
+            _event(
+                options.output,
+                "dispatch_stopped",
+                reason="insufficient_or_unknown_cumulative_budget",
+                cumulative_usage=store.budget_summary(),
+            )
             break
         status = _call_one(
             caller,
@@ -224,15 +256,55 @@ def _work_store(
             started,
             sources[packet["window_id"]],
             options.contract,
+            frozen_request(options, packet, prompt, schema),
         )
         if status != "valid":
             break
-        packet = store.next_pending()
+        packet = _eligible_pending(store)
     summary = _summary(store, options.provider)
     write_json(options.output / "summary.json", summary)
     write_json(options.output / "proposals.json", _proposal_export(summary, options.contract))
     _event(options.output, "worker_stopped", summary=summary, **_progress(store, started))
     return summary
+
+
+def _eligible_pending(store: RoleRunStore) -> dict | None:
+    statuses = store.summary()["statuses"]
+    if statuses["invalid"] or statuses["error"]:
+        return None
+    return store.next_pending()
+
+
+def _recover_saved(store: RoleRunStore, sources: dict, contract: MetadataContract) -> None:
+    for saved in store.saved_responses():
+        frozen = sources[saved["window_id"]]
+        packet = store.packet(saved["window_id"])
+        status, validation = _parse_result(saved["response"], packet, frozen, contract)
+        result = {**saved["response"], **validation, "elapsed_seconds": saved["elapsed_seconds"]}
+        store.finish(saved["attempt_id"], result, status)
+
+
+def _has_budget(
+    options: RunOptions, store: RoleRunStore, started: float, prior_seconds: float
+) -> bool:
+    usage = store.budget_summary()
+    if usage["unknown_elapsed"] or usage["unknown_usage"]:
+        return False
+    if usage["calls"] >= options.limit or usage["output_limit_exceeded"]:
+        return False
+    elapsed = max(usage["seconds"], prior_seconds + time.monotonic() - started)
+    return elapsed + options.timeout <= options.max_seconds and _paid_capacity(options, store)
+
+
+def _paid_capacity(options: RunOptions, store: RoleRunStore) -> bool:
+    spent = _cost(store.results(), options.provider)
+    if spent is None:
+        return False
+    packet = store.next_pending()
+    if packet is None:
+        return spent <= options.budget_usd
+    reserved = store.config["request_reservations_usd"][packet["window_id"]]
+    return spent + reserved <= options.budget_usd
 
 
 def _proposal_export(summary: dict, contract: MetadataContract) -> dict:
@@ -267,6 +339,7 @@ def _summary(store: RoleRunStore, provider: str) -> dict:
     results = store.results()
     return {
         **store.summary(),
+        "cumulative_usage": store.budget_summary(),
         "results": results,
         "api_cost_usd_estimate": _cost(results, provider),
         "quality": "Schema/reference validity only; semantic/human review pending",
@@ -284,12 +357,28 @@ def _cost(results: list[dict], provider: str) -> float | None:
 
 
 def _cost_one(usage: dict | None) -> float | None:
-    if not usage or usage.get("input_tokens") is None or usage.get("output_tokens") is None:
+    if not _known_usage(usage):
         return None
+    assert usage is not None
     cached = usage.get("cached_input_tokens") or 0
     return (
         (usage["input_tokens"] - cached) * 0.75 + cached * 0.075 + usage["output_tokens"] * 4.5
     ) / 1e6
+
+
+def _known_usage(usage: dict | None) -> bool:
+    if not isinstance(usage, dict):
+        return False
+    values: list[Any] = [
+        usage.get("input_tokens"),
+        usage.get("output_tokens"),
+        usage.get("cached_input_tokens") or 0,
+    ]
+    return _valid_counts(values) and values[2] <= values[0]
+
+
+def _valid_counts(values: list) -> bool:
+    return all(type(value) is int and value >= 0 for value in values)
 
 
 def execute(options: RunOptions, live: bool = False, caller: Caller | None = None) -> dict:
@@ -298,10 +387,29 @@ def execute(options: RunOptions, live: bool = False, caller: Caller | None = Non
     if envelope > options.budget_usd:
         raise ValueError("Conservative token-cost planning envelope exceeds POC budget")
     config = run_config(options, hashes, packets)
+    config["request_hashes"] = {
+        p["window_id"]: _request_digest(frozen_request(options, p, prompt, schema)) for p in packets
+    }
+    config["request_reservations_usd"] = {
+        p["window_id"]: reservation(p, prompt, schema, options) for p in packets
+    }
     if not live:
         return {"mode": "offline plan", "config": config, "planning_cost_envelope_usd": envelope}
     with _exclusive(options.output):
         return _execute_live(options, caller, packets, prompt, schema, config, envelope, sources)
+
+
+def _request_digest(request: dict) -> str:
+    import hashlib
+
+    return hashlib.sha256(
+        json.dumps(
+            request,
+            sort_keys=True,
+            separators=(",", ":"),
+            ensure_ascii=False,
+        ).encode()
+    ).hexdigest()
 
 
 def _execute_live(

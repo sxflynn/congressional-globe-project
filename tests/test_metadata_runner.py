@@ -61,7 +61,7 @@ def _response(result):
         "output_text": json.dumps(result),
         "status": "completed",
         "finish_reason": None,
-        "usage": None,
+        "usage": {"input_tokens": 100, "output_tokens": 10, "cached_input_tokens": 0},
         "provider_request_id": "offline-fixture",
     }
 
@@ -78,6 +78,7 @@ def test_two_date_packets_export_exact_evidence_and_unknowns_then_reuse(tmp_path
     cases = _date_cases()
     options = _prepared(tmp_path, "scoped-date-v1", [c["packet"] for c in cases])
     replies = {c["case_id"]: _response(c["result"]) for c in cases}
+    replies[cases[1]["case_id"]]["usage"] = None
     sent = []
 
     def caller(packet, prompt, schema):
@@ -93,7 +94,7 @@ def test_two_date_packets_export_exact_evidence_and_unknowns_then_reuse(tmp_path
     assert report["historical_status"] == "proposal_only_not_human_reviewed"
     for row, case in zip(report["results"], cases, strict=True):
         assert row["source_mapped_proposals"] == case["mapped"]
-    assert first["results"][0]["result"]["usage"] is None
+    assert first["results"][1]["result"]["usage"] is None
     assert first["api_cost_usd_estimate"] is None
 
 

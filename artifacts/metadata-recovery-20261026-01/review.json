@@ -1,0 +1,16 @@
+{
+  "reviewer": "gpt-6-luna delegate /root/main_path_review",
+  "scope": "Bounded T30 code review only; no edits/tests/network; not a human historical grade or workflow adoption verdict",
+  "actual_findings": [
+    "Initial saved response lacked a digest checked on recovery.",
+    "Cached input could exceed total input, allowing negative estimated cost.",
+    "Terminal result usage was not rechecked against its raw response checkpoint on reopening."
+  ],
+  "root_resolution": [
+    "Request, response and terminal-result digests now verified on open/read; native input/config mismatch fails before schema changes.",
+    "Invalid cached usage becomes unknown usage/cost and prevents further sends.",
+    "Terminal result fingerprints and provider-field correspondence verified on open/results; fresh-process regression check covers lowered usage."
+  ],
+  "final_report_received": "I found one remaining integrity gap: terminal result_json is not rechecked against its hashed response checkpoint when the journal is reopened. If its saved usage is changed, paid budget checks could use the altered amount. I sent this to the primary agent. No files were changed, and I ran no tests or provider calls.",
+  "post_review_status": "Primary implemented the final fix and added its regression test; final full gate covers it. No claim of a further independent verdict."
+}

@@ -1,0 +1,580 @@
+{
+  "task": "T30",
+  "basis": "Actual artifacts from final full gate test processes; no test was re-executed to build this record",
+  "experimental_provider_calls": 0,
+  "controlled_sigkill_modes": [
+    "before_claim",
+    "claimed",
+    "ambiguous",
+    "saved_reply",
+    "finished"
+  ],
+  "observed_cases": [
+    {
+      "case": "test_elapsed_budget_survives_p0",
+      "processes": [
+        {
+          "mode": "saved_reply",
+          "returncode": -9,
+          "stderr": ""
+        },
+        {
+          "mode": "resume",
+          "returncode": 0,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [
+        "t2-4-053"
+      ],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "valid",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca",
+          "elapsed_seconds": 30.0,
+          "result_sha256": "7b4d780cdfd725dbb041d26ba2051e67a6b48465745aa442be18d7d012578d94",
+          "actual_response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca"
+        }
+      ],
+      "final": {
+        "statuses": {
+          "error": 0,
+          "inflight": 0,
+          "valid": 1,
+          "invalid": 0,
+          "pending": 1,
+          "unresolved": 0
+        },
+        "attempts": 1,
+        "cumulative_usage": {
+          "calls": 1,
+          "seconds": 30.0,
+          "unknown_elapsed": 0,
+          "input_tokens": 100,
+          "output_tokens": 10,
+          "unknown_usage": 0,
+          "output_limit_exceeded": false
+        }
+      }
+    },
+    {
+      "case": "test_fresh_process_ambiguous_a0",
+      "processes": [
+        {
+          "mode": "claimed",
+          "returncode": -9,
+          "stderr": ""
+        },
+        {
+          "mode": "resume",
+          "returncode": 2,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "inflight",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": null,
+          "elapsed_seconds": null,
+          "result_sha256": null,
+          "actual_response_sha256": null
+        }
+      ],
+      "pickup_error": "ValueError: Unresolved call exists; inspect terminal worker/server evidence before further work"
+    },
+    {
+      "case": "test_fresh_process_ambiguous_a1",
+      "processes": [
+        {
+          "mode": "ambiguous",
+          "returncode": -9,
+          "stderr": ""
+        },
+        {
+          "mode": "resume",
+          "returncode": 2,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [
+        "t2-4-053"
+      ],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "inflight",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": null,
+          "elapsed_seconds": null,
+          "result_sha256": null,
+          "actual_response_sha256": null
+        }
+      ],
+      "pickup_error": "ValueError: Unresolved call exists; inspect terminal worker/server evidence before further work"
+    },
+    {
+      "case": "test_fresh_process_recovers_wi0",
+      "processes": [
+        {
+          "mode": "before_claim",
+          "returncode": -9,
+          "stderr": ""
+        },
+        {
+          "mode": "resume",
+          "returncode": 0,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [
+        "t2-4-053",
+        "house-opening-december-4-1865-v1"
+      ],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "valid",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca",
+          "elapsed_seconds": 0.0,
+          "result_sha256": "5f85126b97abf030c5efbdad5a57122fa9446304f540e07cb8b6f40ab6bf1e2e",
+          "actual_response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca"
+        },
+        {
+          "window_id": "house-opening-december-4-1865-v1",
+          "status": "valid",
+          "request_sha256": "83eb75df0af3492dc46af9934b157bfc47a000494f1aa4c371df50d717db5d87",
+          "response_sha256": "05ab3646b20f6f2e479e4d46b357fb2aa9d82135348f25719712cf5e73bba2a9",
+          "elapsed_seconds": 0.0,
+          "result_sha256": "6e385b8b620a6e8fe603fa8dbe00f19be5902022719ce52e2802523c0217b8bb",
+          "actual_response_sha256": "05ab3646b20f6f2e479e4d46b357fb2aa9d82135348f25719712cf5e73bba2a9"
+        }
+      ],
+      "final": {
+        "statuses": {
+          "unresolved": 0,
+          "pending": 0,
+          "invalid": 0,
+          "inflight": 0,
+          "valid": 2,
+          "error": 0
+        },
+        "attempts": 2,
+        "cumulative_usage": {
+          "calls": 2,
+          "seconds": 0.0,
+          "unknown_elapsed": 0,
+          "input_tokens": 200,
+          "output_tokens": 20,
+          "unknown_usage": 0,
+          "output_limit_exceeded": false
+        }
+      }
+    },
+    {
+      "case": "test_fresh_process_recovers_wi1",
+      "processes": [
+        {
+          "mode": "saved_reply",
+          "returncode": -9,
+          "stderr": ""
+        },
+        {
+          "mode": "resume",
+          "returncode": 0,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [
+        "t2-4-053",
+        "house-opening-december-4-1865-v1"
+      ],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "valid",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca",
+          "elapsed_seconds": 0.0,
+          "result_sha256": "5f85126b97abf030c5efbdad5a57122fa9446304f540e07cb8b6f40ab6bf1e2e",
+          "actual_response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca"
+        },
+        {
+          "window_id": "house-opening-december-4-1865-v1",
+          "status": "valid",
+          "request_sha256": "83eb75df0af3492dc46af9934b157bfc47a000494f1aa4c371df50d717db5d87",
+          "response_sha256": "05ab3646b20f6f2e479e4d46b357fb2aa9d82135348f25719712cf5e73bba2a9",
+          "elapsed_seconds": 0.0,
+          "result_sha256": "6e385b8b620a6e8fe603fa8dbe00f19be5902022719ce52e2802523c0217b8bb",
+          "actual_response_sha256": "05ab3646b20f6f2e479e4d46b357fb2aa9d82135348f25719712cf5e73bba2a9"
+        }
+      ],
+      "final": {
+        "statuses": {
+          "inflight": 0,
+          "invalid": 0,
+          "error": 0,
+          "pending": 0,
+          "unresolved": 0,
+          "valid": 2
+        },
+        "attempts": 2,
+        "cumulative_usage": {
+          "calls": 2,
+          "seconds": 0.0,
+          "unknown_elapsed": 0,
+          "input_tokens": 200,
+          "output_tokens": 20,
+          "unknown_usage": 0,
+          "output_limit_exceeded": false
+        }
+      }
+    },
+    {
+      "case": "test_fresh_process_recovers_wi2",
+      "processes": [
+        {
+          "mode": "finished",
+          "returncode": -9,
+          "stderr": ""
+        },
+        {
+          "mode": "resume",
+          "returncode": 0,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [
+        "t2-4-053",
+        "house-opening-december-4-1865-v1"
+      ],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "valid",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca",
+          "elapsed_seconds": 0.0,
+          "result_sha256": "5f85126b97abf030c5efbdad5a57122fa9446304f540e07cb8b6f40ab6bf1e2e",
+          "actual_response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca"
+        },
+        {
+          "window_id": "house-opening-december-4-1865-v1",
+          "status": "valid",
+          "request_sha256": "83eb75df0af3492dc46af9934b157bfc47a000494f1aa4c371df50d717db5d87",
+          "response_sha256": "05ab3646b20f6f2e479e4d46b357fb2aa9d82135348f25719712cf5e73bba2a9",
+          "elapsed_seconds": 0.0,
+          "result_sha256": "6e385b8b620a6e8fe603fa8dbe00f19be5902022719ce52e2802523c0217b8bb",
+          "actual_response_sha256": "05ab3646b20f6f2e479e4d46b357fb2aa9d82135348f25719712cf5e73bba2a9"
+        }
+      ],
+      "final": {
+        "statuses": {
+          "invalid": 0,
+          "inflight": 0,
+          "valid": 2,
+          "pending": 0,
+          "error": 0,
+          "unresolved": 0
+        },
+        "attempts": 2,
+        "cumulative_usage": {
+          "calls": 2,
+          "seconds": 0.0,
+          "unknown_elapsed": 0,
+          "input_tokens": 200,
+          "output_tokens": 20,
+          "unknown_usage": 0,
+          "output_limit_exceeded": false
+        }
+      }
+    },
+    {
+      "case": "test_invalid_cached_usage_cann0",
+      "processes": [
+        {
+          "mode": "resume",
+          "returncode": 0,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [
+        "t2-4-053"
+      ],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "valid",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": "8f2c55d886a5ff43b5a43bc0eb8df8dc4accf281e596b8663685b4b0dd845a37",
+          "elapsed_seconds": 0.0,
+          "result_sha256": "5a3b92b1da645b64fbd83592515d170f243a8819fe15867cff67d66be473b69e",
+          "actual_response_sha256": "8f2c55d886a5ff43b5a43bc0eb8df8dc4accf281e596b8663685b4b0dd845a37"
+        }
+      ],
+      "final": {
+        "statuses": {
+          "unresolved": 0,
+          "invalid": 0,
+          "pending": 1,
+          "error": 0,
+          "valid": 1,
+          "inflight": 0
+        },
+        "attempts": 1,
+        "cumulative_usage": {
+          "calls": 1,
+          "seconds": 0.0,
+          "unknown_elapsed": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "unknown_usage": 1,
+          "output_limit_exceeded": false
+        }
+      }
+    },
+    {
+      "case": "test_recovered_invalid_reply_k0",
+      "processes": [
+        {
+          "mode": "saved_reply",
+          "returncode": -9,
+          "stderr": ""
+        },
+        {
+          "mode": "resume",
+          "returncode": 0,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [
+        "t2-4-053"
+      ],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "invalid",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": "4203d709102d881fbf84ef059965dabfa10751db398d44d5e1bee89c8ff2ddef",
+          "elapsed_seconds": 0.0,
+          "result_sha256": "edc4be703e47b048bdd398ffa768368a12f373002e825e4f32483ff098c95b92",
+          "actual_response_sha256": "4203d709102d881fbf84ef059965dabfa10751db398d44d5e1bee89c8ff2ddef"
+        }
+      ],
+      "final": {
+        "statuses": {
+          "error": 0,
+          "pending": 1,
+          "inflight": 0,
+          "unresolved": 0,
+          "valid": 0,
+          "invalid": 1
+        },
+        "attempts": 1,
+        "cumulative_usage": {
+          "calls": 1,
+          "seconds": 0.0,
+          "unknown_elapsed": 0,
+          "input_tokens": 100,
+          "output_tokens": 10,
+          "unknown_usage": 0,
+          "output_limit_exceeded": false
+        }
+      }
+    },
+    {
+      "case": "test_saved_checkpoint_mutation0",
+      "processes": [
+        {
+          "mode": "saved_reply",
+          "returncode": -9,
+          "stderr": ""
+        },
+        {
+          "mode": "resume",
+          "returncode": 2,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [
+        "t2-4-053"
+      ],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "inflight",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca",
+          "elapsed_seconds": 0.0,
+          "result_sha256": null,
+          "actual_response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca"
+        }
+      ],
+      "pickup_error": "ValueError: saved request hash mismatch"
+    },
+    {
+      "case": "test_saved_checkpoint_mutation1",
+      "processes": [
+        {
+          "mode": "saved_reply",
+          "returncode": -9,
+          "stderr": ""
+        },
+        {
+          "mode": "resume",
+          "returncode": 2,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [
+        "t2-4-053"
+      ],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "inflight",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca",
+          "elapsed_seconds": 0.0,
+          "result_sha256": null,
+          "actual_response_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        }
+      ],
+      "pickup_error": "ValueError: saved response hash mismatch"
+    },
+    {
+      "case": "test_saved_unknown_usage_recov0",
+      "processes": [
+        {
+          "mode": "saved_reply",
+          "returncode": -9,
+          "stderr": ""
+        },
+        {
+          "mode": "resume",
+          "returncode": 0,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [
+        "t2-4-053"
+      ],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "valid",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": "ec278999fedd7b3b935fcbeafc8e5b0ca1e234a9fd8071568b69647df5ebee38",
+          "elapsed_seconds": 0.0,
+          "result_sha256": "c787cff71080ab25c7898426fc4f6c70c4b38ee3eaaf56f095158893e3ca330e",
+          "actual_response_sha256": "ec278999fedd7b3b935fcbeafc8e5b0ca1e234a9fd8071568b69647df5ebee38"
+        }
+      ],
+      "final": {
+        "statuses": {
+          "invalid": 0,
+          "inflight": 0,
+          "valid": 1,
+          "error": 0,
+          "pending": 1,
+          "unresolved": 0
+        },
+        "attempts": 1,
+        "cumulative_usage": {
+          "calls": 1,
+          "seconds": 0.0,
+          "unknown_elapsed": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "unknown_usage": 1,
+          "output_limit_exceeded": false
+        }
+      }
+    },
+    {
+      "case": "test_terminal_usage_mutation_c0",
+      "processes": [
+        {
+          "mode": "finished",
+          "returncode": -9,
+          "stderr": ""
+        },
+        {
+          "mode": "resume",
+          "returncode": 2,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [
+        "t2-4-053"
+      ],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "valid",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca",
+          "elapsed_seconds": 0.0,
+          "result_sha256": "5f85126b97abf030c5efbdad5a57122fa9446304f540e07cb8b6f40ab6bf1e2e",
+          "actual_response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca"
+        }
+      ],
+      "pickup_error": "ValueError: terminal result hash mismatch"
+    },
+    {
+      "case": "test_unknown_elapsed_is_not_gu0",
+      "processes": [
+        {
+          "mode": "saved_reply",
+          "returncode": -9,
+          "stderr": ""
+        },
+        {
+          "mode": "resume",
+          "returncode": 0,
+          "stderr": ""
+        }
+      ],
+      "test_sends": [
+        "t2-4-053"
+      ],
+      "attempts": [
+        {
+          "window_id": "t2-4-053",
+          "status": "valid",
+          "request_sha256": "d0202ff9970d93cb4956e635499008d043abc8c77d53634a709c4cd20772acad",
+          "response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca",
+          "elapsed_seconds": null,
+          "result_sha256": "d221b20886f9bd76ac0af3ddbe342485d2dd92b31cb5826deb9cd28ac573390a",
+          "actual_response_sha256": "f40babf0e5ce78615005fe7b39cd17b68ed9493a12940a8ac13bcf3ff6d68cca"
+        }
+      ],
+      "final": {
+        "statuses": {
+          "unresolved": 0,
+          "valid": 1,
+          "invalid": 0,
+          "pending": 1,
+          "inflight": 0,
+          "error": 0
+        },
+        "attempts": 1,
+        "cumulative_usage": {
+          "calls": 1,
+          "seconds": 0.0,
+          "unknown_elapsed": 1,
+          "input_tokens": 100,
+          "output_tokens": 10,
+          "unknown_usage": 0,
+          "output_limit_exceeded": false
+        }
+      }
+    }
+  ],
+  "limits": "Same-library fake callers in fresh processes; negative cases deliberately alter checkpoint/database bytes."
+}

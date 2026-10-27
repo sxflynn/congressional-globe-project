@@ -120,7 +120,7 @@ def reservation(packet: dict, prompt: str, schema: dict, options: RunOptions) ->
 
 
 def run_config(options: RunOptions, hashes: dict, packets: list[dict]) -> dict:
-    fields = options.model_dump(mode="json", exclude={"prepared", "output", "max_seconds"})
+    fields = options.model_dump(mode="json", exclude={"prepared", "output"})
     names = (
         "role_aliases.py",
         "role_provider.py",
@@ -136,6 +136,21 @@ def run_config(options: RunOptions, hashes: dict, packets: list[dict]) -> dict:
         "input_hashes": hashes,
         "case_ids": [p["window_id"] for p in packets],
         "code_hashes": {name: digest(Path(__file__).parent / name) for name in names},
+    }
+
+
+def frozen_request(options: RunOptions, packet: dict, prompt: str, schema: dict) -> dict:
+    return {
+        "provider": options.provider,
+        "model": options.model,
+        "base_url": options.base_url,
+        "contract": options.contract,
+        "packet": packet,
+        "prompt": prompt,
+        "schema": schema,
+        "max_output_tokens": options.max_output_tokens,
+        "timeout": options.timeout,
+        "reasoning_effort": "none",
     }
 
 

@@ -1,0 +1,46 @@
+uv run ruff format .
+1 file reformatted, 168 files left unchanged
+npx prettier@3.9.10 --prose-wrap never --write "**/*.md"
+.complexipy_cache/README.md 9ms (unchanged)
+.pytest_cache/README.md 2ms (unchanged)
+AGENTS.md 8ms (unchanged)
+CHANGELOG.md 48ms (unchanged)
+docs/holistic-cleanup-investigation-scorecard.md 17ms (unchanged)
+docs/reference/agentic-workflow-research.md 9ms (unchanged)
+docs/reference/commands.md 10ms (unchanged)
+docs/reference/engineering.md 6ms (unchanged)
+docs/reference/evidence.md 16ms (unchanged)
+docs/reference/human-review-protocol.md 14ms (unchanged)
+docs/reference/log-query.md 7ms (unchanged)
+docs/reference/pickup-tooling.md 6ms (unchanged)
+docs/reference/research-design.md 24ms (unchanged)
+docs/reference/scans.md 8ms (unchanged)
+HAPPY_PATH.md 1ms (unchanged)
+HUMAN_REVIEW.md 5ms (unchanged)
+MASTER_PLAN.md 33ms (unchanged)
+PROGRESS.md 1ms (unchanged)
+PROJECT_GOAL.md 1ms (unchanged)
+README.md 4ms (unchanged)
+RUNBOOK.md 1ms (unchanged)
+TAG_ARM_PROMPT.md 1ms (unchanged)
+V2_EMBEDDING_MODELS.md 1ms (unchanged)
+V2_HANDOFF.md 1ms (unchanged)
+V2_PIVOT.md 1ms (unchanged)
+V2_TAGGING_EVAL.md 1ms (unchanged)
+V2_TAGGING_RETRY.md 1ms (unchanged)
+uv run ruff format --check .
+169 files already formatted
+uv run ruff check .
+E501 Line too long (102 > 100)
+   --> src/congressional_globe/role_run_store.py:330:101
+    |
+328 |             "SELECT a.window_id,a.status,a.result_json,a.result_sha256,c.response_json "
+329 |             "FROM attempts a JOIN attempt_checkpoints c USING(attempt_id) "
+330 |             "WHERE a.status IN ('valid','invalid','error','unresolved') ORDER BY a.started_at,a.rowid"
+    |                                                                                                     ^^
+331 |         ).fetchall()
+332 |         return [_checked_result(dict(row)) for row in rows]
+    |
+
+Found 1 error.
+make: *** [gate] Error 1
