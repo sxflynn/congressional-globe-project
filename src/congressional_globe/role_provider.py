@@ -151,23 +151,37 @@ def _specialize_role_fields(properties: dict, packet: dict) -> None:
 
 def _scope_instruction(schema: dict) -> str:
     if "dates" in schema["properties"]:
-        return (
-            "Use only supplied paragraph aliases. Keep dates within host-declared regions. "
-            "Every paragraph needs a date proposal or explicit unknown; "
-            "do not infer from catalog context."
-        )
+        return _date_instruction(schema)
     return (
         "Use only IDs allowed by the supplied schema enums. candidate_id is a C alias, "
         "never a role label."
     )
 
 
+def _date_instruction(schema: dict) -> str:
+    common = (
+        "Use only supplied paragraph aliases. Keep dates within host-declared regions. "
+        "Every paragraph needs a date proposal or explicit unknown; "
+        "do not infer from catalog context."
+    )
+    if "QuoteDateEvidence" in schema.get("$defs", {}):
+        return common + (
+            " Evidence must contain only paragraph_id, the supplied raw_sha256 and an exact quote "
+            "occurring once in that paragraph. Do not include start/end in evidence objects; "
+            "the host binds offsets. Keep value.start/value.end dates as required by the schema."
+        )
+    return common
+
+
 def _specialize_dates(schema: dict, packet: dict) -> dict:
     source = DatePacket.model_validate(packet)
     aliases = [paragraph.alias for paragraph in source.paragraphs]
     definitions = schema["$defs"]
-    definitions["DateAssignment"]["properties"]["target_ids"]["items"]["enum"] = aliases
-    definitions["DateEvidence"]["properties"]["paragraph_id"]["enum"] = aliases
+    assignment_name = schema["properties"]["dates"]["items"]["$ref"].rsplit("/", 1)[-1]
+    assignment = definitions[assignment_name]
+    evidence_name = assignment["properties"]["evidence"]["items"]["$ref"].rsplit("/", 1)[-1]
+    assignment["properties"]["target_ids"]["items"]["enum"] = aliases
+    definitions[evidence_name]["properties"]["paragraph_id"]["enum"] = aliases
     return schema
 
 

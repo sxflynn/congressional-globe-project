@@ -1,0 +1,213 @@
+{
+  "$defs": {
+    "DateValue": {
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "title": "Start",
+          "type": "string"
+        },
+        "end": {
+          "title": "End",
+          "type": "string"
+        },
+        "precision": {
+          "enum": [
+            "day",
+            "month",
+            "year"
+          ],
+          "title": "Precision",
+          "type": "string"
+        },
+        "extent": {
+          "enum": [
+            "point",
+            "range"
+          ],
+          "title": "Extent",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "precision",
+        "extent"
+      ],
+      "title": "DateValue",
+      "type": "object"
+    },
+    "QuoteDateAlternative": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/DateValue"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/QuoteDateEvidence"
+          },
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        },
+        "basis": {
+          "minLength": 1,
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "evidence",
+        "basis"
+      ],
+      "title": "QuoteDateAlternative",
+      "type": "object"
+    },
+    "QuoteDateAssignment": {
+      "additionalProperties": false,
+      "properties": {
+        "target_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Target Ids",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DateValue"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "date_kind": {
+          "enum": [
+            "explicit",
+            "implicit",
+            "none"
+          ],
+          "title": "Date Kind",
+          "type": "string"
+        },
+        "context_kind": {
+          "enum": [
+            "proceeding",
+            "mentioned",
+            "unknown"
+          ],
+          "title": "Context Kind",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "unknown",
+            "mixed",
+            "needs_review"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "method": {
+          "enum": [
+            "explicit_text",
+            "scoped_continuation",
+            "no_supported_date"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/QuoteDateEvidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "alternatives": {
+          "items": {
+            "$ref": "#/$defs/QuoteDateAlternative"
+          },
+          "title": "Alternatives",
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknowns",
+          "type": "array"
+        },
+        "basis": {
+          "minLength": 1,
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "target_ids",
+        "value",
+        "date_kind",
+        "context_kind",
+        "status",
+        "method",
+        "evidence",
+        "alternatives",
+        "unknowns",
+        "basis"
+      ],
+      "title": "QuoteDateAssignment",
+      "type": "object"
+    },
+    "QuoteDateEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "paragraph_id": {
+          "minLength": 1,
+          "title": "Paragraph Id",
+          "type": "string"
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "paragraph_id",
+        "raw_sha256",
+        "quote"
+      ],
+      "title": "QuoteDateEvidence",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "dates": {
+      "items": {
+        "$ref": "#/$defs/QuoteDateAssignment"
+      },
+      "minItems": 1,
+      "title": "Dates",
+      "type": "array"
+    }
+  },
+  "required": [
+    "dates"
+  ],
+  "title": "QuoteDateResult",
+  "type": "object"
+}

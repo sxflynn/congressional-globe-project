@@ -5,6 +5,7 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Literal
 
+from congressional_globe.quote_dates import quote_date_schema, source_mapped_quote_dates
 from congressional_globe.role_aliases import (
     ROLE_RESULT_SCHEMA,
     FrozenInput,
@@ -14,7 +15,12 @@ from congressional_globe.role_aliases import (
 from congressional_globe.role_v2 import role_result_schema, validate_role_result_v2
 from congressional_globe.scoped_dates import DatePacket, date_result_schema, source_mapped_dates
 
-MetadataContract = Literal["role-v1", "role-v2", "scoped-date-v1"]
+MetadataContract = Literal["role-v1", "role-v2", "scoped-date-v1", "scoped-date-quotes-v1"]
+
+_DATE_MAPPERS = {
+    "scoped-date-v1": source_mapped_dates,
+    "scoped-date-quotes-v1": source_mapped_quote_dates,
+}
 
 
 def metadata_schema(contract: MetadataContract) -> dict:
@@ -22,12 +28,13 @@ def metadata_schema(contract: MetadataContract) -> dict:
         "role-v1": ROLE_RESULT_SCHEMA,
         "role-v2": role_result_schema(),
         "scoped-date-v1": date_result_schema(),
+        "scoped-date-quotes-v1": quote_date_schema(),
     }
     return deepcopy(schemas[contract])
 
 
 def verify_metadata_packet(packet: dict, frozen: dict, contract: MetadataContract) -> None:
-    if contract == "scoped-date-v1":
+    if contract in _DATE_MAPPERS:
         expected = DatePacket.model_validate(frozen).model_dump()
     else:
         expected = prepare_aliases(frozen)["input"]
@@ -36,14 +43,14 @@ def verify_metadata_packet(packet: dict, frozen: dict, contract: MetadataContrac
 
 
 def packet_text(packet: dict, contract: MetadataContract) -> str:
-    if contract == "scoped-date-v1":
+    if contract in _DATE_MAPPERS:
         return "\n\n".join(p.raw_text for p in DatePacket.model_validate(packet).paragraphs)
     return packet["raw_text"]
 
 
 def validated_metadata(result: dict, packet: dict, contract: MetadataContract) -> dict:
-    if contract == "scoped-date-v1":
-        mapped = source_mapped_dates(result, packet)
+    if contract in _DATE_MAPPERS:
+        mapped = _DATE_MAPPERS[contract](result, packet)
         return {"date_proposals": {"dates": mapped["dates"]}}
     validators = {"role-v1": validate_alias_result, "role-v2": validate_role_result_v2}
     return {"role_proposals": validators[contract](result, packet)}
@@ -51,8 +58,8 @@ def validated_metadata(result: dict, packet: dict, contract: MetadataContract) -
 
 def mapped_metadata(result: dict, packet: dict, frozen: dict, contract: MetadataContract) -> dict:
     verify_metadata_packet(packet, frozen, contract)
-    if contract == "scoped-date-v1":
-        return source_mapped_dates(result, packet)
+    if contract in _DATE_MAPPERS:
+        return _DATE_MAPPERS[contract](result, packet)
     return _mapped_roles(result, packet, frozen, contract)
 
 

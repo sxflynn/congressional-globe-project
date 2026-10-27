@@ -130,6 +130,7 @@ def run_config(options: RunOptions, hashes: dict, packets: list[dict]) -> dict:
         "metadata_results.py",
         "role_v2.py",
         "scoped_dates.py",
+        "quote_dates.py",
     )
     return {
         **fields,

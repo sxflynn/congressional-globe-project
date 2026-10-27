@@ -456,7 +456,9 @@ def main() -> None:
     parser.add_argument("--provider", choices=["openai", "ollama"], required=True)
     parser.add_argument("--model", required=True)
     parser.add_argument(
-        "--contract", choices=["role-v1", "role-v2", "scoped-date-v1"], default="role-v1"
+        "--contract",
+        choices=["role-v1", "role-v2", "scoped-date-v1", "scoped-date-quotes-v1"],
+        default="role-v1",
     )
     parser.add_argument("--base-url")
     parser.add_argument("--case", action="append", dest="cases", default=[])

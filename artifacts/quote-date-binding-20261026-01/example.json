@@ -1,0 +1,125 @@
+{
+  "status": "New explicitly offset-free offline fixture, not a replacement of the original AI reply",
+  "original_reply_status": "invalid",
+  "original_reply_evidence": [
+    {
+      "paragraph_id": "P1",
+      "raw_sha256": "b3cd012cd9db46662f2e5414895f7eebe18d0050d2a0b25da7673b4c06acca0a",
+      "start": 30,
+      "end": 55,
+      "quote": "January 2, 1900"
+    }
+  ],
+  "old_host_error": "evidence quote/offset mismatch",
+  "new_contract_refuses_original_offset_fields": true,
+  "new_fixture": {
+    "dates": [
+      {
+        "target_ids": [
+          "P1"
+        ],
+        "value": {
+          "start": "1900-01-02",
+          "end": "1900-01-02",
+          "precision": "day",
+          "extent": "point"
+        },
+        "date_kind": "explicit",
+        "context_kind": "proceeding",
+        "status": "proposed",
+        "method": "explicit_text",
+        "evidence": [
+          {
+            "paragraph_id": "P1",
+            "raw_sha256": "b3cd012cd9db46662f2e5414895f7eebe18d0050d2a0b25da7673b4c06acca0a",
+            "quote": "January 2, 1900"
+          }
+        ],
+        "alternatives": [],
+        "unknowns": [],
+        "basis": "The text explicitly states the meeting was held on January 2, 1900."
+      }
+    ]
+  },
+  "new_source_mapped_result": {
+    "schema_version": "source-mapped-scoped-date-quotes-v1",
+    "window_id": "synthetic-date-transport-20261026-01",
+    "offset_convention": "unicode_codepoints_half_open_within_raw_paragraph",
+    "scope_basis": "Synthetic compatibility probe only; no historical claim.",
+    "scope_evidence_sha256": "b5a9b2dff2dcf696c457867349f37f44d1ad2498b345cbf7c444d873402f79f8",
+    "sources": [
+      {
+        "alias": "P1",
+        "source_paragraph_id": "synthetic::p1",
+        "item_identifier": "synthetic-not-a-historical-source",
+        "scan_leaf": 0,
+        "raw_text": "Synthetic transport check only. The meeting was held January 2, 1900.",
+        "raw_sha256": "b3cd012cd9db46662f2e5414895f7eebe18d0050d2a0b25da7673b4c06acca0a",
+        "region_id": "synthetic-meeting"
+      }
+    ],
+    "dates": [
+      {
+        "target_ids": [
+          "P1"
+        ],
+        "value": {
+          "start": "1900-01-02",
+          "end": "1900-01-02",
+          "precision": "day",
+          "extent": "point"
+        },
+        "date_kind": "explicit",
+        "context_kind": "proceeding",
+        "status": "proposed",
+        "method": "explicit_text",
+        "evidence": [
+          {
+            "paragraph_id": "P1",
+            "raw_sha256": "b3cd012cd9db46662f2e5414895f7eebe18d0050d2a0b25da7673b4c06acca0a",
+            "start": 53,
+            "end": 68,
+            "quote": "January 2, 1900"
+          }
+        ],
+        "alternatives": [],
+        "unknowns": [],
+        "basis": "The text explicitly states the meeting was held on January 2, 1900."
+      }
+    ],
+    "historical_status": "proposal_only_not_human_reviewed",
+    "model_contract": "scoped-date-quotes-v1",
+    "derived_contract": "scoped-date-v1",
+    "coordinate_binding": "host_unique_exact_quote_in_declared_raw_paragraph",
+    "model_proposals": {
+      "dates": [
+        {
+          "target_ids": [
+            "P1"
+          ],
+          "value": {
+            "start": "1900-01-02",
+            "end": "1900-01-02",
+            "precision": "day",
+            "extent": "point"
+          },
+          "date_kind": "explicit",
+          "context_kind": "proceeding",
+          "status": "proposed",
+          "method": "explicit_text",
+          "evidence": [
+            {
+              "paragraph_id": "P1",
+              "raw_sha256": "b3cd012cd9db46662f2e5414895f7eebe18d0050d2a0b25da7673b4c06acca0a",
+              "quote": "January 2, 1900"
+            }
+          ],
+          "alternatives": [],
+          "unknowns": [],
+          "basis": "The text explicitly states the meeting was held on January 2, 1900."
+        }
+      ]
+    }
+  },
+  "new_model_calls": 0
+}

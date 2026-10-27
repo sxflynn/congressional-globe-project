@@ -29,7 +29,7 @@ def _prepared(tmp_path, contract, sources):
     path = tmp_path / "prepared"
     path.mkdir()
     packets = sources
-    if contract != "scoped-date-v1":
+    if not contract.startswith("scoped-date-"):
         packets = [prepare_aliases(source)["input"] for source in sources]
     _write_jsonl(path / "provider-inputs.jsonl", packets)
     _write_jsonl(path / "frozen-inputs.jsonl", sources)
