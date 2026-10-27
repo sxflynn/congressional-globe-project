@@ -84,3 +84,10 @@ No answers or thresholds are invented here. The previously recorded six-paragrap
 
 - The human emphasized a preference for “negative testing,” citing text the system thinks is clean but actually is not, and asked the assistant to interpret the intended meaning.
 - Provisional assistant interpretation, awaiting confirmation: deliberately test failure cases and false reassurance, especially important errors left in apparently clean/high-confidence text. Distinguish missed damage from unnecessary or harmful changes to genuinely correct text. No test suite or final evaluation design has been selected by this exchange.
+
+### Requested addition — image-grounded audit after deterministic cleanup
+
+- The human proposed a concrete negative-testing step and explicitly requested that it be added to the list. Even when deterministic cleanup reports success or no remaining errors, give an image-capable model, ideally Qwen, the original OCR, deterministic changes, resulting text, spell-check results and other diagnostic results, together with the original page image or relevant source crop.
+- Ask the model to identify mistakes or omissions and return **structured feedback**, rather than merely declaring the text clean. The purpose is to challenge apparent success and identify damage missed by rules, incorrect deterministic edits and differences from the printed source.
+- The exact feedback fields, sample coverage, model capability, budget and handling of disagreement remain to be designed. Possible fields for later discussion include affected span, issue category, supporting image evidence, proposed reading and uncertainty; these are assistant suggestions, not an approved schema.
+- This is a requested evaluation-design addition, not authorization to dispatch the model or audit the whole collection. A model reporting no issue does not prove the absence of errors; independent source checks are still needed to measure the auditor's own misses and false alarms. The assistant's spoken phrase “prove that nothing important was missed” should be understood as the goal to test, not an established capability or guarantee.

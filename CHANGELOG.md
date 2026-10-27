@@ -181,3 +181,5 @@ Historical record of completed work. [MASTER_PLAN.md](MASTER_PLAN.md) remains th
 - 2026-10-27: T45 dialogue notes add requested tentative agreement to test optional pre-cleanup scoring against image-checked repair outcomes and review needs, alongside rather than before cleanup testing. No algorithm/sample/budget/model-run approval inferred.
 
 - 2026-10-27: T45 captures the human’s negative-testing question and provisional interpretation of detecting false reassurance in apparently clean text; confirmation/design remain open.
+
+- 2026-10-27: T45 adds explicitly requested evaluation idea: structured image-grounded Qwen audit of original OCR, deterministic edits/results and diagnostics, including apparent no-error successes. Auditor misses/false alarms require independent checking; no error-free guarantee, schema or model-run authorization inferred.
