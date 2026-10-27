@@ -1,0 +1,43 @@
+{
+  "statuses": {
+    "inflight": 0,
+    "error": 0,
+    "pending": 0,
+    "invalid": 1,
+    "valid": 0,
+    "unresolved": 0
+  },
+  "attempts": 1,
+  "cumulative_usage": {
+    "calls": 1,
+    "seconds": 24.436,
+    "unknown_elapsed": 0,
+    "input_tokens": 1283,
+    "output_tokens": 296,
+    "unknown_usage": 0,
+    "output_limit_exceeded": false
+  },
+  "results": [
+    {
+      "window_id": "synthetic-date-transport-20261026-01",
+      "status": "invalid",
+      "result": {
+        "elapsed_seconds": 24.436,
+        "finish_reason": "stop",
+        "output_text": "{\n  \"dates\": [\n    {\n      \"target_ids\": [\n        \"P1\"\n      ],\n      \"value\": {\n        \"start\": \"1900-01-02\",\n        \"end\": \"1900-01-02\",\n        \"precision\": \"day\",\n        \"extent\": \"point\"\n      },\n      \"date_kind\": \"explicit\",\n      \"context_kind\": \"proceeding\",\n      \"status\": \"proposed\",\n      \"method\": \"explicit_text\",\n      \"evidence\": [\n        {\n          \"paragraph_id\": \"P1\",\n          \"raw_sha256\": \"b3cd012cd9db46662f2e5414895f7eebe18d0050d2a0b25da7673b4c06acca0a\",\n          \"start\": 30,\n          \"end\": 55,\n          \"quote\": \"January 2, 1900\"\n        }\n      ],\n      \"alternatives\": [],\n      \"unknowns\": [],\n      \"basis\": \"The text explicitly states the meeting was held on January 2, 1900.\"\n    }\n  ]\n}",
+        "provider_request_id": "chatcmpl-255",
+        "raw_response": "{\"id\": \"chatcmpl-255\", \"choices\": [{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"{\\n  \\\"dates\\\": [\\n    {\\n      \\\"target_ids\\\": [\\n        \\\"P1\\\"\\n      ],\\n      \\\"value\\\": {\\n        \\\"start\\\": \\\"1900-01-02\\\",\\n        \\\"end\\\": \\\"1900-01-02\\\",\\n        \\\"precision\\\": \\\"day\\\",\\n        \\\"extent\\\": \\\"point\\\"\\n      },\\n      \\\"date_kind\\\": \\\"explicit\\\",\\n      \\\"context_kind\\\": \\\"proceeding\\\",\\n      \\\"status\\\": \\\"proposed\\\",\\n      \\\"method\\\": \\\"explicit_text\\\",\\n      \\\"evidence\\\": [\\n        {\\n          \\\"paragraph_id\\\": \\\"P1\\\",\\n          \\\"raw_sha256\\\": \\\"b3cd012cd9db46662f2e5414895f7eebe18d0050d2a0b25da7673b4c06acca0a\\\",\\n          \\\"start\\\": 30,\\n          \\\"end\\\": 55,\\n          \\\"quote\\\": \\\"January 2, 1900\\\"\\n        }\\n      ],\\n      \\\"alternatives\\\": [],\\n      \\\"unknowns\\\": [],\\n      \\\"basis\\\": \\\"The text explicitly states the meeting was held on January 2, 1900.\\\"\\n    }\\n  ]\\n}\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": null}}], \"created\": 1793063341, \"model\": \"qwen3.8:27b-mlx\", \"object\": \"chat.completion\", \"metadata\": null, \"moderation\": null, \"service_tier\": null, \"system_fingerprint\": \"fp_ollama\", \"usage\": {\"completion_tokens\": 296, \"prompt_tokens\": 1283, \"total_tokens\": 1579, \"completion_tokens_details\": null, \"prompt_tokens_details\": {\"audio_tokens\": null, \"cache_write_tokens\": null, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null}}}",
+        "status": "completed",
+        "usage": {
+          "cached_input_tokens": 0,
+          "input_tokens": 1283,
+          "output_tokens": 296
+        },
+        "validation_error": "evidence quote/offset mismatch"
+      }
+    }
+  ],
+  "api_cost_usd_estimate": 0.0,
+  "quality": "Schema/reference validity only; semantic/human review pending",
+  "recovery": "No automatic retries; unknown outcomes block resume"
+}

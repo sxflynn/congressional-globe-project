@@ -1,0 +1,45 @@
+{
+  "mode": "offline plan",
+  "config": {
+    "provider": "ollama",
+    "model": "qwen3.8:27b-mlx",
+    "base_url": "http://127.0.0.1:11434/v1",
+    "contract": "scoped-date-v1",
+    "cases": [
+      "house-opening-december-4-1865-v1"
+    ],
+    "limit": 1,
+    "timeout": 120.0,
+    "max_seconds": 150.0,
+    "max_output_tokens": 2000,
+    "budget_usd": 0.01,
+    "input_hashes": {
+      "provider-inputs.jsonl": "20dd9080b3a11a6b77a107174220318e5d4b24a3cda0f20ee3fac539332abc30",
+      "frozen-inputs.jsonl": "20dd9080b3a11a6b77a107174220318e5d4b24a3cda0f20ee3fac539332abc30",
+      "prompt.txt": "b6a1c971cfef1c7caabf042f67d603b0865e98a5d44eb200c2b448584e05226f",
+      "output.schema.json": "1a82971f65b66cf2a3cfdf3293d99a10b517105438225703cee14fd3d5309561",
+      "source-review.json": "71debb4147554e09b6957934f59b168c6c73724309a8df8d956fcc07b2ac75d5",
+      "checks.json": "72d35463e7b70b6c8666653fb2eaad2dae79fb6ed42e24d2f996251a00504b8d"
+    },
+    "case_ids": [
+      "house-opening-december-4-1865-v1"
+    ],
+    "code_hashes": {
+      "role_aliases.py": "8f4ff097c8fce2f8843124e48547fc1fdddf6c8b84b28e2662f9cc536d615b5d",
+      "role_provider.py": "27f1ba6bfd937aa1957ccf5b760c0b78a14671769b9c20b5b5b3f0579955097f",
+      "role_run_store.py": "e20526e1211219e0390443504b11f54fbe6ac6aec038cbd2d724070e74dd138a",
+      "role_run_io.py": "93cdd128e762b56244e8631e20ed5baa47b61a4cbda04702d64244581c02a357",
+      "role_runner.py": "3b37bf66845a9efb2041a59863396a462963f28c712aa00b20e794a090e3b37c",
+      "metadata_results.py": "395a911e79e71f980a569c78e8f0ed283baa691543af6ace0df5be34fdd683bd",
+      "role_v2.py": "47dcccbd8439a67c3590e13e67acc114c2f33780e80ff2dca685163c713ed078",
+      "scoped_dates.py": "6828fa5b7c3f83c37a7407beccd382575833b14c5669309f3f8e05635b4a57fb"
+    },
+    "request_hashes": {
+      "house-opening-december-4-1865-v1": "92d514514f5c0c90547c287137e138d32a8e3d1ebfaa037d6aba8dba74262f24"
+    },
+    "request_reservations_usd": {
+      "house-opening-december-4-1865-v1": 0.0
+    }
+  },
+  "planning_cost_envelope_usd": 0.0
+}

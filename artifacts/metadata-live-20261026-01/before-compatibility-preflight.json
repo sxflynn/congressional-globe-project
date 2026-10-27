@@ -1,0 +1,53 @@
+{
+  "observed_utc": "2026-10-27T01:08:13.963186+00:00",
+  "label": "before-compatibility",
+  "version": {
+    "version": "0.40.8"
+  },
+  "models_loaded": {
+    "models": []
+  },
+  "selected_model": {
+    "name": "qwen3.8:27b-mlx",
+    "model": "qwen3.8:27b-mlx",
+    "modified_at": "2026-09-24T01:45:09.355713619-04:00",
+    "size": 18174721847,
+    "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "details": {
+      "parent_model": "",
+      "format": "safetensors",
+      "family": "",
+      "families": null,
+      "parameter_size": "",
+      "quantization_level": "nvfp4",
+      "runner": "mlx"
+    },
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools",
+      "thinking"
+    ]
+  },
+  "matching_processes": [
+    "68381 Sat Oct 24 17:13:53 2026     02-03:54:21 /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false",
+    "87583 Wed Oct 21 20:46:50 2026     05-00:21:24 /Applications/Ollama.app/Contents/MacOS/Ollama",
+    "87597 Wed Oct 21 20:46:52 2026     05-00:21:22 /Applications/Ollama.app/Contents/Resources/ollama serve"
+  ],
+  "shared_request_lock": "acquired nonblocking and released",
+  "cleanup_queue": {
+    "average_completed_seconds": 3.35,
+    "average_resolved_seconds": 4.07,
+    "claimed": 0,
+    "completed": 1339,
+    "estimated_pending_hours": 23.51,
+    "estimated_remaining_hours": 23.51,
+    "pending": 20785,
+    "percent_complete": 5.94,
+    "remaining": 21208,
+    "review": 423,
+    "timed_resolved_jobs": 1762,
+    "total": 22547
+  },
+  "log_query_source": "bounded tool query, not whole log dump"
+}

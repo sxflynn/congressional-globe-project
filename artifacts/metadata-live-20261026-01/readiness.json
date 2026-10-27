@@ -1,0 +1,101 @@
+{
+  "task": "T31/T32",
+  "status": "frozen before any inference",
+  "user_authorization": {
+    "source": "Current chat",
+    "exact_latest_request": "Do it",
+    "antecedent": "Ask an actual AI to process a small set of passages, then inspect whether its answers are supported by the words on the page.",
+    "scope": "One bounded small real check only; no repeats of spent role or reading experiments, new human grades, downloads, full-corpus or recurring work."
+  },
+  "capability": {
+    "can_inspect_images": true,
+    "images_used": false
+  },
+  "bounds": {
+    "maximum_provider_calls_total": 2,
+    "maximum_request_seconds_each": 120,
+    "maximum_total_provider_seconds": 240,
+    "maximum_total_dispatch_wall_seconds": 300,
+    "maximum_output_tokens_each": 2000,
+    "maximum_total_output_tokens": 4000,
+    "maximum_logical_request_bytes_each": 16000,
+    "retries": 0,
+    "concurrency": 1,
+    "api_charge_usd": 0,
+    "local_compute_and_review_cost": "Time/tokens measured; energy/hardware/review effort not yet estimated."
+  },
+  "backend": {
+    "provider": "ollama",
+    "base_url": "http://127.0.0.1:11434/v1",
+    "server_version": "0.40.8",
+    "model": "qwen3.8:27b-mlx",
+    "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "openai_python_version": "3.28.0",
+    "thinking_request": "none (maps to disabled thinking per current Ollama docs; actual model observation still checked)",
+    "supported_path": "JSON-object mode with schema instructions and local host validation, not native schema enforcement",
+    "model_metadata_sha256": "7c43b6e77cba2b06a86025d8f9d5d59030cc34852d54487960a708ed803e6a1a",
+    "documentation": [
+      "https://docs.ollama.com/api/openai-compatibility",
+      "https://github.com/ollama/ollama/blob/main/docs/openapi.yaml"
+    ]
+  },
+  "requests": [
+    {
+      "id": "compatibility",
+      "window_id": "synthetic-date-transport-20261026-01",
+      "options_path": "artifacts/metadata-live-20261026-01/compatibility/options.json",
+      "options_sha256": "15af50d52e96fc1c29f090f371865b1890cb3f7c2bd0b15df92f008ce4a6bae9",
+      "plan_path": "artifacts/metadata-live-20261026-01/compatibility/offline-plan.json",
+      "plan_sha256": "cfcb1258387a14a56ba47dad05cec00eff0f611e8d076e34d73479ef6b355d3c",
+      "logical_api_request_path": "artifacts/metadata-live-20261026-01/compatibility/intended-api-request.json",
+      "logical_api_request_sha256": "f0b03948159ce886a0ce04abc7f3939efa54b4cece906b75b906a153f59fc333",
+      "serialized_api_request_utf8_bytes": 5877,
+      "packet_sha256": "fae36827090df8d60129ba309fa027f0198bc68fe0e81e175e378ce1d85bc1b5",
+      "journal_path": "artifacts/metadata-live-20261026-01/compatibility/run/jobs.sqlite",
+      "expectations": {
+        "status": "synthetic transport test only",
+        "source_fixture_path": null,
+        "source_fixture_sha256": null,
+        "expected": "1900-01-02 from the explicit P1 date"
+      },
+      "launch_only_after": "No prior request failure, incomplete reply, unknown usage/time or model/runtime change; historical additionally requires synthetic compatibility host pass and actual runtime context sufficient for conservative byte envelope."
+    },
+    {
+      "id": "house-opening",
+      "window_id": "house-opening-december-4-1865-v1",
+      "options_path": "artifacts/metadata-live-20261026-01/house-opening/options.json",
+      "options_sha256": "08e45a5fdd20eb931a8f9b29418a6a27b55a677157d954b1234746b4f5bbf231",
+      "plan_path": "artifacts/metadata-live-20261026-01/house-opening/offline-plan.json",
+      "plan_sha256": "05a8e158868badc5a8e199f27d21d0369c22cdbb7087eff42d12522261ad5860",
+      "logical_api_request_path": "artifacts/metadata-live-20261026-01/house-opening/intended-api-request.json",
+      "logical_api_request_sha256": "27e7fb7c86a8764fe6912657d6e4168ed108207d68a0a91d5e2df9efc8feb2d5",
+      "serialized_api_request_utf8_bytes": 8382,
+      "packet_sha256": "5ea045651109fc0be9e5451d0eb891c24b0ae5631098975c98fb4850a4982c7d",
+      "journal_path": "artifacts/metadata-live-20261026-01/house-opening/run/jobs.sqlite",
+      "expectations": {
+        "status": "AI-provisional frozen source expectations; not human gold or image-certified",
+        "source_fixture_path": "artifacts/scoped-date-contract-20261026-01/fixtures.json",
+        "source_fixture_sha256": "878c2a3ed17a0e4581653d85f866e8f815e2a4271415e806ea8a5f0fbfbf9042",
+        "expected": "P3 explicit House opening date 1865-12-04 supports P3-P6; P1/P2 prior Senate date unknown; no backward or cross-region propagation. Date scope independent of speaker."
+      },
+      "launch_only_after": "No prior request failure, incomplete reply, unknown usage/time or model/runtime change; historical additionally requires synthetic compatibility host pass and actual runtime context sufficient for conservative byte envelope."
+    }
+  ],
+  "fresh_checks_required": "Before each inference: processes with PID/start/full command, no active cleanup claim, shared Ollama lock available, /api/ps and model digest, recent bounded POST log query. Record launch intent and OS identity in master. Never infer idle from model-load state alone.",
+  "historical_exposure_and_reuse": "House opening is an existing exposed T4/T10 host fixture. Its saved date result is hand-authored, not a prior provider answer. No live scoped-date result is inventoried in named evidence. This is a new request/task identity for live metadata integration, not a repeated role/reading pilot or held-out accuracy test.",
+  "budget_separation": {
+    "new_task_attempts_before_launch": 0,
+    "primary_reading_investigation_immutable": {
+      "attempts": 48,
+      "conservative_request_seconds": 3693.79,
+      "allowance_is_not_used_for_this_task": true
+    },
+    "prior_role_and_topic_calls": "Retained as separate historical evidence; not replayed as new paid/local requests."
+  },
+  "stop_rules": [
+    "Stop all remaining requests on transport error, timeout, refusal/truncation, invalid output, unknown usage/time, model/runtime identity change or insufficient context.",
+    "Do not replace evidence, repair returned JSON, change prompts/samples/settings, retry or choose another model in this frozen run.",
+    "Compatibility pass proves only the declared JSON-object/host path. Historical quality remains separate AI review, not human acceptance.",
+    "Native constrained-schema acceptance and role-v2 live compatibility remain unproved."
+  ]
+}

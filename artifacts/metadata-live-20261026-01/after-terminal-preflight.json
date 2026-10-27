@@ -1,0 +1,73 @@
+{
+  "observed_utc": "2026-10-27T01:10:53.655977+00:00",
+  "label": "after-terminal",
+  "version": {
+    "version": "0.40.8"
+  },
+  "models_loaded": {
+    "models": [
+      {
+        "name": "qwen3.8:27b-mlx",
+        "model": "qwen3.8:27b-mlx",
+        "size": 18600054504,
+        "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+        "details": {
+          "parent_model": "",
+          "format": "safetensors",
+          "family": "",
+          "families": null,
+          "parameter_size": "",
+          "quantization_level": "nvfp4"
+        },
+        "expires_at": "2026-10-26T21:14:01.289245-04:00",
+        "size_vram": 18600054504,
+        "context_length": 262144,
+        "runner": "mlx"
+      }
+    ]
+  },
+  "selected_model": {
+    "name": "qwen3.8:27b-mlx",
+    "model": "qwen3.8:27b-mlx",
+    "modified_at": "2026-09-24T01:45:09.355713619-04:00",
+    "size": 18174721847,
+    "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "details": {
+      "parent_model": "",
+      "format": "safetensors",
+      "family": "",
+      "families": null,
+      "parameter_size": "",
+      "quantization_level": "nvfp4",
+      "runner": "mlx"
+    },
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools",
+      "thinking"
+    ]
+  },
+  "matching_processes": [
+    "68381 Sat Oct 24 17:13:53 2026     02-03:57:00 /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false",
+    "87583 Wed Oct 21 20:46:50 2026     05-00:24:03 /Applications/Ollama.app/Contents/MacOS/Ollama",
+    "87597 Wed Oct 21 20:46:52 2026     05-00:24:01 /Applications/Ollama.app/Contents/Resources/ollama serve",
+    "95077 Mon Oct 26 21:08:36 2026           02:17 /Applications/Ollama.app/Contents/Resources/ollama runner --model qwen3.8:27b-mlx --port 51988"
+  ],
+  "shared_request_lock": "acquired nonblocking and released",
+  "cleanup_queue": {
+    "average_completed_seconds": 3.35,
+    "average_resolved_seconds": 4.07,
+    "claimed": 0,
+    "completed": 1339,
+    "estimated_pending_hours": 23.51,
+    "estimated_remaining_hours": 23.51,
+    "pending": 20785,
+    "percent_complete": 5.94,
+    "remaining": 21208,
+    "review": 423,
+    "timed_resolved_jobs": 1762,
+    "total": 22547
+  },
+  "log_query_source": "bounded tool query, not whole log dump"
+}

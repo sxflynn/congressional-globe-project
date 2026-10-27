@@ -1,0 +1,16 @@
+{
+  "prepared": "artifacts/metadata-live-20261026-01/compatibility/prepared",
+  "output": "artifacts/metadata-live-20261026-01/compatibility/run",
+  "provider": "ollama",
+  "model": "qwen3.8:27b-mlx",
+  "base_url": "http://127.0.0.1:11434/v1",
+  "contract": "scoped-date-v1",
+  "cases": [
+    "synthetic-date-transport-20261026-01"
+  ],
+  "limit": 1,
+  "timeout": 120.0,
+  "max_seconds": 150.0,
+  "max_output_tokens": 2000,
+  "budget_usd": 0.01
+}

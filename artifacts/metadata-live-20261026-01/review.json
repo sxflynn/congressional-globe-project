@@ -1,0 +1,16 @@
+{
+  "reviewer": "gpt-6-luna delegate /root/live_readiness_review",
+  "scope": "Bounded read-only T31 preparation; no edits/model/provider calls; not human grading or new-workflow adoption verdict",
+  "findings": [
+    "Ollama adapter requests JSON objects and includes schema in prompt; it cannot prove native constrained-schema support.",
+    "Do not repeat the spent cross-page role inference as fresh historical evaluation.",
+    "House-opening date result was hand-authored offline, so a new scoped-date request would be a distinct historical integration check.",
+    "Use explicit strict limits and refresh process/queue/model observations immediately before dispatch."
+  ],
+  "root_disposition": [
+    "Limited frozen run to two scoped-date calls, synthetic compatibility then historical House opening; no live role retry.",
+    "Recorded JSON-object/host path and native-schema limitation explicitly.",
+    "Set exact call/time/output bounds and preserved preflight/worker identities.",
+    "First actual model reply failed quote/offset validation; historical request was not sent and no retry occurred."
+  ]
+}
