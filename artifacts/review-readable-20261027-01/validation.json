@@ -1,0 +1,59 @@
+{
+  "task": "T66",
+  "captured_at_utc": "2026-10-28T01:36:05.761039+00:00",
+  "checks": {
+    "full_gate_683": true,
+    "new_regressions_13": true,
+    "nine_full_evidence_hash_bindings": true,
+    "complete_exact_source_span_order": true,
+    "original_details_closed_and_reversible": true,
+    "changed_missing_invalid_view_falls_back": true,
+    "draft_reload_unchanged_note_keys_and_collision_rejection": true,
+    "all_real_store_rows_unchanged": true,
+    "technical_card_and_C_no_new_grade_request": true
+  },
+  "browser": {
+    "desktop": [
+      1280,
+      900
+    ],
+    "phone": [
+      375,
+      812
+    ],
+    "phone_document_width": 375,
+    "readable_source_rows": 50,
+    "raw_source_buttons": 0,
+    "optional_note_fields": 9,
+    "original_details_sections": 9,
+    "all_details_closed_at_end": true,
+    "source_original_metadata_details_opened_and_closed": true,
+    "mouse_keyboard_popovers": true,
+    "unsaved_note_survived_popover_resize_details": true,
+    "temporary_note_restored_exactly": "You missed re-gard",
+    "saved_or_submitted_test_answer": false,
+    "screenshots_inspected": true,
+    "new_proposed_text_glossary_buttons": 8,
+    "errors": 0,
+    "physical_ios_tested": false
+  },
+  "desk": {
+    "pid": 47185,
+    "started_local": "2026-10-27 21:35:26",
+    "command": "python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false",
+    "launch": "existing detached process-session approach",
+    "LAN": "http://10.0.0.56:8501",
+    "HTTP_status": 200,
+    "final_actual_page_verified": true
+  },
+  "new_provider_calls": 0,
+  "new_image_downloads": 0,
+  "canonical_edits": 0,
+  "new_packets": 0,
+  "limits": [
+    "Presentation only; source text remains unchanged and no complete Sample B reading was generated.",
+    "T52 split-word repair and T67 bracket-event annotations remain outstanding.",
+    "No extra HR-010 grading round or provider execution authorized."
+  ],
+  "all_passed": true
+}

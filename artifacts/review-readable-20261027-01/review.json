@@ -1,0 +1,8 @@
+{
+  "reviewer": "existing Luna delegate /root/inventory_review",
+  "scope": "bounded readable catalog/renderer/note identity and final history label deltas",
+  "finding": "History label map needed the same real-question/generated-note collision guard as answer validation.",
+  "resolution": "readable_answer_labels calls evidence_note_questions; dedicated collision regression passes.",
+  "other_findings": "No concrete issue: full evidence hash, every source span in order, original fallback/details,1/32/1context groups,eight pairs incl unchanged6,C informational; exact note identity retained.",
+  "tests_run_by_reviewer": false
+}

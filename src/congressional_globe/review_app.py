@@ -19,7 +19,8 @@ from congressional_globe.review_glossary import (
     styles,
 )
 from congressional_globe.review_models import ReviewEvidence, ReviewPacket
-from congressional_globe.review_notes import evidence_note_id, evidence_note_questions
+from congressional_globe.review_notes import evidence_note_id
+from congressional_globe.review_readable import readable_answer_labels, show_readable_evidence
 from congressional_globe.review_scans import show_inline_scan
 from congressional_globe.review_store import ReviewStore
 
@@ -65,11 +66,7 @@ def _widget_prefix(packet_id: str, version: int, reviewer: str, revision_id: str
 def _evidence(question: Any, scope: str, glossary: list[dict], baseline: dict) -> tuple[dict, bool]:
     notes, save = {}, False
     for index, item in enumerate(_value(question, "evidence", [])):
-        show_text(str(_value(item, "label", "Evidence")), f"{scope}-label-{index}", glossary)
-        show_evidence(str(_value(item, "text", "")), f"{scope}-evidence-{index}", glossary)
-        url = _safe_url(_value(item, "url"))
-        if url:
-            show_inline_scan(url)
+        _show_evidence_item(item, f"{scope}-{index}", glossary)
         note_id = evidence_note_id(
             str(_value(question, "id")), index, ReviewEvidence.model_validate(item)
         )
@@ -77,6 +74,17 @@ def _evidence(question: Any, scope: str, glossary: list[dict], baseline: dict) -
         clicked = st.form_submit_button("Save draft here", key=f"save-{scope}-{index}")
         save = clicked or save
     return notes, save
+
+
+def _show_evidence_item(item: Any, scope: str, glossary: list[dict]) -> None:
+    parsed = ReviewEvidence.model_validate(item)
+    if show_readable_evidence(parsed, scope, glossary):
+        return
+    show_text(str(parsed.label), f"{scope}-label", glossary)
+    show_evidence(parsed.text, f"{scope}-evidence", glossary)
+    url = _safe_url(parsed.url)
+    if url:
+        show_inline_scan(url)
 
 
 def _evidence_note(
@@ -265,11 +273,11 @@ def _show_submission(submission: Any, packet: dict) -> None:
 def _show_answers(submission: Any, packet: dict) -> None:
     payload = dict(packet)
     payload.pop("packet_sha256", None)
-    notes = evidence_note_questions(ReviewPacket.model_validate(payload))
+    labels = readable_answer_labels(ReviewPacket.model_validate(payload))
     for question_id, answer in (_value(submission, "answers", {}) or {}).items():
         if not answer.strip():
             continue
-        label = notes[question_id].prompt if question_id in notes else question_id
+        label = labels.get(question_id, question_id)
         show_text(label, f"answer-label-{question_id}")
         st.text(answer)
 
