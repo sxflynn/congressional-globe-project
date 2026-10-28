@@ -1,0 +1,27 @@
+import hashlib,json
+from pathlib import Path
+import tokenizers
+from tokenizers import Tokenizer
+p=Path('artifacts/ocr-live-readiness-20261028-01');m=json.loads((p/'installed-model-manifest.json').read_text());layer=next(x for x in m['layers'] if x.get('name')=='tokenizer.json');file=Path.home()/'.ollama/models/blobs'/layer['digest'].replace(':','-');assert hashlib.sha256(file.read_bytes()).hexdigest()==layer['digest'].split(':')[1];tok=Tokenizer.from_file(str(file))
+def canonical(x):return json.dumps(x,sort_keys=True,separators=(',',':'),ensure_ascii=False)
+def count(x):return len(tok.encode(x,add_special_tokens=False).ids)
+rows=json.loads(Path('artifacts/deterministic-sample-20261028-01/frozen-inputs.json').read_text())['paragraphs'];results=json.loads(Path('artifacts/deterministic-sample-20261028-01/results.json').read_text());prompts=json.loads(Path('artifacts/ocr-productive-repair-contract-20261027-01/prompts.json').read_text());schema=json.loads(Path('artifacts/ocr-productive-repair-contract-20261027-01/reply.schema.json').read_text());codes=['all_words','names_places','numbers','punctuation','printed_repetition','bracketed_cues','target_context_boundaries','unflagged_text','static_edits'];output=[]
+for unit in ['S1','S2','S3','S4','S5','D1','D2']:
+ selected=[(r,v) for r,v in zip(rows,results,strict=True) if r['unit_id']==unit];audit=unit.startswith('D');role='audit_saved_proposal' if audit else 'productive_repair_and_self_check'
+ minimal={'contract':'ocr-productive-repair-reply-v2','unit_id':unit,'role':role,'status':'no_finding','inspections':[],'findings':[],'patches':[],'reason':None,'target_readings':[],'self_check':[]}
+ for i,(row,result) in enumerate(selected,1):
+  alias=f'P{i}';minimal['inspections'].append({'paragraph_alias':alias,'image_alias':'I1','completeness':'complete','image_suitability':'clear','reason':None});minimal['self_check'].append({'paragraph_alias':alias,'coverage':'complete','checked_content':codes,'remaining_concerns':[]})
+  if not audit:minimal['target_readings'].append({'paragraph_alias':alias,'image_alias':'I1','reading_status':'unchanged','proposed_text':row['raw_text'],'uncertainties':[],'reason':None})
+ candidate=json.loads(json.dumps(minimal));patch_count=0
+ if not audit:
+  for i,(row,result) in enumerate(selected,1):
+   alias=f'P{i}';edits=result['proposed_edits'];patch_count+=len(edits)
+   if edits:
+    candidate['status']='findings';candidate['target_readings'][i-1]['reading_status']='proposed';candidate['target_readings'][i-1]['proposed_text']=result['proposed_text']
+   for j,edit in enumerate(edits,1):
+    fid=f'F{i}_{j}';candidate['findings'].append({'finding_id':fid,'anchor':{'paragraph_alias':alias,'scope':'quote','raw_quote':edit['raw_quote']},'affected_layer':'raw','affected_quote':edit['raw_quote'],'category':'other_damage','resolution':'proposed','proposed_reading':edit['replacement'],'image_alias':'I1','basis':'visible_print','explanation':'Hypothetical line join for capacity calculation only.'});candidate['patches'].append({'finding_id':fid,'paragraph_alias':alias,'raw_quote':edit['raw_quote'],'replacement':edit['replacement'],'image_alias':'I1','reason':'Hypothetical line join for capacity calculation only.'})
+ (p/f'{unit}-capacity-no-finding.json').write_text(json.dumps({'status':'authored_capacity_example_not_a_model_reply','source_basis':'Original OCR and hypothetical deterministic edits only; not an image reading or quality judgment.','reply':minimal},indent=2,ensure_ascii=False)+'\n');(p/f'{unit}-capacity-proposal.json').write_text(json.dumps({'status':'authored_capacity_example_not_a_model_reply','source_basis':'Original OCR and hypothetical deterministic edits only; not an image reading or quality judgment.','reply':candidate},indent=2,ensure_ascii=False)+'\n')
+ projection={'contract':'ocr-productive-repair-input-v2','unit_id':unit,'role':role,'image_alias':'I1','paragraphs':[{'paragraph_alias':f'P{i}','role':'target','raw_text':r['raw_text'],'static_text':r['static_text'],'static_edits':r['static_edits']} for i,(r,v) in enumerate(selected,1)]}
+ text=prompts[role]+'\n'+canonical(schema)+'\n'+canonical(projection)
+ output.append({'unit_id':unit,'targets':len(selected),'canonical_no_finding_output_tokens':count(canonical(minimal)),'hypothetical_line_join_output_tokens':count(canonical(candidate)),'hypothetical_patch_count':patch_count,'candidate_text_input_tokens_with_schema':count(text),'output_candidate_exceeds_1500':count(canonical(candidate))>1500,'input_text_candidate_exceeds_6000':count(text)>6000,'input_scope':'Illustrative text portion only; not final provider projection. Images/rendering/saved-audit proposal omitted; NOT complete token-fit proof.'})
+report={'tool':'tokenizers','tool_version':tokenizers.__version__,'tool_scope':'Temporary counting tool only; no project dependency/model download/provider call.','tokenizer_file_sha256':layer['digest'].split(':')[1],'tokenizer_file_bytes':file.stat().st_size,'installed_model_digest':hashlib.sha256((p/'installed-model-manifest.json').read_bytes()).hexdigest(),'units':output,'limits':'Actual installed tokenizer on canonical authored candidate strings, not server-measured prompt totals or universal minimum/maximum lengths. Capacity examples are not returned model replies, image readings or accepted corrections. Need actual rendered-template/image accounting and actual saved proposals before fit can pass.'};(p/'token-capacity.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(output,indent=2))

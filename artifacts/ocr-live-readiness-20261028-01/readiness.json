@@ -1,0 +1,170 @@
+{
+  "task": "T55",
+  "created_at": "2026-10-28T22:05:43.688196+00:00",
+  "status": "blocked_not_launch_ready",
+  "decision": "do_not_dispatch",
+  "authorization": {
+    "path": "artifacts/ocr-workflow-approval-20261028-01/approval.json",
+    "sha256": "34282bb2d794569ab4458051891adb107650b2aa952dac44968f5829a5214593",
+    "scope": "Explicit waiver and approved first bounded diagnostic remain valid; no repeated approval requested."
+  },
+  "sample": {
+    "path": "artifacts/ocr-productive-repair-contract-20261027-01/sample-binding.json",
+    "sha256": "9ad0e2789e28ce29d3d8ec20a52a3a54b2859b4b38d6629c806e72746f3fb7f0",
+    "unit_ids": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "D1",
+      "D2"
+    ],
+    "targets": 18,
+    "no_substitutions": true,
+    "reserved_units_used": 0
+  },
+  "prospective_bounds": {
+    "path": "artifacts/ocr-productive-repair-contract-20261027-01/bounds.json",
+    "sha256": "db8c1eb674c3c6e269dab25b7d0ad23e6b9e4943bdbb0444f583bfa6b966a407",
+    "maximum_inference_requests": 7,
+    "per_request_seconds": 120,
+    "request_seconds": 840,
+    "planned_setup_reporting_seconds": 360,
+    "whole_session_seconds": 1800,
+    "retries": 0,
+    "input_tokens_candidate": 6000,
+    "output_tokens_candidate": 1500,
+    "ceilings_not_silently_raised": true
+  },
+  "backend": {
+    "provider": "ollama",
+    "version": "0.40.8",
+    "model": "qwen3.8:27b-mlx",
+    "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "installed_manifest_bytes_match_runtime_digest": true,
+    "advertised_vision": true,
+    "actual_new_inference": false,
+    "native_schema_compatibility_for_v2": "not_established"
+  },
+  "units": [
+    {
+      "unit_id": "S1",
+      "status": "cached_and_agent_inspected",
+      "image_path": "artifacts/ocr-live-readiness-20261028-01/images/S1/crop-01.jpg",
+      "image_sha256": "0864afba1dcdedf0555463283e9f79e7e2c1209de20901de07b73b3cd415e5a9",
+      "width": 1028,
+      "height": 805,
+      "source_hocr_sha256": "7300280b1d7966fb72a67717765f839bd174ce11fd20728b505f6bb366998f8f",
+      "page_map_sha256": "d4ca0462c350b0e5ac060102a549360e0b0256713f10f8cf31d50d405bfbfe48",
+      "binding_source": "artifacts/ocr-live-readiness-20261028-01/images/S1/bundle.json"
+    },
+    {
+      "unit_id": "S2",
+      "status": "cached_and_agent_inspected",
+      "image_path": "artifacts/ocr-live-readiness-20261028-01/images/S2/crop-01.jpg",
+      "image_sha256": "558720d837fb5631d182a3f53cec98f8bc9987d09dcc8d65994b3749c35a5668",
+      "width": 1004,
+      "height": 212,
+      "source_hocr_sha256": "16ed248c75a5f2deb217794aeee6a0e63f73d2bbcb73ea33b2d6772a4e59cc67",
+      "page_map_sha256": "5817ab6ba9cb54c27b6e3d8b4eca257ba97afecbca08d552ff0cf0ed87c957f3",
+      "binding_source": "artifacts/ocr-live-readiness-20261028-01/images/S2/bundle.json"
+    },
+    {
+      "unit_id": "S3",
+      "status": "missing_after_bounded_recovery",
+      "metadata_attempts": 2,
+      "image_requests": 0,
+      "failure": "metadata read timeout on both attempts",
+      "targets_unchanged": true
+    },
+    {
+      "unit_id": "S4",
+      "status": "missing_after_bounded_recovery",
+      "metadata_attempts": 2,
+      "image_requests": 0,
+      "failure": "metadata read timeout on both attempts",
+      "targets_unchanged": true
+    },
+    {
+      "unit_id": "S5",
+      "status": "cached_and_agent_inspected",
+      "image_path": "artifacts/ocr-live-readiness-20261028-01/images/S5/crop-01.jpg",
+      "image_sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+      "width": 999,
+      "height": 206,
+      "source_hocr_sha256": "966c31d965de8d72080bd30c8e474e98a2061d3082bd8c0d7f89b10eb81436ff",
+      "page_map_sha256": "6ba53515281768c4f7b446f0d1845811bdbc100167f8e781c8e848be2f5a014b",
+      "binding_source": "artifacts/ocr-live-readiness-20261028-01/images/S5/bundle.json"
+    },
+    {
+      "unit_id": "D1",
+      "status": "cached_and_agent_inspected",
+      "image_path": "artifacts/reading-images-20261024-01/reading-74d01b9894f76563d519-leaf-1060/crop.jpg",
+      "image_sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+      "width": 1600,
+      "height": 3222,
+      "source_hocr_sha256": "966c31d965de8d72080bd30c8e474e98a2061d3082bd8c0d7f89b10eb81436ff",
+      "page_map_sha256": "6ba53515281768c4f7b446f0d1845811bdbc100167f8e781c8e848be2f5a014b",
+      "binding_source": "artifacts/reading-images-20261024-01/reading-74d01b9894f76563d519-leaf-1060/plan.json"
+    },
+    {
+      "unit_id": "D2",
+      "status": "cached_and_agent_inspected",
+      "image_path": "artifacts/reading-images-20261024-01/reading-1cf618a5ce887cee79b1-leaf-741/crop.jpg",
+      "image_sha256": "53373dc3ef8ff554cda84c138db9c24b5f5753710114a2594bae75e06b150555",
+      "width": 1600,
+      "height": 876,
+      "source_hocr_sha256": "966c31d965de8d72080bd30c8e474e98a2061d3082bd8c0d7f89b10eb81436ff",
+      "page_map_sha256": "6ba53515281768c4f7b446f0d1845811bdbc100167f8e781c8e848be2f5a014b",
+      "binding_source": "artifacts/reading-images-20261024-01/reading-1cf618a5ce887cee79b1-leaf-741/plan.json"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "R1",
+      "condition": "S3/S4 source images unavailable: each original and single source-recovery metadata GET timed out at the existing45second setting. No further fetch in this step.",
+      "evidence": [
+        "images/S3/events.jsonl",
+        "images/S3-recovery2/events.jsonl",
+        "images/S4/events.jsonl",
+        "images/S4-recovery2/events.jsonl"
+      ]
+    },
+    {
+      "id": "R2",
+      "condition": "Current productive runner explicitly accepts declared offline test doubles only; an actual owned local HTTP provider adapter/response normalization is not implemented.",
+      "evidence": [
+        "../../src/congressional_globe/productive_ocr_runner.py"
+      ]
+    },
+    {
+      "id": "R3",
+      "condition": "Full rendered-template + image + saved-proposal/diagnostic token fit unverified. Installed tokenizer counts authored examples only; native-gridD1scenario7518 exceeds candidate6000 but actual backend resizing is unverified.",
+      "evidence": [
+        "token-capacity.json",
+        "image-token-scenarios.json"
+      ]
+    },
+    {
+      "id": "R4",
+      "condition": "Actual owned-backend cancellation/stop observation unproved; terminating a fake child does not prove control of the shared Ollama model request.",
+      "evidence": [
+        "../productive-ocr-integration-20261028-01/README.md"
+      ]
+    }
+  ],
+  "prior_costs": {
+    "primary_reading_attempts": 48,
+    "primary_conservative_request_seconds": 3693.79,
+    "source": "MASTER_PLAN.md runtime/budget facts; immutable historical reading terminal export. Other earlier metadata/vision branches remain separate named records; this is not a complete study grand total.",
+    "old_remaining_allowance_not_spent": true,
+    "new_chunk_inference_attempts": 0,
+    "new_chunk_inference_seconds": 0,
+    "hardware_energy_review_cost": "not_measured"
+  },
+  "new_reference_readings": 0,
+  "new_human_review_minutes_required": 0,
+  "human_desk_status": "No generated historical proposal exists from this step. Capacity examples are authored software planning examples and were not posted as AI results.",
+  "next_independent_implementation": "T70: actual local adapter, exact production schema/wire mapping, complete multimodal fit and owned-stop controls; fake HTTP/process tests first, no model calls under implementation row."
+}

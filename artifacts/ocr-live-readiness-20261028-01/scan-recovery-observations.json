@@ -1,0 +1,44 @@
+[
+  {
+    "unit": "S3",
+    "command": [
+      "uv",
+      "run",
+      "globe",
+      "scan",
+      "crop",
+      "--item",
+      "congressionalglo7393unit",
+      "--leaf",
+      "1055",
+      "--paragraph",
+      "par_001055_000071",
+      "--output",
+      "artifacts/ocr-live-readiness-20261028-01/images/S3-recovery2",
+      "--fetch"
+    ],
+    "exit_code": 1,
+    "wall_seconds": 63.37054349994287
+  },
+  {
+    "unit": "S4",
+    "command": [
+      "uv",
+      "run",
+      "globe",
+      "scan",
+      "crop",
+      "--item",
+      "congressionalglo00unit",
+      "--leaf",
+      "83",
+      "--paragraph",
+      "par_000083_000042",
+      "--output",
+      "artifacts/ocr-live-readiness-20261028-01/images/S4-recovery2",
+      "--fetch"
+    ],
+    "exit_code": 1,
+    "wall_seconds": 47.19266595807858
+  }
+]

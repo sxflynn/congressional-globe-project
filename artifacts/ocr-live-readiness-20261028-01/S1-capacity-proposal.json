@@ -1,0 +1,148 @@
+{
+  "status": "authored_capacity_example_not_a_model_reply",
+  "source_basis": "Original OCR and hypothetical deterministic edits only; not an image reading or quality judgment.",
+  "reply": {
+    "contract": "ocr-productive-repair-reply-v2",
+    "unit_id": "S1",
+    "role": "productive_repair_and_self_check",
+    "status": "findings",
+    "inspections": [
+      {
+        "paragraph_alias": "P1",
+        "image_alias": "I1",
+        "completeness": "complete",
+        "image_suitability": "clear",
+        "reason": null
+      }
+    ],
+    "findings": [
+      {
+        "finding_id": "F1_1",
+        "anchor": {
+          "paragraph_alias": "P1",
+          "scope": "quote",
+          "raw_quote": "oppor- tunity"
+        },
+        "affected_layer": "raw",
+        "affected_quote": "oppor- tunity",
+        "category": "other_damage",
+        "resolution": "proposed",
+        "proposed_reading": "opportunity",
+        "image_alias": "I1",
+        "basis": "visible_print",
+        "explanation": "Hypothetical line join for capacity calculation only."
+      },
+      {
+        "finding_id": "F1_2",
+        "anchor": {
+          "paragraph_alias": "P1",
+          "scope": "quote",
+          "raw_quote": "sys- tem"
+        },
+        "affected_layer": "raw",
+        "affected_quote": "sys- tem",
+        "category": "other_damage",
+        "resolution": "proposed",
+        "proposed_reading": "system",
+        "image_alias": "I1",
+        "basis": "visible_print",
+        "explanation": "Hypothetical line join for capacity calculation only."
+      },
+      {
+        "finding_id": "F1_3",
+        "anchor": {
+          "paragraph_alias": "P1",
+          "scope": "quote",
+          "raw_quote": "recon- struction"
+        },
+        "affected_layer": "raw",
+        "affected_quote": "recon- struction",
+        "category": "other_damage",
+        "resolution": "proposed",
+        "proposed_reading": "reconstruction",
+        "image_alias": "I1",
+        "basis": "visible_print",
+        "explanation": "Hypothetical line join for capacity calculation only."
+      },
+      {
+        "finding_id": "F1_4",
+        "anchor": {
+          "paragraph_alias": "P1",
+          "scope": "quote",
+          "raw_quote": "sub- mitted"
+        },
+        "affected_layer": "raw",
+        "affected_quote": "sub- mitted",
+        "category": "other_damage",
+        "resolution": "proposed",
+        "proposed_reading": "submitted",
+        "image_alias": "I1",
+        "basis": "visible_print",
+        "explanation": "Hypothetical line join for capacity calculation only."
+      }
+    ],
+    "patches": [
+      {
+        "finding_id": "F1_1",
+        "paragraph_alias": "P1",
+        "raw_quote": "oppor- tunity",
+        "replacement": "opportunity",
+        "image_alias": "I1",
+        "reason": "Hypothetical line join for capacity calculation only."
+      },
+      {
+        "finding_id": "F1_2",
+        "paragraph_alias": "P1",
+        "raw_quote": "sys- tem",
+        "replacement": "system",
+        "image_alias": "I1",
+        "reason": "Hypothetical line join for capacity calculation only."
+      },
+      {
+        "finding_id": "F1_3",
+        "paragraph_alias": "P1",
+        "raw_quote": "recon- struction",
+        "replacement": "reconstruction",
+        "image_alias": "I1",
+        "reason": "Hypothetical line join for capacity calculation only."
+      },
+      {
+        "finding_id": "F1_4",
+        "paragraph_alias": "P1",
+        "raw_quote": "sub- mitted",
+        "replacement": "submitted",
+        "image_alias": "I1",
+        "reason": "Hypothetical line join for capacity calculation only."
+      }
+    ],
+    "reason": null,
+    "target_readings": [
+      {
+        "paragraph_alias": "P1",
+        "image_alias": "I1",
+        "reading_status": "proposed",
+        "proposed_text": "We have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+        "uncertainties": [],
+        "reason": null
+      }
+    ],
+    "self_check": [
+      {
+        "paragraph_alias": "P1",
+        "coverage": "complete",
+        "checked_content": [
+          "all_words",
+          "names_places",
+          "numbers",
+          "punctuation",
+          "printed_repetition",
+          "bracketed_cues",
+          "target_context_boundaries",
+          "unflagged_text",
+          "static_edits"
+        ],
+        "remaining_concerns": []
+      }
+    ]
+  }
+}

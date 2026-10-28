@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-10-28T21:43:38.130066+00:00",
+  "matching_processes": [
+    "51366 Wed Oct 28 17:43:38 2026           00:00 /bin/bash -c UV_CACHE_DIR=/tmp/globe-uv-cache uv run python - <<'PY'\\012import json,re,subprocess,urllib.request\\012from pathlib import Path\\012from datetime import datetime,UTC\\012p=Path('artifacts/ocr-live-readiness-20261028-01')\\012result=subprocess.run(['ps','-axo','pid,lstart,etime,command'],capture_output=True,text=True,check=True)\\012lines=[]\\012for line in result.stdout.splitlines():\\012 if any(x in line.lower() for x in ['ollama.app/','/ollama serve','ollama runner','mlx_lm','globe cleanup run','globe reading']):\\012  lines.append(re.sub(r'sk-[A-Za-z0-9_-]+','[redacted]',line))\\012(p/'processes.json').write_text(json.dumps({'checked_at':datetime.now(UTC).isoformat(),'matching_processes':lines[:30],'scope':'Only model/server/cleanup commands; no process killed or started.'},indent=2)+'\\n')\\012for name in ['version','tags','ps']:\\012 try:\\012  with urllib.request.urlopen('http://127.0.0.1:11434/api/'+name,timeout=5) as response:\\012   data=response.read(2097153)\\012  assert len(data)<=2097152\\012  value=json.loads(data)\\012 except Exception as e:value={'observation_unknown':True,'error_type':type(e).__name__}\\012 (p/f'api-{name}.json').write_text(json.dumps(value,indent=2)+'\\n')\\012 print(name, str(value)[:1000])\\012print('matching processes',len(lines))\\012PY",
+    "87583 Wed Oct 21 20:46:50 2026     06-20:56:48 /Applications/Ollama.app/Contents/MacOS/Ollama",
+    "87597 Wed Oct 21 20:46:52 2026     06-20:56:46 /Applications/Ollama.app/Contents/Resources/ollama serve"
+  ],
+  "scope": "Only model/server/cleanup commands; no process killed or started."
+}

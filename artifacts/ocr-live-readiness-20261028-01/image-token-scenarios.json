@@ -1,0 +1,25 @@
+{
+  "preprocessor_config_sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+  "scenarios": [
+    {
+      "unit_id": "D1",
+      "image_width": 1600,
+      "image_height": 3222,
+      "patch_times_merge": 32,
+      "native_grid_scenario_tokens": 5050,
+      "illustrative_text_plus_native_grid": 7518,
+      "scenario_exceeds_6000": true,
+      "scope": "Configuration-derived native-grid scenario only. Actual Ollama resizing/rendering/image scheduling not verified; not a measured API token count or a frozen fit record. Saved proposal and full diagnostics still omitted."
+    },
+    {
+      "unit_id": "D2",
+      "image_width": 1600,
+      "image_height": 876,
+      "patch_times_merge": 32,
+      "native_grid_scenario_tokens": 1400,
+      "illustrative_text_plus_native_grid": 3896,
+      "scenario_exceeds_6000": false,
+      "scope": "Configuration-derived native-grid scenario only. Actual Ollama resizing/rendering/image scheduling not verified; not a measured API token count or a frozen fit record. Saved proposal and full diagnostics still omitted."
+    }
+  ]
+}

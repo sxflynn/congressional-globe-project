@@ -1,0 +1,108 @@
+{
+  "units": [
+    {
+      "unit_id": "S1",
+      "status": "cached_and_agent_inspected",
+      "image_path": "artifacts/ocr-live-readiness-20261028-01/images/S1/crop-01.jpg",
+      "image_sha256": "0864afba1dcdedf0555463283e9f79e7e2c1209de20901de07b73b3cd415e5a9",
+      "width": 1028,
+      "height": 805,
+      "source_hocr_sha256": "7300280b1d7966fb72a67717765f839bd174ce11fd20728b505f6bb366998f8f",
+      "page_map_sha256": "d4ca0462c350b0e5ac060102a549360e0b0256713f10f8cf31d50d405bfbfe48",
+      "binding_source": "artifacts/ocr-live-readiness-20261028-01/images/S1/bundle.json"
+    },
+    {
+      "unit_id": "S2",
+      "status": "cached_and_agent_inspected",
+      "image_path": "artifacts/ocr-live-readiness-20261028-01/images/S2/crop-01.jpg",
+      "image_sha256": "558720d837fb5631d182a3f53cec98f8bc9987d09dcc8d65994b3749c35a5668",
+      "width": 1004,
+      "height": 212,
+      "source_hocr_sha256": "16ed248c75a5f2deb217794aeee6a0e63f73d2bbcb73ea33b2d6772a4e59cc67",
+      "page_map_sha256": "5817ab6ba9cb54c27b6e3d8b4eca257ba97afecbca08d552ff0cf0ed87c957f3",
+      "binding_source": "artifacts/ocr-live-readiness-20261028-01/images/S2/bundle.json"
+    },
+    {
+      "unit_id": "S3",
+      "status": "missing_after_bounded_recovery",
+      "metadata_attempts": 2,
+      "image_requests": 0,
+      "failure": "metadata read timeout on both attempts",
+      "targets_unchanged": true
+    },
+    {
+      "unit_id": "S4",
+      "status": "missing_after_bounded_recovery",
+      "metadata_attempts": 2,
+      "image_requests": 0,
+      "failure": "metadata read timeout on both attempts",
+      "targets_unchanged": true
+    },
+    {
+      "unit_id": "S5",
+      "status": "cached_and_agent_inspected",
+      "image_path": "artifacts/ocr-live-readiness-20261028-01/images/S5/crop-01.jpg",
+      "image_sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+      "width": 999,
+      "height": 206,
+      "source_hocr_sha256": "966c31d965de8d72080bd30c8e474e98a2061d3082bd8c0d7f89b10eb81436ff",
+      "page_map_sha256": "6ba53515281768c4f7b446f0d1845811bdbc100167f8e781c8e848be2f5a014b",
+      "binding_source": "artifacts/ocr-live-readiness-20261028-01/images/S5/bundle.json"
+    },
+    {
+      "unit_id": "D1",
+      "status": "cached_and_agent_inspected",
+      "image_path": "artifacts/reading-images-20261024-01/reading-74d01b9894f76563d519-leaf-1060/crop.jpg",
+      "image_sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+      "width": 1600,
+      "height": 3222,
+      "source_hocr_sha256": "966c31d965de8d72080bd30c8e474e98a2061d3082bd8c0d7f89b10eb81436ff",
+      "page_map_sha256": "6ba53515281768c4f7b446f0d1845811bdbc100167f8e781c8e848be2f5a014b",
+      "binding_source": "artifacts/reading-images-20261024-01/reading-74d01b9894f76563d519-leaf-1060/plan.json"
+    },
+    {
+      "unit_id": "D2",
+      "status": "cached_and_agent_inspected",
+      "image_path": "artifacts/reading-images-20261024-01/reading-1cf618a5ce887cee79b1-leaf-741/crop.jpg",
+      "image_sha256": "53373dc3ef8ff554cda84c138db9c24b5f5753710114a2594bae75e06b150555",
+      "width": 1600,
+      "height": 876,
+      "source_hocr_sha256": "966c31d965de8d72080bd30c8e474e98a2061d3082bd8c0d7f89b10eb81436ff",
+      "page_map_sha256": "6ba53515281768c4f7b446f0d1845811bdbc100167f8e781c8e848be2f5a014b",
+      "binding_source": "artifacts/reading-images-20261024-01/reading-1cf618a5ce887cee79b1-leaf-741/plan.json"
+    }
+  ],
+  "inspection_records": [
+    {
+      "unit_id": "S1",
+      "path": "artifacts/ocr-live-readiness-20261028-01/S1-inspection.json",
+      "sha256": "0efc4444cd0b0f4d67039d1e4ce3ace68d12799c7863baae979486cb727809a4",
+      "basis": "Agent source-image readiness inspection, not independent reference or human quality grade."
+    },
+    {
+      "unit_id": "S2",
+      "path": "artifacts/ocr-live-readiness-20261028-01/S2-inspection.json",
+      "sha256": "fb226c02579083d1fb7b2d4ff0e0465391d8957f6d0c337461d0ac3215f45c11",
+      "basis": "Agent source-image readiness inspection, not independent reference or human quality grade."
+    },
+    {
+      "unit_id": "S5",
+      "path": "artifacts/ocr-live-readiness-20261028-01/S5-inspection.json",
+      "sha256": "d244385785b735351e2b84af2ddba8d93230a3f5f734791368e9845f23dfe0e9",
+      "basis": "Agent source-image readiness inspection, not independent reference or human quality grade."
+    },
+    {
+      "unit_id": "D1",
+      "path": "artifacts/ocr-live-readiness-20261028-01/D1-inspection.json",
+      "sha256": "67d06939f8d17778b9e9684064347a988f62e8d03344631ed4ca8bc087d07d87",
+      "basis": "Agent source-image readiness inspection, not independent reference or human quality grade."
+    },
+    {
+      "unit_id": "D2",
+      "path": "artifacts/ocr-live-readiness-20261028-01/D2-inspection.json",
+      "sha256": "102b2a82049fb56c0e9a5240316ce9e6a4c5db41435c74371edf2d551854fe70",
+      "basis": "Agent source-image readiness inspection, not independent reference or human quality grade."
+    }
+  ],
+  "limits": "Five verified images available; two selected images still missing. Inspection records are hash-bound external inputs; full T53 registration-record projection has not yet been constructed. No new historical reference readings."
+}
