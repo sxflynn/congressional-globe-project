@@ -1578,6 +1578,154 @@
       "term": "source details",
       "definition": "Information connecting the displayed example to its original material and saved files.",
       "aliases": []
+    },
+    {
+      "term": "progress walkthrough",
+      "definition": "A readable tour of completed work and its remaining limits.",
+      "aliases": []
+    },
+    {
+      "term": "fixed-rule",
+      "definition": "Using programmed rules and word lists instead of generating an AI answer.",
+      "aliases": [
+        "rule-based"
+      ]
+    },
+    {
+      "term": "fake server",
+      "definition": "A small test program that sends prepared responses. It does not run a language model.",
+      "aliases": [
+        "fake-server"
+      ]
+    },
+    {
+      "term": "software gate",
+      "definition": "The required collection of formatting, code checks and tests before a change is committed.",
+      "aliases": []
+    },
+    {
+      "term": "word joins",
+      "definition": "Joining parts split across a printed line ending. A proposed join can still be wrong.",
+      "aliases": [
+        "split words"
+      ]
+    },
+    {
+      "term": "response",
+      "definition": "The answer bytes returned by a server; their format alone does not establish correctness.",
+      "aliases": [
+        "responses"
+      ]
+    },
+    {
+      "term": "raw HTTP response",
+      "definition": "The exact network reply, saved before its contents are interpreted.",
+      "aliases": []
+    },
+    {
+      "term": "inspection signals",
+      "definition": "Flags pointing to material for later checking; they are not confirmed errors.",
+      "aliases": []
+    },
+    {
+      "term": "productive request",
+      "definition": "A request intended to return the full assigned reading and supported edits together.",
+      "aliases": []
+    },
+    {
+      "term": "bracketed cues",
+      "definition": "Printed words in brackets describing proceedings or reactions; their wording should remain traceable.",
+      "aliases": []
+    },
+    {
+      "term": "stop receipt",
+      "definition": "Saved observations about whether the owned test process stopped.",
+      "aliases": []
+    },
+    {
+      "term": "runtime observations",
+      "definition": "Recorded facts about current processes, queue, logs and model identity before a send.",
+      "aliases": []
+    },
+    {
+      "term": "native preprocessing",
+      "definition": "The selected backend’s actual steps for rendering text and resizing or dividing images before model input.",
+      "aliases": []
+    },
+    {
+      "term": "backend",
+      "definition": "The installed software service that loads and runs the model.",
+      "aliases": []
+    },
+    {
+      "term": "compatibility",
+      "definition": "Whether the selected software accepts and handles the required request and response format.",
+      "aliases": []
+    },
+    {
+      "term": "launch clearance",
+      "definition": "A specific verified readiness record for the frozen run; it is separate from the human’s permission.",
+      "aliases": []
+    },
+    {
+      "term": "text encoding",
+      "definition": "The rule used to represent text as bytes; invalid bytes must not silently become invented text.",
+      "aliases": []
+    },
+    {
+      "term": "sequential",
+      "definition": "One request at a time, without overlap.",
+      "aliases": []
+    },
+    {
+      "term": "whole-session ceiling",
+      "definition": "The total elapsed-time limit including setup, requests and reporting.",
+      "aliases": []
+    },
+    {
+      "term": "historical accuracy",
+      "definition": "Agreement with the original historical evidence, beyond merely passing software checks.",
+      "aliases": []
+    },
+    {
+      "term": "software plumbing",
+      "definition": "The connections that move requests and results between software components.",
+      "aliases": []
+    },
+    {
+      "term": "model input",
+      "definition": "The exact text and image representation supplied to a model before it generates a response.",
+      "aliases": []
+    },
+    {
+      "term": "parent process",
+      "definition": "The program coordinating work done by another program.",
+      "aliases": []
+    },
+    {
+      "term": "worker",
+      "definition": "A program or thread carrying out an assigned request.",
+      "aliases": []
+    },
+    {
+      "term": "raw result",
+      "definition": "The original returned data before it is checked or interpreted.",
+      "aliases": []
+    },
+    {
+      "term": "image-grid calculation",
+      "definition": "A calculation based on dividing an image into blocks for model input; a hypothetical calculation is not a backend measurement.",
+      "aliases": []
+    },
+    {
+      "term": "word-list check",
+      "definition": "Looking for a form in a saved dictionary. A match does not prove the historical spelling.",
+      "aliases": []
+    },
+    {
+      "term": "proposed replacement",
+      "definition": "The suggested text to put in place of an exact original quote; it remains unaccepted until reviewed.",
+      "aliases": []
     }
   ]
 }

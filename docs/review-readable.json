@@ -318,6 +318,114 @@
       "label": "Sample C · no output to review",
       "explanation": "No output was produced for this sample, so there is nothing to grade. You may leave the optional answer blank. The missing result is retained without a replacement.",
       "show_scan": false
+    },
+    "a09943afc2c57fd31f233a568a2bad25998c41be4a86a4277b3e33ca817fee49": {
+      "label": "2 · Real scan and original OCR: reconstruction passage",
+      "explanation": "Part 1, printed page 410. This is a real saved crop and the exact raw OCR. Nearby lines in the image are context. The selected passage begins with the first words shown below and ends at its final sentence. The next card shows the saved cleanup proposal; no AI reading was generated.",
+      "original_body": false,
+      "groups": [
+        {
+          "title": "Original OCR · preserved exactly",
+          "lines": [
+            {
+              "start": 0,
+              "end": 709
+            }
+          ]
+        }
+      ]
+    },
+    "071f6b9952b88764e6ae76f2c65d83e8838493db11bc67f9a83eae5f64489fad": {
+      "label": "3 · Saved fixed-rule proposal: four joins, one split left alone",
+      "explanation": "This is the actual saved output of the new fixed-rule library, not a new model answer. It joins four split words after checking line positions and a word list. The final split word remains unchanged because its joined form did not pass that word-list check. The stray mark after the word loyal also remains. This demonstrates incomplete cleanup; dictionary membership does not verify the printed reading. You can comment on any missed change here.",
+      "original_body": false,
+      "groups": [
+        {
+          "title": "Proposed reading · unreviewed",
+          "lines": [
+            {
+              "start": 23,
+              "end": 724
+            }
+          ]
+        },
+        {
+          "title": "Change 1 · original and proposed",
+          "lines": [
+            {
+              "start": 749,
+              "end": 762,
+              "label": "Original OCR"
+            },
+            {
+              "start": 765,
+              "end": 776,
+              "label": "Proposed replacement"
+            }
+          ]
+        },
+        {
+          "title": "Change 2 · original and proposed",
+          "lines": [
+            {
+              "start": 778,
+              "end": 786,
+              "label": "Original OCR"
+            },
+            {
+              "start": 789,
+              "end": 795,
+              "label": "Proposed replacement"
+            }
+          ]
+        },
+        {
+          "title": "Change 3 · original and proposed",
+          "lines": [
+            {
+              "start": 797,
+              "end": 813,
+              "label": "Original OCR"
+            },
+            {
+              "start": 816,
+              "end": 830,
+              "label": "Proposed replacement"
+            }
+          ]
+        },
+        {
+          "title": "Change 4 · original and proposed",
+          "lines": [
+            {
+              "start": 832,
+              "end": 843,
+              "label": "Original OCR"
+            },
+            {
+              "start": 846,
+              "end": 855,
+              "label": "Proposed replacement"
+            }
+          ]
+        }
+      ]
+    },
+    "98dc572b5da3329f8229cb98754378a8d3a7d954ba27742ced074842da9acfd0": {
+      "label": "4 · Another real scan: a word the rules left unchanged",
+      "explanation": "Part 2, printed page 1564. The saved rule-based output is identical to this raw OCR: zero changes. The scan is available beside the text so you can see what remains. A word being flagged for later inspection does not mean it has been repaired, and unchanged text does not mean verified text. No AI correction has been produced for this selected passage.",
+      "original_body": false,
+      "groups": [
+        {
+          "title": "Original OCR and unchanged rule output",
+          "lines": [
+            {
+              "start": 0,
+              "end": 58
+            }
+          ]
+        }
+      ]
     }
   }
 }

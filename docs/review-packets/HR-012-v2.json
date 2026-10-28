@@ -1,0 +1,57 @@
+{
+  "id": "HR-012",
+  "version": 2,
+  "title": "What I built: real scans, saved cleanup and software checks",
+  "instructions": "Browse at your own pace; all feedback is optional. Comment beside any item, then use Submit review to send your comments to the agent. Save draft keeps unfinished comments for later but does not submit them. Dotted-underlined terms explain the AI-written prose; original OCR and proposed text stay plain. This is a requested progress walkthrough, not a mandatory grading round or another run-approval request. No real AI study was launched. No answer is needed for unrelated offline work to continue.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "progress-comments",
+      "prompt": "Optional overall comments — what should change, what is unclear, or what would you like to see next?",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · What changed, and what you can comment on",
+          "text": "This is a progress walkthrough you asked to see. No new AI study has run. You can inspect real source images, unchanged raw OCR, a saved fixed-rule cleanup proposal, and software checks using a fake server.\n\nThe fixed-rule sample covered 18 paragraphs in seven units: five selected passages, one per volume, plus two previously seen failure cases. It proposed six word joins across those 18 paragraphs. These are proposals, not six verified corrections.\n\nThe runner now saves exact requests and responses, keeps proposed readings separate from original OCR, and refuses incomplete or mismatched results. The full software gate passed 846 tests. That count does not measure historical accuracy.\n\nEvery card has its own optional note box. Nothing here asks you to reapprove the run. You can leave comments on any item and submit them, or simply browse.",
+          "url": null
+        },
+        {
+          "label": "2 · Real scan and original OCR: reconstruction passage · congressionalg7391unit:526:par_000526_000021 · raw SHA-256 c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8",
+          "text": "We have now, as I believe, the golden oppor- tunity to remedy this evil which will never come again to the men of this generation. The sys- tem of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on recon- struction having reported this amendment, I infer that they will, if this amendment is sub- mitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0526.jp2/1986,2485,1028,805/1028,/0/default.jpg"
+        },
+        {
+          "label": "3 · Saved fixed-rule proposal: four joins, one split left alone · congressionalg7391unit:526:par_000526_000021 · raw SHA-256 c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8",
+          "text": "Full proposed reading:\nWe have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\n\n\nExact saved changes:\n\noppor- tunity → opportunity\n\nsys- tem → system\n\nrecon- struction → reconstruction\n\nsub- mitted → submitted",
+          "url": null
+        },
+        {
+          "label": "4 · Another real scan: a word the rules left unchanged · congressionalglo7392unit:716:par_000716_000020 · raw SHA-256 d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+          "text": "Mr. BROWN. The navigable channel is not private propei-ty.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0716.jp2/1155,280,1004,212/1004,/0/default.jpg"
+        },
+        {
+          "label": "5 · What goes into a future AI request, and what must come back",
+          "text": "The request builder now packages the selected scan, original OCR, saved rule changes and inspection signals together. A single productive request is intended to cover every assigned word, including names, numbers, punctuation, repeated lines, bracketed cues and text that was not flagged.\n\nThe required response contains a full proposed reading, an exact list of edits and remaining uncertainties. The software checks that applying those edits recreates the proposed reading exactly. An audit of an earlier saved proposal has a separate response format and cannot silently rewrite that proposal.\n\nThese are implemented software requirements. The seven real requests are not yet ready to send, and there are no new real model outputs to show. The next card shows the invented server example actually used to test the connection.",
+          "url": null
+        },
+        {
+          "label": "6 · Actual connection test: invented text, fake response",
+          "text": "Invented input:\nBy Mr. Example.\n\nPrepared fake-server output:\nBy Mr. Example.\n\nThe fake server returned a prepared answer saying no change was found. The runner saved the original response, checked its required fields and exported a separate unreviewed proposal. Reopening the completed job reused the saved result without another request.\n\nThis tested software plumbing with invented text and a white test image. No language model read a historical page. A valid response format does not establish a correct reading.",
+          "url": null
+        },
+        {
+          "label": "7 · Interruption checks: keep the result, avoid a duplicate request",
+          "text": "In four separate fake-server cases, the parent process was deliberately killed after different save steps: after the raw HTTP response was saved, after the journal saved it but before the stop receipt, after the raw result, and after the final result.\n\nA new process resumed each case successfully. Each case retained exactly one request. The saved response was reused rather than asking again.\n\nOther checks refused stale runtime observations, incomplete image/token evidence, an invented readiness claim and a partial response that happened to look like valid JSON. Invalid text encoding preserves the original bytes. Cancellation tests checked that a delayed worker could not send a late request.\n\nThese are bounded fake-server checks. They do not prove the installed AI model stops within the real time limit.",
+          "url": null
+        },
+        {
+          "label": "8 · What still needs doing before the small AI study",
+          "text": "Two selected scan crops, S3 and S4, remain missing after the recorded timeouts. We have five saved images for the seven selected units; no replacement passages were slipped in.\n\nWe still need genuine native preprocessing evidence: how the installed backend turns this exact text and image into model input. A text-only token count is insufficient. One earlier illustrative image-grid calculation was over the candidate input limit; it was not an actual backend measurement. The limits have not been raised.\n\nThe selected real backend also needs compatibility and stopping evidence. No trusted launch clearance is recorded. Your existing approval is preserved; these are engineering checks, not a request to approve again.\n\nThe next planned task investigates the installed preprocessing path without generating a model response. The study remains at most seven sequential requests, zero automatic retries, with a 30-minute whole-session ceiling. Comments here are optional and do not block unrelated offline work.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}
