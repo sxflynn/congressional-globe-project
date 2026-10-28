@@ -13,7 +13,9 @@
     "two_disjoint_repairs_replay": true,
     "seven_call_arithmetic": true,
     "historical_T50_T60_unchanged": true,
-    "local_links": 199
+    "local_links": 199,
+    "packet_answers_preserved_after_application": true,
+    "inbox_empty": true
   },
   "last_code_gate": 683,
   "documentation_only": true,
@@ -21,5 +23,9 @@
   "new_image_downloads": 0,
   "canonical_edits": 0,
   "T51_independent_verdict_obtained": false,
-  "application_receipt": "pending after committed archive/application"
+  "application_receipt": {
+    "path": "docs/archive/human-review/HR-011-v2/31f55374-c6bc-4943-b50a-6b19ef2bfb05-applied.json",
+    "reference": "19a4067",
+    "sha256": "67beef7d4cfd627f501496a1b39cce1db55acf1a2db7533dd8fa883339552195"
+  }
 }
