@@ -8,6 +8,8 @@ The human requested operationalizing the cleanup discussion. [The evaluation met
 
 ## Needs your attention
 
+Every scan/text example now has its own optional note box and **Save draft here** button. Enter your name at the top before saving. A draft keeps all current answers without requiring completion; **Submit review** sends your feedback to the agent inbox. Submitted notes include the exact example and must receive a recorded action/check or an explicit unresolved reason before being marked handled. Relevant concerns carry forward into later AI instructions and checks. No background model starts when you submit.
+
 **Ready: HR-011 · Small OCR studies: image, raw text, inputs and possible outputs (v2).** Open [the desk](http://10.0.0.56:8501), choose **HR-011 · v2**, and follow the numbered walkthrough: original page image, enlarged count, unchanged raw OCR, possible AI inputs and clearly marked example outputs. Dotted-underlined terms open definitions; OCR and proposed readings stay plain. Read at your own pace; optional notes and an existing independent technical evaluation can be left blank. Earlier packet/answer bytes remain preserved. Design feedback does not supply T51’s independent verdict or authorize a model run.
 
 **Ready: HR-010 · Short source check of selected reading proposals.** Open [the desk](http://10.0.0.56:8501), choose **HR-010**, and compare the two fixed anonymized results with their scans. One full proposed reading and one rejected reply are shown; the unavailable third selection is retained without substitution. This is the already-approved review round, at most10minutes total. Stop sooner and use **Not reviewed — time limit reached** for unfinished samples. No broader approval is requested.

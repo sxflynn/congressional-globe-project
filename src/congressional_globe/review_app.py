@@ -18,6 +18,8 @@ from congressional_globe.review_glossary import (
     show_text,
     styles,
 )
+from congressional_globe.review_models import ReviewEvidence, ReviewPacket
+from congressional_globe.review_notes import evidence_note_id, evidence_note_questions
 from congressional_globe.review_scans import show_inline_scan
 from congressional_globe.review_store import ReviewStore
 
@@ -60,23 +62,55 @@ def _widget_prefix(packet_id: str, version: int, reviewer: str, revision_id: str
     return hashlib.sha256(source.encode()).hexdigest()[:12]
 
 
-def _evidence(question: Any, scope: str, glossary: list[dict]) -> None:
+def _evidence(question: Any, scope: str, glossary: list[dict], baseline: dict) -> tuple[dict, bool]:
+    notes, save = {}, False
     for index, item in enumerate(_value(question, "evidence", [])):
         show_text(str(_value(item, "label", "Evidence")), f"{scope}-label-{index}", glossary)
         show_evidence(str(_value(item, "text", "")), f"{scope}-evidence-{index}", glossary)
         url = _safe_url(_value(item, "url"))
         if url:
             show_inline_scan(url)
+        note_id = evidence_note_id(
+            str(_value(question, "id")), index, ReviewEvidence.model_validate(item)
+        )
+        notes[note_id] = _evidence_note(note_id, scope, index, glossary, baseline)
+        clicked = st.form_submit_button("Save draft here", key=f"save-{scope}-{index}")
+        save = clicked or save
+    return notes, save
 
 
-def _answer_widget(question: Any, current: str, key_prefix: str, glossary: list[dict]) -> str:
+def _evidence_note(
+    note_id: str, scope: str, index: int, glossary: list[dict], baseline: dict
+) -> str:
+    show_text(
+        "Optional note for this example. Save draft here keeps all current answers; "
+        "Submit review sends the finished review.",
+        f"{scope}-note-help-{index}",
+        glossary,
+    )
+    return st.text_area(
+        f"Your note on item {index + 1} above (optional)",
+        value=baseline.get(note_id, ""),
+        key=f"answer-{scope}-{note_id}",
+    )
+
+
+def _answer_widget(
+    question: Any, baseline: dict, key_prefix: str, glossary: list[dict]
+) -> tuple[dict, bool]:
     question_id = str(_value(question, "id"))
     label = str(_value(question, "prompt"))
     required = bool(_value(question, "required", True))
     scope = f"{key_prefix}-{question_id}"
     show_text(label + (" *" if required else ""), scope, glossary)
-    _evidence(question, scope, glossary)
+    notes, save = _evidence(question, scope, glossary, baseline)
     show_option_definitions(question, f"{scope}-options", glossary)
+    notes[question_id] = _main_answer(question, baseline.get(question_id, ""), key_prefix)
+    return notes, save
+
+
+def _main_answer(question: Any, current: str, key_prefix: str) -> str:
+    question_id = str(_value(question, "id"))
     options = _value(question, "options", []) or []
     key = f"answer-{key_prefix}-{question_id}"
     if options:
@@ -203,32 +237,41 @@ def _review_form(
 ) -> tuple[dict[str, str], bool, bool]:
     packet_id, version = _value(packet, "id"), _value(packet, "version")
     with st.form(f"review-{packet_id}-{version}-{key_prefix}"):
-        answers = {
-            str(_value(question, "id")): _answer_widget(
-                question,
-                baseline.get(str(_value(question, "id")), ""),
-                key_prefix,
-                _value(packet, "glossary", []),
+        answers, nearby_save = {}, False
+        for question in questions:
+            values, clicked = _answer_widget(
+                question, baseline, key_prefix, _value(packet, "glossary", [])
             )
-            for question in questions
-        }
+            answers.update(values)
+            nearby_save = clicked or nearby_save
         save_label = "Save revision draft" if revision else "Save draft"
         submit_label = "Submit revision" if revision else "Submit review"
         save = st.form_submit_button(save_label)
         submit = st.form_submit_button(submit_label)
-    return answers, save, submit
+    return answers, save or nearby_save, submit
 
 
-def _show_submission(submission: Any) -> None:
+def _show_submission(submission: Any, packet: dict) -> None:
     state = "Applied" if _value(submission, "applied", False) else "Submitted — awaiting agent"
     receipt = _value(submission, "submission_id", "")
     st.caption(f"{state} · receipt {receipt} · revision {_value(submission, 'revision', '?')}")
     st.write(f"Reviewer: {_value(submission, 'reviewer', 'Unknown')}")
-    for question_id, answer in (_value(submission, "answers", {}) or {}).items():
-        st.write(f"**{question_id}** — {answer}")
+    _show_answers(submission, packet)
     reference = _value(submission, "applied_reference")
     if reference:
         st.info(f"Applied: {reference}")
+
+
+def _show_answers(submission: Any, packet: dict) -> None:
+    payload = dict(packet)
+    payload.pop("packet_sha256", None)
+    notes = evidence_note_questions(ReviewPacket.model_validate(payload))
+    for question_id, answer in (_value(submission, "answers", {}) or {}).items():
+        if not answer.strip():
+            continue
+        label = notes[question_id].prompt if question_id in notes else question_id
+        show_text(label, f"answer-label-{question_id}")
+        st.text(answer)
 
 
 def _legacy_history() -> None:
@@ -314,7 +357,7 @@ def _submission_card(store: ReviewStore, row: dict[str, Any]) -> bool:
     suffix = " · superseded" if row.get("superseded", False) else ""
     title = f"{row['packet_id']} · v{row['version']} · revision {row['revision']}{suffix}"
     with st.expander(title):
-        _show_submission(row)
+        _show_submission(row, store.get_packet(row["packet_id"], row["version"]) or {})
         revise = st.button("Revise this response", key=f"revise-{row['submission_id']}")
     if revise:
         st.session_state["revision_target"] = row

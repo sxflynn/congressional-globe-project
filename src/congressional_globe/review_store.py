@@ -12,6 +12,7 @@ from typing import Any
 from uuid import uuid4
 
 from congressional_globe.review_models import ReviewPacket, ReviewSubmission
+from congressional_globe.review_notes import evidence_feedback, evidence_note_questions
 
 
 def _canonical(value: Any) -> str:
@@ -111,6 +112,7 @@ class ReviewStore:
     ) -> dict[str, str]:
         packet = ReviewPacket.model_validate_json(packet_json)
         questions = {question.id: question for question in packet.questions}
+        questions.update(evidence_note_questions(packet))
         self._check_known_questions(questions, answers)
         self._check_answer_values(questions, answers)
         missing = self._missing_required(packet, answers) if complete else []
@@ -290,7 +292,7 @@ class ReviewStore:
             "WHERE packet_id = ? AND version = ? AND reviewer = ?",
             (row["packet_id"], row["version"], row["reviewer"]),
         ).fetchone()
-        return {
+        result = {
             "submission_id": row["submission_id"],
             "packet_id": row["packet_id"],
             "version": row["version"],
@@ -306,6 +308,20 @@ class ReviewStore:
             "applied_reference": None if receipt is None else receipt["reference"],
             "applied_at": None if receipt is None else receipt["applied_at"],
         }
+        feedback = self._evidence_feedback(connection, row)
+        if feedback:
+            result["evidence_feedback"] = feedback
+        return result
+
+    def _evidence_feedback(self, connection: sqlite3.Connection, row: sqlite3.Row) -> list[dict]:
+        packet = connection.execute(
+            "SELECT packet_json FROM packets WHERE packet_id = ? AND version = ?",
+            (row["packet_id"], row["version"]),
+        ).fetchone()
+        return evidence_feedback(
+            ReviewPacket.model_validate_json(packet["packet_json"]),
+            json.loads(row["answers_json"]),
+        )
 
     def submissions(self, pending_only: bool = False) -> list[dict[str, Any]]:
         clause = (

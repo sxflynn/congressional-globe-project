@@ -1,0 +1,52 @@
+{
+  "task": "T64",
+  "captured_at_utc": "2026-10-28T00:04:47.412882+00:00",
+  "checks": {
+    "full_gate_670": true,
+    "new_regressions_10": true,
+    "real_database_all_rows_unchanged": true,
+    "packets_7_submissions_4_receipts_4_drafts_0": true,
+    "evidence_bound_optional_notes": true,
+    "nearby_save_all_current_answers_without_required_completion": true,
+    "draft_reload_and_immutable_revisions_export": true,
+    "inbox_verbatim_comment_and_source_metadata": true,
+    "wrong_source_index_question_hash_rejected": true,
+    "collision_rejected": true,
+    "mouse_and_keyboard_popover": true,
+    "temporary_browser_note_cleared": true,
+    "no_test_answers_saved_in_real_store": true
+  },
+  "browser": {
+    "HR010_notes_and_local_save_buttons": 9,
+    "HR011_notes_and_local_save_buttons": 12,
+    "HR010_plain_spans": 58,
+    "HR011_plain_spans": 5,
+    "plain_buttons": 0,
+    "errors": 0,
+    "mobile_viewport": [
+      375,
+      812
+    ],
+    "mobile_document_width": 375,
+    "screenshots_inspected": true,
+    "physical_ios_checked": false,
+    "unsaved_note_survived_mouse_popover_and_resize": true,
+    "keyboard_popup_opened_after_safe_focus_verified": true
+  },
+  "desk": {
+    "pid": 5769,
+    "started_local": "2026-10-27 20:01:47",
+    "command": "python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false",
+    "launch": "subprocess with start_new_session=True; stdout/stderr tmp/review-desk-detached.log",
+    "LAN": "http://10.0.0.56:8501",
+    "http_status": 200
+  },
+  "limits": [
+    "Per-note disposition is a mandatory agent procedure; the store does not enforce a disposition ledger.",
+    "Save draft preserves work; Submit review delivers to next agent work turn. No automatic background AI work.",
+    "Human split-word concern remains for T52 regression/follow-up, with no historical correction applied."
+  ],
+  "new_model_calls": 0,
+  "new_historical_grades": 0,
+  "all_passed": true
+}
