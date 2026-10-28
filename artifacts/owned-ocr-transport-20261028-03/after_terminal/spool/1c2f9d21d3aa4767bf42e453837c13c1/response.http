@@ -1,0 +1,5 @@
+HTTP/1.1 200 OK
+Content-Length: 1009
+Connection: close
+
+{"model": "fake:latest", "done": true, "done_reason": "stop", "message": {"role": "assistant", "content": "{\"contract\": \"ocr-productive-repair-reply-v2\", \"unit_id\": \"U1\", \"role\": \"productive_repair_and_self_check\", \"status\": \"no_finding\", \"inspections\": [{\"paragraph_alias\": \"P1\", \"image_alias\": \"I1\", \"completeness\": \"complete\", \"image_suitability\": \"clear\", \"reason\": null}], \"findings\": [], \"patches\": [], \"reason\": null, \"target_readings\": [{\"paragraph_alias\": \"P1\", \"image_alias\": \"I1\", \"reading_status\": \"unchanged\", \"proposed_text\": \"By Mr. Example.\", \"uncertainties\": [], \"reason\": null}], \"self_check\": [{\"paragraph_alias\": \"P1\", \"coverage\": \"complete\", \"checked_content\": [\"all_words\", \"names_places\", \"numbers\", \"punctuation\", \"printed_repetition\", \"bracketed_cues\", \"target_context_boundaries\", \"unflagged_text\", \"static_edits\"], \"remaining_concerns\": []}]}"}, "prompt_eval_count": 6, "eval_count": 2}

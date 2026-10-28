@@ -1,0 +1,111 @@
+{
+  "current_blockers": [
+    "R1: two primary crops absent",
+    "R3: authentic complete native-preprocessing producer/evidence absent",
+    "R4: actual backend compatibility and stopping unproved"
+  ],
+  "final_evidence_code_identity_matches": true,
+  "full_gate": {
+    "checks": [
+      "Ruff format",
+      "Prettier",
+      "Ruff lint",
+      "ty",
+      "Complexipy <=5",
+      "pytest"
+    ],
+    "exit_code": 0,
+    "passed": 846,
+    "seconds": 28.52,
+    "skipped": 0
+  },
+  "git_diff_check": "passed; raw HTTP wire receipts marked binary to preserve required CRLF framing",
+  "human_grades": 0,
+  "links_checked": {
+    "MASTER_PLAN.md": 187,
+    "artifacts/owned-ocr-transport-20261028-01/README.md": 1,
+    "artifacts/owned-ocr-transport-20261028-02/README.md": 1,
+    "artifacts/owned-ocr-transport-20261028-03/README.md": 4
+  },
+  "model_downloads": 0,
+  "new_dependencies": 0,
+  "next_task": "T71 offline native-preprocessing investigation; no inference or source fetch",
+  "operator_exceptions": [
+    "Initial relative fixture path refused before any launch; setup retained under tmp/t70-evidence-relative-path-failure",
+    "Earlier concurrent fake evidence/gate collided on shared lock, both stopped; earlier checkpoint02 and failure log retained. Final evidence and full gate ran sequentially"
+  ],
+  "prior_manifests_verified": true,
+  "real_launch_clearance": "None; deliberately not trusted or pinned until verified T55 readiness",
+  "real_model_calls": 0,
+  "recovery": [
+    {
+      "checkpoint": "after_transport_spool",
+      "killed_returncode": -9,
+      "requests": 1,
+      "resumed_returncode": 0,
+      "status": {
+        "error": 0,
+        "inflight": 0,
+        "invalid": 0,
+        "pending": 0,
+        "unresolved": 0,
+        "valid": 1
+      }
+    },
+    {
+      "checkpoint": "after_raw_before_observation",
+      "killed_returncode": -9,
+      "requests": 1,
+      "resumed_returncode": 0,
+      "status": {
+        "error": 0,
+        "inflight": 0,
+        "invalid": 0,
+        "pending": 0,
+        "unresolved": 0,
+        "valid": 1
+      }
+    },
+    {
+      "checkpoint": "after_raw",
+      "killed_returncode": -9,
+      "requests": 1,
+      "resumed_returncode": 0,
+      "status": {
+        "error": 0,
+        "inflight": 0,
+        "invalid": 0,
+        "pending": 0,
+        "unresolved": 0,
+        "valid": 1
+      }
+    },
+    {
+      "checkpoint": "after_terminal",
+      "killed_returncode": -9,
+      "requests": 1,
+      "resumed_returncode": 0,
+      "status": {
+        "error": 0,
+        "inflight": 0,
+        "invalid": 0,
+        "pending": 0,
+        "unresolved": 0,
+        "valid": 1
+      }
+    }
+  ],
+  "scope": "Implementation and synthetic HTTP/process evidence only",
+  "source_fetches": 0,
+  "source_or_answer_mutations": 0,
+  "source_test_hashes": {
+    "tests/test_productive_ocr_host.py": "ee6329a87da3c73677030c2979c8063b1b584e7df62db170ec9a3c327cff8fdf",
+    "tests/test_productive_ocr_live.py": "73082b2167652a893911f1389c325462f2f6874ee5ffb0d0392b8b313dc05748",
+    "tests/test_productive_ocr_local.py": "7c7827df25ad7fd1295495db91b7065cda981d478104a1e665252388afe9f153",
+    "tests/test_productive_ocr_projection.py": "522478d891612330bbff8bf102c0abf90a5531c5878277cda3c4acc04184c299",
+    "tests/test_productive_ocr_reply.py": "8cc56f75274b859a9897733f11edf8fbdcaf06b0443d2224714568c635e6a453",
+    "tests/test_productive_ocr_runner.py": "dcabab31b14d5672f61aad2ee2558c2a8c5ed2e4adc67c1130394d3d6b662058"
+  },
+  "task": "T70",
+  "wire_attributes": "Narrow .gitattributes rule applies only to these dated response.http evidence files; diff/text unset verified"
+}

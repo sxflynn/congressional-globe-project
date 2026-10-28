@@ -1,0 +1,46 @@
+{
+  "scope": "Offline implementation review, not human or historical grading",
+  "findings": [
+    {
+      "finding": "Self-asserted R1\u2013R4 clearance could authorize a blocked real launch",
+      "action": "Real entry requires independently pinned T55 clearance. Trusted identity deliberately absent; caller registry assertions refuse before transport. Regression added.",
+      "reviewer": "inventory_review",
+      "closure": "confirmed"
+    },
+    {
+      "finding": "Incomplete provider JSON could produce valid-looking host export",
+      "action": "All non-completed provider statuses use versioned transport-failure export with exact entity bytes; regression added.",
+      "reviewer": "productive_reply",
+      "closure": "confirmed"
+    },
+    {
+      "finding": "HTTP framing surplus and cancellation/late-POST race",
+      "action": "Reject surplus framed bytes and serialize cancelled-state/send; fake delayed-worker regression",
+      "reviewer": "productive_reply/productive_host",
+      "closure": "fixed and reviewed"
+    },
+    {
+      "finding": "Invalid UTF-8 response could lose exact bytes or imply empty model reply",
+      "action": "Strict decoding; exact entity base64 and raw HTTP digest retained in distinct failure export; model reply identity absent",
+      "reviewer": "productive_host",
+      "closure": "fixed"
+    },
+    {
+      "finding": "Boolean input usage or zero output could appear valid",
+      "action": "Require actual int exact input and positive capped output; unknown usage remains unknown",
+      "reviewer": "inventory_review",
+      "closure": "fixed"
+    },
+    {
+      "finding": "Synthetic fixtures are not authentic native preprocessing or executable security evidence",
+      "action": "Explicit simulation profile/test hook, tiny marker blobs; operator inspects fixture executable. No sandbox or genuine native fit claim. Real trusted clearance absent.",
+      "closure": "limitation retained"
+    }
+  ],
+  "remaining": [
+    "Two missing primary scans",
+    "Actual complete native preprocessing producer/evidence",
+    "Actual selected backend compatibility/stopping proof"
+  ],
+  "real_model_calls": 0
+}

@@ -1,0 +1,86 @@
+{
+  "contract": "productive-ocr-prepared-owned-job-v1",
+  "full_fit_record_json": "{\"body_sha256\":\"4a42569caa247b5b636f8dc7c4d57666c02d1533cfc628976659e363585518c6\",\"contract\":\"productive-ocr-complete-fit-v1\",\"diagnostics_sha256\":\"b6f23cdb2d94372f497505a4bbd114c573bedb2c343b6958f1fe0832f4ca2be5\",\"evidence_scope\":\"complete_native_backend\",\"host_packet_sha256\":\"9f2a69706de32d4f8d27890610269dd94004fddc11aa9704e6d2a8a6d2ed6d89\",\"image_bindings_sha256\":\"67fc520893a1da5d2d34c3d4d1664f4d7154df3a60c3296549596dc817e4f8f3\",\"image_sha256\":\"4016343e7a0637bd46ab25aff5acc3b4a692d3c6a089000aa8cfda53a4f7cc50\",\"image_tokens\":4,\"input_tokens\":6,\"model_digest\":\"a83b4ed0e7392ee2f851fa5f5f77ca3951af58d70117fda2f686920522bab251\",\"model_name\":\"fake:latest\",\"native_observation_sha256\":\"e68cabefc7d12ce029e4a21053b2286a8dd5b77822a0685048b761524d5ed991\",\"observed_output_tokens\":null,\"output_token_limit\":1500,\"preprocessor_sha256\":\"95691ca63c29fdcc885773d225623b833cde300881c487c86db02454f9b29ba0\",\"rendered_text_sha256\":\"c995239b449ffe348872bdfb2eb307646a687e54c3dcfcfe8b9577ff4f73f78a\",\"renderer_sha256\":\"f71f102a718f01242aee2b2d8f4ce229db0982876b73c736468a7d02616b7ecb\",\"request_projection_sha256\":\"d1e00a983fd18c680ff98bd296a01f3c6bbc0ffb1720744dc930a5d1765f31e8\",\"saved_proposal_sha256\":null,\"source_layers_sha256\":\"d7331bac152d27dd4deee287834e6357daa1360982bbad7abf9ea2d9a9df6dd1\",\"text_tokens\":2,\"token_id_trace_sha256\":\"acdfa024fb0bd79feec5d6bb8784d05e336ff3bbdd24cfef26f8eeed64d4c37a\",\"tokenizer_sha256\":\"ec0ac6d52cd7e7d35c59262357813237cda55781fe0974e9c1f46fa1b7770a8f\"}",
+  "full_fit_sha256": "34b1773322e60fd7fe34b46bb8d2f982dc76b3380886a7ca1ad0891549d7ff46",
+  "job": {
+    "body_sha256": "4a42569caa247b5b636f8dc7c4d57666c02d1533cfc628976659e363585518c6",
+    "body_utf8": "{\"format\":{\"$defs\":{\"Anchor\":{\"additionalProperties\":false,\"properties\":{\"paragraph_alias\":{\"enum\":[\"P1\"],\"pattern\":\"^P([1-9]|[12][0-9]|3[0-2])$\",\"title\":\"Paragraph Alias\",\"type\":\"string\"},\"raw_quote\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"title\":\"Raw Quote\"},\"scope\":{\"enum\":[\"quote\",\"whole_paragraph\"],\"title\":\"Scope\",\"type\":\"string\"}},\"required\":[\"paragraph_alias\",\"scope\",\"raw_quote\"],\"title\":\"Anchor\",\"type\":\"object\"},\"Finding\":{\"additionalProperties\":false,\"properties\":{\"affected_layer\":{\"enum\":[\"raw\",\"static\",\"saved_proposal\"],\"title\":\"Affected Layer\",\"type\":\"string\"},\"affected_quote\":{\"anyOf\":[{\"minLength\":1,\"type\":\"string\"},{\"type\":\"null\"}],\"title\":\"Affected Quote\"},\"anchor\":{\"$ref\":\"#/$defs/Anchor\"},\"basis\":{\"enum\":[\"visible_print\",\"image_unclear\",\"image_unavailable\",\"image_irrelevant\"],\"title\":\"Basis\",\"type\":\"string\"},\"category\":{\"enum\":[\"detector_missed_damage\",\"incorrect_static_edit\",\"name_place_concern\",\"number_concern\",\"unsupported_saved_proposal\",\"source_uncertainty\",\"other_damage\"],\"title\":\"Category\",\"type\":\"string\"},\"explanation\":{\"minLength\":1,\"title\":\"Explanation\",\"type\":\"string\"},\"finding_id\":{\"minLength\":1,\"title\":\"Finding Id\",\"type\":\"string\"},\"image_alias\":{\"const\":\"I1\",\"title\":\"Image Alias\",\"type\":\"string\"},\"proposed_reading\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"title\":\"Proposed Reading\"},\"resolution\":{\"enum\":[\"proposed\",\"unresolved\"],\"title\":\"Resolution\",\"type\":\"string\"}},\"required\":[\"finding_id\",\"anchor\",\"affected_layer\",\"affected_quote\",\"category\",\"resolution\",\"proposed_reading\",\"image_alias\",\"basis\",\"explanation\"],\"title\":\"Finding\",\"type\":\"object\"},\"Inspection\":{\"additionalProperties\":false,\"properties\":{\"completeness\":{\"enum\":[\"complete\",\"partial\",\"not_inspected\"],\"title\":\"Completeness\",\"type\":\"string\"},\"image_alias\":{\"const\":\"I1\",\"title\":\"Image Alias\",\"type\":\"string\"},\"image_suitability\":{\"enum\":[\"clear\",\"unclear\",\"missing\",\"irrelevant\"],\"title\":\"Image Suitability\",\"type\":\"string\"},\"paragraph_alias\":{\"enum\":[\"P1\"],\"pattern\":\"^P([1-9]|[12][0-9]|3[0-2])$\",\"title\":\"Paragraph Alias\",\"type\":\"string\"},\"reason\":{\"anyOf\":[{\"minLength\":1,\"type\":\"string\"},{\"type\":\"null\"}],\"title\":\"Reason\"}},\"required\":[\"paragraph_alias\",\"image_alias\",\"completeness\",\"image_suitability\",\"reason\"],\"title\":\"Inspection\",\"type\":\"object\"},\"Patch\":{\"additionalProperties\":false,\"properties\":{\"finding_id\":{\"minLength\":1,\"title\":\"Finding Id\",\"type\":\"string\"},\"image_alias\":{\"const\":\"I1\",\"title\":\"Image Alias\",\"type\":\"string\"},\"paragraph_alias\":{\"enum\":[\"P1\"],\"pattern\":\"^P([1-9]|[12][0-9]|3[0-2])$\",\"title\":\"Paragraph Alias\",\"type\":\"string\"},\"raw_quote\":{\"minLength\":1,\"title\":\"Raw Quote\",\"type\":\"string\"},\"reason\":{\"minLength\":1,\"title\":\"Reason\",\"type\":\"string\"},\"replacement\":{\"title\":\"Replacement\",\"type\":\"string\"}},\"required\":[\"finding_id\",\"paragraph_alias\",\"raw_quote\",\"replacement\",\"image_alias\",\"reason\"],\"title\":\"Patch\",\"type\":\"object\"},\"SelfCheck\":{\"additionalProperties\":false,\"properties\":{\"checked_content\":{\"items\":{\"enum\":[\"all_words\",\"names_places\",\"numbers\",\"punctuation\",\"printed_repetition\",\"bracketed_cues\",\"target_context_boundaries\",\"unflagged_text\",\"static_edits\"],\"type\":\"string\"},\"maxItems\":9,\"title\":\"Checked Content\",\"type\":\"array\"},\"coverage\":{\"enum\":[\"complete\",\"partial\",\"not_inspected\"],\"title\":\"Coverage\",\"type\":\"string\"},\"paragraph_alias\":{\"enum\":[\"P1\"],\"pattern\":\"^P([1-9]|[12][0-9]|3[0-2])$\",\"title\":\"Paragraph Alias\",\"type\":\"string\"},\"remaining_concerns\":{\"items\":{\"type\":\"string\"},\"maxItems\":32,\"title\":\"Remaining Concerns\",\"type\":\"array\"}},\"required\":[\"paragraph_alias\",\"coverage\",\"checked_content\",\"remaining_concerns\"],\"title\":\"SelfCheck\",\"type\":\"object\"},\"TargetReading\":{\"additionalProperties\":false,\"properties\":{\"image_alias\":{\"const\":\"I1\",\"title\":\"Image Alias\",\"type\":\"string\"},\"paragraph_alias\":{\"enum\":[\"P1\"],\"pattern\":\"^P([1-9]|[12][0-9]|3[0-2])$\",\"title\":\"Paragraph Alias\",\"type\":\"string\"},\"proposed_text\":{\"anyOf\":[{\"maxLength\":6000,\"minLength\":1,\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Proposed Text\"},\"reading_status\":{\"enum\":[\"proposed\",\"unchanged\",\"withheld\"],\"title\":\"Reading Status\",\"type\":\"string\"},\"reason\":{\"anyOf\":[{\"minLength\":1,\"type\":\"string\"},{\"type\":\"null\"}],\"title\":\"Reason\"},\"uncertainties\":{\"items\":{\"$ref\":\"#/$defs/Uncertainty\"},\"maxItems\":32,\"title\":\"Uncertainties\",\"type\":\"array\"}},\"required\":[\"paragraph_alias\",\"image_alias\",\"reading_status\",\"uncertainties\",\"reason\"],\"title\":\"TargetReading\",\"type\":\"object\"},\"Uncertainty\":{\"additionalProperties\":false,\"properties\":{\"raw_quote\":{\"anyOf\":[{\"minLength\":1,\"type\":\"string\"},{\"type\":\"null\"}],\"title\":\"Raw Quote\"},\"reason\":{\"minLength\":1,\"title\":\"Reason\",\"type\":\"string\"}},\"required\":[\"raw_quote\",\"reason\"],\"title\":\"Uncertainty\",\"type\":\"object\"}},\"additionalProperties\":false,\"properties\":{\"contract\":{\"const\":\"ocr-productive-repair-reply-v2\",\"title\":\"Contract\",\"type\":\"string\"},\"findings\":{\"items\":{\"$ref\":\"#/$defs/Finding\"},\"maxItems\":32,\"title\":\"Findings\",\"type\":\"array\"},\"inspections\":{\"items\":{\"$ref\":\"#/$defs/Inspection\"},\"maxItems\":32,\"minItems\":1,\"title\":\"Inspections\",\"type\":\"array\"},\"patches\":{\"items\":{\"$ref\":\"#/$defs/Patch\"},\"maxItems\":32,\"title\":\"Patches\",\"type\":\"array\"},\"reason\":{\"anyOf\":[{\"minLength\":1,\"type\":\"string\"},{\"type\":\"null\"}],\"title\":\"Reason\"},\"role\":{\"const\":\"productive_repair_and_self_check\"},\"self_check\":{\"items\":{\"$ref\":\"#/$defs/SelfCheck\"},\"maxItems\":32,\"minItems\":1,\"title\":\"Self Check\",\"type\":\"array\"},\"status\":{\"enum\":[\"findings\",\"no_finding\",\"incomplete\",\"unresolved\"],\"title\":\"Status\",\"type\":\"string\"},\"target_readings\":{\"items\":{\"$ref\":\"#/$defs/TargetReading\"},\"maxItems\":32,\"title\":\"Target Readings\",\"type\":\"array\"},\"unit_id\":{\"const\":\"U1\"}},\"required\":[\"contract\",\"unit_id\",\"role\",\"status\",\"inspections\",\"findings\",\"patches\",\"reason\",\"target_readings\",\"self_check\"],\"title\":\"Reply\",\"type\":\"object\"},\"messages\":[{\"content\":\"Frozen synthetic prompt for schema tests.\",\"role\":\"system\"},{\"content\":\"{\\\"context_regions\\\":[],\\\"contract\\\":\\\"ocr-productive-repair-input-v2\\\",\\\"diagnostics\\\":{\\\"configuration_sha256\\\":\\\"b79606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910\\\",\\\"detector_sha256\\\":\\\"f2b3cbe41413047352141e5b863d87e696ec4f52b503040dba3a5700acd529a0\\\",\\\"negative_targets\\\":[\\\"P1\\\"],\\\"signals\\\":[],\\\"status\\\":\\\"frozen\\\"},\\\"image_alias\\\":\\\"I1\\\",\\\"paragraphs\\\":[{\\\"paragraph_alias\\\":\\\"P1\\\",\\\"raw_text\\\":\\\"By Mr. Example.\\\",\\\"role\\\":\\\"target\\\",\\\"static_edits\\\":[],\\\"static_text\\\":\\\"By Mr. Example.\\\"}],\\\"reply_contract\\\":\\\"ocr-productive-repair-reply-v2\\\",\\\"role\\\":\\\"productive_repair_and_self_check\\\",\\\"saved_proposal\\\":null,\\\"target_regions\\\":[{\\\"crop_region\\\":{\\\"bottom\\\":20,\\\"left\\\":1,\\\"right\\\":30,\\\"top\\\":2},\\\"paragraph_alias\\\":\\\"P1\\\"}],\\\"unit_id\\\":\\\"U1\\\"}\",\"images\":[\"iVBORw0KGgoAAAANSUhEUgAAACgAAAAeCAIAAADRv8uKAAAAQ0lEQVR4nO3QwQ0AMAyDwJb9d06/9QLkYxY4iTszZyNW1FNYDBP7K6yFR2WFtfCorLAWHpUV1sKjssJaeFRWWGtt9QMTogM5glM6HwAAAABJRU5ErkJggg==\"],\"role\":\"user\"}],\"model\":\"fake:latest\",\"options\":{\"num_predict\":1500},\"stream\":false,\"think\":false}",
+    "host": {
+      "packet_sha256": "9f2a69706de32d4f8d27890610269dd94004fddc11aa9704e6d2a8a6d2ed6d89",
+      "payload": {
+        "bounds_sha256": "80931f42a470544197f8baee8e33b2687d4ebee36812faeb87663693e7651906",
+        "code_sha256": "fdaacb872b0c454fd6124f90ed90636d29d0bb1ba1560609966f6d6c5d522cc3",
+        "contract": "ocr-productive-repair-host-input-v2",
+        "diagnostics": {
+          "configuration_sha256": "b79606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910",
+          "detector_sha256": "f2b3cbe41413047352141e5b863d87e696ec4f52b503040dba3a5700acd529a0",
+          "negative_targets": [
+            "P1"
+          ],
+          "signals": [],
+          "status": "frozen"
+        },
+        "image": {
+          "alias": "I1",
+          "binding_manifest_sha256": "52ea689d269116e8a9d30dbf90b8f5cd372c52528b6b2ba49400dda2af09a839",
+          "bindings": [
+            {
+              "crop_region": {
+                "bottom": 20,
+                "left": 1,
+                "right": 30,
+                "top": 2
+              },
+              "paragraph_alias": "P1",
+              "raw_end": 15,
+              "raw_sha256": "01547871dd18c7843435e9cfad2689b13e6b5ef3dca44684ed638beb2579348f",
+              "raw_start": 0
+            }
+          ],
+          "height": 30,
+          "hocr_sha256": "84709f59e0d1c35220fc615574d81f3ef9a084ef179be56cf1e9ed4f3cdbff71",
+          "legibility_status": "checked",
+          "mime": "image/png",
+          "page_map_sha256": "a4cc77890a6ededb35995d9dd734369d1193033fe89491596eadf4979d2be804",
+          "registration_evidence_sha256": "48c796b3110bddcf553fbfaaa690337dd3d9f9117d17e87604e0a505141fa4bc",
+          "registration_status": "verified",
+          "sha256": "4016343e7a0637bd46ab25aff5acc3b4a692d3c6a089000aa8cfda53a4f7cc50",
+          "source_item_identifier": "item-1",
+          "source_scan_leaf": 2,
+          "width": 40
+        },
+        "model_digest": "a83b4ed0e7392ee2f851fa5f5f77ca3951af58d70117fda2f686920522bab251",
+        "paragraphs": [
+          {
+            "alias": "P1",
+            "part_number": 1,
+            "raw": {
+              "sha256": "01547871dd18c7843435e9cfad2689b13e6b5ef3dca44684ed638beb2579348f",
+              "text": "By Mr. Example."
+            },
+            "role": "target",
+            "scan_leaf": 2,
+            "source_id": "item-1:2:p1",
+            "static": {
+              "edits": [],
+              "lexicon_sha256": "239aec50c94b6ea398dadb908b531bbe124c08fbbe756ce60cd59c37cfd719f2",
+              "rule_sha256": "7369949b47ef2c6ba26fbbee659cedc76123a75c17d321a52d8d1ef35e948042",
+              "sha256": "01547871dd18c7843435e9cfad2689b13e6b5ef3dca44684ed638beb2579348f",
+              "text": "By Mr. Example."
+            }
+          }
+        ],
+        "prompt_sha256": "b2ab9888ca898f155f0974730f56c4f98c45769155de25b59d7c2e70479754b9",
+        "response_schema_sha256": "18ee98c2835921b63a0382f328185e70ca7f1b34314d36e28455189aba836264",
+        "role": "productive_repair_and_self_check",
+        "sampling_manifest_sha256": "52630e4131f9862ea34c8ded9741fae2176c56c55c74827b2bd30cd1ef9eb37b",
+        "saved_proposal": null,
+        "unit_id": "U1"
+      }
+    },
+    "input_tokens": 6,
+    "token_fit_sha256": "5f2a8b0fdfbb4471d183354f9dae3d68dd9f5a47e73572a6f7fe4f4c931a5935",
+    "window_id": "U1"
+  },
+  "token_fit_record_json": "{\"body_sha256\":\"4a42569caa247b5b636f8dc7c4d57666c02d1533cfc628976659e363585518c6\",\"evidence_scope\":\"actual_tokenizer\",\"input_tokens\":6,\"model_digest\":\"a83b4ed0e7392ee2f851fa5f5f77ca3951af58d70117fda2f686920522bab251\",\"model_name\":\"fake:latest\",\"output_tokens\":1500}"
+}
