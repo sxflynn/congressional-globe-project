@@ -1,0 +1,637 @@
+{
+  "contract_draft": "ocr-productive-repair-v2",
+  "count": 8,
+  "cases": [
+    {
+      "id": "EX1",
+      "kind": "synthetic_contract_illustration",
+      "raw_text": "The year was 1866.",
+      "raw_sha256": "e6b8e7cef67ebdc198861ca6afef8f718670911c42d73f67c7205d9edaddbe24",
+      "static_text": "The year was 1866.",
+      "static_sha256": "e6b8e7cef67ebdc198861ca6afef8f718670911c42d73f67c7205d9edaddbe24",
+      "constructed_print": "The year was 1865.",
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "Synthetic imagined print only; no image exists, no host-ready request or historical reading",
+      "provider_reply": {
+        "contract": "ocr-productive-repair-reply-v2",
+        "unit_id": "EX1",
+        "role": "productive_repair_and_self_check",
+        "status": "findings",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "reason": null
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "F1",
+            "anchor": {
+              "paragraph_alias": "P1",
+              "scope": "quote",
+              "raw_quote": "The year was 1866."
+            },
+            "affected_layer": "raw",
+            "affected_quote": "The year was 1866.",
+            "category": "number_concern",
+            "resolution": "proposed",
+            "proposed_reading": "The year was 1865.",
+            "image_alias": "I1",
+            "basis": "visible_print",
+            "explanation": "A plausible number is wrong in the constructed print. Bind the exact raw quote and preserve proposed1865 separately; dictionary success is irrelevant."
+          }
+        ],
+        "patches": [
+          {
+            "finding_id": "F1",
+            "paragraph_alias": "P1",
+            "raw_quote": "The year was 1866.",
+            "replacement": "The year was 1865.",
+            "image_alias": "I1",
+            "reason": "A plausible number is wrong in the constructed print. Bind the exact raw quote and preserve proposed1865 separately; dictionary success is irrelevant."
+          }
+        ],
+        "reason": null,
+        "target_readings": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "reading_status": "proposed",
+            "proposed_text": "The year was 1865.",
+            "uncertainties": [],
+            "reason": null
+          }
+        ],
+        "self_check": [
+          {
+            "paragraph_alias": "P1",
+            "coverage": "complete",
+            "checked_content": [
+              "all_words",
+              "names_places",
+              "numbers",
+              "punctuation",
+              "printed_repetition",
+              "bracketed_cues",
+              "target_context_boundaries",
+              "unflagged_text",
+              "static_edits"
+            ],
+            "remaining_concerns": []
+          }
+        ]
+      },
+      "expected_host_behavior": "A plausible number is wrong in the constructed print. Bind the exact raw quote and preserve proposed1865 separately; dictionary success is irrelevant.",
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof.",
+      "origin": "Preserved T50 case, copied into a new v2 illustration; original unchanged"
+    },
+    {
+      "id": "EX2",
+      "kind": "synthetic_contract_illustration",
+      "raw_text": "Mr. Fessenden spoke of Sioux City.",
+      "raw_sha256": "2bea8da39ea1062565c079b423c689a23473cb8b5befb73c7794996e9df811f9",
+      "static_text": "Mr. Fessenden spoke of Sioux City.",
+      "static_sha256": "2bea8da39ea1062565c079b423c689a23473cb8b5befb73c7794996e9df811f9",
+      "constructed_print": "Mr. Fessenden spoke of Sioux City.",
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "No actual image; constructed correct-name control only",
+      "provider_reply": {
+        "contract": "ocr-productive-repair-reply-v2",
+        "unit_id": "EX2",
+        "role": "productive_repair_and_self_check",
+        "status": "no_finding",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "reason": null
+          }
+        ],
+        "findings": [],
+        "patches": [],
+        "reason": null,
+        "target_readings": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "reading_status": "unchanged",
+            "proposed_text": "Mr. Fessenden spoke of Sioux City.",
+            "uncertainties": [],
+            "reason": null
+          }
+        ],
+        "self_check": [
+          {
+            "paragraph_alias": "P1",
+            "coverage": "complete",
+            "checked_content": [
+              "all_words",
+              "names_places",
+              "numbers",
+              "punctuation",
+              "printed_repetition",
+              "bracketed_cues",
+              "target_context_boundaries",
+              "unflagged_text",
+              "static_edits"
+            ],
+            "remaining_concerns": []
+          }
+        ]
+      },
+      "expected_host_behavior": "No finding is a limited report, not source certification. Rare-name dictionary miss does not justify change.",
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof.",
+      "origin": "Preserved T50 case, copied into a new v2 illustration; original unchanged"
+    },
+    {
+      "id": "EX3",
+      "kind": "synthetic_contract_illustration",
+      "raw_text": "A well- known rule.",
+      "raw_sha256": "14074182f0071839acf7caea381ba702aa508205317ea60bed03f6d382aa6150",
+      "static_text": "A wellknown rule.",
+      "static_sha256": "253d438a621c8a9320ba3338d0225a15cea421add1b3c349e92aa933cde04835",
+      "constructed_print": "A well-known rule.",
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "Synthetic imagined print only; no image exists, no host-ready request or historical reading",
+      "provider_reply": {
+        "contract": "ocr-productive-repair-reply-v2",
+        "unit_id": "EX3",
+        "role": "productive_repair_and_self_check",
+        "status": "findings",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "reason": null
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "F1",
+            "anchor": {
+              "paragraph_alias": "P1",
+              "scope": "quote",
+              "raw_quote": "A well- known rule."
+            },
+            "affected_layer": "static",
+            "affected_quote": "A wellknown rule.",
+            "category": "incorrect_static_edit",
+            "resolution": "proposed",
+            "proposed_reading": "A well-known rule.",
+            "image_alias": "I1",
+            "basis": "visible_print",
+            "explanation": "The constructed static join removes a meaningful hyphen. Bind derived quote through the frozen static edit map; proposed repair is applied to raw, not static offsets."
+          }
+        ],
+        "patches": [
+          {
+            "finding_id": "F1",
+            "paragraph_alias": "P1",
+            "raw_quote": "A well- known rule.",
+            "replacement": "A well-known rule.",
+            "image_alias": "I1",
+            "reason": "The constructed static join removes a meaningful hyphen. Bind derived quote through the frozen static edit map; proposed repair is applied to raw, not static offsets."
+          }
+        ],
+        "reason": null,
+        "target_readings": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "reading_status": "proposed",
+            "proposed_text": "A well-known rule.",
+            "uncertainties": [],
+            "reason": null
+          }
+        ],
+        "self_check": [
+          {
+            "paragraph_alias": "P1",
+            "coverage": "complete",
+            "checked_content": [
+              "all_words",
+              "names_places",
+              "numbers",
+              "punctuation",
+              "printed_repetition",
+              "bracketed_cues",
+              "target_context_boundaries",
+              "unflagged_text",
+              "static_edits"
+            ],
+            "remaining_concerns": []
+          }
+        ]
+      },
+      "expected_host_behavior": "The constructed static join removes a meaningful hyphen. Bind derived quote through the frozen static edit map; proposed repair is applied to raw, not static offsets.",
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof.",
+      "origin": "Preserved T50 case, copied into a new v2 illustration; original unchanged"
+    },
+    {
+      "id": "EX4",
+      "kind": "synthetic_contract_illustration",
+      "raw_text": "The amount is $10,000.",
+      "raw_sha256": "d62859d48792edd247b0df6f3aac92858f672c99a8e4ddd6577a3fd13147a48d",
+      "static_text": "The amount is $10,000.",
+      "static_sha256": "d62859d48792edd247b0df6f3aac92858f672c99a8e4ddd6577a3fd13147a48d",
+      "constructed_print": null,
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "Synthetic imagined print only; no image exists, no host-ready request or historical reading",
+      "provider_reply": {
+        "contract": "ocr-productive-repair-reply-v2",
+        "unit_id": "EX4",
+        "role": "productive_repair_and_self_check",
+        "status": "incomplete",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "not_inspected",
+            "image_suitability": "missing",
+            "reason": "Missing or irrelevant image prevents inspection. Host preflight blocks actual send; a synthetic incomplete reply proves no source reading."
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "F1",
+            "anchor": {
+              "paragraph_alias": "P1",
+              "scope": "whole_paragraph",
+              "raw_quote": null
+            },
+            "affected_layer": "raw",
+            "affected_quote": "The amount is $10,000.",
+            "category": "source_uncertainty",
+            "resolution": "unresolved",
+            "proposed_reading": null,
+            "image_alias": "I1",
+            "basis": "image_unavailable",
+            "explanation": "Missing or irrelevant image prevents inspection. Host preflight blocks actual send; a synthetic incomplete reply proves no source reading."
+          }
+        ],
+        "patches": [],
+        "reason": "Missing or irrelevant image prevents inspection. Host preflight blocks actual send; a synthetic incomplete reply proves no source reading.",
+        "target_readings": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "reading_status": "withheld",
+            "proposed_text": null,
+            "uncertainties": [],
+            "reason": "Missing or irrelevant image prevents inspection. Host preflight blocks actual send; a synthetic incomplete reply proves no source reading."
+          }
+        ],
+        "self_check": [
+          {
+            "paragraph_alias": "P1",
+            "coverage": "not_inspected",
+            "checked_content": [],
+            "remaining_concerns": [
+              "Missing or irrelevant image prevents inspection. Host preflight blocks actual send; a synthetic incomplete reply proves no source reading."
+            ]
+          }
+        ]
+      },
+      "expected_host_behavior": "Missing or irrelevant image prevents inspection. Host preflight blocks actual send; a synthetic incomplete reply proves no source reading.",
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof.",
+      "origin": "Preserved T50 case, copied into a new v2 illustration; original unchanged"
+    },
+    {
+      "id": "EX5",
+      "kind": "synthetic_contract_illustration",
+      "raw_text": "We know that that is correct.",
+      "raw_sha256": "b1c7cc58fd4bd1c326e0bb5fc9a2429ba62dad474a8e89e60f5cfce69db0ba69",
+      "static_text": "We know that that is correct.",
+      "static_sha256": "b1c7cc58fd4bd1c326e0bb5fc9a2429ba62dad474a8e89e60f5cfce69db0ba69",
+      "constructed_print": "We know that that is correct.",
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "Synthetic imagined print only; no image exists, no host-ready request or historical reading",
+      "provider_reply": {
+        "contract": "ocr-productive-repair-reply-v2",
+        "unit_id": "EX5",
+        "role": "audit_saved_proposal",
+        "status": "findings",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "reason": null
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "F1",
+            "anchor": {
+              "paragraph_alias": "P1",
+              "scope": "quote",
+              "raw_quote": "We know that that is correct."
+            },
+            "affected_layer": "saved_proposal",
+            "affected_quote": "We know that is correct.",
+            "category": "unsupported_saved_proposal",
+            "resolution": "proposed",
+            "proposed_reading": "We know that that is correct.",
+            "image_alias": "I1",
+            "basis": "visible_print",
+            "explanation": "Saved proposed wording deletes a printed repeated word. Audit the frozen saved proposal; do not silently replace it or convert a finding into an accepted correction."
+          }
+        ],
+        "patches": [],
+        "reason": null,
+        "target_readings": [],
+        "self_check": [
+          {
+            "paragraph_alias": "P1",
+            "coverage": "complete",
+            "checked_content": [
+              "all_words",
+              "names_places",
+              "numbers",
+              "punctuation",
+              "printed_repetition",
+              "bracketed_cues",
+              "target_context_boundaries",
+              "unflagged_text",
+              "static_edits"
+            ],
+            "remaining_concerns": []
+          }
+        ]
+      },
+      "expected_host_behavior": "Saved proposed wording deletes a printed repeated word. Audit the frozen saved proposal; do not silently replace it or convert a finding into an accepted correction.",
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof.",
+      "origin": "Preserved T50 case, copied into a new v2 illustration; original unchanged"
+    },
+    {
+      "id": "EX6",
+      "kind": "synthetic_contract_illustration",
+      "raw_text": "The public doubt remains.",
+      "raw_sha256": "5ada2a01fa4479c319e96eb2aed77a25b6bfaa66c807904f8f5ca5cc3328dc25",
+      "static_text": "The public doubt remains.",
+      "static_sha256": "5ada2a01fa4479c319e96eb2aed77a25b6bfaa66c807904f8f5ca5cc3328dc25",
+      "constructed_print": "The public debt remains.",
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "Synthetic imagined print only; no image exists, no host-ready request or historical reading",
+      "provider_reply": {
+        "contract": "ocr-productive-repair-reply-v2",
+        "unit_id": "EX6",
+        "role": "productive_repair_and_self_check",
+        "status": "findings",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "reason": null
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "F1",
+            "anchor": {
+              "paragraph_alias": "P1",
+              "scope": "quote",
+              "raw_quote": "The public doubt remains."
+            },
+            "affected_layer": "raw",
+            "affected_quote": "The public doubt remains.",
+            "category": "detector_missed_damage",
+            "resolution": "proposed",
+            "proposed_reading": "The public debt remains.",
+            "image_alias": "I1",
+            "basis": "visible_print",
+            "explanation": "An apparent no-error unit hides a real-word substitution in constructed print. Whole-target inspection must include detector-negative text."
+          }
+        ],
+        "patches": [
+          {
+            "finding_id": "F1",
+            "paragraph_alias": "P1",
+            "raw_quote": "The public doubt remains.",
+            "replacement": "The public debt remains.",
+            "image_alias": "I1",
+            "reason": "An apparent no-error unit hides a real-word substitution in constructed print. Whole-target inspection must include detector-negative text."
+          }
+        ],
+        "reason": null,
+        "target_readings": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "reading_status": "proposed",
+            "proposed_text": "The public debt remains.",
+            "uncertainties": [],
+            "reason": null
+          }
+        ],
+        "self_check": [
+          {
+            "paragraph_alias": "P1",
+            "coverage": "complete",
+            "checked_content": [
+              "all_words",
+              "names_places",
+              "numbers",
+              "punctuation",
+              "printed_repetition",
+              "bracketed_cues",
+              "target_context_boundaries",
+              "unflagged_text",
+              "static_edits"
+            ],
+            "remaining_concerns": []
+          }
+        ]
+      },
+      "expected_host_behavior": "An apparent no-error unit hides a real-word substitution in constructed print. Whole-target inspection must include detector-negative text.",
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof.",
+      "origin": "Preserved T50 case, copied into a new v2 illustration; original unchanged"
+    },
+    {
+      "id": "JOINT",
+      "kind": "authored_from_human_feedback_not_model_response",
+      "raw_text": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American",
+      "raw_sha256": "773dfa49f6c469679cf0f5165730a597a9d10841d0e1904c17c091821ab2394e",
+      "static_text": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American",
+      "constructed_print": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American",
+      "provider_reply": {
+        "contract": "ocr-productive-repair-reply-v2",
+        "unit_id": "JOINT",
+        "role": "productive_repair_and_self_check",
+        "status": "findings",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "reason": null
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "F1",
+            "anchor": {
+              "paragraph_alias": "P1",
+              "scope": "quote",
+              "raw_quote": "Tlie"
+            },
+            "affected_layer": "raw",
+            "affected_quote": "Tlie",
+            "category": "detector_missed_damage",
+            "resolution": "proposed",
+            "proposed_reading": "The",
+            "image_alias": "I1",
+            "basis": "visible_print",
+            "explanation": "Illustrative source-supported joint repair requested by human; not a new model reply."
+          },
+          {
+            "finding_id": "F2",
+            "anchor": {
+              "paragraph_alias": "P1",
+              "scope": "quote",
+              "raw_quote": "GCO"
+            },
+            "affected_layer": "raw",
+            "affected_quote": "GCO",
+            "category": "number_concern",
+            "resolution": "proposed",
+            "proposed_reading": "660",
+            "image_alias": "I1",
+            "basis": "visible_print",
+            "explanation": "Illustrative source-supported joint repair requested by human; not a new model reply."
+          }
+        ],
+        "patches": [
+          {
+            "finding_id": "F1",
+            "paragraph_alias": "P1",
+            "raw_quote": "Tlie",
+            "replacement": "The",
+            "image_alias": "I1",
+            "reason": "Illustrative source-supported joint repair requested by human; not a new model reply."
+          },
+          {
+            "finding_id": "F2",
+            "paragraph_alias": "P1",
+            "raw_quote": "GCO",
+            "replacement": "660",
+            "image_alias": "I1",
+            "reason": "Illustrative source-supported joint repair requested by human; not a new model reply."
+          }
+        ],
+        "reason": null,
+        "target_readings": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "reading_status": "proposed",
+            "proposed_text": "By Mr. MOORHEAD: The petition of 660 citizens of Pennsylvania, praying for protection to American",
+            "uncertainties": [],
+            "reason": null
+          }
+        ],
+        "self_check": [
+          {
+            "paragraph_alias": "P1",
+            "coverage": "complete",
+            "checked_content": [
+              "all_words",
+              "names_places",
+              "numbers",
+              "punctuation",
+              "printed_repetition",
+              "bracketed_cues",
+              "target_context_boundaries",
+              "unflagged_text",
+              "static_edits"
+            ],
+            "remaining_concerns": []
+          }
+        ]
+      },
+      "image_sha256_reference_only": "8a125859cbddd83f7a4813c1348358ebe3865d19cab908c90269d71f54df8b61",
+      "image_bytes": null,
+      "geometry_limit": "Whole-target endpoint not source-verified; fixture is not host-ready. No adjacent labor appended.",
+      "expected_host_behavior": "Two exact repairs replay to full proposed reading. Missing-word quality still requires independent print evidence."
+    },
+    {
+      "id": "BRACKETS",
+      "kind": "synthetic_contract_control_not_historical_reading",
+      "raw_text": "Mr. Fessenden spoke. [Here the hammer fell.] [Laughter.]",
+      "raw_sha256": "955ed8041d9c7b79905d23366d068b1fb7026fb3284935a237ddcd210433cefc",
+      "static_text": "Mr. Fessenden spoke. [Here the hammer fell.] [Laughter.]",
+      "static_sha256": "2bea8da39ea1062565c079b423c689a23473cb8b5befb73c7794996e9df811f9",
+      "constructed_print": "Mr. Fessenden spoke. [Here the hammer fell.] [Laughter.]",
+      "image_bytes": null,
+      "image_sha256": null,
+      "image_claim": "No actual image; constructed correct-name control only",
+      "provider_reply": {
+        "contract": "ocr-productive-repair-reply-v2",
+        "unit_id": "BRACKETS",
+        "role": "productive_repair_and_self_check",
+        "status": "no_finding",
+        "inspections": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "completeness": "complete",
+            "image_suitability": "clear",
+            "reason": null
+          }
+        ],
+        "findings": [],
+        "patches": [],
+        "reason": null,
+        "target_readings": [
+          {
+            "paragraph_alias": "P1",
+            "image_alias": "I1",
+            "reading_status": "unchanged",
+            "proposed_text": "Mr. Fessenden spoke. [Here the hammer fell.] [Laughter.]",
+            "uncertainties": [],
+            "reason": null
+          }
+        ],
+        "self_check": [
+          {
+            "paragraph_alias": "P1",
+            "coverage": "complete",
+            "checked_content": [
+              "all_words",
+              "names_places",
+              "numbers",
+              "punctuation",
+              "printed_repetition",
+              "bracketed_cues",
+              "target_context_boundaries",
+              "unflagged_text",
+              "static_edits"
+            ],
+            "remaining_concerns": []
+          }
+        ]
+      },
+      "expected_host_behavior": "Preserve bracketed wording verbatim. T67 supplies separate source-bound event annotations; do not infer speaker/sentiment/causality.",
+      "geometry_limit": "10x10 box is synthetic schema illustration only; no image bytes or registration proof.",
+      "origin": "Preserved T50 case, copied into a new v2 illustration; original unchanged"
+    }
+  ],
+  "limits": "Eight authored fixtures, not actual model results, independent references, backend capability, quality rates or launch-ready source packets."
+}

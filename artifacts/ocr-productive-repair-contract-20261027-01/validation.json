@@ -1,0 +1,306 @@
+{
+  "task": "T69",
+  "scope": "JSON schema/draft synthetic fixture checks only; disposable fixture checker is not production host implementation",
+  "schemas_checked": 4,
+  "base_cases": [
+    {
+      "case": "EX1",
+      "schema_and_fixture_semantics": "valid_findings",
+      "constructed_print_match": true,
+      "reply_compact_utf8_bytes": 1465,
+      "token_fit": "unknown_actual_model_tokenizer_not_run"
+    },
+    {
+      "case": "EX2",
+      "schema_and_fixture_semantics": "valid_no_finding",
+      "constructed_print_match": true,
+      "reply_compact_utf8_bytes": 728,
+      "token_fit": "unknown_actual_model_tokenizer_not_run"
+    },
+    {
+      "case": "EX3",
+      "schema_and_fixture_semantics": "valid_findings",
+      "constructed_print_match": true,
+      "reply_compact_utf8_bytes": 1508,
+      "token_fit": "unknown_actual_model_tokenizer_not_run"
+    },
+    {
+      "case": "EX4",
+      "schema_and_fixture_semantics": "valid_incomplete",
+      "constructed_print_match": null,
+      "reply_compact_utf8_bytes": 1552,
+      "token_fit": "unknown_actual_model_tokenizer_not_run"
+    },
+    {
+      "case": "EX5",
+      "schema_and_fixture_semantics": "valid_findings",
+      "constructed_print_match": null,
+      "reply_compact_utf8_bytes": 1087,
+      "token_fit": "unknown_actual_model_tokenizer_not_run"
+    },
+    {
+      "case": "EX6",
+      "schema_and_fixture_semantics": "valid_findings",
+      "constructed_print_match": true,
+      "reply_compact_utf8_bytes": 1490,
+      "token_fit": "unknown_actual_model_tokenizer_not_run"
+    },
+    {
+      "case": "JOINT",
+      "schema_and_fixture_semantics": "valid_findings",
+      "constructed_print_match": true,
+      "reply_compact_utf8_bytes": 1905,
+      "token_fit": "unknown_actual_model_tokenizer_not_run"
+    },
+    {
+      "case": "BRACKETS",
+      "schema_and_fixture_semantics": "valid_no_finding",
+      "constructed_print_match": true,
+      "reply_compact_utf8_bytes": 755,
+      "token_fit": "unknown_actual_model_tokenizer_not_run"
+    }
+  ],
+  "negative_mutations": [
+    {
+      "id": "missing_full_reading_field",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "schema",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "legacy_contract",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "schema",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "model_offsets_forbidden",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "schema",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "foreign_role",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "schema",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "number_patch_only_but_full_correct_text",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "full_reading_replay",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "duplicate_target_reading",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "reading_targets",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "context_promoted_to_target",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "reading_targets",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "unreported_adjacent_labor",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "full_reading_replay",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "no_patch_but_hidden_text_change",
+      "base_case": "EX2",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "full_reading_replay",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "no_op_patch",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "no_op",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "overlapping_patch",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "overlap",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "ambiguous_overlapping_quote",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "ambiguous_or_missing_quote",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "unresolved_with_patches",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "unresolved_patches",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "audit_role_returns_reading",
+      "base_case": "EX5",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "audit_must_not_repair",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "model_claims_unclear_but_complete_findings",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "suitability_or_scope",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "simulated_host_wrong_image_despite_model_clear",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "host_image_binding",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "self_check_omits_unflagged_words",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "self_check_scope",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "finding_and_patch_disagree",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "finding_patch_disagreement",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    },
+    {
+      "id": "missed_word_consistent_replay",
+      "base_case": "JOINT",
+      "check_class": "quality",
+      "host_rejected": false,
+      "host_outcome": "valid_findings",
+      "constructed_print_match": false,
+      "expected": "fixture quality failure despite structurally valid response"
+    },
+    {
+      "id": "dropped_bracketed_cues",
+      "base_case": "BRACKETS",
+      "check_class": "quality",
+      "host_rejected": false,
+      "host_outcome": "valid_findings",
+      "constructed_print_match": false,
+      "expected": "fixture quality failure despite structurally valid response"
+    },
+    {
+      "id": "harmful_rare_name_change",
+      "base_case": "EX2",
+      "check_class": "quality",
+      "host_rejected": false,
+      "host_outcome": "valid_findings",
+      "constructed_print_match": false,
+      "expected": "fixture quality failure despite structurally valid response"
+    },
+    {
+      "id": "wrong_number_consistent_replay",
+      "base_case": "EX1",
+      "check_class": "quality",
+      "host_rejected": false,
+      "host_outcome": "valid_findings",
+      "constructed_print_match": false,
+      "expected": "fixture quality failure despite structurally valid response"
+    },
+    {
+      "id": "deleted_printed_repetition",
+      "base_case": "EX2",
+      "check_class": "quality",
+      "host_rejected": false,
+      "host_outcome": "valid_findings",
+      "constructed_print_match": false,
+      "expected": "fixture quality failure despite structurally valid response"
+    },
+    {
+      "id": "full_reading_over_codepoint_cap",
+      "base_case": "JOINT",
+      "check_class": "host",
+      "host_rejected": true,
+      "host_outcome": "schema",
+      "constructed_print_match": null,
+      "expected": "rejected by declared shape/fixture host rule"
+    }
+  ],
+  "negative_count": 24,
+  "all_expected_outcomes": true,
+  "provider_input_shape_passed": true,
+  "prior_artifacts_unchanged": true,
+  "production_validators_implemented": false,
+  "provider_capability_or_token_fit_proven": false,
+  "new_provider_calls": 0,
+  "new_source_reads_or_downloads": 0,
+  "human_grades_created": 0,
+  "last_code_gate_retained": 683,
+  "review": {
+    "reviewer": "existing Luna delegate /root/inventory_review",
+    "finding": "Copied v1 journaling text retained12slots/1440request seconds.",
+    "resolution": "Corrected to7slots/840request seconds+360planned overhead within1800; reviewer confirmed consistency across README/bounds/proposal/validation.",
+    "other_findings": "No concrete remaining inconsistency; audit role/withheld states/old immutability/T51/launch limits and structural-vs-quality distinction preserved.",
+    "writes_or_tests_by_reviewer": false
+  },
+  "structural_checks": {
+    "local_schema_refs_resolved": 18,
+    "local_document_links": 222,
+    "prior_file_hashes_after_formatter": true,
+    "exact_seven_units_preserved_and_5_plus_2_roles": true,
+    "fixture_checker_is_not_production_host": true,
+    "five_structural_pass_quality_fail_controls_do_not_claim_real_image_accuracy": true
+  }
+}

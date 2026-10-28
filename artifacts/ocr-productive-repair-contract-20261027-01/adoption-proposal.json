@@ -1,0 +1,15 @@
+{
+  "status": "Revised concrete T51 proposal; no independent verdict",
+  "change": "Version existing runner/host projections/reply validation/export to productive full reading+exact patch replay and structured self-check; default5combined+2saved-audit calls. No new SDK, scheduler, provider, dependency or command.",
+  "required_implementation": "T53 must implement exact aliases/source bindings/states/patch replay/full reading comparison/cost and recovery; v2draft checks alone do not implement it. T52 deterministic library remains independent.",
+  "risks": [
+    "missed image errors despite valid replay",
+    "hallucinated corrections or dropped brackets/names/numbers",
+    "output cap too small for whole result",
+    "wrong target/context geometry",
+    "correlated self-check",
+    "unknown timeout usage or backend cancellation",
+    "legacy-v1 request reuse mismatch"
+  ],
+  "independent_review": "T51 actual human-run verdict or explicit override still absent; HR011 See above supplies neither. No automatic reviewer or provider dispatch."
+}

@@ -1,0 +1,36 @@
+{
+  "contract": "ocr-productive-repair-input-v2",
+  "reply_contract": "ocr-productive-repair-reply-v2",
+  "unit_id": "JOINT",
+  "role": "productive_repair_and_self_check",
+  "image_alias": "I1",
+  "target_regions": [
+    {
+      "paragraph_alias": "P1",
+      "crop_region": {
+        "left": 0,
+        "top": 0,
+        "right": 10,
+        "bottom": 10
+      }
+    }
+  ],
+  "context_regions": [],
+  "paragraphs": [
+    {
+      "paragraph_alias": "P1",
+      "role": "target",
+      "raw_text": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American",
+      "static_text": "By Mr. MOORHEAD: Tlie petition of GCO citizens of Pennsylvania, praying for protection to American",
+      "static_edits": []
+    }
+  ],
+  "diagnostics": {
+    "status": "not_run",
+    "detector_sha256": null,
+    "configuration_sha256": null,
+    "signals": [],
+    "negative_targets": []
+  },
+  "saved_proposal": null
+}

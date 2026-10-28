@@ -1,0 +1,421 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "contract": {
+      "type": "string",
+      "const": "ocr-productive-repair-reply-v2"
+    },
+    "unit_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "productive_repair_and_self_check",
+        "audit_saved_proposal"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "findings",
+        "no_finding",
+        "incomplete",
+        "unresolved"
+      ]
+    },
+    "inspections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "paragraph_alias": {
+            "type": "string",
+            "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+          },
+          "image_alias": {
+            "type": "string",
+            "const": "I1"
+          },
+          "completeness": {
+            "type": "string",
+            "enum": [
+              "complete",
+              "partial",
+              "not_inspected"
+            ]
+          },
+          "image_suitability": {
+            "type": "string",
+            "enum": [
+              "clear",
+              "unclear",
+              "missing",
+              "irrelevant"
+            ]
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "paragraph_alias",
+          "image_alias",
+          "completeness",
+          "image_suitability",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 32
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "anchor": {
+            "type": "object",
+            "properties": {
+              "paragraph_alias": {
+                "type": "string",
+                "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+              },
+              "scope": {
+                "type": "string",
+                "enum": [
+                  "quote",
+                  "whole_paragraph"
+                ]
+              },
+              "raw_quote": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "paragraph_alias",
+              "scope",
+              "raw_quote"
+            ],
+            "additionalProperties": false
+          },
+          "affected_layer": {
+            "type": "string",
+            "enum": [
+              "raw",
+              "static",
+              "saved_proposal"
+            ]
+          },
+          "affected_quote": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "detector_missed_damage",
+              "incorrect_static_edit",
+              "name_place_concern",
+              "number_concern",
+              "unsupported_saved_proposal",
+              "source_uncertainty",
+              "other_damage"
+            ]
+          },
+          "resolution": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "unresolved"
+            ]
+          },
+          "proposed_reading": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "image_alias": {
+            "type": "string",
+            "const": "I1"
+          },
+          "basis": {
+            "type": "string",
+            "enum": [
+              "visible_print",
+              "image_unclear",
+              "image_unavailable",
+              "image_irrelevant"
+            ]
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "finding_id",
+          "anchor",
+          "affected_layer",
+          "affected_quote",
+          "category",
+          "resolution",
+          "proposed_reading",
+          "image_alias",
+          "basis",
+          "explanation"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 32
+    },
+    "patches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "paragraph_alias": {
+            "type": "string",
+            "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+          },
+          "raw_quote": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "replacement": {
+            "type": "string"
+          },
+          "image_alias": {
+            "type": "string",
+            "const": "I1"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "finding_id",
+          "paragraph_alias",
+          "raw_quote",
+          "replacement",
+          "image_alias",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 32
+    },
+    "reason": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "target_readings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "paragraph_alias": {
+            "type": "string",
+            "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+          },
+          "image_alias": {
+            "type": "string",
+            "const": "I1"
+          },
+          "reading_status": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "unchanged",
+              "withheld"
+            ]
+          },
+          "proposed_text": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 6000
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "uncertainties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "raw_quote": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "raw_quote",
+                "reason"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 32
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "paragraph_alias",
+          "image_alias",
+          "reading_status",
+          "proposed_text",
+          "uncertainties",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 32
+    },
+    "self_check": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "paragraph_alias": {
+            "type": "string",
+            "pattern": "^P([1-9]|[12][0-9]|3[0-2])$"
+          },
+          "coverage": {
+            "type": "string",
+            "enum": [
+              "complete",
+              "partial",
+              "not_inspected"
+            ]
+          },
+          "checked_content": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "all_words",
+                "names_places",
+                "numbers",
+                "punctuation",
+                "printed_repetition",
+                "bracketed_cues",
+                "target_context_boundaries",
+                "unflagged_text",
+                "static_edits"
+              ]
+            },
+            "uniqueItems": true,
+            "maxItems": 9
+          },
+          "remaining_concerns": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "maxItems": 32
+          }
+        },
+        "required": [
+          "paragraph_alias",
+          "coverage",
+          "checked_content",
+          "remaining_concerns"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 32
+    }
+  },
+  "required": [
+    "contract",
+    "unit_id",
+    "role",
+    "status",
+    "inspections",
+    "findings",
+    "patches",
+    "reason",
+    "target_readings",
+    "self_check"
+  ],
+  "additionalProperties": false
+}
