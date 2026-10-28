@@ -6,7 +6,7 @@ Prepare the five parts of the 39th Congress, first session for keyword, OCR-tole
 
 The immediate investigation measures how accurately and efficiently damaged OCR can be repaired with deterministic processing and image-grounded AI, including audits of text that appears clean. The [evaluation contract](docs/reference/ocr-repair-evaluation.md) explains the method; the master contains the actionable tasks and current permission bounds. Optional predictive scoring must not delay cleanup evaluation.
 
-The [bounded deterministic study](artifacts/deterministic-sample-20261028-01/README.md) now preserves exact original-text support for cautious line joins and word/name/number review signals over18frozen paragraphs. Image-model integration and historical accuracy remain unproved.
+The [bounded deterministic study](artifacts/deterministic-sample-20261028-01/README.md) now preserves exact original-text support for cautious line joins and word/name/number review signals over18frozen paragraphs. The [productive repair checks and recovery path](artifacts/productive-ocr-integration-20261028-01/README.md) are now implemented and tested with fake responses. Actual model readiness and historical accuracy remain unproved.
 
 Use the browser review desk below to answer questions and grade samples. Agents pick up submitted answers when they next work on the project.
 

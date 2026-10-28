@@ -1,0 +1,487 @@
+{
+  "$defs": {
+    "Anchor": {
+      "additionalProperties": false,
+      "properties": {
+        "paragraph_alias": {
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$",
+          "title": "Paragraph Alias",
+          "type": "string"
+        },
+        "scope": {
+          "enum": [
+            "quote",
+            "whole_paragraph"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "raw_quote": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw Quote"
+        }
+      },
+      "required": [
+        "paragraph_alias",
+        "scope",
+        "raw_quote"
+      ],
+      "title": "Anchor",
+      "type": "object"
+    },
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "finding_id": {
+          "minLength": 1,
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "anchor": {
+          "$ref": "#/$defs/Anchor"
+        },
+        "affected_layer": {
+          "enum": [
+            "raw",
+            "static",
+            "saved_proposal"
+          ],
+          "title": "Affected Layer",
+          "type": "string"
+        },
+        "affected_quote": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Affected Quote"
+        },
+        "category": {
+          "enum": [
+            "detector_missed_damage",
+            "incorrect_static_edit",
+            "name_place_concern",
+            "number_concern",
+            "unsupported_saved_proposal",
+            "source_uncertainty",
+            "other_damage"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "resolution": {
+          "enum": [
+            "proposed",
+            "unresolved"
+          ],
+          "title": "Resolution",
+          "type": "string"
+        },
+        "proposed_reading": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Proposed Reading"
+        },
+        "image_alias": {
+          "const": "I1",
+          "title": "Image Alias",
+          "type": "string"
+        },
+        "basis": {
+          "enum": [
+            "visible_print",
+            "image_unclear",
+            "image_unavailable",
+            "image_irrelevant"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "explanation": {
+          "minLength": 1,
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "finding_id",
+        "anchor",
+        "affected_layer",
+        "affected_quote",
+        "category",
+        "resolution",
+        "proposed_reading",
+        "image_alias",
+        "basis",
+        "explanation"
+      ],
+      "title": "Finding",
+      "type": "object"
+    },
+    "Inspection": {
+      "additionalProperties": false,
+      "properties": {
+        "paragraph_alias": {
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$",
+          "title": "Paragraph Alias",
+          "type": "string"
+        },
+        "image_alias": {
+          "const": "I1",
+          "title": "Image Alias",
+          "type": "string"
+        },
+        "completeness": {
+          "enum": [
+            "complete",
+            "partial",
+            "not_inspected"
+          ],
+          "title": "Completeness",
+          "type": "string"
+        },
+        "image_suitability": {
+          "enum": [
+            "clear",
+            "unclear",
+            "missing",
+            "irrelevant"
+          ],
+          "title": "Image Suitability",
+          "type": "string"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reason"
+        }
+      },
+      "required": [
+        "paragraph_alias",
+        "image_alias",
+        "completeness",
+        "image_suitability",
+        "reason"
+      ],
+      "title": "Inspection",
+      "type": "object"
+    },
+    "Patch": {
+      "additionalProperties": false,
+      "properties": {
+        "finding_id": {
+          "minLength": 1,
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "paragraph_alias": {
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$",
+          "title": "Paragraph Alias",
+          "type": "string"
+        },
+        "raw_quote": {
+          "minLength": 1,
+          "title": "Raw Quote",
+          "type": "string"
+        },
+        "replacement": {
+          "title": "Replacement",
+          "type": "string"
+        },
+        "image_alias": {
+          "const": "I1",
+          "title": "Image Alias",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "finding_id",
+        "paragraph_alias",
+        "raw_quote",
+        "replacement",
+        "image_alias",
+        "reason"
+      ],
+      "title": "Patch",
+      "type": "object"
+    },
+    "SelfCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "paragraph_alias": {
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$",
+          "title": "Paragraph Alias",
+          "type": "string"
+        },
+        "coverage": {
+          "enum": [
+            "complete",
+            "partial",
+            "not_inspected"
+          ],
+          "title": "Coverage",
+          "type": "string"
+        },
+        "checked_content": {
+          "items": {
+            "enum": [
+              "all_words",
+              "names_places",
+              "numbers",
+              "punctuation",
+              "printed_repetition",
+              "bracketed_cues",
+              "target_context_boundaries",
+              "unflagged_text",
+              "static_edits"
+            ],
+            "type": "string"
+          },
+          "maxItems": 9,
+          "title": "Checked Content",
+          "type": "array"
+        },
+        "remaining_concerns": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 32,
+          "title": "Remaining Concerns",
+          "type": "array"
+        }
+      },
+      "required": [
+        "paragraph_alias",
+        "coverage",
+        "checked_content",
+        "remaining_concerns"
+      ],
+      "title": "SelfCheck",
+      "type": "object"
+    },
+    "TargetReading": {
+      "additionalProperties": false,
+      "properties": {
+        "paragraph_alias": {
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$",
+          "title": "Paragraph Alias",
+          "type": "string"
+        },
+        "image_alias": {
+          "const": "I1",
+          "title": "Image Alias",
+          "type": "string"
+        },
+        "reading_status": {
+          "enum": [
+            "proposed",
+            "unchanged",
+            "withheld"
+          ],
+          "title": "Reading Status",
+          "type": "string"
+        },
+        "proposed_text": {
+          "anyOf": [
+            {
+              "maxLength": 6000,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Proposed Text"
+        },
+        "uncertainties": {
+          "items": {
+            "$ref": "#/$defs/Uncertainty"
+          },
+          "maxItems": 32,
+          "title": "Uncertainties",
+          "type": "array"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reason"
+        }
+      },
+      "required": [
+        "paragraph_alias",
+        "image_alias",
+        "reading_status",
+        "uncertainties",
+        "reason"
+      ],
+      "title": "TargetReading",
+      "type": "object"
+    },
+    "Uncertainty": {
+      "additionalProperties": false,
+      "properties": {
+        "raw_quote": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw Quote"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "raw_quote",
+        "reason"
+      ],
+      "title": "Uncertainty",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract": {
+      "const": "ocr-productive-repair-reply-v2",
+      "title": "Contract",
+      "type": "string"
+    },
+    "unit_id": {
+      "minLength": 1,
+      "title": "Unit Id",
+      "type": "string"
+    },
+    "role": {
+      "enum": [
+        "productive_repair_and_self_check",
+        "audit_saved_proposal"
+      ],
+      "title": "Role",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "findings",
+        "no_finding",
+        "incomplete",
+        "unresolved"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "inspections": {
+      "items": {
+        "$ref": "#/$defs/Inspection"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Inspections",
+      "type": "array"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/Finding"
+      },
+      "maxItems": 32,
+      "title": "Findings",
+      "type": "array"
+    },
+    "patches": {
+      "items": {
+        "$ref": "#/$defs/Patch"
+      },
+      "maxItems": 32,
+      "title": "Patches",
+      "type": "array"
+    },
+    "reason": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Reason"
+    },
+    "target_readings": {
+      "items": {
+        "$ref": "#/$defs/TargetReading"
+      },
+      "maxItems": 32,
+      "title": "Target Readings",
+      "type": "array"
+    },
+    "self_check": {
+      "items": {
+        "$ref": "#/$defs/SelfCheck"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Self Check",
+      "type": "array"
+    }
+  },
+  "required": [
+    "contract",
+    "unit_id",
+    "role",
+    "status",
+    "inspections",
+    "findings",
+    "patches",
+    "reason",
+    "target_readings",
+    "self_check"
+  ],
+  "title": "Reply",
+  "type": "object"
+}

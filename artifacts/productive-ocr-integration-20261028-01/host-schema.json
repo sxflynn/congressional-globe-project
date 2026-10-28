@@ -1,0 +1,667 @@
+{
+  "$defs": {
+    "Binding": {
+      "additionalProperties": false,
+      "properties": {
+        "paragraph_alias": {
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$",
+          "title": "Paragraph Alias",
+          "type": "string"
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "raw_start": {
+          "minimum": 0,
+          "title": "Raw Start",
+          "type": "integer"
+        },
+        "raw_end": {
+          "minimum": 1,
+          "title": "Raw End",
+          "type": "integer"
+        },
+        "crop_region": {
+          "$ref": "#/$defs/Box"
+        }
+      },
+      "required": [
+        "paragraph_alias",
+        "raw_sha256",
+        "raw_start",
+        "raw_end",
+        "crop_region"
+      ],
+      "title": "Binding",
+      "type": "object"
+    },
+    "Box": {
+      "additionalProperties": false,
+      "properties": {
+        "left": {
+          "minimum": 0,
+          "title": "Left",
+          "type": "integer"
+        },
+        "top": {
+          "minimum": 0,
+          "title": "Top",
+          "type": "integer"
+        },
+        "right": {
+          "minimum": 1,
+          "title": "Right",
+          "type": "integer"
+        },
+        "bottom": {
+          "minimum": 1,
+          "title": "Bottom",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "left",
+        "top",
+        "right",
+        "bottom"
+      ],
+      "title": "Box",
+      "type": "object"
+    },
+    "Diagnostics": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "not_run",
+            "frozen"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "detector_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Detector Sha256"
+        },
+        "configuration_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Configuration Sha256"
+        },
+        "signals": {
+          "items": {
+            "$ref": "#/$defs/Signal"
+          },
+          "maxItems": 128,
+          "title": "Signals",
+          "type": "array"
+        },
+        "negative_targets": {
+          "items": {
+            "pattern": "^P([1-9]|[12][0-9]|3[0-2])$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "title": "Negative Targets",
+          "type": "array"
+        }
+      },
+      "required": [
+        "status",
+        "detector_sha256",
+        "configuration_sha256",
+        "signals",
+        "negative_targets"
+      ],
+      "title": "Diagnostics",
+      "type": "object"
+    },
+    "Edit": {
+      "additionalProperties": false,
+      "properties": {
+        "edit_id": {
+          "minLength": 1,
+          "title": "Edit Id",
+          "type": "string"
+        },
+        "raw_start": {
+          "minimum": 0,
+          "title": "Raw Start",
+          "type": "integer"
+        },
+        "raw_end": {
+          "minimum": 1,
+          "title": "Raw End",
+          "type": "integer"
+        },
+        "expected": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Expected",
+          "type": "string"
+        },
+        "replacement": {
+          "title": "Replacement",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "edit_id",
+        "raw_start",
+        "raw_end",
+        "expected",
+        "replacement",
+        "reason"
+      ],
+      "title": "Edit",
+      "type": "object"
+    },
+    "HostPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "contract": {
+          "const": "ocr-productive-repair-host-input-v2",
+          "title": "Contract",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "productive_repair_and_self_check",
+            "audit_saved_proposal"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "unit_id": {
+          "minLength": 1,
+          "title": "Unit Id",
+          "type": "string"
+        },
+        "paragraphs": {
+          "items": {
+            "$ref": "#/$defs/Paragraph"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Paragraphs",
+          "type": "array"
+        },
+        "image": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ImageBinding"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "diagnostics": {
+          "$ref": "#/$defs/Diagnostics"
+        },
+        "saved_proposal": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SavedProposal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "prompt_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Prompt Sha256",
+          "type": "string"
+        },
+        "response_schema_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Response Schema Sha256",
+          "type": "string"
+        },
+        "code_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Code Sha256",
+          "type": "string"
+        },
+        "model_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Model Digest",
+          "type": "string"
+        },
+        "sampling_manifest_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sampling Manifest Sha256",
+          "type": "string"
+        },
+        "bounds_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Bounds Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "contract",
+        "role",
+        "unit_id",
+        "paragraphs",
+        "image",
+        "diagnostics",
+        "saved_proposal",
+        "prompt_sha256",
+        "response_schema_sha256",
+        "code_sha256",
+        "model_digest",
+        "sampling_manifest_sha256",
+        "bounds_sha256"
+      ],
+      "title": "HostPayload",
+      "type": "object"
+    },
+    "ImageBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "alias": {
+          "const": "I1",
+          "title": "Alias",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "mime": {
+          "enum": [
+            "image/jpeg",
+            "image/png"
+          ],
+          "title": "Mime",
+          "type": "string"
+        },
+        "width": {
+          "minimum": 1,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "minimum": 1,
+          "title": "Height",
+          "type": "integer"
+        },
+        "bindings": {
+          "items": {
+            "$ref": "#/$defs/Binding"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Bindings",
+          "type": "array"
+        },
+        "registration_status": {
+          "enum": [
+            "verified",
+            "unknown"
+          ],
+          "title": "Registration Status",
+          "type": "string"
+        },
+        "legibility_status": {
+          "enum": [
+            "checked",
+            "unknown"
+          ],
+          "title": "Legibility Status",
+          "type": "string"
+        },
+        "source_item_identifier": {
+          "minLength": 1,
+          "title": "Source Item Identifier",
+          "type": "string"
+        },
+        "source_scan_leaf": {
+          "minimum": 0,
+          "title": "Source Scan Leaf",
+          "type": "integer"
+        },
+        "hocr_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Hocr Sha256",
+          "type": "string"
+        },
+        "page_map_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Page Map Sha256",
+          "type": "string"
+        },
+        "binding_manifest_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Binding Manifest Sha256",
+          "type": "string"
+        },
+        "registration_evidence_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Registration Evidence Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "alias",
+        "sha256",
+        "mime",
+        "width",
+        "height",
+        "bindings",
+        "registration_status",
+        "legibility_status",
+        "source_item_identifier",
+        "source_scan_leaf",
+        "hocr_sha256",
+        "page_map_sha256",
+        "binding_manifest_sha256",
+        "registration_evidence_sha256"
+      ],
+      "title": "ImageBinding",
+      "type": "object"
+    },
+    "Layer": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "sha256"
+      ],
+      "title": "Layer",
+      "type": "object"
+    },
+    "Paragraph": {
+      "additionalProperties": false,
+      "properties": {
+        "alias": {
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$",
+          "title": "Alias",
+          "type": "string"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "pattern": "^[^:\\s]+:[0-9]+:[^:\\s]+$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "part_number": {
+          "maximum": 5,
+          "minimum": 1,
+          "title": "Part Number",
+          "type": "integer"
+        },
+        "scan_leaf": {
+          "minimum": 0,
+          "title": "Scan Leaf",
+          "type": "integer"
+        },
+        "role": {
+          "enum": [
+            "target",
+            "context"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "raw": {
+          "$ref": "#/$defs/Layer"
+        },
+        "static": {
+          "$ref": "#/$defs/StaticLayer"
+        }
+      },
+      "required": [
+        "alias",
+        "source_id",
+        "part_number",
+        "scan_leaf",
+        "role",
+        "raw",
+        "static"
+      ],
+      "title": "Paragraph",
+      "type": "object"
+    },
+    "ProposalParagraph": {
+      "additionalProperties": false,
+      "properties": {
+        "paragraph_alias": {
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$",
+          "title": "Paragraph Alias",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "raw_edits": {
+          "items": {
+            "$ref": "#/$defs/Edit"
+          },
+          "maxItems": 128,
+          "title": "Raw Edits",
+          "type": "array"
+        }
+      },
+      "required": [
+        "paragraph_alias",
+        "text",
+        "sha256",
+        "raw_edits"
+      ],
+      "title": "ProposalParagraph",
+      "type": "object"
+    },
+    "SavedProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "record_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Record Sha256",
+          "type": "string"
+        },
+        "prior_request_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Prior Request Sha256",
+          "type": "string"
+        },
+        "prior_raw_reply_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Prior Raw Reply Sha256",
+          "type": "string"
+        },
+        "paragraphs": {
+          "items": {
+            "$ref": "#/$defs/ProposalParagraph"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Paragraphs",
+          "type": "array"
+        },
+        "review_state": {
+          "const": "unreviewed_model_proposal",
+          "title": "Review State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "record_sha256",
+        "prior_request_sha256",
+        "prior_raw_reply_sha256",
+        "paragraphs",
+        "review_state"
+      ],
+      "title": "SavedProposal",
+      "type": "object"
+    },
+    "Signal": {
+      "additionalProperties": false,
+      "properties": {
+        "signal_id": {
+          "minLength": 1,
+          "title": "Signal Id",
+          "type": "string"
+        },
+        "paragraph_alias": {
+          "pattern": "^P([1-9]|[12][0-9]|3[0-2])$",
+          "title": "Paragraph Alias",
+          "type": "string"
+        },
+        "raw_start": {
+          "minimum": 0,
+          "title": "Raw Start",
+          "type": "integer"
+        },
+        "raw_end": {
+          "minimum": 1,
+          "title": "Raw End",
+          "type": "integer"
+        },
+        "raw_quote": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Raw Quote",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "word",
+            "name_place",
+            "number",
+            "mixed",
+            "split",
+            "other"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "flags": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Flags",
+          "type": "array"
+        },
+        "route_reason": {
+          "minLength": 1,
+          "title": "Route Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "signal_id",
+        "paragraph_alias",
+        "raw_start",
+        "raw_end",
+        "raw_quote",
+        "category",
+        "flags",
+        "route_reason"
+      ],
+      "title": "Signal",
+      "type": "object"
+    },
+    "StaticLayer": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "edits": {
+          "items": {
+            "$ref": "#/$defs/Edit"
+          },
+          "maxItems": 128,
+          "title": "Edits",
+          "type": "array"
+        },
+        "rule_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Rule Sha256",
+          "type": "string"
+        },
+        "lexicon_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Lexicon Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "sha256",
+        "edits",
+        "rule_sha256",
+        "lexicon_sha256"
+      ],
+      "title": "StaticLayer",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "packet_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Packet Sha256",
+      "type": "string"
+    },
+    "payload": {
+      "$ref": "#/$defs/HostPayload"
+    }
+  },
+  "required": [
+    "packet_sha256",
+    "payload"
+  ],
+  "title": "HostEnvelope",
+  "type": "object"
+}

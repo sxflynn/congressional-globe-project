@@ -1,0 +1,34 @@
+{
+  "task": "T53",
+  "code_hashes": {
+    "bracket_cues.py": "5658161c43075ad5ae562e9626ab5e5c91e111bfba99ee7ee009d3d4a195e5cd",
+    "deterministic_models.py": "f1ec9d2750030a58fc2da4e4bac1a64b887d82bef9ac282b9ef8e231f11ef9cb",
+    "productive_ocr_binding.py": "0f093db25faf93c082078db402a57e863efab9fad517a96575d14a877c82ca55",
+    "productive_ocr_control.py": "8fcd72d2d44e8096add20c1127551e26f86af74d4656dd4faa7866ce35479fec",
+    "productive_ocr_host.py": "7ef6912b5ad0dae279efc0d7a0bcdb001392b06d19ec07f3198fa0d5bd90bb5e",
+    "productive_ocr_reply.py": "330817a50b2e739a5761d79d2fca4194d32d2843aed9c76aabb6d730aa7dfae4",
+    "productive_ocr_runner.py": "aa7ea04e449b661bee08a8654d833381aa982ed3f4e495401f973a40d655eb4d",
+    "role_run_store.py": "e20526e1211219e0390443504b11f54fbe6ac6aec038cbd2d724070e74dd138a"
+  },
+  "fake_units": 2,
+  "fake_attempts": 2,
+  "compatible_rerun_additional_sends": 0,
+  "real_provider_calls": 0,
+  "new_historical_readings": 0,
+  "raw_static_sources_modified": false,
+  "preserved_manifests_verified": [
+    "artifacts/ocr-productive-repair-contract-20261027-01/manifest.json",
+    "artifacts/deterministic-sample-20261028-01/manifest.json"
+  ],
+  "six_fresh_process_checkpoints": true,
+  "owned_fake_process_stop": "test_timeout_cancels_actual_owned_fake_process_and_observes_exit; actual backend adapter not implemented/proved",
+  "quality": "Strict structural/source/replay checks only; invented white image and replies do not establish print fidelity.",
+  "readiness_gaps": [
+    "real provider adapter transport/schema compatibility",
+    "actual tokenizer/image/output fit",
+    "actual model digest/name runtime binding",
+    "real owned backend cancellation/observation and30minute stop",
+    "exact cached source/image registration for all7frozen units"
+  ],
+  "draft_note": "Host-rules7bindings wording conflicts with frozen D2nine targets; authoritative schema max32bindings per packet retained, no sample changed."
+}

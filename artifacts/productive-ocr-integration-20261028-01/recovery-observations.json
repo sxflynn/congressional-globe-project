@@ -1,0 +1,57 @@
+[
+  {
+    "checkpoint": "before_claim",
+    "killed_returncode": -9,
+    "pickup_returncode": 0,
+    "fake_sends": [
+      "U1",
+      "U2"
+    ],
+    "outcome": "compatible recovery without duplicate send"
+  },
+  {
+    "checkpoint": "after_claim",
+    "killed_returncode": -9,
+    "pickup_returncode": 2,
+    "fake_sends": [],
+    "outcome": "ambiguous/missing stop proof blocks further dispatch"
+  },
+  {
+    "checkpoint": "after_send",
+    "killed_returncode": -9,
+    "pickup_returncode": 2,
+    "fake_sends": [
+      "U1"
+    ],
+    "outcome": "ambiguous/missing stop proof blocks further dispatch"
+  },
+  {
+    "checkpoint": "after_raw_before_observation",
+    "killed_returncode": -9,
+    "pickup_returncode": 2,
+    "fake_sends": [
+      "U1"
+    ],
+    "outcome": "ambiguous/missing stop proof blocks further dispatch"
+  },
+  {
+    "checkpoint": "after_raw",
+    "killed_returncode": -9,
+    "pickup_returncode": 0,
+    "fake_sends": [
+      "U1",
+      "U2"
+    ],
+    "outcome": "compatible recovery without duplicate send"
+  },
+  {
+    "checkpoint": "after_terminal",
+    "killed_returncode": -9,
+    "pickup_returncode": 0,
+    "fake_sends": [
+      "U1",
+      "U2"
+    ],
+    "outcome": "compatible recovery without duplicate send"
+  }
+]

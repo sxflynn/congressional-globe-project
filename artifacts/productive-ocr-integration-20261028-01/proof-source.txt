@@ -1,0 +1,35 @@
+import base64,hashlib,json,runpy,time
+from pathlib import Path
+from congressional_globe.productive_ocr_host import HostEnvelope
+from congressional_globe.productive_ocr_reply import Reply
+from congressional_globe.productive_ocr_runner import code_identity
+p=Path('artifacts/productive-ocr-integration-20261028-01')
+h=runpy.run_path('tests/test_productive_ocr_runner.py')
+def save(name,value):(p/name).write_text(json.dumps(value,indent=2,ensure_ascii=False)+'\n')
+jobs,registry,bounds=h['_session']();client=h['Client']()
+first=h['execute'](p/'journal',jobs,bounds,h['RunnerContext'](registry,client))
+second=h['execute'](p/'journal',jobs,bounds,h['RunnerContext'](registry,client))
+assert first==second and client.calls==['U1','U2']
+save('fake-results.json',first);save('frozen-fake-jobs.json',[j.model_dump(mode='json') for j in jobs]);save('fake-session-bounds.json',bounds.model_dump(mode='json'))
+save('fake-registry.json',{'scope':'Invented white PNG and synthetic registry records; no real print/legibility proof.','image_bytes_base64':{k:base64.b64encode(v).decode() for k,v in registry.image_bytes.items()},'files_base64':{k:base64.b64encode(v).decode() for k,v in registry.files.items()},'records':{k:{'record':v.record,'evidence_bytes_base64':base64.b64encode(v.evidence_bytes).decode()} for k,v in registry.records.items()}})
+save('host-schema.json',HostEnvelope.model_json_schema());save('reply-schema.json',Reply.model_json_schema())
+observations=[]
+for checkpoint in ['before_claim','after_claim','after_send','after_raw_before_observation','after_raw','after_terminal']:
+ case=p/'recovery'/checkpoint;case.mkdir(parents=True,exist_ok=False);(case/'started.txt').write_text(str(time.time()))
+ killed=h['_process'](case,checkpoint);resumed=h['_process'](case,'resume')
+ sent=(case/'sent.txt').read_text().splitlines() if (case/'sent.txt').exists() else []
+ safe=checkpoint in ['before_claim','after_raw','after_terminal']
+ assert killed.returncode==-9
+ assert resumed.returncode==(0 if safe else 2),(checkpoint,resumed.stderr)
+ assert sent==(['U1','U2'] if safe else ([] if checkpoint=='after_claim' else ['U1']))
+ observations.append({'checkpoint':checkpoint,'killed_returncode':killed.returncode,'pickup_returncode':resumed.returncode,'fake_sends':sent,'outcome':'compatible recovery without duplicate send' if safe else 'ambiguous/missing stop proof blocks further dispatch'})
+save('recovery-observations.json',observations)
+# Pin preserved T69 draft bytes and earlier T52 evidence; no source re-reading.
+preserved=[]
+for manifest_path in ['artifacts/ocr-productive-repair-contract-20261027-01/manifest.json','artifacts/deterministic-sample-20261028-01/manifest.json']:
+ manifest=json.loads(Path(manifest_path).read_text());files=manifest['files'];items=files if isinstance(files,list) else [{'path':k,**v} for k,v in files.items()]
+ for entry in items:
+  path=Path(entry['path']);assert hashlib.sha256(path.read_bytes()).hexdigest()==entry['sha256'],str(path)
+ preserved.append(manifest_path)
+save('validation.json',{'task':'T53','evidence_driver_sha256':hashlib.sha256((p/'proof-source.txt').read_bytes()).hexdigest(),'code_hashes':code_identity(),'fake_units':2,'fake_attempts':2,'compatible_rerun_additional_sends':0,'real_provider_calls':0,'new_historical_readings':0,'raw_static_sources_modified':False,'preserved_manifests_verified':preserved,'six_fresh_process_checkpoints':True,'owned_fake_process_stop':'test_timeout_cancels_actual_owned_fake_process_and_observes_exit; actual backend adapter not implemented/proved','quality':'Strict structural/source/replay checks only; invented white image and replies do not establish print fidelity.','readiness_gaps':['real provider adapter transport/schema compatibility','actual tokenizer/image/output fit','actual model digest/name runtime binding','real owned backend cancellation/observation and30minute stop','exact cached source/image registration for all7frozen units'],'draft_note':'Host-rules7bindings wording conflicts with frozen D2nine targets; authoritative schema max32bindings per packet retained, no sample changed.'})
+print('Two fake units and six fresh-process recovery checkpoints verified; real provider calls0.')
