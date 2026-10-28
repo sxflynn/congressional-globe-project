@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-28",
+  "source": "Direct human message following oral discussion in this task",
+  "exact_message": "I hereby approve and waive. I hereby approve the run and I waive the independent review because I conducted it orally.",
+  "workflow_decision": "Explicit approval and waiver of independent GPT-6 workflow-adoption evaluation for the discussed productive OCR repair/audit workflow. Oral human review is not independent GPT-6 evidence.",
+  "implementation_scope": "T53 offline source/image/quote/full-reading validation, existing journals and interruption/recovery tests using fake clients; preserve immutable original OCR and separate unreviewed proposals.",
+  "run_scope": "Approval retained for the discussed first small diagnostic: five frozen primary passages, one from each part, plus two exposed saved-failure audits; default one combined productive request per primary passage, at most seven sequential requests, 120 seconds each, zero retries, within the proposed 1800-second whole-session cap. T55 exact readiness/resources/fit/stopping checks and fresh runtime/queue/lock observations remain prerequisites; no request dispatched by this record.",
+  "not_authorized": ["corpus-wide processing", "new models or model downloads", "recurring jobs", "additional sample arms or requests", "canonical OCR rewriting", "historical accuracy or P0 acceptance"],
+  "discussed_risks": ["missed errors despite replay-valid text", "harmful unsupported changes", "wrong source image or target boundaries", "dropped brackets/names/numbers/repetition", "interruption and unknown usage", "sample reuse mistaken for new independent evidence"],
+  "review_desk_direction": "Future actual selected results should distinguish new study passages from previously seen failures; show scan/raw OCR/full proposed reading/exact changes/uncertainties with local notes and existing glossary rules. No new human grading round or historical acceptance is inferred."
+}
