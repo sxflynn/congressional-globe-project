@@ -1,0 +1,60 @@
+{
+  "submission_id": "31f55374-c6bc-4943-b50a-6b19ef2bfb05",
+  "packet_sha256": "51de1f4035e46f4fcef093c9fa3749694b40f5e2ec7e194ca7402985ea8f9e9f",
+  "reviewer": "Stephen Flynn",
+  "revision": 1,
+  "answers": {
+    "design-feedback": "Needs changes — see notes",
+    "design-notes": "It’s mostly fine but I don’t want to waste AI tokens on an AI looking at an image and NOT doing any transcriptions or OCR repair, know what I mean?",
+    "independent-evaluation": "See above"
+  },
+  "notes": [
+    {
+      "note_id": "evidence-note:design-feedback:3:52ead62ff4cc0fe3448ddd0b42765475213e51255cb776e9056752bc34dc8982",
+      "comment": "Why would we spend ai gpu on having it look at raw images of text and NOT try to transcribe it or correct the OCR text?",
+      "question_id": "design-feedback",
+      "item_number": 4,
+      "evidence_label": "3 · Possible input A — image-only reading",
+      "concern": "One productive image/OCR repair request by default",
+      "task": "T69",
+      "action_or_reason": "Accept cost concern. Default first chunk becomes one combined image+OCR repair request per random target, covering all supported errors and structured self-check. Original image-only role did request a transcription, but the walkthrough showed only a fragment and failed to communicate that. A separate comparison pass now requires a named decision-changing purpose and separate bounded scope.",
+      "status": "Direction applied; revised contract/prompt/readiness pending"
+    },
+    {
+      "note_id": "evidence-note:design-feedback:4:2609030757c27700439a5df8c2ddb085ae1d6ec17977b98e077074c0ded7e981",
+      "comment": "Yes 660 is correct from the image. ",
+      "question_id": "design-feedback",
+      "item_number": 5,
+      "evidence_label": "4 · Possible output A — illustrative reading fragment",
+      "concern": "Case-specific human image reading:660",
+      "task": "T68",
+      "action_or_reason": "Record human confirmation that this crop reads660. Preserve exact source/image binding. This is one specific reading, not corpus accuracy or automatic application of a repair.",
+      "status": "Applied to case-specific human evidence"
+    },
+    {
+      "note_id": "evidence-note:design-feedback:6:60e5625e9559dfe07c3a01efed187a21680bc3ddfa263d5e4706f09c94ceaa38",
+      "comment": "Ok, cool? You also got 660 just like the one above. ",
+      "question_id": "design-feedback",
+      "item_number": 7,
+      "evidence_label": "6 · Possible output B — one illustrative proposed repair",
+      "concern": "Duplicate660 fragments do not establish independent agreement",
+      "task": "T68/T69",
+      "action_or_reason": "Both displayed fragments were authored illustrations, not two new model responses. Do not count agreement or spend an extra request merely to repeat the number. Default combined request must return all supported corrections for its target.",
+      "status": "Clarification and design direction applied"
+    },
+    {
+      "note_id": "evidence-note:design-feedback:7:94211ef2aeeec5c6a7d63ad8cea72b7c627f7ac116015a086cbfdf72b82ceb18",
+      "comment": "If the ocr image is narrowly scoped enough why not have a single AI request repair both 660 and “Tlie” meaning “The.” I feel like qwen could handle both. ",
+      "question_id": "design-feedback",
+      "item_number": 8,
+      "evidence_label": "7 · What the proposed reading preview might look like",
+      "concern": "Repair both number and word in a single narrowly scoped request",
+      "task": "T69",
+      "action_or_reason": "Require the same request to inspect the entire assigned target and propose GCO→660 and Tlie→The when supported; output full proposed reading plus source-bound exact changes/uncertainty, not one isolated numeral fragment. Qwen capability remains to be measured; no run/model approval inferred.",
+      "status": "Joint-repair requirement applied; contract implementation/testing pending"
+    }
+  ],
+  "all_four_notes_accounted_for": true,
+  "independent_evaluation_field": "See above refers to design feedback; no evaluator/verdict/risks supplied. T51 remains waiting; no override inferred.",
+  "applied_means": "Review direction ingested, with explicit contract/readiness follow-up; not implementation complete or live authorization."
+}

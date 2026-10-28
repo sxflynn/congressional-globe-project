@@ -1,0 +1,32 @@
+{
+  "supersedes_default_only": [
+    "T60 mandatory image-only+combined two-pass cadence",
+    "T50 v1 role adoption as current workflow without revision"
+  ],
+  "preserves": [
+    "T49/T60 sample IDs and old artifacts",
+    "two exposed saved-failure audits",
+    "audit unflagged text and apparent deterministic successes",
+    "uncertainty, source bindings, cost/recovery and human acceptance limits"
+  ],
+  "proposed_default": {
+    "primary_units": 5,
+    "combined_repair_requests_per_primary": 1,
+    "saved_failure_audit_units": 2,
+    "total_request_ceiling": 7,
+    "seconds_per_request_ceiling": 120,
+    "request_seconds_ceiling": 840,
+    "setup_report_planning_seconds": 360,
+    "planning_total_seconds": 1200,
+    "whole_session_hard_cap_seconds": 1800,
+    "unused_time_is_not_extra_call_authority": true,
+    "retries": 0,
+    "new_human_grading_minutes": 0
+  },
+  "productive_output": "Complete proposed reading of assigned target, exact source-bound changes for all supported errors, structured self-check/inspection scope and explicit uncertainty. Host replay must agree with proposed reading.",
+  "independence_limit": "Single-request self-check is correlated model evidence, not an independent audit or gold.",
+  "optional_second_pass": "Only for a separately named bounded study question that justifies its incremental cost; no automatic comparison call.",
+  "readiness": "T69 must freeze revised versioned contract/prompt/input/output limits, then T53/T55 implementation/preflight/cancellation and actual live authority remain required. Seven calls is a prospective design ceiling, not a dispatch instruction.",
+  "presumed_model_capability": "No proof that Qwen can complete this scope within bounds; verify later without silently increasing budgets.",
+  "T51": "Still requires actual independent verdict or explicit human override; See above is neither."
+}
