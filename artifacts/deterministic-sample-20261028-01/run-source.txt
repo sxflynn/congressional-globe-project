@@ -1,0 +1,112 @@
+"""Offline reproduction of T52's exact18 targets; no canonical traversal/provider."""
+import hashlib
+import json
+import time
+from collections import Counter
+from pathlib import Path
+
+from congressional_globe.bracket_cues import BracketSource
+from congressional_globe.deterministic_geometry import GeometryRegistry
+from congressional_globe.deterministic_lexicon import Lexicon, LexiconSpec
+from congressional_globe.deterministic_models import ExactEdit, OCRLine, ParagraphInput
+from congressional_globe.deterministic_repair import DeterministicResult, analyze_paragraph, verify_result
+from congressional_globe.deterministic_rules import Resources
+
+ROOT = Path(__file__).parent
+manifest = json.loads((ROOT / 'input-manifest.json').read_text())
+for filename, identity in manifest['files'].items():
+    data = Path(filename).read_bytes()
+    assert len(data) == identity['bytes']
+    assert hashlib.sha256(data).hexdigest() == identity['sha256'], filename
+
+
+def save(name, value):
+    (ROOT / name).write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n')
+
+
+def lexicon(filename, purpose):
+    return Lexicon(spec=LexiconSpec(
+        label=filename, purpose=purpose,
+        sha256=manifest['files'][filename]['sha256'],
+        provenance='Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.',
+        limitations='Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved.'
+    ), data=Path(filename).read_bytes())
+
+
+wall, cpu = time.perf_counter(), time.process_time()
+geometry_path = 'artifacts/deterministic-sample-20261028-01/geometry-registry.json'
+resources = Resources(
+    words=lexicon('artifacts/static-audit-20261011/supplemented-lexicon.txt', 'words'),
+    names=lexicon('/usr/share/dict/propernames', 'names'),
+    places=None,
+    geometry=GeometryRegistry(data=Path(geometry_path).read_bytes(), expected_sha256=manifest['files'][geometry_path]['sha256']),
+)
+resource_cost = dict(wall_seconds=time.perf_counter()-wall, process_cpu_seconds=time.process_time()-cpu)
+rows = json.loads((ROOT / 'frozen-inputs.json').read_text())['paragraphs']
+assert len(rows) == 18 and set(r['unit_id'] for r in rows) == {'S1','S2','S3','S4','S5','D1','D2'}
+# Derive exact selected membership independently from the pinned upstream selection.
+design = json.loads(Path('artifacts/ocr-small-pilot-design-20261027-01/design.json').read_text())
+sample = json.loads(Path('artifacts/ocr-sample-design-20261027-01/sample.json').read_text())
+fixtures = json.loads(Path('artifacts/reading-failure-fixtures-20261025-01/fixtures.json').read_text())['cases']
+expected = {}
+for unit in design['units'][:5]:
+    original = next(r for r in sample['primary'] if r['source_id'] == unit['source_id'])
+    expected[(unit['id'], original['source_id'])] = (original['raw_sha256'], original['static_sha256'])
+for unit in design['units'][5:]:
+    case = next(c for c in fixtures if c['id'] == unit['fixture_ref']['case_id'])
+    assert len(case['candidate']['target']) == unit['target_paragraph_count']
+    for original in case['candidate']['target']:
+        source_id = f"{original['item_identifier']}:{original['scan_leaf']}:{original['paragraph_id']}"
+        expected[(unit['id'], source_id)] = (original['raw_sha256'], original['static_sha256'])
+assert Counter(r['unit_id'] for r in rows) == Counter(S1=1,S2=1,S3=1,S4=1,S5=1,D1=4,D2=9)
+assert len(expected) == len(rows)
+assert {(r['unit_id'],r['source_id']):(r['raw_sha256'],r['static_sha256']) for r in rows} == expected
+
+results, costs = [], []
+for row in rows:
+    source = ParagraphInput(
+        source=BracketSource(source_id=row['source_id'], raw_text=row['raw_text'], raw_sha256=row['raw_sha256']),
+        static_text=row['static_text'], static_sha256=row['static_sha256'],
+        static_edits=tuple(ExactEdit(start=e['start_char'],end=e['end_char'],raw_quote=e['expected'],replacement=e['replacement'],rule_id='saved_static_comparator:'+e['reason']) for e in row['static_edits']),
+        lines=tuple(OCRLine(**line) for line in row['lines']),
+        line_status='declared_exact', line_reason=None, line_evidence_sha256=row['page_line_sha256'],
+    )
+    wall, cpu = time.perf_counter(), time.process_time()
+    result = analyze_paragraph(source, resources)
+    costs.append(dict(source_id=row['source_id'],wall_seconds=time.perf_counter()-wall,process_cpu_seconds=time.process_time()-cpu))
+    # Separate recomputation verifies resource-based decisions as well as JSON structure.
+    portable = DeterministicResult.model_validate_json(result.model_dump_json())
+    verify_result(portable, resources)
+    results.append(result)
+save('results.json', [r.model_dump(mode='json') for r in results])
+save('result-schema.json', DeterministicResult.model_json_schema())
+summary = []
+for unit in ['S1','S2','S3','S4','S5','D1','D2']:
+    selected = [result for row,result in zip(rows,results,strict=True) if row['unit_id']==unit]
+    summary.append(dict(
+        unit_id=unit, kind=next(r['kind'] for r in rows if r['unit_id']==unit),
+        paragraphs=len(selected), raw_codepoints=sum(len(r.input.source.raw_text) for r in selected),
+        saved_static_edits=sum(len(r.input.static_edits) for r in selected),
+        proposed_joins=sum(len(r.proposed_edits) for r in selected),
+        split_reasons=dict(Counter(s.reason for r in selected for s in r.splits)),
+        raw_tokens=sum(len(r.raw_tokens) for r in selected),
+        raw_flagged_tokens=sum(bool(t.signals) for r in selected for t in r.raw_tokens),
+        raw_unflagged_tokens=sum(not t.signals for r in selected for t in r.raw_tokens),
+        raw_routes=dict(Counter(route for r in selected for t in r.raw_tokens for route in t.routes)),
+        raw_bracket_annotations=sum(len(r.brackets.annotations) for r in selected),
+        raw_bracket_issues=sum(len(r.brackets.issues) for r in selected),
+        bracket_status_counts=dict(Counter(r.bracket_preservation.status for r in selected)),
+        all_balanced_literal_quotes_unchanged=all(r.bracket_preservation.proposed_quotes==tuple(a.text for a in r.brackets.annotations) for r in selected),
+    ))
+save('summary.json',dict(units=summary,limits='Signals are workload candidates, not verified errors. Primary and exposed challenge counts kept separate; no population accuracy or model runtime extrapolation. All18 outputs unreviewed; places not assessed.'))
+save('costs.json',dict(resource_load=resource_cost,paragraph_analysis=costs,
+    total_analysis_wall_seconds=sum(c['wall_seconds'] for c in costs),total_analysis_process_cpu_seconds=sum(c['process_cpu_seconds'] for c in costs),
+    excluded='Input preparation, fingerprint checks, result JSON encoding/write and verification recomputation excluded from analysis timings; test/gate timings separate. Single local run; no GPU/provider calls.',
+    provider_calls=0))
+save('validation.json',dict(task='T52',paragraphs=18,units=7,raw_codepoints=4302,
+    run_source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+    exact_upstream_selected_membership_verified=True,pinned_files_verified=True,all_static_ledgers_replayed=True,all_proposed_ledgers_and_support_maps_replayed=True,
+    all_outputs_json_roundtrip_and_recompute=True,geometry_registry_matches=True,places='not_assessed',historical_accuracy='not_measured',provider_calls=0,
+    re_gard_regression='Synthetic exact-adjacent-line case and ambiguous/no-geometry/bracket negative controls in tests; not a new image-backed human adjudication.',
+    local_re_gard_membership={word:word.casefold() in resources.words.forms for word in ['re','gard','regard']}))
+print(json.dumps(summary,indent=2))

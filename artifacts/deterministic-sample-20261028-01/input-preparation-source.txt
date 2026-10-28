@@ -1,0 +1,48 @@
+import json,hashlib,re,time
+from pathlib import Path
+root=Path('artifacts/deterministic-sample-20261028-01')
+def load(path):return json.loads(Path(path).read_text())
+design=load('artifacts/ocr-small-pilot-design-20261027-01/design.json');sample=load('artifacts/ocr-sample-design-20261027-01/sample.json');fixtures=load('artifacts/reading-failure-fixtures-20261025-01/fixtures.json')['cases'];rows=[]
+for unit in design['units'][:5]:
+ s=next(x for x in sample['primary'] if x['source_id']==unit['source_id'])
+ rows.append({'unit_id':unit['id'],'kind':unit['kind'],'source_id':s['source_id'],'item_identifier':s['item_identifier'],'scan_leaf':s['scan_leaf'],'paragraph_id':s['paragraph_id'],'raw_text':s['raw_text'],'raw_sha256':s['raw_sha256'],'static_text':s['static_text'],'static_sha256':s['static_sha256'],'static_edits':s['static_edits'],'expected_page_line_sha256':s['page_line_sha256']})
+for unit in design['units'][5:]:
+ case=next(x for x in fixtures if x['id']==unit['fixture_ref']['case_id'])
+ assert len(case['candidate']['target'])==unit['target_paragraph_count']
+ for s in case['candidate']['target']:
+  sid=f"{s['item_identifier']}:{s['scan_leaf']}:{s['paragraph_id']}"
+  rows.append({'unit_id':unit['id'],'kind':unit['kind'],'source_id':sid,'item_identifier':s['item_identifier'],'scan_leaf':s['scan_leaf'],'paragraph_id':s['paragraph_id'],'raw_text':s['raw'],'raw_sha256':s['raw_sha256'],'static_text':s['static'],'static_sha256':s['static_sha256'],'static_edits':s['static_patches'],'expected_page_line_sha256':None})
+assert len(rows)==18
+pages={}
+for row in rows:pages.setdefault((row['item_identifier'],row['scan_leaf']),[]).append(row)
+assert len(pages)==7
+remaining=set(pages);source=Path(sample['source']['path']);started=time.perf_counter();headers=0;records=[]
+with source.open('rb') as stream:
+ for lineno,line in enumerate(stream,1):
+  if len(line)>64*1024*1024:raise ValueError('page record byte cap exceeded')
+  prefix=line[:4096];item=re.search(rb'"item_identifier"\s*:\s*"([^\"]+)"',prefix);leaf=re.search(rb'"scan_leaf"\s*:\s*(\d+)',prefix)
+  assert item and leaf,('missing metadata header',lineno)
+  headers+=1;key=(item[1].decode(),int(leaf[1]))
+  if key not in remaining:continue
+  page=json.loads(line);assert (page['item_identifier'],page['scan_leaf'])==key
+  linehash=hashlib.sha256(line).hexdigest()
+  for row in pages[key]:
+   if row['expected_page_line_sha256']:assert linehash==row['expected_page_line_sha256'],('page fingerprint',lineno)
+   para=next(p for p in page['paragraphs'] if p['id']==row['paragraph_id'])
+   assert para['text_ocr']==row['raw_text']
+   assert hashlib.sha256(row['raw_text'].encode()).hexdigest()==row['raw_sha256']
+   assert para.get('text_normalized')==row['static_text']
+   row['page_line_number']=lineno;row['page_line_sha256']=linehash
+   lines=para['lines'];raw=row['raw_text']
+   if ' '.join(x['text'] for x in lines)==raw:
+    cursor=0;slices=[]
+    for x in lines:
+     slices.append({'line_id':x['id'],'start':cursor,'end':cursor+len(x['text']),'text':x['text']});cursor+=len(x['text'])+1
+    row['lines']=slices;row['line_status']='verified_exact';row['line_reason']=None
+   else:
+    row['lines']=[];row['line_status']='unavailable';row['line_reason']='Exact line-text concatenation does not reproduce raw; no geometry guessed.'
+  records.append({'item_identifier':key[0],'scan_leaf':key[1],'line_number':lineno,'line_sha256':linehash,'target_paragraphs':len(pages[key])});remaining.remove(key)
+  if not remaining:break
+assert not remaining,remaining
+(root/'frozen-inputs.json').write_text(json.dumps({'task':'T52','units':7,'paragraphs':rows,'lookup':{'canonical_source':str(source),'header_rows_traversed':headers,'selected_pages_parsed':len(records),'selected_paragraphs_extracted':len(rows),'pages':records,'elapsed_seconds':time.perf_counter()-started,'scope':'One metadata-header lookup stream; only allowlisted7pages parsed, only18frozen targets extracted/processed; no reserved or other paragraph text inspected/scored. Original full-file identity from T49, selected primary exact line hashes checked; this unit does not repeat a full source-file hash audit.'}},indent=2,ensure_ascii=False)+'\n')
+print('materialized',len(rows),'target paragraphs from',len(records),'pages; exact lines',sum(x['line_status']=='verified_exact' for x in rows))

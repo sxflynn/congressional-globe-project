@@ -1,0 +1,86 @@
+{
+  "task": "T52",
+  "files": {
+    "artifacts/deterministic-sample-20261028-01/summary.json": {
+      "sha256": "cdb740aca83fa24d352ef1be42246b2d0f0c139b396e1f5aadeb8fb607abc0e1",
+      "bytes": 5280
+    },
+    "artifacts/deterministic-sample-20261028-01/gate.log.gz": {
+      "sha256": "1bd42c9527289a74c26b0fe301e3dd381bf759bb69681ffac935523b0851df50",
+      "bytes": 23904
+    },
+    "artifacts/deterministic-sample-20261028-01/geometry-registry.json": {
+      "sha256": "a78bf1965fe6c98d5695d1a0846eac509579568428ec453ce5a63b9ad8c9276c",
+      "bytes": 21215
+    },
+    "artifacts/deterministic-sample-20261028-01/input-manifest.json": {
+      "sha256": "6c01395b3a470ed3f7bd101ff63a4524561eff88988b55fda7cbb58cf53fb592",
+      "bytes": 1662
+    },
+    "artifacts/deterministic-sample-20261028-01/frozen-inputs.json": {
+      "sha256": "21ed379a90c4096fbf12a0c4f5d0655a5ad61297698aab774a2fb4cc73f74957",
+      "bytes": 46762
+    },
+    "artifacts/deterministic-sample-20261028-01/input-preparation-source.txt": {
+      "sha256": "cc71b692e5fef3315ae28f0c91a26594cda54adda3b924895097bfac547eeee4",
+      "bytes": 4327
+    },
+    "artifacts/deterministic-sample-20261028-01/result-schema.json": {
+      "sha256": "d2ca796ca16d73e0e4be28ece9ec9aaba15ecd2092343ea149492ffe76174515",
+      "bytes": 20290
+    },
+    "artifacts/deterministic-sample-20261028-01/results.json": {
+      "sha256": "1bca738f89c08bd4222a3e6cbfd564153e6c727b4e414c7e247da88c03a0ce2f",
+      "bytes": 815530
+    },
+    "artifacts/deterministic-sample-20261028-01/README.md": {
+      "sha256": "43027792ef374363f1bb12ceea229b8416ccf883a079cf62e342f1018893d65b",
+      "bytes": 6804
+    },
+    "artifacts/deterministic-sample-20261028-01/run-source.txt": {
+      "sha256": "bc7d753c492402cdea5279b5bfa500c42f822aa0cf8c67376d8ee8ae0d2989d5",
+      "bytes": 7720
+    },
+    "artifacts/deterministic-sample-20261028-01/validation.json": {
+      "sha256": "5c97363c05e8e8c8fab03a0e273002ca3cca40cdd7c1a81f5c93a3486f1b95dc",
+      "bytes": 795
+    },
+    "artifacts/deterministic-sample-20261028-01/review.json": {
+      "sha256": "bab7972e87a973e485086013949d1ea18c5b82b50c8e79bbeb2f447beb6ed9b4",
+      "bytes": 987
+    },
+    "artifacts/deterministic-sample-20261028-01/costs.json": {
+      "sha256": "f0c85bd83be54436706faea46bbf57ae9fbec31a1caa1c7b286ec9f70f6a2e40",
+      "bytes": 3716
+    },
+    "src/congressional_globe/deterministic_geometry.py": {
+      "sha256": "2a3e6122e3752ae817321c1fe234c2282246f443c75d74edae302878c89c1318",
+      "bytes": 2226
+    },
+    "src/congressional_globe/deterministic_rules.py": {
+      "sha256": "a1b09aa61c81be25586050bd8047b5b69a70a5e942c0e70ff8fb6f24cb0c5291",
+      "bytes": 10816
+    },
+    "src/congressional_globe/deterministic_models.py": {
+      "sha256": "f1ec9d2750030a58fc2da4e4bac1a64b887d82bef9ac282b9ef8e231f11ef9cb",
+      "bytes": 5712
+    },
+    "src/congressional_globe/deterministic_lexicon.py": {
+      "sha256": "3a3d14d7a3a7331026d25ba31f83bfc9b4103c85daa608e9d82b61d3941c3929",
+      "bytes": 1860
+    },
+    "src/congressional_globe/deterministic_repair.py": {
+      "sha256": "32c5a713199d8102a13a178a43b0aca4fd4ff2048d9f48271ce87d9448a3d879",
+      "bytes": 6920
+    },
+    "tests/test_deterministic_repair.py": {
+      "sha256": "67b6e806993cedcbabb11a2b8cca287d482d12f649161daf180869d835f6061f",
+      "bytes": 10468
+    },
+    "src/congressional_globe/bracket_cues.py": {
+      "sha256": "5658161c43075ad5ae562e9626ab5e5c91e111bfba99ee7ee009d3d4a195e5cd",
+      "bytes": 9912
+    }
+  },
+  "checks": "Final make gate passed752tests, formatting/lint/types/complexity. No provider call. Driver checksum agrees with output validation."
+}

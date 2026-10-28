@@ -1,0 +1,35 @@
+{
+  "task": "T52",
+  "scope": "Only S1-S5 probability subset and D1-D2 exposed challenge;18 paragraphs. No reserved confirmation units.",
+  "files": {
+    "artifacts/ocr-small-pilot-design-20261027-01/design.json": {
+      "sha256": "e53cbe06f852e966c2523981642b7426f6cbe807c3c6732986aafe2101ecfd9f",
+      "bytes": 28094
+    },
+    "artifacts/ocr-sample-design-20261027-01/sample.json": {
+      "sha256": "d460f3410be9905f4cf5fe42ee8eaa7e5a1174b9cde74d5d1be14a30395083b1",
+      "bytes": 130873
+    },
+    "artifacts/reading-failure-fixtures-20261025-01/fixtures.json": {
+      "sha256": "6d290330bc4d4186c72275df4331b87118cf01729fafb93361477414b2fbdfbc",
+      "bytes": 428207
+    },
+    "artifacts/deterministic-sample-20261028-01/frozen-inputs.json": {
+      "sha256": "21ed379a90c4096fbf12a0c4f5d0655a5ad61297698aab774a2fb4cc73f74957",
+      "bytes": 46762
+    },
+    "artifacts/deterministic-sample-20261028-01/geometry-registry.json": {
+      "sha256": "a78bf1965fe6c98d5695d1a0846eac509579568428ec453ce5a63b9ad8c9276c",
+      "bytes": 21215
+    },
+    "artifacts/static-audit-20261011/supplemented-lexicon.txt": {
+      "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+      "bytes": 3507065
+    },
+    "/usr/share/dict/propernames": {
+      "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+      "bytes": 8546
+    }
+  },
+  "geometry_trust_boundary": "Registry prepared from exactly selected canonical page records; its expected hash pinned here before analysis. The library checks declared geometry against this registry, not historical image correctness or independent canonical membership."
+}

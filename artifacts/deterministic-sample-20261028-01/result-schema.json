@@ -1,0 +1,867 @@
+{
+  "$defs": {
+    "BracketAnnotation": {
+      "additionalProperties": false,
+      "properties": {
+        "annotation_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Annotation Id",
+          "type": "string"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "pattern": "^[^:\\s]+:[0-9]+:[^:\\s]+$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "exclusiveMinimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "event_cue",
+            "numeric_marker",
+            "editorial_marker",
+            "unknown"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "literal_cue": {
+          "enum": [
+            "laughter",
+            "applause",
+            "hammer_fell",
+            "unknown"
+          ],
+          "title": "Literal Cue",
+          "type": "string"
+        },
+        "basis": {
+          "enum": [
+            "exact_literal_allowlist",
+            "literal_numeric_form",
+            "literal_editorial_allowlist",
+            "unclassified"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "status": {
+          "const": "literal_candidate",
+          "default": "literal_candidate",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "annotation_id",
+        "source_id",
+        "raw_sha256",
+        "start",
+        "end",
+        "text",
+        "kind",
+        "literal_cue",
+        "basis"
+      ],
+      "title": "BracketAnnotation",
+      "type": "object"
+    },
+    "BracketComparison": {
+      "additionalProperties": false,
+      "properties": {
+        "contract": {
+          "const": "bracket-literal-preservation-v1",
+          "default": "bracket-literal-preservation-v1",
+          "title": "Contract",
+          "type": "string"
+        },
+        "source_report": {
+          "$ref": "#/$defs/BracketReport"
+        },
+        "proposed_text": {
+          "maxLength": 6000,
+          "title": "Proposed Text",
+          "type": "string"
+        },
+        "proposed_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Proposed Sha256",
+          "type": "string"
+        },
+        "proposed_quotes": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 256,
+          "title": "Proposed Quotes",
+          "type": "array"
+        },
+        "proposed_issues": {
+          "items": {
+            "$ref": "#/$defs/BracketIssue"
+          },
+          "maxItems": 512,
+          "title": "Proposed Issues",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "same_literal_sequence",
+            "changed_literal_sequence",
+            "needs_review"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_report",
+        "proposed_text",
+        "proposed_sha256",
+        "proposed_quotes",
+        "proposed_issues",
+        "status"
+      ],
+      "title": "BracketComparison",
+      "type": "object"
+    },
+    "BracketIssue": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "enum": [
+            "nested_brackets",
+            "unmatched_open",
+            "unmatched_close"
+          ],
+          "title": "Code",
+          "type": "string"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "exclusiveMinimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "start",
+        "end",
+        "text"
+      ],
+      "title": "BracketIssue",
+      "type": "object"
+    },
+    "BracketReport": {
+      "additionalProperties": false,
+      "properties": {
+        "contract": {
+          "const": "source-bound-bracket-candidates-v1",
+          "default": "source-bound-bracket-candidates-v1",
+          "title": "Contract",
+          "type": "string"
+        },
+        "rule_version": {
+          "const": "literal-bracket-cues-v1",
+          "default": "literal-bracket-cues-v1",
+          "title": "Rule Version",
+          "type": "string"
+        },
+        "rules_sha256": {
+          "default": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Rules Sha256",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/BracketSource"
+        },
+        "annotations": {
+          "items": {
+            "$ref": "#/$defs/BracketAnnotation"
+          },
+          "maxItems": 256,
+          "title": "Annotations",
+          "type": "array"
+        },
+        "issues": {
+          "items": {
+            "$ref": "#/$defs/BracketIssue"
+          },
+          "maxItems": 512,
+          "title": "Issues",
+          "type": "array"
+        },
+        "inspection_state": {
+          "enum": [
+            "complete",
+            "needs_review"
+          ],
+          "title": "Inspection State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "annotations",
+        "issues",
+        "inspection_state"
+      ],
+      "title": "BracketReport",
+      "type": "object"
+    },
+    "BracketSource": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "maxLength": 256,
+          "pattern": "^[^:\\s]+:[0-9]+:[^:\\s]+$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "raw_text": {
+          "maxLength": 6000,
+          "title": "Raw Text",
+          "type": "string"
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "raw_text",
+        "raw_sha256"
+      ],
+      "title": "BracketSource",
+      "type": "object"
+    },
+    "ExactEdit": {
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "exclusiveMinimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "raw_quote": {
+          "minLength": 1,
+          "title": "Raw Quote",
+          "type": "string"
+        },
+        "replacement": {
+          "title": "Replacement",
+          "type": "string"
+        },
+        "rule_id": {
+          "minLength": 1,
+          "title": "Rule Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "raw_quote",
+        "replacement",
+        "rule_id"
+      ],
+      "title": "ExactEdit",
+      "type": "object"
+    },
+    "LexiconIdentity": {
+      "additionalProperties": false,
+      "properties": {
+        "spec": {
+          "$ref": "#/$defs/LexiconSpec"
+        },
+        "lookup_rule": {
+          "const": "nonblank-lines-strip-casefold-v1",
+          "default": "nonblank-lines-strip-casefold-v1",
+          "title": "Lookup Rule",
+          "type": "string"
+        },
+        "forms_count": {
+          "minimum": 0,
+          "title": "Forms Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "spec",
+        "forms_count"
+      ],
+      "title": "LexiconIdentity",
+      "type": "object"
+    },
+    "LexiconSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "purpose": {
+          "enum": [
+            "words",
+            "names",
+            "places"
+          ],
+          "title": "Purpose",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "provenance": {
+          "minLength": 1,
+          "title": "Provenance",
+          "type": "string"
+        },
+        "limitations": {
+          "minLength": 1,
+          "title": "Limitations",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "purpose",
+        "sha256",
+        "provenance",
+        "limitations"
+      ],
+      "title": "LexiconSpec",
+      "type": "object"
+    },
+    "OCRLine": {
+      "additionalProperties": false,
+      "properties": {
+        "line_id": {
+          "minLength": 1,
+          "title": "Line Id",
+          "type": "string"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "exclusiveMinimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "line_id",
+        "start",
+        "end",
+        "text"
+      ],
+      "title": "OCRLine",
+      "type": "object"
+    },
+    "ParagraphInput": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/BracketSource"
+        },
+        "static_text": {
+          "maxLength": 6000,
+          "title": "Static Text",
+          "type": "string"
+        },
+        "static_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Static Sha256",
+          "type": "string"
+        },
+        "static_edits": {
+          "items": {
+            "$ref": "#/$defs/ExactEdit"
+          },
+          "maxItems": 128,
+          "title": "Static Edits",
+          "type": "array"
+        },
+        "lines": {
+          "items": {
+            "$ref": "#/$defs/OCRLine"
+          },
+          "maxItems": 256,
+          "title": "Lines",
+          "type": "array"
+        },
+        "line_status": {
+          "enum": [
+            "declared_exact",
+            "unavailable"
+          ],
+          "title": "Line Status",
+          "type": "string"
+        },
+        "line_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Line Reason"
+        },
+        "line_evidence_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Line Evidence Sha256"
+        }
+      },
+      "required": [
+        "source",
+        "static_text",
+        "static_sha256",
+        "static_edits",
+        "lines",
+        "line_status",
+        "line_reason",
+        "line_evidence_sha256"
+      ],
+      "title": "ParagraphInput",
+      "type": "object"
+    },
+    "SplitFinding": {
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "exclusiveMinimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "raw_quote": {
+          "title": "Raw Quote",
+          "type": "string"
+        },
+        "joined_candidate": {
+          "title": "Joined Candidate",
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "proposed_join",
+            "retained_for_review"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "reason": {
+          "enum": [
+            "guarded_adjacent_line_join",
+            "line_geometry_unavailable",
+            "not_at_adjacent_line_boundary",
+            "vocabulary_unavailable",
+            "joined_form_not_known",
+            "known_hyphenated_form",
+            "standalone_parts_ambiguous",
+            "protected_bracket_span",
+            "uppercase_or_nonlowercase",
+            "malformed_bracket_structure"
+          ],
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "raw_quote",
+        "joined_candidate",
+        "decision",
+        "reason"
+      ],
+      "title": "SplitFinding",
+      "type": "object"
+    },
+    "SupportSegment": {
+      "additionalProperties": false,
+      "properties": {
+        "raw_start": {
+          "minimum": 0,
+          "title": "Raw Start",
+          "type": "integer"
+        },
+        "raw_end": {
+          "minimum": 0,
+          "title": "Raw End",
+          "type": "integer"
+        },
+        "derived_start": {
+          "minimum": 0,
+          "title": "Derived Start",
+          "type": "integer"
+        },
+        "derived_end": {
+          "minimum": 0,
+          "title": "Derived End",
+          "type": "integer"
+        },
+        "mapping": {
+          "enum": [
+            "exact_copy",
+            "replacement"
+          ],
+          "title": "Mapping",
+          "type": "string"
+        }
+      },
+      "required": [
+        "raw_start",
+        "raw_end",
+        "derived_start",
+        "derived_end",
+        "mapping"
+      ],
+      "title": "SupportSegment",
+      "type": "object"
+    },
+    "TokenFinding": {
+      "additionalProperties": false,
+      "properties": {
+        "layer": {
+          "enum": [
+            "raw",
+            "proposed"
+          ],
+          "title": "Layer",
+          "type": "string"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "exclusiveMinimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "raw_start": {
+          "minimum": 0,
+          "title": "Raw Start",
+          "type": "integer"
+        },
+        "raw_end": {
+          "exclusiveMinimum": 0,
+          "title": "Raw End",
+          "type": "integer"
+        },
+        "raw_quote": {
+          "title": "Raw Quote",
+          "type": "string"
+        },
+        "context": {
+          "title": "Context",
+          "type": "string"
+        },
+        "categories": {
+          "items": {
+            "enum": [
+              "word",
+              "name_place_candidate",
+              "number",
+              "mixed_alphanumeric",
+              "symbol_pattern"
+            ],
+            "type": "string"
+          },
+          "title": "Categories",
+          "type": "array"
+        },
+        "signals": {
+          "items": {
+            "enum": [
+              "word_not_in_vocabulary",
+              "vocabulary_not_assessed",
+              "numeric_value_unverified",
+              "roman_like_ambiguous",
+              "mixed_identifier_unverified",
+              "symbol_pattern_unverified",
+              "title_name_cue",
+              "capitalized_candidate",
+              "lexical_name_hint",
+              "lexical_place_hint"
+            ],
+            "type": "string"
+          },
+          "title": "Signals",
+          "type": "array"
+        },
+        "routes": {
+          "items": {
+            "enum": [
+              "whole_unit_audit_only",
+              "word_image_check_candidate",
+              "number_image_check_candidate",
+              "name_place_image_check_candidate",
+              "pattern_image_check_candidate"
+            ],
+            "type": "string"
+          },
+          "title": "Routes",
+          "type": "array"
+        },
+        "membership": {
+          "enum": [
+            "known",
+            "unfamiliar",
+            "not_assessed",
+            "not_word"
+          ],
+          "title": "Membership",
+          "type": "string"
+        }
+      },
+      "required": [
+        "layer",
+        "start",
+        "end",
+        "text",
+        "raw_start",
+        "raw_end",
+        "raw_quote",
+        "context",
+        "categories",
+        "signals",
+        "routes",
+        "membership"
+      ],
+      "title": "TokenFinding",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract": {
+      "const": "bounded-deterministic-proposal-v1",
+      "default": "bounded-deterministic-proposal-v1",
+      "title": "Contract",
+      "type": "string"
+    },
+    "rule_version": {
+      "const": "bounded-lexical-linewrap-v1",
+      "default": "bounded-lexical-linewrap-v1",
+      "title": "Rule Version",
+      "type": "string"
+    },
+    "implementation_sha256": {
+      "default": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Implementation Sha256",
+      "type": "string"
+    },
+    "input": {
+      "$ref": "#/$defs/ParagraphInput"
+    },
+    "lexicons": {
+      "items": {
+        "$ref": "#/$defs/LexiconIdentity"
+      },
+      "maxItems": 3,
+      "title": "Lexicons",
+      "type": "array"
+    },
+    "geometry_registry_sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Geometry Registry Sha256"
+    },
+    "proposed_text": {
+      "maxLength": 6000,
+      "title": "Proposed Text",
+      "type": "string"
+    },
+    "proposed_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Proposed Sha256",
+      "type": "string"
+    },
+    "proposed_edits": {
+      "items": {
+        "$ref": "#/$defs/ExactEdit"
+      },
+      "maxItems": 128,
+      "title": "Proposed Edits",
+      "type": "array"
+    },
+    "support_map": {
+      "items": {
+        "$ref": "#/$defs/SupportSegment"
+      },
+      "maxItems": 257,
+      "title": "Support Map",
+      "type": "array"
+    },
+    "splits": {
+      "items": {
+        "$ref": "#/$defs/SplitFinding"
+      },
+      "maxItems": 2048,
+      "title": "Splits",
+      "type": "array"
+    },
+    "raw_tokens": {
+      "items": {
+        "$ref": "#/$defs/TokenFinding"
+      },
+      "maxItems": 6000,
+      "title": "Raw Tokens",
+      "type": "array"
+    },
+    "proposed_tokens": {
+      "items": {
+        "$ref": "#/$defs/TokenFinding"
+      },
+      "maxItems": 6000,
+      "title": "Proposed Tokens",
+      "type": "array"
+    },
+    "brackets": {
+      "$ref": "#/$defs/BracketReport"
+    },
+    "bracket_preservation": {
+      "$ref": "#/$defs/BracketComparison"
+    },
+    "word_lookup": {
+      "enum": [
+        "available",
+        "not_assessed"
+      ],
+      "title": "Word Lookup",
+      "type": "string"
+    },
+    "name_lookup": {
+      "enum": [
+        "available",
+        "not_assessed"
+      ],
+      "title": "Name Lookup",
+      "type": "string"
+    },
+    "place_lookup": {
+      "enum": [
+        "available",
+        "not_assessed"
+      ],
+      "title": "Place Lookup",
+      "type": "string"
+    },
+    "detector_state": {
+      "enum": [
+        "signals_present",
+        "no_rule_signals"
+      ],
+      "title": "Detector State",
+      "type": "string"
+    },
+    "acceptance": {
+      "const": "unreviewed_deterministic_proposal",
+      "default": "unreviewed_deterministic_proposal",
+      "title": "Acceptance",
+      "type": "string"
+    },
+    "source_quality": {
+      "const": "not_verified",
+      "default": "not_verified",
+      "title": "Source Quality",
+      "type": "string"
+    }
+  },
+  "required": [
+    "input",
+    "lexicons",
+    "geometry_registry_sha256",
+    "proposed_text",
+    "proposed_sha256",
+    "proposed_edits",
+    "support_map",
+    "splits",
+    "raw_tokens",
+    "proposed_tokens",
+    "brackets",
+    "bracket_preservation",
+    "word_lookup",
+    "name_lookup",
+    "place_lookup",
+    "detector_state"
+  ],
+  "title": "DeterministicResult",
+  "type": "object"
+}

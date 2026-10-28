@@ -1,0 +1,181 @@
+{
+  "units": [
+    {
+      "unit_id": "S1",
+      "kind": "primary_probability_subset",
+      "paragraphs": 1,
+      "raw_codepoints": 709,
+      "saved_static_edits": 5,
+      "proposed_joins": 4,
+      "split_reasons": {
+        "guarded_adjacent_line_join": 4,
+        "joined_form_not_known": 1
+      },
+      "raw_tokens": 121,
+      "raw_flagged_tokens": 26,
+      "raw_unflagged_tokens": 95,
+      "raw_routes": {
+        "whole_unit_audit_only": 95,
+        "name_place_image_check_candidate": 13,
+        "word_image_check_candidate": 17
+      },
+      "raw_bracket_annotations": 0,
+      "raw_bracket_issues": 0,
+      "bracket_status_counts": {
+        "same_literal_sequence": 1
+      },
+      "all_balanced_literal_quotes_unchanged": true
+    },
+    {
+      "unit_id": "S2",
+      "kind": "primary_probability_subset",
+      "paragraphs": 1,
+      "raw_codepoints": 58,
+      "saved_static_edits": 0,
+      "proposed_joins": 0,
+      "split_reasons": {},
+      "raw_tokens": 9,
+      "raw_flagged_tokens": 3,
+      "raw_unflagged_tokens": 6,
+      "raw_routes": {
+        "whole_unit_audit_only": 6,
+        "name_place_image_check_candidate": 2,
+        "word_image_check_candidate": 1
+      },
+      "raw_bracket_annotations": 0,
+      "raw_bracket_issues": 0,
+      "bracket_status_counts": {
+        "same_literal_sequence": 1
+      },
+      "all_balanced_literal_quotes_unchanged": true
+    },
+    {
+      "unit_id": "S3",
+      "kind": "primary_probability_subset",
+      "paragraphs": 1,
+      "raw_codepoints": 19,
+      "saved_static_edits": 0,
+      "proposed_joins": 0,
+      "split_reasons": {},
+      "raw_tokens": 4,
+      "raw_flagged_tokens": 0,
+      "raw_unflagged_tokens": 4,
+      "raw_routes": {
+        "whole_unit_audit_only": 4
+      },
+      "raw_bracket_annotations": 0,
+      "raw_bracket_issues": 0,
+      "bracket_status_counts": {
+        "same_literal_sequence": 1
+      },
+      "all_balanced_literal_quotes_unchanged": true
+    },
+    {
+      "unit_id": "S4",
+      "kind": "primary_probability_subset",
+      "paragraphs": 1,
+      "raw_codepoints": 33,
+      "saved_static_edits": 0,
+      "proposed_joins": 0,
+      "split_reasons": {},
+      "raw_tokens": 7,
+      "raw_flagged_tokens": 3,
+      "raw_unflagged_tokens": 4,
+      "raw_routes": {
+        "name_place_image_check_candidate": 1,
+        "number_image_check_candidate": 2,
+        "whole_unit_audit_only": 4
+      },
+      "raw_bracket_annotations": 0,
+      "raw_bracket_issues": 0,
+      "bracket_status_counts": {
+        "same_literal_sequence": 1
+      },
+      "all_balanced_literal_quotes_unchanged": true
+    },
+    {
+      "unit_id": "S5",
+      "kind": "primary_probability_subset",
+      "paragraphs": 1,
+      "raw_codepoints": 63,
+      "saved_static_edits": 1,
+      "proposed_joins": 0,
+      "split_reasons": {
+        "joined_form_not_known": 1
+      },
+      "raw_tokens": 7,
+      "raw_flagged_tokens": 6,
+      "raw_unflagged_tokens": 1,
+      "raw_routes": {
+        "name_place_image_check_candidate": 3,
+        "whole_unit_audit_only": 1,
+        "word_image_check_candidate": 4
+      },
+      "raw_bracket_annotations": 0,
+      "raw_bracket_issues": 0,
+      "bracket_status_counts": {
+        "same_literal_sequence": 1
+      },
+      "all_balanced_literal_quotes_unchanged": true
+    },
+    {
+      "unit_id": "D1",
+      "kind": "exposed_challenge_audit",
+      "paragraphs": 4,
+      "raw_codepoints": 1858,
+      "saved_static_edits": 5,
+      "proposed_joins": 0,
+      "split_reasons": {
+        "standalone_parts_ambiguous": 1,
+        "uppercase_or_nonlowercase": 3,
+        "joined_form_not_known": 1
+      },
+      "raw_tokens": 316,
+      "raw_flagged_tokens": 83,
+      "raw_unflagged_tokens": 233,
+      "raw_routes": {
+        "whole_unit_audit_only": 233,
+        "number_image_check_candidate": 8,
+        "word_image_check_candidate": 45,
+        "name_place_image_check_candidate": 41
+      },
+      "raw_bracket_annotations": 0,
+      "raw_bracket_issues": 0,
+      "bracket_status_counts": {
+        "same_literal_sequence": 4
+      },
+      "all_balanced_literal_quotes_unchanged": true
+    },
+    {
+      "unit_id": "D2",
+      "kind": "exposed_challenge_audit",
+      "paragraphs": 9,
+      "raw_codepoints": 1562,
+      "saved_static_edits": 5,
+      "proposed_joins": 2,
+      "split_reasons": {
+        "guarded_adjacent_line_join": 2,
+        "uppercase_or_nonlowercase": 2,
+        "joined_form_not_known": 1
+      },
+      "raw_tokens": 278,
+      "raw_flagged_tokens": 50,
+      "raw_unflagged_tokens": 228,
+      "raw_routes": {
+        "number_image_check_candidate": 4,
+        "whole_unit_audit_only": 228,
+        "name_place_image_check_candidate": 21,
+        "pattern_image_check_candidate": 3,
+        "word_image_check_candidate": 26
+      },
+      "raw_bracket_annotations": 1,
+      "raw_bracket_issues": 1,
+      "bracket_status_counts": {
+        "needs_review": 1,
+        "same_literal_sequence": 8
+      },
+      "all_balanced_literal_quotes_unchanged": true
+    }
+  ],
+  "limits": "Signals are workload candidates, not verified errors. Primary and exposed challenge counts kept separate; no population accuracy or model runtime extrapolation. All18 outputs unreviewed; places not assessed."
+}
