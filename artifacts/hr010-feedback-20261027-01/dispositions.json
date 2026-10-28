@@ -1,0 +1,117 @@
+{
+  "submission_id": "3a565acf-11f7-486d-8030-f2b3b9a139fb",
+  "packet_sha256": "35527290c324015753b62c2a0640e8199e6430133ec520ed277f70e51882cc19",
+  "reviewer": "Stephen Flynn",
+  "revision": 1,
+  "grades": {
+    "review-notes": "No notes other than what I already wrote. ",
+    "sample-a-grade": "Needs fixes",
+    "sample-b-grade": "Needs fixes",
+    "sample-c-status": "Not sure what you’re asking of me. "
+  },
+  "notes": [
+    {
+      "note_id": "evidence-note:sample-a-grade:0:c00a8e49527107efce72ce6001c32e0b944c3729fa04e9f90266a85375520f2b",
+      "comment": "You missed re-gard",
+      "question_id": "sample-a-grade",
+      "item_number": 1,
+      "evidence_label": "Part 4 · printed page 3641 · scan leaf 873 · congressionalglo00unit:873:par_000873_000006 · raw SHA-256 86728a521280b61d8bee81b14b5085dde53f63ab9bf9c0a49fc0e0bdf83a5c37",
+      "concern": "confirmed missed split-word repair",
+      "task": "T52",
+      "action_or_reason": "Human reports “re-gard” missed. Packet raw and proposed reading both retain re- gard. Preserve old failure; require exposed/synthetic regression and image-bound repair audit before a clean-reading claim.",
+      "status": "unresolved implementation; T52 explicitly carries regression"
+    },
+    {
+      "note_id": "evidence-note:sample-a-grade:1:08e9af941c79b209908a71387570195695d049215644f62eeef7bccc604dd849",
+      "comment": "So I have a strong opinion that these phrases in brackets [like this] are really important. Sometimes it will say stuff like [lots of laughter] right? So it’s an extremely important clue to know about so make sure there is special metadata or annotations or whatever so that these are specially identified. ",
+      "question_id": "sample-a-grade",
+      "item_number": 2,
+      "evidence_label": "Part 4 · printed page 3641 · scan leaf 873 · congressionalglo00unit:873:par_000873_000007 · raw SHA-256 42641e430e0060ec06561d5dc2ad29ba1854ee5e26dc44089947da821226f1ef",
+      "concern": "retain and specially identify bracketed historical events",
+      "task": "T67",
+      "action_or_reason": "Accept requirement: preserve exact bracketed text and add separate source-bound annotations for reported procedural/reaction events. [Here the hammer fell.] is this sample; laughter is the human’s general example, not observed evidence in this passage. Do not infer a speaker, sentiment or event outside the bracket text.",
+      "status": "requirement applied; bounded offline implementation queued"
+    },
+    {
+      "note_id": "evidence-note:sample-a-grade:2:04ee32dd71b8bf006fd3946d1cd9b1a2f82182eed87e8fe12f124f2b5259b44d",
+      "comment": "Looks good. ",
+      "question_id": "sample-a-grade",
+      "item_number": 3,
+      "evidence_label": "Part 4 · printed page 3641 · scan leaf 873 · congressionalglo00unit:873:par_000873_000008 · raw SHA-256 e56c786c52729592525b560f2fd30189a8d13e2f9e844e2550766ad690d2701d",
+      "concern": "case-specific positive feedback",
+      "task": "T65",
+      "action_or_reason": "Record “Looks good.” for this sample-A third evidence only; do not manufacture a general fidelity score or whole-sample approval.",
+      "status": "applied to review record"
+    },
+    {
+      "note_id": "evidence-note:sample-a-grade:3:c91a73e4ef2aec25e656489b5b90ccd318ad0b85de5a9b08c4cd450e9a4e7a19",
+      "comment": "Looks great. You caught the number correctly. ",
+      "question_id": "sample-a-grade",
+      "item_number": 4,
+      "evidence_label": "Part 4 · printed page 3641 · scan leaf 873 · congressionalglo00unit:873:par_000873_000009 · raw SHA-256 d60dfaf370e761ba47a694614ca8c6f312e7c37f5017f0cea2db92fa67f3c3ab",
+      "concern": "case-specific positive number feedback",
+      "task": "T65",
+      "action_or_reason": "Record positive judgment of the shown number repair in sample-A fourth evidence. Preserve exact original/proposal and overall Needs fixes grade; no corpus patch or number-repair policy inferred.",
+      "status": "applied to review record"
+    },
+    {
+      "note_id": "evidence-note:sample-a-grade:4:1a878e296943661f7a65fa6496ea00d2aeae15b78d1558bc43994926e9d3069f",
+      "comment": "Not sure what feedback to give here. The image looks fine. ",
+      "question_id": "sample-a-grade",
+      "item_number": 5,
+      "evidence_label": "Source image and response provenance · Part 4 · scan leaf 873 · source image SHA-256 75200af1eb768b8cdf81283edeb847ba329cf9f799447de37ff7b972d04b9d15",
+      "concern": "technical citation card is not a grading task",
+      "task": "T66",
+      "action_or_reason": "Human finds image fine but does not know what to judge. Put provenance details behind optional technical disclosure and make display-only/source-access scope explicit; keep original evidence available unchanged.",
+      "status": "unresolved UI implementation; bounded task queued"
+    },
+    {
+      "note_id": "evidence-note:sample-b-grade:0:17c6a638523f90bac49457b950827738bb2c7f16a1d33b904ccf3ece0c607b82",
+      "comment": "Woah that was super weird. Have a smart model look at that. You provided me all this super weird text and like at the top the image didn’t even have anything about fortification stuff. And the way it did the list was super weird. Was that supposed to be some kind of ocr cleanup? Is it because of the line break formatting stuff that ocr does way crazy paragraph break stuff?",
+      "question_id": "sample-b-grade",
+      "item_number": 1,
+      "evidence_label": "Part 2 · scan leaf 74 · unchanged OCR source input · composite IDs and raw SHA-256 values included per paragraph",
+      "concern": "index layout/context confusion; smart-model inspection requested",
+      "task": "T65/T66",
+      "action_or_reason": "Vision-capable primary agent inspected exactly cached crop with matching SHA. Crop contains index rows, not narrative; it starts at remarks on the, by and omits the Fortifications heading shown as preceding OCR context. Saved plan sources start at paragraph71; preceding context is paragraph70, so target crop does not certify that context heading. Display combines line/entry-level OCR blocks with repeated identifiers/hashes. Correct explanation and separate target/context; do not silently join fragments or supply missing text.",
+      "status": "bounded source analysis completed; presentation/context repair remains T66"
+    },
+    {
+      "note_id": "evidence-note:sample-b-grade:1:9673ccc8924e830e5d845cbd2677a5c34231f0775e14bbae182a66c4455c04fc",
+      "comment": "Yeah again, I see there’s lot of metadata for each new paragraph right. So in terms of the old versus new, yeah you do a good job with the fixes, but overall yeah as a human I’m having a hard time with all the paragraph metadata. Unless there is something fundamental I am misunderstanding. ",
+      "question_id": "sample-b-grade",
+      "item_number": 2,
+      "evidence_label": "Part 2 · scan leaf 74 · eight returned old/new proposals · crop SHA-256 553abad18265c6f2fc1b6360fb21dc550eb5a3256e5d91948f6b9b96a81f87cd",
+      "concern": "reduce metadata burden in old/new comparison",
+      "task": "T66",
+      "action_or_reason": "Human says local fixes look good but paragraph metadata impedes review. Preserve that qualified praise and overall Needs fixes. Present readable old/new entries with short labels, tuck full source IDs/hashes/receipts into optional details, keep notes attached to the same exact evidence.",
+      "status": "unresolved UI implementation; bounded task queued"
+    },
+    {
+      "note_id": "evidence-note:sample-b-grade:2:6c89fc0b2e84cc4780e7f1cf7b63073348f51fa1bfd0af4d144958b2723f94d5",
+      "comment": "Cool. ",
+      "question_id": "sample-b-grade",
+      "item_number": 3,
+      "evidence_label": "Source and response citation · https://archive.org/details/congressionalglo7392unit/page/n74/mode/1up",
+      "concern": "case-specific acknowledgement of source/citation",
+      "task": "T65",
+      "action_or_reason": "Record “Cool.” as acknowledgement, not a quality grade or new authorization.",
+      "status": "applied to review record"
+    },
+    {
+      "note_id": "evidence-note:sample-c-status:0:31614914ec604c82eabd4d10c95ae147e2976e8869daa717a274ca19d2bfecfe",
+      "comment": "Ok?",
+      "question_id": "sample-c-status",
+      "item_number": 1,
+      "evidence_label": "Sample C · Part 3 · long pension exchange · selected output unavailable; no substitute",
+      "concern": "unavailable sample wording confusing",
+      "task": "T66",
+      "action_or_reason": "Record “Ok?” alongside sample-c-status “Not sure what you’re asking of me.” No reading was produced and no judgment is inferred. Show a plain informational unavailable status rather than implying there is an output to grade. No substitute or extra review requested.",
+      "status": "recorded; wording/presentation implementation queued"
+    }
+  ],
+  "all_nine_notes_accounted_for": true,
+  "applied_means": "Review ingested with explicit follow-up; outstanding implementation is not claimed completed.",
+  "no_new_model_calls": true,
+  "no_canonical_edits": true
+}
