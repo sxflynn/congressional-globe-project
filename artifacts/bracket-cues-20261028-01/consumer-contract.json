@@ -1,0 +1,10 @@
+{
+  "rule_version": "literal-bracket-cues-v1",
+  "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+  "source_binding": "Caller supplies registered original source_id/raw_text/raw_sha256. Library verifies hash and exact spans/classification/IDs but does not look up the corpus or inspect an image. Unicode offsets count Python codepoints, end exclusive.",
+  "before_repair": "Keep original bracket text in raw/static/source views. Attach source-bound candidate metadata separately; no deletion, rewriting or reassignment to a speaker.",
+  "after_proposal": "T53 may call compare_brackets only after its own full-reading/source-map validation. Changed literal sequence or malformed brackets is an explicit preservation concern requiring source-supported explanation/review, not an automatic restoration or canonical acceptance.",
+  "known_limit": "same_literal_sequence checks quote order/count/bytes, not placement among surrounding prose. It cannot detect an unchanged cue moved to a different context or establish actual event occurrence/speaker/sentiment/causality.",
+  "T69_alignment": "Existing v2 draft already requires bracketed_cues self-check and exact patch replay. Preserve T69 artifact bytes; future integration must carry these candidates/concerns explicitly through source-linked exports, with unknown cases retained.",
+  "implementation_state": "Library and typed validation implemented; deterministic sample processing/repair runner/export/review UI integration not implemented by T67. No new command, orchestration or provider run."
+}

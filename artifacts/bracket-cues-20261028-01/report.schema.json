@@ -1,0 +1,208 @@
+{
+  "$defs": {
+    "BracketAnnotation": {
+      "additionalProperties": false,
+      "properties": {
+        "annotation_id": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Annotation Id",
+          "type": "string"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "pattern": "^[^:\\s]+:[0-9]+:[^:\\s]+$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "exclusiveMinimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "event_cue",
+            "numeric_marker",
+            "editorial_marker",
+            "unknown"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "literal_cue": {
+          "enum": [
+            "laughter",
+            "applause",
+            "hammer_fell",
+            "unknown"
+          ],
+          "title": "Literal Cue",
+          "type": "string"
+        },
+        "basis": {
+          "enum": [
+            "exact_literal_allowlist",
+            "literal_numeric_form",
+            "literal_editorial_allowlist",
+            "unclassified"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "status": {
+          "const": "literal_candidate",
+          "default": "literal_candidate",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "annotation_id",
+        "source_id",
+        "raw_sha256",
+        "start",
+        "end",
+        "text",
+        "kind",
+        "literal_cue",
+        "basis"
+      ],
+      "title": "BracketAnnotation",
+      "type": "object"
+    },
+    "BracketIssue": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "enum": [
+            "nested_brackets",
+            "unmatched_open",
+            "unmatched_close"
+          ],
+          "title": "Code",
+          "type": "string"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "exclusiveMinimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "start",
+        "end",
+        "text"
+      ],
+      "title": "BracketIssue",
+      "type": "object"
+    },
+    "BracketSource": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "maxLength": 256,
+          "pattern": "^[^:\\s]+:[0-9]+:[^:\\s]+$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "raw_text": {
+          "maxLength": 6000,
+          "title": "Raw Text",
+          "type": "string"
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "raw_text",
+        "raw_sha256"
+      ],
+      "title": "BracketSource",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract": {
+      "const": "source-bound-bracket-candidates-v1",
+      "default": "source-bound-bracket-candidates-v1",
+      "title": "Contract",
+      "type": "string"
+    },
+    "rule_version": {
+      "const": "literal-bracket-cues-v1",
+      "default": "literal-bracket-cues-v1",
+      "title": "Rule Version",
+      "type": "string"
+    },
+    "rules_sha256": {
+      "default": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Rules Sha256",
+      "type": "string"
+    },
+    "source": {
+      "$ref": "#/$defs/BracketSource"
+    },
+    "annotations": {
+      "items": {
+        "$ref": "#/$defs/BracketAnnotation"
+      },
+      "maxItems": 256,
+      "title": "Annotations",
+      "type": "array"
+    },
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/BracketIssue"
+      },
+      "maxItems": 512,
+      "title": "Issues",
+      "type": "array"
+    },
+    "inspection_state": {
+      "enum": [
+        "complete",
+        "needs_review"
+      ],
+      "title": "Inspection State",
+      "type": "string"
+    }
+  },
+  "required": [
+    "source",
+    "annotations",
+    "issues",
+    "inspection_state"
+  ],
+  "title": "BracketReport",
+  "type": "object"
+}

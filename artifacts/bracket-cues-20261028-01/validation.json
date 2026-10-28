@@ -1,0 +1,40 @@
+{
+  "task": "T67",
+  "captured_at_utc": "2026-10-28T10:36:03.903907+00:00",
+  "rule_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+  "checks": {
+    "full_gate_726": true,
+    "new_regressions_43": true,
+    "eight_report_examples_revalidate": true,
+    "four_comparison_examples_revalidate": true,
+    "two_generated_schemas_well_formed": true,
+    "old_packet_answers_receipt_and_T69_bytes_preserved": true,
+    "source_hash_unicode_spans_literal_text_and_ids_checked": true,
+    "strict_report_and_comparison_tamper_rejection": true,
+    "nested_unclosed_and_ellipsis_regressions": true,
+    "unknown_negatives_and_proposed_preservation_concerns": true,
+    "local_links_checked": 221
+  },
+  "implementation": "Offline library and typed semantic revalidation only; repair/sample/export/UI integration not delivered.",
+  "limits": [
+    "Literal cue labels are candidates, not event occurrence/speaker/sentiment/causality assertions.",
+    "Caller must supply a registered source; library does not independently prove corpus membership or inspect images.",
+    "same_literal_sequence does not verify placement among surrounding prose or source fidelity.",
+    "6000codepoints/512bracket symbols; explicit overflow failure without truncation."
+  ],
+  "new_provider_calls": 0,
+  "new_image_reads_or_downloads": 0,
+  "new_human_grades": 0,
+  "canonical_edits": 0,
+  "all_passed": true,
+  "implementation_files": [
+    {
+      "path": "src/congressional_globe/bracket_cues.py",
+      "sha256": "5658161c43075ad5ae562e9626ab5e5c91e111bfba99ee7ee009d3d4a195e5cd"
+    },
+    {
+      "path": "tests/test_bracket_cues.py",
+      "sha256": "5aefbd2ace0366eaa3e085fb6846877bf54a8e1cd77e3ad5cb434c00b6c44d65"
+    }
+  ]
+}

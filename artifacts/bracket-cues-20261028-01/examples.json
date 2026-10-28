@@ -1,0 +1,447 @@
+{
+  "reports": [
+    {
+      "kind": "already_exposed_HR010_source_no_new_image_reading",
+      "report": {
+        "contract": "source-bound-bracket-candidates-v1",
+        "rule_version": "literal-bracket-cues-v1",
+        "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+        "source": {
+          "source_id": "congressionalglo00unit:873:par_000873_000007",
+          "raw_text": "[Here the hammer fell.]",
+          "raw_sha256": "42641e430e0060ec06561d5dc2ad29ba1854ee5e26dc44089947da821226f1ef"
+        },
+        "annotations": [
+          {
+            "annotation_id": "70c78fbfd27c022a6de1d03d65fce2fec36a9db22a4e3fded7136d8ba7ccabc1",
+            "source_id": "congressionalglo00unit:873:par_000873_000007",
+            "raw_sha256": "42641e430e0060ec06561d5dc2ad29ba1854ee5e26dc44089947da821226f1ef",
+            "start": 0,
+            "end": 23,
+            "text": "[Here the hammer fell.]",
+            "kind": "event_cue",
+            "literal_cue": "hammer_fell",
+            "basis": "exact_literal_allowlist",
+            "status": "literal_candidate"
+          }
+        ],
+        "issues": [],
+        "inspection_state": "complete"
+      }
+    },
+    {
+      "kind": "synthetic_software_fixture",
+      "report": {
+        "contract": "source-bound-bracket-candidates-v1",
+        "rule_version": "literal-bracket-cues-v1",
+        "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+        "source": {
+          "source_id": "fixture:0:brackets",
+          "raw_text": "[Laughter.]",
+          "raw_sha256": "69f58162b58c4ba8981e3b0753c2ac97954615cb4181471519e2cb4c4b7f0050"
+        },
+        "annotations": [
+          {
+            "annotation_id": "fbb0c2bd1e5905622cda359d0179f5dfe82a6640370c208b375bf164ac8b7c98",
+            "source_id": "fixture:0:brackets",
+            "raw_sha256": "69f58162b58c4ba8981e3b0753c2ac97954615cb4181471519e2cb4c4b7f0050",
+            "start": 0,
+            "end": 11,
+            "text": "[Laughter.]",
+            "kind": "event_cue",
+            "literal_cue": "laughter",
+            "basis": "exact_literal_allowlist",
+            "status": "literal_candidate"
+          }
+        ],
+        "issues": [],
+        "inspection_state": "complete"
+      }
+    },
+    {
+      "kind": "synthetic_software_fixture",
+      "report": {
+        "contract": "source-bound-bracket-candidates-v1",
+        "rule_version": "literal-bracket-cues-v1",
+        "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+        "source": {
+          "source_id": "fixture:1:brackets",
+          "raw_text": "[lots of laughter]",
+          "raw_sha256": "5b4d64926316c7689ddb6e0f5511d71489097aabc29d94f6766549cb21db3fc6"
+        },
+        "annotations": [
+          {
+            "annotation_id": "4b1255291f7a902d2b298b0b04d298b92a06dca9eb8dcb60bfa52685340c3e75",
+            "source_id": "fixture:1:brackets",
+            "raw_sha256": "5b4d64926316c7689ddb6e0f5511d71489097aabc29d94f6766549cb21db3fc6",
+            "start": 0,
+            "end": 18,
+            "text": "[lots of laughter]",
+            "kind": "event_cue",
+            "literal_cue": "laughter",
+            "basis": "exact_literal_allowlist",
+            "status": "literal_candidate"
+          }
+        ],
+        "issues": [],
+        "inspection_state": "complete"
+      }
+    },
+    {
+      "kind": "synthetic_software_fixture",
+      "report": {
+        "contract": "source-bound-bracket-candidates-v1",
+        "rule_version": "literal-bracket-cues-v1",
+        "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+        "source": {
+          "source_id": "fixture:2:brackets",
+          "raw_text": "[Applause.]",
+          "raw_sha256": "d328b58710f2b0988f635e97ae768d1dc20011221b817e49196e136647347a75"
+        },
+        "annotations": [
+          {
+            "annotation_id": "dd627d1a05cdcdabf562e0ebe76cea5206c15ac3b4359c42ba068723617ef53b",
+            "source_id": "fixture:2:brackets",
+            "raw_sha256": "d328b58710f2b0988f635e97ae768d1dc20011221b817e49196e136647347a75",
+            "start": 0,
+            "end": 11,
+            "text": "[Applause.]",
+            "kind": "event_cue",
+            "literal_cue": "applause",
+            "basis": "exact_literal_allowlist",
+            "status": "literal_candidate"
+          }
+        ],
+        "issues": [],
+        "inspection_state": "complete"
+      }
+    },
+    {
+      "kind": "synthetic_software_fixture",
+      "report": {
+        "contract": "source-bound-bracket-candidates-v1",
+        "rule_version": "literal-bracket-cues-v1",
+        "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+        "source": {
+          "source_id": "fixture:3:brackets",
+          "raw_text": "[42] [sic.] [unclear] [...]",
+          "raw_sha256": "2503e5d6f6fe71df335f83e2d68599e046e00c74d7df6cc44ce7dccf82e19a32"
+        },
+        "annotations": [
+          {
+            "annotation_id": "61f6f58f7554a66c5627b5f1618402f99d832d974f511e26db1f37e5aba5c519",
+            "source_id": "fixture:3:brackets",
+            "raw_sha256": "2503e5d6f6fe71df335f83e2d68599e046e00c74d7df6cc44ce7dccf82e19a32",
+            "start": 0,
+            "end": 4,
+            "text": "[42]",
+            "kind": "numeric_marker",
+            "literal_cue": "unknown",
+            "basis": "literal_numeric_form",
+            "status": "literal_candidate"
+          },
+          {
+            "annotation_id": "660586458590374afd816c99fff2c020f5a4401e32cb4568f0aa9cc0cdd1c623",
+            "source_id": "fixture:3:brackets",
+            "raw_sha256": "2503e5d6f6fe71df335f83e2d68599e046e00c74d7df6cc44ce7dccf82e19a32",
+            "start": 5,
+            "end": 11,
+            "text": "[sic.]",
+            "kind": "editorial_marker",
+            "literal_cue": "unknown",
+            "basis": "literal_editorial_allowlist",
+            "status": "literal_candidate"
+          },
+          {
+            "annotation_id": "17d53dc4aefe913444435bd5ec3fb1f987b4e4fa4aaef23520cdc42a0a67d76b",
+            "source_id": "fixture:3:brackets",
+            "raw_sha256": "2503e5d6f6fe71df335f83e2d68599e046e00c74d7df6cc44ce7dccf82e19a32",
+            "start": 12,
+            "end": 21,
+            "text": "[unclear]",
+            "kind": "editorial_marker",
+            "literal_cue": "unknown",
+            "basis": "literal_editorial_allowlist",
+            "status": "literal_candidate"
+          },
+          {
+            "annotation_id": "1ad2283897693371d4017bf788049b9bc0027fc3703d405b6cbdb78c8a53ce54",
+            "source_id": "fixture:3:brackets",
+            "raw_sha256": "2503e5d6f6fe71df335f83e2d68599e046e00c74d7df6cc44ce7dccf82e19a32",
+            "start": 22,
+            "end": 27,
+            "text": "[...]",
+            "kind": "editorial_marker",
+            "literal_cue": "unknown",
+            "basis": "literal_editorial_allowlist",
+            "status": "literal_candidate"
+          }
+        ],
+        "issues": [],
+        "inspection_state": "complete"
+      }
+    },
+    {
+      "kind": "synthetic_software_fixture",
+      "report": {
+        "contract": "source-bound-bracket-candidates-v1",
+        "rule_version": "literal-bracket-cues-v1",
+        "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+        "source": {
+          "source_id": "fixture:4:brackets",
+          "raw_text": "[No laughter.] [Laughter?]",
+          "raw_sha256": "a31ed08cfa220910c8752f616b72ada327ba4a62d7d1b9c691382bb2152be23c"
+        },
+        "annotations": [
+          {
+            "annotation_id": "d480148ab70b09aec0fcea58a953e9ba7ed7e7cc45d3c2a7d8b404e5acbb720a",
+            "source_id": "fixture:4:brackets",
+            "raw_sha256": "a31ed08cfa220910c8752f616b72ada327ba4a62d7d1b9c691382bb2152be23c",
+            "start": 0,
+            "end": 14,
+            "text": "[No laughter.]",
+            "kind": "unknown",
+            "literal_cue": "unknown",
+            "basis": "unclassified",
+            "status": "literal_candidate"
+          },
+          {
+            "annotation_id": "2a2b0413496b621455c7a49f66d7e8a5ae9284ce7b301d40f6a605b51366160a",
+            "source_id": "fixture:4:brackets",
+            "raw_sha256": "a31ed08cfa220910c8752f616b72ada327ba4a62d7d1b9c691382bb2152be23c",
+            "start": 15,
+            "end": 26,
+            "text": "[Laughter?]",
+            "kind": "unknown",
+            "literal_cue": "unknown",
+            "basis": "unclassified",
+            "status": "literal_candidate"
+          }
+        ],
+        "issues": [],
+        "inspection_state": "complete"
+      }
+    },
+    {
+      "kind": "synthetic_software_fixture",
+      "report": {
+        "contract": "source-bound-bracket-candidates-v1",
+        "rule_version": "literal-bracket-cues-v1",
+        "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+        "source": {
+          "source_id": "fixture:5:brackets",
+          "raw_text": "[[x]",
+          "raw_sha256": "79722286c2ca9e2147bcd41620b7ae58d20b482433ebd1ba680e30b564344811"
+        },
+        "annotations": [],
+        "issues": [
+          {
+            "code": "unmatched_open",
+            "start": 0,
+            "end": 1,
+            "text": "["
+          },
+          {
+            "code": "nested_brackets",
+            "start": 0,
+            "end": 4,
+            "text": "[[x]"
+          }
+        ],
+        "inspection_state": "needs_review"
+      }
+    },
+    {
+      "kind": "synthetic_software_fixture",
+      "report": {
+        "contract": "source-bound-bracket-candidates-v1",
+        "rule_version": "literal-bracket-cues-v1",
+        "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+        "source": {
+          "source_id": "fixture:6:brackets",
+          "raw_text": "[[bad]] [Laughter.] stray]",
+          "raw_sha256": "cc1d857b7fea4f64c025a34339b454668eb021cf67fabd9f70751f7b141da725"
+        },
+        "annotations": [
+          {
+            "annotation_id": "d40bf82a2fefa7b9e8cef117c5dae7459c5bab75cddf5c4c0c1bb5bbd2c1c848",
+            "source_id": "fixture:6:brackets",
+            "raw_sha256": "cc1d857b7fea4f64c025a34339b454668eb021cf67fabd9f70751f7b141da725",
+            "start": 8,
+            "end": 19,
+            "text": "[Laughter.]",
+            "kind": "event_cue",
+            "literal_cue": "laughter",
+            "basis": "exact_literal_allowlist",
+            "status": "literal_candidate"
+          }
+        ],
+        "issues": [
+          {
+            "code": "nested_brackets",
+            "start": 0,
+            "end": 7,
+            "text": "[[bad]]"
+          },
+          {
+            "code": "unmatched_close",
+            "start": 25,
+            "end": 26,
+            "text": "]"
+          }
+        ],
+        "inspection_state": "needs_review"
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "contract": "bracket-literal-preservation-v1",
+      "source_report": {
+        "contract": "source-bound-bracket-candidates-v1",
+        "rule_version": "literal-bracket-cues-v1",
+        "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+        "source": {
+          "source_id": "fixture:0:brackets",
+          "raw_text": "Tlie speaker said GCO. [Here the hammer fell.]",
+          "raw_sha256": "800a3fe48ceedb82f9e35f556c6a2242c06e1351d39a9729655bb0dc950b953b"
+        },
+        "annotations": [
+          {
+            "annotation_id": "39b2c58eb094994a844762dd84885684d6ab18808e274e08ca69f423543ae347",
+            "source_id": "fixture:0:brackets",
+            "raw_sha256": "800a3fe48ceedb82f9e35f556c6a2242c06e1351d39a9729655bb0dc950b953b",
+            "start": 23,
+            "end": 46,
+            "text": "[Here the hammer fell.]",
+            "kind": "event_cue",
+            "literal_cue": "hammer_fell",
+            "basis": "exact_literal_allowlist",
+            "status": "literal_candidate"
+          }
+        ],
+        "issues": [],
+        "inspection_state": "complete"
+      },
+      "proposed_text": "The speaker said 660. [Here the hammer fell.]",
+      "proposed_sha256": "cd7f0e30a96e113d3da0fdb8cccf7cb4c61be5866f5686e4fb50d9aa0b004713",
+      "proposed_quotes": [
+        "[Here the hammer fell.]"
+      ],
+      "proposed_issues": [],
+      "status": "same_literal_sequence"
+    },
+    {
+      "contract": "bracket-literal-preservation-v1",
+      "source_report": {
+        "contract": "source-bound-bracket-candidates-v1",
+        "rule_version": "literal-bracket-cues-v1",
+        "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+        "source": {
+          "source_id": "fixture:0:brackets",
+          "raw_text": "The speaker continued. [Laughter.]",
+          "raw_sha256": "a5f962c91bb0a7c775afdf7cd937379c2b3d5f2b32fd18c9c0025ea49c041a34"
+        },
+        "annotations": [
+          {
+            "annotation_id": "ec6087c77ee5769adb347c51ba1c87da664182e8aaa9f0501ea2ee633e534e7e",
+            "source_id": "fixture:0:brackets",
+            "raw_sha256": "a5f962c91bb0a7c775afdf7cd937379c2b3d5f2b32fd18c9c0025ea49c041a34",
+            "start": 23,
+            "end": 34,
+            "text": "[Laughter.]",
+            "kind": "event_cue",
+            "literal_cue": "laughter",
+            "basis": "exact_literal_allowlist",
+            "status": "literal_candidate"
+          }
+        ],
+        "issues": [],
+        "inspection_state": "complete"
+      },
+      "proposed_text": "The speaker continued.",
+      "proposed_sha256": "2430d0be671204855b24245e07b7267cbd464c6902125c9a1faf77cf00c65256",
+      "proposed_quotes": [],
+      "proposed_issues": [],
+      "status": "changed_literal_sequence"
+    },
+    {
+      "contract": "bracket-literal-preservation-v1",
+      "source_report": {
+        "contract": "source-bound-bracket-candidates-v1",
+        "rule_version": "literal-bracket-cues-v1",
+        "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+        "source": {
+          "source_id": "fixture:0:brackets",
+          "raw_text": "[Laughter.]",
+          "raw_sha256": "69f58162b58c4ba8981e3b0753c2ac97954615cb4181471519e2cb4c4b7f0050"
+        },
+        "annotations": [
+          {
+            "annotation_id": "fbb0c2bd1e5905622cda359d0179f5dfe82a6640370c208b375bf164ac8b7c98",
+            "source_id": "fixture:0:brackets",
+            "raw_sha256": "69f58162b58c4ba8981e3b0753c2ac97954615cb4181471519e2cb4c4b7f0050",
+            "start": 0,
+            "end": 11,
+            "text": "[Laughter.]",
+            "kind": "event_cue",
+            "literal_cue": "laughter",
+            "basis": "exact_literal_allowlist",
+            "status": "literal_candidate"
+          }
+        ],
+        "issues": [],
+        "inspection_state": "complete"
+      },
+      "proposed_text": "[Applause.]",
+      "proposed_sha256": "d328b58710f2b0988f635e97ae768d1dc20011221b817e49196e136647347a75",
+      "proposed_quotes": [
+        "[Applause.]"
+      ],
+      "proposed_issues": [],
+      "status": "changed_literal_sequence"
+    },
+    {
+      "contract": "bracket-literal-preservation-v1",
+      "source_report": {
+        "contract": "source-bound-bracket-candidates-v1",
+        "rule_version": "literal-bracket-cues-v1",
+        "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+        "source": {
+          "source_id": "fixture:0:brackets",
+          "raw_text": "[Laughter.]",
+          "raw_sha256": "69f58162b58c4ba8981e3b0753c2ac97954615cb4181471519e2cb4c4b7f0050"
+        },
+        "annotations": [
+          {
+            "annotation_id": "fbb0c2bd1e5905622cda359d0179f5dfe82a6640370c208b375bf164ac8b7c98",
+            "source_id": "fixture:0:brackets",
+            "raw_sha256": "69f58162b58c4ba8981e3b0753c2ac97954615cb4181471519e2cb4c4b7f0050",
+            "start": 0,
+            "end": 11,
+            "text": "[Laughter.]",
+            "kind": "event_cue",
+            "literal_cue": "laughter",
+            "basis": "exact_literal_allowlist",
+            "status": "literal_candidate"
+          }
+        ],
+        "issues": [],
+        "inspection_state": "complete"
+      },
+      "proposed_text": "[Laughter.",
+      "proposed_sha256": "0e60f5c277ce071e79d4fa72dc70e5bc5ef7f536fcbd8c17e9c65ff55dac261b",
+      "proposed_quotes": [],
+      "proposed_issues": [
+        {
+          "code": "unmatched_open",
+          "start": 0,
+          "end": 1,
+          "text": "["
+        }
+      ],
+      "status": "needs_review"
+    }
+  ],
+  "limits": "One previously exposed raw passage plus synthetic fixtures only; literal candidate labels are not verified events or quality rates."
+}
