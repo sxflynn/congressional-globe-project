@@ -1,0 +1,132 @@
+{
+  "status": "One versioned lossless input serialization proposal; not adopted or executable.",
+  "contract_change_requires": "Separate bounded implementation/validation and refreshed source/request/fit identities before use. Existing hosts/projections/schemas and caps unchanged.",
+  "unchanged_output_contract": true,
+  "units": [
+    {
+      "unit_id": "S1",
+      "proposal_version": "input-v3-column-proposal-only",
+      "original_user_sha256": "9b9bdcda87cb02ff5d92251fe622439e88735da4c0c9840433a8c50aa91d3afc",
+      "restored_user_sha256": "9b9bdcda87cb02ff5d92251fe622439e88735da4c0c9840433a8c50aa91d3afc",
+      "exact_roundtrip": true,
+      "all_targets_retained": 1,
+      "system": {
+        "utf8_bytes": 2956,
+        "codepoints": 2956,
+        "tokens": 713,
+        "sha256": "aa8b90d2283fcab680331129ec0911d9ccb66a2ee48df04484d4dbfdabfe9fc6"
+      },
+      "user": {
+        "utf8_bytes": 5425,
+        "codepoints": 5425,
+        "tokens": 1829,
+        "sha256": "d98f768e5067ba8cbd5abcc51cea509360f301452c7cc49f68cc85aa7da18543"
+      },
+      "literal_messages_separate_token_sum": 2542,
+      "literal_messages_exceed_6000": false,
+      "runtime_adopted": false,
+      "native_fit": null,
+      "dispatch_allowed": false
+    },
+    {
+      "unit_id": "S2",
+      "proposal_version": "input-v3-column-proposal-only",
+      "original_user_sha256": "c8b9a35b3512ba511cddc7274c4a712f2d48ba75107d0ddfbf6d1bffcfb4b38e",
+      "restored_user_sha256": "c8b9a35b3512ba511cddc7274c4a712f2d48ba75107d0ddfbf6d1bffcfb4b38e",
+      "exact_roundtrip": true,
+      "all_targets_retained": 1,
+      "system": {
+        "utf8_bytes": 2955,
+        "codepoints": 2955,
+        "tokens": 713,
+        "sha256": "4587ec2d540b355690e5ab7f56487ef824bf95ef88fc917334f3b306897112b5"
+      },
+      "user": {
+        "utf8_bytes": 1474,
+        "codepoints": 1474,
+        "tokens": 555,
+        "sha256": "f85fcefc9c458c0a4036cfaf0f10ad6ddb6f7fd9ebd4c90a5c9b73305d690950"
+      },
+      "literal_messages_separate_token_sum": 1268,
+      "literal_messages_exceed_6000": false,
+      "runtime_adopted": false,
+      "native_fit": null,
+      "dispatch_allowed": false
+    },
+    {
+      "unit_id": "S5",
+      "proposal_version": "input-v3-column-proposal-only",
+      "original_user_sha256": "ffd2cc7dea39330bd58a00c7af020cba33bfebe02032aa8b159e62b31ed6f09d",
+      "restored_user_sha256": "ffd2cc7dea39330bd58a00c7af020cba33bfebe02032aa8b159e62b31ed6f09d",
+      "exact_roundtrip": true,
+      "all_targets_retained": 1,
+      "system": {
+        "utf8_bytes": 2154,
+        "codepoints": 2154,
+        "tokens": 396,
+        "sha256": "79e92fba2e4247e37f9a8180aaa4d1ee19fd26cf2d201a1706a570ae119d3249"
+      },
+      "user": {
+        "utf8_bytes": 1921,
+        "codepoints": 1921,
+        "tokens": 691,
+        "sha256": "a80dbb58124fd300132990b8a35922bfbced7b3909d49e778513242e8a9ed882"
+      },
+      "literal_messages_separate_token_sum": 1087,
+      "literal_messages_exceed_6000": false,
+      "runtime_adopted": false,
+      "native_fit": null,
+      "dispatch_allowed": false
+    },
+    {
+      "unit_id": "D1",
+      "proposal_version": "input-v3-column-proposal-only",
+      "original_user_sha256": "52f30008deefa6289e9ff60fe6eddc3d6dfcce29ae38da4c6313c5619bc45ea2",
+      "restored_user_sha256": "52f30008deefa6289e9ff60fe6eddc3d6dfcce29ae38da4c6313c5619bc45ea2",
+      "exact_roundtrip": true,
+      "all_targets_retained": 4,
+      "system": {
+        "utf8_bytes": 1135,
+        "codepoints": 1135,
+        "tokens": 212,
+        "sha256": "e68852e6044c39cdf0bd453496fa24e132e83d83212bdd273bc7f03a8f684939"
+      },
+      "user": {
+        "utf8_bytes": 16036,
+        "codepoints": 16026,
+        "tokens": 5535,
+        "sha256": "19381c10b916fe38edd28fca1940ff13151af131fe17b9a65688e3fd3fd7457e"
+      },
+      "literal_messages_separate_token_sum": 5747,
+      "literal_messages_exceed_6000": false,
+      "runtime_adopted": false,
+      "native_fit": null,
+      "dispatch_allowed": false
+    },
+    {
+      "unit_id": "D2",
+      "proposal_version": "input-v3-column-proposal-only",
+      "original_user_sha256": "4f228541a09792ed3ad1e16d1f850feb82bb3caff10cfb6e8f23998d9f8bdf0b",
+      "restored_user_sha256": "4f228541a09792ed3ad1e16d1f850feb82bb3caff10cfb6e8f23998d9f8bdf0b",
+      "exact_roundtrip": true,
+      "all_targets_retained": 9,
+      "system": {
+        "utf8_bytes": 1135,
+        "codepoints": 1135,
+        "tokens": 212,
+        "sha256": "e68852e6044c39cdf0bd453496fa24e132e83d83212bdd273bc7f03a8f684939"
+      },
+      "user": {
+        "utf8_bytes": 14992,
+        "codepoints": 14982,
+        "tokens": 5124,
+        "sha256": "45420b86cf5632b7e62d73dbc0cc68a051332b40d0632143c5342d4bcf5c3ef9"
+      },
+      "literal_messages_separate_token_sum": 5336,
+      "literal_messages_exceed_6000": false,
+      "runtime_adopted": false,
+      "native_fit": null,
+      "dispatch_allowed": false
+    }
+  ]
+}

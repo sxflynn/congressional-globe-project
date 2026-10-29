@@ -1,0 +1,202 @@
+"""One-off T79 evidence preparation; not a runtime command or adopted workflow."""
+import base64
+import copy
+import hashlib
+import importlib.metadata
+import json
+import sys
+from pathlib import Path
+
+from jsonschema import Draft202012Validator
+from congressional_globe.productive_ocr_reply import validate_reply
+
+CACHE = Path('/private/tmp/globe-uv-cache/archive-v0/GVNoav3j3zbPJjNI')
+sys.path.insert(0, str(CACHE))
+import tokenizers
+from tokenizers import Tokenizer
+
+OUT = Path('artifacts/study-capacity-screen-20261029-01')
+INPUT = Path('artifacts/study-input-assembly-20261029-01')
+OLD = Path('artifacts/ocr-live-readiness-20261028-01')
+
+def canonical(value):
+    return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(',', ':'))
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+def save(path, value):
+    path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n')
+
+manifest = json.loads((OLD/'installed-model-manifest.json').read_text())
+layer = next(x for x in manifest['layers'] if x.get('name') == 'tokenizer.json')
+resource = Path.home()/'.ollama/models/blobs'/layer['digest'].replace(':', '-')
+assert sha(resource.read_bytes()) == layer['digest'].split(':')[1]
+tok = Tokenizer.from_file(str(resource))
+
+def measure(text):
+    return {'utf8_bytes': len(text.encode()), 'codepoints': len(text),
+            'tokens': len(tok.encode(text, add_special_tokens=False).ids),
+            'sha256': sha(text.encode())}
+
+checks = ['all_words', 'names_places', 'numbers', 'punctuation', 'printed_repetition',
+          'bracketed_cues', 'target_context_boundaries', 'unflagged_text', 'static_edits']
+rows = []
+examples = []
+proposal_rows = []
+case_proposals = {x['unit_id']: x for x in json.loads(Path('artifacts/hr012-feedback-20261029-01/case-proposals.json').read_text())}
+
+# A reversible column encoding of diagnostic rows, leaving historical strings verbatim.
+# This proposal has no production decoder and cannot pass the current input contract.
+def compact_provider(provider):
+    value = copy.deepcopy(provider)
+    signals = value['diagnostics'].pop('signals')
+    columns = sorted(set().union(*(s.keys() for s in signals)))
+    reasons = sorted({s['route_reason'] for s in signals})
+    value['diagnostics']['signal_table'] = {
+        'columns': columns, 'route_reasons': reasons,
+        'rows': [[reasons.index(s[k]) if k == 'route_reason' else s[k] for k in columns] for s in signals]}
+    value['contract'] = 'ocr-productive-repair-input-v3-column-proposal'
+    return value
+
+def restore_provider(value):
+    value = copy.deepcopy(value)
+    table = value['diagnostics'].pop('signal_table')
+    value['diagnostics']['signals'] = [
+        {k: table['route_reasons'][v] if k == 'route_reason' else v for k, v in zip(table['columns'], row, strict=True)}
+        for row in table['rows']]
+    value['contract'] = 'ocr-productive-repair-input-v2'
+    return value
+
+extra = '\nInput v3 proposal: diagnostics.signal_table encodes every original signal in rows with the listed columns. In the route_reason column each integer selects route_reasons by zero-based index. Expand each row using those columns and reasons. All original fields, flags, quotes and offsets retain their meanings. No target or evidence is omitted. The reply contract is unchanged.'
+units = json.loads((INPUT/'units.json').read_text())
+for meta in units:
+    unit = meta['unit_id']
+    if meta['status'] == 'missing_source_image':
+        rows.append({'unit_id': unit, 'status': 'missing_source_image', 'measurements': None})
+        continue
+    folder = OUT/unit
+    folder.mkdir(exist_ok=True)
+    src = INPUT/unit
+    projection = json.loads((src/'projection.json').read_text())
+    raw_request = (src/'request.json').read_bytes()
+    assert sha(raw_request) == meta['request_sha256'] == projection['body_sha256']
+    assert raw_request == projection['body_utf8'].encode()
+    request = json.loads(raw_request)
+    host = json.loads((src/'host.json').read_text())
+    schema = request['format']
+    assert sha(canonical(schema).encode()) == meta['schema_sha256']
+    validator = Draft202012Validator(schema)
+    user = request['messages'][1]['content']
+    prompt = request['messages'][0]['content']
+    provider = json.loads(user)
+    targets = [p for p in host['payload']['paragraphs'] if p['role'] == 'target']
+    image = base64.b64decode(request['messages'][1]['images'][0], validate=True)
+    assert sha(image) == meta['image_sha256']
+    role = host['payload']['role']
+    audit = role == 'audit_saved_proposal'
+    base = {'contract':'ocr-productive-repair-reply-v2','unit_id':unit,'role':role,
+            'status':'incomplete','reason':'Not inspected.','inspections':[],
+            'self_check':[],'findings':[],'patches':[],'target_readings':[]}
+    for p in targets:
+        alias = p['alias']
+        base['inspections'].append({'paragraph_alias':alias,'image_alias':'I1',
+            'completeness':'not_inspected','image_suitability':'unclear','reason':'Not inspected.'})
+        base['self_check'].append({'paragraph_alias':alias,'coverage':'not_inspected',
+            'checked_content':[],'remaining_concerns':[]})
+        if not audit:
+            base['target_readings'].append({'paragraph_alias':alias,'image_alias':'I1',
+                'reading_status':'withheld','proposed_text':None,'uncertainties':[], 'reason':'Not inspected.'})
+    full = copy.deepcopy(base)
+    full['status'], full['reason'] = 'no_finding', None
+    for i, p in enumerate(targets):
+        full['inspections'][i].update(completeness='complete', image_suitability='clear', reason=None)
+        full['self_check'][i].update(coverage='complete', checked_content=checks)
+        if not audit:
+            full['target_readings'][i].update(reading_status='unchanged',proposed_text=p['raw']['text'],reason=None)
+    variants = {'small_incomplete':base,'full_scope_raw_copy_illustration':full}
+    if audit:
+        concerned = copy.deepcopy(full)
+        concerned.update(status='unresolved', reason='Illustrative concerns remain.')
+        for i, p in enumerate(targets, 1):
+            concerned['self_check'][i-1]['remaining_concerns'] = ['Illustrative unresolved concern.']
+            concerned['findings'].append({'finding_id':f'F{i}',
+                'anchor':{'paragraph_alias':p['alias'],'scope':'whole_paragraph','raw_quote':None},
+                'affected_layer':'saved_proposal','affected_quote':None,
+                'category':'unsupported_saved_proposal','resolution':'unresolved',
+                'proposed_reading':None,'image_alias':'I1','basis':'image_unclear',
+                'explanation':'Illustrative unresolved concern.'})
+        variants['one_unresolved_concern_per_target_illustration'] = concerned
+    if not audit:
+        edited = copy.deepcopy(full)
+        edits = case_proposals[unit]['all_edits_from_raw'] if unit in case_proposals else [
+            {'raw_quote': e['expected'], 'replacement':e['replacement'], 'start':e['raw_start'],'end':e['raw_end']}
+            for e in targets[0]['static']['edits']]
+        raw = targets[0]['raw']['text']
+        proposed = raw
+        for e in sorted(edits, key=lambda e:e['start'], reverse=True):
+            assert proposed[e['start']:e['end']] == e['raw_quote']
+            proposed = proposed[:e['start']] + e['replacement'] + proposed[e['end']:]
+        for i,e in enumerate(edits,1):
+            fid = f'F{i}'
+            edited['findings'].append({'finding_id':fid,'anchor':{'paragraph_alias':'P1','scope':'quote','raw_quote':e['raw_quote']},'affected_layer':'raw','affected_quote':e['raw_quote'],'category':'other_damage','resolution':'proposed','proposed_reading':e['replacement'],'image_alias':'I1','basis':'visible_print','explanation':'Illustrative saved edit.'})
+            edited['patches'].append({'finding_id':fid,'paragraph_alias':'P1','raw_quote':e['raw_quote'],'replacement':e['replacement'],'image_alias':'I1','reason':'Illustrative saved edit.'})
+        if edits:
+            edited['status']='findings'
+            edited['target_readings'][0].update(reading_status='proposed',proposed_text=proposed)
+        variants['saved_edits_full_reading_illustration']=edited
+    for name, reply in variants.items():
+        text = canonical(reply)
+        validator.validate(reply)
+        validate_reply(text, host)
+        path = folder/f'{name}.json'
+        path.write_text(text)
+        examples.append({'unit_id':unit,'variant':name,'path':str(path),**measure(text),
+            'per_unit_schema_valid':True,'host_semantic_replay_valid':True,
+            'over_1500_tokens':measure(text)['tokens']>1500,
+            'scope':'Authored size illustration only. Not a model outcome, image inspection, minimum proof or historical correctness finding.',
+            'named_feedback':'raw-copy illustration leaves known feedback unaddressed' if unit in case_proposals and 'raw_copy' in name else 'not a new outcome'})
+    compact = compact_provider(provider)
+    assert canonical(restore_provider(compact)) == user
+    compact_text = canonical(compact)
+    (folder/'proposed-user-v3.json').write_text(compact_text)
+    (folder/'proposed-prompt-v3.txt').write_text(prompt+extra)
+    proposal_rows.append({'unit_id':unit,'proposal_version':'input-v3-column-proposal-only',
+        'original_user_sha256':sha(user.encode()),'restored_user_sha256':sha(canonical(restore_provider(compact)).encode()),
+        'exact_roundtrip':True,'all_targets_retained':len(targets),
+        'system':measure(prompt+extra),'user':measure(compact_text),
+        'literal_messages_separate_token_sum':measure(prompt+extra)['tokens']+measure(compact_text)['tokens'],
+        'literal_messages_exceed_6000':measure(prompt+extra)['tokens']+measure(compact_text)['tokens']>6000,
+        'runtime_adopted':False,'native_fit':None,'dispatch_allowed':False})
+    text_sum=measure(prompt)['tokens']+measure(user)['tokens']
+    rows.append({'unit_id':unit,'status':'offline_components_measured','targets':len(targets),
+        'exposure':meta['exposure'],'request_sha256':sha(raw_request),'schema_sha256':meta['schema_sha256'],'request_transport_bytes':len(raw_request),
+        'system_text':measure(prompt),'user_text':measure(user),
+        'literal_messages_separate_token_sum':text_sum,
+        'literal_messages_exceed_6000':text_sum>6000,
+        'literal_message_join_newline_diagnostic':measure(prompt+'\n'+user),
+        'schema_grammar_separate':measure(canonical(schema)),
+        'user_component_diagnostics_only':{k:measure(canonical(v)) for k,v in provider.items()},
+        'image_transport':{'decoded_bytes':len(image),'sha256':sha(image),'base64_ascii_bytes':len(request['messages'][1]['images'][0]),'native_image_tokens':None},
+        'options':request['options'],'native_fit':None,'dispatch_allowed':False})
+
+save(OUT/'components.json',rows)
+save(OUT/'output-examples.json',examples)
+save(OUT/'compact-input-proposal.json',{'status':'One versioned lossless input serialization proposal; not adopted or executable.',
+    'contract_change_requires':'Separate bounded implementation/validation and refreshed source/request/fit identities before use. Existing hosts/projections/schemas and caps unchanged.',
+    'unchanged_output_contract':True,'units':proposal_rows})
+save(OUT/'tool-identity.json',{'tokenizers_version':tokenizers.__version__,
+    'preparation_source':{'path':str(OUT/'screen-source.txt'),'bytes':(OUT/'screen-source.txt').stat().st_size,'sha256':sha((OUT/'screen-source.txt').read_bytes())},
+    'python':sys.executable,'python_version':sys.version,'jsonschema_version':importlib.metadata.version('jsonschema'),
+    'tokenizer_resource':str(resource),'tokenizer_resource_bytes':resource.stat().st_size,
+    'tokenizer_resource_sha256':sha(resource.read_bytes()),
+    'tool_files':[{'path':str(p),'bytes':p.stat().st_size,'sha256':sha(p.read_bytes())} for p in sorted((CACHE/'tokenizers').rglob('*')) if p.is_file() and '__pycache__' not in str(p)],
+    'add_special_tokens':False,'runtime_server_contacted':False,'dependencies_installed':False})
+save(OUT/'validation.json',{'all_seven_rows_retained':len(rows)==7,'available_units':len(proposal_rows),
+    'exact_T78_request_and_schema_and_image_hashes':True,'illustrations_schema_and_host_replay_passes':len(examples),
+    'compact_input_exact_roundtrips':len(proposal_rows),'output_caps_unchanged':1500,'input_cap_unchanged':6000,
+    'new_historical_findings':0,'model_calls':0,'server_calls':0,'image_fetches':0,
+    'native_fit':None,'launch_ready':False,'code_gate':'No repository implementation changed; prior full gate922 retained pending independent T73 changes.'})
+print(json.dumps({'units':[(r['unit_id'],r.get('literal_messages_separate_token_sum')) for r in rows],
+    'examples':[(r['unit_id'],r['variant'],r['tokens']) for r in examples],
+    'compact':[(r['unit_id'],r['literal_messages_separate_token_sum']) for r in proposal_rows]},indent=2))

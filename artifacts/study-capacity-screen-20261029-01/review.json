@@ -1,0 +1,17 @@
+{
+  "reviewer": "GPT-6 Luna delegate",
+  "scope": "Bounded offline exact-input/tool/output/proposal review; not human grade or model outcome",
+  "findings": [
+    {
+      "finding": "Preparation-source identity missing",
+      "disposition": "Source path/bytes/SHA-256 added to tool-identity.json; independently checked."
+    },
+    {
+      "finding": "Per-unit schema hash not directly exported",
+      "disposition": "schema_sha256 added to all five components rows; independently checked against T78."
+    }
+  ],
+  "followup": "Both findings closed; all fifteen examples and added dense audit illustrations checked; D2 1515 over-cap retained; no new findings.",
+  "native_fit": null,
+  "launch_ready": false
+}
