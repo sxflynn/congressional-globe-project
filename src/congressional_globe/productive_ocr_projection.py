@@ -22,7 +22,9 @@ from congressional_globe.productive_ocr_reply import Reply
 
 
 class SchemaArtifact(Contract):
-    contract: Literal["productive-ocr-reply-schema-v1"] = "productive-ocr-reply-schema-v1"
+    contract: Literal["productive-ocr-reply-schema-v1", "productive-ocr-reply-schema-v2"] = (
+        "productive-ocr-reply-schema-v1"
+    )
     unit_id: str = Field(min_length=1)
     role: Literal["productive_repair_and_self_check", "audit_saved_proposal"]
     target_aliases: tuple[str, ...] = Field(min_length=1, max_length=32)
@@ -67,7 +69,7 @@ def _specialize_audit(schema: dict, role: str) -> None:
         schema["properties"][key]["maxItems"] = 0
 
 
-def derive_reply_schema(host_payload: dict) -> SchemaArtifact:
+def derive_reply_schema(host_payload: dict, *, conformance_v2: bool = False) -> SchemaArtifact:
     """Derive a frozen, per-unit schema without mutating the generic Reply schema."""
     payload = host_payload.get("payload", host_payload)
     targets = [
@@ -81,8 +83,15 @@ def derive_reply_schema(host_payload: dict) -> SchemaArtifact:
     schema["properties"]["role"] = {"const": payload["role"]}
     _set_alias_enum(schema, list(aliases))
     _specialize_audit(schema, payload["role"])
+    if conformance_v2:
+        from congressional_globe.productive_ocr_conformance import specialize_conformance
+
+        specialize_conformance(schema)
     schema_text = _canonical_text(schema)
     return SchemaArtifact(
+        contract="productive-ocr-reply-schema-v2"
+        if conformance_v2
+        else "productive-ocr-reply-schema-v1",
         unit_id=payload["unit_id"],
         role=payload["role"],
         target_aliases=aliases,
@@ -136,13 +145,15 @@ def compile_request_projection(
     prompt_text: str,
     model_name: str,
     output_tokens: int = 1500,
+    *,
+    conformance_v2: bool = False,
 ) -> tuple[RequestProjection, SchemaArtifact]:
     """Validate and freeze exact body bytes; fit evidence is a separate mandatory gate."""
     if not 1 <= output_tokens <= 1500:
         raise ValueError("output ceiling must be within the frozen 1500-token limit")
     host = validate_host(host_envelope, registry)
     payload = host["payload"]
-    schema = derive_reply_schema(host)
+    schema = derive_reply_schema(host, conformance_v2=conformance_v2)
     if payload["response_schema_sha256"] != schema.schema_sha256:
         raise ValueError("host packet does not bind the derived per-request reply schema")
     if hashlib.sha256(prompt_text.encode("utf-8")).hexdigest() != payload["prompt_sha256"]:

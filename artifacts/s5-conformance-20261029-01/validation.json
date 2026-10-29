@@ -1,0 +1,104 @@
+{
+  "task": "T89",
+  "scope": "offline conformance candidate only",
+  "focused_cases": 13,
+  "full_gate": {
+    "command": "UV_CACHE_DIR=tmp/uv-cache make gate",
+    "tests_passed": 1023,
+    "ruff_format": "pass",
+    "ruff_check": "pass",
+    "ty": "pass",
+    "complexity_max5": "pass"
+  },
+  "mechanical_evidence": [
+    "Original S5 projection reconstructs byte-for-byte",
+    "Actual saved reply still rejected with unchanged first host error",
+    "New host/projection/request reconstruct exactly with opt-in schema and bound resources",
+    "Complete both-raw-patch/no-finding/whole-paragraph/withheld uncertainty controls pass strict host and JSON Schema",
+    "Observed semantic contradictions rejected without host relaxation"
+  ],
+  "bound_inputs": [
+    {
+      "path": "artifacts/s5-measurement-20261029-01/run/result.json",
+      "bytes": 11467,
+      "sha256": "580b673b0aaff4003873bfa86f6374eba5f3a9b2311a41ca37e4750eaa1ab6c9"
+    },
+    {
+      "path": "artifacts/s5-measurement-20261029-01/diagnostic.json",
+      "bytes": 1740,
+      "sha256": "7e7e7fed1d19d4444260f5e2fffbefd7477eed06de69654e0e314b0de790919c"
+    },
+    {
+      "path": "artifacts/study-input-assembly-20261029-01/S5/request.json",
+      "bytes": 65342,
+      "sha256": "e19305443cf7b8676acdf25848b88455db203d55b8e1c394116bdd071aed000a"
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_reply.py",
+      "bytes": 22083,
+      "sha256": "330817a50b2e739a5761d79d2fca4194d32d2843aed9c76aabb6d730aa7dfae4"
+    }
+  ],
+  "candidate_files": [
+    {
+      "path": "artifacts/s5-conformance-20261029-01/README.md",
+      "bytes": 4629,
+      "sha256": "3c655360cf07d396d5882309e1d303e4a0c01c946a0dabd552957e9d9669b47d"
+    },
+    {
+      "path": "artifacts/s5-conformance-20261029-01/capacity.json",
+      "bytes": 475,
+      "sha256": "d3c4d51afec9e62653b5a3457405d7da0a2974452006c559bec5b78dbc35a94c"
+    },
+    {
+      "path": "artifacts/s5-conformance-20261029-01/code-identity.json",
+      "bytes": 1891,
+      "sha256": "74bfd211900b94313f08ad593715e2bbd586aec08461b673c91411861cc8104e"
+    },
+    {
+      "path": "artifacts/s5-conformance-20261029-01/host.json",
+      "bytes": 4436,
+      "sha256": "8c1e38a3360e6ed3467251f42bb7f9f15956c4a061748982ca1e9314cc4e294e"
+    },
+    {
+      "path": "artifacts/s5-conformance-20261029-01/projection.json",
+      "bytes": 72577,
+      "sha256": "fbef25b6e9a3f64dee5fc4cab430609bc28ddfe0b073c2208ca85e5ec5d82872"
+    },
+    {
+      "path": "artifacts/s5-conformance-20261029-01/prompt.txt",
+      "bytes": 4421,
+      "sha256": "a5845a790b82f97d5fa527de46980f975296df869df6c0bea2d11ff2e2262451"
+    },
+    {
+      "path": "artifacts/s5-conformance-20261029-01/proposal.json",
+      "bytes": 4959,
+      "sha256": "458ce5e0d08681081e462c920d90d08b620a1a8b382605a4bbdde63b06186813"
+    },
+    {
+      "path": "artifacts/s5-conformance-20261029-01/reply-schema.json",
+      "bytes": 7505,
+      "sha256": "5a42931a141323340e1bd03b4cccc040505c00fbaff02b1961ddaa134ee97923"
+    },
+    {
+      "path": "artifacts/s5-conformance-20261029-01/request.json",
+      "bytes": 69709,
+      "sha256": "b2945ba94e625c0ee515b68e5d223995d65a53629860485a58ef1991829ad52e"
+    },
+    {
+      "path": "artifacts/s5-conformance-20261029-01/review.json",
+      "bytes": 1774,
+      "sha256": "76d17f2efaf2825abf5b738555fa4b99173ee05d39e2121938790db0bf36e587"
+    },
+    {
+      "path": "artifacts/s5-conformance-20261029-01/schema.json",
+      "bytes": 8897,
+      "sha256": "6770e2989b510a1d9e3dd8521d7c0bfc7e1be21635db1365947c9399de166ee2"
+    }
+  ],
+  "live_calls": 0,
+  "server_starts": 0,
+  "fetches": 0,
+  "downloads": 0,
+  "quality_or_native_fit_claim": false
+}

@@ -1,0 +1,68 @@
+{
+  "task": "T89",
+  "state": "offline candidate; separate new authority required; no dispatch permitted",
+  "question": "Does the revised prompt/schema yield a useful host-valid full repair on the same now-exposed S5 target?",
+  "recommendation": "Authorize one additional S5 conformance attempt, changing only prompt/schema and required provenance/authority bindings. Treat it as exposed development, not independent quality confirmation.",
+  "candidate_projection": {
+    "contract": "productive-ocr-request-projection-v1",
+    "host_packet_sha256": "a433faf1b4b7488bf8e3846dbe6ebebd5cdbf122e844af7f973567b9c49ef987",
+    "body_sha256": "b2945ba94e625c0ee515b68e5d223995d65a53629860485a58ef1991829ad52e",
+    "schema_sha256": "5a42931a141323340e1bd03b4cccc040505c00fbaff02b1961ddaa134ee97923",
+    "prompt_sha256": "a5845a790b82f97d5fa527de46980f975296df869df6c0bea2d11ff2e2262451",
+    "model_name": "qwen3.8:27b-mlx",
+    "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "image_sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+    "source_layers_sha256": "b47e948fedba42eadd2bc8d6bc0db0a06c89602c1f8b31a4621c3788d207e4ad",
+    "image_bindings_json": "[{\"crop_region\":{\"bottom\":206,\"left\":0,\"right\":999,\"top\":0},\"paragraph_alias\":\"P1\"}]",
+    "image_bindings_sha256": "e99793a9b8842d47cfd02ca4d018e64c46c5db17780ab6ae8110eb5722e512d8",
+    "diagnostics_sha256": "0ea95ab53f4e217827f2191aad9a0b9ce464e2446abd93883a2e6c81d4991e0a",
+    "saved_proposal_sha256": null
+  },
+  "source": "Original S5 target/image/raw/static/diagnostics/sample unchanged; six other units pending. Prior actual failed reply immutable.",
+  "limits": {
+    "calls": 1,
+    "retries": 0,
+    "other_loading_probes": 0,
+    "server_starts": 1,
+    "fetches": 0,
+    "downloads": 0,
+    "output_tokens": 1500,
+    "input_reporting_threshold": 6000,
+    "whole_session_seconds": 600,
+    "prep_hash_seconds": 270,
+    "startup_load_request_seconds": 120,
+    "owned_exit_observation_seconds": 30,
+    "report_seconds": 180
+  },
+  "required_exception": "Renew only for this new request the staged S5 scope and pre-request native-fit exception. Retain strict host validation and owned-stop observation; no general T55 clearance.",
+  "next_action_after_approval": "Pin approval and new one-use spent slot in existing measurement path; current old command/spec MUST continue rejecting this body. Rebind exact final code identity and gate before dispatch; validate original resource closure, fresh process/queue/log/shared-lock checks, then one attempt and stop. No new automation command proposed.",
+  "affected_command": "UV_CACHE_DIR=tmp/uv-cache uv run python -m congressional_globe.productive_ocr_measurement --repository . --spec artifacts/s5-conformance-20261029-01/run/spec.json (proposed; spec not created; current dispatcher refuses candidate)",
+  "resources": {
+    "executable": "/Applications/Ollama.app/Contents/Resources/ollama",
+    "executable_sha256": "e5c7c0ffa50d23d0f0e59cbf325f689b0010ee5563be89b73b05f08844e19e6b",
+    "model_name": "qwen3.8:27b-mlx",
+    "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e"
+  },
+  "costs": {
+    "new_calls_so_far": 0,
+    "prior_S5_calls": 1,
+    "prior_S5_cycle_seconds": 53.335579541977495,
+    "prior_S5_input_tokens": 1391,
+    "prior_S5_output_tokens": 762,
+    "forecast": "Prior cold cycle 53.34s is one observation, not a promise; revised prompt/grammar cost and compatibility unknown. At most 600 wall seconds including setup/stop/report; local dollar/energy cost unmeasured; no new human grading required.",
+    "report_reserve_change": "180s instead of 150s, prep planning reserve 270s instead of 300s; total remains 600s. Prior report157.38s exceeded150s planning reserve."
+  },
+  "alternatives": [
+    "Stop live work here; retain offline fix and failed result.",
+    "Require authentic native fit before another call; returns to already documented producer/build/resource decision, not another inventory."
+  ],
+  "success": "Complete host-valid repaired reading and exact raw replay; raw-copy valid structure alone is not repair success or quality acceptance. Incomplete/invalid/timeout ends attempt with raw evidence and unknown usage retained; no retry.",
+  "unknowns": [
+    "Actual grammar support for conditional schema",
+    "True native input fit",
+    "Revised latency/output capacity",
+    "Forced cancellation behavior",
+    "Historical quality beyond one exposed target"
+  ],
+  "deadline_requirements": "270/120/30/180 are nonoverlapping absolute phase deadlines inside600s. Implementation must use one120s spawn-through-response deadline: startup <=45s and request timeout=min(120s, remaining phase and session budget), not sequential45+120. Stop/observe by420s, report by600s. If preflight/prep cannot finish by270s, do not dispatch. Authority path must enforce and test this before launch."
+}

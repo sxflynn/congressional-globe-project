@@ -1,0 +1,24 @@
+{
+  "reviewer": "gpt-6-luna via bounded repository-requested delegate",
+  "verdict": "accepted offline candidate and decision proposal; no live behavior/quality claim",
+  "scope": "Projection/conformance module, prompt, meaningful controls, observed immutable failure, candidate bindings, concrete proposal. Read-only review, no runtime/test invocation by reviewer.",
+  "findings": [
+    {
+      "issue": "Schema does not encode every cross-field host rule",
+      "disposition": "Proposed affected_quote tightened to nonempty string; equality/status/self-check/replay explicitly remain unchanged strict host checks. No schema-only conformance claim."
+    },
+    {
+      "issue": "New prompt/schema require new host bindings",
+      "disposition": "Candidate rebinds new prompt/schema/current code identities; test reconstructs exact frozen host/projection/request. Old frozen S5 still reproduces exactly."
+    },
+    {
+      "issue": "Reviewer initially thought unresolved null affected_quote forbidden",
+      "disposition": "Reviewer re-inspected branch helper and accepted correction: restriction applies only to proposed branch. Both withheld controls now include unresolved whole-paragraph null finding passing schema and host."
+    },
+    {
+      "issue": "Startup45 plus request120 could consume reserved time",
+      "disposition": "Proposal now requires shared absolute120-second spawn-through-response phase, request timeout bounded by remaining phase/session time, no dispatch afterprep270, observed stop by420/report by600; enforcement/tests required before live authority path."
+    }
+  ],
+  "final_review_text": "Verified; disposition accepted. These changes address both review findings. This is an offline review; I did not run tests or launch anything."
+}
