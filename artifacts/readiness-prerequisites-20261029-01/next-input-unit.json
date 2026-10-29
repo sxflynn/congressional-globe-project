@@ -1,0 +1,53 @@
+{
+  "task": "T78",
+  "status": "proposed_ready_offline",
+  "parent": [
+    "M2.4",
+    "M5.2",
+    "T55"
+  ],
+  "decision": "Prepare and verify exact host/registry/request inputs where evidence exists, without dispatch or fit/readiness assertion.",
+  "units_with_images": [
+    "S1",
+    "S2",
+    "S5",
+    "D1",
+    "D2"
+  ],
+  "targets_with_images": 16,
+  "fixed_full_sample": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "D1",
+    "D2"
+  ],
+  "missing_units": [
+    "S3",
+    "S4"
+  ],
+  "steps": [
+    "Project existing T55 source/image/geometry and hash-bound inspection records into the T53 strict registry and host fields; do not author invented verification.",
+    "Use exact selected raw/static source records and saved-proposal identities for audits. Preserve D1/D2 exposure and target/context boundaries.",
+    "Bind T75 source-specific HR012 instructions and typed diagnostics into S1/S2 inputs, and record exact named-feedback post-response checks.",
+    "Derive per-unit reply schemas, prompt/code/resource/body identities and immutable request bytes for available units only; retain explicit missing rows for S3/S4.",
+    "Validate known inputs with existing host/projection checks. Unavailable genuine fit/producer/resources stay missing; do not build or dispatch FrozenJobs by faking token counts."
+  ],
+  "bounds": {
+    "model_api_calls": 0,
+    "server_launches": 0,
+    "image_fetches": 0,
+    "new_dependencies": 0,
+    "model_downloads": 0,
+    "source_mutations": 0,
+    "sample_substitutions": 0
+  },
+  "does_not_complete": [
+    "Seven-unit launch readiness",
+    "Authentic native preprocessing/parity",
+    "Actual owned-backend stopping/compatibility",
+    "Historical quality or human acceptance"
+  ]
+}
