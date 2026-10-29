@@ -1,0 +1,267 @@
+{
+  "task": "T83",
+  "status": "proposed_pending_human_scope_and_preflight_exception",
+  "launch_authorized": false,
+  "recommended_route": "single original S5 productive measurement attempt before complete native-fit/real-stop evidence; explicit exception required",
+  "selected": {
+    "unit_id": "S5",
+    "status": "validated_input_projection_only",
+    "targets": 1,
+    "image_sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+    "host_sha256": "bfb175c53ce0b5a026516310e3670628ef3482f18f980df894838f794805a2aa",
+    "request_sha256": "e19305443cf7b8676acdf25848b88455db203d55b8e1c394116bdd071aed000a",
+    "schema_sha256": "d5f4a2f82c571ccd63611cd07790b543f7daa60cf0fe190cd2975741cf63bf92",
+    "request_bytes": 65342,
+    "diagnostic_signals": 7,
+    "exposure": "primary_selected_not_previously_model_repaired",
+    "native_fit": null,
+    "frozen_job_created": false,
+    "dispatch_allowed": false
+  },
+  "projection_identity": {
+    "contract": "productive-ocr-request-projection-v1",
+    "host_packet_sha256": "bfb175c53ce0b5a026516310e3670628ef3482f18f980df894838f794805a2aa",
+    "body_sha256": "e19305443cf7b8676acdf25848b88455db203d55b8e1c394116bdd071aed000a",
+    "schema_sha256": "d5f4a2f82c571ccd63611cd07790b543f7daa60cf0fe190cd2975741cf63bf92",
+    "prompt_sha256": "e301eae7dc1b76a8af23b730f765c34ff656b5e32a424a02d8a7f63678c1257f",
+    "model_name": "qwen3.8:27b-mlx",
+    "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "image_sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+    "source_layers_sha256": "b47e948fedba42eadd2bc8d6bc0db0a06c89602c1f8b31a4621c3788d207e4ad",
+    "image_bindings_json": "[{\"crop_region\":{\"bottom\":206,\"left\":0,\"right\":999,\"top\":0},\"paragraph_alias\":\"P1\"}]",
+    "image_bindings_sha256": "e99793a9b8842d47cfd02ca4d018e64c46c5db17780ab6ae8110eb5722e512d8",
+    "diagnostics_sha256": "0ea95ab53f4e217827f2191aad9a0b9ce464e2446abd93883a2e6c81d4991e0a",
+    "saved_proposal_sha256": null
+  },
+  "original_rows": [
+    {
+      "unit_id": "S1",
+      "status": "validated_input_projection_only",
+      "targets": 1,
+      "image_sha256": "0864afba1dcdedf0555463283e9f79e7e2c1209de20901de07b73b3cd415e5a9",
+      "host_sha256": "a78b196824b4dbe869f21d76185843b331b2c166774d76ca238399aad0a74bbb",
+      "request_sha256": "87bfbdb13c0ced6f74e718f3d7d4c96075880e41d87f9f08b6b28a975545714a",
+      "schema_sha256": "3dc56a420aeb21f7b1872f0f9ec51fe4de5c8c5415e7290cfc23d74986923e94",
+      "request_bytes": 314227,
+      "diagnostic_signals": 27,
+      "exposure": "source_specific_human_feedback_conditioned",
+      "native_fit": null,
+      "frozen_job_created": false,
+      "dispatch_allowed": false
+    },
+    {
+      "unit_id": "S2",
+      "status": "validated_input_projection_only",
+      "targets": 1,
+      "image_sha256": "558720d837fb5631d182a3f53cec98f8bc9987d09dcc8d65994b3749c35a5668",
+      "host_sha256": "e60f43528cf25c9b04c67549dca96be686152143dd336f57d5437e45e27b376c",
+      "request_sha256": "64eb38d161504b581461684646e708bdeca8f04e88831ea8cb4f21039d0267c1",
+      "schema_sha256": "31de446461f8a3659333f3c7cc052c7197ecd26475d9468f91251b9581f430e1",
+      "request_bytes": 73416,
+      "diagnostic_signals": 4,
+      "exposure": "source_specific_human_feedback_conditioned",
+      "native_fit": null,
+      "frozen_job_created": false,
+      "dispatch_allowed": false
+    },
+    {
+      "unit_id": "S3",
+      "status": "missing_source_image",
+      "request_created": false
+    },
+    {
+      "unit_id": "S4",
+      "status": "missing_source_image",
+      "request_created": false
+    },
+    {
+      "unit_id": "S5",
+      "status": "validated_input_projection_only",
+      "targets": 1,
+      "image_sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+      "host_sha256": "bfb175c53ce0b5a026516310e3670628ef3482f18f980df894838f794805a2aa",
+      "request_sha256": "e19305443cf7b8676acdf25848b88455db203d55b8e1c394116bdd071aed000a",
+      "schema_sha256": "d5f4a2f82c571ccd63611cd07790b543f7daa60cf0fe190cd2975741cf63bf92",
+      "request_bytes": 65342,
+      "diagnostic_signals": 7,
+      "exposure": "primary_selected_not_previously_model_repaired",
+      "native_fit": null,
+      "frozen_job_created": false,
+      "dispatch_allowed": false
+    },
+    {
+      "unit_id": "D1",
+      "status": "validated_input_projection_only",
+      "targets": 4,
+      "image_sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+      "host_sha256": "afec48eaeef597a07c5bce4eb87fd99d5b6f2fdae6e65a7a3bd958652beb065e",
+      "request_sha256": "7a6bed37b90d681d02201b37f327ab6c6aaea2f187719f141aa78fe55824d1c4",
+      "schema_sha256": "77e11d638ee670a6cb1209ea69d7781b09a72c91b835442b96a7348d76625151",
+      "request_bytes": 2241812,
+      "diagnostic_signals": 83,
+      "exposure": "previously_exposed_saved_failure_audit",
+      "native_fit": null,
+      "frozen_job_created": false,
+      "dispatch_allowed": false
+    },
+    {
+      "unit_id": "D2",
+      "status": "validated_input_projection_only",
+      "targets": 9,
+      "image_sha256": "53373dc3ef8ff554cda84c138db9c24b5f5753710114a2594bae75e06b150555",
+      "host_sha256": "4007cbda0554c447c4127c6bcc234822e38a7ae48b3f5f48311f71505935945b",
+      "request_sha256": "8db79f99eacadd00ed20b8f8997b2fa11d3919f69a5a02aad59d3742610b48c2",
+      "schema_sha256": "3c453c181f4c1460ee577681ff22ab73a50a8c66413ae2adab339ec163464e04",
+      "request_bytes": 641388,
+      "diagnostic_signals": 50,
+      "exposure": "previously_exposed_saved_failure_audit",
+      "native_fit": null,
+      "frozen_job_created": false,
+      "dispatch_allowed": false
+    }
+  ],
+  "pending_units": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "D1",
+    "D2"
+  ],
+  "resources": {
+    "path": "/Applications/Ollama.app/Contents/Resources/ollama",
+    "sha256": "e5c7c0ffa50d23d0f0e59cbf325f689b0010ee5563be89b73b05f08844e19e6b",
+    "bytes": 52684064,
+    "file": "/Applications/Ollama.app/Contents/Resources/ollama: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64]\n/Applications/Ollama.app/Contents/Resources/ollama (for architecture x86_64):\tMach-O 64-bit executable x86_64\n/Applications/Ollama.app/Contents/Resources/ollama (for architecture arm64):\tMach-O 64-bit executable arm64\n",
+    "source_revision_claim": "f580b5484a58c8370c35d669555bf887783a3f68",
+    "dirty_build": true
+  },
+  "limits": {
+    "model_calls": 1,
+    "retries": 0,
+    "other_model_loading_probes": 0,
+    "server_starts": 1,
+    "fetches": 0,
+    "downloads": 0,
+    "prep_hash_seconds": 300,
+    "spawn_through_request_seconds": 120,
+    "observation_reserve_seconds": 30,
+    "report_reserve_seconds": 150,
+    "whole_session_seconds": 600,
+    "output_tokens": 1500,
+    "input_threshold": 6000,
+    "input_threshold_enforced_before_send": false,
+    "native_fit_may_remain_unknown": true
+  },
+  "manifest": {
+    "path": "artifacts/ocr-live-readiness-20261028-01/installed-model-manifest.json",
+    "sha256": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "layers": 1209,
+    "config_and_layer_bytes": 18174721847,
+    "current_adapter_layer_limit": 64
+  },
+  "decision_sources": [
+    "original approval requires exact readiness",
+    "T83 explicitly requires changed scope/resource/budget/gate decisions",
+    "engineering workflow adoption rule"
+  ],
+  "inputs": [
+    {
+      "path": "docs/reference/engineering.md",
+      "sha256": "669093f5f15e71a814b33a38fc47ea91fac260f7562cc82cc5fae72ac4235f51"
+    },
+    {
+      "path": "artifacts/ocr-live-readiness-20261028-01/README.md",
+      "sha256": "24711c4960900eafb59f81a5e50a8cea8b424f4069232252b4368ba034263bfd"
+    },
+    {
+      "path": "artifacts/ocr-live-readiness-20261028-01/installed-model-manifest.json",
+      "sha256": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e"
+    },
+    {
+      "path": "artifacts/ocr-live-readiness-20261028-01/costs.json",
+      "sha256": "b349d0361c2e701a0b6f017da206c6a282ccc016be59f22c2754bd0ce1dfcd69"
+    },
+    {
+      "path": "artifacts/ocr-workflow-approval-20261028-01/approval.json",
+      "sha256": "34282bb2d794569ab4458051891adb107650b2aa952dac44968f5829a5214593"
+    },
+    {
+      "path": "artifacts/native-preprocessing-study-20261029-01/producer-proposal-v2.json",
+      "sha256": "8bfe434306a246ba6a314e10a028db4a02f0f512776b99790e21c184b57a316a"
+    },
+    {
+      "path": "artifacts/native-preprocessing-study-20261029-01/executable.json",
+      "sha256": "450246ad671892a977cc440c9f2ea5a1a1b9b417be76171ece734c158b8d82fe"
+    },
+    {
+      "path": "artifacts/native-preprocessing-study-20261029-01/go-build-info-arm64.txt",
+      "sha256": "6eb42fca1635b2b92f1c5129421205941ed2fd437dd301de5253d84e866c3350"
+    },
+    {
+      "path": "artifacts/readiness-prerequisites-20261029-01/README.md",
+      "sha256": "3b5f61063054a3ae16643bb6a2db9acfd886c6c5a80d8428479d33ee223e8fc6"
+    },
+    {
+      "path": "artifacts/study-input-assembly-20261029-01/units.json",
+      "sha256": "f72c2b31a3300bb5292bebdd709f321601773789b57f2e401a9983adfe123e2e"
+    },
+    {
+      "path": "artifacts/study-input-assembly-20261029-01/costs.json",
+      "sha256": "8dfa20196667f6b71c81968675b28f3ebe8cdc3840f92c181bb43a6146aa9210"
+    },
+    {
+      "path": "artifacts/study-capacity-screen-20261029-01/README.md",
+      "sha256": "ee79892d2f48fabaac6fb1b4102dd4245fea2d95ef7e5dc0ed2f364c1d748b29"
+    },
+    {
+      "path": "artifacts/compact-diagnostic-codec-20261029-01/README.md",
+      "sha256": "eef4678c3a1054b7bc99312889e992c299cda33db9871eb7c62c6bd400f0495e"
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_authority.py",
+      "sha256": "720f0cc1851e1e1cd4e054c8b73af41621c88fd397497b4f1a5d3bb6374eb02b"
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_fit.py",
+      "sha256": "48e7e1765b48fe061bdd0c471b42b013148fe8967def6929ae7a6697bfd11ae0"
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_native_trace.py",
+      "sha256": "88346b116d212cd3cc60202e1abd3a11f92f74f3ac933f48954b9eeafed0974e"
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_live.py",
+      "sha256": "7321b895b71fcc118da59cb3e249fc3b712a14360d6ee480515a473062fbcb60"
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_local.py",
+      "sha256": "63faf8b487cf64464d8780d6aab06cf8d77c58326405ddba9ee3cd6f69d49663"
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_http.py",
+      "sha256": "9d9395540512155d25cb898c19074f7426f5689dd891f2c483838e051b29cf2c"
+    },
+    {
+      "path": "artifacts/study-input-assembly-20261029-01/S5/host.json",
+      "sha256": "2de630d247f1baec4367527464cac87c1205fb3d63b1bfabe65061d1e644f620"
+    },
+    {
+      "path": "artifacts/study-input-assembly-20261029-01/S5/request.json",
+      "sha256": "e19305443cf7b8676acdf25848b88455db203d55b8e1c394116bdd071aed000a"
+    },
+    {
+      "path": "artifacts/study-input-assembly-20261029-01/S5/projection.json",
+      "sha256": "13eb83137fc4eec9c63fa3cfdfd5caaeaab4a6f8aa06547cf1fa1b1015efa304"
+    },
+    {
+      "path": "artifacts/study-input-assembly-20261029-01/S5/schema.json",
+      "sha256": "07df6aa5d4000e3ab4fee6e0b2d32e4fded92850380f20f759d6d1f669f0a67d"
+    },
+    {
+      "path": "artifacts/study-input-assembly-20261029-01/S5/prompt.txt",
+      "sha256": "e301eae7dc1b76a8af23b730f765c34ff656b5e32a424a02d8a7f63678c1257f"
+    }
+  ],
+  "master_snapshot_note": "Master is updated by this task; no stable hash asserted for mutable active record."
+}
