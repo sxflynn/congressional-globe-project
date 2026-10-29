@@ -1726,6 +1726,173 @@
       "term": "proposed replacement",
       "definition": "The suggested text to put in place of an exact original quote; it remains unaccepted until reviewed.",
       "aliases": []
+    },
+    {
+      "term": "S5",
+      "definition": "The short passage chosen from part five of this study. This label identifies the same selected passage across its saved inputs and results.",
+      "aliases": []
+    },
+    {
+      "term": "self-check",
+      "definition": "A model’s own list of what it inspected and what remains uncertain. It is part of that same answer, not an independent second opinion.",
+      "aliases": [
+        "self-check categories"
+      ]
+    },
+    {
+      "term": "target/context boundaries",
+      "definition": "The dividing lines between the passage to repair and nearby writing supplied only to help interpret it. Nearby writing must not be appended to the passage.",
+      "aliases": []
+    },
+    {
+      "term": "unflagged text",
+      "definition": "Words or characters that earlier checks did not mark as suspicious. Absence of a warning does not establish that the text is correct.",
+      "aliases": []
+    },
+    {
+      "term": "fixed-rule cleanup",
+      "definition": "Proposed changes made by repeatable software rules rather than a language model, such as joining a word split across lines.",
+      "aliases": [
+        "fixed-rule repair",
+        "fixed-rule edits"
+      ]
+    },
+    {
+      "term": "source-anchor type",
+      "definition": "The format identifying where a concern belongs in the original text: a quoted span or the entire paragraph.",
+      "aliases": []
+    },
+    {
+      "term": "conditional schema",
+      "definition": "Response-format rules in which one field controls what another field may contain. For example, choosing a whole paragraph can require an empty quote.",
+      "aliases": [
+        "conditional-schema support",
+        "Conditional schema rules"
+      ]
+    },
+    {
+      "term": "strict validator",
+      "definition": "Software that rejects an answer when required fields, source links or text-reconstruction rules disagree. Passing these checks alone does not prove the historical wording.",
+      "aliases": []
+    },
+    {
+      "term": "cold start",
+      "definition": "Starting a request when the model needs to be loaded for that session. Loading time is part of the elapsed time reported here.",
+      "aliases": []
+    },
+    {
+      "term": "input tokens",
+      "definition": "Small pieces of text or other encoded input counted by the model software. Token counts depend on how that software prepares the request.",
+      "aliases": [
+        "input-token"
+      ]
+    },
+    {
+      "term": "routing rates",
+      "definition": "The assumed share of passages sent to a particular cleanup or checking method. Here these are scenario assumptions, not measured error frequencies.",
+      "aliases": []
+    },
+    {
+      "term": "rework",
+      "definition": "Additional attempts or human/software corrections after an initial attempt. Its amount and time have not been measured for the collection.",
+      "aliases": []
+    },
+    {
+      "term": "native input-fit evidence",
+      "definition": "A measurement of how this installed model software actually converts the complete text and image into input, and whether that complete input fits.",
+      "aliases": [
+        "true fit",
+        "complete native input-fit evidence"
+      ]
+    },
+    {
+      "term": "input-fit exception",
+      "definition": "Permission for one described test to proceed without first having a complete measurement of whether its text and image input fits. It supplies no permission for other requests.",
+      "aliases": []
+    },
+    {
+      "term": "preflight exception",
+      "definition": "A narrowly specified change to a check normally required before sending a request. It applies only to the action described in the decision.",
+      "aliases": []
+    },
+    {
+      "term": "one-use allowance",
+      "definition": "A recorded permission that can be consumed by only one attempted request. A failed or unclear result does not automatically replenish it.",
+      "aliases": []
+    },
+    {
+      "term": "queue",
+      "definition": "The list of work waiting or already claimed, checked to avoid starting competing model operations.",
+      "aliases": []
+    },
+    {
+      "term": "lock",
+      "definition": "A shared software safeguard allowing only one owner to perform the protected operation at a time. Here it helps prevent overlapping model requests.",
+      "aliases": []
+    },
+    {
+      "term": "raw-text edit",
+      "definition": "A change specified against the exact original machine-read text, rather than against a later cleaned version.",
+      "aliases": []
+    },
+    {
+      "term": "edit list",
+      "definition": "The recorded original text and replacement for each proposed change. Applying the complete list should recreate the proposed reading.",
+      "aliases": [
+        "linked edit"
+      ]
+    },
+    {
+      "term": "response rules",
+      "definition": "Requirements for what an answer must contain and how its fields and proposed text must agree. They do not establish historical accuracy.",
+      "aliases": []
+    },
+    {
+      "term": "whole-paragraph concerns",
+      "definition": "Uncertainties attached to an entire passage when a smaller exact quotation cannot identify the issue. They should remain visible without inventing a reading.",
+      "aliases": []
+    },
+    {
+      "term": "withheld readings",
+      "definition": "Cases where the answer leaves the proposed text empty and explains why it cannot supply a supported complete reading.",
+      "aliases": []
+    },
+    {
+      "term": "agent inbox",
+      "definition": "The saved submitted-feedback list the coding agent checks when work resumes. Saving a draft does not add it to this list.",
+      "aliases": []
+    },
+    {
+      "term": "owned process",
+      "definition": "A running program started and tracked for this particular operation, so its exit can be checked without controlling unrelated programs.",
+      "aliases": [
+        "owned process exit"
+      ]
+    },
+    {
+      "term": "shared deadlines",
+      "definition": "Time cutoffs shared by several steps, so each step receives only the remaining time rather than a fresh full allowance.",
+      "aliases": []
+    },
+    {
+      "term": "useful yield",
+      "definition": "The share of attempts that produce a result usable for the intended task under its checks. It has not yet been established for this cleanup method.",
+      "aliases": []
+    },
+    {
+      "term": "literal messages",
+      "definition": "The written instruction and data strings before the model software adds its own framing and processes the image.",
+      "aliases": []
+    },
+    {
+      "term": "reporting threshold",
+      "definition": "A number used to report or flag an observation, rather than a proven capacity limit or a rule that blocks the request.",
+      "aliases": []
+    },
+    {
+      "term": "code/request identities",
+      "definition": "Fingerprints of the exact software files and request bytes, used to detect changes between preparation and execution.",
+      "aliases": []
     }
   ]
 }

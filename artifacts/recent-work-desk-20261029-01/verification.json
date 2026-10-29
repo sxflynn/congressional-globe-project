@@ -1,0 +1,47 @@
+{
+  "task": "T91",
+  "packet_id": "HR-013",
+  "version": 1,
+  "packet_sha256": "6128e7977d5fdde7092fde3698ae20bcfb6a910c7227a53684c6b0d9023f305f",
+  "verified_at_utc": "2026-10-29T22:33:20.181512+00:00",
+  "verified_lan_url": "http://10.0.0.56:8501",
+  "existing_server": {
+    "pid": 75258,
+    "start_local": "2026-10-29 14:31:41",
+    "restarted": false
+  },
+  "browser": "IAB desktop; actual rendered packet inspected",
+  "checks": {
+    "pending_review_visible": true,
+    "seven_evidence_cards_and_local_notes_visible": true,
+    "saved_image_loaded": {
+      "width": 999,
+      "height": 206
+    },
+    "source_span_glossary_buttons": 0,
+    "visible_glossary_buttons": 176,
+    "mouse_definition_open_close": true,
+    "keyboard_enter_escape": true,
+    "unsaved_comment_preserved": true,
+    "temporary_comment_cleared": true,
+    "save_or_submit_clicked": false,
+    "next_test_preselected": false,
+    "default_choice_empty": true,
+    "physical_phone_test": false
+  },
+  "limits": "No human answer fabricated, saved or submitted. No model/server/source fetch/download operation. Existing saved scan bytes reused; no second historical quality reading claimed. Real submissions remain pending for next-turn inbox processing.",
+  "review": {
+    "reviewer": "gpt-6-luna",
+    "verdict": "No material findings",
+    "scope": "Read-only packet/source/glossary/span/cache/tests review; no independent browser check or test invocation. Parent inspected actual desk.",
+    "result": "Actual failed reply, offline fix and hypothetical attempt-cost scenarios distinguished. Optional choice is limited to T90 one new call and stated exception; no launch on submission."
+  },
+  "tests": {
+    "focused_passed": 25,
+    "full_gate_passed": 1026,
+    "command": "UV_CACHE_DIR=tmp/uv-cache make gate",
+    "format_lint_types_complexity": "pass",
+    "initial_gate_disposition": "New presentation test exceeded complexity5; split rendering assertion into helper without weakening checks, final gate passes."
+  },
+  "shared_glossary_terms_added": 30
+}

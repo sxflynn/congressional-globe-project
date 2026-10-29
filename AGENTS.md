@@ -14,6 +14,8 @@ Shared entry point for Codex, Claude, OpenCode and other agents. New human instr
 
 ## Always preserve
 
+- Put requests for human decisions and recent-work walkthroughs in the human review desk, with concrete evidence and comment boxes; notify the human in chat with the desk link instead of asking a standalone approval question. Direct human preference, 2026-10-29. Use the review protocol; do not infer a decision from this delivery preference.
+
 - Human-facing review-desk/server links must always use the current verified `10.x.x.x` LAN IP address, with the port (for example, `http://10.0.0.56:8501`). Do not give localhost or127.0.0.1 as the user-facing address. Recheck the LAN address after network changes; never invent an address. Direct human rule,2026-10-28.
 
 - AI-written review-desk prose must use plain English and generous dotted-underlined glossary help. Define unfamiliar terms and phrases in the agent’s titles, instructions, questions, choices, labels and explanations; include variants actually displayed. Do not add glossary underlining to original historical writing, OCR excerpts or proposed transcriptions. Keep quoted passages plain even inside mixed evidence cards; annotate the surrounding AI explanation only. Explain with a concrete example when useful. Definitions must be neutral and must never hint at a grade, identify a hidden model or rewrite source text. Expand the shared glossary for existing packets; preserve immutable packet/answer bytes. Follow the [mandatory glossary authoring checks](docs/reference/human-review-protocol.md#mandatory-plain-language-and-glossary-rule).

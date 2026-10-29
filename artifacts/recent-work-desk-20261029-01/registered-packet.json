@@ -1,0 +1,66 @@
+{
+  "blind": false,
+  "id": "HR-013",
+  "instructions": "Browse at your own pace; comments are optional. Each item has its own note box. Enter your name before Save draft or Submit review. Save draft keeps unfinished feedback; Submit review sends it to the agent inbox. Dotted-underlined terms explain AI-written instructions and explanations; original OCR and proposed readings stay plain. The final question is an optional decision about one bounded test. You can submit comments while leaving that decision unanswered. No model starts when you submit.",
+  "questions": [
+    {
+      "evidence": [
+        {
+          "label": "1 · What has happened since the previous walkthrough",
+          "text": "We have now made one real AI request on one short passage, called S5. Qwen received the saved scan, original OCR, fixed-rule cleanup and inspection signals in one request. It returned a complete answer in 53.34 seconds, but the answer failed the software checks. No clean reading was accepted.\n\nI then clarified the response rules and tested them without asking the model again. The latest software gate passed 1,023 tests, including 13 focused checks for this failure. That establishes software behavior, not historical accuracy.\n\nYou can comment beside every item below. This walkthrough is optional; no regrading of your earlier reviews is requested. Your earlier comments about the stray apostrophe after loyal and the damaged word property remain attached to their original cases and required future checks. They were not tested by this S5 request.",
+          "url": null
+        },
+        {
+          "label": "2 · Actual scan and original OCR · congressionalglo7395unit:529:par_000529_000006 · raw SHA-256 7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426",
+          "text": "The Committee on- Appropriations recom- mended non-concurrence.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+        },
+        {
+          "label": "3 · The full proposed reading actually returned by the AI",
+          "text": "The Committee on Appropriations recommended non-concurrence.",
+          "url": null
+        },
+        {
+          "label": "4 · Why the answer could not be accepted",
+          "text": "The AI supplied just one raw-text edit:\non- Appropriations → on Appropriations\n\nApplying that saved edit to the original OCR produces:\nThe Committee on Appropriations recom- mended non-concurrence.\n\nBut the returned full proposed reading also joins recom- mended to recommended. That second edit was missing from its edit list, even though fixed-rule cleanup had already suggested it. Every retained change must be listed against the original OCR, so the full sentence can be recreated exactly.\n\nThe answer also said no finding while reporting a repair, called its repair image-unclear while describing clear print, used the wrong source-anchor type, and omitted four required self-check categories. Those contradictions remain saved. I did not silently repair the old answer or turn it into an accepted result.",
+          "url": null
+        },
+        {
+          "label": "5 · What I changed after that failure",
+          "text": "The revised instructions say exactly how to identify the original words being changed, when image evidence supports a proposed repair, and when to withhold a reading because print is unclear.\n\nThey require all nine self-check categories: all words; names and places; numbers; punctuation; printed repetition; bracketed cues; target/context boundaries; unflagged text; and existing fixed-rule edits. A completed reading must have no remaining unresolved concerns.\n\nThey also explain that every change from original OCR needs a linked edit, including a retained fixed-rule repair. Software must replay the complete edit list and recover the full proposed reading character for character. Conditional schema rules now prevent some contradictory field combinations. Other consistency checks remain enforced by the existing strict validator.\n\nThe old request still reconstructs exactly, and its saved failed answer still fails. Invented test examples cover both required edits, unchanged text, whole-paragraph concerns and honest withheld readings. No second model response exists yet. These tests do not prove that Qwen will follow the revised instructions.",
+          "url": null
+        },
+        {
+          "label": "6 · What the timing does and does not tell us",
+          "text": "The one real request took 53.34 seconds including its cold start. The backend reported 45.08 seconds, including about 6.01 seconds loading the model. It reported 1,391 input tokens and 762 output tokens. Preparation and the first saved report brought that measured session to about 260 seconds. Total engineering effort and electricity cost were not measured.\n\nA provisional forecast assumes 296,995 paragraphs, one paragraph per request, and the same 53.34 seconds for every request. Sending 10% of paragraphs to AI and auditing 1% of the rest would mean about 480 computer hours. Sending 25% plus the same audit rule would mean about 1,133 hours. Sending every paragraph would mean about 4,400 hours.\n\nThose are hypothetical attempt costs, not a forecast of successful cleanup. We have zero accepted results from one attempt; useful yield, longer-passage costs, routing rates and rework are unknown. Keeping the model loaded or grouping passages might change time, but neither was measured here. The remaining six selected units are still pending; two of their images are missing. No full-collection job is proposed.",
+          "url": null
+        }
+      ],
+      "id": "work-comments",
+      "options": [],
+      "prompt": "Optional overall comments — what should change, what is unclear, or what would you like to see?",
+      "required": false
+    },
+    {
+      "evidence": [
+        {
+          "label": "7 · Optional decision: one small test of the revised instructions",
+          "text": "I recommend one additional request on this same S5 passage, using the revised instructions and response rules. Its purpose is to learn whether the model can return a useful complete repair that passes the strict checks. This passage has now been seen during development, so the result would not be an independent accuracy test.\n\nLimits: one request to the same installed Qwen model; no retries, extra probes, downloads or source fetches; at most 1,500 output tokens and ten minutes for the whole session. Preparation gets up to 270 seconds, startup plus the request share 120 seconds, observing the owned process exit gets 30 seconds, and reporting gets 180 seconds. A missed preparation deadline means no request.\n\nAs with the first measurement, this asks to proceed before complete native input-fit evidence exists. The 6,000-input-token figure is a reporting threshold for this attempt, not a verified capacity limit. The revised literal messages measure 1,712 tokens before actual backend image/framing treatment; true fit and conditional-schema support remain unknown. The previous one-call permission is spent. New approval would apply only to this changed request and this narrow preflight exception.\n\nAfter an approval, I would first pin a new one-use allowance, test the shared deadlines, freeze final code/request identities and check current processes, queue and lock. Then one request, save the raw reply and measured costs, observe the owned process stop, and report even if invalid or incomplete. An uncertain stop or ambiguous outcome blocks further calls.\n\nYou may approve, request changes, defer, or leave this unanswered and comment only. Choosing an option and submitting records your decision for the next agent turn; it does not launch a model automatically. No choice approves corpus-wide processing, rewriting original OCR, or final cleanup policy. Other offline work can continue without this decision.",
+          "url": null
+        }
+      ],
+      "id": "next-test",
+      "options": [
+        "Approve this one test and its stated input-fit exception",
+        "Request changes — see my comments",
+        "Defer this test",
+        "Not sure — I need more explanation"
+      ],
+      "prompt": "Optional: what should happen with the single S5 test described above?",
+      "required": false
+    }
+  ],
+  "title": "Recent OCR work: the real AI result, the fix, and next steps",
+  "version": 1,
+  "packet_sha256": "6128e7977d5fdde7092fde3698ae20bcfb6a910c7227a53684c6b0d9023f305f"
+}

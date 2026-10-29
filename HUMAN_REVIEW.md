@@ -8,6 +8,8 @@ The human requested operationalizing the cleanup discussion. [The evaluation met
 
 ## Needs your attention
 
+**HR-013 · Recent OCR work: the real AI result, the fix, and next steps** is ready in [the review desk](http://10.0.0.56:8501). It shows the actual S5 scan/original text, returned AI reading, missing edit and other response failures, the offline fix, measured timing and cautious collection scenarios. Every card has an optional comment box. The final one-call test decision is optional; submit comments without choosing it if you prefer. Nothing starts automatically. This is the current requested walkthrough; earlier HR-012 descriptions below reflect their earlier preparation checkpoint.
+
 Every scan/text example now has its own optional note box and **Save draft here** button. Enter your name at the top before saving. A draft keeps all current answers without requiring completion; **Submit review** sends your feedback to the agent inbox. Submitted notes include the exact example and must receive a recorded action/check or an explicit unresolved reason before being marked handled. Relevant concerns carry forward into later AI instructions and checks. No background model starts when you submit.
 
 **HR-011 received and incorporated.** You requested changes: one focused image-and-OCR request should repair all supported errors in its assigned passage, including both the number and “Tlie”→“The,” and return useful proposed text. An extra image-reading pass must justify its purpose and cost. Your confirmation of “660” and all four local notes are preserved. The [revised contract draft](artifacts/ocr-productive-repair-contract-20261027-01/README.md) now carries this direction, including full text, exact changes and uncertainty in one reply; software integration and actual model fit remain to be proved; no new model run has started and no repeat review is requested. [Exact answers](docs/archive/human-review/HR-011-v2/31f55374-c6bc-4943-b50a-6b19ef2bfb05.json) · [Every-note follow-through](artifacts/hr011-feedback-20261027-01/dispositions.json).
@@ -60,7 +62,7 @@ Saved drafts and submissions are in `artifacts/human-review/reviews.sqlite`. Uns
 
 ## If the desk will not open
 
-On this computer, open [the local desk](http://127.0.0.1:8501). On your phone or tablet, use [the Wi-Fi address](http://10.0.0.56:8501) while connected to the same network. The computer running the desk must be awake, and its Wi-Fi address can change.
+On this computer, phone or tablet, open [the review desk](http://10.0.0.56:8501) while connected to the same network. The computer running the desk must be awake, and its Wi-Fi address can change.
 
 If a previously open tab shows an error, reopen the address in a fresh tab. Saved drafts and submitted reviews stay in the database; unsaved typing may be lost. If neither address opens, ask an agent to check the running server before restarting it. Do not delete or replace the saved-review database to fix a connection problem.
 
