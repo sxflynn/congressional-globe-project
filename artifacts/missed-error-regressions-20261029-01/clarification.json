@@ -1,0 +1,5 @@
+{
+  "earlier_record": "artifacts/hr012-feedback-20261029-01/dispositions.json S1 diagnosis",
+  "clarification": "T74 loosely described isolated punctuation as already flagged. Exact old TOKEN regex excludes standalone apostrophes; it only recognized selected other symbols. This task detects the actual missed apostrophe explicitly. The earlier committed disposition is preserved rather than rewritten.",
+  "checked_in_test": "test_actual_stray_mark_gets_exact_review_route_missing_from_old_tokenizer"
+}

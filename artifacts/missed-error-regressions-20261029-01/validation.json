@@ -1,0 +1,39 @@
+{
+  "task": "T75",
+  "new_test_cases": 33,
+  "focused": "33passed",
+  "full_gate": {
+    "exit_code": 0,
+    "passed": 879,
+    "skipped": 0,
+    "seconds": 29.52,
+    "checks": [
+      "Ruff format",
+      "Prettier",
+      "Ruff lint",
+      "ty",
+      "Complexipy <=5",
+      "pytest"
+    ]
+  },
+  "actual_human_cases": 2,
+  "authored_presentation_controls": 5,
+  "earlier_outputs_fail_local_checks": true,
+  "separate_case_copies_pass_only_named_local_checks": true,
+  "original_evidence_bytes_match_HEAD": true,
+  "implementation_bytes_match_measured_reports": true,
+  "source_image_test_dependencies_tracked": true,
+  "links_resolve": true,
+  "real_model_calls": 0,
+  "source_image_fetches": 0,
+  "canonical_edits": 0,
+  "new_human_grades": 0,
+  "scope": "Bounded explicit review signals, target-source signal bridge and named human feedback instruction/check library; no general automatic repair or complete live request integration",
+  "remaining": [
+    "T55 must actually bind instructions/checks into frozen requests",
+    "Native fit producer/capture and exact installed parity remain unknown",
+    "Two selected source images missing",
+    "Actual backend stopping/compatibility unproved"
+  ],
+  "next": "T76 READY offline native-fit v2 validation only; no model workload or clearance"
+}

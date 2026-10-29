@@ -1,0 +1,158 @@
+[
+  {
+    "unit_id": "S1",
+    "review_report": {
+      "contract": "bounded-missed-error-review-v1",
+      "rule_version": "punctuation-internal-hyphen-review-v1",
+      "implementation_sha256": "703174a215a53bfadef97427cd062d861235f8e5671ebcb357f5e1fa46c51010",
+      "source": {
+        "source_id": "congressionalg7391unit:526:par_000526_000021",
+        "raw_text": "We have now, as I believe, the golden oppor- tunity to remedy this evil which will never come again to the men of this generation. The sys- tem of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on recon- struction having reported this amendment, I infer that they will, if this amendment is sub- mitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+        "raw_sha256": "c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8"
+      },
+      "words": {
+        "spec": {
+          "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+          "purpose": "words",
+          "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+          "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+          "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+        },
+        "lookup_rule": "nonblank-lines-strip-casefold-v1",
+        "forms_count": 310675
+      },
+      "findings": [
+        {
+          "start": 277,
+          "end": 278,
+          "raw_quote": "'",
+          "kind": "isolated_quote",
+          "reason": "isolated_mark_needs_image",
+          "candidate_readings": [],
+          "route": "image_review_required",
+          "state": "unverified_review_candidate"
+        }
+      ],
+      "proposed_text": "We have now, as I believe, the golden oppor- tunity to remedy this evil which will never come again to the men of this generation. The sys- tem of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on recon- struction having reported this amendment, I infer that they will, if this amendment is sub- mitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+      "interpretation": "review_signals_only_not_corrections",
+      "source_quality": "not_verified"
+    },
+    "host_signal_projection": [
+      {
+        "signal_id": "6ae28bb401c47f71f09c3dfb591a8b8ce0d5e3cbf697bde8d4e4707ed58ffba4",
+        "paragraph_alias": "P1",
+        "raw_start": 277,
+        "raw_end": 278,
+        "raw_quote": "'",
+        "category": "other",
+        "flags": [
+          "isolated_quote",
+          "isolated_mark_needs_image",
+          "unverified_review_candidate"
+        ],
+        "route_reason": "Inspect the original image; this signal is not a repair or a verified reading."
+      }
+    ],
+    "projection_note": "Bound to this source paragraph; caller still freezes/verifies actual host packet, image registry and final diagnostics before use. No ready/live request exists.",
+    "feedback_instruction": "Source-specific human feedback evidence-note:progress-comments:2:071f6b9952b88764e6ae76f2c65d83e8838493db11bc67f9a83eae5f64489fad; source congressionalg7391unit:526:par_000526_000021; raw SHA-256 c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8; image SHA-256 0864afba1dcdedf0555463283e9f79e7e2c1209de20901de07b73b3cd415e5a9. Check the exact raw passage \"loyal ' and\" against the image. The recorded case-specific requested reading is 'loyal and'. Repair all other supported errors in this same assigned target. Preserve genuine punctuation and report uncertainty if the evidence disagrees. A review flag or a dictionary match is not a completed correction.",
+    "prior_output_check": {
+      "note_id": "evidence-note:progress-comments:2:071f6b9952b88764e6ae76f2c65d83e8838493db11bc67f9a83eae5f64489fad",
+      "source_id": "congressionalg7391unit:526:par_000526_000021",
+      "raw_sha256": "c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8",
+      "image_sha256": "0864afba1dcdedf0555463283e9f79e7e2c1209de20901de07b73b3cd415e5a9",
+      "proposed_sha256": "531bde09ff5131821ee38df7c47cd1892142e29858c5a71ac8655cfafdf1a96c",
+      "state": "not_addressed",
+      "reason": "The full named local reading differs from the requested reading.",
+      "scope": "named_feedback_only_not_whole_reading_acceptance"
+    },
+    "separate_case_proposal_check": {
+      "note_id": "evidence-note:progress-comments:2:071f6b9952b88764e6ae76f2c65d83e8838493db11bc67f9a83eae5f64489fad",
+      "source_id": "congressionalg7391unit:526:par_000526_000021",
+      "raw_sha256": "c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8",
+      "image_sha256": "0864afba1dcdedf0555463283e9f79e7e2c1209de20901de07b73b3cd415e5a9",
+      "proposed_sha256": "c1cb9f9321d7f8d1700d9897d173ce5c54da77bfa55427c595a854b7cafae19d",
+      "state": "addressed_in_proposal",
+      "reason": "The exact named local reading maps to its full original span.",
+      "scope": "named_feedback_only_not_whole_reading_acceptance"
+    }
+  },
+  {
+    "unit_id": "S2",
+    "review_report": {
+      "contract": "bounded-missed-error-review-v1",
+      "rule_version": "punctuation-internal-hyphen-review-v1",
+      "implementation_sha256": "703174a215a53bfadef97427cd062d861235f8e5671ebcb357f5e1fa46c51010",
+      "source": {
+        "source_id": "congressionalglo7392unit:716:par_000716_000020",
+        "raw_text": "Mr. BROWN. The navigable channel is not private propei-ty.",
+        "raw_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570"
+      },
+      "words": {
+        "spec": {
+          "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+          "purpose": "words",
+          "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+          "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+          "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+        },
+        "lookup_rule": "nonblank-lines-strip-casefold-v1",
+        "forms_count": 310675
+      },
+      "findings": [
+        {
+          "start": 48,
+          "end": 57,
+          "raw_quote": "propei-ty",
+          "kind": "internal_hyphen_damage",
+          "reason": "unknown_internal_hyphen",
+          "candidate_readings": [
+            "property"
+          ],
+          "route": "image_review_required",
+          "state": "unverified_review_candidate"
+        }
+      ],
+      "proposed_text": "Mr. BROWN. The navigable channel is not private propei-ty.",
+      "interpretation": "review_signals_only_not_corrections",
+      "source_quality": "not_verified"
+    },
+    "host_signal_projection": [
+      {
+        "signal_id": "f700ec29fbc497c5a6f860c0b52e6607513c3999037a2554670be3bd34710e66",
+        "paragraph_alias": "P1",
+        "raw_start": 48,
+        "raw_end": 57,
+        "raw_quote": "propei-ty",
+        "category": "word",
+        "flags": [
+          "internal_hyphen_damage",
+          "unknown_internal_hyphen",
+          "unverified_review_candidate"
+        ],
+        "route_reason": "Inspect the original image; this signal is not a repair or a verified reading."
+      }
+    ],
+    "projection_note": "Bound to this source paragraph; caller still freezes/verifies actual host packet, image registry and final diagnostics before use. No ready/live request exists.",
+    "feedback_instruction": "Source-specific human feedback evidence-note:progress-comments:3:98dc572b5da3329f8229cb98754378a8d3a7d954ba27742ced074842da9acfd0; source congressionalglo7392unit:716:par_000716_000020; raw SHA-256 d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570; image SHA-256 558720d837fb5631d182a3f53cec98f8bc9987d09dcc8d65994b3749c35a5668. Check the exact raw passage 'propei-ty' against the image. The recorded case-specific requested reading is 'property'. Repair all other supported errors in this same assigned target. Preserve genuine punctuation and report uncertainty if the evidence disagrees. A review flag or a dictionary match is not a completed correction.",
+    "prior_output_check": {
+      "note_id": "evidence-note:progress-comments:3:98dc572b5da3329f8229cb98754378a8d3a7d954ba27742ced074842da9acfd0",
+      "source_id": "congressionalglo7392unit:716:par_000716_000020",
+      "raw_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+      "image_sha256": "558720d837fb5631d182a3f53cec98f8bc9987d09dcc8d65994b3749c35a5668",
+      "proposed_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+      "state": "not_addressed",
+      "reason": "The full named local reading differs from the requested reading.",
+      "scope": "named_feedback_only_not_whole_reading_acceptance"
+    },
+    "separate_case_proposal_check": {
+      "note_id": "evidence-note:progress-comments:3:98dc572b5da3329f8229cb98754378a8d3a7d954ba27742ced074842da9acfd0",
+      "source_id": "congressionalglo7392unit:716:par_000716_000020",
+      "raw_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+      "image_sha256": "558720d837fb5631d182a3f53cec98f8bc9987d09dcc8d65994b3749c35a5668",
+      "proposed_sha256": "fbc6d520e03b3697c18ba6be80502b99deb4d45373e2f2da65bb727ec075315f",
+      "state": "addressed_in_proposal",
+      "reason": "The exact named local reading maps to its full original span.",
+      "scope": "named_feedback_only_not_whole_reading_acceptance"
+    }
+  }
+]

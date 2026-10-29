@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6-luna",
+  "scope": "Bounded read-only review; no model serving/network/testing launched by delegate",
+  "findings": [
+    {
+      "issue": "Valid alias could point to another source",
+      "resolution": "Use strict full host Paragraph, enforce source ID/raw SHA/text/target role; derive alias from that row and bind IDs to source identity. Wrong valid alias/source/context regressions added."
+    },
+    {
+      "issue": "Root found local support could include extra unsupported words in same replacement",
+      "resolution": "Compare exact mapped local span to required replacement; preserve unknown boundary mapping for larger edits and test extra-text/deletion/repetition negatives."
+    }
+  ],
+  "closure": "Delegate found no remaining blocking issue after revised bridge and boundary checks. AI code review is not human grading."
+}
