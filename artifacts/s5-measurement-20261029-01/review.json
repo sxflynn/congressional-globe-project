@@ -1,0 +1,30 @@
+{
+  "reviewers": [
+    "gpt-6-luna (manifest/tests)",
+    "gpt-6-luna (source-loader/code review)"
+  ],
+  "scope": "bounded offline implementation and software review, not historical grading",
+  "findings": [
+    {
+      "issue": "recover did not bind frozen configuration to spent slot and approved inputs",
+      "disposition": "fixed: config equality plus original approval/backend/reconstructed complete packet equality"
+    },
+    {
+      "issue": "recover must bind code used to parse response",
+      "disposition": "fixed: compare saved code fingerprint to actual code identity"
+    },
+    {
+      "issue": "strict tuple plan revalidation rejected serialized JSON",
+      "disposition": "fixed: MeasurementSpec.model_validate_json on canonical frozen bytes"
+    },
+    {
+      "issue": "raw journal elapsed differs from transport elapsed on fresh recovery",
+      "disposition": "fixed: preserve immutable saved response/elapsed and compare spool response, import transport elapsed only without prior raw checkpoint"
+    },
+    {
+      "issue": "hash loop/test functions over complexity5",
+      "disposition": "refactored unchanged semantics; full gate rerun required"
+    }
+  ],
+  "fresh_process_proof": "Actual OwnedLocalClient with non-model fake HTTP store; SIGKILL after durable raw response, recover in new process, exactly1POST, next dispatch refused. Synthetic authority bypass restricted to test monkeypatches. Real runtime uses exact approved S5 constants."
+}

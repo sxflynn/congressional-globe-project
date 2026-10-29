@@ -1,0 +1,99 @@
+"""Offline loading and verification of the frozen S5 measurement inputs."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import re
+from pathlib import Path
+from typing import Any
+
+from congressional_globe.productive_ocr_host import EvidenceRecord, EvidenceRegistry, validate_host
+from congressional_globe.productive_ocr_projection import (
+    RequestProjection,
+    compile_request_projection,
+)
+
+ASSEMBLY = Path("artifacts/study-input-assembly-20261029-01")
+HOST_SHA256 = "bfb175c53ce0b5a026516310e3670628ef3482f18f980df894838f794805a2aa"
+REQUEST_SHA256 = "e19305443cf7b8676acdf25848b88455db203d55b8e1c394116bdd071aed000a"
+IMAGE_SHA256 = "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530"
+
+
+def _json(path: Path) -> Any:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _hashes(value: Any) -> set[str]:
+    if isinstance(value, dict):
+        return set().union(*(_hashes(item) for item in value.values()), set())
+    if isinstance(value, list):
+        return set().union(*(_hashes(item) for item in value), set())
+    if isinstance(value, str) and re.fullmatch(r"[0-9a-f]{64}", value):
+        return {value}
+    return set()
+
+
+def _read_verified(path: Path, digest: str) -> bytes:
+    content = path.read_bytes()
+    if hashlib.sha256(content).hexdigest() != digest:
+        raise ValueError(f"registered resource changed: {digest}")
+    return content
+
+
+def _load_registered_resource(
+    digest: str,
+    root: Path,
+    index: dict,
+    record_ids: set[str],
+    file_ids: set[str],
+    records: dict[str, EvidenceRecord],
+    files: dict[str, bytes],
+) -> set[str]:
+    if digest in record_ids:
+        raw = _read_verified(root / "registered" / digest, digest)
+        record = json.loads(raw)
+        files[digest] = raw
+        records[digest] = EvidenceRecord(record, raw)
+        return _hashes(record)
+    if digest in file_ids:
+        path = root.parent.parent / index["files"][digest]["path"]
+        files[digest] = _read_verified(path, digest)
+    return set()
+
+
+def _registry(root: Path, host: dict, index: dict) -> EvidenceRegistry:
+    files: dict[str, bytes] = {}
+    records: dict[str, EvidenceRecord] = {}
+    pending = _hashes(host["payload"])
+    record_ids = set(index["records"])
+    file_ids = set(index["files"])
+    while pending:
+        digest = pending.pop()
+        if digest not in records and digest not in files:
+            pending.update(
+                _load_registered_resource(digest, root, index, record_ids, file_ids, records, files)
+            )
+    image_path = root.parent.parent / index["images"][IMAGE_SHA256]
+    image_bytes = _read_verified(image_path, IMAGE_SHA256)
+    return EvidenceRegistry({IMAGE_SHA256: image_bytes}, records, files)
+
+
+def load_s5_inputs(repository: Path) -> tuple[dict, RequestProjection, EvidenceRegistry]:
+    """Load only the S5 resource closure and check every frozen projection byte."""
+    root = repository / ASSEMBLY
+    host = _json(root / "S5" / "host.json")
+    if host.get("packet_sha256") != HOST_SHA256:
+        raise ValueError("S5 host packet identity changed")
+    index = _json(root / "registry-index.json")
+    registry = _registry(root, host, index)
+    validate_host(host, registry)
+    prompt = (root / "S5" / "prompt.txt").read_text(encoding="utf-8")
+    saved = RequestProjection.model_validate(_json(root / "S5" / "projection.json"))
+    request_bytes = (root / "S5" / "request.json").read_bytes()
+    if hashlib.sha256(request_bytes).hexdigest() != REQUEST_SHA256:
+        raise ValueError("S5 request body identity changed")
+    projection, _schema = compile_request_projection(host, registry, prompt, saved.model_name)
+    if projection != saved or projection.body_utf8.encode("utf-8") != request_bytes:
+        raise ValueError("S5 frozen projection or request bytes disagree with reconstructed inputs")
+    return host, projection, registry

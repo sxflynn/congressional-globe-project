@@ -1,0 +1,46 @@
+{
+  "tasks": [
+    "T84",
+    "T85"
+  ],
+  "status": "offline implementation and source validation passed; no real operation yet",
+  "approval_sha256": "8afa77450efbfdc1f0f4cc236fcfd16f3c4d6763b0c91e6c0e6d666f4ef13bfc",
+  "source_scope_sha256": "b1200d0d0c346b4edfd5d79245facda1a06431c7f3952b9c2215951af3acc288",
+  "files": [
+    {
+      "path": "src/congressional_globe/productive_ocr_measurement.py",
+      "sha256": "66cefd218eae41e6ded5f56e2812c00cf34bf0611d8f1e8ad47f29911f5850f4"
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_measurement_inputs.py",
+      "sha256": "413ccd34b768cddf22a54bbe54f5c58513e4b6209d6f9c021c5236c0cebb5356"
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_local.py",
+      "sha256": "450a548fef590c00cb42bc786e99896f2dec71eb072facf36a207b4590d7fa84"
+    },
+    {
+      "path": "tests/test_productive_ocr_manifest_actual.py",
+      "sha256": "4c24df355fb3ecb9adb95d9d64d2fe31746a1c0e49080328ebe160c6752f57fb"
+    },
+    {
+      "path": "tests/test_productive_ocr_measurement.py",
+      "sha256": "42836193925296edfaef299ca16c7df83609ae4ea9cef7eec5629c9e7f596d6e"
+    },
+    {
+      "path": "tests/test_productive_ocr_measurement_inputs.py",
+      "sha256": "7a2a9d3f8fa60ecb36c9131c9ddae9c9d4170e3fd06b2004a3c5406ef3a13fdb"
+    }
+  ],
+  "gate": {
+    "command": "UV_CACHE_DIR=tmp/uv-cache make gate",
+    "tests_passed": 1010,
+    "pytest_seconds": 30.76,
+    "log_sha256": "8640e2ba239fb1987929ef11f9b0bd81cce8951a27099307c537d9600dbf3d39",
+    "format_lint_typing_complexity": "pass; complexity<=5"
+  },
+  "review_sha256": "a9cb1be589517308e0d3ca1e312870b13e807a32fb6a5370a3bfe37b52b69177",
+  "genuine_native_fit": null,
+  "real_calls": 0,
+  "remaining": "T87 exact config/fresh runtime, one shared T56/T86 operation, T88 report; six other original units pending"
+}

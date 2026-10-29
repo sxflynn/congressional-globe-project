@@ -31,6 +31,8 @@ from congressional_globe.productive_ocr_http import (
 
 MAX_BODY_BYTES = 24 * 1024 * 1024
 MAX_MODEL_PARTS = 64
+PINNED_MODEL_MANIFEST_SHA256 = "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e"
+PINNED_MODEL_PARTS = 1209
 
 
 class StrictModel(BaseModel):
@@ -43,6 +45,7 @@ class ManifestPart(StrictModel):
     mediaType: str = Field(min_length=1)
     digest: str = Field(pattern=r"^sha256:[0-9a-f]{64}$")
     size: int = Field(ge=0)
+    name: str | None = None
 
 
 class ModelManifest(StrictModel):
@@ -50,7 +53,7 @@ class ModelManifest(StrictModel):
     schemaVersion: int = Field(ge=1)
     mediaType: str = Field(min_length=1)
     config: ManifestPart
-    layers: list[ManifestPart] = Field(min_length=1, max_length=MAX_MODEL_PARTS)
+    layers: list[ManifestPart] = Field(min_length=1)
 
 
 class OwnedLocalPlan(StrictModel):
@@ -186,7 +189,7 @@ class OwnedLocalClient:
     def start(self, body: bytes) -> OwnedLocalCall:
         started_epoch, started_monotonic = time.time(), time.monotonic()
         deadline = _job_deadline(self.plan, started_epoch, started_monotonic)
-        _validate_launch_inputs(self.plan, self.spool_dir, body)
+        _validate_launch_inputs(self.plan, self.spool_dir, body, deadline)
         _require_request_budget(deadline, self.plan.stop_grace_seconds)
         call_dir = _new_spool_dir(self.spool_dir)
         request_hash = sha256_bytes(body)
@@ -501,14 +504,16 @@ def _spool_partial_response(spool: Path, raw: bytes) -> None:
         _write_synced(spool / "response.http.partial", raw)
 
 
-def _validate_launch_inputs(plan: OwnedLocalPlan, spool: Path, body: bytes) -> None:
+def _validate_launch_inputs(
+    plan: OwnedLocalPlan, spool: Path, body: bytes, deadline: float | None = None
+) -> None:
     if not body or len(body) > MAX_BODY_BYTES:
         raise ValueError("frozen request body is empty or too large")
     request = json.loads(body)
     if not isinstance(request, dict) or request.get("model") != plan.model_name:
         raise ValueError("frozen request model differs from selected local model")
-    _verify_executable(plan)
-    _verify_model_store(plan)
+    _verify_executable(plan, deadline)
+    _verify_model_store(plan, deadline)
     _assert_port_free(plan.host, plan.port)
     _ensure_private_directory(spool)
 
@@ -530,35 +535,48 @@ def _require_request_budget(deadline: float, stop_grace: float) -> float:
     return remaining
 
 
-def _verify_executable(plan: OwnedLocalPlan) -> None:
+def _verify_executable(plan: OwnedLocalPlan, deadline: float | None = None) -> None:
     path = Path(plan.executable)
-    if path.is_symlink() or not path.is_file() or _sha_file(path) != plan.executable_sha256:
+    if (
+        path.is_symlink()
+        or not path.is_file()
+        or _sha_file(path, deadline) != plan.executable_sha256
+    ):
         raise ValueError("selected server executable identity changed")
     if path.stat().st_mode & 0o022:
         raise ValueError("selected server executable is group/world writable")
 
 
-def _verify_model_store(plan: OwnedLocalPlan) -> None:
+def _verify_model_store(plan: OwnedLocalPlan, deadline: float | None = None) -> None:
     root, manifest_path = Path(plan.model_store), Path(plan.model_manifest)
     _verify_readonly_model_store(root)
     if manifest_path.is_symlink() or not manifest_path.is_file():
         raise ValueError("selected model manifest is missing or symlinked")
-    if _sha_file(manifest_path) != plan.model_digest:
+    if _sha_file(manifest_path, deadline) != plan.model_digest:
         raise ValueError("selected model manifest digest mismatch")
     try:
-        manifest = ModelManifest.model_validate_json(manifest_path.read_bytes())
+        manifest = _parse_model_manifest(manifest_path.read_bytes())
     except Exception as exc:
         raise ValueError("selected model manifest is invalid") from exc
     for part in (manifest.config, *manifest.layers):
-        _verify_blob(root, part)
+        _verify_blob(root, part, deadline)
 
 
-def _verify_blob(root: Path, part: ManifestPart) -> None:
+def _parse_model_manifest(raw: bytes) -> ModelManifest:
+    digest = hashlib.sha256(raw).hexdigest()
+    limit = PINNED_MODEL_PARTS if digest == PINNED_MODEL_MANIFEST_SHA256 else MAX_MODEL_PARTS
+    manifest = ModelManifest.model_validate_json(raw)
+    if len(manifest.layers) > limit:
+        raise ValueError("selected model manifest has too many layers")
+    return manifest
+
+
+def _verify_blob(root: Path, part: ManifestPart, deadline: float | None = None) -> None:
     digest = part.digest.removeprefix("sha256:")
     path = root / "blobs" / f"sha256-{digest}"
     if path.is_symlink() or not path.is_file() or path.stat().st_size != part.size:
         raise ValueError("selected model blob is missing or differs from manifest size")
-    if _sha_file(path) != digest:
+    if _sha_file(path, deadline) != digest:
         raise ValueError("selected model blob hash differs from manifest digest")
 
 
@@ -839,12 +857,19 @@ def _fsync_directory(path: Path) -> None:
         os.close(descriptor)
 
 
-def _sha_file(path: Path) -> str:
+def _sha_file(path: Path, deadline: float | None = None) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as stream:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
+            _check_hash_deadline(deadline)
             digest.update(block)
+    _check_hash_deadline(deadline)
     return digest.hexdigest()
+
+
+def _check_hash_deadline(deadline: float | None) -> None:
+    if deadline is not None and time.monotonic() >= deadline:
+        raise TimeoutError("local request deadline expired while hashing resources")
 
 
 def _read_process_row(pid: int) -> _ProcessRow | None:
