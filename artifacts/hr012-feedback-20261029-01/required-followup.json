@@ -1,0 +1,43 @@
+{
+  "contract": "hr012-required-followup-v1",
+  "source_cases": [
+    {
+      "unit_id": "S1",
+      "source_id": "congressionalg7391unit:526:par_000526_000021",
+      "raw_sha256": "c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8",
+      "image_sha256": "0864afba1dcdedf0555463283e9f79e7e2c1209de20901de07b73b3cd415e5a9",
+      "note_id": "evidence-note:progress-comments:2:071f6b9952b88764e6ae76f2c65d83e8838493db11bc67f9a83eae5f64489fad",
+      "expected_edit": {
+        "start": 271,
+        "end": 282,
+        "raw_quote": "loyal ' and",
+        "replacement": "loyal and",
+        "rule_id": "hr012-case-specific-source-inspection-v1"
+      }
+    },
+    {
+      "unit_id": "S2",
+      "source_id": "congressionalglo7392unit:716:par_000716_000020",
+      "raw_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+      "image_sha256": "558720d837fb5631d182a3f53cec98f8bc9987d09dcc8d65994b3749c35a5668",
+      "note_id": "evidence-note:progress-comments:3:98dc572b5da3329f8229cb98754378a8d3a7d954ba27742ced074842da9acfd0",
+      "expected_edit": {
+        "start": 48,
+        "end": 57,
+        "raw_quote": "propei-ty",
+        "replacement": "property",
+        "rule_id": "hr012-case-specific-source-inspection-v1"
+      }
+    }
+  ],
+  "model_instruction_requirements": [
+    "Inspect all assigned text, including punctuation and isolated marks; explain retained uncertainty rather than treating a review signal as a repair.",
+    "For S1 specifically check the mark after loyal against the image and preserve real apostrophes elsewhere.",
+    "For S2 specifically check propei-ty against the image; include letter substitution and internal-hyphen repair when supported."
+  ],
+  "prelaunch_checks": [
+    "T55 must bind these unresolved human concerns into exact S1/S2 request instructions and post-response checks before any dependent model request.",
+    "Preserve original T52 failures and human notes; a repaired copy must never overwrite either."
+  ],
+  "no_new_calls": true
+}

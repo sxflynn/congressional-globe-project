@@ -1,0 +1,213 @@
+[
+  {
+    "unit_id": "S1",
+    "source": {
+      "source_id": "congressionalg7391unit:526:par_000526_000021",
+      "raw_text": "We have now, as I believe, the golden oppor- tunity to remedy this evil which will never come again to the men of this generation. The sys- tem of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on recon- struction having reported this amendment, I infer that they will, if this amendment is sub- mitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+      "raw_sha256": "c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8"
+    },
+    "image_path": "artifacts/ocr-live-readiness-20261028-01/images/S1/crop-01.jpg",
+    "image_sha256": "0864afba1dcdedf0555463283e9f79e7e2c1209de20901de07b73b3cd415e5a9",
+    "prior_proposed_sha256": "531bde09ff5131821ee38df7c47cd1892142e29858c5a71ac8655cfafdf1a96c",
+    "human_note_id": "evidence-note:progress-comments:2:071f6b9952b88764e6ae76f2c65d83e8838493db11bc67f9a83eae5f64489fad",
+    "exact_new_edit": {
+      "start": 271,
+      "end": 282,
+      "raw_quote": "loyal ' and",
+      "replacement": "loyal and",
+      "rule_id": "hr012-case-specific-source-inspection-v1"
+    },
+    "all_edits_from_raw": [
+      {
+        "start": 38,
+        "end": 51,
+        "raw_quote": "oppor- tunity",
+        "replacement": "opportunity",
+        "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+      },
+      {
+        "start": 135,
+        "end": 143,
+        "raw_quote": "sys- tem",
+        "replacement": "system",
+        "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+      },
+      {
+        "start": 271,
+        "end": 282,
+        "raw_quote": "loyal ' and",
+        "replacement": "loyal and",
+        "rule_id": "hr012-case-specific-source-inspection-v1"
+      },
+      {
+        "start": 354,
+        "end": 370,
+        "raw_quote": "recon- struction",
+        "replacement": "reconstruction",
+        "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+      },
+      {
+        "start": 448,
+        "end": 459,
+        "raw_quote": "sub- mitted",
+        "replacement": "submitted",
+        "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+      }
+    ],
+    "derived_text": "We have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+    "derived_sha256": "c1cb9f9321d7f8d1700d9897d173ce5c54da77bfa55427c595a854b7cafae19d",
+    "support_map": [
+      {
+        "raw_start": 0,
+        "raw_end": 38,
+        "derived_start": 0,
+        "derived_end": 38,
+        "mapping": "exact_copy"
+      },
+      {
+        "raw_start": 38,
+        "raw_end": 51,
+        "derived_start": 38,
+        "derived_end": 49,
+        "mapping": "replacement"
+      },
+      {
+        "raw_start": 51,
+        "raw_end": 135,
+        "derived_start": 49,
+        "derived_end": 133,
+        "mapping": "exact_copy"
+      },
+      {
+        "raw_start": 135,
+        "raw_end": 143,
+        "derived_start": 133,
+        "derived_end": 139,
+        "mapping": "replacement"
+      },
+      {
+        "raw_start": 143,
+        "raw_end": 271,
+        "derived_start": 139,
+        "derived_end": 267,
+        "mapping": "exact_copy"
+      },
+      {
+        "raw_start": 271,
+        "raw_end": 282,
+        "derived_start": 267,
+        "derived_end": 276,
+        "mapping": "replacement"
+      },
+      {
+        "raw_start": 282,
+        "raw_end": 354,
+        "derived_start": 276,
+        "derived_end": 348,
+        "mapping": "exact_copy"
+      },
+      {
+        "raw_start": 354,
+        "raw_end": 370,
+        "derived_start": 348,
+        "derived_end": 362,
+        "mapping": "replacement"
+      },
+      {
+        "raw_start": 370,
+        "raw_end": 448,
+        "derived_start": 362,
+        "derived_end": 440,
+        "mapping": "exact_copy"
+      },
+      {
+        "raw_start": 448,
+        "raw_end": 459,
+        "derived_start": 440,
+        "derived_end": 449,
+        "mapping": "replacement"
+      },
+      {
+        "raw_start": 459,
+        "raw_end": 709,
+        "derived_start": 449,
+        "derived_end": 699,
+        "mapping": "exact_copy"
+      }
+    ],
+    "basis": "Actual human case-specific correction plus agent inspection of hash-bound saved image; no new model response",
+    "acceptance": "separate_case_specific_proposal_not_canonical",
+    "remaining_scope": "Does not repair all remaining errors or establish a generally safe automatic rule",
+    "checks": {
+      "source_hash_matches": true,
+      "old_output_still_contains_reported_error": true,
+      "exact_replay": true,
+      "reported_error_removed_in_separate_copy": true,
+      "historical_result_unchanged": true,
+      "neighbor_words_and_spacing": true
+    }
+  },
+  {
+    "unit_id": "S2",
+    "source": {
+      "source_id": "congressionalglo7392unit:716:par_000716_000020",
+      "raw_text": "Mr. BROWN. The navigable channel is not private propei-ty.",
+      "raw_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570"
+    },
+    "image_path": "artifacts/ocr-live-readiness-20261028-01/images/S2/crop-01.jpg",
+    "image_sha256": "558720d837fb5631d182a3f53cec98f8bc9987d09dcc8d65994b3749c35a5668",
+    "prior_proposed_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+    "human_note_id": "evidence-note:progress-comments:3:98dc572b5da3329f8229cb98754378a8d3a7d954ba27742ced074842da9acfd0",
+    "exact_new_edit": {
+      "start": 48,
+      "end": 57,
+      "raw_quote": "propei-ty",
+      "replacement": "property",
+      "rule_id": "hr012-case-specific-source-inspection-v1"
+    },
+    "all_edits_from_raw": [
+      {
+        "start": 48,
+        "end": 57,
+        "raw_quote": "propei-ty",
+        "replacement": "property",
+        "rule_id": "hr012-case-specific-source-inspection-v1"
+      }
+    ],
+    "derived_text": "Mr. BROWN. The navigable channel is not private property.",
+    "derived_sha256": "fbc6d520e03b3697c18ba6be80502b99deb4d45373e2f2da65bb727ec075315f",
+    "support_map": [
+      {
+        "raw_start": 0,
+        "raw_end": 48,
+        "derived_start": 0,
+        "derived_end": 48,
+        "mapping": "exact_copy"
+      },
+      {
+        "raw_start": 48,
+        "raw_end": 57,
+        "derived_start": 48,
+        "derived_end": 56,
+        "mapping": "replacement"
+      },
+      {
+        "raw_start": 57,
+        "raw_end": 58,
+        "derived_start": 56,
+        "derived_end": 57,
+        "mapping": "exact_copy"
+      }
+    ],
+    "basis": "Actual human case-specific correction plus agent inspection of hash-bound saved image; no new model response",
+    "acceptance": "separate_case_specific_proposal_not_canonical",
+    "remaining_scope": "Does not repair all remaining errors or establish a generally safe automatic rule",
+    "checks": {
+      "source_hash_matches": true,
+      "old_output_still_contains_reported_error": true,
+      "exact_replay": true,
+      "reported_error_removed_in_separate_copy": true,
+      "historical_result_unchanged": true
+    }
+  }
+]

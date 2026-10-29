@@ -1,0 +1,41 @@
+{
+  "submission_id": "a65bc01a-06dc-475c-9569-4719517b0a2b",
+  "packet_sha256": "0414bb93a2133c8ddf1f91f4b79026db676197e40609430be2fd4ce13bc2375f",
+  "payload_sha256": "cab41c3c46d5b0d5e302bf062698f86b9a25c4b3e567357d487ba7662775ab0d",
+  "revision": 1,
+  "reviewer": "Stephen Flynn",
+  "created_at": "2026-10-29 01:14:43",
+  "notes": [
+    {
+      "note_id": "evidence-note:progress-comments:2:071f6b9952b88764e6ae76f2c65d83e8838493db11bc67f9a83eae5f64489fad",
+      "exact_comment": "You missed the stray apostrophe, which should have been deleted. It\u2019s right after the word \u201cloyal\u201d. It was just a little smidge in the scan but the OCR picked it up as a \u2018, and your system above didn\u2019t identify it was a spurious character that needs to be deleted. ",
+      "unit_id": "S1",
+      "concern": "loyal ' and \u2192 loyal and",
+      "source_inspection": "Supported in the saved crop inspected by this vision-capable agent; human correction preserved independently",
+      "action": "Create separate case-specific source-bound proposal and exact replay check, keeping T52/HR012 original bytes. Carry the error into whole-target model instructions and explicit output checks.",
+      "why_previous_output_missed_it": "The bounded line-join rule proposes split-word joins only. The token layer flags isolated punctuation for inspection but does not decide whether the mark is dirt or printed punctuation. No image-backed repair has run, so flagging did not delete it.",
+      "unresolved": "General punctuation/letter-confusion detection and automatic repair efficacy are not implemented or proved; T75 will add bounded failure coverage. No global apostrophe deletion, dictionary-only acceptance or silent OCR rewrite.",
+      "followup_tasks": [
+        "T75",
+        "T55",
+        "T56"
+      ]
+    },
+    {
+      "note_id": "evidence-note:progress-comments:3:98dc572b5da3329f8229cb98754378a8d3a7d954ba27742ced074842da9acfd0",
+      "exact_comment": "Uh, why? Propei-ty should have been fixed to \u201cproperty\u201d. ",
+      "unit_id": "S2",
+      "concern": "propei-ty \u2192 property",
+      "source_inspection": "Supported in the saved crop inspected by this vision-capable agent; human correction preserved independently",
+      "action": "Create separate case-specific source-bound proposal and exact replay check, keeping T52/HR012 original bytes. Carry the error into whole-target model instructions and explicit output checks.",
+      "why_previous_output_missed_it": "This requires letter-confusion repair as well as removal of an internal hyphen. It is not the implemented exact adjacent-line dictionary join. The saved output made no edit; a word-review signal is not a correction.",
+      "unresolved": "General punctuation/letter-confusion detection and automatic repair efficacy are not implemented or proved; T75 will add bounded failure coverage. No global apostrophe deletion, dictionary-only acceptance or silent OCR rewrite.",
+      "followup_tasks": [
+        "T75",
+        "T55",
+        "T56"
+      ]
+    }
+  ],
+  "limits": "Two exposed case-specific human corrections, not blind gold or population quality. P0 remains open."
+}
