@@ -2,7 +2,7 @@
 .NOTPARALLEL:
 
 review:
-	uv run streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false
+	uv run python -m congressional_globe.review_desk_launcher
 
 review-demo:
 	uv run globe review register docs/review-demo.json

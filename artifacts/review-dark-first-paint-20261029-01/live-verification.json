@@ -1,0 +1,214 @@
+{
+  "task": "T73",
+  "date": "2026-10-29",
+  "status": "live_verified",
+  "implementation": {
+    "launcher": "src/congressional_globe/review_desk_launcher.py",
+    "streamlit_version": "1.66.1",
+    "streamlit_version_guard": "1.66.1",
+    "theme_config_sha256": "bed1e072f2489a8ef90a28553cf7b83da09c7b39bf469f9777c7d33e2e0297cd",
+    "launcher_sha256": "8ff0e9db3c9d4e0a9e1f30e2f4950c62fd8ca364c3c1ff3ff6e56cd55423e971",
+    "installed_index_sha256": "961380a1d0f4ec0effca0a0412fd493888f694f138b7b9aa1245686d8d600444",
+    "generated_overlay_index_sha256": "c6d11b5945e3fcf19a794c36cc78086ef2373d5a83838a225b63fd90d911433e",
+    "actual_live_document_confirmed_patch": "#review-desk-first-paint and meta color-scheme=dark light present in loaded document",
+    "static_assets": "full app rendered through overlay; focused test also served symlinked asset from actual Streamlit 1.66.1 route"
+  },
+  "live_test_server": {
+    "wrapper_pid": 72571,
+    "python_pid": 72572,
+    "started": "2026-10-29 14:27:07",
+    "port": 18503,
+    "database": "temporary byte-identical copy at /tmp/globe-t73-review.sqlite",
+    "listener_after_cleanup": "none",
+    "termination": "Ctrl-C to owned exec session 44267; wrapper/server exited successfully",
+    "main_server_8501_touched": false
+  },
+  "browser_matrix": [
+    {
+      "label": "desktop-dark",
+      "kind": "cold",
+      "viewport_width": 1280,
+      "emulated_scheme": "dark",
+      "first_observed_ms_range": "324\u2013363",
+      "html_background": "rgb(30, 27, 23)",
+      "first_frame_pixel_rgb": [
+        30,
+        27,
+        23
+      ],
+      "root_was_mounted_at_first_sample": false,
+      "screenshot": "live-frames/desktop-dark-cold-0.png"
+    },
+    {
+      "label": "desktop-dark",
+      "kind": "reload",
+      "viewport_width": 1280,
+      "emulated_scheme": "dark",
+      "first_observed_ms_range": "324\u2013363",
+      "html_background": "rgb(30, 27, 23)",
+      "first_frame_pixel_rgb": [
+        30,
+        27,
+        23
+      ],
+      "root_was_mounted_at_first_sample": false,
+      "screenshot": "live-frames/desktop-dark-reload-0.png"
+    },
+    {
+      "label": "desktop-light",
+      "kind": "cold",
+      "viewport_width": 1280,
+      "emulated_scheme": "light",
+      "first_observed_ms_range": "324\u2013363",
+      "html_background": "rgb(250, 246, 237)",
+      "first_frame_pixel_rgb": [
+        250,
+        246,
+        237
+      ],
+      "root_was_mounted_at_first_sample": false,
+      "screenshot": "live-frames/desktop-light-cold-0.png"
+    },
+    {
+      "label": "desktop-light",
+      "kind": "reload",
+      "viewport_width": 1280,
+      "emulated_scheme": "light",
+      "first_observed_ms_range": "324\u2013363",
+      "html_background": "rgb(250, 246, 237)",
+      "first_frame_pixel_rgb": [
+        250,
+        246,
+        237
+      ],
+      "root_was_mounted_at_first_sample": false,
+      "screenshot": "live-frames/desktop-light-reload-0.png"
+    },
+    {
+      "label": "mobile-dark",
+      "kind": "cold",
+      "viewport_width": 375,
+      "emulated_scheme": "dark",
+      "first_observed_ms_range": "324\u2013363",
+      "html_background": "rgb(30, 27, 23)",
+      "first_frame_pixel_rgb": [
+        30,
+        27,
+        23
+      ],
+      "root_was_mounted_at_first_sample": false,
+      "screenshot": "live-frames/mobile-dark-cold-0.png"
+    },
+    {
+      "label": "mobile-dark",
+      "kind": "reload",
+      "viewport_width": 375,
+      "emulated_scheme": "dark",
+      "first_observed_ms_range": "324\u2013363",
+      "html_background": "rgb(30, 27, 23)",
+      "first_frame_pixel_rgb": [
+        30,
+        27,
+        23
+      ],
+      "root_was_mounted_at_first_sample": false,
+      "screenshot": "live-frames/mobile-dark-reload-0.png"
+    },
+    {
+      "label": "mobile-light",
+      "kind": "cold",
+      "viewport_width": 375,
+      "emulated_scheme": "light",
+      "first_observed_ms_range": "324\u2013363",
+      "html_background": "rgb(250, 246, 237)",
+      "first_frame_pixel_rgb": [
+        250,
+        246,
+        237
+      ],
+      "root_was_mounted_at_first_sample": false,
+      "screenshot": "live-frames/mobile-light-cold-0.png"
+    },
+    {
+      "label": "mobile-light",
+      "kind": "reload",
+      "viewport_width": 375,
+      "emulated_scheme": "light",
+      "first_observed_ms_range": "324\u2013363",
+      "html_background": "rgb(250, 246, 237)",
+      "first_frame_pixel_rgb": [
+        250,
+        246,
+        237
+      ],
+      "root_was_mounted_at_first_sample": false,
+      "screenshot": "live-frames/mobile-light-reload-0.png"
+    }
+  ],
+  "fully_rendered_checks": [
+    {
+      "viewport": "desktop 1280px",
+      "scheme": "dark",
+      "screenshot": "live-frames/cold-desktop-dark-final.png",
+      "observed": "full review-desk content visible; dark document/app canvas"
+    },
+    {
+      "viewport": "desktop 1280px",
+      "scheme": "light",
+      "screenshot": "live-frames/desktop-light-review-rendered.png",
+      "observed": "full review-desk content visible; #faf6ed document/app canvas"
+    },
+    {
+      "viewport": "375px responsive viewport emulation",
+      "scheme": "dark",
+      "screenshot": "live-frames/mobile-dark-review-rendered.png",
+      "observed": "full review-desk content visible; #1e1b17 document/app canvas"
+    },
+    {
+      "viewport": "375px responsive viewport emulation",
+      "scheme": "light",
+      "screenshot": "live-frames/mobile-light-review-rendered.png",
+      "observed": "full review-desk content visible; #faf6ed document/app canvas"
+    }
+  ],
+  "store_preservation": {
+    "source_database": "artifacts/human-review/reviews.sqlite",
+    "before_sha256": "6b95d4a689af34f3b21e972c3afdc02dcc7a4920e2e4bca468d1b1d6676c617b",
+    "after_sha256": "6b95d4a689af34f3b21e972c3afdc02dcc7a4920e2e4bca468d1b1d6676c617b",
+    "counts_after_readonly_verification": {
+      "packets": 9,
+      "drafts": 0,
+      "submissions": 7,
+      "applied_receipts": 7
+    },
+    "test_copy_after_sha256": "6b95d4a689af34f3b21e972c3afdc02dcc7a4920e2e4bca468d1b1d6676c617b",
+    "test_copy_initial_sha256": "6b95d4a689af34f3b21e972c3afdc02dcc7a4920e2e4bca468d1b1d6676c617b",
+    "draft_or_answer_interaction": "none; browser only loaded the review home view; all test traffic used the temporary copy",
+    "temporary_test_database_removed": true
+  },
+  "screenshot_sha256": {
+    "cold-desktop-dark-0.png": "1036134851e8e13d1560e32907073f47e3e20f93cbb64a4e0d67b61acd9e5009",
+    "desktop-dark-reload-0.png": "1036134851e8e13d1560e32907073f47e3e20f93cbb64a4e0d67b61acd9e5009",
+    "desktop-light-cold-0.png": "68b5d34adba9af72b1e553630d60885df0217d76c6fefc83f7242463099b617d",
+    "desktop-light-reload-0.png": "68b5d34adba9af72b1e553630d60885df0217d76c6fefc83f7242463099b617d",
+    "mobile-dark-cold-0.png": "29655f4a06fb57180694ff44e667195a8fc23d1efcd96dcad95459b89c31d35a",
+    "mobile-dark-reload-0.png": "29655f4a06fb57180694ff44e667195a8fc23d1efcd96dcad95459b89c31d35a",
+    "mobile-light-cold-0.png": "a084c1789acb906c8712a5afde144b91f7ad971436e364825ac037a34732954c",
+    "mobile-light-reload-0.png": "a084c1789acb906c8712a5afde144b91f7ad971436e364825ac037a34732954c",
+    "cold-desktop-dark-final.png": "a7a81cb97e85224994ee10873f8bd6ad40c31d1f5da2f43449e3fcf9163fab67",
+    "desktop-light-review-rendered.png": "de327591dd8b5a4528ebf050ca67b8b6953b06e0956921fe58de5e03e06fb2f9",
+    "mobile-dark-review-rendered.png": "4de67f111199d7d2eade3e59ace81b950b863a1b5b90332415c22977b9164c93",
+    "mobile-light-review-rendered.png": "2a73d4014d2f5b27046267ef4d48314324092c8e19504ff457ffd86fa97ec14d"
+  },
+  "notes": [
+    "Cold-load captures cleared browser cache, disabled cache, emulated 300ms network latency and 4x CPU throttling.",
+    "At the first post-commit browser sample (~324\u2013363ms), the document background already matches emulated system preference while the Streamlit root is absent/unmounted.",
+    "Reload captures show the same matching background. Both light and dark full review desk pages were inspected. Mobile evidence is 375px viewport emulation, not a physical handset test.",
+    "Actual screenshot evidence under live-frames; saved spike evidence remains separate."
+  ],
+  "browser_capture_source": {
+    "file": "live-capture-source.js",
+    "sha256": "b9fcc438bfd203a7402d21514794fb6b6bd535c5906af53cec392844e45afa55",
+    "description": "Exact Playwright function submitted for the successful eight-condition cold/reload capture; not rerun from this saved copy."
+  }
+}

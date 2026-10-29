@@ -1,0 +1,15 @@
+{
+  "old_process": "45374 Wed Oct 28 21:04:32 2026     /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m streamlit run src/congressional_globe/review_app.py --server.address 0.0.0.0 --server.port 8501 --server.headless true --browser.gatherUsageStats false",
+  "new_launcher_pid": 75257,
+  "port": 8501,
+  "command": [
+    "uv",
+    "run",
+    "--no-sync",
+    "python",
+    "-m",
+    "congressional_globe.review_desk_launcher"
+  ],
+  "launch_time_epoch": 1793298701.0771542,
+  "log": "artifacts/review-dark-first-paint-20261029-01/main-server.log"
+}

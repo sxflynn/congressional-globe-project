@@ -1,0 +1,86 @@
+{
+  "task": "T73",
+  "date": "2026-10-29",
+  "status": "implemented_and_live_verified",
+  "finding": "The baseline Streamlit document paints white before the React app applies the selected theme. An early color-scheme meta tag and inline CSS in index.html fixes this while retaining the existing automatic light/dark theme config. The review-desk launcher now makes a temporary overlay with symlinks to installed static resources and its own customized index; it applies Streamlit's internal static-directory hook only in the launcher process and only before route construction. The installed package files and 23 MB asset bundle are not modified or copied.",
+  "baseline_evidence": [
+    {
+      "file": "spike/frames/baseline-dark-000562.png",
+      "observation": "White document canvas during a cold load with emulated dark preference."
+    },
+    {
+      "file": "spike/frames/baseline-light-000561.png",
+      "observation": "White document canvas during a cold load with emulated light preference."
+    },
+    {
+      "file": "spike/measure-baseline-dark.js",
+      "observation": "Clears browser cache, disables cache, emulates 300 ms latency and 4x CPU throttling, samples the earliest document background, and captures startup frames."
+    },
+    {
+      "file": "spike/measure-baseline-light.js",
+      "observation": "Same cold-load measurement under emulated light preference."
+    }
+  ],
+  "spike_evidence": [
+    {
+      "file": "spike/static/index.html",
+      "observation": "Adds color-scheme metadata and inline early CSS: dark #1e1b17 by default, light #faf6ed under prefers-color-scheme: light."
+    },
+    {
+      "file": "spike/frames/patched-dark-000553.png",
+      "observation": "The first captured cold-load frame is dark under emulated dark preference."
+    },
+    {
+      "file": "spike/frames/patched-light-000560.png",
+      "observation": "The first captured cold-load frame is light under emulated light preference."
+    },
+    {
+      "file": "spike/measure-patched-dark.js",
+      "observation": "Same cache-cleared cold-load protocol under emulated dark preference."
+    },
+    {
+      "file": "spike/measure-patched-light.js",
+      "observation": "Same cache-cleared cold-load protocol under emulated light preference."
+    },
+    {
+      "file": "spike/reload-patched-dark.js",
+      "observation": "Warm reload sampling under emulated dark preference."
+    },
+    {
+      "file": "spike/reload-patched-light.js",
+      "observation": "Warm reload sampling under emulated light preference."
+    }
+  ],
+  "implementation": {
+    "files": [
+      "src/congressional_globe/review_desk_launcher.py",
+      "Makefile",
+      "tests/test_review_desk_launcher.py"
+    ],
+    "streamlit_version_guard": "exactly 1.66.1, matching uv.lock",
+    "config_colors": "read from .streamlit/config.toml and validated as six-digit hex",
+    "scope": "temporary directory and get_static_dir override last for the review server process lifetime; both restore/clean up on normal exit or exceptions",
+    "verification": "the actual Streamlit Starlette static route returned the overlaid index and an original symlinked asset in a focused test; live cold-load and reload screenshots confirm the patch before the app root mounts"
+  },
+  "integration_limit": {
+    "installed_streamlit": "1.66.1",
+    "static_bundle_size": "23 MB",
+    "current_review_drafts_or_answers_touched": false,
+    "application_theme_config_changed": false,
+    "mobile_device_test": "375px viewport emulation on desktop browser; no physical handset test",
+    "compatibility_risk": "The launcher uses Streamlit's internal file_util.get_static_dir hook; its exact-version guard fails closed on upgrades until the static route and startup document are rechecked.",
+    "live_verification": "live-verification.json: isolated port 18503, cache-cleared cold load and reload across desktop and 375px viewports under dark and light preferences; first captured screenshot pixels match the scheme; rendered dark and light desks inspected. Source database bytes and counts remained unchanged."
+  },
+  "checks": {
+    "focused_pytest": "7 passed",
+    "focused_ruff": "passed after formatting",
+    "focused_ty": "passed",
+    "focused_complexity": "all functions at complexity 5 or below",
+    "streamlit_route_test": "passed using actual Streamlit 1.66.1 static route; root returned patched index and asset route returned linked source bytes",
+    "saved_frame_visual_inspection": "baseline-dark, baseline-light, patched-dark, and patched-light startup PNGs inspected",
+    "source_inspection": "review_app injects CSS after page startup; installed Streamlit static index is the first document and has no app-specific head hook",
+    "inbox": "Root startup inbox succeeded with UV_CACHE_DIR=tmp/uv-cache and returned []; delegate initial default-cache failure did not block root review check.",
+    "live_server": "verified on isolated test server; process stopped and listener closed",
+    "full_gate": "Root full make gate:929passed, formatting/Ruff/ty/complexity passed; initial fixture typing and Ruff failures corrected."
+  }
+}
