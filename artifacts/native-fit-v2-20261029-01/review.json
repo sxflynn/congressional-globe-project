@@ -1,0 +1,69 @@
+{
+  "contract": "t76-native-fit-v2-review",
+  "review_type": "independent bounded code review by an OpenCode general-purpose subagent; no Luna model was available in this harness, so no Luna identity is claimed",
+  "scope": [
+    "src/congressional_globe/productive_ocr_native_trace.py",
+    "tests/test_productive_ocr_native_trace.py"
+  ],
+  "findings": [
+    {
+      "severity": "material",
+      "summary": "authentic_capture could be forged with a locally registered self-authored receipt",
+      "disposition": "fixed: authentic_capture is Literal[False]; declared_owned_capture records the claim; blockers retain the self-asserted-capture warning and require_authentic_producer always refuses"
+    },
+    {
+      "severity": "minor",
+      "summary": "positional-layout values are not semantically validated",
+      "disposition": "documented limitation: exact byte length, entry count and width are bound; values are not interpreted"
+    },
+    {
+      "severity": "minor",
+      "summary": "boundary_token_count allowed zero despite the expanded-boundary contract",
+      "disposition": "fixed: minimum one boundary token required"
+    },
+    {
+      "severity": "minor",
+      "summary": "exported bytes were normalised rather than hash-verified",
+      "disposition": "fixed: export accepts only exact registered canonical trace bytes"
+    },
+    {
+      "severity": "minor",
+      "summary": "caller-supplied RequestProjection internal hashes were trusted",
+      "disposition": "fixed: body and image-bindings hashes are recomputed"
+    },
+    {
+      "severity": "minor",
+      "summary": "NativeTraceGate had no cross-field consistency check",
+      "disposition": "fixed: model validator ties validity to trace/digest presence and producer kind"
+    },
+    {
+      "severity": "minor",
+      "summary": "require_authentic_producer declared a return type it never returned",
+      "disposition": "fixed: NoReturn with explicit authored/owned refusal messages"
+    },
+    {
+      "severity": "minor",
+      "summary": "imprecise out-of-range media index and unwrapped exporter exceptions",
+      "disposition": "fixed: explicit missing-segment error and failed-gate wrapping"
+    },
+    {
+      "severity": "minor",
+      "summary": "test coverage gaps for several validators and the explicit ceiling branch",
+      "disposition": "fixed: 15 added cases cover segment kind/order, duplicate media, boundary tokens, media counts, grid/shape arithmetic, positions width, projection drift, exact export bytes, gate consistency and unregistered receipts; the redundant post-equality ceiling branch was removed because field caps already enforce 6000"
+    }
+  ],
+  "confirmed_sound": [
+    "launch_clearance and launch_ready cannot be constructed true",
+    "float32 byte/shape/endianness/finiteness/min-max checks are fail-closed",
+    "expanded-stream, media, text-tiling and grid invariants are enforced",
+    "registry lookups re-hash actual bytes and require canonical registered artifacts",
+    "v1 module and the 6000/1500 caps are unchanged"
+  ],
+  "checks": {
+    "focused_tests": "43 passed",
+    "full_gate": "922 passed",
+    "ruff": "clean",
+    "ty": "clean",
+    "complexipy": "all functions within complexity 5"
+  }
+}
