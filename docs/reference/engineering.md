@@ -11,6 +11,16 @@ Read this before implementation or worker recovery. [MASTER_PLAN.md](../../MASTE
 
 Use Luna delegates for bounded preparation/review when available, as requested by the human; name ownership and inspect their findings. If the harness cannot provide that model, do not invent delegation or model identity. AI review is not a human grade.
 
+## Closing a run blocker
+
+The master names the current checkpoint and owns the only ordered task list. For work supporting a blocked experiment, state the exact missing evidence/resource or unresolved decision, how this unit addresses it, and which executable action follows. A new helper, contract, schema, fake-server test or inventory is not proof that the installed backend works. Reuse completed evidence; do not repeat a spent investigation under a new task number.
+
+End each blocker task with actual closure evidence or a concrete decision for the human: recommended option, alternatives, exact affected commands/resources/source identities, proposed call/time/fetch/token limits, costs/unknowns and the rule that needs changing. Complete reversible preparation first. If a prerequisite cannot be satisfied, explain the precise missing input and consequence; do not keep calling it “future integration.” New prerequisite work must link directly to an open gate in the master and have its own bounded exit check.
+
+Keep software requirements separate from natural/model limits. A candidate study token ceiling is not the model's measured context capacity. Inspect whether real capture/stop code can produce and accept the required evidence; a validator that deliberately refuses every authentic-producer claim cannot be cleared by another authored fixture. Make any circular bootstrap explicit, such as requiring actual stopping evidence before allowing the only probe that could produce it. Prepare a bounded probe and its consumption/authority decision rather than bypassing the gate. No extra call, download, scope change, cap raise or gate waiver is implied.
+
+Previously recorded human approval remains effective within its exact scope. Ask only about material changes not already covered. Retain raw results, unknown usage, independent checks, sequential Ollama ownership and the separate production/full-corpus decisions. Plain-English reports must distinguish preparation, actual timed runs, provisional findings, quality evidence and forecasts with measured versus assumed inputs.
+
 ## Validation and commits
 
 - Code: `make gate` from repository root. It formats with Ruff/Prettier, then checks Ruff, ty, complexity≤5 and pytest. For Codex run with the permissions needed by the required Markdown formatter. Do not skip or weaken checks.

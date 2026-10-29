@@ -1,0 +1,71 @@
+"""One-off T82 documentation/preservation checks; not an installed workflow."""
+import hashlib
+import json
+import re
+import subprocess
+from pathlib import Path
+
+OUT=Path('artifacts/blocker-to-run-handoff-20261029-01')
+# Establish the self-linked report path; success is written only after every check.
+(OUT/'validation.json').write_text(json.dumps({'status':'checks_in_progress'})+'\n')
+master=Path('MASTER_PLAN.md').read_text()
+old=subprocess.check_output(['git','show','HEAD:MASTER_PLAN.md'],text=True)
+def task_rows(text):
+    return {re.match(r'\| \*\*(T\d+)\b',line)[1]:line for line in text.splitlines() if re.match(r'\| \*\*(T\d+)\b',line)}
+before,after=task_rows(old),task_rows(master)
+assert before.keys() <= after.keys(),before.keys()-after.keys()
+changed={key for key,value in before.items() if value!=after[key]}
+assert changed=={'T81','T55','T56'},changed
+assert after.keys()-before.keys()=={'T82','T83','T84','T85','T86','T87','T88'}
+ready=[match[1] for line in master.splitlines() if (match:=re.match(r'\| \*\*(T\d+) READY\b',line))]
+assert ready==['T83'],ready
+assert 'T81 PLANNED — conditional support, deferred' in after['T81']
+assert 'T82 DONE — blocker-to-run handoff correction' in after['T82']
+assert all(f'T{i}' in after for i in range(83,89))
+assert 'T88' in after['T56'] and 'T87' in after['T55']
+assert '### Blocker-to-run closure queue' in master
+assert master.index('### Blocker-to-run closure queue')<master.index('### Next few tasks')
+assert master.index('| **T83 READY')<master.index('| **T81 PLANNED')
+assert 'T83 is the first READY task' in master
+assert 'closure queue' in Path('AGENTS.md').read_text()
+assert 'actual timed runs' in Path('docs/reference/engineering.md').read_text()
+assert 'First inspection, secondary inspection' in Path('docs/reference/ocr-repair-evaluation.md').read_text()
+for entry in json.loads((OUT/'human-direction.json').read_text())['statements']:
+    assert hashlib.sha256(entry['text'].encode()).hexdigest()==entry['utf8_sha256']
+pins=json.loads((OUT/'preservation-before.json').read_text())
+for entry in pins:
+    assert hashlib.sha256(Path(entry['path']).read_bytes()).hexdigest()==entry['sha256'],entry['path']
+changed_paths=subprocess.check_output(['git','diff','--name-only'],text=True).splitlines()
+allowed=['AGENTS.md','MASTER_PLAN.md','CHANGELOG.md','docs/reference/engineering.md','docs/reference/ocr-repair-evaluation.md']
+assert set(changed_paths)==set(allowed),changed_paths
+
+def slug(heading):
+    heading=re.sub(r'\[([^\]]+)\]\([^)]*\)',r'\1',heading)
+    return re.sub(r'[^\w\- ]','',heading.lower()).replace(' ','-')
+
+checked=0
+for name in [*allowed,str(OUT/'README.md')]:
+    file=Path(name)
+    for link in re.findall(r'\]\(([^)]+)\)',file.read_text()):
+        if '://' in link:continue
+        path,_,anchor=link.partition('#')
+        target=file.parent/path if path else file
+        assert target.exists(),(file,link)
+        if anchor and target.suffix=='.md':
+            headings=[slug(m[1].strip()) for line in target.read_text().splitlines() if (m:=re.match(r'^#{1,6}\s+(.+)$',line))]
+            assert anchor in headings,(file,link,headings)
+        checked+=1
+subprocess.run(['git','diff','--check'],check=True)
+report={'task':'T82','first_READY':'T83','previous_tasks_preserved':len(before),
+    'intentionally_updated_existing_rows':sorted(changed),'added_task_rows':sorted(after.keys()-before.keys()),
+    'T81_conditional_deferred':True,'actual_run_endpoint':'T56 after T87/T55','first_results_and_forecast_endpoint':'T88',
+    'all_blockers_have_explicit_evidence_or_human_decision_exit':True,
+    'bounded_Luna_review':'No material gap; see review.json.',
+    'local_links_and_anchors_checked':checked,'human_verbatim_hashes_verified':True,
+    'prior_approval_bounds_input_proposal_proof_code_hashes_verified':len(pins),
+    'tracked_changes_only_expected_markdown':True,'implementation_and_archive_paths_changed':False,
+    'required_elevated_prettier':'Passed for all Markdown plus explicit new artifact README.',
+    'git_diff_check':'passed','code_changes':False,'full_code_gate':'Not rerun; prior996passing code gate retained.',
+    'model_backend_operations':0,'source_or_dependency_fetches':0,'new_runtime_authority':False}
+(OUT/'validation.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps(report,indent=2))

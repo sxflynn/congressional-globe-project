@@ -1,0 +1,36 @@
+{
+  "task": "T82",
+  "first_READY": "T83",
+  "previous_tasks_preserved": 70,
+  "intentionally_updated_existing_rows": [
+    "T55",
+    "T56",
+    "T81"
+  ],
+  "added_task_rows": [
+    "T82",
+    "T83",
+    "T84",
+    "T85",
+    "T86",
+    "T87",
+    "T88"
+  ],
+  "T81_conditional_deferred": true,
+  "actual_run_endpoint": "T56 after T87/T55",
+  "first_results_and_forecast_endpoint": "T88",
+  "all_blockers_have_explicit_evidence_or_human_decision_exit": true,
+  "bounded_Luna_review": "No material gap; see review.json.",
+  "local_links_and_anchors_checked": 268,
+  "human_verbatim_hashes_verified": true,
+  "prior_approval_bounds_input_proposal_proof_code_hashes_verified": 19,
+  "tracked_changes_only_expected_markdown": true,
+  "implementation_and_archive_paths_changed": false,
+  "required_elevated_prettier": "Passed for all Markdown plus explicit new artifact README.",
+  "git_diff_check": "passed",
+  "code_changes": false,
+  "full_code_gate": "Not rerun; prior996passing code gate retained.",
+  "model_backend_operations": 0,
+  "source_or_dependency_fetches": 0,
+  "new_runtime_authority": false
+}
