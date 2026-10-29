@@ -1,0 +1,34 @@
+import json,hashlib,base64,copy
+from pathlib import Path
+from pydantic import ValidationError
+from congressional_globe.productive_ocr_host import HostEnvelope,canonical_json
+from congressional_globe.scan_fetch import read_bundle
+H=lambda b:hashlib.sha256(b).hexdigest();root=Path('artifacts/study-input-assembly-20261029-01');units=json.loads((root/'units.json').read_bytes());assert [u['unit_id'] for u in units]==['S1','S2','S3','S4','S5','D1','D2']
+for uid in ['S1','S2','S5']:read_bundle(Path('artifacts/ocr-live-readiness-20261028-01/images')/uid)
+for uid,dirname in [('D1','reading-74d01b9894f76563d519-leaf-1060'),('D2','reading-1cf618a5ce887cee79b1-leaf-741')]:
+ d=Path('artifacts/reading-images-20261024-01')/dirname;b=json.loads((d/'binding.json').read_bytes());assert H((d/'info.json').read_bytes())==b['info_receipt']['sha256'];assert H((d/'plan.json').read_bytes())==b['plan_sha256'];assert H((d/'crop.jpg').read_bytes())==b['image_receipt']['sha256']
+checks=[]
+for row in units:
+ uid=row['unit_id'];d=root/uid
+ if not row.get('request_sha256'):
+  assert not d.exists();continue
+ host=json.loads((d/'host.json').read_bytes());HostEnvelope.model_validate(host);body=(d/'request.json').read_bytes();request=json.loads(body);projection=json.loads((d/'projection.json').read_bytes());schema=json.loads((d/'schema.json').read_bytes());prompt=(d/'prompt.txt').read_text();obligations=json.loads((d/'feedback-check-obligations.json').read_bytes())
+ assert H(body)==row['request_sha256']==projection['body_sha256'];assert request['options']['num_predict']==1500 and request['think'] is False and request['stream'] is False
+ assert H(base64.b64decode(request['messages'][1]['images'][0]))==row['image_sha256'];assert request['messages'][0]['content']==prompt
+ assert H(prompt.encode())==host['payload']['prompt_sha256'];assert H(canonical_json(schema))==projection['schema_sha256'];assert schema['properties']['unit_id']['const']==uid
+ actual_alias=[p['alias'] for p in host['payload']['paragraphs']];assert schema['$defs']['Patch']['properties']['paragraph_alias']['enum']==actual_alias
+ expected_role='productive_repair_and_self_check' if uid.startswith('S') else 'audit_saved_proposal';assert host['payload']['role']==expected_role
+ if uid in ['S1','S2']:
+  assert obligations['required'] and obligations['named_requirements'][0]['note_id'] in prompt
+  assert 'feedback-conditioned' in prompt
+ if uid.startswith('D'):
+  assert schema['properties']['patches']['maxItems']==0 and schema['properties']['target_readings']['maxItems']==0
+  assert host['payload']['saved_proposal']['review_state']=='unreviewed_model_proposal'
+ changed=copy.deepcopy(host);changed['payload']['paragraphs'][0]['raw']['text']+='x'
+ try:HostEnvelope.model_validate(changed)
+ except ValidationError:pass
+ else:raise AssertionError('changed raw text accepted under original packet identity')
+ checks.append({'unit_id':uid,'source_image_metadata_receipts_checked':True,'request_and_image_hashes_match':True,'scope_role_alias_schema_match':True,'prompt_hash_matches':True,'altered_raw_rejected':True,'feedback_binding_checked':uid in ['S1','S2'],'input_only_not_frozen_job':True})
+assert len(checks)==5
+(root/'validation.json').write_text(json.dumps({'task':'T78','available_input_units':5,'available_targets':16,'full_sample_units':7,'missing_units':['S3','S4'],'known_scope_unchanged':True,'checks':checks,'host_and_registry_validation':'All five host envelopes and full registry resources validated by validate_host; compile_request_projection revalidated all exact bytes during the saved assembly execution.','external_resource_caveat':'Registry index requires existing original large hOCR/page map/lexicon sources; no portable pilot acceptance.','source_registration':'Derived exact source-coordinate transforms from prior saved scan/binding/inspection records, not a new visual grade.','prospective_bounds_only':True,'no_hidden_fixture_expectations_copied':True,'feedback_conditioned_primary_units':['S1','S2'],'must_separate_from_unaided_quality_estimates':True,'raw_provider_calls':0,'server_launches':0,'image_fetches':0,'frozen_jobs':0,'genuine_fit_records':0,'launch_clearance':None,'code_changed':False,'last_full_gate_retained':922,'authentic_capture_producer_missing':True,'T73_other_owner_preserved':True},indent=2)+'\n')
+print('Five exact requests/schema/roles/images/prompts and mutation refusal checked; two missing rows remain.')

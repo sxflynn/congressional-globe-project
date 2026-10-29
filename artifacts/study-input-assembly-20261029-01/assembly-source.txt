@@ -1,0 +1,119 @@
+"""Offline evidence preparation only: no client, runner, token counts or dispatch."""
+import hashlib,inspect,json,math,sqlite3,time
+from pathlib import Path
+from congressional_globe import workflow
+from congressional_globe.productive_ocr_host import EvidenceRegistry,EvidenceRecord,canonical_json,validate_host
+from congressional_globe.productive_ocr_projection import derive_reply_schema,compile_request_projection
+from congressional_globe.productive_ocr_runner import code_identity
+from congressional_globe.deterministic_models import ExactEdit,replay_with_map
+from congressional_globe.deterministic_lexicon import Lexicon,LexiconSpec
+from congressional_globe.bracket_cues import BracketSource
+from congressional_globe.repair_review import review_missed_errors,provider_signals
+from congressional_globe.repair_feedback import FeedbackRequirement,feedback_instruction
+
+root=Path('artifacts/study-input-assembly-20261029-01');root.mkdir(exist_ok=False)
+H=lambda b:hashlib.sha256(b).hexdigest();load=lambda p:json.loads(Path(p).read_bytes())
+registry=EvidenceRegistry(image_bytes={},records={},files={});paths={};newfiles=root/'registered';newfiles.mkdir()
+def pin_bytes(data,path=None):
+ h=H(data);registry.files[h]=data
+ if path:paths[h]={'path':str(path),'bytes':len(data),'storage':'existing immutable resource'}
+ else:
+  p=newfiles/h;p.write_bytes(data);paths[h]={'path':str(p),'bytes':len(data),'storage':'new derived evidence bytes'}
+ return h
+def pin(value):return pin_bytes(canonical_json(value))
+def pin_path(path,expected=None):
+ p=Path(path);h=pin_bytes(p.read_bytes(),p)
+ if expected is not None:assert h==expected,(path,h,expected)
+ return h
+def save(path,value):path.write_text(json.dumps(value,indent=2)+'\n')
+
+inputs=load('artifacts/deterministic-sample-20261028-01/frozen-inputs.json')['paragraphs'];results=load('artifacts/deterministic-sample-20261028-01/results.json')
+units=load('artifacts/readiness-prerequisites-20261029-01/unit-inputs.json');sample_path='artifacts/ocr-productive-repair-contract-20261027-01/sample-binding.json';sample=load(sample_path);fixtures=load('artifacts/reading-failure-fixtures-20261025-01/fixtures.json')['cases'];prompts=load('artifacts/ocr-productive-repair-contract-20261027-01/prompts.json');bounds_path='artifacts/ocr-productive-repair-contract-20261027-01/bounds.json'
+sample_sha=pin_path(sample_path,'9ad0e2789e28ce29d3d8ec20a52a3a54b2859b4b38d6629c806e72746f3fb7f0');bounds_sha=pin_path(bounds_path)
+code_sha=pin(code_identity());model_sha=pin_path('artifacts/ocr-live-readiness-20261028-01/installed-model-manifest.json','5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e')
+manifest=load('artifacts/runs/static-final-20261011/workflow_manifest.json');parts={p['identifier']:p for p in manifest['parts']}
+# Reproduce the actual historical processing identity bytes, not a renamed new rule.
+static_bytes=b''
+for name in ['extraction.py','models.py','structure.py','static_cleanup.py','normalization.py','pipeline.py','chunking.py']:
+ static_bytes+=name.encode()+(Path('src/congressional_globe')/name).read_bytes()
+for stage in [workflow._extract_classify,workflow._extract_part,workflow._write_page_paragraphs,workflow._write_residuals,workflow._write_residual]:static_bytes+=inspect.getsource(stage).encode()
+static_sha=pin_bytes(static_bytes);assert static_sha==manifest['config']['processing_sha256']==workflow._processing_fingerprint()
+word_spec=LexiconSpec.model_validate(results[0]['lexicons'][0]['spec']);words_data=Path(word_spec.label).read_bytes();word_sha=pin_bytes(words_data,word_spec.label);assert word_sha==word_spec.sha256
+words=Lexicon(spec=word_spec,data=words_data)
+follow=load('artifacts/hr012-feedback-20261029-01/required-followup.json');reqs={r['unit_id']:FeedbackRequirement.model_validate({k:v for k,v in r.items() if k!='unit_id'}) for r in follow['source_cases']}
+follow_sha=pin_path('artifacts/hr012-feedback-20261029-01/required-followup.json')
+detector_files={n:pin_path('src/congressional_globe/'+n) for n in ['deterministic_rules.py','repair_review.py','repair_feedback.py']};detector_sha=pin({'contract':'composite-saved-and-missed-error-detectors-v1','files':detector_files,'baseline_results_sha256':pin_path('artifacts/deterministic-sample-20261028-01/results.json'),'limitations':'Saved T52 signals plus T75 review-only extension; not verified error labels.'})
+# Load only the original resources for the three parts involved, with exact hashes.
+for item in {r['source_id'].split(':')[0] for r in inputs if r['unit_id'] in ['S1','S2','S5','D1','D2']}:
+ p=parts[item];pin_path(p['hocr_path'],p['hocr_sha256']);pin_path(p['page_map_path'],p['page_map_sha256'])
+
+def paragraph_record(source,index):
+ raw={'text':source['raw_text'],'sha256':source['raw_sha256']};edits=[]
+ for n,e in enumerate(source['static_edits']):
+  edits.append({'edit_id':f'legacy-static-{n}','raw_start':e['start_char'],'raw_end':e['end_char'],'expected':e['expected'],'replacement':e['replacement'],'reason':e['reason']})
+ return {'alias':f'P{index+1}','source_id':source['source_id'],'part_number':parts[source['item_identifier']]['part_number'],'scan_leaf':source['scan_leaf'],'role':'target','raw':raw,'static':{'text':source['static_text'],'sha256':source['static_sha256'],'edits':edits,'rule_sha256':static_sha,'lexicon_sha256':word_sha}}
+
+def audit_proposal(case,paragraphs):
+ with sqlite3.connect('file:artifacts/reading-quote-expansion-run-20261025-01/attempts.sqlite?mode=ro',uri=True) as c:
+  request=c.execute('SELECT request_json FROM attempts WHERE attempt_id=?',(case['attempt_id'],)).fetchone()[0].encode()
+ assert H(request)==case['request_sha256'];pin_bytes(request)
+ raw=case['raw_reply'].encode();assert H(raw)==case['raw_reply_sha256'];pin_bytes(raw)
+ proposed=[]
+ for para in paragraphs:
+  derived=case['current_host_replay']['derived'][para['source_id']];edits=[];text=para['raw']['text']
+  for n,m in enumerate(derived['mapping']):
+   if m['kind']!='replacement':continue
+   low,high=m['raw_start'],m['raw_end'];assert low<high
+   edits.append({'edit_id':f'prior-model-{n}','raw_start':low,'raw_end':high,'expected':text[low:high],'replacement':derived['text'][m['clean_start']:m['clean_end']],'reason':'Exact saved prior proposal mapping; not accepted as correct.'})
+  replay=replay_with_map(text,tuple(ExactEdit(start=e['raw_start'],end=e['raw_end'],raw_quote=e['expected'],replacement=e['replacement'],rule_id=e['edit_id']) for e in edits))[0];assert replay==derived['text']
+  proposed.append({'paragraph_alias':para['alias'],'text':replay,'sha256':H(replay.encode()),'raw_edits':edits})
+ record={'prior_request_sha256':H(request),'prior_raw_reply_sha256':H(raw),'paragraphs':proposed,'review_state':'unreviewed_model_proposal'}
+ return {'record_sha256':pin(record),**record}
+
+out=[]
+for unit in units:
+ uid=unit['unit_id']
+ if not unit['image_available']:
+  out.append({'unit_id':uid,'status':'missing_source_image','request_created':False});continue
+ target_inputs=[r for r in inputs if r['unit_id']==uid];paragraphs=[paragraph_record(r,i) for i,r in enumerate(target_inputs)];image_data=Path(unit['image_path']).read_bytes();assert H(image_data)==unit['image_sha256'];registry.image_bytes[H(image_data)]=image_data
+ qa_sha=pin_path(unit['inspection_path'],unit['inspection_sha256']);item=target_inputs[0]['item_identifier'];leaf=target_inputs[0]['scan_leaf'];part=parts[item]
+ source_refs=[];boxes={}
+ if uid.startswith('S'):
+  directory=Path(unit['image_path']).parent;bundle=load(directory/'bundle.json');pin_path(directory/'bundle.json');info=load(directory/'info.json');assert (info['width'],info['height'])==(bundle['target']['ocr_width'],bundle['target']['ocr_height']);assert bundle['registration']=='exact dimensions; native pixel coordinates; no inferred scaling/rotation'
+  source_refs.append({'path':str(directory/'bundle.json'),'sha256':H((directory/'bundle.json').read_bytes())});boxes['P1']={'left':0,'top':0,'right':unit['width'],'bottom':unit['height']}
+ else:
+  directory=Path(unit['image_path']).parent;plan=load(directory/'plan.json');binding=load(directory/'binding.json');assert H((directory/'plan.json').read_bytes())==binding['plan_sha256'];assert binding['image_receipt']['sha256']==H(image_data)
+  info=load(directory/'info.json');assert (info['width'],info['height'])==(plan['ocr_width'],plan['ocr_height']);region=plan['region'];sx=unit['width']/(region['right']-region['left']);sy=unit['height']/(region['bottom']-region['top']);by_source={x['source_id']:x for x in plan['sources']}
+  for para in paragraphs:
+   source_box=by_source[para['source_id']]['box'];assert by_source[para['source_id']]['raw_sha256']==para['raw']['sha256']
+   boxes[para['alias']]={'left':math.floor((source_box['left']-region['left'])*sx),'top':math.floor((source_box['top']-region['top'])*sy),'right':math.ceil((source_box['right']-region['left'])*sx),'bottom':math.ceil((source_box['bottom']-region['top'])*sy)}
+  source_refs=[{'path':str(directory/n),'sha256':pin_path(directory/n)} for n in ['plan.json','binding.json']]
+ identity={'sha256':H(image_data),'source_item_identifier':item,'source_scan_leaf':leaf,'hocr_sha256':part['hocr_sha256'],'page_map_sha256':part['page_map_sha256'],'width':unit['width'],'height':unit['height']}
+ metadata={**identity,'paragraph_boxes':boxes,'paragraph_order':[p['alias'] for p in paragraphs],'paragraph_bindings':{p['alias']:{'raw_sha256':p['raw']['sha256'],'raw_start':0,'raw_end':len(p['raw']['text'])} for p in paragraphs},'derivation':{'method':'Source-coordinate projection from saved exact-dimension IIIF/reading records; no new visual grade. Floor starts/ceil ends for scaled saved crops.','source_refs':source_refs}}
+ binding_sha=pin(metadata);registry.records[binding_sha]=EvidenceRecord(metadata,registry.files[binding_sha]);registration={**metadata,'legibility_evidence_sha256':qa_sha,'registration_basis':'Derived saved source/binding coordinate record plus prior hash-bound whole-crop inspection; not independent historical truth.'};registration_sha=pin(registration);registry.records[registration_sha]=EvidenceRecord(registration,registry.files[registration_sha])
+ image={'alias':'I1',**identity,'mime':'image/jpeg','bindings':[{'paragraph_alias':p['alias'],'raw_sha256':p['raw']['sha256'],'raw_start':0,'raw_end':len(p['raw']['text']),'crop_region':boxes[p['alias']]} for p in paragraphs],'registration_status':'verified','legibility_status':'checked','binding_manifest_sha256':binding_sha,'registration_evidence_sha256':registration_sha}
+ signals=[];review_reports=[]
+ for para in paragraphs:
+  prior=next(r for r in results if r['input']['source']['source_id']==para['source_id'])
+  for n,t in enumerate(prior['raw_tokens']):
+   if not t['signals']:continue
+   signals.append({'signal_id':f"T52-{uid}-{para['alias']}-{n}",'paragraph_alias':para['alias'],'raw_start':t['raw_start'],'raw_end':t['raw_end'],'raw_quote':t['raw_quote'],'category':'other','flags':t['signals'],'route_reason':'Saved T52 detector flag, not a confirmed error or completed fix.'})
+  report=review_missed_errors(BracketSource(source_id=para['source_id'],raw_text=para['raw']['text'],raw_sha256=para['raw']['sha256']),words);review_reports.append(report.model_dump(mode='json'));signals.extend(s.model_dump(mode='json') for s in provider_signals(report,para,words))
+ assert len(signals)<=128,(uid,len(signals))
+ signaled={s['paragraph_alias'] for s in signals};config_sha=pin({'contract':'available-input-detector-config-v1','source_reports':review_reports,'word_lexicon_sha256':word_sha,'saved_T52_results_sha256':H(Path('artifacts/deterministic-sample-20261028-01/results.json').read_bytes()),'feedback_requirements_sha256':follow_sha})
+ diagnostics={'status':'frozen','detector_sha256':detector_sha,'configuration_sha256':config_sha,'signals':signals,'negative_targets':[p['alias'] for p in paragraphs if p['alias'] not in signaled]}
+ role='productive_repair_and_self_check' if uid.startswith('S') else 'audit_saved_proposal';prompt=prompts[role];exposure='primary_selected_not_previously_model_repaired'
+ if uid in reqs:
+  prompt+='\n\nThis target contains actual HR012 human feedback. Treat its result as feedback-conditioned, not an unaided recognition result.\n'+feedback_instruction(BracketSource.model_validate(target_inputs[0]|{}) if False else BracketSource(source_id=paragraphs[0]['source_id'],raw_text=paragraphs[0]['raw']['text'],raw_sha256=paragraphs[0]['raw']['sha256']),image_data,reqs[uid]);exposure='source_specific_human_feedback_conditioned'
+ prompt_sha=pin_bytes(prompt.encode());prior=None
+ if not uid.startswith('S'):
+  entry=next(x for x in sample['units'] if x['id']==uid);case=next(x for x in fixtures if x['id']==entry['fixture_ref']['case_id']);prior=audit_proposal(case,paragraphs);exposure='previously_exposed_saved_failure_audit'
+ payload={'contract':'ocr-productive-repair-host-input-v2','role':role,'unit_id':uid,'paragraphs':paragraphs,'image':image,'diagnostics':diagnostics,'saved_proposal':prior,'prompt_sha256':prompt_sha,'response_schema_sha256':'0'*64,'code_sha256':code_sha,'model_digest':model_sha,'sampling_manifest_sha256':sample_sha,'bounds_sha256':bounds_sha}
+ schema=derive_reply_schema(payload);payload['response_schema_sha256']=pin_bytes(schema.schema_text.encode());host={'packet_sha256':H(canonical_json(payload)),'payload':payload};checked=validate_host(host,registry);projection,_=compile_request_projection(checked,registry,prompt,'qwen3.8:27b-mlx')
+ d=root/uid;d.mkdir();save(d/'host.json',checked);save(d/'projection.json',projection.model_dump(mode='json'));(d/'request.json').write_bytes(projection.body_utf8.encode());(d/'prompt.txt').write_text(prompt);save(d/'schema.json',json.loads(schema.schema_text));save(d/'feedback-check-obligations.json',{'required':uid in reqs,'requirements_sha256':follow_sha,'named_requirements':[reqs[uid].model_dump(mode='json')] if uid in reqs else [],'post_response_library':'repair_feedback.check_feedback','no_outcome_without_actual_response':True})
+ out.append({'unit_id':uid,'status':'validated_input_projection_only','targets':len(paragraphs),'image_sha256':H(image_data),'host_sha256':checked['packet_sha256'],'request_sha256':projection.body_sha256,'schema_sha256':projection.schema_sha256,'request_bytes':len(projection.body_utf8.encode()),'diagnostic_signals':len(signals),'exposure':exposure,'native_fit':None,'frozen_job_created':False,'dispatch_allowed':False})
+ save(root/'units.json',out)
+ # Index references only: never copy full hOCR/word resources into this derived package.
+ save(root/'registry-index.json',{'files':paths,'records':list(registry.records),'images':{r['image_sha256']:r['image_path'] for r in units if r['image_available']},'external_sources_required':True})
+save(root/'summary.json',{'task':'T78','units':out,'full_sample_unchanged':True,'available_inputs':5,'available_targets':16,'missing_images':['S3','S4'],'model_calls':0,'frozen_jobs':0,'genuine_native_fit':False,'launch_ready':False,'bounds_binding':'Original prospective T69 caps; not an active started session. Future readiness must deliberately rebind execution-time bounds/code identities.','exposure_note':'S1/S2 now explicitly feedback-conditioned, must not pool as unaided model recognition. D1/D2 remain exposed audits; no hidden fixture labels were copied.'})
+print(json.dumps(out))

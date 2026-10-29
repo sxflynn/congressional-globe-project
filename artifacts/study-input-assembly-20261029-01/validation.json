@@ -1,0 +1,87 @@
+{
+  "task": "T78",
+  "available_input_units": 5,
+  "available_targets": 16,
+  "full_sample_units": 7,
+  "missing_units": [
+    "S3",
+    "S4"
+  ],
+  "known_scope_unchanged": true,
+  "checks": [
+    {
+      "unit_id": "S1",
+      "source_image_metadata_receipts_checked": true,
+      "request_and_image_hashes_match": true,
+      "scope_role_alias_schema_match": true,
+      "prompt_hash_matches": true,
+      "altered_raw_rejected": true,
+      "feedback_binding_checked": true,
+      "input_only_not_frozen_job": true
+    },
+    {
+      "unit_id": "S2",
+      "source_image_metadata_receipts_checked": true,
+      "request_and_image_hashes_match": true,
+      "scope_role_alias_schema_match": true,
+      "prompt_hash_matches": true,
+      "altered_raw_rejected": true,
+      "feedback_binding_checked": true,
+      "input_only_not_frozen_job": true
+    },
+    {
+      "unit_id": "S5",
+      "source_image_metadata_receipts_checked": true,
+      "request_and_image_hashes_match": true,
+      "scope_role_alias_schema_match": true,
+      "prompt_hash_matches": true,
+      "altered_raw_rejected": true,
+      "feedback_binding_checked": false,
+      "input_only_not_frozen_job": true
+    },
+    {
+      "unit_id": "D1",
+      "source_image_metadata_receipts_checked": true,
+      "request_and_image_hashes_match": true,
+      "scope_role_alias_schema_match": true,
+      "prompt_hash_matches": true,
+      "altered_raw_rejected": true,
+      "feedback_binding_checked": false,
+      "input_only_not_frozen_job": true
+    },
+    {
+      "unit_id": "D2",
+      "source_image_metadata_receipts_checked": true,
+      "request_and_image_hashes_match": true,
+      "scope_role_alias_schema_match": true,
+      "prompt_hash_matches": true,
+      "altered_raw_rejected": true,
+      "feedback_binding_checked": false,
+      "input_only_not_frozen_job": true
+    }
+  ],
+  "host_and_registry_validation": "All five host envelopes and full registry resources validated by validate_host; compile_request_projection revalidated all exact bytes during the saved assembly execution.",
+  "external_resource_caveat": "Registry index requires existing original large hOCR/page map/lexicon sources; no portable pilot acceptance.",
+  "source_registration": "Derived exact source-coordinate transforms from prior saved scan/binding/inspection records, not a new visual grade.",
+  "prospective_bounds_only": true,
+  "no_hidden_fixture_expectations_copied": true,
+  "feedback_conditioned_primary_units": [
+    "S1",
+    "S2"
+  ],
+  "must_separate_from_unaided_quality_estimates": true,
+  "raw_provider_calls": 0,
+  "server_launches": 0,
+  "image_fetches": 0,
+  "frozen_jobs": 0,
+  "genuine_fit_records": 0,
+  "launch_clearance": null,
+  "code_changed": false,
+  "last_full_gate_retained": 922,
+  "authentic_capture_producer_missing": true,
+  "T73_other_owner_preserved": true,
+  "registered_derived_bytes_rehashed": true,
+  "current_processing_code_identity_matches_all_five_hosts": true,
+  "links_resolve": true,
+  "gate_note": "Data-only preparation; existing implementation full gate922 retained, no code or other agent tests rerun."
+}

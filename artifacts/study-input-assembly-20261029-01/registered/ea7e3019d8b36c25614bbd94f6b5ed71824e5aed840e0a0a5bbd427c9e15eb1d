@@ -1,0 +1,1586 @@
+extraction.py"""Streaming extraction from Internet Archive hOCR and page maps."""
+
+from __future__ import annotations
+
+import re
+from collections.abc import Iterator
+from pathlib import Path
+
+from lxml import etree  # ty: ignore[unresolved-import]
+
+from congressional_globe.inventory import PARTS
+from congressional_globe.models import (
+    ArchivePageMap,
+    ArchivePageMapEntry,
+    BoundingBox,
+    LineRecord,
+    PageRecord,
+    ParagraphRecord,
+    PrintedPage,
+    SourceKind,
+    WordRecord,
+)
+
+_BBOX = re.compile(r"bbox (\d+) (\d+) (\d+) (\d+)")
+_PAGE = re.compile(r"ppageno (\d+)")
+_DIMENSIONS = re.compile(r"bbox 0 0 (\d+) (\d+)")
+_DPI = re.compile(r"scan_res (\d+)")
+_CONFIDENCE = re.compile(r"x_wconf (\d+)")
+_FONT_SIZE = re.compile(r"x_fsize ([\d.]+)")
+
+
+def load_page_map(path: Path) -> dict[int, PrintedPage]:
+    payload = ArchivePageMap.model_validate_json(path.read_text(encoding="utf-8"))
+    return {entry.leaf_num: _printed_page(entry) for entry in payload.pages}
+
+
+def iter_pages(hocr_path: Path, page_map: dict[int, PrintedPage]) -> Iterator[PageRecord]:
+    context = etree.iterparse(str(hocr_path), events=("end",), recover=True, huge_tree=True)
+    for _, element in context:
+        if _is_hocr_page(element):
+            yield _page_record(element, hocr_path.stem.removesuffix("_hocr"), page_map)
+            _release_page(element)
+
+
+def _release_page(element: etree._Element) -> None:
+    element.clear()
+    parent = element.getparent()
+    if parent is not None:
+        while element.getprevious() is not None:
+            del parent[0]
+
+
+def _is_hocr_page(element: etree._Element) -> bool:
+    return _has_class(element, "ocr_page")
+
+
+def _page_record(
+    element: etree._Element, identifier: str, page_map: dict[int, PrintedPage]
+) -> PageRecord:
+    title = element.get("title", "")
+    scan_leaf = _int_match(_PAGE, title)
+    width, height = _dimensions(title)
+    paragraphs = _paragraphs(element)
+    return PageRecord(
+        id=f"ia:{identifier}:leaf:{scan_leaf}",
+        item_identifier=identifier,
+        part_number=PARTS.get(identifier),
+        scan_leaf=scan_leaf,
+        hocr_page_id=element.get("id", f"page_{scan_leaf:06d}"),
+        image_width_px=width,
+        image_height_px=height,
+        dpi=_int_match(_DPI, title) or None,
+        printed_page=page_map.get(scan_leaf, PrintedPage()),
+        text_ocr="\n\n".join(paragraph.text_ocr for paragraph in paragraphs),
+        paragraphs=paragraphs,
+    )
+
+
+def _paragraphs(page: etree._Element) -> list[ParagraphRecord]:
+    records = [
+        _paragraph_record(element) for element in page.iter() if _has_class(element, "ocr_par")
+    ]
+    return _ordered(records)
+
+
+def _paragraph_record(element: etree._Element) -> ParagraphRecord:
+    lines = [_line_record(child) for child in element.iter() if _has_class(child, "ocr_line")]
+    return ParagraphRecord(
+        id=element.get("id", ""),
+        reading_order=0,
+        bbox=_bbox(element.get("title", "")),
+        line_ids=[line.id for line in lines if line.id],
+        lines=lines,
+        text_ocr=_text(element),
+    )
+
+
+def _line_record(element: etree._Element) -> LineRecord:
+    words = [_word_record(child) for child in element.iter() if _has_class(child, "ocrx_word")]
+    return LineRecord(
+        id=element.get("id", ""),
+        bbox=_bbox(element.get("title", "")),
+        text=_text(element),
+        words=words,
+    )
+
+
+def _word_record(element: etree._Element) -> WordRecord:
+    title = element.get("title", "")
+    return WordRecord(
+        id=element.get("id", ""),
+        text=_text(element),
+        bbox=_bbox(title),
+        confidence=_int_match(_CONFIDENCE, title) if _CONFIDENCE.search(title) else None,
+        font_size=_float_match(_FONT_SIZE, title),
+    )
+
+
+def _ordered(paragraphs: list[ParagraphRecord]) -> list[ParagraphRecord]:
+    """Retain source hOCR block order instead of assuming a fixed column layout."""
+    return [
+        paragraph.model_copy(update={"reading_order": index})
+        for index, paragraph in enumerate(paragraphs)
+    ]
+
+
+def _printed_page(entry: ArchivePageMapEntry) -> PrintedPage:
+    number = str(entry.page_number) if entry.page_number is not None else None
+    return PrintedPage(
+        detected=number,
+        source=SourceKind.ARCHIVE_MAP if number else SourceKind.UNKNOWN,
+        confidence=entry.confidence,
+    )
+
+
+def _dimensions(title: str) -> tuple[int | None, int | None]:
+    match = _DIMENSIONS.search(title)
+    return (int(match.group(1)), int(match.group(2))) if match else (None, None)
+
+
+def _int_match(pattern: re.Pattern[str], value: str) -> int:
+    match = pattern.search(value)
+    return int(match.group(1)) if match else 0
+
+
+def _float_match(pattern: re.Pattern[str], value: str) -> float | None:
+    match = pattern.search(value)
+    return float(match.group(1)) if match else None
+
+
+def _bbox(title: str) -> BoundingBox | None:
+    match = _BBOX.search(title)
+    if match is None:
+        return None
+    return BoundingBox(
+        left=int(match.group(1)),
+        top=int(match.group(2)),
+        right=int(match.group(3)),
+        bottom=int(match.group(4)),
+    )
+
+
+def _has_class(element: etree._Element, name: str) -> bool:
+    return name in element.get("class", "").split()
+
+
+def _text(element: etree._Element) -> str:
+    return " ".join("".join(element.itertext()).split())
+models.py"""Validated data contracts for raw, canonical, and AI-derived records."""
+
+from __future__ import annotations
+
+from enum import StrEnum
+from typing import Any
+
+from pydantic import BaseModel, ConfigDict, Field, model_validator
+
+
+class SourceKind(StrEnum):
+    ARCHIVE_MAP = "archive_map"
+    DIRECT_HEADER = "direct_header"
+    PROPAGATED = "propagated"
+    MANUAL_REVIEW = "manual_review"
+    UNKNOWN = "unknown"
+
+
+class BoundingBox(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    left: int = Field(ge=0)
+    top: int = Field(ge=0)
+    right: int = Field(ge=0)
+    bottom: int = Field(ge=0)
+
+    @model_validator(mode="after")
+    def validate_order(self) -> BoundingBox:
+        if self.right < self.left or self.bottom < self.top:
+            raise ValueError("bounding box coordinates must be ordered")
+        return self
+
+
+class ArchivePageMapEntry(BaseModel):
+    model_config = ConfigDict(extra="allow", frozen=True)
+
+    leaf_num: int = Field(alias="leafNum", ge=0)
+    page_number: str | int | None = Field(default=None, alias="pageNumber")
+    confidence: int | None = Field(default=None, ge=0, le=100)
+
+
+class ArchivePageMap(BaseModel):
+    model_config = ConfigDict(extra="allow", frozen=True)
+
+    pages: list[ArchivePageMapEntry]
+
+
+class PrintedPage(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    detected: str | None = None
+    inferred: str | None = None
+    source: SourceKind = SourceKind.UNKNOWN
+    confidence: int | None = Field(default=None, ge=0, le=100)
+
+
+class WordRecord(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str
+    text: str
+    bbox: BoundingBox | None = None
+    confidence: int | None = Field(default=None, ge=0, le=100)
+    font_size: float | None = Field(default=None, gt=0)
+
+
+class LineRecord(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str
+    bbox: BoundingBox | None = None
+    text: str
+    words: list[WordRecord]
+
+
+class ParagraphRecord(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str
+    reading_order: int = Field(ge=0)
+    bbox: BoundingBox | None = None
+    line_ids: list[str]
+    lines: list[LineRecord] = Field(default_factory=list)
+    text_ocr: str
+    text_normalized: str | None = None
+    static_edits: list[TextEdit] = Field(default_factory=list)
+    static_cleanup_provenance: dict[str, str] | None = None
+    unresolved_wrap_hints: list[dict[str, str]] = Field(default_factory=list)
+    role: str = "body"
+    role_source: str | None = None
+    context: dict[str, str] = Field(default_factory=dict)
+    ai_edits: list[TextEdit] = Field(default_factory=list)
+    ai_input_text: str | None = None
+    ai_input_sha256: str | None = None
+    cleanup_status: str | None = None
+    ai_provenance: dict[str, Any] | None = None
+
+
+class PageRecord(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str
+    item_identifier: str
+    part_number: int | None = Field(default=None, ge=1)
+    scan_leaf: int = Field(ge=0)
+    hocr_page_id: str
+    image_width_px: int | None = Field(default=None, ge=1)
+    image_height_px: int | None = Field(default=None, ge=1)
+    dpi: int | None = Field(default=None, ge=1)
+    printed_page: PrintedPage
+    text_ocr: str
+    text_normalized: str | None = None
+    paragraphs: list[ParagraphRecord]
+
+
+class TextEdit(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    start_char: int = Field(ge=0)
+    end_char: int = Field(ge=0)
+    expected: str
+    replacement: str
+    reason: str
+    confidence: float = Field(ge=0, le=1)
+
+
+class CleanupResult(BaseModel):
+    """Strict model output used to reconstruct normalized text from raw text."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    edits: list[TextEdit]
+    needs_image_review: bool
+    review_reason: str | None = None
+
+
+def strict_json_schema(model: type[BaseModel]) -> dict[str, Any]:
+    """Return a schema that satisfies OpenAI strict structured outputs.
+
+    Strict mode requires every object property to appear in ``required``; Pydantic
+    omits properties that carry defaults, so promote them here for transport only.
+    """
+    schema = model.model_json_schema()
+    _require_all_properties(schema)
+    return schema
+
+
+def _require_all_properties(node: Any) -> None:
+    if isinstance(node, dict):
+        _require_object_properties(node)
+        children = node.values()
+    elif isinstance(node, list):
+        children = node
+    else:
+        return
+    for child in children:
+        _require_all_properties(child)
+
+
+def _require_object_properties(node: dict[str, Any]) -> None:
+    properties = node.get("properties")
+    if node.get("type") == "object" and isinstance(properties, dict):
+        node["required"] = list(properties)
+
+
+class RAGParagraphSource(BaseModel):
+    """Source and cleanup provenance for one paragraph represented in a chunk."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    paragraph_id: str
+    item_identifier: str
+    part_number: int | None = None
+    scan_leaf: int
+    printed_page: PrintedPage
+    hocr_page_id: str
+    hocr_line_ids: list[str]
+    bbox: BoundingBox | None = None
+    role: str = "body"
+    role_source: str | None = None
+    context: dict[str, str] = Field(default_factory=dict)
+    cleanup_status: str | None = None
+    static_edits: list[TextEdit] = Field(default_factory=list)
+    static_cleanup_provenance: dict[str, str] | None = None
+    ai_edits: list[TextEdit] = Field(default_factory=list)
+    ai_provenance: dict[str, Any] | None = None
+
+
+class RAGChunk(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str
+    text: str
+    item_identifier: str
+    part_number: int | None
+    scan_leaves: list[int]
+    printed_pages: list[str]
+    paragraph_ids: list[str]
+    citation: str
+    hocr_page_id: str | None = None
+    paragraph_sources: list[RAGParagraphSource] = Field(default_factory=list)
+    edition_date: str | None = None
+    edition_date_source_paragraph_id: str | None = None
+    edition_date_source_text: str | None = None
+    chamber: str | None = None
+    chamber_source_paragraph_id: str | None = None
+    chamber_source_text: str | None = None
+structure.py"""Conservative page structure and model-routing heuristics."""
+
+from __future__ import annotations
+
+import re
+from datetime import date
+
+from congressional_globe.models import (
+    BoundingBox,
+    LineRecord,
+    PageRecord,
+    ParagraphRecord,
+    WordRecord,
+)
+
+_RUNNING_HEADER = re.compile(
+    r"(?:THE\s+CONGRESSIONAL\s+GLOBE\.?|INDEX\s+TO\s+(?:THE\s+)?CONGRESSIONAL\s+GLOBE\.?)",
+    re.IGNORECASE,
+)
+_PAGE_NUMBER = re.compile(r"\d{1,5}")
+_CHAMBER_PATTERN = (
+    r"(?:IN\s+(?:THE\s+)?)?(SENATE|HOUSE\s+OF\s+REPRESENTATIVES)"
+    r"(?:\s+OF\s+THE\s+UNITED\s+STATES)?"
+)
+_CHAMBER = re.compile(rf"^\s*{_CHAMBER_PATTERN}[.,:;]?\s*$", re.IGNORECASE)
+_DATE_PATTERN = (
+    r"(?:(MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY)\s*,?\s*)?"
+    r"(JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER)"
+    r"\s+(\d{1,2})(?:ST|ND|RD|TH)?[,]?\s+(18\d{2})[.,:]?"
+)
+_DATE = re.compile(rf"^\s*{_DATE_PATTERN}\s*$", re.IGNORECASE)
+_DATE_LIKE_PATTERN = (
+    r"(?:(?:MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY)\s*,?\s*)?"
+    r"(?:JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER)"
+    r"\s+\d{1,2}(?:ST|ND|RD|TH)?[,]?\s+1[0-9A-Z]{3}[.,:]?"
+)
+_DATE_LIKE = re.compile(rf"^\s*{_DATE_LIKE_PATTERN}\s*$", re.IGNORECASE)
+_COMBINED_HEADER = re.compile(
+    rf"^\s*(?P<chamber>{_CHAMBER_PATTERN})[.,:;]\s*(?P<date>{_DATE_PATTERN})\s*$",
+    re.IGNORECASE,
+)
+_COMBINED_HEADER_PREFIX = re.compile(
+    rf"^\s*(?P<chamber>{_CHAMBER_PATTERN})[.,:;]\s*(?P<date>{_DATE_PATTERN})(?=\s|$)",
+    re.IGNORECASE,
+)
+_COMBINED_DATE_LIKE_PREFIX = re.compile(
+    rf"^\s*(?P<chamber>{_CHAMBER_PATTERN})[.,:;]\s*(?P<date>{_DATE_LIKE_PATTERN})(?=\s|$)",
+    re.IGNORECASE,
+)
+_DATE_PREFIX = re.compile(rf"^\s*(?P<date>{_DATE_PATTERN})(?=\s|$)", re.IGNORECASE)
+_COMBINED_PREFIX = re.compile(
+    rf"^\s*(?P<chamber>{_CHAMBER_PATTERN})[.,:;]\s*(?P<date>.*?)\s*$",
+    re.IGNORECASE,
+)
+_SUSPICIOUS_OCR = re.compile(r"[\\€•▪■□�]|(?<![A-Za-z])[A-Za-z]{2,}\d{2,}[A-Za-z]{2,}(?![A-Za-z])")
+_WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
+
+
+def classify_page(page: PageRecord) -> PageRecord:
+    """Classify clear running furniture and attach explicit same-page header facts."""
+    facts, fact_orders, fact_hints = _page_facts(page)
+    paragraphs = [
+        _classify_paragraph(page, paragraph, facts, fact_orders, fact_hints)
+        for paragraph in page.paragraphs
+    ]
+    return page.model_copy(update={"paragraphs": paragraphs})
+
+
+def needs_model(paragraph: ParagraphRecord) -> bool:
+    """Route residual wrap hints and a narrow set of suspicious OCR glyphs."""
+    if paragraph.role in {"running_header", "page_number"}:
+        return False
+    if paragraph.unresolved_wrap_hints:
+        return True
+    source = paragraph.text_ocr if paragraph.text_normalized is None else paragraph.text_normalized
+    return _SUSPICIOUS_OCR.search(source) is not None
+
+
+def _page_facts(page: PageRecord) -> tuple[dict[str, str], dict[str, int], dict[str, str]]:
+    facts: dict[str, str] = {}
+    fact_orders: dict[str, int] = {}
+    hints: dict[str, str] = {}
+    if page.image_height_px is None:
+        return facts, fact_orders, hints
+    ordered = sorted(page.paragraphs, key=lambda paragraph: paragraph.reading_order)
+    for paragraph in ordered:
+        for header_text in _header_candidates(page, paragraph):
+            _add_date_fact(facts, fact_orders, hints, paragraph, header_text)
+            _add_chamber_fact(facts, fact_orders, hints, paragraph, header_text)
+    return facts, fact_orders, hints
+
+
+def _header_candidates(page: PageRecord, paragraph: ParagraphRecord) -> list[str]:
+    candidates = [line.text.strip() for line in paragraph.lines if _line_near_top(page, line)]
+    if _near_top(page, paragraph):
+        candidates.append(paragraph.text_ocr.strip())
+    return candidates
+
+
+def _add_date_fact(
+    facts: dict[str, str],
+    fact_orders: dict[str, int],
+    hints: dict[str, str],
+    paragraph: ParagraphRecord,
+    header_text: str,
+) -> None:
+    match = _header_date(header_text)
+    if match is not None:
+        _record_date(facts, fact_orders, hints, paragraph, match, header_text)
+    elif _DATE_LIKE.fullmatch(_strip_combined_chamber(header_text)):
+        hints["date"] = f"Unvalidated date-like header in {paragraph.id}: {header_text}"
+
+
+def _header_date(text: str) -> re.Match[str] | None:
+    combined = _COMBINED_HEADER.fullmatch(text)
+    if combined is not None:
+        return _DATE.fullmatch(combined.group("date"))
+    combined_prefix = _COMBINED_HEADER_PREFIX.match(text)
+    if combined_prefix is not None:
+        return _DATE.fullmatch(combined_prefix.group("date"))
+    direct = _DATE.fullmatch(text)
+    if direct is not None:
+        return direct
+    date_prefix = _DATE_PREFIX.match(text)
+    return _weekday_date_prefix(date_prefix)
+
+
+def _weekday_date_prefix(prefix: re.Match[str] | None) -> re.Match[str] | None:
+    if prefix is None:
+        return None
+    parsed = _DATE.fullmatch(prefix.group("date"))
+    return parsed if parsed is not None and parsed.group(1) is not None else None
+
+
+def _strip_combined_chamber(text: str) -> str:
+    combined = _COMBINED_HEADER.fullmatch(text)
+    if combined is not None:
+        return combined.group("date")
+    combined_prefix = _COMBINED_HEADER_PREFIX.match(text)
+    if combined_prefix is not None:
+        return combined_prefix.group("date")
+    date_like_prefix = _COMBINED_DATE_LIKE_PREFIX.match(text)
+    if date_like_prefix is not None:
+        return date_like_prefix.group("date")
+    prefix = re.match(rf"^\s*{_CHAMBER_PATTERN}[.,:;]\s*", text, re.IGNORECASE)
+    return text[prefix.end() :] if prefix is not None else text
+
+
+def _record_date(
+    facts: dict[str, str],
+    fact_orders: dict[str, int],
+    hints: dict[str, str],
+    paragraph: ParagraphRecord,
+    match: re.Match[str],
+    source_text: str,
+) -> None:
+    if match is None:
+        return
+    parsed = _parse_date(match)
+    if parsed is None:
+        hints["date"] = f"Unvalidated date-like header in {paragraph.id}: {match.group(0)}"
+        return
+    if _weekday_conflicts(match.group(1), parsed):
+        hints["date"] = f"Weekday/date mismatch in {paragraph.id}: {match.group(0)}"
+        return
+    _write_fact(
+        facts, fact_orders, hints, "edition_date", parsed.isoformat(), paragraph, source_text
+    )
+
+
+def _parse_date(match: re.Match[str]) -> date | None:
+    try:
+        return date(int(match.group(4)), _month_number(match.group(2)), int(match.group(3)))
+    except ValueError:
+        return None
+
+
+def _month_number(month: str) -> int:
+    months = {
+        "january": 1,
+        "february": 2,
+        "march": 3,
+        "april": 4,
+        "may": 5,
+        "june": 6,
+        "july": 7,
+        "august": 8,
+        "september": 9,
+        "october": 10,
+        "november": 11,
+        "december": 12,
+    }
+    return months[month.lower()]
+
+
+def _weekday_conflicts(weekday: str | None, value: date) -> bool:
+    return weekday is not None and _WEEKDAYS[value.weekday()] != weekday.lower()
+
+
+def _add_chamber_fact(
+    facts: dict[str, str],
+    fact_orders: dict[str, int],
+    hints: dict[str, str],
+    paragraph: ParagraphRecord,
+    header_text: str,
+) -> None:
+    chamber_text = _chamber_header_text(header_text)
+    match = _CHAMBER.fullmatch(chamber_text)
+    if match is None:
+        return
+    chamber = "senate" if match.group(1).lower() == "senate" else "house_of_representatives"
+    _write_fact(facts, fact_orders, hints, "chamber", chamber, paragraph, header_text)
+
+
+def _chamber_header_text(text: str) -> str:
+    combined = _COMBINED_HEADER.fullmatch(text)
+    if combined is not None:
+        return combined.group("chamber")
+    combined_prefix = _COMBINED_HEADER_PREFIX.match(text)
+    if combined_prefix is not None:
+        return combined_prefix.group("chamber")
+    date_like_prefix = _COMBINED_DATE_LIKE_PREFIX.match(text)
+    if date_like_prefix is not None:
+        return date_like_prefix.group("chamber")
+    prefix = _COMBINED_PREFIX.fullmatch(text)
+    if prefix is not None and _DATE_LIKE.fullmatch(prefix.group("date")):
+        return prefix.group("chamber")
+    return text
+
+
+def _write_fact(
+    facts: dict[str, str],
+    fact_orders: dict[str, int],
+    hints: dict[str, str],
+    key: str,
+    value: str,
+    paragraph: ParagraphRecord,
+    source_text: str,
+) -> None:
+    if key in hints:
+        return
+    if key in facts:
+        _handle_repeated_fact(facts, fact_orders, hints, key, value)
+        return
+    facts[key] = value
+    facts[f"{key}_source_paragraph_id"] = paragraph.id
+    facts[f"{key}_source_text"] = source_text
+    fact_orders[key] = paragraph.reading_order
+
+
+def _handle_repeated_fact(
+    facts: dict[str, str],
+    fact_orders: dict[str, int],
+    hints: dict[str, str],
+    key: str,
+    value: str,
+) -> None:
+    if facts[key] != value:
+        for suffix in ("", "_source_paragraph_id", "_source_text"):
+            facts.pop(f"{key}{suffix}", None)
+        fact_orders.pop(key, None)
+        hints[key] = f"Conflicting explicit {key} headers on this page"
+
+
+def _classify_paragraph(
+    page: PageRecord,
+    paragraph: ParagraphRecord,
+    facts: dict[str, str],
+    fact_orders: dict[str, int],
+    page_hints: dict[str, str],
+) -> ParagraphRecord:
+    role, source = _paragraph_role(page, paragraph)
+    context = dict(paragraph.context)
+    _clear_derived_facts(context)
+    context.update(_visible_facts(facts, fact_orders, paragraph))
+    for kind, hint in page_hints.items():
+        _add_review_hint(context, f"{kind}: {hint}")
+    low_confidence = _low_confidence_hint(paragraph) if role == "body" else None
+    if low_confidence:
+        _add_review_hint(context, low_confidence)
+    return paragraph.model_copy(update={"role": role, "role_source": source, "context": context})
+
+
+def _visible_facts(
+    facts: dict[str, str], fact_orders: dict[str, int], paragraph: ParagraphRecord
+) -> dict[str, str]:
+    visible = {}
+    for key, order in fact_orders.items():
+        if order <= paragraph.reading_order:
+            _copy_fact_fields(visible, facts, key)
+    return visible
+
+
+def _copy_fact_fields(visible: dict[str, str], facts: dict[str, str], key: str) -> None:
+    for suffix in ("", "_source_paragraph_id", "_source_text"):
+        fact_key = f"{key}{suffix}"
+        if fact_key in facts:
+            visible[fact_key] = facts[fact_key]
+
+
+def _clear_derived_facts(context: dict[str, str]) -> None:
+    for key in (
+        "edition_date",
+        "edition_date_source_paragraph_id",
+        "edition_date_source_text",
+        "chamber",
+        "chamber_source_paragraph_id",
+        "chamber_source_text",
+    ):
+        context.pop(key, None)
+
+
+def _paragraph_role(page: PageRecord, paragraph: ParagraphRecord) -> tuple[str, str | None]:
+    if not _valid_bbox(page, paragraph) or not _near_edge(page, paragraph):
+        return "body", None
+    text = paragraph.text_ocr.strip()
+    if _is_running_header(text):
+        return "running_header", "exact_header_pattern_and_edge_geometry"
+    if _matches_printed_page(page, text):
+        return "page_number", "printed_page_match_and_edge_geometry"
+    return "body", None
+
+
+def _is_running_header(text: str) -> bool:
+    return _RUNNING_HEADER.fullmatch(text) is not None
+
+
+def _valid_bbox(page: PageRecord, paragraph: ParagraphRecord) -> bool:
+    return _valid_box(page, paragraph.bbox)
+
+
+def _valid_box(page: PageRecord, bbox: BoundingBox | None) -> bool:
+    if bbox is None or page.image_height_px is None or page.image_width_px is None:
+        return False
+    return (
+        bbox.right > bbox.left
+        and bbox.bottom > bbox.top
+        and bbox.right <= page.image_width_px
+        and bbox.bottom <= page.image_height_px
+    )
+
+
+def _near_edge(page: PageRecord, paragraph: ParagraphRecord) -> bool:
+    bbox = paragraph.bbox
+    height = page.image_height_px
+    if bbox is None or height is None:
+        return False
+    return bbox.top <= height * 0.08 or bbox.bottom >= height * 0.92
+
+
+def _near_top(page: PageRecord, paragraph: ParagraphRecord) -> bool:
+    bbox = paragraph.bbox
+    height = page.image_height_px
+    return (
+        _valid_bbox(page, paragraph)
+        and bbox is not None
+        and height is not None
+        and bbox.top <= height * 0.16
+    )
+
+
+def _line_near_top(page: PageRecord, line: LineRecord) -> bool:
+    bbox = line.bbox
+    height = page.image_height_px
+    return (
+        bbox is not None
+        and _valid_box(page, bbox)
+        and height is not None
+        and bbox.top <= height * 0.25
+    )
+
+
+def _matches_printed_page(page: PageRecord, text: str) -> bool:
+    if _PAGE_NUMBER.fullmatch(text) is None:
+        return False
+    return text in {page.printed_page.detected, page.printed_page.inferred}
+
+
+def _low_confidence_hint(paragraph: ParagraphRecord) -> str | None:
+    low_count = sum(_is_low_confidence(word) for line in paragraph.lines for word in line.words)
+    if low_count >= 3:
+        return f"low OCR word confidence in {paragraph.id}; verify against scan"
+    return None
+
+
+def _is_low_confidence(word: WordRecord) -> bool:
+    return word.confidence is not None and word.confidence < 20
+
+
+def _add_review_hint(context: dict[str, str], hint: str) -> None:
+    previous = context.get("review_hint")
+    context["review_hint"] = f"{previous}; {hint}" if previous else hint
+static_cleanup.py"""Conservative, patch-based cleanup that runs without model requests."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import re
+from itertools import pairwise
+from pathlib import Path
+
+from congressional_globe.models import LineRecord, ParagraphRecord, TextEdit
+from congressional_globe.normalization import apply_edits
+
+_LINE_END = re.compile(r"(?<![A-Za-z])([A-Za-z]+)-$")
+_LINE_START = re.compile(r"([a-z][A-Za-z]*)")
+_SUFFIXES = ("s", "es", "ed", "ing", "ly")
+
+
+def normalize_jsonl(paragraphs_path: Path, lexicon_path: Path, output_path: Path) -> int:
+    """Write normalized records, unresolved hints, and reproducible provenance."""
+    _reject_output_alias(paragraphs_path, lexicon_path, output_path)
+    lexicon_bytes = lexicon_path.read_bytes()
+    lexicon = {word.casefold() for word in lexicon_bytes.decode("utf-8").splitlines()}
+    provenance = {
+        "pipeline_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "lexicon_sha256": hashlib.sha256(lexicon_bytes).hexdigest(),
+        "input_sha256": _file_sha256(paragraphs_path),
+    }
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    count = 0
+    with (
+        paragraphs_path.open(encoding="utf-8") as source,
+        output_path.open("w", encoding="utf-8") as target,
+    ):
+        for line in source:
+            record = _normalized_record(line, lexicon, provenance)
+            if record is not None:
+                target.write(record + "\n")
+                count += 1
+    return count
+
+
+def _reject_output_alias(source: Path, lexicon: Path, output: Path) -> None:
+    if _same_file(source, output) or _same_file(lexicon, output):
+        raise ValueError("cleanup output must not alias either input path")
+
+
+def _same_file(left: Path, right: Path) -> bool:
+    return left.resolve() == right.resolve() or (
+        left.exists() and right.exists() and left.samefile(right)
+    )
+
+
+def _file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as source:
+        for block in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def _normalized_record(line: str, lexicon: set[str], provenance: dict[str, str]) -> str | None:
+    if not line.strip():
+        return None
+    payload = json.loads(line)
+    fields = {key: value for key, value in payload.items() if key in ParagraphRecord.model_fields}
+    paragraph = ParagraphRecord.model_validate(fields)
+    edits = _line_wrap_edits(paragraph.lines, paragraph.text_ocr, lexicon)
+    normalized = apply_edits(paragraph.text_ocr, edits)
+    return json.dumps(
+        {
+            **payload,
+            "text_normalized": normalized,
+            "static_edits": [edit.model_dump(mode="json") for edit in edits],
+            "unresolved_wrap_hints": _unresolved_hints(paragraph.lines, lexicon),
+            "static_cleanup_provenance": provenance,
+        },
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
+
+
+def normalize_line_wraps(
+    paragraph: ParagraphRecord, lexicon: set[str]
+) -> tuple[str, list[TextEdit]]:
+    """Join lexicon-supported words only across adjacent OCR line boundaries."""
+    edits = _line_wrap_edits(paragraph.lines, paragraph.text_ocr, lexicon)
+    return apply_edits(paragraph.text_ocr, edits), edits
+
+
+def _line_wrap_edits(lines: list[LineRecord], source: str, lexicon: set[str]) -> list[TextEdit]:
+    positions = _line_positions(lines, source)
+    return [
+        edit
+        for index, (left, right) in enumerate(pairwise(lines))
+        if (edit := _positioned_pair_edit(left, right, source, positions, index, lexicon))
+        is not None
+    ]
+
+
+def _positioned_pair_edit(
+    left: LineRecord,
+    right: LineRecord,
+    source: str,
+    positions: list[int | None],
+    index: int,
+    lexicon: set[str],
+) -> TextEdit | None:
+    left_start, right_start = positions[index : index + 2]
+    if left_start is None or right_start is None:
+        return None
+    return _pair_edit(left, right, source, left_start, right_start, lexicon)
+
+
+def _line_positions(lines: list[LineRecord], source: str) -> list[int | None]:
+    positions: list[int | None] = []
+    cursor = 0
+    for line in lines:
+        start = source.find(line.text, cursor)
+        positions.append(start if start >= 0 else None)
+        if start >= 0:
+            cursor = start + len(line.text)
+    return positions
+
+
+def _pair_edit(
+    left: LineRecord,
+    right: LineRecord,
+    source: str,
+    left_start: int,
+    right_start: int,
+    lexicon: set[str],
+) -> TextEdit | None:
+    left_text = left.text.rstrip()
+    left_match = _LINE_END.search(left_text)
+    right_match = _LINE_START.match(right.text.lstrip())
+    if left_match is None or right_match is None:
+        return None
+    left_word, right_word = left_match.group(1), right_match.group(1)
+    joined = (left_word + right_word).casefold()
+    start = left_start + left_match.start()
+    right_word_start = right_start + len(right.text) - len(right.text.lstrip())
+    gap = source[start + len(left_word) + 1 : right_word_start]
+    expected = f"{left_word}-{gap}{right_word}"
+    if not gap or not gap.isspace() or source[start : start + len(expected)] != expected:
+        return None
+    if not _known_word(joined, lexicon):
+        return None
+    return TextEdit(
+        start_char=start,
+        end_char=start + len(expected),
+        expected=expected,
+        replacement=left_word + right_word,
+        reason=f"adjacent-line wrap; lexicon form {joined}",
+        confidence=0.98,
+    )
+
+
+def _unresolved_hints(lines: list[LineRecord], lexicon: set[str]) -> list[dict[str, str]]:
+    return [
+        hint
+        for left, right in pairwise(lines)
+        if (hint := _unresolved_hint(left, right, lexicon)) is not None
+    ]
+
+
+def _unresolved_hint(
+    left: LineRecord, right: LineRecord, lexicon: set[str]
+) -> dict[str, str] | None:
+    left_match = _LINE_END.search(left.text.rstrip())
+    right_match = _LINE_START.match(right.text.lstrip())
+    if left_match is None or right_match is None:
+        return None
+    joined = (left_match.group(1) + right_match.group(1)).casefold()
+    if _known_word(joined, lexicon):
+        return None
+    return {
+        "left_line_id": left.id,
+        "right_line_id": right.id,
+        "candidate": joined,
+        "reason": "line-end hyphen unresolved by static lexicon",
+    }
+
+
+def _known_word(word: str, lexicon: set[str]) -> bool:
+    if word in lexicon:
+        return True
+    return any(word.endswith(suffix) and word[: -len(suffix)] in lexicon for suffix in _SUFFIXES)
+normalization.py"""Validated application of model-suggested OCR patches."""
+
+from __future__ import annotations
+
+import re
+import unicodedata
+
+from congressional_globe.models import TextEdit
+
+
+def apply_edits(text: str, edits: list[TextEdit]) -> str:
+    _validate_edits(text, edits)
+    result = text
+    for edit in reversed(edits):
+        result = result[: edit.start_char] + edit.replacement + result[edit.end_char :]
+    return result
+
+
+def resolve_edits(text: str, edits: list[TextEdit]) -> list[TextEdit]:
+    """Correct model offsets only when its exact source anchor occurs once."""
+    resolved = [_resolve_edit(text, edit) for edit in edits]
+    return _dedupe_and_sort(resolved)
+
+
+def validate_edit_shapes(text: str, edits: list[TextEdit]) -> None:
+    """Reject edits that only change punctuation or numeric values."""
+    for edit in edits:
+        _validate_edit_shape(edit)
+
+
+def _validate_edit_shape(edit: TextEdit) -> None:
+    if edit.expected == edit.replacement:
+        return
+    if _numeric_only_pair(edit.expected, edit.replacement):
+        raise ValueError("numeric-only edits require review")
+    if not _punctuation_only(edit) or _allowed_separator_repair(edit):
+        return
+    raise ValueError("punctuation-only edits require review")
+
+
+def _numeric_only_pair(expected: str, replacement: str) -> bool:
+    return _is_numeric_only(expected) and _is_numeric_only(replacement)
+
+
+def _punctuation_only(edit: TextEdit) -> bool:
+    return _without_punctuation(edit.expected) == _without_punctuation(edit.replacement)
+
+
+def _allowed_separator_repair(edit: TextEdit) -> bool:
+    return _whitespace_only(edit.expected, edit.replacement) or _hyphen_join(edit)
+
+
+def _is_numeric_only(value: str) -> bool:
+    return bool(value.strip()) and all(char.isdigit() or char in " ,./$%-" for char in value)
+
+
+def _without_punctuation(value: str) -> str:
+    return "".join(char for char in value if not unicodedata.category(char).startswith("P"))
+
+
+def _whitespace_only(expected: str, replacement: str) -> bool:
+    return expected != replacement and expected.split() == replacement.split()
+
+
+def _hyphen_join(edit: TextEdit) -> bool:
+    return bool(
+        re.fullmatch(r"[A-Za-z]+-\s+[A-Za-z]+", edit.expected)
+    ) and edit.replacement == re.sub(r"-\s+", "", edit.expected)
+
+
+def _dedupe_and_sort(edits: list[TextEdit]) -> list[TextEdit]:
+    """Drop repeated model proposals and order edits against the unmodified text."""
+    seen: set[tuple[int, int, str]] = set()
+    unique: list[TextEdit] = []
+    for edit in sorted(edits, key=lambda item: item.start_char):
+        key = (edit.start_char, edit.end_char, edit.replacement)
+        if key not in seen:
+            seen.add(key)
+            unique.append(edit)
+    return unique
+
+
+def _resolve_edit(text: str, edit: TextEdit) -> TextEdit:
+    if _matches_source(text, edit):
+        return edit
+    start = _unique_position(text, edit.expected)
+    return edit.model_copy(update={"start_char": start, "end_char": start + len(edit.expected)})
+
+
+def _matches_source(text: str, edit: TextEdit) -> bool:
+    return text[edit.start_char : edit.end_char] == edit.expected
+
+
+def _unique_position(text: str, expected: str) -> int:
+    positions = [index for index in range(len(text)) if text.startswith(expected, index)]
+    if len(positions) != 1:
+        raise ValueError("edit expected text must occur exactly once when offsets are incorrect")
+    return positions[0]
+
+
+def _validate_edits(text: str, edits: list[TextEdit]) -> None:
+    previous_end = 0
+    for edit in edits:
+        _validate_order(edit, previous_end)
+        _validate_span(text, edit)
+        _validate_expected_text(text, edit)
+        previous_end = edit.end_char
+
+
+def _validate_order(edit: TextEdit, previous_end: int) -> None:
+    if edit.start_char < previous_end:
+        raise ValueError("edits must be sorted and non-overlapping")
+
+
+def _validate_span(text: str, edit: TextEdit) -> None:
+    if edit.end_char < edit.start_char or edit.end_char > len(text):
+        raise ValueError("edit span is outside source text")
+
+
+def _validate_expected_text(text: str, edit: TextEdit) -> None:
+    if text[edit.start_char : edit.end_char] != edit.expected:
+        raise ValueError("edit expected text does not match source text")
+pipeline.py"""Local pipeline orchestration; all transformations are explicit commands."""
+
+from __future__ import annotations
+
+import json
+import os
+import sqlite3
+from collections.abc import Iterator
+from hashlib import sha256
+from pathlib import Path
+from tempfile import NamedTemporaryFile, TemporaryDirectory
+from typing import Any
+
+from congressional_globe.chunking import chunk_page
+from congressional_globe.extraction import iter_pages, load_page_map
+from congressional_globe.inventory import PARTS, SourceFile, inventory
+from congressional_globe.models import PageRecord, ParagraphRecord
+from congressional_globe.normalization import apply_edits
+
+
+def write_inventory(root: Path, destination: Path, include_hashes: bool) -> None:
+    report = inventory(root, include_hashes)
+    serializable = {
+        identifier: {
+            suffix: _source_file_payload(source_file) for suffix, source_file in derivatives.items()
+        }
+        for identifier, derivatives in report.items()
+    }
+    _write_json(destination, serializable)
+
+
+def extract_identifier(root: Path, destination: Path, identifier: str) -> tuple[Path, Path]:
+    hocr_path = root / f"{identifier}_hocr.html"
+    map_path = root / f"{identifier}_page_numbers.json"
+    page_path = destination / f"{identifier}_pages.jsonl"
+    paragraph_path = destination / f"{identifier}_paragraphs.jsonl"
+    destination.mkdir(parents=True, exist_ok=True)
+    page_map = load_page_map(map_path)
+    with (
+        page_path.open("w", encoding="utf-8") as pages,
+        paragraph_path.open("w", encoding="utf-8") as paragraphs,
+    ):
+        for page in iter_pages(hocr_path, page_map):
+            _write_line(pages, page.model_dump(mode="json"))
+            for paragraph in page.paragraphs:
+                _write_line(paragraphs, _paragraph_payload(page, paragraph.model_dump(mode="json")))
+    return page_path, paragraph_path
+
+
+def build_rag(root: Path, artifact_root: Path, run_id: str, single_json: bool) -> Path:
+    run_directory = artifact_root / run_id
+    pages_directory = run_directory / "pages"
+    chunks_path = run_directory / "chunks.jsonl"
+    run_directory.mkdir(parents=True, exist_ok=True)
+    page_paths = [extract_identifier(root, pages_directory, identifier)[0] for identifier in PARTS]
+    _write_chunks(page_paths, chunks_path)
+    _write_manifest(run_directory, page_paths, chunks_path)
+    if single_json:
+        _write_single_json(run_directory / "corpus.json", page_paths)
+    return run_directory
+
+
+def build_rag_from_pages(pages_path: Path, chunks_path: Path, max_characters: int = 4_000) -> int:
+    """Build page-bounded RAG JSONL from an existing canonical pages JSONL."""
+    chunks_path.parent.mkdir(parents=True, exist_ok=True)
+    count = 0
+    with chunks_path.open("w", encoding="utf-8") as target:
+        for payload in _read_jsonl(pages_path):
+            page = PageRecord.model_validate(payload)
+            for chunk in chunk_page(page, max_characters):
+                _write_line(target, chunk.model_dump(mode="json"))
+                count += 1
+    return count
+
+
+def merge_normalized_paragraphs(pages_path: Path, normalized_path: Path, output_path: Path) -> int:
+    """Merge complete normalized paragraph JSONL into pages, preserving OCR and ledgers."""
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    _reject_output_aliases(pages_path, normalized_path, output_path)
+    temporary_path = _temporary_output(output_path)
+    with TemporaryDirectory(prefix="globe-merge-") as temporary:
+        try:
+            database = Path(temporary) / "paragraphs.sqlite"
+            _index_normalized_paragraphs(database, normalized_path)
+            page_count = _merge_pages(database, pages_path, temporary_path)
+            _reject_unmatched_paragraphs(database)
+            os.replace(temporary_path, output_path)
+        finally:
+            temporary_path.unlink(missing_ok=True)
+    return page_count
+
+
+def _reject_output_aliases(pages: Path, normalized: Path, output: Path) -> None:
+    for source in (pages, normalized):
+        same_path = source.resolve() == output.resolve()
+        same_file = source.exists() and output.exists() and os.path.samefile(source, output)
+        if same_path or same_file:
+            raise ValueError(f"Output path aliases an input file: {source}")
+
+
+def _temporary_output(output: Path) -> Path:
+    with NamedTemporaryFile(prefix=f".{output.name}.", suffix=".tmp", dir=output.parent) as temp:
+        return Path(temp.name)
+
+
+def _index_normalized_paragraphs(database: Path, normalized_path: Path) -> None:
+    with sqlite3.connect(database) as connection:
+        connection.execute(
+            "CREATE TABLE normalized (item TEXT, leaf INTEGER, paragraph TEXT, "
+            "text_ocr TEXT, text_normalized TEXT, payload TEXT, "
+            "PRIMARY KEY (item, leaf, paragraph))"
+        )
+        for payload in _read_jsonl(normalized_path):
+            paragraph = _validated_normalized(payload)
+            identity = _paragraph_identity(payload)
+            try:
+                connection.execute(
+                    "INSERT INTO normalized VALUES (?, ?, ?, ?, ?, ?)",
+                    (*identity, paragraph.text_ocr, paragraph.text_normalized, json.dumps(payload)),
+                )
+            except sqlite3.IntegrityError as error:
+                raise ValueError(f"Duplicate normalized paragraph identity: {identity}") from error
+
+
+def _validated_normalized(payload: dict[str, Any]):
+    fields = {key: value for key, value in payload.items() if key in ParagraphRecord.model_fields}
+    paragraph = ParagraphRecord.model_validate(fields)
+    if paragraph.text_normalized is None:
+        raise ValueError(f"Normalized text is missing for paragraph {paragraph.id}")
+    return paragraph
+
+
+def _paragraph_identity(payload: dict[str, Any]) -> tuple[str, int, str]:
+    required = ("item_identifier", "scan_leaf", "id")
+    try:
+        item, leaf, paragraph = (payload[key] for key in required)
+    except KeyError as error:
+        raise ValueError(
+            f"Normalized paragraph is missing identity field: {error.args[0]}"
+        ) from error
+    return str(item), int(leaf), str(paragraph)
+
+
+def _merge_pages(database: Path, pages_path: Path, output_path: Path) -> int:
+    count = 0
+    with sqlite3.connect(database) as connection, output_path.open("w", encoding="utf-8") as target:
+        for payload in _read_jsonl(pages_path):
+            page = PageRecord.model_validate(payload)
+            paragraphs = _merge_page_paragraphs(connection, page)
+            text_normalized = "\n\n".join(paragraph["text_normalized"] for paragraph in paragraphs)
+            merged = PageRecord.model_validate(
+                {**payload, "paragraphs": paragraphs, "text_normalized": text_normalized}
+            )
+            _write_line(target, merged.model_dump(mode="json"))
+            count += 1
+    return count
+
+
+def _merge_page_paragraphs(
+    connection: sqlite3.Connection, page: PageRecord
+) -> list[dict[str, Any]]:
+    return [_merge_paragraph(connection, page, paragraph) for paragraph in page.paragraphs]
+
+
+def _merge_paragraph(
+    connection: sqlite3.Connection, page: PageRecord, paragraph: ParagraphRecord
+) -> dict[str, Any]:
+    identity = (page.item_identifier, page.scan_leaf, paragraph.id)
+    row = _lookup_normalized(connection, identity)
+    if row[0] != paragraph.text_ocr:
+        raise ValueError(f"Raw OCR mismatch for normalized paragraph: {identity}")
+    derived = json.loads(row[2])
+    merged = _normalized_paragraph(paragraph, derived, row[1], identity)
+    connection.execute(
+        "DELETE FROM normalized WHERE item = ? AND leaf = ? AND paragraph = ?", identity
+    )
+    return merged.model_dump(mode="json")
+
+
+def _lookup_normalized(
+    connection: sqlite3.Connection, identity: tuple[str, int, str]
+) -> tuple[str, str, str]:
+    row = connection.execute(
+        "SELECT text_ocr, text_normalized, payload FROM normalized "
+        "WHERE item = ? AND leaf = ? AND paragraph = ?",
+        identity,
+    ).fetchone()
+    if row is None:
+        raise ValueError(f"Missing normalized paragraph identity: {identity}")
+    return row
+
+
+def _normalized_paragraph(
+    paragraph: ParagraphRecord,
+    derived: dict[str, Any],
+    text_normalized: str,
+    identity: tuple[str, int, str],
+) -> ParagraphRecord:
+    updates: dict[str, Any] = {"text_normalized": text_normalized}
+    for field in (
+        "static_edits",
+        "static_cleanup_provenance",
+        "unresolved_wrap_hints",
+        "role",
+        "role_source",
+        "context",
+        "ai_edits",
+        "ai_input_text",
+        "ai_input_sha256",
+        "cleanup_status",
+        "ai_provenance",
+    ):
+        if field in derived:
+            updates[field] = derived[field]
+    merged = ParagraphRecord.model_validate({**paragraph.model_dump(mode="json"), **updates})
+    _verify_static_ledger(merged, derived, identity)
+    return merged
+
+
+def _verify_static_ledger(
+    paragraph: ParagraphRecord, derived: dict[str, Any], identity: tuple[str, int, str]
+) -> None:
+    static_text = apply_edits(paragraph.text_ocr, paragraph.static_edits)
+    if paragraph.ai_input_text is not None:
+        _verify_ai_stage(paragraph, static_text, identity)
+        return
+    if static_text != paragraph.text_normalized:
+        raise ValueError(f"Static edit ledger does not reproduce normalized text: {identity}")
+
+
+def _verify_ai_stage(
+    paragraph: ParagraphRecord, static_text: str, identity: tuple[str, int, str]
+) -> None:
+    if paragraph.ai_input_text != static_text:
+        raise ValueError(f"AI input does not match static text: {identity}")
+    if paragraph.ai_input_sha256 != sha256(static_text.encode()).hexdigest():
+        raise ValueError(f"AI input hash mismatch: {identity}")
+    if apply_edits(static_text, paragraph.ai_edits) != paragraph.text_normalized:
+        raise ValueError(f"AI edit ledger does not reproduce normalized text: {identity}")
+
+
+def _reject_unmatched_paragraphs(database: Path) -> None:
+    with sqlite3.connect(database) as connection:
+        row = connection.execute("SELECT item, leaf, paragraph FROM normalized LIMIT 1").fetchone()
+    if row is not None:
+        raise ValueError(f"Normalized paragraph has no canonical page: {tuple(row)}")
+
+
+def _write_chunks(page_paths: list[Path], chunks_path: Path) -> None:
+    with chunks_path.open("w", encoding="utf-8") as target:
+        for page_path in page_paths:
+            _write_chunks_from_page_file(target, page_path)
+
+
+def _write_chunks_from_page_file(target: Any, page_path: Path) -> None:
+    for payload in _read_jsonl(page_path):
+        page = PageRecord.model_validate(payload)
+        for chunk in chunk_page(page):
+            _write_line(target, chunk.model_dump(mode="json"))
+
+
+def _write_manifest(run_directory: Path, page_paths: list[Path], chunks_path: Path) -> None:
+    payload = {
+        "schema_version": "0.1.0",
+        "title": "The Congressional Globe",
+        "congress": 39,
+        "session": 1,
+        "parts": [
+            {"identifier": identifier, "part_number": part} for identifier, part in PARTS.items()
+        ],
+        "page_files": [str(path.relative_to(run_directory)) for path in page_paths],
+        "chunks_file": str(chunks_path.relative_to(run_directory)),
+        "raw_metadata_policy": "Preserve Internet Archive metadata separately and unchanged.",
+    }
+    _write_json(run_directory / "session_manifest.json", payload)
+
+
+def _write_single_json(destination: Path, page_paths: list[Path]) -> None:
+    with destination.open("w", encoding="utf-8") as target:
+        target.write('{"schema_version":"0.1.0","pages":[\n')
+        first = True
+        for page_path in page_paths:
+            first = _write_page_file(target, page_path, first)
+        target.write("]}\n")
+
+
+def _write_page_file(target: Any, page_path: Path, first: bool) -> bool:
+    for payload in _read_jsonl(page_path):
+        if not first:
+            target.write(",\n")
+        json.dump(payload, target, ensure_ascii=False, separators=(",", ":"))
+        first = False
+    return first
+
+
+def _paragraph_payload(page: PageRecord, paragraph: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "item_identifier": page.item_identifier,
+        "part_number": page.part_number,
+        "scan_leaf": page.scan_leaf,
+        "printed_page": page.printed_page.model_dump(mode="json"),
+        "hocr_page_id": page.hocr_page_id,
+        **paragraph,
+    }
+
+
+def _source_file_payload(source_file: SourceFile | None) -> dict[str, object] | None:
+    if source_file is None:
+        return None
+    return {
+        "path": str(source_file.path),
+        "size_bytes": source_file.size_bytes,
+        "sha256": source_file.sha256,
+    }
+
+
+def _write_json(path: Path, payload: object) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def _write_line(target: Any, payload: object) -> None:
+    target.write(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n")
+
+
+def _read_jsonl(path: Path) -> Iterator[dict[str, Any]]:
+    with path.open(encoding="utf-8") as source:
+        for line in source:
+            if line.strip():
+                yield json.loads(line)
+chunking.py"""Page-bounded RAG chunk construction with stable citations."""
+
+from __future__ import annotations
+
+from congressional_globe.models import PageRecord, ParagraphRecord, RAGChunk, RAGParagraphSource
+
+
+def chunk_page(page: PageRecord, max_characters: int = 4_000) -> list[RAGChunk]:
+    substantive = [
+        paragraph
+        for paragraph in page.paragraphs
+        if paragraph.role not in {"running_header", "page_number"}
+    ]
+    groups = _paragraph_groups(substantive, max_characters)
+    return [_chunk(page, group, index) for index, group in enumerate(groups)]
+
+
+def _paragraph_groups(paragraphs: list[ParagraphRecord], limit: int) -> list[list[ParagraphRecord]]:
+    groups: list[list[ParagraphRecord]] = []
+    current: list[ParagraphRecord] = []
+    for paragraph in paragraphs:
+        paragraph_length = len(_paragraph_text(paragraph))
+        if current and _group_length(current) + paragraph_length + 2 > limit:
+            groups.append(current)
+            current = []
+        current.append(paragraph)
+    if current:
+        groups.append(current)
+    return groups
+
+
+def _group_length(group: list[ParagraphRecord]) -> int:
+    text_length = sum(len(_paragraph_text(paragraph)) for paragraph in group)
+    return text_length + max(0, len(group) - 1) * 2
+
+
+def _paragraph_text(paragraph: ParagraphRecord) -> str:
+    if paragraph.text_normalized is not None:
+        return paragraph.text_normalized
+    return paragraph.text_ocr
+
+
+def _chunk(page: PageRecord, group: list[ParagraphRecord], index: int) -> RAGChunk:
+    page_value = page.printed_page.inferred or page.printed_page.detected or "unpaginated"
+    citation = _citation(page, page_value, group)
+    edition_date = _consistent_fact(group, "edition_date")
+    chamber = _consistent_fact(group, "chamber")
+    return RAGChunk(
+        id=f"{page.id}:chunk:{index:04d}",
+        text="\n\n".join(_paragraph_text(paragraph) for paragraph in group),
+        item_identifier=page.item_identifier,
+        part_number=page.part_number,
+        scan_leaves=[page.scan_leaf],
+        printed_pages=[page_value],
+        paragraph_ids=[paragraph.id for paragraph in group],
+        citation=citation,
+        hocr_page_id=page.hocr_page_id,
+        paragraph_sources=[_paragraph_source(page, paragraph) for paragraph in group],
+        edition_date=edition_date[0] if edition_date else None,
+        edition_date_source_paragraph_id=edition_date[1] if edition_date else None,
+        edition_date_source_text=edition_date[2] if edition_date else None,
+        chamber=chamber[0] if chamber else None,
+        chamber_source_paragraph_id=chamber[1] if chamber else None,
+        chamber_source_text=chamber[2] if chamber else None,
+    )
+
+
+def _paragraph_source(page: PageRecord, paragraph: ParagraphRecord) -> RAGParagraphSource:
+    return RAGParagraphSource(
+        paragraph_id=paragraph.id,
+        item_identifier=page.item_identifier,
+        part_number=page.part_number,
+        scan_leaf=page.scan_leaf,
+        printed_page=page.printed_page,
+        hocr_page_id=page.hocr_page_id,
+        hocr_line_ids=paragraph.line_ids,
+        bbox=paragraph.bbox,
+        role=paragraph.role,
+        role_source=paragraph.role_source,
+        context=paragraph.context,
+        cleanup_status=paragraph.cleanup_status,
+        static_edits=paragraph.static_edits,
+        static_cleanup_provenance=paragraph.static_cleanup_provenance,
+        ai_edits=paragraph.ai_edits,
+        ai_provenance=paragraph.ai_provenance,
+    )
+
+
+def _consistent_fact(group: list[ParagraphRecord], key: str) -> tuple[str, str, str] | None:
+    values = [_fact_value(paragraph, key) for paragraph in group]
+    if not values or any(value is None for value in values):
+        return None
+    first = values[0]
+    return first if all(value == first for value in values) else None
+
+
+def _fact_value(paragraph: ParagraphRecord, key: str) -> tuple[str, str, str] | None:
+    if _has_relevant_review_hint(paragraph, key):
+        return None
+    value = paragraph.context.get(key)
+    source_id = paragraph.context.get(f"{key}_source_paragraph_id")
+    source_text = paragraph.context.get(f"{key}_source_text")
+    if not value or not source_id or not source_text:
+        return None
+    return value, source_id, source_text
+
+
+def _has_relevant_review_hint(paragraph: ParagraphRecord, key: str) -> bool:
+    hint = paragraph.context.get("review_hint", "").casefold()
+    markers = ("date", "weekday") if key == "edition_date" else ("chamber",)
+    return any(marker in hint for marker in markers)
+
+
+def _citation(page: PageRecord, page_value: str, group: list[ParagraphRecord]) -> str:
+    part = f", pt. {page.part_number}" if page.part_number else ""
+    return (
+        f"The Congressional Globe, 39th Cong., 1st Sess.{part}, p. {page_value}, "
+        f"leaf {page.scan_leaf}, hOCR {page.hocr_page_id}, "
+        f"paragraphs {', '.join(paragraph.id for paragraph in group)}"
+    )
+def _extract_classify(
+    root: Path, run_directory: Path, page_limit: int | None, start_leaf: int
+) -> dict[str, int]:
+    page_path = run_directory / "pages.jsonl"
+    paragraph_path = run_directory / "paragraphs.jsonl"
+    counts = {"pages": 0, "paragraphs": 0}
+    with (
+        page_path.open("w", encoding="utf-8") as pages,
+        paragraph_path.open("w", encoding="utf-8") as paragraphs,
+    ):
+        for identifier in PARTS:
+            page_count, paragraph_count = _extract_part(
+                root, identifier, page_limit, start_leaf, pages, paragraphs
+            )
+            counts["pages"] += page_count
+            counts["paragraphs"] += paragraph_count
+    return counts
+def _extract_part(
+    root: Path,
+    identifier: str,
+    page_limit: int | None,
+    start_leaf: int,
+    pages: Any,
+    paragraphs: Any,
+) -> tuple[int, int]:
+    page_map = load_page_map(root / f"{identifier}_page_numbers.json")
+    page_count = 0
+    paragraph_count = 0
+    page_stream = iter_pages(root / f"{identifier}_hocr.html", page_map)
+    started_pages = dropwhile(lambda page: page.scan_leaf < start_leaf, page_stream)
+    bounded_pages = started_pages if page_limit is None else islice(started_pages, page_limit)
+    for raw_page in bounded_pages:
+        page = classify_page(raw_page)
+        _write_line(pages, page.model_dump(mode="json"))
+        paragraph_count += _write_page_paragraphs(paragraphs, page)
+        page_count += 1
+    return page_count, paragraph_count
+def _write_page_paragraphs(target: Any, page: PageRecord) -> int:
+    for paragraph in page.paragraphs:
+        _write_line(target, _paragraph_payload(page, paragraph.model_dump(mode="json")))
+    return len(page.paragraphs)
+def _write_residuals(static_path: Path, output_path: Path) -> int:
+    count = 0
+    with output_path.open("w", encoding="utf-8") as target:
+        for payload in _read_jsonl(static_path):
+            paragraph = ParagraphRecord.model_validate(
+                {
+                    key: value
+                    for key, value in payload.items()
+                    if key in ParagraphRecord.model_fields
+                }
+            )
+            count += _write_residual(target, payload, paragraph)
+    return count
+def _write_residual(target: Any, payload: dict[str, Any], paragraph: ParagraphRecord) -> int:
+    if not needs_model(paragraph):
+        return 0
+    _write_line(target, payload)
+    return 1

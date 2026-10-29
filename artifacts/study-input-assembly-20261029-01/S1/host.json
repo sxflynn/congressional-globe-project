@@ -1,0 +1,443 @@
+{
+  "packet_sha256": "a78b196824b4dbe869f21d76185843b331b2c166774d76ca238399aad0a74bbb",
+  "payload": {
+    "contract": "ocr-productive-repair-host-input-v2",
+    "role": "productive_repair_and_self_check",
+    "unit_id": "S1",
+    "paragraphs": [
+      {
+        "alias": "P1",
+        "source_id": "congressionalg7391unit:526:par_000526_000021",
+        "part_number": 1,
+        "scan_leaf": 526,
+        "role": "target",
+        "raw": {
+          "text": "We have now, as I believe, the golden oppor- tunity to remedy this evil which will never come again to the men of this generation. The sys- tem of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on recon- struction having reported this amendment, I infer that they will, if this amendment is sub- mitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+          "sha256": "c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8"
+        },
+        "static": {
+          "text": "We have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+          "sha256": "7232477948a863ee16c02ae4c837d5caffac4e177f60d8729633f531d29b7c9a",
+          "edits": [
+            {
+              "edit_id": "legacy-static-0",
+              "raw_start": 38,
+              "raw_end": 51,
+              "expected": "oppor- tunity",
+              "replacement": "opportunity",
+              "reason": "adjacent-line wrap; lexicon form opportunity"
+            },
+            {
+              "edit_id": "legacy-static-1",
+              "raw_start": 135,
+              "raw_end": 143,
+              "expected": "sys- tem",
+              "replacement": "system",
+              "reason": "adjacent-line wrap; lexicon form system"
+            },
+            {
+              "edit_id": "legacy-static-2",
+              "raw_start": 354,
+              "raw_end": 370,
+              "expected": "recon- struction",
+              "replacement": "reconstruction",
+              "reason": "adjacent-line wrap; lexicon form reconstruction"
+            },
+            {
+              "edit_id": "legacy-static-3",
+              "raw_start": 448,
+              "raw_end": 459,
+              "expected": "sub- mitted",
+              "replacement": "submitted",
+              "reason": "adjacent-line wrap; lexicon form submitted"
+            },
+            {
+              "edit_id": "legacy-static-4",
+              "raw_start": 592,
+              "raw_end": 602,
+              "expected": "in- sisted",
+              "replacement": "insisted",
+              "reason": "adjacent-line wrap; lexicon form insisted"
+            }
+          ],
+          "rule_sha256": "ea7e3019d8b36c25614bbd94f6b5ed71824e5aed840e0a0a5bbd427c9e15eb1d",
+          "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d"
+        }
+      }
+    ],
+    "image": {
+      "alias": "I1",
+      "sha256": "0864afba1dcdedf0555463283e9f79e7e2c1209de20901de07b73b3cd415e5a9",
+      "mime": "image/jpeg",
+      "width": 1028,
+      "height": 805,
+      "bindings": [
+        {
+          "paragraph_alias": "P1",
+          "raw_sha256": "c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8",
+          "raw_start": 0,
+          "raw_end": 709,
+          "crop_region": {
+            "left": 0,
+            "top": 0,
+            "right": 1028,
+            "bottom": 805
+          }
+        }
+      ],
+      "registration_status": "verified",
+      "legibility_status": "checked",
+      "source_item_identifier": "congressionalg7391unit",
+      "source_scan_leaf": 526,
+      "hocr_sha256": "7300280b1d7966fb72a67717765f839bd174ce11fd20728b505f6bb366998f8f",
+      "page_map_sha256": "d4ca0462c350b0e5ac060102a549360e0b0256713f10f8cf31d50d405bfbfe48",
+      "binding_manifest_sha256": "dd7e44fad4e9bbe4b2e96fe6c240510bbc7809547dc018e258ad43fee18af4d8",
+      "registration_evidence_sha256": "6c0c7b02d5d93dfac874f567c0cde01fd3389cf05134d671fb3ed4a39394dd60"
+    },
+    "diagnostics": {
+      "status": "frozen",
+      "detector_sha256": "653eac66ed83a31be83e50f25e85f4a2cd51a830d9f87257576662e63bdfc2df",
+      "configuration_sha256": "b50d95ef8fb7e8ceebf030edf3501e37f8996a33cec2e274715ace3476e71435",
+      "signals": [
+        {
+          "signal_id": "T52-S1-P1-4",
+          "paragraph_alias": "P1",
+          "raw_start": 16,
+          "raw_end": 17,
+          "raw_quote": "I",
+          "category": "other",
+          "flags": [
+            "capitalized_candidate"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-8",
+          "paragraph_alias": "P1",
+          "raw_start": 38,
+          "raw_end": 43,
+          "raw_quote": "oppor",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-9",
+          "paragraph_alias": "P1",
+          "raw_start": 45,
+          "raw_end": 51,
+          "raw_quote": "tunity",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-25",
+          "paragraph_alias": "P1",
+          "raw_start": 131,
+          "raw_end": 134,
+          "raw_quote": "The",
+          "category": "other",
+          "flags": [
+            "lexical_name_hint"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-26",
+          "paragraph_alias": "P1",
+          "raw_start": 135,
+          "raw_end": 138,
+          "raw_quote": "sys",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-27",
+          "paragraph_alias": "P1",
+          "raw_start": 140,
+          "raw_end": 143,
+          "raw_quote": "tem",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-30",
+          "paragraph_alias": "P1",
+          "raw_start": 155,
+          "raw_end": 158,
+          "raw_quote": "has",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-32",
+          "paragraph_alias": "P1",
+          "raw_start": 167,
+          "raw_end": 170,
+          "raw_quote": "The",
+          "category": "other",
+          "flags": [
+            "lexical_name_hint"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-33",
+          "paragraph_alias": "P1",
+          "raw_start": 171,
+          "raw_end": 177,
+          "raw_quote": "States",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary",
+            "capitalized_candidate"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-45",
+          "paragraph_alias": "P1",
+          "raw_start": 243,
+          "raw_end": 253,
+          "raw_quote": "exceptions",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-46",
+          "paragraph_alias": "P1",
+          "raw_start": 255,
+          "raw_end": 264,
+          "raw_quote": "destroyed",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-51",
+          "paragraph_alias": "P1",
+          "raw_start": 289,
+          "raw_end": 294,
+          "raw_quote": "State",
+          "category": "other",
+          "flags": [
+            "capitalized_candidate"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-52",
+          "paragraph_alias": "P1",
+          "raw_start": 295,
+          "raw_end": 306,
+          "raw_quote": "governments",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-57",
+          "paragraph_alias": "P1",
+          "raw_start": 337,
+          "raw_end": 340,
+          "raw_quote": "The",
+          "category": "other",
+          "flags": [
+            "lexical_name_hint"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-61",
+          "paragraph_alias": "P1",
+          "raw_start": 361,
+          "raw_end": 370,
+          "raw_quote": "struction",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-63",
+          "paragraph_alias": "P1",
+          "raw_start": 378,
+          "raw_end": 386,
+          "raw_quote": "reported",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-66",
+          "paragraph_alias": "P1",
+          "raw_start": 403,
+          "raw_end": 404,
+          "raw_quote": "I",
+          "category": "other",
+          "flags": [
+            "capitalized_candidate"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-76",
+          "paragraph_alias": "P1",
+          "raw_start": 453,
+          "raw_end": 459,
+          "raw_quote": "mitted",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-79",
+          "paragraph_alias": "P1",
+          "raw_start": 467,
+          "raw_end": 472,
+          "raw_quote": "State",
+          "category": "other",
+          "flags": [
+            "capitalized_candidate"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-80",
+          "paragraph_alias": "P1",
+          "raw_start": 473,
+          "raw_end": 485,
+          "raw_quote": "Legislatures",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary",
+            "capitalized_candidate"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-82",
+          "paragraph_alias": "P1",
+          "raw_start": 489,
+          "raw_end": 497,
+          "raw_quote": "Congress",
+          "category": "other",
+          "flags": [
+            "capitalized_candidate"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-89",
+          "paragraph_alias": "P1",
+          "raw_start": 534,
+          "raw_end": 540,
+          "raw_quote": "States",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary",
+            "capitalized_candidate"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-97",
+          "paragraph_alias": "P1",
+          "raw_start": 575,
+          "raw_end": 585,
+          "raw_quote": "guarantees",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-101",
+          "paragraph_alias": "P1",
+          "raw_start": 596,
+          "raw_end": 602,
+          "raw_quote": "sisted",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-116",
+          "paragraph_alias": "P1",
+          "raw_start": 681,
+          "raw_end": 686,
+          "raw_quote": "Union",
+          "category": "other",
+          "flags": [
+            "capitalized_candidate"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "T52-S1-P1-120",
+          "paragraph_alias": "P1",
+          "raw_start": 702,
+          "raw_end": 708,
+          "raw_quote": "States",
+          "category": "other",
+          "flags": [
+            "word_not_in_vocabulary",
+            "capitalized_candidate"
+          ],
+          "route_reason": "Saved T52 detector flag, not a confirmed error or completed fix."
+        },
+        {
+          "signal_id": "6ae28bb401c47f71f09c3dfb591a8b8ce0d5e3cbf697bde8d4e4707ed58ffba4",
+          "paragraph_alias": "P1",
+          "raw_start": 277,
+          "raw_end": 278,
+          "raw_quote": "'",
+          "category": "other",
+          "flags": [
+            "isolated_quote",
+            "isolated_mark_needs_image",
+            "unverified_review_candidate"
+          ],
+          "route_reason": "Inspect the original image; this signal is not a repair or a verified reading."
+        }
+      ],
+      "negative_targets": []
+    },
+    "saved_proposal": null,
+    "prompt_sha256": "036bc4aacd2d6f01a75ba6c0daee31ef8d4dd58a2bc6cd3041d2b37f7a09fd39",
+    "response_schema_sha256": "3dc56a420aeb21f7b1872f0f9ec51fe4de5c8c5415e7290cfc23d74986923e94",
+    "code_sha256": "2704013ad5ec16e7afc65b86dea36989f13b015a546885cf51b1bf6fa69d2f3d",
+    "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "sampling_manifest_sha256": "9ad0e2789e28ce29d3d8ec20a52a3a54b2859b4b38d6629c806e72746f3fb7f0",
+    "bounds_sha256": "db8c1eb674c3c6e269dab25b7d0ad23e6b9e4943bdbb0444f583bfa6b966a407"
+  }
+}
