@@ -1,0 +1,9 @@
+{
+  "command": "ps -axo pid,lstart,etime,command; targeted local filter",
+  "rows": [
+    "75257 Thu Oct 29 14:31:41 2026        02:37:07 uv run --no-sync python -m congressional_globe.review_desk_launcher",
+    "75258 Thu Oct 29 14:31:41 2026        02:37:07 /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m congressional_globe.review_desk_launcher",
+    "87583 Wed Oct 21 20:46:50 2026     07-20:21:58 /Applications/Ollama.app/Contents/MacOS/Ollama",
+    "87597 Wed Oct 21 20:46:52 2026     07-20:21:56 /Applications/Ollama.app/Contents/Resources/ollama serve"
+  ]
+}

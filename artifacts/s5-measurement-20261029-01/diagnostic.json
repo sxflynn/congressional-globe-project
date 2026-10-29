@@ -1,0 +1,28 @@
+{
+  "status": "actual returned response invalid; never salvaged or canonically applied",
+  "json_shape_valid": true,
+  "first_host_rejection": "whole-paragraph anchor has no quote",
+  "independent_mechanical_observations": {
+    "whole_paragraph_anchor_has_nonnull_quote": true,
+    "no_finding_status_has_findings_and_patches": true,
+    "proposed_finding_claims_image_unclear": true,
+    "missing_self_check_categories": [
+      "all_words",
+      "bracketed_cues",
+      "printed_repetition",
+      "target_context_boundaries"
+    ],
+    "complete_self_check_has_remaining_concerns": true,
+    "patch_replay_equals_full_reading": false
+  },
+  "raw_text": "The Committee on- Appropriations recom- mended non-concurrence.",
+  "literal_returned_patch_replay": "The Committee on Appropriations recom- mended non-concurrence.",
+  "returned_full_reading": "The Committee on Appropriations recommended non-concurrence.",
+  "missing_patch_effect": "returned full text joins recom- mended but its sole raw patch does not",
+  "source_inspection": {
+    "observer": "parent vision-capable Codex harness, not blinded/independent gold",
+    "image_sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+    "observations": "The displayed target supports on Appropriations and recommended; printed non-concurrence and final period are retained. Full proposed sentence stays within target; neighboring sentences were not copied. No additional harmful textual change observed in this one target. Contract failure prevents a valid derived export; accuracy/recall/harm rates unavailable."
+  },
+  "scope_limits": "One63-character selected paragraph, no personal name or number test, no representative routing or quality inference."
+}

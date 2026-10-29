@@ -1,0 +1,25 @@
+{
+  "task": "T87",
+  "scope": "approved one-off S5 measurement only; not full T55/native clearance",
+  "implementation_commit": "68c7e0c",
+  "spec_sha256": "2ebdffdb3f4a31167e5004a64b3b893d3db95b8e641479e1a10f9c32941eaaa4",
+  "code_sha256": "9198b31a15c8ba214a743404ed69a719163bd4e173f0266d2cd9761ae04bee37",
+  "request_sha256": "e19305443cf7b8676acdf25848b88455db203d55b8e1c394116bdd071aed000a",
+  "approval_sha256": "8afa77450efbfdc1f0f4cc236fcfd16f3c4d6763b0c91e6c0e6d666f4ef13bfc",
+  "command": "UV_CACHE_DIR=tmp/uv-cache uv run python -m congressional_globe.productive_ocr_measurement --repository . --spec artifacts/s5-measurement-20261029-01/run/spec.json",
+  "model_calls": 1,
+  "retries": 0,
+  "other_loading_probes": 0,
+  "source_fetches": 0,
+  "downloads": 0,
+  "input_fit": "unknown, explicitly allowed before this attempt only",
+  "pending_units": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "D1",
+    "D2"
+  ],
+  "gate_tests": 1010
+}

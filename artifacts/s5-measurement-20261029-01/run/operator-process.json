@@ -1,0 +1,7 @@
+{
+  "command": "ps -axo pid,ppid,lstart,etime,command; exact measurement filter",
+  "rows": [
+    "61316 61315 Thu Oct 29 17:11:13 2026           00:15 uv run python -m congressional_globe.productive_ocr_measurement --repository . --spec artifacts/s5-measurement-20261029-01/run/spec.json",
+    "61334 61316 Thu Oct 29 17:11:14 2026           00:14 /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m congressional_globe.productive_ocr_measurement --repository . --spec artifacts/s5-measurement-20261029-01/run/spec.json"
+  ]
+}

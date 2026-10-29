@@ -1,0 +1,86 @@
+{
+  "tasks": [
+    "T87",
+    "T56(S5 only)",
+    "T86(observed completion/termination only)",
+    "T88(initial report only)"
+  ],
+  "request_sha256": "e19305443cf7b8676acdf25848b88455db203d55b8e1c394116bdd071aed000a",
+  "spec_sha256": "2ebdffdb3f4a31167e5004a64b3b893d3db95b8e641479e1a10f9c32941eaaa4",
+  "outcome": "complete HTTP reply, valid JSON shape, invalid host semantics;0 valid clean exports",
+  "calls": 1,
+  "server_starts": 1,
+  "retries": 0,
+  "new_source_fetches": 0,
+  "downloads": 0,
+  "nonloading_shared_metadata_GETs": 2,
+  "input_tokens_backend_reported": 1391,
+  "output_tokens_backend_reported": 762,
+  "input_threshold": 6000,
+  "authentic_native_fit": null,
+  "provider_status": "completed/stop, not output-length truncation",
+  "cold_cycle_seconds": 53.335579541977495,
+  "backend_reported_seconds": {
+    "total_duration": 45.083900416,
+    "load_duration": 6.0107695,
+    "prompt_eval_duration": 11.545559,
+    "eval_duration": 27.512278167
+  },
+  "frozen_start_to_terminal_receipt_seconds": 102.770761013031,
+  "pre_client_start_seconds": 49.43589997291565,
+  "first_report_elapsed_seconds_since_terminal": 157.3754198551178,
+  "owned_stop": "receipt stopped; independent subsequent ps has none of61405/61413/61334/61316; shared lock available",
+  "tested_stop_path": "normal complete response followed by owned process termination; not proof of timeout/cancel/crash stop",
+  "source_scope": "original S5 one63-character paragraph, cached999x206JPEG; six units pending",
+  "historical_costs": "Original investigation48attempts/3693.79 conservative seconds,137216known input/25692output,nine unknown usages preserved separately; T55source10HTTP attempts,252.59known subprocess seconds excluding S1 unmeasured; timings overlap. Offline engineering total/hardware energy/human time unknown.",
+  "collection_paragraphs": 296995,
+  "scenario_basis": "Each attempt costs same53.3356seconds as this short cold S5 cycle; one paragraph per request; no batching/persistent-server speedup assumed. Routing/audit/rework rates hypothetical; prices/energy not measured.",
+  "attempted_processing_scenarios": [
+    {
+      "assumed_routed_fraction": 0.1,
+      "assumed_audit_fraction_of_unrouted": 0.01,
+      "assumed_paragraphs_per_request": 1,
+      "attempted_requests": 32373,
+      "hours_at_measured_cold_cycle": 479.62019903123263,
+      "continuous_days": 19.984174959634693,
+      "hours_with_assumed_25pct_additional_rework": 599.5252487890408
+    },
+    {
+      "assumed_routed_fraction": 0.25,
+      "assumed_audit_fraction_of_unrouted": 0.01,
+      "assumed_paragraphs_per_request": 1,
+      "attempted_requests": 76477,
+      "hours_at_measured_cold_cycle": 1133.0403101755037,
+      "continuous_days": 47.21001292397932,
+      "hours_with_assumed_25pct_additional_rework": 1416.3003877193796
+    },
+    {
+      "assumed_routed_fraction": 1.0,
+      "assumed_audit_fraction_of_unrouted": 0.01,
+      "assumed_paragraphs_per_request": 1,
+      "attempted_requests": 296995,
+      "hours_at_measured_cold_cycle": 4400.111235019335,
+      "continuous_days": 183.33796812580565,
+      "hours_with_assumed_25pct_additional_rework": 5500.139043774169
+    }
+  ],
+  "successful_cleanup_forecast": "No finite completion estimate supported:0/1 valid results. If that invalid rate persisted, successful cleanup yield would remain zero. Scenarios price attempts only; useful yield and larger passage costs unknown.",
+  "next_smallest_question": "Can a minimally versioned prompt/schema enforce quote anchors, consistent status/basis, all raw patches and full self-check in one request? Prepare offline against this exact immutable failure and existing synthetics; no S5 retry or new live call without separately bounded authority.",
+  "pending_units": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "D1",
+    "D2"
+  ],
+  "P0_M6_M7": "open; no accepted canonical repair or full-corpus operation",
+  "evidence": {
+    "result_sha256": "580b673b0aaff4003873bfa86f6374eba5f3a9b2311a41ca37e4750eaa1ab6c9",
+    "receipt_sha256": "fba61c3df7995ff49c5012e6ff9b1721b60e0a8be24292620e811f357eadabda",
+    "raw_http_sha256": "a30dbfa1c404507852db67ffd31dc933a62c42e7d5780e1ea0ef5fc66aa8c4f1",
+    "diagnostic_sha256": "7e7e7fed1d19d4444260f5e2fffbefd7477eed06de69654e0e314b0de790919c"
+  },
+  "report_timing_note": "First saved report157.38seconds after terminal,7.38above150second planning reserve; frozen-start-to-first-report260.15seconds remains inside600second whole-session cap. Subsequent documentation/commit work is offline, with no model or server operation.",
+  "download_accounting_scope": "0 requested model/dependency downloads and0source fetches; automatic backend runtime/cache metadata origin/network cost not instrumented."
+}
