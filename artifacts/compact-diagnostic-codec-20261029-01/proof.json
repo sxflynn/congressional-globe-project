@@ -1,0 +1,47 @@
+{
+  "task": "T80",
+  "all_seven_rows_retained": true,
+  "roundtrips": 5,
+  "independent_stdlib_inverse_checks": 5,
+  "exact_T79_compact_matches": 5,
+  "schema_sha256": "97a7509462f4ba53b04d3b7aeba54c7e2f0a0b8b1bc56ce21c2935bdb9effa21",
+  "schema_limit": "JSON schema describes structural bounds; Python semantic validators and independently held reference/hash checks remain mandatory.",
+  "identities": [
+    {
+      "path": "src/congressional_globe/productive_ocr_compact.py",
+      "bytes": 8609,
+      "sha256": "bddef7e091ac285f98050e280b2571191d920d7ed992ea8acba0d95dfa61a7d0"
+    },
+    {
+      "path": "tests/test_productive_ocr_compact.py",
+      "bytes": 12321,
+      "sha256": "a8ff37e50afc1cab370c7d4364bb4619463cb141efd6df627a0e3ca909741fbb"
+    },
+    {
+      "path": "artifacts/compact-diagnostic-codec-20261029-01/proof-source.txt",
+      "bytes": 4768,
+      "sha256": "7fad32f94b21aefec4d59ab206691068f6dc423b1655357c8652d596aeaeab9d"
+    }
+  ],
+  "local_proof_seconds": 0.016523333033546805,
+  "codec_resource_bounds": {
+    "serialized_utf8_bytes": 2097152,
+    "json_depth": 32,
+    "signals": 128,
+    "route_reasons": 128,
+    "paragraphs": 32,
+    "target_layer_total_codepoints": 6000,
+    "context_layer_total_codepoints": 2000
+  },
+  "production_path_files_edited": false,
+  "input_token_cap_unchanged": 6000,
+  "output_token_cap_unchanged": 1500,
+  "model_calls": 0,
+  "server_calls": 0,
+  "fetches": 0,
+  "dependency_installs": 0,
+  "new_historical_findings": 0,
+  "native_fit": null,
+  "runtime_adopted": false,
+  "launch_ready": false
+}

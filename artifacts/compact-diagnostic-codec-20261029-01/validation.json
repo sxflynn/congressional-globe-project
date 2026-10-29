@@ -1,0 +1,76 @@
+{
+  "focused_cases": 67,
+  "full_make_gate": {
+    "tests_passed": 996,
+    "pytest_seconds": 30.22,
+    "formatting": "passed",
+    "ruff": "passed",
+    "ty": "passed",
+    "complexity_maximum": 5,
+    "complexity": "passed"
+  },
+  "production_paths": [
+    {
+      "path": "src/congressional_globe/productive_ocr_host.py",
+      "sha256": "f98bd97fbe24b772de7c1b298d1f924a255d223acfffacd45f14a396caf8f6da",
+      "unchanged_from_HEAD": true,
+      "imports_compact_codec": false
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_projection.py",
+      "sha256": "1e08740e86340e2da4566b70beee8ada8d2a66a98473d1458443693f6cb5049d",
+      "unchanged_from_HEAD": true,
+      "imports_compact_codec": false
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_fit.py",
+      "sha256": "48e7e1765b48fe061bdd0c471b42b013148fe8967def6929ae7a6697bfd11ae0",
+      "unchanged_from_HEAD": true,
+      "imports_compact_codec": false
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_native_trace.py",
+      "sha256": "88346b116d212cd3cc60202e1abd3a11f92f74f3ac933f48954b9eeafed0974e",
+      "unchanged_from_HEAD": true,
+      "imports_compact_codec": false
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_live.py",
+      "sha256": "7321b895b71fcc118da59cb3e249fc3b712a14360d6ee480515a473062fbcb60",
+      "unchanged_from_HEAD": true,
+      "imports_compact_codec": false
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_http.py",
+      "sha256": "9d9395540512155d25cb898c19074f7426f5689dd891f2c483838e051b29cf2c",
+      "unchanged_from_HEAD": true,
+      "imports_compact_codec": false
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_runner.py",
+      "sha256": "aa7ea04e449b661bee08a8654d833381aa982ed3f4e495401f973a40d655eb4d",
+      "unchanged_from_HEAD": true,
+      "imports_compact_codec": false
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_export.py",
+      "sha256": "a542bf92638adce92609711dd069d9b5acb790421ad75fce5c67d4b976530a22",
+      "unchanged_from_HEAD": true,
+      "imports_compact_codec": false
+    },
+    {
+      "path": "src/congressional_globe/productive_ocr_authority.py",
+      "sha256": "720f0cc1851e1e1cd4e054c8b73af41621c88fd397497b4f1a5d3bb6374eb02b",
+      "unchanged_from_HEAD": true,
+      "imports_compact_codec": false
+    }
+  ],
+  "five_encoder_T79_exact_matches": true,
+  "five_decoder_exact_restorations": true,
+  "five_independent_stdlib_inverses": true,
+  "all_seven_sample_rows": true,
+  "source_proof_identity_checks": true,
+  "runtime_adopted": false,
+  "native_fit": null,
+  "launch_ready": false
+}

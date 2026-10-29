@@ -1,0 +1,78 @@
+"""One-off T80 evidence, not a new command or provider workflow."""
+import copy
+import hashlib
+import json
+import time
+from pathlib import Path
+
+from congressional_globe.productive_ocr_compact import (
+    CompactProvider, MAX_JSON_DEPTH, MAX_SERIALIZED_BYTES,
+    decode_provider, encode_provider,
+)
+
+OUT=Path('artifacts/compact-diagnostic-codec-20261029-01')
+INPUT=Path('artifacts/study-input-assembly-20261029-01')
+PROPOSAL=Path('artifacts/study-capacity-screen-20261029-01')
+def canonical(x): return json.dumps(x,sort_keys=True,ensure_ascii=False,separators=(',',':'))
+def sha(b): return hashlib.sha256(b).hexdigest()
+def save(p,x): p.write_text(json.dumps(x,indent=2,ensure_ascii=False)+'\n')
+rows=json.loads((INPUT/'units.json').read_text())
+pins={r['unit_id']:r for r in json.loads((PROPOSAL/'compact-input-proposal.json').read_text())['units']}
+results=[]
+started=time.perf_counter()
+for row in rows:
+    unit=row['unit_id']
+    if row['status']=='missing_source_image':
+        results.append({'unit_id':unit,'status':'missing_source_image','codec_input_created':False})
+        continue
+    data=(INPUT/unit/'request.json').read_bytes()
+    assert sha(data)==row['request_sha256']
+    original=json.loads(data)['messages'][1]['content']
+    digest=pins[unit]['original_user_sha256']
+    assert sha(original.encode())==digest
+    encoded=encode_provider(original,digest)
+    proposed=(PROPOSAL/unit/'proposed-user-v3.json').read_bytes()
+    assert encoded.encode()==proposed
+    restored=decode_provider(encoded,original,digest)
+    assert restored==original
+    # Independent explicit inverse, using only stdlib and the frozen table fields.
+    independent=copy.deepcopy(json.loads(encoded))
+    table=independent['diagnostics'].pop('signal_table')
+    signals=[]
+    for values in table['rows']:
+        signal=dict(zip(table['columns'],values,strict=True))
+        signal['route_reason']=table['route_reasons'][signal['route_reason']]
+        signals.append(signal)
+    independent['diagnostics']['signals']=signals
+    independent['contract']='ocr-productive-repair-input-v2'
+    assert canonical(independent)==original
+    folder=OUT/unit;folder.mkdir(exist_ok=True)
+    (folder/'compact-provider.json').write_text(encoded)
+    (folder/'restored-provider.json').write_text(restored)
+    results.append({'unit_id':unit,'status':'offline_codec_verified',
+        'exposure':row['exposure'],'targets':row['targets'],
+        'original_request_sha256':row['request_sha256'],
+        'original_provider_sha256':digest,'restored_provider_sha256':sha(restored.encode()),
+        'compact_provider_sha256':sha(encoded.encode()),'T79_compact_exact_bytes_match':True,
+        'original_provider_bytes':len(original.encode()),'compact_provider_bytes':len(encoded.encode()),
+        'canonical_roundtrip_exact':True,'independent_stdlib_inverse_exact':True,
+        'all_provider_fields_and_ordered_array_payloads_retained':True,
+        'literal_system_plus_user_tokens_from_T79_exact_byte_identity':pins[unit]['literal_messages_separate_token_sum'],
+        'token_count_scope':'Inherited from pinned T79 byte-identical provider/prompt proposal, not rerun or native-fit evidence.',
+        'native_fit':None,'runtime_adopted':False,'dispatch_allowed':False})
+save(OUT/'units.json',results)
+schema=canonical(CompactProvider.model_json_schema())
+(OUT/'compact-provider.schema.json').write_text(schema)
+paths=['src/congressional_globe/productive_ocr_compact.py','tests/test_productive_ocr_compact.py',str(OUT/'proof-source.txt')]
+save(OUT/'proof.json',{'task':'T80','all_seven_rows_retained':len(results)==7,'roundtrips':5,
+    'independent_stdlib_inverse_checks':5,'exact_T79_compact_matches':5,
+    'schema_sha256':sha(schema.encode()),
+    'schema_limit':'JSON schema describes structural bounds; Python semantic validators and independently held reference/hash checks remain mandatory.',
+    'identities':[{'path':p,'bytes':Path(p).stat().st_size,'sha256':sha(Path(p).read_bytes())} for p in paths],
+    'local_proof_seconds':time.perf_counter()-started,
+    'codec_resource_bounds':{'serialized_utf8_bytes':MAX_SERIALIZED_BYTES,'json_depth':MAX_JSON_DEPTH,
+        'signals':128,'route_reasons':128,'paragraphs':32,'target_layer_total_codepoints':6000,'context_layer_total_codepoints':2000},
+    'production_path_files_edited':False,'input_token_cap_unchanged':6000,'output_token_cap_unchanged':1500,
+    'model_calls':0,'server_calls':0,'fetches':0,'dependency_installs':0,
+    'new_historical_findings':0,'native_fit':None,'runtime_adopted':False,'launch_ready':False})
+print(json.dumps([{'unit_id':r['unit_id'],'status':r['status'],'original_bytes':r.get('original_provider_bytes'),'compact_bytes':r.get('compact_provider_bytes')} for r in results],indent=2))
