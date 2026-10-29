@@ -1,0 +1,60 @@
+[
+  {
+    "id": "F1",
+    "finding": "Installed arm64 binary identifies v0.40.8+dirty, revision f580b5484a58c8370c35d669555bf887783a3f68 and vcs.modified=true.",
+    "evidence": [
+      "executable.json",
+      "go-build-info-arm64.txt"
+    ],
+    "implication": "Revision-pinned official sources describe a candidate base, not an attested exact build. Unknown local modifications remain."
+  },
+  {
+    "id": "F2",
+    "finding": "Selected installed model manifest uses qwen3.8 renderer and qwen3.5 parser over Qwen3_5 model/vision configuration; tokenizer chat_template is not sufficient to establish the selected Go renderer.",
+    "evidence": [
+      "v1+json.json",
+      "config.json",
+      "tokenizer_config.json",
+      "model-renderers-qwen35.go"
+    ],
+    "implication": "Exact rendered request must include actual backend renderer/think/image-tag choices; do not reuse a generic tokenizer template count."
+  },
+  {
+    "id": "F3",
+    "finding": "Public chat debug_render_only branch returns rendered template and image count after runner scheduling/loading. Internal runner /v1/tokenize is text-only and starts after model Load.",
+    "evidence": [
+      "server-routes.go",
+      "mlxrunner-server.go",
+      "mlxrunner-client.go"
+    ],
+    "implication": "No sufficient no-load/full-multimodal evidence API found in these route implementations. No debug, tokenize or generation request was made."
+  },
+  {
+    "id": "F4",
+    "finding": "The CPU PrepareMedia interface prepares float32 image data, dimensions, token expansions and positional layout; EncodeMedia is separate. Qwen resizes using patch/merge alignment and CatmullRom, then normalizes/patchifies.",
+    "evidence": [
+      "mlxrunner-model-media.go",
+      "mlxrunner-model-qwen3_5-process_image.go",
+      "mlxrunner-model-qwen3_5-vision.go"
+    ],
+    "implication": "A zero-response-generation producer is technically plausible, but exact parity requires backend evidence and an exporter, not a hand-authored schedule."
+  },
+  {
+    "id": "F5",
+    "finding": "T70 fit evidence expects decodable tile image bytes and text-only IDs plus separate image count. This selected model computes and stores as native preparation state float32 patch rows, grid/position arrays, and a single expanded token stream including image boundary/pad IDs.",
+    "evidence": [
+      "mlxrunner-model-media.go",
+      "mlxrunner-model-qwen3_5-vision.go",
+      "../../src/congressional_globe/productive_ocr_fit.py"
+    ],
+    "implication": "Version the native-fit representation; preserve v1 fake proof and never disguise floats as JPEG tiles or double-count image markers."
+  },
+  {
+    "id": "F6",
+    "finding": "Runner Prepare maps num_predict<=0 to remaining context generation budget.",
+    "evidence": [
+      "mlxrunner-pipeline.go"
+    ],
+    "implication": "num_predict:0 is not a zero-generation/dry-run mechanism. Do not spend an approved study request to discover this."
+  }
+]

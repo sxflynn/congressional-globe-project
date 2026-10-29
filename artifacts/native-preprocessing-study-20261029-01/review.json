@@ -1,0 +1,9 @@
+{
+  "reviewer": "native_source_review",
+  "model": "gpt-6-luna",
+  "scope": "Bounded read-only comparison of saved source/installed metadata/report/proposal and current fit-v1; no edits, network or runtime calls",
+  "verdict": "No material unsupported claim in scoped evidence. Does not attest installed dirty-build parity, authentic capture or stopping.",
+  "finding": "F5 emits might imply an external export when native code only computes return state.",
+  "action": "Changed wording to computes and stores as native preparation state.",
+  "not_a_human_or_historical_grade": true
+}

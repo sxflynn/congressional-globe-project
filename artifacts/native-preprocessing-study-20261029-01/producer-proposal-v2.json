@@ -1,0 +1,33 @@
+{
+  "contract": "productive-ocr-native-preflight-proposal-v2",
+  "status": "proposed_not_implemented_not_launch_clearance",
+  "question": "Can the exact installed backend emit complete preprocessing without generating a reply and without silent resource/input changes?",
+  "selected_model_manifest_sha256": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+  "selected_executable_sha256": "e5c7c0ffa50d23d0f0e59cbf325f689b0010ee5563be89b73b05f08844e19e6b",
+  "needs": [
+    "Attest dirty-build source or bounded observed parity before claiming exact native behavior.",
+    "Design/export exact renderer bytes and segment token IDs, expanded full IDs with media ranges and boundary ownership, float32 patch data bytes/shape/endianness plus grid and positional-layout traces.",
+    "Preserve exact original HTTP body/image/schema/diagnostics/saved-proposal hashes. A debug request is separate bytes and must bind a deterministic transform of the intended body; it is not the study request hash itself.",
+    "Schema format may constrain decoding grammar without entering rendered text. Record its actual native handling and identity without pretending the schema is always prompt text.",
+    "Budget startup/model loading, preprocessing and stopping separately even when zero reply tokens are generated; no unstated extra pass.",
+    "Explicitly retain existing 6000input/1500output/7request/1800whole-session caps and HR012 S1/S2 instructions/output checks; any overrun/inadequate cap is a versioned proposal, not a silent change."
+  ],
+  "phases": [
+    {
+      "task": "T76",
+      "scope": "Offline v2 contract/exporter design and fake native-float/expanded-stream tests; no installed server launch, inference or new dependency. Record exact parity/resource gaps.",
+      "launch_authority": false
+    },
+    {
+      "future_scope": "Only after a separately named bounded readiness task defines actual resources, fresh process/queue/log/ownership checks and exact zero-generation operation, consider observed backend capture under applicable recorded human permission. No such operation performed or authorized by this T71 investigation.",
+      "launch_authority": false
+    }
+  ],
+  "current_gaps": [
+    "Two primary scans still missing",
+    "No authentic complete native preflight",
+    "Dirty installed build parity unknown",
+    "Actual selected backend stopping/compatibility unproved"
+  ],
+  "trusted_t55_clearance": null
+}
