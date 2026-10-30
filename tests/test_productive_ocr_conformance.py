@@ -141,7 +141,6 @@ def test_whole_paragraph_and_no_finding_controls():
 def test_candidate_projection_requires_explicit_v2_and_rebound_prompt_schema():
     from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes
     from congressional_globe.productive_ocr_projection import compile_request_projection
-    from congressional_globe.productive_ocr_runner import code_identity
 
     host, old, registry = load_s5_inputs(Path("."))
     schema = derive_reply_schema(host, conformance_v2=True)
@@ -151,7 +150,8 @@ def test_candidate_projection_requires_explicit_v2_and_rebound_prompt_schema():
     resources = {
         "response_schema_sha256": schema.schema_text.encode(),
         "prompt_sha256": prompt.encode(),
-        "code_sha256": canonical_json(code_identity()),
+        # Reproduce the immutable historical candidate with its recorded implementation.
+        "code_sha256": (ROOT / "code-identity.json").read_bytes(),
     }
     for key, data in resources.items():
         digest = sha256_bytes(data)

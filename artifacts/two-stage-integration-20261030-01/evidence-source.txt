@@ -1,0 +1,56 @@
+"""One-off offline T97 evidence using saved pilot inputs and fake-only journal; no provider."""
+import json
+import runpy
+from pathlib import Path
+from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes
+from congressional_globe.productive_ocr_runner import RunnerContext, execute, code_identity
+from congressional_globe.productive_ocr_text_reply import export_text_reply
+
+base = Path('artifacts/two-stage-integration-20261030-01')
+ns = runpy.run_path('tests/test_productive_ocr_text.py')
+def save(name, value):
+    (base / name).write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n')
+rows = []
+for unit, old, new in [('S1', "loyal ' and", 'loyal and'), ('S2', 'propei-ty', 'property'), ('S5', 'on- Appropriations', 'on Appropriations')]:
+    host, registry, result, routes, projection, schema = ns['saved_case'](unit)
+    corrected = result.proposed_text.replace(old, new).replace('in- sisted', 'insisted')
+    fake_reply = ns['reply'](host, corrected)
+    exported = export_text_reply(host, projection.body_utf8, fake_reply)
+    save(f'{unit}-host.json', host)
+    save(f'{unit}-routes.json', [r.model_dump(mode='json') for r in routes])
+    save(f'{unit}-simulated-export.json', exported.model_dump(mode='json'))
+    (base / f'{unit}-request.json').write_text(projection.body_utf8)
+    (base / f'{unit}-prompt.txt').write_bytes(registry.files[host['payload']['prompt_sha256']])
+    (base / f'{unit}-schema.json').write_text(schema.schema_text)
+    rows.append(dict(unit=unit, raw=result.input.source.raw_text, software_output=result.proposed_text,
+                     simulated_secondary_text=corrected, actual_new_model_output=None,
+                     scope='authored test reply for integration, not measured AI quality or historical acceptance',
+                     flags=sum(len(r.signals) for r in routes), grouped_requests=1,
+                     source_id=result.input.source.source_id, raw_sha256=result.input.source.raw_sha256,
+                     request_sha256=projection.body_sha256))
+units = json.loads(Path('artifacts/study-input-assembly-20261029-01/units.json').read_bytes())
+all_routes = []
+for result in ns['saved_results']():
+    route = ns['route_paragraph'](result, ns['saved_resources'](result), 'P1')
+    all_routes.append(route.model_dump(mode='json'))
+save('all18-paragraph-routes.json', all_routes)
+save('seven-unit-status.json', [dict(unit_id=u['unit_id'], image_status=u['status'],
+     next_mode='blocked_missing_image' if u['unit_id'] in ['S3','S4'] else
+               'retained_v2_saved_proposal_audit' if u['unit_id'] in ['D1','D2'] else 'offline_v3_projection',
+     actual_new_model_output=None, dispatch_allowed=False) for u in units])
+jobs, registry, bounds = ns['fake_session']()
+client = ns['TextClient']()
+result = execute(base / 'fake-run', jobs, bounds, RunnerContext(registry, client))
+assert client.calls == ['U1','U2']
+reused = execute(base / 'fake-run', jobs, bounds, RunnerContext(registry, client))
+assert result == reused and client.calls == ['U1','U2']
+save('fake-run-summary.json', result)
+save('walkthrough.json', dict(task='T97', cases=rows, actual_provider_calls=0,
+    fake_client_calls=client.calls, reuse_without_new_send=True, code_identity=code_identity(),
+    number_rule='Every detected number routes independent of lookup/plausibility/prior repair; audits required for detection gaps.',
+    detection_gaps='Damaged/unusual/non-English number spellings and contextual quantities remain unproved; no exemption.',
+    full_text_limit='Model-reported complete coverage is not independent verification. Obvious fragments/context copies fail; arbitrary subtle omissions cannot be certified by software.',
+    feedback_guard='Unique expected local reading with unchanged 24-codepoint source context each side; changed or ambiguous context withholds. Not image truth or word-level alignment.',
+    alignment='Changed replies use one exact-replaying paragraph replacement, explicitly coarse; no token-level source precision.',
+    quality='No new AI run, quality score, runtime forecast, native-fit proof, P0 decision or accepted clean text.'))
+print('Saved actual software projections for S1/S2/S5, all18 routes/seven identities, simulated assembly and fake journal reuse.')

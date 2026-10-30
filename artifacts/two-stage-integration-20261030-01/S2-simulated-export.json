@@ -1,0 +1,61 @@
+{
+  "contract": "source-bound-productive-ocr-text-v3",
+  "host_packet_sha256": "d14ad69ea135895b1b8f4cba022ef12482ecab6b9bef5882498fcfb371a81d71",
+  "provider_request_sha256": "5244116a2d97fe8d3c87c3e4db11aa576d072a84d304fee7c3941eedfa4f340c",
+  "raw_reply_sha256": "cc56734a42900c32df7e8b67e7aebf0bfc4db8a7ad95734dfd8d90182779eaa3",
+  "raw_reply_text": "{\"contract\": \"ocr-productive-repair-text-reply-v3\", \"unit_id\": \"S2\", \"readings\": [{\"paragraph_alias\": \"P1\", \"coverage\": \"complete\", \"corrected_text\": \"Mr. BROWN. The navigable channel is not private property.\", \"reason\": null}]}",
+  "image_sha256": "558720d837fb5631d182a3f53cec98f8bc9987d09dcc8d65994b3749c35a5668",
+  "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+  "source_layers_sha256": "dbb40a52f874ca99c3ec128ad19c10a57d83067a4c1ad3abd65f30ead1fc8016",
+  "response_schema_sha256": "7d9809d24ce8b7d0d47286980434ca53f5e2e030bccbb3a18d435550a49267f1",
+  "diagnostics_sha256": "72168193447d5e875133cd0d2791a53edfc823eeae7938b4467c7b7e55c3fcef",
+  "outcome": {
+    "proposal_status": "findings",
+    "derived_proposals": [
+      {
+        "paragraph_alias": "P1",
+        "source_id": "congressionalglo7392unit:716:par_000716_000020",
+        "raw_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+        "deterministic_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+        "text": "Mr. BROWN. The navigable channel is not private property.",
+        "sha256": "fbc6d520e03b3697c18ba6be80502b99deb4d45373e2f2da65bb727ec075315f",
+        "raw_edits": [
+          {
+            "start": 0,
+            "end": 58,
+            "raw_quote": "Mr. BROWN. The navigable channel is not private propei-ty.",
+            "replacement": "Mr. BROWN. The navigable channel is not private property.",
+            "rule_id": "software-whole-target-replacement-v3"
+          }
+        ],
+        "support_map": [
+          {
+            "raw_start": 0,
+            "raw_end": 58,
+            "derived_start": 0,
+            "derived_end": 57,
+            "mapping": "replacement"
+          }
+        ],
+        "replay_verified": true,
+        "alignment": "coarse_whole_paragraph_not_token_alignment",
+        "acceptance": "unreviewed_model_proposal",
+        "source_quality": "not_verified"
+      }
+    ],
+    "provider_reply": {
+      "contract": "ocr-productive-repair-text-reply-v3",
+      "unit_id": "S2",
+      "readings": [
+        {
+          "paragraph_alias": "P1",
+          "coverage": "complete",
+          "corrected_text": "Mr. BROWN. The navigable channel is not private property.",
+          "reason": null
+        }
+      ]
+    },
+    "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified"
+  },
+  "acceptance": "unreviewed_ai_evidence"
+}

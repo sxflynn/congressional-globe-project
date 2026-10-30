@@ -1,0 +1,74 @@
+[
+  {
+    "source_id": "congressionalglo7395unit:529:par_000529_000006",
+    "raw_sha256": "7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426",
+    "deterministic_sha256": "7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426",
+    "deterministic_result_sha256": "1fc6224378473ca10b3f2de9d8790ade59fab54f5d1c868fb94bb2006acacf5c",
+    "name_list_state": "available",
+    "signals": [
+      {
+        "signal_id": "7f36379de63783fa58ceff14198747b890d457da3abe273e5ab44f5c7fcab0c1",
+        "paragraph_alias": "P1",
+        "raw_start": 4,
+        "raw_end": 13,
+        "raw_quote": "Committee",
+        "category": "word",
+        "flags": [
+          "name_list_unfamiliar"
+        ],
+        "route_reason": "Inspect the entire target against the image; this is not a verified error."
+      },
+      {
+        "signal_id": "477dc0db2063e3ea37da15f7aba5ad4e50e887acf4a9cc1cec6be161372fcd50",
+        "paragraph_alias": "P1",
+        "raw_start": 18,
+        "raw_end": 32,
+        "raw_quote": "Appropriations",
+        "category": "word",
+        "flags": [
+          "post_repair_word_unfamiliar",
+          "name_list_unfamiliar"
+        ],
+        "route_reason": "Inspect the entire target against the image; this is not a verified error."
+      },
+      {
+        "signal_id": "9d2c77eee26156cb67deafb53e35a0d36e9b5b291517bf8d33128b88dfa39a5f",
+        "paragraph_alias": "P1",
+        "raw_start": 33,
+        "raw_end": 38,
+        "raw_quote": "recom",
+        "category": "word",
+        "flags": [
+          "post_repair_word_unfamiliar"
+        ],
+        "route_reason": "Inspect the entire target against the image; this is not a verified error."
+      },
+      {
+        "signal_id": "8eeb1e0f1e867f9a88bdbab3b7e7e9de3d06e0a874717f85b4aa43e2ab2a448f",
+        "paragraph_alias": "P1",
+        "raw_start": 40,
+        "raw_end": 46,
+        "raw_quote": "mended",
+        "category": "word",
+        "flags": [
+          "post_repair_word_unfamiliar"
+        ],
+        "route_reason": "Inspect the entire target against the image; this is not a verified error."
+      },
+      {
+        "signal_id": "04e09859724b3bd22b73d185d84d375eaa162f6a1385fe4073e857bf865f51fb",
+        "paragraph_alias": "P1",
+        "raw_start": 47,
+        "raw_end": 62,
+        "raw_quote": "non-concurrence",
+        "category": "word",
+        "flags": [
+          "post_repair_word_unfamiliar"
+        ],
+        "route_reason": "Inspect the entire target against the image; this is not a verified error."
+      }
+    ],
+    "selection": "secondary_inspection",
+    "coverage_gaps": "Numeric detection is conservative but incomplete: damaged or unusual written forms, non-English spellings and contextual quantities can be missed. Ambiguous Roman/word forms still route. Every detected number routes, including raw numbers later repaired. Unflagged and apparent-success audits remain required; no familiarity exemption."
+  }
+]

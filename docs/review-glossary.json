@@ -1983,6 +1983,58 @@
       "term": "grouped request",
       "definition": "One model request covering related flagged items in the same assigned passage, rather than a separate call for each flag.",
       "aliases": []
+    },
+    {
+      "term": "offline integration",
+      "definition": "Connecting the software stages and testing them locally without sending a new request to an AI model."
+    },
+    {
+      "term": "authored simulations",
+      "definition": "Test answers deliberately written to exercise software behavior. They are not new answers returned by an AI experiment."
+    },
+    {
+      "term": "local-context check",
+      "definition": "A check that the requested reading appears once between unchanged nearby source text. Changed or repeated nearby text can make the check inconclusive."
+    },
+    {
+      "term": "coarse support",
+      "definition": "A source link covering a whole paragraph instead of claiming an exact match for each changed word."
+    },
+    {
+      "term": "exact-replaying proposal",
+      "definition": "A proposed text that software can reproduce exactly from the original text and a recorded replacement. This does not establish accuracy against the image."
+    },
+    {
+      "term": "numeric flags",
+      "definition": "Markers that select passages containing possible numbers for image inspection; they do not declare the numbers wrong."
+    },
+    {
+      "term": "lookup hint",
+      "definition": "Information from a word or name list that helps choose what to inspect, without proving what the original page says."
+    },
+    {
+      "term": "word alignment",
+      "definition": "A claim about which particular words in one text correspond to words in another text."
+    },
+    {
+      "term": "target labels",
+      "definition": "Short names identifying the assigned passages. They distinguish those passages from nearby context."
+    },
+    {
+      "term": "fresh process",
+      "definition": "A newly started program that reads saved work, rather than relying on the earlier program’s memory."
+    },
+    {
+      "term": "stopping receipt",
+      "definition": "A saved record that the owned request has stopped. It is separate from saving the returned words."
+    },
+    {
+      "term": "withheld answer",
+      "definition": "A reply that provides no proposed reading and explains why the evidence is uncertain."
+    },
+    {
+      "term": "contextual quantities",
+      "definition": "Amounts expressed indirectly through surrounding language rather than a straightforward numeric form."
     }
   ]
 }

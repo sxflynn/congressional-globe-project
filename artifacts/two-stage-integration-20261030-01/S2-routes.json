@@ -1,0 +1,37 @@
+[
+  {
+    "source_id": "congressionalglo7392unit:716:par_000716_000020",
+    "raw_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+    "deterministic_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+    "deterministic_result_sha256": "859b9198e668b55e4530b38e3c8d131d444716739b5ab0aaa6b570f581d4d3a8",
+    "name_list_state": "available",
+    "signals": [
+      {
+        "signal_id": "552297ab746b2b981e5cf7c9b93448e0a73bdf34fdabc98603d5161f30005c9f",
+        "paragraph_alias": "P1",
+        "raw_start": 4,
+        "raw_end": 9,
+        "raw_quote": "BROWN",
+        "category": "word",
+        "flags": [
+          "name_list_unfamiliar"
+        ],
+        "route_reason": "Inspect the entire target against the image; this is not a verified error."
+      },
+      {
+        "signal_id": "f98409bcf2630b418c8cce06a1b8d34fbb44fe4b9f33d35086813a01c7488ac4",
+        "paragraph_alias": "P1",
+        "raw_start": 48,
+        "raw_end": 57,
+        "raw_quote": "propei-ty",
+        "category": "word",
+        "flags": [
+          "post_repair_word_unfamiliar"
+        ],
+        "route_reason": "Inspect the entire target against the image; this is not a verified error."
+      }
+    ],
+    "selection": "secondary_inspection",
+    "coverage_gaps": "Numeric detection is conservative but incomplete: damaged or unusual written forms, non-English spellings and contextual quantities can be missed. Ambiguous Roman/word forms still route. Every detected number routes, including raw numbers later repaired. Unflagged and apparent-success audits remain required; no familiarity exemption."
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "reviewer": "existing bounded gpt-6-luna delegate /root/t89_review",
+  "scope": "read-only preparation and correctness review; no source-quality judgment or human grade",
+  "findings": [
+    {
+      "issue": "Copied context appended to target could pass.",
+      "action": "Reject excess full-context occurrences relative to assigned target; append/prepend/context-only controls."
+    },
+    {
+      "issue": "Independent bracket counts allowed reordering/malformed repair.",
+      "action": "Reuse ordered compare_brackets; require same literal sequence and no malformed structure."
+    },
+    {
+      "issue": "Required phrase could appear in wrong location.",
+      "action": "Unique requested reading between unchanged 24-codepoint source context on each side; changed/ambiguous context withholds."
+    },
+    {
+      "issue": "Unicode numeric forms and incomplete detector coverage.",
+      "action": "Use isnumeric for glyphs incl fractions/Roman/superscripts; retain explicit unusual/damaged/non-English/contextual detection gaps and audit requirement."
+    }
+  ],
+  "verdict": "No further material issue found in inspected v3 scope after corrections; reviewer did not edit or run tests."
+}

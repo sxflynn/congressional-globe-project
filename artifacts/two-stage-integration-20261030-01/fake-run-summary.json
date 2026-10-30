@@ -1,0 +1,182 @@
+{
+  "statuses": {
+    "valid": 2,
+    "pending": 0,
+    "unresolved": 0,
+    "inflight": 0,
+    "error": 0,
+    "invalid": 0
+  },
+  "attempts": 2,
+  "usage": {
+    "calls": 2,
+    "seconds": 7.44168646633625e-05,
+    "unknown_elapsed": 0,
+    "input_tokens": 4,
+    "output_tokens": 6,
+    "unknown_usage": 0,
+    "output_limit_exceeded": false
+  },
+  "results": [
+    {
+      "window_id": "U1",
+      "status": "valid",
+      "result": {
+        "elapsed_seconds": 4.016701132059097e-05,
+        "finish_reason": null,
+        "output_text": "{\"contract\": \"ocr-productive-repair-text-reply-v3\", \"unit_id\": \"U1\", \"readings\": [{\"paragraph_alias\": \"P1\", \"coverage\": \"complete\", \"corrected_text\": \"By Mr. Example.\", \"reason\": null}]}",
+        "owned_stop_observation": {
+          "attempt_id": "38a4f2cf-ff8e-4adc-beb0-57772845f6d0",
+          "body_sha256": "c26c969a9cb5d3f8c180ef6fd2459a5266d901f3de0b052059a630b9d9ff987c",
+          "cancellation_requested": false,
+          "response_sha256": "287cacbf943f01e78ba392ee9c53d6cf8219fbdabca766646a56044646f31e36",
+          "state": "stopped",
+          "window_id": "U1",
+          "within_deadline": true
+        },
+        "proposal_status": "no_finding",
+        "quality": "host_replay_only; print_accuracy_unreviewed",
+        "raw_response": "{\"contract\": \"ocr-productive-repair-text-reply-v3\", \"unit_id\": \"U1\", \"readings\": [{\"paragraph_alias\": \"P1\", \"coverage\": \"complete\", \"corrected_text\": \"By Mr. Example.\", \"reason\": null}]}",
+        "source_mapped_proposals": {
+          "acceptance": "unreviewed_ai_evidence",
+          "contract": "source-bound-productive-ocr-text-v3",
+          "diagnostics_sha256": "936e197b456cd7ca763adbd347ffd3328607c3370e880069d8c523d47e30ac29",
+          "host_packet_sha256": "a1e536ef07367f6fe9c44364ebe8abb4bb134631751d3b6d1498066ea6dfe617",
+          "image_sha256": "4016343e7a0637bd46ab25aff5acc3b4a692d3c6a089000aa8cfda53a4f7cc50",
+          "model_digest": "9372c470eeadd5ecd9c3c74c2b3cb633f8e2f2fad799250a0f70d652b6b825e4",
+          "outcome": {
+            "derived_proposals": [
+              {
+                "acceptance": "unreviewed_model_proposal",
+                "alignment": "exact_copy",
+                "deterministic_sha256": "01547871dd18c7843435e9cfad2689b13e6b5ef3dca44684ed638beb2579348f",
+                "paragraph_alias": "P1",
+                "raw_edits": [],
+                "raw_sha256": "01547871dd18c7843435e9cfad2689b13e6b5ef3dca44684ed638beb2579348f",
+                "replay_verified": true,
+                "sha256": "01547871dd18c7843435e9cfad2689b13e6b5ef3dca44684ed638beb2579348f",
+                "source_id": "item-1:2:p1",
+                "source_quality": "not_verified",
+                "support_map": [
+                  {
+                    "derived_end": 15,
+                    "derived_start": 0,
+                    "mapping": "exact_copy",
+                    "raw_end": 15,
+                    "raw_start": 0
+                  }
+                ],
+                "text": "By Mr. Example."
+              }
+            ],
+            "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+            "proposal_status": "no_finding",
+            "provider_reply": {
+              "contract": "ocr-productive-repair-text-reply-v3",
+              "readings": [
+                {
+                  "corrected_text": "By Mr. Example.",
+                  "coverage": "complete",
+                  "paragraph_alias": "P1",
+                  "reason": null
+                }
+              ],
+              "unit_id": "U1"
+            }
+          },
+          "provider_request_sha256": "c26c969a9cb5d3f8c180ef6fd2459a5266d901f3de0b052059a630b9d9ff987c",
+          "raw_reply_sha256": "2b0b6baa28f45f193396f8a3f9410af240bca95e9f844e7c35d2efe678c32e9d",
+          "raw_reply_text": "{\"contract\": \"ocr-productive-repair-text-reply-v3\", \"unit_id\": \"U1\", \"readings\": [{\"paragraph_alias\": \"P1\", \"coverage\": \"complete\", \"corrected_text\": \"By Mr. Example.\", \"reason\": null}]}",
+          "response_schema_sha256": "1f1ad766fc67014457ef102158bf217dccddf778c1a04ec82446448c3ba28a73",
+          "source_layers_sha256": "776963edc81fbbef20a6a8d718263e578490f81d9b7b1c2f69b7919751a8d553"
+        },
+        "status": "completed",
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 3
+        }
+      }
+    },
+    {
+      "window_id": "U2",
+      "status": "valid",
+      "result": {
+        "elapsed_seconds": 3.424985334277153e-05,
+        "finish_reason": null,
+        "output_text": "{\"contract\": \"ocr-productive-repair-text-reply-v3\", \"unit_id\": \"U2\", \"readings\": [{\"paragraph_alias\": \"P1\", \"coverage\": \"complete\", \"corrected_text\": \"By Mr. Example.\", \"reason\": null}]}",
+        "owned_stop_observation": {
+          "attempt_id": "92227c90-e24c-44ae-a6eb-c4e0d7ebc90d",
+          "body_sha256": "e47bd7e76b04ebb9130e958d2c385aa300c96f97e0f188876779f1d0e8e53568",
+          "cancellation_requested": false,
+          "response_sha256": "10c92e9358a347e24a5bab868672861cfbadb8162b99a47442c01797ca2b2fe2",
+          "state": "stopped",
+          "window_id": "U2",
+          "within_deadline": true
+        },
+        "proposal_status": "no_finding",
+        "quality": "host_replay_only; print_accuracy_unreviewed",
+        "raw_response": "{\"contract\": \"ocr-productive-repair-text-reply-v3\", \"unit_id\": \"U2\", \"readings\": [{\"paragraph_alias\": \"P1\", \"coverage\": \"complete\", \"corrected_text\": \"By Mr. Example.\", \"reason\": null}]}",
+        "source_mapped_proposals": {
+          "acceptance": "unreviewed_ai_evidence",
+          "contract": "source-bound-productive-ocr-text-v3",
+          "diagnostics_sha256": "936e197b456cd7ca763adbd347ffd3328607c3370e880069d8c523d47e30ac29",
+          "host_packet_sha256": "422a7bebf108f37e47457c40c49c4f86e7bf03619892418617e29bf560ffa58e",
+          "image_sha256": "4016343e7a0637bd46ab25aff5acc3b4a692d3c6a089000aa8cfda53a4f7cc50",
+          "model_digest": "9372c470eeadd5ecd9c3c74c2b3cb633f8e2f2fad799250a0f70d652b6b825e4",
+          "outcome": {
+            "derived_proposals": [
+              {
+                "acceptance": "unreviewed_model_proposal",
+                "alignment": "exact_copy",
+                "deterministic_sha256": "01547871dd18c7843435e9cfad2689b13e6b5ef3dca44684ed638beb2579348f",
+                "paragraph_alias": "P1",
+                "raw_edits": [],
+                "raw_sha256": "01547871dd18c7843435e9cfad2689b13e6b5ef3dca44684ed638beb2579348f",
+                "replay_verified": true,
+                "sha256": "01547871dd18c7843435e9cfad2689b13e6b5ef3dca44684ed638beb2579348f",
+                "source_id": "item-1:2:p1",
+                "source_quality": "not_verified",
+                "support_map": [
+                  {
+                    "derived_end": 15,
+                    "derived_start": 0,
+                    "mapping": "exact_copy",
+                    "raw_end": 15,
+                    "raw_start": 0
+                  }
+                ],
+                "text": "By Mr. Example."
+              }
+            ],
+            "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+            "proposal_status": "no_finding",
+            "provider_reply": {
+              "contract": "ocr-productive-repair-text-reply-v3",
+              "readings": [
+                {
+                  "corrected_text": "By Mr. Example.",
+                  "coverage": "complete",
+                  "paragraph_alias": "P1",
+                  "reason": null
+                }
+              ],
+              "unit_id": "U2"
+            }
+          },
+          "provider_request_sha256": "e47bd7e76b04ebb9130e958d2c385aa300c96f97e0f188876779f1d0e8e53568",
+          "raw_reply_sha256": "910b1d2a2d7d16c9cb32a02aceaf0871399a7aa44fd182fb681fd3badc660662",
+          "raw_reply_text": "{\"contract\": \"ocr-productive-repair-text-reply-v3\", \"unit_id\": \"U2\", \"readings\": [{\"paragraph_alias\": \"P1\", \"coverage\": \"complete\", \"corrected_text\": \"By Mr. Example.\", \"reason\": null}]}",
+          "response_schema_sha256": "efe7c6436ad405706a4c1ae505bb76feb93221bc314eeedfa2e6c7c0765a5f2f",
+          "source_layers_sha256": "776963edc81fbbef20a6a8d718263e578490f81d9b7b1c2f69b7919751a8d553"
+        },
+        "status": "completed",
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 3
+        }
+      }
+    }
+  ],
+  "historical_status": "unreviewed_proposals_not_verified_print",
+  "backend_stop_scope": "injected_owned_client_only; actual_backend_unproved"
+}

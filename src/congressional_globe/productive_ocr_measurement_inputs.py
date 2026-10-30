@@ -74,9 +74,10 @@ def _registry(root: Path, host: dict, index: dict) -> EvidenceRegistry:
             pending.update(
                 _load_registered_resource(digest, root, index, record_ids, file_ids, records, files)
             )
-    image_path = root.parent.parent / index["images"][IMAGE_SHA256]
-    image_bytes = _read_verified(image_path, IMAGE_SHA256)
-    return EvidenceRegistry({IMAGE_SHA256: image_bytes}, records, files)
+    image_hash = host["payload"]["image"]["sha256"]
+    image_path = root.parent.parent / index["images"][image_hash]
+    image_bytes = _read_verified(image_path, image_hash)
+    return EvidenceRegistry({image_hash: image_bytes}, records, files)
 
 
 def load_s5_inputs(repository: Path) -> tuple[dict, RequestProjection, EvidenceRegistry]:

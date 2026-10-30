@@ -1,0 +1,123 @@
+{
+  "packet_sha256": "d14ad69ea135895b1b8f4cba022ef12482ecab6b9bef5882498fcfb371a81d71",
+  "payload": {
+    "contract": "ocr-productive-repair-host-input-v3",
+    "role": "productive_repair_and_self_check",
+    "unit_id": "S2",
+    "paragraphs": [
+      {
+        "alias": "P1",
+        "source_id": "congressionalglo7392unit:716:par_000716_000020",
+        "part_number": 2,
+        "scan_leaf": 716,
+        "role": "target",
+        "raw": {
+          "text": "Mr. BROWN. The navigable channel is not private propei-ty.",
+          "sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570"
+        },
+        "static": {
+          "text": "Mr. BROWN. The navigable channel is not private propei-ty.",
+          "sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+          "edits": [],
+          "rule_sha256": "4dcb11804a918cfad1b8c42b5f52399852ca5ac3ec0c8475ea32bb18789cbf27",
+          "lexicon_sha256": "db72ad8eebdb6df2257048fac965b8f0cdb9e7189ab6b7e7f835588db54a71a0"
+        }
+      }
+    ],
+    "image": {
+      "alias": "I1",
+      "sha256": "558720d837fb5631d182a3f53cec98f8bc9987d09dcc8d65994b3749c35a5668",
+      "mime": "image/jpeg",
+      "width": 1004,
+      "height": 212,
+      "bindings": [
+        {
+          "paragraph_alias": "P1",
+          "raw_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+          "raw_start": 0,
+          "raw_end": 58,
+          "crop_region": {
+            "left": 0,
+            "top": 0,
+            "right": 1004,
+            "bottom": 212
+          }
+        }
+      ],
+      "registration_status": "verified",
+      "legibility_status": "checked",
+      "source_item_identifier": "congressionalglo7392unit",
+      "source_scan_leaf": 716,
+      "hocr_sha256": "16ed248c75a5f2deb217794aeee6a0e63f73d2bbcb73ea33b2d6772a4e59cc67",
+      "page_map_sha256": "5817ab6ba9cb54c27b6e3d8b4eca257ba97afecbca08d552ff0cf0ed87c957f3",
+      "binding_manifest_sha256": "8cfb787a3db15dfec5cdf6768a6e1e190929ff3b35f0a9ee5314952db412dba0",
+      "registration_evidence_sha256": "d33412cd9606e8e22975b0dadc9baceccbb9ab4a81e6fe2aa9b99ea1c2ea0216"
+    },
+    "diagnostics": {
+      "status": "frozen",
+      "detector_sha256": "3be87b8538124368fa443b14e30aad46fcd73ee7d41802642a6de81ca4edcc33",
+      "configuration_sha256": "8b329985e7a9c4166244e65599b6da1b65846bd5bf6b1c5f973bd78ea44a16aa",
+      "signals": [
+        {
+          "signal_id": "f700ec29fbc497c5a6f860c0b52e6607513c3999037a2554670be3bd34710e66",
+          "paragraph_alias": "P1",
+          "raw_start": 48,
+          "raw_end": 57,
+          "raw_quote": "propei-ty",
+          "category": "word",
+          "flags": [
+            "internal_hyphen_damage",
+            "unknown_internal_hyphen",
+            "unverified_review_candidate"
+          ],
+          "route_reason": "Inspect the original image; this signal is not a repair or a verified reading."
+        },
+        {
+          "signal_id": "de10b6fa7a5753398ae0ea120274e525bace101f01ce8fe2cf4684e973ebccd3",
+          "paragraph_alias": "P1",
+          "raw_start": 48,
+          "raw_end": 57,
+          "raw_quote": "propei-ty",
+          "category": "other",
+          "flags": [
+            "required_local_reading:property",
+            "human_note:evidence-note:progress-comments:3:98dc572b5da3329f8229cb98754378a8d3a7d954ba27742ced074842da9acfd0"
+          ],
+          "route_reason": "Inspect the entire target against the image; this is not a verified error."
+        },
+        {
+          "signal_id": "552297ab746b2b981e5cf7c9b93448e0a73bdf34fdabc98603d5161f30005c9f",
+          "paragraph_alias": "P1",
+          "raw_start": 4,
+          "raw_end": 9,
+          "raw_quote": "BROWN",
+          "category": "word",
+          "flags": [
+            "name_list_unfamiliar"
+          ],
+          "route_reason": "Inspect the entire target against the image; this is not a verified error."
+        },
+        {
+          "signal_id": "f98409bcf2630b418c8cce06a1b8d34fbb44fe4b9f33d35086813a01c7488ac4",
+          "paragraph_alias": "P1",
+          "raw_start": 48,
+          "raw_end": 57,
+          "raw_quote": "propei-ty",
+          "category": "word",
+          "flags": [
+            "post_repair_word_unfamiliar"
+          ],
+          "route_reason": "Inspect the entire target against the image; this is not a verified error."
+        }
+      ],
+      "negative_targets": []
+    },
+    "saved_proposal": null,
+    "prompt_sha256": "497cfdeda9fafc112846bb19e31e658fe1fa12208f6e168406585479a790e981",
+    "response_schema_sha256": "7d9809d24ce8b7d0d47286980434ca53f5e2e030bccbb3a18d435550a49267f1",
+    "code_sha256": "64380527c1e76a1d4dc27955b16a671d38ee6cfa80dc06981ae1b6f363e0afb3",
+    "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "sampling_manifest_sha256": "9ad0e2789e28ce29d3d8ec20a52a3a54b2859b4b38d6629c806e72746f3fb7f0",
+    "bounds_sha256": "db8c1eb674c3c6e269dab25b7d0ad23e6b9e4943bdbb0444f583bfa6b966a407"
+  }
+}

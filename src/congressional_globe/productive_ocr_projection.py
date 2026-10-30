@@ -22,9 +22,11 @@ from congressional_globe.productive_ocr_reply import Reply
 
 
 class SchemaArtifact(Contract):
-    contract: Literal["productive-ocr-reply-schema-v1", "productive-ocr-reply-schema-v2"] = (
-        "productive-ocr-reply-schema-v1"
-    )
+    contract: Literal[
+        "productive-ocr-reply-schema-v1",
+        "productive-ocr-reply-schema-v2",
+        "productive-ocr-reply-schema-v3",
+    ] = "productive-ocr-reply-schema-v1"
     unit_id: str = Field(min_length=1)
     role: Literal["productive_repair_and_self_check", "audit_saved_proposal"]
     target_aliases: tuple[str, ...] = Field(min_length=1, max_length=32)
@@ -78,15 +80,14 @@ def derive_reply_schema(host_payload: dict, *, conformance_v2: bool = False) -> 
     aliases = tuple(targets)
     if not aliases or len(set(aliases)) != len(aliases):
         raise ValueError("schema needs unique declared target aliases")
+    if payload.get("contract") == "ocr-productive-repair-host-input-v3":
+        return _text_schema(payload, aliases, conformance_v2)
     schema = copy.deepcopy(Reply.model_json_schema())
     schema["properties"]["unit_id"] = {"const": payload["unit_id"]}
     schema["properties"]["role"] = {"const": payload["role"]}
     _set_alias_enum(schema, list(aliases))
     _specialize_audit(schema, payload["role"])
-    if conformance_v2:
-        from congressional_globe.productive_ocr_conformance import specialize_conformance
-
-        specialize_conformance(schema)
+    _apply_conformance(schema, conformance_v2)
     schema_text = _canonical_text(schema)
     return SchemaArtifact(
         contract="productive-ocr-reply-schema-v2"
@@ -97,6 +98,22 @@ def derive_reply_schema(host_payload: dict, *, conformance_v2: bool = False) -> 
         target_aliases=aliases,
         schema_text=schema_text,
         schema_sha256=sha256_bytes(schema_text.encode("utf-8")),
+    )
+
+
+def _text_schema(payload, aliases, conformance_v2):
+    from congressional_globe.productive_ocr_text_reply import text_reply_schema
+
+    if conformance_v2:
+        raise ValueError("v2 conformance cannot select v3 mode")
+    text = text_reply_schema(payload)
+    return SchemaArtifact(
+        contract="productive-ocr-reply-schema-v3",
+        unit_id=payload["unit_id"],
+        role=payload["role"],
+        target_aliases=aliases,
+        schema_text=text,
+        schema_sha256=sha256_bytes(text.encode()),
     )
 
 
@@ -199,3 +216,10 @@ def compile_request_projection(
         saved_proposal_sha256=saved_hash,
     )
     return projection, schema
+
+
+def _apply_conformance(schema, enabled):
+    if enabled:
+        from congressional_globe.productive_ocr_conformance import specialize_conformance
+
+        specialize_conformance(schema)

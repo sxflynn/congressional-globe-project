@@ -42,6 +42,7 @@ def registered(registry, digest):
 
 
 def verify_real_authority(readiness, prepared, client, registry, authorization_sha):
+    _require_v2_live_mode(prepared)
     if authorization_sha != APPROVAL_SHA256:
         raise ValueError("real execution requires the recorded human approval scope")
     registered(registry, APPROVAL_SHA256)
@@ -181,3 +182,9 @@ def _verify_simulation_blobs(plan):
         path = Path(plan.model_store) / "blobs" / part["digest"].replace(":", "-")
         if path.stat().st_size != len(SIMULATION_BLOB) or path.read_bytes() != SIMULATION_BLOB:
             raise ValueError("simulation store contains real or unrecognized model data")
+
+
+def _require_v2_live_mode(prepared):
+    for item in prepared:
+        if item.job.host["payload"]["contract"] == "ocr-productive-repair-host-input-v3":
+            raise ValueError("text v3 mode is offline only; requires separate live authority")

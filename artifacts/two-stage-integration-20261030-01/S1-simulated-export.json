@@ -1,0 +1,61 @@
+{
+  "contract": "source-bound-productive-ocr-text-v3",
+  "host_packet_sha256": "cb2432475cd804fbd4fcf409259436ef51c762b644e777cb266996dac83fdedd",
+  "provider_request_sha256": "c74f1c733b5bfaa9400a935e210793b29bf95d677df63d8ea0b9bb07d2ad4ed8",
+  "raw_reply_sha256": "ac55c923f8367b2be0172c7cb0d61f7f3fc4031e8170f3840a1663abb2f2840d",
+  "raw_reply_text": "{\"contract\": \"ocr-productive-repair-text-reply-v3\", \"unit_id\": \"S1\", \"readings\": [{\"paragraph_alias\": \"P1\", \"coverage\": \"complete\", \"corrected_text\": \"We have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\", \"reason\": null}]}",
+  "image_sha256": "0864afba1dcdedf0555463283e9f79e7e2c1209de20901de07b73b3cd415e5a9",
+  "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+  "source_layers_sha256": "c4182c0608c77b354c7abb348663b38ffc5cb72128c14b39cfb9531a63c7cbfa",
+  "response_schema_sha256": "c5d79393a45631455491a92efe6f5d98e4ba6261421c67955497bced2a047b64",
+  "diagnostics_sha256": "ece0587fb995ba4421f02174f0225dbd9cd95f9484886ed3f6ff33401c3c2928",
+  "outcome": {
+    "proposal_status": "findings",
+    "derived_proposals": [
+      {
+        "paragraph_alias": "P1",
+        "source_id": "congressionalg7391unit:526:par_000526_000021",
+        "raw_sha256": "c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8",
+        "deterministic_sha256": "531bde09ff5131821ee38df7c47cd1892142e29858c5a71ac8655cfafdf1a96c",
+        "text": "We have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+        "sha256": "55866c513496c65d9c19036441eb36ea5120cdf89c553b7446c2d10b675ab0bb",
+        "raw_edits": [
+          {
+            "start": 0,
+            "end": 709,
+            "raw_quote": "We have now, as I believe, the golden oppor- tunity to remedy this evil which will never come again to the men of this generation. The sys- tem of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on recon- struction having reported this amendment, I infer that they will, if this amendment is sub- mitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+            "replacement": "We have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+            "rule_id": "software-whole-target-replacement-v3"
+          }
+        ],
+        "support_map": [
+          {
+            "raw_start": 0,
+            "raw_end": 709,
+            "derived_start": 0,
+            "derived_end": 697,
+            "mapping": "replacement"
+          }
+        ],
+        "replay_verified": true,
+        "alignment": "coarse_whole_paragraph_not_token_alignment",
+        "acceptance": "unreviewed_model_proposal",
+        "source_quality": "not_verified"
+      }
+    ],
+    "provider_reply": {
+      "contract": "ocr-productive-repair-text-reply-v3",
+      "unit_id": "S1",
+      "readings": [
+        {
+          "paragraph_alias": "P1",
+          "coverage": "complete",
+          "corrected_text": "We have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+          "reason": null
+        }
+      ]
+    },
+    "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified"
+  },
+  "acceptance": "unreviewed_ai_evidence"
+}

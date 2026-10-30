@@ -1,0 +1,47 @@
+{
+  "id": "HR-013",
+  "version": 5,
+  "title": "Software checks connected to image inspection",
+  "instructions": "Compare the inputs, expected output, actual software output and stated differences below. All comments are optional. Test replies are clearly labelled simulations; no new AI experiment has run. Dotted-underlined terms explain the surrounding prose. Enter your name to leave comments, Save draft to keep unfinished comments, or Submit review to send them. Nothing starts automatically.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "integration-comments",
+      "prompt": "Optional comments on the implemented process and these examples",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · What is connected now",
+          "text": "The offline integration is implemented: guarded software repair → word-list misses, missing-name candidates and all detected numbers → one image-inspection request per assigned paragraph → corrected text or a reason to withhold it. Several flags in a paragraph stay together. The model supplies no offsets or edit list. Software reconstructs an exact-replaying proposal with a source link to the whole paragraph.\n\nNo new AI call has run. The test replies below are authored simulations, not measured AI output. Existing original text, failed model output and your answers remain unchanged. This page is an optional progress walkthrough, not another method vote or run approval.",
+          "url": null
+        },
+        {
+          "label": "2 · Inputs: original text and software output",
+          "text": "Actual saved original OCR:\nMr. BROWN. The navigable channel is not private propei-ty.\n\nActual guarded software output:\nMr. BROWN. The navigable channel is not private propei-ty.\n\nThe software leaves this passage unchanged. Its word-list check and the saved internal-hyphen check select the full paragraph for secondary inspection. Your earlier correction is included in the exact request and the local-context check. A name-list match is a lookup hint, not proof of the printed name.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0716.jp2/1155,280,1004,212/1004,/0/default.jpg"
+        },
+        {
+          "label": "3 · Expected output, actual test output and difference",
+          "text": "Expected reading for this already reviewed example:\nMr. BROWN. The navigable channel is not private property.\n\nActual software assembly using an authored test reply:\nMr. BROWN. The navigable channel is not private property.\n\nDifference from that expectation: none in this software test. Difference from a completed AI experiment: no new model output exists. The test proves request binding and reconstruction, not that a model can read the image accurately. Returning only the corrected word fails; uncertain image reading must return no text and a reason.",
+          "url": null
+        },
+        {
+          "label": "4 · Actual first pass and the remaining errors",
+          "text": "Actual software output after four guarded line-wrap joins:\nWe have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\n\nExpected behavior: preserve this as a proposal, inspect the complete paragraph, fix the previously reported stray apostrophe when supported, and check other errors even if they were not flagged.\n\nActual result: the new request includes your apostrophe feedback; the software test reconstructs an authored full-paragraph answer with that correction and the remaining split repaired. A reply that retains the reported apostrophe fails the check. Successful-looking joins and dictionary-passing words remain eligible for audit.",
+          "url": null
+        },
+        {
+          "label": "5 · ALL numbers, and actual coverage limits",
+          "text": "Input examples exercised by software tests:\n703; 2794; 1865-10-30; $1,000.50; 21st; one; twenty-first; II; I; fortieth; half; H.R.703; ½; Ⅳ; ²\n\nExpected: every number goes to secondary image inspection even when familiar, plausible, in a lookup list, or already repaired.\nActual: these forms route. The test also joins a split written number, then still sends the repaired number for inspection. Multiple numeric flags remain one paragraph request.\n\nCoverage limit: damaged or unusual number spellings, other languages and contextual quantities can still be missed. Those are audit gaps to investigate, never exemptions. There is no claim that every possible number form is detected.\n\nActual missing-image example:\nNo. 703) for the relief of. 2794,\n\nBoth numbers route, but this assigned image is still missing. No corrected result or substitute sample has been invented.",
+          "url": null
+        },
+        {
+          "label": "6 · Actual safety checks and what remains",
+          "text": "Actual tests reject a word fragment as a paragraph, adjacent context copied into the answer, wrong or duplicate target labels, changed or reordered bracketed passages, and a feedback phrase placed elsewhere in the paragraph. A conservative local-context check can withhold an answer if nearby writing also changes. It is not an independent image judgment.\n\nA simulated interruption after the raw reply and stopping receipt recovers in a fresh process without a duplicate request. A withheld answer blocks the next request. Previous response-format rules remain strict, and the new format is explicitly blocked from live execution under old authority.\n\nAll seven assigned sample identities remain: S1, S2 and S5 have new offline input projections; S3 and S4 still lack images; D1 and D2 retain their separate saved-proposal audit role.\n\nChanged answers cite the complete paragraph with coarse support. Exact word alignment and subtle omissions are not certified by software. No clean-text acceptance, accuracy result, runtime forecast or native-fit proof is claimed. Next comes the separately bounded run-readiness decision using the revised format.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}

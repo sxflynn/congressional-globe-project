@@ -172,7 +172,7 @@ class SavedProposal(StrictModel):
 
 
 class HostPayload(StrictModel):
-    contract: Literal["ocr-productive-repair-host-input-v2"]
+    contract: Literal["ocr-productive-repair-host-input-v2", "ocr-productive-repair-host-input-v3"]
     role: Literal["productive_repair_and_self_check", "audit_saved_proposal"]
     unit_id: str = Field(min_length=1)
     paragraphs: list[Paragraph] = Field(min_length=1, max_length=32)
@@ -426,6 +426,7 @@ def _verify_one_target(
 
 
 def _validate_payload(payload: dict[str, Any], registry: EvidenceRegistry) -> dict[str, Any]:
+    _validate_text_mode(payload)
     _validate_packet_resources(payload, registry)
     paragraphs = payload.get("paragraphs")
     if not isinstance(paragraphs, list) or not 1 <= len(paragraphs) <= 32:
@@ -437,6 +438,16 @@ def _validate_payload(payload: dict[str, Any], registry: EvidenceRegistry) -> di
         _verify_image(image, targets | contexts, registry)
     _validate_proposal(payload, targets, registry)
     return payload
+
+
+def _validate_text_mode(payload: dict) -> None:
+    if payload["contract"] != "ocr-productive-repair-host-input-v3":
+        return
+    from congressional_globe.productive_ocr_text_reply import text_reply_schema
+
+    if payload["role"] != "productive_repair_and_self_check":
+        _fail("text mode cannot replace saved-proposal audit mode")
+    _hash(text_sha256(text_reply_schema(payload)), payload["response_schema_sha256"], "text schema")
 
 
 def _validate_packet_resources(payload: dict[str, Any], registry: EvidenceRegistry) -> None:
@@ -647,8 +658,16 @@ def project_provider(validated_host: dict[str, Any]) -> dict[str, Any]:
         _fail("host packet is not launch-ready")
     _require_image_ready(image, data["diagnostics"])
     return {
-        "contract": PROVIDER_CONTRACT,
-        "reply_contract": REPLY_CONTRACT,
+        "contract": (
+            "ocr-productive-repair-input-v3"
+            if data["contract"] == "ocr-productive-repair-host-input-v3"
+            else PROVIDER_CONTRACT
+        ),
+        "reply_contract": (
+            "ocr-productive-repair-text-reply-v3"
+            if data["contract"] == "ocr-productive-repair-host-input-v3"
+            else REPLY_CONTRACT
+        ),
         "unit_id": data["unit_id"],
         "role": data["role"],
         "image_alias": image["alias"],

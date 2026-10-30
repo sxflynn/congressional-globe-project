@@ -1,0 +1,20 @@
+import json, runpy
+from pathlib import Path
+ns=runpy.run_path('tests/test_productive_ocr_text.py')
+base=Path('artifacts/two-stage-integration-20261030-01')
+old=json.loads(Path('artifacts/study-input-assembly-20261029-01/registry-index.json').read_bytes())
+existing=set(old['files'])|set(old['records'])
+root=base/'registered-new';root.mkdir(exist_ok=True)
+new={}
+for unit in ['S1','S2','S5']:
+ host,registry,*_=ns['saved_case'](unit)
+ assert host==json.loads((base/f'{unit}-host.json').read_bytes())
+ for digest,content in registry.files.items():
+  if digest not in existing:
+   (root/digest).write_bytes(content)
+   new[digest]=dict(bytes=len(content),path=f'registered-new/{digest}')
+(base/'registry-closure.json').write_text(json.dumps(dict(
+ inherited_index='artifacts/study-input-assembly-20261029-01/registry-index.json',
+ new_files=new,images='reuse original registered image paths; none fetched',
+ verification='new host/prompt/schema/resources match frozen projection exactly'),indent=2)+'\n')
+print('Persisted',len(new),'new hash-bound resources; inherited registry/image files unchanged.')

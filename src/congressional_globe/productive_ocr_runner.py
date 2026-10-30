@@ -417,8 +417,15 @@ def _validate(response: dict, job: FrozenJob) -> tuple[str, dict]:
 
     try:
         _provider_complete(response)
-        mapped = validate_reply(response["output_text"], job.host)
-        status = json.loads(response["output_text"])["status"]
+        if job.host["payload"]["contract"] == "ocr-productive-repair-host-input-v3":
+            from congressional_globe.productive_ocr_text_reply import export_text_reply
+
+            exported = export_text_reply(job.host, job.body_utf8, response["output_text"])
+            mapped = exported.model_dump(mode="json")
+            status = exported.outcome["proposal_status"]
+        else:
+            mapped = validate_reply(response["output_text"], job.host)
+            status = json.loads(response["output_text"])["status"]
         return "valid", {
             "source_mapped_proposals": mapped,
             "proposal_status": status,
