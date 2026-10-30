@@ -1,0 +1,93 @@
+{
+  "packet_snapshot": {
+    "packet_json": "{\"blind\":false,\"id\":\"HR-013\",\"instructions\":\"Review the input that exposed the mismatch, the expected reply shape and actual software outcomes. This is an offline fix; no new model response exists. All comments are optional. Original/model passages remain plain, while dotted-underlined terms explain our surrounding prose. Enter your name to comment, Save draft to keep unfinished comments, or Submit review to send them. Nothing launches automatically.\",\"questions\":[{\"evidence\":[{\"label\":\"1 · Input: the actual response that exposed the mismatch\",\"text\":\"The saved model text was:\\nThe Committee on Appropriations recommended non-concurrence.\\n\\nThe actual response also supplied this completion comment:\\nNo further action required.\\n\\nIt declared complete coverage. The host check required a null reason, but our earlier prompt and response schema allowed this comment. The saved result remains invalid and unchanged; this fix makes the request communicate the existing requirement.\",\"url\":\"https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg\"},{\"label\":\"2 · Expected reply shape and the updated request\",\"text\":\"Expected complete reply shape, using an authored offline example:\\n{\\n  \\\"contract\\\": \\\"ocr-productive-repair-text-reply-v3\\\",\\n  \\\"readings\\\": [\\n    {\\n      \\\"corrected_text\\\": \\\"The Committee on Appropriations recommended non-concurrence.\\\",\\n      \\\"coverage\\\": \\\"complete\\\",\\n      \\\"paragraph_alias\\\": \\\"P1\\\",\\n      \\\"reason\\\": null\\n    }\\n  ],\\n  \\\"unit_id\\\": \\\"S5\\\"\\n}\\n\\nThe updated prompt now explicitly says: for a complete reading, return the entire text and a JSON null reason, without a completion comment. For an incomplete reading, return no text and explain the uncertainty.\\n\\nThe new response schema expresses those same two alternatives. The reply fields and host checks stay the same. A prompt from one version cannot be paired with the other version’s schema.\",\"url\":null},{\"label\":\"3 · Actual software-check outcomes\",\"text\":\"Unchanged actual reply: rejected by the new schema and by the host, for the same comment-field inconsistency.\\n\\nAuthored complete example above: accepted by both checks, with an unreviewed text proposal linked to the original paragraph. This is an offline example, not a new AI response.\\n\\nAuthored uncertain example:\\n{\\n  \\\"contract\\\": \\\"ocr-productive-repair-text-reply-v3\\\",\\n  \\\"readings\\\": [\\n    {\\n      \\\"corrected_text\\\": null,\\n      \\\"coverage\\\": \\\"incomplete\\\",\\n      \\\"paragraph_alias\\\": \\\"P1\\\",\\n      \\\"reason\\\": \\\"Last word is unclear.\\\"\\n    }\\n  ],\\n  \\\"unit_id\\\": \\\"S5\\\"\\n}\\n\\nActual software outcome for that uncertain example: both checks accept the uncertainty, no text proposal is produced, and its status remains unresolved. Empty or contradictory combinations are rejected. No model call was made during this fix.\",\"url\":null},{\"label\":\"4 · Preservation, checks and remaining limit\",\"text\":\"All 1,094 project tests pass, including 15 focused checks for complete and uncertain replies, the actual saved failure, mixed prompt/schema versions and original request reconstruction. The original prompt, schema and S5 request still reproduce byte for byte. The earlier model result, its invalid status and both spent call slots remain unchanged.\\n\\nThe new candidate request uses the same original S5 scan and text, one complete paragraph target and the existing model/output ceiling. Its stricter prompt and schema are saved for inspection. Image/source links, feedback checks, number routing and uncertainty safeguards remain in place.\\n\\nThis establishes software agreement. Whether the installed model follows this stricter schema in a real call remains untested. A future actual test needs its own exact authorization; no retry or new call follows automatically. Comments are optional.\",\"url\":null}],\"id\":\"format-fix-comments\",\"options\":[],\"prompt\":\"Optional comments on the fix or these before-and-after examples\",\"required\":false}],\"title\":\"Comment-field mismatch fixed in the request\",\"version\":8}",
+    "packet_sha256": "b745cb8b7efd77505d38494c90766386ae6a006c4607bb3636f68e76a6fdf560"
+  },
+  "packet": {
+    "blind": false,
+    "id": "HR-013",
+    "instructions": "Review the input that exposed the mismatch, the expected reply shape and actual software outcomes. This is an offline fix; no new model response exists. All comments are optional. Original/model passages remain plain, while dotted-underlined terms explain our surrounding prose. Enter your name to comment, Save draft to keep unfinished comments, or Submit review to send them. Nothing launches automatically.",
+    "questions": [
+      {
+        "evidence": [
+          {
+            "label": "1 · Input: the actual response that exposed the mismatch",
+            "text": "The saved model text was:\nThe Committee on Appropriations recommended non-concurrence.\n\nThe actual response also supplied this completion comment:\nNo further action required.\n\nIt declared complete coverage. The host check required a null reason, but our earlier prompt and response schema allowed this comment. The saved result remains invalid and unchanged; this fix makes the request communicate the existing requirement.",
+            "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+          },
+          {
+            "label": "2 · Expected reply shape and the updated request",
+            "text": "Expected complete reply shape, using an authored offline example:\n{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"The Committee on Appropriations recommended non-concurrence.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ],\n  \"unit_id\": \"S5\"\n}\n\nThe updated prompt now explicitly says: for a complete reading, return the entire text and a JSON null reason, without a completion comment. For an incomplete reading, return no text and explain the uncertainty.\n\nThe new response schema expresses those same two alternatives. The reply fields and host checks stay the same. A prompt from one version cannot be paired with the other version’s schema.",
+            "url": null
+          },
+          {
+            "label": "3 · Actual software-check outcomes",
+            "text": "Unchanged actual reply: rejected by the new schema and by the host, for the same comment-field inconsistency.\n\nAuthored complete example above: accepted by both checks, with an unreviewed text proposal linked to the original paragraph. This is an offline example, not a new AI response.\n\nAuthored uncertain example:\n{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": null,\n      \"coverage\": \"incomplete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": \"Last word is unclear.\"\n    }\n  ],\n  \"unit_id\": \"S5\"\n}\n\nActual software outcome for that uncertain example: both checks accept the uncertainty, no text proposal is produced, and its status remains unresolved. Empty or contradictory combinations are rejected. No model call was made during this fix.",
+            "url": null
+          },
+          {
+            "label": "4 · Preservation, checks and remaining limit",
+            "text": "All 1,094 project tests pass, including 15 focused checks for complete and uncertain replies, the actual saved failure, mixed prompt/schema versions and original request reconstruction. The original prompt, schema and S5 request still reproduce byte for byte. The earlier model result, its invalid status and both spent call slots remain unchanged.\n\nThe new candidate request uses the same original S5 scan and text, one complete paragraph target and the existing model/output ceiling. Its stricter prompt and schema are saved for inspection. Image/source links, feedback checks, number routing and uncertainty safeguards remain in place.\n\nThis establishes software agreement. Whether the installed model follows this stricter schema in a real call remains untested. A future actual test needs its own exact authorization; no retry or new call follows automatically. Comments are optional.",
+            "url": null
+          }
+        ],
+        "id": "format-fix-comments",
+        "options": [],
+        "prompt": "Optional comments on the fix or these before-and-after examples",
+        "required": false
+      }
+    ],
+    "title": "Comment-field mismatch fixed in the request",
+    "version": 8
+  },
+  "submission": {
+    "submission_id": "9c46ec2b-16d1-4a8c-aff9-6cb2cced6737",
+    "packet_id": "HR-013",
+    "version": 8,
+    "packet_sha256": "b745cb8b7efd77505d38494c90766386ae6a006c4607bb3636f68e76a6fdf560",
+    "reviewer": "Stephen Flynn",
+    "answers": {
+      "evidence-note:format-fix-comments:0:341a4a91ec5f560cba8609c93e7bfbf0d2aa7bd775e04da31f00072b54e9de62": "",
+      "evidence-note:format-fix-comments:1:c20800b13b1bd90d1eb6e5a1d30927afa29b971fd6c5cca64688222f8b0abe67": "Alright I guess",
+      "evidence-note:format-fix-comments:2:fb98065ecf9f11e6469f8f8e4993721d6263bd92f8bd350205aa989db41cea58": "Why did it say the last word was unclear?",
+      "evidence-note:format-fix-comments:3:a7e4d821a6ee99c462c1e3156d70ce671fc3a9fe0e51b782927d433e8bc0d1b4": "",
+      "format-fix-comments": ""
+    },
+    "notes": null,
+    "payload_sha256": "86bd9983977a77b77e43e2295df9d7710c0c39854fe96306b4f0d5a357336fc2",
+    "revision": 1,
+    "superseded": false,
+    "created_at": "2026-10-30 18:56:47",
+    "applied": true,
+    "applied_reference": "d009e23",
+    "applied_at": "2026-10-30 19:01:35",
+    "evidence_feedback": [
+      {
+        "note_id": "evidence-note:format-fix-comments:1:c20800b13b1bd90d1eb6e5a1d30927afa29b971fd6c5cca64688222f8b0abe67",
+        "question_id": "format-fix-comments",
+        "item_number": 2,
+        "evidence": {
+          "label": "2 · Expected reply shape and the updated request",
+          "text": "Expected complete reply shape, using an authored offline example:\n{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"The Committee on Appropriations recommended non-concurrence.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ],\n  \"unit_id\": \"S5\"\n}\n\nThe updated prompt now explicitly says: for a complete reading, return the entire text and a JSON null reason, without a completion comment. For an incomplete reading, return no text and explain the uncertainty.\n\nThe new response schema expresses those same two alternatives. The reply fields and host checks stay the same. A prompt from one version cannot be paired with the other version’s schema.",
+          "url": null
+        },
+        "comment": "Alright I guess"
+      },
+      {
+        "note_id": "evidence-note:format-fix-comments:2:fb98065ecf9f11e6469f8f8e4993721d6263bd92f8bd350205aa989db41cea58",
+        "question_id": "format-fix-comments",
+        "item_number": 3,
+        "evidence": {
+          "label": "3 · Actual software-check outcomes",
+          "text": "Unchanged actual reply: rejected by the new schema and by the host, for the same comment-field inconsistency.\n\nAuthored complete example above: accepted by both checks, with an unreviewed text proposal linked to the original paragraph. This is an offline example, not a new AI response.\n\nAuthored uncertain example:\n{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": null,\n      \"coverage\": \"incomplete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": \"Last word is unclear.\"\n    }\n  ],\n  \"unit_id\": \"S5\"\n}\n\nActual software outcome for that uncertain example: both checks accept the uncertainty, no text proposal is produced, and its status remains unresolved. Empty or contradictory combinations are rejected. No model call was made during this fix.",
+          "url": null
+        },
+        "comment": "Why did it say the last word was unclear?"
+      }
+    ]
+  },
+  "applied_receipt": {
+    "reference": "d009e23",
+    "applied_at": "2026-10-30 19:01:35"
+  }
+}
