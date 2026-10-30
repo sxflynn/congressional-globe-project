@@ -1,0 +1,42 @@
+{
+  "id": "HR-013",
+  "version": 4,
+  "title": "Software first, then focused AI inspection",
+  "instructions": "Your requested routing change is recorded for the next offline implementation. This is a response and progress walkthrough, not another vote on the same principle or a run-approval request. Compare the inputs, expected behavior and actual saved outputs below. All comments are optional. Original OCR, proposed readings and your quoted comment stay plain; dotted-underlined terms explain AI prose. Enter your name to edit, Save draft for unfinished comments, or Submit review to send them. Nothing starts automatically.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "routing-comments",
+      "prompt": "Optional comments on the two-stage pipeline or what the next example should show",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Your requested routing approach",
+          "text": "Your exact comment:\nWhat about the idea of using software to try to deterministicaly fix things like fix all the hyphen new line stuff, but if you encounter a word that fails the dictionary, or a name not on the name list roster, or a number, then it gets sent to secondary inspection where the AI has ti inspect and provide the corrected word?\n\nYes. This is the intended two-stage approach, and I am carrying it into the next offline integration rather than asking you to approve the same principle again. Software first makes well-supported mechanical repairs. Lookup failures, names missing from the name list and detected numbers become candidates for image-based AI inspection. The model supplies corrected text or says it cannot read it; software applies source-bound replacements and assembles the reading.\n\nThis changes the focus from sending everything for a new full transcription to selecting targets for secondary inspection. Multiple flagged words or numbers in the same assigned passage can be handled together in one request. A small separate audit still checks some apparently successful repairs and unflagged text. No new AI call has been authorized or launched.",
+          "url": null
+        },
+        {
+          "label": "2 · Inputs and expected first-pass behavior",
+          "text": "Actual original OCR for a first-pass example:\nWe have now, as I believe, the golden oppor- tunity to remedy this evil which will never come again to the men of this generation. The sys- tem of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on recon- struction having reported this amendment, I infer that they will, if this amendment is sub- mitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\n\nThis is the saved S1 source paragraph. The first pass uses the pinned dictionary, source line geometry and the original text. Expected behavior: join only supported line-wrap splits, preserve genuine hyphens and mark uncertain cases for inspection. A dictionary match is not proof that the word is printed correctly.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0526.jp2/1986,2485,1028,805/1028,/0/default.jpg"
+        },
+        {
+          "label": "3 · Actual first-pass output and remaining issues",
+          "text": "Actual saved first-pass proposed reading:\nWe have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\n\nThe saved rules proposed four joins:\noppor- tunity → opportunity\nsys- tem → system\nrecon- struction → reconstruction\nsub- mitted → submitted\n\nThis is a saved software result, not a new run or accepted transcription. It still contains the stray apostrophe that you previously identified. The later missed-error detector marks that apostrophe for image inspection. The four successful-looking joins also remain eligible for audit; passing a dictionary does not remove that safeguard.",
+          "url": null
+        },
+        {
+          "label": "4 · Secondary inspection: input, expected correction and actual status",
+          "text": "Actual original OCR for the secondary-inspection example:\nMr. BROWN. The navigable channel is not private propei-ty.\n\nActual saved software output: this paragraph was left unchanged. The word propei-ty failed the word list, so the detector marked it for image inspection. A later internal-hyphen check also flagged the same span and suggested property as a candidate. It did not apply that candidate automatically.\n\nExpected corrected word in this already reviewed case:\nproperty\n\nExpected assembled proposed reading if that correction is supported:\nMr. BROWN. The navigable channel is not private property.\n\nThat expectation comes from your earlier HR-012 feedback and its saved case-specific proposal. It is not an independent reference or a fresh model result. Actual AI output under the revised selective pipeline: none yet. If the image is unclear, the correct response is uncertainty and the original text stays available.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0716.jp2/1155,280,1004,212/1004,/0/default.jpg"
+        },
+        {
+          "label": "5 · Number/name routing and the next executable step",
+          "text": "Actual numeric test input from the saved sample:\nNo. 703) for the relief of. 2794,\n\nThe existing detector marks both 703 and 2794 for number-image inspection. It does not claim either number is wrong. The original S4 image is missing, so this case cannot honestly be corrected by image AI yet; there is no actual secondary result. No replacement sample or new image download is being used.\n\nFor names, absence from the pinned roster sends a name candidate to inspection; it does not mean the name must be replaced with the closest known name. Known names and dictionary words can also be misread into other valid words. That is why unflagged text and apparently successful repairs still need sampled audits.\n\nThe next offline task connects these existing checks to the grouped request and corrected-text handling. It will test missing images, repeated text, genuine hyphens, uncertainty, exact software assembly, and your prior apostrophe/property concerns. It will not run a model.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}

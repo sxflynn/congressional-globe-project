@@ -1954,6 +1954,35 @@
       "term": "offline implementation",
       "definition": "Software preparation and testing using saved or invented data, without sending a model request.",
       "aliases": []
+    },
+    {
+      "term": "two-stage pipeline",
+      "definition": "A process in two parts: repeatable software cleanup and detection first, followed by image-based inspection of selected targets. Some apparently clean text is also audited.",
+      "aliases": [
+        "two-stage approach"
+      ]
+    },
+    {
+      "term": "secondary inspection",
+      "definition": "A later check using the source image and context to examine a word, number, name or passage selected by earlier software. A selected item is not necessarily wrong.",
+      "aliases": []
+    },
+    {
+      "term": "first pass",
+      "definition": "The initial software stage, before any later AI inspection. Its changes and warnings remain recorded separately from accepted text.",
+      "aliases": [
+        "first-pass"
+      ]
+    },
+    {
+      "term": "line geometry",
+      "definition": "Recorded positions and boundaries of the original OCR lines, used to check whether a split really crosses adjacent lines.",
+      "aliases": []
+    },
+    {
+      "term": "grouped request",
+      "definition": "One model request covering related flagged items in the same assigned passage, rather than a separate call for each flag.",
+      "aliases": []
     }
   ]
 }

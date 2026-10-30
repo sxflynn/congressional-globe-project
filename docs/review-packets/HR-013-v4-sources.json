@@ -1,0 +1,25 @@
+{
+  "source_records": {
+    "congressionalg7391unit:526:par_000526_000021": {
+      "raw_sha256": "c2c190f9b6bfed34f956f8603ccb3cf658e6f0a012fcd6cf7ed5d77035cc6cc8",
+      "proposed_sha256": "531bde09ff5131821ee38df7c47cd1892142e29858c5a71ac8655cfafdf1a96c"
+    },
+    "congressionalglo7392unit:716:par_000716_000020": {
+      "raw_sha256": "d86ad98d001eeca387a37678140fb5691201997390bf1d5bcc50c1b111a38570",
+      "expected_case_sha256": "fbc6d520e03b3697c18ba6be80502b99deb4d45373e2f2da65bb727ec075315f"
+    },
+    "congressionalglo00unit:83:par_000083_000042": {
+      "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "image": "missing original S4; no fetch"
+    }
+  },
+  "actual_AI_output_for_new_route": null,
+  "existing_result_file": "artifacts/deterministic-sample-20261028-01/results.json",
+  "existing_result_sha256": "1bca738f89c08bd4222a3e6cbfd564153e6c727b4e414c7e247da88c03a0ce2f",
+  "existing_feedback_signal_file": "artifacts/missed-error-regressions-20261029-01/source-cases.json",
+  "existing_feedback_signal_sha256": "73481add8cc89cf49322d50e7b86f2425347604d5cba019ffbc79aa2270b8a09",
+  "exact_human_comment": "What about the idea of using software to try to deterministicaly fix things like fix all the hyphen new line stuff, but if you encounter a word that fails the dictionary, or a name not on the name list roster, or a number, then it gets sent to secondary inspection where the AI has ti inspect and provide the corrected word?",
+  "exact_submitted_choice": "Request another change — see my comments",
+  "submission_id": "49fabb8b-3f33-46ba-803e-b16ca73faa05",
+  "input_expected_actual_scope": "Existing real first-pass outputs plus human-feedback-conditioned expected S2 property. No new model result or quality grade."
+}

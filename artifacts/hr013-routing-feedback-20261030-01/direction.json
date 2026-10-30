@@ -1,0 +1,122 @@
+{
+  "task": "T96",
+  "scope": "Apply submitted routing direction to next offline implementation; not model-call, canonical cleanup or corpus-wide approval",
+  "human_comment": "What about the idea of using software to try to deterministicaly fix things like fix all the hyphen new line stuff, but if you encounter a word that fails the dictionary, or a name not on the name list roster, or a number, then it gets sent to secondary inspection where the AI has ti inspect and provide the corrected word?",
+  "selection": "Request another change — see my comments",
+  "reuse": [
+    "T52 guarded line geometry/word-list joins and token signals",
+    "T75 missed-error signals and exact HR012 apostrophe/property checks",
+    "Current raw/source/image/hash/maps/journal controls; old model results unchanged"
+  ],
+  "pipeline": [
+    "Keep raw OCR; run guarded deterministic repairs with known line boundaries, protected forms and reversible source maps",
+    "On the resulting layer, nominate dictionary misses, name candidates absent the pinned name list, detected numbers and other existing damage/uncertainty signals for secondary image inspection",
+    "Group flags in the same assigned target so one productive image+OCR request handles related word/number issues together; do not create one call per token. Current fixed pilot retains declared whole-paragraph targets; narrower/expanded windows must be explicitly source-bound Inspect the entire assigned target for all supported errors, including unflagged text and apparently successful deterministic repairs; a focus flag is not a limit on inspection.",
+    "AI proposes corrected target text (word/span or complete assigned paragraph) or null with a clear reason; software owns anchors, replacement application, differences and full-reading assembly. No model-authored edit list required in the new offline candidate",
+    "Retain explicit audits of apparently repaired and unflagged/lookup-passing text; audit work is separate from risk-trigger routing and must have finite declared counts"
+  ],
+  "guards": [
+    "Do not remove every hyphen: preserve genuine hyphenated words/historical names/spellings, reject absent line geometry or ambiguous joins",
+    "A dictionary miss/roster miss is a review trigger, not evidence of error. Known words/names remain source-unverified; rosters are incomplete",
+    "Include all detected numeric tokens in the bounded offline candidate queue; current detector covers digit-bearing tokens and limited Roman contexts, not complete detection of spelled-out numbers. No unrestricted number-driven dispatch follows",
+    "Use image plus original text and sufficient context. Missing/unclear images produce unavailable/withheld results, never guesses or replacement source text",
+    "No new image fetch/model download, new sample substitution, automatic retry, cap increase or provider call. Preserve seven original rows and missing S3/S4 images",
+    "S1/S2 are human-feedback-conditioned development cases; no independent quality estimate or corpus routing prevalence inferred",
+    "A returned word/fragment is incomplete when the declared target is a whole paragraph. Corrected output must cover its exact declared target or be withheld; never accept a fragment as complete paragraph repair."
+  ],
+  "already_measured": {
+    "first_pass_S1_proposed_joins": 4,
+    "S2_original_unchanged": true,
+    "S2_dictionary_signal": {
+      "layer": "raw",
+      "start": 48,
+      "end": 57,
+      "text": "propei-ty",
+      "raw_start": 48,
+      "raw_end": 57,
+      "raw_quote": "propei-ty",
+      "context": "avigable channel is not private propei-ty.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    "S2_existing_internal_hyphen_signal": [
+      {
+        "signal_id": "f700ec29fbc497c5a6f860c0b52e6607513c3999037a2554670be3bd34710e66",
+        "paragraph_alias": "P1",
+        "raw_start": 48,
+        "raw_end": 57,
+        "raw_quote": "propei-ty",
+        "category": "word",
+        "flags": [
+          "internal_hyphen_damage",
+          "unknown_internal_hyphen",
+          "unverified_review_candidate"
+        ],
+        "route_reason": "Inspect the original image; this signal is not a repair or a verified reading."
+      }
+    ],
+    "S2_expected_property_basis": "Prior exact HR012 feedback and saved separate case proposal; not a new AI result",
+    "numeric_example_source": {
+      "source_id": "congressionalglo00unit:83:par_000083_000042",
+      "raw_text": "No. 703) for the relief of. 2794,",
+      "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172"
+    },
+    "numeric_flags": [
+      {
+        "layer": "raw",
+        "start": 4,
+        "end": 7,
+        "text": "703",
+        "raw_start": 4,
+        "raw_end": 7,
+        "raw_quote": "703",
+        "context": "No. 703) for the relief of. 2794,",
+        "categories": [
+          "number"
+        ],
+        "signals": [
+          "numeric_value_unverified"
+        ],
+        "routes": [
+          "number_image_check_candidate"
+        ],
+        "membership": "not_word"
+      },
+      {
+        "layer": "raw",
+        "start": 28,
+        "end": 32,
+        "text": "2794",
+        "raw_start": 28,
+        "raw_end": 32,
+        "raw_quote": "2794",
+        "context": "No. 703) for the relief of. 2794,",
+        "categories": [
+          "number"
+        ],
+        "signals": [
+          "numeric_value_unverified"
+        ],
+        "routes": [
+          "number_image_check_candidate"
+        ],
+        "membership": "not_word"
+      }
+    ]
+  },
+  "not_yet_measured": [
+    "No real AI result under the revised selective pipeline",
+    "Actual missed/harmful errors after repair, lookup false positives/false negatives and audit yield",
+    "Exact integrated request size/fit, timing and useful yield for the revised representation"
+  ],
+  "next_executable_task": "T97 offline integration: connect pinned current deterministic result/feedback signals to source-bound grouped secondary targets, lean corrected-text/null reply validation, software-only assembly/export and fake-client journal/recovery. Preserve old v2 paths and refusal gates. Gate and demonstrate actual S1/S2 inputs plus missing-image numeric case and synthetic negatives; no inference.",
+  "approval_boundary": "This processes Request another change as the revised offline engineering direction. It is not endorsement of final cleanup quality/policy or approval for a live run. Do not ask the human again whether to use deterministic-first routing; ask only a concrete unresolved later resource/run decision after implementation."
+}

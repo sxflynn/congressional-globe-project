@@ -1,0 +1,58 @@
+{
+  "task": "T96",
+  "submission_id": "49fabb8b-3f33-46ba-803e-b16ca73faa05",
+  "packet_id": "HR-013",
+  "version": 3,
+  "revision": 1,
+  "reviewer": "Stephen Flynn",
+  "submitted_at_utc": "2026-10-30 10:51:28",
+  "packet_sha256": "9523011a2ba506a05be5c588b7218523bc1948ee0e421bd48f83cf8de256f0c3",
+  "payload_sha256": "0570c9673d1fdd3f7ca339419996f63d394ce7dc22a10b9e335d15408e2f66bc",
+  "archive_sha256": "e00d2544609cbe43f686cb0bfa79f8d9188920202a6215f51ca2ec7e5ddd0e46",
+  "overall_comment": {
+    "id": "fulltext-comments",
+    "exact_text": "What about the idea of using software to try to deterministicaly fix things like fix all the hyphen new line stuff, but if you encounter a word that fails the dictionary, or a name not on the name list roster, or a number, then it gets sent to secondary inspection where the AI has ti inspect and provide the corrected word?",
+    "requested_change": "Deterministic cleanup first; route dictionary failures, names absent roster or numbers to secondary image AI for corrected text.",
+    "action": "Apply as refinement of the existing intended two-stage offline engineering direction. Reuse T52 guarded rules/flags and T75 feedback checks, then implement grouped source-bound secondary text proposals/software assembly in T97. No repeat approval of this outline is needed.",
+    "meaningful_checks": "Existing real S1result validates/replays4joins; real S2 has dictionary+internal-hyphen route, expected property hashes to prior HR012 case proposal; actual S4numeric703/2794flags retained with missing-image/no-result status. Typed/source/hash/plain/glossary/isolated AppTest checks.",
+    "remaining_limits": "Actual selective-AI correction/quality/routing-cost results absent; dictionary/roster failure not truth, preserved genuine hyphens, all detected numeric candidates offline not unbounded dispatch, audits of clean/unflagged text remain. No model-call authorization."
+  },
+  "choice": {
+    "exact_text": "Request another change — see my comments",
+    "disposition": "Apply requested routing refinement; prior whole-target full-text alternative is not a general instruction to send all paragraphs. Keep T90 live work blocked until revised implementation/exact readiness and explicit bounded call authority."
+  },
+  "evidence_local_notes": [
+    {
+      "id": "evidence-note:fulltext-comments:0:feda030241203bac7e5d5fbd0ce6988e7b4f14771c6d73024f60380fbde57e3c",
+      "exact_text": "",
+      "disposition": "Blank; no additional action or judgment inferred."
+    },
+    {
+      "id": "evidence-note:fulltext-comments:1:b119f8785e6acbb0f4b54bccccfed8397186e83050128f61de5471603609f272",
+      "exact_text": "",
+      "disposition": "Blank; no additional action or judgment inferred."
+    },
+    {
+      "id": "evidence-note:fulltext-comments:2:549f8615c8ce7c9dbcde608304e9cec9128230925774aab6dcb56b6bba91d678",
+      "exact_text": "",
+      "disposition": "Blank; no additional action or judgment inferred."
+    },
+    {
+      "id": "evidence-note:fulltext-comments:3:a7b13c44bb6d69d4898c8b906ef4ff4aff97cc8e9e2c12bdf4434d8553bfe1cf",
+      "exact_text": "",
+      "disposition": "Blank; no additional action or judgment inferred."
+    },
+    {
+      "id": "evidence-note:fulltext-comments:4:85acd99cf1af865cd081bd15f7603ec1fdfd84fb9dbc89fdaf6eb1047bfdf84f",
+      "exact_text": "",
+      "disposition": "Blank; no additional action or judgment inferred."
+    }
+  ],
+  "next_model_instructions": [
+    "Software first; inspect selected target in original image with original OCR, deterministic proposal and context",
+    "Group related flags within same assigned target; one productive request handles multiple supported errors",
+    "Return corrected assigned text or explicit uncertainty, with no model-authored edit list in the new versioned candidate",
+    "Keep unflagged/apparent-success audits and prior S1apostrophe/S2property checks source-bound; do not call these feedback-conditioned cases independent accuracy tests"
+  ],
+  "receipt_sequence": "Commit archive/disposition before recording application receipt."
+}
