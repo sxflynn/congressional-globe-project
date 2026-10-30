@@ -1,0 +1,43 @@
+{
+  "task": "T95",
+  "status": "concrete design alternative only; not adopted or executable",
+  "question": "Is a model-authored edit list necessary when the model already supplies a full proposed reading?",
+  "recommendation": "Use full-text-first for the next offline implementation candidate: ask model for complete target text or explicit inability/uncertainty, then derive and record all raw-to-proposed differences in software. Preserve original OCR and treat full reading as a separate unreviewed candidate.",
+  "why_old_contract_used_edits": [
+    "Reversible traceability and source-span support for searches/citations",
+    "Explicit per-change model evidence/justification links",
+    "Mechanical agreement between full reading and declared edits"
+  ],
+  "why_not_established_superior": [
+    "No matched evidence proves model-authored patches more accurate/efficient than full-text output",
+    "A model can contradict its own edit list; S5 did",
+    "Host can compute all textual differences without asking model to describe them twice",
+    "A replay check establishes equality between strings, not truth of either string"
+  ],
+  "proposed_model_output": {
+    "paragraph_alias": "P1",
+    "proposed_text": "The Committee on Appropriations recommended non-concurrence.",
+    "uncertainty": null
+  },
+  "incomplete_output_example": {
+    "paragraph_alias": "P1",
+    "proposed_text": null,
+    "uncertainty": "Cannot read the whole assigned paragraph clearly."
+  },
+  "proposed_instructions": "Inspect the entire assigned target in the supplied image against original OCR and optional fixed-rule text. Return the complete proposed target text and uncertainty; do not generate patches, offsets, raw quotes or per-edit bookkeeping. Preserve names/numbers/printed repetition/bracketed cues and source spelling; inspect unflagged text and previous repairs. Never append neighboring context. If the entire target cannot be read safely, return null text and a clear reason; no guessed full reading.",
+  "software_obligations": [
+    "Bind exact source/image/request/model hashes and target; save raw response before parsing",
+    "Keep original OCR immutable and returned full text separate; replacement means using a derived candidate reading, not modifying the raw archive or silently accepting text",
+    "Compute reproducible raw-to-proposed differences and exact replay; retain algorithm/version and both full strings",
+    "Multiple alignments can exist for repeated/reordered text. Do not claim uniquely justified word-level mapping from an arbitrary alignment; record ambiguity or use coarser paragraph-level source support",
+    "Check structural/size/target integrity, bracket/name/number/deletion/insertion/context concerns and explicit uncertain/incomplete outcomes",
+    "Audit the full reading against the image, including unflagged/unchanged text; diff mechanics and model self-report do not establish accuracy",
+    "If per-edit image explanations are needed for a later specific audit, request them for that purpose rather than universally duplicating the full reading"
+  ],
+  "implementation_boundary": "Existing Reply/validators/runner and all historical outcomes remain unchanged. A new versioned full-text parser/export, source-support/audit rules and bounded uncertainty/recovery checks must be implemented and tested before any changed live request. The old patch contract cannot be silently relaxed.",
+  "review_tradeoff": "Independent Luna analysis prefers preserving per-edit model evidence/findings and rejecting nonunique alignment. Parent disposition: these are useful stricter options, not essential to merely preserve source identity or record a full-text proposal. Proposed lean path instead reports alignment uncertainty/coarser paragraph support and requires source audits; no exact word-evidence or acceptance guarantee is claimed. Human method direction remains unresolved.",
+  "live_authority": "Request changes supplies no live approval. T90 stays blocked; source/sample/model/output1500/session600 restrictions are not changed. No live spec/body or fresh preflight is prepared; any future call needs a separately concrete authorization after implementation/readiness.",
+  "new_model_calls": 0,
+  "new_source_fetches": 0,
+  "quality_claim": null
+}

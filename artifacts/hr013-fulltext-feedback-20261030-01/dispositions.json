@@ -1,0 +1,51 @@
+{
+  "task": "T95",
+  "submission_id": "76ff189c-d0ce-4a69-a414-5aab6e6f0e69",
+  "packet_id": "HR-013",
+  "version": 2,
+  "revision": 1,
+  "reviewer": "Stephen Flynn",
+  "submitted_at_utc": "2026-10-30 10:42:24",
+  "packet_sha256": "ace45c350f17651fba393d3686d18e8ba4821ecd90d747d3988be6c35e806f2c",
+  "payload_sha256": "be8e7dfbf7252381618c020a435c59187d1b5642bf685b6083260fe7f1ed694a",
+  "archive_sha256": "ae2347574d22f4f134b97d90734a508d8ea881e4a6c06f3582f28f808974397e",
+  "choice": {
+    "id": "next-test",
+    "exact_answer": "Request changes — see my comments",
+    "disposition": "Apply Request changes: old exact S5 conformance-call proposal is not approved; no new model request. Respond to the named design objection before any dependent run."
+  },
+  "evidence_note_dispositions": [
+    {
+      "note_id": "evidence-note:next-test:0:1a57477fa1ed86272cc2b7ee44360004beb2440585be6c773b245a042e0387c6",
+      "question_id": "next-test",
+      "item_number": 1,
+      "exact_comment": "My question is why are we wanting the model to return an edit list? Why not just ask it to write the full text and then replace the ocr text with what it said? Instead of trying to surgically edit using an edit list? U less there’s something I’m not understanding as to why the edit list is superior?",
+      "exact_evidence": {
+        "label": "7 · Optional decision: one small test of the revised instructions",
+        "text": "I recommend one additional request on this same S5 passage, using the revised instructions and response rules. Its purpose is to learn whether the model can return a useful complete repair that passes the strict checks. This passage has now been seen during development, so the result would not be an independent accuracy test.\n\nLimits: one request to the same installed Qwen model; no retries, extra probes, downloads or source fetches; at most 1,500 output tokens and ten minutes for the whole session. Preparation gets up to 270 seconds, startup plus the request share 120 seconds, observing the owned process exit gets 30 seconds, and reporting gets 180 seconds. A missed preparation deadline means no request.\n\nAs with the first measurement, this asks to proceed before complete native input-fit evidence exists. The 6,000-input-token figure is a reporting threshold for this attempt, not a verified capacity limit. The revised literal messages measure 1,712 tokens before actual backend image/framing treatment; true fit and conditional-schema support remain unknown. The previous one-call permission is spent. New approval would apply only to this changed request and this narrow preflight exception.\n\nAfter an approval, I would first pin a new one-use allowance, test the shared deadlines, freeze final code/request identities and check current processes, queue and lock. Then one request, save the raw reply and measured costs, observe the owned process stop, and report even if invalid or incomplete. An uncertain stop or ambiguous outcome blocks further calls.\n\nYou may approve, request changes, defer, or leave this unanswered and comment only. Choosing an option and submitting records your decision for the next agent turn; it does not launch a model automatically. No choice approves corpus-wide processing, rewriting original OCR, or final cleanup policy. Other offline work can continue without this decision.",
+        "url": null
+      },
+      "concern": "Explain the need for model-authored edits and compare full-text replacement with software-derived change records.",
+      "action": "Explain that audit/source records are useful, but model-authored patches are not established superior and duplicate full-text representation. Publish concrete full-text-first alternative, expected/actual distinction and original-OCR preservation in HR013v3.",
+      "meaningful_check": "One-off software diff on immutable raw OCR and saved full-reading field derives2removals and exactly replays. Original reply still fails unchanged old validator; no new historical/transcription/model-result acceptance.",
+      "remaining_unresolved": "Human method direction, prospective versioned parser/export/alignment/audit implementation and live readiness/authority. No production algorithm adoption or provider budget supplied by this question."
+    }
+  ],
+  "blank_fields": [
+    "evidence-note:work-comments:0:05e11f1852d5254a49f2c2ce266e27ed7e9efa6878420ad8a3ae41ea143fac57",
+    "evidence-note:work-comments:1:34f2e7598211d547e8202db8f5c86e5bc34f14391888a58cce959af14ca9f18a",
+    "evidence-note:work-comments:2:65643010bf35aa51988b15e4c5ae610025cf700ac43dd6286aa6591f25249fd9",
+    "evidence-note:work-comments:3:009fb47a980babc466edb42a4497fd70e6dfee60a4548955b2e42ebcc802db0d",
+    "evidence-note:work-comments:4:a0ad6dae5ade356424e55d6d3ed0b5c7f8479b1d6e85145b96fa24157701bebe",
+    "work-comments"
+  ],
+  "blank_field_disposition": "No additional judgment inferred from blank optional fields.",
+  "next_model_instruction_obligation": "Carry this source-linked concern: choose the response representation deliberately; do not continue the old model-edit-list test unchanged after Request changes. If full-text-first is selected, model prompt should ask full assigned text/explicit uncertainty and let software compute comparisons; preserve raw/source and audit apparent successes/unflagged text.",
+  "software_checks": "Typed packet, canonical hashes, original raw/actual reply identities,2-edit exact replay, plain quote spans, neutral glossary, isolated AppTest order/image/comments and existing focused review checks. Prior full code gate1030 retained; code unchanged.",
+  "no_new_authority": [
+    "No model call",
+    "No original OCR overwrite or automatic acceptance",
+    "No P0/full-corpus decision",
+    "No Computer Use or server restart"
+  ]
+}

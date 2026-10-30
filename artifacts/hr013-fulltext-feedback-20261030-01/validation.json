@@ -1,0 +1,35 @@
+{
+  "task": "T95",
+  "checks": {
+    "exact_feedback_note_and_evidence_bound": true,
+    "packet_model_valid": true,
+    "all_questions_optional": true,
+    "quoted_human_and_historical_reading_spans_have_zero_glossary_buttons": true,
+    "AI_explanations_have_glossary": true,
+    "AppTest_order": [
+      6,
+      9,
+      12,
+      15,
+      18
+    ],
+    "AppTest_images": 1,
+    "AppTest_textareas": 6,
+    "AppTest_exceptions": 0,
+    "software_diff_exact_roundtrip": true,
+    "old_actual_failure_unchanged": true
+  },
+  "scope": "Offline one-saved-paragraph diff demonstration and review authoring only, not production diff/parser/export implementation, new model output, source truth or human acceptance. No Computer Use/server restart/fetch/model call.",
+  "last_code_gate": 1030,
+  "code_changed": false,
+  "bounded_review": {
+    "reviewer": "gpt-6-luna",
+    "verdict": "No material concern in final packet/disposition",
+    "scope": "Read-only architecture/saved failure/exact submitted note/final proposal and packet. No tests, edits, runtime or Computer Use by reviewer.",
+    "tradeoff": "Initial preference for retaining per-edit model evidence is recorded as stricter option; parent lean proposal retains source/audit needs and honest ambiguous/coarse mappings, not automatic acceptance."
+  },
+  "focused_review_checks_passed": 36,
+  "registered_packet_sha256": "9523011a2ba506a05be5c588b7218523bc1948ee0e421bd48f83cf8de256f0c3",
+  "prior_packets_and_actual_result_bytes_unchanged": true,
+  "current_verified_lan_url": "http://10.0.0.56:8501"
+}

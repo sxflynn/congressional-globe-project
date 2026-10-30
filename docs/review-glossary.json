@@ -1925,6 +1925,35 @@
       "term": "remaining_concerns",
       "definition": "The response field listing issues the model says remain unresolved after its self-check.",
       "aliases": []
+    },
+    {
+      "term": "full-text-first",
+      "definition": "A proposed approach where the model returns the complete assigned passage and uncertainty, while software derives the recorded text differences. It is a design option, not an accuracy guarantee.",
+      "aliases": [
+        "full text from the model"
+      ]
+    },
+    {
+      "term": "computer-derived differences",
+      "definition": "Changes found by comparing two saved text strings in software. They describe how strings differ, not whether the scan supports a change.",
+      "aliases": [
+        "computer diff"
+      ]
+    },
+    {
+      "term": "text alignment",
+      "definition": "A rule for matching corresponding portions of two texts. Repeated or reordered wording can allow several matches, so the match may be uncertain.",
+      "aliases": []
+    },
+    {
+      "term": "paragraph-level source links",
+      "definition": "Links from an entire proposed paragraph to its original paragraph and scan, without claiming that every changed character has a uniquely identified source location.",
+      "aliases": []
+    },
+    {
+      "term": "offline implementation",
+      "definition": "Software preparation and testing using saved or invented data, without sending a model request.",
+      "aliases": []
     }
   ]
 }

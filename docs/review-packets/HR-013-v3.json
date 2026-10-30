@@ -1,0 +1,54 @@
+{
+  "id": "HR-013",
+  "version": 3,
+  "title": "Do we need the model to write an edit list?",
+  "instructions": "Your feedback arrived. This version answers your question and compares a simpler alternative using inputs → expected output → actual output → differences. All comments and the method-direction question are optional. The next choice concerns offline design/implementation only; it does not authorize a model call. Original OCR, proposed readings and your quoted question stay plain. Definitions help with AI explanations. Enter your name to open the editing form, Save draft to keep unfinished feedback, or Submit review to send it.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "fulltext-comments",
+      "prompt": "Optional comments on the explanation and proposed simpler method",
+      "required": false,
+      "options": [],
+      "evidence": [
+        {
+          "label": "1 · Your question and the answer",
+          "text": "Your exact submitted question:\nMy question is why are we wanting the model to return an edit list? Why not just ask it to write the full text and then replace the ocr text with what it said? Instead of trying to surgically edit using an edit list? U less there’s something I’m not understanding as to why the edit list is superior?\n\nDirect answer: the model does not have to write an edit list. We can ask it for the complete text and let the software calculate the differences. We have no matched comparison in this study showing that making the model author an edit list is superior.\n\nI required the list to retain source links, make changes visible and check that the edits recreate the full reading. Those are useful software records. Making the model generate those records is a separate design choice. It added failure conditions that this saved reply did not meet. A replay check confirms that two representations agree; it does not prove that the wording matches the scan.\n\nMy recommendation is to simplify the next candidate: full text from the model, differences from software, original OCR preserved alongside the proposed cleaned reading. Your Request changes is recorded; the previous next-test proposal is not approved.",
+          "url": null
+        },
+        {
+          "label": "2 · Inputs — same OCR and scan, simpler proposed instruction",
+          "text": "Original OCR:\nThe Committee on- Appropriations recom- mended non-concurrence.\n\nThe assigned scan is shown below. The proposed simpler instruction is: read the entire assigned paragraph, return its complete text, and explain uncertainty. If the paragraph cannot be read completely, return no proposed text and give the reason. Do not return an edit list or count character positions. Nearby writing remains context, not extra target text. This instruction is a proposal; it has not been sent.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+        },
+        {
+          "label": "3 · Expected output — full reading or explicit uncertainty",
+          "text": "Illustrative expected model text:\nThe Committee on Appropriations recommended non-concurrence.\n\nFor a clear, complete reading, the uncertainty field would be empty. For unclear or incomplete print, the proposed text would be empty and the uncertainty field would explain why. These are expected response examples, not newly observed results.\n\nExpected software behavior: keep the original OCR, save this full reading separately, and calculate every difference between them. The proposed full reading can become the displayed cleaned version after checks; the raw archive stays accessible. Names, numbers, missing text and copying adjacent context still need source checks. The model no longer has to supply a second, matching edit list.",
+          "url": null
+        },
+        {
+          "label": "4 · Actual output — no new run; saved-text software demonstration",
+          "text": "Actual output from a model under this proposed simpler method: none. It has not run.\n\nFor an offline demonstration only, I compared the original OCR with this full-reading field from the already saved failed reply:\nThe Committee on Appropriations recommended non-concurrence.\n\nThe computer found two removals: the hyphen after on, and the hyphen-plus-space inside recom- mended. Replaying those computer-derived differences recreates the saved full reading exactly. The old model listed only one word-level repair.\n\nThis demonstrates that software can produce the difference record. It does not accept the old reply, establish the sentence as a verified transcription or measure whether the simpler request will improve model accuracy or speed. The original reply remains saved and invalid under its original rules.",
+          "url": null
+        },
+        {
+          "label": "5 · Differences and remaining checks",
+          "text": "What changes: the model supplies one complete reading, while software records the changes. This avoids asking the model to keep two versions of its answer synchronized.\n\nWhat still needs care: fluent full text can omit words, invent a name or number, modernize spelling or copy nearby writing. An edit list can also contain those mistakes; neither format establishes source fidelity. We still need image checks and audits of the whole reading.\n\nRepeated phrases can produce more than one possible text alignment. A computer diff is a reproducible comparison, not the model’s explanation of why a change is justified. The proposed software would record ambiguity or use paragraph-level source links rather than pretend it has unique word-level evidence.\n\nWhat is implemented today: the existing edit-list contract is still active; no validator has been loosened. This full-text-first alternative needs a new versioned response reader and export checks before a live test. No original OCR, accepted ledger or historical result has been replaced.",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "method-direction",
+      "prompt": "Optional: which response approach should the next offline implementation use?",
+      "required": false,
+      "options": [
+        "Use full text from the model; calculate differences in software",
+        "Keep requiring a model-written edit list",
+        "Request another change — see my comments",
+        "Not sure — I need more explanation"
+      ],
+      "evidence": []
+    }
+  ]
+}

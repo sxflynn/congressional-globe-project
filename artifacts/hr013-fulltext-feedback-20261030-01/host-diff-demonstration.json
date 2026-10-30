@@ -1,0 +1,83 @@
+{
+  "scope": "One-off offline software illustration, not new model output, adopter or salvage of old failed result",
+  "input": {
+    "original_ocr": "The Committee on- Appropriations recom- mended non-concurrence.",
+    "original_sha256": "7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426",
+    "saved_full_reading": "The Committee on Appropriations recommended non-concurrence.",
+    "reading_sha256": "7edc647befc48b112484c2022b5696e696d08668825ca6fd17db64d1453f3030",
+    "actual_result_path": "artifacts/s5-measurement-20261029-01/run/result.json",
+    "actual_reply_sha256": "2bf49db348810e3aa0e4c78146914ee58abe53bf3fd9962f10c6913ee3d7cfda"
+  },
+  "expected": "Computing differences on the computer identifies all changes between these two texts and replays exactly; it does not verify print.",
+  "actual_offline_demonstration": {
+    "algorithm": "Python stdlib difflib.SequenceMatcher(autojunk=False); demonstration only, no claim of unique/minimal/historically meaningful alignment",
+    "operations": [
+      {
+        "operation": "delete",
+        "raw_start": 16,
+        "raw_end": 17,
+        "original": "-",
+        "replacement": "",
+        "proposed_start": 16,
+        "proposed_end": 16
+      },
+      {
+        "operation": "delete",
+        "raw_start": 38,
+        "raw_end": 40,
+        "original": "- ",
+        "replacement": "",
+        "proposed_start": 37,
+        "proposed_end": 37
+      }
+    ],
+    "round_trip_equals_saved_reading": true,
+    "support_map": [
+      {
+        "raw_start": 0,
+        "raw_end": 16,
+        "derived_start": 0,
+        "derived_end": 16,
+        "mapping": "exact_copy"
+      },
+      {
+        "raw_start": 16,
+        "raw_end": 17,
+        "derived_start": 16,
+        "derived_end": 16,
+        "mapping": "replacement"
+      },
+      {
+        "raw_start": 17,
+        "raw_end": 38,
+        "derived_start": 16,
+        "derived_end": 37,
+        "mapping": "exact_copy"
+      },
+      {
+        "raw_start": 38,
+        "raw_end": 40,
+        "derived_start": 37,
+        "derived_end": 37,
+        "mapping": "replacement"
+      },
+      {
+        "raw_start": 40,
+        "raw_end": 63,
+        "derived_start": 37,
+        "derived_end": 60,
+        "mapping": "exact_copy"
+      }
+    ],
+    "old_host_rejection_unchanged": "whole-paragraph anchor has no quote",
+    "old_export_still_invalid": true
+  },
+  "limits": [
+    "Reusing a saved full-reading field in this illustration does not accept or relabel the actual failed model result",
+    "Alternative model reply contract has not been implemented, called or validated live",
+    "A difference/replay test proves text equality, not faithful transcription or correct edits",
+    "Repeated or reordered text can have multiple valid alignments; proposed future alignment must record its rule/version and ambiguity or use whole-paragraph provenance",
+    "Missing text, invented names/numbers and adjacent-context copying still require source/image checks and audits",
+    "Original OCR remains immutable; candidate full text could replace only a separate derived proposal after checks, not accepted source text"
+  ]
+}

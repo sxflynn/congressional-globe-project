@@ -1,0 +1,19 @@
+{
+  "source_id": "congressionalglo7395unit:529:par_000529_000006",
+  "raw_sha256": "7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426",
+  "image_sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+  "actual_reply_sha256": "2bf49db348810e3aa0e4c78146914ee58abe53bf3fd9962f10c6913ee3d7cfda",
+  "source_image_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg",
+  "expected_reading_origin": "Existing source-inspected illustration from prior review; not independent reference",
+  "actual_new_method_output": null,
+  "offline_demonstration_path": "artifacts/hr013-fulltext-feedback-20261030-01/host-diff-demonstration.json",
+  "exact_note_id": "evidence-note:next-test:0:1a57477fa1ed86272cc2b7ee44360004beb2440585be6c773b245a042e0387c6",
+  "exact_note": "My question is why are we wanting the model to return an edit list? Why not just ask it to write the full text and then replace the ocr text with what it said? Instead of trying to surgically edit using an edit list? U less there’s something I’m not understanding as to why the edit list is superior?",
+  "exact_note_evidence": {
+    "label": "7 · Optional decision: one small test of the revised instructions",
+    "text": "I recommend one additional request on this same S5 passage, using the revised instructions and response rules. Its purpose is to learn whether the model can return a useful complete repair that passes the strict checks. This passage has now been seen during development, so the result would not be an independent accuracy test.\n\nLimits: one request to the same installed Qwen model; no retries, extra probes, downloads or source fetches; at most 1,500 output tokens and ten minutes for the whole session. Preparation gets up to 270 seconds, startup plus the request share 120 seconds, observing the owned process exit gets 30 seconds, and reporting gets 180 seconds. A missed preparation deadline means no request.\n\nAs with the first measurement, this asks to proceed before complete native input-fit evidence exists. The 6,000-input-token figure is a reporting threshold for this attempt, not a verified capacity limit. The revised literal messages measure 1,712 tokens before actual backend image/framing treatment; true fit and conditional-schema support remain unknown. The previous one-call permission is spent. New approval would apply only to this changed request and this narrow preflight exception.\n\nAfter an approval, I would first pin a new one-use allowance, test the shared deadlines, freeze final code/request identities and check current processes, queue and lock. Then one request, save the raw reply and measured costs, observe the owned process stop, and report even if invalid or incomplete. An uncertain stop or ambiguous outcome blocks further calls.\n\nYou may approve, request changes, defer, or leave this unanswered and comment only. Choosing an option and submitting records your decision for the next agent turn; it does not launch a model automatically. No choice approves corpus-wide processing, rewriting original OCR, or final cleanup policy. Other offline work can continue without this decision.",
+    "url": null
+  },
+  "submission_id": "76ff189c-d0ce-4a69-a414-5aab6e6f0e69",
+  "packet_v2_sha256": "ace45c350f17651fba393d3686d18e8ba4821ecd90d747d3988be6c35e806f2c"
+}
