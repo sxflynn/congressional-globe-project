@@ -1,0 +1,53 @@
+import hashlib,json
+from pathlib import Path
+from congressional_globe.review_store import _canonical,_digest
+from congressional_globe.productive_ocr_host import text_sha256
+from congressional_globe.review_glossary import definitions
+base=Path('artifacts/hr013-example-clarification-20261030-01')
+archive=Path('docs/archive/human-review/HR-013-v8/9c46ec2b-16d1-4a8c-aff9-6cb2cced6737.json')
+data=json.loads(archive.read_bytes());submission=data['submission']
+assert not submission['superseded'] and submission['revision']==1
+assert _digest(data['packet_snapshot']['packet_json'])==submission['packet_sha256']==data['packet_snapshot']['packet_sha256']
+assert _digest(_canonical(dict(answers=submission['answers'],notes=submission['notes'])))==submission['payload_sha256']
+actual_path=Path('artifacts/s5-text-measurement-20261030-01/run/result.json');actual_bytes=actual_path.read_bytes();result=json.loads(actual_bytes);reply=json.loads(result['output_text'])
+actual=reply['readings'][0]
+assert actual['coverage']=='complete' and actual['reason']=='No further action required.'
+assert 'Last word is unclear.' not in result['output_text']
+test=json.loads(Path('artifacts/text-reply-conformance-20261030-01/checks.json').read_bytes())
+invented=next(case for case in test['cases'] if case['label']=='authored_uncertain_example')
+assert invented['reply']['readings'][0]['reason']=='Last word is unclear.'
+dispositions=[]
+for key,text in submission['answers'].items():
+ if text=='Alright I guess':action='Acknowledge the explanation was received; no new requested change, quality acceptance, model-call authority or policy decision inferred.'
+ elif text=='Why did it say the last word was unclear?':action='Answer directly: the parent agent invented that phrase to test incomplete-reply handling. Actual model declared complete and said No further action required. Reusing S5/P1 in the displayed example blurred that distinction; clarify in new v9 packet and require fictional identities for displayed invented cases.'
+ else:assert text=='';action='Blank optional field; no additional feedback or judgment inferred.'
+ dispositions.append(dict(id=key,exact_text=text,action=action))
+proof=dict(task='T100',submission_id=submission['submission_id'],reviewer=submission['reviewer'],version=8,revision=1,submitted_at_utc=submission['created_at'],
+ packet_sha256=submission['packet_sha256'],payload_sha256=submission['payload_sha256'],archive_sha256=hashlib.sha256(archive.read_bytes()).hexdigest(),
+ per_field_dispositions=dispositions,overall_notes=submission['notes'],actual_reply_reason=actual['reason'],invented_phrase_source='T99 authored_uncertain_example; parent-written software-test input',
+ actual_result_path=str(actual_path),actual_result_sha256=hashlib.sha256(actual_bytes).hexdigest(),actual_result_status=result['measurement_status'],
+ remaining_limits='No model/source uncertainty observation or new quality/call approval; old result remains invalid. Commit this disposition before applied receipt.')
+(base/'dispositions.json').write_text(json.dumps(proof,ensure_ascii=False,indent=2)+'\n')
+spans=json.loads(Path('docs/review-source-spans.json').read_text());cards=[]
+def card(label,parts,url=None):
+ body='';ranges=[]
+ for part,plain in parts:
+  start=len(body);body+=part
+  if plain:ranges.append(dict(start=start,end=len(body)))
+ spans['source_spans'][text_sha256(body)]=ranges;cards.append(dict(label=label,text=body,url=url))
+old=json.loads(Path('docs/review-packets/HR-013-v7.json').read_bytes());url=old['questions'][0]['evidence'][0]['url']
+card('1 · Actual model reply: it did not report an unclear word',[("Your question:\n",False),("Why did it say the last word was unclear?",True),("\n\nIt did not. I wrote that phrase as an invented software-test input. It refers to no word on this scan.\n\nActual model text, unchanged:\n",False),(actual['corrected_text'],True),("\n\nActual completion comment, unchanged:\n",False),(actual['reason'],True),("\n\nThe model declared the reading complete. Its saved reply contains no statement that the last word was unclear. Its invalid status came from the comment-field mismatch already explained, not from uncertainty about the printed sentence.",False)],url)
+card('2 · Invented software test — no actual scan was judged unclear',[("I invented this test phrase:\n",False),("Last word is unclear.",True),("\n\nPurpose: test what the software should do if a hypothetical image cannot support a complete reading. Expected behavior: accept an incomplete reply with no proposed text and an explanation. Actual software-test outcome: it kept that example unresolved and produced no text proposal.\n\nThis was not an AI observation, a human judgment or a finding about the actual S5 scan. The old display reused the real sample’s labels, which made that distinction confusing. Future displayed invented cases will use clearly fictional examples without actual sample labels and will be separated from real model results. The old packet and your comments remain unchanged.",False)])
+card('3 · Your other comment is recorded',[("Your other submitted comment:\n",False),("Alright I guess",True),("\n\nRecorded as acknowledgement of the explanation. I have not treated it as a new model-call instruction, a quality grade or acceptance of a historical reading. This clarification makes no new model call and changes no saved result. All comments here are optional; no further approval is requested.",False)])
+packet=dict(id='HR-013',version=9,title='The unclear-word line was an invented test',instructions='This answers your submitted question and records both comments. Compare the actual model reply with the separately labelled invented software test. No word on the actual scan was reported unclear by the model. Comments are optional. Original/model/quoted passages stay plain; dotted-underlined terms explain surrounding prose. Enter your name to comment, Save draft to keep unfinished comments, or Submit review to send them. Nothing starts automatically.',blind=False,questions=[dict(id='example-clarification-comments',prompt='Optional comments on this clarification',options=[],required=False,evidence=cards)])
+Path('docs/review-packets/HR-013-v9.json').write_text(json.dumps(packet,ensure_ascii=False,indent=2)+'\n')
+Path('docs/review-source-spans.json').write_text(json.dumps(spans,ensure_ascii=False,indent=2)+'\n')
+glossary=json.loads(Path('docs/review-glossary.json').read_text());existing=definitions()
+for term,definition in {'invented software test':'An example deliberately written by the agent to exercise a software rule. It is not an observation returned by a model or made from an actual scan.',
+ 'fictional examples':'Made-up situations presented to explain or test behavior, without claiming that they occurred in the source material.'}.items():
+ if term.casefold() not in existing:glossary['terms'].append(dict(term=term,definition=definition))
+Path('docs/review-glossary.json').write_text(json.dumps(glossary,ensure_ascii=False,indent=2)+'\n')
+p=Path('docs/reference/human-review-protocol.md');s=p.read_text();marker='For an explicitly blind grading stage, preserve the source-only packet'
+addition='**Separate invented tests from actual observations.** In human-facing examples, label invented uncertainty or failure scenarios in the heading as invented software tests. Use clearly fictional cases without real sample identifiers; do not reuse labels such as S5/P1 in an invented display. Show actual model output separately and state explicitly when an example’s uncertainty phrase was written by the agent rather than observed in a scan or returned by a model. Internal source-bound regression fixtures may retain their required identities; this rule governs how they are presented to the human.\n\n'
+assert marker in s;s=s.replace(marker,addition+marker);p.write_text(s)
+print('Verified exact archive/payload and both notes; actual complete reply has no unclear-word claim. Prepared v9 clarification.')

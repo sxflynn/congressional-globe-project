@@ -28,6 +28,8 @@ Direct human instruction, 2026-10-29: “I want to see the inputs to the process
 3. **Actual output:** show the saved result unchanged, with status and measured limits. Say explicitly if the process has not run or no result exists. Never replace a failed reply with a repaired demonstration.
 4. **Differences:** put expected and actual differences next to the example in plain English. Include missing, incorrect and unsupported changes as well as matching parts; separate format/replay checks from historical accuracy. Give each section a comment box through evidence-local notes.
 
+**Separate invented tests from actual observations.** In human-facing examples, label invented uncertainty or failure scenarios in the heading as invented software tests. Use clearly fictional cases without real sample identifiers; do not reuse labels such as S5/P1 in an invented display. Show actual model output separately and state explicitly when an example’s uncertainty phrase was written by the agent rather than observed in a scan or returned by a model. Internal source-bound regression fixtures may retain their required identities; this rule governs how they are presented to the human.
+
 For an explicitly blind grading stage, preserve the source-only packet and capture expectations before exposing any model output; present the comparison in the subsequent diagnostic stage. Preserve immutable packets/answers when changing presentation by registering a new version. Continue using generous neutral glossary help in AI explanations while all historical/OCR/proposed reading excerpts remain plain. This presentation preference grants no model-call, quality-policy or full-run authority.
 
 #### How to ask for sample grades

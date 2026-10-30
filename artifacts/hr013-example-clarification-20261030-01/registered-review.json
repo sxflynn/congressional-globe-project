@@ -1,0 +1,33 @@
+{
+  "id": "HR-013",
+  "version": 9,
+  "title": "The unclear-word line was an invented test",
+  "instructions": "This answers your submitted question and records both comments. Compare the actual model reply with the separately labelled invented software test. No word on the actual scan was reported unclear by the model. Comments are optional. Original/model/quoted passages stay plain; dotted-underlined terms explain surrounding prose. Enter your name to comment, Save draft to keep unfinished comments, or Submit review to send them. Nothing starts automatically.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "example-clarification-comments",
+      "prompt": "Optional comments on this clarification",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Actual model reply: it did not report an unclear word",
+          "text": "Your question:\nWhy did it say the last word was unclear?\n\nIt did not. I wrote that phrase as an invented software-test input. It refers to no word on this scan.\n\nActual model text, unchanged:\nThe Committee on Appropriations recommended non-concurrence.\n\nActual completion comment, unchanged:\nNo further action required.\n\nThe model declared the reading complete. Its saved reply contains no statement that the last word was unclear. Its invalid status came from the comment-field mismatch already explained, not from uncertainty about the printed sentence.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+        },
+        {
+          "label": "2 · Invented software test — no actual scan was judged unclear",
+          "text": "I invented this test phrase:\nLast word is unclear.\n\nPurpose: test what the software should do if a hypothetical image cannot support a complete reading. Expected behavior: accept an incomplete reply with no proposed text and an explanation. Actual software-test outcome: it kept that example unresolved and produced no text proposal.\n\nThis was not an AI observation, a human judgment or a finding about the actual S5 scan. The old display reused the real sample’s labels, which made that distinction confusing. Future displayed invented cases will use clearly fictional examples without actual sample labels and will be separated from real model results. The old packet and your comments remain unchanged.",
+          "url": null
+        },
+        {
+          "label": "3 · Your other comment is recorded",
+          "text": "Your other submitted comment:\nAlright I guess\n\nRecorded as acknowledgement of the explanation. I have not treated it as a new model-call instruction, a quality grade or acceptance of a historical reading. This clarification makes no new model call and changes no saved result. All comments here are optional; no further approval is requested.",
+          "url": null
+        }
+      ]
+    }
+  ],
+  "packet_sha256": "5c0c3f1fd8444d27efdc55a0dd9b396dff2cb8fab39bf36cd19f41b23b296cb8"
+}

@@ -1,0 +1,45 @@
+{
+  "task": "T100",
+  "submission_id": "9c46ec2b-16d1-4a8c-aff9-6cb2cced6737",
+  "reviewer": "Stephen Flynn",
+  "version": 8,
+  "revision": 1,
+  "submitted_at_utc": "2026-10-30 18:56:47",
+  "packet_sha256": "b745cb8b7efd77505d38494c90766386ae6a006c4607bb3636f68e76a6fdf560",
+  "payload_sha256": "86bd9983977a77b77e43e2295df9d7710c0c39854fe96306b4f0d5a357336fc2",
+  "archive_sha256": "b582c8ecaa500909d2d8dc81ae890d11a4a50c0f5f5854fa38ff7966fe55df05",
+  "per_field_dispositions": [
+    {
+      "id": "evidence-note:format-fix-comments:0:341a4a91ec5f560cba8609c93e7bfbf0d2aa7bd775e04da31f00072b54e9de62",
+      "exact_text": "",
+      "action": "Blank optional field; no additional feedback or judgment inferred."
+    },
+    {
+      "id": "evidence-note:format-fix-comments:1:c20800b13b1bd90d1eb6e5a1d30927afa29b971fd6c5cca64688222f8b0abe67",
+      "exact_text": "Alright I guess",
+      "action": "Acknowledge the explanation was received; no new requested change, quality acceptance, model-call authority or policy decision inferred."
+    },
+    {
+      "id": "evidence-note:format-fix-comments:2:fb98065ecf9f11e6469f8f8e4993721d6263bd92f8bd350205aa989db41cea58",
+      "exact_text": "Why did it say the last word was unclear?",
+      "action": "Answer directly: the parent agent invented that phrase to test incomplete-reply handling. Actual model declared complete and said No further action required. Reusing S5/P1 in the displayed example blurred that distinction; clarify in new v9 packet and require fictional identities for displayed invented cases."
+    },
+    {
+      "id": "evidence-note:format-fix-comments:3:a7e4d821a6ee99c462c1e3156d70ce671fc3a9fe0e51b782927d433e8bc0d1b4",
+      "exact_text": "",
+      "action": "Blank optional field; no additional feedback or judgment inferred."
+    },
+    {
+      "id": "format-fix-comments",
+      "exact_text": "",
+      "action": "Blank optional field; no additional feedback or judgment inferred."
+    }
+  ],
+  "overall_notes": null,
+  "actual_reply_reason": "No further action required.",
+  "invented_phrase_source": "T99 authored_uncertain_example; parent-written software-test input",
+  "actual_result_path": "artifacts/s5-text-measurement-20261030-01/run/result.json",
+  "actual_result_sha256": "0ab36be60f7bcfc302c7b7757cbc6499571594844b472a972ac2a3f53ec89c8d",
+  "actual_result_status": "invalid",
+  "remaining_limits": "No model/source uncertainty observation or new quality/call approval; old result remains invalid. Commit this disposition before applied receipt."
+}
