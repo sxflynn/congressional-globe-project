@@ -1,0 +1,27 @@
+{
+  "origin": "direct human chat2026-10-30",
+  "exact_text": "When I say number I mean ALL numbers, not just unfamiliar numbers",
+  "sha256_utf8": "6d2af3245aa12cc6fb43486fa4a208ec9156603b63cb8724b8387aa45580b4c5",
+  "task": "T98",
+  "applied_rule": "Every number is routed to secondary image inspection. Dictionary/roster membership, familiarity, plausible value, clean appearance and previous deterministic success must never suppress numeric routing.",
+  "coverage": "Numeric quantities/identifiers expressed as digits, amounts, dates, years, page/bill/section numbers, ordinals and written/Roman numeric forms belong to the requirement. Detection ambiguity or unsupported forms are explicit coverage gaps requiring inspection/coverage work, not exemptions from the rule.",
+  "implementation_status": "Requirement clarified; T97 remains the next READY offline integration. Current detector handles digit-bearing tokens and some Roman contexts and is not proved to detect every numeric expression.",
+  "tests_required_in_T97": [
+    "Familiar1,10,660,1866,703and2794route even if present in lookup resources",
+    "A plausible/correct-looking number still routes",
+    "A number retained or changed by first-pass software still routes",
+    "Dictionary/name-list results affect word/name routing, never numeric inclusion",
+    "Amounts/dates/years/identifiers/ordinals/written/Roman numeric forms have explicit coverage tests; ambiguous or unsupported cases are recorded, never silently certified clean",
+    "Multiple numbers in one assigned target remain covered by one grouped full-target inspection; no token-by-token duplicate requests",
+    "Missing/unclear images produce queued/unavailable/withheld outcomes, not a clean exemption"
+  ],
+  "scope": "Clarifies desired pipeline routing, not whether every number is wrong and not permission for an unbounded live/corpus run. Original sample/limits, uncertainty, source preservation and old results remain unchanged.",
+  "validation": {
+    "exact_text_and_method_T97_requirements": "pass",
+    "affected_local_links": "pass",
+    "markdown_and_whitespace": "pass",
+    "bounded_luna_review": "No material issue; every-number requirement and honest coverage gaps confirmed.",
+    "last_code_gate_retained": 1030,
+    "code_changed": false
+  }
+}
