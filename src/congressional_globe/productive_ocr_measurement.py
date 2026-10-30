@@ -34,10 +34,17 @@ REPOSITORY = Path(__file__).resolve().parents[2]
 TEXT_PACKAGE = Path("artifacts/s5-text-measurement-20261030-01")
 TEXT_APPROVAL_SHA = "7dfdbef3c989b6ec85470f02ee5c988a2e53a393fbbec7ae233e2c77b3895f17"
 TEXT_BODY_SHA = "067610eef55dd0c346b3a5f41494b6b0e2c57cfbebf1f923dd047d7c476ab08f"
+CONFORMANCE_PACKAGE = Path("artifacts/s5-conformance-verification-20261030-01")
+CONFORMANCE_APPROVAL_SHA = "2e9f82f13d17572421e8d40f071b958788a9e4f80684c5ded07a331cd7355572"
+CONFORMANCE_BODY_SHA = "dd3f0268df6a4c03a0fdac962313336d1869b239953113c788b28c8aca12acd8"
 
 
 class MeasurementSpec(Contract):
-    contract: Literal["productive-ocr-s5-measurement-v1", "productive-ocr-s5-text-measurement-v2"]
+    contract: Literal[
+        "productive-ocr-s5-measurement-v1",
+        "productive-ocr-s5-text-measurement-v2",
+        "productive-ocr-s5-conformance-measurement-v3",
+    ]
     approval_sha256: Sha256
     body_sha256: Sha256
     code_sha256: Sha256
@@ -322,23 +329,35 @@ def _is_text(spec):
 
 
 def _package(spec):
+    if _is_conformance(spec):
+        return CONFORMANCE_PACKAGE
     return TEXT_PACKAGE if _is_text(spec) else PACKAGE
 
 
 def _authority(spec):
+    if _is_conformance(spec):
+        return CONFORMANCE_APPROVAL_SHA, CONFORMANCE_BODY_SHA
     return (TEXT_APPROVAL_SHA, TEXT_BODY_SHA) if _is_text(spec) else (APPROVAL_SHA, BODY_SHA)
 
 
 def _prep_seconds(spec):
-    return 270 if _is_text(spec) else 300
+    return 300 if spec.contract == "productive-ocr-s5-measurement-v1" else 270
 
 
 def _load_inputs(repository, spec):
+    if _is_conformance(spec):
+        from congressional_globe.productive_ocr_measurement_inputs import load_s5_conformance_inputs
+
+        return load_s5_conformance_inputs(repository)
     if not _is_text(spec):
         return load_s5_inputs(repository)
     from congressional_globe.productive_ocr_measurement_inputs import load_s5_text_inputs
 
     return load_s5_text_inputs(repository)
+
+
+def _is_conformance(spec):
+    return spec.contract == "productive-ocr-s5-conformance-measurement-v3"
 
 
 def _export_text(packet, response):

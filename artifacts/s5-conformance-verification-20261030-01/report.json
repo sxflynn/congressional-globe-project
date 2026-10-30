@@ -1,0 +1,72 @@
+{
+  "task": "T102",
+  "state": "one authorized actual attempt terminal; format compliance observed, target boundary fails, original measurement unresolved",
+  "physical_calls": 1,
+  "retries": 0,
+  "prior_S5_calls": 2,
+  "cumulative_S5_calls": 3,
+  "accepted_clean_outputs": 0,
+  "authority": {
+    "source": "direct typed Submitted and proceed adopts preceding HR-014 scope",
+    "web_review": "HR-013v9 All good acknowledged separately; no HR014 web answer fabricated"
+  },
+  "inputs": {
+    "source_id": "congressionalglo7395unit:529:par_000529_000006",
+    "original_ocr": "The Committee on- Appropriations recom- mended non-concurrence.",
+    "software_proposal": "The Committee on- Appropriations recom- mended non-concurrence.",
+    "image_sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+    "request_sha256": "dd3f0268df6a4c03a0fdac962313336d1869b239953113c788b28c8aca12acd8"
+  },
+  "expected_output": "The Committee on Appropriations recommended non-concurrence.",
+  "actual_output": "The Committee on Appropriations recommended non-concurrence. The amendment was non-concurred in.",
+  "extra_out_of_target_text": "The amendment was non-concurred in.",
+  "field_format": {
+    "advertised_schema_passed": true,
+    "coverage": "complete",
+    "reason": null,
+    "old_completion_comment_problem": "not repeated in this response"
+  },
+  "structural_export": {
+    "proposal_status": "findings",
+    "replay_verified": true,
+    "alignment": "coarse_whole_paragraph_not_token_alignment",
+    "limitation": "Coarse whole-paragraph replay cannot prove that the output stays inside the assigned printed paragraph."
+  },
+  "target_scope": {
+    "assessment": "fails: output includes visible next indented paragraph",
+    "image_inspection": "parent vision-capable agent viewed same cached crop and identified appended next-paragraph sentence",
+    "input_binding_issue": "P1 target region covers entire registered crop, including adjacent paragraphs. No separate context paragraph is declared.",
+    "guard_gap": "Current context guard checks declared context strings only; none are declared here, so this adjacent-copy error passed structural export.",
+    "human_acceptance": false
+  },
+  "measured": {
+    "elapsed_seconds": 30.37534633395262,
+    "reported_usage": {
+      "input_tokens": 1415,
+      "output_tokens": 102
+    }
+  },
+  "original_measurement_status": "unresolved",
+  "original_stop_receipt": "unknown",
+  "later_stop_check": {
+    "remaining_owned_rows": [],
+    "checked_at_epoch": 1793404362.74964,
+    "meaning": "fresh exact owned PID/process-group check confirms absent now; initial unknown receipt remains unchanged"
+  },
+  "actual_result_sha256": "df6e55d796469e3d47b01e6def72970885b275b0e1adee0fce11e2329af18a61",
+  "limits": "One exposed development paragraph; field-format success is not general quality/native-fit/provider coverage. S5 has no numeric text. No corpus forecast or clean acceptance.",
+  "next_blocker": "Offline: bind precise printed target region and explicit nearby context using existing source/geometry/cached image, then reject this actual adjacent-copy response and preserve full-target uncertainty. No new provider call or fetch authority.",
+  "report_written_epoch": 1793404456.702999,
+  "session_elapsed_at_report_seconds": 153.23035597801208,
+  "adjacent_source_evidence": {
+    "path": "boundary-evidence.json",
+    "next_paragraph_id": "par_000529_000007",
+    "matching_first_line": "The amendment was non-concurred in.",
+    "target_image_local_bbox": [
+      64,
+      64,
+      935,
+      142
+    ]
+  }
+}

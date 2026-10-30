@@ -142,3 +142,35 @@ def _same_s5_source(original, host):
     after = [(p["source_id"], p["raw"], p["role"]) for p in new["paragraphs"]]
     if before != after:
         raise ValueError("text measurement changed original S5 paragraph boundaries/raw")
+
+
+def load_s5_conformance_inputs(
+    repository: Path,
+) -> tuple[dict, RequestProjection, EvidenceRegistry]:
+    """Load only the reviewed strict-schema body, preserving both historical loaders."""
+    from congressional_globe.productive_ocr_authority import MODEL_NAME
+    from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes
+    from congressional_globe.productive_ocr_runner import code_identity
+
+    original, _projection, registry = load_s5_inputs(repository)
+    t97 = repository / "artifacts/two-stage-integration-20261030-01"
+    root = repository / "artifacts/text-reply-conformance-20261030-01"
+    host = json.loads(
+        _read_verified(
+            root / "candidate-host.json",
+            "407bec1b03c049d00454acc9f2690caccb656548272da00a8b3494a2a7d4ea79",
+        )
+    )
+    _load_text_resources(t97, registry)
+    _load_text_resources(root, registry)
+    validate_host(host, registry)
+    _same_s5_source(original, host)
+    code = canonical_json(code_identity())
+    host["payload"]["code_sha256"] = sha256_bytes(code)
+    registry.files[sha256_bytes(code)] = code
+    host["packet_sha256"] = sha256_bytes(canonical_json(host["payload"]))
+    prompt = registry.files[host["payload"]["prompt_sha256"]].decode("utf-8")
+    projection, _schema = compile_request_projection(
+        host, registry, prompt, MODEL_NAME, conformance_v4=True
+    )
+    return host, projection, registry

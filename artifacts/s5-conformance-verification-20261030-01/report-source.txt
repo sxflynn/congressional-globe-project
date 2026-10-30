@@ -1,0 +1,40 @@
+"""Report the one actual call without changing its response or unknown stop receipt."""
+import json,time
+from pathlib import Path
+from jsonschema import Draft202012Validator
+from congressional_globe.productive_ocr_host import sha256_bytes
+from congressional_globe.productive_ocr_runner import code_identity,fingerprint
+base=Path('artifacts/s5-conformance-verification-20261030-01')
+raw=(base/'run/result.json').read_bytes();result=json.loads(raw)
+body=json.loads((base/'request.json').read_bytes());host=json.loads((base/'host.json').read_bytes())
+spec=json.loads((base/'run/spec.json').read_bytes());assert spec['code_sha256']==fingerprint(code_identity())
+reply=json.loads(result['output_text']);reading=reply['readings'][0]
+Draft202012Validator(body['format']).validate(reply)
+expected='The Committee on Appropriations recommended non-concurrence.'
+extra='The amendment was non-concurred in.'
+assert reading['corrected_text']==expected+' '+extra
+assert reading['coverage']=='complete' and reading['reason'] is None
+terminal=json.loads((base/'terminal-processes.json').read_bytes());assert terminal['remaining_rows']==[]
+actual=result['source_export']['outcome'];assert actual['proposal_status']=='findings'
+image=host['payload']['image'];target=host['payload']['paragraphs'][0]
+assert len(host['payload']['paragraphs'])==1 and target['role']=='target'
+assert image['bindings'][0]['crop_region']==dict(left=0,top=0,right=999,bottom=206)
+report=dict(task='T102',state='one authorized actual attempt terminal; format compliance observed, target boundary fails, original measurement unresolved',
+ physical_calls=1,retries=0,prior_S5_calls=2,cumulative_S5_calls=3,accepted_clean_outputs=0,
+ authority=dict(source='direct typed Submitted and proceed adopts preceding HR-014 scope',web_review='HR-013v9 All good acknowledged separately; no HR014 web answer fabricated'),
+ inputs=dict(source_id=target['source_id'],original_ocr=target['raw']['text'],software_proposal=target['static']['text'],image_sha256=image['sha256'],request_sha256=sha256_bytes((base/'request.json').read_bytes())),
+ expected_output=expected,actual_output=reading['corrected_text'],extra_out_of_target_text=extra,
+ field_format=dict(advertised_schema_passed=True,coverage=reading['coverage'],reason=reading['reason'],old_completion_comment_problem='not repeated in this response'),
+ structural_export=dict(proposal_status=actual['proposal_status'],replay_verified=actual['derived_proposals'][0]['replay_verified'],alignment=actual['derived_proposals'][0]['alignment'],limitation='Coarse whole-paragraph replay cannot prove that the output stays inside the assigned printed paragraph.'),
+ target_scope=dict(assessment='fails: output includes visible next indented paragraph',image_inspection='parent vision-capable agent viewed same cached crop and identified appended next-paragraph sentence',
+  input_binding_issue='P1 target region covers entire registered crop, including adjacent paragraphs. No separate context paragraph is declared.',
+  guard_gap='Current context guard checks declared context strings only; none are declared here, so this adjacent-copy error passed structural export.',human_acceptance=False),
+ measured=dict(elapsed_seconds=result['elapsed_seconds'],reported_usage=result['usage']),
+ original_measurement_status=result['measurement_status'],original_stop_receipt=result['owned_stop_observation'],
+ later_stop_check=dict(remaining_owned_rows=[],checked_at_epoch=terminal['checked_at_epoch'],meaning='fresh exact owned PID/process-group check confirms absent now; initial unknown receipt remains unchanged'),
+ actual_result_sha256=sha256_bytes(raw),
+ limits='One exposed development paragraph; field-format success is not general quality/native-fit/provider coverage. S5 has no numeric text. No corpus forecast or clean acceptance.',
+ next_blocker='Offline: bind precise printed target region and explicit nearby context using existing source/geometry/cached image, then reject this actual adjacent-copy response and preserve full-target uncertainty. No new provider call or fetch authority.',
+ report_written_epoch=time.time(),session_elapsed_at_report_seconds=time.time()-spec['started_at_epoch'])
+(base/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+print('Actual field format passes; added visible neighbouring sentence fails target scope. Raw unresolved/unknown preserved; fresh owned group absent. No retry.')

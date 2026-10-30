@@ -1,0 +1,31 @@
+"""Stream only to the two already identified adjacent hOCR paragraphs; no source edits."""
+import json,re
+from pathlib import Path
+from lxml import html
+from congressional_globe.productive_ocr_host import sha256_bytes
+base=Path('artifacts/s5-conformance-verification-20261030-01')
+path=Path('congressionalglo7395unit_hocr.html');wanted=['par_000529_000006','par_000529_000007']
+fragments={};capture=None;lines=[]
+with path.open() as stream:
+ for line in stream:
+  if capture is None:
+   found=next((key for key in wanted if f'id="{key}"' in line),None)
+   if found: capture=found;lines=[line]
+  else:lines.append(line)
+  if capture and '</p>' in line:
+   fragments[capture]=''.join(lines);capture=None;lines=[]
+   if len(fragments)==2:break
+bundle_path=Path('artifacts/ocr-live-readiness-20261028-01/images/S5/bundle.json')
+bundle=json.loads(bundle_path.read_bytes());origin=bundle['target']['regions'][0]['bbox'];records=[]
+for key in wanted:
+ node=html.fromstring(fragments[key]);coords=list(map(int,re.search(r'bbox (\d+) (\d+) (\d+) (\d+)',node.attrib['title']).groups()))
+ first=node.xpath('.//span[contains(concat(" ",normalize-space(@class)," ")," ocr_line ")]')[0]
+ line=' '.join(first.text_content().split())
+ records.append(dict(paragraph_id=key,page_bbox=coords,image_local_bbox=[coords[0]-origin['left'],coords[1]-origin['top'],coords[2]-origin['left'],coords[3]-origin['top']],first_line=line,fragment_sha256=sha256_bytes(fragments[key].encode())))
+report=json.loads((base/'report.json').read_bytes());assert records[1]['first_line']==report['extra_out_of_target_text']
+proof=dict(hocr_path=str(path),hocr_sha256=bundle['target']['hocr_sha256'],hocr_identity='Already verified by actual request source loader; this extraction does not rehash or modify the file.',crop_bundle_path=str(bundle_path),crop_bundle_sha256=sha256_bytes(bundle_path.read_bytes()),crop_origin=origin,paragraphs=records,
+ conclusion='Added output equals first line of the next saved OCR paragraph. Declared P1 region is whole999x206 crop, rather than source target bounds64,64,935,142.',scope='Source geometry evidence for next offline fix; no new crop or model reading fabricated.')
+(base/'boundary-evidence.json').write_text(json.dumps(proof,ensure_ascii=False,indent=2)+'\n')
+report['adjacent_source_evidence']=dict(path='boundary-evidence.json',next_paragraph_id=wanted[1],matching_first_line=records[1]['first_line'],target_image_local_bbox=records[0]['image_local_bbox'])
+(base/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+print('Verified appended sentence against next source paragraph; exact target region:',records[0]['image_local_bbox'])

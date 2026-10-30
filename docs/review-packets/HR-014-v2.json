@@ -1,0 +1,37 @@
+{
+  "id": "HR-014",
+  "version": 2,
+  "title": "Actual result: format passed, neighbouring text copied",
+  "instructions": "This is the one real corrected-format S5 attempt you authorized. Compare actual inputs, expected output, actual model text and the separate format, target-boundary and stop outcomes. All comments are optional. Historical/model text stays plain, with dotted-underlined help in surrounding prose. No new call is requested or started here.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "corrected-s5-result-comments",
+      "prompt": "Optional comments on the actual result or next target-boundary fix",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Actual inputs and expected output",
+          "text": "Original OCR for the assigned paragraph:\nThe Committee on- Appropriations recom- mended non-concurrence.\n\nActual software proposal supplied to the model:\nThe Committee on- Appropriations recom- mended non-concurrence.\n\nExpected complete output for this assigned paragraph:\nThe Committee on Appropriations recommended non-concurrence.\n\nThe same saved S5 scan, one target paragraph, model and corrected field rules were supplied. Expected scope: correct this paragraph without adding the next paragraph. The scan shown here also contains neighbouring print; the supplied target box covered the whole crop.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+        },
+        {
+          "label": "2 · Actual model output and the exact extra sentence",
+          "text": "Actual model text, unchanged:\nThe Committee on Appropriations recommended non-concurrence. The amendment was non-concurred in.\n\nExtra text beyond the expected paragraph:\nThe amendment was non-concurred in.\n\nThat extra sentence is visible in the next indented paragraph of the same crop. The first sentence matches the expected reading, but the complete returned text is too broad. This actual reply is not accepted as clean text. No invented uncertainty example is included here.",
+          "url": null
+        },
+        {
+          "label": "3 · What passed, what failed and what our checks missed",
+          "text": "The corrected reply format worked on this call: the model declared complete coverage and returned a JSON null reason, so the earlier comment-field mismatch did not recur.\n\nThe target-boundary check did not work adequately. Our image target box covered all 999×206 pixels, including neighbouring print. The request declared only the target paragraph, with no separate context paragraph. The software checks known declared context, so they missed this copied neighbouring sentence and allowed an unreviewed whole-paragraph proposal.\n\nThis exposes a concrete source-binding gap. Exact software replay does not prove that a reading belongs entirely to the assigned printed paragraph. The next offline fix will use the existing source geometry and adjacent paragraph text to distinguish the target from its neighbours and retain this actual response as a regression case. It will not erase this result or launch another call.",
+          "url": null
+        },
+        {
+          "label": "4 · Actual timing, stopping and remaining limits",
+          "text": "Exactly one authorized call was made, with no retry. It returned in 30.38 seconds; the backend reported 1,415 input tokens and 102 output tokens. There are now three S5 development attempts in total, all with immutable spent slots.\n\nThe original stopping receipt says unknown, so the saved overall measurement remains unresolved. A later exact process/group check found the owned server, child and request programs gone. That confirms they are absent now; it does not rewrite the original receipt or its status. The shared service was not controlled.\n\nNo source text or accepted ledger changed. This exposed repeat demonstrates complete-branch format compliance, not general accuracy, native input fit or numeric-reading quality; S5 has no numbers. Provider behavior on incomplete replies and forced cancellation remains unproved.\n\nYour submitted web review was All good on the earlier clarification. Your separate typed Submitted and proceed authorized this stated one-call scope; no HR-014 web answer was fabricated. This permission is now spent. Comments on these actual results are optional; no further call starts automatically.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}

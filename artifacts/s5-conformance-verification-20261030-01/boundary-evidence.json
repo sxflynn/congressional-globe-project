@@ -1,0 +1,51 @@
+{
+  "hocr_path": "congressionalglo7395unit_hocr.html",
+  "hocr_sha256": "966c31d965de8d72080bd30c8e474e98a2061d3082bd8c0d7f89b10eb81436ff",
+  "hocr_identity": "Already verified by actual request source loader; this extraction does not rehash or modify the file.",
+  "crop_bundle_path": "artifacts/ocr-live-readiness-20261028-01/images/S5/bundle.json",
+  "crop_bundle_sha256": "48862e59f220465ae409993d830bb5314ba9744ee102ae26a57269400e33311e",
+  "crop_origin": {
+    "left": 33,
+    "top": 638,
+    "right": 1032,
+    "bottom": 844
+  },
+  "paragraphs": [
+    {
+      "paragraph_id": "par_000529_000006",
+      "page_bbox": [
+        97,
+        702,
+        968,
+        780
+      ],
+      "image_local_bbox": [
+        64,
+        64,
+        935,
+        142
+      ],
+      "first_line": "The Committee on- Appropriations recom-",
+      "fragment_sha256": "a3ddcd58a2e33aaabda8e71a2a91b24ee1ed2fd16768df5707ecb2824f6f7921"
+    },
+    {
+      "paragraph_id": "par_000529_000007",
+      "page_bbox": [
+        137,
+        787,
+        875,
+        880
+      ],
+      "image_local_bbox": [
+        104,
+        149,
+        842,
+        242
+      ],
+      "first_line": "The amendment was non-concurred in.",
+      "fragment_sha256": "01283c9dbe2e199c6634b34f122e06e0e30cc3487ecf71cf916d500ebce5e24d"
+    }
+  ],
+  "conclusion": "Added output equals first line of the next saved OCR paragraph. Declared P1 region is whole999x206 crop, rather than source target bounds64,64,935,142.",
+  "scope": "Source geometry evidence for next offline fix; no new crop or model reading fabricated."
+}
