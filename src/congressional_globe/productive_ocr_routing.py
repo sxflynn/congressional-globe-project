@@ -119,6 +119,16 @@ TEXT_PROMPT = (
     "read or remains uncertain, return null text, incomplete coverage and a concrete reason. "
     "Use only the declared text-reply-v3 JSON schema. No source reading is accepted by this reply."
 )
+TEXT_PROMPT_V4 = TEXT_PROMPT.replace(
+    "Use only the declared text-reply-v3 JSON schema.",
+    "Return the text-reply-v3 JSON reply using the supplied conformance-v4 schema.",
+) + (
+    ' For a complete reading, set coverage to "complete", corrected_text to the entire '
+    "reading, and reason to JSON null (not a string). Do not add a completion comment "
+    'such as "No further action required." For an incomplete or uncertain reading, set '
+    'coverage to "incomplete", corrected_text to JSON null, and reason to a nonempty '
+    "explanation. Never provide a complete reading while reporting uncertainty."
+)
 
 
 class ParagraphRoute(Contract):
@@ -242,7 +252,13 @@ def _install_first_pass(paragraph, result, registry):
 
 
 def prepare_text_host(
-    host, registry: EvidenceRegistry, results, resources: Resources, requirements=()
+    host,
+    registry: EvidenceRegistry,
+    results,
+    resources: Resources,
+    requirements=(),
+    *,
+    conformance_v4: bool = False,
 ):
     """Reuse a validated packet's exact image/context; freeze one request per assigned unit.
 
@@ -260,7 +276,7 @@ def prepare_text_host(
         result = results[paragraph["alias"]]
         routes.append(route_paragraph(result, resources, paragraph["alias"]))
         _install_first_pass(paragraph, result, registry)
-    prompt = _feedback_prompt(payload, registry, results, requirements)
+    prompt = _feedback_prompt(payload, registry, results, requirements, conformance_v4)
     _install_diagnostics(payload, routes, registry)
     payload["contract"] = TEXT_HOST
     from congressional_globe.productive_ocr_runner import code_identity
@@ -270,7 +286,7 @@ def prepare_text_host(
     registry.files[payload["prompt_sha256"]] = prompt.encode()
     from congressional_globe.productive_ocr_projection import derive_reply_schema
 
-    schema = derive_reply_schema(host)
+    schema = derive_reply_schema(host, conformance_v4=conformance_v4)
     payload["response_schema_sha256"] = schema.schema_sha256
     registry.files[schema.schema_sha256] = schema.schema_text.encode()
     host["packet_sha256"] = sha256_bytes(canonical_json(payload))
@@ -303,11 +319,11 @@ def _check_assigned_results(targets, results):
         raise ValueError("first pass must cover exactly the assigned targets")
 
 
-def _feedback_prompt(payload, registry, results, requirements):
+def _feedback_prompt(payload, registry, results, requirements, conformance_v4):
     from congressional_globe.repair_feedback import feedback_instruction
 
     paragraphs = {p["source_id"]: p for p in payload["paragraphs"] if p["role"] == "target"}
-    instructions = [TEXT_PROMPT]
+    instructions = [TEXT_PROMPT_V4 if conformance_v4 else TEXT_PROMPT]
     for requirement in requirements:
         paragraph = paragraphs[requirement.source_id]
         source = results[paragraph["alias"]].input.source

@@ -1,0 +1,15 @@
+{
+  "reviewer": "existing bounded gpt-6-luna delegate /root/t89_review",
+  "scope": "read-only version/shape/prompt/source-compatibility review; no model calls or human source grade",
+  "findings": [
+    {
+      "issue": "Reply-contract v3 and specialized schema v4 names could be confused.",
+      "action": "New prompt explicitly names the unchanged v3 reply contract and conformance-v4 schema; default old prompt bytes preserved."
+    },
+    {
+      "issue": "Schema hash alone allowed mixing old/new prompt versions.",
+      "action": "Require strict schema iff registered prompt has exact strict prompt prefix; both mixed directions reject, source feedback suffix allowed."
+    }
+  ],
+  "verdict": "No material compatibility issue remains in inspected scope. New branches match existing host shape validation; provider oneOf enforcement remains unverified."
+}

@@ -1,5 +1,6 @@
 """Lean full-target replies with explicitly coarse, software-derived source support."""
 
+import copy
 import json
 import re
 from typing import Literal
@@ -156,13 +157,32 @@ def export_text_reply(host, request_body_utf8, raw_reply_text) -> TextHostExport
     )
 
 
-def text_reply_schema(payload):
+def text_reply_schema(payload, *, conformance_v4: bool = False):
     schema = TextReply.model_json_schema()
     schema["properties"]["unit_id"] = {"const": payload["unit_id"]}
     aliases = [p["alias"] for p in payload["paragraphs"] if p["role"] == "target"]
     schema["$defs"]["TextReading"]["properties"]["paragraph_alias"]["enum"] = aliases
     schema["properties"]["readings"].update(minItems=len(aliases), maxItems=len(aliases))
+    if conformance_v4:
+        _specialize_reading(schema)
     return json.dumps(schema, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+
+
+def _specialize_reading(schema):
+    definition = schema["$defs"]["TextReading"]
+    complete = copy.deepcopy(definition)
+    complete["properties"].update(
+        coverage={"const": "complete"},
+        corrected_text={"type": "string", "minLength": 1, "maxLength": 6000},
+        reason={"type": "null"},
+    )
+    incomplete = copy.deepcopy(definition)
+    incomplete["properties"].update(
+        coverage={"const": "incomplete"},
+        corrected_text={"type": "null"},
+        reason={"type": "string", "minLength": 1, "maxLength": 1000},
+    )
+    schema["$defs"]["TextReading"] = {"oneOf": [complete, incomplete]}
 
 
 def _require_registered_image(image):

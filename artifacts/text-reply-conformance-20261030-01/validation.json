@@ -1,0 +1,20 @@
+{
+  "task": "T99",
+  "scope": "offline request/host consistency fix",
+  "full_gate_tests": 1094,
+  "new_focused_tests": 15,
+  "provider_calls": 0,
+  "actual_saved_failure": "unchanged; new wire schema and unchanged host both reject it",
+  "authored_complete_example": "schema/host agree",
+  "authored_incomplete_example": "schema/host agree, unresolved with no proposal",
+  "prompt_schema_mixed_modes": "reject both directions",
+  "legacy_T97_prompt_schema_request": "exact byte replay passes",
+  "source_scope": "same S5 image/raw/static and target; all source guards unchanged",
+  "code_identity_current": true,
+  "review_packet": "HR-013 v8",
+  "packet_sha256": "b745cb8b7efd77505d38494c90766386ae6a006c4607bb3636f68e76a6fdf560",
+  "review_comment_boxes": 5,
+  "review_app_exceptions": 0,
+  "computer_use": false,
+  "live_provider_oneOf": "not tested; no new authorization"
+}

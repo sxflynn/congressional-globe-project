@@ -426,7 +426,7 @@ def _verify_one_target(
 
 
 def _validate_payload(payload: dict[str, Any], registry: EvidenceRegistry) -> dict[str, Any]:
-    _validate_text_mode(payload)
+    _validate_text_mode(payload, registry)
     _validate_packet_resources(payload, registry)
     paragraphs = payload.get("paragraphs")
     if not isinstance(paragraphs, list) or not 1 <= len(paragraphs) <= 32:
@@ -440,14 +440,27 @@ def _validate_payload(payload: dict[str, Any], registry: EvidenceRegistry) -> di
     return payload
 
 
-def _validate_text_mode(payload: dict) -> None:
+def _validate_text_mode(payload: dict, registry: EvidenceRegistry) -> None:
     if payload["contract"] != "ocr-productive-repair-host-input-v3":
         return
     from congressional_globe.productive_ocr_text_reply import text_reply_schema
 
     if payload["role"] != "productive_repair_and_self_check":
         _fail("text mode cannot replace saved-proposal audit mode")
-    _hash(text_sha256(text_reply_schema(payload)), payload["response_schema_sha256"], "text schema")
+    strict_schema = text_sha256(text_reply_schema(payload, conformance_v4=True))
+    supported = {text_sha256(text_reply_schema(payload)), strict_schema}
+    if payload["response_schema_sha256"] not in supported:
+        _fail("text schema hash mismatch")
+    _verify_text_prompt_mode(payload, registry, strict_schema)
+
+
+def _verify_text_prompt_mode(payload, registry, strict_schema):
+    from congressional_globe.productive_ocr_routing import TEXT_PROMPT_V4
+
+    prompt = registry.files.get(payload["prompt_sha256"], b"")
+    strict_prompt = prompt.startswith(TEXT_PROMPT_V4.encode())
+    if strict_prompt != (payload["response_schema_sha256"] == strict_schema):
+        _fail("text prompt/schema conformance versions differ")
 
 
 def _validate_packet_resources(payload: dict[str, Any], registry: EvidenceRegistry) -> None:

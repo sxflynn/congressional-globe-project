@@ -1,0 +1,43 @@
+"""Offline T99 evidence; no model/provider/server calls or changed historical replies."""
+import copy,json,runpy
+from pathlib import Path
+from jsonschema import Draft202012Validator
+from congressional_globe.productive_ocr_host import sha256_bytes
+from congressional_globe.productive_ocr_text_reply import validate_text_reply
+from congressional_globe.productive_ocr_runner import code_identity
+base=Path('artifacts/text-reply-conformance-20261030-01')
+ns=runpy.run_path('tests/test_productive_ocr_text_conformance.py')
+old,host,registry,projection,schema,routes=ns['_new_case']()
+actual=ns['_actual_reply']()
+legacy=ns['derive_reply_schema'](old)
+validator=Draft202012Validator(json.loads(schema.schema_text))
+assert Draft202012Validator(json.loads(legacy.schema_text)).is_valid(actual)
+assert not validator.is_valid(actual)
+complete=copy.deepcopy(actual);complete['readings'][0]['reason']=None
+withheld=copy.deepcopy(actual);withheld['readings'][0].update(coverage='incomplete',corrected_text=None,reason='Last word is unclear.')
+cases=[]
+for label,reply in [('actual_saved_reply_unchanged',actual),('authored_complete_example',complete),('authored_uncertain_example',withheld)]:
+ try:outcome=validate_text_reply(json.dumps(reply),host);accepted=True;status=outcome['proposal_status']
+ except ValueError:accepted=False;status='invalid'
+ cases.append(dict(label=label,reply=reply,wire_schema_accepts=validator.is_valid(reply),host_accepts=accepted,proposal_status=status,
+                   source='unchanged actual T90 reply' if label.startswith('actual') else 'authored offline example, not new model output'))
+assert [(r['wire_schema_accepts'],r['host_accepts']) for r in cases]==[(False,False),(True,True),(True,True)]
+def save(name,value):
+ (base/name).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
+save('candidate-host.json',host);save('candidate-projection.json',projection.model_dump(mode='json'))
+(base/'candidate-request.json').write_text(projection.body_utf8)
+(base/'candidate-schema.json').write_text(schema.schema_text)
+(base/'candidate-prompt.txt').write_bytes(registry.files[host['payload']['prompt_sha256']])
+save('checks.json',dict(task='T99',cases=cases,schema_contract=schema.contract,unchanged_reply_contract='ocr-productive-repair-text-reply-v3',
+ request_sha256=projection.body_sha256,code_identity=code_identity(),provider_calls=0,
+ old_result='invalid, unchanged; no salvage or new accepted clean export',
+ existing_authority='spent slots unchanged; new request hash has no dispatch authority',
+ source_scope='same original S5 image/raw/software proposal; one whole paragraph target, no changed sample or routing',
+ limits='Offline schema/host agreement only; actual provider support for oneOf and future reply compliance remain unverified.'))
+save('legacy-replay.json',dict(prompt_bytes=(ns['T97']/'S5-prompt.txt').read_bytes()==ns['TEXT_PROMPT'].encode(),
+ original_v3_schema_sha256=sha256_bytes((ns['T97']/'S5-schema.json').read_bytes()),
+ original_v3_request_sha256=sha256_bytes((ns['T97']/'S5-request.json').read_bytes()),
+ check='Focused test reconstructs original prompt/schema/body byte for byte with recorded host identity.'))
+old_raw=(ns['ACTUAL']/'run/result.json').read_bytes()
+save('unchanged-evidence.json',dict(actual_result_path=str(ns['ACTUAL']/'run/result.json'),actual_result_sha256=sha256_bytes(old_raw),actual_status=json.loads(old_raw)['measurement_status']))
+print('Offline candidate request',projection.body_sha256,'; unchanged actual reply rejects in both new schema and host; complete/withheld examples agree.')

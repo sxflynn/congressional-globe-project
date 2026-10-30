@@ -2071,6 +2071,22 @@
     {
       "term": "clean export",
       "definition": "A proposed corrected-text output produced after validation; it still needs any required source-quality or human acceptance."
+    },
+    {
+      "term": "reply shape",
+      "definition": "The required arrangement and values of answer fields, separate from whether the proposed historical words are accurate."
+    },
+    {
+      "term": "null reason",
+      "definition": "A reason field containing JSON null, meaning no explanation of uncertainty is supplied. It is different from the string “null” or an empty string."
+    },
+    {
+      "term": "complete reply",
+      "definition": "An answer claiming to cover the entire assigned passage. Here it must contain text and a null reason; that claim alone does not prove accuracy."
+    },
+    {
+      "term": "uncertain example",
+      "definition": "An authored demonstration of how a reply should withhold text when the evidence cannot support a complete reading."
     }
   ]
 }

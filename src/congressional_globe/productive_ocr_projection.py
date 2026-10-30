@@ -26,6 +26,7 @@ class SchemaArtifact(Contract):
         "productive-ocr-reply-schema-v1",
         "productive-ocr-reply-schema-v2",
         "productive-ocr-reply-schema-v3",
+        "productive-ocr-reply-schema-v4",
     ] = "productive-ocr-reply-schema-v1"
     unit_id: str = Field(min_length=1)
     role: Literal["productive_repair_and_self_check", "audit_saved_proposal"]
@@ -71,9 +72,12 @@ def _specialize_audit(schema: dict, role: str) -> None:
         schema["properties"][key]["maxItems"] = 0
 
 
-def derive_reply_schema(host_payload: dict, *, conformance_v2: bool = False) -> SchemaArtifact:
+def derive_reply_schema(
+    host_payload: dict, *, conformance_v2: bool = False, conformance_v4: bool = False
+) -> SchemaArtifact:
     """Derive a frozen, per-unit schema without mutating the generic Reply schema."""
     payload = host_payload.get("payload", host_payload)
+    _check_schema_modes(payload, conformance_v4)
     targets = [
         paragraph["alias"] for paragraph in payload["paragraphs"] if paragraph["role"] == "target"
     ]
@@ -81,7 +85,7 @@ def derive_reply_schema(host_payload: dict, *, conformance_v2: bool = False) -> 
     if not aliases or len(set(aliases)) != len(aliases):
         raise ValueError("schema needs unique declared target aliases")
     if payload.get("contract") == "ocr-productive-repair-host-input-v3":
-        return _text_schema(payload, aliases, conformance_v2)
+        return _text_schema(payload, aliases, conformance_v2, conformance_v4)
     schema = copy.deepcopy(Reply.model_json_schema())
     schema["properties"]["unit_id"] = {"const": payload["unit_id"]}
     schema["properties"]["role"] = {"const": payload["role"]}
@@ -101,20 +105,27 @@ def derive_reply_schema(host_payload: dict, *, conformance_v2: bool = False) -> 
     )
 
 
-def _text_schema(payload, aliases, conformance_v2):
+def _text_schema(payload, aliases, conformance_v2, conformance_v4):
     from congressional_globe.productive_ocr_text_reply import text_reply_schema
 
     if conformance_v2:
         raise ValueError("v2 conformance cannot select v3 mode")
-    text = text_reply_schema(payload)
+    text = text_reply_schema(payload, conformance_v4=conformance_v4)
     return SchemaArtifact(
-        contract="productive-ocr-reply-schema-v3",
+        contract="productive-ocr-reply-schema-v4"
+        if conformance_v4
+        else "productive-ocr-reply-schema-v3",
         unit_id=payload["unit_id"],
         role=payload["role"],
         target_aliases=aliases,
         schema_text=text,
         schema_sha256=sha256_bytes(text.encode()),
     )
+
+
+def _check_schema_modes(payload, conformance_v4):
+    if conformance_v4 and payload.get("contract") != "ocr-productive-repair-host-input-v3":
+        raise ValueError("v4 conformance requires the lean text host mode")
 
 
 def source_layers_identity(payload: dict) -> str:
@@ -164,13 +175,14 @@ def compile_request_projection(
     output_tokens: int = 1500,
     *,
     conformance_v2: bool = False,
+    conformance_v4: bool = False,
 ) -> tuple[RequestProjection, SchemaArtifact]:
     """Validate and freeze exact body bytes; fit evidence is a separate mandatory gate."""
     if not 1 <= output_tokens <= 1500:
         raise ValueError("output ceiling must be within the frozen 1500-token limit")
     host = validate_host(host_envelope, registry)
     payload = host["payload"]
-    schema = derive_reply_schema(host, conformance_v2=conformance_v2)
+    schema = derive_reply_schema(host, conformance_v2=conformance_v2, conformance_v4=conformance_v4)
     if payload["response_schema_sha256"] != schema.schema_sha256:
         raise ValueError("host packet does not bind the derived per-request reply schema")
     if hashlib.sha256(prompt_text.encode("utf-8")).hexdigest() != payload["prompt_sha256"]:

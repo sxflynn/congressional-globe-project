@@ -1,0 +1,37 @@
+{
+  "id": "HR-013",
+  "version": 8,
+  "title": "Comment-field mismatch fixed in the request",
+  "instructions": "Review the input that exposed the mismatch, the expected reply shape and actual software outcomes. This is an offline fix; no new model response exists. All comments are optional. Original/model passages remain plain, while dotted-underlined terms explain our surrounding prose. Enter your name to comment, Save draft to keep unfinished comments, or Submit review to send them. Nothing launches automatically.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "format-fix-comments",
+      "prompt": "Optional comments on the fix or these before-and-after examples",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Input: the actual response that exposed the mismatch",
+          "text": "The saved model text was:\nThe Committee on Appropriations recommended non-concurrence.\n\nThe actual response also supplied this completion comment:\nNo further action required.\n\nIt declared complete coverage. The host check required a null reason, but our earlier prompt and response schema allowed this comment. The saved result remains invalid and unchanged; this fix makes the request communicate the existing requirement.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+        },
+        {
+          "label": "2 · Expected reply shape and the updated request",
+          "text": "Expected complete reply shape, using an authored offline example:\n{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"The Committee on Appropriations recommended non-concurrence.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ],\n  \"unit_id\": \"S5\"\n}\n\nThe updated prompt now explicitly says: for a complete reading, return the entire text and a JSON null reason, without a completion comment. For an incomplete reading, return no text and explain the uncertainty.\n\nThe new response schema expresses those same two alternatives. The reply fields and host checks stay the same. A prompt from one version cannot be paired with the other version’s schema.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual software-check outcomes",
+          "text": "Unchanged actual reply: rejected by the new schema and by the host, for the same comment-field inconsistency.\n\nAuthored complete example above: accepted by both checks, with an unreviewed text proposal linked to the original paragraph. This is an offline example, not a new AI response.\n\nAuthored uncertain example:\n{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": null,\n      \"coverage\": \"incomplete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": \"Last word is unclear.\"\n    }\n  ],\n  \"unit_id\": \"S5\"\n}\n\nActual software outcome for that uncertain example: both checks accept the uncertainty, no text proposal is produced, and its status remains unresolved. Empty or contradictory combinations are rejected. No model call was made during this fix.",
+          "url": null
+        },
+        {
+          "label": "4 · Preservation, checks and remaining limit",
+          "text": "All 1,094 project tests pass, including 15 focused checks for complete and uncertain replies, the actual saved failure, mixed prompt/schema versions and original request reconstruction. The original prompt, schema and S5 request still reproduce byte for byte. The earlier model result, its invalid status and both spent call slots remain unchanged.\n\nThe new candidate request uses the same original S5 scan and text, one complete paragraph target and the existing model/output ceiling. Its stricter prompt and schema are saved for inspection. Image/source links, feedback checks, number routing and uncertainty safeguards remain in place.\n\nThis establishes software agreement. Whether the installed model follows this stricter schema in a real call remains untested. A future actual test needs its own exact authorization; no retry or new call follows automatically. Comments are optional.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}
