@@ -1,0 +1,108 @@
+{
+  "packet_snapshot": {
+    "packet_json": "{\"blind\":false,\"id\":\"HR-013\",\"instructions\":\"For each process, compare what went in, what should have come out, and what actually came out. The difference card explains where they agree or disagree. This version reorganizes the existing saved S5 evidence; it contains no new model run and does not ask you to repeat earlier grading. The expected wording is clearly labelled as an agent illustration. Enter your name to open the editing form; your name then stays fixed while writing. All comments and the next-test decision remain optional. Save draft keeps unfinished work; Submit review sends entered feedback. Submitting does not start a model. Dotted-underlined terms explain AI prose; historical/OCR/proposed-reading excerpts stay plain.\",\"questions\":[{\"evidence\":[{\"label\":\"1 · Inputs — the scan, original text and prior cleanup\",\"text\":\"Original OCR supplied:\\nThe Committee on- Appropriations recom- mended non-concurrence.\\n\\nPrior fixed-rule cleanup also supplied:\\nThe Committee on- Appropriations recommended non-concurrence.\\n\\nThe same saved scan shown below was supplied as image I1. Nearby print was context, not permission to add adjacent sentences. The target was this one paragraph, labelled S5.\\n\\nThe instruction was to inspect the whole target, return a full proposed reading, and list every change needed to recreate it from the original OCR. A retained fixed-rule repair also needed an edit. One request; at most 1,500 output tokens. This is a summary of the actual saved instruction, not a new request.\",\"url\":\"https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg\"},{\"label\":\"2 · Expected output — full reading, edits and required checks\",\"text\":\"Expected full reading for this comparison:\\nThe Committee on Appropriations recommended non-concurrence.\\n\\nExpected raw-text edits:\\nrecom- mended → recommended\\non- Appropriations → on Appropriations\\n\\nExpected accompanying result: report findings, not no_finding; support each proposed repair with visible-print evidence; identify the exact original words; complete all nine self-check categories; and make the edit list recreate the full reading exactly. Unclear or incomplete evidence should produce a withheld reading with reasons, not a guessed complete answer.\\n\\nBasis of this expectation: the required response rules plus the earlier agent inspection of this saved scan. The displayed sentence and edit list are an agent-authored expected-output illustration, not an independently graded transcription, a new model result or accepted corpus text.\",\"url\":null},{\"label\":\"3 · Actual output — the unchanged saved AI response\",\"text\":\"Actual full reading returned:\\nThe Committee on Appropriations recommended non-concurrence.\\n\\nActual raw-text edit list:\\non- Appropriations → on Appropriations\\n\\nActual response fields: status was no_finding, although the answer contained a finding and patch. That proposed repair used image_unclear as its evidence basis. Only five of nine required self-check categories were listed, and remaining_concerns was nonempty. A whole-paragraph anchor carried a quote, which that anchor type forbids. These are observations of the unchanged saved answer.\\n\\nThe response returned normally; it was not cut off at the output limit. The software rejected it. No accepted clean export was created.\",\"url\":null},{\"label\":\"4 · Differences — matching sentence, missing edit and contradictory fields\",\"text\":\"The full reading matches the expected illustration, but the edit list does not. Applying the one actual edit to original OCR gives:\\nThe Committee on Appropriations recom- mended non-concurrence.\\n\\nThe actual list is missing:\\nrecom- mended → recommended\\n\\nSo the reading and edit list disagree. The response also contradicts its no_finding status and image_unclear evidence label, misuses the anchor type, and has an incomplete self-check.\\n\\nWhat changed afterward: I clarified those requirements in a new prompt and conditional schema and checked complete, unchanged and withheld examples in software tests. That revised request has not been sent. Actual model output for the revised process: unavailable. Software checks are not evidence that Qwen will satisfy the revised requirements.\",\"url\":null},{\"label\":\"5 · Expected limits and actual measured time\",\"text\":\"Expected planning limits for the first S5 measurement: one request, 120 seconds for startup plus the request, at most 1,500 output tokens, and 600 seconds for the whole measured session.\\n\\nActual saved settings: up to 45 seconds for startup and 120 seconds for the request, with a separate 600-second session deadline. Those settings did not enforce one shared 120-second startup-plus-request deadline. That configuration gap is distinct from the time actually observed, and the proposed next test requires a shared deadline.\\n\\nActual observations: 53.34 seconds for the cold request cycle, 762 reported output tokens, and about 260 seconds through the first saved report. The separate 150-second reporting planning reserve was exceeded by 7.38 seconds, though the whole measured session stayed inside 600 seconds. The request returned normally; timeout enforcement was not demonstrated by this result.\\n\\nThat single short passage does not establish collection-wide speed, accuracy or failure rates. The earlier 480/1,133/4,400-hour scenarios were hypothetical costs of attempts under assumed routing rates, not expected successful-cleanup outputs.\",\"url\":null}],\"id\":\"work-comments\",\"options\":[],\"prompt\":\"Optional comments on the inputs, expected output, actual output or comparison\",\"required\":false},{\"evidence\":[{\"label\":\"7 · Optional decision: one small test of the revised instructions\",\"text\":\"I recommend one additional request on this same S5 passage, using the revised instructions and response rules. Its purpose is to learn whether the model can return a useful complete repair that passes the strict checks. This passage has now been seen during development, so the result would not be an independent accuracy test.\\n\\nLimits: one request to the same installed Qwen model; no retries, extra probes, downloads or source fetches; at most 1,500 output tokens and ten minutes for the whole session. Preparation gets up to 270 seconds, startup plus the request share 120 seconds, observing the owned process exit gets 30 seconds, and reporting gets 180 seconds. A missed preparation deadline means no request.\\n\\nAs with the first measurement, this asks to proceed before complete native input-fit evidence exists. The 6,000-input-token figure is a reporting threshold for this attempt, not a verified capacity limit. The revised literal messages measure 1,712 tokens before actual backend image/framing treatment; true fit and conditional-schema support remain unknown. The previous one-call permission is spent. New approval would apply only to this changed request and this narrow preflight exception.\\n\\nAfter an approval, I would first pin a new one-use allowance, test the shared deadlines, freeze final code/request identities and check current processes, queue and lock. Then one request, save the raw reply and measured costs, observe the owned process stop, and report even if invalid or incomplete. An uncertain stop or ambiguous outcome blocks further calls.\\n\\nYou may approve, request changes, defer, or leave this unanswered and comment only. Choosing an option and submitting records your decision for the next agent turn; it does not launch a model automatically. No choice approves corpus-wide processing, rewriting original OCR, or final cleanup policy. Other offline work can continue without this decision.\",\"url\":null}],\"id\":\"next-test\",\"options\":[\"Approve this one test and its stated input-fit exception\",\"Request changes — see my comments\",\"Defer this test\",\"Not sure — I need more explanation\"],\"prompt\":\"Optional: what should happen with the single S5 test described above?\",\"required\":false}],\"title\":\"OCR repair: inputs, expected output, actual output\",\"version\":2}",
+    "packet_sha256": "ace45c350f17651fba393d3686d18e8ba4821ecd90d747d3988be6c35e806f2c"
+  },
+  "packet": {
+    "blind": false,
+    "id": "HR-013",
+    "instructions": "For each process, compare what went in, what should have come out, and what actually came out. The difference card explains where they agree or disagree. This version reorganizes the existing saved S5 evidence; it contains no new model run and does not ask you to repeat earlier grading. The expected wording is clearly labelled as an agent illustration. Enter your name to open the editing form; your name then stays fixed while writing. All comments and the next-test decision remain optional. Save draft keeps unfinished work; Submit review sends entered feedback. Submitting does not start a model. Dotted-underlined terms explain AI prose; historical/OCR/proposed-reading excerpts stay plain.",
+    "questions": [
+      {
+        "evidence": [
+          {
+            "label": "1 · Inputs — the scan, original text and prior cleanup",
+            "text": "Original OCR supplied:\nThe Committee on- Appropriations recom- mended non-concurrence.\n\nPrior fixed-rule cleanup also supplied:\nThe Committee on- Appropriations recommended non-concurrence.\n\nThe same saved scan shown below was supplied as image I1. Nearby print was context, not permission to add adjacent sentences. The target was this one paragraph, labelled S5.\n\nThe instruction was to inspect the whole target, return a full proposed reading, and list every change needed to recreate it from the original OCR. A retained fixed-rule repair also needed an edit. One request; at most 1,500 output tokens. This is a summary of the actual saved instruction, not a new request.",
+            "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+          },
+          {
+            "label": "2 · Expected output — full reading, edits and required checks",
+            "text": "Expected full reading for this comparison:\nThe Committee on Appropriations recommended non-concurrence.\n\nExpected raw-text edits:\nrecom- mended → recommended\non- Appropriations → on Appropriations\n\nExpected accompanying result: report findings, not no_finding; support each proposed repair with visible-print evidence; identify the exact original words; complete all nine self-check categories; and make the edit list recreate the full reading exactly. Unclear or incomplete evidence should produce a withheld reading with reasons, not a guessed complete answer.\n\nBasis of this expectation: the required response rules plus the earlier agent inspection of this saved scan. The displayed sentence and edit list are an agent-authored expected-output illustration, not an independently graded transcription, a new model result or accepted corpus text.",
+            "url": null
+          },
+          {
+            "label": "3 · Actual output — the unchanged saved AI response",
+            "text": "Actual full reading returned:\nThe Committee on Appropriations recommended non-concurrence.\n\nActual raw-text edit list:\non- Appropriations → on Appropriations\n\nActual response fields: status was no_finding, although the answer contained a finding and patch. That proposed repair used image_unclear as its evidence basis. Only five of nine required self-check categories were listed, and remaining_concerns was nonempty. A whole-paragraph anchor carried a quote, which that anchor type forbids. These are observations of the unchanged saved answer.\n\nThe response returned normally; it was not cut off at the output limit. The software rejected it. No accepted clean export was created.",
+            "url": null
+          },
+          {
+            "label": "4 · Differences — matching sentence, missing edit and contradictory fields",
+            "text": "The full reading matches the expected illustration, but the edit list does not. Applying the one actual edit to original OCR gives:\nThe Committee on Appropriations recom- mended non-concurrence.\n\nThe actual list is missing:\nrecom- mended → recommended\n\nSo the reading and edit list disagree. The response also contradicts its no_finding status and image_unclear evidence label, misuses the anchor type, and has an incomplete self-check.\n\nWhat changed afterward: I clarified those requirements in a new prompt and conditional schema and checked complete, unchanged and withheld examples in software tests. That revised request has not been sent. Actual model output for the revised process: unavailable. Software checks are not evidence that Qwen will satisfy the revised requirements.",
+            "url": null
+          },
+          {
+            "label": "5 · Expected limits and actual measured time",
+            "text": "Expected planning limits for the first S5 measurement: one request, 120 seconds for startup plus the request, at most 1,500 output tokens, and 600 seconds for the whole measured session.\n\nActual saved settings: up to 45 seconds for startup and 120 seconds for the request, with a separate 600-second session deadline. Those settings did not enforce one shared 120-second startup-plus-request deadline. That configuration gap is distinct from the time actually observed, and the proposed next test requires a shared deadline.\n\nActual observations: 53.34 seconds for the cold request cycle, 762 reported output tokens, and about 260 seconds through the first saved report. The separate 150-second reporting planning reserve was exceeded by 7.38 seconds, though the whole measured session stayed inside 600 seconds. The request returned normally; timeout enforcement was not demonstrated by this result.\n\nThat single short passage does not establish collection-wide speed, accuracy or failure rates. The earlier 480/1,133/4,400-hour scenarios were hypothetical costs of attempts under assumed routing rates, not expected successful-cleanup outputs.",
+            "url": null
+          }
+        ],
+        "id": "work-comments",
+        "options": [],
+        "prompt": "Optional comments on the inputs, expected output, actual output or comparison",
+        "required": false
+      },
+      {
+        "evidence": [
+          {
+            "label": "7 · Optional decision: one small test of the revised instructions",
+            "text": "I recommend one additional request on this same S5 passage, using the revised instructions and response rules. Its purpose is to learn whether the model can return a useful complete repair that passes the strict checks. This passage has now been seen during development, so the result would not be an independent accuracy test.\n\nLimits: one request to the same installed Qwen model; no retries, extra probes, downloads or source fetches; at most 1,500 output tokens and ten minutes for the whole session. Preparation gets up to 270 seconds, startup plus the request share 120 seconds, observing the owned process exit gets 30 seconds, and reporting gets 180 seconds. A missed preparation deadline means no request.\n\nAs with the first measurement, this asks to proceed before complete native input-fit evidence exists. The 6,000-input-token figure is a reporting threshold for this attempt, not a verified capacity limit. The revised literal messages measure 1,712 tokens before actual backend image/framing treatment; true fit and conditional-schema support remain unknown. The previous one-call permission is spent. New approval would apply only to this changed request and this narrow preflight exception.\n\nAfter an approval, I would first pin a new one-use allowance, test the shared deadlines, freeze final code/request identities and check current processes, queue and lock. Then one request, save the raw reply and measured costs, observe the owned process stop, and report even if invalid or incomplete. An uncertain stop or ambiguous outcome blocks further calls.\n\nYou may approve, request changes, defer, or leave this unanswered and comment only. Choosing an option and submitting records your decision for the next agent turn; it does not launch a model automatically. No choice approves corpus-wide processing, rewriting original OCR, or final cleanup policy. Other offline work can continue without this decision.",
+            "url": null
+          }
+        ],
+        "id": "next-test",
+        "options": [
+          "Approve this one test and its stated input-fit exception",
+          "Request changes — see my comments",
+          "Defer this test",
+          "Not sure — I need more explanation"
+        ],
+        "prompt": "Optional: what should happen with the single S5 test described above?",
+        "required": false
+      }
+    ],
+    "title": "OCR repair: inputs, expected output, actual output",
+    "version": 2
+  },
+  "submission": {
+    "submission_id": "76ff189c-d0ce-4a69-a414-5aab6e6f0e69",
+    "packet_id": "HR-013",
+    "version": 2,
+    "packet_sha256": "ace45c350f17651fba393d3686d18e8ba4821ecd90d747d3988be6c35e806f2c",
+    "reviewer": "Stephen Flynn",
+    "answers": {
+      "evidence-note:next-test:0:1a57477fa1ed86272cc2b7ee44360004beb2440585be6c773b245a042e0387c6": "My question is why are we wanting the model to return an edit list? Why not just ask it to write the full text and then replace the ocr text with what it said? Instead of trying to surgically edit using an edit list? U less there’s something I’m not understanding as to why the edit list is superior?",
+      "evidence-note:work-comments:0:05e11f1852d5254a49f2c2ce266e27ed7e9efa6878420ad8a3ae41ea143fac57": "",
+      "evidence-note:work-comments:1:34f2e7598211d547e8202db8f5c86e5bc34f14391888a58cce959af14ca9f18a": "",
+      "evidence-note:work-comments:2:65643010bf35aa51988b15e4c5ae610025cf700ac43dd6286aa6591f25249fd9": "",
+      "evidence-note:work-comments:3:009fb47a980babc466edb42a4497fd70e6dfee60a4548955b2e42ebcc802db0d": "",
+      "evidence-note:work-comments:4:a0ad6dae5ade356424e55d6d3ed0b5c7f8479b1d6e85145b96fa24157701bebe": "",
+      "next-test": "Request changes — see my comments",
+      "work-comments": ""
+    },
+    "notes": null,
+    "payload_sha256": "be8e7dfbf7252381618c020a435c59187d1b5642bf685b6083260fe7f1ed694a",
+    "revision": 1,
+    "superseded": false,
+    "created_at": "2026-10-30 10:42:24",
+    "applied": true,
+    "applied_reference": "dcf5655",
+    "applied_at": "2026-10-30 10:48:58",
+    "evidence_feedback": [
+      {
+        "note_id": "evidence-note:next-test:0:1a57477fa1ed86272cc2b7ee44360004beb2440585be6c773b245a042e0387c6",
+        "question_id": "next-test",
+        "item_number": 1,
+        "evidence": {
+          "label": "7 · Optional decision: one small test of the revised instructions",
+          "text": "I recommend one additional request on this same S5 passage, using the revised instructions and response rules. Its purpose is to learn whether the model can return a useful complete repair that passes the strict checks. This passage has now been seen during development, so the result would not be an independent accuracy test.\n\nLimits: one request to the same installed Qwen model; no retries, extra probes, downloads or source fetches; at most 1,500 output tokens and ten minutes for the whole session. Preparation gets up to 270 seconds, startup plus the request share 120 seconds, observing the owned process exit gets 30 seconds, and reporting gets 180 seconds. A missed preparation deadline means no request.\n\nAs with the first measurement, this asks to proceed before complete native input-fit evidence exists. The 6,000-input-token figure is a reporting threshold for this attempt, not a verified capacity limit. The revised literal messages measure 1,712 tokens before actual backend image/framing treatment; true fit and conditional-schema support remain unknown. The previous one-call permission is spent. New approval would apply only to this changed request and this narrow preflight exception.\n\nAfter an approval, I would first pin a new one-use allowance, test the shared deadlines, freeze final code/request identities and check current processes, queue and lock. Then one request, save the raw reply and measured costs, observe the owned process stop, and report even if invalid or incomplete. An uncertain stop or ambiguous outcome blocks further calls.\n\nYou may approve, request changes, defer, or leave this unanswered and comment only. Choosing an option and submitting records your decision for the next agent turn; it does not launch a model automatically. No choice approves corpus-wide processing, rewriting original OCR, or final cleanup policy. Other offline work can continue without this decision.",
+          "url": null
+        },
+        "comment": "My question is why are we wanting the model to return an edit list? Why not just ask it to write the full text and then replace the ocr text with what it said? Instead of trying to surgically edit using an edit list? U less there’s something I’m not understanding as to why the edit list is superior?"
+      }
+    ]
+  },
+  "applied_receipt": {
+    "reference": "dcf5655",
+    "applied_at": "2026-10-30 10:48:58"
+  }
+}
