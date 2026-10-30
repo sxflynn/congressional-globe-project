@@ -2035,6 +2035,42 @@
     {
       "term": "contextual quantities",
       "definition": "Amounts expressed indirectly through surrounding language rather than a straightforward numeric form."
+    },
+    {
+      "term": "format mismatch",
+      "definition": "A disagreement about how an answer must be represented, separate from whether its proposed words match the source."
+    },
+    {
+      "term": "completion comment",
+      "definition": "A short message saying that the task is finished. Here it is separate from a proposed historical reading."
+    },
+    {
+      "term": "format rule",
+      "definition": "A requirement about the structure or fields of an answer, such as when a field must contain no value."
+    },
+    {
+      "term": "host rule",
+      "definition": "A check applied by the local software after a model returns an answer."
+    },
+    {
+      "term": "backend reported",
+      "definition": "Counted and returned by the model-running software; this is not an independent measurement of its internal input representation."
+    },
+    {
+      "term": "exposed example",
+      "definition": "A case already seen during development or earlier feedback, so it cannot serve as a new blind quality test."
+    },
+    {
+      "term": "owned client",
+      "definition": "The local request program responsible for the private model process it starts and stops."
+    },
+    {
+      "term": "response schema",
+      "definition": "The machine-readable description of the fields and value types allowed in a model reply."
+    },
+    {
+      "term": "clean export",
+      "definition": "A proposed corrected-text output produced after validation; it still needs any required source-quality or human acceptance."
     }
   ]
 }

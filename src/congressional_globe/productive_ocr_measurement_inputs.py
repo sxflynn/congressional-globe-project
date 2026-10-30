@@ -98,3 +98,47 @@ def load_s5_inputs(repository: Path) -> tuple[dict, RequestProjection, EvidenceR
     if projection != saved or projection.body_utf8.encode("utf-8") != request_bytes:
         raise ValueError("S5 frozen projection or request bytes disagree with reconstructed inputs")
     return host, projection, registry
+
+
+def load_s5_text_inputs(repository: Path) -> tuple[dict, RequestProjection, EvidenceRegistry]:
+    """Bind the reviewed T97 S5 inputs to today's code and the approved installed model."""
+    from congressional_globe.productive_ocr_authority import MODEL_NAME
+    from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes
+    from congressional_globe.productive_ocr_runner import code_identity
+
+    original, _projection, registry = load_s5_inputs(repository)
+    root = repository / "artifacts/two-stage-integration-20261030-01"
+    host_bytes = _read_verified(
+        root / "S5-host.json", "092c6cf332e88fcafc49b4c4da18f33af4c77b1f7b543e9c45b342f7c5115f26"
+    )
+    host = json.loads(host_bytes)
+    _load_text_resources(root, registry)
+    validate_host(host, registry)
+    _same_s5_source(original, host)
+    code_bytes = canonical_json(code_identity())
+    host["payload"]["code_sha256"] = sha256_bytes(code_bytes)
+    registry.files[sha256_bytes(code_bytes)] = code_bytes
+    host["packet_sha256"] = sha256_bytes(canonical_json(host["payload"]))
+    prompt = registry.files[host["payload"]["prompt_sha256"]].decode("utf-8")
+    projection, _schema = compile_request_projection(host, registry, prompt, MODEL_NAME)
+    return host, projection, registry
+
+
+def _load_text_resources(root, registry):
+    closure = _json(root / "registry-closure.json")
+    for digest, record in closure["new_files"].items():
+        registry.files[digest] = _read_verified(root / record["path"], digest)
+
+
+def _same_s5_source(original, host):
+    old, new = original["payload"], host["payload"]
+    if (new["unit_id"], new["image"], new["sampling_manifest_sha256"]) != (
+        old["unit_id"],
+        old["image"],
+        old["sampling_manifest_sha256"],
+    ):
+        raise ValueError("text measurement changed original S5 source/image/sample")
+    before = [(p["source_id"], p["raw"], p["role"]) for p in old["paragraphs"]]
+    after = [(p["source_id"], p["raw"], p["role"]) for p in new["paragraphs"]]
+    if before != after:
+        raise ValueError("text measurement changed original S5 paragraph boundaries/raw")

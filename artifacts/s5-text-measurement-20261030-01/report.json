@@ -1,0 +1,83 @@
+{
+  "task": "T90",
+  "state": "authorized one-call experiment completed; raw result remains host-invalid",
+  "actual_provider_calls": 1,
+  "retries": 0,
+  "prior_S5_calls": 1,
+  "cumulative_S5_calls": 2,
+  "accepted_clean_exports": 0,
+  "inputs": {
+    "source_id": "congressionalglo7395unit:529:par_000529_000006",
+    "original_ocr": "The Committee on- Appropriations recom- mended non-concurrence.",
+    "software_output": "The Committee on- Appropriations recom- mended non-concurrence.",
+    "image_sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+    "request_sha256": "067610eef55dd0c346b3a5f41494b6b0e2c57cfbebf1f923dd047d7c476ab08f"
+  },
+  "expected_output": "The Committee on Appropriations recommended non-concurrence.",
+  "actual_output": "The Committee on Appropriations recommended non-concurrence.",
+  "text_matches_expectation": true,
+  "text_difference_from_expectation": [],
+  "actual_raw_reply": {
+    "contract": "ocr-productive-repair-text-reply-v3",
+    "readings": [
+      {
+        "corrected_text": "The Committee on Appropriations recommended non-concurrence.",
+        "coverage": "complete",
+        "paragraph_alias": "P1",
+        "reason": "No further action required."
+      }
+    ],
+    "unit_id": "S5"
+  },
+  "actual_host_status": "invalid",
+  "actual_rejection": "1 validation error for TextReply\nreadings.0\n  Value error, complete needs text/no reason; incomplete needs null text/reason [type=value_error, input_value={'corrected_text': 'The C...rther action required.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "wire_schema_accepts_actual_reply": true,
+  "host_joint_rule_expressed_in_wire_schema": false,
+  "diagnosis": "The request allowed a reason string with complete coverage, while the host required null. The model supplied a harmless completion comment. This is a request/validator mismatch; it is not evidence that the reading failed.",
+  "diagnostic_only": {
+    "change": "Copy reply and change only reason to null, offline.",
+    "host_check": "passes",
+    "status": "counterfactual local check; not actual output, not accepted or substituted for invalid result"
+  },
+  "raw_to_actual_software_comparison": [
+    {
+      "operation": "delete",
+      "raw_start": 16,
+      "raw_end": 17,
+      "raw_quote": "-",
+      "replacement": "",
+      "scope": "software comparison only; not uniquely aligned image evidence"
+    },
+    {
+      "operation": "delete",
+      "raw_start": 38,
+      "raw_end": 40,
+      "raw_quote": "- ",
+      "replacement": "",
+      "scope": "software comparison only; not uniquely aligned image evidence"
+    }
+  ],
+  "source_inspection": {
+    "image": "artifacts/ocr-live-readiness-20261028-01/images/S5/crop-01.jpg",
+    "scope": "parent image-capable agent inspected same cached crop; complete target sentence matches the returned reading and genuine non-concurrence hyphen; adjacent context not added",
+    "human_gold": false,
+    "independent_blind_score": false
+  },
+  "measured": {
+    "start_through_response_and_owned_stop_seconds": 28.034391874913126,
+    "reported_usage": {
+      "input_tokens": 1322,
+      "output_tokens": 59
+    },
+    "prior_call_seconds": 53.335579541977495,
+    "prior_reported_usage": {
+      "input_tokens": 1391,
+      "output_tokens": 762
+    },
+    "owned_stop": "stopped"
+  },
+  "limits": "One exposed development paragraph; prompt/schema/output workload differ from prior call. No general accuracy, speedup, native-fit, memory or whole-collection runtime claim.",
+  "next_step": "Offline: express the existing complete->text/reason-null and incomplete->null-text/reason rules in the prompt and provider schema, preserve this result. No further call authorized by this approval.",
+  "report_written_epoch": 1793360592.601469,
+  "numeric_live_coverage": "S5 contains no numeric text; this call supplies no actual numeric-reading quality evidence."
+}

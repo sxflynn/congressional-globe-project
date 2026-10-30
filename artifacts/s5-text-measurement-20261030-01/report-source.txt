@@ -1,0 +1,42 @@
+"""Describe the one actual response without repairing or accepting its immutable result."""
+import copy,difflib,gzip,json,time
+from pathlib import Path
+from jsonschema import Draft202012Validator
+from congressional_globe.productive_ocr_host import sha256_bytes
+from congressional_globe.productive_ocr_text_reply import validate_text_reply
+base=Path('artifacts/s5-text-measurement-20261030-01')
+result=json.loads((base/'run/result.json').read_bytes())
+host=json.loads((base/'host.json').read_bytes())
+body=json.loads((base/'request.json').read_bytes())
+reply=json.loads(result['output_text']);actual=reply['readings'][0]['corrected_text']
+expected='The Committee on Appropriations recommended non-concurrence.'
+target=host['payload']['paragraphs'][0]
+Draft202012Validator(body['format']).validate(reply)
+try:validate_text_reply(result['output_text'],host)
+except ValueError as error:rejection=str(error)
+else:raise AssertionError('Actual host rejection must remain reproducible')
+changed=copy.deepcopy(reply);changed['readings'][0]['reason']=None
+counterfactual=validate_text_reply(json.dumps(changed),host)
+assert counterfactual['proposal_status']=='findings'
+differences=[]
+for op,low,high,start,end in difflib.SequenceMatcher(None,target['raw']['text'],actual,autojunk=False).get_opcodes():
+ if op!='equal':differences.append(dict(operation=op,raw_start=low,raw_end=high,raw_quote=target['raw']['text'][low:high],replacement=actual[start:end],scope='software comparison only; not uniquely aligned image evidence'))
+prior=json.loads(Path('artifacts/s5-measurement-20261029-01/run/result.json').read_bytes())
+report=dict(task='T90',state='authorized one-call experiment completed; raw result remains host-invalid',
+ actual_provider_calls=1,retries=0,prior_S5_calls=1,cumulative_S5_calls=2,accepted_clean_exports=0,
+ inputs=dict(source_id=target['source_id'],original_ocr=target['raw']['text'],software_output=target['static']['text'],image_sha256=host['payload']['image']['sha256'],request_sha256=sha256_bytes((base/'request.json').read_bytes())),
+ expected_output=expected,actual_output=actual,text_matches_expectation=actual==expected,text_difference_from_expectation=[],
+ actual_raw_reply=reply,actual_host_status=result['measurement_status'],actual_rejection=rejection,
+ wire_schema_accepts_actual_reply=True,host_joint_rule_expressed_in_wire_schema=False,
+ diagnosis='The request allowed a reason string with complete coverage, while the host required null. The model supplied a harmless completion comment. This is a request/validator mismatch; it is not evidence that the reading failed.',
+ diagnostic_only=dict(change='Copy reply and change only reason to null, offline.',host_check='passes',status='counterfactual local check; not actual output, not accepted or substituted for invalid result'),
+ raw_to_actual_software_comparison=differences,
+ source_inspection=dict(image='artifacts/ocr-live-readiness-20261028-01/images/S5/crop-01.jpg',scope='parent image-capable agent inspected same cached crop; complete target sentence matches the returned reading and genuine non-concurrence hyphen; adjacent context not added',human_gold=False,independent_blind_score=False),
+ measured=dict(start_through_response_and_owned_stop_seconds=result['elapsed_seconds'],reported_usage=result['usage'],prior_call_seconds=prior['elapsed_seconds'],prior_reported_usage=prior['usage'],owned_stop=result['owned_stop_observation']),
+ limits='One exposed development paragraph; prompt/schema/output workload differ from prior call. No general accuracy, speedup, native-fit, memory or whole-collection runtime claim.',
+ next_step='Offline: express the existing complete->text/reason-null and incomplete->null-text/reason rules in the prompt and provider schema, preserve this result. No further call authorized by this approval.',
+ report_written_epoch=time.time())
+(base/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+for source,name in [('tmp/t90-gate.log','initial-gate.log.gz'),('tmp/t90-final-gate.log','gate.log.gz')]:
+ with gzip.open(base/name,'wb') as stream:stream.write(Path(source).read_bytes())
+print('Actual text matches expected; wire schema accepts actual; host rejects unadvertised joint rule; null-only diagnostic passes. Original result unchanged.')

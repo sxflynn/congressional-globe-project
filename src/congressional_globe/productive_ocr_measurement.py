@@ -31,10 +31,13 @@ BODY_SHA = "e19305443cf7b8676acdf25848b88455db203d55b8e1c394116bdd071aed000a"
 EXECUTABLE_SHA = "e5c7c0ffa50d23d0f0e59cbf325f689b0010ee5563be89b73b05f08844e19e6b"
 PACKAGE = Path("artifacts/s5-measurement-20261029-01")
 REPOSITORY = Path(__file__).resolve().parents[2]
+TEXT_PACKAGE = Path("artifacts/s5-text-measurement-20261030-01")
+TEXT_APPROVAL_SHA = "7dfdbef3c989b6ec85470f02ee5c988a2e53a393fbbec7ae233e2c77b3895f17"
+TEXT_BODY_SHA = "067610eef55dd0c346b3a5f41494b6b0e2c57cfbebf1f923dd047d7c476ab08f"
 
 
 class MeasurementSpec(Contract):
-    contract: Literal["productive-ocr-s5-measurement-v1"]
+    contract: Literal["productive-ocr-s5-measurement-v1", "productive-ocr-s5-text-measurement-v2"]
     approval_sha256: Sha256
     body_sha256: Sha256
     code_sha256: Sha256
@@ -52,7 +55,7 @@ def write_new(path: Path, value: object) -> None:
 
 
 def _verify_spec(repository: Path, spec: MeasurementSpec) -> None:
-    _verify_repository(repository)
+    _verify_repository(repository, _package(spec))
     _verify_approval(repository, spec)
     if spec.code_sha256 != fingerprint(code_identity()):
         raise ValueError("measurement implementation differs from frozen code")
@@ -61,17 +64,18 @@ def _verify_spec(repository: Path, spec: MeasurementSpec) -> None:
 
 
 def _verify_approval(repository: Path, spec: MeasurementSpec) -> None:
-    approval = repository / PACKAGE / "approval.json"
-    if sha256_bytes(approval.read_bytes()) != APPROVAL_SHA:
+    approval_sha, body_sha = _authority(spec)
+    approval = repository / _package(spec) / "approval.json"
+    if sha256_bytes(approval.read_bytes()) != approval_sha:
         raise ValueError("exact human S5 approval is absent or changed")
-    if (spec.approval_sha256, spec.body_sha256) != (APPROVAL_SHA, BODY_SHA):
+    if (spec.approval_sha256, spec.body_sha256) != (approval_sha, body_sha):
         raise ValueError("measurement scope differs from the approved S5 attempt")
 
 
-def _verify_repository(repository: Path) -> None:
+def _verify_repository(repository: Path, package: Path = PACKAGE) -> None:
     if repository.resolve() != REPOSITORY:
         raise ValueError("measurement spent slot belongs to the original repository only")
-    if (repository / PACKAGE).is_symlink() or (repository / PACKAGE / "run").is_symlink():
+    if (repository / package).is_symlink() or (repository / package / "run").is_symlink():
         raise ValueError("measurement evidence directories cannot be symlinks")
 
 
@@ -90,8 +94,8 @@ def _verify_session_time(spec: MeasurementSpec) -> None:
     if spec.plan.session_deadline_epoch != spec.started_at_epoch + 600:
         raise ValueError("measurement must bind the approved600second whole session")
     age = time.time() - spec.started_at_epoch
-    if not 0 <= age <= 300:
-        raise TimeoutError("preparation exceeded300seconds or clock is unverified")
+    if not 0 <= age <= _prep_seconds(spec):
+        raise TimeoutError("preparation exceeded its bounded phase or clock is unverified")
 
 
 def _verify_runtime(directory: Path, spec: MeasurementSpec) -> RuntimeObservation:
@@ -122,10 +126,10 @@ def _verify_runtime_files(directory: Path, proof: RuntimeObservation) -> None:
 def execute(repository: Path, spec: MeasurementSpec, checkpoint=lambda _: None) -> dict:
     """Validate source and authority, claim a fixed slot, then send at most once."""
     _verify_spec(repository, spec)
-    host, projection, _registry = load_s5_inputs(repository)
+    host, projection, _registry = _load_inputs(repository, spec)
     if projection.body_sha256 != spec.body_sha256:
         raise ValueError("selected input differs from exact approved request")
-    directory = repository / PACKAGE / "run"
+    directory = repository / _package(spec) / "run"
     _verify_runtime(directory, spec)
     _verify_session_time(spec)
     packet = {"window_id": "S5", "host": host, "body_utf8": projection.body_utf8}
@@ -211,6 +215,8 @@ def _finish_response(store, attempt, packet, response, elapsed, state):
 
 def _export(packet, response, elapsed):
     host = packet["host"]
+    if host["payload"].get("contract") == "ocr-productive-repair-host-input-v3":
+        return _export_text(packet, response)
     return export_reply(
         host,
         packet["body_utf8"],
@@ -225,9 +231,9 @@ def _export(packet, response, elapsed):
 def _result_status(response, exported, state):
     if state != "stopped":
         return "unresolved"
-    if not _complete_response(response) or exported["outcome"] == "invalid":
+    if not _complete_response(response):
         return "invalid"
-    return "valid"
+    return _export_status(exported)
 
 
 def _complete_response(response):
@@ -239,12 +245,14 @@ def _complete_response(response):
     )
 
 
-def recover(repository: Path) -> dict:
+def recover(repository: Path, selected_spec: MeasurementSpec | None = None) -> dict:
     """Reconcile one complete saved transport receipt without any dispatch path."""
-    _verify_repository(repository)
-    directory = repository / PACKAGE / "run"
+    package = PACKAGE if selected_spec is None else _package(selected_spec)
+    _verify_repository(repository, package)
+    directory = repository / package / "run"
     frozen = json.loads((directory / "frozen.json").read_bytes())
     spec = MeasurementSpec.model_validate_json(canonical_json(frozen["config"]["spec"]))
+    _match_recovery_spec(selected_spec, spec)
     packet = frozen["packet"]
     if json.loads((directory.parent / "spent-slot.json").read_bytes()) != frozen["config"]:
         raise ValueError("recovery configuration differs from the fixed spent slot")
@@ -262,7 +270,7 @@ def _verify_recovery_authority(repository, spec, packet):
     _verify_backend(spec)
     if spec.code_sha256 != fingerprint(code_identity()):
         raise ValueError("recovery implementation differs from the frozen attempt")
-    host, projection, _registry = load_s5_inputs(repository)
+    host, projection, _registry = _load_inputs(repository, spec)
     expected = {"window_id": "S5", "host": host, "body_utf8": projection.body_utf8}
     if packet != expected or projection.body_sha256 != spec.body_sha256:
         raise ValueError("recovery checkpoint differs from the approved source/request")
@@ -299,13 +307,71 @@ def main() -> None:
     parser.add_argument("--recover", action="store_true")
     args = parser.parse_args()
     if args.recover:
-        result = recover(args.repository.resolve())
+        selected = _optional_spec(args.spec)
+        result = recover(args.repository.resolve(), selected)
     else:
         if args.spec is None:
             parser.error("--spec is required for the single measurement attempt")
         spec = MeasurementSpec.model_validate_json(args.spec.read_bytes())
         result = execute(args.repository.resolve(), spec)
     print(json.dumps(result, ensure_ascii=False))
+
+
+def _is_text(spec):
+    return spec.contract == "productive-ocr-s5-text-measurement-v2"
+
+
+def _package(spec):
+    return TEXT_PACKAGE if _is_text(spec) else PACKAGE
+
+
+def _authority(spec):
+    return (TEXT_APPROVAL_SHA, TEXT_BODY_SHA) if _is_text(spec) else (APPROVAL_SHA, BODY_SHA)
+
+
+def _prep_seconds(spec):
+    return 270 if _is_text(spec) else 300
+
+
+def _load_inputs(repository, spec):
+    if not _is_text(spec):
+        return load_s5_inputs(repository)
+    from congressional_globe.productive_ocr_measurement_inputs import load_s5_text_inputs
+
+    return load_s5_text_inputs(repository)
+
+
+def _export_text(packet, response):
+    from congressional_globe.productive_ocr_text_reply import export_text_reply
+
+    try:
+        return export_text_reply(
+            packet["host"], packet["body_utf8"], response.get("output_text", "")
+        ).model_dump(mode="json")
+    except (ValueError, KeyError, TypeError) as error:
+        return {
+            "outcome": "invalid",
+            "rejection_reason": str(error)[:1000],
+            "raw_reply_text": response.get("output_text", ""),
+        }
+
+
+def _export_status(exported):
+    outcome = exported["outcome"]
+    if outcome == "invalid":
+        return "invalid"
+    if isinstance(outcome, dict) and outcome["proposal_status"] == "unresolved":
+        return "unresolved"
+    return "valid"
+
+
+def _optional_spec(path):
+    return None if path is None else MeasurementSpec.model_validate_json(path.read_bytes())
+
+
+def _match_recovery_spec(selected, frozen):
+    if selected is not None and selected != frozen:
+        raise ValueError("selected recovery specification differs from frozen attempt")
 
 
 if __name__ == "__main__":

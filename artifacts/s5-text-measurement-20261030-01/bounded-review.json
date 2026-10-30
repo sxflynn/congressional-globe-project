@@ -1,0 +1,15 @@
+{
+  "reviewer": "existing bounded gpt-6-luna delegate /root/t89_review",
+  "scope": "read-only lifecycle/authority/source/recovery and actual-result review; no calls/edits/independent human quality grade",
+  "findings": [
+    {
+      "issue": "Caller-selected recovery spec selected package but did not match frozen spec.",
+      "action": "Require selected spec equality before receipt reconciliation; mutation control passes."
+    },
+    {
+      "issue": "Raw reply accepted by wire schema but rejected by host joint field rule.",
+      "action": "Preserve actual invalid result and raw evidence; report expected-text match separately. Next offline task aligns schema/prompt/host, with no retry."
+    }
+  ],
+  "verdict": "Separate one-use slot and authority/body/source bindings are appropriately isolated from v1; shared120s execution is enforced by owned client; normal stop proved. Actual text matches expectation but no host-valid clean export/efficacy claim."
+}

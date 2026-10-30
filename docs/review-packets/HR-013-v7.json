@@ -1,0 +1,42 @@
+{
+  "id": "HR-013",
+  "version": 7,
+  "title": "Actual AI result: expected sentence, format mismatch",
+  "instructions": "This is the actual result of the single additional S5 call you authorized. Compare inputs, expected output, actual output and the separate format issue. All comments are optional. Original writing and model text stay plain; dotted-underlined terms explain our surrounding prose. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it. No further call starts automatically.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "actual-result-comments",
+      "prompt": "Optional comments on the actual reading, format issue or next small fix",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Actual inputs to the model",
+          "text": "Original OCR, unchanged:\nThe Committee on- Appropriations recom- mended non-concurrence.\n\nActual guarded software output supplied to the model:\nThe Committee on- Appropriations recom- mended non-concurrence.\n\nThe model received this original S5 scan and both text layers. The instruction was to inspect the complete assigned paragraph, preserve genuine hyphens, correct supported errors and return complete text or uncertainty. This is the same development example used before; it is not a new blind test. One additional call was authorized and made. No image was downloaded or sample replaced.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+        },
+        {
+          "label": "2 · Expected output versus actual model output",
+          "text": "Expected complete reading, recorded before this call:\nThe Committee on Appropriations recommended non-concurrence.\n\nActual text returned by the model:\nThe Committee on Appropriations recommended non-concurrence.\n\nText difference from the expectation: none. The full target sentence was returned; the genuine hyphen in non-concurrence remains. The parent agent also inspected the same cached scan and observed this reading. This is one exposed example, not an independent human grade or general accuracy measurement.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual format problem, and why it happened",
+          "text": "The actual reply declared complete coverage and supplied this reason:\nNo further action required.\n\nOur host validator required the reason field to be null for a complete reading. But the JSON schema sent to the model allowed a string or null without that condition, and the prompt did not forbid a completion comment. The reply passes the schema the model saw but fails the extra host rule.\n\nThis is a request/validator mismatch, not evidence of a wrong transcription. The original result remains marked invalid, and no accepted clean export was produced. An offline diagnostic that changes only that field to null passes the remaining checks; that diagnostic is not the actual reply and does not replace or accept it.",
+          "url": null
+        },
+        {
+          "label": "4 · Actual time, output size and stopping",
+          "text": "This new call took 28.03 seconds from starting the owned client through response and normal stopping, inside the shared 120-second execution limit. The backend reported 1,322 input tokens and 59 output tokens. It returned a complete response; the owned server and child stopped, and a fresh process check found them gone.\n\nFor comparison, the previous S5 call took 53.34 seconds and reported 1,391 input tokens and 762 output tokens. The new reply is much shorter, but the prompts and requested reporting differ. These two exposed attempts do not establish a general speedup, full-collection forecast or accuracy rate.\n\nExactly one new call was made, with no retry. There are two S5 development calls in total. Native input fit and general memory/capacity limits remain unknown; the explicitly approved diagnostic exception was used. The shared Ollama service was not controlled.",
+          "url": null
+        },
+        {
+          "label": "5 · What this establishes and the next small fix",
+          "text": "We now have an actual response showing that the simpler format can produce the expected complete sentence on this scan. We also found a concrete software problem: the prompt, response schema and host validator disagree about the reason field.\n\nThe next offline fix is to make the request state the existing rule explicitly: complete reading means text with a null reason; incomplete reading means no text with a concrete reason. Preserve uncertainty and the saved invalid result. No additional model call follows automatically from this review or the approval already spent.\n\nAll other original sample identities remain pending as before, including the two missing images. This result does not authorize a full run, establish a clean-layer policy or change accepted historical text. Comments beside each example and the overall comment are optional.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}
