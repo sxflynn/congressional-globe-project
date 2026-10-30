@@ -2095,6 +2095,22 @@
     {
       "term": "fictional examples",
       "definition": "Made-up situations presented to explain or test behavior, without claiming that they occurred in the source material."
+    },
+    {
+      "term": "internal-input-size exception",
+      "definition": "Permission for this one experiment to proceed before an exact measurement of how the model represents the image and text internally. It does not increase the model’s real capacity or approve a full run."
+    },
+    {
+      "term": "internal image/text input size",
+      "definition": "The size of the model’s actual internal representation of the supplied image and words; reported word counts alone may not measure it."
+    },
+    {
+      "term": "single-use slot",
+      "definition": "A saved record allowing at most one attempt. Once claimed, it remains spent even if the request fails."
+    },
+    {
+      "term": "code/spec freeze",
+      "definition": "Saving the exact program and request settings that a particular run is allowed to use."
     }
   ]
 }

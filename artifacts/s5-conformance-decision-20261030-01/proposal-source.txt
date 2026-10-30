@@ -1,0 +1,62 @@
+"""Offline exact-request verification and bounded decision; no model/service operation."""
+import hashlib,json
+from pathlib import Path
+from congressional_globe.productive_ocr_authority import MODEL_NAME,MODEL_DIGEST
+from congressional_globe.productive_ocr_host import validate_host,sha256_bytes
+from congressional_globe.productive_ocr_measurement_inputs import load_s5_inputs
+from congressional_globe.productive_ocr_projection import compile_request_projection
+from congressional_globe.productive_ocr_runner import code_identity
+base=Path('artifacts/s5-conformance-decision-20261030-01')
+source=Path('artifacts/text-reply-conformance-20261030-01')
+original,_,registry=load_s5_inputs(Path('.'))
+for root in [Path('artifacts/two-stage-integration-20261030-01'),source]:
+ closure=json.loads((root/'registry-closure.json').read_bytes())
+ for digest,record in closure['new_files'].items():
+  raw=(root/record['path']).read_bytes();assert sha256_bytes(raw)==digest;registry.files[digest]=raw
+host=json.loads((source/'candidate-host.json').read_bytes());validate_host(host,registry)
+prompt=(source/'candidate-prompt.txt').read_text()
+projection,schema=compile_request_projection(host,registry,prompt,MODEL_NAME,conformance_v4=True)
+assert projection.body_utf8.encode()==(source/'candidate-request.json').read_bytes()
+assert host['payload']['image']==original['payload']['image']
+assert [(p['source_id'],p['raw'],p['role']) for p in host['payload']['paragraphs']]==[(p['source_id'],p['raw'],p['role']) for p in original['payload']['paragraphs']]
+previous=Path('artifacts/s5-text-measurement-20261030-01');spec=json.loads((previous/'run/spec.json').read_bytes())
+plan=spec['plan']
+def file_hash(path):
+ h=hashlib.sha256()
+ with Path(path).open('rb') as stream:
+  while chunk:=stream.read(1024*1024):h.update(chunk)
+ return h.hexdigest()
+assert file_hash(plan['executable'])==plan['executable_sha256']
+assert file_hash(plan['model_manifest'])==MODEL_DIGEST
+prior=[]
+for package in ['artifacts/s5-measurement-20261029-01','artifacts/s5-text-measurement-20261030-01']:
+ root=Path(package);raw=(root/'spent-slot.json').read_bytes();result=json.loads((root/'run/result.json').read_bytes())
+ prior.append(dict(package=package,spent_slot_sha256=sha256_bytes(raw),elapsed_seconds=result['elapsed_seconds'],reported_usage=result['usage'],status=result['measurement_status']))
+proposal=dict(task='T101',state='concrete new-call decision; not approved or dispatched',
+ question='Does the installed model follow the corrected complete/incomplete reply schema on the same exposed S5 passage?',
+ recommendation='One additional S5 development check after binding the actual new approval in the existing one-slot measurement path.',
+ request=dict(path=str(source/'candidate-request.json'),sha256=projection.body_sha256,prompt_sha256=projection.prompt_sha256,schema_sha256=projection.schema_sha256,
+              schema_contract=schema.contract,reply_contract='ocr-productive-repair-text-reply-v3',image_sha256=projection.image_sha256,source_id=host['payload']['paragraphs'][0]['source_id']),
+ exact_inputs=host['payload']['paragraphs'],
+ model=dict(name=MODEL_NAME,digest=MODEL_DIGEST,executable=plan['executable'],executable_sha256=plan['executable_sha256'],manifest_path=plan['model_manifest'],installed_executable_and_manifest_reverified=True,downloads=0),
+ limits=dict(calls=1,retries=0,other_loading_probes=0,server_starts=1,fetches=0,downloads=0,output_tokens=1500,input_reporting_threshold=6000,
+             whole_session_seconds=600,prep_seconds=270,startup_load_request_seconds=120,owned_stop_observation_seconds=30,report_seconds=180),
+ required_exception='For this one S5 diagnostic only, allow dispatch before authentic internal image/text input-fit proof, as in the prior two explicitly approved diagnostics. No broader native clearance, larger-input scope or corpus authority.',
+ expected_output='The Committee on Appropriations recommended non-concurrence.',
+ expected_metadata='complete plus full text and reason:null; or incomplete plus null text and concrete reason. Never force a reading from an unclear image.',
+ actual_new_output=None,prior_attempts=prior,
+ actual_prior_result='Most recent actual full reading matched expectation; invalid only because completion comment violated a host rule omitted from the advertised schema/prompt. Old result remains invalid.',
+ minimal_implementation='Extend the existing MeasurementSpec profile/authority/package/input selection to one new exact conformance profile, actual approval SHA and body SHA, with its own fixed spent slot; reuse existing owned client/raw-first journal/export/receipt-only recovery. Preserve both historical profiles and spent slots. No new CLI or generalized workflow.',
+ proposed_existing_command='UV_CACHE_DIR=tmp/uv-cache uv run python -m congressional_globe.productive_ocr_measurement --repository . --spec artifacts/s5-conformance-verification-20261030-01/run/spec.json',
+ command_state='Not executable yet: actual approval and narrow profile binding/final code/spec are intentionally absent. Current dispatcher must reject this new body.',
+ after_approval=['Bind actual affirmative review/chat approval to exact new profile/body/new slot; source/authority/recovery tests and make gate.',
+ 'Freeze final code/spec within the same limits; fresh process/start/queue/bounded logs/nonloading model-state/shared-lock checks.',
+ 'Claim new fixed slot before dispatch, run once with shared120s deadline, preserve raw HTTP/reply/owned stop and unknown usage.',
+ 'Report actual input/expected/output/differences in desk; incomplete/invalid/timeout stops without retry or automatic follow-on.'],
+ cost_basis='Prior observed cycles53.34s and28.03s, different prompt/schema/output workload. No promise of latency, quality or whole-corpus speed. At most600s run session; necessary pre-run code tests are separately reported engineering time. Local dollar/energy cost unmeasured.',
+ unknowns=['Installed provider handling of oneOf schema','Actual reply compliance','Authentic internal input fit and wider capacity','Forced-cancellation behavior','Quality beyond this exposed case; this passage contains no numbers'],
+ purpose_limit='Isolate actual corrected-format compliance before broader original-sample tests. Not independent accuracy confirmation or numeric-reading evaluation.',
+ no_follow_on_calls=True,decision_authorizes='Necessary narrow existing-runner binding plus this one exact bounded call; no separate method vote afterward.',
+ preparation_code_identity=code_identity())
+(base/'proposal.json').write_text(json.dumps(proposal,ensure_ascii=False,indent=2)+'\n')
+print('Exact candidate/source/installed executable/manifest verified. Prior2slots retained; no new request sent. Body:',projection.body_sha256)

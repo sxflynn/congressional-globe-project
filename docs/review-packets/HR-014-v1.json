@@ -1,0 +1,41 @@
+{
+  "id": "HR-014",
+  "version": 1,
+  "title": "One real test of the corrected reply format",
+  "instructions": "The corrected request is prepared; this is the exact one-call decision needed to test it. Earlier one-call permissions are already spent. Please read the inputs, expected result, actual earlier result and limits before choosing. Leaving this unanswered does not start anything. Comments are optional. Historical/model passages stay plain; dotted-underlined terms explain our prose. No Computer Use is requested.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "corrected-s5-call",
+      "prompt": "Authorize one additional S5 check under all listed limits, including the explicit one-case internal-input-size exception?",
+      "options": [
+        "Run one S5 test within these limits",
+        "Do not run another test",
+        "Request changes — see my comments"
+      ],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Inputs for the proposed single test",
+          "text": "Original OCR, unchanged:\nThe Committee on- Appropriations recom- mended non-concurrence.\n\nGuarded software proposal, unchanged:\nThe Committee on- Appropriations recom- mended non-concurrence.\n\nUse this same original S5 scan and one complete target paragraph with the already installed Qwen model. The changed request explicitly states the complete/incomplete rules in both the prompt and response schema. No replacement sample, image download, new model or broader batch is included. This is an exposed development case.\n\nPurpose: check whether the model follows the repaired reply format before moving on to broader examples. This sentence contains no numbers, so this test does not establish numeric-reading quality.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+        },
+        {
+          "label": "2 · Expected output and honest uncertainty",
+          "text": "Expected complete reading, previously recorded:\nThe Committee on Appropriations recommended non-concurrence.\n\nFor a complete reply, the model must return the full sentence with a null reason, without a completion comment. If it cannot read the entire assigned paragraph confidently, it must withhold text and give a concrete reason. The host keeps that incomplete outcome unresolved. No invented uncertainty statement is being attributed to this scan.\n\nA valid export would show agreement with the software’s format/source-link checks. It would not make this repeated case an independent quality test or automatically accept a clean historical reading.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual output so far: the earlier call, unchanged",
+          "text": "Earlier actual model text:\nThe Committee on Appropriations recommended non-concurrence.\n\nEarlier actual completion comment:\nNo further action required.\n\nThat earlier call took 28.03 seconds and stopped. Its full reading matched the expectation, but it remains invalid because the comment conflicted with an extra host rule the old request did not advertise. The rule is now advertised consistently; 1,094 software tests pass. Whether the model follows the corrected format is still untested.\n\nActual output for this newly proposed request: none. Both previous S5 call slots remain spent. A new attempt gets its own single-use slot; no old response is rewritten or accepted.",
+          "url": null
+        },
+        {
+          "label": "4 · Exact limits, exception and what your decision authorizes",
+          "text": "Recommended scope: one additional S5 call, at most 120 seconds shared across resource checks, startup, loading and response; at most 1,500 output tokens; a 600-second run session including preparation, stopping and reporting. No retry, extra loading probe, download, fetch or automatic next call. Failure or uncertainty still spends this attempt. The owned server must stop and its receipt is saved.\n\nExplicit exception requested: allow this one diagnostic before the model’s exact internal image/text input size has been proved, as with the previous two approved S5 diagnostics. Its reported counts are saved, but this does not establish native input fit or wider capacity. Do not choose Run if you want that proof first.\n\nYour Run choice authorizes the necessary narrow binding of this exact request and your actual approval into the existing measurement runner, its separate spent slot, tests and final code/spec freeze, then this one call after fresh process/queue/log/lock checks. The existing dispatcher currently rejects this body; no approval or executable live spec has been fabricated. No new workflow or command is proposed.\n\nPrior observed call cycles were 53.34 and 28.03 seconds with different requested reporting. They are not a latency promise or corpus forecast. Local money/energy cost is unmeasured. Necessary implementation/tests are engineering work before the bounded run session. Afterward, show actual input, expected reading, raw reply, differences and measured costs here, including failures.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}
