@@ -14,6 +14,8 @@ Shared entry point for Codex, Claude, OpenCode and other agents. New human instr
 
 ## Always preserve
 
+- Present process reviews in this order: **inputs → expected output → actual output → differences**. Show concrete examples, identify where the expectation comes from, and distinguish requirements/illustrations from independently verified answers. If a result or reference is unavailable, say so. Direct human instruction, 2026-10-29; detailed authoring rule in the human review protocol.
+
 - Do not use Computer Use for this project unless the human explicitly changes that preference. Use code, CLI, saved data and isolated software tests; state honestly when browser/device checks were not performed. Direct human instruction, 2026-10-29.
 
 - Put requests for human decisions and recent-work walkthroughs in the human review desk, with concrete evidence and comment boxes; notify the human in chat with the desk link instead of asking a standalone approval question. Direct human preference, 2026-10-29. Use the review protocol; do not infer a decision from this delivery preference.

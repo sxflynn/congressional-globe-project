@@ -1,0 +1,107 @@
+{
+  "packet": "HR-013-v2",
+  "prior_source_manifest": "docs/review-packets/HR-013-v1-sources.json",
+  "source_id": "congressionalglo7395unit:529:par_000529_000006",
+  "raw_sha256": "7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426",
+  "image_sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+  "actual_reply_sha256": "2bf49db348810e3aa0e4c78146914ee58abe53bf3fd9962f10c6913ee3d7cfda",
+  "actual_output_origin": "artifacts/s5-measurement-20261029-01/run/result.json:output_text (unchanged)",
+  "expected_output_origin": "Agent-authored illustration based on previous source inspection in artifacts/s5-measurement-20261029-01/diagnostic.json plus unchanged strict response/replay requirements; not independent gold or salvaged model output.",
+  "expected_reading": "The Committee on Appropriations recommended non-concurrence.",
+  "expected_raw_patches": [
+    {
+      "raw_quote": "recom- mended",
+      "replacement": "recommended"
+    },
+    {
+      "raw_quote": "on- Appropriations",
+      "replacement": "on Appropriations"
+    }
+  ],
+  "actual_reading": "The Committee on Appropriations recommended non-concurrence.",
+  "actual_raw_patches": [
+    {
+      "finding_id": "F1",
+      "image_alias": "I1",
+      "paragraph_alias": "P1",
+      "raw_quote": "on- Appropriations",
+      "reason": "Replace spurious hyphen and space with single space to match printed text 'on Appropriations'",
+      "replacement": "on Appropriations"
+    }
+  ],
+  "actual_single_patch_replay": "The Committee on Appropriations recom- mended non-concurrence.",
+  "source_spans": {
+    "5dad947642217b862bb77aa338ed03fce6db13179381ac8e12c145578bed5a56": [
+      {
+        "start": 23,
+        "end": 86
+      },
+      {
+        "start": 128,
+        "end": 189
+      }
+    ],
+    "fea9bb2e931f839af291a82cff1ed190dc4d32e78e1af9ed8875132d32189d16": [
+      {
+        "start": 43,
+        "end": 103
+      },
+      {
+        "start": 130,
+        "end": 196
+      }
+    ],
+    "7c1e655d63ade62384c44362d42dc452fa8834211d3cd65fac97db324df036de": [
+      {
+        "start": 30,
+        "end": 90
+      },
+      {
+        "start": 119,
+        "end": 157
+      }
+    ],
+    "31039a805060cfa2de511f7363001818d3f8b11f1abdb9df73ab72fbe500f134": [
+      {
+        "start": 132,
+        "end": 194
+      },
+      {
+        "start": 224,
+        "end": 251
+      }
+    ],
+    "ed03820f2af77d67949b0546ea7e0d211f61867f75e1e9d180733400b7f24b45": [],
+    "3f099a8594f34ab1e5a87bb22a1bff3b408b25dca03972b2de3156f52560e5b6": []
+  },
+  "input_files": [
+    {
+      "path": "artifacts/s5-measurement-20261029-01/run/result.json",
+      "sha256": "580b673b0aaff4003873bfa86f6374eba5f3a9b2311a41ca37e4750eaa1ab6c9"
+    },
+    {
+      "path": "artifacts/s5-measurement-20261029-01/diagnostic.json",
+      "sha256": "7e7e7fed1d19d4444260f5e2fffbefd7477eed06de69654e0e314b0de790919c"
+    },
+    {
+      "path": "artifacts/s5-measurement-20261029-01/report.json",
+      "sha256": "4c2550797039e90f1d255ed111b07b75c031e814211ba19aaae0e04f5165d7f4"
+    },
+    {
+      "path": "artifacts/s5-conformance-20261029-01/proposal.json",
+      "sha256": "458ce5e0d08681081e462c920d90d08b620a1a8b382605a4bbdde63b06186813"
+    },
+    {
+      "path": "artifacts/s5-conformance-20261029-01/prompt.txt",
+      "sha256": "a5845a790b82f97d5fa527de46980f975296df869df6c0bea2d11ff2e2262451"
+    },
+    {
+      "path": "artifacts/ocr-live-readiness-20261028-01/images/S5/bundle.json",
+      "sha256": "48862e59f220465ae409993d830bb5314ba9744ee102ae26a57269400e33311e"
+    },
+    {
+      "path": "artifacts/ocr-live-readiness-20261028-01/images/S5/crop-01.jpg",
+      "sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530"
+    }
+  ]
+}

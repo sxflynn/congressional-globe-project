@@ -1898,6 +1898,33 @@
       "term": "Save draft and change reviewer",
       "definition": "Save the current answers under the current reviewer name before opening the name field for another reviewer. Saved answers can be restored later under the original name.",
       "aliases": []
+    },
+    {
+      "term": "expected output",
+      "definition": "The concrete result or required behavior used for comparison. Its label should explain whether it comes from an agreed rule, a reviewed reference or an authored illustration.",
+      "aliases": [
+        "expected-output illustration"
+      ]
+    },
+    {
+      "term": "actual output",
+      "definition": "The result that the process really returned, kept unchanged even when incomplete or rejected. If it has not run, no actual output exists.",
+      "aliases": []
+    },
+    {
+      "term": "no_finding",
+      "definition": "A response label meaning that the model reports no issue in the inspected scope. It does not independently establish correctness.",
+      "aliases": []
+    },
+    {
+      "term": "image_unclear",
+      "definition": "A response label reporting that the image does not clearly establish the wording. It describes uncertainty in the model’s evidence.",
+      "aliases": []
+    },
+    {
+      "term": "remaining_concerns",
+      "definition": "The response field listing issues the model says remain unresolved after its self-check.",
+      "aliases": []
     }
   ]
 }

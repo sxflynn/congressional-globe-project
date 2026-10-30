@@ -19,6 +19,17 @@ Current requests and decisions are listed only in the [master register](../../MA
 
 If a model returns a plausible but unsupported name/date/bill assignment, reject/hold it rather than ask the human to bless a guess. Escalate a representative cluster or policy ambiguity when it affects the research standard; do not make the human adjudicate every production row. Reuse approved guidance, sample periodically, and measure remaining review workload. If the human is unsure, retain uncertainty and seek additional evidence; a forced yes/no is not a historical fact.
 
+#### Show inputs, expected output and actual output
+
+Direct human instruction, 2026-10-29: “I want to see the inputs to the process, the expected output, and the actual output.” Use this order for each process/example in a diagnostic review or progress walkthrough:
+
+1. **Inputs:** show the actual source material and the relevant instruction/settings supplied to that step. Distinguish original material, prior cleanup and context. Keep exact source/scan identities available without burying the example in metadata.
+2. **Expected output:** show concretely what a satisfactory result would contain, including the proposed reading or required fields/edits when available. Identify its basis: agreed requirement, human-reviewed reference, source-inspected agent illustration or synthetic test expectation. An illustration is not independent truth. When the correct wording is unknown, state that and describe the required uncertainty behavior instead of inventing an answer.
+3. **Actual output:** show the saved result unchanged, with status and measured limits. Say explicitly if the process has not run or no result exists. Never replace a failed reply with a repaired demonstration.
+4. **Differences:** put expected and actual differences next to the example in plain English. Include missing, incorrect and unsupported changes as well as matching parts; separate format/replay checks from historical accuracy. Give each section a comment box through evidence-local notes.
+
+For an explicitly blind grading stage, preserve the source-only packet and capture expectations before exposing any model output; present the comparison in the subsequent diagnostic stage. Preserve immutable packets/answers when changing presentation by registering a new version. Continue using generous neutral glossary help in AI explanations while all historical/OCR/proposed reading excerpts remain plain. This presentation preference grants no model-call, quality-policy or full-run authority.
+
 #### How to ask for sample grades
 
 1. Freeze IDs, raw text/context, citations, vocabulary/rubric and sample version. Start calibration with a few readable examples (typically 3–5 when suitable): a clear positive, a negative/incidental mention, an ambiguous/truncated/mixed case, and a model disagreement or failure. This calibrates expectations; it is not sufficient evidence of corpus accuracy. Fresh benchmark selection still needs the declared coverage/exclusions.

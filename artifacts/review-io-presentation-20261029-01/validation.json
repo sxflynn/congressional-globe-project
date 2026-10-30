@@ -1,0 +1,33 @@
+{
+  "task": "T94",
+  "checks": {
+    "typed_packet_valid": true,
+    "expected_two_patches_replay_from_original_raw": true,
+    "actual_reading_patch_list_reply_hash_unchanged": true,
+    "original_evidence_hashes_unchanged": true,
+    "optional_next_test_question_and_evidence_equal_v1": true,
+    "all_source_excerpt_spans_plain": true,
+    "AI_explanations_have_glossary_help": true,
+    "AppTest_card_order": [
+      6,
+      9,
+      12,
+      15,
+      18
+    ],
+    "AppTest_saved_scan_images": 1,
+    "AppTest_comment_fields": 7,
+    "AppTest_exceptions": 0,
+    "questions_optional": true
+  },
+  "review": {
+    "reviewer": "gpt-6-luna",
+    "finding": "First draft conflated original planning cap with saved startup45/request120 settings. Fixed by showing expected planning, actual configured limits and actual measured behavior separately; no shared deadline enforcement claimed for first run.",
+    "other_findings": "Expected illustration provenance, immutable actual reply, explicit differences and copied unchanged decision reviewed with no other material issue."
+  },
+  "limits": "Isolated AppTest/lxml/source replay only; no Computer Use/browser/device check, model/source fetch or service restart. Expected illustration is not independently verified truth. Prior full code gate1030 retained for data/documentation-only authoring.",
+  "packet_sha256": "ace45c350f17651fba393d3686d18e8ba4821ecd90d747d3988be6c35e806f2c",
+  "prior_packet_submission_receipt_bytes_unchanged": true,
+  "verified_lan_url": "http://10.0.0.56:8501",
+  "focused_review_checks_passed": 36
+}

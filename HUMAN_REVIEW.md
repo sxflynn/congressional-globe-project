@@ -8,7 +8,7 @@ The human requested operationalizing the cleanup discussion. [The evaluation met
 
 ## Needs your attention
 
-**HR-013 · Recent OCR work: the real AI result, the fix, and next steps** has a submitted response in [the review desk](http://10.0.0.56:8501). The human reports entering feedback, but the saved revision1 is blank. A software bug was reproduced: entering/changing the reviewer name after typing comments could reset the form and submit empty answers. T93 fixes that path by locking the name before editing, saving drafts before name changes, and blocking entirely blank submissions. The original comment wording was not recovered from the saved database/drafts. The blank archived submission remains unchanged and supplies no decision. The existing **History → HR-013 → Revise this response** path remains available; no Computer Use or desk restart is being performed. It shows the actual S5 scan/original text, returned AI reading, missing edit and other response failures, the offline fix, measured timing and cautious collection scenarios. Every card has an optional comment box. The final one-call test decision is optional; submit comments without choosing it if you prefer. Nothing starts automatically. This is the current requested walkthrough; earlier HR-012 descriptions below reflect their earlier preparation checkpoint.
+**HR-013v2 · OCR repair: inputs, expected output, actual output** is ready in [the review desk](http://10.0.0.56:8501). The current Pending review shows the actual scan/raw text and supplied cleanup, an explicitly labelled expected-output illustration, the unchanged AI answer, then their differences. The optional next-test question keeps its original bounds; all comments remain optional. Version1 and its submitted record remain in History. The human reports entering feedback there; the stored record is blank, and T93 reproduces/fixes a feedback-loss path. The original wording was not recovered from saved data. No Computer Use or desk restart was performed.
 
 Every scan/text example now has its own optional note box and **Save draft here** button. Enter your name at the top before saving. A draft keeps all current answers without requiring completion; **Submit review** sends your feedback to the agent inbox. Submitted notes include the exact example and must receive a recorded action/check or an explicit unresolved reason before being marked handled. Relevant concerns carry forward into later AI instructions and checks. No background model starts when you submit.
 
@@ -21,6 +21,10 @@ Every scan/text example now has its own optional note box and **Save draft here*
 **HR-004 received and applied.** Both passages need wording repair even though their subjects remain clear. You identified an incomprehensible damaged word (`ra}'`) that hurt reading, and named the sample2 topics: government-document preservation/fireproof storage and the Sioux City railroad branch. Your exact free-text answers are preserved; no repeat review is requested.
 
 HR-005-v1 and HR-008-v1 are already answered and incorporated; no repeat review is needed. HR-003 standards/resources are approved; review effort revised by HR-009; new role/date samples have not been requested.
+
+## How evidence is presented
+
+Each process is shown as **inputs → expected output → actual output → differences**, with concrete examples and comment boxes. Expected outputs identify whether they are agreed requirements, reviewed answers or agent-authored illustrations. Unavailable or unrun results are stated explicitly.
 
 ## Definitions while reviewing
 
