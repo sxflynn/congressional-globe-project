@@ -70,6 +70,7 @@ def test_required_validation_and_free_text_submission(tmp_path, monkeypatch) -> 
     store = _store(tmp_path, monkeypatch)
     app = _app()
     _reviewer(app)
+    _question_widget(app, "comment", "text_area").set_value("Required choice still missing")
     app.button[1].click().run()
     assert any("required answers are missing" in item.value for item in app.error)
 
@@ -180,6 +181,7 @@ def test_packet_definitions_render_in_prompts_evidence_and_choice_help(tmp_path,
         }
     )
     app = _app()
+    _reviewer(app)
     rendered = "\n".join(item.value for item in app.markdown)
     assert rendered.count("A small invented test object.") == 4
     assert "Answer terms:" in rendered
@@ -206,3 +208,83 @@ def test_packet_title_and_version_offer_definitions(tmp_path, monkeypatch):
     assert heading.xpath('.//button[@aria-label="Define: Provenance"]')
     assert tree.xpath('.//button[@aria-label="Define: version"]')
     assert not app.exception
+
+
+def _button_named(app, label):
+    return next(button for button in app.button if button.label == label)
+
+
+def test_no_feedback_widgets_before_reviewer_and_name_locks_before_editing(tmp_path, monkeypatch):
+    store = _store(tmp_path, monkeypatch)
+    app = _app()
+    assert not app.text_area
+    assert not app.get("form")
+    assert not store.submissions()
+    _reviewer(app)
+    assert app.text_input(key="reviewer").disabled
+    _question_widget(app, "choice", "selectbox").select("B")
+    _question_widget(app, "comment", "text_area").set_value("Entered after locked identity")
+    _button_named(app, "Submit review").click().run()
+    assert store.submissions()[0]["answers"]["comment"] == "Entered after locked identity"
+    assert not app.exception
+
+
+def test_reviewer_switch_saves_feedback_and_does_not_leak_it_to_another_reviewer(
+    tmp_path, monkeypatch
+):
+    store = _store(tmp_path, monkeypatch)
+    app = _app()
+    _reviewer(app)
+    _question_widget(app, "choice", "selectbox").select("B")
+    _question_widget(app, "comment", "text_area").set_value("First reviewer exact feedback")
+    _button_named(app, "Save draft and change reviewer").click().run()
+    assert not app.exception
+    assert not app.text_area
+    draft = store.get_draft("DEMO-TEST", 1, "Reviewer One")
+    assert draft is not None
+    assert draft["answers"]["comment"] == "First reviewer exact feedback"
+    _reviewer(app, "Reviewer Two")
+    assert _question_widget(app, "comment", "text_area").value == ""
+    _question_widget(app, "comment", "text_area").set_value("Second reviewer draft")
+    _button_named(app, "Save draft and change reviewer").click().run()
+    _reviewer(app, "Reviewer One")
+    assert _question_widget(app, "comment", "text_area").value == "First reviewer exact feedback"
+    assert _question_widget(app, "choice", "selectbox").value == "B"
+
+
+def test_failed_switch_save_keeps_identity_and_feedback(tmp_path, monkeypatch):
+    _store(tmp_path, monkeypatch)
+    app = _app()
+    _reviewer(app)
+    _question_widget(app, "comment", "text_area").set_value("Must not disappear")
+
+    def fail(*args, **kwargs):
+        raise RuntimeError("Synthetic save failure")
+
+    monkeypatch.setattr(ReviewStore, "save_draft", fail)
+    _button_named(app, "Save draft and change reviewer").click().run()
+    assert app.text_input(key="reviewer").value == "Reviewer One"
+    assert app.text_input(key="reviewer").disabled
+    assert _question_widget(app, "comment", "text_area").value == "Must not disappear"
+    assert any("Synthetic save failure" in error.value for error in app.error)
+
+
+def test_completely_blank_optional_submission_is_not_reported_as_success(tmp_path, monkeypatch):
+    store = _store(tmp_path, monkeypatch)
+    store.register(
+        {
+            "id": "DEMO-OPTIONAL",
+            "version": 1,
+            "title": "Optional",
+            "instructions": "Test",
+            "questions": [{"id": "note", "prompt": "Note", "required": False}],
+        }
+    )
+    app = _app()
+    _reviewer(app)
+    _button_named(app, "Submit review").click().run()
+    assert not store.submissions()
+    assert any("No comments or answers reached the form" in error.value for error in app.error)
+    _question_widget(app, "note", "text_area").set_value("Actual synthetic comment")
+    _button_named(app, "Submit review").click().run()
+    assert store.submissions()[0]["answers"] == {"note": "Actual synthetic comment"}

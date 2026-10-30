@@ -118,6 +118,7 @@ def test_walkthrough_renders_cached_images_before_raw_ocr(tmp_path, monkeypatch)
     )
     ReviewStore(database).register(packet)
     app = AppTest.from_string("from congressional_globe.review_app import main\nmain()").run()
+    app.text_input(key="reviewer").set_value("Synthetic reviewer").run()
     assert not app.exception
     assert len(app.get("image")) == 2
     assert len(app.get("link_button")) == 4

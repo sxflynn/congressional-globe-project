@@ -59,6 +59,7 @@ def test_passage_precedes_inline_scan_and_source_tab_removed(tmp_path, monkeypat
     ]
     store.register(packet)
     app = _app()
+    app.text_input(key="reviewer").set_value("Synthetic reviewer").run()
     assert not app.exception
     assert app.radio[0].options == ["Pending", "Submitted", "History"]
     rendered = "\n".join(item.value for item in app.markdown)

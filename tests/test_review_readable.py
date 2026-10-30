@@ -95,6 +95,7 @@ def _app():
 def test_original_details_plain_spans_and_notes_remain_accessible(tmp_path, monkeypatch):
     _setup(tmp_path, monkeypatch)
     app = _app()
+    app.text_input(key="reviewer").set_value("Synthetic reviewer").run()
     assert not app.exception
     assert _details_count(app) == 9
     assert len(app.text_area) == 11

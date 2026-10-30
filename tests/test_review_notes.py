@@ -95,6 +95,7 @@ def test_note_identity_rejects_different_evidence(tmp_path, monkeypatch, change)
 def test_each_note_and_save_button_immediately_follows_its_evidence(tmp_path, monkeypatch):
     _setup(tmp_path, monkeypatch)
     app = _app()
+    app.text_input(key="reviewer").set_value("Synthetic reviewer").run()
     nodes = list(app)
     textareas = [i for i, node in enumerate(nodes) if node.type == "text_area"]
     saves = _save_positions(nodes)

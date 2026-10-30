@@ -135,22 +135,34 @@ def _save_result(
     answers: dict[str, str],
     submit: bool,
     revision: bool = False,
-) -> None:
+) -> bool:
     packet_id, version = _value(packet, "id"), _value(packet, "version")
     if not reviewer.strip():
         st.error("Enter your name or reviewer ID before saving or submitting.")
-        return
+        return False
+    if _empty_submission(submit, answers):
+        st.error(
+            "No comments or answers reached the form. "
+            "Add a comment or choose an answer before submitting."
+        )
+        return False
     try:
         if not submit:
             store.save_draft(packet_id, version, reviewer, answers)
             st.success("Draft saved. You can return to it later.")
-            return
+            return True
         result = store.submit(packet_id, version, reviewer, answers)
         st.success(_submission_message(result))
         if revision:
             st.session_state.pop("revision_target", None)
+        return True
     except (ValueError, KeyError, RuntimeError, sqlite3.Error) as exc:
         st.error(str(exc))
+        return False
+
+
+def _empty_submission(submit: bool, answers: dict[str, str]) -> bool:
+    return submit and not any(value.strip() for value in answers.values())
 
 
 def _submission_message(result: dict[str, Any]) -> str:
@@ -182,9 +194,16 @@ def _show_packet(
     baseline = _baseline(store, packet_id, version, reviewer, prior)
     key_prefix = _widget_prefix(packet_id, version, reviewer, revision_id)
     questions = _value(packet, "questions", [])
-    answers, save, submit = _review_form(packet, questions, baseline, key_prefix, revision)
-    if save or submit:
-        _save_result(store, packet, reviewer, answers, submit, revision)
+    answers, save, submit, change = _review_form(packet, questions, baseline, key_prefix, revision)
+    if any((save, submit, change)):
+        saved = _save_result(store, packet, reviewer, answers, submit, revision)
+        _switch_reviewer(change, saved)
+
+
+def _switch_reviewer(change: bool, saved: bool) -> None:
+    if change and saved:
+        st.session_state["reset_reviewer"] = True
+        st.rerun()
 
 
 def _packet_heading(text: str, scope: str, glossary: list[dict]) -> None:
@@ -205,21 +224,48 @@ def _reviewer(
     revision: bool,
     reviewer_default: str,
 ) -> str | None:
-    reviewer_key = f"revision-reviewer-{revision_id}" if revision else "reviewer"
-    reviewer_value = st.text_input(
-        "Your name or reviewer ID",
-        value=st.session_state.get(reviewer_key, "") or reviewer_default,
-        key=reviewer_key,
-        disabled=revision,
-    )
-    reviewer = reviewer_default.strip() if revision else reviewer_value.strip()
+    reviewer = _reviewer_input(revision_id, revision, reviewer_default)
+    if not reviewer:
+        st.info("Enter your name above to open the review. Your name stays fixed while you write.")
+        return None
     try:
-        if reviewer.strip():
-            store.get_draft(packet_id, version, reviewer)
+        store.get_draft(packet_id, version, reviewer)
     except (ValueError, KeyError) as exc:
         st.error(f"This packet version is no longer available for editing: {exc}")
         return None
     return reviewer
+
+
+def _reset_reviewer() -> None:
+    if st.session_state.pop("reset_reviewer", False):
+        st.session_state.pop("reviewer", None)
+        st.session_state.pop("active_reviewer", None)
+
+
+def _reviewer_input(revision_id: str, revision: bool, reviewer_default: str) -> str:
+    _reset_reviewer()
+    reviewer_key = f"revision-reviewer-{revision_id}" if revision else "reviewer"
+    fixed = _fixed_reviewer(revision, reviewer_default)
+    if fixed:
+        st.session_state[reviewer_key] = fixed
+    reviewer_value = st.text_input(
+        "Your name or reviewer ID",
+        key=reviewer_key,
+        disabled=revision or bool(fixed),
+    )
+    reviewer = fixed or reviewer_value.strip()
+    _lock_reviewer(reviewer, revision)
+    return reviewer
+
+
+def _fixed_reviewer(revision: bool, reviewer_default: str) -> str:
+    return reviewer_default.strip() if revision else st.session_state.get("active_reviewer", "")
+
+
+def _lock_reviewer(reviewer: str, revision: bool) -> None:
+    if reviewer and not revision and not st.session_state.get("active_reviewer"):
+        st.session_state["active_reviewer"] = reviewer
+        st.rerun()
 
 
 def _baseline(
@@ -242,7 +288,7 @@ def _review_form(
     baseline: dict[str, str],
     key_prefix: str,
     revision: bool,
-) -> tuple[dict[str, str], bool, bool]:
+) -> tuple[dict[str, str], bool, bool, bool]:
     packet_id, version = _value(packet, "id"), _value(packet, "version")
     with st.form(f"review-{packet_id}-{version}-{key_prefix}"):
         answers, nearby_save = {}, False
@@ -256,7 +302,18 @@ def _review_form(
         submit_label = "Submit revision" if revision else "Submit review"
         save = st.form_submit_button(save_label)
         submit = st.form_submit_button(submit_label)
-    return answers, save or nearby_save, submit
+        change = _change_reviewer_button(revision)
+    return answers, save or nearby_save, submit, change
+
+
+def _change_reviewer_button(revision: bool) -> bool:
+    if revision:
+        return False
+    show_text(
+        "Save draft and change reviewer keeps your answers before you enter a different name.",
+        "change-reviewer-help",
+    )
+    return st.form_submit_button("Save draft and change reviewer")
 
 
 def _show_submission(submission: Any, packet: dict) -> None:

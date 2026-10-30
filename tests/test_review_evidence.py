@@ -115,6 +115,7 @@ def test_live_packet_app_keeps_ai_question_help_and_plain_source(tmp_path, monke
     packet = json.loads(Path("docs/review-packets/HR-010-v1.json").read_text())
     ReviewStore(database).register(packet)
     app = AppTest.from_string("from congressional_globe.review_app import main\nmain()").run()
+    app.text_input(key="reviewer").set_value("Synthetic reviewer").run()
     tree = _tree("\n".join(item.value for item in app.markdown))
     assert not app.exception
     assert tree.xpath('.//button[@aria-label="Define: paragraph boundaries"]')

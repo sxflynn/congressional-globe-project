@@ -14,6 +14,8 @@ Shared entry point for Codex, Claude, OpenCode and other agents. New human instr
 
 ## Always preserve
 
+- Do not use Computer Use for this project unless the human explicitly changes that preference. Use code, CLI, saved data and isolated software tests; state honestly when browser/device checks were not performed. Direct human instruction, 2026-10-29.
+
 - Put requests for human decisions and recent-work walkthroughs in the human review desk, with concrete evidence and comment boxes; notify the human in chat with the desk link instead of asking a standalone approval question. Direct human preference, 2026-10-29. Use the review protocol; do not infer a decision from this delivery preference.
 
 - Human-facing review-desk/server links must always use the current verified `10.x.x.x` LAN IP address, with the port (for example, `http://10.0.0.56:8501`). Do not give localhost or127.0.0.1 as the user-facing address. Recheck the LAN address after network changes; never invent an address. Direct human rule,2026-10-28.

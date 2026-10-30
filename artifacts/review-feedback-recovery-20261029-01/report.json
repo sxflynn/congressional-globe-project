@@ -1,0 +1,76 @@
+{
+  "task": "T93",
+  "human_reports": [
+    {
+      "text": "I ENTERED FEEDBACK",
+      "scope": "Human reports actual entry; blank stored payload is not evidence no feedback was entered."
+    },
+    {
+      "text": "I dont want to do Computer Use btw",
+      "scope": "No more Computer Use after this direction; persist project preference. Code/CLI/AppTest only."
+    }
+  ],
+  "observed_failure": "Old9983765 app exposed comment fields before reviewer name. Typing comments then entering name changed reviewer-derived widget keys, erased form values, and accepted a blank submission without errors. Reproduced offline from exact old source with zeroexceptions; synthetic data only.",
+  "causal_limit": "This is a demonstrated loss path consistent with the incident. Exact original browser event order and comment wording were not observed or reconstructed.",
+  "recovery": "Consistent read-only SQLite backup and exact original bytes preserved locally before investigation. All drafts/revisions checked: no saved drafts, oneHR013submission with blank notes/selection; no WAL/journal present. Known HR013note-key scan found7blank payloads,0freelistpages. Original wording not recovered from bounded saved-data checks. No human browser reloaded and no server restarted.",
+  "changes": [
+    "Gate editing until nonblank reviewer; copy reviewer to independent session identity and lock it before rendering form",
+    "Keep reviewer-specific form keys and revision identities; rehydrate disabled name field from committed identity",
+    "In-form Save draft and change reviewer submits full current form to draft before resetting identity; failed save retains identity/text",
+    "Reject entirely blank UI submissions with explicit error, rather than success; preserve store APIs/old answers and optional comment-only semantics"
+  ],
+  "checks": {
+    "full_gate_passed": 1030,
+    "command": "UV_CACHE_DIR=tmp/uv-cache make gate",
+    "new_regressions": 4,
+    "coverage": [
+      "No editable form before name, locked reviewer and exact comment submission",
+      "Switch saves/reloads exact draft and separates reviewers",
+      "Save failure retains reviewer and feedback",
+      "Empty optional UI submission rejected, subsequent comment submits",
+      "Existing draft, evidence-note, source-rendering, revision/history/glossary checks pass after selecting reviewer"
+    ],
+    "complexity_max": 5,
+    "browser_or_device_test": "Not performed; user explicitly declined Computer Use. AppTest is isolated software testing, not browser/device proof.",
+    "main_database_unchanged": true
+  },
+  "bounded_reviews": [
+    {
+      "reviewer": "gpt-6-luna",
+      "scope": "Reproduced old bug in isolated AppTest and read-only final code/test review; no real DB or runtime/browser control",
+      "verdict": "No material code-review concerns; name lock, safe switch, failed-save retention and blank guard reviewed"
+    }
+  ],
+  "limits": [
+    "No original feedback text recovered or fabricated",
+    "No new HR013answer, permission, quality label or model call inferred",
+    "Existing blank submission/application receipts and prior source/model evidence remain immutable",
+    "No production-desk restart or Computer Use verification; server memory/session behavior not certified here"
+  ],
+  "evidence_hashes": [
+    {
+      "path": "artifacts/review-feedback-recovery-20261029-01/old-bug-reproduction-initial-harness-error.json",
+      "sha256": "9bc1ed1a791f4f489c32d0458673195feaa720dfc5b737bfc74673451e2f7c84"
+    },
+    {
+      "path": "artifacts/review-feedback-recovery-20261029-01/old-bug-reproduction.json",
+      "sha256": "29d7c0263f5f8c3467126404a1c76a5f552ddf6d9441323356856f9a47550abd"
+    },
+    {
+      "path": "artifacts/review-feedback-recovery-20261029-01/recovery-observations.json",
+      "sha256": "07eff53062a876769b0fb0948d830d8fe060383fae833bc73648f193998f8a78"
+    },
+    {
+      "path": "artifacts/review-feedback-recovery-20261029-01/reviews-before-investigation.sqlite",
+      "sha256": "b97f0961dd5a2a4636e85ca3f3e81268f476654d8c0640f81e82fd1e5d683057"
+    },
+    {
+      "path": "artifacts/review-feedback-recovery-20261029-01/reviews-original-bytes.sqlite",
+      "sha256": "95879c6d782958ac21a2c35935fd234694fcfc13a334be1dac3a0e992a4df770"
+    },
+    {
+      "path": "artifacts/review-feedback-recovery-20261029-01/saved-review-records.json",
+      "sha256": "f8fa712ab7ad0632316c5de8178b46db5132858ab9e1e78d39b80ad17ef2cba5"
+    }
+  ]
+}
