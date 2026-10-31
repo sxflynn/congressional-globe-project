@@ -1,0 +1,19 @@
+{
+  "source": "Direct human chat; standing small-sample autonomy",
+  "exact_instruction": "You don’t always need my permission for AI runs. Record that. It’s only for huge runs so you need my sign off. For small things and samples you can act autonomously",
+  "action": "Execute the next bounded three-run S5 consistency test autonomously under this instruction.",
+  "scope": "Three sequential byte-identical T104 paragraph requests with installed Qwen; no new source/model/download, no larger sample or automatic follow-on.",
+  "body_sha256": "025a19416e512063dd1c397da962d5d7c701d2ec60dc66b404fc8cf3d9fddb1b",
+  "calls": 3,
+  "per_call_seconds": 120,
+  "per_call_session_seconds": 600,
+  "group_seconds": 1800,
+  "output_tokens_per_call": 1500,
+  "output_tokens_group": 4500,
+  "retries": 0,
+  "fetches": 0,
+  "downloads": 0,
+  "native_fit": "Still unknown; use the existing bounded S5 diagnostic measurement path, preserving unknown native fit rather than asserting clearance. The new direct autonomy instruction supersedes routine new small-sample approval requests.",
+  "stopping": "Stop on transport/time/resource/ownership/unknown-exit or usage failure; completed semantic failure remains an observed repetition only after positive owned exit. No replacement attempts.",
+  "huge_runs": "Require explicit human sign-off; no corpus-wide or recurring run is authorized here."
+}
