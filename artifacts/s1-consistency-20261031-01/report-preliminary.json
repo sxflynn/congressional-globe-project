@@ -1,0 +1,40 @@
+{
+  "task": "T108",
+  "state": "preliminary1of3",
+  "planned_calls": 3,
+  "actual_calls": 1,
+  "runs": [
+    {
+      "repetition": 1,
+      "text": "We have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.",
+      "coverage": "complete",
+      "reason": null,
+      "matches_expected": true,
+      "named_stray_mark_removed": true,
+      "missed_wrap_joined": true,
+      "written_quantity_preserved": true,
+      "neighbor_line_copied": false,
+      "measurement_status": "valid",
+      "owned_stop": "stopped",
+      "elapsed_seconds": 67.32940591685474,
+      "usage": {
+        "input_tokens": 6050,
+        "output_tokens": 173
+      },
+      "raw_output": "{\"contract\":\"ocr-productive-repair-text-reply-v3\",\"readings\":[{\"corrected_text\":\"We have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\",\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null}],\"unit_id\":\"S1\"}",
+      "raw_output_sha256": "d146590fa47cd788d291f23c40e9079b9da645631e6cf5c613ccc381f63d657e",
+      "result_sha256": "dff9a06ca393d0e26f862314cb3a42b0e43fe4d22e429172bb392727753311f7"
+    }
+  ],
+  "all_match_expected": true,
+  "all_valid_stopped": true,
+  "distinct_raw_replies": 1,
+  "distinct_corrected_readings": 1,
+  "request_cycle_seconds": 67.32940591685474,
+  "reported_input_tokens": 6050,
+  "reported_output_tokens": 173,
+  "source": "Original S1, prior human-feedback-conditioned; exposed, not independent gold.",
+  "claims": "Full case source fidelity/generalization/complete numeric coverage/native input fit remain unproved. No original or accepted text changed.",
+  "full_gate": 1158,
+  "computer_use": false
+}

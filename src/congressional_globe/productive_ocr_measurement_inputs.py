@@ -193,3 +193,55 @@ def load_s5_scoped_inputs(repository: Path) -> tuple[dict, RequestProjection, Ev
     if projection.body_sha256 != BODY_SHA:
         raise ValueError("scoped measurement differs from exact T104 request")
     return host, projection, registry
+
+
+def load_s1_scoped_inputs(repository: Path) -> tuple[dict, RequestProjection, EvidenceRegistry]:
+    """Reconstruct original S1 with frozen feedback, strict reply and visible boundaries."""
+    from congressional_globe.productive_ocr_authority import MODEL_NAME
+    from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes
+    from congressional_globe.productive_ocr_measurement_scoped import S1_BODY_SHA
+    from congressional_globe.productive_ocr_projection import derive_reply_schema
+    from congressional_globe.productive_ocr_routing import TEXT_PROMPT, TEXT_PROMPT_V4
+    from congressional_globe.productive_ocr_runner import code_identity
+    from congressional_globe.productive_ocr_scope import prepare_source_scope
+
+    root = repository / ASSEMBLY
+    original = _json(root / "S1/host.json")
+    registry = _registry(root, original, _json(root / "registry-index.json"))
+    t97 = repository / "artifacts/two-stage-integration-20261030-01"
+    host = json.loads(
+        _read_verified(
+            t97 / "S1-host.json", "7a2b170d786e778c34d1f6fc8b84a16feb5f01a026a9f67125d7751f36d02d5f"
+        )
+    )
+    _load_text_resources(t97, registry)
+    validate_host(host, registry)
+    _same_s5_source(original, host)
+    old_prompt = registry.files[host["payload"]["prompt_sha256"]].decode()
+    if not old_prompt.startswith(TEXT_PROMPT + "\n\n"):
+        raise ValueError("S1 source-specific feedback prompt changed")
+    prompt = TEXT_PROMPT_V4 + old_prompt[len(TEXT_PROMPT) :]
+    _bind_s1_resources(host, registry, prompt, canonical_json(code_identity()))
+    schema = derive_reply_schema(host["payload"], conformance_v4=True)
+    registry.files[schema.schema_sha256] = schema.schema_text.encode()
+    host["payload"]["response_schema_sha256"] = schema.schema_sha256
+    host["packet_sha256"] = sha256_bytes(canonical_json(host["payload"]))
+    bundle = repository / "artifacts/ocr-live-readiness-20261028-01/images/S1/bundle.json"
+    context = [("congressionalg7391unit:526:par_000526_000022", "line_000526_000253")]
+    host = prepare_source_scope(host, registry, bundle.read_bytes(), context)
+    prompt = registry.files[host["payload"]["prompt_sha256"]].decode()
+    projection, _schema = compile_request_projection(
+        host, registry, prompt, MODEL_NAME, conformance_v4=True
+    )
+    if projection.body_sha256 != S1_BODY_SHA:
+        raise ValueError("S1 differs from exact feedback-conditioned request")
+    return host, projection, registry
+
+
+def _bind_s1_resources(host, registry, prompt, code):
+    from congressional_globe.productive_ocr_host import sha256_bytes
+
+    for field, data in [("prompt_sha256", prompt.encode()), ("code_sha256", code)]:
+        digest = sha256_bytes(data)
+        host["payload"][field] = digest
+        registry.files[digest] = data

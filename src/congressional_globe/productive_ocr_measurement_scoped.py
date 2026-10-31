@@ -1,4 +1,4 @@
-"""Three fixed S5 observations under the human's small-sample autonomy instruction."""
+"""Fixed three-repeat original S5/S1 observations under small-sample autonomy."""
 
 import json
 import time
@@ -16,10 +16,30 @@ PACKAGE = Path("artifacts/s5-scoped-consistency-20261030-01")
 APPROVAL_SHA = "90818598931f4735d17e305856363edbfe82a8d93fa44a7c665e10b8b8b1dae0"
 BODY_SHA = "025a19416e512063dd1c397da962d5d7c701d2ec60dc66b404fc8cf3d9fddb1b"
 PROFILES = tuple(f"productive-ocr-s5-scoped-repeat-{i}-v4" for i in range(1, 4))
+S1_PACKAGE = Path("artifacts/s1-consistency-20261031-01")
+S1_APPROVAL_SHA = "b8e9120dbdbb0a0a4188ef87b7eca1ee3d84f07ff674d038ab25255c9157b277"
+S1_BODY_SHA = "338d0cf1be8d22ae6b5bad6d90a3f274229e3472f1c38d96cc6ea16a289ebde7"
+S1_PROFILES = tuple(f"productive-ocr-s1-scoped-repeat-{i}-v4" for i in range(1, 4))
+ALL_PROFILES = PROFILES + S1_PROFILES
+
+
+def _selection(spec):
+    if spec.contract in S1_PROFILES:
+        return S1_PACKAGE, S1_APPROVAL_SHA, S1_BODY_SHA, S1_PROFILES
+    return PACKAGE, APPROVAL_SHA, BODY_SHA, PROFILES
+
+
+def authority(spec):
+    _root, approval, body, _profiles = _selection(spec)
+    return approval, body
+
+
+def window(spec):
+    return "S1" if spec.contract in S1_PROFILES else "S5"
 
 
 class ScopedGroup(Contract):
-    contract: Literal["productive-ocr-s5-scoped-group-v1"]
+    contract: Literal["productive-ocr-s5-scoped-group-v1", "productive-ocr-s1-scoped-group-v1"]
     approval_sha256: Sha256
     body_sha256: Sha256
     code_sha256: Sha256
@@ -29,22 +49,28 @@ class ScopedGroup(Contract):
 
 
 def package(spec):
-    return PACKAGE / f"repeat-{PROFILES.index(spec.contract) + 1}"
+    root, _approval, _body, profiles = _selection(spec)
+    return root / f"repeat-{profiles.index(spec.contract) + 1}"
 
 
 def verify_group(repository, spec, packet):
-    root = repository / PACKAGE
+    selected_root, approval, body, profiles = _selection(spec)
+    root = repository / selected_root
     _verify_paths(root, package(spec).name)
     group = ScopedGroup.model_validate_json((root / "group.json").read_bytes())
-    expected = (APPROVAL_SHA, BODY_SHA, spec.code_sha256)
+    expected = (approval, body, spec.code_sha256)
     if (group.approval_sha256, group.body_sha256, group.code_sha256) != expected:
         raise ValueError("scoped group authority/input/code mismatch")
+    if group.contract != f"productive-ocr-{window(spec).lower()}-scoped-group-v1":
+        raise ValueError("scoped group belongs to another sample")
     _verify_group_time(group, spec)
     group_sha = sha256_bytes((root / "group.json").read_bytes())
     receipts = []
-    for number in range(1, PROFILES.index(spec.contract) + 1):
+    for number in range(1, profiles.index(spec.contract) + 1):
         receipts.append(
-            _verify_previous(root / f"repeat-{number}", spec, number, group_sha, packet)
+            _verify_previous(
+                root / f"repeat-{number}", spec, profiles[number - 1], group_sha, packet
+            )
         )
     if len(receipts) != len(set(receipts)):
         raise ValueError("scoped repetitions reuse the same transport receipt")
@@ -60,12 +86,12 @@ def _verify_group_time(group, spec):
         raise TimeoutError("scoped group deadline exceeded or clock unverified")
 
 
-def _verify_previous(directory, spec, number, group_sha, packet):
+def _verify_previous(directory, spec, expected_profile, group_sha, packet):
     _verify_paths(directory.parent, directory.name)
     saved = json.loads((directory / "spent-slot.json").read_bytes())
     expected = (spec.approval_sha256, spec.body_sha256, spec.code_sha256)
     prior = saved["spec"]
-    _verify_frozen(directory, saved, number, group_sha, packet)
+    _verify_frozen(directory, saved, expected_profile, group_sha, packet)
     if tuple(prior[k] for k in ("approval_sha256", "body_sha256", "code_sha256")) != expected:
         raise ValueError("previous scoped slot changed input or authority")
     result = json.loads((directory / "run/result.json").read_bytes())
@@ -85,9 +111,9 @@ def _verify_paths(root, repeat):
             raise ValueError("scoped evidence paths cannot be symlinks")
 
 
-def _verify_frozen(directory, saved, number, group_sha, packet):
+def _verify_frozen(directory, saved, expected_profile, group_sha, packet):
     frozen = json.loads((directory / "run/frozen.json").read_bytes())
-    if saved["spec"]["contract"] != PROFILES[number - 1]:
+    if saved["spec"]["contract"] != expected_profile:
         raise ValueError("previous scoped slot has the wrong repetition profile")
     if saved.get("group_sha256") != group_sha or saved.get("max_output_tokens") != 1500:
         raise ValueError("previous scoped group deadline or budget changed")
@@ -119,8 +145,9 @@ def _same_receipt(result, response):
 
 
 def approval_path(repository, spec):
-    _verify_paths(repository / PACKAGE, package(spec).name)
-    path = repository / PACKAGE / "approval.json"
-    if sha256_bytes(path.read_bytes()) != APPROVAL_SHA:
+    root, approval, _body, _profiles = _selection(spec)
+    _verify_paths(repository / root, package(spec).name)
+    path = repository / root / "approval.json"
+    if path.is_symlink() or sha256_bytes(path.read_bytes()) != approval:
         raise ValueError("scoped small-sample authority changed")
     return path

@@ -48,6 +48,9 @@ class MeasurementSpec(Contract):
         "productive-ocr-s5-scoped-repeat-1-v4",
         "productive-ocr-s5-scoped-repeat-2-v4",
         "productive-ocr-s5-scoped-repeat-3-v4",
+        "productive-ocr-s1-scoped-repeat-1-v4",
+        "productive-ocr-s1-scoped-repeat-2-v4",
+        "productive-ocr-s1-scoped-repeat-3-v4",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256
@@ -84,7 +87,7 @@ def _verify_approval(repository: Path, spec: MeasurementSpec) -> None:
 
 
 def _approval_path(repository, spec):
-    if spec.contract in scoped.PROFILES:
+    if spec.contract in scoped.ALL_PROFILES:
         return scoped.approval_path(repository, spec)
     return repository / _package(spec) / "approval.json"
 
@@ -119,7 +122,7 @@ def _verify_runtime(directory: Path, spec: MeasurementSpec) -> RuntimeObservatio
     proof = RuntimeObservation.model_validate_json((directory / "runtime.json").read_bytes())
     if (proof.readiness_sha256, proof.window_id) != (
         fingerprint(spec.model_dump(mode="json")),
-        "S5",
+        scoped.window(spec),
     ):
         raise ValueError("operator observation does not bind this exact S5 specification")
     if not 0 <= time.time() - proof.checked_at_epoch <= 30:
@@ -149,20 +152,20 @@ def execute(repository: Path, spec: MeasurementSpec, checkpoint=lambda _: None) 
     directory = repository / _package(spec) / "run"
     _verify_runtime(directory, spec)
     _verify_session_time(spec)
-    packet = {"window_id": "S5", "host": host, "body_utf8": projection.body_utf8}
+    packet = {"window_id": scoped.window(spec), "host": host, "body_utf8": projection.body_utf8}
     with _session_lock():
         return _claim_execute(directory, spec, packet, checkpoint)
 
 
 def _claim_execute(directory, spec, packet, checkpoint):
     config = {"spec": spec.model_dump(mode="json"), "max_output_tokens": 1500}
-    if spec.contract in scoped.PROFILES:
+    if spec.contract in scoped.ALL_PROFILES:
         config["group_sha256"] = scoped.verify_group(REPOSITORY, spec, packet)
     write_new(directory.parent / "spent-slot.json", config)
     write_new(directory / "frozen.json", {"config": config, "packet": packet})
     store = RoleRunStore(directory / "jobs.sqlite", config, [packet])
     try:
-        attempt = store.start("S5", packet)
+        attempt = store.start(packet["window_id"], packet)
         checkpoint("after_claim")
         result = _attempt(directory, spec, packet, store, attempt, checkpoint)
         write_new(directory / "result.json", result)
@@ -290,7 +293,7 @@ def _verify_recovery_authority(repository, spec, packet):
     if spec.code_sha256 != fingerprint(code_identity()):
         raise ValueError("recovery implementation differs from the frozen attempt")
     host, projection, _registry = _load_inputs(repository, spec)
-    expected = {"window_id": "S5", "host": host, "body_utf8": projection.body_utf8}
+    expected = {"window_id": scoped.window(spec), "host": host, "body_utf8": projection.body_utf8}
     if packet != expected or projection.body_sha256 != spec.body_sha256:
         raise ValueError("recovery checkpoint differs from the approved source/request")
 
@@ -303,7 +306,7 @@ def _recover_store(directory, spec, packet, store):
     )
     if saved is None:
         raise ValueError("no complete receipt; slot stays spent and outcome unknown")
-    attempt = store.inflight_id("S5")
+    attempt = store.inflight_id(scoped.window(spec))
     elapsed = _reconcile_saved_response(store, attempt, saved)
     return _finish_response(store, attempt, packet, saved.response, elapsed, saved.stop_observation)
 
@@ -341,7 +344,7 @@ def _is_text(spec):
 
 
 def _package(spec):
-    if spec.contract in scoped.PROFILES:
+    if spec.contract in scoped.ALL_PROFILES:
         return scoped.package(spec)
     if _is_conformance(spec):
         return CONFORMANCE_PACKAGE
@@ -349,8 +352,8 @@ def _package(spec):
 
 
 def _authority(spec):
-    if spec.contract in scoped.PROFILES:
-        return scoped.APPROVAL_SHA, scoped.BODY_SHA
+    if spec.contract in scoped.ALL_PROFILES:
+        return scoped.authority(spec)
     if _is_conformance(spec):
         return CONFORMANCE_APPROVAL_SHA, CONFORMANCE_BODY_SHA
     return (TEXT_APPROVAL_SHA, TEXT_BODY_SHA) if _is_text(spec) else (APPROVAL_SHA, BODY_SHA)
@@ -361,7 +364,11 @@ def _prep_seconds(spec):
 
 
 def _load_inputs(repository, spec):
-    if spec.contract in scoped.PROFILES:
+    if spec.contract in scoped.S1_PROFILES:
+        from congressional_globe.productive_ocr_measurement_inputs import load_s1_scoped_inputs
+
+        return load_s1_scoped_inputs(repository)
+    if spec.contract in scoped.ALL_PROFILES:
         from congressional_globe.productive_ocr_measurement_inputs import load_s5_scoped_inputs
 
         return load_s5_scoped_inputs(repository)
