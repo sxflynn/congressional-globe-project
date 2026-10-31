@@ -1,0 +1,27 @@
+import hashlib,json
+from pathlib import Path
+b=Path('artifacts/review-location-feedback-20261031-01')
+a=json.loads((b/'hr014-submission.json').read_text());c=json.loads((b/'hr015-submission.json').read_text())
+for doc in [a,c]:
+ s=doc['submission'];assert s['revision']==1 and not s['superseded']
+ assert hashlib.sha256(doc['packet_snapshot']['packet_json'].encode()).hexdigest()==s['packet_sha256']
+rows=[]
+for doc in [a,c]:
+ s=doc['submission']
+ for key,value in s['answers'].items():
+  if not value.strip():action='Blank field; no judgment or requested change inferred.'
+  elif s['packet_id']=='HR-014':action='Preserve Looks good as acknowledgement of the three-run walkthrough; no independent source grade, numeric-quality/P0 decision or new workload inferred.'
+  else:action='Show exact original-page location with one source-bound focused crop. Explain original print has that twice across two lines; quoted one-that sentence is unchanged older model output, not verbatim print. Keep prior error/output unchanged.'
+  rows.append(dict(submission_id=s['submission_id'],packet_id=s['packet_id'],revision=s['revision'],answer_id=key,exact_comment=value,action=action,check='Read exact submitted evidence; verified original raw/two-line image versus saved old proposal, source IDs/hashes/coordinates and focused-crop dimensions.' if value.strip() and s['packet_id']=='HR-015' else 'Exact answer archived; all fields inspected.'))
+(b/'dispositions.json').write_text(json.dumps(dict(fields=rows,remaining='Whole-case source accuracy and model generality remain unproved; this closes screenshot-location/wording distinction, not historical acceptance.'),ensure_ascii=False,indent=2)+'\n')
+p=json.loads(Path('docs/review-packets/HR-015-v2.json').read_text());p['version']=3;p['title']='Appendix wording located in a focused original scan';p['instructions']='Your screenshot-location note is answered first, with a focused view of the same original page. The five varied scans remain below. Compare original print, expected preservation and unchanged older model output. Comments are optional; no new decision or permission is requested. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it.'
+note=c['submission']['answers']['evidence-note:scan-variety-comments:4:91aba6b9cf91556fde6a3a3a54d3c0f94aa2233373c7af9ec160684e083c2f71']
+scan='I must admit that that act\nis quite full.';ocr='I must admit that that act is quite full.';model='I must admit that act is quite full.'
+text='Your submitted note:\n'+note+'\n\nInput: original printed words in the focused scan, with the line break preserved:\n'+scan+'\n\nExpected preservation of those words:\n'+ocr+'\n\nActual older model output, unchanged:\n'+model+'\n\nYou will not find that exact model sentence in the scan: the print contains two occurrences of that, while the model returned one. In the full image, look in the leftmost column, just above the quoted section numbered 13. The focused view below comes from that same page and shows both lines at a larger readable size. No words were drawn onto or rewritten in the image. This clarifies where the example is and distinguishes printed words from model output; it does not change the older result or accept a new transcription.'
+receipt=json.loads((b/'focused-source-receipt.json').read_text());card=dict(label='Your note · Original print versus the older model wording',text=text,url=receipt['resolved_url']);p['questions'][0]['evidence'].insert(0,card)
+Path('docs/review-packets/HR-015-v3.json').write_text(json.dumps(p,ensure_ascii=False,indent=2)+'\n')
+f=Path('docs/review-source-spans.json');sp=json.loads(f.read_text());ranges=[];cursor=0
+for q in [note,scan,ocr,model]:
+ start=text.index(q,cursor);ranges.append(dict(start=start,end=start+len(q)));cursor=start+len(q)
+sp['source_spans'][hashlib.sha256(text.encode()).hexdigest()]=ranges;f.write_text(json.dumps(sp,ensure_ascii=False,indent=2)+'\n')
+print('All13answer fields inspected; exact source has repeated that; old model sentence remains unchanged.')
