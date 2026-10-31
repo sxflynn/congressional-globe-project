@@ -1,0 +1,22 @@
+{
+  "task": "T105",
+  "source": "Direct human chat instruction",
+  "exact_instruction": "Also if you ever run AI models on a tiny sample you should run it like 3 times on the exact same thing to see if it behaves consistently.",
+  "scope": "Prospective tiny-sample AI tests",
+  "runs_per_identical_input": 3,
+  "frozen": [
+    "source text and images",
+    "prompt and reply schema",
+    "model and version",
+    "generation settings including seed when present"
+  ],
+  "independence": "Fresh provider requests; no previous reply as context; cached/journal replay does not count.",
+  "report": [
+    "every raw reply including invalid and uncertain",
+    "exact and meaningful output differences",
+    "source-fidelity and format outcomes",
+    "elapsed time and usage per run and combined"
+  ],
+  "limits": "Consistency is not correctness. Preserve existing stopping rules; explain incomplete groups. No reopening spent historical experiments or new launch in this documentation task.",
+  "provider_calls": 0
+}
