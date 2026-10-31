@@ -15,6 +15,7 @@ from typing import Literal
 
 from pydantic import Field
 
+from congressional_globe import productive_ocr_measurement_scoped as scoped
 from congressional_globe.bracket_cues import Contract
 from congressional_globe.productive_ocr_authority import MODEL_DIGEST, MODEL_NAME
 from congressional_globe.productive_ocr_export import export_reply
@@ -44,6 +45,9 @@ class MeasurementSpec(Contract):
         "productive-ocr-s5-measurement-v1",
         "productive-ocr-s5-text-measurement-v2",
         "productive-ocr-s5-conformance-measurement-v3",
+        "productive-ocr-s5-scoped-repeat-1-v4",
+        "productive-ocr-s5-scoped-repeat-2-v4",
+        "productive-ocr-s5-scoped-repeat-3-v4",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256
@@ -72,11 +76,17 @@ def _verify_spec(repository: Path, spec: MeasurementSpec) -> None:
 
 def _verify_approval(repository: Path, spec: MeasurementSpec) -> None:
     approval_sha, body_sha = _authority(spec)
-    approval = repository / _package(spec) / "approval.json"
+    approval = _approval_path(repository, spec)
     if sha256_bytes(approval.read_bytes()) != approval_sha:
         raise ValueError("exact human S5 approval is absent or changed")
     if (spec.approval_sha256, spec.body_sha256) != (approval_sha, body_sha):
         raise ValueError("measurement scope differs from the approved S5 attempt")
+
+
+def _approval_path(repository, spec):
+    if spec.contract in scoped.PROFILES:
+        return scoped.approval_path(repository, spec)
+    return repository / _package(spec) / "approval.json"
 
 
 def _verify_repository(repository: Path, package: Path = PACKAGE) -> None:
@@ -146,6 +156,8 @@ def execute(repository: Path, spec: MeasurementSpec, checkpoint=lambda _: None) 
 
 def _claim_execute(directory, spec, packet, checkpoint):
     config = {"spec": spec.model_dump(mode="json"), "max_output_tokens": 1500}
+    if spec.contract in scoped.PROFILES:
+        config["group_sha256"] = scoped.verify_group(REPOSITORY, spec, packet)
     write_new(directory.parent / "spent-slot.json", config)
     write_new(directory / "frozen.json", {"config": config, "packet": packet})
     store = RoleRunStore(directory / "jobs.sqlite", config, [packet])
@@ -329,12 +341,16 @@ def _is_text(spec):
 
 
 def _package(spec):
+    if spec.contract in scoped.PROFILES:
+        return scoped.package(spec)
     if _is_conformance(spec):
         return CONFORMANCE_PACKAGE
     return TEXT_PACKAGE if _is_text(spec) else PACKAGE
 
 
 def _authority(spec):
+    if spec.contract in scoped.PROFILES:
+        return scoped.APPROVAL_SHA, scoped.BODY_SHA
     if _is_conformance(spec):
         return CONFORMANCE_APPROVAL_SHA, CONFORMANCE_BODY_SHA
     return (TEXT_APPROVAL_SHA, TEXT_BODY_SHA) if _is_text(spec) else (APPROVAL_SHA, BODY_SHA)
@@ -345,6 +361,10 @@ def _prep_seconds(spec):
 
 
 def _load_inputs(repository, spec):
+    if spec.contract in scoped.PROFILES:
+        from congressional_globe.productive_ocr_measurement_inputs import load_s5_scoped_inputs
+
+        return load_s5_scoped_inputs(repository)
     if _is_conformance(spec):
         from congressional_globe.productive_ocr_measurement_inputs import load_s5_conformance_inputs
 

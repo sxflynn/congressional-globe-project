@@ -1,0 +1,48 @@
+{
+  "id": "HR-014",
+  "version": 5,
+  "title": "Three identical paragraph tests: actual results",
+  "instructions": "Compare the inputs, expected output, all three actual model readings and their differences. These calls followed your instruction to repeat tiny samples three times and your permission to handle small tests autonomously. About two minutes to review. Comments are optional; no new decision is requested. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "three-run-results-comments",
+      "prompt": "Optional comments on the three actual results",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Inputs: the same paragraph, image and instruction three times",
+          "text": "Original OCR and current software proposal, identical:\nThe Committee on- Appropriations recom- mended non-concurrence.\n\nNearby print supplied only as context:\nThe amendment was non-concurred in.\n\nThe assigned paragraph has its own checked target box inside the same saved image. Your instruction is included: use the OCR as the starting point, clean it up, restore image-supported words within that paragraph across lines, and do not add a neighbouring sentence. Each of the three independent requests used exactly the same image, prompt, response rules and installed Qwen model. Earlier replies were not added to the next request. The output limit stayed at 1,500 tokens per call; no seed or temperature was explicitly supplied, identically in all three. Internal provider randomness is not claimed fully controlled.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+        },
+        {
+          "label": "2 · Expected output",
+          "text": "Expected target reading from the earlier and current source inspection:\nThe Committee on Appropriations recommended non-concurrence.\n\nExpected behavior: repair the two damaged word breaks, preserve the genuine hyphen in non-concurrence, and omit the separate neighbouring sentence. A full reading must declare complete with no uncertainty reason; a genuinely incomplete reading must withhold its text and explain why. This expected wording is a source-inspected agent illustration on an already exposed example, not an independent human reference.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual model output: run 1",
+          "text": "Actual model reading, unchanged:\nThe Committee on Appropriations recommended non-concurrence.\n\nThe model declared complete. Its uncertainty reason was null. The response checks recorded valid; owned shutdown was stopped. Measured request cycle: 31.86 seconds. Reported usage: 1,862 input tokens and 92 output tokens. The exact raw reply and transport evidence are preserved.",
+          "url": null
+        },
+        {
+          "label": "4 · Actual model output: run 2",
+          "text": "Actual model reading, unchanged:\nThe Committee on Appropriations recommended non-concurrence.\n\nThe model declared complete. Its uncertainty reason was null. The response checks recorded valid; owned shutdown was stopped. Measured request cycle: 28.58 seconds. Reported usage: 1,862 input tokens and 94 output tokens. The exact raw reply and transport evidence are preserved.",
+          "url": null
+        },
+        {
+          "label": "5 · Actual model output: run 3",
+          "text": "Actual model reading, unchanged:\nThe Committee on Appropriations recommended non-concurrence.\n\nThe model declared complete. Its uncertainty reason was null. The response checks recorded valid; owned shutdown was stopped. Measured request cycle: 29.27 seconds. Reported usage: 1,862 input tokens and 95 output tokens. The exact raw reply and transport evidence are preserved.",
+          "url": null
+        },
+        {
+          "label": "6 · Differences, consistency and limits",
+          "text": "All three corrected readings match the expected paragraph. There are 1 distinct corrected readings and 2 distinct raw reply strings. Differences in JSON layout are separate from differences in words. Every actual reply is retained; none was selected as a replacement for another.\n\nTogether the three request cycles took 89.72 seconds and reported 5,586 input tokens plus 281 output tokens. This adds three calls to the earlier three, for six historical development calls. The owned processes are now absent.\n\nAll 1,150 project tests pass, including 18 new repeat-group controls. Three consistent answers on this exposed paragraph do not establish wider accuracy. This paragraph contains no numbers, so it does not test the ALL-number requirement. Internal input fit, broader missing-word repair quality and full-collection timing remain unknown. No historical OCR or accepted reading was changed. No Computer Use, download, fetch or automatic follow-on call occurred. Small tests may proceed autonomously under your standing instruction; huge runs still require your sign-off.",
+          "url": null
+        }
+      ]
+    }
+  ],
+  "packet_sha256": "1ecee4ae5c6b9c2756a3d78f0d5af7524b6f97b9d287c0365000fe0ddedd8312"
+}

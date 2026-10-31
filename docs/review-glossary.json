@@ -2170,6 +2170,35 @@
       "term": "substantially similar",
       "definition": "Mostly the same words and order, while some characters or words may still need repair.",
       "aliases": []
+    },
+    {
+      "term": "consistency",
+      "definition": "How closely repeated runs on the same inputs agree. Agreement alone does not show that the reading matches the original page.",
+      "aliases": [
+        "consistently"
+      ]
+    },
+    {
+      "term": "independent requests",
+      "definition": "Separate model calls that each receive the same input and no earlier reply in their conversation. They may still share the same model and computer.",
+      "aliases": []
+    },
+    {
+      "term": "planned repetitions",
+      "definition": "The fixed repeated calls included before the experiment starts. These are observations of variation, rather than replacements chosen after seeing an error.",
+      "aliases": [
+        "planned repetition"
+      ]
+    },
+    {
+      "term": "internal input fit",
+      "definition": "Evidence that the model’s own image and text representation fits its available capacity. Counting the visible text alone does not establish this.",
+      "aliases": []
+    },
+    {
+      "term": "group deadline",
+      "definition": "The latest time allowed for the entire set of repeated calls and its final report. It cannot be reset between repetitions.",
+      "aliases": []
     }
   ]
 }

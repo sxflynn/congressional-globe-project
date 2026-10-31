@@ -1,0 +1,77 @@
+{
+  "task": "T107",
+  "runs": [
+    {
+      "repetition": 1,
+      "text": "The Committee on Appropriations recommended non-concurrence.",
+      "coverage": "complete",
+      "reason": null,
+      "matches_expected": true,
+      "measurement_status": "valid",
+      "owned_stop": "stopped",
+      "elapsed_seconds": 31.861680290894583,
+      "usage": {
+        "input_tokens": 1862,
+        "output_tokens": 92
+      },
+      "raw_output": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"The Committee on Appropriations recommended non-concurrence.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  , \"unit_id\": \"S5\"\n}",
+      "raw_output_sha256": "19eedaf81ccba61c1744faf544ef67f288cb5cc93fcaa0cda28389055aa62e0b",
+      "result_sha256": "1cfe2b4015bf3a2da51a0976af9d35c9d6ec932f63c54faaa8c342fabcb2688f",
+      "request_sha256": "025a19416e512063dd1c397da962d5d7c701d2ec60dc66b404fc8cf3d9fddb1b"
+    },
+    {
+      "repetition": 2,
+      "text": "The Committee on Appropriations recommended non-concurrence.",
+      "coverage": "complete",
+      "reason": null,
+      "matches_expected": true,
+      "measurement_status": "valid",
+      "owned_stop": "stopped",
+      "elapsed_seconds": 28.58140837494284,
+      "usage": {
+        "input_tokens": 1862,
+        "output_tokens": 94
+      },
+      "raw_output": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"The Committee on Appropriations recommended non-concurrence.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"S5\"\n}",
+      "raw_output_sha256": "c2ef8ece8fa3fb54f6f998a8fde6ee868125cf4300208a231d15830dd91f2eff",
+      "result_sha256": "ee0738a1700eae29853ebaad50eedf976140aa1e095c42352fb9c0302a9db66b",
+      "request_sha256": "025a19416e512063dd1c397da962d5d7c701d2ec60dc66b404fc8cf3d9fddb1b"
+    },
+    {
+      "repetition": 3,
+      "text": "The Committee on Appropriations recommended non-concurrence.",
+      "coverage": "complete",
+      "reason": null,
+      "matches_expected": true,
+      "measurement_status": "valid",
+      "owned_stop": "stopped",
+      "elapsed_seconds": 29.272562084021047,
+      "usage": {
+        "input_tokens": 1862,
+        "output_tokens": 95
+      },
+      "raw_output": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"The Committee on Appropriations recommended non-concurrence.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"S5\"\n}",
+      "raw_output_sha256": "c2ef8ece8fa3fb54f6f998a8fde6ee868125cf4300208a231d15830dd91f2eff",
+      "result_sha256": "af145ca969d48c56e211322c5f2e7bed02e3d40b27dbd713f5122e3c13775a87",
+      "request_sha256": "025a19416e512063dd1c397da962d5d7c701d2ec60dc66b404fc8cf3d9fddb1b"
+    }
+  ],
+  "planned_calls": 3,
+  "actual_calls": 3,
+  "identical_request": true,
+  "distinct_raw_outputs": 2,
+  "distinct_corrected_readings": 1,
+  "all_match_expected": true,
+  "all_valid_stopped": true,
+  "request_cycle_seconds": 89.71565074985847,
+  "reported_input_tokens": 5586,
+  "reported_output_tokens": 281,
+  "prior_calls": 3,
+  "cumulative_calls": 6,
+  "prior_request_cycle_seconds": 111.74531775084324,
+  "source_inspection": "Exact cached image inspected; target first full paragraph, neighbor separate below. Expected reading is agent/source-inspected illustration, not independent human gold.",
+  "limits": "Three exposed-case repetitions; agreement is not corpus accuracy. No numbers in S5. Native input fit and wider source-fidelity/forced-cancellation/capacity remain unproved. No accepted text/raw OCR/old packet/answer changed.",
+  "full_gate": "1150 passed in58.79seconds",
+  "focused_controls": 18,
+  "computer_use": false
+}

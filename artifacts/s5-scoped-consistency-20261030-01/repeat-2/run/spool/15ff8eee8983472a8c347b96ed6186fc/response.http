@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Sat, 31 Oct 2026 00:55:33 GMT
+Content-Length: 651
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-10-31T00:55:33.151799Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"The Committee on Appropriations recommended non-concurrence.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"S5\"\n}"},"done":true,"done_reason":"stop","total_duration":21120814584,"load_duration":2909862125,"prompt_eval_count":1862,"prompt_eval_cached_count":0,"prompt_eval_duration":14697110000,"eval_count":94,"eval_duration":3497489542}

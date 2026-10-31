@@ -174,3 +174,22 @@ def load_s5_conformance_inputs(
         host, registry, prompt, MODEL_NAME, conformance_v4=True
     )
     return host, projection, registry
+
+
+def load_s5_scoped_inputs(repository: Path) -> tuple[dict, RequestProjection, EvidenceRegistry]:
+    """Derive the reviewed target/context scope without changing the T104 wire request."""
+    from congressional_globe.productive_ocr_authority import MODEL_NAME
+    from congressional_globe.productive_ocr_measurement_scoped import BODY_SHA
+    from congressional_globe.productive_ocr_scope import prepare_source_scope
+
+    original, _projection, registry = load_s5_conformance_inputs(repository)
+    bundle = repository / "artifacts/ocr-live-readiness-20261028-01/images/S5/bundle.json"
+    context = [("congressionalglo7395unit:529:par_000529_000007", "line_000529_000019")]
+    host = prepare_source_scope(original, registry, bundle.read_bytes(), context)
+    prompt = registry.files[host["payload"]["prompt_sha256"]].decode()
+    projection, _schema = compile_request_projection(
+        host, registry, prompt, MODEL_NAME, conformance_v4=True
+    )
+    if projection.body_sha256 != BODY_SHA:
+        raise ValueError("scoped measurement differs from exact T104 request")
+    return host, projection, registry
