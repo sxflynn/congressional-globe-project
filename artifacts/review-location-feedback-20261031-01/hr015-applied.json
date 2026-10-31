@@ -1,0 +1,88 @@
+{
+  "packet_snapshot": {
+    "packet_json": "{\"blind\":false,\"id\":\"HR-015\",\"instructions\":\"Browse these five real saved scans. Each card shows input excerpts, concrete expected cleanup and the actual saved result or its absence. Expected excerpts are source-inspected illustrations, not accepted transcriptions. The only recent three-run model result is the short committee paragraph; other cards explicitly label older proposals or software output. About five minutes if you inspect every scan; comments are optional. Expand Show original scan below each card to view it. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it. This is a walkthrough, not a request for permission.\",\"questions\":[{\"evidence\":[{\"label\":\"1 · Longer speech: broken words and a stray mark\",\"text\":\"Input excerpts from the original OCR:\\ngolden oppor- tunity\\nloyal ' and legal\\nin- sisted upon\\ntwo or three\\n\\nExpected excerpts after cleanup:\\ngolden opportunity\\nloyal and legal\\ninsisted upon\\n\\nActual saved software output excerpts:\\ngolden opportunity\\nloyal ' and legal\\nin- sisted upon\\n\\nDifferences: the fixed rules repaired the first word break but left the stray mark after loyal and another split word. The written quantity in the input must also be checked under your ALL-number rule. The expected excerpts are source-inspected illustrations, with the earlier human stray-mark feedback carried forward; they are not accepted text. No new three-run model result exists for this longer passage yet. This image also contains neighbouring paragraphs, so their words must stay outside the target.\",\"url\":\"https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0526.jp2/1986,2485,1028,805/1028,/0/default.jpg\"},{\"label\":\"2 · Short speaker passage: a damaged word\",\"text\":\"Input, original OCR:\\nMr. BROWN. The navigable channel is not private propei-ty.\\n\\nExpected target reading:\\nMr. BROWN. The navigable channel is not private property.\\n\\nActual saved software output:\\nMr. BROWN. The navigable channel is not private propei-ty.\\n\\nDifferences: the word repair is still missing from the saved software output. The expected reading follows the visible print and earlier human feedback. Preserve the speaker name and exclude the next speaker below. No new three-run model result exists for this scan yet.\",\"url\":\"https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0716.jp2/1155,280,1004,212/1004,/0/default.jpg\"},{\"label\":\"3 · Short committee paragraph: the three-run comparison\",\"text\":\"Input, original OCR:\\nThe Committee on- Appropriations recom- mended non-concurrence.\\n\\nExpected target reading:\\nThe Committee on Appropriations recommended non-concurrence.\\n\\nActual model reading, identical in all three recent runs:\\nThe Committee on Appropriations recommended non-concurrence.\\n\\nDifferences: both damaged word breaks were repaired, the genuine hyphen stayed, and the separate neighbouring sentence was omitted. All three responses passed the reply-format and transport checks, with shutdown confirmed; their request cycles totalled 89.72 seconds. This is the same completed test shown in HR-014, not another run. Those checks do not establish full source fidelity or human acceptance. It is a useful contrast with the longer and more complex scans here.\",\"url\":\"https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg\"},{\"label\":\"4 · Two-column laws: numbered sections and text across columns\",\"text\":\"Input excerpts from the selected original paragraphs:\\nwith- out further action\\nChap. CCCXL — An Act to remove tte Office\\n\\nExpected excerpt repairs from the visible print:\\nwithout further action\\nChap. CCCXLI.—An Act to remove the Office\\n\\nActual older model proposal excerpts, unchanged:\\nwith- out further action\\nChap. CCCXLI.—An Act to remove the Office\\n\\nDifferences: the older proposal repaired the heading but left the split word in another selected paragraph. This is an unreviewed historical proposal from a previously exposed failure case, not output from the improved method. The selected text continues from the bottom of the left column to the top of the right column. Section numbers, Roman numerals and dates require image checks; nearby laws must not be merged into the target. Full independent corrected text for every selected paragraph is not available. No new three-run result exists here.\",\"url\":\"https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_1060.jp2/1124,226,1866,3758/1600,/0/default.jpg\"},{\"label\":\"5 · Appendix layout: headings, dates and quoted legislation\",\"text\":\"Input excerpts from the original OCR:\\nApportionment of Bepresentation — Mr. Henderson.\\nJuly 17, 18G2\\nI must admit that that act is quite full.\\n\\nExpected excerpt repairs or preservation from the visible print:\\nApportionment of Representation\\nJuly 17, 1862\\nI must admit that that act is quite full.\\n\\nActual older model proposal excerpts, unchanged:\\nApportionment of Representation—Mr. Henderson.\\nJuly 17, 1862\\nI must admit that act is quite full.\\n\\nDifferences: the older proposal repaired a heading and a year but dropped one repeated word that is present in the original print. A plausible correction can therefore still lose source words. This is an unreviewed historical proposal, not a new result or accepted reading. Keep headings, page numbers, speaker labels and quoted legislation distinct. Check all numeric text, including dates and section labels, rather than only suspicious-looking values. Full independent corrected text for every selected paragraph is not available. No new three-run result exists for this image.\",\"url\":\"https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0741.jp2/59,42,2824,1547/1600,/0/default.jpg\"}],\"id\":\"scan-variety-comments\",\"options\":[],\"prompt\":\"Optional comments on the range of scans and their different problems\",\"required\":false}],\"title\":\"Five varied OCR scans: speeches, speakers, laws and appendix text\",\"version\":2}",
+    "packet_sha256": "4d2cb314fdc71f7b951e0c241c5dfb1c5a5f81e865582edcb60856603c3e9d3a"
+  },
+  "packet": {
+    "blind": false,
+    "id": "HR-015",
+    "instructions": "Browse these five real saved scans. Each card shows input excerpts, concrete expected cleanup and the actual saved result or its absence. Expected excerpts are source-inspected illustrations, not accepted transcriptions. The only recent three-run model result is the short committee paragraph; other cards explicitly label older proposals or software output. About five minutes if you inspect every scan; comments are optional. Expand Show original scan below each card to view it. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it. This is a walkthrough, not a request for permission.",
+    "questions": [
+      {
+        "evidence": [
+          {
+            "label": "1 · Longer speech: broken words and a stray mark",
+            "text": "Input excerpts from the original OCR:\ngolden oppor- tunity\nloyal ' and legal\nin- sisted upon\ntwo or three\n\nExpected excerpts after cleanup:\ngolden opportunity\nloyal and legal\ninsisted upon\n\nActual saved software output excerpts:\ngolden opportunity\nloyal ' and legal\nin- sisted upon\n\nDifferences: the fixed rules repaired the first word break but left the stray mark after loyal and another split word. The written quantity in the input must also be checked under your ALL-number rule. The expected excerpts are source-inspected illustrations, with the earlier human stray-mark feedback carried forward; they are not accepted text. No new three-run model result exists for this longer passage yet. This image also contains neighbouring paragraphs, so their words must stay outside the target.",
+            "url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0526.jp2/1986,2485,1028,805/1028,/0/default.jpg"
+          },
+          {
+            "label": "2 · Short speaker passage: a damaged word",
+            "text": "Input, original OCR:\nMr. BROWN. The navigable channel is not private propei-ty.\n\nExpected target reading:\nMr. BROWN. The navigable channel is not private property.\n\nActual saved software output:\nMr. BROWN. The navigable channel is not private propei-ty.\n\nDifferences: the word repair is still missing from the saved software output. The expected reading follows the visible print and earlier human feedback. Preserve the speaker name and exclude the next speaker below. No new three-run model result exists for this scan yet.",
+            "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0716.jp2/1155,280,1004,212/1004,/0/default.jpg"
+          },
+          {
+            "label": "3 · Short committee paragraph: the three-run comparison",
+            "text": "Input, original OCR:\nThe Committee on- Appropriations recom- mended non-concurrence.\n\nExpected target reading:\nThe Committee on Appropriations recommended non-concurrence.\n\nActual model reading, identical in all three recent runs:\nThe Committee on Appropriations recommended non-concurrence.\n\nDifferences: both damaged word breaks were repaired, the genuine hyphen stayed, and the separate neighbouring sentence was omitted. All three responses passed the reply-format and transport checks, with shutdown confirmed; their request cycles totalled 89.72 seconds. This is the same completed test shown in HR-014, not another run. Those checks do not establish full source fidelity or human acceptance. It is a useful contrast with the longer and more complex scans here.",
+            "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+          },
+          {
+            "label": "4 · Two-column laws: numbered sections and text across columns",
+            "text": "Input excerpts from the selected original paragraphs:\nwith- out further action\nChap. CCCXL — An Act to remove tte Office\n\nExpected excerpt repairs from the visible print:\nwithout further action\nChap. CCCXLI.—An Act to remove the Office\n\nActual older model proposal excerpts, unchanged:\nwith- out further action\nChap. CCCXLI.—An Act to remove the Office\n\nDifferences: the older proposal repaired the heading but left the split word in another selected paragraph. This is an unreviewed historical proposal from a previously exposed failure case, not output from the improved method. The selected text continues from the bottom of the left column to the top of the right column. Section numbers, Roman numerals and dates require image checks; nearby laws must not be merged into the target. Full independent corrected text for every selected paragraph is not available. No new three-run result exists here.",
+            "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_1060.jp2/1124,226,1866,3758/1600,/0/default.jpg"
+          },
+          {
+            "label": "5 · Appendix layout: headings, dates and quoted legislation",
+            "text": "Input excerpts from the original OCR:\nApportionment of Bepresentation — Mr. Henderson.\nJuly 17, 18G2\nI must admit that that act is quite full.\n\nExpected excerpt repairs or preservation from the visible print:\nApportionment of Representation\nJuly 17, 1862\nI must admit that that act is quite full.\n\nActual older model proposal excerpts, unchanged:\nApportionment of Representation—Mr. Henderson.\nJuly 17, 1862\nI must admit that act is quite full.\n\nDifferences: the older proposal repaired a heading and a year but dropped one repeated word that is present in the original print. A plausible correction can therefore still lose source words. This is an unreviewed historical proposal, not a new result or accepted reading. Keep headings, page numbers, speaker labels and quoted legislation distinct. Check all numeric text, including dates and section labels, rather than only suspicious-looking values. Full independent corrected text for every selected paragraph is not available. No new three-run result exists for this image.",
+            "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0741.jp2/59,42,2824,1547/1600,/0/default.jpg"
+          }
+        ],
+        "id": "scan-variety-comments",
+        "options": [],
+        "prompt": "Optional comments on the range of scans and their different problems",
+        "required": false
+      }
+    ],
+    "title": "Five varied OCR scans: speeches, speakers, laws and appendix text",
+    "version": 2
+  },
+  "submission": {
+    "submission_id": "95751c09-56f4-40e0-916c-a7af2ce02050",
+    "packet_id": "HR-015",
+    "version": 2,
+    "packet_sha256": "4d2cb314fdc71f7b951e0c241c5dfb1c5a5f81e865582edcb60856603c3e9d3a",
+    "reviewer": "Stephen Flynn",
+    "answers": {
+      "evidence-note:scan-variety-comments:0:873eb3e5187cb22e362edb027c4a2d15a3709a05cd9a3dbc93cc14042c8e62b2": "",
+      "evidence-note:scan-variety-comments:1:337d97f2b18ab623ea79ce6d7a841a28780ad34a257e051b4c5f181cdd7160e5": "",
+      "evidence-note:scan-variety-comments:2:7cc9a20d61617f085baa7f7a794a379b6d191450e2e9fa900b677728c9e146d3": "",
+      "evidence-note:scan-variety-comments:3:414145f5d8437bbaef92d64ca04840d87d36376a57134484de6b941b1c2b433a": "",
+      "evidence-note:scan-variety-comments:4:91aba6b9cf91556fde6a3a3a54d3c0f94aa2233373c7af9ec160684e083c2f71": "I’m not seeing “ I must admit that act is quite full.” in the ocr screenshot above ",
+      "scan-variety-comments": ""
+    },
+    "notes": null,
+    "payload_sha256": "2b0d7ecc911dd78a159fe87872e4008a0574fde036a0899fbdd967aca31c538a",
+    "revision": 1,
+    "superseded": false,
+    "created_at": "2026-10-31 01:12:43",
+    "applied": true,
+    "applied_reference": "2160a54",
+    "applied_at": "2026-10-31 01:16:55",
+    "evidence_feedback": [
+      {
+        "note_id": "evidence-note:scan-variety-comments:4:91aba6b9cf91556fde6a3a3a54d3c0f94aa2233373c7af9ec160684e083c2f71",
+        "question_id": "scan-variety-comments",
+        "item_number": 5,
+        "evidence": {
+          "label": "5 · Appendix layout: headings, dates and quoted legislation",
+          "text": "Input excerpts from the original OCR:\nApportionment of Bepresentation — Mr. Henderson.\nJuly 17, 18G2\nI must admit that that act is quite full.\n\nExpected excerpt repairs or preservation from the visible print:\nApportionment of Representation\nJuly 17, 1862\nI must admit that that act is quite full.\n\nActual older model proposal excerpts, unchanged:\nApportionment of Representation—Mr. Henderson.\nJuly 17, 1862\nI must admit that act is quite full.\n\nDifferences: the older proposal repaired a heading and a year but dropped one repeated word that is present in the original print. A plausible correction can therefore still lose source words. This is an unreviewed historical proposal, not a new result or accepted reading. Keep headings, page numbers, speaker labels and quoted legislation distinct. Check all numeric text, including dates and section labels, rather than only suspicious-looking values. Full independent corrected text for every selected paragraph is not available. No new three-run result exists for this image.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0741.jp2/59,42,2824,1547/1600,/0/default.jpg"
+        },
+        "comment": "I’m not seeing “ I must admit that act is quite full.” in the ocr screenshot above "
+      }
+    ]
+  },
+  "applied_receipt": {
+    "reference": "2160a54",
+    "applied_at": "2026-10-31 01:16:55"
+  }
+}
