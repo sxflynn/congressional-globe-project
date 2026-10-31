@@ -135,6 +135,13 @@ class TextHostExport(Contract):
     acceptance: Literal["unreviewed_ai_evidence"] = "unreviewed_ai_evidence"
 
 
+class ScopedTextHostExport(TextHostExport):
+    boundary_scope: dict
+    boundary_check: Literal["visible_context_exclusion_not_full_source_fidelity"] = (
+        "visible_context_exclusion_not_full_source_fidelity"
+    )
+
+
 def export_text_reply(host, request_body_utf8, raw_reply_text) -> TextHostExport:
     from congressional_globe.productive_ocr_export import _verify_request_body
     from congressional_globe.productive_ocr_host import canonical_json
@@ -143,7 +150,7 @@ def export_text_reply(host, request_body_utf8, raw_reply_text) -> TextHostExport
     payload = host["payload"]
     _verify_request_body(host, request_body_utf8, payload["response_schema_sha256"])
     outcome = validate_text_reply(raw_reply_text, host)
-    return TextHostExport(
+    exported = TextHostExport(
         host_packet_sha256=host["packet_sha256"],
         provider_request_sha256=text_sha256(request_body_utf8),
         raw_reply_sha256=text_sha256(raw_reply_text),
@@ -155,6 +162,10 @@ def export_text_reply(host, request_body_utf8, raw_reply_text) -> TextHostExport
         diagnostics_sha256=sha256_bytes(canonical_json(payload["diagnostics"])),
         outcome=outcome,
     )
+    scope = payload["image"].get("scope")
+    if scope is not None:
+        return ScopedTextHostExport(**exported.model_dump(), boundary_scope=scope)
+    return exported
 
 
 def text_reply_schema(payload, *, conformance_v4: bool = False):
@@ -210,6 +221,9 @@ def _check_context(text, target, host):
         allowed = max(target["raw"]["text"].count(context), target["static"]["text"].count(context))
         if text.count(context) > allowed:
             raise ValueError("context text cannot be included in a target reading")
+    from congressional_globe.productive_ocr_scope import reject_context_copy
+
+    reject_context_copy(text, target, host["payload"]["image"].get("scope", {}))
 
 
 def _check_reply_scope(reply, host, targets):

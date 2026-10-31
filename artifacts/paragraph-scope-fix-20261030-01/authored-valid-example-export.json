@@ -1,0 +1,85 @@
+{
+  "contract": "source-bound-productive-ocr-text-v3",
+  "host_packet_sha256": "20adee0944af2b560b91b9fd7c1da4b5053b2d980fe1841887c70c972fb5fd4d",
+  "provider_request_sha256": "904a8e69a61528bcacdf44a0bd55f722b326583c13ceb439d499aab80b2c08e0",
+  "raw_reply_sha256": "8396bae53a8fac4fa100d83b270614c179eaf60a2656b04d0f91722055704095",
+  "raw_reply_text": "{\"contract\": \"ocr-productive-repair-text-reply-v3\", \"readings\": [{\"corrected_text\": \"The Committee on Appropriations recommended non-concurrence.\", \"coverage\": \"complete\", \"paragraph_alias\": \"P1\", \"reason\": null}], \"unit_id\": \"S5\"}",
+  "image_sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+  "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+  "source_layers_sha256": "10f777588a7612882ced5dffe3578ca1dac09dd03308296a1b509726173cf7d9",
+  "response_schema_sha256": "40ab9168132ce6a7dcf7d3907262856dffa1a6df1e486a5d6ccc4aa3f1d6fa1d",
+  "diagnostics_sha256": "0dab8f3daa9defcf913993013af3f845fe8c9c9731a5af45749de9ea8ff07e4e",
+  "outcome": {
+    "proposal_status": "findings",
+    "derived_proposals": [
+      {
+        "paragraph_alias": "P1",
+        "source_id": "congressionalglo7395unit:529:par_000529_000006",
+        "raw_sha256": "7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426",
+        "deterministic_sha256": "7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426",
+        "text": "The Committee on Appropriations recommended non-concurrence.",
+        "sha256": "7edc647befc48b112484c2022b5696e696d08668825ca6fd17db64d1453f3030",
+        "raw_edits": [
+          {
+            "start": 0,
+            "end": 63,
+            "raw_quote": "The Committee on- Appropriations recom- mended non-concurrence.",
+            "replacement": "The Committee on Appropriations recommended non-concurrence.",
+            "rule_id": "software-whole-target-replacement-v3"
+          }
+        ],
+        "support_map": [
+          {
+            "raw_start": 0,
+            "raw_end": 63,
+            "derived_start": 0,
+            "derived_end": 60,
+            "mapping": "replacement"
+          }
+        ],
+        "replay_verified": true,
+        "alignment": "coarse_whole_paragraph_not_token_alignment",
+        "acceptance": "unreviewed_model_proposal",
+        "source_quality": "not_verified"
+      }
+    ],
+    "provider_reply": {
+      "contract": "ocr-productive-repair-text-reply-v3",
+      "unit_id": "S5",
+      "readings": [
+        {
+          "paragraph_alias": "P1",
+          "coverage": "complete",
+          "corrected_text": "The Committee on Appropriations recommended non-concurrence.",
+          "reason": null
+        }
+      ]
+    },
+    "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified"
+  },
+  "acceptance": "unreviewed_ai_evidence",
+  "boundary_scope": {
+    "contract": "ocr-visible-boundary-scope-v1",
+    "crop_bundle_sha256": "48862e59f220465ae409993d830bb5314ba9744ee102ae26a57269400e33311e",
+    "base_registration_sha256": "6085e514d6fb3a308abd17bba8a66b484ac0f08d04660d89fc1ee60eff818c2a",
+    "visible_context": [
+      {
+        "source_id": "congressionalglo7395unit:529:par_000529_000007",
+        "paragraph_sha256": "8354c3bbe43fbeb7a563ba5eb9ad7dce47cd8ea9742152eaf3ce262adb9adc8a",
+        "line_id": "line_000529_000019",
+        "raw_start": 0,
+        "raw_end": 35,
+        "text": "The amendment was non-concurred in.",
+        "text_sha256": "05a46af1cb1d9e655cc94392b2da5a33512afa709718294afe9c9ee98220a1d6",
+        "crop_region": {
+          "left": 105,
+          "top": 149,
+          "right": 842,
+          "bottom": 184
+        },
+        "parent_visibility": "partial"
+      }
+    ]
+  },
+  "boundary_check": "visible_context_exclusion_not_full_source_fidelity"
+}

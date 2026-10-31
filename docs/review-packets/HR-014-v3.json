@@ -1,0 +1,37 @@
+{
+  "id": "HR-014",
+  "version": 3,
+  "title": "Paragraph target and neighbour-copying check improved",
+  "instructions": "Review the actual saved failure, expected paragraph boundary, improved input and actual software-check outcomes. This is an offline fix with no new model reply. Original and model passages stay plain; dotted-underlined terms explain our surrounding prose. All comments are optional. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it. Nothing launches automatically.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "paragraph-scope-comments",
+      "prompt": "Optional comments on the paragraph-boundary improvement",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Input: the actual reply that copied its neighbour",
+          "text": "Actual saved model text, unchanged:\nThe Committee on Appropriations recommended non-concurrence. The amendment was non-concurred in.\n\nOnly this paragraph was assigned:\nThe Committee on Appropriations recommended non-concurrence.\n\nThe extra sentence belongs to the neighbouring paragraph visible below it. The old image target box covered the entire picture, so the input did not separate them precisely enough. The earlier result and its original unresolved stop status remain unchanged.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+        },
+        {
+          "label": "2 · Expected boundary and the improved input",
+          "text": "Expected: use the requested paragraph as the repair target and nearby print only for context.\n\nActual software change: the target box is now derived from the saved source coordinates of that paragraph, rather than the whole picture. The original picture’s bytes stay unchanged.\n\nOnly this fully visible neighbouring line is supplied as context:\nThe amendment was non-concurred in.\n\nIts exact source paragraph, line, text span and image position are checked. The neighbouring paragraph continues below the picture, so the input explicitly marks that parent as partly visible and sends no hidden remainder. A clipped line or ambiguous source match is refused rather than guessed. The prompt explicitly says not to copy context into the target.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual software outcome on the saved failure",
+          "text": "The exact saved two-sentence reply is now rejected on the new input because it adds the declared neighbouring line. The check also catches full-line copies with altered placement, spacing, capitalisation and separated hyphen punctuation, including repeated copies.\n\nA separate offline test supplies the already recorded expected target reading:\nThe Committee on Appropriations recommended non-concurrence.\n\nActual software outcome: that full target-only reading passes the source-link and boundary checks as an unreviewed proposal, with the genuine hyphen preserved. It is a test input, not a new AI response. An incomplete reply still withholds text and remains unresolved. No actual scan was newly reported unclear.",
+          "url": null
+        },
+        {
+          "label": "4 · Checks, preservation and what remains untested",
+          "text": "All 1,132 project tests pass, including 29 new focused controls for the actual failure, valid full-target text, clipped/ambiguous/overlapping context, duplicate source identities, changed source hashes/spans and old input compatibility. The source page, original registration and crop evidence are checked together. No historical OCR, accepted text, old packet, model reply or receipt was changed.\n\nNew derived exports record the visible context’s source/span and explicitly state the check’s limit: it excludes copied declared lines; it does not prove full source fidelity or catch arbitrary paraphrases or unknown neighbouring text. Ambiguous overlap is held rather than accepted.\n\nThe improved model input is saved, but no new model call has tested whether the model follows the tighter box. The original uncertain stop receipt stays preserved; the earlier later process-absence check is separate evidence. Existing model-call permissions are spent. Comments are optional; nothing starts automatically.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}

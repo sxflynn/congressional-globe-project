@@ -1,0 +1,170 @@
+{
+  "packet_sha256": "20adee0944af2b560b91b9fd7c1da4b5053b2d980fe1841887c70c972fb5fd4d",
+  "payload": {
+    "contract": "ocr-productive-repair-host-input-v3",
+    "role": "productive_repair_and_self_check",
+    "unit_id": "S5",
+    "paragraphs": [
+      {
+        "alias": "P1",
+        "source_id": "congressionalglo7395unit:529:par_000529_000006",
+        "part_number": 5,
+        "scan_leaf": 529,
+        "role": "target",
+        "raw": {
+          "text": "The Committee on- Appropriations recom- mended non-concurrence.",
+          "sha256": "7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426"
+        },
+        "static": {
+          "text": "The Committee on- Appropriations recom- mended non-concurrence.",
+          "sha256": "7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426",
+          "edits": [],
+          "rule_sha256": "d79c70b4e0c8b8a56e4710553e882acee1d52d7dcab6c137007264aac2e37dc6",
+          "lexicon_sha256": "db72ad8eebdb6df2257048fac965b8f0cdb9e7189ab6b7e7f835588db54a71a0"
+        }
+      }
+    ],
+    "image": {
+      "alias": "I1",
+      "sha256": "a1ee1cd7a90786a9133380126140dccc9e1b53f0b00bf6b9982e92840c6d1530",
+      "mime": "image/jpeg",
+      "width": 999,
+      "height": 206,
+      "bindings": [
+        {
+          "paragraph_alias": "P1",
+          "raw_sha256": "7a926169722e128633f476c44c0ade2ba003c51119a83736a05bf7bf7550d426",
+          "raw_start": 0,
+          "raw_end": 63,
+          "crop_region": {
+            "left": 64,
+            "top": 64,
+            "right": 935,
+            "bottom": 142
+          }
+        }
+      ],
+      "registration_status": "verified",
+      "legibility_status": "checked",
+      "source_item_identifier": "congressionalglo7395unit",
+      "source_scan_leaf": 529,
+      "hocr_sha256": "966c31d965de8d72080bd30c8e474e98a2061d3082bd8c0d7f89b10eb81436ff",
+      "page_map_sha256": "6ba53515281768c4f7b446f0d1845811bdbc100167f8e781c8e848be2f5a014b",
+      "binding_manifest_sha256": "a68eb7300233ae1c06db5f46cade8e3f686ba27d42979a887fca9c9d0e8f1657",
+      "registration_evidence_sha256": "37aef8915339e80abd80b790541f18f7ef37cc5cd624ae0366437fe7b115cac6",
+      "scope": {
+        "contract": "ocr-visible-boundary-scope-v1",
+        "crop_bundle_sha256": "48862e59f220465ae409993d830bb5314ba9744ee102ae26a57269400e33311e",
+        "base_registration_sha256": "6085e514d6fb3a308abd17bba8a66b484ac0f08d04660d89fc1ee60eff818c2a",
+        "visible_context": [
+          {
+            "source_id": "congressionalglo7395unit:529:par_000529_000007",
+            "paragraph_sha256": "8354c3bbe43fbeb7a563ba5eb9ad7dce47cd8ea9742152eaf3ce262adb9adc8a",
+            "line_id": "line_000529_000019",
+            "raw_start": 0,
+            "raw_end": 35,
+            "text": "The amendment was non-concurred in.",
+            "text_sha256": "05a46af1cb1d9e655cc94392b2da5a33512afa709718294afe9c9ee98220a1d6",
+            "crop_region": {
+              "left": 105,
+              "top": 149,
+              "right": 842,
+              "bottom": 184
+            },
+            "parent_visibility": "partial"
+          }
+        ]
+      }
+    },
+    "diagnostics": {
+      "status": "frozen",
+      "detector_sha256": "3be87b8538124368fa443b14e30aad46fcd73ee7d41802642a6de81ca4edcc33",
+      "configuration_sha256": "f97e03f64c96d408afab15d18a8aff68115c5902ed4a4540e1f9105e617121d3",
+      "signals": [
+        {
+          "signal_id": "2529e2f683b577f6fb9145f9bea2e5f1cd1689d7c1e3bf9bf4e6a0bde1f518c2",
+          "paragraph_alias": "P1",
+          "raw_start": 47,
+          "raw_end": 62,
+          "raw_quote": "non-concurrence",
+          "category": "word",
+          "flags": [
+            "internal_hyphen_damage",
+            "unknown_internal_hyphen",
+            "unverified_review_candidate"
+          ],
+          "route_reason": "Inspect the original image; this signal is not a repair or a verified reading."
+        },
+        {
+          "signal_id": "7f36379de63783fa58ceff14198747b890d457da3abe273e5ab44f5c7fcab0c1",
+          "paragraph_alias": "P1",
+          "raw_start": 4,
+          "raw_end": 13,
+          "raw_quote": "Committee",
+          "category": "word",
+          "flags": [
+            "name_list_unfamiliar"
+          ],
+          "route_reason": "Inspect the entire target against the image; this is not a verified error."
+        },
+        {
+          "signal_id": "477dc0db2063e3ea37da15f7aba5ad4e50e887acf4a9cc1cec6be161372fcd50",
+          "paragraph_alias": "P1",
+          "raw_start": 18,
+          "raw_end": 32,
+          "raw_quote": "Appropriations",
+          "category": "word",
+          "flags": [
+            "post_repair_word_unfamiliar",
+            "name_list_unfamiliar"
+          ],
+          "route_reason": "Inspect the entire target against the image; this is not a verified error."
+        },
+        {
+          "signal_id": "9d2c77eee26156cb67deafb53e35a0d36e9b5b291517bf8d33128b88dfa39a5f",
+          "paragraph_alias": "P1",
+          "raw_start": 33,
+          "raw_end": 38,
+          "raw_quote": "recom",
+          "category": "word",
+          "flags": [
+            "post_repair_word_unfamiliar"
+          ],
+          "route_reason": "Inspect the entire target against the image; this is not a verified error."
+        },
+        {
+          "signal_id": "8eeb1e0f1e867f9a88bdbab3b7e7e9de3d06e0a874717f85b4aa43e2ab2a448f",
+          "paragraph_alias": "P1",
+          "raw_start": 40,
+          "raw_end": 46,
+          "raw_quote": "mended",
+          "category": "word",
+          "flags": [
+            "post_repair_word_unfamiliar"
+          ],
+          "route_reason": "Inspect the entire target against the image; this is not a verified error."
+        },
+        {
+          "signal_id": "04e09859724b3bd22b73d185d84d375eaa162f6a1385fe4073e857bf865f51fb",
+          "paragraph_alias": "P1",
+          "raw_start": 47,
+          "raw_end": 62,
+          "raw_quote": "non-concurrence",
+          "category": "word",
+          "flags": [
+            "post_repair_word_unfamiliar"
+          ],
+          "route_reason": "Inspect the entire target against the image; this is not a verified error."
+        }
+      ],
+      "negative_targets": []
+    },
+    "saved_proposal": null,
+    "prompt_sha256": "3ec4900a5c7b2ba51a8f43fec705bc879e19774420ba5ac4a0c0292358d6274d",
+    "response_schema_sha256": "40ab9168132ce6a7dcf7d3907262856dffa1a6df1e486a5d6ccc4aa3f1d6fa1d",
+    "code_sha256": "84a5bb99ba10213795fcb0039714cef0224436a2b198c82d515f62861de064bd",
+    "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+    "sampling_manifest_sha256": "9ad0e2789e28ce29d3d8ec20a52a3a54b2859b4b38d6629c806e72746f3fb7f0",
+    "bounds_sha256": "db8c1eb674c3c6e269dab25b7d0ad23e6b9e4943bdbb0444f583bfa6b966a407"
+  }
+}

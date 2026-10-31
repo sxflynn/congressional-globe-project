@@ -1,0 +1,12 @@
+{
+  "reviewer": "existing bounded gpt-6-luna delegate /root/t89_review",
+  "scope": "read-only source/geometry/context/provenance and compatibility review; no provider/process/edit actions",
+  "findings": [
+    {
+      "issue": "New visible-context budget should count both transmitted raw/static layers.",
+      "action": "New scope counts raw+static+visible text; regression covers both layers. Legacy per-layer checks untouched."
+    }
+  ],
+  "verdict": "Source/line/span/page/hash/native-crop/original-registration and metadata scope binding verified; no remaining material issue in inspected scope.",
+  "limit": "New guard excludes normalized complete declared-visible-line copies, not arbitrary paraphrase or full-source fidelity; real new-input model behavior untested."
+}

@@ -1,0 +1,47 @@
+{
+  "task": "T103",
+  "scope": "offline source-bound target/context and copy-exclusion implementation",
+  "full_gate_tests": 1132,
+  "new_focused_tests": 29,
+  "provider_calls": 0,
+  "computer_use": false,
+  "new_target_box": {
+    "left": 64,
+    "top": 64,
+    "right": 935,
+    "bottom": 142
+  },
+  "context_box": {
+    "left": 105,
+    "top": 149,
+    "right": 842,
+    "bottom": 184
+  },
+  "parent_visibility": "partial",
+  "source_span": [
+    0,
+    35
+  ],
+  "image_bytes_unchanged": true,
+  "actual_legacy_reply_check": "new input rejects actual adjacent copy; legacy input behavior preserved",
+  "valid_target_only_test": "passes as unreviewed proposal; not new AI output",
+  "uncertainty": "withheld/no proposal retained",
+  "source_checks": [
+    "pinned hOCR paragraph/page/ppageno/IDs and duplicate rejection",
+    "exact raw text/line/span/hash/fully-visible geometry",
+    "original registration and crop-bundle linkage",
+    "scope hash in new geometry evidence",
+    "target/context overlap and clipped-source refusal",
+    "combined raw/static/visible context<=2000 text characters",
+    "strict reply plus target-only instruction"
+  ],
+  "source_and_historical_results_unchanged": true,
+  "original_measurement": "unresolved; initial unknown stop receipt unchanged",
+  "new_input_provider_behavior": "unverified",
+  "copy_guard_limit": "normalized full selected-line copy, not arbitrary rewrites or unseen-context detection",
+  "review_packet": "HR014 v3",
+  "packet_sha256": "83ece8520c21a7597d708c5ed1751e136069e0b2a18233afa7da0a06004d8a30",
+  "review_comment_boxes": 5,
+  "review_app_exceptions": 0,
+  "next": "Any new actual test requires separately bounded authorization and exact code/body/slot/runtime binding."
+}

@@ -135,6 +135,29 @@ class ImageBinding(StrictModel):
     registration_evidence_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
 
 
+class VisibleContextSpan(StrictModel):
+    source_id: str = Field(pattern=r"^[^:\s]+:[0-9]+:[^:\s]+$")
+    paragraph_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    line_id: str = Field(min_length=1)
+    raw_start: int = Field(ge=0)
+    raw_end: int = Field(gt=0)
+    text: str = Field(min_length=1, max_length=2000)
+    text_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    crop_region: Box
+    parent_visibility: Literal["complete", "partial"]
+
+
+class BoundaryScope(StrictModel):
+    contract: Literal["ocr-visible-boundary-scope-v1"] = "ocr-visible-boundary-scope-v1"
+    crop_bundle_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    base_registration_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    visible_context: list[VisibleContextSpan] = Field(min_length=1, max_length=32)
+
+
+class ScopedImageBinding(ImageBinding):
+    scope: BoundaryScope
+
+
 class Signal(StrictModel):
     signal_id: str = Field(min_length=1)
     paragraph_alias: str = Field(pattern=r"^P([1-9]|[12][0-9]|3[0-2])$")
@@ -176,7 +199,7 @@ class HostPayload(StrictModel):
     role: Literal["productive_repair_and_self_check", "audit_saved_proposal"]
     unit_id: str = Field(min_length=1)
     paragraphs: list[Paragraph] = Field(min_length=1, max_length=32)
-    image: ImageBinding | None
+    image: ScopedImageBinding | ImageBinding | None
     diagnostics: Diagnostics
     saved_proposal: SavedProposal | None
     prompt_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
@@ -436,8 +459,19 @@ def _validate_payload(payload: dict[str, Any], registry: EvidenceRegistry) -> di
     image = payload["image"]
     if image is not None:
         _verify_image(image, targets | contexts, registry)
+        _verify_boundary_scope(payload, registry)
     _validate_proposal(payload, targets, registry)
     return payload
+
+
+def _verify_boundary_scope(payload, registry):
+    if "scope" not in payload["image"]:
+        return
+    from congressional_globe.productive_ocr_scope import verify_scope
+
+    if payload["contract"] != "ocr-productive-repair-host-input-v3":
+        _fail("visible boundary scope requires the lean text host")
+    verify_scope(payload, registry)
 
 
 def _validate_text_mode(payload: dict, registry: EvidenceRegistry) -> None:
@@ -670,7 +704,7 @@ def project_provider(validated_host: dict[str, Any]) -> dict[str, Any]:
     if image is None:
         _fail("host packet is not launch-ready")
     _require_image_ready(image, data["diagnostics"])
-    return {
+    projection = {
         "contract": (
             "ocr-productive-repair-input-v3"
             if data["contract"] == "ocr-productive-repair-host-input-v3"
@@ -690,6 +724,16 @@ def project_provider(validated_host: dict[str, Any]) -> dict[str, Any]:
         "diagnostics": data["diagnostics"],
         "saved_proposal": data["saved_proposal"],
     }
+    if "scope" in image:
+        projection["contract"] = "ocr-productive-repair-input-v4"
+        projection["image_frame"] = {
+            "width": image["width"],
+            "height": image["height"],
+            "coordinates": "pixels; origin top-left; right/bottom exclusive",
+        }
+        projection["visible_context_spans"] = image["scope"]["visible_context"]
+        projection["boundary_scope_contract"] = image["scope"]["contract"]
+    return projection
 
 
 def _require_image_ready(image: dict[str, Any], diagnostics: dict[str, Any]) -> None:
