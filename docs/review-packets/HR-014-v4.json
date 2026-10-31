@@ -1,0 +1,32 @@
+{
+  "id": "HR-014",
+  "version": 4,
+  "title": "Your OCR cleanup feedback is now in the model instruction",
+  "instructions": "Compare the input instruction, expected paragraph and actual saved result below. This applies your submitted feedback; it requests no new decision. The new model instruction has not been tested by a new model call. Comments are optional. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "ocr-baseline-feedback-comments",
+      "prompt": "Optional comments on how your feedback was applied",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Input: your feedback and the revised instruction",
+          "text": "Your submitted feedback asks us to treat the original OCR as substantially similar to the printed paragraph, clean it up, and distinguish a few missed words from a whole added sentence. The exact submitted wording is preserved in the feedback archive.\n\nActual instruction now included in the saved model request:\nThe original OCR is substantially similar to the printed target paragraph but may need cleanup. Use it as the starting point; verify repairs against the image rather than transcribing all nearby print. Restore words missed by OCR, including words on another line, only when they belong to the assigned target paragraph and are supported by its image. Do not add a whole neighbouring sentence or paragraph. Only target_regions identify text to return. The full image includes nearby print. All regions use the supplied image_frame pixel dimensions, with origin at top-left and exclusive right/bottom edges. visible_context_spans are context only: never append or prepend their words to a target. Each context excerpt identifies only the stated source span; partial parent visibility does not mean the rest of its paragraph is visible or read. Preserve the assigned target paragraph boundary; if its extent cannot be determined, withhold its reading.",
+          "url": null
+        },
+        {
+          "label": "2 · Expected output and actual saved failure",
+          "text": "Original OCR for the assigned paragraph:\nThe Committee on- Appropriations recom- mended non-concurrence.\n\nExpected target reading, based on the earlier source inspection:\nThe Committee on Appropriations recommended non-concurrence.\n\nActual earlier model text, unchanged:\nThe Committee on Appropriations recommended non-concurrence. The amendment was non-concurred in.\n\nExpected behavior: repair the assigned paragraph. Restore missing words from its image when supported, even across a line break. Do not add a neighbouring sentence. We have not run the model with the revised instruction, so there is no new model result.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0529.jp2/33,638,999,206/999,/0/default.jpg"
+        },
+        {
+          "label": "3 · Actual software results and remaining uncertainty",
+          "text": "The revised instruction is present in the saved request. The existing precise target box and visible-context checks remain in place. Replaying the exact earlier reply still rejects the copied neighbouring sentence. A separate software test that supplies the expected target reading still passes as an unreviewed proposal. That test input is not a new AI reply.\n\nAll 1,132 project tests pass. These checks establish that the request carries your instruction and the software rejects the known copied line. They do not establish that the model follows the instruction or correctly restores all missing words. No historical text, earlier model result or submitted answer was changed. No new model call or Computer Use occurred. Nothing launches automatically.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}

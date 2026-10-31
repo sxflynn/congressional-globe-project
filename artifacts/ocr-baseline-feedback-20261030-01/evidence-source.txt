@@ -1,0 +1,49 @@
+"""Offline actual-response regression and source-bound input; no model/provider call."""
+import copy,json,runpy
+from pathlib import Path
+from congressional_globe.productive_ocr_host import canonical_json,sha256_bytes,project_provider
+from congressional_globe.productive_ocr_projection import derive_reply_schema
+from congressional_globe.productive_ocr_runner import code_identity
+from congressional_globe.productive_ocr_text_reply import export_text_reply,validate_text_reply
+base=Path('artifacts/ocr-baseline-feedback-20261030-01')
+ns=runpy.run_path('tests/test_productive_ocr_scope.py')
+legacy,host,registry,projection=ns['_case']()
+schema=derive_reply_schema(host,conformance_v4=True)
+actual_path=ns['BASE']/'run/result.json';raw=actual_path.read_bytes();actual=json.loads(raw)
+assert validate_text_reply(actual['output_text'],legacy)['proposal_status']=='findings'
+try:validate_text_reply(actual['output_text'],host)
+except ValueError as error:rejection=str(error)
+else:raise AssertionError('Saved actual adjacent-copy response must be rejected on new input')
+good=ns['_reply']()
+exported=export_text_reply(host,projection.body_utf8,good)
+assert exported.outcome['derived_proposals'][0]['text']==ns['EXPECTED']
+assert exported.boundary_scope['visible_context'][0]['parent_visibility']=='partial'
+provider=project_provider(host)
+assert 'Twenty-sixth' not in json.dumps(provider)
+def save(name,value):
+ (base/name).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
+save('candidate-host.json',host);save('candidate-projection.json',projection.model_dump(mode='json'))
+(base/'candidate-request.json').write_text(projection.body_utf8)
+(base/'candidate-schema.json').write_text(schema.schema_text)
+(base/'candidate-prompt.txt').write_bytes(registry.files[host['payload']['prompt_sha256']])
+save('authored-valid-example-export.json',exported.model_dump(mode='json'))
+inherited=json.loads(Path('artifacts/study-input-assembly-20261029-01/registry-index.json').read_bytes())
+known=set(inherited['files'])|set(inherited['records'])
+for folder in ['artifacts/two-stage-integration-20261030-01','artifacts/text-reply-conformance-20261030-01']:
+ known.update(json.loads((Path(folder)/'registry-closure.json').read_bytes())['new_files'])
+registered=base/'registered-new';registered.mkdir(exist_ok=True);new={}
+for digest,value in registry.files.items():
+ if digest not in known:
+  (registered/digest).write_bytes(value);new[digest]=dict(path=f'registered-new/{digest}',bytes=len(value),record=digest in registry.records)
+save('registry-closure.json',dict(inherited=['artifacts/study-input-assembly-20261029-01/registry-index.json','artifacts/two-stage-integration-20261030-01/registry-closure.json','artifacts/text-reply-conformance-20261030-01/registry-closure.json'],new_files=new))
+save('checks.json',dict(task='T104',source_id=host['payload']['paragraphs'][0]['source_id'],image_sha256=host['payload']['image']['sha256'],image_bytes_unchanged=True,
+ original_target_region=legacy['payload']['image']['bindings'][0]['crop_region'],new_target_region=host['payload']['image']['bindings'][0]['crop_region'],visible_context=host['payload']['image']['scope']['visible_context'],
+ actual_saved_output=actual['output_text'],actual_saved_status=actual['measurement_status'],actual_saved_stop=actual['owned_stop_observation'],actual_result_sha256=sha256_bytes(raw),
+ offline_actual_reply_check=dict(legacy_input='structural findings; missed adjacent copy',new_input='rejected',reason=rejection),
+ expected_target=ns['EXPECTED'],authored_valid_example='same expected target supplied as offline test; no new AI output',valid_example_state=exported.outcome['proposal_status'],
+ input_scope='hOCR source/page/line/raw-span/hash/native-crop geometry checked; exact target plus fully visible line from partially visible parent, hidden remainder omitted',
+ provider_contract=provider['contract'],body_sha256=projection.body_sha256,provider_calls=0,code_identity=code_identity(),
+ guard_limit='Normalized complete declared-visible-line copy exclusion, not arbitrary paraphrase, unseen context or full image fidelity; ambiguous/clipped source context is refused.',
+ old_result_and_stop='Unresolved/unknown saved bytes unchanged; no stop behavior claim or retry authority.',
+ native_provider_behavior='New scoped input has not been run; legacy real complete-field compliance does not prove new target behavior.'))
+print('New target region',host['payload']['image']['bindings'][0]['crop_region'],'; actual copied-neighbour reply rejects; authored correct-target test passes. No new model output.')

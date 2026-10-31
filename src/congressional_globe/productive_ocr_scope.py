@@ -21,6 +21,11 @@ from congressional_globe.productive_ocr_host import (
 from congressional_globe.scan_fetch import ScanBundle
 
 SCOPE_INSTRUCTION = (
+    "The original OCR is substantially similar to the printed target paragraph but may "
+    "need cleanup. Use it as the starting point; verify repairs against the image rather "
+    "than transcribing all nearby print. Restore words missed by OCR, including words "
+    "on another line, only when they belong to the assigned target paragraph and are "
+    "supported by its image. Do not add a whole neighbouring sentence or paragraph. "
     "Only target_regions identify text to return. The full image includes nearby print. "
     "All regions use the supplied image_frame pixel dimensions, with origin at top-left "
     "and exclusive right/bottom edges. "

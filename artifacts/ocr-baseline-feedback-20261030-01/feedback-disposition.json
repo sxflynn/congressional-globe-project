@@ -1,0 +1,16 @@
+{
+  "submission_id": "c815edf6-3c8c-45db-b35c-97b19b13da0a",
+  "revision": 1,
+  "question_id": "corrected-s5-result-comments",
+  "exact_comment": "Yeah so the thing is the AI model, through improved prompting needs to be told that the original ocr text is substantially similar to the text contents of the original but might need cleanup. Do not add a whole other sentence like that now sometimes you will see a case where a few extra words on a new like get missed by the ocr but that’s different from whole extra sentences etc ",
+  "action": "Add original-OCR starting-point and image-supported missing-target-words instruction to scoped repair prompt; preserve target boundary/context exclusion.",
+  "checks": [
+    "Saved serialized request contains exact revised instruction",
+    "Actual saved adjacent-sentence reply rejected",
+    "Authored target-only software fixture accepted",
+    "29 focused controls and full gate 1132"
+  ],
+  "unresolved": "Actual model adherence and missing-word repair quality require a separately authorized test; no new call authority.",
+  "evidence_local_notes": "All four submitted evidence-local comments are empty; no nonblank note omitted.",
+  "provider_calls": 0
+}
