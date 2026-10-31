@@ -32,6 +32,18 @@ Direct human instruction, 2026-10-29: “I want to see the inputs to the process
 
 For an explicitly blind grading stage, preserve the source-only packet and capture expectations before exposing any model output; present the comparison in the subsequent diagnostic stage. Preserve immutable packets/answers when changing presentation by registering a new version. Continue using generous neutral glossary help in AI explanations while all historical/OCR/proposed reading excerpts remain plain. This presentation preference grants no model-call, quality-policy or full-run authority.
 
+#### Small work samples while work is underway
+
+Direct human instruction, 2026-10-30: “But you should put small samples of your work in the human review desk so I have the opportunity to check your work in flight and steer the direction of the project if I see details I don’t like”.
+
+Publish a small set of real work examples (normally one to three) as soon as the first usable result exists, before expanding to more cases or substantial implementation. Do not wait for a milestone, completed batch or polished success report. Show the actual inputs, concrete expected behavior and its basis, unchanged actual output, differences/known limits and evidence-local comment boxes; include a failure or uncertainty when observed. Label partial/preliminary results plainly. A plan without an actual output is not a completed work sample; if no result exists yet, say so.
+
+For a three-repeat tiny AI experiment, show the first completed observation as preliminary and add the remaining actual results through a new immutable packet version. Do not present a single observation as the completed consistency test. Keep the exact request fixed across the planned repetitions. If human feedback changes the required input or method, stop or version the affected work explicitly; preserve the incomplete original group and never combine changed-input results as three identical runs.
+
+Notify the human in chat with the verified LAN desk link when a sample is available. Check submitted feedback at that checkpoint and before the next dependent action, including each remaining model repetition or expansion to more cases; read and record every relevant evidence-local note under the existing application protocol. Incorporate actionable steering before the affected work. A versioned follow-up should explain concretely what changed in response. Existing HR014/HR015 examples remain available; do not create a new review just to ask the human to agree with this standing instruction.
+
+These are optional opportunities to steer autonomous work. Do not impose an answer, grade or permission requirement for each small test, infer approval from silence, or wait indefinitely for comments. Continue bounded authorized work while checking for submitted feedback; huge runs and genuine unresolved decisions retain their explicit gates. No background monitor, recurring workload or automatic model call is created by this cadence.
+
 #### How to ask for sample grades
 
 1. Freeze IDs, raw text/context, citations, vocabulary/rubric and sample version. Start calibration with a few readable examples (typically 3–5 when suitable): a clear positive, a negative/incidental mention, an ambiguous/truncated/mixed case, and a model disagreement or failure. This calibrates expectations; it is not sufficient evidence of corpus accuracy. Fresh benchmark selection still needs the declared coverage/exclusions.

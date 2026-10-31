@@ -1,0 +1,23 @@
+{
+  "task": "T110",
+  "source": "Direct human chat instruction",
+  "exact_instruction": "But you should put small samples of your work in the human review desk so I have the opportunity to check your work in flight and steer the direction of the project if I see details I don’t like",
+  "cadence": "Publish1–3real examples as soon as first usable output exists, before expansion; first AI repetition is preliminary, later immutable version contains all results.",
+  "contents": [
+    "actual inputs",
+    "expected behavior and basis",
+    "unchanged actual output",
+    "differences and limits",
+    "evidence-local comments"
+  ],
+  "feedback": "Check submissions before dependent steps and every remaining repetition; apply relevant notes; version changed inputs and preserve incomplete identical-run groups.",
+  "authority": "Optional steering opportunity, not routine permission; autonomous small tests continue, huge runs require sign-off.",
+  "existing_examples": [
+    "HR-014-v5",
+    "HR-015-v2"
+  ],
+  "next_application": "T108 first actual S1 observation is published before expanding.",
+  "provider_calls": 0,
+  "computer_use": false,
+  "image_inspection_capability": true
+}
