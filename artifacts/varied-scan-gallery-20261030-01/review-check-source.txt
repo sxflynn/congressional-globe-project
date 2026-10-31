@@ -1,0 +1,46 @@
+import json
+import os
+from pathlib import Path
+from lxml import html
+from streamlit.testing.v1 import AppTest
+from congressional_globe.review_evidence import evidence_html
+from congressional_globe.review_glossary import annotated_html, definitions
+from congressional_globe.review_models import ReviewPacket
+from congressional_globe.review_store import ReviewStore
+packet=ReviewPacket.model_validate_json(Path('docs/review-packets/HR-015-v2.json').read_text())
+assert len({str(e.url) for e in packet.questions[0].evidence})==5
+proof=[]
+for i,evidence in enumerate(packet.questions[0].evidence):
+    rendered=evidence_html(evidence.text,f't97-{i}')
+    tree=html.fragment_fromstring(rendered,create_parent='div')
+    assert not tree.xpath('.//span[@class="review-source-text"]//button')
+    assert tree.text_content().replace('Definition for ', '') # nonempty render
+    proof.append(dict(label=evidence.label,plain_source_spans=len(tree.xpath('.//span[@class="review-source-text"]')),
+                      glossary_buttons=len(tree.xpath('.//button[@class="glossary-term"]'))))
+    Path(f'tmp/t97-card-{i}.html').write_text(rendered)
+for field in [packet.title,packet.instructions,packet.questions[0].prompt]:
+    annotated_html(field,definitions(),'surface')
+path=Path('tmp/t109-review-proof.sqlite')
+if path.exists():path.unlink()
+os.environ['GLOBE_REVIEW_DATABASE']=str(path)
+store=ReviewStore(path)
+registered=store.register(packet)
+app=AppTest.from_string('from congressional_globe.review_app import main\nmain()').run()
+assert not app.exception
+app.text_input(key='reviewer').set_value('Synthetic test reviewer').run()
+assert not app.exception
+assert len(app.text_area)==6
+texts=[]
+for element in app.markdown:
+    tree=html.fragment_fromstring(element.value,create_parent="div")
+    for popover in tree.xpath(".//*[@popover]"):popover.drop_tree()
+    texts.append(tree.text_content())
+assert any('Actual older model proposal excerpts' in t for t in texts)
+assert any('Expected excerpt repairs' in t for t in texts)
+assert any('Input excerpts from the original OCR' in t for t in texts)
+result=dict(packet_sha256=registered['packet_sha256'],evidence_cards=proof,comment_boxes=6,
+    app_exceptions=0,rendered_input_expected_actual=True,original_spans_no_glossary=True,
+    computer_use=False,browser_or_device_interaction='not performed per user preference',
+    synthetic_database=str(path),production_answers_written=False)
+Path('artifacts/varied-scan-gallery-20261030-01/review-validation.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result,indent=2))
