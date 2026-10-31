@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Sat, 31 Oct 2026 01:25:56 GMT
+Content-Length: 1293
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-10-31T01:25:56.196297Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"We have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  \n  ,\n  \"unit_id\": \"S1\"\n}"},"done":true,"done_reason":"stop","total_duration":59879426958,"load_duration":3213422125,"prompt_eval_count":6050,"prompt_eval_cached_count":0,"prompt_eval_duration":49560220834,"eval_count":211,"eval_duration":7058296417}

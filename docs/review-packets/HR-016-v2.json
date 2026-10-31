@@ -1,0 +1,52 @@
+{
+  "id": "HR-016",
+  "version": 2,
+  "title": "Longer speech: all three identical-input results",
+  "instructions": "Compare the completed three-run test with the preliminary result shown earlier. Inputs, expected reading, unchanged actual output and differences are shown in order. Comments are optional; this is not a permission request. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "longer-speech-comments",
+      "prompt": "Optional comments to steer the next steps",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Actual inputs: longer speech and existing software cleanup",
+          "text": "Original target OCR:\nWe have now, as I believe, the golden oppor- tunity to remedy this evil which will never come again to the men of this generation. The sys- tem of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on recon- struction having reported this amendment, I infer that they will, if this amendment is sub- mitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\n\nActual saved software cleanup supplied to the model:\nWe have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal ' and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be in- sisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\n\nThe same original image is supplied with a precise paragraph target. The next paragraph’s fully visible first line is supplied only as context, with its parent marked partly visible. The prompt uses OCR as the starting point, repairs only the assigned paragraph, and carries your earlier stray-mark feedback. Detected written numbers, including two, three and one, are routed independently of familiarity. This is a feedback-conditioned example, not an unaided recognition test.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0526.jp2/1986,2485,1028,805/1028,/0/default.jpg"
+        },
+        {
+          "label": "2 · Expected output, declared before the model calls",
+          "text": "Expected source-inspected illustration:\nWe have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\n\nExpected behavior: preserve all target words and the written quantities, complete the remaining broken word, remove the stray mark after loyal as in your earlier feedback, and exclude the next paragraph. The software had already joined four other word breaks. A genuinely incomplete reading must withhold text and state its reason. This illustration is not independent human gold or accepted text.",
+          "url": null
+        },
+        {
+          "label": "Actual run 1 · Unchanged model reading",
+          "text": "Actual model reading:\nWe have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\n\nCoverage: complete; uncertainty reason: null. Response-check status: valid; owned shutdown: stopped. Request cycle: 67.33 seconds. Reported usage: 6,050 input and 173 output tokens. Format/source-link/copy checks do not establish full source fidelity.",
+          "url": null
+        },
+        {
+          "label": "Actual run 2 · Unchanged model reading",
+          "text": "Actual model reading:\nWe have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\n\nCoverage: complete; uncertainty reason: null. Response-check status: valid; owned shutdown: stopped. Request cycle: 67.56 seconds. Reported usage: 6,050 input and 211 output tokens. Format/source-link/copy checks do not establish full source fidelity.",
+          "url": null
+        },
+        {
+          "label": "Actual run 3 · Unchanged model reading",
+          "text": "Actual model reading:\nWe have now, as I believe, the golden opportunity to remedy this evil which will never come again to the men of this generation. The system of slavery has fallen. The States whose representation was increased by it have, with two or three exceptions, destroyed their loyal and legal State governments, and now seek reconstruction. The committee on reconstruction having reported this amendment, I infer that they will, if this amendment is submitted to the State Legislatures by Congress, recommend that its adoption by the States lately in rebellion be one of the guarantees to be insisted upon as a condition precedent to their taking equal authority and rank in the Union with the loyal States.\n\nCoverage: complete; uncertainty reason: null. Response-check status: valid; owned shutdown: stopped. Request cycle: 69.19 seconds. Reported usage: 6,050 input and 173 output tokens. Format/source-link/copy checks do not establish full source fidelity.",
+          "url": null
+        },
+        {
+          "label": "Differences, current progress and limits",
+          "text": "Run 1: exact expected reading matches; stray-mark check passes; remaining split-word check passes; two written-quantity phrases preserved; declared next-paragraph line not copied.\nRun 2: exact expected reading matches; stray-mark check passes; remaining split-word check passes; two written-quantity phrases preserved; declared next-paragraph line not copied.\nRun 3: exact expected reading matches; stray-mark check passes; remaining split-word check passes; two written-quantity phrases preserved; declared next-paragraph line not copied.\n\nAll three planned observations are now saved. There are 1 distinct corrected readings and 2 distinct raw reply strings. Together they took 204.08 request-cycle seconds and reported 18,150 input/557 output tokens. The first observation was published before the remaining two.\n\nAll 1,158 project tests pass. This one longer speech broadens the earlier short committee example, but does not establish corpus accuracy or complete coverage of every kind of number. Ambiguous Roman-looking letters were also routed without asserting they were numbers. Original text, previous model results and human answers remain unchanged. No Computer Use, model download or source fetch occurred in this test.",
+          "url": null
+        },
+        {
+          "label": "Measured input size and capacity limit",
+          "text": "Each observed input count is reported by the provider. Counts in this group are [6050, 6050, 6050], compared with the 6,000 reporting threshold. This is not a hard input cap or authentic proof of internal input fit. The fixed time/output limits and explicit unknown-fit status remain unchanged.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}
