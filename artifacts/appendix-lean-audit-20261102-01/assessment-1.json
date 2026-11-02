@@ -1,0 +1,39 @@
+{
+  "assessor": "Root AI source/format assessment",
+  "summary": "First appendix reply correctly detects the omitted printed that in the saved proposal and proposes restoring that that. It also proposes the correct raw year1862. But it repeats P7and omits P9, includes unchanged readings as concerns, misassigns header errors to P7, and proposes changing the already-correct be it further enacted to he it further enacted, contradicting the scan. The remaining Presi- dent split is not reported. Host validation rejects no-ops; separate alias/quote/source checks expose additional defects. This is partial source recognition, not a valid complete audit.",
+  "primary_checks": [
+    {
+      "alias": "P7",
+      "check": "printed that that vs saved that",
+      "outcome": "detected with source-supported restoration"
+    },
+    {
+      "alias": "P7",
+      "check": "correct saved1862repair",
+      "outcome": "raw18G2→1862correct; no supported reason to alter savedyear"
+    },
+    {
+      "alias": "P5",
+      "check": "savedRepresentationalreadycorrect",
+      "outcome": "rawBepresentation→Representationcorrect, also incorrectly attributed to P7in another record"
+    },
+    {
+      "alias": "P8",
+      "check": "remainingPresi- dent→President",
+      "outcome": "not reported"
+    },
+    {
+      "alias": "P8",
+      "check": "preserve printed be it further enacted",
+      "outcome": "harmful proposed be→he regression; scan supports be"
+    }
+  ],
+  "extra_findings": [
+    "P7twice/P9missing despite9records and complete claims.",
+    "Multiple declared quotes absent from assigned target/layer; exact occurrence checks recorded separately.",
+    "Four unchanged-reading concerns violate the reply contract; actual export rejects these first.",
+    "Small-cap/case and punctuation claims are not accepted as source corrections from this reply; several rationales conflict with actual raw punctuation."
+  ],
+  "stop_group": false,
+  "scope": "Selected source-inspected AI checks, not human gold/population accuracy. Known usage/positive shutdown permit two remaining identical observations; all failure evidence retained."
+}

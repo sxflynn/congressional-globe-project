@@ -1,0 +1,250 @@
+{
+  "task": "T121",
+  "case": "D2W",
+  "planned_calls": 3,
+  "actual_calls": 1,
+  "request_cycle_seconds": 108.52492024982348,
+  "reported_input_tokens": 6854,
+  "reported_output_tokens": 875,
+  "unknown_usage_calls": 0,
+  "all_positive_stop": true,
+  "runs": [
+    {
+      "repetition": 1,
+      "elapsed_seconds": 108.52492024982348,
+      "usage": {
+        "input_tokens": 6854,
+        "output_tokens": 875
+      },
+      "measurement_status": "invalid",
+      "owned_stop": "stopped",
+      "status": "completed",
+      "finish_reason": "stop",
+      "raw_output": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"39TH CONG....1ST SESS.\",\"reading\":\"39th Cong....1st Sess.\",\"reason\":\"Image shows mixed-case text; saved proposal forces all caps.\"},{\"layer\":\"raw\",\"quote\":\"Bepresentation\",\"reading\":\"Representation\",\"reason\":\"OCR misread 'R' as 'B'; correct spelling is 'Representation'.\"},{\"layer\":\"raw\",\"quote\":\"18G2\",\"reading\":\"1862\",\"reason\":\"OCR error: 'G' misread for '6'; correct year is 1862.\"},{\"layer\":\"saved_proposal\",\"quote\":\"I must admit that act is quite full\",\"reading\":\"I must admit that that act is quite full\",\"reason\":\"Saved proposal dropped 'that'; image shows 'that that act'.\"},{\"layer\":\"raw\",\"quote\":\"amnestj\",\"reading\":\"amnesty.\",\"reason\":\"OCR misread 'y' as 'j'; image shows 'amnesty.' with period.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P7\",\"reason\":null},{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"SEC. 13. And be it further enacted\",\"reading\":\"Sec. 13. And he it further enacted\",\"reason\":\"Image shows 'Sec.' (not all caps) and 'he' (not 'be'); 'he' matches original text.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P8\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"18G2\",\"reading\":\"1862\",\"reason\":\"OCR error: 'G' misread for '6'; correct year is 1862.\"},{\"layer\":\"raw\",\"quote\":\"amnestj\",\"reading\":\"amnesty\",\"reason\":\"OCR misread 'y' as 'j'; correct word is 'amnesty'.\"},{\"layer\":\"raw\",\"quote\":\"[Mr. CLARK]\",\"reading\":\"[Mr. Clark]\",\"reason\":\"Image shows 'Clark' (mixed case); saved proposal forces all caps.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P7\",\"reason\":null}\n\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"Bepresentation\",\"reading\":\"Representation\",\"reason\":\"OCR misread 'R' as 'B'; correct spelling is 'Representation'.\"},{\"layer\":\"raw\",\"quote\":\"Mr. Henderson\",\"reading\":\"Mr. Henderson.\",\"reason\":\"Image shows 'Mr. Henderson.' with period; raw text missing period.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P5\",\"reason\":null}\n\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"39th Cong. ... 1st Sess.\",\"reading\":\"39th Cong....1st Sess.\",\"reason\":\"Image shows '39th Cong....1st Sess.' with no spaces around dots; raw text has spaces.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}\n\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"1866.\",\"reading\":\"1866.\",\"reason\":\"Image shows '1866.' with period; raw text missing period.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null}\n\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"APPENDIX TO THE CONGRESSIONAL GLOBE.\",\"reading\":\"APPENDIX TO THE CONGRESSIONAL GLOBE.\",\"reason\":\"Image shows 'APPENDIX TO THE CONGRESSIONAL GLOBE.' with period; raw text missing period.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null}\n\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"107\",\"reading\":\"107\",\"reason\":\"Image shows '107'; raw text matches.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null}\n\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"Senate.\",\"reading\":\"Senate.\",\"reason\":\"Image shows 'Senate.'; raw text matches.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P6\",\"reason\":null}\n\n]\n\n,\"unit_id\":\"D2\"}",
+      "parsed_reply": {
+        "contract": "ocr-lean-audit-reply-v1",
+        "targets": [
+          {
+            "concerns": [
+              {
+                "layer": "saved_proposal",
+                "quote": "39TH CONG....1ST SESS.",
+                "reading": "39th Cong....1st Sess.",
+                "reason": "Image shows mixed-case text; saved proposal forces all caps."
+              },
+              {
+                "layer": "raw",
+                "quote": "Bepresentation",
+                "reading": "Representation",
+                "reason": "OCR misread 'R' as 'B'; correct spelling is 'Representation'."
+              },
+              {
+                "layer": "raw",
+                "quote": "18G2",
+                "reading": "1862",
+                "reason": "OCR error: 'G' misread for '6'; correct year is 1862."
+              },
+              {
+                "layer": "saved_proposal",
+                "quote": "I must admit that act is quite full",
+                "reading": "I must admit that that act is quite full",
+                "reason": "Saved proposal dropped 'that'; image shows 'that that act'."
+              },
+              {
+                "layer": "raw",
+                "quote": "amnestj",
+                "reading": "amnesty.",
+                "reason": "OCR misread 'y' as 'j'; image shows 'amnesty.' with period."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P7",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "saved_proposal",
+                "quote": "SEC. 13. And be it further enacted",
+                "reading": "Sec. 13. And he it further enacted",
+                "reason": "Image shows 'Sec.' (not all caps) and 'he' (not 'be'); 'he' matches original text."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P8",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "18G2",
+                "reading": "1862",
+                "reason": "OCR error: 'G' misread for '6'; correct year is 1862."
+              },
+              {
+                "layer": "raw",
+                "quote": "amnestj",
+                "reading": "amnesty",
+                "reason": "OCR misread 'y' as 'j'; correct word is 'amnesty'."
+              },
+              {
+                "layer": "raw",
+                "quote": "[Mr. CLARK]",
+                "reading": "[Mr. Clark]",
+                "reason": "Image shows 'Clark' (mixed case); saved proposal forces all caps."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P7",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "Bepresentation",
+                "reading": "Representation",
+                "reason": "OCR misread 'R' as 'B'; correct spelling is 'Representation'."
+              },
+              {
+                "layer": "raw",
+                "quote": "Mr. Henderson",
+                "reading": "Mr. Henderson.",
+                "reason": "Image shows 'Mr. Henderson.' with period; raw text missing period."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P5",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "39th Cong. ... 1st Sess.",
+                "reading": "39th Cong....1st Sess.",
+                "reason": "Image shows '39th Cong....1st Sess.' with no spaces around dots; raw text has spaces."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P4",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "1866.",
+                "reading": "1866.",
+                "reason": "Image shows '1866.' with period; raw text missing period."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P1",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "APPENDIX TO THE CONGRESSIONAL GLOBE.",
+                "reading": "APPENDIX TO THE CONGRESSIONAL GLOBE.",
+                "reason": "Image shows 'APPENDIX TO THE CONGRESSIONAL GLOBE.' with period; raw text missing period."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P2",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "107",
+                "reading": "107",
+                "reason": "Image shows '107'; raw text matches."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P3",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "Senate.",
+                "reading": "Senate.",
+                "reason": "Image shows 'Senate.'; raw text matches."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P6",
+            "reason": null
+          }
+        ],
+        "unit_id": "D2"
+      },
+      "parse_error": null,
+      "source_export": {
+        "acceptance": "unreviewed_ai_evidence; no repair/production/native-fit acceptance",
+        "actual_provider_request_sha256": "b7afffc240c5835bf27cb5b1a1cab8fae513c2f282fe98c7b38abefee3d1e0ae",
+        "image_sha256": "53373dc3ef8ff554cda84c138db9c24b5f5753710114a2594bae75e06b150555",
+        "outcome": "invalid",
+        "raw_reply_sha256": "9dac365368687f5b6c56c95aba8125e282e53da0d8139223ac83905b222dec54",
+        "raw_reply_text": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"39TH CONG....1ST SESS.\",\"reading\":\"39th Cong....1st Sess.\",\"reason\":\"Image shows mixed-case text; saved proposal forces all caps.\"},{\"layer\":\"raw\",\"quote\":\"Bepresentation\",\"reading\":\"Representation\",\"reason\":\"OCR misread 'R' as 'B'; correct spelling is 'Representation'.\"},{\"layer\":\"raw\",\"quote\":\"18G2\",\"reading\":\"1862\",\"reason\":\"OCR error: 'G' misread for '6'; correct year is 1862.\"},{\"layer\":\"saved_proposal\",\"quote\":\"I must admit that act is quite full\",\"reading\":\"I must admit that that act is quite full\",\"reason\":\"Saved proposal dropped 'that'; image shows 'that that act'.\"},{\"layer\":\"raw\",\"quote\":\"amnestj\",\"reading\":\"amnesty.\",\"reason\":\"OCR misread 'y' as 'j'; image shows 'amnesty.' with period.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P7\",\"reason\":null},{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"SEC. 13. And be it further enacted\",\"reading\":\"Sec. 13. And he it further enacted\",\"reason\":\"Image shows 'Sec.' (not all caps) and 'he' (not 'be'); 'he' matches original text.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P8\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"18G2\",\"reading\":\"1862\",\"reason\":\"OCR error: 'G' misread for '6'; correct year is 1862.\"},{\"layer\":\"raw\",\"quote\":\"amnestj\",\"reading\":\"amnesty\",\"reason\":\"OCR misread 'y' as 'j'; correct word is 'amnesty'.\"},{\"layer\":\"raw\",\"quote\":\"[Mr. CLARK]\",\"reading\":\"[Mr. Clark]\",\"reason\":\"Image shows 'Clark' (mixed case); saved proposal forces all caps.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P7\",\"reason\":null}\n\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"Bepresentation\",\"reading\":\"Representation\",\"reason\":\"OCR misread 'R' as 'B'; correct spelling is 'Representation'.\"},{\"layer\":\"raw\",\"quote\":\"Mr. Henderson\",\"reading\":\"Mr. Henderson.\",\"reason\":\"Image shows 'Mr. Henderson.' with period; raw text missing period.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P5\",\"reason\":null}\n\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"39th Cong. ... 1st Sess.\",\"reading\":\"39th Cong....1st Sess.\",\"reason\":\"Image shows '39th Cong....1st Sess.' with no spaces around dots; raw text has spaces.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}\n\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"1866.\",\"reading\":\"1866.\",\"reason\":\"Image shows '1866.' with period; raw text missing period.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null}\n\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"APPENDIX TO THE CONGRESSIONAL GLOBE.\",\"reading\":\"APPENDIX TO THE CONGRESSIONAL GLOBE.\",\"reason\":\"Image shows 'APPENDIX TO THE CONGRESSIONAL GLOBE.' with period; raw text missing period.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null}\n\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"107\",\"reading\":\"107\",\"reason\":\"Image shows '107'; raw text matches.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null}\n\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"Senate.\",\"reading\":\"Senate.\",\"reason\":\"Image shows 'Senate.'; raw text matches.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P6\",\"reason\":null}\n\n]\n\n,\"unit_id\":\"D2\"}",
+        "rejection_reason": "4 validation errors for LeanAuditReply\ntargets.5.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':...w text missing period.\"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\ntargets.6.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':...w text missing period.\"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\ntargets.7.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':...07'; raw text matches.\"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\ntargets.8.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or ",
+        "response_schema_sha256": "d8ae70c9fad79f9d75dfda06df89ce7e938e46b8bd4a5cc977cfa4be24fd6991",
+        "source_context_host_sha256": "eddfcc6d438267fc958af5f6c154baa048903c5bafc920f65423d1115cfa0b46"
+      },
+      "error": null,
+      "assessment": {
+        "assessor": "Root AI source/format assessment",
+        "summary": "First appendix reply correctly detects the omitted printed that in the saved proposal and proposes restoring that that. It also proposes the correct raw year1862. But it repeats P7and omits P9, includes unchanged readings as concerns, misassigns header errors to P7, and proposes changing the already-correct be it further enacted to he it further enacted, contradicting the scan. The remaining Presi- dent split is not reported. Host validation rejects no-ops; separate alias/quote/source checks expose additional defects. This is partial source recognition, not a valid complete audit.",
+        "primary_checks": [
+          {
+            "alias": "P7",
+            "check": "printed that that vs saved that",
+            "outcome": "detected with source-supported restoration"
+          },
+          {
+            "alias": "P7",
+            "check": "correct saved1862repair",
+            "outcome": "raw18G2→1862correct; no supported reason to alter savedyear"
+          },
+          {
+            "alias": "P5",
+            "check": "savedRepresentationalreadycorrect",
+            "outcome": "rawBepresentation→Representationcorrect, also incorrectly attributed to P7in another record"
+          },
+          {
+            "alias": "P8",
+            "check": "remainingPresi- dent→President",
+            "outcome": "not reported"
+          },
+          {
+            "alias": "P8",
+            "check": "preserve printed be it further enacted",
+            "outcome": "harmful proposed be→he regression; scan supports be"
+          }
+        ],
+        "extra_findings": [
+          "P7twice/P9missing despite9records and complete claims.",
+          "Multiple declared quotes absent from assigned target/layer; exact occurrence checks recorded separately.",
+          "Four unchanged-reading concerns violate the reply contract; actual export rejects these first.",
+          "Small-cap/case and punctuation claims are not accepted as source corrections from this reply; several rationales conflict with actual raw punctuation."
+        ],
+        "stop_group": false,
+        "scope": "Selected source-inspected AI checks, not human gold/population accuracy. Known usage/positive shutdown permit two remaining identical observations; all failure evidence retained."
+      },
+      "result_sha256": "79734b33febb4fa65a188934459665f05bd0bc5d4c078bf713eeb3731366ec7d"
+    }
+  ],
+  "source_expectations_path": "artifacts/appendix-lean-audit-20261102-01/expected-audit-checks.json",
+  "quality_basis": "Agent judgments of exact-hash cached images, original full targets and frozen prior proposal. Not independent human gold or population accuracy.",
+  "native_fit": "unknown",
+  "distinct_raw_replies": 1,
+  "distinct_reported_concern_sets": 1,
+  "concern_pattern_limit": "Returned claim patterns only; no source correctness or complete coverage implied."
+}
