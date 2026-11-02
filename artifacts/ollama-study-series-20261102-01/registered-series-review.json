@@ -1,0 +1,53 @@
+{
+  "id": "HR-022",
+  "version": 1,
+  "title": "Ollama series: actual results and agent source checks",
+  "instructions": "Inputs, expected output, actual output and differences are shown in order. This is a completed bounded series report, including failures and the agent’s evaluation against saved scans. Comments are optional; this is not a permission request. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "series-comments",
+      "prompt": "Optional comments about these results or the next test",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Inputs: short speech and numbered law columns",
+          "text": "The series used three original available-image cases, with their original target identities preserved. Short-speech OCR:\nMr. BROWN. The navigable channel is not private propei-ty.\n\nLaw-heading OCR excerpt:\nChap. CCCXL — An Act to remove tte Office\n\nBrown’s short repair prompt included your earlier property correction. The law audit retained all four source targets, the whole saved image and the older proposal. The linked scan shows the chapter heading in the right-hand column below the first approval date. Raw OCR, older proposals and human answers remain unchanged.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_1060.jp2/1124,226,1866,3758/1600,/0/default.jpg"
+        },
+        {
+          "label": "1 · Inputs: appendix and printed repetition",
+          "text": "Appendix OCR excerpts:\nJuly 17, 18G2\nI must admit that that act is quite full.\n\nThe audit retained all nine original targets, including headings, quoted law and the left-column passage. The repeated word is in the first left-column paragraph, just above the quotation headed Sec. 13. The older model proposal was included for checking; it was not treated as truth.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0741.jp2/59,42,2824,1547/1600,/0/default.jpg"
+        },
+        {
+          "label": "2 · Expected output: source-based checks saved before new replies",
+          "text": "Expected short reading:\nMr. BROWN. The navigable channel is not private property.\n\nPrinted law chapter:\nCCCXI\n\nPrinted appendix year and sentence:\nJuly 17, 1862\nI must admit that that act is quite full.\n\nThe agent inspected the saved images before new calls. The short repair should preserve the entire sentence and exclude nearby speakers. An audit should check every assigned target and identify supported differences from the older proposal, including all numbers and printed repeated words. These AI assessments are not independent human gold. Correct old repairs must not be called errors.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual new outputs: successes, failures and partial text",
+          "text": "Short speech: all three independent identical-input replies returned:\nMr. BROWN. The navigable channel is not private property.\n\nOriginal law audit: no usable reply. Original appendix audit: no usable reply. Compact law audit: no usable reply. Their token usage is unknown.\n\nLonger compact law audit: text returned after 182.97 seconds, but stopped at 1,500 output tokens; its JSON is incomplete and invalid. Exact visible model fragment:\nthe supplied crop/image evidence for P4 shows CCCXL\n\nThe complete raw fragment and per-attempt records are in the separate work-sample packets. None of these audit results is a complete accepted reading.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual older outputs: evaluated separately",
+          "text": "The older law model proposed:\nChap. CCCXLI.—An Act to remove the Office\n\nThe older appendix model proposed these excerpts:\nJuly 17, 1862\nI must admit that act is quite full.\n\nThese are saved historical model outputs, not new successful audits. The law edit also fixes tte to the, and the appendix edit also repairs the damaged year. Correct and incorrect changes can occur within one model edit.",
+          "url": null
+        },
+        {
+          "label": "4 · Differences: what the agent can conclude",
+          "text": "The guided short repair is consistent across three calls and matches the inspected sentence. It does not test unaided error discovery or corpus accuracy.\n\nThe older law proposal changes an already wrong chapter number to a different wrong number, while fixing the adjacent damaged word correctly. The older appendix proposal repairs the year correctly but deletes one word present in both OCR and print. That omission is a source conflict, even though the resulting sentence sounds fluent.\n\nThe new longer audit notices the chapter disagreement but its visible explanation misreads the printed chapter. It also questions supported spacing and comma repairs as number/word-count concerns. Its reply is truncated: selected visible claims can be assessed, but whole-audit accuracy and coverage cannot. A model’s uncertainty or self-check is not an independent source reading. No automatic correction or human acceptance follows.",
+          "url": null
+        },
+        {
+          "label": "5 · Measured costs, stop rules and next useful change",
+          "text": "S2 repair: 37.58 seconds; valid guided repair; 2,026 input / 98 output tokens.\nS2 repair: 35.13 seconds; valid guided repair; 2,026 input / 96 output tokens.\nS2 repair: 34.45 seconds; valid guided repair; 2,026 input / 95 output tokens.\nD1 original audit: 114.46 seconds; no usable reply; usage unknown.\nD2 original audit: 114.52 seconds; no usable reply; usage unknown.\nD1 compact audit: 114.41 seconds; no usable reply; usage unknown.\nD1 longer compact audit: 182.97 seconds; truncated invalid audit; 10,816 input / 1,500 output tokens.\n\nSeven new attempts took 633.52 request-cycle seconds. Known usage totals 16,894 input and 1,789 output tokens, plus unknown usage for three attempts. These times exclude most preparation and reporting. All owned model processes stopped.\n\nEach failed group stopped without a retry or replacement. A separate explicitly versioned test allowed five minutes on the same compact request; ordinary plans retain the two-minute limit, and the output cap stayed 1,500. No further extension is running.\n\nThe next useful change is a smaller audit reply format: preserve every target and source-backed concern, but remove duplicated inspection/checklist fields. Test word-versus-number wording and the actual returned output length, while preserving the original failed contracts and all source evidence. The current results supply no native-fit proof, representative accuracy rate or full-corpus launch approval.",
+          "url": null
+        }
+      ]
+    }
+  ],
+  "packet_sha256": "dd58497a70df9651b0651e0bae5af2b52a9ab59a5c61179d4175fc77ebcce9d8"
+}

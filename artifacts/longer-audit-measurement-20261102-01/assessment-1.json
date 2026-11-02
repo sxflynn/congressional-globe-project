@@ -1,0 +1,53 @@
+{
+  "assessor": "Root AI agent, comparing exact visible fragment to frozen source expectations and saved image.",
+  "summary": "A reply returned after182.97seconds with10816input/1500outputtokens, then ended at the output cap. JSONis truncated and host export invalid; group stops1of3. Visible fragment notices savedCCCXLIversus rawCCCXL but wrongly says the crop showsCCCXL; actual print isCCCXI. It also questions supported may-be/Wisconsin/comma repairs as number/word-count concerns. No complete audit or corrected source reading was produced.",
+  "source_accuracy": "Selected claims in unvalidated partial reply can be compared; no whole-audit accuracy score, completeness or accepted correction.",
+  "primary_checks": [
+    {
+      "alias": "P4",
+      "check": "chapter",
+      "observed": "Flags difference in saved number but states visible CCCXL and suggests unresolved CCCXL; no CCCXI recovery.",
+      "source": "CCCXI",
+      "assessment": "Source conflict in visible explanation; not an applied repair."
+    },
+    {
+      "alias": "P1",
+      "check": "with- out",
+      "observed": "Flags the split but proposes unresolved with out.",
+      "source": "without",
+      "assessment": "No supported complete joined-word reading returned."
+    },
+    {
+      "alias": "P4",
+      "check": "Rep- resentatives",
+      "observed": "No assessable resolution in visible fragment.",
+      "assessment": "Not scored as missed across a complete audit: output is incomplete."
+    }
+  ],
+  "extra_findings": [
+    {
+      "observed": "as may be called consequential number/word-count change",
+      "source": "as may be visible and old proposal correct",
+      "assessment": "Uncertainty is reported, but number label/source objection does not establish a saved-text error."
+    },
+    {
+      "observed": "Wisconsin to be removed questioned and old raw spelling proposed unresolved",
+      "source": "Wisconsin to be removed supported by print",
+      "assessment": "No supported error in this old repair established."
+    },
+    {
+      "observed": "Comma after enacted questioned as number concern",
+      "source": "Printed comma supports old repair",
+      "assessment": "No supported numeric/source error in the old comma repair established."
+    }
+  ],
+  "exact_observed_fragments": [
+    "the supplied crop/image evidence for P4 shows CCCXL",
+    "a consequential number/word-count change",
+    "\"proposed_reading\": \"with out\""
+  ],
+  "stop_group": true,
+  "stop_reason": "Provider finish_reason length at1500tokens; incomplete JSON. Original group stop rule forbids dependent repetitions.",
+  "time_inference": "Longer allowance yielded text, but input/system/model variance and lack of a prior full reply limit causal claims.183secondsobserved exceeds original120secondlifecycle allowance.",
+  "limits": "Model says image unclear/irrelevant. Agent can read the saved crop, but model internal image representation is unmeasured; do not claim independent human gold or that it definitely inspected all print."
+}

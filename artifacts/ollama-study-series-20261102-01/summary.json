@@ -1,0 +1,104 @@
+{
+  "task": "T117",
+  "actual_new_attempts": 7,
+  "request_cycle_seconds": 633.5164512079209,
+  "known_input_tokens": 16894,
+  "known_output_tokens": 1789,
+  "unknown_usage_attempts": 3,
+  "all_owned_stopped": true,
+  "attempts": [
+    {
+      "case": "S2 repair",
+      "result_path": "artifacts/s2-consistency-20261102-01/repeat-1/run/result.json",
+      "result_sha256": "7e38c04aa952e130dee0c800af4b7a48dc33ea2beb0900c022d34507d9bf9c0e",
+      "elapsed_seconds": 37.58400016697124,
+      "usage": {
+        "input_tokens": 2026,
+        "output_tokens": 98
+      },
+      "measurement_status": "valid",
+      "finish_reason": "stop",
+      "owned_stop": "stopped",
+      "outcome": "valid guided repair"
+    },
+    {
+      "case": "S2 repair",
+      "result_path": "artifacts/s2-consistency-20261102-01/repeat-2/run/result.json",
+      "result_sha256": "712887a18cccc2355b7a47b8bc907a32043ea382c50dae529a252d9bd8662f71",
+      "elapsed_seconds": 35.13213491695933,
+      "usage": {
+        "input_tokens": 2026,
+        "output_tokens": 96
+      },
+      "measurement_status": "valid",
+      "finish_reason": "stop",
+      "owned_stop": "stopped",
+      "outcome": "valid guided repair"
+    },
+    {
+      "case": "S2 repair",
+      "result_path": "artifacts/s2-consistency-20261102-01/repeat-3/run/result.json",
+      "result_sha256": "30338c3e6b34d6d7fe29a8371140b91c4842005b3ff5a1784b6d76fa0a924331",
+      "elapsed_seconds": 34.44528312492184,
+      "usage": {
+        "input_tokens": 2026,
+        "output_tokens": 95
+      },
+      "measurement_status": "valid",
+      "finish_reason": "stop",
+      "owned_stop": "stopped",
+      "outcome": "valid guided repair"
+    },
+    {
+      "case": "D1 original audit",
+      "result_path": "artifacts/audit-series-20261102-01/D1/repeat-1/run/result.json",
+      "result_sha256": "c3288522203d23292cb1a334b075d378603ed45fb56b0f5748cf3fbe90cdfdc1",
+      "elapsed_seconds": 114.46009283303283,
+      "usage": null,
+      "measurement_status": "unresolved",
+      "finish_reason": null,
+      "owned_stop": "stopped",
+      "outcome": "no usable reply"
+    },
+    {
+      "case": "D2 original audit",
+      "result_path": "artifacts/audit-series-20261102-01/D2/repeat-1/run/result.json",
+      "result_sha256": "0ebc0949f762e8fe081b384a79446109bd67a0c059688d31f6441b84278675f3",
+      "elapsed_seconds": 114.51674220804125,
+      "usage": null,
+      "measurement_status": "unresolved",
+      "finish_reason": null,
+      "owned_stop": "stopped",
+      "outcome": "no usable reply"
+    },
+    {
+      "case": "D1 compact audit",
+      "result_path": "artifacts/compact-audit-measurement-20261102-01/repeat-1/run/result.json",
+      "result_sha256": "ba1ac1334a04c150ce9aa248bfdafd5b2310b4c38e335784286a319beaa7c64d",
+      "elapsed_seconds": 114.40713170799427,
+      "usage": null,
+      "measurement_status": "unresolved",
+      "finish_reason": null,
+      "owned_stop": "stopped",
+      "outcome": "no usable reply"
+    },
+    {
+      "case": "D1 longer compact audit",
+      "result_path": "artifacts/longer-audit-measurement-20261102-01/repeat-1/run/result.json",
+      "result_sha256": "d784806a5ad8680438da73ed24a21a4d6c3bfcfed734135af1280ecdb61d95cf",
+      "elapsed_seconds": 182.97106625000015,
+      "usage": {
+        "input_tokens": 10816,
+        "output_tokens": 1500
+      },
+      "measurement_status": "invalid",
+      "finish_reason": "length",
+      "owned_stop": "stopped",
+      "outcome": "truncated invalid audit"
+    }
+  ],
+  "quality": "3guided short repairs match source-inspected full sentence;3no-reply failures cannot be graded for accuracy;1partial invalid audit permits only selected visible-claim assessment. Historical source checks reused separately, not new generation or population accuracy.",
+  "series_state": "complete in bounded stopped-groups scope; no remaining model worker or automatic extension",
+  "native_fit": "unknown",
+  "full_gate": 1188
+}

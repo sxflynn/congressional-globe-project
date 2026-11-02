@@ -2245,7 +2245,9 @@
     {
       "term": "request cycle",
       "definition": "The measured time for one model request to return, including the work counted by the runner’s timer.",
-      "aliases": []
+      "aliases": [
+        "request-cycle"
+      ]
     },
     {
       "term": "hard input cap",
@@ -2285,6 +2287,51 @@
     {
       "term": "corpus correction",
       "definition": "A change adopted into the collection’s text. A model proposal alone does not make that change.",
+      "aliases": []
+    },
+    {
+      "term": "time allowance",
+      "definition": "The maximum time permitted for one described task or request. More allowed time is not a promise that it will finish.",
+      "aliases": []
+    },
+    {
+      "term": "lossless",
+      "definition": "Able to restore exactly the information supplied before the change of format. This does not show that the source information is accurate.",
+      "aliases": []
+    },
+    {
+      "term": "decoding",
+      "definition": "Turning a stored representation back into the information it represents.",
+      "aliases": []
+    },
+    {
+      "term": "inspection coverage",
+      "definition": "The parts of the assigned material that a reviewer or model says it checked. A claim of coverage does not prove the check was accurate.",
+      "aliases": []
+    },
+    {
+      "term": "native-fit",
+      "definition": "A check that the model’s complete internal image and text representation fits its available capacity. Counting the visible text alone does not establish this.",
+      "aliases": []
+    },
+    {
+      "term": "corpus accuracy",
+      "definition": "How faithfully results represent original writing across the whole collection. Selected examples do not establish this rate.",
+      "aliases": []
+    },
+    {
+      "term": "unknown usage",
+      "definition": "Token totals were not returned or verified for an attempt. This does not mean that no work or cost occurred.",
+      "aliases": []
+    },
+    {
+      "term": "source-based",
+      "definition": "Using original material as the basis for a check. The conclusion still depends on what was inspected.",
+      "aliases": []
+    },
+    {
+      "term": "output cap",
+      "definition": "The largest model reply allowed for a request, measured here in tokens. Reaching it can cut a reply off.",
       "aliases": []
     }
   ]

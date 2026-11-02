@@ -1,0 +1,72 @@
+{
+  "assessor": "Root AI agent; exact-hash cached images inspected; Luna source comparison confirms chapter/year and repeated-word distinction.",
+  "historical_runs": [
+    {
+      "case": "D1",
+      "raw_reply_sha256": "37bf61d7a82cd53f855fafab5d7d684201fc1607291e37db57ff22450502d9a6",
+      "total_duration_nanoseconds": 89786892084,
+      "input_tokens": 7715,
+      "output_tokens": 638,
+      "reuse": "Historical reading/patch proposal, not a newly completed audit or part of current series call count."
+    },
+    {
+      "case": "D2",
+      "raw_reply_sha256": "58dd470f509145d621120b65645857069a928fef1de2e5c1547565face6c8951",
+      "total_duration_nanoseconds": 85883872458,
+      "input_tokens": 4512,
+      "output_tokens": 871,
+      "reuse": "Historical reading/patch proposal, not a newly completed audit or part of current series call count."
+    }
+  ],
+  "selected_source_checks": [
+    {
+      "case": "D1",
+      "alias": "P4",
+      "raw": "CCCXL",
+      "model": "CCCXLI",
+      "visible_print": "CCCXI",
+      "assessment": "source conflict: proposed chapter number is wrong; raw was already wrong, model changes it to a different wrong number."
+    },
+    {
+      "case": "D1",
+      "alias": "P4",
+      "raw": "tte Office",
+      "model": "the Office",
+      "visible_print": "the Office",
+      "assessment": "supported word repair, combined in the same model patch with the wrong chapter number."
+    },
+    {
+      "case": "D1",
+      "alias": "P4",
+      "raw": "as maybe, to cause",
+      "model": "as may be, to cause",
+      "visible_print": "as may be, to cause",
+      "assessment": "supported word-spacing repair."
+    },
+    {
+      "case": "D2",
+      "alias": "P7",
+      "raw": "July 17, 18G2",
+      "model": "July 17, 1862",
+      "visible_print": "July 17, 1862",
+      "assessment": "supported year repair; old saved proposal is already correct here."
+    },
+    {
+      "case": "D2",
+      "alias": "P7",
+      "raw": "I must admit that that act is quite full.",
+      "model": "I must admit that act is quite full.",
+      "visible_print": "I must admit that that act is quite full.",
+      "assessment": "introduced omission: deletes a word present in both original OCR and print."
+    },
+    {
+      "case": "D2",
+      "alias": "P5",
+      "raw": "Bepresentation",
+      "model": "Representation",
+      "visible_print": "Representation",
+      "assessment": "supported damaged-letter repair."
+    }
+  ],
+  "limits": "Six selected checks, not exhaustive independent reference labels or a representative accuracy percentage. Correct and incorrect changes occur within the same patch; do not accept whole edits based on one successful subchange. Human answers/raw sources/proposals unchanged."
+}
