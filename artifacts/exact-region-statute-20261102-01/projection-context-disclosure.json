@@ -1,0 +1,16 @@
+{
+  "issue": "Copied generic RequestProjection keeps original image_sha256/image_bindings metadata after body changes to region PNG.",
+  "actual_wire_proof": "Actual request body hash, decoded image PNG hash, original target/raw source and exact pixel derivation independently bound and verified; source_export has actual_provider_image_sha256/image_derivation.",
+  "source_context_fields": [
+    "image_sha256",
+    "image_bindings_json",
+    "image_bindings_sha256",
+    "source_layers_sha256",
+    "diagnostics_sha256",
+    "saved_proposal_sha256"
+  ],
+  "do_not_claim": "Do not interpret inherited image fields as actual crop media/geometry or native-fit evidence.",
+  "current_group": "Keep code/input frozen for all3; no body/image/usage/stop uncertainty caused by this metadata issue.",
+  "next": "After group, distinct explicit source-context vs actual-media projection metadata; preserve old artifacts and original reports.",
+  "review": "Root identified during actual projection inspection; bounded Luna traced compile/native-fit semantics and confirmed stale generic fields."
+}

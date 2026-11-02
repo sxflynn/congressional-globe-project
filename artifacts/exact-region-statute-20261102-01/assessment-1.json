@@ -1,0 +1,12 @@
+{
+  "assessor": "Root AI source and scope assessment",
+  "summary": "The first crop-only reply returns the full intended quotation, correctly reading be and section 13. Its words and internal punctuation match the source-inspected illustration; only the outer quotation marks differ. No neighboring text is included. The actual sent PNG is verified against the parent pixels. A separate metadata issue remains: the copied generic projection retains original full-image descriptors, while the actual request and export correctly identify the crop. Those inherited fields cannot certify actual-image geometry or native fit.",
+  "source_checks": {
+    "be": "correct",
+    "section_13": "retained",
+    "whole_selected_paragraph": "matches source-inspected illustration apart from outer quote style",
+    "neighbor_exclusion": "passed this run"
+  },
+  "stop_group": false,
+  "limits": "Selected source-inspected AI assessment, not independent gold or population quality. Metadata issue disclosed; actual body/source-image proof remains exact and frozen."
+}
