@@ -47,7 +47,10 @@ def load_compact_inputs(repository: Path):
 def export_compact_reply(repository, packet, response, elapsed):
     """Keep actual wire identity separate from original-shape semantic validation."""
     host, compact, _registry = load_compact_inputs(repository)
-    if packet != {"window_id": "D1C", "host": host, "body_utf8": compact.body_utf8}:
+    window = packet.get("window_id")
+    if window not in {"D1C", "D1L"}:
+        raise ValueError("compact export does not bind the fixed actual request")
+    if packet != {"window_id": window, "host": host, "body_utf8": compact.body_utf8}:
         raise ValueError("compact export does not bind the fixed actual request")
     _same_host, original, _registry = load_audit_inputs(repository, "D1")
     validated = export_reply(

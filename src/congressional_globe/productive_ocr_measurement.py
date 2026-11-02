@@ -22,6 +22,7 @@ from congressional_globe.productive_ocr_export import export_reply
 from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes
 from congressional_globe.productive_ocr_live import RuntimeObservation
 from congressional_globe.productive_ocr_local import OwnedLocalClient, OwnedLocalPlan, read_spool
+from congressional_globe.productive_ocr_long_audit import LongerAuditPlan
 from congressional_globe.productive_ocr_measurement_inputs import load_s5_inputs
 from congressional_globe.productive_ocr_runner import _session_lock, code_identity, fingerprint
 from congressional_globe.role_run_store import RoleRunStore
@@ -63,12 +64,15 @@ class MeasurementSpec(Contract):
         "productive-ocr-d1c-compact-repeat-1-v3",
         "productive-ocr-d1c-compact-repeat-2-v3",
         "productive-ocr-d1c-compact-repeat-3-v3",
+        "productive-ocr-d1l-long-repeat-1-v3",
+        "productive-ocr-d1l-long-repeat-2-v3",
+        "productive-ocr-d1l-long-repeat-3-v3",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256
     code_sha256: Sha256
     started_at_epoch: float = Field(gt=0, allow_inf_nan=False)
-    plan: OwnedLocalPlan
+    plan: OwnedLocalPlan | LongerAuditPlan
 
 
 def write_new(path: Path, value: object) -> None:
@@ -118,8 +122,8 @@ def _verify_backend(spec: MeasurementSpec) -> None:
         raise ValueError("S5 measurement requires the exact approved installed backend")
     if plan.executable != "/Applications/Ollama.app/Contents/Resources/ollama":
         raise ValueError("measurement executable path differs from the approved backend")
-    if plan.request_timeout_seconds != 120 or plan.startup_timeout_seconds > 45:
-        raise ValueError("measurement lifecycle must retain the approved120second bound")
+    if plan.request_timeout_seconds != _timeout_seconds(spec) or plan.startup_timeout_seconds > 45:
+        raise ValueError("measurement lifecycle differs from its fixed diagnostic time bound")
 
 
 def _verify_session_time(spec: MeasurementSpec) -> None:
@@ -200,12 +204,21 @@ def _attempt(directory, spec, packet, store, attempt, checkpoint):
         call = client.start(packet["body_utf8"].encode())
     except Exception as error:
         return _finish_failure(store, attempt, error, time.monotonic() - started)
-    return _receive(directory, packet, store, attempt, call, started, checkpoint)
+    return _receive(
+        directory,
+        packet,
+        store,
+        attempt,
+        call,
+        started,
+        checkpoint,
+        spec.plan.request_timeout_seconds,
+    )
 
 
-def _receive(directory, packet, store, attempt, call, started, checkpoint):
+def _receive(directory, packet, store, attempt, call, started, checkpoint, timeout=120):
     try:
-        response = call.result(timeout=120)
+        response = call.result(timeout=timeout)
     except Exception as error:
         state = call.cancel_and_observe()
         return _finish_failure(store, attempt, error, time.monotonic() - started, state)
@@ -219,6 +232,7 @@ def _receive(directory, packet, store, attempt, call, started, checkpoint):
 def _finish_failure(store, attempt, error, elapsed, state=None):
     result = {
         "error_type": type(error).__name__,
+        "error_cause_types": _error_cause_types(error),
         "error": str(error)[:1000],
         "owned_stop_observation": state or getattr(error, "owned_stop_observation", "unknown"),
         "elapsed_seconds": elapsed,
@@ -228,6 +242,16 @@ def _finish_failure(store, attempt, error, elapsed, state=None):
     }
     store.finish(attempt, result, "unresolved")
     return result
+
+
+def _error_cause_types(error):
+    names = []
+    for _index in range(4):
+        names.append(type(error).__name__)
+        error = error.__cause__
+        if error is None:
+            break
+    return names
 
 
 def _finish_response(store, attempt, packet, response, elapsed, state):
@@ -248,7 +272,7 @@ def _finish_response(store, attempt, packet, response, elapsed, state):
 
 
 def _export(packet, response, elapsed):
-    if packet.get("window_id") == "D1C":
+    if packet.get("window_id") in {"D1C", "D1L"}:
         from congressional_globe.productive_ocr_compact_measurement import export_compact_reply
 
         return export_compact_reply(REPOSITORY, packet, response, elapsed)
@@ -375,7 +399,13 @@ def _authority(spec):
     return (TEXT_APPROVAL_SHA, TEXT_BODY_SHA) if _is_text(spec) else (APPROVAL_SHA, BODY_SHA)
 
 
+def _timeout_seconds(spec):
+    return 300 if spec.contract in scoped.LONG_PROFILES else 120
+
+
 def _prep_seconds(spec):
+    if spec.contract in scoped.LONG_PROFILES:
+        return 90
     return 300 if spec.contract == "productive-ocr-s5-measurement-v1" else 270
 
 

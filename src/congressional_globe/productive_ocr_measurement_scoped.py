@@ -36,11 +36,24 @@ COMPACT_PACKAGE = Path("artifacts/compact-audit-measurement-20261102-01")
 COMPACT_APPROVAL_SHA = "47bc589e15910fb6f6174123c1dbdc5b694e3f76e295af7c810e2f669d181a10"
 COMPACT_BODY_SHA = "ef80f5feb637e041fc1f24a5f4947d533b4a91fa9fdadda3e14a82fc67ded3f4"
 COMPACT_PROFILES = tuple(f"productive-ocr-d1c-compact-repeat-{i}-v3" for i in range(1, 4))
-ALL_PROFILES = PROFILES + S1_PROFILES + S2_PROFILES + D1_PROFILES + D2_PROFILES + COMPACT_PROFILES
+LONG_PACKAGE = Path("artifacts/longer-audit-measurement-20261102-01")
+LONG_APPROVAL_SHA = "c48fb3ac3efa85a61681be8ed52b1bc1e716125efcf0ec4e6036959fec49119a"
+LONG_BODY_SHA = COMPACT_BODY_SHA
+LONG_PROFILES = tuple(f"productive-ocr-d1l-long-repeat-{i}-v3" for i in range(1, 4))
+ALL_PROFILES = (
+    PROFILES
+    + S1_PROFILES
+    + S2_PROFILES
+    + D1_PROFILES
+    + D2_PROFILES
+    + COMPACT_PROFILES
+    + LONG_PROFILES
+)
 
 
 def _selection(spec):
     choices = [
+        (LONG_PACKAGE, LONG_APPROVAL_SHA, LONG_BODY_SHA, LONG_PROFILES),
         (COMPACT_PACKAGE, COMPACT_APPROVAL_SHA, COMPACT_BODY_SHA, COMPACT_PROFILES),
         (D1_PACKAGE, D1_APPROVAL_SHA, D1_BODY_SHA, D1_PROFILES),
         (D2_PACKAGE, D2_APPROVAL_SHA, D2_BODY_SHA, D2_PROFILES),
@@ -70,6 +83,7 @@ class ScopedGroup(Contract):
         "productive-ocr-d1-scoped-group-v1",
         "productive-ocr-d2-scoped-group-v1",
         "productive-ocr-d1c-scoped-group-v1",
+        "productive-ocr-d1l-scoped-group-v1",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256

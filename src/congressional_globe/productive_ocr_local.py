@@ -182,7 +182,9 @@ class OwnedLocalClient:
         spool_dir: Path,
         before_send: Callable[[], None] | None = None,
     ) -> None:
-        self.plan = OwnedLocalPlan.model_validate(plan)
+        from congressional_globe.productive_ocr_long_audit import validate_diagnostic_plan
+
+        self.plan = validate_diagnostic_plan(plan)
         self.spool_dir = spool_dir
         self.before_send = before_send
 

@@ -293,7 +293,7 @@ def load_s2_scoped_inputs(repository: Path) -> tuple[dict, RequestProjection, Ev
 def load_scoped_inputs(repository, spec):
     from congressional_globe import productive_ocr_measurement_scoped as scoped
 
-    if spec.contract in scoped.COMPACT_PROFILES:
+    if spec.contract in scoped.COMPACT_PROFILES + scoped.LONG_PROFILES:
         from congressional_globe.productive_ocr_compact_measurement import load_compact_inputs
 
         return load_compact_inputs(repository)
