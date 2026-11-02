@@ -1,0 +1,43 @@
+{
+  "id": "HR-024",
+  "version": 1,
+  "title": "Whole-string law-column audit: first actual observation",
+  "instructions": "Inputs, expected output, actual output and differences are shown in order. The agent evaluates the returned claims against the saved source image. Comments are optional; this is not a permission request. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "audit-comments",
+      "prompt": "Optional comments to steer later work",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Inputs: original text, image and older model proposal",
+          "text": "The compact audit receives four source targets in two law columns. All original target text, the image and the complete older proposal are retained. The model is asked to report source-supported discrepancies and inspection coverage for every target; this is an audit, not a new corrected transcription. The following are exact excerpts for orientation, in original OCR then older-proposal order:\n\nChap. CCCXL — An Act to remove tte Office\n\nChap. CCCXLI.—An Act to remove the Office\n\nwith- out\n\nThe compact source input, image, original words and older proposal are preserved. Relative to T118, only four text patterns in the response schema change to explicitly permit whole strings. Source content, instructions, model and options are identical. The lean reply keeps one coverage record and concise source-bound concerns per target. Independent decoding restores the original source content, keeping the reply format explicit. Expected answers below were saved separately before these calls and were not inserted into the model prompt.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_1060.jp2/1124,226,1866,3758/1600,/0/default.jpg"
+        },
+        {
+          "label": "2 · Expected output: source checks declared before the calls",
+          "text": "Older proposal:\nCCCXLI\nVisible print / expected reading:\nCCCXI\nAgent expectation: Report that the saved proposal chapter number contradicts visible print; do not accept its fluent-looking correction.\n\nOlder proposal:\nwith- out\nVisible print / expected reading:\nwithout\nAgent expectation: Recognize the line-break join remains unrepaired in the saved proposal.\n\nOlder proposal:\nRep- resentatives\nVisible print / expected reading:\nRepresentatives\nAgent expectation: Whole audit should notice remaining line-break damage without confusing it with a true printed hyphen.\n\nThe agent inspected the saved image and earlier proposal. These are selected diagnostic checks, not an exhaustive independent reference or human grade. Numbers that already match the print must still be inspected; a correct old repair must not be called an error.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual run 1: exact model reply",
+          "text": "Exact returned reply:\n{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"with- out\",\"reading\":\"without\",\"reason\":\"Line-break artifact; the visible print supports the single word 'without'.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"the eastern\",\"reading\":\"the eastern\",\"reason\":\"Continuation to next column is valid; 'eastern district of Louisiana' is confirmed by image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"district of Louisiana\",\"reading\":\"district of Louisiana\",\"reason\":\"Continuation from previous column is valid; 'district of Louisiana' is confirmed by image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"tte\",\"reading\":\"the\",\"reason\":\"Typo in saved proposal; image clearly shows 'the Office'.\"},{\"layer\":\"saved_proposal\",\"quote\":\"as maybe, to cause\",\"reading\":\"as may be, to cause\",\"reason\":\"Typo in saved proposal; image shows 'as may be' (two words).\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}\n\nRequest cycle: 138.62 seconds. Reported usage: 10,965 input / 281 output tokens. Response-check status: invalid; owned shutdown: stopped; finish reason: stop. A model’s inspection claim is not proof that every word and number was checked.",
+          "url": null
+        },
+        {
+          "label": "4 · Differences: agent evaluation against the source",
+          "text": "Run 1 — The first changed-schema reply now contains full words and explanations, unlike all three T118single-character replies. It correctly proposes joining the saved with- out to without. It still misses the wrong chapter numeral, includes two unchanged readings as concerns, and attributes tte/as maybe defects to the saved proposal even though those quotes do not occur there. Host validation rejects the no-ops; independent quote checks also reject the two wrong-layer claims. This is useful partial recognition but not a valid complete audit.\n\nOnly the first of three planned observations exists. Later calls remain subject to feedback, known usage, positive shutdown and the original limits.\n\nThe detailed assessment records each source check and any extra finding. Software format checks, model self-reports, source-image AI assessment and human judgment remain separate. Agreement between repeated calls alone is not accuracy. Original sources, older proposals and human answers are unchanged.",
+          "url": null
+        },
+        {
+          "label": "5 · Costs, capacity and remaining limits",
+          "text": "Observed request cycles total 138.62 seconds. Known reported usage totals 10,965 input and 281 output tokens; 0 calls have unknown usage. The complete original audit request is retained. Earlier literal text counts exceed the 6,000 reporting threshold before image accounting; this is not proof of internal input fit. Each call retains the 300-second lifecycle allowance and 1,500-token output cap. This version changes four reply-schema text patterns; the prior T118 source, prompt, model, options, host validation and limits are unchanged. T118 had three invalid single-character replies totaling407.38seconds/32895input/590output, retained separately. This comparison tests a suspected constraint mismatch; exact backend compiler semantics remain unproved. Known-usage, positive-stop invalid or length-capped replies remain planned observations; unknown usage/exit and exhausted budgets still block dependent calls. An incomplete or truncated reply remains a failure, and unknown usage or owned exit prevents dependent calls. No retries, source fetches, model downloads, Computer Use or corpus-wide run.",
+          "url": null
+        }
+      ]
+    }
+  ],
+  "packet_sha256": "44d68dc83f86c6e4e5c301610282604cc55ba2116275d0c9ca7afee3c99eda93"
+}

@@ -1,0 +1,28 @@
+{
+  "assessor": "Root AI source/format assessment",
+  "summary": "Second changed-schema reply again uses full phrases and finds the saved split-word defect. It explicitly claims the chapter is CCCXLI, citing the prior proposal, but the scan reads CCCXI: this repeats the historical wrong number rather than correcting it. It also reports two unchanged readings as concerns, so host validation rejects the reply. Other P4raw-word/spacing/punctuation repairs are supported by the visible print, but do not make the wrong chapter or full-coverage claim reliable.",
+  "primary_checks": [
+    {
+      "alias": "P1",
+      "check": "with- out→without",
+      "outcome": "source-supported finding; exact quote checked separately"
+    },
+    {
+      "alias": "P4",
+      "check": "CCCXLI→CCCXI",
+      "outcome": "wrong: asserts CCCXLI as confirmed; scan reads CCCXI"
+    },
+    {
+      "alias": "P4",
+      "check": "raw tte/as maybe/Wiscon- sin to.be/enacted punctuation",
+      "outcome": "proposed word/spacing/comma readings supported by saved image; exact quote occurrence counts recorded"
+    }
+  ],
+  "extra_findings": [
+    "P2/P3unchanged readings violate the concern contract; actual rejection occurs at no-op validation.",
+    "Correct adjacent repairs coexist with an explicitly wrong chapter number.",
+    "All4aliases claim complete coverage, which is not proof of correct image inspection."
+  ],
+  "stop_group": false,
+  "scope": "Selected AI source checks, not independent human gold. Known usage/positive stop permit third identical observation; preserve all differences."
+}

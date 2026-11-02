@@ -1,0 +1,28 @@
+{
+  "assessor": "Root AI source/format assessment",
+  "summary": "The first changed-schema reply now contains full words and explanations, unlike all three T118single-character replies. It correctly proposes joining the saved with- out to without. It still misses the wrong chapter numeral, includes two unchanged readings as concerns, and attributes tte/as maybe defects to the saved proposal even though those quotes do not occur there. Host validation rejects the no-ops; independent quote checks also reject the two wrong-layer claims. This is useful partial recognition but not a valid complete audit.",
+  "primary_checks": [
+    {
+      "alias": "P1",
+      "check": "with- out→without",
+      "outcome": "source-supported finding, exact saved quote occurs once"
+    },
+    {
+      "alias": "P4",
+      "check": "CCCXLI→CCCXI",
+      "outcome": "not recovered"
+    },
+    {
+      "alias": "P4",
+      "check": "the Office and as may be already repaired in saved proposal",
+      "outcome": "wrong-layer concerns: tte and as maybe, to cause are absent from saved proposal"
+    }
+  ],
+  "extra_findings": [
+    "P2the eastern→the eastern and P3district of Louisiana→same are no-ops, disallowed as concerns.",
+    "All4aliases claim complete coverage, but selected chapter check is missed.",
+    "Multi-character output is evidence of behavioral change after schema-only change, not proof of exact backend converter implementation."
+  ],
+  "stop_group": false,
+  "scope": "AI assessment of selected exact-source controls; not independent human gold or population accuracy. Known usage/positive stop permit remaining identical observations."
+}

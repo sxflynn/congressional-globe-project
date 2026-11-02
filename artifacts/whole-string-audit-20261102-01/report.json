@@ -1,0 +1,407 @@
+{
+  "task": "T120",
+  "case": "D1W",
+  "planned_calls": 3,
+  "actual_calls": 3,
+  "request_cycle_seconds": 420.415577666834,
+  "reported_input_tokens": 32895,
+  "reported_output_tokens": 1103,
+  "unknown_usage_calls": 0,
+  "all_positive_stop": true,
+  "runs": [
+    {
+      "repetition": 1,
+      "elapsed_seconds": 138.6196655840613,
+      "usage": {
+        "input_tokens": 10965,
+        "output_tokens": 281
+      },
+      "measurement_status": "invalid",
+      "owned_stop": "stopped",
+      "status": "completed",
+      "finish_reason": "stop",
+      "raw_output": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"with- out\",\"reading\":\"without\",\"reason\":\"Line-break artifact; the visible print supports the single word 'without'.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"the eastern\",\"reading\":\"the eastern\",\"reason\":\"Continuation to next column is valid; 'eastern district of Louisiana' is confirmed by image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"district of Louisiana\",\"reading\":\"district of Louisiana\",\"reason\":\"Continuation from previous column is valid; 'district of Louisiana' is confirmed by image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"tte\",\"reading\":\"the\",\"reason\":\"Typo in saved proposal; image clearly shows 'the Office'.\"},{\"layer\":\"saved_proposal\",\"quote\":\"as maybe, to cause\",\"reading\":\"as may be, to cause\",\"reason\":\"Typo in saved proposal; image shows 'as may be' (two words).\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}",
+      "parsed_reply": {
+        "contract": "ocr-lean-audit-reply-v1",
+        "targets": [
+          {
+            "concerns": [
+              {
+                "layer": "saved_proposal",
+                "quote": "with- out",
+                "reading": "without",
+                "reason": "Line-break artifact; the visible print supports the single word 'without'."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P1",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "the eastern",
+                "reading": "the eastern",
+                "reason": "Continuation to next column is valid; 'eastern district of Louisiana' is confirmed by image."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P2",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "district of Louisiana",
+                "reading": "district of Louisiana",
+                "reason": "Continuation from previous column is valid; 'district of Louisiana' is confirmed by image."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P3",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "saved_proposal",
+                "quote": "tte",
+                "reading": "the",
+                "reason": "Typo in saved proposal; image clearly shows 'the Office'."
+              },
+              {
+                "layer": "saved_proposal",
+                "quote": "as maybe, to cause",
+                "reading": "as may be, to cause",
+                "reason": "Typo in saved proposal; image shows 'as may be' (two words)."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P4",
+            "reason": null
+          }
+        ],
+        "unit_id": "D1"
+      },
+      "parse_error": null,
+      "source_export": {
+        "acceptance": "unreviewed_ai_evidence; no repair/production/native-fit acceptance",
+        "actual_provider_request_sha256": "54595eaa7fb926cad47fb0f5626474aedd23b9ce420f6ec5525dc066434e43b0",
+        "image_sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+        "outcome": "invalid",
+        "raw_reply_sha256": "2b58ef04a8346dc10ab713b34e2a3d4e5be98ac11fa079c586cb0270f99d6c69",
+        "raw_reply_text": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"with- out\",\"reading\":\"without\",\"reason\":\"Line-break artifact; the visible print supports the single word 'without'.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"the eastern\",\"reading\":\"the eastern\",\"reason\":\"Continuation to next column is valid; 'eastern district of Louisiana' is confirmed by image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"district of Louisiana\",\"reading\":\"district of Louisiana\",\"reason\":\"Continuation from previous column is valid; 'district of Louisiana' is confirmed by image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"tte\",\"reading\":\"the\",\"reason\":\"Typo in saved proposal; image clearly shows 'the Office'.\"},{\"layer\":\"saved_proposal\",\"quote\":\"as maybe, to cause\",\"reading\":\"as may be, to cause\",\"reason\":\"Typo in saved proposal; image shows 'as may be' (two words).\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}",
+        "rejection_reason": "2 validation errors for LeanAuditReply\ntargets.1.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':...is confirmed by image.\"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\ntargets.2.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':...is confirmed by image.\"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+        "response_schema_sha256": "0ce2e48d5a43b9fa6fa6e0cb56602a4e231dc4cf65b9399fc88a8fe2113e2930",
+        "source_context_host_sha256": "47703d1c2e8c1289e548ad5fa0a3a8094cc230549da5bf2cbde237ecce24ae94"
+      },
+      "error": null,
+      "assessment": {
+        "assessor": "Root AI source/format assessment",
+        "summary": "The first changed-schema reply now contains full words and explanations, unlike all three T118single-character replies. It correctly proposes joining the saved with- out to without. It still misses the wrong chapter numeral, includes two unchanged readings as concerns, and attributes tte/as maybe defects to the saved proposal even though those quotes do not occur there. Host validation rejects the no-ops; independent quote checks also reject the two wrong-layer claims. This is useful partial recognition but not a valid complete audit.",
+        "primary_checks": [
+          {
+            "alias": "P1",
+            "check": "with- out→without",
+            "outcome": "source-supported finding, exact saved quote occurs once"
+          },
+          {
+            "alias": "P4",
+            "check": "CCCXLI→CCCXI",
+            "outcome": "not recovered"
+          },
+          {
+            "alias": "P4",
+            "check": "the Office and as may be already repaired in saved proposal",
+            "outcome": "wrong-layer concerns: tte and as maybe, to cause are absent from saved proposal"
+          }
+        ],
+        "extra_findings": [
+          "P2the eastern→the eastern and P3district of Louisiana→same are no-ops, disallowed as concerns.",
+          "All4aliases claim complete coverage, but selected chapter check is missed.",
+          "Multi-character output is evidence of behavioral change after schema-only change, not proof of exact backend converter implementation."
+        ],
+        "stop_group": false,
+        "scope": "AI assessment of selected exact-source controls; not independent human gold or population accuracy. Known usage/positive stop permit remaining identical observations."
+      },
+      "result_sha256": "643b04526dff1a11d33872b34c94dde5a104c94bc357354a7964991f783070a4"
+    },
+    {
+      "repetition": 2,
+      "elapsed_seconds": 142.4771439167671,
+      "usage": {
+        "input_tokens": 10965,
+        "output_tokens": 452
+      },
+      "measurement_status": "invalid",
+      "owned_stop": "stopped",
+      "status": "completed",
+      "finish_reason": "stop",
+      "raw_output": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"district court with- out\",\"reading\":\"district court without\",\"reason\":\"The static edit joins the line break; the printed text is 'without'.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"district court of the eastern\",\"reading\":\"district court of the eastern\",\"reason\":\"This segment continues directly into P3; it is correct but flagged as a split target.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"district of Louisiana\",\"reading\":\"district of Louisiana\",\"reason\":\"Correct continuation from P2.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"Chap. CCCXL — An Act to remove tte Office\",\"reading\":\"Chap. CCCXLI.—An Act to remove the Office\",\"reason\":\"OCR misidentified 'CCCXLI' as 'CCCXL' and 'the' as 'tte'. The chapter number is CCCXLI, not CCCXL, as confirmed by the running text and the prior proposal edit.\"},{\"layer\":\"raw\",\"quote\":\"as maybe, to cause\",\"reading\":\"as may be, to cause\",\"reason\":\"'maybe' is an OCR error for the two-word 'may be'.\"},{\"layer\":\"raw\",\"quote\":\"Wiscon- sin to.be removed\",\"reading\":\"Wisconsin to be removed\",\"reason\":\"Line-break artifact 'Wiscon- sin' joins to 'Wisconsin'; 'to.be' is an OCR error for 'to be' (space missing).\"},{\"layer\":\"raw\",\"quote\":\"Sec. 2. And be it further enacted. That all\",\"reading\":\"Sec. 2. And be it further enacted, That all\",\"reason\":\"The period after 'enacted' is an OCR error; it should be a comma to match the style of the other sections in the image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}",
+      "parsed_reply": {
+        "contract": "ocr-lean-audit-reply-v1",
+        "targets": [
+          {
+            "concerns": [
+              {
+                "layer": "saved_proposal",
+                "quote": "district court with- out",
+                "reading": "district court without",
+                "reason": "The static edit joins the line break; the printed text is 'without'."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P1",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "district court of the eastern",
+                "reading": "district court of the eastern",
+                "reason": "This segment continues directly into P3; it is correct but flagged as a split target."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P2",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "district of Louisiana",
+                "reading": "district of Louisiana",
+                "reason": "Correct continuation from P2."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P3",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "Chap. CCCXL — An Act to remove tte Office",
+                "reading": "Chap. CCCXLI.—An Act to remove the Office",
+                "reason": "OCR misidentified 'CCCXLI' as 'CCCXL' and 'the' as 'tte'. The chapter number is CCCXLI, not CCCXL, as confirmed by the running text and the prior proposal edit."
+              },
+              {
+                "layer": "raw",
+                "quote": "as maybe, to cause",
+                "reading": "as may be, to cause",
+                "reason": "'maybe' is an OCR error for the two-word 'may be'."
+              },
+              {
+                "layer": "raw",
+                "quote": "Wiscon- sin to.be removed",
+                "reading": "Wisconsin to be removed",
+                "reason": "Line-break artifact 'Wiscon- sin' joins to 'Wisconsin'; 'to.be' is an OCR error for 'to be' (space missing)."
+              },
+              {
+                "layer": "raw",
+                "quote": "Sec. 2. And be it further enacted. That all",
+                "reading": "Sec. 2. And be it further enacted, That all",
+                "reason": "The period after 'enacted' is an OCR error; it should be a comma to match the style of the other sections in the image."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P4",
+            "reason": null
+          }
+        ],
+        "unit_id": "D1"
+      },
+      "parse_error": null,
+      "source_export": {
+        "acceptance": "unreviewed_ai_evidence; no repair/production/native-fit acceptance",
+        "actual_provider_request_sha256": "54595eaa7fb926cad47fb0f5626474aedd23b9ce420f6ec5525dc066434e43b0",
+        "image_sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+        "outcome": "invalid",
+        "raw_reply_sha256": "24761bdca1e4360cb95176d92e41371cdef98b5d51e9cc33ab715b2a2f95fcd3",
+        "raw_reply_text": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"district court with- out\",\"reading\":\"district court without\",\"reason\":\"The static edit joins the line break; the printed text is 'without'.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"district court of the eastern\",\"reading\":\"district court of the eastern\",\"reason\":\"This segment continues directly into P3; it is correct but flagged as a split target.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"district of Louisiana\",\"reading\":\"district of Louisiana\",\"reason\":\"Correct continuation from P2.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"Chap. CCCXL — An Act to remove tte Office\",\"reading\":\"Chap. CCCXLI.—An Act to remove the Office\",\"reason\":\"OCR misidentified 'CCCXLI' as 'CCCXL' and 'the' as 'tte'. The chapter number is CCCXLI, not CCCXL, as confirmed by the running text and the prior proposal edit.\"},{\"layer\":\"raw\",\"quote\":\"as maybe, to cause\",\"reading\":\"as may be, to cause\",\"reason\":\"'maybe' is an OCR error for the two-word 'may be'.\"},{\"layer\":\"raw\",\"quote\":\"Wiscon- sin to.be removed\",\"reading\":\"Wisconsin to be removed\",\"reason\":\"Line-break artifact 'Wiscon- sin' joins to 'Wisconsin'; 'to.be' is an OCR error for 'to be' (space missing).\"},{\"layer\":\"raw\",\"quote\":\"Sec. 2. And be it further enacted. That all\",\"reading\":\"Sec. 2. And be it further enacted, That all\",\"reason\":\"The period after 'enacted' is an OCR error; it should be a comma to match the style of the other sections in the image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}",
+        "rejection_reason": "2 validation errors for LeanAuditReply\ntargets.1.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':...ged as a split target.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\ntargets.2.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':... continuation from P2.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+        "response_schema_sha256": "0ce2e48d5a43b9fa6fa6e0cb56602a4e231dc4cf65b9399fc88a8fe2113e2930",
+        "source_context_host_sha256": "47703d1c2e8c1289e548ad5fa0a3a8094cc230549da5bf2cbde237ecce24ae94"
+      },
+      "error": null,
+      "assessment": {
+        "assessor": "Root AI source/format assessment",
+        "summary": "Second changed-schema reply again uses full phrases and finds the saved split-word defect. It explicitly claims the chapter is CCCXLI, citing the prior proposal, but the scan reads CCCXI: this repeats the historical wrong number rather than correcting it. It also reports two unchanged readings as concerns, so host validation rejects the reply. Other P4raw-word/spacing/punctuation repairs are supported by the visible print, but do not make the wrong chapter or full-coverage claim reliable.",
+        "primary_checks": [
+          {
+            "alias": "P1",
+            "check": "with- out→without",
+            "outcome": "source-supported finding; exact quote checked separately"
+          },
+          {
+            "alias": "P4",
+            "check": "CCCXLI→CCCXI",
+            "outcome": "wrong: asserts CCCXLI as confirmed; scan reads CCCXI"
+          },
+          {
+            "alias": "P4",
+            "check": "raw tte/as maybe/Wiscon- sin to.be/enacted punctuation",
+            "outcome": "proposed word/spacing/comma readings supported by saved image; exact quote occurrence counts recorded"
+          }
+        ],
+        "extra_findings": [
+          "P2/P3unchanged readings violate the concern contract; actual rejection occurs at no-op validation.",
+          "Correct adjacent repairs coexist with an explicitly wrong chapter number.",
+          "All4aliases claim complete coverage, which is not proof of correct image inspection."
+        ],
+        "stop_group": false,
+        "scope": "Selected AI source checks, not independent human gold. Known usage/positive stop permit third identical observation; preserve all differences."
+      },
+      "result_sha256": "9bcc72fed396737c585f66e1e7349c3c7d61d0bf0c8675d0e82c2a9470bda56c"
+    },
+    {
+      "repetition": 3,
+      "elapsed_seconds": 139.3187681660056,
+      "usage": {
+        "input_tokens": 10965,
+        "output_tokens": 370
+      },
+      "measurement_status": "invalid",
+      "owned_stop": "stopped",
+      "status": "completed",
+      "finish_reason": "stop",
+      "raw_output": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"static\",\"quote\":\"with- out\",\"reading\":\"without\",\"reason\":\"Image shows hyphenated line wrap.\"},{\"layer\":\"static\",\"quote\":\"district court of the eastern\",\"reading\":\"district court of the eastern\",\"reason\":\"Number audit confirms eastern district text aligns with image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"district court of the eastern\",\"reading\":\"district court of the eastern\",\"reason\":\"Number and district name audit confirms continuity with image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"July 28, 1866\",\"reading\":\"July 28, 1866\",\"reason\":\"Number audit confirms date values match image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"Chap. CCCXLI\",\"reading\":\"Chap. CCCXL\",\"reason\":\"Image clearly prints the 300th chapter, not the 301st.\"},{\"layer\":\"static\",\"quote\":\"tte\",\"reading\":\"the\",\"reason\":\"Image prints 'the' with ascender damage, not 'tte'.\"},{\"layer\":\"raw\",\"quote\":\"as maybe,\",\"reading\":\"as may be,\",\"reason\":\"Image separates 'may' and 'be' in print.\"},{\"layer\":\"raw\",\"quote\":\"enacted. That\",\"reading\":\"enacted, That\",\"reason\":\"Image uses a comma after 'enacted'.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}",
+      "parsed_reply": {
+        "contract": "ocr-lean-audit-reply-v1",
+        "targets": [
+          {
+            "concerns": [
+              {
+                "layer": "static",
+                "quote": "with- out",
+                "reading": "without",
+                "reason": "Image shows hyphenated line wrap."
+              },
+              {
+                "layer": "static",
+                "quote": "district court of the eastern",
+                "reading": "district court of the eastern",
+                "reason": "Number audit confirms eastern district text aligns with image."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P1",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "district court of the eastern",
+                "reading": "district court of the eastern",
+                "reason": "Number and district name audit confirms continuity with image."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P2",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "July 28, 1866",
+                "reading": "July 28, 1866",
+                "reason": "Number audit confirms date values match image."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P3",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "saved_proposal",
+                "quote": "Chap. CCCXLI",
+                "reading": "Chap. CCCXL",
+                "reason": "Image clearly prints the 300th chapter, not the 301st."
+              },
+              {
+                "layer": "static",
+                "quote": "tte",
+                "reading": "the",
+                "reason": "Image prints 'the' with ascender damage, not 'tte'."
+              },
+              {
+                "layer": "raw",
+                "quote": "as maybe,",
+                "reading": "as may be,",
+                "reason": "Image separates 'may' and 'be' in print."
+              },
+              {
+                "layer": "raw",
+                "quote": "enacted. That",
+                "reading": "enacted, That",
+                "reason": "Image uses a comma after 'enacted'."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P4",
+            "reason": null
+          }
+        ],
+        "unit_id": "D1"
+      },
+      "parse_error": null,
+      "source_export": {
+        "acceptance": "unreviewed_ai_evidence; no repair/production/native-fit acceptance",
+        "actual_provider_request_sha256": "54595eaa7fb926cad47fb0f5626474aedd23b9ce420f6ec5525dc066434e43b0",
+        "image_sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+        "outcome": "invalid",
+        "raw_reply_sha256": "cf2e5c71ee8d5e4a185a8d8c3f4e26889a924e3ce1610d64e8c2cba4b6ba7baf",
+        "raw_reply_text": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"static\",\"quote\":\"with- out\",\"reading\":\"without\",\"reason\":\"Image shows hyphenated line wrap.\"},{\"layer\":\"static\",\"quote\":\"district court of the eastern\",\"reading\":\"district court of the eastern\",\"reason\":\"Number audit confirms eastern district text aligns with image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"district court of the eastern\",\"reading\":\"district court of the eastern\",\"reason\":\"Number and district name audit confirms continuity with image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"July 28, 1866\",\"reading\":\"July 28, 1866\",\"reason\":\"Number audit confirms date values match image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"Chap. CCCXLI\",\"reading\":\"Chap. CCCXL\",\"reason\":\"Image clearly prints the 300th chapter, not the 301st.\"},{\"layer\":\"static\",\"quote\":\"tte\",\"reading\":\"the\",\"reason\":\"Image prints 'the' with ascender damage, not 'tte'.\"},{\"layer\":\"raw\",\"quote\":\"as maybe,\",\"reading\":\"as may be,\",\"reason\":\"Image separates 'may' and 'be' in print.\"},{\"layer\":\"raw\",\"quote\":\"enacted. That\",\"reading\":\"enacted, That\",\"reason\":\"Image uses a comma after 'enacted'.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}",
+        "rejection_reason": "3 validation errors for LeanAuditReply\ntargets.0.concerns.1\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'static', 'quot...ext aligns with image.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\ntargets.1.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':...continuity with image.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\ntargets.2.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':...te values match image.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+        "response_schema_sha256": "0ce2e48d5a43b9fa6fa6e0cb56602a4e231dc4cf65b9399fc88a8fe2113e2930",
+        "source_context_host_sha256": "47703d1c2e8c1289e548ad5fa0a3a8094cc230549da5bf2cbde237ecce24ae94"
+      },
+      "error": null,
+      "assessment": {
+        "assessor": "Root AI source/format assessment",
+        "summary": "Third changed-schema reply uses full phrases and again proposes the supported without reading. It flags the saved chapter but replaces CCCXLI with another wrong numeral, CCCXL; the scan reads CCCXI. Its explanation also misstates the numerical values. It includes three unchanged readings as concerns and misassigns one continuation quote to P1. Host validation rejects no-ops first; separate quote checks document source/layer failures. The three observations show better text length but zero valid complete audits and no correct selected chapter correction.",
+        "primary_checks": [
+          {
+            "alias": "P1",
+            "check": "with- out→without",
+            "outcome": "reading source-supported; actual declared static quote checked separately"
+          },
+          {
+            "alias": "P4",
+            "check": "CCCXLI→CCCXI",
+            "outcome": "wrong: proposes CCCXL, which contradicts CCCXI"
+          },
+          {
+            "alias": "P4",
+            "check": "raw tte/as maybe/enacted punctuation",
+            "outcome": "reading proposals supported by print, exact declared quote/layer counts recorded separately"
+          }
+        ],
+        "extra_findings": [
+          "Three no-op concerns violate the advertised contract.",
+          "P1continuation quote belongs to another target; source quote binding would reject it.",
+          "Chapter reasoning calls CCCXL the300th and CCCXLI301st; these numerals are340and341, while printCCCXIis311.",
+          "All4aliases claim complete coverage despite wrong chapter and source errors."
+        ],
+        "stop_group": false,
+        "scope": "Selected AI source checks, not human gold or population accuracy. All3planned observations complete with known usage/positive stop; no replacement/retry."
+      },
+      "result_sha256": "70600bd4a15506f9e75dd27ca868c6180dafdfa1604bd23728df6140b9534f83"
+    }
+  ],
+  "source_expectations_path": "artifacts/whole-string-audit-20261102-01/expected-audit-checks.json",
+  "quality_basis": "Agent judgments of exact-hash cached images, original full targets and frozen prior proposal. Not independent human gold or population accuracy.",
+  "native_fit": "unknown",
+  "distinct_raw_replies": 3,
+  "distinct_reported_concern_sets": 3,
+  "concern_pattern_limit": "Returned claim patterns only; no source correctness or complete coverage implied."
+}

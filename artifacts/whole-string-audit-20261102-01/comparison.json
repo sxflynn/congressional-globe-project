@@ -1,0 +1,203 @@
+{
+  "question": "Do explicit whole-string schema patterns remove observed single-character output and yield source-faithful audits?",
+  "rows": [
+    {
+      "arm": "T118 baseline",
+      "repetition": 1,
+      "seconds": 139.09221229190007,
+      "input_tokens": 10965,
+      "output_tokens": 196,
+      "status": "invalid",
+      "finish_reason": "stop",
+      "owned_stop": "stopped",
+      "concerns": 6,
+      "nonempty_field_lengths": {
+        "quote": [
+          1
+        ],
+        "reading": [
+          1
+        ],
+        "reason": [
+          1
+        ]
+      },
+      "noop_concerns": 1
+    },
+    {
+      "arm": "T118 baseline",
+      "repetition": 2,
+      "seconds": 135.543671624735,
+      "input_tokens": 10965,
+      "output_tokens": 227,
+      "status": "invalid",
+      "finish_reason": "stop",
+      "owned_stop": "stopped",
+      "concerns": 8,
+      "nonempty_field_lengths": {
+        "quote": [
+          1
+        ],
+        "reading": [
+          1
+        ],
+        "reason": [
+          1
+        ]
+      },
+      "noop_concerns": 8
+    },
+    {
+      "arm": "T118 baseline",
+      "repetition": 3,
+      "seconds": 132.7434929171577,
+      "input_tokens": 10965,
+      "output_tokens": 167,
+      "status": "invalid",
+      "finish_reason": "stop",
+      "owned_stop": "stopped",
+      "concerns": 4,
+      "nonempty_field_lengths": {
+        "quote": [
+          1
+        ],
+        "reading": [
+          1
+        ],
+        "reason": [
+          1
+        ]
+      },
+      "noop_concerns": 0
+    },
+    {
+      "arm": "T120 explicit whole-string patterns",
+      "repetition": 1,
+      "seconds": 138.6196655840613,
+      "input_tokens": 10965,
+      "output_tokens": 281,
+      "status": "invalid",
+      "finish_reason": "stop",
+      "owned_stop": "stopped",
+      "concerns": 5,
+      "nonempty_field_lengths": {
+        "quote": [
+          3,
+          9,
+          11,
+          18,
+          21
+        ],
+        "reading": [
+          3,
+          7,
+          11,
+          19,
+          21
+        ],
+        "reason": [
+          57,
+          60,
+          74,
+          90,
+          92
+        ]
+      },
+      "noop_concerns": 2
+    },
+    {
+      "arm": "T120 explicit whole-string patterns",
+      "repetition": 2,
+      "seconds": 142.4771439167671,
+      "input_tokens": 10965,
+      "output_tokens": 452,
+      "status": "invalid",
+      "finish_reason": "stop",
+      "owned_stop": "stopped",
+      "concerns": 7,
+      "nonempty_field_lengths": {
+        "quote": [
+          18,
+          21,
+          24,
+          25,
+          29,
+          41,
+          43
+        ],
+        "reading": [
+          19,
+          21,
+          22,
+          23,
+          29,
+          41,
+          43
+        ],
+        "reason": [
+          29,
+          50,
+          68,
+          85,
+          108,
+          119,
+          160
+        ]
+      },
+      "noop_concerns": 2
+    },
+    {
+      "arm": "T120 explicit whole-string patterns",
+      "repetition": 3,
+      "seconds": 139.3187681660056,
+      "input_tokens": 10965,
+      "output_tokens": 370,
+      "status": "invalid",
+      "finish_reason": "stop",
+      "owned_stop": "stopped",
+      "concerns": 8,
+      "nonempty_field_lengths": {
+        "quote": [
+          3,
+          9,
+          12,
+          13,
+          29
+        ],
+        "reading": [
+          3,
+          7,
+          10,
+          11,
+          13,
+          29
+        ],
+        "reason": [
+          33,
+          35,
+          40,
+          46,
+          51,
+          54,
+          62
+        ]
+      },
+      "noop_concerns": 3
+    }
+  ],
+  "comparison_limits": "Same exposed D1 source/image/prompt/model/options/host across arms, four schema pattern values differ. Not randomized, independent gold, exact compiler proof, native-fit evidence or population accuracy.",
+  "prior_series": {
+    "calls": 7,
+    "seconds": 633.5164512079209,
+    "input_tokens_known": 16894,
+    "output_tokens_known": 1789,
+    "unknown_usage_calls": 3
+  },
+  "cumulative": {
+    "calls": 13,
+    "request_cycle_seconds": 1461.3114057085477,
+    "reported_input_tokens_known": 82684,
+    "reported_output_tokens_known": 3482,
+    "unknown_usage_calls": 3
+  }
+}

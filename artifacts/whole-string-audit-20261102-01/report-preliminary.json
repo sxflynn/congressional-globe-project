@@ -1,0 +1,138 @@
+{
+  "task": "T120",
+  "case": "D1W",
+  "planned_calls": 3,
+  "actual_calls": 1,
+  "request_cycle_seconds": 138.6196655840613,
+  "reported_input_tokens": 10965,
+  "reported_output_tokens": 281,
+  "unknown_usage_calls": 0,
+  "all_positive_stop": true,
+  "runs": [
+    {
+      "repetition": 1,
+      "elapsed_seconds": 138.6196655840613,
+      "usage": {
+        "input_tokens": 10965,
+        "output_tokens": 281
+      },
+      "measurement_status": "invalid",
+      "owned_stop": "stopped",
+      "status": "completed",
+      "finish_reason": "stop",
+      "raw_output": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"with- out\",\"reading\":\"without\",\"reason\":\"Line-break artifact; the visible print supports the single word 'without'.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"the eastern\",\"reading\":\"the eastern\",\"reason\":\"Continuation to next column is valid; 'eastern district of Louisiana' is confirmed by image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"district of Louisiana\",\"reading\":\"district of Louisiana\",\"reason\":\"Continuation from previous column is valid; 'district of Louisiana' is confirmed by image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"tte\",\"reading\":\"the\",\"reason\":\"Typo in saved proposal; image clearly shows 'the Office'.\"},{\"layer\":\"saved_proposal\",\"quote\":\"as maybe, to cause\",\"reading\":\"as may be, to cause\",\"reason\":\"Typo in saved proposal; image shows 'as may be' (two words).\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}",
+      "parsed_reply": {
+        "contract": "ocr-lean-audit-reply-v1",
+        "targets": [
+          {
+            "concerns": [
+              {
+                "layer": "saved_proposal",
+                "quote": "with- out",
+                "reading": "without",
+                "reason": "Line-break artifact; the visible print supports the single word 'without'."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P1",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "the eastern",
+                "reading": "the eastern",
+                "reason": "Continuation to next column is valid; 'eastern district of Louisiana' is confirmed by image."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P2",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "district of Louisiana",
+                "reading": "district of Louisiana",
+                "reason": "Continuation from previous column is valid; 'district of Louisiana' is confirmed by image."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P3",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "saved_proposal",
+                "quote": "tte",
+                "reading": "the",
+                "reason": "Typo in saved proposal; image clearly shows 'the Office'."
+              },
+              {
+                "layer": "saved_proposal",
+                "quote": "as maybe, to cause",
+                "reading": "as may be, to cause",
+                "reason": "Typo in saved proposal; image shows 'as may be' (two words)."
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P4",
+            "reason": null
+          }
+        ],
+        "unit_id": "D1"
+      },
+      "parse_error": null,
+      "source_export": {
+        "acceptance": "unreviewed_ai_evidence; no repair/production/native-fit acceptance",
+        "actual_provider_request_sha256": "54595eaa7fb926cad47fb0f5626474aedd23b9ce420f6ec5525dc066434e43b0",
+        "image_sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+        "outcome": "invalid",
+        "raw_reply_sha256": "2b58ef04a8346dc10ab713b34e2a3d4e5be98ac11fa079c586cb0270f99d6c69",
+        "raw_reply_text": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"with- out\",\"reading\":\"without\",\"reason\":\"Line-break artifact; the visible print supports the single word 'without'.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"the eastern\",\"reading\":\"the eastern\",\"reason\":\"Continuation to next column is valid; 'eastern district of Louisiana' is confirmed by image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"district of Louisiana\",\"reading\":\"district of Louisiana\",\"reason\":\"Continuation from previous column is valid; 'district of Louisiana' is confirmed by image.\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"tte\",\"reading\":\"the\",\"reason\":\"Typo in saved proposal; image clearly shows 'the Office'.\"},{\"layer\":\"saved_proposal\",\"quote\":\"as maybe, to cause\",\"reading\":\"as may be, to cause\",\"reason\":\"Typo in saved proposal; image shows 'as may be' (two words).\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}",
+        "rejection_reason": "2 validation errors for LeanAuditReply\ntargets.1.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':...is confirmed by image.\"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\ntargets.2.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':...is confirmed by image.\"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+        "response_schema_sha256": "0ce2e48d5a43b9fa6fa6e0cb56602a4e231dc4cf65b9399fc88a8fe2113e2930",
+        "source_context_host_sha256": "47703d1c2e8c1289e548ad5fa0a3a8094cc230549da5bf2cbde237ecce24ae94"
+      },
+      "error": null,
+      "assessment": {
+        "assessor": "Root AI source/format assessment",
+        "summary": "The first changed-schema reply now contains full words and explanations, unlike all three T118single-character replies. It correctly proposes joining the saved with- out to without. It still misses the wrong chapter numeral, includes two unchanged readings as concerns, and attributes tte/as maybe defects to the saved proposal even though those quotes do not occur there. Host validation rejects the no-ops; independent quote checks also reject the two wrong-layer claims. This is useful partial recognition but not a valid complete audit.",
+        "primary_checks": [
+          {
+            "alias": "P1",
+            "check": "with- out→without",
+            "outcome": "source-supported finding, exact saved quote occurs once"
+          },
+          {
+            "alias": "P4",
+            "check": "CCCXLI→CCCXI",
+            "outcome": "not recovered"
+          },
+          {
+            "alias": "P4",
+            "check": "the Office and as may be already repaired in saved proposal",
+            "outcome": "wrong-layer concerns: tte and as maybe, to cause are absent from saved proposal"
+          }
+        ],
+        "extra_findings": [
+          "P2the eastern→the eastern and P3district of Louisiana→same are no-ops, disallowed as concerns.",
+          "All4aliases claim complete coverage, but selected chapter check is missed.",
+          "Multi-character output is evidence of behavioral change after schema-only change, not proof of exact backend converter implementation."
+        ],
+        "stop_group": false,
+        "scope": "AI assessment of selected exact-source controls; not independent human gold or population accuracy. Known usage/positive stop permit remaining identical observations."
+      },
+      "result_sha256": "643b04526dff1a11d33872b34c94dde5a104c94bc357354a7964991f783070a4"
+    }
+  ],
+  "source_expectations_path": "artifacts/whole-string-audit-20261102-01/expected-audit-checks.json",
+  "quality_basis": "Agent judgments of exact-hash cached images, original full targets and frozen prior proposal. Not independent human gold or population accuracy.",
+  "native_fit": "unknown",
+  "distinct_raw_replies": 1,
+  "distinct_reported_concern_sets": 1,
+  "concern_pattern_limit": "Returned claim patterns only; no source correctness or complete coverage implied."
+}

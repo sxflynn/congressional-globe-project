@@ -2333,6 +2333,27 @@
       "term": "output cap",
       "definition": "The largest model reply allowed for a request, measured here in tokens. Reaching it can cut a reply off.",
       "aliases": []
+    },
+    {
+      "term": "whole-string",
+      "definition": "A rule applied to a complete piece of text, such as an entire word or sentence. A string is a stored piece of text.",
+      "aliases": [
+        "whole strings"
+      ]
+    },
+    {
+      "term": "text pattern",
+      "definition": "A compact rule describing allowed text. For example, a rule may allow a full sentence but reject a reply containing only spaces.",
+      "aliases": [
+        "text patterns",
+        "schema text patterns",
+        "reply-schema text patterns"
+      ]
+    },
+    {
+      "term": "constraint mismatch",
+      "definition": "A difference between how two parts of a program interpret the same rule. It is a possible explanation to check, not a confirmed cause.",
+      "aliases": []
     }
   ]
 }
