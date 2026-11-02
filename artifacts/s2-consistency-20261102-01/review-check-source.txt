@@ -1,0 +1,45 @@
+import hashlib,json,os,sys
+from pathlib import Path
+from lxml import html
+from streamlit.testing.v1 import AppTest
+from congressional_globe.review_evidence import evidence_html
+from congressional_globe.review_glossary import annotated_html,definitions
+from congressional_globe.review_models import ReviewPacket
+from congressional_globe.review_store import ReviewStore
+count=int(sys.argv[1]);version=1 if count==1 else 2
+b=Path('artifacts/s2-consistency-20261102-01');packet=ReviewPacket.model_validate_json(Path(f'docs/review-packets/HR-017-v{version}.json').read_text())
+report=json.loads((b/('report-preliminary.json' if count==1 else 'report.json')).read_text());expected=json.loads((b/'expected-illustration.json').read_text());cards=packet.questions[0].evidence
+assert len(cards)==count+4
+proof=[]
+spans=json.loads(Path('docs/review-source-spans.json').read_text())['source_spans']
+for i,evidence in enumerate(cards):
+ digest=hashlib.sha256(evidence.text.encode()).hexdigest();assert digest in spans
+ rendered=evidence_html(evidence.text,f't112-v{version}-{i}');tree=html.fragment_fromstring(rendered,create_parent='div')
+ assert not tree.xpath('.//span[@class="review-source-text"]//button')
+ plain=[x.text_content() for x in tree.xpath('.//span[@class="review-source-text"]')]
+ wanted=[expected['raw_text']] if i==0 else [expected['expected_text']] if i==1 else [report['runs'][i-2]['text']] if 2<=i<count+2 else []
+ assert plain==wanted
+ assert tree.xpath('.//button[@class="glossary-term"]')
+ proof.append(dict(label=evidence.label,plain_source_spans=len(plain),glossary_buttons=len(tree.xpath('.//button[@class="glossary-term"]'))))
+ Path(f'tmp/t112-v{version}-card-{i}.html').write_text(rendered)
+for row in report['runs']:
+ path=b/f"repeat-{row['repetition']}/run/result.json"
+ assert hashlib.sha256(path.read_bytes()).hexdigest()==row['result_sha256']
+ assert json.loads(path.read_text())['output_text']==row['raw_output']
+for field in [packet.title,packet.instructions,packet.questions[0].prompt]+[c.label for c in cards]:annotated_html(field,definitions(),'surface')
+path=Path(f'tmp/t112-v{version}-review-proof.sqlite')
+if path.exists():path.unlink()
+os.environ['GLOBE_REVIEW_DATABASE']=str(path)
+registered=ReviewStore(path).register(packet)
+app=AppTest.from_string('from congressional_globe.review_app import main\nmain()').run();assert not app.exception
+app.text_input(key='reviewer').set_value('Synthetic test reviewer').run();assert not app.exception
+assert len(app.text_area)==len(cards)+1
+texts=[]
+for element in app.markdown:
+ tree=html.fragment_fromstring(element.value,create_parent='div')
+ for popover in tree.xpath('.//*[@popover]'):popover.drop_tree()
+ texts.append(tree.text_content())
+for required in ['Actual model reading','Expected source-inspected illustration','Only the first of three' if count==1 else 'All three planned observations are saved']:
+ assert any(required in t for t in texts)
+result=dict(packet_sha256=registered['packet_sha256'],evidence_cards=proof,comment_boxes=len(cards)+1,app_exceptions=0,original_spans_no_glossary=True,saved_result_hashes_verified=count,computer_use=False,browser_or_device_interaction='not performed per user preference',synthetic_database=str(path),production_answers_written=False)
+(b/f'review-v{version}-validation.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

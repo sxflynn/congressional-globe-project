@@ -1,0 +1,53 @@
+{
+  "id": "HR-017",
+  "version": 2,
+  "title": "Short speech: all three actual results",
+  "instructions": "Inputs, expected output, actual output and differences are shown in order. The agent also evaluates the model against the source image. Comments are optional and can steer later work; this is not a permission request. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "short-speech-comments",
+      "prompt": "Optional comments about this short-passage test",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Inputs: original short speech and earlier feedback",
+          "text": "Original OCR:\nMr. BROWN. The navigable channel is not private propei-ty.\n\nThe saved software proposal is exactly the same text; it did not repair the damaged word. The complete original image is supplied, with Brown’s two-line paragraph marked as the target. Your earlier correction from propei-ty to property is included in the prompt. This is a feedback-conditioned test. The preceding visible fragment is context only; surrounding speakers are excluded from the requested reading.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0716.jp2/1155,280,1004,212/1004,/0/default.jpg"
+        },
+        {
+          "label": "2 · Expected output: declared before these calls",
+          "text": "Expected source-inspected illustration:\nMr. BROWN. The navigable channel is not private property.\n\nThe agent inspected the saved image before these calls. Expected behavior: repair the damaged word, preserve Brown’s name, all other words and punctuation, and exclude surrounding print. This is an AI assessment using source evidence and earlier human feedback; it is not independent human gold or an accepted corpus correction.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual run 1: unchanged model reading",
+          "text": "Actual model reading:\nMr. BROWN. The navigable channel is not private property.\n\nCoverage: complete; uncertainty reason: null. Response-check status: valid; owned shutdown: stopped. Request cycle: 37.58 seconds. Reported usage: 2,026 input and 98 output tokens.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual run 2: unchanged model reading",
+          "text": "Actual model reading:\nMr. BROWN. The navigable channel is not private property.\n\nCoverage: complete; uncertainty reason: null. Response-check status: valid; owned shutdown: stopped. Request cycle: 35.13 seconds. Reported usage: 2,026 input and 96 output tokens.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual run 3: unchanged model reading",
+          "text": "Actual model reading:\nMr. BROWN. The navigable channel is not private property.\n\nCoverage: complete; uncertainty reason: null. Response-check status: valid; owned shutdown: stopped. Request cycle: 34.45 seconds. Reported usage: 2,026 input and 95 output tokens.",
+          "url": null
+        },
+        {
+          "label": "4 · Differences: agent evaluation and remaining limits",
+          "text": "Run 1: full expected reading matches; damaged-word repair passes; speaker preservation passes; surrounding-print exclusion passes.\nRun 2: full expected reading matches; damaged-word repair passes; speaker preservation passes; surrounding-print exclusion passes.\nRun 3: full expected reading matches; damaged-word repair passes; speaker preservation passes; surrounding-print exclusion passes.\n\nAll three planned observations are saved. There are 1 distinct corrected readings and 2 exact reply layouts. The first observation was published before runs 2 and 3.\n\nThe source-image comparison checks the full sentence, not only whether property appears. The target contains no numbers, so this test supplies no numeric repair evidence. Earlier human feedback named the correction in the prompt; agreement tests following that guidance. It does not measure unaided discovery or representative accuracy. Software checks and the agent’s image assessment remain separate from human approval. Original OCR, historical proposals and human answers are preserved.",
+          "url": null
+        },
+        {
+          "label": "5 · Measured time, usage and input limits",
+          "text": "Observed request cycles total 107.16 seconds, with 6,078 input and 289 output tokens reported by the provider. Input counts are [2026, 2026, 2026]. The 6,000 input threshold is a reporting threshold, not a hard input cap. Internal input fit remains unknown. Each call retains the 120-second time limit and 1,500 output-token cap; there are no retries, downloads or source fetches.",
+          "url": null
+        }
+      ]
+    }
+  ],
+  "packet_sha256": "a2ac2cf113f1b5846ef3f14a5916e1792e4d09afa5eb292aa7ab8ad4318ad09b"
+}

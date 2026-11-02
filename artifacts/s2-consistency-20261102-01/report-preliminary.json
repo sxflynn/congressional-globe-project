@@ -1,0 +1,46 @@
+{
+  "task": "T112",
+  "state": "preliminary1of3",
+  "planned_calls": 3,
+  "actual_calls": 1,
+  "runs": [
+    {
+      "repetition": 1,
+      "text": "Mr. BROWN. The navigable channel is not private property.",
+      "coverage": "complete",
+      "reason": null,
+      "matches_expected": true,
+      "property_repaired": true,
+      "speaker_preserved": true,
+      "neighbor_print_excluded": true,
+      "measurement_status": "valid",
+      "owned_stop": "stopped",
+      "elapsed_seconds": 37.58400016697124,
+      "usage": {
+        "input_tokens": 2026,
+        "output_tokens": 98
+      },
+      "raw_output": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. BROWN. The navigable channel is not private property.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"S2\"\n}",
+      "result_sha256": "7e38c04aa952e130dee0c800af4b7a48dc33ea2beb0900c022d34507d9bf9c0e",
+      "raw_output_sha256": "30c9c60513ad3a8c41494e322c7027e31c81b4aa498429e485e4e47c0d1c198a",
+      "raw_to_proposed_changes": [
+        {
+          "operation": "replace",
+          "before": "i-",
+          "after": "r"
+        }
+      ]
+    }
+  ],
+  "all_match_expected": true,
+  "all_valid_stopped": true,
+  "distinct_raw_replies": 1,
+  "distinct_corrected_readings": 1,
+  "request_cycle_seconds": 37.58400016697124,
+  "reported_input_tokens": 2026,
+  "reported_output_tokens": 98,
+  "evaluation": "Agent source-image assessment: full Brown sentence reads Mr. BROWN. The navigable channel is not private property. Compare exact full proposed reading, speaker, punctuation, named repair and exclusion of visible surrounding print. Human previously supplied property in the prompt; success is guided compliance, not unaided discovery, independent gold or corpus accuracy.",
+  "numeric_scope": "No numeric forms in this target; no numeric efficacy result.",
+  "native_fit": "unknown",
+  "computer_use": false
+}

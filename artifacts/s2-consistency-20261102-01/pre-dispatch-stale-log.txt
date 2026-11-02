@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/sflynn/Downloads/congressional globe project/tmp/t112-launch.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/productive_ocr_measurement.py", line 341, in main
+    result = execute(args.repository.resolve(), spec)
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/productive_ocr_measurement.py", line 156, in execute
+    _verify_runtime(directory, spec)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/productive_ocr_measurement.py", line 132, in _verify_runtime
+    raise ValueError("operator runtime observation is stale or future dated")
+ValueError: operator runtime observation is stale or future dated

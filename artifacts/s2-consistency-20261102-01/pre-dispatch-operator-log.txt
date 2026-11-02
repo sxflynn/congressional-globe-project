@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/sflynn/Downloads/congressional globe project/tmp/t112-launch.py", line 6, in <module>
+    write_new(spec_path.parent/'operator-process.json',dict(pid=os.getpid(),observed_at_epoch=time.time(),process=identity))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sflynn/Downloads/congressional globe project/src/congressional_globe/productive_ocr_measurement.py", line 68, in write_new
+    with path.open("xb") as stream:
+         ~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: 'artifacts/s2-consistency-20261102-01/repeat-2/run/operator-process.json'
