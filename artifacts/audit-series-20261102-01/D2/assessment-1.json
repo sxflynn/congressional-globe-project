@@ -1,0 +1,31 @@
+{
+  "assessor": "Root AI agent",
+  "summary": "No usable model reply was received. The attempt failed after114.52seconds; owned shutdown is positively recorded, but token usage is unknown. Repetition/year checks cannot be assessed without output. This case group stops after its first attempt; observations2/3are not executed or replaced.",
+  "source_accuracy": "not assessable without a reply",
+  "primary_checks": [
+    {
+      "check": "printed_repetition",
+      "alias": "P7",
+      "outcome": "not assessable; no model reply"
+    },
+    {
+      "check": "already_repaired_number",
+      "alias": "P7",
+      "outcome": "not assessable; no model reply"
+    },
+    {
+      "check": "already_repaired_word",
+      "alias": "P5",
+      "outcome": "not assessable; no model reply"
+    },
+    {
+      "check": "remaining_word_split",
+      "alias": "P8",
+      "outcome": "not assessable; no model reply"
+    }
+  ],
+  "extra_findings": [],
+  "stop_group": true,
+  "stop_reason": "Incomplete HTTPresponse/unknown usage under original case-group stop rule.",
+  "transport_limits": "Generic owned local HTTPfailure; exact root cause not established. Do not infer zero generation or successful fit."
+}

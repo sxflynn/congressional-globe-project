@@ -1,0 +1,62 @@
+{
+  "task": "T114",
+  "case": "D2",
+  "planned_calls": 3,
+  "actual_calls": 1,
+  "request_cycle_seconds": 114.51674220804125,
+  "reported_input_tokens": 0,
+  "reported_output_tokens": 0,
+  "unknown_usage_calls": 1,
+  "all_positive_stop": true,
+  "runs": [
+    {
+      "repetition": 1,
+      "elapsed_seconds": 114.51674220804125,
+      "usage": null,
+      "measurement_status": "unresolved",
+      "owned_stop": "stopped",
+      "status": null,
+      "finish_reason": null,
+      "raw_output": null,
+      "parsed_reply": null,
+      "parse_error": null,
+      "source_export": null,
+      "error": "owned local HTTP request failed",
+      "assessment": {
+        "assessor": "Root AI agent",
+        "summary": "No usable model reply was received. The attempt failed after114.52seconds; owned shutdown is positively recorded, but token usage is unknown. Repetition/year checks cannot be assessed without output. This case group stops after its first attempt; observations2/3are not executed or replaced.",
+        "source_accuracy": "not assessable without a reply",
+        "primary_checks": [
+          {
+            "check": "printed_repetition",
+            "alias": "P7",
+            "outcome": "not assessable; no model reply"
+          },
+          {
+            "check": "already_repaired_number",
+            "alias": "P7",
+            "outcome": "not assessable; no model reply"
+          },
+          {
+            "check": "already_repaired_word",
+            "alias": "P5",
+            "outcome": "not assessable; no model reply"
+          },
+          {
+            "check": "remaining_word_split",
+            "alias": "P8",
+            "outcome": "not assessable; no model reply"
+          }
+        ],
+        "extra_findings": [],
+        "stop_group": true,
+        "stop_reason": "Incomplete HTTPresponse/unknown usage under original case-group stop rule.",
+        "transport_limits": "Generic owned local HTTPfailure; exact root cause not established. Do not infer zero generation or successful fit."
+      },
+      "result_sha256": "0ebc0949f762e8fe081b384a79446109bd67a0c059688d31f6441b84278675f3"
+    }
+  ],
+  "source_expectations_path": "artifacts/audit-series-20261102-01/D2/expected-audit-checks.json",
+  "quality_basis": "Agent judgments of exact-hash cached images, original full targets and frozen prior proposal. Not independent human gold or population accuracy.",
+  "native_fit": "unknown"
+}

@@ -1,0 +1,48 @@
+import hashlib,json,sys
+from pathlib import Path
+from congressional_globe.review_models import ReviewPacket
+unit=sys.argv[1];count=int(sys.argv[2]);assert unit in ('D1','D2');assert count in (1,3)
+version=1 if count==1 else 2;review='HR-018' if unit=='D1' else 'HR-019';b=Path('artifacts/audit-series-20261102-01')/unit
+expected=json.loads((b/'expected-audit-checks.json').read_text());runs=[]
+for i in range(1,count+1):
+ d=b/f'repeat-{i}/run';r=json.loads((d/'result.json').read_text());assessment=json.loads((b/f'assessment-{i}.json').read_text());raw=r.get('output_text')
+ parsed=None;parse_error=None
+ if raw is not None:
+  try:parsed=json.loads(raw)
+  except json.JSONDecodeError as error:parse_error=str(error)
+ runs.append(dict(repetition=i,elapsed_seconds=r['elapsed_seconds'],usage=r.get('usage'),measurement_status=r.get('measurement_status','unresolved'),owned_stop=r.get('owned_stop_observation','unknown'),status=r.get('status'),finish_reason=r.get('finish_reason'),raw_output=raw,parsed_reply=parsed,parse_error=parse_error,source_export=r.get('source_export'),error=r.get('error'),assessment=assessment,result_sha256=hashlib.sha256((d/'result.json').read_bytes()).hexdigest()))
+report=dict(task='T114',case=unit,planned_calls=3,actual_calls=count,request_cycle_seconds=sum(r['elapsed_seconds'] for r in runs),reported_input_tokens=sum(r['usage']['input_tokens'] for r in runs if r['usage']),reported_output_tokens=sum(r['usage']['output_tokens'] for r in runs if r['usage']),unknown_usage_calls=sum(r['usage'] is None for r in runs),all_positive_stop=all(r['owned_stop']=='stopped' for r in runs),runs=runs,source_expectations_path=str(b/'expected-audit-checks.json'),quality_basis='Agent judgments of exact-hash cached images, original full targets and frozen prior proposal. Not independent human gold or population accuracy.',native_fit='unknown')
+out=b/('report-preliminary.json' if count==1 else 'report.json');assert not out.exists();out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+cards=[];ranges={}
+def card(label,text,quotes=(),url=None):
+ cursor=0;sp=[]
+ for q in quotes:
+  start=text.index(q,cursor);sp.append(dict(start=start,end=start+len(q)));cursor=start+len(q)
+ ranges[hashlib.sha256(text.encode()).hexdigest()]=sp;cards.append(dict(label=label,text=text,url=url))
+host=json.loads((b/'repeat-1/host.json').read_text())['payload'];gallery=json.loads(Path('artifacts/varied-scan-gallery-20261030-01/manifest.json').read_text());url=next(r['url'] for r in gallery['images'] if r['unit_id']==unit)
+if unit=='D1':
+ excerpts=['Chap. CCCXL — An Act to remove tte Office','Chap. CCCXLI.—An Act to remove the Office','with- out'];scope='four source targets in two law columns'
+else:
+ excerpts=['I must admit that that act is quite full.','I must admit that act is quite full.','July 17, 18G2','July 17, 1862'];scope='nine source targets: appendix headings and the left-column passage'
+card('1 · Inputs: original text, image and older model proposal','The audit receives '+scope+'. All original target text, the image and the complete older proposal are retained. The model is asked to report source-supported discrepancies and inspection coverage for every target; this is an audit, not a new corrected transcription. The following are exact excerpts for orientation, in original OCR then older-proposal order:\n\n'+'\n\n'.join(excerpts)+'\n\nExpected answers below were saved separately before these calls and were not inserted into the model prompt.',excerpts,url)
+checks=expected['primary_checks'];quotes=[];paragraphs=[]
+for check in checks:
+ for field in ['saved','print']:
+  if field in check:quotes.append(check[field])
+ paragraphs.append('Older proposal:\n'+check.get('saved','[not given]')+'\nVisible print / expected reading:\n'+check['print']+'\nAgent expectation: '+check['expectation'])
+card('2 · Expected output: source checks declared before the calls','\n\n'.join(paragraphs)+'\n\nThe agent inspected the saved image and earlier proposal. These are selected diagnostic checks, not an exhaustive independent reference or human grade. Numbers that already match the print must still be inspected; a correct old repair must not be called an error.',quotes)
+for row in runs:
+ raw=row['raw_output'];display=raw if raw is not None else '[No model reply saved; transport failure]'
+ usage='unknown' if row['usage'] is None else f"{row['usage']['input_tokens']:,} input / {row['usage']['output_tokens']:,} output tokens"
+ card(f"3 · Actual run {row['repetition']}: exact model reply",'Exact returned reply:\n'+display+f"\n\nRequest cycle: {row['elapsed_seconds']:.2f} seconds. Reported usage: {usage}. Response-check status: {row['measurement_status']}; owned shutdown: {row['owned_stop']}; finish reason: {row['finish_reason']}. A model’s inspection claim is not proof that every word and number was checked.",[raw] if raw is not None else [])
+notes=[]
+for row in runs:notes.append(f"Run {row['repetition']} — "+row['assessment']['summary'])
+progress='Only the first of three planned observations exists. Later calls remain subject to feedback, known usage, positive shutdown and the original limits.' if count==1 else 'All three planned observations are saved. Every reply is retained, including disagreements and invalid results.'
+if runs[-1]['assessment'].get('stop_group'):
+ progress='This case group stopped after its first attempt. Planned observations 2 and 3 are not executed: '+runs[-1]['assessment']['stop_reason']+' This failure is retained; no retry or replacement follows.'
+card('4 · Differences: agent evaluation against the source','\n\n'.join(notes)+'\n\n'+progress+'\n\nThe detailed assessment records each source check and any extra finding. Software format checks, model self-reports, source-image AI assessment and human judgment remain separate. Agreement between repeated calls alone is not accuracy. Original sources, older proposals and human answers are unchanged.')
+card('5 · Costs, capacity and remaining limits',f"Observed request cycles total {report['request_cycle_seconds']:.2f} seconds. Known reported usage totals {report['reported_input_tokens']:,} input and {report['reported_output_tokens']:,} output tokens; {report['unknown_usage_calls']} calls have unknown usage. The complete original audit request is retained. Earlier literal text counts exceed the 6,000 reporting threshold before image accounting; this is not proof of internal input fit. The 1,500 output-token cap and 120-second call limit were not raised. An incomplete or truncated reply remains a failure, and unknown usage or owned exit prevents dependent calls. No retries, source fetches, model downloads, Computer Use or corpus-wide run.")
+packet=dict(id=review,version=version,title=('Law-column audit' if unit=='D1' else 'Appendix audit')+(': first actual observation' if count==1 else ': all three observations'),instructions='Inputs, expected output, actual output and differences are shown in order. The agent evaluates the returned claims against the saved source image. Comments are optional; this is not a permission request. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it.',blind=False,questions=[dict(id='audit-comments',prompt='Optional comments to steer later work',options=[],required=False,evidence=cards)])
+ReviewPacket.model_validate(packet);p=Path(f'docs/review-packets/{review}-v{version}.json');assert not p.exists();p.write_text(json.dumps(packet,ensure_ascii=False,indent=2)+'\n')
+p=Path('docs/review-source-spans.json');data=json.loads(p.read_text());data['source_spans'].update(ranges);p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+print(json.dumps({k:v for k,v in report.items() if k!='runs'},indent=2))

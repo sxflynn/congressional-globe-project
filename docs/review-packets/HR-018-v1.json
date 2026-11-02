@@ -1,0 +1,42 @@
+{
+  "id": "HR-018",
+  "version": 1,
+  "title": "Law-column audit: first actual observation",
+  "instructions": "Inputs, expected output, actual output and differences are shown in order. The agent evaluates the returned claims against the saved source image. Comments are optional; this is not a permission request. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "audit-comments",
+      "prompt": "Optional comments to steer later work",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Inputs: original text, image and older model proposal",
+          "text": "The audit receives four source targets in two law columns. All original target text, the image and the complete older proposal are retained. The model is asked to report source-supported discrepancies and inspection coverage for every target; this is an audit, not a new corrected transcription. The following are exact excerpts for orientation, in original OCR then older-proposal order:\n\nChap. CCCXL — An Act to remove tte Office\n\nChap. CCCXLI.—An Act to remove the Office\n\nwith- out\n\nExpected answers below were saved separately before these calls and were not inserted into the model prompt.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_1060.jp2/1124,226,1866,3758/1600,/0/default.jpg"
+        },
+        {
+          "label": "2 · Expected output: source checks declared before the calls",
+          "text": "Older proposal:\nCCCXLI\nVisible print / expected reading:\nCCCXI\nAgent expectation: Report that the saved proposal chapter number contradicts visible print; do not accept its fluent-looking correction.\n\nOlder proposal:\nwith- out\nVisible print / expected reading:\nwithout\nAgent expectation: Recognize the line-break join remains unrepaired in the saved proposal.\n\nOlder proposal:\nRep- resentatives\nVisible print / expected reading:\nRepresentatives\nAgent expectation: Whole audit should notice remaining line-break damage without confusing it with a true printed hyphen.\n\nThe agent inspected the saved image and earlier proposal. These are selected diagnostic checks, not an exhaustive independent reference or human grade. Numbers that already match the print must still be inspected; a correct old repair must not be called an error.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual run 1: exact model reply",
+          "text": "Exact returned reply:\n[No model reply saved; transport failure]\n\nRequest cycle: 114.46 seconds. Reported usage: unknown. Response-check status: unresolved; owned shutdown: stopped; finish reason: None. A model’s inspection claim is not proof that every word and number was checked.",
+          "url": null
+        },
+        {
+          "label": "4 · Differences: agent evaluation against the source",
+          "text": "Run 1 — No usable model reply was received. The attempt failed after114.46seconds; owned shutdown is positively recorded, but token usage is unknown. There is no evidence that Qwen caught or missed the chapter error because no audit output exists. The D1case group stops here; planned observations2/3are not executed or replaced.\n\nThis case group stopped after its first attempt. Planned observations 2 and 3 are not executed: Incomplete HTTPresponse/unknown usage under original group stop rule. This failure is retained; no retry or replacement follows.\n\nThe detailed assessment records each source check and any extra finding. Software format checks, model self-reports, source-image AI assessment and human judgment remain separate. Agreement between repeated calls alone is not accuracy. Original sources, older proposals and human answers are unchanged.",
+          "url": null
+        },
+        {
+          "label": "5 · Costs, capacity and remaining limits",
+          "text": "Observed request cycles total 114.46 seconds. Known reported usage totals 0 input and 0 output tokens; 1 calls have unknown usage. The complete original audit request is retained. Earlier literal text counts exceed the 6,000 reporting threshold before image accounting; this is not proof of internal input fit. The 1,500 output-token cap and 120-second call limit were not raised. An incomplete or truncated reply remains a failure, and unknown usage or owned exit prevents dependent calls. No retries, source fetches, model downloads, Computer Use or corpus-wide run.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+"""One-off operator evidence capture for the human-authorized single S5 attempt."""
+import datetime,json,os,re,socket,subprocess,time,urllib.request,sys
+from pathlib import Path
+from congressional_globe.productive_ocr_host import canonical_json,sha256_bytes
+from congressional_globe.productive_ocr_local import OwnedLocalPlan
+from congressional_globe.productive_ocr_live import RuntimeObservation
+from congressional_globe.productive_ocr_measurement import MeasurementSpec,write_new
+from congressional_globe.productive_ocr_measurement_inputs import load_audit_inputs
+from congressional_globe import productive_ocr_measurement_scoped as scoped
+from congressional_globe.productive_ocr_measurement_scoped import ScopedGroup
+from congressional_globe.productive_ocr_runner import code_identity,fingerprint,_session_lock
+
+unit=sys.argv[1];assert unit in ("D1","D2")
+APPROVAL_SHA=getattr(scoped,unit+"_APPROVAL_SHA");BODY_SHA=getattr(scoped,unit+"_BODY_SHA");PROFILES=getattr(scoped,unit+"_PROFILES")
+number=int(sys.argv[2]);assert number in (1,2,3)
+root=Path('artifacts/audit-series-20261102-01')/unit
+base=root/f'repeat-{number}';directory=base/'run'
+assert not (base/'spent-slot.json').exists(), 'New attempt already spent; do not launch.'
+assert not directory.exists(), 'Operator freeze already exists; inspect instead of overwriting.'
+pending=json.loads(subprocess.run(['uv','run','globe','review','inbox'],check=True,capture_output=True,text=True).stdout)
+assert not pending, 'Submitted feedback arrived; apply it before a dependent repetition.'
+started=time.time();directory.mkdir(parents=True)
+if number==1:
+ write_new(root/'group.json',ScopedGroup(contract=f'productive-ocr-{unit.lower()}-scoped-group-v1',approval_sha256=APPROVAL_SHA,body_sha256=BODY_SHA,code_sha256=fingerprint(code_identity()),started_at_epoch=started,deadline_epoch=started+1800,calls=3).model_dump(mode='json'))
+host,projection,registry=load_audit_inputs(Path('.'),unit)
+assert projection.body_sha256==BODY_SHA
+with (base/'request.json').open('xb') as stream:
+ stream.write(projection.body_utf8.encode());stream.flush();os.fsync(stream.fileno())
+old=json.loads(Path('artifacts/s5-measurement-20261029-01/run/spec.json').read_bytes())
+plan=dict(old['plan']);plan.update(port=64900+(0 if unit=="D1" else 4)+number,session_deadline_epoch=started+600)
+# JSON validation preserves the strict tuple argv field.
+owned=OwnedLocalPlan.model_validate_json(json.dumps(plan))
+spec=MeasurementSpec(contract=PROFILES[number-1],approval_sha256=APPROVAL_SHA,
+ body_sha256=BODY_SHA,code_sha256=fingerprint(code_identity()),started_at_epoch=started,plan=owned)
+write_new(directory/'spec.json',spec.model_dump(mode='json'))
+write_new(base/'host.json',host);write_new(base/'projection.json',projection.model_dump(mode='json'))
+write_new(base/'code-identity.json',code_identity())
+since=(datetime.datetime.now(datetime.UTC)-datetime.timedelta(minutes=10)).isoformat()
+command=['uv','run','globe','ollama','logs','query','--since',since,'--limit','8','--max-output-bytes','16000','--max-scan-bytes','1048576','--no-raw']
+logs=subprocess.run(command,check=True,capture_output=True,text=True).stdout
+log_data=json.loads(logs)
+queue=subprocess.run(['uv','run','globe','cleanup','status','--run-directory','artifacts/runs/static-final-20261011','--run-id','static-final-20261011'],check=True,capture_output=True,text=True).stdout
+queue_data=json.loads(queue);assert queue_data['claimed']==0, 'Existing cleanup queue claim; do not dispatch.'
+ps=subprocess.run(['ps','-axo','pid,ppid,lstart,etime,command'],check=True,capture_output=True,text=True).stdout
+rows=[];workers=[]
+for line in ps.splitlines()[1:]:
+ fields=line.split(None,8)
+ if len(fields)!=9:continue
+ command=fields[8];lower=command.lower()
+ if lower.startswith(('/bin/bash','bash ','/bin/zsh','zsh ')):continue
+ if not any(term in lower for term in ['ollama','productive_ocr_measurement','globe cleanup','mlx_lm','mlx_vlm','t114-launch.py']):continue
+ rows.append(line.strip())
+ if ' runner ' in lower or 'mlx_lm' in lower or 'mlx_vlm' in lower or 'productive_ocr_measurement' in lower or 'globe cleanup run' in lower or 't114-launch.py' in lower:
+  workers.append(line.strip())
+assert not workers, f'Existing model/cleanup worker observed: {workers}'
+request=urllib.request.Request('http://127.0.0.1:11434/api/ps',method='GET')
+with urllib.request.urlopen(request,timeout=4) as response:loaded=json.load(response)
+assert not loaded.get('models'), 'Shared service has a loaded model; do not compete.'
+with socket.socket() as sock:sock.bind(('127.0.0.1',owned.port))
+with _session_lock():pass
+manifest=Path(owned.model_manifest).read_bytes()
+assert sha256_bytes(manifest)==owned.model_digest
+metadata=dict(manifest_sha256=sha256_bytes(manifest),loaded_models_nonloading_GET=loaded,
+ shared_service='unowned; no control attempted',private_port_checked_free=owned.port)
+queue_evidence=dict(prior_D1_case='One spent failure/114.4601seconds/unknown tokens; group stopped and cost not reset. D2is separate originally frozen case, not retry or replacement.',cleanup_status=queue_data,shared_request_lock='acquired and released; runner will own during attempt',new_slot='unspent',
+ prior_S5='all three historical attempts spent; original results/slots preserved',master_owner='T114 current agent; sequential group observed')
+process_evidence=dict(command='ps -axo pid,ppid,lstart,etime,command; bounded model/worker filter',rows=rows,active_model_workers=workers)
+evidence=directory/'evidence';evidence.mkdir()
+def store(value):
+ raw=canonical_json(value);digest=sha256_bytes(raw);(evidence/digest).write_bytes(raw);return digest
+proof=RuntimeObservation(contract='productive-ocr-live-runtime-observation-v1',readiness_sha256=fingerprint(spec.model_dump(mode='json')),
+ window_id=unit,checked_at_epoch=time.time(),process_evidence_sha256=store(process_evidence),queue_evidence_sha256=store(queue_evidence),
+ log_evidence_sha256=store(log_data),model_metadata_sha256=store(metadata),competing_requests=0)
+write_new(directory/'runtime.json',proof.model_dump(mode='json'))
+write_new(base/'freeze.json',dict(task='T114',approval_sha256=APPROVAL_SHA,body_sha256=BODY_SHA,
+ spec_sha256=fingerprint(spec.model_dump(mode='json')),code_sha256=spec.code_sha256,request_model=owned.model_name,
+ calls=1,retries=0,fetches=0,downloads=0,input_fit='unknown; explicitly scoped diagnostic exception',
+ limits=dict(prep_seconds=270,start_through_response_seconds=120,stop_observation_seconds=30,report_seconds=180,whole_session_seconds=600,output_tokens=1500),
+ observation='Launch intent frozen before owned process; actual server identity is written immediately to spool/server.json.',
+ source=f'original {unit} audit with all original targets/proposal; no replacement or omission',prior_S5_calls=6, prior_S1_calls=3, prior_S2_calls=3))
+print(f'Repeat {number}: fresh process/queue/log/model/lock checks clear; exact request frozen.')

@@ -1,0 +1,58 @@
+{
+  "task": "T114",
+  "case": "D1",
+  "planned_calls": 3,
+  "actual_calls": 1,
+  "request_cycle_seconds": 114.46009283303283,
+  "reported_input_tokens": 0,
+  "reported_output_tokens": 0,
+  "unknown_usage_calls": 1,
+  "all_positive_stop": true,
+  "runs": [
+    {
+      "repetition": 1,
+      "elapsed_seconds": 114.46009283303283,
+      "usage": null,
+      "measurement_status": "unresolved",
+      "owned_stop": "stopped",
+      "status": null,
+      "finish_reason": null,
+      "raw_output": null,
+      "parsed_reply": null,
+      "parse_error": null,
+      "source_export": null,
+      "error": "owned local HTTP request failed",
+      "assessment": {
+        "assessor": "Root AI agent",
+        "summary": "No usable model reply was received. The attempt failed after114.46seconds; owned shutdown is positively recorded, but token usage is unknown. There is no evidence that Qwen caught or missed the chapter error because no audit output exists. The D1case group stops here; planned observations2/3are not executed or replaced.",
+        "source_accuracy": "not assessable without a reply",
+        "primary_checks": [
+          {
+            "check": "number",
+            "alias": "P4",
+            "outcome": "not assessable; no model reply"
+          },
+          {
+            "check": "unrepaired_word",
+            "alias": "P1",
+            "outcome": "not assessable; no model reply"
+          },
+          {
+            "check": "unrepaired_word",
+            "alias": "P4",
+            "outcome": "not assessable; no model reply"
+          }
+        ],
+        "extra_findings": [],
+        "stop_group": true,
+        "stop_reason": "Incomplete HTTPresponse/unknown usage under original group stop rule.",
+        "next_independent_case": "D2is a separately frozen original case, not a retry/replacement of D1. Preserve D1unknown cost; only consider D2after independent terminal owned-process checks.",
+        "transport_limits": "Result says owned local HTTP request failed; precise root cause not established. Do not infer zero generation or input fit."
+      },
+      "result_sha256": "c3288522203d23292cb1a334b075d378603ed45fb56b0f5748cf3fbe90cdfdc1"
+    }
+  ],
+  "source_expectations_path": "artifacts/audit-series-20261102-01/D1/expected-audit-checks.json",
+  "quality_basis": "Agent judgments of exact-hash cached images, original full targets and frozen prior proposal. Not independent human gold or population accuracy.",
+  "native_fit": "unknown"
+}

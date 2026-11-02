@@ -1,0 +1,27 @@
+{
+  "assessor": "Root AI agent",
+  "summary": "No usable model reply was received. The attempt failed after114.46seconds; owned shutdown is positively recorded, but token usage is unknown. There is no evidence that Qwen caught or missed the chapter error because no audit output exists. The D1case group stops here; planned observations2/3are not executed or replaced.",
+  "source_accuracy": "not assessable without a reply",
+  "primary_checks": [
+    {
+      "check": "number",
+      "alias": "P4",
+      "outcome": "not assessable; no model reply"
+    },
+    {
+      "check": "unrepaired_word",
+      "alias": "P1",
+      "outcome": "not assessable; no model reply"
+    },
+    {
+      "check": "unrepaired_word",
+      "alias": "P4",
+      "outcome": "not assessable; no model reply"
+    }
+  ],
+  "extra_findings": [],
+  "stop_group": true,
+  "stop_reason": "Incomplete HTTPresponse/unknown usage under original group stop rule.",
+  "next_independent_case": "D2is a separately frozen original case, not a retry/replacement of D1. Preserve D1unknown cost; only consider D2after independent terminal owned-process checks.",
+  "transport_limits": "Result says owned local HTTP request failed; precise root cause not established. Do not infer zero generation or input fit."
+}
