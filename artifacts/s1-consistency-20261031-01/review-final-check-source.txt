@@ -1,0 +1,64 @@
+import hashlib
+import json
+import os
+from pathlib import Path
+from lxml import html
+from streamlit.testing.v1 import AppTest
+from congressional_globe.review_evidence import evidence_html
+from congressional_globe.review_glossary import annotated_html, definitions
+from congressional_globe.review_models import ReviewPacket
+from congressional_globe.review_store import ReviewStore
+b=Path('artifacts/s1-consistency-20261031-01')
+p=Path('docs/review-packets/HR-016-v2.json')
+packet=ReviewPacket.model_validate_json(p.read_text())
+report=json.loads((b/'report.json').read_text())
+expected=json.loads((b/'expected-illustration.json').read_text())
+host=json.loads((b/'repeat-1/host.json').read_text())
+cards=packet.questions[0].evidence
+assert len(cards)==7
+assert expected['raw_text'] in cards[0].text
+assert host['payload']['paragraphs'][0]['static']['text'] in cards[0].text
+assert expected['expected_text'] in cards[1].text
+for i,row in enumerate(report['runs'],1):
+ result=b/f'repeat-{i}/run/result.json'
+ assert hashlib.sha256(result.read_bytes()).hexdigest()==row['result_sha256']
+ actual=json.loads(result.read_text())
+ assert actual['output_text']==row['raw_output']
+ assert row['text'] in cards[i+1].text
+ assert f"{row['elapsed_seconds']:.2f} seconds" in cards[i+1].text
+ assert f"{row['usage']['input_tokens']:,} input and {row['usage']['output_tokens']:,} output" in cards[i+1].text
+proof=[]
+spans=json.loads(Path('docs/review-source-spans.json').read_text())['source_spans']
+for i,evidence in enumerate(cards):
+ digest=hashlib.sha256(evidence.text.encode()).hexdigest()
+ assert digest in spans
+ rendered=evidence_html(evidence.text,f't108-final-{i}')
+ tree=html.fragment_fromstring(rendered,create_parent='div')
+ assert not tree.xpath('.//span[@class="review-source-text"]//button')
+ plain=[x.text_content() for x in tree.xpath('.//span[@class="review-source-text"]')]
+ expected_plain=([expected['raw_text'],host['payload']['paragraphs'][0]['static']['text']] if i==0 else [expected['expected_text']] if i==1 else [report['runs'][i-2]['text']] if i in (2,3,4) else [])
+ assert plain==expected_plain
+ assert tree.xpath('.//button[@class="glossary-term"]')
+ proof.append(dict(label=evidence.label,plain_source_spans=len(plain),glossary_buttons=len(tree.xpath('.//button[@class="glossary-term"]'))))
+ Path(f'tmp/t108-final-card-{i}.html').write_text(rendered)
+for field in [packet.title,packet.instructions,packet.questions[0].prompt]+[c.label for c in cards]:
+ annotated_html(field,definitions(),'surface')
+path=Path('tmp/t108-final-review-proof.sqlite')
+if path.exists():path.unlink()
+os.environ['GLOBE_REVIEW_DATABASE']=str(path)
+registered=ReviewStore(path).register(packet)
+app=AppTest.from_string('from congressional_globe.review_app import main\nmain()').run()
+assert not app.exception
+app.text_input(key='reviewer').set_value('Synthetic test reviewer').run()
+assert not app.exception
+assert len(app.text_area)==8
+texts=[]
+for element in app.markdown:
+ tree=html.fragment_fromstring(element.value,create_parent='div')
+ for popover in tree.xpath('.//*[@popover]'):popover.drop_tree()
+ texts.append(tree.text_content())
+for required in ['Actual model reading','Expected source-inspected illustration','All three planned observations are now saved']:
+ assert any(required in t for t in texts)
+result=dict(packet_sha256=registered['packet_sha256'],evidence_cards=proof,comment_boxes=8,app_exceptions=0,rendered_input_expected_actual=True,original_spans_no_glossary=True,saved_reply_hashes_verified=3,computer_use=False,browser_or_device_interaction='not performed per user preference',synthetic_database=str(path),production_answers_written=False)
+(b/'review-final-validation.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result,indent=2))

@@ -2226,6 +2226,51 @@
       "aliases": [
         "source-inspected illustration"
       ]
+    },
+    {
+      "term": "feedback-conditioned",
+      "definition": "Prepared with earlier human comments included in the model’s instructions. This does not test what the model would notice without those comments.",
+      "aliases": []
+    },
+    {
+      "term": "response-check status",
+      "definition": "Whether the returned reply passes the software’s required format and source-link checks. Passing does not prove every word is accurate.",
+      "aliases": []
+    },
+    {
+      "term": "owned shutdown",
+      "definition": "The recorded stopping of the model processes started for this test. It does not refer to other running services.",
+      "aliases": []
+    },
+    {
+      "term": "request cycle",
+      "definition": "The measured time for one model request to return, including the work counted by the runner’s timer.",
+      "aliases": []
+    },
+    {
+      "term": "hard input cap",
+      "definition": "A limit that would prevent a request from being sent if its input exceeded the stated size.",
+      "aliases": []
+    },
+    {
+      "term": "unknown-fit",
+      "definition": "The complete internal size of the image and text has not been measured for the model.",
+      "aliases": []
+    },
+    {
+      "term": "identical-input",
+      "definition": "Using exactly the same source, picture, instructions and settings in each repeated call.",
+      "aliases": []
+    },
+    {
+      "term": "written quantities",
+      "definition": "Amounts expressed in words, such as two or three, rather than digits.",
+      "aliases": []
+    },
+    {
+      "term": "raw reply strings",
+      "definition": "The exact characters returned by the model, including spaces and line breaks. Replies can differ in layout while proposing the same reading.",
+      "aliases": []
     }
   ]
 }
