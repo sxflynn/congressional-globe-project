@@ -1,0 +1,26 @@
+{
+  "assessor": "Root AI agent",
+  "summary": "The lossless compact request also failed before a usable HTTPreply after114.41seconds. Owned shutdown is positive; token usage is unknown. No chapter/word audit finding exists to grade. This case group stops after1of3; observations2/3are not executed or replaced. Reduced literal diagnostic overhead did not by itself produce a reply within the unchanged lifecycle limit.",
+  "source_accuracy": "not assessable; no model reply",
+  "primary_checks": [
+    {
+      "check": "number",
+      "alias": "P4",
+      "outcome": "not assessable; no reply"
+    },
+    {
+      "check": "unrepaired_word",
+      "alias": "P1",
+      "outcome": "not assessable; no reply"
+    },
+    {
+      "check": "unrepaired_word",
+      "alias": "P4",
+      "outcome": "not assessable; no reply"
+    }
+  ],
+  "extra_findings": [],
+  "stop_group": true,
+  "stop_reason": "Incomplete HTTPresponse/unknown usage under original group stop rule.",
+  "limits": "Precise cause unproved; do not infer zero model generation or valid native fit."
+}

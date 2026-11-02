@@ -1,0 +1,57 @@
+{
+  "task": "T115",
+  "case": "D1C",
+  "planned_calls": 3,
+  "actual_calls": 1,
+  "request_cycle_seconds": 114.40713170799427,
+  "reported_input_tokens": 0,
+  "reported_output_tokens": 0,
+  "unknown_usage_calls": 1,
+  "all_positive_stop": true,
+  "runs": [
+    {
+      "repetition": 1,
+      "elapsed_seconds": 114.40713170799427,
+      "usage": null,
+      "measurement_status": "unresolved",
+      "owned_stop": "stopped",
+      "status": null,
+      "finish_reason": null,
+      "raw_output": null,
+      "parsed_reply": null,
+      "parse_error": null,
+      "source_export": null,
+      "error": "owned local HTTP request failed",
+      "assessment": {
+        "assessor": "Root AI agent",
+        "summary": "The lossless compact request also failed before a usable HTTPreply after114.41seconds. Owned shutdown is positive; token usage is unknown. No chapter/word audit finding exists to grade. This case group stops after1of3; observations2/3are not executed or replaced. Reduced literal diagnostic overhead did not by itself produce a reply within the unchanged lifecycle limit.",
+        "source_accuracy": "not assessable; no model reply",
+        "primary_checks": [
+          {
+            "check": "number",
+            "alias": "P4",
+            "outcome": "not assessable; no reply"
+          },
+          {
+            "check": "unrepaired_word",
+            "alias": "P1",
+            "outcome": "not assessable; no reply"
+          },
+          {
+            "check": "unrepaired_word",
+            "alias": "P4",
+            "outcome": "not assessable; no reply"
+          }
+        ],
+        "extra_findings": [],
+        "stop_group": true,
+        "stop_reason": "Incomplete HTTPresponse/unknown usage under original group stop rule.",
+        "limits": "Precise cause unproved; do not infer zero model generation or valid native fit."
+      },
+      "result_sha256": "ba1ac1334a04c150ce9aa248bfdafd5b2310b4c38e335784286a319beaa7c64d"
+    }
+  ],
+  "source_expectations_path": "artifacts/compact-audit-measurement-20261102-01/expected-audit-checks.json",
+  "quality_basis": "Agent judgments of exact-hash cached images, original full targets and frozen prior proposal. Not independent human gold or population accuracy.",
+  "native_fit": "unknown"
+}
