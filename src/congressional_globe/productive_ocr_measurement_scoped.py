@@ -1,4 +1,4 @@
-"""Fixed three-repeat original S5/S1 observations under small-sample autonomy."""
+"""Fixed three-repeat original S5/S1/S2 observations under small-sample autonomy."""
 
 import json
 import time
@@ -20,10 +20,16 @@ S1_PACKAGE = Path("artifacts/s1-consistency-20261031-01")
 S1_APPROVAL_SHA = "b8e9120dbdbb0a0a4188ef87b7eca1ee3d84f07ff674d038ab25255c9157b277"
 S1_BODY_SHA = "338d0cf1be8d22ae6b5bad6d90a3f274229e3472f1c38d96cc6ea16a289ebde7"
 S1_PROFILES = tuple(f"productive-ocr-s1-scoped-repeat-{i}-v4" for i in range(1, 4))
-ALL_PROFILES = PROFILES + S1_PROFILES
+S2_PACKAGE = Path("artifacts/s2-consistency-20261102-01")
+S2_APPROVAL_SHA = "8ac38514f4ca1e4d7043f5b4461bee006c6334ac1907b562b5acc7f4864b4723"
+S2_BODY_SHA = "df2829ff7b7bb26ca98dc847237d78424b7f9fe148d58516d7f9393fc7d495ac"
+S2_PROFILES = tuple(f"productive-ocr-s2-scoped-repeat-{i}-v4" for i in range(1, 4))
+ALL_PROFILES = PROFILES + S1_PROFILES + S2_PROFILES
 
 
 def _selection(spec):
+    if spec.contract in S2_PROFILES:
+        return S2_PACKAGE, S2_APPROVAL_SHA, S2_BODY_SHA, S2_PROFILES
     if spec.contract in S1_PROFILES:
         return S1_PACKAGE, S1_APPROVAL_SHA, S1_BODY_SHA, S1_PROFILES
     return PACKAGE, APPROVAL_SHA, BODY_SHA, PROFILES
@@ -35,11 +41,17 @@ def authority(spec):
 
 
 def window(spec):
+    if spec.contract in S2_PROFILES:
+        return "S2"
     return "S1" if spec.contract in S1_PROFILES else "S5"
 
 
 class ScopedGroup(Contract):
-    contract: Literal["productive-ocr-s5-scoped-group-v1", "productive-ocr-s1-scoped-group-v1"]
+    contract: Literal[
+        "productive-ocr-s5-scoped-group-v1",
+        "productive-ocr-s1-scoped-group-v1",
+        "productive-ocr-s2-scoped-group-v1",
+    ]
     approval_sha256: Sha256
     body_sha256: Sha256
     code_sha256: Sha256

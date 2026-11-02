@@ -51,6 +51,9 @@ class MeasurementSpec(Contract):
         "productive-ocr-s1-scoped-repeat-1-v4",
         "productive-ocr-s1-scoped-repeat-2-v4",
         "productive-ocr-s1-scoped-repeat-3-v4",
+        "productive-ocr-s2-scoped-repeat-1-v4",
+        "productive-ocr-s2-scoped-repeat-2-v4",
+        "productive-ocr-s2-scoped-repeat-3-v4",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256
@@ -364,14 +367,10 @@ def _prep_seconds(spec):
 
 
 def _load_inputs(repository, spec):
-    if spec.contract in scoped.S1_PROFILES:
-        from congressional_globe.productive_ocr_measurement_inputs import load_s1_scoped_inputs
-
-        return load_s1_scoped_inputs(repository)
     if spec.contract in scoped.ALL_PROFILES:
-        from congressional_globe.productive_ocr_measurement_inputs import load_s5_scoped_inputs
+        from congressional_globe.productive_ocr_measurement_inputs import load_scoped_inputs
 
-        return load_s5_scoped_inputs(repository)
+        return load_scoped_inputs(repository, spec)
     if _is_conformance(spec):
         from congressional_globe.productive_ocr_measurement_inputs import load_s5_conformance_inputs
 

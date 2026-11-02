@@ -2271,6 +2271,21 @@
       "term": "raw reply strings",
       "definition": "The exact characters returned by the model, including spaces and line breaks. Replies can differ in layout while proposing the same reading.",
       "aliases": []
+    },
+    {
+      "term": "AI assessment",
+      "definition": "A judgment made by the AI agent after comparing the evidence. It is not a human review or automatic approval.",
+      "aliases": []
+    },
+    {
+      "term": "independent human gold",
+      "definition": "A reference reading produced and checked by people without relying on the tested model’s answer. It is used for comparison rather than assumed from model agreement.",
+      "aliases": []
+    },
+    {
+      "term": "corpus correction",
+      "definition": "A change adopted into the collection’s text. A model proposal alone does not make that change.",
+      "aliases": []
     }
   ]
 }

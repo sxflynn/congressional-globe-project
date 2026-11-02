@@ -1,0 +1,123 @@
+import hashlib, json
+from pathlib import Path
+
+from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes, validate_host
+from congressional_globe.productive_ocr_measurement_inputs import _json, _load_text_resources, _registry
+from congressional_globe.productive_ocr_projection import derive_reply_schema, compile_request_projection
+from congressional_globe.productive_ocr_routing import COVERAGE_GAPS, TEXT_PROMPT, TEXT_PROMPT_V4
+from congressional_globe.productive_ocr_scope import SCOPE_INSTRUCTION, prepare_source_scope
+from congressional_globe.productive_ocr_authority import MODEL_NAME
+
+repo = Path.cwd()
+assembly = repo / "artifacts/study-input-assembly-20261029-01"
+t97 = repo / "artifacts/two-stage-integration-20261030-01"
+out = repo / "artifacts/s2-consistency-20261102-01"
+out.mkdir(parents=True, exist_ok=True)
+
+old = _json(assembly / "S2/host.json")
+index = _json(assembly / "registry-index.json")
+registry = _registry(assembly, old, index)
+_load_text_resources(t97, registry)
+host = _json(t97 / "S2-host.json")
+validate_host(host, registry)
+
+# Reuse the existing source-specific feedback verbatim while switching only the
+# common instruction prefix to the strict conformance-v4 contract.
+old_prompt = registry.files[host["payload"]["prompt_sha256"]].decode("utf-8")
+if not old_prompt.startswith(TEXT_PROMPT + "\n\n"):
+    raise ValueError("T97 S2 prompt no longer has the expected frozen base + feedback form")
+feedback = old_prompt[len(TEXT_PROMPT) + 2 :]
+prompt = TEXT_PROMPT_V4 + "\n\n" + feedback
+prompt_sha = sha256_bytes(prompt.encode("utf-8"))
+host["payload"]["prompt_sha256"] = prompt_sha
+registry.files[prompt_sha] = prompt.encode("utf-8")
+schema = derive_reply_schema(host["payload"], conformance_v4=True)
+registry.files[schema.schema_sha256] = schema.schema_text.encode("utf-8")
+host["payload"]["response_schema_sha256"] = schema.schema_sha256
+host["packet_sha256"] = sha256_bytes(canonical_json(host["payload"]))
+validate_host(host, registry)
+
+bundle = (repo / "artifacts/ocr-live-readiness-20261028-01/images/S2/bundle.json").read_bytes()
+context = [("congressionalglo7392unit:716:par_000716_000019", "line_000716_000100")]
+scoped = prepare_source_scope(host, registry, bundle, context)
+scoped_prompt = registry.files[scoped["payload"]["prompt_sha256"]].decode("utf-8")
+projection, scoped_schema = compile_request_projection(
+    scoped, registry, scoped_prompt, MODEL_NAME, conformance_v4=True
+)
+
+payload = scoped["payload"]
+target = next(row for row in payload["paragraphs"] if row["alias"] == "P1")
+source_span = payload["image"]["scope"]["visible_context"][0]
+numbers = [
+    {k: signal[k] for k in ("category", "raw_start", "raw_end", "raw_quote", "flags")}
+    for signal in payload["diagnostics"]["signals"]
+    if signal["category"] == "number"
+]
+summary = {
+    "task": "T112 offline S2 candidate preparation",
+    "claim_limit": "Prepared exact candidate only; no model output or quality result exists.",
+    "source": {
+        "source_id": target["source_id"],
+        "raw_sha256": target["raw"]["sha256"],
+        "raw_text": target["raw"]["text"],
+        "static_sha256": target["static"]["sha256"],
+        "static_text": target["static"]["text"],
+        "cached_image": "artifacts/ocr-live-readiness-20261028-01/images/S2/crop-01.jpg",
+        "image_sha256": payload["image"]["sha256"],
+        "image_frame": {"width": payload["image"]["width"], "height": payload["image"]["height"]},
+        "sample_identity": "Original S2 row retained; no replacement or newly selected sample.",
+    },
+    "target_geometry": payload["image"]["bindings"],
+    "visible_context": source_span,
+    "expected_behavior_basis": {
+        "method": "T97 strict conformance-v4 full-target text reply with source-derived visible boundary.",
+        "feedback": feedback,
+        "scope_instruction": SCOPE_INSTRUCTION,
+        "expected_text": "No full corrected reading asserted here; feedback requires inspecting the damaged token and requesting 'property'. Any other changes need image support. This is not a gold transcription.",
+    },
+    "all_number_signals": numbers,
+    "number_coverage_note": COVERAGE_GAPS,
+    "contracts": {
+        "host_contract": payload["contract"],
+        "reply_schema_contract": scoped_schema.contract,
+        "prompt_sha256": payload["prompt_sha256"],
+        "schema_sha256": scoped_schema.schema_sha256,
+        "host_packet_sha256": scoped["packet_sha256"],
+        "request_body_sha256": projection.body_sha256,
+        "image_bindings_json": projection.image_bindings_json,
+        "scope_instruction_sha256": sha256_bytes(SCOPE_INSTRUCTION.encode()),
+        "code_identity_sha256": payload["code_sha256"],
+        "model_name": MODEL_NAME,
+    },
+    "limitations": [
+        "Offline preparation only; no provider call or model output.",
+        "Source-inspected illustration is not independent gold or accepted text.",
+        "The ALL-number scan routes detected no numeric forms in the target; detector coverage remains incomplete for unusual, damaged, non-English and contextual number forms.",
+        "Visible context is a single line from a neighboring paragraph; its parent paragraph is only partly visible in the crop. The context is excluded from the target response.",
+        "The source crop and original hOCR/resource registrations are reused unchanged.",
+    ],
+}
+
+(out / "host.json").write_bytes(canonical_json(scoped))
+(out / "prompt.txt").write_text(scoped_prompt, encoding="utf-8")
+(out / "schema.json").write_text(scoped_schema.schema_text, encoding="utf-8")
+(out / "request.json").write_text(projection.body_utf8, encoding="utf-8")
+(out / "preparation.json").write_bytes(canonical_json(summary))
+(out / "README.txt").write_text(
+    "T112 S2 offline candidate reconstruction. The host, prompt, conformance-v4 schema, "
+    "and exact request were rebuilt from the existing T78/T97 S2 inputs and cached S2 crop, "
+    "then given one hOCR-derived visible neighboring line. No provider call was made. "
+    "See preparation.json for source identities, target/context geometry, feedback, hashes, "
+    "number routing and limitations. This is not a model result or an accepted reading.\n",
+    encoding="utf-8",
+)
+print(json.dumps({
+    "artifact": str(out),
+    "body_sha256": projection.body_sha256,
+    "schema_sha256": scoped_schema.schema_sha256,
+    "prompt_sha256": payload["prompt_sha256"],
+    "target_geometry": payload["image"]["bindings"],
+    "visible_context": source_span,
+    "number_signals": numbers,
+    "image_sha256": payload["image"]["sha256"],
+}, ensure_ascii=False, indent=2))
