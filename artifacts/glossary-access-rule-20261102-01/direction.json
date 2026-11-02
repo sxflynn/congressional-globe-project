@@ -1,0 +1,7 @@
+{
+  "date": "2026-11-02",
+  "source": "direct human chat",
+  "exact_text": "you shuld NEVER be directly reading the review-glossary.json, that is a huge waste of tokens. you should instead be using a python tool to query and do CRUD methods to the review glossary! thats a new rule for your agents!!",
+  "scope": "All project agents. Never directly display/read the whole glossary into context; Python may load/validate JSON internally for targeted query/create/read/update/delete operations. Return only requested matches or concise mutation summaries. No unrequested deletions or changes to immutable packets/answers.",
+  "evaluation_direction": "Human also explicitly authorizes the AI agent to evaluate Qwen outputs. Compare saved input, expected, actual and differences against source images; label agent judgments, not human grades or independent gold."
+}
