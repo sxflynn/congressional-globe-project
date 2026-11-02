@@ -70,6 +70,9 @@ class MeasurementSpec(Contract):
         "productive-ocr-d1a-lean-repeat-1-v1",
         "productive-ocr-d1a-lean-repeat-2-v1",
         "productive-ocr-d1a-lean-repeat-3-v1",
+        "productive-ocr-d1w-whole-repeat-1-v1",
+        "productive-ocr-d1w-whole-repeat-2-v1",
+        "productive-ocr-d1w-whole-repeat-3-v1",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256
@@ -275,10 +278,12 @@ def _finish_response(store, attempt, packet, response, elapsed, state):
 
 
 def _export(packet, response, elapsed):
-    if packet.get("window_id") == "D1A":
+    if packet.get("window_id") in {"D1A", "D1W"}:
         from congressional_globe.productive_ocr_lean_audit import export_lean_reply
+        from congressional_globe.productive_ocr_whole_audit import export_whole_reply
 
-        return export_lean_reply(REPOSITORY, packet, response, elapsed)
+        exporter = {"D1A": export_lean_reply, "D1W": export_whole_reply}[packet["window_id"]]
+        return exporter(REPOSITORY, packet, response, elapsed)
     if packet.get("window_id") in {"D1C", "D1L"}:
         from congressional_globe.productive_ocr_compact_measurement import export_compact_reply
 
@@ -407,11 +412,15 @@ def _authority(spec):
 
 
 def _timeout_seconds(spec):
-    return 300 if spec.contract in scoped.LONG_PROFILES + scoped.LEAN_PROFILES else 120
+    return (
+        300
+        if spec.contract in scoped.LONG_PROFILES + scoped.LEAN_PROFILES + scoped.WHOLE_PROFILES
+        else 120
+    )
 
 
 def _prep_seconds(spec):
-    if spec.contract in scoped.LONG_PROFILES + scoped.LEAN_PROFILES:
+    if spec.contract in scoped.LONG_PROFILES + scoped.LEAN_PROFILES + scoped.WHOLE_PROFILES:
         return 90
     return 300 if spec.contract == "productive-ocr-s5-measurement-v1" else 270
 

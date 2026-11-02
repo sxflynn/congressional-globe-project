@@ -294,11 +294,13 @@ def load_scoped_inputs(repository, spec):
     from congressional_globe import productive_ocr_measurement_scoped as scoped
 
     window = scoped.window(spec)
-    if window == "D1A":
+    if window in {"D1A", "D1W"}:
         from congressional_globe.productive_ocr_lean_audit import load_lean_inputs
+        from congressional_globe.productive_ocr_whole_audit import load_whole_inputs
 
-        host, projection, registry = load_lean_inputs(repository)
-        if projection.body_sha256 != scoped.LEAN_BODY_SHA:
+        loader = {"D1A": load_lean_inputs, "D1W": load_whole_inputs}[window]
+        host, projection, registry = loader(repository)
+        if projection.body_sha256 != scoped.authority(spec)[1]:
             raise ValueError("lean audit differs from the exact frozen request")
         return host, projection, registry
     if window in {"D1C", "D1L"}:

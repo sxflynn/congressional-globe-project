@@ -1,0 +1,17 @@
+{
+  "task": "T120",
+  "changed_fields": [
+    "format.$defs.LeanConcern.properties.quote.pattern",
+    "format.$defs.LeanConcern.properties.reason.pattern",
+    "format.$defs.LeanConcern.properties.reading.anyOf[0].pattern",
+    "format.$defs.LeanTarget.properties.reason.anyOf[0].pattern"
+  ],
+  "original_body_sha256": "3664ab0258ed47656510f4782ddfd11984f050653e578489a3d9a167fc7b39cf",
+  "new_body_sha256": "54595eaa7fb926cad47fb0f5626474aedd23b9ce420f6ec5525dc066434e43b0",
+  "unchanged": "All source/image/target/proposal/diagnostic bytes, messages, prompt, model, options, output cap and host validator semantics.",
+  "purpose": "Test whether explicit whole-string schema patterns permit meaningful source concerns after three single-character baseline failures.",
+  "hypothesis_limit": "Observed output matches fullmatch behavior of old patterns. Exact active backend converter implementation/semantics not proved.",
+  "scope": "Three sequential actual observations, never repeat until success; all failures retained. Not independent accuracy/native fit or accepted historical text.",
+  "preparation_checks": "15focused controls: actual wire diff/source equality, search/fullmatch/host whitespace and Unicode behavior, empty deletion, actual profile/load/export provenance and safe length prior-receipt integrity.",
+  "computer_use": false
+}

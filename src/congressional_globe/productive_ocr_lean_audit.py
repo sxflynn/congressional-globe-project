@@ -197,6 +197,10 @@ def export_lean_reply(repository, packet, response, _elapsed):
     host, projection, _registry = load_lean_inputs(repository)
     if packet != {"window_id": "D1A", "host": host, "body_utf8": projection.body_utf8}:
         raise ValueError("lean export does not bind the exact actual request")
+    return export_bound_reply(host, projection, response)
+
+
+def export_bound_reply(host, projection, response):
     raw = response.get("output_text", "")
     try:
         outcome = validate_reply(raw, host)
