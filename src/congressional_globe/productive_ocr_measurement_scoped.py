@@ -24,10 +24,22 @@ S2_PACKAGE = Path("artifacts/s2-consistency-20261102-01")
 S2_APPROVAL_SHA = "8ac38514f4ca1e4d7043f5b4461bee006c6334ac1907b562b5acc7f4864b4723"
 S2_BODY_SHA = "df2829ff7b7bb26ca98dc847237d78424b7f9fe148d58516d7f9393fc7d495ac"
 S2_PROFILES = tuple(f"productive-ocr-s2-scoped-repeat-{i}-v4" for i in range(1, 4))
-ALL_PROFILES = PROFILES + S1_PROFILES + S2_PROFILES
+D1_PACKAGE = Path("artifacts/audit-series-20261102-01/D1")
+D1_APPROVAL_SHA = "38c82284f60d1ae352817acfa59f157fc2f34239a59bb6acfb408176f7f3e143"
+D1_BODY_SHA = "7a6bed37b90d681d02201b37f327ab6c6aaea2f187719f141aa78fe55824d1c4"
+D1_PROFILES = tuple(f"productive-ocr-d1-audit-repeat-{i}-v2" for i in range(1, 4))
+D2_PACKAGE = Path("artifacts/audit-series-20261102-01/D2")
+D2_APPROVAL_SHA = "c54e80ef62b01ba92586af9ee767d5166cad686bd81d4d0a48648fd0e1ab579d"
+D2_BODY_SHA = "8db79f99eacadd00ed20b8f8997b2fa11d3919f69a5a02aad59d3742610b48c2"
+D2_PROFILES = tuple(f"productive-ocr-d2-audit-repeat-{i}-v2" for i in range(1, 4))
+ALL_PROFILES = PROFILES + S1_PROFILES + S2_PROFILES + D1_PROFILES + D2_PROFILES
 
 
 def _selection(spec):
+    if spec.contract in D1_PROFILES:
+        return D1_PACKAGE, D1_APPROVAL_SHA, D1_BODY_SHA, D1_PROFILES
+    if spec.contract in D2_PROFILES:
+        return D2_PACKAGE, D2_APPROVAL_SHA, D2_BODY_SHA, D2_PROFILES
     if spec.contract in S2_PROFILES:
         return S2_PACKAGE, S2_APPROVAL_SHA, S2_BODY_SHA, S2_PROFILES
     if spec.contract in S1_PROFILES:
@@ -41,6 +53,10 @@ def authority(spec):
 
 
 def window(spec):
+    if spec.contract in D1_PROFILES:
+        return "D1"
+    if spec.contract in D2_PROFILES:
+        return "D2"
     if spec.contract in S2_PROFILES:
         return "S2"
     return "S1" if spec.contract in S1_PROFILES else "S5"
@@ -51,6 +67,8 @@ class ScopedGroup(Contract):
         "productive-ocr-s5-scoped-group-v1",
         "productive-ocr-s1-scoped-group-v1",
         "productive-ocr-s2-scoped-group-v1",
+        "productive-ocr-d1-scoped-group-v1",
+        "productive-ocr-d2-scoped-group-v1",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256

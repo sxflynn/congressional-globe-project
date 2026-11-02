@@ -54,6 +54,12 @@ class MeasurementSpec(Contract):
         "productive-ocr-s2-scoped-repeat-1-v4",
         "productive-ocr-s2-scoped-repeat-2-v4",
         "productive-ocr-s2-scoped-repeat-3-v4",
+        "productive-ocr-d1-audit-repeat-1-v2",
+        "productive-ocr-d1-audit-repeat-2-v2",
+        "productive-ocr-d1-audit-repeat-3-v2",
+        "productive-ocr-d2-audit-repeat-1-v2",
+        "productive-ocr-d2-audit-repeat-2-v2",
+        "productive-ocr-d2-audit-repeat-3-v2",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256

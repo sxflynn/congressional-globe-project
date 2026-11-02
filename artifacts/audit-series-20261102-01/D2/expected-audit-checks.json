@@ -1,0 +1,77 @@
+{
+  "primary_checks": [
+    {
+      "alias": "P7",
+      "kind": "printed_repetition",
+      "raw": "I must admit that that act is quite full.",
+      "saved": "I must admit that act is quite full.",
+      "print": "I must admit that that act is quite full.",
+      "expectation": "Report omitted repeated that in saved proposal; fluency is not source fidelity."
+    },
+    {
+      "alias": "P7",
+      "kind": "already_repaired_number",
+      "raw": "July 17, 18G2",
+      "saved": "July 17, 1862",
+      "print": "July 17, 1862",
+      "expectation": "Inspect date but distinguish raw damage from saved proposal, whose year is already correct."
+    },
+    {
+      "alias": "P5",
+      "kind": "already_repaired_word",
+      "raw": "Bepresentation",
+      "saved": "Representation",
+      "print": "Representation",
+      "expectation": "Saved heading repaired this OCR error; do not report it as still wrong in saved text."
+    },
+    {
+      "alias": "P8",
+      "kind": "remaining_word_split",
+      "saved": "Presi- dent",
+      "print": "President",
+      "expectation": "Remaining line-break damage is visible; preserve quotation text and Sec.13."
+    }
+  ],
+  "numeric_controls": [
+    {
+      "alias": "P1",
+      "forms": [
+        "1866"
+      ]
+    },
+    {
+      "alias": "P3",
+      "forms": [
+        "107"
+      ]
+    },
+    {
+      "alias": "P4",
+      "forms": [
+        "39th",
+        "1st"
+      ]
+    },
+    {
+      "alias": "P7",
+      "forms": [
+        "17",
+        "1862",
+        "thirteenth"
+      ]
+    },
+    {
+      "alias": "P8",
+      "forms": [
+        "13"
+      ]
+    }
+  ],
+  "boundary": "Header plus left-column targets only; adjacent middle/right speeches are not targets.",
+  "prior_reply_sha256": "58dd470f509145d621120b65645857069a928fef1de2e5c1547565face6c8951",
+  "task": "T114",
+  "case": "D2",
+  "basis": "Root AI inspected exact-hash saved crop before new model outputs; bounded Luna independently inspected source. Root verified saved proposal and actual prior model reply via T78registered exact hashes.",
+  "limits": "Exposed diagnostic, no human gold/population accuracy claim. Checks are source-inspected expectations, not exhaustive independent quality labels. Preserve uncertainty and grade extra findings against source; do not infer false-positive rates from selected checks.",
+  "disclosed_to_provider": false
+}

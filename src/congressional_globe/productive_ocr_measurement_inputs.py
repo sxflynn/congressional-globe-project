@@ -293,8 +293,33 @@ def load_s2_scoped_inputs(repository: Path) -> tuple[dict, RequestProjection, Ev
 def load_scoped_inputs(repository, spec):
     from congressional_globe import productive_ocr_measurement_scoped as scoped
 
+    if spec.contract in scoped.D1_PROFILES + scoped.D2_PROFILES:
+        return load_audit_inputs(repository, scoped.window(spec))
     if spec.contract in scoped.S2_PROFILES:
         return load_s2_scoped_inputs(repository)
     if spec.contract in scoped.S1_PROFILES:
         return load_s1_scoped_inputs(repository)
     return load_s5_scoped_inputs(repository)
+
+
+def load_audit_inputs(repository: Path, unit: str):
+    """Retain every original audit target, saved proposal and registered source byte."""
+    from congressional_globe import productive_ocr_measurement_scoped as scoped
+    from congressional_globe.productive_ocr_authority import MODEL_NAME
+    from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes
+    from congressional_globe.productive_ocr_runner import code_identity
+
+    expected = {"D1": scoped.D1_BODY_SHA, "D2": scoped.D2_BODY_SHA}[unit]
+    root = repository / ASSEMBLY
+    host = _json(root / unit / "host.json")
+    registry = _registry(root, host, _json(root / "registry-index.json"))
+    validate_host(host, registry)
+    code = canonical_json(code_identity())
+    host["payload"]["code_sha256"] = sha256_bytes(code)
+    registry.files[sha256_bytes(code)] = code
+    host["packet_sha256"] = sha256_bytes(canonical_json(host["payload"]))
+    prompt = registry.files[host["payload"]["prompt_sha256"]].decode()
+    projection, _schema = compile_request_projection(host, registry, prompt, MODEL_NAME)
+    if projection.body_sha256 != expected:
+        raise ValueError("audit differs from the exact original target/proposal request")
+    return host, projection, registry

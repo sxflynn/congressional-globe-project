@@ -1,0 +1,93 @@
+{
+  "unit": "D1",
+  "original_role": "audit_saved_proposal",
+  "all_targets": [
+    {
+      "alias": "P1",
+      "source_id": "congressionalglo7395unit:1060:par_001060_000025",
+      "raw_sha256": "8afdad05fdde58558f1cf5a973e281e1247e086cfad7af139eba0a6dbecacbbf"
+    },
+    {
+      "alias": "P2",
+      "source_id": "congressionalglo7395unit:1060:par_001060_000026",
+      "raw_sha256": "d3d297fc4b96c5e77591cd5c98530462be7a5a3381ff6cf300a1dfb440e3e411"
+    },
+    {
+      "alias": "P3",
+      "source_id": "congressionalglo7395unit:1060:par_001060_000027",
+      "raw_sha256": "42f077531ceac77b40857983d727226ea24ac857994913b82909af411e485eb5"
+    },
+    {
+      "alias": "P4",
+      "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+      "raw_sha256": "38df69ac13782c2367417d4c8807e27539bd6edd36e7c19758163967681efcfc"
+    }
+  ],
+  "image": {
+    "alias": "I1",
+    "sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+    "mime": "image/jpeg",
+    "width": 1600,
+    "height": 3222,
+    "bindings": [
+      {
+        "paragraph_alias": "P1",
+        "raw_sha256": "8afdad05fdde58558f1cf5a973e281e1247e086cfad7af139eba0a6dbecacbbf",
+        "raw_start": 0,
+        "raw_end": 259,
+        "crop_region": {
+          "left": 27,
+          "top": 2805,
+          "right": 777,
+          "bottom": 3014
+        }
+      },
+      {
+        "paragraph_alias": "P2",
+        "raw_sha256": "d3d297fc4b96c5e77591cd5c98530462be7a5a3381ff6cf300a1dfb440e3e411",
+        "raw_start": 0,
+        "raw_end": 231,
+        "crop_region": {
+          "left": 27,
+          "top": 3021,
+          "right": 778,
+          "bottom": 3195
+        }
+      },
+      {
+        "paragraph_alias": "P3",
+        "raw_sha256": "42f077531ceac77b40857983d727226ea24ac857994913b82909af411e485eb5",
+        "raw_start": 0,
+        "raw_end": 418,
+        "crop_region": {
+          "left": 818,
+          "top": 27,
+          "right": 1571,
+          "bottom": 388
+        }
+      },
+      {
+        "paragraph_alias": "P4",
+        "raw_sha256": "38df69ac13782c2367417d4c8807e27539bd6edd36e7c19758163967681efcfc",
+        "raw_start": 0,
+        "raw_end": 950,
+        "crop_region": {
+          "left": 820,
+          "top": 436,
+          "right": 1573,
+          "bottom": 1240
+        }
+      }
+    ],
+    "registration_status": "verified",
+    "legibility_status": "checked",
+    "source_item_identifier": "congressionalglo7395unit",
+    "source_scan_leaf": 1060,
+    "hocr_sha256": "966c31d965de8d72080bd30c8e474e98a2061d3082bd8c0d7f89b10eb81436ff",
+    "page_map_sha256": "6ba53515281768c4f7b446f0d1845811bdbc100167f8e781c8e848be2f5a014b",
+    "binding_manifest_sha256": "eeabe8efd469ff519adfc9d6f970c3806cacf9dfeb7e480ee0649f2e980d9e57",
+    "registration_evidence_sha256": "dfd0b622f3300ae21c3809f67cf4c91e454f1e3184f27a8c9108153644dd2e6e"
+  },
+  "prior_exposure": "Exposed saved-failure audit; preserve exact prior request/reply/proposal identities; no independent population accuracy claim.",
+  "question": "Can the installed model audit every original target and identify source-supported discrepancies in the old proposal, especially all numbers and printed repetition, within fixed120second/1500output budget?"
+}
