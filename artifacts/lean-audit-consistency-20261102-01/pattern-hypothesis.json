@@ -1,0 +1,51 @@
+{
+  "status": "Supported hypothesis, not a proved exact-build cause.",
+  "observation": "First request sends quote/reason pattern\\S and reading^$|\\S; returned nonempty quoted values are overwhelmingly single characters.",
+  "source_evidence": [
+    "T71mlxrunner-client.go requestGrammar wraps supplied JSONschema unchanged.",
+    "T71mlxrunner-pipeline.go passes format to grammarEngine.prepare.",
+    "mlxrunner/grammar.go identified by pinned candidate directory/hash but not cached.",
+    "Bundled libollama_xgrammar.dylib has schema/regex converter symbols; exact dirty-source/build parity remains unproved."
+  ],
+  "bounded_reviewer": "GPT-6 Luna read-only; no inference or downloads.",
+  "offline_semantics_examples": [
+    {
+      "text": "CCCXI",
+      "host_search_nonblank": true,
+      "hypothesized_fullmatch_nonblank": false,
+      "anchored_nonblank": true
+    },
+    {
+      "text": "The printed chapter differs.",
+      "host_search_nonblank": true,
+      "hypothesized_fullmatch_nonblank": false,
+      "anchored_nonblank": true
+    },
+    {
+      "text": "t",
+      "host_search_nonblank": true,
+      "hypothesized_fullmatch_nonblank": true,
+      "anchored_nonblank": true
+    },
+    {
+      "text": " ",
+      "host_search_nonblank": false,
+      "hypothesized_fullmatch_nonblank": false,
+      "anchored_nonblank": false
+    },
+    {
+      "text": "",
+      "host_search_nonblank": false,
+      "hypothesized_fullmatch_nonblank": false,
+      "anchored_nonblank": false
+    },
+    {
+      "text": "with- out",
+      "host_search_nonblank": true,
+      "hypothesized_fullmatch_nonblank": false,
+      "anchored_nonblank": true
+    }
+  ],
+  "scope": "Python search/fullmatch examples illustrate the hypothesis only; they do not execute the selected backend grammar.",
+  "next_after_group": "A separately frozen anchored-pattern experiment can test the suspected cause without changing source/model/time/output limits. Do not alter this current3repeat group."
+}

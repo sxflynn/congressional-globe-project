@@ -1,0 +1,144 @@
+{
+  "task": "T118",
+  "case": "D1A",
+  "planned_calls": 3,
+  "actual_calls": 1,
+  "request_cycle_seconds": 139.09221229190007,
+  "reported_input_tokens": 10965,
+  "reported_output_tokens": 196,
+  "unknown_usage_calls": 0,
+  "all_positive_stop": true,
+  "runs": [
+    {
+      "repetition": 1,
+      "elapsed_seconds": 139.09221229190007,
+      "usage": {
+        "input_tokens": 10965,
+        "output_tokens": 196
+      },
+      "measurement_status": "invalid",
+      "owned_stop": "stopped",
+      "status": "completed",
+      "finish_reason": "stop",
+      "raw_output": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"t\",\"reading\":\"h\",\"reason\":\"'\"},{\"layer\":\"raw\",\"quote\":\"e\",\"reading\":\"e\",\"reason\":\"d\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\".\",\"reading\":\",\",\"reason\":\"P\"},{\"layer\":\"raw\",\"quote\":\".\",\"reading\":\",\",\"reason\":\"S\"},{\"layer\":\"raw\",\"quote\":\"-\",\"reading\":\"\",\"reason\":\"w\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null}\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"-\",\"reading\":\"\",\"reason\":\"w\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null}\n,{\"concerns\":[],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null}\n],\"unit_id\":\"D1\"}",
+      "parsed_reply": {
+        "contract": "ocr-lean-audit-reply-v1",
+        "targets": [
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "t",
+                "reading": "h",
+                "reason": "'"
+              },
+              {
+                "layer": "raw",
+                "quote": "e",
+                "reading": "e",
+                "reason": "d"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P4",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": ".",
+                "reading": ",",
+                "reason": "P"
+              },
+              {
+                "layer": "raw",
+                "quote": ".",
+                "reading": ",",
+                "reason": "S"
+              },
+              {
+                "layer": "raw",
+                "quote": "-",
+                "reading": "",
+                "reason": "w"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P1",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "-",
+                "reading": "",
+                "reason": "w"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P3",
+            "reason": null
+          },
+          {
+            "concerns": [],
+            "coverage": "complete",
+            "paragraph_alias": "P2",
+            "reason": null
+          }
+        ],
+        "unit_id": "D1"
+      },
+      "parse_error": null,
+      "source_export": {
+        "acceptance": "unreviewed_ai_evidence; no repair/production/native-fit acceptance",
+        "actual_provider_request_sha256": "3664ab0258ed47656510f4782ddfd11984f050653e578489a3d9a167fc7b39cf",
+        "image_sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+        "outcome": "invalid",
+        "raw_reply_sha256": "8dd7e2723a77a15f2529bbd7d9824218bb156bbcf1d07914618b89c08aa87986",
+        "raw_reply_text": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"t\",\"reading\":\"h\",\"reason\":\"'\"},{\"layer\":\"raw\",\"quote\":\"e\",\"reading\":\"e\",\"reason\":\"d\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\".\",\"reading\":\",\",\"reason\":\"P\"},{\"layer\":\"raw\",\"quote\":\".\",\"reading\":\",\",\"reason\":\"S\"},{\"layer\":\"raw\",\"quote\":\"-\",\"reading\":\"\",\"reason\":\"w\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null}\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"-\",\"reading\":\"\",\"reason\":\"w\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null}\n,{\"concerns\":[],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null}\n],\"unit_id\":\"D1\"}",
+        "rejection_reason": "1 validation error for LeanAuditReply\ntargets.0.concerns.1\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':...ng': 'e', 'reason': 'd'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+        "response_schema_sha256": "643221da8bb71ce28d8fdbab3c71caeb2a147c6ee86faec8c1662c1aa1e82a93",
+        "source_context_host_sha256": "694ea2b8a0cfcabb88f4461d74f43b950310035134f49fdd58cbfed6700ace2c"
+      },
+      "error": null,
+      "assessment": {
+        "assessor": "Root AI source/format assessment",
+        "summary": "All4target records appear, but the reply uses mostly single-character quotes/readings/reasons, includes unchanged e→e and duplicate punctuation concerns. Host validation rejects the no-op; unique source anchoring would also fail for repeated single characters. No supported chapter correction is returned despite complete coverage claims. It finishes normally with known usage/positive shutdown, so this invalid observation is retained and identical planned repetitions continue.",
+        "primary_checks": [
+          {
+            "alias": "P4",
+            "check": "chapter CCCXI",
+            "outcome": "not recovered in the complete returned text; concerns are single letters rather than a supported chapter reading"
+          },
+          {
+            "alias": "P1",
+            "check": "with- out→without",
+            "outcome": "single hyphen deletion concern does not supply the complete joined-word repair"
+          },
+          {
+            "alias": "P4",
+            "check": "other split words",
+            "outcome": "no source-anchored resolution returned"
+          }
+        ],
+        "extra_findings": [
+          "e→e is a no-op and invalid under the advertised rule.",
+          "Repeated raw period concerns are not unique source quotes.",
+          "Reasons are single characters with no meaningful source explanation."
+        ],
+        "hypothesis": "Unanchored nonblank regex patterns may be constraining this backend grammar to single-character strings; not established as the cause yet. Preserve all3requests unchanged before a separate correction experiment.",
+        "stop_group": false,
+        "scope": "Source-inspected selected checks only, no human gold or population rate; invalid output is not accepted text."
+      },
+      "result_sha256": "c072b1c36d495fcc9c7b397dede05851db93233bce88333156798a3c0d30fa5d"
+    }
+  ],
+  "source_expectations_path": "artifacts/lean-audit-consistency-20261102-01/expected-audit-checks.json",
+  "quality_basis": "Agent judgments of exact-hash cached images, original full targets and frozen prior proposal. Not independent human gold or population accuracy.",
+  "native_fit": "unknown",
+  "distinct_raw_replies": 1,
+  "distinct_reported_concern_sets": 1,
+  "concern_pattern_limit": "Returned claim patterns only; no source correctness or complete coverage implied."
+}

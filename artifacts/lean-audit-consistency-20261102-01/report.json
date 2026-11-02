@@ -1,0 +1,381 @@
+{
+  "task": "T118",
+  "case": "D1A",
+  "planned_calls": 3,
+  "actual_calls": 3,
+  "request_cycle_seconds": 407.3793768337928,
+  "reported_input_tokens": 32895,
+  "reported_output_tokens": 590,
+  "unknown_usage_calls": 0,
+  "all_positive_stop": true,
+  "runs": [
+    {
+      "repetition": 1,
+      "elapsed_seconds": 139.09221229190007,
+      "usage": {
+        "input_tokens": 10965,
+        "output_tokens": 196
+      },
+      "measurement_status": "invalid",
+      "owned_stop": "stopped",
+      "status": "completed",
+      "finish_reason": "stop",
+      "raw_output": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"t\",\"reading\":\"h\",\"reason\":\"'\"},{\"layer\":\"raw\",\"quote\":\"e\",\"reading\":\"e\",\"reason\":\"d\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\".\",\"reading\":\",\",\"reason\":\"P\"},{\"layer\":\"raw\",\"quote\":\".\",\"reading\":\",\",\"reason\":\"S\"},{\"layer\":\"raw\",\"quote\":\"-\",\"reading\":\"\",\"reason\":\"w\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null}\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"-\",\"reading\":\"\",\"reason\":\"w\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null}\n,{\"concerns\":[],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null}\n],\"unit_id\":\"D1\"}",
+      "parsed_reply": {
+        "contract": "ocr-lean-audit-reply-v1",
+        "targets": [
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "t",
+                "reading": "h",
+                "reason": "'"
+              },
+              {
+                "layer": "raw",
+                "quote": "e",
+                "reading": "e",
+                "reason": "d"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P4",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": ".",
+                "reading": ",",
+                "reason": "P"
+              },
+              {
+                "layer": "raw",
+                "quote": ".",
+                "reading": ",",
+                "reason": "S"
+              },
+              {
+                "layer": "raw",
+                "quote": "-",
+                "reading": "",
+                "reason": "w"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P1",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "-",
+                "reading": "",
+                "reason": "w"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P3",
+            "reason": null
+          },
+          {
+            "concerns": [],
+            "coverage": "complete",
+            "paragraph_alias": "P2",
+            "reason": null
+          }
+        ],
+        "unit_id": "D1"
+      },
+      "parse_error": null,
+      "source_export": {
+        "acceptance": "unreviewed_ai_evidence; no repair/production/native-fit acceptance",
+        "actual_provider_request_sha256": "3664ab0258ed47656510f4782ddfd11984f050653e578489a3d9a167fc7b39cf",
+        "image_sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+        "outcome": "invalid",
+        "raw_reply_sha256": "8dd7e2723a77a15f2529bbd7d9824218bb156bbcf1d07914618b89c08aa87986",
+        "raw_reply_text": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"t\",\"reading\":\"h\",\"reason\":\"'\"},{\"layer\":\"raw\",\"quote\":\"e\",\"reading\":\"e\",\"reason\":\"d\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\".\",\"reading\":\",\",\"reason\":\"P\"},{\"layer\":\"raw\",\"quote\":\".\",\"reading\":\",\",\"reason\":\"S\"},{\"layer\":\"raw\",\"quote\":\"-\",\"reading\":\"\",\"reason\":\"w\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null}\n,{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"-\",\"reading\":\"\",\"reason\":\"w\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null}\n,{\"concerns\":[],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null}\n],\"unit_id\":\"D1\"}",
+        "rejection_reason": "1 validation error for LeanAuditReply\ntargets.0.concerns.1\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'raw', 'quote':...ng': 'e', 'reason': 'd'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+        "response_schema_sha256": "643221da8bb71ce28d8fdbab3c71caeb2a147c6ee86faec8c1662c1aa1e82a93",
+        "source_context_host_sha256": "694ea2b8a0cfcabb88f4461d74f43b950310035134f49fdd58cbfed6700ace2c"
+      },
+      "error": null,
+      "assessment": {
+        "assessor": "Root AI source/format assessment",
+        "summary": "All4target records appear, but the reply uses mostly single-character quotes/readings/reasons, includes unchanged e→e and duplicate punctuation concerns. Host validation rejects the no-op; unique source anchoring would also fail for repeated single characters. No supported chapter correction is returned despite complete coverage claims. It finishes normally with known usage/positive shutdown, so this invalid observation is retained and identical planned repetitions continue.",
+        "primary_checks": [
+          {
+            "alias": "P4",
+            "check": "chapter CCCXI",
+            "outcome": "not recovered in the complete returned text; concerns are single letters rather than a supported chapter reading"
+          },
+          {
+            "alias": "P1",
+            "check": "with- out→without",
+            "outcome": "single hyphen deletion concern does not supply the complete joined-word repair"
+          },
+          {
+            "alias": "P4",
+            "check": "other split words",
+            "outcome": "no source-anchored resolution returned"
+          }
+        ],
+        "extra_findings": [
+          "e→e is a no-op and invalid under the advertised rule.",
+          "Repeated raw period concerns are not unique source quotes.",
+          "Reasons are single characters with no meaningful source explanation."
+        ],
+        "hypothesis": "Unanchored nonblank regex patterns may be constraining this backend grammar to single-character strings; not established as the cause yet. Preserve all3requests unchanged before a separate correction experiment.",
+        "stop_group": false,
+        "scope": "Source-inspected selected checks only, no human gold or population rate; invalid output is not accepted text."
+      },
+      "result_sha256": "c072b1c36d495fcc9c7b397dede05851db93233bce88333156798a3c0d30fa5d"
+    },
+    {
+      "repetition": 2,
+      "elapsed_seconds": 135.543671624735,
+      "usage": {
+        "input_tokens": 10965,
+        "output_tokens": 227
+      },
+      "measurement_status": "invalid",
+      "owned_stop": "stopped",
+      "status": "completed",
+      "finish_reason": "stop",
+      "raw_output": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"},{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"},{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"},{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"},{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"},{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}",
+      "parsed_reply": {
+        "contract": "ocr-lean-audit-reply-v1",
+        "targets": [
+          {
+            "concerns": [],
+            "coverage": "complete",
+            "paragraph_alias": "P1",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "static",
+                "quote": "a",
+                "reading": "a",
+                "reason": "P"
+              },
+              {
+                "layer": "static",
+                "quote": "a",
+                "reading": "a",
+                "reason": "P"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P2",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "static",
+                "quote": "a",
+                "reading": "a",
+                "reason": "P"
+              },
+              {
+                "layer": "static",
+                "quote": "a",
+                "reading": "a",
+                "reason": "P"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P3",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "static",
+                "quote": "a",
+                "reading": "a",
+                "reason": "P"
+              },
+              {
+                "layer": "static",
+                "quote": "a",
+                "reading": "a",
+                "reason": "P"
+              },
+              {
+                "layer": "static",
+                "quote": "a",
+                "reading": "a",
+                "reason": "P"
+              },
+              {
+                "layer": "static",
+                "quote": "a",
+                "reading": "a",
+                "reason": "P"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P4",
+            "reason": null
+          }
+        ],
+        "unit_id": "D1"
+      },
+      "parse_error": null,
+      "source_export": {
+        "acceptance": "unreviewed_ai_evidence; no repair/production/native-fit acceptance",
+        "actual_provider_request_sha256": "3664ab0258ed47656510f4782ddfd11984f050653e578489a3d9a167fc7b39cf",
+        "image_sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+        "outcome": "invalid",
+        "raw_reply_sha256": "2f85b211214fe980d76717f7a191fa1eab938fc6ec3536af55c26c4ca1365482",
+        "raw_reply_text": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"},{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"},{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"},{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"},{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"},{\"layer\":\"static\",\"quote\":\"a\",\"reading\":\"a\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}",
+        "rejection_reason": "8 validation errors for LeanAuditReply\ntargets.1.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'static', 'quot...ng': 'a', 'reason': 'P'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\ntargets.1.concerns.1\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'static', 'quot...ng': 'a', 'reason': 'P'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\ntargets.2.concerns.0\n  Value error, concern needs a nonblank quote/reason and a changed or unknown reading [type=value_error, input_value={'layer': 'static', 'quot...ng': 'a', 'reason': 'P'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\ntargets.2.concerns.1\n  Value error, concern needs a nonblank quote/reason and a changed or ",
+        "response_schema_sha256": "643221da8bb71ce28d8fdbab3c71caeb2a147c6ee86faec8c1662c1aa1e82a93",
+        "source_context_host_sha256": "694ea2b8a0cfcabb88f4461d74f43b950310035134f49fdd58cbfed6700ace2c"
+      },
+      "error": null,
+      "assessment": {
+        "assessor": "Root AI source/format assessment",
+        "summary": "Second reply again covers all4aliases but its concerns repeat single-character a→a with one-character P reasons. These are no-ops/duplicates, not meaningful source findings, and host validation rejects them. The expected chapter correction and remaining split-word repair are not recovered. Known usage/positive stop permit the third identical observation.",
+        "primary_checks": [
+          {
+            "alias": "P4",
+            "check": "chapter CCCXI",
+            "outcome": "not recovered"
+          },
+          {
+            "alias": "P1",
+            "check": "with- out→without",
+            "outcome": "no concern or complete repair returned"
+          }
+        ],
+        "extra_findings": [
+          "Repeated static a→a no-ops across P2/P3/P4.",
+          "All coverage fields claim complete but no source-anchored chapter finding is returned."
+        ],
+        "stop_group": false,
+        "scope": "Selected source checks, not independent gold. This reinforces the single-character pattern hypothesis but does not establish exact converter semantics."
+      },
+      "result_sha256": "688d3a6082287b17c9e393d13110d717f46ee2c03c0ab4b579e7ddc802d8b578"
+    },
+    {
+      "repetition": 3,
+      "elapsed_seconds": 132.7434929171577,
+      "usage": {
+        "input_tokens": 10965,
+        "output_tokens": 167
+      },
+      "measurement_status": "invalid",
+      "owned_stop": "stopped",
+      "status": "completed",
+      "finish_reason": "stop",
+      "raw_output": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"P\",\"reading\":\"I\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"static\",\"quote\":\"P\",\"reading\":\"I\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"P\",\"reading\":\"I\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"P\",\"reading\":\"I\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}",
+      "parsed_reply": {
+        "contract": "ocr-lean-audit-reply-v1",
+        "targets": [
+          {
+            "concerns": [
+              {
+                "layer": "saved_proposal",
+                "quote": "P",
+                "reading": "I",
+                "reason": "P"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P1",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "static",
+                "quote": "P",
+                "reading": "I",
+                "reason": "P"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P2",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "saved_proposal",
+                "quote": "P",
+                "reading": "I",
+                "reason": "P"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P3",
+            "reason": null
+          },
+          {
+            "concerns": [
+              {
+                "layer": "raw",
+                "quote": "P",
+                "reading": "I",
+                "reason": "P"
+              }
+            ],
+            "coverage": "complete",
+            "paragraph_alias": "P4",
+            "reason": null
+          }
+        ],
+        "unit_id": "D1"
+      },
+      "parse_error": null,
+      "source_export": {
+        "acceptance": "unreviewed_ai_evidence; no repair/production/native-fit acceptance",
+        "actual_provider_request_sha256": "3664ab0258ed47656510f4782ddfd11984f050653e578489a3d9a167fc7b39cf",
+        "image_sha256": "8bb7e1665b915fa003e9731ab1df15fedb300b7a64007b11c350d1759171de11",
+        "outcome": "invalid",
+        "raw_reply_sha256": "53eb411e2b8c4587418b0f715fc0f9bb7303b71fac2929a57f2927e8793aefda",
+        "raw_reply_text": "{\"contract\":\"ocr-lean-audit-reply-v1\",\"targets\":[{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"P\",\"reading\":\"I\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P1\",\"reason\":null},{\"concerns\":[{\"layer\":\"static\",\"quote\":\"P\",\"reading\":\"I\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P2\",\"reason\":null},{\"concerns\":[{\"layer\":\"saved_proposal\",\"quote\":\"P\",\"reading\":\"I\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P3\",\"reason\":null},{\"concerns\":[{\"layer\":\"raw\",\"quote\":\"P\",\"reading\":\"I\",\"reason\":\"P\"}],\"coverage\":\"complete\",\"paragraph_alias\":\"P4\",\"reason\":null}],\"unit_id\":\"D1\"}",
+        "rejection_reason": "quote must occur exactly once in its declared text",
+        "response_schema_sha256": "643221da8bb71ce28d8fdbab3c71caeb2a147c6ee86faec8c1662c1aa1e82a93",
+        "source_context_host_sha256": "694ea2b8a0cfcabb88f4461d74f43b950310035134f49fdd58cbfed6700ace2c"
+      },
+      "error": null,
+      "assessment": {
+        "assessor": "Root AI source/format assessment",
+        "summary": "Third reply again claims complete coverage for all4aliases but repeats single-character P→I concerns with P reasons. Exact source quote binding fails; the expected chapter correction and split-word repair are not recovered. All three planned observations are complete, invalid, known-usage and positively stopped.",
+        "primary_checks": [
+          {
+            "alias": "P4",
+            "check": "chapter CCCXI",
+            "outcome": "not recovered"
+          },
+          {
+            "alias": "P1",
+            "check": "with- out→without",
+            "outcome": "not recovered"
+          }
+        ],
+        "extra_findings": [
+          "Every concern is a single-character P→I claim, on differing declared layers.",
+          "Coverage complete is a model claim without useful supporting findings."
+        ],
+        "stop_group": false,
+        "scope": "Selected AI source checks, not independent gold. Single-character behavior is observed; precise backend cause remains a hypothesis."
+      },
+      "result_sha256": "17415c9c5bc623345b57dd709e67eeeedd2d987e661573a001fc59bdb2f03209"
+    }
+  ],
+  "source_expectations_path": "artifacts/lean-audit-consistency-20261102-01/expected-audit-checks.json",
+  "quality_basis": "Agent judgments of exact-hash cached images, original full targets and frozen prior proposal. Not independent human gold or population accuracy.",
+  "native_fit": "unknown",
+  "distinct_raw_replies": 3,
+  "distinct_reported_concern_sets": 3,
+  "concern_pattern_limit": "Returned claim patterns only; no source correctness or complete coverage implied."
+}

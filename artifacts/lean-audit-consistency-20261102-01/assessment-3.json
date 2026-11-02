@@ -1,0 +1,22 @@
+{
+  "assessor": "Root AI source/format assessment",
+  "summary": "Third reply again claims complete coverage for all4aliases but repeats single-character P→I concerns with P reasons. Exact source quote binding fails; the expected chapter correction and split-word repair are not recovered. All three planned observations are complete, invalid, known-usage and positively stopped.",
+  "primary_checks": [
+    {
+      "alias": "P4",
+      "check": "chapter CCCXI",
+      "outcome": "not recovered"
+    },
+    {
+      "alias": "P1",
+      "check": "with- out→without",
+      "outcome": "not recovered"
+    }
+  ],
+  "extra_findings": [
+    "Every concern is a single-character P→I claim, on differing declared layers.",
+    "Coverage complete is a model claim without useful supporting findings."
+  ],
+  "stop_group": false,
+  "scope": "Selected AI source checks, not independent gold. Single-character behavior is observed; precise backend cause remains a hypothesis."
+}

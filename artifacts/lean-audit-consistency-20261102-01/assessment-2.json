@@ -1,0 +1,22 @@
+{
+  "assessor": "Root AI source/format assessment",
+  "summary": "Second reply again covers all4aliases but its concerns repeat single-character a\u2192a with one-character P reasons. These are no-ops/duplicates, not meaningful source findings, and host validation rejects them. The expected chapter correction and remaining split-word repair are not recovered. Known usage/positive stop permit the third identical observation.",
+  "primary_checks": [
+    {
+      "alias": "P4",
+      "check": "chapter CCCXI",
+      "outcome": "not recovered"
+    },
+    {
+      "alias": "P1",
+      "check": "with- out\u2192without",
+      "outcome": "no concern or complete repair returned"
+    }
+  ],
+  "extra_findings": [
+    "Repeated static a\u2192a no-ops across P2/P3/P4.",
+    "All coverage fields claim complete but no source-anchored chapter finding is returned."
+  ],
+  "stop_group": false,
+  "scope": "Selected source checks, not independent gold. This reinforces the single-character pattern hypothesis but does not establish exact converter semantics."
+}

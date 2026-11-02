@@ -1,0 +1,29 @@
+{
+  "assessor": "Root AI source/format assessment",
+  "summary": "All4target records appear, but the reply uses mostly single-character quotes/readings/reasons, includes unchanged e→e and duplicate punctuation concerns. Host validation rejects the no-op; unique source anchoring would also fail for repeated single characters. No supported chapter correction is returned despite complete coverage claims. It finishes normally with known usage/positive shutdown, so this invalid observation is retained and identical planned repetitions continue.",
+  "primary_checks": [
+    {
+      "alias": "P4",
+      "check": "chapter CCCXI",
+      "outcome": "not recovered in the complete returned text; concerns are single letters rather than a supported chapter reading"
+    },
+    {
+      "alias": "P1",
+      "check": "with- out→without",
+      "outcome": "single hyphen deletion concern does not supply the complete joined-word repair"
+    },
+    {
+      "alias": "P4",
+      "check": "other split words",
+      "outcome": "no source-anchored resolution returned"
+    }
+  ],
+  "extra_findings": [
+    "e→e is a no-op and invalid under the advertised rule.",
+    "Repeated raw period concerns are not unique source quotes.",
+    "Reasons are single characters with no meaningful source explanation."
+  ],
+  "hypothesis": "Unanchored nonblank regex patterns may be constraining this backend grammar to single-character strings; not established as the cause yet. Preserve all3requests unchanged before a separate correction experiment.",
+  "stop_group": false,
+  "scope": "Source-inspected selected checks only, no human gold or population rate; invalid output is not accepted text."
+}
