@@ -1,0 +1,15 @@
+{
+  "reviewer": "GPT-6 Luna /root/review_s2_runner",
+  "verdict": "No substantive blocker found.",
+  "confirmed": [
+    "Every crop pixel independently checked against original coordinates; fixed parent size/hash and frozen crop hash.",
+    "Only image/dimensions/rectangle change; selected source/prompt/reply/model/options unchanged.",
+    "Exact D2Rwire/export distinguishes parent image, actual PNG, target raw source/region and unverified accuracy.",
+    "Separate3slots/authority/budgets/receipt guards; old full-image requests unchanged.",
+    "One exact derived display URL, no fetch/fake receipt; displayedPNGequals recomputed parent crop and actual input, failure closes to warning/link."
+  ],
+  "limits": [
+    "Reviewer did not run tests.",
+    "Backend internal resizing/context effects not isolated; no population-quality claim."
+  ]
+}

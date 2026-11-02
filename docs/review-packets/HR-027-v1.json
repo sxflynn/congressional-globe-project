@@ -1,0 +1,42 @@
+{
+  "id": "HR-027",
+  "version": 1,
+  "title": "Exact paragraph image: actual input preparation",
+  "instructions": "Inputs, expected output, actual output and differences are shown in order. The paragraph image is copied directly from the saved source; no new model reply exists yet. Comments are optional. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "image-reading-comments",
+      "prompt": "Optional comments to steer later work",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Inputs: original image and registered paragraph",
+          "text": "The saved original appendix image and its previously registered paragraph area are the inputs. The selected area runs from pixel (20, 457) to (522, 584). It contains the short indented quotation in the left column. The original image and earlier model results remain unchanged.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0741.jp2/59,42,2824,1547/1600,/0/default.jpg"
+        },
+        {
+          "label": "2 · Expected output: exact copied pixels",
+          "text": "The expected output is a 502 × 127 paragraph image. Every decoded pixel must equal the pixel at its corresponding original coordinate. The operation may copy the selected area and encode it as PNG, with no resizing, retouching or generated content. This is an image-copying requirement, not an expectation that a model will read it correctly.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual output: paragraph image copied from the source",
+          "text": "The image below is the exact new model input. This is an actual source-image extraction, not a generated illustration or a model reply. The original source file is unchanged. The original image link provides full-page context.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0741.jp2/59,42,2824,1547/1600,/0/default.jpg#globe-p8-pixel-region-20261102-01"
+        },
+        {
+          "label": "4 · Differences: measured source preservation",
+          "text": "All 63,754 decoded pixels match their original coordinates; the measured pixel difference count is zero. The saved PNG also matches the actual request image bytes. The selected paragraph is unchanged, while neighboring text is absent. The earlier full-image test returned a neighbor in one of three calls; those replies remain visible and separate. Backend resizing may change when the smaller image is supplied, so this test will not isolate an internal cause.",
+          "url": null
+        },
+        {
+          "label": "5 · Next observations and limits",
+          "text": "No model call has run for this image yet. Exactly three independent identical requests are planned, using the same paragraph instruction, reply format, model and generation settings as the full-image reading. Each call is limited to 300 seconds and 1,500 output tokens, with a 1,800-second group limit and no retries, new source fetches or model downloads. The first actual reply will appear before repetitions. Comments are optional; no routine permission is requested.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}

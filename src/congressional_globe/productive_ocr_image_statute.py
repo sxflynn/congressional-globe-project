@@ -1,5 +1,6 @@
 """Explicit one-paragraph image-only diagnostic, separate from full appendix audits."""
 
+import base64
 import copy
 import json
 from typing import Literal
@@ -96,6 +97,15 @@ def export_image_reply(repository, packet, response, _elapsed):
     host, projection, _registry = load_image_inputs(repository)
     if packet != {"window_id": "D2I", "host": host, "body_utf8": projection.body_utf8}:
         raise ValueError("image-only export does not bind exact target and actual request")
+    return export_bound_image_reply(host, projection, response)
+
+
+def provider_image_bytes(projection):
+    body = json.loads(projection.body_utf8)
+    return base64.b64decode(body["messages"][1]["images"][0], validate=True)
+
+
+def export_bound_image_reply(host, projection, response):
     raw = response.get("output_text", "")
     try:
         reply = ImageStatuteReply.model_validate(_parse(raw))
@@ -117,6 +127,7 @@ def export_image_reply(repository, packet, response, _elapsed):
         selected_raw_sha256=SOURCE_SHA,
         selected_image_region=REGION,
         image_sha256=host["payload"]["image"]["sha256"],
+        actual_provider_image_sha256=sha256_bytes(provider_image_bytes(projection)),
         raw_reply_sha256=sha256_bytes(raw.encode()),
         raw_reply_text=raw,
         validation_scope=(
