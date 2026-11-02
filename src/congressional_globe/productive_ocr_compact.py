@@ -1,6 +1,7 @@
 """Bounded offline-only codec for the T79 diagnostic column proposal.
 
-This module is not used by request compilation or dispatch. Decoding requires an
+Production request compilation does not use this module. A separately bounded D1
+measurement imports it for lossless wire comparison. Decoding requires an
 independently held original provider and its canonical SHA-256, not a self-hash
 supplied by the compact input. Shape/replay validity is not source authenticity.
 """

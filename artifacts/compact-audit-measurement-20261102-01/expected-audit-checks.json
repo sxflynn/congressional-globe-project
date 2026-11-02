@@ -1,0 +1,64 @@
+{
+  "primary_checks": [
+    {
+      "alias": "P4",
+      "kind": "number",
+      "raw": "CCCXL",
+      "saved": "CCCXLI",
+      "print": "CCCXI",
+      "expectation": "Report that the saved proposal chapter number contradicts visible print; do not accept its fluent-looking correction."
+    },
+    {
+      "alias": "P1",
+      "kind": "unrepaired_word",
+      "raw": "with- out",
+      "saved": "with- out",
+      "print": "without",
+      "expectation": "Recognize the line-break join remains unrepaired in the saved proposal."
+    },
+    {
+      "alias": "P4",
+      "kind": "unrepaired_word",
+      "saved": "Rep- resentatives",
+      "print": "Representatives",
+      "expectation": "Whole audit should notice remaining line-break damage without confusing it with a true printed hyphen."
+    }
+  ],
+  "numeric_controls": [
+    {
+      "alias": "P1",
+      "forms": [
+        "2"
+      ]
+    },
+    {
+      "alias": "P2",
+      "forms": [
+        "3"
+      ]
+    },
+    {
+      "alias": "P3",
+      "forms": [
+        "28",
+        "1866"
+      ]
+    },
+    {
+      "alias": "P4",
+      "forms": [
+        "CCCXI",
+        "2",
+        "28",
+        "1866"
+      ]
+    }
+  ],
+  "boundary": "P2ends at eastern in left column and P3continues district of Louisiana at top right; do not merge adjacent acts.",
+  "prior_reply_sha256": "37bf61d7a82cd53f855fafab5d7d684201fc1607291e37db57ff22450502d9a6",
+  "task": "T114",
+  "case": "D1",
+  "basis": "Root AI inspected exact-hash saved crop before new model outputs; bounded Luna independently inspected source. Root verified saved proposal and actual prior model reply via T78registered exact hashes.",
+  "limits": "Exposed diagnostic, no human gold/population accuracy claim. Checks are source-inspected expectations, not exhaustive independent quality labels. Preserve uncertainty and grade extra findings against source; do not infer false-positive rates from selected checks.",
+  "disclosed_to_provider": false
+}

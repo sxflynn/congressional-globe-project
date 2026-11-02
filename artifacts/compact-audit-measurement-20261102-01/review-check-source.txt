@@ -1,0 +1,27 @@
+import hashlib,json,os,sys
+from pathlib import Path
+from lxml import html
+from streamlit.testing.v1 import AppTest
+from congressional_globe.review_evidence import evidence_html
+from congressional_globe.review_glossary import annotated_html,definitions
+from congressional_globe.review_models import ReviewPacket
+from congressional_globe.review_store import ReviewStore
+unit=sys.argv[1];version=int(sys.argv[2]);review='HR-020';b=Path('artifacts/compact-audit-measurement-20261102-01')
+packet=ReviewPacket.model_validate_json(Path(f'docs/review-packets/{review}-v{version}.json').read_text());spans=json.loads(Path('docs/review-source-spans.json').read_text())['source_spans'];proof=[]
+for i,c in enumerate(packet.questions[0].evidence):
+ digest=hashlib.sha256(c.text.encode()).hexdigest();assert digest in spans
+ tree=html.fragment_fromstring(evidence_html(c.text,f't114-{unit}-{version}-{i}'),create_parent='div')
+ assert not tree.xpath('.//span[@class="review-source-text"]//button')
+ actual=[n.text_content() for n in tree.xpath('.//span[@class="review-source-text"]')]
+ expected=[c.text[r['start']:r['end']] for r in spans[digest]];assert actual==expected
+ buttons=tree.xpath('.//button[@class="glossary-term"]');assert buttons
+ proof.append(dict(label=c.label,plain_source_spans=len(actual),glossary_buttons=len(buttons)))
+for field in [packet.title,packet.instructions,packet.questions[0].prompt]+[e.label for e in packet.questions[0].evidence]:annotated_html(field,definitions(),'surface')
+path=Path(f'tmp/t114-{unit}-v{version}-proof.sqlite')
+if path.exists():path.unlink()
+os.environ['GLOBE_REVIEW_DATABASE']=str(path);registered=ReviewStore(path).register(packet)
+app=AppTest.from_string('from congressional_globe.review_app import main\nmain()').run();assert not app.exception
+app.text_input(key='reviewer').set_value('Synthetic test reviewer').run();assert not app.exception
+assert len(app.text_area)==len(proof)+1
+result=dict(packet_sha256=registered['packet_sha256'],evidence_cards=proof,comment_boxes=len(proof)+1,app_exceptions=0,plain_source_spans_no_glossary=True,computer_use=False,browser_or_device_checks='not performed per user preference',synthetic_database=str(path),production_answers_written=False)
+(b/f'review-v{version}-validation.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

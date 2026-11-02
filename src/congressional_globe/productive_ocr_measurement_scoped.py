@@ -32,18 +32,24 @@ D2_PACKAGE = Path("artifacts/audit-series-20261102-01/D2")
 D2_APPROVAL_SHA = "c54e80ef62b01ba92586af9ee767d5166cad686bd81d4d0a48648fd0e1ab579d"
 D2_BODY_SHA = "8db79f99eacadd00ed20b8f8997b2fa11d3919f69a5a02aad59d3742610b48c2"
 D2_PROFILES = tuple(f"productive-ocr-d2-audit-repeat-{i}-v2" for i in range(1, 4))
-ALL_PROFILES = PROFILES + S1_PROFILES + S2_PROFILES + D1_PROFILES + D2_PROFILES
+COMPACT_PACKAGE = Path("artifacts/compact-audit-measurement-20261102-01")
+COMPACT_APPROVAL_SHA = "47bc589e15910fb6f6174123c1dbdc5b694e3f76e295af7c810e2f669d181a10"
+COMPACT_BODY_SHA = "ef80f5feb637e041fc1f24a5f4947d533b4a91fa9fdadda3e14a82fc67ded3f4"
+COMPACT_PROFILES = tuple(f"productive-ocr-d1c-compact-repeat-{i}-v3" for i in range(1, 4))
+ALL_PROFILES = PROFILES + S1_PROFILES + S2_PROFILES + D1_PROFILES + D2_PROFILES + COMPACT_PROFILES
 
 
 def _selection(spec):
-    if spec.contract in D1_PROFILES:
-        return D1_PACKAGE, D1_APPROVAL_SHA, D1_BODY_SHA, D1_PROFILES
-    if spec.contract in D2_PROFILES:
-        return D2_PACKAGE, D2_APPROVAL_SHA, D2_BODY_SHA, D2_PROFILES
-    if spec.contract in S2_PROFILES:
-        return S2_PACKAGE, S2_APPROVAL_SHA, S2_BODY_SHA, S2_PROFILES
-    if spec.contract in S1_PROFILES:
-        return S1_PACKAGE, S1_APPROVAL_SHA, S1_BODY_SHA, S1_PROFILES
+    choices = [
+        (COMPACT_PACKAGE, COMPACT_APPROVAL_SHA, COMPACT_BODY_SHA, COMPACT_PROFILES),
+        (D1_PACKAGE, D1_APPROVAL_SHA, D1_BODY_SHA, D1_PROFILES),
+        (D2_PACKAGE, D2_APPROVAL_SHA, D2_BODY_SHA, D2_PROFILES),
+        (S2_PACKAGE, S2_APPROVAL_SHA, S2_BODY_SHA, S2_PROFILES),
+        (S1_PACKAGE, S1_APPROVAL_SHA, S1_BODY_SHA, S1_PROFILES),
+    ]
+    for choice in choices:
+        if spec.contract in choice[3]:
+            return choice
     return PACKAGE, APPROVAL_SHA, BODY_SHA, PROFILES
 
 
@@ -53,13 +59,7 @@ def authority(spec):
 
 
 def window(spec):
-    if spec.contract in D1_PROFILES:
-        return "D1"
-    if spec.contract in D2_PROFILES:
-        return "D2"
-    if spec.contract in S2_PROFILES:
-        return "S2"
-    return "S1" if spec.contract in S1_PROFILES else "S5"
+    return spec.contract.split("-")[2].upper() if spec.contract in ALL_PROFILES else "S5"
 
 
 class ScopedGroup(Contract):
@@ -69,6 +69,7 @@ class ScopedGroup(Contract):
         "productive-ocr-s2-scoped-group-v1",
         "productive-ocr-d1-scoped-group-v1",
         "productive-ocr-d2-scoped-group-v1",
+        "productive-ocr-d1c-scoped-group-v1",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256

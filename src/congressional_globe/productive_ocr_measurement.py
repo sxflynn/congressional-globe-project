@@ -60,6 +60,9 @@ class MeasurementSpec(Contract):
         "productive-ocr-d2-audit-repeat-1-v2",
         "productive-ocr-d2-audit-repeat-2-v2",
         "productive-ocr-d2-audit-repeat-3-v2",
+        "productive-ocr-d1c-compact-repeat-1-v3",
+        "productive-ocr-d1c-compact-repeat-2-v3",
+        "productive-ocr-d1c-compact-repeat-3-v3",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256
@@ -245,6 +248,10 @@ def _finish_response(store, attempt, packet, response, elapsed, state):
 
 
 def _export(packet, response, elapsed):
+    if packet.get("window_id") == "D1C":
+        from congressional_globe.productive_ocr_compact_measurement import export_compact_reply
+
+        return export_compact_reply(REPOSITORY, packet, response, elapsed)
     host = packet["host"]
     if host["payload"].get("contract") == "ocr-productive-repair-host-input-v3":
         return _export_text(packet, response)
