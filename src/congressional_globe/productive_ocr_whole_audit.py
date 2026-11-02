@@ -12,12 +12,7 @@ READING = r"^(\s*\S[\s\S]*)?$"
 def load_whole_inputs(repository):
     host, original, registry = load_lean_inputs(repository)
     body = json.loads(original.body_utf8)
-    definitions = body["format"]["$defs"]
-    concern = definitions["LeanConcern"]["properties"]
-    concern["quote"]["pattern"] = NONBLANK
-    concern["reason"]["pattern"] = NONBLANK
-    concern["reading"]["anyOf"][0]["pattern"] = READING
-    definitions["LeanTarget"]["properties"]["reason"]["anyOf"][0]["pattern"] = NONBLANK
+    apply_whole_patterns(body["format"])
     wire = canonical_json(body).decode()
     projection = original.model_copy(
         update=dict(
@@ -27,6 +22,16 @@ def load_whole_inputs(repository):
         )
     )
     return host, projection, registry
+
+
+def apply_whole_patterns(schema):
+    """Specialize a newly owned schema without changing lean host validation."""
+    definitions = schema["$defs"]
+    concern = definitions["LeanConcern"]["properties"]
+    concern["quote"]["pattern"] = NONBLANK
+    concern["reason"]["pattern"] = NONBLANK
+    concern["reading"]["anyOf"][0]["pattern"] = READING
+    definitions["LeanTarget"]["properties"]["reason"]["anyOf"][0]["pattern"] = NONBLANK
 
 
 def export_whole_reply(repository, packet, response, _elapsed):

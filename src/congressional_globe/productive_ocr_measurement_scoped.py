@@ -48,6 +48,10 @@ WHOLE_PACKAGE = Path("artifacts/whole-string-audit-20261102-01")
 WHOLE_APPROVAL_SHA = "7b44f8f1d10a017e6fafdb51abdcbeddc7867c428520fbebf2d317e73464b56b"
 WHOLE_BODY_SHA = "54595eaa7fb926cad47fb0f5626474aedd23b9ce420f6ec5525dc066434e43b0"
 WHOLE_PROFILES = tuple(f"productive-ocr-d1w-whole-repeat-{i}-v1" for i in range(1, 4))
+APPENDIX_PACKAGE = Path("artifacts/appendix-lean-audit-20261102-01")
+APPENDIX_APPROVAL_SHA = "ce9cc753daeb00c6c800e56994925e46d35952a6d9384b6d1c9a2da5fd478a6d"
+APPENDIX_BODY_SHA = "b7afffc240c5835bf27cb5b1a1cab8fae513c2f282fe98c7b38abefee3d1e0ae"
+APPENDIX_PROFILES = tuple(f"productive-ocr-d2w-whole-repeat-{i}-v1" for i in range(1, 4))
 ALL_PROFILES = (
     PROFILES
     + S1_PROFILES
@@ -58,11 +62,13 @@ ALL_PROFILES = (
     + LONG_PROFILES
     + LEAN_PROFILES
     + WHOLE_PROFILES
+    + APPENDIX_PROFILES
 )
 
 
 def _selection(spec):
     choices = [
+        (APPENDIX_PACKAGE, APPENDIX_APPROVAL_SHA, APPENDIX_BODY_SHA, APPENDIX_PROFILES),
         (WHOLE_PACKAGE, WHOLE_APPROVAL_SHA, WHOLE_BODY_SHA, WHOLE_PROFILES),
         (LEAN_PACKAGE, LEAN_APPROVAL_SHA, LEAN_BODY_SHA, LEAN_PROFILES),
         (LONG_PACKAGE, LONG_APPROVAL_SHA, LONG_BODY_SHA, LONG_PROFILES),
@@ -98,6 +104,7 @@ class ScopedGroup(Contract):
         "productive-ocr-d1l-scoped-group-v1",
         "productive-ocr-d1a-scoped-group-v1",
         "productive-ocr-d1w-scoped-group-v1",
+        "productive-ocr-d2w-scoped-group-v1",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256
@@ -154,7 +161,9 @@ def _verify_previous(directory, spec, expected_profile, group_sha, packet):
     if tuple(prior[k] for k in ("approval_sha256", "body_sha256", "code_sha256")) != expected:
         raise ValueError("previous scoped slot changed input or authority")
     result = json.loads((directory / "run/result.json").read_bytes())
-    _verify_previous_result(result, allow_length=spec.contract in LEAN_PROFILES + WHOLE_PROFILES)
+    _verify_previous_result(
+        result, allow_length=spec.contract in LEAN_PROFILES + WHOLE_PROFILES + APPENDIX_PROFILES
+    )
     receipt = read_spool(
         directory / "run/spool", spec.body_sha256, spec.plan.model_name, spec.plan.model_digest
     )
