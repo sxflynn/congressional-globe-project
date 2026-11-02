@@ -2354,6 +2354,27 @@
       "term": "constraint mismatch",
       "definition": "A difference between how two parts of a program interpret the same rule. It is a possible explanation to check, not a confirmed cause.",
       "aliases": []
+    },
+    {
+      "term": "image-only",
+      "definition": "A model receives the page image without an OCR text copy or an older proposed transcription. It can still use patterns learned during training.",
+      "aliases": [
+        "image-only evidence"
+      ]
+    },
+    {
+      "term": "pixel",
+      "definition": "One tiny dot in a digital image. Pixel coordinates locate a position by counting dots from the image edge.",
+      "aliases": [
+        "pixels"
+      ]
+    },
+    {
+      "term": "target rectangle",
+      "definition": "The rectangular area selected for inspection. Its left, top, right and bottom edges identify the requested area in the image.",
+      "aliases": [
+        "target_rectangle"
+      ]
     }
   ]
 }

@@ -52,6 +52,10 @@ APPENDIX_PACKAGE = Path("artifacts/appendix-lean-audit-20261102-01")
 APPENDIX_APPROVAL_SHA = "ce9cc753daeb00c6c800e56994925e46d35952a6d9384b6d1c9a2da5fd478a6d"
 APPENDIX_BODY_SHA = "b7afffc240c5835bf27cb5b1a1cab8fae513c2f282fe98c7b38abefee3d1e0ae"
 APPENDIX_PROFILES = tuple(f"productive-ocr-d2w-whole-repeat-{i}-v1" for i in range(1, 4))
+IMAGE_PACKAGE = Path("artifacts/image-only-statute-20261102-01")
+IMAGE_APPROVAL_SHA = "333f6cb56893f5bb5406a2b5788f8d9a508296feaf003ced5e11bc11245c96bb"
+IMAGE_BODY_SHA = "b45343d9787ab33ece403d0f239a028ba3f0491a88146f6f3b953c58fca8a5ef"
+IMAGE_PROFILES = tuple(f"productive-ocr-d2i-image-repeat-{i}-v1" for i in range(1, 4))
 ALL_PROFILES = (
     PROFILES
     + S1_PROFILES
@@ -63,11 +67,13 @@ ALL_PROFILES = (
     + LEAN_PROFILES
     + WHOLE_PROFILES
     + APPENDIX_PROFILES
+    + IMAGE_PROFILES
 )
 
 
 def _selection(spec):
     choices = [
+        (IMAGE_PACKAGE, IMAGE_APPROVAL_SHA, IMAGE_BODY_SHA, IMAGE_PROFILES),
         (APPENDIX_PACKAGE, APPENDIX_APPROVAL_SHA, APPENDIX_BODY_SHA, APPENDIX_PROFILES),
         (WHOLE_PACKAGE, WHOLE_APPROVAL_SHA, WHOLE_BODY_SHA, WHOLE_PROFILES),
         (LEAN_PACKAGE, LEAN_APPROVAL_SHA, LEAN_BODY_SHA, LEAN_PROFILES),
@@ -105,6 +111,7 @@ class ScopedGroup(Contract):
         "productive-ocr-d1a-scoped-group-v1",
         "productive-ocr-d1w-scoped-group-v1",
         "productive-ocr-d2w-scoped-group-v1",
+        "productive-ocr-d2i-scoped-group-v1",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256
@@ -162,7 +169,9 @@ def _verify_previous(directory, spec, expected_profile, group_sha, packet):
         raise ValueError("previous scoped slot changed input or authority")
     result = json.loads((directory / "run/result.json").read_bytes())
     _verify_previous_result(
-        result, allow_length=spec.contract in LEAN_PROFILES + WHOLE_PROFILES + APPENDIX_PROFILES
+        result,
+        allow_length=spec.contract
+        in LEAN_PROFILES + WHOLE_PROFILES + APPENDIX_PROFILES + IMAGE_PROFILES,
     )
     receipt = read_spool(
         directory / "run/spool", spec.body_sha256, spec.plan.model_name, spec.plan.model_digest

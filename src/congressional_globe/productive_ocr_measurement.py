@@ -76,6 +76,9 @@ class MeasurementSpec(Contract):
         "productive-ocr-d2w-whole-repeat-1-v1",
         "productive-ocr-d2w-whole-repeat-2-v1",
         "productive-ocr-d2w-whole-repeat-3-v1",
+        "productive-ocr-d2i-image-repeat-1-v1",
+        "productive-ocr-d2i-image-repeat-2-v1",
+        "productive-ocr-d2i-image-repeat-3-v1",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256
@@ -281,8 +284,9 @@ def _finish_response(store, attempt, packet, response, elapsed, state):
 
 
 def _export(packet, response, elapsed):
-    if packet.get("window_id") in {"D1A", "D1W", "D2W"}:
+    if packet.get("window_id") in {"D1A", "D1W", "D2W", "D2I"}:
         from congressional_globe.productive_ocr_appendix_audit import export_appendix_reply
+        from congressional_globe.productive_ocr_image_statute import export_image_reply
         from congressional_globe.productive_ocr_lean_audit import export_lean_reply
         from congressional_globe.productive_ocr_whole_audit import export_whole_reply
 
@@ -290,6 +294,7 @@ def _export(packet, response, elapsed):
             "D1A": export_lean_reply,
             "D1W": export_whole_reply,
             "D2W": export_appendix_reply,
+            "D2I": export_image_reply,
         }[packet["window_id"]]
         return exporter(REPOSITORY, packet, response, elapsed)
     if packet.get("window_id") in {"D1C", "D1L"}:
@@ -427,6 +432,7 @@ def _timeout_seconds(spec):
         + scoped.LEAN_PROFILES
         + scoped.WHOLE_PROFILES
         + scoped.APPENDIX_PROFILES
+        + scoped.IMAGE_PROFILES
         else 120
     )
 
@@ -438,6 +444,7 @@ def _prep_seconds(spec):
         + scoped.LEAN_PROFILES
         + scoped.WHOLE_PROFILES
         + scoped.APPENDIX_PROFILES
+        + scoped.IMAGE_PROFILES
     ):
         return 90
     return 300 if spec.contract == "productive-ocr-s5-measurement-v1" else 270
