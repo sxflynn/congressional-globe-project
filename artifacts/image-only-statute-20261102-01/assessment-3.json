@@ -1,0 +1,14 @@
+{
+  "assessor": "Root AI comparison with saved image and predeclared illustration",
+  "summary": "The third reply returns the intended full quotation and correctly reads be. Its words and internal punctuation match the source-inspected illustration, with two typography differences: SEC is capitalized and the outer quotation marks are curved. The scan uses small capital letters for the section label, so this case variation is recorded rather than graded as a word error. No neighboring text appears. Across the three identical requests, two return the selected paragraph and one returns its neighbor; all three pass format checks. Source selection is therefore inconsistent despite valid-looking replies.",
+  "source_checks": {
+    "be": "correct for requested paragraph",
+    "section_13": "retained",
+    "internal_words_and_punctuation": "match illustration after section-label case and outer quote-style normalization",
+    "line_wraps": "joined correctly",
+    "neighbor_exclusion": "passed this run",
+    "typography": "SEC versus Sec and curved outer quotes recorded; no independent typography gold"
+  },
+  "stop_group": false,
+  "limits": "Selected source-inspected AI assessment only. Full-image selection failure in run2 remains retained; no causal OCR-removal claim or accepted cleanup."
+}

@@ -1,0 +1,14 @@
+{
+  "assessor": "Root AI comparison with saved image and predeclared illustration",
+  "summary": "The first image-only reply reads the printed be correctly and returns the full selected quotation. Its words, section13and internal punctuation match the source-inspected joined-word illustration; the only byte differences are curved versus straight outer quotation marks. President/participated/exceptions word wraps are joined, with no adjacent paragraph text. Reply shape passes, and this selected reading is source-supported in the agent inspection; neither proves population accuracy or that removing OCR alone caused improvement.",
+  "source_checks": {
+    "be": "correct",
+    "section_13": "retained",
+    "internal_words_and_punctuation": "match predeclared source-inspected illustration",
+    "line_wraps": "joined without added words",
+    "neighbor_exclusion": "no adjacent paragraph text",
+    "typography": "outer quote style differs; small-cap representation not independently graded"
+  },
+  "stop_group": false,
+  "limits": "AI source comparison only; changed task and scope versus whole D2audit, not independent human gold or accepted cleanup."
+}

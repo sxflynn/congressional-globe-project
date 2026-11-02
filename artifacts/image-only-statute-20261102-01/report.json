@@ -1,0 +1,216 @@
+{
+  "task": "T122",
+  "case": "D2I",
+  "planned_calls": 3,
+  "actual_calls": 3,
+  "request_cycle_seconds": 97.29632950015366,
+  "reported_input_tokens": 4872,
+  "reported_output_tokens": 446,
+  "unknown_usage_calls": 0,
+  "all_positive_stop": true,
+  "distinct_raw_replies": 3,
+  "distinct_readings": 3,
+  "parseable_readings": 3,
+  "runs": [
+    {
+      "repetition": 1,
+      "elapsed_seconds": 33.61421591695398,
+      "usage": {
+        "input_tokens": 1624,
+        "output_tokens": 144
+      },
+      "measurement_status": "valid",
+      "owned_stop": "stopped",
+      "status": "completed",
+      "finish_reason": "stop",
+      "raw_output": "{\n  \"contract\": \"ocr-image-statute-reply-v1\",\n  \"coverage\": \"complete\",\n  \"paragraph_alias\": \"P8\",\n  \"reading\": \"“Sec. 13. And be it further enacted, That the President is hereby authorized, at any time hereafter, by proclamation, to extend to persons who may have participated in the existing rebellion in any State or part thereof, pardon and amnesty, with such exceptions and at such time and on such conditions as he may deem expedient for the public welfare.”\",\n  \"reason\": null\n,\n  \"unit_id\": \"D2P8\"\n}",
+      "parsed_reply": {
+        "contract": "ocr-image-statute-reply-v1",
+        "coverage": "complete",
+        "paragraph_alias": "P8",
+        "reading": "“Sec. 13. And be it further enacted, That the President is hereby authorized, at any time hereafter, by proclamation, to extend to persons who may have participated in the existing rebellion in any State or part thereof, pardon and amnesty, with such exceptions and at such time and on such conditions as he may deem expedient for the public welfare.”",
+        "reason": null,
+        "unit_id": "D2P8"
+      },
+      "assessment": {
+        "assessor": "Root AI comparison with saved image and predeclared illustration",
+        "summary": "The first image-only reply reads the printed be correctly and returns the full selected quotation. Its words, section13and internal punctuation match the source-inspected joined-word illustration; the only byte differences are curved versus straight outer quotation marks. President/participated/exceptions word wraps are joined, with no adjacent paragraph text. Reply shape passes, and this selected reading is source-supported in the agent inspection; neither proves population accuracy or that removing OCR alone caused improvement.",
+        "source_checks": {
+          "be": "correct",
+          "section_13": "retained",
+          "internal_words_and_punctuation": "match predeclared source-inspected illustration",
+          "line_wraps": "joined without added words",
+          "neighbor_exclusion": "no adjacent paragraph text",
+          "typography": "outer quote style differs; small-cap representation not independently graded"
+        },
+        "stop_group": false,
+        "limits": "AI source comparison only; changed task and scope versus whole D2audit, not independent human gold or accepted cleanup."
+      },
+      "source_export": {
+        "acceptance": "unreviewed_ai_evidence; no repair/production/native-fit acceptance",
+        "actual_provider_request_sha256": "b45343d9787ab33ece403d0f239a028ba3f0491a88146f6f3b953c58fca8a5ef",
+        "image_sha256": "53373dc3ef8ff554cda84c138db9c24b5f5753710114a2594bae75e06b150555",
+        "outcome": {
+          "proposal_status": "transcription",
+          "provider_reply": {
+            "contract": "ocr-image-statute-reply-v1",
+            "coverage": "complete",
+            "paragraph_alias": "P8",
+            "reading": "“Sec. 13. And be it further enacted, That the President is hereby authorized, at any time hereafter, by proclamation, to extend to persons who may have participated in the existing rebellion in any State or part thereof, pardon and amnesty, with such exceptions and at such time and on such conditions as he may deem expedient for the public welfare.”",
+            "reason": null,
+            "unit_id": "D2P8"
+          }
+        },
+        "raw_reply_sha256": "397c361f316bf21ef77a4fd5241d2833f06861164914a67bcf36f7992823ba91",
+        "raw_reply_text": "{\n  \"contract\": \"ocr-image-statute-reply-v1\",\n  \"coverage\": \"complete\",\n  \"paragraph_alias\": \"P8\",\n  \"reading\": \"“Sec. 13. And be it further enacted, That the President is hereby authorized, at any time hereafter, by proclamation, to extend to persons who may have participated in the existing rebellion in any State or part thereof, pardon and amnesty, with such exceptions and at such time and on such conditions as he may deem expedient for the public welfare.”\",\n  \"reason\": null\n,\n  \"unit_id\": \"D2P8\"\n}",
+        "rejection_reason": null,
+        "response_schema_sha256": "e7e4b720038027489707f9c8d5f8dc682c98f8d55bcef4bbbc310ec6d717691c",
+        "selected_image_region": {
+          "bottom": 584,
+          "left": 20,
+          "right": 522,
+          "top": 457
+        },
+        "selected_raw_sha256": "b4f4cd8ccce9ffb5f813c7435c7ff3cff6b6056c74c42378c418b40a9e01821b",
+        "selected_source_id": "congressionalglo7395unit:741:par_000741_000007",
+        "source_context_host_sha256": "37a4179bacc0596b2d8afe1d0b2d19bea8b549263bbda5c57eaeaf23fdac0c1c",
+        "validation_scope": "Reply shape/uncertainty and original target/request identity only; image transcription accuracy and complete coverage remain unverified AI claims."
+      },
+      "result_sha256": "53fe0c0878bacf5114d14c8e273e2db5fe6e0328182160fd5452d0735d3a69f1"
+    },
+    {
+      "repetition": 2,
+      "elapsed_seconds": 33.1937956251204,
+      "usage": {
+        "input_tokens": 1624,
+        "output_tokens": 176
+      },
+      "measurement_status": "valid",
+      "owned_stop": "stopped",
+      "status": "completed",
+      "finish_reason": "stop",
+      "raw_output": "{\n  \"contract\": \"ocr-image-statute-reply-v1\",\n  \"coverage\": \"complete\",\n  \"paragraph_alias\": \"P8\",\n  \"reading\": \"It will not be disputed that by virtue of that authority the President had power to issue his proclamation of general amnesty. But disputes may arise on other questions connected with this proclamation. What was the condition upon which the pardon was to inure to the benefit of the party pardoned? It was first that he should file the oath named and in the manner to be prescribed. But this is not of itself sufficient. There is something more necessary that the benefits of the pardon should inure. According to the common law, and when we\",\n  \"reason\": null,\n  \"unit_id\": \"D2P8\"\n}",
+      "parsed_reply": {
+        "contract": "ocr-image-statute-reply-v1",
+        "coverage": "complete",
+        "paragraph_alias": "P8",
+        "reading": "It will not be disputed that by virtue of that authority the President had power to issue his proclamation of general amnesty. But disputes may arise on other questions connected with this proclamation. What was the condition upon which the pardon was to inure to the benefit of the party pardoned? It was first that he should file the oath named and in the manner to be prescribed. But this is not of itself sufficient. There is something more necessary that the benefits of the pardon should inure. According to the common law, and when we",
+        "reason": null,
+        "unit_id": "D2P8"
+      },
+      "assessment": {
+        "assessor": "Root AI scope and source assessment",
+        "summary": "The second image-only reply passes reply-shape checks but transcribes the neighboring unindented paragraph below the selected quotation. It starts with It will not be disputed and even continues into the next cut-off passage. The requested P8 statute is absent, although the reply labels itself P8 and complete. This is a consequential selection failure: valid formatting and the correct label do not prove the model followed the image rectangle. It provides no reading of the selected be or section 13.",
+        "source_checks": {
+          "selected_paragraph": "wrong: neighboring P9 and following partial text",
+          "be": "selected statute not returned; not assessable",
+          "section_13": "not returned",
+          "neighbor_exclusion": "failed",
+          "coverage": "complete claim unsupported for requested target"
+        },
+        "stop_group": false,
+        "limits": "Source/region assessment of actual reply; no repair or acceptance. Known usage and positive shutdown permit third identical observation; preserve this disagreement without replacing it."
+      },
+      "source_export": {
+        "acceptance": "unreviewed_ai_evidence; no repair/production/native-fit acceptance",
+        "actual_provider_request_sha256": "b45343d9787ab33ece403d0f239a028ba3f0491a88146f6f3b953c58fca8a5ef",
+        "image_sha256": "53373dc3ef8ff554cda84c138db9c24b5f5753710114a2594bae75e06b150555",
+        "outcome": {
+          "proposal_status": "transcription",
+          "provider_reply": {
+            "contract": "ocr-image-statute-reply-v1",
+            "coverage": "complete",
+            "paragraph_alias": "P8",
+            "reading": "It will not be disputed that by virtue of that authority the President had power to issue his proclamation of general amnesty. But disputes may arise on other questions connected with this proclamation. What was the condition upon which the pardon was to inure to the benefit of the party pardoned? It was first that he should file the oath named and in the manner to be prescribed. But this is not of itself sufficient. There is something more necessary that the benefits of the pardon should inure. According to the common law, and when we",
+            "reason": null,
+            "unit_id": "D2P8"
+          }
+        },
+        "raw_reply_sha256": "6c156326296e75525b32c4b1d9f9fd3ed7d420a75cba4e3d386ce5118484fecd",
+        "raw_reply_text": "{\n  \"contract\": \"ocr-image-statute-reply-v1\",\n  \"coverage\": \"complete\",\n  \"paragraph_alias\": \"P8\",\n  \"reading\": \"It will not be disputed that by virtue of that authority the President had power to issue his proclamation of general amnesty. But disputes may arise on other questions connected with this proclamation. What was the condition upon which the pardon was to inure to the benefit of the party pardoned? It was first that he should file the oath named and in the manner to be prescribed. But this is not of itself sufficient. There is something more necessary that the benefits of the pardon should inure. According to the common law, and when we\",\n  \"reason\": null,\n  \"unit_id\": \"D2P8\"\n}",
+        "rejection_reason": null,
+        "response_schema_sha256": "e7e4b720038027489707f9c8d5f8dc682c98f8d55bcef4bbbc310ec6d717691c",
+        "selected_image_region": {
+          "bottom": 584,
+          "left": 20,
+          "right": 522,
+          "top": 457
+        },
+        "selected_raw_sha256": "b4f4cd8ccce9ffb5f813c7435c7ff3cff6b6056c74c42378c418b40a9e01821b",
+        "selected_source_id": "congressionalglo7395unit:741:par_000741_000007",
+        "source_context_host_sha256": "37a4179bacc0596b2d8afe1d0b2d19bea8b549263bbda5c57eaeaf23fdac0c1c",
+        "validation_scope": "Reply shape/uncertainty and original target/request identity only; image transcription accuracy and complete coverage remain unverified AI claims."
+      },
+      "result_sha256": "2203aa9e9c0b285dc2d267d820ffa16243fd31b26ae1c7681829dd52939ad399"
+    },
+    {
+      "repetition": 3,
+      "elapsed_seconds": 30.48831795807928,
+      "usage": {
+        "input_tokens": 1624,
+        "output_tokens": 126
+      },
+      "measurement_status": "valid",
+      "owned_stop": "stopped",
+      "status": "completed",
+      "finish_reason": "stop",
+      "raw_output": "{\"contract\": \"ocr-image-statute-reply-v1\", \"coverage\": \"complete\", \"paragraph_alias\": \"P8\", \"reading\": \"“SEC. 13. And be it further enacted, That the President is hereby authorized, at any time hereafter, by proclamation, to extend to persons who may have participated in the existing rebellion in any State or part thereof, pardon and amnesty, with such exceptions and at such time and on such conditions as he may deem expedient for the public welfare.”\", \"reason\": null, \"unit_id\": \"D2P8\"}",
+      "parsed_reply": {
+        "contract": "ocr-image-statute-reply-v1",
+        "coverage": "complete",
+        "paragraph_alias": "P8",
+        "reading": "“SEC. 13. And be it further enacted, That the President is hereby authorized, at any time hereafter, by proclamation, to extend to persons who may have participated in the existing rebellion in any State or part thereof, pardon and amnesty, with such exceptions and at such time and on such conditions as he may deem expedient for the public welfare.”",
+        "reason": null,
+        "unit_id": "D2P8"
+      },
+      "assessment": {
+        "assessor": "Root AI comparison with saved image and predeclared illustration",
+        "summary": "The third reply returns the intended full quotation and correctly reads be. Its words and internal punctuation match the source-inspected illustration, with two typography differences: SEC is capitalized and the outer quotation marks are curved. The scan uses small capital letters for the section label, so this case variation is recorded rather than graded as a word error. No neighboring text appears. Across the three identical requests, two return the selected paragraph and one returns its neighbor; all three pass format checks. Source selection is therefore inconsistent despite valid-looking replies.",
+        "source_checks": {
+          "be": "correct for requested paragraph",
+          "section_13": "retained",
+          "internal_words_and_punctuation": "match illustration after section-label case and outer quote-style normalization",
+          "line_wraps": "joined correctly",
+          "neighbor_exclusion": "passed this run",
+          "typography": "SEC versus Sec and curved outer quotes recorded; no independent typography gold"
+        },
+        "stop_group": false,
+        "limits": "Selected source-inspected AI assessment only. Full-image selection failure in run2 remains retained; no causal OCR-removal claim or accepted cleanup."
+      },
+      "source_export": {
+        "acceptance": "unreviewed_ai_evidence; no repair/production/native-fit acceptance",
+        "actual_provider_request_sha256": "b45343d9787ab33ece403d0f239a028ba3f0491a88146f6f3b953c58fca8a5ef",
+        "image_sha256": "53373dc3ef8ff554cda84c138db9c24b5f5753710114a2594bae75e06b150555",
+        "outcome": {
+          "proposal_status": "transcription",
+          "provider_reply": {
+            "contract": "ocr-image-statute-reply-v1",
+            "coverage": "complete",
+            "paragraph_alias": "P8",
+            "reading": "“SEC. 13. And be it further enacted, That the President is hereby authorized, at any time hereafter, by proclamation, to extend to persons who may have participated in the existing rebellion in any State or part thereof, pardon and amnesty, with such exceptions and at such time and on such conditions as he may deem expedient for the public welfare.”",
+            "reason": null,
+            "unit_id": "D2P8"
+          }
+        },
+        "raw_reply_sha256": "f7a32718d56c05babc99bf3bcb2e3d52838ec093d911f1c42692c125b23c9651",
+        "raw_reply_text": "{\"contract\": \"ocr-image-statute-reply-v1\", \"coverage\": \"complete\", \"paragraph_alias\": \"P8\", \"reading\": \"“SEC. 13. And be it further enacted, That the President is hereby authorized, at any time hereafter, by proclamation, to extend to persons who may have participated in the existing rebellion in any State or part thereof, pardon and amnesty, with such exceptions and at such time and on such conditions as he may deem expedient for the public welfare.”\", \"reason\": null, \"unit_id\": \"D2P8\"}",
+        "rejection_reason": null,
+        "response_schema_sha256": "e7e4b720038027489707f9c8d5f8dc682c98f8d55bcef4bbbc310ec6d717691c",
+        "selected_image_region": {
+          "bottom": 584,
+          "left": 20,
+          "right": 522,
+          "top": 457
+        },
+        "selected_raw_sha256": "b4f4cd8ccce9ffb5f813c7435c7ff3cff6b6056c74c42378c418b40a9e01821b",
+        "selected_source_id": "congressionalglo7395unit:741:par_000741_000007",
+        "source_context_host_sha256": "37a4179bacc0596b2d8afe1d0b2d19bea8b549263bbda5c57eaeaf23fdac0c1c",
+        "validation_scope": "Reply shape/uncertainty and original target/request identity only; image transcription accuracy and complete coverage remain unverified AI claims."
+      },
+      "result_sha256": "5cf89e355d78ee017b23d4050a7b8e1565e38f0efb85262cf79e877437076ea1"
+    }
+  ],
+  "native_fit": "unknown",
+  "quality_basis": "Selected source-inspected AI checks; no human gold/population accuracy claim.",
+  "comparison_limit": "Changed task and scope versus D2whole audit. Contextual diagnostic only, not controlled causal OCR-anchoring proof; all original nine-target audit results remain unchanged."
+}
