@@ -293,17 +293,26 @@ def load_s2_scoped_inputs(repository: Path) -> tuple[dict, RequestProjection, Ev
 def load_scoped_inputs(repository, spec):
     from congressional_globe import productive_ocr_measurement_scoped as scoped
 
-    if spec.contract in scoped.COMPACT_PROFILES + scoped.LONG_PROFILES:
+    window = scoped.window(spec)
+    if window == "D1A":
+        from congressional_globe.productive_ocr_lean_audit import load_lean_inputs
+
+        host, projection, registry = load_lean_inputs(repository)
+        if projection.body_sha256 != scoped.LEAN_BODY_SHA:
+            raise ValueError("lean audit differs from the exact frozen request")
+        return host, projection, registry
+    if window in {"D1C", "D1L"}:
         from congressional_globe.productive_ocr_compact_measurement import load_compact_inputs
 
         return load_compact_inputs(repository)
-    if spec.contract in scoped.D1_PROFILES + scoped.D2_PROFILES:
-        return load_audit_inputs(repository, scoped.window(spec))
-    if spec.contract in scoped.S2_PROFILES:
-        return load_s2_scoped_inputs(repository)
-    if spec.contract in scoped.S1_PROFILES:
-        return load_s1_scoped_inputs(repository)
-    return load_s5_scoped_inputs(repository)
+    if window in {"D1", "D2"}:
+        return load_audit_inputs(repository, window)
+    loaders = {
+        "S1": load_s1_scoped_inputs,
+        "S2": load_s2_scoped_inputs,
+        "S5": load_s5_scoped_inputs,
+    }
+    return loaders[window](repository)
 
 
 def load_audit_inputs(repository: Path, unit: str):

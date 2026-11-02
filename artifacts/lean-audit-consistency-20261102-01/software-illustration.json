@@ -1,0 +1,131 @@
+{
+  "label": "Authored selected-concern illustration, not returned model output or exhaustive gold reading.",
+  "reply": {
+    "contract": "ocr-lean-audit-reply-v1",
+    "unit_id": "D1",
+    "targets": [
+      {
+        "paragraph_alias": "P1",
+        "coverage": "complete",
+        "reason": null,
+        "concerns": [
+          {
+            "layer": "saved_proposal",
+            "quote": "with- out",
+            "reading": "without",
+            "reason": "The printed word is divided at the line end."
+          }
+        ]
+      },
+      {
+        "paragraph_alias": "P2",
+        "coverage": "complete",
+        "reason": null,
+        "concerns": []
+      },
+      {
+        "paragraph_alias": "P3",
+        "coverage": "complete",
+        "reason": null,
+        "concerns": []
+      },
+      {
+        "paragraph_alias": "P4",
+        "coverage": "complete",
+        "reason": null,
+        "concerns": [
+          {
+            "layer": "saved_proposal",
+            "quote": "CCCXLI",
+            "reading": "CCCXI",
+            "reason": "The printed chapter numeral differs from the saved proposal."
+          }
+        ]
+      }
+    ]
+  },
+  "actual_software_binding": {
+    "proposal_status": "findings",
+    "provider_reply": {
+      "contract": "ocr-lean-audit-reply-v1",
+      "unit_id": "D1",
+      "targets": [
+        {
+          "paragraph_alias": "P1",
+          "coverage": "complete",
+          "reason": null,
+          "concerns": [
+            {
+              "layer": "saved_proposal",
+              "quote": "with- out",
+              "reading": "without",
+              "reason": "The printed word is divided at the line end."
+            }
+          ]
+        },
+        {
+          "paragraph_alias": "P2",
+          "coverage": "complete",
+          "reason": null,
+          "concerns": []
+        },
+        {
+          "paragraph_alias": "P3",
+          "coverage": "complete",
+          "reason": null,
+          "concerns": []
+        },
+        {
+          "paragraph_alias": "P4",
+          "coverage": "complete",
+          "reason": null,
+          "concerns": [
+            {
+              "layer": "saved_proposal",
+              "quote": "CCCXLI",
+              "reading": "CCCXI",
+              "reason": "The printed chapter numeral differs from the saved proposal."
+            }
+          ]
+        }
+      ]
+    },
+    "source_bindings": {
+      "P1": [
+        {
+          "source_id": "congressionalglo7395unit:1060:par_001060_000025",
+          "raw_sha256": "8afdad05fdde58558f1cf5a973e281e1247e086cfad7af139eba0a6dbecacbbf",
+          "layer": "saved_proposal",
+          "layer_start": 226,
+          "layer_end": 235,
+          "raw_start": 226,
+          "raw_end": 235,
+          "raw_support": "with- out",
+          "quote": "with- out",
+          "reading": "without",
+          "reason": "The printed word is divided at the line end.",
+          "quality": "source positions only; image reading remains unverified AI evidence"
+        }
+      ],
+      "P2": [],
+      "P3": [],
+      "P4": [
+        {
+          "source_id": "congressionalglo7395unit:1060:par_001060_000028",
+          "raw_sha256": "38df69ac13782c2367417d4c8807e27539bd6edd36e7c19758163967681efcfc",
+          "layer": "saved_proposal",
+          "layer_start": 6,
+          "layer_end": 12,
+          "raw_start": 0,
+          "raw_end": 41,
+          "raw_support": "Chap. CCCXL \u2014 An Act to remove tte Office",
+          "quote": "CCCXLI",
+          "reading": "CCCXI",
+          "reason": "The printed chapter numeral differs from the saved proposal.",
+          "quality": "source positions only; image reading remains unverified AI evidence"
+        }
+      ]
+    },
+    "inspection_quality": "coverage is a model claim, not independent accuracy evidence"
+  }
+}

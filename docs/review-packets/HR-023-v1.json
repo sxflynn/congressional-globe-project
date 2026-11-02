@@ -1,0 +1,42 @@
+{
+  "id": "HR-023",
+  "version": 1,
+  "title": "Smaller audit reply: software example before model runs",
+  "instructions": "Inputs, expected output, actual older output, current software result and differences are shown in order. This early example exposes the change while work is underway. The example reply is authored; no new model result exists yet. Optional comments can steer later steps. Enter your name to comment, Save draft to keep unfinished feedback, or Submit review to send it.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "lean-audit-comments",
+      "prompt": "Optional comments about this change or its source checks",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "1 · Inputs: same original law targets and older proposal",
+          "text": "Original OCR heading excerpt:\nChap. CCCXL — An Act to remove tte Office\n\nOlder proposal heading excerpt:\nChap. CCCXLI.—An Act to remove the Office\n\nThe next test keeps all four original targets, the same image, old proposal and diagnostic hints. Only the audit reply format and its instructions change. The chapter heading is in the right-hand column, below the first approval date.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_1060.jp2/1124,226,1866,3758/1600,/0/default.jpg"
+        },
+        {
+          "label": "2 · Expected output: full coverage and source-based concerns",
+          "text": "Source-inspected examples:\nCCCXI\nwithout\n\nA reply must cover every assigned paragraph once. Concerns must quote the exact text from the stated original, software or older-proposal layer and give a supported reading or explicit uncertainty. The software checks where quotes belong; it does not certify the proposed image reading. The agent’s expected examples are saved separately and are not included in the new model prompt. These are selected checks, not independent human gold.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual older audit: truncated reply and incorrect visible claim",
+          "text": "Exact visible fragment from the earlier model audit:\nthe supplied crop/image evidence for P4 shows CCCXL\n\nThat request took 182.97 seconds and returned 1,500 output tokens before stopping at the cap. Its JSON is incomplete and invalid. The visible claim conflicts with the chapter numeral in the scan. No new Qwen reply exists yet.",
+          "url": null
+        },
+        {
+          "label": "3 · Actual software check: authored format illustration",
+          "text": "Authored example reply, not a returned model result:\n{\n  \"contract\": \"ocr-lean-audit-reply-v1\",\n  \"unit_id\": \"D1\",\n  \"targets\": [\n    {\n      \"paragraph_alias\": \"P1\",\n      \"coverage\": \"complete\",\n      \"reason\": null,\n      \"concerns\": [\n        {\n          \"layer\": \"saved_proposal\",\n          \"quote\": \"with- out\",\n          \"reading\": \"without\",\n          \"reason\": \"The printed word is divided at the line end.\"\n        }\n      ]\n    },\n    {\n      \"paragraph_alias\": \"P2\",\n      \"coverage\": \"complete\",\n      \"reason\": null,\n      \"concerns\": []\n    },\n    {\n      \"paragraph_alias\": \"P3\",\n      \"coverage\": \"complete\",\n      \"reason\": null,\n      \"concerns\": []\n    },\n    {\n      \"paragraph_alias\": \"P4\",\n      \"coverage\": \"complete\",\n      \"reason\": null,\n      \"concerns\": [\n        {\n          \"layer\": \"saved_proposal\",\n          \"quote\": \"CCCXLI\",\n          \"reading\": \"CCCXI\",\n          \"reason\": \"The printed chapter numeral differs from the saved proposal.\"\n        }\n      ]\n    }\n  ]\n}\n\nThe current software accepts this small selected-concern illustration and maps each quoted concern to its original source support. All four coverage records are present. The completeness fields are illustrative claims; this example is not an exhaustive audit, proof of image accuracy or measured model success. The original reply/checklist format and all failed outputs remain preserved.",
+          "url": null
+        },
+        {
+          "label": "4 · Differences and the next three-run test",
+          "text": "The proposed format has one coverage record per paragraph and concise concerns, replacing separate inspection and repeated checklist records. It still requires checking all words, names, punctuation, repetition, genuine hyphens and actual numbers, including dates and chapter/section numerals. Word counts are not the numeric quantities intended here.\n\nImplementation and checks are underway. Next, freeze exactly three independent identical-input Qwen calls, each at most five minutes and 1,500 output tokens. Preserve bad, invalid, uncertain or known-truncated observations and continue planned repetitions when usage and owned shutdown are known and the budget permits. Unknown usage or owned exit and exhausted limits still stop dependent calls. The first actual observation will be shown before runs two and three. Comments are optional; no permission request or production acceptance is implied.",
+          "url": null
+        }
+      ]
+    }
+  ]
+}

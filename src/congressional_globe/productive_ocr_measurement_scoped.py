@@ -40,6 +40,10 @@ LONG_PACKAGE = Path("artifacts/longer-audit-measurement-20261102-01")
 LONG_APPROVAL_SHA = "c48fb3ac3efa85a61681be8ed52b1bc1e716125efcf0ec4e6036959fec49119a"
 LONG_BODY_SHA = COMPACT_BODY_SHA
 LONG_PROFILES = tuple(f"productive-ocr-d1l-long-repeat-{i}-v3" for i in range(1, 4))
+LEAN_PACKAGE = Path("artifacts/lean-audit-consistency-20261102-01")
+LEAN_APPROVAL_SHA = "04bb912e1c42b25f5acadedf6ec9f23c280d520513c52cf00c1cacabfa02af27"
+LEAN_BODY_SHA = "3664ab0258ed47656510f4782ddfd11984f050653e578489a3d9a167fc7b39cf"
+LEAN_PROFILES = tuple(f"productive-ocr-d1a-lean-repeat-{i}-v1" for i in range(1, 4))
 ALL_PROFILES = (
     PROFILES
     + S1_PROFILES
@@ -48,11 +52,13 @@ ALL_PROFILES = (
     + D2_PROFILES
     + COMPACT_PROFILES
     + LONG_PROFILES
+    + LEAN_PROFILES
 )
 
 
 def _selection(spec):
     choices = [
+        (LEAN_PACKAGE, LEAN_APPROVAL_SHA, LEAN_BODY_SHA, LEAN_PROFILES),
         (LONG_PACKAGE, LONG_APPROVAL_SHA, LONG_BODY_SHA, LONG_PROFILES),
         (COMPACT_PACKAGE, COMPACT_APPROVAL_SHA, COMPACT_BODY_SHA, COMPACT_PROFILES),
         (D1_PACKAGE, D1_APPROVAL_SHA, D1_BODY_SHA, D1_PROFILES),
@@ -84,6 +90,7 @@ class ScopedGroup(Contract):
         "productive-ocr-d2-scoped-group-v1",
         "productive-ocr-d1c-scoped-group-v1",
         "productive-ocr-d1l-scoped-group-v1",
+        "productive-ocr-d1a-scoped-group-v1",
     ]
     approval_sha256: Sha256
     body_sha256: Sha256
@@ -140,7 +147,7 @@ def _verify_previous(directory, spec, expected_profile, group_sha, packet):
     if tuple(prior[k] for k in ("approval_sha256", "body_sha256", "code_sha256")) != expected:
         raise ValueError("previous scoped slot changed input or authority")
     result = json.loads((directory / "run/result.json").read_bytes())
-    _verify_previous_result(result)
+    _verify_previous_result(result, allow_length=spec.contract in LEAN_PROFILES)
     receipt = read_spool(
         directory / "run/spool", spec.body_sha256, spec.plan.model_name, spec.plan.model_digest
     )
@@ -166,11 +173,13 @@ def _verify_frozen(directory, saved, expected_profile, group_sha, packet):
         raise ValueError("previous scoped frozen input or configuration changed")
 
 
-def _verify_previous_result(result):
+def _verify_previous_result(result, *, allow_length=False):
     usage = result.get("usage") or {}
     if result.get("owned_stop_observation") != "stopped":
         raise ValueError("previous scoped owned stop is unknown or running")
-    if result.get("status") != "completed" or result.get("finish_reason") == "length":
+    if result.get("status") != "completed":
+        raise ValueError("previous scoped transport incomplete")
+    if result.get("finish_reason") == "length" and not allow_length:
         raise ValueError("previous scoped transport incomplete")
     _verify_usage(usage)
 
