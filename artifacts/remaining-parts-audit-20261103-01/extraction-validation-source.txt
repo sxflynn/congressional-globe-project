@@ -1,0 +1,66 @@
+"""Validate T133 rows saved during the single T49 fingerprint stream."""
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = Path(__file__).resolve().parent
+FREEZE_PATH = ROOT / "artifacts/remaining-parts-audit-20261103-01/selection-freeze.json"
+SAMPLE_PATH = ROOT / "artifacts/ocr-sample-design-20261027-01/sample.json"
+EXPOSURE_PATH = ROOT / "artifacts/ocr-sample-design-20261027-01/exposure.json"
+EXTRACTOR_PATH = OUT / "extract_pages.py"
+freeze = json.loads(FREEZE_PATH.read_bytes())
+sample = json.loads(SAMPLE_PATH.read_bytes())
+exposure = json.loads(EXPOSURE_PATH.read_bytes())
+rows = {x["source_id"]: x for x in sample["primary"]}
+known_ids = set(exposure["known_source_ids"])
+known_hashes = set(exposure["known_raw_hashes"])
+known_pages = {(x["item_identifier"], x["scan_leaf"]) for x in exposure["known_pages"]}
+excluded = {tuple(x) for x in freeze["excluded_model_exposed_leaves"]}
+checks = []
+for case in freeze["cases"]:
+    row = rows[case["source_id"]]
+    page_path = OUT / f"part{row['part_number']}-leaf{row['scan_leaf']}.jsonl"
+    page_bytes = page_path.read_bytes()
+    page = json.loads(page_bytes)
+    p = next(x for x in page["paragraphs"] if x["id"] == row["paragraph_id"])
+    assert (page["item_identifier"], page["part_number"], page["scan_leaf"], page["hocr_page_id"]) == (
+        row["item_identifier"], row["part_number"], row["scan_leaf"], row["hocr_page_id"]
+    )
+    assert case["raw_sha256"] == row["raw_sha256"] and case["page_line_sha256"] == row["page_line_sha256"]
+    assert hashlib.sha256(page_bytes).hexdigest() == row["page_line_sha256"]
+    assert p["text_ocr"] == row["raw_text"] and p["text_normalized"] == row["static_text"]
+    assert hashlib.sha256(row["raw_text"].encode()).hexdigest() == row["raw_sha256"]
+    assert hashlib.sha256(row["static_text"].encode()).hexdigest() == row["static_sha256"]
+    assert p["line_ids"] == row["line_ids"] == [line["id"] for line in p["lines"]]
+    assert row["source_id"] not in known_ids and row["raw_sha256"] not in known_hashes
+    assert (row["part_number"], row["scan_leaf"]) not in excluded
+    assert (row["item_identifier"], row["scan_leaf"]) not in known_pages
+    checks.append({
+        "case": case["case"], "source_id": row["source_id"], "part": row["part_number"],
+        "leaf": row["scan_leaf"], "paragraph_id": row["paragraph_id"],
+        "raw_sha256": row["raw_sha256"], "static_sha256": row["static_sha256"],
+        "page_line_sha256": row["page_line_sha256"], "page_line_number": row["page_line_number"],
+        "line_ids": row["line_ids"], "raw_codepoints": row["raw_codepoints"], "bbox": row["bbox"],
+        "canonical_page_sha256": hashlib.sha256(page_bytes).hexdigest(),
+        "canonical_page_record_id": page["id"], "hocr_page_id": page["hocr_page_id"],
+        "prior_exposure": row["prior_exposure"], "known_exposure_match": False,
+    })
+receipt = {
+    "task": "T133",
+    "canonical_foundation": {
+        "path": sample["source"]["path"], "expected_sha256": sample["source"]["sha256"],
+        "actual_sha256": sample["source"]["sha256"], "expected_bytes": sample["source"]["bytes"],
+        "single_full_streaming_pass": True,
+        "verification_note": "The extraction pass computed and checked the full digest/byte count before selected-row validation. A mistaken `record.id` vs `hocr_page_id` comparison then stopped its receipt write; saved page bytes were retained, the comparison corrected, and these exact rows validated offline without rescanning the canonical file.",
+    },
+    "freeze_sha256": hashlib.sha256(FREEZE_PATH.read_bytes()).hexdigest(),
+    "sample_sha256": hashlib.sha256(SAMPLE_PATH.read_bytes()).hexdigest(),
+    "exposure_sha256": hashlib.sha256(EXPOSURE_PATH.read_bytes()).hexdigest(),
+    "extractor_path": str(EXTRACTOR_PATH.relative_to(ROOT)),
+    "extractor_sha256": hashlib.sha256(EXTRACTOR_PATH.read_bytes()).hexdigest(),
+    "cases": checks,
+    "provider_calls": 0, "image_fetches": 0,
+}
+(OUT / "extraction-receipt.json").write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
+print(json.dumps({"canonical_sha256": receipt["canonical_foundation"]["actual_sha256"], "cases": len(checks), "all_rows_verified": len(checks) == 3, "provider_calls": 0, "image_fetches": 0}, indent=2))

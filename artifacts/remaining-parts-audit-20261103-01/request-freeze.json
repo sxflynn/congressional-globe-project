@@ -1,0 +1,31 @@
+{
+  "task": "T133",
+  "selection_sha256": "d354e03a9797ca12e5617ce407eaa86f8d13dd974c02e24c2e2d5e3c2c21a25c",
+  "method_sha256": "7eac7647ebff0f1d33b91187a632c66c00b7cc6ee32d75b02c3ab1df09145002",
+  "body_sha256_by_case": {
+    "W1": "51045e4f551d1b2d6335f25831c06c76358d95df0eee897f2e73e74ca56766e4",
+    "W2": "56293d91411c6e6b3630fb60c1180f6e091e6af1f042ddc32bf889018885f597",
+    "W3": "82c184830a73ba238fe186c626ac098a9da4c0ffd186ee4e97db18ccdb3b71ab"
+  },
+  "script_sha256": "94f27ef7470556617966905a4049c88e54241f993efd76a0e40ce39e46bc1b6c",
+  "code_sha256": "447926079ffb9651f87740dbec5734baf27de07240dd48bc385cf0ae9896680d",
+  "bounds": {
+    "cases": 3,
+    "identical_runs_each": 3,
+    "total_calls": 9,
+    "retries": 0,
+    "request_seconds": 120,
+    "output_tokens": 1500,
+    "per_case_group_seconds": 1800,
+    "total_model_phase_seconds": 1800,
+    "image_downloads_max": 3,
+    "info_downloads_max": 3,
+    "per_image_bytes_max": 8000000,
+    "model_downloads": 0
+  },
+  "planned_calls": 9,
+  "planned_repeats": 3,
+  "provider_calls_so_far": 0,
+  "native_fit": "unknown; named bounded diagnostic, no general clearance",
+  "runtime_pin": "External caller manifestSHA plus scriptSHA, no circularselfhash."
+}

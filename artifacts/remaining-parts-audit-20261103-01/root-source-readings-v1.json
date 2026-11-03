@@ -1,0 +1,48 @@
+{
+  "reader": "root, exact model unknown",
+  "method": "Direct saved native-raster inspection before Qwen replies; selection role/length and historicalS4missing-state known; no accepted benchmark reference.",
+  "accepted_benchmark_reference": false,
+  "readings": {
+    "W1": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+    "W2": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State \u2026 893, 1921, 3464",
+    "W3": "No. 703) for the relief of \u2026 2794."
+  },
+  "assessments": [
+    {
+      "case": "W1",
+      "image_sha256": "1c636cf308f76bff5c49beedda2cbbdc62524918fea57125ba38fe1621a35f1c",
+      "visible_source_reading": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+      "expected_behavior": "complete_supported_visible_target",
+      "comparison_mode": "word_punctuation_and_case_variants_separate",
+      "source_uncertainty": null,
+      "expected_numbers": []
+    },
+    {
+      "case": "W2",
+      "image_sha256": "bc58111e65875e61c7623a386056c6f777826a67f36b4f076cc8649b49005b0e",
+      "visible_source_reading": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State \u2026 893, 1921, 3464",
+      "expected_behavior": "complete_supported_visible_target",
+      "comparison_mode": "words_and_numbers_ignore_dotleader_count",
+      "source_uncertainty": "Index leaders represented by ellipsis for readability; exact leader count is unscored. This is a visible index fragment, not a complete legislative title or verified beneficiary.",
+      "expected_numbers": [
+        "156",
+        "893",
+        "1921",
+        "3464"
+      ]
+    },
+    {
+      "case": "W3",
+      "image_sha256": "144048d84f99e04867b1920ad620fc13fb56920159c31ef4c932b3ef459c886a",
+      "visible_source_reading": "No. 703) for the relief of \u2026 2794.",
+      "expected_behavior": "complete_supported_visible_target",
+      "comparison_mode": "words_and_numbers_ignore_dotleader_count",
+      "source_uncertainty": "Index leaders represented by ellipsis for readability; exact leader count is unscored. This is a visible index fragment, not a complete legislative title or verified beneficiary.",
+      "expected_numbers": [
+        "703",
+        "2794"
+      ]
+    }
+  ],
+  "comparison_predeclared": "W1words/punctuation plus case/spacing distinctions; W2/W3word and numeric-token sequences, excluding dot-leader counts/spacing. All raw replies retained, internal word splits still substantive differences."
+}

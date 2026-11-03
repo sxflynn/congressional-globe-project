@@ -1,0 +1,119 @@
+"""One-pass T133 canonical-page extraction and source-fingerprint verification."""
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = Path(__file__).resolve().parent
+FREEZE_PATH = ROOT / "artifacts/remaining-parts-audit-20261103-01/selection-freeze.json"
+SAMPLE_PATH = ROOT / "artifacts/ocr-sample-design-20261027-01/sample.json"
+EXPOSURE_PATH = ROOT / "artifacts/ocr-sample-design-20261027-01/exposure.json"
+freeze = json.loads(FREEZE_PATH.read_bytes())
+sample = json.loads(SAMPLE_PATH.read_bytes())
+exposure = json.loads(EXPOSURE_PATH.read_bytes())
+source_path = ROOT / sample["source"]["path"]
+rows = {row["source_id"]: row for row in sample["primary"]}
+selected = {case["source_id"]: case for case in freeze["cases"]}
+if set(selected) - set(rows):
+    raise SystemExit("a frozen case is absent from the T49 primary frame")
+keyed = {}
+for source_id, frozen in selected.items():
+    row = rows[source_id]
+    key = (row["item_identifier"], row["scan_leaf"], row["paragraph_id"])
+    if key in keyed:
+        raise SystemExit(f"duplicate frozen canonical selector: {key}")
+    keyed[key] = (source_id, row, frozen)
+
+hasher = hashlib.sha256()
+found = {}
+byte_offset = 0
+with source_path.open("rb") as source:
+    for line_number, raw in enumerate(source, 1):
+        hasher.update(raw)
+        record = json.loads(raw)
+        for key, (source_id, row, frozen) in keyed.items():
+            if (record.get("item_identifier"), record.get("scan_leaf")) != key[:2]:
+                continue
+            paragraph = next((p for p in record.get("paragraphs", []) if p.get("id") == key[2]), None)
+            if paragraph is None:
+                continue
+            if source_id in found:
+                raise SystemExit(f"duplicate canonical row for {source_id}")
+            if hashlib.sha256(raw).hexdigest() != row["page_line_sha256"]:
+                raise SystemExit(f"canonical page-line hash differs from T49 for {source_id}")
+            path = OUT / f"part{row['part_number']}-leaf{row['scan_leaf']}.jsonl"
+            path.write_bytes(raw)
+            found[source_id] = {
+                "canonical_jsonl_line_number": line_number,
+                "canonical_byte_offset": byte_offset,
+                "canonical_line_bytes": len(raw),
+                "path": str(path.relative_to(ROOT)),
+                "record": record,
+                "paragraph": paragraph,
+            }
+        byte_offset += len(raw)
+
+actual_sha = hasher.hexdigest()
+if actual_sha != sample["source"]["sha256"]:
+    raise SystemExit(f"canonical source fingerprint mismatch: {actual_sha}")
+if byte_offset != sample["source"]["bytes"]:
+    raise SystemExit(f"canonical source byte count mismatch: {byte_offset}")
+if set(found) != set(selected):
+    raise SystemExit(f"missing frozen page rows: {sorted(set(selected) - set(found))}")
+known_ids = set(exposure["known_source_ids"])
+known_raw_hashes = set(exposure["known_raw_hashes"])
+known_pages = {(x["item_identifier"], x["scan_leaf"]) for x in exposure["known_pages"]}
+excluded = {tuple(x) for x in freeze["excluded_model_exposed_leaves"]}
+checks = []
+for case in freeze["cases"]:
+    source_id = case["source_id"]
+    row = rows[source_id]
+    entry = found[source_id]
+    record, paragraph = entry["record"], entry["paragraph"]
+    if case["raw_sha256"] != row["raw_sha256"] or case["page_line_sha256"] != row["page_line_sha256"]:
+        raise SystemExit(f"freeze/T49 source hash mismatch: {source_id}")
+    if (record["item_identifier"], record["part_number"], record["scan_leaf"], record["hocr_page_id"]) != (
+        row["item_identifier"], row["part_number"], row["scan_leaf"], row["hocr_page_id"]
+    ):
+        raise SystemExit(f"canonical page identity differs from T49: {source_id}")
+    if paragraph["text_ocr"] != row["raw_text"] or paragraph["text_normalized"] != row["static_text"]:
+        raise SystemExit(f"canonical paragraph raw/static differs from T49: {source_id}")
+    if hashlib.sha256(row["raw_text"].encode()).hexdigest() != row["raw_sha256"]:
+        raise SystemExit(f"raw text hash mismatch: {source_id}")
+    if hashlib.sha256(row["static_text"].encode()).hexdigest() != row["static_sha256"]:
+        raise SystemExit(f"static text hash mismatch: {source_id}")
+    if paragraph["line_ids"] != row["line_ids"] or [x["id"] for x in paragraph["lines"]] != row["line_ids"]:
+        raise SystemExit(f"canonical line IDs differ from T49: {source_id}")
+    if row["source_id"] in known_ids or row["raw_sha256"] in known_raw_hashes:
+        raise SystemExit(f"selected source or raw hash is in known exposure set: {source_id}")
+    if (row["part_number"], row["scan_leaf"]) in excluded or (row["item_identifier"], row["scan_leaf"]) in known_pages:
+        raise SystemExit(f"selected page is in known exposure set: {source_id}")
+    checks.append({
+        "case": case["case"], "source_id": source_id, "part": row["part_number"],
+        "leaf": row["scan_leaf"], "paragraph_id": row["paragraph_id"],
+        "raw_sha256": row["raw_sha256"], "static_sha256": row["static_sha256"],
+        "page_line_sha256": row["page_line_sha256"], "page_line_number": row["page_line_number"],
+        "line_ids": row["line_ids"], "raw_codepoints": row["raw_codepoints"],
+        "bbox": row["bbox"], "role": paragraph["role"],
+        "canonical_page_line_number": entry["canonical_jsonl_line_number"],
+        "canonical_page_byte_offset": entry["canonical_byte_offset"],
+        "canonical_page_line_sha256": hashlib.sha256((OUT / Path(entry["path"]).name).read_bytes()).hexdigest(),
+        "prior_exposure": row["prior_exposure"],
+        "known_exact_id_or_hash_or_page": False,
+    })
+receipt = {
+    "task": "T133",
+    "canonical_foundation": {
+        "path": sample["source"]["path"], "sha256_expected": sample["source"]["sha256"],
+        "sha256_actual": actual_sha, "bytes_expected": sample["source"]["bytes"],
+        "bytes_actual": byte_offset, "single_streaming_pass": True,
+    },
+    "freeze_sha256": hashlib.sha256(FREEZE_PATH.read_bytes()).hexdigest(),
+    "sample_sha256": hashlib.sha256(SAMPLE_PATH.read_bytes()).hexdigest(),
+    "exposure_sha256": hashlib.sha256(EXPOSURE_PATH.read_bytes()).hexdigest(),
+    "cases": checks,
+    "all_three_exact_rows_verified": len(checks) == 3,
+    "provider_calls": 0, "image_fetches": 0,
+}
+(OUT / "extraction-receipt.json").write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
+print(json.dumps({"canonical_sha256": actual_sha, "canonical_bytes": byte_offset, "verified_cases": len(checks), "provider_calls": 0, "image_fetches": 0}, indent=2))

@@ -1,0 +1,134 @@
+{
+  "source_id": "congressionalg7391unit:150:par_000150_000094",
+  "raw_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+  "deterministic_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+  "deterministic_result_sha256": "9405f68ce5d6dea43d69b8429f5b9bdb7d1935ee11ba9af3f26eafc545ba8a3e",
+  "name_list_state": "available",
+  "signals": [
+    {
+      "signal_id": "caf4f8f49952872483c4bcd01602e1732a7febb0569ac32f9d531cb317076d96",
+      "paragraph_alias": "P1",
+      "raw_start": 4,
+      "raw_end": 10,
+      "raw_quote": "GRIMES",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar",
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "2f257ea9457dd490de71051367ef9d89ce12398afb63609b7c0292fe8033e04d",
+      "paragraph_alias": "P1",
+      "raw_start": 61,
+      "raw_end": 70,
+      "raw_quote": "addressed",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "a01d920fd4d3da67734987aad793ad1766460e7a448764f6db5d19bce91a1945",
+      "paragraph_alias": "P1",
+      "raw_start": 78,
+      "raw_end": 84,
+      "raw_quote": "Senate",
+      "category": "word",
+      "flags": [
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "5d6286620c5479df5823f23de279a4a6a3b5b6641f662c1f374a78cb582ff662",
+      "paragraph_alias": "P1",
+      "raw_start": 89,
+      "raw_end": 94,
+      "raw_quote": "seems",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "d2fd5d9b74b9e80c5a21e71995ac846be8a50ab806efc9afbcf835192dd0dd6b",
+      "paragraph_alias": "P1",
+      "raw_start": 101,
+      "raw_end": 110,
+      "raw_quote": "addressed",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "1d466fca208d00ce073cf6114d1278aae11f96531a212cd927b74496536943cd",
+      "paragraph_alias": "P1",
+      "raw_start": 120,
+      "raw_end": 126,
+      "raw_quote": "Barker",
+      "category": "word",
+      "flags": [
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "f5965b4add3f7d8c5d6955b34de8ddf40d9180d62adc2a5677f4c50d73047e7d",
+      "paragraph_alias": "P1",
+      "raw_start": 132,
+      "raw_end": 141,
+      "raw_quote": "presented",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "5052aa05519291ab3dd529a62e2c823a61b68741917208c25f9c11feb0ea9243",
+      "paragraph_alias": "P1",
+      "raw_start": 178,
+      "raw_end": 184,
+      "raw_quote": "Senate",
+      "category": "word",
+      "flags": [
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "71a89e58a4825ecbb87ea502f714ca088b44457a09680e691fba2bfd5d765022",
+      "paragraph_alias": "P1",
+      "raw_start": 12,
+      "raw_end": 13,
+      "raw_quote": "I",
+      "category": "number",
+      "flags": [
+        "roman_number_or_ambiguous_word",
+        "all_numbers_raw"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "4dbee6ca07e2265c33db154acfae8416887a8e96b946f8b338b1698a633ad9c7",
+      "paragraph_alias": "P1",
+      "raw_start": 12,
+      "raw_end": 13,
+      "raw_quote": "I",
+      "category": "number",
+      "flags": [
+        "roman_number_or_ambiguous_word",
+        "all_numbers_post_repair"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    }
+  ],
+  "selection": "secondary_inspection",
+  "coverage_gaps": "Numeric-notation detection is conservative but incomplete; unusual/damaged numeric forms can be missed. Detected digit-bearing and ambiguous Roman notation still route, including raw numbers later repaired. Spelled-out number words use ordinary post-repair spelling checks; their numerical meaning alone does not route them. Unfamiliar/unassessed words, independent name flags and success/unflagged audits remain."
+}

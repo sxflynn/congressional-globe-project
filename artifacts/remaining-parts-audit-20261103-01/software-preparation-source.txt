@@ -1,0 +1,60 @@
+"""Offline T133 geometry-aware deterministic routes using the pinned T52 helper."""
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = Path(__file__).resolve().parent
+FREEZE_PATH = ROOT / "artifacts/remaining-parts-audit-20261103-01/selection-freeze.json"
+SAMPLE_PATH = ROOT / "artifacts/ocr-sample-design-20261027-01/sample.json"
+EXPOSURE_PATH = ROOT / "artifacts/ocr-sample-design-20261027-01/exposure.json"
+T52_RESULTS = ROOT / "artifacts/deterministic-sample-20261028-01/results.json"
+freeze = json.loads(FREEZE_PATH.read_bytes())
+sample = json.loads(SAMPLE_PATH.read_bytes())
+rows = {x["source_id"]: x for x in sample["primary"]}
+module_path = ROOT / "tmp/t129-source-prep/prepare_candidates.py"
+spec = importlib.util.spec_from_file_location("t129_prep", module_path)
+helper = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(helper)
+resources, resource_identities = helper.load_resources()
+code_paths = [ROOT / f"src/congressional_globe/{name}" for name in [
+    "deterministic_models.py", "deterministic_geometry.py", "deterministic_rules.py",
+    "deterministic_repair.py", "productive_ocr_routing.py",
+]]
+report = {
+    "task": "T133",
+    "freeze_sha256": hashlib.sha256(FREEZE_PATH.read_bytes()).hexdigest(),
+    "sample_sha256": hashlib.sha256(SAMPLE_PATH.read_bytes()).hexdigest(),
+    "canonical_foundation_sha256": sample["source"]["sha256"],
+    "t52_results_sha256": hashlib.sha256(T52_RESULTS.read_bytes()).hexdigest(),
+    "t129_helper_path": str(module_path.relative_to(ROOT)),
+    "t129_helper_sha256": hashlib.sha256(module_path.read_bytes()).hexdigest(),
+    "t52_resources": resource_identities,
+    "deterministic_code_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in code_paths},
+    "cases": [], "provider_calls": 0, "image_fetches": 0,
+}
+for frozen in freeze["cases"]:
+    row = rows[frozen["source_id"]]
+    page_path = OUT / f"part{row['part_number']}-leaf{row['scan_leaf']}.jsonl"
+    result, route, paragraph, geometry_sha, page = helper.prepare_case(row, page_path.read_bytes(), resources)
+    report["cases"].append({
+        "case": frozen["case"], "source_id": row["source_id"], "part": row["part_number"],
+        "leaf": row["scan_leaf"], "paragraph_id": row["paragraph_id"],
+        "raw_sha256": row["raw_sha256"], "static_sha256": row["static_sha256"],
+        "page_line_sha256": row["page_line_sha256"], "page_line_number": row["page_line_number"],
+        "line_ids": row["line_ids"], "raw_codepoints": row["raw_codepoints"],
+        "static_edits": [{"raw_quote": e.raw_quote, "replacement": e.replacement, "rule": e.rule_id} for e in result.input.static_edits],
+        "proposed_text_sha256": result.proposed_sha256,
+        "proposed_edits": [{"raw_quote": e.raw_quote, "replacement": e.replacement, "rule": e.rule_id} for e in result.proposed_edits],
+        "deterministic_result_sha256": sha256_bytes(canonical_json(result.model_dump(mode="json"))),
+        "geometry_registry_sha256": geometry_sha, "selection": route.selection,
+        "signal_count": len(route.signals),
+        "signal_summary": [{"category": x["category"], "raw_quote": x["raw_quote"], "flags": x["flags"]} for x in route.signals],
+        "bbox": row["bbox"], "role": paragraph["role"], "item_identifier": page["item_identifier"],
+        "page_record_id": page["id"], "page_dimensions_px": [page["image_width_px"], page["image_height_px"]],
+        "source_accuracy": "not inspected; root reading pending",
+    })
+(OUT / "software-routes.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+print(json.dumps({"task": "T133", "cases": [{k:c[k] for k in ["case","leaf","raw_codepoints","selection","signal_count"]} for c in report["cases"]], "provider_calls": 0, "image_fetches": 0}, indent=2))

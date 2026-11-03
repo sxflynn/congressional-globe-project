@@ -1,0 +1,84 @@
+"""Bounded T52 proof that W3 is the original S4 source whose image was missing."""
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = Path(__file__).resolve().parent
+freeze_path = ROOT / "artifacts/remaining-parts-audit-20261103-01/selection-freeze.json"
+sample_path = ROOT / "artifacts/ocr-sample-design-20261027-01/sample.json"
+binding_path = ROOT / "artifacts/ocr-productive-repair-contract-20261027-01/sample-binding.json"
+readiness_path = ROOT / "artifacts/ocr-live-readiness-20261028-01/readiness.json"
+image_readiness_path = ROOT / "artifacts/ocr-live-readiness-20261028-01/image-readiness.json"
+freeze = json.loads(freeze_path.read_bytes())
+sample = json.loads(sample_path.read_bytes())
+binding = json.loads(binding_path.read_bytes())
+readiness = json.loads(readiness_path.read_bytes())
+image_readiness = json.loads(image_readiness_path.read_bytes())
+w3 = next(c for c in freeze["cases"] if c["case"] == "W3")
+assert w3["source_id"] == "congressionalglo00unit:83:par_000083_000042"
+row = next(x for x in sample["primary"] if x["source_id"] == w3["source_id"])
+s4 = next(x for x in binding["units"] if x.get("id") == "S4")
+ready_s4 = next(x for x in readiness["units"] if x.get("unit_id") == "S4")
+image_ready_s4 = next(x for x in image_readiness["units"] if x.get("unit_id") == "S4")
+assert (s4["source_id"], s4["part_number"], s4["scan_leaf"], s4["raw_sha256"]) == (
+    w3["source_id"], w3["part"], w3["leaf"], w3["raw_sha256"]
+)
+assert s4["input_ref"]["sha256"] == hashlib.sha256(sample_path.read_bytes()).hexdigest()
+assert s4["input_ref"]["selector"] == f"primary source_id={w3['source_id']}"
+assert s4["image_sha256"] is None and s4["image_status"].startswith("not_bound")
+assert ready_s4["status"] == image_ready_s4["status"] == "missing_after_bounded_recovery"
+assert ready_s4["targets_unchanged"] is True
+assert "timeout" in ready_s4["failure"].lower()
+targets = []
+for label in ["S4", "S4-recovery2"]:
+    p = ROOT / f"artifacts/ocr-live-readiness-20261028-01/images/{label}/target.json"
+    target = json.loads(p.read_bytes())
+    values = {k: target[k] for k in ["item_identifier", "part_number", "scan_leaf", "paragraph_id", "raw_sha256", "hocr_sha256", "page_map_sha256"]}
+    assert (values["item_identifier"], values["part_number"], values["scan_leaf"], values["paragraph_id"], values["raw_sha256"]) == (
+        "congressionalglo00unit", 4, 83, "par_000083_000042", w3["raw_sha256"]
+    )
+    targets.append({"label": label, "path": str(p.relative_to(ROOT)), "file_sha256": hashlib.sha256(p.read_bytes()).hexdigest(), **values})
+old_image_paths = [
+    ROOT / "artifacts/ocr-live-readiness-20261028-01/images/S4/crop-01.jpg",
+    ROOT / "artifacts/ocr-live-readiness-20261028-01/images/S4/info.json",
+    ROOT / "artifacts/ocr-live-readiness-20261028-01/images/S4-recovery2/crop-01.jpg",
+    ROOT / "artifacts/ocr-live-readiness-20261028-01/images/S4-recovery2/info.json",
+]
+assert all(not p.exists() for p in old_image_paths)
+capacity_path = ROOT / "artifacts/ocr-live-readiness-20261028-01/S4-capacity-proposal.json"
+capacity = json.loads(capacity_path.read_bytes())
+assert capacity["status"] == "authored_capacity_example_not_a_model_reply"
+results_path = ROOT / "artifacts/deterministic-sample-20261028-01/results.json"
+results = json.loads(results_path.read_bytes())
+matching = [x for x in results if x.get("input", {}).get("source", {}).get("source_id") == w3["source_id"]]
+assert len(matching) == 1 and matching[0]["input"]["source"]["raw_sha256"] == w3["raw_sha256"]
+proof = {
+    "task": "T133",
+    "claim": "W3 exactly reuses the source identity frozen as original T52 unit S4; historical image readiness for S4 was missing after bounded recovery.",
+    "source_id": w3["source_id"], "part": w3["part"], "leaf": w3["leaf"],
+    "paragraph_id": w3["paragraph_id"], "raw_sha256": w3["raw_sha256"],
+    "static_sha256": s4["static_sha256"],
+    "page_line_sha256": w3["page_line_sha256"],
+    "t52_sample_binding": {
+        "path": str(binding_path.relative_to(ROOT)), "sha256": hashlib.sha256(binding_path.read_bytes()).hexdigest(),
+        "source_manifest_sha256": binding["source_manifest_sha256"],
+        "input_ref": s4["input_ref"],
+        "S4": {k: s4.get(k) for k in ["id", "kind", "source_id", "part_number", "scan_leaf", "raw_sha256", "static_sha256", "image_sha256", "image_status", "reference_status", "prior_exposure"]},
+    },
+    "t52_readiness": {
+        "path": str(readiness_path.relative_to(ROOT)), "sha256": hashlib.sha256(readiness_path.read_bytes()).hexdigest(),
+        "status": ready_s4["status"], "metadata_attempts": ready_s4["metadata_attempts"],
+        "image_requests": ready_s4["image_requests"], "targets_unchanged": ready_s4["targets_unchanged"],
+        "failure": ready_s4["failure"], "image_readiness_status": image_ready_s4["status"],
+    },
+    "matching_old_target_records": targets,
+    "old_crop_and_info_files_exist": [p.exists() for p in old_image_paths],
+    "capacity_example_status": capacity["status"],
+    "t52_deterministic_result_count": len(matching),
+    "t52_deterministic_result_source_sha256": matching[0]["input"]["source"]["raw_sha256"],
+    "interpretation_limit": "Historical S4 identity and missing-image state are established; this does not establish current image availability, image quality, T55 native fit, or general launch readiness.",
+    "provider_calls": 0, "image_fetches": 0,
+}
+(OUT / "s4-identity-proof.json").write_text(json.dumps(proof, ensure_ascii=False, indent=2) + "\n")
+print(json.dumps({"W3_matches_T52_S4": True, "raw_sha256": w3["raw_sha256"], "readiness_status": ready_s4["status"], "old_crop_files_exist": any(p.exists() for p in old_image_paths), "capacity_example_is_model_reply": False, "provider_calls": 0, "image_fetches": 0}, indent=2))

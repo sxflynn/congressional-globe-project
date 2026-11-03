@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 18:28:51 GMT
+Content-Length: 778
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T18:28:51.972199Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter-nate sections to aid in the construction of, in said State. ... ... . ... . ... . ... 1893, 1921, 3464\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n, \"unit_id\": \"W2\"\n}"},"done":true,"done_reason":"stop","total_duration":29840498042,"load_duration":3912642834,"prompt_eval_count":2491,"prompt_eval_cached_count":0,"prompt_eval_duration":20643154542,"eval_count":144,"eval_duration":5273438959}

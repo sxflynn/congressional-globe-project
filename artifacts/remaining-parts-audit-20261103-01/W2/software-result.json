@@ -1,0 +1,1313 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7392unit:96:par_000096_000041",
+      "raw_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter- nate sections to aid in the construction of, in said State 1893, 1921, 3464",
+      "raw_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea"
+    },
+    "static_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State 1893, 1921, 3464",
+    "static_sha256": "345f84e792eeeaaa241dd36aac719084677a0a93d5b0e0d851d425d597c5bbad",
+    "static_edits": [
+      {
+        "start": 83,
+        "end": 94,
+        "raw_quote": "alter- nate",
+        "replacement": "alternate",
+        "rule_id": "adjacent-line wrap; lexicon form alternate"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000096_000089",
+        "start": 0,
+        "end": 44,
+        "text": "bill (S. No. 156) making an additional grant"
+      },
+      {
+        "line_id": "line_000096_000090",
+        "start": 45,
+        "end": 89,
+        "text": "of lands to the State of Minnesota in alter-"
+      },
+      {
+        "line_id": "line_000096_000091",
+        "start": 90,
+        "end": 134,
+        "text": "nate sections to aid in the construction of,"
+      },
+      {
+        "line_id": "line_000096_000092",
+        "start": 135,
+        "end": 165,
+        "text": "in said State 1893, 1921, 3464"
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "5283ddb322430c5ab3177f551a88b6cedbae2625c79d073eb9b071b2f1a0ff51"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "610668235dbacbcf259904854df188071b1076e1ac6d9bde7591ed5a35631075",
+  "proposed_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter- nate sections to aid in the construction of, in said State 1893, 1921, 3464",
+  "proposed_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 165,
+      "derived_start": 0,
+      "derived_end": 165,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 83,
+      "end": 94,
+      "raw_quote": "alter- nate",
+      "joined_candidate": "alternate",
+      "decision": "retained_for_review",
+      "reason": "standalone_parts_ambiguous"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 4,
+      "text": "bill",
+      "raw_start": 0,
+      "raw_end": 4,
+      "raw_quote": "bill",
+      "context": "bill (S. No. 156) making an addition",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 6,
+      "end": 7,
+      "text": "S",
+      "raw_start": 6,
+      "raw_end": 7,
+      "raw_quote": "S",
+      "context": "bill (S. No. 156) making an additional ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 9,
+      "end": 11,
+      "text": "No",
+      "raw_start": 9,
+      "raw_end": 11,
+      "raw_quote": "No",
+      "context": "bill (S. No. 156) making an additional gran",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 13,
+      "end": 16,
+      "text": "156",
+      "raw_start": 13,
+      "raw_end": 16,
+      "raw_quote": "156",
+      "context": "bill (S. No. 156) making an additional grant of ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 18,
+      "end": 24,
+      "text": "making",
+      "raw_start": 18,
+      "raw_end": 24,
+      "raw_quote": "making",
+      "context": "bill (S. No. 156) making an additional grant of lands to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 25,
+      "end": 27,
+      "text": "an",
+      "raw_start": 25,
+      "raw_end": 27,
+      "raw_quote": "an",
+      "context": "bill (S. No. 156) making an additional grant of lands to th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 28,
+      "end": 38,
+      "text": "additional",
+      "raw_start": 28,
+      "raw_end": 38,
+      "raw_quote": "additional",
+      "context": "bill (S. No. 156) making an additional grant of lands to the State of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 39,
+      "end": 44,
+      "text": "grant",
+      "raw_start": 39,
+      "raw_end": 44,
+      "raw_quote": "grant",
+      "context": ". No. 156) making an additional grant of lands to the State of Minnes",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 45,
+      "end": 47,
+      "text": "of",
+      "raw_start": 45,
+      "raw_end": 47,
+      "raw_quote": "of",
+      "context": "156) making an additional grant of lands to the State of Minnesota",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 48,
+      "end": 53,
+      "text": "lands",
+      "raw_start": 48,
+      "raw_end": 53,
+      "raw_quote": "lands",
+      "context": ") making an additional grant of lands to the State of Minnesota in al",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 54,
+      "end": 56,
+      "text": "to",
+      "raw_start": 54,
+      "raw_end": 56,
+      "raw_quote": "to",
+      "context": "ng an additional grant of lands to the State of Minnesota in alter",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 57,
+      "end": 60,
+      "text": "the",
+      "raw_start": 57,
+      "raw_end": 60,
+      "raw_quote": "the",
+      "context": "an additional grant of lands to the State of Minnesota in alter- na",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 61,
+      "end": 66,
+      "text": "State",
+      "raw_start": 61,
+      "raw_end": 66,
+      "raw_quote": "State",
+      "context": "dditional grant of lands to the State of Minnesota in alter- nate sec",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 67,
+      "end": 69,
+      "text": "of",
+      "raw_start": 67,
+      "raw_end": 69,
+      "raw_quote": "of",
+      "context": "nal grant of lands to the State of Minnesota in alter- nate sectio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 70,
+      "end": 79,
+      "text": "Minnesota",
+      "raw_start": 70,
+      "raw_end": 79,
+      "raw_quote": "Minnesota",
+      "context": " grant of lands to the State of Minnesota in alter- nate sections to aid ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 80,
+      "end": 82,
+      "text": "in",
+      "raw_start": 80,
+      "raw_end": 82,
+      "raw_quote": "in",
+      "context": "lands to the State of Minnesota in alter- nate sections to aid in ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 83,
+      "end": 88,
+      "text": "alter",
+      "raw_start": 83,
+      "raw_end": 88,
+      "raw_quote": "alter",
+      "context": "ds to the State of Minnesota in alter- nate sections to aid in the co",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 90,
+      "end": 94,
+      "text": "nate",
+      "raw_start": 90,
+      "raw_end": 94,
+      "raw_quote": "nate",
+      "context": "he State of Minnesota in alter- nate sections to aid in the construc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 95,
+      "end": 103,
+      "text": "sections",
+      "raw_start": 95,
+      "raw_end": 103,
+      "raw_quote": "sections",
+      "context": "ate of Minnesota in alter- nate sections to aid in the construction of, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 104,
+      "end": 106,
+      "text": "to",
+      "raw_start": 104,
+      "raw_end": 106,
+      "raw_quote": "to",
+      "context": "nnesota in alter- nate sections to aid in the construction of, in ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 107,
+      "end": 110,
+      "text": "aid",
+      "raw_start": 107,
+      "raw_end": 110,
+      "raw_quote": "aid",
+      "context": "sota in alter- nate sections to aid in the construction of, in said",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 111,
+      "end": 113,
+      "text": "in",
+      "raw_start": 111,
+      "raw_end": 113,
+      "raw_quote": "in",
+      "context": " in alter- nate sections to aid in the construction of, in said St",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 114,
+      "end": 117,
+      "text": "the",
+      "raw_start": 114,
+      "raw_end": 117,
+      "raw_quote": "the",
+      "context": " alter- nate sections to aid in the construction of, in said State ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 118,
+      "end": 130,
+      "text": "construction",
+      "raw_start": 118,
+      "raw_end": 130,
+      "raw_quote": "construction",
+      "context": "er- nate sections to aid in the construction of, in said State 1893, 1921, 3",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 131,
+      "end": 133,
+      "text": "of",
+      "raw_start": 131,
+      "raw_end": 133,
+      "raw_quote": "of",
+      "context": "ions to aid in the construction of, in said State 1893, 1921, 3464",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 135,
+      "end": 137,
+      "text": "in",
+      "raw_start": 135,
+      "raw_end": 137,
+      "raw_quote": "in",
+      "context": " to aid in the construction of, in said State 1893, 1921, 3464",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 138,
+      "end": 142,
+      "text": "said",
+      "raw_start": 138,
+      "raw_end": 142,
+      "raw_quote": "said",
+      "context": " aid in the construction of, in said State 1893, 1921, 3464",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 143,
+      "end": 148,
+      "text": "State",
+      "raw_start": 143,
+      "raw_end": 148,
+      "raw_quote": "State",
+      "context": "in the construction of, in said State 1893, 1921, 3464",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 149,
+      "end": 153,
+      "text": "1893",
+      "raw_start": 149,
+      "raw_end": 153,
+      "raw_quote": "1893",
+      "context": " construction of, in said State 1893, 1921, 3464",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 155,
+      "end": 159,
+      "text": "1921",
+      "raw_start": 155,
+      "raw_end": 159,
+      "raw_quote": "1921",
+      "context": "ruction of, in said State 1893, 1921, 3464",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 161,
+      "end": 165,
+      "text": "3464",
+      "raw_start": 161,
+      "raw_end": 165,
+      "raw_quote": "3464",
+      "context": "n of, in said State 1893, 1921, 3464",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 4,
+      "text": "bill",
+      "raw_start": 0,
+      "raw_end": 4,
+      "raw_quote": "bill",
+      "context": "bill (S. No. 156) making an addition",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 6,
+      "end": 7,
+      "text": "S",
+      "raw_start": 6,
+      "raw_end": 7,
+      "raw_quote": "S",
+      "context": "bill (S. No. 156) making an additional ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 9,
+      "end": 11,
+      "text": "No",
+      "raw_start": 9,
+      "raw_end": 11,
+      "raw_quote": "No",
+      "context": "bill (S. No. 156) making an additional gran",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 13,
+      "end": 16,
+      "text": "156",
+      "raw_start": 13,
+      "raw_end": 16,
+      "raw_quote": "156",
+      "context": "bill (S. No. 156) making an additional grant of ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 18,
+      "end": 24,
+      "text": "making",
+      "raw_start": 18,
+      "raw_end": 24,
+      "raw_quote": "making",
+      "context": "bill (S. No. 156) making an additional grant of lands to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 25,
+      "end": 27,
+      "text": "an",
+      "raw_start": 25,
+      "raw_end": 27,
+      "raw_quote": "an",
+      "context": "bill (S. No. 156) making an additional grant of lands to th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 28,
+      "end": 38,
+      "text": "additional",
+      "raw_start": 28,
+      "raw_end": 38,
+      "raw_quote": "additional",
+      "context": "bill (S. No. 156) making an additional grant of lands to the State of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 39,
+      "end": 44,
+      "text": "grant",
+      "raw_start": 39,
+      "raw_end": 44,
+      "raw_quote": "grant",
+      "context": ". No. 156) making an additional grant of lands to the State of Minnes",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 45,
+      "end": 47,
+      "text": "of",
+      "raw_start": 45,
+      "raw_end": 47,
+      "raw_quote": "of",
+      "context": "156) making an additional grant of lands to the State of Minnesota",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 48,
+      "end": 53,
+      "text": "lands",
+      "raw_start": 48,
+      "raw_end": 53,
+      "raw_quote": "lands",
+      "context": ") making an additional grant of lands to the State of Minnesota in al",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 54,
+      "end": 56,
+      "text": "to",
+      "raw_start": 54,
+      "raw_end": 56,
+      "raw_quote": "to",
+      "context": "ng an additional grant of lands to the State of Minnesota in alter",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 57,
+      "end": 60,
+      "text": "the",
+      "raw_start": 57,
+      "raw_end": 60,
+      "raw_quote": "the",
+      "context": "an additional grant of lands to the State of Minnesota in alter- na",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 61,
+      "end": 66,
+      "text": "State",
+      "raw_start": 61,
+      "raw_end": 66,
+      "raw_quote": "State",
+      "context": "dditional grant of lands to the State of Minnesota in alter- nate sec",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 67,
+      "end": 69,
+      "text": "of",
+      "raw_start": 67,
+      "raw_end": 69,
+      "raw_quote": "of",
+      "context": "nal grant of lands to the State of Minnesota in alter- nate sectio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 70,
+      "end": 79,
+      "text": "Minnesota",
+      "raw_start": 70,
+      "raw_end": 79,
+      "raw_quote": "Minnesota",
+      "context": " grant of lands to the State of Minnesota in alter- nate sections to aid ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 80,
+      "end": 82,
+      "text": "in",
+      "raw_start": 80,
+      "raw_end": 82,
+      "raw_quote": "in",
+      "context": "lands to the State of Minnesota in alter- nate sections to aid in ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 83,
+      "end": 88,
+      "text": "alter",
+      "raw_start": 83,
+      "raw_end": 88,
+      "raw_quote": "alter",
+      "context": "ds to the State of Minnesota in alter- nate sections to aid in the co",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 90,
+      "end": 94,
+      "text": "nate",
+      "raw_start": 90,
+      "raw_end": 94,
+      "raw_quote": "nate",
+      "context": "he State of Minnesota in alter- nate sections to aid in the construc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 95,
+      "end": 103,
+      "text": "sections",
+      "raw_start": 95,
+      "raw_end": 103,
+      "raw_quote": "sections",
+      "context": "ate of Minnesota in alter- nate sections to aid in the construction of, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 104,
+      "end": 106,
+      "text": "to",
+      "raw_start": 104,
+      "raw_end": 106,
+      "raw_quote": "to",
+      "context": "nnesota in alter- nate sections to aid in the construction of, in ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 107,
+      "end": 110,
+      "text": "aid",
+      "raw_start": 107,
+      "raw_end": 110,
+      "raw_quote": "aid",
+      "context": "sota in alter- nate sections to aid in the construction of, in said",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 111,
+      "end": 113,
+      "text": "in",
+      "raw_start": 111,
+      "raw_end": 113,
+      "raw_quote": "in",
+      "context": " in alter- nate sections to aid in the construction of, in said St",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 114,
+      "end": 117,
+      "text": "the",
+      "raw_start": 114,
+      "raw_end": 117,
+      "raw_quote": "the",
+      "context": " alter- nate sections to aid in the construction of, in said State ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 118,
+      "end": 130,
+      "text": "construction",
+      "raw_start": 118,
+      "raw_end": 130,
+      "raw_quote": "construction",
+      "context": "er- nate sections to aid in the construction of, in said State 1893, 1921, 3",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 131,
+      "end": 133,
+      "text": "of",
+      "raw_start": 131,
+      "raw_end": 133,
+      "raw_quote": "of",
+      "context": "ions to aid in the construction of, in said State 1893, 1921, 3464",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 135,
+      "end": 137,
+      "text": "in",
+      "raw_start": 135,
+      "raw_end": 137,
+      "raw_quote": "in",
+      "context": " to aid in the construction of, in said State 1893, 1921, 3464",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 138,
+      "end": 142,
+      "text": "said",
+      "raw_start": 138,
+      "raw_end": 142,
+      "raw_quote": "said",
+      "context": " aid in the construction of, in said State 1893, 1921, 3464",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 143,
+      "end": 148,
+      "text": "State",
+      "raw_start": 143,
+      "raw_end": 148,
+      "raw_quote": "State",
+      "context": "in the construction of, in said State 1893, 1921, 3464",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 149,
+      "end": 153,
+      "text": "1893",
+      "raw_start": 149,
+      "raw_end": 153,
+      "raw_quote": "1893",
+      "context": " construction of, in said State 1893, 1921, 3464",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 155,
+      "end": 159,
+      "text": "1921",
+      "raw_start": 155,
+      "raw_end": 159,
+      "raw_quote": "1921",
+      "context": "ruction of, in said State 1893, 1921, 3464",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 161,
+      "end": 165,
+      "text": "3464",
+      "raw_start": 161,
+      "raw_end": 165,
+      "raw_quote": "3464",
+      "context": "n of, in said State 1893, 1921, 3464",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7392unit:96:par_000096_000041",
+      "raw_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter- nate sections to aid in the construction of, in said State 1893, 1921, 3464",
+      "raw_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7392unit:96:par_000096_000041",
+        "raw_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter- nate sections to aid in the construction of, in said State 1893, 1921, 3464",
+        "raw_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter- nate sections to aid in the construction of, in said State 1893, 1921, 3464",
+    "proposed_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

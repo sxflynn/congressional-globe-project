@@ -1,0 +1,42 @@
+import hashlib,json,re,sys
+from pathlib import Path
+r=Path('artifacts/remaining-parts-audit-20261103-01');version=int(sys.argv[1]);f=json.loads((r/'selection-freeze.json').read_bytes());refs=json.loads((r/'root-source-readings-v2.json').read_bytes());items=[];catalog={};total=0
+words=lambda t:re.findall(r'\w+',t.casefold());punct=lambda t:re.findall(r'\w+|[^\w\s]',t.replace('’',"'").casefold())
+for choice in f['cases']:
+ case=choice['case'];d=r/case;host=json.loads((d/'host.json').read_bytes());target=host['payload']['paragraphs'][0];a=next(x for x in refs['assessments'] if x['case']==case);index=case!='W1';parts=[('Inputs — full original OCR:\n',False),(target['raw']['text'],True),('\n\nExpected output — my image reading before Qwen replies, one reader rather than accepted benchmark truth. ',False)]
+ if index:parts.append(('The dots linking text to page numbers are represented by an ellipsis; their exact count is not a transcription reference. Words and numeric sequences are compared separately:\n',False))
+ else:parts.append(('Word, punctuation, case and spacing differences are kept separate:\n',False))
+ parts.append((a['visible_source_reading'],True))
+ if case=='W2':parts.append(('\n\nSource-reading correction — I initially missed the faint leading 1. A magnified view of the original pixels supports 1893. The initial and corrected readings are both preserved before any Qwen output; raw OCR already has 1893. This is a single-reader correction, not independent adjudication.',False))
+ if case=='W3':parts.append(('\n\nSource recovery — this is the original S4 raw target whose earlier image metadata requests timed out. This new native crop is available and registered. Its plan differs from the old padded crop; the old missing-image records remain unchanged and broader launch readiness is not cleared. Only this visible index fragment is assigned; do not infer a missing entry prefix or beneficiary.',False))
+ parts.extend([('\n\nActual output — full software first pass:\n',False),(target['static']['text'],True)])
+ count=exact=content=numeric=accepted=0;times=0;usage=[0,0]
+ for n in [1,2,3]:
+  p=d/f'call-{n}/result.json'
+  if not p.exists():continue
+  x=json.loads(p.read_bytes());response=x.get('response',{});reply=response.get('output_text','');text=None
+  try:text=json.loads(reply)['readings'][0]['corrected_text']
+  except (ValueError,KeyError,IndexError,TypeError):pass
+  count+=1;total+=1;exact+=text==a['visible_source_reading'];accepted+=isinstance(x.get('export',{}).get('outcome'),dict)
+  if text is not None:
+   content+=(words(text)==words(a['visible_source_reading'])) if index else (punct(text)==punct(a['visible_source_reading']))
+   numeric+=re.findall(r'\d+',text)==a['expected_numbers']
+  times+=x.get('transport_elapsed_seconds',0);u=response.get('usage') or {};usage[0]+=u.get('input_tokens',0);usage[1]+=u.get('output_tokens',0)
+  parts.extend([(f'\n\nActual output — model run {n} of 3, full reading or exact unresolved reply:\n',False),(text if text is not None else reply or str(x.get('reason','No captured reply.')),True)])
+ summary=f'\n\nDifferences — {count} of 3 identical observations are recorded. '
+ if count:
+  summary+=f'{accepted} pass the reply checks. '
+  summary+=(f'{content} match the visible word sequence and {numeric} match the numeric sequence; index dot counts and spacing are not scored. ' if index else f'{exact} exactly match the image reading; {content} match its words and punctuation with case/spacing/apostrophe differences treated alike. ')
+  summary+=f'Transport totals {times:.3f} seconds; reported usage {usage[0]} input and {usage[1]} output tokens. '
+ if count<3:summary+=f'{3-count} planned identical repetitions remain. '
+ summary+='No original OCR or model reply is changed. This selection by length is not a population accuracy or routing-rate estimate. Passing reply checks is separate from source fidelity.'
+
+ if case=='W2' and count==3:summary+=' Two readings join alternate correctly; run1 leaves alter-nate. All three preserve the four numeric tokens.'
+ if case=='W3':summary+=' Post-output source recheck: my frozen illustration ends with a period, but the original pixels show a comma after 2794. That was my reference error; both references and all replies remain unchanged. Word and numeric comparisons are unaffected.'
+ parts.append((summary,False));text='';spans=[]
+ for value,source in parts:
+  start=len(text);text+=value
+  if source:spans.append(dict(start=start,end=len(text)))
+ url=json.loads((d/'image/crop-01.jpg.receipt.json').read_bytes())['requested_url'];items.append(dict(label=f'Fresh passage {case[1:]}: part {choice["part"]}, leaf {choice["leaf"]}',text=text,url=url));catalog[hashlib.sha256(text.encode()).hexdigest()]=spans
+packet=dict(id='HR-032',version=version,title=f'Three fresh passages: {total} of 9 Qwen observations',instructions='Work continues with three fresh primary passages from parts 1, 2 and 4, each with three identical model observations. The original S4 source has a newly registered native crop. Index words and numbers are assessed separately from the dots linking entries to pages; missing context is not invented. Expected readings are provisional, frozen before outputs. Optional notes can steer the remaining work.',blind=False,questions=[dict(id='expanded-workflow-comments',prompt='Optional notes on these fresh passages and results',options=[],required=False,evidence=items)])
+p=Path(f'docs/review-packets/HR-032-v{version}.json');assert not p.exists();p.write_text(json.dumps(packet,indent=2,ensure_ascii=False)+'\n');p=Path('docs/review-source-spans.json');c=json.loads(p.read_bytes());c['source_spans'].update(catalog);p.write_text(json.dumps(c,indent=2,ensure_ascii=False)+'\n');print(f'HR032v{version}: {total}actualobservations,3sourcecases.')

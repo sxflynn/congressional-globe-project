@@ -1,0 +1,922 @@
+{
+  "task": "T133",
+  "actual_calls": 9,
+  "retries": 0,
+  "image_downloads": 3,
+  "info_downloads": 3,
+  "cases": [
+    {
+      "case": "W1",
+      "source_id": "congressionalg7391unit:150:par_000150_000094",
+      "source_codepoints": 185,
+      "software_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+      "root_visible_illustration": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": null,
+      "signals": 10,
+      "route": "secondary_inspection",
+      "actual_calls": 3,
+      "input_body_sha256": "51045e4f551d1b2d6335f25831c06c76358d95df0eee897f2e73e74ca56766e4",
+      "identical_input_bytes": true,
+      "distinct_raw_replies": 3,
+      "distinct_corrected_text_values": 1,
+      "distinct_coverage_text_pairs": 1,
+      "distinct_reason_values": 1,
+      "observations": [
+        {
+          "repeat": 1,
+          "coverage": "complete",
+          "corrected_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "ce0a828559b460ea061788ebcabd682719b903786c9a60b0c43c149df6aa247c",
+            "host_packet_sha256": "fb42a87ef3af45abaf3f39b6a37f789f656867ae666f016d98f3ddcb14f816b6",
+            "image_sha256": "1c636cf308f76bff5c49beedda2cbbdc62524918fea57125ba38fe1621a35f1c",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "exact_copy",
+                  "deterministic_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [],
+                  "raw_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+                  "replay_verified": true,
+                  "sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+                  "source_id": "congressionalg7391unit:150:par_000150_000094",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 185,
+                      "derived_start": 0,
+                      "mapping": "exact_copy",
+                      "raw_end": 185,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate."
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "no_finding",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "W1"
+              }
+            },
+            "provider_request_sha256": "51045e4f551d1b2d6335f25831c06c76358d95df0eee897f2e73e74ca56766e4",
+            "raw_reply_sha256": "d44cf42f36e93d41750a80be5463a5b8b262ed0de5592e3a611ee679084f00e3",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n, \"unit_id\": \"W1\"\n}",
+            "response_schema_sha256": "2bdba11bf96b2054e38a1ba183d6b4ab1ced0ce28f0afcd57abeec0eec61ba1e",
+            "source_layers_sha256": "9ed209377ff4b28fc54f954d1b67f27d4145ad6162dd43f199c6f41685fea454"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1998,
+            "output_tokens": 121
+          },
+          "elapsed_seconds": 36.60785629181191,
+          "transport_elapsed_seconds": 36.57336858287454,
+          "positive_owned_stop": true,
+          "receipt_sha256": "aab3e83d35d37c333890ec043756e2fd772401fa909fe7695f05055b57cd139b",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "word_sequence_matches": true,
+          "numeric_sequence_matches": true,
+          "software_differences": []
+        },
+        {
+          "repeat": 2,
+          "coverage": "complete",
+          "corrected_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "ce0a828559b460ea061788ebcabd682719b903786c9a60b0c43c149df6aa247c",
+            "host_packet_sha256": "fb42a87ef3af45abaf3f39b6a37f789f656867ae666f016d98f3ddcb14f816b6",
+            "image_sha256": "1c636cf308f76bff5c49beedda2cbbdc62524918fea57125ba38fe1621a35f1c",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "exact_copy",
+                  "deterministic_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [],
+                  "raw_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+                  "replay_verified": true,
+                  "sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+                  "source_id": "congressionalg7391unit:150:par_000150_000094",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 185,
+                      "derived_start": 0,
+                      "mapping": "exact_copy",
+                      "raw_end": 185,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate."
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "no_finding",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "W1"
+              }
+            },
+            "provider_request_sha256": "51045e4f551d1b2d6335f25831c06c76358d95df0eee897f2e73e74ca56766e4",
+            "raw_reply_sha256": "7df9b8ef42d9fb1fc224d54413ce2d5c45cdc915d89a7d84a860cd3c8a2f9c93",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n, \"unit_id\": \"W1\"}",
+            "response_schema_sha256": "2bdba11bf96b2054e38a1ba183d6b4ab1ced0ce28f0afcd57abeec0eec61ba1e",
+            "source_layers_sha256": "9ed209377ff4b28fc54f954d1b67f27d4145ad6162dd43f199c6f41685fea454"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1998,
+            "output_tokens": 120
+          },
+          "elapsed_seconds": 34.45104487473145,
+          "transport_elapsed_seconds": 34.41851304238662,
+          "positive_owned_stop": true,
+          "receipt_sha256": "db1976fd5085dfa398e11230550f4f7422a46fec04143a326c91adaa5b9f42bc",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "word_sequence_matches": true,
+          "numeric_sequence_matches": true,
+          "software_differences": []
+        },
+        {
+          "repeat": 3,
+          "coverage": "complete",
+          "corrected_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "ce0a828559b460ea061788ebcabd682719b903786c9a60b0c43c149df6aa247c",
+            "host_packet_sha256": "fb42a87ef3af45abaf3f39b6a37f789f656867ae666f016d98f3ddcb14f816b6",
+            "image_sha256": "1c636cf308f76bff5c49beedda2cbbdc62524918fea57125ba38fe1621a35f1c",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "exact_copy",
+                  "deterministic_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [],
+                  "raw_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+                  "replay_verified": true,
+                  "sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+                  "source_id": "congressionalg7391unit:150:par_000150_000094",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 185,
+                      "derived_start": 0,
+                      "mapping": "exact_copy",
+                      "raw_end": 185,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate."
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "no_finding",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "W1"
+              }
+            },
+            "provider_request_sha256": "51045e4f551d1b2d6335f25831c06c76358d95df0eee897f2e73e74ca56766e4",
+            "raw_reply_sha256": "c87f1e57b2cffa053363bf3c6b07a101c51d33c07cd7a401b4980263ce4e364d",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"W1\"\n}",
+            "response_schema_sha256": "2bdba11bf96b2054e38a1ba183d6b4ab1ced0ce28f0afcd57abeec0eec61ba1e",
+            "source_layers_sha256": "9ed209377ff4b28fc54f954d1b67f27d4145ad6162dd43f199c6f41685fea454"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1998,
+            "output_tokens": 125
+          },
+          "elapsed_seconds": 35.43275437504053,
+          "transport_elapsed_seconds": 35.397375292144716,
+          "positive_owned_stop": true,
+          "receipt_sha256": "74749db3b158926eca1b25c786ac4e18b1dbe4b0e0af3f44fdc6d3e64decacd1",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "word_sequence_matches": true,
+          "numeric_sequence_matches": true,
+          "software_differences": []
+        }
+      ]
+    },
+    {
+      "case": "W2",
+      "source_id": "congressionalglo7392unit:96:par_000096_000041",
+      "source_codepoints": 165,
+      "software_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter- nate sections to aid in the construction of, in said State 1893, 1921, 3464",
+      "root_visible_illustration": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State … 1893, 1921, 3464",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": "Index leaders represented by ellipsis for readability; exact leader count is unscored. This is a visible index fragment, not a complete legislative title or verified beneficiary. Initialrootreading893waswrong; exactdecodedpixel magnification shows leading1, so1893is supported. Correctedbeforemodeloutputs; one-reader assessment remains provisional.",
+      "signals": 14,
+      "route": "secondary_inspection",
+      "actual_calls": 3,
+      "input_body_sha256": "56293d91411c6e6b3630fb60c1180f6e091e6af1f042ddc32bf889018885f597",
+      "identical_input_bytes": true,
+      "distinct_raw_replies": 3,
+      "distinct_corrected_text_values": 3,
+      "distinct_coverage_text_pairs": 3,
+      "distinct_reason_values": 1,
+      "observations": [
+        {
+          "repeat": 1,
+          "coverage": "complete",
+          "corrected_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter-nate sections to aid in the construction of, in said State. ... ... . ... . ... . ... 1893, 1921, 3464",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "5d827de60f177d3c8fecb81ccc86b4e0ef71a40f6cbe52919a9f7f12d3eb63ad",
+            "host_packet_sha256": "8e7cfe592ffd84e561b83e20ecfee02d8e57868624e9a370afa79322e9490956",
+            "image_sha256": "bc58111e65875e61c7623a386056c6f777826a67f36b4f076cc8649b49005b0e",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 165,
+                      "raw_quote": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter- nate sections to aid in the construction of, in said State 1893, 1921, 3464",
+                      "replacement": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter-nate sections to aid in the construction of, in said State. ... ... . ... . ... . ... 1893, 1921, 3464",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+                  "replay_verified": true,
+                  "sha256": "6fcb0c75d335e0e3f28371e745df4e8724013de7b293f111d5253acfe91cc25e",
+                  "source_id": "congressionalglo7392unit:96:par_000096_000041",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 191,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 165,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter-nate sections to aid in the construction of, in said State. ... ... . ... . ... . ... 1893, 1921, 3464"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter-nate sections to aid in the construction of, in said State. ... ... . ... . ... . ... 1893, 1921, 3464",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "W2"
+              }
+            },
+            "provider_request_sha256": "56293d91411c6e6b3630fb60c1180f6e091e6af1f042ddc32bf889018885f597",
+            "raw_reply_sha256": "706235494ffd6522bacc0b948c2558ce83d51fa7701661fe3575ffed41c6e2e0",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter-nate sections to aid in the construction of, in said State. ... ... . ... . ... . ... 1893, 1921, 3464\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n, \"unit_id\": \"W2\"\n}",
+            "response_schema_sha256": "2fbacb0ecd460321dbd112f31a5bf42abab6b0dfd6aa178449f12f070decfdf5",
+            "source_layers_sha256": "550e830b01f7c1892b298275460cf3f1cbd1ec44c8ae2474f203f803ec029bf0"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 2491,
+            "output_tokens": 144
+          },
+          "elapsed_seconds": 38.53004179196432,
+          "transport_elapsed_seconds": 38.49772520828992,
+          "positive_owned_stop": true,
+          "receipt_sha256": "5cbd1b2e9c398604ddeb1e151b06ee7b9a39ee1e91bb57666abf7a4198e3aee8",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": false,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": false,
+          "word_sequence_matches": false,
+          "numeric_sequence_matches": true,
+          "software_differences": [
+            {
+              "software_quote": " ",
+              "model_quote": "",
+              "software_start": 89,
+              "software_end": 90,
+              "model_start": 89,
+              "model_end": 89
+            },
+            {
+              "software_quote": "",
+              "model_quote": ". ... ... . ... . ... . ...",
+              "software_start": 148,
+              "software_end": 148,
+              "model_start": 147,
+              "model_end": 174
+            }
+          ]
+        },
+        {
+          "repeat": 2,
+          "coverage": "complete",
+          "corrected_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State............................1893, 1921, 3464",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "5d827de60f177d3c8fecb81ccc86b4e0ef71a40f6cbe52919a9f7f12d3eb63ad",
+            "host_packet_sha256": "8e7cfe592ffd84e561b83e20ecfee02d8e57868624e9a370afa79322e9490956",
+            "image_sha256": "bc58111e65875e61c7623a386056c6f777826a67f36b4f076cc8649b49005b0e",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 165,
+                      "raw_quote": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter- nate sections to aid in the construction of, in said State 1893, 1921, 3464",
+                      "replacement": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State............................1893, 1921, 3464",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+                  "replay_verified": true,
+                  "sha256": "5dd99ffa8d55ea3d38ca365321ab78067f0f5f9a41b4f34724bda782a6e8e692",
+                  "source_id": "congressionalglo7392unit:96:par_000096_000041",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 190,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 165,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State............................1893, 1921, 3464"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State............................1893, 1921, 3464",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "W2"
+              }
+            },
+            "provider_request_sha256": "56293d91411c6e6b3630fb60c1180f6e091e6af1f042ddc32bf889018885f597",
+            "raw_reply_sha256": "bee0b49590d922a8f30f7e741997bfb408312a425567181d73a63343ce046b1d",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State............................1893, 1921, 3464\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"W2\"\n}",
+            "response_schema_sha256": "2fbacb0ecd460321dbd112f31a5bf42abab6b0dfd6aa178449f12f070decfdf5",
+            "source_layers_sha256": "550e830b01f7c1892b298275460cf3f1cbd1ec44c8ae2474f203f803ec029bf0"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 2491,
+            "output_tokens": 137
+          },
+          "elapsed_seconds": 38.96571774967015,
+          "transport_elapsed_seconds": 38.93443154171109,
+          "positive_owned_stop": true,
+          "receipt_sha256": "1d8ff1c7963e5c0f056a1bff539159160e7e750e53dbea8eebacb83d8516d6b0",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": false,
+          "word_sequence_matches": true,
+          "numeric_sequence_matches": true,
+          "software_differences": [
+            {
+              "software_quote": "- ",
+              "model_quote": "",
+              "software_start": 88,
+              "software_end": 90,
+              "model_start": 88,
+              "model_end": 88
+            },
+            {
+              "software_quote": " ",
+              "model_quote": "............................",
+              "software_start": 148,
+              "software_end": 149,
+              "model_start": 146,
+              "model_end": 174
+            }
+          ]
+        },
+        {
+          "repeat": 3,
+          "coverage": "complete",
+          "corrected_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State......................1893, 1921, 3464",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "5d827de60f177d3c8fecb81ccc86b4e0ef71a40f6cbe52919a9f7f12d3eb63ad",
+            "host_packet_sha256": "8e7cfe592ffd84e561b83e20ecfee02d8e57868624e9a370afa79322e9490956",
+            "image_sha256": "bc58111e65875e61c7623a386056c6f777826a67f36b4f076cc8649b49005b0e",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 165,
+                      "raw_quote": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter- nate sections to aid in the construction of, in said State 1893, 1921, 3464",
+                      "replacement": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State......................1893, 1921, 3464",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+                  "replay_verified": true,
+                  "sha256": "1fe0d1f0f6c56409ecc8755d16133d592bc7851c254c974612dc54b3fd031bf7",
+                  "source_id": "congressionalglo7392unit:96:par_000096_000041",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 184,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 165,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State......................1893, 1921, 3464"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State......................1893, 1921, 3464",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "W2"
+              }
+            },
+            "provider_request_sha256": "56293d91411c6e6b3630fb60c1180f6e091e6af1f042ddc32bf889018885f597",
+            "raw_reply_sha256": "47b49f59babea51d2df866c3f7e1a92f5f2ed1284b37819ed3a959a4529e8209",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State......................1893, 1921, 3464\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"W2\"\n}",
+            "response_schema_sha256": "2fbacb0ecd460321dbd112f31a5bf42abab6b0dfd6aa178449f12f070decfdf5",
+            "source_layers_sha256": "550e830b01f7c1892b298275460cf3f1cbd1ec44c8ae2474f203f803ec029bf0"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 2491,
+            "output_tokens": 137
+          },
+          "elapsed_seconds": 38.297551500145346,
+          "transport_elapsed_seconds": 38.26792791578919,
+          "positive_owned_stop": true,
+          "receipt_sha256": "4c539477cc7669a2c866aac02e68a18606315bc0e8d86ed13a9ecd677dda1b24",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": false,
+          "word_sequence_matches": true,
+          "numeric_sequence_matches": true,
+          "software_differences": [
+            {
+              "software_quote": "- ",
+              "model_quote": "",
+              "software_start": 88,
+              "software_end": 90,
+              "model_start": 88,
+              "model_end": 88
+            },
+            {
+              "software_quote": " ",
+              "model_quote": "......................",
+              "software_start": 148,
+              "software_end": 149,
+              "model_start": 146,
+              "model_end": 168
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "W3",
+      "source_id": "congressionalglo00unit:83:par_000083_000042",
+      "source_codepoints": 33,
+      "software_text": "No. 703) for the relief of. 2794,",
+      "root_visible_illustration": "No. 703) for the relief of … 2794.",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": "Index leaders represented by ellipsis for readability; exact leader count is unscored. This is a visible index fragment, not a complete legislative title or verified beneficiary.",
+      "signals": 4,
+      "route": "secondary_inspection",
+      "actual_calls": 3,
+      "input_body_sha256": "82c184830a73ba238fe186c626ac098a9da4c0ffd186ee4e97db18ccdb3b71ab",
+      "identical_input_bytes": true,
+      "distinct_raw_replies": 3,
+      "distinct_corrected_text_values": 3,
+      "distinct_coverage_text_pairs": 3,
+      "distinct_reason_values": 1,
+      "observations": [
+        {
+          "repeat": 1,
+          "coverage": "complete",
+          "corrected_text": "No. 703) for the relief of ...................2794,",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "b48d585bf4c4ae1efb56b457229adfca9861e17d91dc118b52415edc99ccc1c7",
+            "host_packet_sha256": "02398687d3f491a4887fd150dbd4053a625671f0c4fb68845598bdadfeefc804",
+            "image_sha256": "144048d84f99e04867b1920ad620fc13fb56920159c31ef4c932b3ef459c886a",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 33,
+                      "raw_quote": "No. 703) for the relief of. 2794,",
+                      "replacement": "No. 703) for the relief of ...................2794,",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+                  "replay_verified": true,
+                  "sha256": "cc56fcc06f72e08cdfb49ec4f0073a3704648eaf0efd3787c413f50b820419a7",
+                  "source_id": "congressionalglo00unit:83:par_000083_000042",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 51,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 33,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "No. 703) for the relief of ...................2794,"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "No. 703) for the relief of ...................2794,",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "W3"
+              }
+            },
+            "provider_request_sha256": "82c184830a73ba238fe186c626ac098a9da4c0ffd186ee4e97db18ccdb3b71ab",
+            "raw_reply_sha256": "0e8c0d104445740147594c638a5ec6658e41d68f7e9a335e07721c12475883b8",
+            "raw_reply_text": "{\n    \"contract\": \"ocr-productive-repair-text-reply-v3\",\n    \"readings\": [\n        {\n            \"corrected_text\": \"No. 703) for the relief of ...................2794,\",\n            \"coverage\": \"complete\",\n            \"paragraph_alias\": \"P1\",\n            \"reason\": null\n        }\n    ]\n,\n    \"unit_id\": \"W3\"\n}",
+            "response_schema_sha256": "e523bf48a6e485b528a1198f1c6262cd42a0c36bfa7a194cb7e661d9ab0c44d6",
+            "source_layers_sha256": "8fa6ad3fe7dccaf6f9656c9a946e91cdbfb21a379fa5b88e733e307ff0cbbac0"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1160,
+            "output_tokens": 100
+          },
+          "elapsed_seconds": 24.790934167336673,
+          "transport_elapsed_seconds": 24.761588208843023,
+          "positive_owned_stop": true,
+          "receipt_sha256": "0e2635bd5849fc2d30b5b049867f66348dc3bf0cf6907d0299deea3aaef58370",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": false,
+          "word_sequence_matches": true,
+          "numeric_sequence_matches": true,
+          "software_differences": [
+            {
+              "software_quote": "",
+              "model_quote": " ",
+              "software_start": 26,
+              "software_end": 26,
+              "model_start": 26,
+              "model_end": 27
+            },
+            {
+              "software_quote": " ",
+              "model_quote": "..................",
+              "software_start": 27,
+              "software_end": 28,
+              "model_start": 28,
+              "model_end": 46
+            }
+          ]
+        },
+        {
+          "repeat": 2,
+          "coverage": "complete",
+          "corrected_text": "No. 703) for the relief of ……………… 2794,",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "b48d585bf4c4ae1efb56b457229adfca9861e17d91dc118b52415edc99ccc1c7",
+            "host_packet_sha256": "02398687d3f491a4887fd150dbd4053a625671f0c4fb68845598bdadfeefc804",
+            "image_sha256": "144048d84f99e04867b1920ad620fc13fb56920159c31ef4c932b3ef459c886a",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 33,
+                      "raw_quote": "No. 703) for the relief of. 2794,",
+                      "replacement": "No. 703) for the relief of ……………… 2794,",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+                  "replay_verified": true,
+                  "sha256": "df0bb49769089d207e6a28687948bed9aeb0654c09ede9f630b7f5936d95475a",
+                  "source_id": "congressionalglo00unit:83:par_000083_000042",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 39,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 33,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "No. 703) for the relief of ……………… 2794,"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "No. 703) for the relief of ……………… 2794,",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "W3"
+              }
+            },
+            "provider_request_sha256": "82c184830a73ba238fe186c626ac098a9da4c0ffd186ee4e97db18ccdb3b71ab",
+            "raw_reply_sha256": "a254ff9bb6f4e5daba6b9511578a4636977bdcc3558e08ce9d9cbb06ff57e7b2",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"No. 703) for the relief of ……………… 2794,\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n, \"unit_id\": \"W3\"\n}",
+            "response_schema_sha256": "e523bf48a6e485b528a1198f1c6262cd42a0c36bfa7a194cb7e661d9ab0c44d6",
+            "source_layers_sha256": "8fa6ad3fe7dccaf6f9656c9a946e91cdbfb21a379fa5b88e733e307ff0cbbac0"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1160,
+            "output_tokens": 98
+          },
+          "elapsed_seconds": 25.30088512506336,
+          "transport_elapsed_seconds": 25.268981917295605,
+          "positive_owned_stop": true,
+          "receipt_sha256": "49ca39d609f07537f79ce2f89840b4f0cb4a8b2efe54da0ccb58a54a7c35f78d",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": false,
+          "word_sequence_matches": true,
+          "numeric_sequence_matches": true,
+          "software_differences": [
+            {
+              "software_quote": ".",
+              "model_quote": " ………………",
+              "software_start": 26,
+              "software_end": 27,
+              "model_start": 26,
+              "model_end": 33
+            }
+          ]
+        },
+        {
+          "repeat": 3,
+          "coverage": "complete",
+          "corrected_text": "No. 703) for the relief of..................2794,",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "b48d585bf4c4ae1efb56b457229adfca9861e17d91dc118b52415edc99ccc1c7",
+            "host_packet_sha256": "02398687d3f491a4887fd150dbd4053a625671f0c4fb68845598bdadfeefc804",
+            "image_sha256": "144048d84f99e04867b1920ad620fc13fb56920159c31ef4c932b3ef459c886a",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 33,
+                      "raw_quote": "No. 703) for the relief of. 2794,",
+                      "replacement": "No. 703) for the relief of..................2794,",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+                  "replay_verified": true,
+                  "sha256": "691980237c16da79276b4e3dd832e943f7f6767890dc44088b6d0e59e9bbaaf8",
+                  "source_id": "congressionalglo00unit:83:par_000083_000042",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 49,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 33,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "No. 703) for the relief of..................2794,"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "No. 703) for the relief of..................2794,",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "W3"
+              }
+            },
+            "provider_request_sha256": "82c184830a73ba238fe186c626ac098a9da4c0ffd186ee4e97db18ccdb3b71ab",
+            "raw_reply_sha256": "34701b290cc44e46e7ff661127b748f8a601d922d4e8c1bbe741f3542cd6bd37",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"No. 703) for the relief of..................2794,\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"W3\"\n}",
+            "response_schema_sha256": "e523bf48a6e485b528a1198f1c6262cd42a0c36bfa7a194cb7e661d9ab0c44d6",
+            "source_layers_sha256": "8fa6ad3fe7dccaf6f9656c9a946e91cdbfb21a379fa5b88e733e307ff0cbbac0"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1160,
+            "output_tokens": 100
+          },
+          "elapsed_seconds": 25.86809983290732,
+          "transport_elapsed_seconds": 25.834346750285476,
+          "positive_owned_stop": true,
+          "receipt_sha256": "b0dcd1e403a8a4550cb23103cdea4221c4bae03b084c84f6ff2d09921985b375",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": false,
+          "word_sequence_matches": true,
+          "numeric_sequence_matches": true,
+          "software_differences": [
+            {
+              "software_quote": " ",
+              "model_quote": ".................",
+              "software_start": 27,
+              "software_end": 28,
+              "model_start": 27,
+              "model_end": 44
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "total": {
+    "request_cycle_seconds": 298.24488570867106,
+    "owned_transport_seconds": 297.9542584596202,
+    "input_tokens": 16947,
+    "output_tokens": 1082
+  },
+  "model_phase_budget": {
+    "calls": 9,
+    "deadline_epoch": 1793732033.105945,
+    "selection_sha256": "d354e03a9797ca12e5617ce407eaa86f8d13dd974c02e24c2e2d5e3c2c21a25c",
+    "started_at_epoch": 1793730233.105945,
+    "task": "T133",
+    "observed_elapsed_to_last_receipt_seconds": 840.0071806907654
+  },
+  "prior_recent_series": {
+    "attempts": 49,
+    "request_cycle_seconds": 2736.467862957157,
+    "known_input_tokens": 146134,
+    "known_output_tokens": 10740,
+    "unknown_usage_attempts": 3
+  },
+  "cumulative_recent_series": {
+    "attempts": 58,
+    "request_cycle_seconds": 3034.7127486658283,
+    "known_input_tokens": 163081,
+    "known_output_tokens": 11822,
+    "unknown_usage_attempts": 3
+  },
+  "limits": [
+    "Longest unused primary perpart1/2/4; purposeful length selection, not population accuracy or routing frequency.",
+    "One root reader, self-corrected893to1893beforeoutputs; both references preserved, not independent adjudication or accepted gold.",
+    "Index leader counts/spacing unscored; words/numbers compared separately, punctuation variants remain recorded. W3frozenreferenceperiod was a root error: savedprintendscomma; post-output correction preserved separately.",
+    "Original S4 source identity recovered with a new zero-padding native crop; historical missing image/old padded plan and T55 readiness remain unchanged.",
+    "No corpus/nativefit/P0acceptance or model superiority claim."
+  ]
+}

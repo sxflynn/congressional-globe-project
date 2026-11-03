@@ -1,0 +1,1444 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalg7391unit:150:par_000150_000094",
+      "raw_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+      "raw_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6"
+    },
+    "static_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+    "static_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+    "static_edits": [],
+    "lines": [
+      {
+        "line_id": "line_000150_000263",
+        "start": 0,
+        "end": 38,
+        "text": "Mr. GRIMES. I object to the reading of"
+      },
+      {
+        "line_id": "line_000150_000264",
+        "start": 39,
+        "end": 85,
+        "text": "that paper. It is not addressed to the Senate."
+      },
+      {
+        "line_id": "line_000150_000265",
+        "start": 86,
+        "end": 131,
+        "text": "It seems it is addressed to Jacob Barker, and"
+      },
+      {
+        "line_id": "line_000150_000266",
+        "start": 132,
+        "end": 177,
+        "text": "presented here to influence the action of the"
+      },
+      {
+        "line_id": "line_000150_000267",
+        "start": 178,
+        "end": 185,
+        "text": "Senate."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "185132ca0504843c65d732c299f49fb968c6a371a2d3f497ccf402cfb8031bd1"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "bbc89035d3c83ffe96fafee37e81bd5da81806b2bae04372bd0ef3b59f21e74e",
+  "proposed_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+  "proposed_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 185,
+      "derived_start": 0,
+      "derived_end": 185,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. GRIMES. I object to the readin",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 10,
+      "text": "GRIMES",
+      "raw_start": 4,
+      "raw_end": 10,
+      "raw_quote": "GRIMES",
+      "context": "Mr. GRIMES. I object to the reading of tha",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "title_name_cue"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 12,
+      "end": 13,
+      "text": "I",
+      "raw_start": 12,
+      "raw_end": 13,
+      "raw_quote": "I",
+      "context": "Mr. GRIMES. I object to the reading of that p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 14,
+      "end": 20,
+      "text": "object",
+      "raw_start": 14,
+      "raw_end": 20,
+      "raw_quote": "object",
+      "context": "Mr. GRIMES. I object to the reading of that paper. I",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 21,
+      "end": 23,
+      "text": "to",
+      "raw_start": 21,
+      "raw_end": 23,
+      "raw_quote": "to",
+      "context": "Mr. GRIMES. I object to the reading of that paper. It i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 24,
+      "end": 27,
+      "text": "the",
+      "raw_start": 24,
+      "raw_end": 27,
+      "raw_quote": "the",
+      "context": "Mr. GRIMES. I object to the reading of that paper. It is no",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 28,
+      "end": 35,
+      "text": "reading",
+      "raw_start": 28,
+      "raw_end": 35,
+      "raw_quote": "reading",
+      "context": "Mr. GRIMES. I object to the reading of that paper. It is not addres",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 36,
+      "end": 38,
+      "text": "of",
+      "raw_start": 36,
+      "raw_end": 38,
+      "raw_quote": "of",
+      "context": "GRIMES. I object to the reading of that paper. It is not addressed",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 39,
+      "end": 43,
+      "text": "that",
+      "raw_start": 39,
+      "raw_end": 43,
+      "raw_quote": "that",
+      "context": "MES. I object to the reading of that paper. It is not addressed to t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 44,
+      "end": 49,
+      "text": "paper",
+      "raw_start": 44,
+      "raw_end": 49,
+      "raw_quote": "paper",
+      "context": "I object to the reading of that paper. It is not addressed to the Sen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 51,
+      "end": 53,
+      "text": "It",
+      "raw_start": 51,
+      "raw_end": 53,
+      "raw_quote": "It",
+      "context": "t to the reading of that paper. It is not addressed to the Senate.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 54,
+      "end": 56,
+      "text": "is",
+      "raw_start": 54,
+      "raw_end": 56,
+      "raw_quote": "is",
+      "context": "o the reading of that paper. It is not addressed to the Senate. It",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 57,
+      "end": 60,
+      "text": "not",
+      "raw_start": 57,
+      "raw_end": 60,
+      "raw_quote": "not",
+      "context": "he reading of that paper. It is not addressed to the Senate. It see",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 61,
+      "end": 70,
+      "text": "addressed",
+      "raw_start": 61,
+      "raw_end": 70,
+      "raw_quote": "addressed",
+      "context": "eading of that paper. It is not addressed to the Senate. It seems it is a",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 71,
+      "end": 73,
+      "text": "to",
+      "raw_start": 71,
+      "raw_end": 73,
+      "raw_quote": "to",
+      "context": "that paper. It is not addressed to the Senate. It seems it is addr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 74,
+      "end": 77,
+      "text": "the",
+      "raw_start": 74,
+      "raw_end": 77,
+      "raw_quote": "the",
+      "context": "t paper. It is not addressed to the Senate. It seems it is addresse",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 78,
+      "end": 84,
+      "text": "Senate",
+      "raw_start": 78,
+      "raw_end": 84,
+      "raw_quote": "Senate",
+      "context": "per. It is not addressed to the Senate. It seems it is addressed to Ja",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 86,
+      "end": 88,
+      "text": "It",
+      "raw_start": 86,
+      "raw_end": 88,
+      "raw_quote": "It",
+      "context": "is not addressed to the Senate. It seems it is addressed to Jacob ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 89,
+      "end": 94,
+      "text": "seems",
+      "raw_start": 89,
+      "raw_end": 94,
+      "raw_quote": "seems",
+      "context": "not addressed to the Senate. It seems it is addressed to Jacob Barker",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 95,
+      "end": 97,
+      "text": "it",
+      "raw_start": 95,
+      "raw_end": 97,
+      "raw_quote": "it",
+      "context": "dressed to the Senate. It seems it is addressed to Jacob Barker, a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 98,
+      "end": 100,
+      "text": "is",
+      "raw_start": 98,
+      "raw_end": 100,
+      "raw_quote": "is",
+      "context": "ssed to the Senate. It seems it is addressed to Jacob Barker, and ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 101,
+      "end": 110,
+      "text": "addressed",
+      "raw_start": 101,
+      "raw_end": 110,
+      "raw_quote": "addressed",
+      "context": "d to the Senate. It seems it is addressed to Jacob Barker, and presented ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 111,
+      "end": 113,
+      "text": "to",
+      "raw_start": 111,
+      "raw_end": 113,
+      "raw_quote": "to",
+      "context": "enate. It seems it is addressed to Jacob Barker, and presented her",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 114,
+      "end": 119,
+      "text": "Jacob",
+      "raw_start": 114,
+      "raw_end": 119,
+      "raw_quote": "Jacob",
+      "context": "te. It seems it is addressed to Jacob Barker, and presented here to i",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate",
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 120,
+      "end": 126,
+      "text": "Barker",
+      "raw_start": 120,
+      "raw_end": 126,
+      "raw_quote": "Barker",
+      "context": " seems it is addressed to Jacob Barker, and presented here to influenc",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 128,
+      "end": 131,
+      "text": "and",
+      "raw_start": 128,
+      "raw_end": 131,
+      "raw_quote": "and",
+      "context": "t is addressed to Jacob Barker, and presented here to influence the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 132,
+      "end": 141,
+      "text": "presented",
+      "raw_start": 132,
+      "raw_end": 141,
+      "raw_quote": "presented",
+      "context": " addressed to Jacob Barker, and presented here to influence the action of",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 142,
+      "end": 146,
+      "text": "here",
+      "raw_start": 142,
+      "raw_end": 146,
+      "raw_quote": "here",
+      "context": " to Jacob Barker, and presented here to influence the action of the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 147,
+      "end": 149,
+      "text": "to",
+      "raw_start": 147,
+      "raw_end": 149,
+      "raw_quote": "to",
+      "context": "acob Barker, and presented here to influence the action of the Sen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 150,
+      "end": 159,
+      "text": "influence",
+      "raw_start": 150,
+      "raw_end": 159,
+      "raw_quote": "influence",
+      "context": "b Barker, and presented here to influence the action of the Senate.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 160,
+      "end": 163,
+      "text": "the",
+      "raw_start": 160,
+      "raw_end": 163,
+      "raw_quote": "the",
+      "context": "and presented here to influence the action of the Senate.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 164,
+      "end": 170,
+      "text": "action",
+      "raw_start": 164,
+      "raw_end": 170,
+      "raw_quote": "action",
+      "context": "presented here to influence the action of the Senate.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 171,
+      "end": 173,
+      "text": "of",
+      "raw_start": 171,
+      "raw_end": 173,
+      "raw_quote": "of",
+      "context": "ed here to influence the action of the Senate.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 174,
+      "end": 177,
+      "text": "the",
+      "raw_start": 174,
+      "raw_end": 177,
+      "raw_quote": "the",
+      "context": "here to influence the action of the Senate.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 178,
+      "end": 184,
+      "text": "Senate",
+      "raw_start": 178,
+      "raw_end": 184,
+      "raw_quote": "Senate",
+      "context": " to influence the action of the Senate.",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. GRIMES. I object to the readin",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 10,
+      "text": "GRIMES",
+      "raw_start": 4,
+      "raw_end": 10,
+      "raw_quote": "GRIMES",
+      "context": "Mr. GRIMES. I object to the reading of tha",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "title_name_cue"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 12,
+      "end": 13,
+      "text": "I",
+      "raw_start": 12,
+      "raw_end": 13,
+      "raw_quote": "I",
+      "context": "Mr. GRIMES. I object to the reading of that p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 14,
+      "end": 20,
+      "text": "object",
+      "raw_start": 14,
+      "raw_end": 20,
+      "raw_quote": "object",
+      "context": "Mr. GRIMES. I object to the reading of that paper. I",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 21,
+      "end": 23,
+      "text": "to",
+      "raw_start": 21,
+      "raw_end": 23,
+      "raw_quote": "to",
+      "context": "Mr. GRIMES. I object to the reading of that paper. It i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 24,
+      "end": 27,
+      "text": "the",
+      "raw_start": 24,
+      "raw_end": 27,
+      "raw_quote": "the",
+      "context": "Mr. GRIMES. I object to the reading of that paper. It is no",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 28,
+      "end": 35,
+      "text": "reading",
+      "raw_start": 28,
+      "raw_end": 35,
+      "raw_quote": "reading",
+      "context": "Mr. GRIMES. I object to the reading of that paper. It is not addres",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 36,
+      "end": 38,
+      "text": "of",
+      "raw_start": 36,
+      "raw_end": 38,
+      "raw_quote": "of",
+      "context": "GRIMES. I object to the reading of that paper. It is not addressed",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 39,
+      "end": 43,
+      "text": "that",
+      "raw_start": 39,
+      "raw_end": 43,
+      "raw_quote": "that",
+      "context": "MES. I object to the reading of that paper. It is not addressed to t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 44,
+      "end": 49,
+      "text": "paper",
+      "raw_start": 44,
+      "raw_end": 49,
+      "raw_quote": "paper",
+      "context": "I object to the reading of that paper. It is not addressed to the Sen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 51,
+      "end": 53,
+      "text": "It",
+      "raw_start": 51,
+      "raw_end": 53,
+      "raw_quote": "It",
+      "context": "t to the reading of that paper. It is not addressed to the Senate.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 54,
+      "end": 56,
+      "text": "is",
+      "raw_start": 54,
+      "raw_end": 56,
+      "raw_quote": "is",
+      "context": "o the reading of that paper. It is not addressed to the Senate. It",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 57,
+      "end": 60,
+      "text": "not",
+      "raw_start": 57,
+      "raw_end": 60,
+      "raw_quote": "not",
+      "context": "he reading of that paper. It is not addressed to the Senate. It see",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 61,
+      "end": 70,
+      "text": "addressed",
+      "raw_start": 61,
+      "raw_end": 70,
+      "raw_quote": "addressed",
+      "context": "eading of that paper. It is not addressed to the Senate. It seems it is a",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 71,
+      "end": 73,
+      "text": "to",
+      "raw_start": 71,
+      "raw_end": 73,
+      "raw_quote": "to",
+      "context": "that paper. It is not addressed to the Senate. It seems it is addr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 74,
+      "end": 77,
+      "text": "the",
+      "raw_start": 74,
+      "raw_end": 77,
+      "raw_quote": "the",
+      "context": "t paper. It is not addressed to the Senate. It seems it is addresse",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 78,
+      "end": 84,
+      "text": "Senate",
+      "raw_start": 78,
+      "raw_end": 84,
+      "raw_quote": "Senate",
+      "context": "per. It is not addressed to the Senate. It seems it is addressed to Ja",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 86,
+      "end": 88,
+      "text": "It",
+      "raw_start": 86,
+      "raw_end": 88,
+      "raw_quote": "It",
+      "context": "is not addressed to the Senate. It seems it is addressed to Jacob ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 89,
+      "end": 94,
+      "text": "seems",
+      "raw_start": 89,
+      "raw_end": 94,
+      "raw_quote": "seems",
+      "context": "not addressed to the Senate. It seems it is addressed to Jacob Barker",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 95,
+      "end": 97,
+      "text": "it",
+      "raw_start": 95,
+      "raw_end": 97,
+      "raw_quote": "it",
+      "context": "dressed to the Senate. It seems it is addressed to Jacob Barker, a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 98,
+      "end": 100,
+      "text": "is",
+      "raw_start": 98,
+      "raw_end": 100,
+      "raw_quote": "is",
+      "context": "ssed to the Senate. It seems it is addressed to Jacob Barker, and ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 101,
+      "end": 110,
+      "text": "addressed",
+      "raw_start": 101,
+      "raw_end": 110,
+      "raw_quote": "addressed",
+      "context": "d to the Senate. It seems it is addressed to Jacob Barker, and presented ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 111,
+      "end": 113,
+      "text": "to",
+      "raw_start": 111,
+      "raw_end": 113,
+      "raw_quote": "to",
+      "context": "enate. It seems it is addressed to Jacob Barker, and presented her",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 114,
+      "end": 119,
+      "text": "Jacob",
+      "raw_start": 114,
+      "raw_end": 119,
+      "raw_quote": "Jacob",
+      "context": "te. It seems it is addressed to Jacob Barker, and presented here to i",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate",
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 120,
+      "end": 126,
+      "text": "Barker",
+      "raw_start": 120,
+      "raw_end": 126,
+      "raw_quote": "Barker",
+      "context": " seems it is addressed to Jacob Barker, and presented here to influenc",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 128,
+      "end": 131,
+      "text": "and",
+      "raw_start": 128,
+      "raw_end": 131,
+      "raw_quote": "and",
+      "context": "t is addressed to Jacob Barker, and presented here to influence the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 132,
+      "end": 141,
+      "text": "presented",
+      "raw_start": 132,
+      "raw_end": 141,
+      "raw_quote": "presented",
+      "context": " addressed to Jacob Barker, and presented here to influence the action of",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 142,
+      "end": 146,
+      "text": "here",
+      "raw_start": 142,
+      "raw_end": 146,
+      "raw_quote": "here",
+      "context": " to Jacob Barker, and presented here to influence the action of the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 147,
+      "end": 149,
+      "text": "to",
+      "raw_start": 147,
+      "raw_end": 149,
+      "raw_quote": "to",
+      "context": "acob Barker, and presented here to influence the action of the Sen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 150,
+      "end": 159,
+      "text": "influence",
+      "raw_start": 150,
+      "raw_end": 159,
+      "raw_quote": "influence",
+      "context": "b Barker, and presented here to influence the action of the Senate.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 160,
+      "end": 163,
+      "text": "the",
+      "raw_start": 160,
+      "raw_end": 163,
+      "raw_quote": "the",
+      "context": "and presented here to influence the action of the Senate.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 164,
+      "end": 170,
+      "text": "action",
+      "raw_start": 164,
+      "raw_end": 170,
+      "raw_quote": "action",
+      "context": "presented here to influence the action of the Senate.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 171,
+      "end": 173,
+      "text": "of",
+      "raw_start": 171,
+      "raw_end": 173,
+      "raw_quote": "of",
+      "context": "ed here to influence the action of the Senate.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 174,
+      "end": 177,
+      "text": "the",
+      "raw_start": 174,
+      "raw_end": 177,
+      "raw_quote": "the",
+      "context": "here to influence the action of the Senate.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 178,
+      "end": 184,
+      "text": "Senate",
+      "raw_start": 178,
+      "raw_end": 184,
+      "raw_quote": "Senate",
+      "context": " to influence the action of the Senate.",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalg7391unit:150:par_000150_000094",
+      "raw_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+      "raw_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalg7391unit:150:par_000150_000094",
+        "raw_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+        "raw_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+    "proposed_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

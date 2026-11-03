@@ -1,0 +1,12 @@
+{
+  "task": "T133",
+  "case": "W2",
+  "initial_reading_record": "root-source-readings-v1.json",
+  "initial_record_sha256": "8d036b4c15e4f5e784edc7274a967911f8d3bf09538c15ea3a671a994a06dcfe",
+  "corrected_record": "root-source-readings-v2.json",
+  "corrected_record_sha256": "aeb5d499e143576fb9945b503fb8b90a5a93e2cf74410a22f9b299812afb1855",
+  "change": "893\u21921893: initialrootreader missedfaintleading1; native-pixel detail revealsstem/base.",
+  "evidence": "W2/image/number-detail-proof.json andnumber-detail-view.png,localnearest-neighboronly;originalJPEGunchanged",
+  "model_calls_so_far": 0,
+  "limits": "Single-reader self-correction,notindependentadjudication oracceptedbenchmarkgold; originalreferencekept."
+}

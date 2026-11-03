@@ -1,0 +1,374 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo00unit:83:par_000083_000042",
+      "raw_text": "No. 703) for the relief of. 2794,",
+      "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172"
+    },
+    "static_text": "No. 703) for the relief of. 2794,",
+    "static_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+    "static_edits": [],
+    "lines": [
+      {
+        "line_id": "line_000083_000066",
+        "start": 0,
+        "end": 33,
+        "text": "No. 703) for the relief of. 2794,"
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "c6df49629169fcfb42df8ab652dd2654189a1c1f6e619e05a521bfbe80b983d7"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "38298fff984eee46ce8993c9d495b0a860b830fb79162129ad240ebc436c57dd",
+  "proposed_text": "No. 703) for the relief of. 2794,",
+  "proposed_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 33,
+      "derived_start": 0,
+      "derived_end": 33,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 2,
+      "text": "No",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "No",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 7,
+      "text": "703",
+      "raw_start": 4,
+      "raw_end": 7,
+      "raw_quote": "703",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 9,
+      "end": 12,
+      "text": "for",
+      "raw_start": 9,
+      "raw_end": 12,
+      "raw_quote": "for",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 13,
+      "end": 16,
+      "text": "the",
+      "raw_start": 13,
+      "raw_end": 16,
+      "raw_quote": "the",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 17,
+      "end": 23,
+      "text": "relief",
+      "raw_start": 17,
+      "raw_end": 23,
+      "raw_quote": "relief",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 24,
+      "end": 26,
+      "text": "of",
+      "raw_start": 24,
+      "raw_end": 26,
+      "raw_quote": "of",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 28,
+      "end": 32,
+      "text": "2794",
+      "raw_start": 28,
+      "raw_end": 32,
+      "raw_quote": "2794",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 2,
+      "text": "No",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "No",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 7,
+      "text": "703",
+      "raw_start": 4,
+      "raw_end": 7,
+      "raw_quote": "703",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 9,
+      "end": 12,
+      "text": "for",
+      "raw_start": 9,
+      "raw_end": 12,
+      "raw_quote": "for",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 13,
+      "end": 16,
+      "text": "the",
+      "raw_start": 13,
+      "raw_end": 16,
+      "raw_quote": "the",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 17,
+      "end": 23,
+      "text": "relief",
+      "raw_start": 17,
+      "raw_end": 23,
+      "raw_quote": "relief",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 24,
+      "end": 26,
+      "text": "of",
+      "raw_start": 24,
+      "raw_end": 26,
+      "raw_quote": "of",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 28,
+      "end": 32,
+      "text": "2794",
+      "raw_start": 28,
+      "raw_end": 32,
+      "raw_quote": "2794",
+      "context": "No. 703) for the relief of. 2794,",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo00unit:83:par_000083_000042",
+      "raw_text": "No. 703) for the relief of. 2794,",
+      "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo00unit:83:par_000083_000042",
+        "raw_text": "No. 703) for the relief of. 2794,",
+        "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "No. 703) for the relief of. 2794,",
+    "proposed_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

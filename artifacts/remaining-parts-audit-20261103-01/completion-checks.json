@@ -1,0 +1,26 @@
+{
+  "task": "T133",
+  "fixed_slots_terminal": 9,
+  "repeats_per_case": 3,
+  "source_crops": 3,
+  "source_info": 3,
+  "failures_retried": 0,
+  "software_changed": false,
+  "last_code_gate": "T132 full1366passed; retained, data-only study",
+  "review": "HR032v1-v6; firstsoftware/firstactual before remaining repeats; isolated AppTest4commentboxes/0exceptions/plain source",
+  "source_reading_corrections": [
+    "W2initial893\u21921893beforeoutputs; rawalready1893",
+    "W3frozenperiod\u2192visiblecomma recheckedafteroutputs; no word/numeric scoring effect"
+  ],
+  "human_acceptance": false,
+  "browser_device_checks": false,
+  "remaining_limits": [
+    "Single source reader, no accepted gold",
+    "Purposeful length-selected units, not population estimate",
+    "S4newnativecrop differs historical padded crop; no T55 launch clearance",
+    "Internaljoins inconsistent; no prompt/software adoption",
+    "P0/nativefit/fullcorpus unresolved"
+  ],
+  "bounded_Luna_review": "result-review.json; no blocking finding, re-viewed W2/W3 supports 1893/alternate and finalcomma; retrospective AI evidence, not human gold",
+  "focused_review_tests": "review_glossary, review_readable, review_evidence passed"
+}

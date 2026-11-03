@@ -1,0 +1,22 @@
+{
+  "id": "HR-032",
+  "version": 1,
+  "title": "Three remaining-part passages: first software result",
+  "instructions": "More Qwen work is underway. This fixed study has three fresh source passages and three identical calls per passage. This first real software output is visible before expansion to the model calls. Optional comments can steer the work; no routine permission is needed to continue.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "expanded-workflow-comments",
+      "prompt": "Optional notes on these fresh inputs and results",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "First new passage: an objection about a paper addressed to Jacob Barker",
+          "text": "Inputs — full original OCR from the first frozen passage:\nMr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.\n\nExpected output — my direct source-image reading, recorded before seeing model replies; one reader, not accepted benchmark truth:\nMr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.\n\nActual output — full first pass from the software:\nMr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.\n\nDifferences — the software raises 10 inspection flags and selects secondary inspection of the whole passage. A flag is not a verified error. This is the first real software sample from a fixed three-passage study, selected as the longest remaining unused primary passage in each of parts 1, 2 and 4. Three identical model calls per passage are planned, 9 calls maximum; no model call has run. The reserved sample is untouched. Images and text are not replaced after seeing the outcomes.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0150.jp2/2158,3661,883,205/883,/0/default.jpg"
+        }
+      ]
+    }
+  ]
+}

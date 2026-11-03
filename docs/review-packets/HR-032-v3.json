@@ -1,0 +1,32 @@
+{
+  "id": "HR-032",
+  "version": 3,
+  "title": "Three fresh passages: 1 of 9 Qwen observations",
+  "instructions": "Work continues with three fresh primary passages from parts 1, 2 and 4, each with three identical model observations. The original S4 source has a newly registered native crop. Index words and numbers are assessed separately from the dots linking entries to pages; missing context is not invented. Expected readings are provisional, frozen before outputs. Optional notes can steer the remaining work.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "expanded-workflow-comments",
+      "prompt": "Optional notes on these fresh passages and results",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "Fresh passage 1: part 1, leaf 150",
+          "text": "Inputs — full original OCR:\nMr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.\n\nExpected output — my image reading before Qwen replies, one reader rather than accepted benchmark truth. Word, punctuation, case and spacing differences are kept separate:\nMr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.\n\nActual output — full software first pass:\nMr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.\n\nActual output — model run 1 of 3, full reading or exact unresolved reply:\nMr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.\n\nDifferences — 1 of 3 identical observations are recorded. 1 pass the reply checks. 1 exactly match the image reading; 1 match its words and punctuation with case/spacing/apostrophe differences treated alike. Transport totals 36.573 seconds; reported usage 1998 input and 121 output tokens. 2 planned identical repetitions remain. No original OCR or model reply is changed. This selection by length is not a population accuracy or routing-rate estimate. Passing reply checks is separate from source fidelity.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0150.jp2/2158,3661,883,205/883,/0/default.jpg"
+        },
+        {
+          "label": "Fresh passage 2: part 2, leaf 96",
+          "text": "Inputs — full original OCR:\nbill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter- nate sections to aid in the construction of, in said State 1893, 1921, 3464\n\nExpected output — my image reading before Qwen replies, one reader rather than accepted benchmark truth. The dots linking text to page numbers are represented by an ellipsis; their exact count is not a transcription reference. Words and numeric sequences are compared separately:\nbill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State … 1893, 1921, 3464\n\nSource-reading correction — I initially missed the faint leading 1. A magnified view of the original pixels supports 1893. The initial and corrected readings are both preserved before any Qwen output; raw OCR already has 1893. This is a single-reader correction, not independent adjudication.\n\nActual output — full software first pass:\nbill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter- nate sections to aid in the construction of, in said State 1893, 1921, 3464\n\nDifferences — 0 of 3 identical observations are recorded. 3 planned identical repetitions remain. No original OCR or model reply is changed. This selection by length is not a population accuracy or routing-rate estimate. Passing reply checks is separate from source fidelity.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7392unit%2fcongressionalglo7392unit_jp2.zip%2fcongressionalglo7392unit_jp2%2fcongressionalglo7392unit_0096.jp2/295,3869,837,174/837,/0/default.jpg"
+        },
+        {
+          "label": "Fresh passage 3: part 4, leaf 83",
+          "text": "Inputs — full original OCR:\nNo. 703) for the relief of. 2794,\n\nExpected output — my image reading before Qwen replies, one reader rather than accepted benchmark truth. The dots linking text to page numbers are represented by an ellipsis; their exact count is not a transcription reference. Words and numeric sequences are compared separately:\nNo. 703) for the relief of … 2794.\n\nSource recovery — this is the original S4 raw target whose earlier image metadata requests timed out. This new native crop is available and registered. Its plan differs from the old padded crop; the old missing-image records remain unchanged and broader launch readiness is not cleared. Only this visible index fragment is assigned; do not infer a missing entry prefix or beneficiary.\n\nActual output — full software first pass:\nNo. 703) for the relief of. 2794,\n\nDifferences — 0 of 3 identical observations are recorded. 3 planned identical repetitions remain. No original OCR or model reply is changed. This selection by length is not a population accuracy or routing-rate estimate. Passing reply checks is separate from source fidelity.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0083.jp2/186,2907,792,44/792,/0/default.jpg"
+        }
+      ]
+    }
+  ]
+}

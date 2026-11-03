@@ -1,0 +1,120 @@
+{
+  "task": "T133",
+  "authorization": "DirectuserContinue after T131/T132completion; standing small-testautonomy.",
+  "cases": [
+    {
+      "case": "W1",
+      "source_id": "congressionalg7391unit:150:par_000150_000094",
+      "part": 1,
+      "leaf": 150,
+      "paragraph_id": "par_000150_000094",
+      "raw_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+      "page_line_sha256": "185132ca0504843c65d732c299f49fb968c6a371a2d3f497ccf402cfb8031bd1",
+      "raw_codepoints": 185
+    },
+    {
+      "case": "W2",
+      "source_id": "congressionalglo7392unit:96:par_000096_000041",
+      "part": 2,
+      "leaf": 96,
+      "paragraph_id": "par_000096_000041",
+      "raw_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+      "page_line_sha256": "5283ddb322430c5ab3177f551a88b6cedbae2625c79d073eb9b071b2f1a0ff51",
+      "raw_codepoints": 165
+    },
+    {
+      "case": "W3",
+      "source_id": "congressionalglo00unit:83:par_000083_000042",
+      "part": 4,
+      "leaf": 83,
+      "paragraph_id": "par_000083_000042",
+      "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "page_line_sha256": "c6df49629169fcfb42df8ab652dd2654189a1c1f6e619e05a521bfbe80b983d7",
+      "raw_codepoints": 33
+    }
+  ],
+  "selection_rule": "Longest remaining unused primary passage perpart1,2,4, descending rawlength then frozenpriority/sourceID; exclude all known model-exposedleaves. Freeze beforeimage outcomes. No reservedconfirmation.",
+  "excluded_model_exposed_leaves": [
+    [
+      1,
+      278
+    ],
+    [
+      1,
+      526
+    ],
+    [
+      2,
+      406
+    ],
+    [
+      2,
+      716
+    ],
+    [
+      3,
+      719
+    ],
+    [
+      3,
+      988
+    ],
+    [
+      3,
+      1055
+    ],
+    [
+      4,
+      648
+    ],
+    [
+      4,
+      717
+    ],
+    [
+      5,
+      147
+    ],
+    [
+      5,
+      302
+    ],
+    [
+      5,
+      529
+    ],
+    [
+      5,
+      741
+    ],
+    [
+      5,
+      1060
+    ]
+  ],
+  "exposure": "Earlier offline preparation may include OCR glimpses; no known selected-page modeltest. Broader/training exposure unknown.",
+  "bounds": {
+    "cases": 3,
+    "identical_runs_each": 3,
+    "total_calls": 9,
+    "retries": 0,
+    "request_seconds": 120,
+    "output_tokens": 1500,
+    "per_case_group_seconds": 1800,
+    "total_model_phase_seconds": 1800,
+    "image_downloads_max": 3,
+    "info_downloads_max": 3,
+    "per_image_bytes_max": 8000000,
+    "model_downloads": 0
+  },
+  "model": "qwen3.8:27b-mlx",
+  "request_format": "Existing full-text conformance-v4 with same generic source-boundaryinstruction; current T132hostguard, exactnativeparagraphcrops.",
+  "question": "How consistently does the current software-first/full-target Qwen pipeline preserve or repair fresh remaining-part inputs, including the formerlymissing original S4source?",
+  "limits": [
+    "One root source reader, notacceptedbenchmarkgold.",
+    "Length-selected diagnostic, no population/routing-rate estimate.",
+    "Missing/partial/unreadable selectedcases retained without replacement; atmost9calls, incompletegroupsreported.",
+    "Unknown usage/stop or globalbudget exhaustion stopsremainingcalls; no retry/download/corpus/recurrence.",
+    "ClosingS4imageavailabilitydoesnotclearT55nativefit/generalreadiness/P0."
+  ]
+}

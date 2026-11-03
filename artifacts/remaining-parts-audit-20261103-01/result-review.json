@@ -1,0 +1,160 @@
+{
+  "task": "T133",
+  "review_order": "inputs → expected output → actual output → differences",
+  "inputs_summary": "Three fixed source-bound requests W1–W3; three identical-body observations each. See each case for source, image and request hashes.",
+  "totals": {
+    "actual_calls": 9,
+    "request_cycle_seconds": 298.24488570867106,
+    "owned_transport_seconds": 297.9542584596202,
+    "input_tokens": 16947,
+    "output_tokens": 1082,
+    "all_calls_positive_owned_stop": true
+  },
+  "cases": {
+    "W1": {
+      "inputs": {
+        "source_id": "congressionalg7391unit:150:par_000150_000094",
+        "raw_source_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+        "image_sha256": "1c636cf308f76bff5c49beedda2cbbdc62524918fea57125ba38fe1621a35f1c",
+        "request_sha256": "51045e4f551d1b2d6335f25831c06c76358d95df0eee897f2e73e74ca56766e4",
+        "identical_request_bytes_all_repeats": true
+      },
+      "expected_output": {
+        "pre_output_reference": "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+        "basis": "one reader’s provisional direct image inspection, not an accepted benchmark reference",
+        "predeclared_comparison": "word_punctuation_and_case_variants_separate"
+      },
+      "actual_output": {
+        "readings": [
+          "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+          "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate.",
+          "Mr. GRIMES. I object to the reading of that paper. It is not addressed to the Senate. It seems it is addressed to Jacob Barker, and presented here to influence the action of the Senate."
+        ],
+        "all_positive_stops": true,
+        "known_token_usage": [
+          {
+            "input_tokens": 1998,
+            "output_tokens": 121
+          },
+          {
+            "input_tokens": 1998,
+            "output_tokens": 120
+          },
+          {
+            "input_tokens": 1998,
+            "output_tokens": 125
+          }
+        ],
+        "receipt_sha256": [
+          "aab3e83d35d37c333890ec043756e2fd772401fa909fe7695f05055b57cd139b",
+          "db1976fd5085dfa398e11230550f4f7422a46fec04143a326c91adaa5b9f42bc",
+          "74749db3b158926eca1b25c786ac4e18b1dbe4b0e0af3f44fdc6d3e64decacd1"
+        ]
+      },
+      "differences": [
+        "No text difference from the provisional visible reading; one corrected-text value across three replies. Raw reply bytes varied."
+      ]
+    },
+    "W2": {
+      "inputs": {
+        "source_id": "congressionalglo7392unit:96:par_000096_000041",
+        "raw_source_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+        "image_sha256": "bc58111e65875e61c7623a386056c6f777826a67f36b4f076cc8649b49005b0e",
+        "request_sha256": "56293d91411c6e6b3630fb60c1180f6e091e6af1f042ddc32bf889018885f597",
+        "identical_request_bytes_all_repeats": true
+      },
+      "expected_output": {
+        "pre_output_reference": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State … 1893, 1921, 3464",
+        "basis": "one reader’s provisional direct image inspection, not an accepted benchmark reference",
+        "predeclared_comparison": "words_and_numbers_ignore_dotleader_count"
+      },
+      "actual_output": {
+        "readings": [
+          "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alter-nate sections to aid in the construction of, in said State. ... ... . ... . ... . ... 1893, 1921, 3464",
+          "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State............................1893, 1921, 3464",
+          "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State......................1893, 1921, 3464"
+        ],
+        "all_positive_stops": true,
+        "known_token_usage": [
+          {
+            "input_tokens": 2491,
+            "output_tokens": 144
+          },
+          {
+            "input_tokens": 2491,
+            "output_tokens": 137
+          },
+          {
+            "input_tokens": 2491,
+            "output_tokens": 137
+          }
+        ],
+        "receipt_sha256": [
+          "5cbd1b2e9c398604ddeb1e151b06ee7b9a39ee1e91bb57666abf7a4198e3aee8",
+          "1d8ff1c7963e5c0f056a1bff539159160e7e750e53dbea8eebacb83d8516d6b0",
+          "4c539477cc7669a2c866aac02e68a18606315bc0e8d86ed13a9ecd677dda1b24"
+        ]
+      },
+      "differences": [
+        "The cached image shows “alternate” split at the printed line end as “alter-” / “nate”; run 1 preserves the line-break hyphen (“alter-nate”), while runs 2 and 3 join it as “alternate”. All three preserve the visible numbers 156, 1893, 1921 and 3464. The provisional 893 reading was corrected to 1893 before outputs; current image crop visibly supports 1893. Dot-leader counts and spacing are excluded by the predeclared comparison."
+      ]
+    },
+    "W3": {
+      "inputs": {
+        "source_id": "congressionalglo00unit:83:par_000083_000042",
+        "raw_source_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+        "image_sha256": "144048d84f99e04867b1920ad620fc13fb56920159c31ef4c932b3ef459c886a",
+        "request_sha256": "82c184830a73ba238fe186c626ac098a9da4c0ffd186ee4e97db18ccdb3b71ab",
+        "identical_request_bytes_all_repeats": true
+      },
+      "expected_output": {
+        "pre_output_reference": "No. 703) for the relief of … 2794.",
+        "basis": "one reader’s provisional direct image inspection, not an accepted benchmark reference",
+        "predeclared_comparison": "words_and_numbers_ignore_dotleader_count"
+      },
+      "actual_output": {
+        "readings": [
+          "No. 703) for the relief of ...................2794,",
+          "No. 703) for the relief of ……………… 2794,",
+          "No. 703) for the relief of..................2794,"
+        ],
+        "all_positive_stops": true,
+        "known_token_usage": [
+          {
+            "input_tokens": 1160,
+            "output_tokens": 100
+          },
+          {
+            "input_tokens": 1160,
+            "output_tokens": 98
+          },
+          {
+            "input_tokens": 1160,
+            "output_tokens": 100
+          }
+        ],
+        "receipt_sha256": [
+          "0e2635bd5849fc2d30b5b049867f66348dc3bf0cf6907d0299deea3aaef58370",
+          "49ca39d609f07537f79ce2f89840b4f0cb4a8b2efe54da0ccb58a54a7c35f78d",
+          "b0dcd1e403a8a4550cb23103cdea4221c4bae03b084c84f6ff2d09921985b375"
+        ]
+      },
+      "differences": [
+        "All three replies match the visible words and number 2794; leader glyphs/count/spacing vary and are excluded. The frozen pre-output illustration ended “2794.”, but the cached native crop visibly ends “2794,”. Record this as a post-output correction to the root illustration, not as a model error or independent benchmark adjudication."
+      ]
+    }
+  },
+  "source_and_scope_limits": [
+    "Visible readings are one reader’s provisional source assessments; the packet does not establish a gold transcription or population-level accuracy.",
+    "W2’s initial 893 reading and prepared-v1 remain preserved; the corrected 1893 reading was made from the native pixels before any provider output.",
+    "W3’s new 792×44 native crop is registered to the original S4 source target. It differs from the old planned crop and closes only image availability for this sample; it does not rewrite old T55 inputs or establish native-fit, R1 compatibility, general readiness, or P0 clearance.",
+    "Model outputs remain unreviewed evidence; no text was accepted or applied."
+  ],
+  "evidence_paths": {
+    "report": "report.json",
+    "frozen_source_readings": "root-source-readings-v2.json",
+    "s4_recovery": "s4-image-recovery.json",
+    "run_receipts": "W1/call-{1,2,3}/result.json; W2/call-{1,2,3}/result.json; W3/call-{1,2,3}/result.json"
+  },
+  "reviewer_note": "W3 punctuation correction is based on direct inspection of the cached image crop in this review; it postdates the frozen illustrative reading and is not an independent benchmark."
+}

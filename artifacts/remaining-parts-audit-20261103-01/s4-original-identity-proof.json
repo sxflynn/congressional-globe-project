@@ -1,0 +1,87 @@
+{
+  "task": "T133",
+  "claim": "W3 exactly reuses the source identity frozen as original T52 unit S4; historical image readiness for S4 was missing after bounded recovery.",
+  "source_id": "congressionalglo00unit:83:par_000083_000042",
+  "part": 4,
+  "leaf": 83,
+  "paragraph_id": "par_000083_000042",
+  "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+  "static_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+  "page_line_sha256": "c6df49629169fcfb42df8ab652dd2654189a1c1f6e619e05a521bfbe80b983d7",
+  "t52_sample_binding": {
+    "path": "artifacts/ocr-productive-repair-contract-20261027-01/sample-binding.json",
+    "sha256": "9ad0e2789e28ce29d3d8ec20a52a3a54b2859b4b38d6629c806e72746f3fb7f0",
+    "source_manifest_sha256": "e53cbe06f852e966c2523981642b7426f6cbe807c3c6732986aafe2101ecfd9f",
+    "input_ref": {
+      "path": "artifacts/ocr-sample-design-20261027-01/sample.json",
+      "sha256": "d460f3410be9905f4cf5fe42ee8eaa7e5a1174b9cde74d5d1be14a30395083b1",
+      "selector": "primary source_id=congressionalglo00unit:83:par_000083_000042"
+    },
+    "S4": {
+      "id": "S4",
+      "kind": "primary_probability_subset",
+      "source_id": "congressionalglo00unit:83:par_000083_000042",
+      "part_number": 4,
+      "scan_leaf": 83,
+      "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "static_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "image_sha256": null,
+      "image_status": "not_bound; future target coverage/registration/legibility check required",
+      "reference_status": "no actual reading; future image-only AI observation is provisional",
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      }
+    }
+  },
+  "t52_readiness": {
+    "path": "artifacts/ocr-live-readiness-20261028-01/readiness.json",
+    "sha256": "45e29bb8a3428049b98b9d761433b65d839becac1a3131f0461834d094ff3c50",
+    "status": "missing_after_bounded_recovery",
+    "metadata_attempts": 2,
+    "image_requests": 0,
+    "targets_unchanged": true,
+    "failure": "metadata read timeout on both attempts",
+    "image_readiness_status": "missing_after_bounded_recovery"
+  },
+  "matching_old_target_records": [
+    {
+      "label": "S4",
+      "path": "artifacts/ocr-live-readiness-20261028-01/images/S4/target.json",
+      "file_sha256": "efcec079bb1bcb05615580d2c937d19a88dd17392e9beedd70df573d715d8b95",
+      "item_identifier": "congressionalglo00unit",
+      "part_number": 4,
+      "scan_leaf": 83,
+      "paragraph_id": "par_000083_000042",
+      "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "hocr_sha256": "d45d7da868baa8bd019deb0774ab0796ffcb9dba6aa027323756b7ced15d42a9",
+      "page_map_sha256": "d49c423696592b25e2e243f2a4335f509b078fee1e14ada130db34baa314e2aa"
+    },
+    {
+      "label": "S4-recovery2",
+      "path": "artifacts/ocr-live-readiness-20261028-01/images/S4-recovery2/target.json",
+      "file_sha256": "efcec079bb1bcb05615580d2c937d19a88dd17392e9beedd70df573d715d8b95",
+      "item_identifier": "congressionalglo00unit",
+      "part_number": 4,
+      "scan_leaf": 83,
+      "paragraph_id": "par_000083_000042",
+      "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "hocr_sha256": "d45d7da868baa8bd019deb0774ab0796ffcb9dba6aa027323756b7ced15d42a9",
+      "page_map_sha256": "d49c423696592b25e2e243f2a4335f509b078fee1e14ada130db34baa314e2aa"
+    }
+  ],
+  "old_crop_and_info_files_exist": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "capacity_example_status": "authored_capacity_example_not_a_model_reply",
+  "t52_deterministic_result_count": 1,
+  "t52_deterministic_result_source_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+  "interpretation_limit": "Historical S4 identity and missing-image state are established; this does not establish current image availability, image quality, T55 native fit, or general launch readiness.",
+  "provider_calls": 0,
+  "image_fetches": 0
+}

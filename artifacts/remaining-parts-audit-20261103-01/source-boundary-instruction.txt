@@ -1,0 +1,1 @@
+Source-boundary rule: If the assigned text ends in a word cut off by the registered crop, return coverage "incomplete", corrected_text null, and a concrete reason. Do not infer or append unseen letters from language probability. Preserve supported historical wording and fully visible line continuations; do not silently extend the assigned target beyond the image.

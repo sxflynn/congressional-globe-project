@@ -1,0 +1,368 @@
+{
+  "task": "T133",
+  "freeze_sha256": "d354e03a9797ca12e5617ce407eaa86f8d13dd974c02e24c2e2d5e3c2c21a25c",
+  "sample_sha256": "d460f3410be9905f4cf5fe42ee8eaa7e5a1174b9cde74d5d1be14a30395083b1",
+  "canonical_foundation_sha256": "4ab8ef6b325b650a0db002a94d690989f02d82333e977e5fed05c8f651772eeb",
+  "t52_results_sha256": "1bca738f89c08bd4222a3e6cbfd564153e6c727b4e414c7e247da88c03a0ce2f",
+  "t129_helper_path": "tmp/t129-source-prep/prepare_candidates.py",
+  "t129_helper_sha256": "12c2f8e7db9b2b23d6d4981d79c15814718d259cef5276038b3c81dd9acdc624",
+  "t52_resources": {
+    "words": {
+      "path": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+      "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d"
+    },
+    "names": {
+      "path": "/usr/share/dict/propernames",
+      "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a"
+    }
+  },
+  "deterministic_code_sha256": {
+    "deterministic_models.py": "f1ec9d2750030a58fc2da4e4bac1a64b887d82bef9ac282b9ef8e231f11ef9cb",
+    "deterministic_geometry.py": "2a3e6122e3752ae817321c1fe234c2282246f443c75d74edae302878c89c1318",
+    "deterministic_rules.py": "a1b09aa61c81be25586050bd8047b5b69a70a5e942c0e70ff8fb6f24cb0c5291",
+    "deterministic_repair.py": "32c5a713199d8102a13a178a43b0aca4fd4ff2048d9f48271ce87d9448a3d879",
+    "productive_ocr_routing.py": "0a115160b892a640256f372be97dddf87afd38de007963cafd1269c65924dd0b"
+  },
+  "cases": [
+    {
+      "case": "W1",
+      "source_id": "congressionalg7391unit:150:par_000150_000094",
+      "part": 1,
+      "leaf": 150,
+      "paragraph_id": "par_000150_000094",
+      "raw_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+      "static_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+      "page_line_sha256": "185132ca0504843c65d732c299f49fb968c6a371a2d3f497ccf402cfb8031bd1",
+      "page_line_number": 151,
+      "line_ids": [
+        "line_000150_000263",
+        "line_000150_000264",
+        "line_000150_000265",
+        "line_000150_000266",
+        "line_000150_000267"
+      ],
+      "raw_codepoints": 185,
+      "static_edits": [],
+      "proposed_text_sha256": "0ed67d2d214dcc5408f71965c2c8a7cc327aaa2a0ead8c06838d188b46cbb6f6",
+      "proposed_edits": [],
+      "deterministic_result_sha256": "47af0e10231017059c148a55ad476055fa4919eb29f92e1d207d66db4230ff45",
+      "geometry_registry_sha256": "bbc89035d3c83ffe96fafee37e81bd5da81806b2bae04372bd0ef3b59f21e74e",
+      "selection": "secondary_inspection",
+      "signal_count": 10,
+      "signal_summary": [
+        {
+          "category": "word",
+          "raw_quote": "GRIMES",
+          "flags": [
+            "post_repair_word_unfamiliar",
+            "name_list_unfamiliar"
+          ]
+        },
+        {
+          "category": "word",
+          "raw_quote": "addressed",
+          "flags": [
+            "post_repair_word_unfamiliar"
+          ]
+        },
+        {
+          "category": "word",
+          "raw_quote": "Senate",
+          "flags": [
+            "name_list_unfamiliar"
+          ]
+        },
+        {
+          "category": "word",
+          "raw_quote": "seems",
+          "flags": [
+            "post_repair_word_unfamiliar"
+          ]
+        },
+        {
+          "category": "word",
+          "raw_quote": "addressed",
+          "flags": [
+            "post_repair_word_unfamiliar"
+          ]
+        },
+        {
+          "category": "word",
+          "raw_quote": "Barker",
+          "flags": [
+            "name_list_unfamiliar"
+          ]
+        },
+        {
+          "category": "word",
+          "raw_quote": "presented",
+          "flags": [
+            "post_repair_word_unfamiliar"
+          ]
+        },
+        {
+          "category": "word",
+          "raw_quote": "Senate",
+          "flags": [
+            "name_list_unfamiliar"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "I",
+          "flags": [
+            "roman_number_or_ambiguous_word",
+            "all_numbers_raw"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "I",
+          "flags": [
+            "roman_number_or_ambiguous_word",
+            "all_numbers_post_repair"
+          ]
+        }
+      ],
+      "bbox": {
+        "left": 2158,
+        "top": 3661,
+        "right": 3041,
+        "bottom": 3866
+      },
+      "role": "body",
+      "item_identifier": "congressionalg7391unit",
+      "page_record_id": "ia:congressionalg7391unit:leaf:150",
+      "page_dimensions_px": [
+        3199,
+        4298
+      ],
+      "source_accuracy": "not inspected; root reading pending"
+    },
+    {
+      "case": "W2",
+      "source_id": "congressionalglo7392unit:96:par_000096_000041",
+      "part": 2,
+      "leaf": 96,
+      "paragraph_id": "par_000096_000041",
+      "raw_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+      "static_sha256": "345f84e792eeeaaa241dd36aac719084677a0a93d5b0e0d851d425d597c5bbad",
+      "page_line_sha256": "5283ddb322430c5ab3177f551a88b6cedbae2625c79d073eb9b071b2f1a0ff51",
+      "page_line_number": 1183,
+      "line_ids": [
+        "line_000096_000089",
+        "line_000096_000090",
+        "line_000096_000091",
+        "line_000096_000092"
+      ],
+      "raw_codepoints": 165,
+      "static_edits": [
+        {
+          "raw_quote": "alter- nate",
+          "replacement": "alternate",
+          "rule": "adjacent-line wrap; lexicon form alternate"
+        }
+      ],
+      "proposed_text_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+      "proposed_edits": [],
+      "deterministic_result_sha256": "b3ede12482994d4430af4e5762a6e188f442ba9fed88a412dd77205ecbde3db9",
+      "geometry_registry_sha256": "610668235dbacbcf259904854df188071b1076e1ac6d9bde7591ed5a35631075",
+      "selection": "secondary_inspection",
+      "signal_count": 14,
+      "signal_summary": [
+        {
+          "category": "word",
+          "raw_quote": "S",
+          "flags": [
+            "name_list_unfamiliar"
+          ]
+        },
+        {
+          "category": "word",
+          "raw_quote": "lands",
+          "flags": [
+            "post_repair_word_unfamiliar"
+          ]
+        },
+        {
+          "category": "word",
+          "raw_quote": "State",
+          "flags": [
+            "name_list_unfamiliar"
+          ]
+        },
+        {
+          "category": "word",
+          "raw_quote": "Minnesota",
+          "flags": [
+            "name_list_unfamiliar"
+          ]
+        },
+        {
+          "category": "word",
+          "raw_quote": "sections",
+          "flags": [
+            "post_repair_word_unfamiliar"
+          ]
+        },
+        {
+          "category": "word",
+          "raw_quote": "State",
+          "flags": [
+            "name_list_unfamiliar"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "156)",
+          "flags": [
+            "digit_bearing_number_or_identifier",
+            "all_numbers_raw"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "1893,",
+          "flags": [
+            "digit_bearing_number_or_identifier",
+            "all_numbers_raw"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "1921,",
+          "flags": [
+            "digit_bearing_number_or_identifier",
+            "all_numbers_raw"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "3464",
+          "flags": [
+            "digit_bearing_number_or_identifier",
+            "all_numbers_raw"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "156)",
+          "flags": [
+            "digit_bearing_number_or_identifier",
+            "all_numbers_post_repair"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "1893,",
+          "flags": [
+            "digit_bearing_number_or_identifier",
+            "all_numbers_post_repair"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "1921,",
+          "flags": [
+            "digit_bearing_number_or_identifier",
+            "all_numbers_post_repair"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "3464",
+          "flags": [
+            "digit_bearing_number_or_identifier",
+            "all_numbers_post_repair"
+          ]
+        }
+      ],
+      "bbox": {
+        "left": 295,
+        "top": 3869,
+        "right": 1132,
+        "bottom": 4043
+      },
+      "role": "body",
+      "item_identifier": "congressionalglo7392unit",
+      "page_record_id": "ia:congressionalglo7392unit:leaf:96",
+      "page_dimensions_px": [
+        3151,
+        4275
+      ],
+      "source_accuracy": "not inspected; root reading pending"
+    },
+    {
+      "case": "W3",
+      "source_id": "congressionalglo00unit:83:par_000083_000042",
+      "part": 4,
+      "leaf": 83,
+      "paragraph_id": "par_000083_000042",
+      "raw_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "static_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "page_line_sha256": "c6df49629169fcfb42df8ab652dd2654189a1c1f6e619e05a521bfbe80b983d7",
+      "page_line_number": 3326,
+      "line_ids": [
+        "line_000083_000066"
+      ],
+      "raw_codepoints": 33,
+      "static_edits": [],
+      "proposed_text_sha256": "f992409f40179bf2c561eb4b297b9d860c81a893f9135b9fd1a40423d46fc172",
+      "proposed_edits": [],
+      "deterministic_result_sha256": "e7cb55d17d57dcb95db6e49bbd47fd7090cb797f680d5b6dc43952c8f6cd81c6",
+      "geometry_registry_sha256": "38298fff984eee46ce8993c9d495b0a860b830fb79162129ad240ebc436c57dd",
+      "selection": "secondary_inspection",
+      "signal_count": 4,
+      "signal_summary": [
+        {
+          "category": "number",
+          "raw_quote": "703)",
+          "flags": [
+            "digit_bearing_number_or_identifier",
+            "all_numbers_raw"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "2794,",
+          "flags": [
+            "digit_bearing_number_or_identifier",
+            "all_numbers_raw"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "703)",
+          "flags": [
+            "digit_bearing_number_or_identifier",
+            "all_numbers_post_repair"
+          ]
+        },
+        {
+          "category": "number",
+          "raw_quote": "2794,",
+          "flags": [
+            "digit_bearing_number_or_identifier",
+            "all_numbers_post_repair"
+          ]
+        }
+      ],
+      "bbox": {
+        "left": 186,
+        "top": 2907,
+        "right": 978,
+        "bottom": 2951
+      },
+      "role": "body",
+      "item_identifier": "congressionalglo00unit",
+      "page_record_id": "ia:congressionalglo00unit:leaf:83",
+      "page_dimensions_px": [
+        3057,
+        4269
+      ],
+      "source_accuracy": "not inspected; root reading pending"
+    }
+  ],
+  "provider_calls": 0,
+  "image_fetches": 0
+}
