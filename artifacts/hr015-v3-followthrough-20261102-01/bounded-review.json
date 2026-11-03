@@ -1,0 +1,12 @@
+{
+  "reviewer": "GPT-6 Luna /root/review_s2_runner",
+  "verdict": "No substantive blocker or scope regression.",
+  "findings": [
+    "Current number words use proposed-token spelling/name checks rather than forced numeric flags.",
+    "Unfamiliar/unassessed residual words still route; digit-bearing/Unicode/Roman-like forms unchanged.",
+    "Explicit legacy mode preserves old written-number signals/coverage/rulev3, currentdetectorv4.",
+    "Historical prompt untouched;12frozen case body hashes asserted unchanged."
+  ],
+  "tests": "Root:21new checks/retained historical41checks/full gate1300;22review tests; HR015v4source/glossary/render checks13commentboxes/0exceptions.",
+  "provider_calls": 0
+}

@@ -20,7 +20,7 @@ from congressional_globe.productive_ocr_host import (
 
 TEXT_HOST = "ocr-productive-repair-host-input-v3"
 TEXT_REPLY = "ocr-productive-repair-text-reply-v3"
-# Deliberately over-route ambiguous forms (I, one, second, May dates, etc.).
+# Retained only for explicit reconstruction of pre-HR015v3 routing records.
 NUMBER_WORDS = frozenset(
     [
         "zero",
@@ -103,11 +103,18 @@ NUMBER_WORDS = frozenset(
 )
 NUMBER_FORMS = re.compile(r"\d[^\s]*|[^\W\d_]+", re.UNICODE)
 ROMAN_FORM = re.compile(r"[ivxlcdm]+", re.IGNORECASE)
-COVERAGE_GAPS = (
+LEGACY_COVERAGE_GAPS = (
     "Numeric detection is conservative but incomplete: damaged or unusual written forms, "
     "non-English spellings and contextual quantities can be missed. Ambiguous Roman/word "
     "forms still route. Every detected number routes, including raw numbers later repaired. "
     "Unflagged and apparent-success audits remain required; no familiarity exemption."
+)
+COVERAGE_GAPS = (
+    "Numeric-notation detection is conservative but incomplete; unusual/damaged numeric "
+    "forms can be missed. Detected digit-bearing and ambiguous Roman notation still route, "
+    "including raw numbers later repaired. Spelled-out number words use ordinary "
+    "post-repair spelling checks; their numerical meaning alone does not route them. "
+    "Unfamiliar/unassessed words, independent name flags and success/unflagged audits remain."
 )
 TEXT_PROMPT = (
     "Inspect the complete assigned target paragraphs against the registered image, including "
@@ -142,19 +149,23 @@ class ParagraphRoute(Contract):
     coverage_gaps: str = COVERAGE_GAPS
 
 
-def _number_kind(word):
+def _number_kind(word, legacy_written_numbers=False):
     if any(character.isnumeric() for character in word):
         return "digit_bearing_number_or_identifier"
-    if word.casefold() in NUMBER_WORDS:
+    return _letter_number_kind(word, legacy_written_numbers)
+
+
+def _letter_number_kind(word, legacy_written_numbers):
+    if legacy_written_numbers and word.casefold() in NUMBER_WORDS:
         return "written_number_or_ambiguous_quantity"
     if ROMAN_FORM.fullmatch(word):
         return "roman_number_or_ambiguous_word"
     return None
 
 
-def _number_spans(text: str):
+def _number_spans(text: str, legacy_written_numbers=False):
     for match in NUMBER_FORMS.finditer(text):
-        kind = _number_kind(match.group())
+        kind = _number_kind(match.group(), legacy_written_numbers)
         if kind is not None:
             yield match.start(), match.end(), kind
 
@@ -191,21 +202,24 @@ def _lookup_signals(result, resources, alias):
             yield _signal(raw, alias, token.raw_start, token.raw_end, "word", flags)
 
 
-def _numeric_signals(result, alias):
+def _numeric_signals(result, alias, legacy_written_numbers=False):
     raw = result.input.source.raw_text
-    for low, high, kind in _number_spans(raw):
+    for low, high, kind in _number_spans(raw, legacy_written_numbers):
         yield _signal(raw, alias, low, high, "number", [kind, "all_numbers_raw"])
-    for low, high, kind in _number_spans(result.proposed_text):
+    for low, high, kind in _number_spans(result.proposed_text, legacy_written_numbers):
         start, end = derived_support(result.support_map, low, high)
         yield _signal(raw, alias, start, end, "number", [kind, "all_numbers_post_repair"])
 
 
 def route_paragraph(
-    result: DeterministicResult, resources: Resources, alias: str
+    result: DeterministicResult, resources: Resources, alias: str, *, legacy_written_numbers=False
 ) -> ParagraphRoute:
-    """Recompute the saved first pass before using its post-repair signals."""
+    """Route post-repair words; legacy mode only reconstructs immutable old evidence."""
     verify_result(result, resources)
-    signals = [*_lookup_signals(result, resources, alias), *_numeric_signals(result, alias)]
+    signals = [
+        *_lookup_signals(result, resources, alias),
+        *_numeric_signals(result, alias, legacy_written_numbers),
+    ]
     unique = {signal["signal_id"]: signal for signal in signals}
     return ParagraphRoute(
         source_id=result.input.source.source_id,
@@ -215,6 +229,7 @@ def route_paragraph(
         name_list_state=result.name_lookup,
         signals=list(unique.values()),
         selection="secondary_inspection" if unique else "audit_only",
+        coverage_gaps=LEGACY_COVERAGE_GAPS if legacy_written_numbers else COVERAGE_GAPS,
     )
 
 
@@ -259,6 +274,7 @@ def prepare_text_host(
     requirements=(),
     *,
     conformance_v4: bool = False,
+    legacy_written_numbers: bool = False,
 ):
     """Reuse a validated packet's exact image/context; freeze one request per assigned unit.
 
@@ -274,10 +290,14 @@ def prepare_text_host(
     routes = []
     for paragraph in targets:
         result = results[paragraph["alias"]]
-        routes.append(route_paragraph(result, resources, paragraph["alias"]))
+        routes.append(
+            route_paragraph(
+                result, resources, paragraph["alias"], legacy_written_numbers=legacy_written_numbers
+            )
+        )
         _install_first_pass(paragraph, result, registry)
     prompt = _feedback_prompt(payload, registry, results, requirements, conformance_v4)
-    _install_diagnostics(payload, routes, registry)
+    _install_diagnostics(payload, routes, registry, legacy_written_numbers)
     payload["contract"] = TEXT_HOST
     from congressional_globe.productive_ocr_runner import code_identity
 
@@ -293,7 +313,7 @@ def prepare_text_host(
     return validate_host(host, registry), tuple(routes)
 
 
-def _install_diagnostics(payload, routes, registry):
+def _install_diagnostics(payload, routes, registry, legacy_written_numbers):
     # Preserve feedback-conditioned signals and their source-bound provenance.
     old = payload["diagnostics"]
     signals = _merge_signals(old, routes)
@@ -302,7 +322,14 @@ def _install_diagnostics(payload, routes, registry):
     negatives = _negative_targets(payload, signaled)
     payload["diagnostics"] = dict(
         status="frozen",
-        detector_sha256=_register(registry, dict(rule="all-numbers-two-stage-v3")),
+        detector_sha256=_register(
+            registry,
+            dict(
+                rule="all-numbers-two-stage-v3"
+                if legacy_written_numbers
+                else "numeric-notation-and-post-repair-words-v4"
+            ),
+        ),
         configuration_sha256=_register(registry, config),
         signals=list(signals.values()),
         negative_targets=negatives,

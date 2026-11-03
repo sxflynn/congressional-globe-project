@@ -131,25 +131,25 @@ def test_real_software_inputs_preserve_feedback_and_full_target(unit, old, new):
         "H.R.703",
     ],
 )
-def test_all_numeric_forms_route_even_when_dictionary_and_name_list_say_known(form):
+def test_legacy_numeric_forms_reconstruct_historical_all_word_number_routing(form):
     raw = f"Known {form} text."
     source = DET["_input"](raw)
     lex = DET["_lexicon"](["known", "text", form, "one", "twenty", "first", "half"])
     resources = Resources(words=lex, names=DET["_lexicon"](["Known", form], "names"))
     result = analyze_paragraph(source, resources)
-    routed = route_paragraph(result, resources, "P1")
+    routed = route_paragraph(result, resources, "P1", legacy_written_numbers=True)
     numbers = [s for s in routed.signals if s["category"] == "number"]
     assert numbers
     assert routed.selection == "secondary_inspection"
     assert "incomplete" in routed.coverage_gaps
 
 
-def test_joined_apparent_success_still_routes_written_number_and_no_per_flag_job():
+def test_legacy_joined_apparent_success_retains_historical_written_number_signal():
     source = DET["_input"]("twen- ty 703 703.", ["twen-", "ty 703 703."])
     resources = DET["_resources"](source, ["twenty"])
     result = analyze_paragraph(source, resources)
     assert result.proposed_text == "twenty 703 703."
-    routed = route_paragraph(result, resources, "P1")
+    routed = route_paragraph(result, resources, "P1", legacy_written_numbers=True)
     assert any(s["raw_quote"] == "twen- ty" for s in routed.signals if s["category"] == "number")
     assert {s["paragraph_alias"] for s in routed.signals} == {"P1"}
 
