@@ -1,0 +1,61 @@
+{
+  "submission_id": "255a8947-bfee-4d86-b05b-e7622cf7f23c",
+  "packet_id": "HR-015",
+  "version": 3,
+  "packet_sha256": "5c7e34cdc5c68a037f5d90d1c78107db76b90c9e09aa6a90ca0c9d1f49f245a3",
+  "payload_sha256": "8c880e404455eb6727f18450b734b6e2c49e8c1846c08aff8f21731fbcad28d5",
+  "archive": "docs/archive/human-review/HR-015-v3/255a8947-bfee-4d86-b05b-e7622cf7f23c.json",
+  "notes": [
+    {
+      "item_number": 1,
+      "note_id": "evidence-note:scan-variety-comments:0:80f29167f63f2549d637a7df9f5ddf9f3fc467fb33fe1244d869c8ef97e8f6db",
+      "verbatim_comment": "Oh okay nevermind. You’re good",
+      "topic": "Acknowledgment of source-location clarification",
+      "action_or_check": "Close the earlier missing-sentence location confusion. This is acknowledgment only, not a new grade for the old model or a source-text change.",
+      "disposition": "Closed in direction record; original evidence/answer retained."
+    },
+    {
+      "item_number": 2,
+      "note_id": "evidence-note:scan-variety-comments:1:873eb3e5187cb22e362edb027c4a2d15a3709a05cd9a3dbc93cc14042c8e62b2",
+      "verbatim_comment": "Just to be clear. If the number is written out using letters then it is treated as a word not a number. If it passes spell check then it should like “pass” or whatever. ",
+      "topic": "Spelled-out numbers use word routing",
+      "action_or_check": "English number words such as two, three and thirteenth follow ordinary post-repair spell checking; their numerical meaning alone must not force the numeric-inspection route. Current NUMBER_WORDS branch requires prospective correction. Digit-bearing numeric notation and existing Roman-identifier routing are unchanged by this example-specific refinement.",
+      "disposition": "Accepted; T126 will version current routing while preserving historical requests/prompts and test spell-check passing/failing examples."
+    },
+    {
+      "item_number": 3,
+      "note_id": "evidence-note:scan-variety-comments:2:337d97f2b18ab623ea79ce6d7a841a28780ad34a257e051b4c5f181cdd7160e5",
+      "verbatim_comment": "So shouldn’t that go to secondary inspection? If the software fix still produces a word that fails spell check it should go to secondary inspection and should have a LLM look it over etc",
+      "topic": "Unresolved repaired word goes to secondary inspection",
+      "action_or_check": "Words still unfamiliar or unassessed after the software pass require secondary image inspection of the complete assigned paragraph. Current _lookup_flags reads proposed_tokens already; T126 must prove the actual case and regression rather than claim missing implementation without checking.",
+      "disposition": "Accepted; T126 bounded code/source verification and tests pending. Existing S2three real guided calls retained as separate exposed-case evidence."
+    },
+    {
+      "item_number": 4,
+      "note_id": "evidence-note:scan-variety-comments:3:7cc9a20d61617f085baa7f7a794a379b6d191450e2e9fa900b677728c9e146d3",
+      "verbatim_comment": "Nice ",
+      "topic": "Positive acknowledgment of short sample",
+      "action_or_check": "Record Nice as positive acknowledgment of the shown S5sample only. No broad quality standard, method/corpus acceptance or new provider authorization inferred.",
+      "disposition": "Closed acknowledgment; no implementation or historical grade invented."
+    },
+    {
+      "item_number": 5,
+      "note_id": "evidence-note:scan-variety-comments:4:414145f5d8437bbaef92d64ca04840d87d36376a57134484de6b941b1c2b433a",
+      "verbatim_comment": "Maybe you already thought of this but shouldn’t it be the full thing? An act to remove the office of surveyor general of the states of etc etc etc, right?",
+      "topic": "Show complete law passage",
+      "action_or_check": "Replace excerpt-only presentation with the full D1P4heading/statute paragraph, original OCR and actual full older proposal, plus source image and clearly labelled expectations. Keep original4target audit scope/results unchanged. Correct the old expected CCCXLIclaim in a new packet: inspected print is CCCXI.",
+      "disposition": "Accepted; T126 publishes full source context/new packet. Old packet/answer bytes remain immutable; no independently graded full reference is claimed."
+    },
+    {
+      "item_number": 6,
+      "note_id": "evidence-note:scan-variety-comments:5:91aba6b9cf91556fde6a3a3a54d3c0f94aa2233373c7af9ec160684e083c2f71",
+      "verbatim_comment": "I don’t know why you are only printing “ I must admit that that act is quite full.” there is other text around it",
+      "topic": "Show complete appendix passage and context",
+      "action_or_check": "Show full D2P7rather than just the repeated-word sentence, with nearby quoted statute/following context clearly identified and full actual older proposal. Explain that old/new full audits already received the original nine targets; display excerpts were the limitation.",
+      "disposition": "Accepted; T126 publishes full context and distinguishes actual outputs from illustrations; no model rerun or silent source/scope replacement."
+    }
+  ],
+  "overall_comment": "Blank; no additional direction inferred.",
+  "implementation_status": "T125records accepted guidance only; T126implementation/full-context presentation remains explicitly pending.",
+  "provider_calls": 0
+}
