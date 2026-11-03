@@ -1,0 +1,39 @@
+{
+  "task": "T124",
+  "reconciled_records": 1,
+  "planned_records": 6,
+  "rows": [
+    {
+      "case": "D2R",
+      "repetition": 1,
+      "legacy_projection_path": "artifacts/exact-region-statute-20261102-01/repeat-1/projection.json",
+      "legacy_projection_sha256": "b188f2258ac7853cef4eddac297205e3e83c98f424e9b817c734260befdf9f5b",
+      "corrected_projection_path": "artifacts/image-projection-reconciliation-20261102-01/D2R-repeat-1-projection.json",
+      "corrected_projection_sha256": "93bbb787e47fc228a4770de87a407a2da59894863de667a14cf3916785cd54fc",
+      "unchanged_request_sha256": "0e6d40345d06473e21d35bbf1ddee7eb76384be99435aae4cb30db97d0d1330f",
+      "unchanged_result_sha256": "295807c9c2a46dac5dbab1a18558856ccbfc4efeec8463a4f407c8e0769ef3b1",
+      "frozen_source_context_host_sha256": "b5c2d16435dc5f9d802697e688df77182f833da779b7974879bb3e32f10967f6",
+      "original_source_image_sha256": "53373dc3ef8ff554cda84c138db9c24b5f5753710114a2594bae75e06b150555",
+      "actual_media": {
+        "image_sha256": "544897eaf03eb007da7020ee12d7240f2ae377fbc699ed1c18a7716705463ce1",
+        "mime_type": "image/png",
+        "width": 502,
+        "height": 127,
+        "image_alias": "I1",
+        "paragraph_alias": "P8",
+        "selected_region": {
+          "left": 0,
+          "top": 0,
+          "right": 502,
+          "bottom": 127
+        }
+      },
+      "source_context_target_count": 9,
+      "provider_calls": 0
+    }
+  ],
+  "provider_calls": 0,
+  "recovery_dispatches": 0,
+  "old_artifacts_changed": false,
+  "classification": "Additive explicit metadata only, not a new request/result, accuracy label, usage measurement or native-fit proof."
+}

@@ -10,6 +10,7 @@ from pydantic import Field, model_validator
 from congressional_globe.bracket_cues import Contract
 from congressional_globe.productive_ocr_compact import _parse
 from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes
+from congressional_globe.productive_ocr_image_projection import make_image_projection
 from congressional_globe.productive_ocr_lean_audit import _same_request_metadata, _targets
 from congressional_globe.productive_ocr_measurement_inputs import load_audit_inputs
 from congressional_globe.productive_ocr_whole_audit import NONBLANK
@@ -79,18 +80,7 @@ def load_image_inputs(repository):
     body["format"] = ImageStatuteReply.model_json_schema()
     _same_request_metadata(before, body)
     wire = canonical_json(body).decode()
-    return (
-        host,
-        original.model_copy(
-            update=dict(
-                body_utf8=wire,
-                body_sha256=sha256_bytes(wire.encode()),
-                prompt_sha256=sha256_bytes(PROMPT.encode()),
-                schema_sha256=sha256_bytes(canonical_json(body["format"])),
-            )
-        ),
-        registry,
-    )
+    return host, make_image_projection(original, wire), registry
 
 
 def export_image_reply(repository, packet, response, _elapsed):
@@ -128,6 +118,11 @@ def export_bound_image_reply(host, projection, response):
         selected_image_region=REGION,
         image_sha256=host["payload"]["image"]["sha256"],
         actual_provider_image_sha256=sha256_bytes(provider_image_bytes(projection)),
+        actual_media=projection.actual_media.model_dump(mode="json"),
+        projection_contract=projection.contract,
+        source_context_projection_sha256=sha256_bytes(
+            canonical_json(projection.source_context.model_dump(mode="json"))
+        ),
         raw_reply_sha256=sha256_bytes(raw.encode()),
         raw_reply_text=raw,
         validation_scope=(

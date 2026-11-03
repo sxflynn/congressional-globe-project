@@ -8,6 +8,7 @@ import json
 from PIL import Image
 
 from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes
+from congressional_globe.productive_ocr_image_projection import make_image_projection
 from congressional_globe.productive_ocr_image_statute import (
     REGION,
     export_bound_image_reply,
@@ -54,11 +55,7 @@ def load_region_inputs(repository):
     normalized["messages"][1]["images"] = before["messages"][1]["images"]
     _same_request_metadata(before, normalized)
     wire = canonical_json(body).decode()
-    return (
-        host,
-        original.model_copy(update=dict(body_utf8=wire, body_sha256=sha256_bytes(wire.encode()))),
-        registry,
-    )
+    return host, make_image_projection(original.source_context, wire), registry
 
 
 def export_region_reply(repository, packet, response, _elapsed):
