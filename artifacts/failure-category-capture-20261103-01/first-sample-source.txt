@@ -1,0 +1,10 @@
+"""Actual isolated fake-HTTP timeout; never loads or calls an AI model."""
+import importlib.util,json,hashlib
+from pathlib import Path
+from congressional_globe.productive_ocr_local import OwnedLocalClient,OwnedLocalError
+r=Path('artifacts/failure-category-capture-20261103-01');r.mkdir(exist_ok=True);d=(r/'first-software-v2').resolve();d.mkdir(exist_ok=False)
+spec=importlib.util.spec_from_file_location('fixture','tests/test_productive_ocr_local.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);plan,spool=m._fixture(d,request_timeout=3);body=m._body('hang');call=OwnedLocalClient(plan,spool).start(body)
+try:call.result(5);raise AssertionError('Expected fake timeout')
+except OwnedLocalError:pass
+s=next(spool.iterdir());details=json.loads((s/'failure-details.json').read_bytes());receipt=json.loads((s/'receipt.json').read_bytes());assert details['categories']==['http_exchange','timeout'] and call.observe()=='stopped';assert not receipt['complete_http_response'];assert details['receipt_sha256']==hashlib.sha256((s/'receipt.json').read_bytes()).hexdigest()
+result=dict(task='T135',fixture='A small Python HTTP program sleeps on POST; fake model bytes are an inert text marker, never AI weights.',expected='Actual fake timeout retains category chain and receipt hash without error messages; remains incomplete/unknown for usage.',actual=details,stop=call.observe(),usage=None,provider_generation_requests=0,original_X13_cause='Still unknown; this fixture does not reconstruct it.',sample_directory=str(s));(r/'first-software-result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

@@ -8,6 +8,7 @@ import os
 import shutil
 import socket
 import threading
+from itertools import pairwise
 from pathlib import Path
 
 import pytest
@@ -156,6 +157,7 @@ def test_owned_fake_server_spools_raw_http_then_stops(tmp_path: Path) -> None:
         spool, hashlib.sha256(body).hexdigest(), "fake:latest", plan.model_digest
     )
     assert recovered is not None
+    assert not (Path(recovered.spool_directory) / "failure-details.json").exists()
     assert recovered.response["raw_response"] == response["raw_response"]
     assert (Path(recovered.spool_directory) / "request.bin").read_bytes() == body
     assert (
@@ -322,3 +324,117 @@ def test_invalid_utf8_response_preserves_original_body_bytes() -> None:
     assert result["finish_reason"] == "invalid UTF-8 response body"
     assert result["raw_response"] is None
     assert base64.b64decode(result["raw_response_base64"]) == body
+
+
+def test_timeout_details_preserve_unknown_usage_and_stop_receipt(tmp_path: Path) -> None:
+    from congressional_globe import productive_ocr_local as local
+
+    plan, spool = _fixture(tmp_path, request_timeout=3)
+    body = _body("hang")
+    call = OwnedLocalClient(plan, spool).start(body)
+    with pytest.raises(OwnedLocalError, match="HTTP request failed"):
+        call.result(5)
+    directory = next(spool.iterdir())
+    details = local.LocalFailureDetails.model_validate_json(
+        (directory / "failure-details.json").read_bytes()
+    )
+    receipt = (directory / "receipt.json").read_bytes()
+    assert call.observe() == "stopped"
+    assert details.categories == ["http_exchange", "timeout"]
+    assert details.request_sha256 == hashlib.sha256(body).hexdigest()
+    assert details.receipt_sha256 == hashlib.sha256(receipt).hexdigest()
+    assert details.request_write_completed
+    assert details.received_http_bytes == 0 and not details.complete_http_response
+    assert details.request_budget_seconds == 3 and details.stop_reserve_seconds == 1
+    with pytest.raises(OwnedLocalError, match="no complete durable receipt"):
+        read_spool(spool, details.request_sha256, "fake:latest", plan.model_digest)
+
+
+def test_failure_details_omit_exception_messages(tmp_path: Path, monkeypatch) -> None:
+    from congressional_globe import productive_ocr_local as local
+
+    original = local.exchange
+
+    def fail_post(*args, **kwargs):
+        if args[2] != "POST":
+            return original(*args, **kwargs)
+        try:
+            raise TimeoutError("PRIVATE_INNER_CANARY")
+        except TimeoutError as exc:
+            raise local.HttpExchangeFailure("PRIVATE_OUTER_CANARY", b"", True) from exc
+
+    monkeypatch.setattr(local, "exchange", fail_post)
+    plan, spool = _fixture(tmp_path)
+    with pytest.raises(OwnedLocalError):
+        OwnedLocalClient(plan, spool).start(_body()).result(6)
+    data = next(spool.glob("*/failure-details.json")).read_text()
+    assert "PRIVATE" not in data and "CANARY" not in data
+    assert json.loads(data)["categories"] == ["http_exchange", "timeout"]
+
+
+def test_malformed_response_details_keep_raw_bytes(tmp_path: Path, monkeypatch) -> None:
+    from congressional_globe import productive_ocr_local as local
+
+    original = local.exchange
+    raw = b"invalid HTTP framing"
+
+    def malformed_post(*args, **kwargs):
+        if args[2] != "POST":
+            return original(*args, **kwargs)
+        args[6].set()
+        return raw
+
+    monkeypatch.setattr(local, "exchange", malformed_post)
+    plan, spool = _fixture(tmp_path)
+    with pytest.raises(OwnedLocalError):
+        OwnedLocalClient(plan, spool).start(_body()).result(6)
+    directory = next(spool.iterdir())
+    details = json.loads((directory / "failure-details.json").read_bytes())
+    assert details["categories"][0] == "value_error"
+    assert details["received_http_bytes"] == len(raw)
+    assert details["complete_http_response"] and details["request_write_completed"]
+    assert (directory / "response.http").read_bytes() == raw
+
+
+def test_failure_chain_is_bounded_and_handles_cycles() -> None:
+    from congressional_globe.productive_ocr_local import _failure_chain
+
+    errors = [RuntimeError("PRIVATE") for _ in range(10)]
+    for first, second in pairwise(errors):
+        first.__cause__ = second
+    assert _failure_chain(errors[0]) == (["other"] * 8, True)
+    errors[1].__cause__ = errors[0]
+    assert _failure_chain(errors[0]) == (["other", "other"], True)
+
+
+def test_failure_chain_respects_suppressed_context() -> None:
+    from congressional_globe.productive_ocr_local import _failure_chain
+
+    error = RuntimeError("PRIVATE")
+    error.__context__ = TimeoutError("PRIVATE")
+    error.__suppress_context__ = True
+    assert _failure_chain(error) == (["other"], False)
+    error.__cause__ = ConnectionResetError("PRIVATE")
+    assert _failure_chain(error) == (["other", "connection"], False)
+
+
+def test_failure_detail_write_error_preserves_original_failure(tmp_path: Path, monkeypatch) -> None:
+    from congressional_globe import productive_ocr_local as local
+
+    original = local._write_synced
+
+    def no_details(path, data):
+        if path.name == "failure-details.json":
+            raise OSError("PRIVATE_WRITE_CANARY")
+        return original(path, data)
+
+    monkeypatch.setattr(local, "_write_synced", no_details)
+    plan, spool = _fixture(tmp_path, request_timeout=3)
+    call = OwnedLocalClient(plan, spool).start(_body("hang"))
+    with pytest.raises(OwnedLocalError, match="HTTP request failed") as failure:
+        call.result(5)
+    assert isinstance(failure.value.__cause__, local.HttpExchangeFailure)
+    assert call.observe() == "stopped"
+    directory = next(spool.iterdir())
+    assert json.loads((directory / "receipt.json").read_bytes())["stop_observation"] == "stopped"
+    assert not (directory / "failure-details.json").exists()

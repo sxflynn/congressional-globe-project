@@ -1,0 +1,33 @@
+{
+  "task": "T135",
+  "status": "DONE in HTTP-worker exception scope",
+  "new_tests": 6,
+  "retained_local_tests": 10,
+  "local_tests_passed": 16,
+  "full_gate_tests_passed": 1372,
+  "full_gate_seconds": 119.76,
+  "full_gate_command": "UV_CACHE_DIR=tmp/uv-cache make gate",
+  "source_sha256": "4fedab0670542cc867aa97825ae8891aa0aa9197c4c8334ec147e5999933d21c",
+  "test_sha256": "f59f4109f375358582457fb900c882606cfb375514bc70ba62b82e3ebcaa020a",
+  "gate_log_sha256": "622d0d07d6fef95847e2c80f451e1d397bcd1573ecb95b1a1c536dbd7a0fac04",
+  "features": [
+    "Fixed error families, maximum8cause/context entries, cycle detection/suppression respected.",
+    "Message-free post-stop best-effort record bound to request and existing receipt SHA.",
+    "Body-write/byte/budget facts, completebyteexchange distinct from valid parsing.",
+    "Existing receipt/recovery/usage/stop rules unchanged."
+  ],
+  "limits": [
+    "HTTPworkerexceptionsonly; startup/caller-onlycancellationnotcovered.",
+    "Missing/unreadabledetailsremainunknown; no impliedusage0 or retryauthority.",
+    "OriginalT134X13cause andusage stillunknown; oldartifacts notretrofitted."
+  ],
+  "provider_generation_requests": 0,
+  "model_downloads": 0,
+  "source_image_fetches": 0,
+  "caps_changed": false,
+  "workflow_adopted": false,
+  "review": "Lunacode-review.json; neutralvalue_error precisionfix; sourceSHA bound",
+  "first_actual": "HR034v1 isolatedfakeHTTP timeout, notQwen; finalv2checks/limits",
+  "gate_log_file": "gate-output.txt.gz",
+  "gate_log_gzip_sha256": "ac7b71e186d30b5c3ac06709579bfaa31f3648af82f5bc31a0e27312b7379e96"
+}

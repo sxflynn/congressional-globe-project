@@ -2670,6 +2670,23 @@
       "term": "http_exchange",
       "aliases": [],
       "definition": "The step that sends a request to a local service and reads its reply. This label alone does not explain why that step failed."
+    },
+    {
+      "term": "value error",
+      "aliases": [
+        "value_error"
+      ],
+      "definition": "A software exception saying that a value could not be used as expected. It can occur at different processing steps, so the label alone does not identify the cause."
+    },
+    {
+      "term": "complete byte exchange",
+      "aliases": [],
+      "definition": "A request and response have finished transferring their bytes. The received response may still have invalid structure or unusable contents."
+    },
+    {
+      "term": "best effort",
+      "aliases": [],
+      "definition": "An action is attempted without guaranteeing success. Here, saving extra failure details may fail while the original error and shutdown receipt remain available."
     }
   ]
 }

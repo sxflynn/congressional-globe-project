@@ -1,0 +1,53 @@
+#!/opt/homebrew/bin/python3
+import json
+import os
+import socket
+
+host, port = os.environ["OLLAMA_HOST"].split(":")
+server = socket.socket()
+server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+server.bind((host, int(port)))
+server.listen(8)
+while True:
+    conn, _ = server.accept()
+    with conn:
+        request = b""
+        while b"\r\n\r\n" not in request:
+            part = conn.recv(4096)
+            if not part:
+                break
+            request += part
+        head, _, body = request.partition(b"\r\n\r\n")
+        headers = head.decode().split("\r\n")
+        length = 0
+        if headers[0].startswith("POST"):
+            length_header = next(
+                line for line in headers if line.lower().startswith("content-length:")
+            )
+            length = int(length_header.split(":", 1)[1])
+        while len(body) < length:
+            body += conn.recv(4096)
+        with open(os.path.join(os.environ["HOME"], "requests.log"), "a") as log:
+            log.write(headers[0].split()[0] + "\n")
+        if headers[0].startswith("GET"):
+            status, payload = 200, b'{"version":"fake"}'
+        elif json.loads(body).get("prompt") == "hang":
+            import time
+            time.sleep(20)
+            status, payload = 200, b"{}"
+        elif json.loads(body).get("prompt") == "http-error":
+            status, payload = 503, b'{"error":"expected fake error"}'
+        else:
+            status = 200
+            result = {
+                "model": "fake:latest", "done": True, "done_reason": "stop",
+                "message": {"role": "assistant", "content": "fixture"},
+                "prompt_eval_count": 3, "eval_count": 2,
+            }
+            payload = json.dumps(result).encode()
+        reason = "OK" if status == 200 else "Unavailable"
+        header = (
+            "HTTP/1.1 %d %s\r\nContent-Length: %d\r\n"
+            "Connection: close\r\n\r\n" % (status, reason, len(payload))
+        ).encode()
+        conn.sendall(header + payload)

@@ -1,0 +1,25 @@
+{
+  "task": "T135",
+  "fixture": "A small Python HTTP program sleeps on POST; fake model bytes are an inert text marker, never AI weights.",
+  "expected": "Actual fake timeout retains category chain and receipt hash without error messages; remains incomplete/unknown for usage.",
+  "actual": {
+    "categories": [
+      "http_exchange",
+      "timeout"
+    ],
+    "chain_truncated": false,
+    "complete_http_response": false,
+    "contract": "productive-ocr-owned-failure-v1",
+    "receipt_sha256": "b64b8caa7b8d0e4fb612dc32f45ddbc39d8e4673b8976e406c75d25f88c139db",
+    "received_http_bytes": 0,
+    "request_budget_seconds": 3.0,
+    "request_sha256": "986b0a4b11152ee64350b6df71afbd98c3737db2431c46cb4ef95d9e1a9c6d77",
+    "request_write_completed": true,
+    "stop_reserve_seconds": 1.0
+  },
+  "stop": "stopped",
+  "usage": null,
+  "provider_generation_requests": 0,
+  "original_X13_cause": "Still unknown; this fixture does not reconstruct it.",
+  "sample_directory": "/Users/sflynn/Downloads/congressional globe project/artifacts/failure-category-capture-20261103-01/first-software-v2/spool/a1af4e46e89745ae9cb9d58e78576bb2"
+}

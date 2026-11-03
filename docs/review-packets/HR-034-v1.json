@@ -1,0 +1,21 @@
+{
+  "id": "HR-034",
+  "version": 1,
+  "title": "Better records when a request fails",
+  "instructions": "The expanded Qwen study exposed a gap: its failed request kept shutdown evidence but lost the underlying error category. This first real software test shows the proposed fix using an isolated fake HTTP program. The old model failure remains unknown. Optional comments can steer the remaining software checks.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "failure-record-comments",
+      "prompt": "Optional notes on this failure record and its limits",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "First isolated software timeout; no model call",
+          "text": "Inputs \u2014 the real dense-index attempt ended without a reply or usage. Its old cause is still unknown. This new software test uses a small Python HTTP program that waits instead of replying. It loads no AI weights and makes no model-generation call.\n\nExpected output \u2014 retain the stopped-process receipt and original failure, then save a small failure record with error categories, request and receipt fingerprints, byte count and time limits. Omit exception messages and request contents; missing token usage stays unknown.\n\nActual output \u2014 the isolated software test recorded the following data:\n{\n  \"categories\": [\n    \"http_exchange\",\n    \"timeout\"\n  ],\n  \"chain_truncated\": false,\n  \"complete_http_response\": false,\n  \"contract\": \"productive-ocr-owned-failure-v1\",\n  \"receipt_sha256\": \"b64b8caa7b8d0e4fb612dc32f45ddbc39d8e4673b8976e406c75d25f88c139db\",\n  \"received_http_bytes\": 0,\n  \"request_budget_seconds\": 3.0,\n  \"request_sha256\": \"986b0a4b11152ee64350b6df71afbd98c3737db2431c46cb4ef95d9e1a9c6d77\",\n  \"request_write_completed\": true,\n  \"stop_reserve_seconds\": 1.0\n}\nThe fake process stopped. The record matches the existing request and receipt fingerprints; no response bytes or usage were available.\n\nDifferences \u2014 the new record distinguishes the HTTP step from its timeout cause in this controlled test. It does not reconstruct the real X13 cause or establish model quality. This is an additional record written after the existing stop receipt; old receipts and response-recovery checks stay unchanged. The write is best effort: missing details remain unknown. HTTP worker exceptions are covered; startup failures and caller-only cancellation errors are outside this change. Six new focused controls and the retained local-transport tests pass; broader checks are still underway. No retry, larger limit or new model call follows from this sample."
+        }
+      ]
+    }
+  ]
+}

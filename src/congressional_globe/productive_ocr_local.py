@@ -153,6 +153,54 @@ class LocalTransportIntent(StrictModel):
     model_digest: str = Field(pattern=r"^[0-9a-f]{64}$")
 
 
+FailureCategory = Literal[
+    "http_exchange", "timeout", "connection", "os_error", "value_error", "other"
+]
+
+
+class LocalFailureDetails(StrictModel):
+    contract: Literal["productive-ocr-owned-failure-v1"] = "productive-ocr-owned-failure-v1"
+    request_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    receipt_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    categories: list[FailureCategory] = Field(min_length=1, max_length=8)
+    chain_truncated: bool
+    request_write_completed: bool
+    received_http_bytes: int = Field(ge=0)
+    complete_http_response: bool
+    request_budget_seconds: float = Field(gt=0, le=120, allow_inf_nan=False)
+    stop_reserve_seconds: float = Field(ge=0, allow_inf_nan=False)
+
+
+def _failure_category(exc: BaseException) -> FailureCategory:
+    kinds: tuple[tuple[type[BaseException], FailureCategory], ...] = (
+        (HttpExchangeFailure, "http_exchange"),
+        (TimeoutError, "timeout"),
+        (ConnectionError, "connection"),
+        (OSError, "os_error"),
+        (ValueError, "value_error"),
+    )
+    return next((kind for cls, kind in kinds if isinstance(exc, cls)), "other")
+
+
+def _failure_chain(exc: BaseException) -> tuple[list[FailureCategory], bool]:
+    categories: list[FailureCategory] = []
+    seen: set[int] = set()
+    current: BaseException | None = exc
+    while current is not None and len(categories) < 8:
+        if id(current) in seen:
+            break
+        seen.add(id(current))
+        categories.append(_failure_category(current))
+        current = _next_failure(current)
+    return categories, current is not None
+
+
+def _next_failure(exc: BaseException) -> BaseException | None:
+    if exc.__cause__ is not None:
+        return exc.__cause__
+    return None if exc.__suppress_context__ else exc.__context__
+
+
 @dataclass(frozen=True)
 class _ProcessRow:
     pid: int
@@ -469,6 +517,7 @@ class OwnedLocalCall:
         _spool_partial_response(self.spool, raw)
         observation = self._stop_backend()
         _write_failure_receipt(self, observation, raw, complete=complete)
+        _write_failure_details(self, exc, raw, complete)
 
     def result(self, timeout: float) -> dict[str, Any]:
         remaining = min(timeout, self.deadline_monotonic - time.monotonic())
@@ -812,6 +861,29 @@ def _write_failure_receipt(
         complete_http_response=complete,
     )
     _save_receipt(call.spool, receipt)
+
+
+def _write_failure_details(
+    call: OwnedLocalCall, exc: Exception, raw: bytes, complete: bool
+) -> None:
+    """Best-effort, message-free diagnostics after the authoritative stop receipt."""
+    try:
+        categories, truncated = _failure_chain(exc)
+        details = LocalFailureDetails(
+            request_sha256=call.request_hash,
+            receipt_sha256=sha256_bytes((call.spool / "receipt.json").read_bytes()),
+            categories=categories,
+            chain_truncated=truncated,
+            request_write_completed=call._body_sent or complete,
+            received_http_bytes=len(raw),
+            complete_http_response=complete,
+            request_budget_seconds=call.plan.request_timeout_seconds,
+            stop_reserve_seconds=2 * call.plan.stop_grace_seconds,
+        )
+        _write_synced(call.spool / "failure-details.json", canonical_json(details.model_dump()))
+    except (OSError, ValueError):
+        # Missing diagnostics remain unknown; never replace the original request error.
+        return
 
 
 def _process_records(call: OwnedLocalCall) -> list[OwnedProcessIdentity]:
