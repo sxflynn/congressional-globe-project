@@ -1,0 +1,32 @@
+"""One-off suggestions only; never changes OCR or dispatches a model."""
+import hashlib,heapq,importlib.util,json,os,re,sys,time
+from pathlib import Path
+r=Path('artifacts/lexical-suggestions-20261102-01');freeze=json.loads((r/'selection-freeze.json').read_bytes());mode=sys.argv[1];assert mode in ['first','rest']
+sp=importlib.util.spec_from_file_location('prep','tmp/t129-source-prep/prepare_candidates.py');p=importlib.util.module_from_spec(sp);sp.loader.exec_module(p);resources,identities=p.load_resources()
+word_forms=resources.words.forms;name_forms=resources.names.forms;forms=sorted(x for x in word_forms|name_forms if re.fullmatch('[a-z]+',x))
+script_sha=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+def distance(a,b):
+ row=list(range(len(b)+1))
+ for i,left in enumerate(a,1):
+  new=[i]
+  for j,right in enumerate(b,1):new.append(min(new[-1]+1,row[j]+1,row[j-1]+(left!=right)))
+  row=new
+ return row[-1]
+def rank(text):
+ started=time.perf_counter();normalized=re.sub('[^a-z]','',text.casefold());pool=[x for x in forms if abs(len(x)-len(normalized))<=2]
+ score=lambda candidate:(distance(normalized,candidate),-len(os.path.commonprefix([normalized,candidate])),abs(len(candidate)-len(normalized)),candidate)
+ top=heapq.nsmallest(5,pool,key=score)
+ return dict(input=text,normalized_letters=normalized,candidates_scored=len(pool),elapsed_seconds=time.perf_counter()-started,suggestions=[dict(form=x,letter_distance=distance(normalized,x),shared_prefix=len(os.path.commonprefix([normalized,x])),in_word_list=x in word_forms,in_name_list=x in name_forms) for x in top])
+if mode=='first':
+ result=rank(freeze['tokens'][0]['text']);out=dict(task='T130',method_sha256=script_sha,selection_sha256=hashlib.sha256((r/'selection-freeze.json').read_bytes()).hexdigest(),resources=identities,rankings=[result],occurrences_processed=1,provider_calls=0)
+ with (r/'first-candidate.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+ print(json.dumps(result))
+else:
+ first=json.loads((r/'first-candidate.json').read_bytes());assert first['method_sha256']==script_sha and first['resources']==identities
+ cache={x['input']:x for x in first['rankings']}
+ for occurrence in freeze['tokens']:
+  text=occurrence['text']
+  if text not in cache:cache[text]=rank(text)
+ out=dict(task='T130',method_sha256=script_sha,selection_sha256=first['selection_sha256'],resources=identities,rankings=list(cache.values()),occurrences=freeze['tokens'],occurrences_processed=len(freeze['tokens']),unique_queries=len(cache),provider_calls=0,canonical_edits=0)
+ with (r/'all-candidates.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+ print('Completed8frozen occurrences/7unique lists; no model calls or source edits.')

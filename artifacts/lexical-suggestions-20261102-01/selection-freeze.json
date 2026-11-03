@@ -1,0 +1,84 @@
+{
+  "task": "T130",
+  "selection": "Every unfamiliar post-repair word occurrence from the frozen3T129cases, source order; no removal of awkward cases or duplicates.",
+  "tokens": [
+    {
+      "case": "U2",
+      "text": "PRESlDEXT",
+      "raw_start": 4,
+      "raw_end": 13,
+      "raw_quote": "PRESlDEXT",
+      "software_result_sha256": "447c6f4d6e60423a33eeb786d06a482e7af9c02f079bdf34679ff0a2f1a352b0"
+    },
+    {
+      "case": "U2",
+      "text": "j-o",
+      "raw_start": 14,
+      "raw_end": 17,
+      "raw_quote": "j-o",
+      "software_result_sha256": "447c6f4d6e60423a33eeb786d06a482e7af9c02f079bdf34679ff0a2f1a352b0"
+    },
+    {
+      "case": "U2",
+      "text": "tempore",
+      "raw_start": 18,
+      "raw_end": 25,
+      "raw_quote": "tempore",
+      "software_result_sha256": "447c6f4d6e60423a33eeb786d06a482e7af9c02f079bdf34679ff0a2f1a352b0"
+    },
+    {
+      "case": "U2",
+      "text": "merits",
+      "raw_start": 87,
+      "raw_end": 93,
+      "raw_quote": "merits",
+      "software_result_sha256": "447c6f4d6e60423a33eeb786d06a482e7af9c02f079bdf34679ff0a2f1a352b0"
+    },
+    {
+      "case": "U2",
+      "text": "amendments",
+      "raw_start": 101,
+      "raw_end": 111,
+      "raw_quote": "amendments",
+      "software_result_sha256": "447c6f4d6e60423a33eeb786d06a482e7af9c02f079bdf34679ff0a2f1a352b0"
+    },
+    {
+      "case": "U2",
+      "text": "amendments",
+      "raw_start": 143,
+      "raw_end": 153,
+      "raw_quote": "amendments",
+      "software_result_sha256": "447c6f4d6e60423a33eeb786d06a482e7af9c02f079bdf34679ff0a2f1a352b0"
+    },
+    {
+      "case": "U3",
+      "text": "Anderson's",
+      "raw_start": 84,
+      "raw_end": 94,
+      "raw_quote": "Anderson's",
+      "software_result_sha256": "e252beac5282595024dd01b37f6ff2694450d6f0705c4b0bb2d9a9d11df9e68b"
+    },
+    {
+      "case": "U3",
+      "text": "called",
+      "raw_start": 196,
+      "raw_end": 202,
+      "raw_quote": "called",
+      "software_result_sha256": "e252beac5282595024dd01b37f6ff2694450d6f0705c4b0bb2d9a9d11df9e68b"
+    }
+  ],
+  "limits": {
+    "max_occurrences": 12,
+    "actual_occurrences": 8,
+    "unique_strings": 7,
+    "suggestions_each": 5,
+    "provider_calls": 0,
+    "fetches": 0,
+    "downloads": 0,
+    "training": 0,
+    "automatic_replacements": 0
+  },
+  "algorithm": "Normalize token and candidate to ASCII letters/casefold; candidates are existing pinned word/name forms with only letters and lengths within2characters. Sort by Levenshtein distance, then longer shared prefix, then length difference, then alphabetical form. Keep5; label word/name membership. No context or image features; non-ML baseline, not a learned prediction system.",
+  "comparison": "Rankings frozen before comparison with root source words and saved3Qwenreadings/case. Qwen has paragraph+image evidence whereas candidate method has only token letters; no fair model superiority or error-rate claim.",
+  "adoption": "One-off diagnostic only; no cleanup policy/routing/word-list edits or installed workflow adoption."
+}

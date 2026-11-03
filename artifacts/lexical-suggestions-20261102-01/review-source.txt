@@ -1,0 +1,34 @@
+import json,hashlib,sys,re
+from pathlib import Path
+r=Path('artifacts/lexical-suggestions-20261102-01');version=int(sys.argv[1]);all_results=json.loads((r/('first-candidate.json' if version==1 else 'all-candidates.json')).read_bytes());items=[];spans={}
+expected={'PRESlDEXT':'PRESIDENT','j-o':'pro','tempore':'tempore','merits':'merits','amendments':'amendments',"Anderson's":"Anderson's",'called':'called'}
+for result in all_results['rankings']:
+ token=result['input'];text='Inputs — unfamiliar word string from the frozen software-first sample:\n';ranges=[]
+ def source(x):
+  global text
+  a=len(text);text+=x;ranges.append(dict(start=a,end=len(text)))
+ source(token);text+='\n\nExpected output — source word from my saved image reading, one reader rather than accepted benchmark truth:\n';source(expected[token]);text+='\n\nActual output — the first five ranked candidates from existing word lists, compared in lowercase:\n'
+ source('\n'.join(f'{i}. {x["form"]} (letter distance {x["letter_distance"]})' for i,x in enumerate(result['suggestions'],1)))
+
+ if version>=3:
+  case='U3' if token in ["Anderson's",'called'] else 'U2'
+  text+='\n\nActual output — word excerpts from each saved full-paragraph Qwen reading; these are excerpts, not word-only model replies. Full readings remain in HR-028:\n'
+  for n in [1,2,3]:
+   path=Path('artifacts/fresh-workflow-audit-20261102-01')/case/f'call-{n}/result.json';response=json.loads(path.read_bytes())['response']['output_text'];full=json.loads(response)['readings'][0]['corrected_text']
+   matches=list(re.finditer(r'(?<!\w)'+re.escape(expected[token])+r'(?!\w)',full));assert matches
+   text+=f'Run {n}: '
+   for j,match in enumerate(matches):
+    if j:text+=' / '
+    source(match.group())
+   text+='\n'
+ text+='\n\nDifferences — '
+ if version==1:text+='The first suggestion names the word I read in the image. The other suggestions remain visible; none is applied. '
+ else:
+  annotation=json.loads((r/'comparison.json').read_bytes());a=next(x for x in annotation['unique_comparisons'] if x['input']==token);text+=a['interpretation']+' '
+ text+=f'This query checked {result["candidates_scored"]:,} existing forms in {result["elapsed_seconds"]:.3f} seconds. The method ranks by letter distance, then shared prefix and fixed tie rules. It uses letters alone; the saved Qwen runs have the full passage and its image, so this is not a like-for-like model error-rate test. No source text, routing rule or word list changes. '
+ if version==1:text+='This first real candidate list is published before computing the remaining six unique strings.'
+ case='U3' if token in ["Anderson's",'called'] else 'U2';url=json.loads((Path('artifacts/fresh-workflow-audit-20261102-01')/case/'image/crop-01.jpg.receipt.json').read_bytes())['requested_url']
+ items.append(dict(label=f'Word suggestions for {token}',text=text,url=url));spans[hashlib.sha256(text.encode()).hexdigest()]=ranges
+p=dict(id='HR-029',version=version,title='Word suggestions from surviving letters',instructions='An optional bounded comparison using the existing fresh cases. These lists are suggestions for checking, not automatic replacements. This first method compares letters in local word lists; a trained machine learning predictor is untested. No new model calls, image fetches or downloads are used. Optional comments can steer future work.',blind=False,questions=[dict(id='word-suggestion-comments',prompt='Optional notes on the suggestions and their risks',options=[],required=False,evidence=items)])
+path=Path(f'docs/review-packets/HR-029-v{version}.json');assert not path.exists();path.write_text(json.dumps(p,indent=2,ensure_ascii=False)+'\n')
+path=Path('docs/review-source-spans.json');d=json.loads(path.read_bytes());d['source_spans'].update(spans);path.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n');print('HR029version',version,'candidate lists',len(items))

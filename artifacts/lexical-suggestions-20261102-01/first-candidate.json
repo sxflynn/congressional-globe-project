@@ -1,0 +1,62 @@
+{
+  "task": "T130",
+  "method_sha256": "ecf18dcd36c2b3528bb876f701556f3ca41cd3d49b8170dd9759e60dc6eafeae",
+  "selection_sha256": "fe9aa31bea3ac12a77e27976da684c270ade716db806606af8ec66367f987965",
+  "resources": {
+    "words": {
+      "path": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+      "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d"
+    },
+    "names": {
+      "path": "/usr/share/dict/propernames",
+      "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a"
+    }
+  },
+  "rankings": [
+    {
+      "input": "PRESlDEXT",
+      "normalized_letters": "presldext",
+      "candidates_scored": 142704,
+      "elapsed_seconds": 0.9376798747107387,
+      "suggestions": [
+        {
+          "form": "president",
+          "letter_distance": 2,
+          "shared_prefix": 4,
+          "in_word_list": true,
+          "in_name_list": false
+        },
+        {
+          "form": "presley",
+          "letter_distance": 3,
+          "shared_prefix": 5,
+          "in_word_list": true,
+          "in_name_list": true
+        },
+        {
+          "form": "prescient",
+          "letter_distance": 3,
+          "shared_prefix": 4,
+          "in_word_list": true,
+          "in_name_list": false
+        },
+        {
+          "form": "preselect",
+          "letter_distance": 3,
+          "shared_prefix": 4,
+          "in_word_list": true,
+          "in_name_list": false
+        },
+        {
+          "form": "presidente",
+          "letter_distance": 3,
+          "shared_prefix": 4,
+          "in_word_list": true,
+          "in_name_list": false
+        }
+      ]
+    }
+  ],
+  "occurrences_processed": 1,
+  "provider_calls": 0
+}

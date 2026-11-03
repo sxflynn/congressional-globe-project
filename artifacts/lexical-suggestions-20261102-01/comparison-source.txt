@@ -1,0 +1,21 @@
+import importlib.util,json,re
+from pathlib import Path
+r=Path('artifacts/lexical-suggestions-20261102-01');data=json.loads((r/'all-candidates.json').read_bytes());model=json.loads(Path('artifacts/fresh-workflow-audit-20261102-01/report.json').read_bytes());normalize=lambda t:re.sub('[^a-z]','',t.casefold())
+sp=importlib.util.spec_from_file_location('prep','tmp/t129-source-prep/prepare_candidates.py');p=importlib.util.module_from_spec(sp);sp.loader.exec_module(p);resources,_=p.load_resources()
+expected={'PRESlDEXT':'PRESIDENT','j-o':'pro','tempore':'tempore','merits':'merits','amendments':'amendments',"Anderson's":"Anderson's",'called':'called'}
+notes={
+ 'PRESlDEXT':'The first suggestion names the source word. Other plausible strings remain in the list; none is applied.',
+ 'j-o':'The first suggestion is jo; the source reads pro. The source word is absent from these five suggestions. Stripping the hyphen loses information about the damaged printed group.',
+ 'tempore':'The source already reads tempore. The first suggestion tempora would alter that reading; the source form is absent from these five suggestions.',
+ 'merits':'The source already reads merits. The first suggestion merit drops the printed plural ending; the source form is absent from these five suggestions.',
+ 'amendments':'The source already reads amendments twice in the passage. The first suggestion amendment drops the printed plural ending; the source form is absent from these five suggestions.',
+ "Anderson's":"The source already reads Anderson's. The first suggestion anderson would remove the possessive form; the source form is absent from these five suggestions.",
+ 'called':'The source already reads called. The first suggestion caller changes the printed word; the source form is absent from these five suggestions.'}
+rows=[]
+for x in data['rankings']:
+ token=x['input'];truth=expected[token];target=normalize(truth);case='U3' if token in ["Anderson's",'called'] else 'U2';observed=next(c for c in model['cases'] if c['case']==case)
+ assert all(z['exact_root_illustration_match'] for z in observed['observations'])
+ candidates=[a['form'] for a in x['suggestions']]
+ rows.append(dict(input=token,source_word=truth,source_basis='Root single saved-image reading; raw token→printed word mapping assessed from complete source passage, not accepted benchmark gold.',original_already_source_word=normalize(token)==target,source_normalized_form_in_words=target in resources.words.forms,source_normalized_form_in_names=target in resources.names.forms,first_suggestion=candidates[0],source_form_rank=candidates.index(target)+1 if target in candidates else None,expected_form_in_five=target in candidates,saved_Qwen_full_target_source_reading_matches=3,comparison_information='Suggestion uses letters only; Qwen uses image+complete paragraph+software hints. Not equal input tasks.',interpretation=notes[token]))
+report=dict(task='T130',unique_comparisons=rows,all_occurrences=len(data['occurrences']),unique_strings=len(rows),top1_source_form_count=sum(x['source_form_rank']==1 for x in rows),top5_source_form_count=sum(x['expected_form_in_five'] for x in rows),already_source_correct_unique=sum(x['original_already_source_word'] for x in rows),ranking_elapsed_seconds=sum(x['elapsed_seconds'] for x in data['rankings']),new_model_calls=0,source_changes=0,limitations=['One source reader; seven selected unfamiliar strings, not a population/model error-rate estimate.','Five of seven strings already match source words despite missing lookup membership.','The two amendments occurrences share one computed list and are not independent evidence.','No context-trained machine learning predictor was built or tested.','Qwen and letter ranking receive different evidence; no model superiority claim.','No automatic substitution, vocabulary/routing mutation or adopted workflow.'])
+(r/'comparison.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n');print(json.dumps({k:report[k] for k in ['all_occurrences','unique_strings','top1_source_form_count','top5_source_form_count','already_source_correct_unique','ranking_elapsed_seconds','new_model_calls']}))
