@@ -1,0 +1,16 @@
+{
+  "case": "V2",
+  "repeat": 1,
+  "original_result_sha256": "34e945c6379796d2891bb2a2f36bb713f293c0b98d2ee22757fc275af5d07d02",
+  "original_request_sha256": "30e714ef8ddaaf27b8da758fd87fa4a652f776e223a7ddffc257aec434e83fef",
+  "original_host_packet_sha256": "7852e5c246c2f4ce91cafd499f902a0a0a55cd7634c204686d990c7137588d6e",
+  "original_reply_checks_passed": true,
+  "new_status": "rejected_reply_checks",
+  "new_export": {
+    "outcome": "invalid",
+    "rejection_reason": "assigned target may end in a cut-off word; return incomplete coverage with null text and a reason"
+  },
+  "original_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  \n  ,\n  \"unit_id\": \"V2\"\n}",
+  "raw_text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+  "provider_calls": 0
+}

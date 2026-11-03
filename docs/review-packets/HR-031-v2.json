@@ -1,0 +1,22 @@
+{
+  "id": "HR-031",
+  "version": 2,
+  "title": "Software now catches the cut-off coverage claim",
+  "instructions": "This is software checking saved replies from the completed study. It launches no model calls and preserves the original sources and replies. Optional notes can steer further work; the original uncertainty and broader quality decisions remain open.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "cutoff-guard-comments",
+      "prompt": "Optional notes on the new check and its limits",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "A previously accepted complete claim is now rejected",
+          "text": "Inputs — the full original OCR target:\nMr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-\n\nInputs — the first actual Qwen reply from the completed study, preserved exactly:\n{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  \n  ,\n  \"unit_id\": \"V2\"\n}\n\nExpected output — the crop ends in an unfinished word. The fixed uncertainty rule requires incomplete coverage, null corrected text and a reason. The missing letters remain unverified. A complete-coverage claim must not pass just because its JSON fields are well formed.\n\nActual output — the previous software checks accepted this reply as complete. The new software check rejects it with this message:\nassigned target may end in a cut-off word; return incomplete coverage with null text and a reason\n\nDifferences — all 18 saved replies have now been checked. The three complete claims on this cut-off target are rejected; the other 15 replies still pass the reply checks. That does not certify the other readings as correct: the inconsistent line joins observed in HR-030 remain. No Qwen call occurs. Original OCR text and old results remain unchanged.\n\nThe output format is unchanged. An incomplete reply must have no corrected text and an explanation containing more than blank space.\n\nScope and limits — the conservative rule detects a word followed by a single ASCII hyphen at the end of the source text. Internal line continuations and genuine internal hyphens remain eligible for complete readings. A rare passage that truly ends in a word plus a hyphen may be held for review; truncation without that ending is not detected. This check withholds a claim; it does not repair the source capture or supply missing letters.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7393unit%2fcongressionalglo7393unit_jp2.zip%2fcongressionalglo7393unit_jp2%2fcongressionalglo7393unit_0719.jp2/1912,3681,881,134/881,/0/default.jpg"
+        }
+      ]
+    }
+  ]
+}

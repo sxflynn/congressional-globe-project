@@ -1,0 +1,20 @@
+"""Recheck saved replies under the new guard; no provider interaction."""
+import hashlib,json,sys
+from pathlib import Path
+from congressional_globe.productive_ocr_host import sha256_bytes
+from congressional_globe.productive_ocr_local import read_spool
+from congressional_globe.productive_ocr_runner import code_identity
+from congressional_globe.productive_ocr_text_reply import export_text_reply
+old=Path('artifacts/expanded-workflow-audit-20261103-01');r=Path('artifacts/source-fragment-guard-20261103-01');r.mkdir(exist_ok=True);mode=sys.argv[1];assert mode=='all'
+def check(case,n):
+ d=old/case;p=d/f'call-{n}/result.json';saved=p.read_bytes();result=json.loads(saved);host=json.loads((d/'host.json').read_bytes());body=(d/'request.json').read_bytes();request_sha=sha256_bytes(body);assert result['request_sha256']==request_sha
+ receipt=read_spool(p.parent/'spool',request_sha,'qwen3.8:27b-mlx',host['payload']['model_digest']);assert receipt and receipt.stop_observation=='stopped' and receipt.receipt_sha256==result['receipt_sha256']
+ for key in ['output_text','usage','status','finish_reason']:assert receipt.response.get(key)==result['response'].get(key)
+ try:new=export_text_reply(host,body.decode(),result['response']['output_text']).model_dump(mode='json');status='accepted_reply_checks'
+ except (ValueError,KeyError,TypeError) as e:new=dict(outcome='invalid',rejection_reason=str(e));status='rejected_reply_checks'
+ assert p.read_bytes()==saved
+ return dict(case=case,repeat=n,original_result_sha256=sha256_bytes(saved),original_request_sha256=request_sha,original_host_packet_sha256=host['packet_sha256'],original_reply_checks_passed=isinstance(result['export']['outcome'],dict),new_status=status,new_export=new,original_reply_text=result['response']['output_text'],raw_text=host['payload']['paragraphs'][0]['raw']['text'],provider_calls=0)
+rows=[check(case,n) for case in ['V1','V2','V3','V4','V5','V6'] for n in [1,2,3]]
+rejected=[x for x in rows if x['new_status']=='rejected_reply_checks'];assert {(x['case'],x['repeat']) for x in rejected}=={('V2',1),('V2',2),('V2',3)}
+report=dict(task='T132',validation_stage='Final guard plus nonblank uncertainty reason; schemas unchanged',saved_replies=18,new_provider_calls=0,original_checks_passed=18,new_checks_rejected=3,new_checks_passed=15,replays=rows,code_identity=code_identity(),limits=['May withhold rare legitimate terminal word-hyphen; does not detect nonhyphen truncation.','Other15passing replies are not thereby verified source readings; internal line-join misses remain.','Original bodies/responses/results/exports unchanged; this is additive offline revalidation.'])
+(r/'replay-all-final.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n');print('Final validator:3actualV2completeclaims blocked,15otherreplychecks retained;0newcalls.')

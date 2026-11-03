@@ -1,0 +1,29 @@
+{
+  "task": "T132",
+  "gate": "1366passed",
+  "new_focused_checks": 15,
+  "replayed_actual_replies": 18,
+  "actual_false_complete_replies_rejected": 3,
+  "other_reply_checks_retained": 15,
+  "new_provider_calls": 0,
+  "new_fetches": 0,
+  "source_and_old_result_bytes_unchanged": true,
+  "reply_schema_sha256_unchanged": {
+    "V1": "480baf4292c3a98d472bd4835bd8d41afd0662896da91f9ca540f58c23dedf6d",
+    "V2": "a0c2ab86a4db3e7f53386871881f96e3848d8ee83ffd21375bc6ef026d19b58c",
+    "V3": "ea9bd80f83a6e9e22d3f41d33c8842740c870fbf2dd57282eaae1cbfd678f267",
+    "V4": "04b850b28095e34db07afa0be2ee75a775b447f1630de212a9e8016383126981",
+    "V5": "37fd905e7f4bc4db9fc63b7bac0d5b5acf06657bb7a0e51966c50f5a4b4713af",
+    "V6": "29a264031a3f12da1c18ada802dc26ed46e684622bb61fa7cab5be71ddb3b2b2"
+  },
+  "guard": "Conservative raw-source terminal letter-word plus ASCII hyphen requires incomplete/null; no inferred suffix can turn missing source coverage into complete.",
+  "uncertainty_reason": "Nonblank text required. This does not verify the reason is specific or true.",
+  "review": "Luna no code/replay blocker; prose ambiguity fixed inHR031v2. Review noted14initialchecks; final15includes whitespace reason regression.",
+  "human_view": "HR031v2,2commentboxes/0AppTestexceptions/sourceandmodelquotationsplain",
+  "limitations": [
+    "May withholdrarelegitimateword-hyphenending; misses truncation withoutthatpattern.",
+    "Does notrepairsourcecaptureor missedinternaljoins, and15passingreplychecksarenot15verifiedcorrectsource readings.",
+    "No canonical text/routing/wordlist mutation or P0/nativefit/quality acceptance.",
+    "No browser/device check."
+  ]
+}

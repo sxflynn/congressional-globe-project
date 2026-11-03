@@ -21,6 +21,8 @@ class TextReading(Contract):
 
     @model_validator(mode="after")
     def coherent_uncertainty(self):
+        if self.reason is not None and not self.reason.strip():
+            raise ValueError("uncertainty reason must contain nonblank text")
         expected = (self.corrected_text is not None, self.reason is None)
         complete = self.coverage == "complete"
         if expected != (complete, complete):
@@ -102,6 +104,7 @@ def validate_text_reply(raw_reply: str, host: dict) -> dict:
     for reading in reply.readings:
         if reading.corrected_text is not None:
             target = targets[reading.paragraph_alias]
+            _check_source_word_boundary(target)
             _check_full_target(reading.corrected_text, target, host)
             proposals.append(coarse_proposal(target, reading.corrected_text))
     complete = len(proposals) == len(targets)
@@ -112,6 +115,19 @@ def validate_text_reply(raw_reply: str, host: dict) -> dict:
         provider_reply=reply.model_dump(mode="json"),
         inspection_quality="coverage_is_model_report_not_independent_proof; print_unverified",
     )
+
+
+def _check_source_word_boundary(target):
+    """Withhold complete readings for a conservative unresolved word-ending signal.
+
+    This does not establish the missing letters or repair a source boundary. A rare
+    legitimate terminal word-hyphen may need review; nonhyphen truncation is not detected.
+    """
+    if re.search(r"[^\W\d_]+-\s*$", target["raw"]["text"]):
+        raise ValueError(
+            "assigned target may end in a cut-off word; return incomplete coverage "
+            "with null text and a reason"
+        )
 
 
 def _proposal_status(complete, changed):
