@@ -1,0 +1,95 @@
+{
+  "source_id": "congressionalg7391unit:278:par_000278_000024",
+  "raw_sha256": "6abc0d63f74869ff6e901e2158c177e8bc6753b92dab6ef874f5a29e3cc8ce96",
+  "deterministic_sha256": "be20b6ed847d900d21b45a25865a57013c75fe44aad213af62bafa03b40c84a8",
+  "deterministic_result_sha256": "76c497362fb161d026d853af045b768925304b67e4c3e71f14eff8ee5043b301",
+  "name_list_state": "available",
+  "signals": [
+    {
+      "signal_id": "ce3fb9cdedc2bb32d8a24687614cf5fd9fc171d9ba27574b225416dec0050f23",
+      "paragraph_alias": "P1",
+      "raw_start": 4,
+      "raw_end": 13,
+      "raw_quote": "PRESlDEXT",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "2a25cc145bf47910ea54bbdcdc3a1d896624941ee9197f223c53f4ad3de4d0e2",
+      "paragraph_alias": "P1",
+      "raw_start": 14,
+      "raw_end": 17,
+      "raw_quote": "j-o",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "8ef4c61d227201e6dbd8ab049bebb3dd120668b68a6f208ca3b7267b0c913d23",
+      "paragraph_alias": "P1",
+      "raw_start": 18,
+      "raw_end": 25,
+      "raw_quote": "tempore",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "894d1d467f4bed6baa810620d56ae3761a03ca55a5f8e05f34015556a8408003",
+      "paragraph_alias": "P1",
+      "raw_start": 31,
+      "raw_end": 36,
+      "raw_quote": "Chair",
+      "category": "word",
+      "flags": [
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "8b27a64e2972e6ff058f5d9bd1dcc012bf77a4d2c57644e4eb3e9ad47ee534e4",
+      "paragraph_alias": "P1",
+      "raw_start": 87,
+      "raw_end": 93,
+      "raw_quote": "merits",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "3fca30cd3afb7b9d69b9050e786c41bc0632fc9f2be0f01bc0a5f8dc7c95a7d3",
+      "paragraph_alias": "P1",
+      "raw_start": 101,
+      "raw_end": 111,
+      "raw_quote": "amendments",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "823b23c876f5786051c4b20b8f715b7a2c9de81a66ab75e98725eea873002340",
+      "paragraph_alias": "P1",
+      "raw_start": 143,
+      "raw_end": 153,
+      "raw_quote": "amendments",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    }
+  ],
+  "selection": "secondary_inspection",
+  "coverage_gaps": "Numeric-notation detection is conservative but incomplete; unusual/damaged numeric forms can be missed. Detected digit-bearing and ambiguous Roman notation still route, including raw numbers later repaired. Spelled-out number words use ordinary post-repair spelling checks; their numerical meaning alone does not route them. Unfamiliar/unassessed words, independent name flags and success/unflagged audits remain."
+}

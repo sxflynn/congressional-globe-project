@@ -1,0 +1,1461 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalg7391unit:278:par_000278_000024",
+      "raw_text": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the refer- ence of the amendments and the bill to the committee.",
+      "raw_sha256": "6abc0d63f74869ff6e901e2158c177e8bc6753b92dab6ef874f5a29e3cc8ce96"
+    },
+    "static_text": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+    "static_sha256": "be20b6ed847d900d21b45a25865a57013c75fe44aad213af62bafa03b40c84a8",
+    "static_edits": [
+      {
+        "start": 124,
+        "end": 135,
+        "raw_quote": "refer- ence",
+        "replacement": "reference",
+        "rule_id": "adjacent-line wrap; lexicon form reference"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000278_000131",
+        "start": 0,
+        "end": 36,
+        "text": "The PRESlDEXT^j-o tempore. The Chair"
+      },
+      {
+        "line_id": "line_000278_000132",
+        "start": 37,
+        "end": 82,
+        "text": "would suggest that the question now is not on"
+      },
+      {
+        "line_id": "line_000278_000133",
+        "start": 83,
+        "end": 130,
+        "text": "the merits of the amendments, but on the refer-"
+      },
+      {
+        "line_id": "line_000278_000134",
+        "start": 131,
+        "end": 173,
+        "text": "ence of the amendments and the bill to the"
+      },
+      {
+        "line_id": "line_000278_000135",
+        "start": 174,
+        "end": 184,
+        "text": "committee."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "c5c77e9e83619da76dfea589810e7b50724aaf652b9560b06e1f58d20b18d911"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "0c3e97d2ffcc03e70d6d3cf2eed7fc8a66d797b208b90092eb3d6e9fa9cdf1f7",
+  "proposed_text": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+  "proposed_sha256": "be20b6ed847d900d21b45a25865a57013c75fe44aad213af62bafa03b40c84a8",
+  "proposed_edits": [
+    {
+      "start": 124,
+      "end": 135,
+      "raw_quote": "refer- ence",
+      "replacement": "reference",
+      "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+    }
+  ],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 124,
+      "derived_start": 0,
+      "derived_end": 124,
+      "mapping": "exact_copy"
+    },
+    {
+      "raw_start": 124,
+      "raw_end": 135,
+      "derived_start": 124,
+      "derived_end": 133,
+      "mapping": "replacement"
+    },
+    {
+      "raw_start": 135,
+      "raw_end": 184,
+      "derived_start": 133,
+      "derived_end": 182,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 124,
+      "end": 135,
+      "raw_quote": "refer- ence",
+      "joined_candidate": "reference",
+      "decision": "proposed_join",
+      "reason": "guarded_adjacent_line_join"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 3,
+      "text": "The",
+      "raw_start": 0,
+      "raw_end": 3,
+      "raw_quote": "The",
+      "context": "The PRESlDEXT^j-o tempore. The Chai",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 13,
+      "text": "PRESlDEXT",
+      "raw_start": 4,
+      "raw_end": 13,
+      "raw_quote": "PRESlDEXT",
+      "context": "The PRESlDEXT^j-o tempore. The Chair would su",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 13,
+      "end": 14,
+      "text": "^",
+      "raw_start": 13,
+      "raw_end": 14,
+      "raw_quote": "^",
+      "context": "The PRESlDEXT^j-o tempore. The Chair would sug",
+      "categories": [
+        "symbol_pattern"
+      ],
+      "signals": [
+        "symbol_pattern_unverified"
+      ],
+      "routes": [
+        "pattern_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 14,
+      "end": 17,
+      "text": "j-o",
+      "raw_start": 14,
+      "raw_end": 17,
+      "raw_quote": "j-o",
+      "context": "The PRESlDEXT^j-o tempore. The Chair would sugges",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 18,
+      "end": 25,
+      "text": "tempore",
+      "raw_start": 18,
+      "raw_end": 25,
+      "raw_quote": "tempore",
+      "context": "The PRESlDEXT^j-o tempore. The Chair would suggest that t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 27,
+      "end": 30,
+      "text": "The",
+      "raw_start": 27,
+      "raw_end": 30,
+      "raw_quote": "The",
+      "context": "The PRESlDEXT^j-o tempore. The Chair would suggest that the qu",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 31,
+      "end": 36,
+      "text": "Chair",
+      "raw_start": 31,
+      "raw_end": 36,
+      "raw_quote": "Chair",
+      "context": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 37,
+      "end": 42,
+      "text": "would",
+      "raw_start": 37,
+      "raw_end": 42,
+      "raw_quote": "would",
+      "context": "RESlDEXT^j-o tempore. The Chair would suggest that the question now i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 43,
+      "end": 50,
+      "text": "suggest",
+      "raw_start": 43,
+      "raw_end": 50,
+      "raw_quote": "suggest",
+      "context": "XT^j-o tempore. The Chair would suggest that the question now is not on",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 51,
+      "end": 55,
+      "text": "that",
+      "raw_start": 51,
+      "raw_end": 55,
+      "raw_quote": "that",
+      "context": "empore. The Chair would suggest that the question now is not on the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 56,
+      "end": 59,
+      "text": "the",
+      "raw_start": 56,
+      "raw_end": 59,
+      "raw_quote": "the",
+      "context": "e. The Chair would suggest that the question now is not on the meri",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 60,
+      "end": 68,
+      "text": "question",
+      "raw_start": 60,
+      "raw_end": 68,
+      "raw_quote": "question",
+      "context": "he Chair would suggest that the question now is not on the merits of the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 69,
+      "end": 72,
+      "text": "now",
+      "raw_start": 69,
+      "raw_end": 72,
+      "raw_quote": "now",
+      "context": "would suggest that the question now is not on the merits of the ame",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 73,
+      "end": 75,
+      "text": "is",
+      "raw_start": 73,
+      "raw_end": 75,
+      "raw_quote": "is",
+      "context": "d suggest that the question now is not on the merits of the amendm",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 76,
+      "end": 79,
+      "text": "not",
+      "raw_start": 76,
+      "raw_end": 79,
+      "raw_quote": "not",
+      "context": "uggest that the question now is not on the merits of the amendments",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 80,
+      "end": 82,
+      "text": "on",
+      "raw_start": 80,
+      "raw_end": 82,
+      "raw_quote": "on",
+      "context": "st that the question now is not on the merits of the amendments, b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 83,
+      "end": 86,
+      "text": "the",
+      "raw_start": 83,
+      "raw_end": 86,
+      "raw_quote": "the",
+      "context": "that the question now is not on the merits of the amendments, but o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 87,
+      "end": 93,
+      "text": "merits",
+      "raw_start": 87,
+      "raw_end": 93,
+      "raw_quote": "merits",
+      "context": " the question now is not on the merits of the amendments, but on the r",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 94,
+      "end": 96,
+      "text": "of",
+      "raw_start": 94,
+      "raw_end": 96,
+      "raw_quote": "of",
+      "context": "estion now is not on the merits of the amendments, but on the refe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 97,
+      "end": 100,
+      "text": "the",
+      "raw_start": 97,
+      "raw_end": 100,
+      "raw_quote": "the",
+      "context": "ion now is not on the merits of the amendments, but on the refer- e",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 101,
+      "end": 111,
+      "text": "amendments",
+      "raw_start": 101,
+      "raw_end": 111,
+      "raw_quote": "amendments",
+      "context": "now is not on the merits of the amendments, but on the refer- ence of the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 113,
+      "end": 116,
+      "text": "but",
+      "raw_start": 113,
+      "raw_end": 116,
+      "raw_quote": "but",
+      "context": "n the merits of the amendments, but on the refer- ence of the amend",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 117,
+      "end": 119,
+      "text": "on",
+      "raw_start": 117,
+      "raw_end": 119,
+      "raw_quote": "on",
+      "context": "e merits of the amendments, but on the refer- ence of the amendmen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 120,
+      "end": 123,
+      "text": "the",
+      "raw_start": 120,
+      "raw_end": 123,
+      "raw_quote": "the",
+      "context": "erits of the amendments, but on the refer- ence of the amendments a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 124,
+      "end": 129,
+      "text": "refer",
+      "raw_start": 124,
+      "raw_end": 129,
+      "raw_quote": "refer",
+      "context": "s of the amendments, but on the refer- ence of the amendments and the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 131,
+      "end": 135,
+      "text": "ence",
+      "raw_start": 131,
+      "raw_end": 135,
+      "raw_quote": "ence",
+      "context": "e amendments, but on the refer- ence of the amendments and the bill ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 136,
+      "end": 138,
+      "text": "of",
+      "raw_start": 136,
+      "raw_end": 138,
+      "raw_quote": "of",
+      "context": "ndments, but on the refer- ence of the amendments and the bill to ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 139,
+      "end": 142,
+      "text": "the",
+      "raw_start": 139,
+      "raw_end": 142,
+      "raw_quote": "the",
+      "context": "ents, but on the refer- ence of the amendments and the bill to the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 143,
+      "end": 153,
+      "text": "amendments",
+      "raw_start": 143,
+      "raw_end": 153,
+      "raw_quote": "amendments",
+      "context": ", but on the refer- ence of the amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 154,
+      "end": 157,
+      "text": "and",
+      "raw_start": 154,
+      "raw_end": 157,
+      "raw_quote": "and",
+      "context": "e refer- ence of the amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 158,
+      "end": 161,
+      "text": "the",
+      "raw_start": 158,
+      "raw_end": 161,
+      "raw_quote": "the",
+      "context": "fer- ence of the amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 162,
+      "end": 166,
+      "text": "bill",
+      "raw_start": 162,
+      "raw_end": 166,
+      "raw_quote": "bill",
+      "context": " ence of the amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 167,
+      "end": 169,
+      "text": "to",
+      "raw_start": 167,
+      "raw_end": 169,
+      "raw_quote": "to",
+      "context": " of the amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 170,
+      "end": 173,
+      "text": "the",
+      "raw_start": 170,
+      "raw_end": 173,
+      "raw_quote": "the",
+      "context": " the amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 174,
+      "end": 183,
+      "text": "committee",
+      "raw_start": 174,
+      "raw_end": 183,
+      "raw_quote": "committee",
+      "context": " amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 3,
+      "text": "The",
+      "raw_start": 0,
+      "raw_end": 3,
+      "raw_quote": "The",
+      "context": "The PRESlDEXT^j-o tempore. The Chai",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 13,
+      "text": "PRESlDEXT",
+      "raw_start": 4,
+      "raw_end": 13,
+      "raw_quote": "PRESlDEXT",
+      "context": "The PRESlDEXT^j-o tempore. The Chair would su",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 13,
+      "end": 14,
+      "text": "^",
+      "raw_start": 13,
+      "raw_end": 14,
+      "raw_quote": "^",
+      "context": "The PRESlDEXT^j-o tempore. The Chair would sug",
+      "categories": [
+        "symbol_pattern"
+      ],
+      "signals": [
+        "symbol_pattern_unverified"
+      ],
+      "routes": [
+        "pattern_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 14,
+      "end": 17,
+      "text": "j-o",
+      "raw_start": 14,
+      "raw_end": 17,
+      "raw_quote": "j-o",
+      "context": "The PRESlDEXT^j-o tempore. The Chair would sugges",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 18,
+      "end": 25,
+      "text": "tempore",
+      "raw_start": 18,
+      "raw_end": 25,
+      "raw_quote": "tempore",
+      "context": "The PRESlDEXT^j-o tempore. The Chair would suggest that t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 27,
+      "end": 30,
+      "text": "The",
+      "raw_start": 27,
+      "raw_end": 30,
+      "raw_quote": "The",
+      "context": "The PRESlDEXT^j-o tempore. The Chair would suggest that the qu",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 31,
+      "end": 36,
+      "text": "Chair",
+      "raw_start": 31,
+      "raw_end": 36,
+      "raw_quote": "Chair",
+      "context": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 37,
+      "end": 42,
+      "text": "would",
+      "raw_start": 37,
+      "raw_end": 42,
+      "raw_quote": "would",
+      "context": "RESlDEXT^j-o tempore. The Chair would suggest that the question now i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 43,
+      "end": 50,
+      "text": "suggest",
+      "raw_start": 43,
+      "raw_end": 50,
+      "raw_quote": "suggest",
+      "context": "XT^j-o tempore. The Chair would suggest that the question now is not on",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 51,
+      "end": 55,
+      "text": "that",
+      "raw_start": 51,
+      "raw_end": 55,
+      "raw_quote": "that",
+      "context": "empore. The Chair would suggest that the question now is not on the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 56,
+      "end": 59,
+      "text": "the",
+      "raw_start": 56,
+      "raw_end": 59,
+      "raw_quote": "the",
+      "context": "e. The Chair would suggest that the question now is not on the meri",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 60,
+      "end": 68,
+      "text": "question",
+      "raw_start": 60,
+      "raw_end": 68,
+      "raw_quote": "question",
+      "context": "he Chair would suggest that the question now is not on the merits of the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 69,
+      "end": 72,
+      "text": "now",
+      "raw_start": 69,
+      "raw_end": 72,
+      "raw_quote": "now",
+      "context": "would suggest that the question now is not on the merits of the ame",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 73,
+      "end": 75,
+      "text": "is",
+      "raw_start": 73,
+      "raw_end": 75,
+      "raw_quote": "is",
+      "context": "d suggest that the question now is not on the merits of the amendm",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 76,
+      "end": 79,
+      "text": "not",
+      "raw_start": 76,
+      "raw_end": 79,
+      "raw_quote": "not",
+      "context": "uggest that the question now is not on the merits of the amendments",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 80,
+      "end": 82,
+      "text": "on",
+      "raw_start": 80,
+      "raw_end": 82,
+      "raw_quote": "on",
+      "context": "st that the question now is not on the merits of the amendments, b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 83,
+      "end": 86,
+      "text": "the",
+      "raw_start": 83,
+      "raw_end": 86,
+      "raw_quote": "the",
+      "context": "that the question now is not on the merits of the amendments, but o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 87,
+      "end": 93,
+      "text": "merits",
+      "raw_start": 87,
+      "raw_end": 93,
+      "raw_quote": "merits",
+      "context": " the question now is not on the merits of the amendments, but on the r",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 94,
+      "end": 96,
+      "text": "of",
+      "raw_start": 94,
+      "raw_end": 96,
+      "raw_quote": "of",
+      "context": "estion now is not on the merits of the amendments, but on the refe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 97,
+      "end": 100,
+      "text": "the",
+      "raw_start": 97,
+      "raw_end": 100,
+      "raw_quote": "the",
+      "context": "ion now is not on the merits of the amendments, but on the refer- e",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 101,
+      "end": 111,
+      "text": "amendments",
+      "raw_start": 101,
+      "raw_end": 111,
+      "raw_quote": "amendments",
+      "context": "now is not on the merits of the amendments, but on the refer- ence of the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 113,
+      "end": 116,
+      "text": "but",
+      "raw_start": 113,
+      "raw_end": 116,
+      "raw_quote": "but",
+      "context": "n the merits of the amendments, but on the refer- ence of the amend",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 117,
+      "end": 119,
+      "text": "on",
+      "raw_start": 117,
+      "raw_end": 119,
+      "raw_quote": "on",
+      "context": "e merits of the amendments, but on the refer- ence of the amendmen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 120,
+      "end": 123,
+      "text": "the",
+      "raw_start": 120,
+      "raw_end": 123,
+      "raw_quote": "the",
+      "context": "erits of the amendments, but on the refer- ence of the amendments a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 124,
+      "end": 133,
+      "text": "reference",
+      "raw_start": 124,
+      "raw_end": 135,
+      "raw_quote": "refer- ence",
+      "context": "s of the amendments, but on the refer- ence of the amendments and the bill ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 134,
+      "end": 136,
+      "text": "of",
+      "raw_start": 136,
+      "raw_end": 138,
+      "raw_quote": "of",
+      "context": "ndments, but on the refer- ence of the amendments and the bill to ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 137,
+      "end": 140,
+      "text": "the",
+      "raw_start": 139,
+      "raw_end": 142,
+      "raw_quote": "the",
+      "context": "ents, but on the refer- ence of the amendments and the bill to the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 141,
+      "end": 151,
+      "text": "amendments",
+      "raw_start": 143,
+      "raw_end": 153,
+      "raw_quote": "amendments",
+      "context": ", but on the refer- ence of the amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 152,
+      "end": 155,
+      "text": "and",
+      "raw_start": 154,
+      "raw_end": 157,
+      "raw_quote": "and",
+      "context": "e refer- ence of the amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 156,
+      "end": 159,
+      "text": "the",
+      "raw_start": 158,
+      "raw_end": 161,
+      "raw_quote": "the",
+      "context": "fer- ence of the amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 160,
+      "end": 164,
+      "text": "bill",
+      "raw_start": 162,
+      "raw_end": 166,
+      "raw_quote": "bill",
+      "context": " ence of the amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 165,
+      "end": 167,
+      "text": "to",
+      "raw_start": 167,
+      "raw_end": 169,
+      "raw_quote": "to",
+      "context": " of the amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 168,
+      "end": 171,
+      "text": "the",
+      "raw_start": 170,
+      "raw_end": 173,
+      "raw_quote": "the",
+      "context": " the amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 172,
+      "end": 181,
+      "text": "committee",
+      "raw_start": 174,
+      "raw_end": 183,
+      "raw_quote": "committee",
+      "context": " amendments and the bill to the committee.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalg7391unit:278:par_000278_000024",
+      "raw_text": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the refer- ence of the amendments and the bill to the committee.",
+      "raw_sha256": "6abc0d63f74869ff6e901e2158c177e8bc6753b92dab6ef874f5a29e3cc8ce96"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalg7391unit:278:par_000278_000024",
+        "raw_text": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the refer- ence of the amendments and the bill to the committee.",
+        "raw_sha256": "6abc0d63f74869ff6e901e2158c177e8bc6753b92dab6ef874f5a29e3cc8ce96"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+    "proposed_sha256": "be20b6ed847d900d21b45a25865a57013c75fe44aad213af62bafa03b40c84a8",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

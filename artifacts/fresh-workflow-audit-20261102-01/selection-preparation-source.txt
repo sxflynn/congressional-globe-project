@@ -1,0 +1,20 @@
+import hashlib,json
+from pathlib import Path
+from congressional_globe.models import PageRecord
+from congressional_globe.scan_geometry import target_from_page
+from congressional_globe.scan_fetch import prepare_bundle
+root=Path('artifacts/fresh-workflow-audit-20261102-01');root.mkdir(exist_ok=False)
+manifest=json.loads(Path('artifacts/runs/static-final-20261011/workflow_manifest.json').read_text());parts={x['identifier']:x for x in manifest['parts']}
+sample=json.loads(Path('artifacts/ocr-sample-design-20261027-01/sample.json').read_text())
+cases=[('U1',3,1055,'par_001055_000071','zero-indicator control'),('U2',1,278,'par_000278_000024','apparent current software join with residual signals'),('U3',2,406,'par_000406_000009','first eligible third-part primary')]
+rows=[]
+for alias,part,leaf,pid,role in cases:
+ raw=Path(f'tmp/t129-source-prep/part{part}-leaf{leaf}.jsonl').read_bytes();page=PageRecord.model_validate_json(raw);choice=next(x for x in sample['primary'] if x['part_number']==part and x['scan_leaf']==leaf and x['paragraph_id']==pid)
+ p=parts[page.item_identifier];target=target_from_page(page,pid,p['hocr_sha256'],p['page_map_sha256'],padding=0,max_width=1600)
+ assert target.raw_sha256==choice['raw_sha256']
+ d=root/alias;d.mkdir();(d/'source-page.jsonl').write_bytes(raw);prepare_bundle(d/'image',target)
+ rows.append({'case':alias,'source_id':choice['source_id'],'role':role,'part':part,'leaf':leaf,'paragraph_id':pid,'raw_sha256':target.raw_sha256,'page_line_sha256':hashlib.sha256(raw).hexdigest(),'prior_source_image_reading':False,'target_image_scope':'complete paragraph bounding box, native dimensions, zero padding','selection':'frozen primary priority order within declared role; no image-outcome selection'})
+freeze={'task':'T129','cases':rows,'selection_rule':'First confirmed unused zero-indicator current-route primary (part3leaf1055); first reproducible current guarded-edit primary in a different part (part1leaf278, preceding79/150 have no guarded edits); first eligible primary of a third part in frozen order (part2leaf406, exposed716excluded). No selection by image outcomes.','prior_exposure_excluded_leaves':{'1':[526],'2':[716],'5':[529,741,1060]},'reserved_confirmation':'not inspected or used','bounds':{'cases':3,'identical_runs_each':3,'total_calls':9,'retries':0,'request_seconds':120,'output_tokens':1500,'per_case_group_seconds':1800,'image_downloads_max':4,'per_image_bytes_max':8000000,'model_downloads':0},'model':'qwen3.8:27b-mlx','request_format':'existing full assigned corrected text/conformance-v4, host computes diff','context_image':{'item':'congressionalglo7395unit','leaf':740,'scope':'one full-page image, width2000, previous-page document context only'},'no_claims':['native fit','independent benchmark accuracy','canonical acceptance','P0 decision']}
+(root/'selection-freeze.json').write_text(json.dumps(freeze,indent=2)+'\n')
+p=Path('MASTER_PLAN.md');s=p.read_text().replace('**T129 PLANNED','**T129 ACTIVE',1);s=s.replace('Before READY pin exact cases/inputs/caps; source prep may proceed after T128claim.','Exact pre-image selection frozen in [selection-freeze](artifacts/fresh-workflow-audit-20261102-01/selection-freeze.json): U1P3leaf1055par71zero-indicator, U2P1leaf278par24currentjoin/residualsignals, U3P2leaf406par9firsteligiblethirdpart. Native zero-padding full-target crops; previousleaf740onefullpage width2000. Same3×3/120s/1500output/1800s-group/4images/0retry caps. Root implements actual column view before model code freeze.');p.write_text(s)
+print('Frozen exact triad before source-image inspection; 3 target images + 1 previous page maximum.')

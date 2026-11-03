@@ -1,0 +1,252 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7393unit:1055:par_001055_000071",
+      "raw_text": "It was so referred.",
+      "raw_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4"
+    },
+    "static_text": "It was so referred.",
+    "static_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+    "static_edits": [],
+    "lines": [
+      {
+        "line_id": "line_001055_000277",
+        "start": 0,
+        "end": 19,
+        "text": "It was so referred."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "6b11e4358d240877054d01014e7340cd4c59fc5b6940809f3e75bd82e4069571"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "a3183501c5ca9e71037824968d25a740f74295f2ee643b322d52ecb65f4ed3ef",
+  "proposed_text": "It was so referred.",
+  "proposed_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 19,
+      "derived_start": 0,
+      "derived_end": 19,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 2,
+      "text": "It",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "It",
+      "context": "It was so referred.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 3,
+      "end": 6,
+      "text": "was",
+      "raw_start": 3,
+      "raw_end": 6,
+      "raw_quote": "was",
+      "context": "It was so referred.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 7,
+      "end": 9,
+      "text": "so",
+      "raw_start": 7,
+      "raw_end": 9,
+      "raw_quote": "so",
+      "context": "It was so referred.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 10,
+      "end": 18,
+      "text": "referred",
+      "raw_start": 10,
+      "raw_end": 18,
+      "raw_quote": "referred",
+      "context": "It was so referred.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 2,
+      "text": "It",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "It",
+      "context": "It was so referred.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 3,
+      "end": 6,
+      "text": "was",
+      "raw_start": 3,
+      "raw_end": 6,
+      "raw_quote": "was",
+      "context": "It was so referred.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 7,
+      "end": 9,
+      "text": "so",
+      "raw_start": 7,
+      "raw_end": 9,
+      "raw_quote": "so",
+      "context": "It was so referred.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 10,
+      "end": 18,
+      "text": "referred",
+      "raw_start": 10,
+      "raw_end": 18,
+      "raw_quote": "referred",
+      "context": "It was so referred.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7393unit:1055:par_001055_000071",
+      "raw_text": "It was so referred.",
+      "raw_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7393unit:1055:par_001055_000071",
+        "raw_text": "It was so referred.",
+        "raw_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "It was so referred.",
+    "proposed_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "no_rule_signals",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

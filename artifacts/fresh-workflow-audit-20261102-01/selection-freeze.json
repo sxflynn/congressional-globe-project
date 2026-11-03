@@ -1,0 +1,84 @@
+{
+  "task": "T129",
+  "cases": [
+    {
+      "case": "U1",
+      "source_id": "congressionalglo7393unit:1055:par_001055_000071",
+      "role": "zero-indicator control",
+      "part": 3,
+      "leaf": 1055,
+      "paragraph_id": "par_001055_000071",
+      "raw_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+      "page_line_sha256": "6b11e4358d240877054d01014e7340cd4c59fc5b6940809f3e75bd82e4069571",
+      "prior_source_image_reading": false,
+      "target_image_scope": "complete paragraph bounding box, native dimensions, zero padding",
+      "selection": "frozen primary priority order within declared role; no image-outcome selection"
+    },
+    {
+      "case": "U2",
+      "source_id": "congressionalg7391unit:278:par_000278_000024",
+      "role": "apparent current software join with residual signals",
+      "part": 1,
+      "leaf": 278,
+      "paragraph_id": "par_000278_000024",
+      "raw_sha256": "6abc0d63f74869ff6e901e2158c177e8bc6753b92dab6ef874f5a29e3cc8ce96",
+      "page_line_sha256": "c5c77e9e83619da76dfea589810e7b50724aaf652b9560b06e1f58d20b18d911",
+      "prior_source_image_reading": false,
+      "target_image_scope": "complete paragraph bounding box, native dimensions, zero padding",
+      "selection": "frozen primary priority order within declared role; no image-outcome selection"
+    },
+    {
+      "case": "U3",
+      "source_id": "congressionalglo7392unit:406:par_000406_000009",
+      "role": "first eligible third-part primary",
+      "part": 2,
+      "leaf": 406,
+      "paragraph_id": "par_000406_000009",
+      "raw_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+      "page_line_sha256": "529a1424cb5378f461ba024a5d21174c66ac789f9a1fd513a7b34be7bf24be81",
+      "prior_source_image_reading": false,
+      "target_image_scope": "complete paragraph bounding box, native dimensions, zero padding",
+      "selection": "frozen primary priority order within declared role; no image-outcome selection"
+    }
+  ],
+  "selection_rule": "First confirmed unused zero-indicator current-route primary (part3leaf1055); first reproducible current guarded-edit primary in a different part (part1leaf278, preceding79/150 have no guarded edits); first eligible primary of a third part in frozen order (part2leaf406, exposed716excluded). No selection by image outcomes.",
+  "prior_exposure_excluded_leaves": {
+    "1": [
+      526
+    ],
+    "2": [
+      716
+    ],
+    "5": [
+      529,
+      741,
+      1060
+    ]
+  },
+  "reserved_confirmation": "not inspected or used",
+  "bounds": {
+    "cases": 3,
+    "identical_runs_each": 3,
+    "total_calls": 9,
+    "retries": 0,
+    "request_seconds": 120,
+    "output_tokens": 1500,
+    "per_case_group_seconds": 1800,
+    "image_downloads_max": 4,
+    "per_image_bytes_max": 8000000,
+    "model_downloads": 0
+  },
+  "model": "qwen3.8:27b-mlx",
+  "request_format": "existing full assigned corrected text/conformance-v4, host computes diff",
+  "context_image": {
+    "item": "congressionalglo7395unit",
+    "leaf": 740,
+    "scope": "one full-page image, width2000, previous-page document context only"
+  },
+  "no_claims": [
+    "native fit",
+    "independent benchmark accuracy",
+    "canonical acceptance",
+    "P0 decision"
+  ]
+}

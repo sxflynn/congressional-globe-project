@@ -1,0 +1,79 @@
+{
+  "schema_version": "scan-bundle-v1",
+  "target": {
+    "item_identifier": "congressionalglo7393unit",
+    "part_number": 3,
+    "scan_leaf": 1055,
+    "hocr_page_id": "page_001055",
+    "paragraph_id": "par_001055_000071",
+    "printed_page": "2865",
+    "raw_text": "It was so referred.",
+    "raw_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+    "hocr_sha256": "ad739902df2b43344e9d65c00c756170af9b40bf3f2a0d2e5e1d093e2799b3a8",
+    "page_map_sha256": "9afc5bce34495216c8a8c8ec6b9f9378901316bcf759f3c223700e5fb09581e4",
+    "ocr_width": 3101,
+    "ocr_height": 4340,
+    "selection_start": 0,
+    "selection_end": 19,
+    "selection_text": "It was so referred.",
+    "precision": "paragraph",
+    "max_width": 1600,
+    "regions": [
+      {
+        "bbox": {
+          "left": 2052,
+          "top": 3293,
+          "right": 2399,
+          "bottom": 3327
+        },
+        "line_ids": [
+          "line_001055_000277"
+        ],
+        "word_ids": [
+          "word_001055_001840",
+          "word_001055_001841",
+          "word_001055_001842",
+          "word_001055_001843"
+        ]
+      }
+    ]
+  },
+  "target_sha256": "edd5718d57daf3b097f5f34880bc54a5f315699e21afdf1c353fab362c7a2976",
+  "info_receipt": {
+    "requested_url": "https://iiif.archive.org/iiif/congressionalglo7393unit$1055/info.json",
+    "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7393unit%2fcongressionalglo7393unit_jp2.zip%2fcongressionalglo7393unit_jp2%2fcongressionalglo7393unit_1055.jp2/info.json",
+    "retrieved_at_utc": "2026-11-03T03:00:28.531181+00:00",
+    "elapsed_seconds": 17.0604359167628,
+    "bytes": 999,
+    "sha256": "34b2d00462a7e96cb98618f73228321957b9fcd5d877f2c97ecf3a65e9483c87",
+    "content_type": "application/json;charset=utf-8"
+  },
+  "images": [
+    {
+      "file": "crop-01.jpg",
+      "width": 347,
+      "height": 34,
+      "region": [
+        2052,
+        3293,
+        347,
+        34
+      ],
+      "receipt": {
+        "requested_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7393unit%2fcongressionalglo7393unit_jp2.zip%2fcongressionalglo7393unit_jp2%2fcongressionalglo7393unit_1055.jp2/2052,3293,347,34/347,/0/default.jpg",
+        "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7393unit%2fcongressionalglo7393unit_jp2.zip%2fcongressionalglo7393unit_jp2%2fcongressionalglo7393unit_1055.jp2/2052,3293,347,34/347,/0/default.jpg",
+        "retrieved_at_utc": "2026-11-03T03:00:29.177196+00:00",
+        "elapsed_seconds": 0.6450844169594347,
+        "bytes": 4650,
+        "sha256": "96f4314d5330b5ea4cea60000f5e9220141e290002d4b81ad6f09cbcb67c61e7",
+        "content_type": "image/jpeg"
+      }
+    }
+  ],
+  "code_sha256": {
+    "scan_models.py": "8c099fc7068cbb216a40cf05a4241d48eb9218a789ddcb5b1fbbc344c77c46b1",
+    "scan_geometry.py": "a70e9423ddb9c0868ecd1bd1aea8cac781919f03abfe84bb87631872055fc238",
+    "scan_fetch.py": "7ce46f0afc70f860b99ff631eb3eb006885741e50608cf2dbeaac0fec3e25da2"
+  },
+  "registration": "exact dimensions; native pixel coordinates; no inferred scaling/rotation"
+}

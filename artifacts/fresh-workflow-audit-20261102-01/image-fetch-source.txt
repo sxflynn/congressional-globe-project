@@ -1,0 +1,12 @@
+from pathlib import Path
+from congressional_globe.scan_models import ScanTarget
+from congressional_globe.scan_fetch import fetch_bundle,download,ImageInfo
+root=Path('artifacts/fresh-workflow-audit-20261102-01')
+for alias in ['U1','U2','U3']:
+ d=root/alias/'image';t=ScanTarget.model_validate_json((d/'target.json').read_bytes());b=fetch_bundle(d,t);print(alias,'one native paragraph image',b.images[0].width,b.images[0].height,flush=True)
+d=root/'previous-page-740';d.mkdir(exist_ok=False)
+download('https://iiif.archive.org/iiif/congressionalglo7395unit$740/info.json',d/'info.json',2000000)
+i=ImageInfo.model_validate_json((d/'info.json').read_bytes())
+assert (i.width,i.height)==(3115,4275)
+r=download(i.service_id+'/full/2000,/0/default.jpg',d/'page.jpg',8000000)
+print('Previous page740 one full image',r.sha256,flush=True)

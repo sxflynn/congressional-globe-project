@@ -1,0 +1,1594 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7392unit:406:par_000406_000009",
+      "raw_text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+      "raw_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f"
+    },
+    "static_text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+    "static_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+    "static_edits": [],
+    "lines": [
+      {
+        "line_id": "line_000406_000032",
+        "start": 0,
+        "end": 39,
+        "text": "Mr. VAN WINKLE. I will state that there"
+      },
+      {
+        "line_id": "line_000406_000033",
+        "start": 40,
+        "end": 83,
+        "text": "must be a mistake in the name. This case of"
+      },
+      {
+        "line_id": "line_000406_000034",
+        "start": 84,
+        "end": 126,
+        "text": "Anderson's was considered in the committee"
+      },
+      {
+        "line_id": "line_000406_000035",
+        "start": 127,
+        "end": 172,
+        "text": "under the supposition that it was the same as"
+      },
+      {
+        "line_id": "line_000406_000036",
+        "start": 173,
+        "end": 211,
+        "text": "the case of the person called Johnson."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "529a1424cb5378f461ba024a5d21174c66ac789f9a1fd513a7b34be7bf24be81"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "971ff1a7c66a908b3121edf837c63e4a5b9d530c04deeda133d670840696659e",
+  "proposed_text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+  "proposed_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 211,
+      "derived_start": 0,
+      "derived_end": 211,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. VAN WINKLE. I will state that ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 7,
+      "text": "VAN",
+      "raw_start": 4,
+      "raw_end": 7,
+      "raw_quote": "VAN",
+      "context": "Mr. VAN WINKLE. I will state that there",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue",
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 8,
+      "end": 14,
+      "text": "WINKLE",
+      "raw_start": 8,
+      "raw_end": 14,
+      "raw_quote": "WINKLE",
+      "context": "Mr. VAN WINKLE. I will state that there must b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 16,
+      "end": 17,
+      "text": "I",
+      "raw_start": 16,
+      "raw_end": 17,
+      "raw_quote": "I",
+      "context": "Mr. VAN WINKLE. I will state that there must be a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 18,
+      "end": 22,
+      "text": "will",
+      "raw_start": 18,
+      "raw_end": 22,
+      "raw_quote": "will",
+      "context": "Mr. VAN WINKLE. I will state that there must be a mist",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 23,
+      "end": 28,
+      "text": "state",
+      "raw_start": 23,
+      "raw_end": 28,
+      "raw_quote": "state",
+      "context": "Mr. VAN WINKLE. I will state that there must be a mistake in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 29,
+      "end": 33,
+      "text": "that",
+      "raw_start": 29,
+      "raw_end": 33,
+      "raw_quote": "that",
+      "context": "Mr. VAN WINKLE. I will state that there must be a mistake in the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 34,
+      "end": 39,
+      "text": "there",
+      "raw_start": 34,
+      "raw_end": 39,
+      "raw_quote": "there",
+      "context": ". VAN WINKLE. I will state that there must be a mistake in the name. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 40,
+      "end": 44,
+      "text": "must",
+      "raw_start": 40,
+      "raw_end": 44,
+      "raw_quote": "must",
+      "context": "WINKLE. I will state that there must be a mistake in the name. This ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 45,
+      "end": 47,
+      "text": "be",
+      "raw_start": 45,
+      "raw_end": 47,
+      "raw_quote": "be",
+      "context": "E. I will state that there must be a mistake in the name. This cas",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 48,
+      "end": 49,
+      "text": "a",
+      "raw_start": 48,
+      "raw_end": 49,
+      "raw_quote": "a",
+      "context": "I will state that there must be a mistake in the name. This case ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 50,
+      "end": 57,
+      "text": "mistake",
+      "raw_start": 50,
+      "raw_end": 57,
+      "raw_quote": "mistake",
+      "context": "will state that there must be a mistake in the name. This case of Ander",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 58,
+      "end": 60,
+      "text": "in",
+      "raw_start": 58,
+      "raw_end": 60,
+      "raw_quote": "in",
+      "context": "te that there must be a mistake in the name. This case of Anderson",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 61,
+      "end": 64,
+      "text": "the",
+      "raw_start": 61,
+      "raw_end": 64,
+      "raw_quote": "the",
+      "context": "that there must be a mistake in the name. This case of Anderson's w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 65,
+      "end": 69,
+      "text": "name",
+      "raw_start": 65,
+      "raw_end": 69,
+      "raw_quote": "name",
+      "context": " there must be a mistake in the name. This case of Anderson's was co",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 71,
+      "end": 75,
+      "text": "This",
+      "raw_start": 71,
+      "raw_end": 75,
+      "raw_quote": "This",
+      "context": " must be a mistake in the name. This case of Anderson's was consider",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 76,
+      "end": 80,
+      "text": "case",
+      "raw_start": 76,
+      "raw_end": 80,
+      "raw_quote": "case",
+      "context": " be a mistake in the name. This case of Anderson's was considered in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 81,
+      "end": 83,
+      "text": "of",
+      "raw_start": 81,
+      "raw_end": 83,
+      "raw_quote": "of",
+      "context": " mistake in the name. This case of Anderson's was considered in th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 84,
+      "end": 94,
+      "text": "Anderson's",
+      "raw_start": 84,
+      "raw_end": 94,
+      "raw_quote": "Anderson's",
+      "context": "stake in the name. This case of Anderson's was considered in the committee",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 95,
+      "end": 98,
+      "text": "was",
+      "raw_start": 95,
+      "raw_end": 98,
+      "raw_quote": "was",
+      "context": "e name. This case of Anderson's was considered in the committee und",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 99,
+      "end": 109,
+      "text": "considered",
+      "raw_start": 99,
+      "raw_end": 109,
+      "raw_quote": "considered",
+      "context": "me. This case of Anderson's was considered in the committee under the supp",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 110,
+      "end": 112,
+      "text": "in",
+      "raw_start": 110,
+      "raw_end": 112,
+      "raw_quote": "in",
+      "context": "se of Anderson's was considered in the committee under the supposi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 113,
+      "end": 116,
+      "text": "the",
+      "raw_start": 113,
+      "raw_end": 116,
+      "raw_quote": "the",
+      "context": "of Anderson's was considered in the committee under the supposition",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 117,
+      "end": 126,
+      "text": "committee",
+      "raw_start": 117,
+      "raw_end": 126,
+      "raw_quote": "committee",
+      "context": "nderson's was considered in the committee under the supposition that it w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 127,
+      "end": 132,
+      "text": "under",
+      "raw_start": 127,
+      "raw_end": 132,
+      "raw_quote": "under",
+      "context": "was considered in the committee under the supposition that it was the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 133,
+      "end": 136,
+      "text": "the",
+      "raw_start": 133,
+      "raw_end": 136,
+      "raw_quote": "the",
+      "context": "nsidered in the committee under the supposition that it was the sam",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 137,
+      "end": 148,
+      "text": "supposition",
+      "raw_start": 137,
+      "raw_end": 148,
+      "raw_quote": "supposition",
+      "context": "ered in the committee under the supposition that it was the same as the cas",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 149,
+      "end": 153,
+      "text": "that",
+      "raw_start": 149,
+      "raw_end": 153,
+      "raw_quote": "that",
+      "context": "committee under the supposition that it was the same as the case of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 154,
+      "end": 156,
+      "text": "it",
+      "raw_start": 154,
+      "raw_end": 156,
+      "raw_quote": "it",
+      "context": "ttee under the supposition that it was the same as the case of the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 157,
+      "end": 160,
+      "text": "was",
+      "raw_start": 157,
+      "raw_end": 160,
+      "raw_quote": "was",
+      "context": "e under the supposition that it was the same as the case of the per",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 161,
+      "end": 164,
+      "text": "the",
+      "raw_start": 161,
+      "raw_end": 164,
+      "raw_quote": "the",
+      "context": "der the supposition that it was the same as the case of the person ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 165,
+      "end": 169,
+      "text": "same",
+      "raw_start": 165,
+      "raw_end": 169,
+      "raw_quote": "same",
+      "context": "the supposition that it was the same as the case of the person calle",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 170,
+      "end": 172,
+      "text": "as",
+      "raw_start": 170,
+      "raw_end": 172,
+      "raw_quote": "as",
+      "context": "upposition that it was the same as the case of the person called J",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 173,
+      "end": 176,
+      "text": "the",
+      "raw_start": 173,
+      "raw_end": 176,
+      "raw_quote": "the",
+      "context": "osition that it was the same as the case of the person called Johns",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 177,
+      "end": 181,
+      "text": "case",
+      "raw_start": 177,
+      "raw_end": 181,
+      "raw_quote": "case",
+      "context": "ion that it was the same as the case of the person called Johnson.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 182,
+      "end": 184,
+      "text": "of",
+      "raw_start": 182,
+      "raw_end": 184,
+      "raw_quote": "of",
+      "context": "hat it was the same as the case of the person called Johnson.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 185,
+      "end": 188,
+      "text": "the",
+      "raw_start": 185,
+      "raw_end": 188,
+      "raw_quote": "the",
+      "context": " it was the same as the case of the person called Johnson.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 189,
+      "end": 195,
+      "text": "person",
+      "raw_start": 189,
+      "raw_end": 195,
+      "raw_quote": "person",
+      "context": "was the same as the case of the person called Johnson.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 196,
+      "end": 202,
+      "text": "called",
+      "raw_start": 196,
+      "raw_end": 202,
+      "raw_quote": "called",
+      "context": " same as the case of the person called Johnson.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 203,
+      "end": 210,
+      "text": "Johnson",
+      "raw_start": 203,
+      "raw_end": 210,
+      "raw_quote": "Johnson",
+      "context": "s the case of the person called Johnson.",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. VAN WINKLE. I will state that ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 7,
+      "text": "VAN",
+      "raw_start": 4,
+      "raw_end": 7,
+      "raw_quote": "VAN",
+      "context": "Mr. VAN WINKLE. I will state that there",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue",
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 8,
+      "end": 14,
+      "text": "WINKLE",
+      "raw_start": 8,
+      "raw_end": 14,
+      "raw_quote": "WINKLE",
+      "context": "Mr. VAN WINKLE. I will state that there must b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 16,
+      "end": 17,
+      "text": "I",
+      "raw_start": 16,
+      "raw_end": 17,
+      "raw_quote": "I",
+      "context": "Mr. VAN WINKLE. I will state that there must be a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 18,
+      "end": 22,
+      "text": "will",
+      "raw_start": 18,
+      "raw_end": 22,
+      "raw_quote": "will",
+      "context": "Mr. VAN WINKLE. I will state that there must be a mist",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 23,
+      "end": 28,
+      "text": "state",
+      "raw_start": 23,
+      "raw_end": 28,
+      "raw_quote": "state",
+      "context": "Mr. VAN WINKLE. I will state that there must be a mistake in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 29,
+      "end": 33,
+      "text": "that",
+      "raw_start": 29,
+      "raw_end": 33,
+      "raw_quote": "that",
+      "context": "Mr. VAN WINKLE. I will state that there must be a mistake in the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 34,
+      "end": 39,
+      "text": "there",
+      "raw_start": 34,
+      "raw_end": 39,
+      "raw_quote": "there",
+      "context": ". VAN WINKLE. I will state that there must be a mistake in the name. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 40,
+      "end": 44,
+      "text": "must",
+      "raw_start": 40,
+      "raw_end": 44,
+      "raw_quote": "must",
+      "context": "WINKLE. I will state that there must be a mistake in the name. This ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 45,
+      "end": 47,
+      "text": "be",
+      "raw_start": 45,
+      "raw_end": 47,
+      "raw_quote": "be",
+      "context": "E. I will state that there must be a mistake in the name. This cas",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 48,
+      "end": 49,
+      "text": "a",
+      "raw_start": 48,
+      "raw_end": 49,
+      "raw_quote": "a",
+      "context": "I will state that there must be a mistake in the name. This case ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 50,
+      "end": 57,
+      "text": "mistake",
+      "raw_start": 50,
+      "raw_end": 57,
+      "raw_quote": "mistake",
+      "context": "will state that there must be a mistake in the name. This case of Ander",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 58,
+      "end": 60,
+      "text": "in",
+      "raw_start": 58,
+      "raw_end": 60,
+      "raw_quote": "in",
+      "context": "te that there must be a mistake in the name. This case of Anderson",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 61,
+      "end": 64,
+      "text": "the",
+      "raw_start": 61,
+      "raw_end": 64,
+      "raw_quote": "the",
+      "context": "that there must be a mistake in the name. This case of Anderson's w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 65,
+      "end": 69,
+      "text": "name",
+      "raw_start": 65,
+      "raw_end": 69,
+      "raw_quote": "name",
+      "context": " there must be a mistake in the name. This case of Anderson's was co",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 71,
+      "end": 75,
+      "text": "This",
+      "raw_start": 71,
+      "raw_end": 75,
+      "raw_quote": "This",
+      "context": " must be a mistake in the name. This case of Anderson's was consider",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 76,
+      "end": 80,
+      "text": "case",
+      "raw_start": 76,
+      "raw_end": 80,
+      "raw_quote": "case",
+      "context": " be a mistake in the name. This case of Anderson's was considered in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 81,
+      "end": 83,
+      "text": "of",
+      "raw_start": 81,
+      "raw_end": 83,
+      "raw_quote": "of",
+      "context": " mistake in the name. This case of Anderson's was considered in th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 84,
+      "end": 94,
+      "text": "Anderson's",
+      "raw_start": 84,
+      "raw_end": 94,
+      "raw_quote": "Anderson's",
+      "context": "stake in the name. This case of Anderson's was considered in the committee",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 95,
+      "end": 98,
+      "text": "was",
+      "raw_start": 95,
+      "raw_end": 98,
+      "raw_quote": "was",
+      "context": "e name. This case of Anderson's was considered in the committee und",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 99,
+      "end": 109,
+      "text": "considered",
+      "raw_start": 99,
+      "raw_end": 109,
+      "raw_quote": "considered",
+      "context": "me. This case of Anderson's was considered in the committee under the supp",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 110,
+      "end": 112,
+      "text": "in",
+      "raw_start": 110,
+      "raw_end": 112,
+      "raw_quote": "in",
+      "context": "se of Anderson's was considered in the committee under the supposi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 113,
+      "end": 116,
+      "text": "the",
+      "raw_start": 113,
+      "raw_end": 116,
+      "raw_quote": "the",
+      "context": "of Anderson's was considered in the committee under the supposition",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 117,
+      "end": 126,
+      "text": "committee",
+      "raw_start": 117,
+      "raw_end": 126,
+      "raw_quote": "committee",
+      "context": "nderson's was considered in the committee under the supposition that it w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 127,
+      "end": 132,
+      "text": "under",
+      "raw_start": 127,
+      "raw_end": 132,
+      "raw_quote": "under",
+      "context": "was considered in the committee under the supposition that it was the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 133,
+      "end": 136,
+      "text": "the",
+      "raw_start": 133,
+      "raw_end": 136,
+      "raw_quote": "the",
+      "context": "nsidered in the committee under the supposition that it was the sam",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 137,
+      "end": 148,
+      "text": "supposition",
+      "raw_start": 137,
+      "raw_end": 148,
+      "raw_quote": "supposition",
+      "context": "ered in the committee under the supposition that it was the same as the cas",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 149,
+      "end": 153,
+      "text": "that",
+      "raw_start": 149,
+      "raw_end": 153,
+      "raw_quote": "that",
+      "context": "committee under the supposition that it was the same as the case of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 154,
+      "end": 156,
+      "text": "it",
+      "raw_start": 154,
+      "raw_end": 156,
+      "raw_quote": "it",
+      "context": "ttee under the supposition that it was the same as the case of the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 157,
+      "end": 160,
+      "text": "was",
+      "raw_start": 157,
+      "raw_end": 160,
+      "raw_quote": "was",
+      "context": "e under the supposition that it was the same as the case of the per",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 161,
+      "end": 164,
+      "text": "the",
+      "raw_start": 161,
+      "raw_end": 164,
+      "raw_quote": "the",
+      "context": "der the supposition that it was the same as the case of the person ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 165,
+      "end": 169,
+      "text": "same",
+      "raw_start": 165,
+      "raw_end": 169,
+      "raw_quote": "same",
+      "context": "the supposition that it was the same as the case of the person calle",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 170,
+      "end": 172,
+      "text": "as",
+      "raw_start": 170,
+      "raw_end": 172,
+      "raw_quote": "as",
+      "context": "upposition that it was the same as the case of the person called J",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 173,
+      "end": 176,
+      "text": "the",
+      "raw_start": 173,
+      "raw_end": 176,
+      "raw_quote": "the",
+      "context": "osition that it was the same as the case of the person called Johns",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 177,
+      "end": 181,
+      "text": "case",
+      "raw_start": 177,
+      "raw_end": 181,
+      "raw_quote": "case",
+      "context": "ion that it was the same as the case of the person called Johnson.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 182,
+      "end": 184,
+      "text": "of",
+      "raw_start": 182,
+      "raw_end": 184,
+      "raw_quote": "of",
+      "context": "hat it was the same as the case of the person called Johnson.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 185,
+      "end": 188,
+      "text": "the",
+      "raw_start": 185,
+      "raw_end": 188,
+      "raw_quote": "the",
+      "context": " it was the same as the case of the person called Johnson.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 189,
+      "end": 195,
+      "text": "person",
+      "raw_start": 189,
+      "raw_end": 195,
+      "raw_quote": "person",
+      "context": "was the same as the case of the person called Johnson.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 196,
+      "end": 202,
+      "text": "called",
+      "raw_start": 196,
+      "raw_end": 202,
+      "raw_quote": "called",
+      "context": " same as the case of the person called Johnson.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 203,
+      "end": 210,
+      "text": "Johnson",
+      "raw_start": 203,
+      "raw_end": 210,
+      "raw_quote": "Johnson",
+      "context": "s the case of the person called Johnson.",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7392unit:406:par_000406_000009",
+      "raw_text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+      "raw_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7392unit:406:par_000406_000009",
+        "raw_text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+        "raw_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+    "proposed_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}
