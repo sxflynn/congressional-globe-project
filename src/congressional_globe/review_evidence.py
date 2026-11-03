@@ -62,7 +62,7 @@ def evidence_html(text: str, scope: str, custom: list[dict] | None = None) -> st
 
 
 def show_evidence(text: str, scope: str, custom: list[dict] | None = None) -> None:
-    content = evidence_html(text, scope, custom)
+    content = evidence_html(text, scope, custom).replace("\n", "<br>")
     st.markdown(
         f'<div class="glossary-copy source-card glossary-source">{content}</div>',
         unsafe_allow_html=True,

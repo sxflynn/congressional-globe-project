@@ -123,3 +123,20 @@ def test_live_packet_app_keeps_ai_question_help_and_plain_source(tmp_path, monke
     assert tree.xpath('.//span[@class="review-source-text"]')
     assert not tree.xpath('.//span[@class="review-source-text"]//button')
     assert not tree.xpath('.//button[@aria-label="Define: broom corn"]')
+
+
+def test_live_evidence_keeps_explicit_breaks_across_source_and_explanation(monkeypatch):
+    packet = json.loads(Path("docs/review-packets/HR-015-v4.json").read_text())
+    text = packet["questions"][0]["evidence"][0]["text"]
+    displayed = []
+    monkeypatch.setattr(review_evidence.st, "markdown", lambda value, **_: displayed.append(value))
+    review_evidence.show_evidence(text, "spacing", packet.get("glossary"))
+    rendered = displayed[0]
+    tree = _tree(rendered)
+    for popup in tree.xpath(".//*[@popover]"):
+        popup.drop_tree()
+    assert len(tree.xpath(".//br")) == text.count("\n")
+    for line_break in tree.xpath(".//br"):
+        line_break.tail = "\n" + (line_break.tail or "")
+    assert _visible_text(tree) == text
+    assert not tree.xpath('.//span[@class="review-source-text"]//button')

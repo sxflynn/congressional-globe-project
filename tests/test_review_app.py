@@ -288,3 +288,14 @@ def test_completely_blank_optional_submission_is_not_reported_as_success(tmp_pat
     _question_widget(app, "note", "text_area").set_value("Actual synthetic comment")
     _button_named(app, "Submit review").click().run()
     assert store.submissions()[0]["answers"] == {"note": "Actual synthetic comment"}
+
+
+def test_typing_hint_is_hidden_only_inside_textareas(tmp_path, monkeypatch):
+    _store(tmp_path, monkeypatch)
+    app = _app()
+    assert not app.exception
+    markup = "\n".join(item.value for item in app.markdown)
+    assert '[data-testid="stTextArea"] [data-testid="InputInstructions"]{display:none}' in markup
+    assert '[data-testid="InputInstructions"]{display:none}' not in markup.replace(
+        '[data-testid="stTextArea"] [data-testid="InputInstructions"]{display:none}', ""
+    )

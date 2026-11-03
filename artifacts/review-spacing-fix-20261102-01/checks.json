@@ -1,0 +1,20 @@
+{
+  "task": "T128",
+  "submission_id": "218d7248-838f-4712-8e57-07fe5955da13",
+  "inputs": "Existing immutable evidence contains newlines; textarea hint is inside installed Streamlit stTextArea wrapper.",
+  "expected": "Visible evidence line breaks; no keyboard hint over writing space; source and saved answers unchanged.",
+  "actual": "Explicit br at evidence display boundary; textarea-only hint CSS; original evidence_html still returns exact source text.",
+  "differences": "Two requested display fixes; no packet/source/answer edit or new model call.",
+  "checks": {
+    "gate": "1340 passed",
+    "focused": "existing save/submit and source-span tests retained; two new rendering checks",
+    "packet_sha256": "349abb51cd419e4837b6278e2e1a43289091d99880b1de701c8584d37ceb7a01",
+    "streamlit": "1.66.1, installed TextArea and InputInstructions JS selectors inspected",
+    "browser_device_visual_check": "not performed; Computer Use prohibited"
+  },
+  "lan_health": "10.0.0.56:8501, en1 and health verified",
+  "luna_review": {
+    "verdict": "no substantive blocker",
+    "limit": "Not a browser/device visual test; hidden shortcut hint also absent to assistive technology."
+  }
+}

@@ -455,6 +455,8 @@ def _masthead() -> None:
     st.markdown(
         """
         <style>
+        /* Keep the form shortcut hint outside the writing experience. */
+        [data-testid="stTextArea"] [data-testid="InputInstructions"]{display:none}
         /* The local review desk needs no floating Streamlit deployment toolbar. */
         [data-testid="stHeader"]{display:none}
         [data-testid="stMainBlockContainer"]{padding-top:2rem}
