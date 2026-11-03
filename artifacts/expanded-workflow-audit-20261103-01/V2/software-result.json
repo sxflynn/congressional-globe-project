@@ -1,0 +1,1049 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7393unit:719:par_000719_000027",
+      "raw_text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+      "raw_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda"
+    },
+    "static_text": "Mr. CONNESS. If the Senator from Michigan will give way I will move that the Senate proceed to the consideration of executive busi-",
+    "static_sha256": "061c83852778f5507fa9f69e1e356de3e64f3d119ed35b24333a0aac8e67eb06",
+    "static_edits": [
+      {
+        "start": 33,
+        "end": 43,
+        "raw_quote": "Michi- gan",
+        "replacement": "Michigan",
+        "rule_id": "adjacent-line wrap; lexicon form michigan"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000719_000267",
+        "start": 0,
+        "end": 39,
+        "text": "Mr. CONNESS. If the Senator from Michi-"
+      },
+      {
+        "line_id": "line_000719_000268",
+        "start": 40,
+        "end": 85,
+        "text": "gan will give way I will move that the Senate"
+      },
+      {
+        "line_id": "line_000719_000269",
+        "start": 86,
+        "end": 133,
+        "text": "proceed to the consideration of executive busi-"
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "c27ddf8a771072513b89c86564d3bc7a32d7c5abd8f8dea261b955b22c10d330"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "de8b56a46a3148dd5bf7df92463735fc2d739ffd0cd7aa11f159d4a439c05e1b",
+  "proposed_text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+  "proposed_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 133,
+      "derived_start": 0,
+      "derived_end": 133,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 33,
+      "end": 43,
+      "raw_quote": "Michi- gan",
+      "joined_candidate": "Michigan",
+      "decision": "retained_for_review",
+      "reason": "uppercase_or_nonlowercase"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. CONNESS. If the Senator from M",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 11,
+      "text": "CONNESS",
+      "raw_start": 4,
+      "raw_end": 11,
+      "raw_quote": "CONNESS",
+      "context": "Mr. CONNESS. If the Senator from Michi- gan",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "title_name_cue"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 13,
+      "end": 15,
+      "text": "If",
+      "raw_start": 13,
+      "raw_end": 15,
+      "raw_quote": "If",
+      "context": "Mr. CONNESS. If the Senator from Michi- gan wil",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 16,
+      "end": 19,
+      "text": "the",
+      "raw_start": 16,
+      "raw_end": 19,
+      "raw_quote": "the",
+      "context": "Mr. CONNESS. If the Senator from Michi- gan will gi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 20,
+      "end": 27,
+      "text": "Senator",
+      "raw_start": 20,
+      "raw_end": 27,
+      "raw_quote": "Senator",
+      "context": "Mr. CONNESS. If the Senator from Michi- gan will give way I",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 28,
+      "end": 32,
+      "text": "from",
+      "raw_start": 28,
+      "raw_end": 32,
+      "raw_quote": "from",
+      "context": "Mr. CONNESS. If the Senator from Michi- gan will give way I will",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 33,
+      "end": 38,
+      "text": "Michi",
+      "raw_start": 33,
+      "raw_end": 38,
+      "raw_quote": "Michi",
+      "context": "r. CONNESS. If the Senator from Michi- gan will give way I will move ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 40,
+      "end": 43,
+      "text": "gan",
+      "raw_start": 40,
+      "raw_end": 43,
+      "raw_quote": "gan",
+      "context": "ESS. If the Senator from Michi- gan will give way I will move that ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 44,
+      "end": 48,
+      "text": "will",
+      "raw_start": 44,
+      "raw_end": 48,
+      "raw_quote": "will",
+      "context": " If the Senator from Michi- gan will give way I will move that the S",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 49,
+      "end": 53,
+      "text": "give",
+      "raw_start": 49,
+      "raw_end": 53,
+      "raw_quote": "give",
+      "context": "he Senator from Michi- gan will give way I will move that the Senate",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 54,
+      "end": 57,
+      "text": "way",
+      "raw_start": 54,
+      "raw_end": 57,
+      "raw_quote": "way",
+      "context": "nator from Michi- gan will give way I will move that the Senate pro",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 58,
+      "end": 59,
+      "text": "I",
+      "raw_start": 58,
+      "raw_end": 59,
+      "raw_quote": "I",
+      "context": "r from Michi- gan will give way I will move that the Senate proce",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 60,
+      "end": 64,
+      "text": "will",
+      "raw_start": 60,
+      "raw_end": 64,
+      "raw_quote": "will",
+      "context": "from Michi- gan will give way I will move that the Senate proceed to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 65,
+      "end": 69,
+      "text": "move",
+      "raw_start": 65,
+      "raw_end": 69,
+      "raw_quote": "move",
+      "context": "Michi- gan will give way I will move that the Senate proceed to the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 70,
+      "end": 74,
+      "text": "that",
+      "raw_start": 70,
+      "raw_end": 74,
+      "raw_quote": "that",
+      "context": "- gan will give way I will move that the Senate proceed to the consi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 75,
+      "end": 78,
+      "text": "the",
+      "raw_start": 75,
+      "raw_end": 78,
+      "raw_quote": "the",
+      "context": " will give way I will move that the Senate proceed to the considera",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 79,
+      "end": 85,
+      "text": "Senate",
+      "raw_start": 79,
+      "raw_end": 85,
+      "raw_quote": "Senate",
+      "context": "l give way I will move that the Senate proceed to the consideration of",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 86,
+      "end": 93,
+      "text": "proceed",
+      "raw_start": 86,
+      "raw_end": 93,
+      "raw_quote": "proceed",
+      "context": "way I will move that the Senate proceed to the consideration of executi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 94,
+      "end": 96,
+      "text": "to",
+      "raw_start": 94,
+      "raw_end": 96,
+      "raw_quote": "to",
+      "context": "ll move that the Senate proceed to the consideration of executive ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 97,
+      "end": 100,
+      "text": "the",
+      "raw_start": 97,
+      "raw_end": 100,
+      "raw_quote": "the",
+      "context": "move that the Senate proceed to the consideration of executive busi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 101,
+      "end": 114,
+      "text": "consideration",
+      "raw_start": 101,
+      "raw_end": 114,
+      "raw_quote": "consideration",
+      "context": " that the Senate proceed to the consideration of executive busi-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 115,
+      "end": 117,
+      "text": "of",
+      "raw_start": 115,
+      "raw_end": 117,
+      "raw_quote": "of",
+      "context": "te proceed to the consideration of executive busi-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 118,
+      "end": 127,
+      "text": "executive",
+      "raw_start": 118,
+      "raw_end": 127,
+      "raw_quote": "executive",
+      "context": "proceed to the consideration of executive busi-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 128,
+      "end": 132,
+      "text": "busi",
+      "raw_start": 128,
+      "raw_end": 132,
+      "raw_quote": "busi",
+      "context": " the consideration of executive busi-",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. CONNESS. If the Senator from M",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 11,
+      "text": "CONNESS",
+      "raw_start": 4,
+      "raw_end": 11,
+      "raw_quote": "CONNESS",
+      "context": "Mr. CONNESS. If the Senator from Michi- gan",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "title_name_cue"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 13,
+      "end": 15,
+      "text": "If",
+      "raw_start": 13,
+      "raw_end": 15,
+      "raw_quote": "If",
+      "context": "Mr. CONNESS. If the Senator from Michi- gan wil",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 16,
+      "end": 19,
+      "text": "the",
+      "raw_start": 16,
+      "raw_end": 19,
+      "raw_quote": "the",
+      "context": "Mr. CONNESS. If the Senator from Michi- gan will gi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 20,
+      "end": 27,
+      "text": "Senator",
+      "raw_start": 20,
+      "raw_end": 27,
+      "raw_quote": "Senator",
+      "context": "Mr. CONNESS. If the Senator from Michi- gan will give way I",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 28,
+      "end": 32,
+      "text": "from",
+      "raw_start": 28,
+      "raw_end": 32,
+      "raw_quote": "from",
+      "context": "Mr. CONNESS. If the Senator from Michi- gan will give way I will",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 33,
+      "end": 38,
+      "text": "Michi",
+      "raw_start": 33,
+      "raw_end": 38,
+      "raw_quote": "Michi",
+      "context": "r. CONNESS. If the Senator from Michi- gan will give way I will move ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 40,
+      "end": 43,
+      "text": "gan",
+      "raw_start": 40,
+      "raw_end": 43,
+      "raw_quote": "gan",
+      "context": "ESS. If the Senator from Michi- gan will give way I will move that ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 44,
+      "end": 48,
+      "text": "will",
+      "raw_start": 44,
+      "raw_end": 48,
+      "raw_quote": "will",
+      "context": " If the Senator from Michi- gan will give way I will move that the S",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 49,
+      "end": 53,
+      "text": "give",
+      "raw_start": 49,
+      "raw_end": 53,
+      "raw_quote": "give",
+      "context": "he Senator from Michi- gan will give way I will move that the Senate",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 54,
+      "end": 57,
+      "text": "way",
+      "raw_start": 54,
+      "raw_end": 57,
+      "raw_quote": "way",
+      "context": "nator from Michi- gan will give way I will move that the Senate pro",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 58,
+      "end": 59,
+      "text": "I",
+      "raw_start": 58,
+      "raw_end": 59,
+      "raw_quote": "I",
+      "context": "r from Michi- gan will give way I will move that the Senate proce",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 60,
+      "end": 64,
+      "text": "will",
+      "raw_start": 60,
+      "raw_end": 64,
+      "raw_quote": "will",
+      "context": "from Michi- gan will give way I will move that the Senate proceed to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 65,
+      "end": 69,
+      "text": "move",
+      "raw_start": 65,
+      "raw_end": 69,
+      "raw_quote": "move",
+      "context": "Michi- gan will give way I will move that the Senate proceed to the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 70,
+      "end": 74,
+      "text": "that",
+      "raw_start": 70,
+      "raw_end": 74,
+      "raw_quote": "that",
+      "context": "- gan will give way I will move that the Senate proceed to the consi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 75,
+      "end": 78,
+      "text": "the",
+      "raw_start": 75,
+      "raw_end": 78,
+      "raw_quote": "the",
+      "context": " will give way I will move that the Senate proceed to the considera",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 79,
+      "end": 85,
+      "text": "Senate",
+      "raw_start": 79,
+      "raw_end": 85,
+      "raw_quote": "Senate",
+      "context": "l give way I will move that the Senate proceed to the consideration of",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 86,
+      "end": 93,
+      "text": "proceed",
+      "raw_start": 86,
+      "raw_end": 93,
+      "raw_quote": "proceed",
+      "context": "way I will move that the Senate proceed to the consideration of executi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 94,
+      "end": 96,
+      "text": "to",
+      "raw_start": 94,
+      "raw_end": 96,
+      "raw_quote": "to",
+      "context": "ll move that the Senate proceed to the consideration of executive ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 97,
+      "end": 100,
+      "text": "the",
+      "raw_start": 97,
+      "raw_end": 100,
+      "raw_quote": "the",
+      "context": "move that the Senate proceed to the consideration of executive busi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 101,
+      "end": 114,
+      "text": "consideration",
+      "raw_start": 101,
+      "raw_end": 114,
+      "raw_quote": "consideration",
+      "context": " that the Senate proceed to the consideration of executive busi-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 115,
+      "end": 117,
+      "text": "of",
+      "raw_start": 115,
+      "raw_end": 117,
+      "raw_quote": "of",
+      "context": "te proceed to the consideration of executive busi-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 118,
+      "end": 127,
+      "text": "executive",
+      "raw_start": 118,
+      "raw_end": 127,
+      "raw_quote": "executive",
+      "context": "proceed to the consideration of executive busi-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 128,
+      "end": 132,
+      "text": "busi",
+      "raw_start": 128,
+      "raw_end": 132,
+      "raw_quote": "busi",
+      "context": " the consideration of executive busi-",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7393unit:719:par_000719_000027",
+      "raw_text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+      "raw_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7393unit:719:par_000719_000027",
+        "raw_text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+        "raw_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+    "proposed_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

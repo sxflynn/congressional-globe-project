@@ -1,0 +1,92 @@
+"""One-pass T131 canonical source extraction; no image/provider access."""
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+SAMPLE = ROOT / "artifacts/ocr-sample-design-20261027-01/sample.json"
+FOUNDATION = ROOT / json.loads(SAMPLE.read_bytes())["source"]["path"]
+OUT = Path(__file__).resolve().parent
+FREEZE = json.loads((ROOT / "artifacts/expanded-workflow-audit-20261103-01/selection-freeze.json").read_bytes())
+SAMPLE_DATA = json.loads(SAMPLE.read_bytes())
+FROZEN = {c["source_id"]: c for c in FREEZE["cases"]}
+ROWS = {r["source_id"]: r for r in SAMPLE_DATA["primary"] if r["source_id"] in FROZEN}
+if set(ROWS) != set(FROZEN):
+    raise SystemExit("not all frozen source IDs are T49 primary rows")
+
+hasher = hashlib.sha256()
+found = {}
+offset = 0
+with FOUNDATION.open("rb") as source:
+    for line_number, raw in enumerate(source, 1):
+        hasher.update(raw)
+        try:
+            record = json.loads(raw)
+        except (UnicodeDecodeError, json.JSONDecodeError):
+            offset += len(raw)
+            continue
+        for source_id, frozen in FROZEN.items():
+            row = ROWS[source_id]
+            if (record.get("item_identifier"), record.get("scan_leaf")) != (row["item_identifier"], row["scan_leaf"]):
+                continue
+            if row["paragraph_id"] not in {p.get("id") for p in record.get("paragraphs", [])}:
+                continue
+            if source_id in found:
+                raise SystemExit(f"duplicate canonical page for {source_id}")
+            target = OUT / f"part{row['part_number']}-leaf{row['scan_leaf']}.jsonl"
+            target.write_bytes(raw)
+            found[source_id] = {
+                "source_id": source_id,
+                "part": row["part_number"],
+                "leaf": row["scan_leaf"],
+                "paragraph_id": row["paragraph_id"],
+                "canonical_page_line": line_number,
+                "canonical_byte_offset": offset,
+                "canonical_line_bytes": len(raw),
+                "saved_path": str(target.relative_to(ROOT)),
+                "raw_sha256": row["raw_sha256"],
+                "static_sha256": row["static_sha256"],
+                "page_line_sha256": row["page_line_sha256"],
+                "canonical_row_source_id_present": True,
+            }
+        offset += len(raw)
+
+actual = hasher.hexdigest()
+expected = SAMPLE_DATA["source"]["sha256"]
+if actual != expected:
+    raise SystemExit(f"canonical foundation SHA mismatch: {actual} != {expected}")
+if set(found) != set(FROZEN):
+    raise SystemExit(f"missing frozen canonical rows: {sorted(set(FROZEN)-set(found))}")
+for source_id, metadata in found.items():
+    row = ROWS[source_id]
+    record = json.loads((ROOT / metadata["saved_path"]).read_bytes())
+    paragraph = next(p for p in record["paragraphs"] if p["id"] == row["paragraph_id"])
+    if paragraph["text_ocr"] != row["raw_text"] or paragraph["text_normalized"] != row["static_text"]:
+        raise SystemExit(f"raw/static text mismatch for {source_id}")
+    if row["raw_sha256"] != FROZEN[source_id]["raw_sha256"]:
+        raise SystemExit(f"frozen raw hash mismatch for {source_id}")
+    if paragraph["line_ids"] != row["line_ids"]:
+        raise SystemExit(f"canonical line IDs differ from T49 foundation for {source_id}")
+    if [line["id"] for line in paragraph["lines"]] != row["line_ids"]:
+        raise SystemExit(f"canonical line records differ from T49 foundation for {source_id}")
+    if hashlib.sha256(row["raw_text"].encode()).hexdigest() != row["raw_sha256"]:
+        raise SystemExit(f"T49 raw text digest mismatch for {source_id}")
+    if hashlib.sha256(row["static_text"].encode()).hexdigest() != row["static_sha256"]:
+        raise SystemExit(f"T49 static text digest mismatch for {source_id}")
+    metadata["page_line_number"] = row["page_line_number"]
+    metadata["line_ids"] = row["line_ids"]
+
+receipt = {
+    "task": "T131",
+    "method": "single binary streaming pass; hash every canonical JSONL byte while extracting six exact page rows",
+    "canonical_source_path": str(FOUNDATION.relative_to(ROOT)),
+    "canonical_sha256_expected": expected,
+    "canonical_sha256_actual": actual,
+    "canonical_bytes_streamed": offset,
+    "selected_page_count": len(found),
+    "cases": [found[c["source_id"]] for c in FREEZE["cases"]],
+    "provider_calls": 0,
+    "image_fetches": 0,
+}
+(OUT / "extraction-receipt.json").write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
+print(json.dumps({k: receipt[k] for k in ("canonical_sha256_actual", "canonical_bytes_streamed", "selected_page_count", "provider_calls", "image_fetches")}, indent=2))

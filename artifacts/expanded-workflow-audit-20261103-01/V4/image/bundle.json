@@ -1,0 +1,87 @@
+{
+  "schema_version": "scan-bundle-v1",
+  "target": {
+    "item_identifier": "congressionalglo00unit",
+    "part_number": 4,
+    "scan_leaf": 717,
+    "hocr_page_id": "page_000717",
+    "paragraph_id": "par_000717_000026",
+    "printed_page": "3485",
+    "raw_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+    "raw_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+    "hocr_sha256": "d45d7da868baa8bd019deb0774ab0796ffcb9dba6aa027323756b7ced15d42a9",
+    "page_map_sha256": "d49c423696592b25e2e243f2a4335f509b078fee1e14ada130db34baa314e2aa",
+    "ocr_width": 3057,
+    "ocr_height": 4269,
+    "selection_start": 0,
+    "selection_end": 56,
+    "selection_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+    "precision": "paragraph",
+    "max_width": 1600,
+    "regions": [
+      {
+        "bbox": {
+          "left": 1044,
+          "top": 2568,
+          "right": 1923,
+          "bottom": 2653
+        },
+        "line_ids": [
+          "line_000717_000149",
+          "line_000717_000150"
+        ],
+        "word_ids": [
+          "word_000717_001119",
+          "word_000717_001120",
+          "word_000717_001121",
+          "word_000717_001122",
+          "word_000717_001123",
+          "word_000717_001124",
+          "word_000717_001125",
+          "word_000717_001126",
+          "word_000717_001127",
+          "word_000717_001128",
+          "word_000717_001129"
+        ]
+      }
+    ]
+  },
+  "target_sha256": "5c94a6b45c9dfb3849e101534a3637728f3b8a33e0e26ae944f26412c55678fb",
+  "info_receipt": {
+    "requested_url": "https://iiif.archive.org/iiif/congressionalglo00unit$717/info.json",
+    "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0717.jp2/info.json",
+    "retrieved_at_utc": "2026-11-03T11:45:19.264672+00:00",
+    "elapsed_seconds": 0.9778507919982076,
+    "bytes": 991,
+    "sha256": "881dbd15c4711e715c919e6438eade3bf99ea50c30101dc8ccbe11da55d664e9",
+    "content_type": "application/json;charset=utf-8"
+  },
+  "images": [
+    {
+      "file": "crop-01.jpg",
+      "width": 879,
+      "height": 85,
+      "region": [
+        1044,
+        2568,
+        879,
+        85
+      ],
+      "receipt": {
+        "requested_url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0717.jp2/1044,2568,879,85/879,/0/default.jpg",
+        "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalglo00unit%2fcongressionalglo00unit_jp2.zip%2fcongressionalglo00unit_jp2%2fcongressionalglo00unit_0717.jp2/1044,2568,879,85/879,/0/default.jpg",
+        "retrieved_at_utc": "2026-11-03T11:45:20.100557+00:00",
+        "elapsed_seconds": 0.8345097498968244,
+        "bytes": 19850,
+        "sha256": "2dba1d8bf07bf639a464b536ae789f7c7e6393ac2d9d2f610f869179b8b60126",
+        "content_type": "image/jpeg"
+      }
+    }
+  ],
+  "code_sha256": {
+    "scan_models.py": "8c099fc7068cbb216a40cf05a4241d48eb9218a789ddcb5b1fbbc344c77c46b1",
+    "scan_geometry.py": "a70e9423ddb9c0868ecd1bd1aea8cac781919f03abfe84bb87631872055fc238",
+    "scan_fetch.py": "7ce46f0afc70f860b99ff631eb3eb006885741e50608cf2dbeaac0fec3e25da2"
+  },
+  "registration": "exact dimensions; native pixel coordinates; no inferred scaling/rotation"
+}

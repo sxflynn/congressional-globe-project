@@ -1,0 +1,1754 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7393unit:988:par_000988_000008",
+      "raw_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.",
+      "raw_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9"
+    },
+    "static_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.",
+    "static_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+    "static_edits": [],
+    "lines": [
+      {
+        "line_id": "line_000988_000054",
+        "start": 0,
+        "end": 38,
+        "text": "The PRESIDENT pro tempore. It is moved"
+      },
+      {
+        "line_id": "line_000988_000055",
+        "start": 39,
+        "end": 82,
+        "text": "and seconded that the Senator from Illinois"
+      },
+      {
+        "line_id": "line_000988_000056",
+        "start": 83,
+        "end": 127,
+        "text": "be authorized to withdraw from the Committee"
+      },
+      {
+        "line_id": "line_000988_000057",
+        "start": 128,
+        "end": 173,
+        "text": "on Military Affairs the petition presented by"
+      },
+      {
+        "line_id": "line_000988_000058",
+        "start": 174,
+        "end": 218,
+        "text": "him which was referred to that, committee by"
+      },
+      {
+        "line_id": "line_000988_000059",
+        "start": 219,
+        "end": 255,
+        "text": "order of the Senate some time since."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "4cc9aef972b5faf2049641947a3efd1e7dd9b38d602b6806b68d2ddf5439edc3"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "9bf9686774e28b498d7c01fb8e0c3d8b3f583fa36fe67a0f6871e4196e49ea41",
+  "proposed_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.",
+  "proposed_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 255,
+      "derived_start": 0,
+      "derived_end": 255,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 3,
+      "text": "The",
+      "raw_start": 0,
+      "raw_end": 3,
+      "raw_quote": "The",
+      "context": "The PRESIDENT pro tempore. It is mo",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 13,
+      "text": "PRESIDENT",
+      "raw_start": 4,
+      "raw_end": 13,
+      "raw_quote": "PRESIDENT",
+      "context": "The PRESIDENT pro tempore. It is moved and se",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 14,
+      "end": 17,
+      "text": "pro",
+      "raw_start": 14,
+      "raw_end": 17,
+      "raw_quote": "pro",
+      "context": "The PRESIDENT pro tempore. It is moved and second",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 18,
+      "end": 25,
+      "text": "tempore",
+      "raw_start": 18,
+      "raw_end": 25,
+      "raw_quote": "tempore",
+      "context": "The PRESIDENT pro tempore. It is moved and seconded that ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 27,
+      "end": 29,
+      "text": "It",
+      "raw_start": 27,
+      "raw_end": 29,
+      "raw_quote": "It",
+      "context": "The PRESIDENT pro tempore. It is moved and seconded that the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 30,
+      "end": 32,
+      "text": "is",
+      "raw_start": 30,
+      "raw_end": 32,
+      "raw_quote": "is",
+      "context": "The PRESIDENT pro tempore. It is moved and seconded that the Sen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 33,
+      "end": 38,
+      "text": "moved",
+      "raw_start": 33,
+      "raw_end": 38,
+      "raw_quote": "moved",
+      "context": "he PRESIDENT pro tempore. It is moved and seconded that the Senator f",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 39,
+      "end": 42,
+      "text": "and",
+      "raw_start": 39,
+      "raw_end": 42,
+      "raw_quote": "and",
+      "context": "SIDENT pro tempore. It is moved and seconded that the Senator from ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 43,
+      "end": 51,
+      "text": "seconded",
+      "raw_start": 43,
+      "raw_end": 51,
+      "raw_quote": "seconded",
+      "context": "NT pro tempore. It is moved and seconded that the Senator from Illinois ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 52,
+      "end": 56,
+      "text": "that",
+      "raw_start": 52,
+      "raw_end": 56,
+      "raw_quote": "that",
+      "context": "mpore. It is moved and seconded that the Senator from Illinois be au",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 57,
+      "end": 60,
+      "text": "the",
+      "raw_start": 57,
+      "raw_end": 60,
+      "raw_quote": "the",
+      "context": ". It is moved and seconded that the Senator from Illinois be author",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 61,
+      "end": 68,
+      "text": "Senator",
+      "raw_start": 61,
+      "raw_end": 68,
+      "raw_quote": "Senator",
+      "context": " is moved and seconded that the Senator from Illinois be authorized to ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 69,
+      "end": 73,
+      "text": "from",
+      "raw_start": 69,
+      "raw_end": 73,
+      "raw_quote": "from",
+      "context": "d and seconded that the Senator from Illinois be authorized to withd",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 74,
+      "end": 82,
+      "text": "Illinois",
+      "raw_start": 74,
+      "raw_end": 82,
+      "raw_quote": "Illinois",
+      "context": " seconded that the Senator from Illinois be authorized to withdraw from ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 83,
+      "end": 85,
+      "text": "be",
+      "raw_start": 83,
+      "raw_end": 85,
+      "raw_quote": "be",
+      "context": " that the Senator from Illinois be authorized to withdraw from the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 86,
+      "end": 96,
+      "text": "authorized",
+      "raw_start": 86,
+      "raw_end": 96,
+      "raw_quote": "authorized",
+      "context": "at the Senator from Illinois be authorized to withdraw from the Committee ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 97,
+      "end": 99,
+      "text": "to",
+      "raw_start": 97,
+      "raw_end": 99,
+      "raw_quote": "to",
+      "context": "tor from Illinois be authorized to withdraw from the Committee on ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 100,
+      "end": 108,
+      "text": "withdraw",
+      "raw_start": 100,
+      "raw_end": 108,
+      "raw_quote": "withdraw",
+      "context": " from Illinois be authorized to withdraw from the Committee on Military ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 109,
+      "end": 113,
+      "text": "from",
+      "raw_start": 109,
+      "raw_end": 113,
+      "raw_quote": "from",
+      "context": "inois be authorized to withdraw from the Committee on Military Affai",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 114,
+      "end": 117,
+      "text": "the",
+      "raw_start": 114,
+      "raw_end": 117,
+      "raw_quote": "the",
+      "context": " be authorized to withdraw from the Committee on Military Affairs t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 118,
+      "end": 127,
+      "text": "Committee",
+      "raw_start": 118,
+      "raw_end": 127,
+      "raw_quote": "Committee",
+      "context": "authorized to withdraw from the Committee on Military Affairs the petitio",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 128,
+      "end": 130,
+      "text": "on",
+      "raw_start": 128,
+      "raw_end": 130,
+      "raw_quote": "on",
+      "context": " to withdraw from the Committee on Military Affairs the petition p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 131,
+      "end": 139,
+      "text": "Military",
+      "raw_start": 131,
+      "raw_end": 139,
+      "raw_quote": "Military",
+      "context": " withdraw from the Committee on Military Affairs the petition presented ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 140,
+      "end": 147,
+      "text": "Affairs",
+      "raw_start": 140,
+      "raw_end": 147,
+      "raw_quote": "Affairs",
+      "context": " from the Committee on Military Affairs the petition presented by him w",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 148,
+      "end": 151,
+      "text": "the",
+      "raw_start": 148,
+      "raw_end": 151,
+      "raw_quote": "the",
+      "context": "e Committee on Military Affairs the petition presented by him which",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 152,
+      "end": 160,
+      "text": "petition",
+      "raw_start": 152,
+      "raw_end": 160,
+      "raw_quote": "petition",
+      "context": "mmittee on Military Affairs the petition presented by him which was refe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 161,
+      "end": 170,
+      "text": "presented",
+      "raw_start": 161,
+      "raw_end": 170,
+      "raw_quote": "presented",
+      "context": "n Military Affairs the petition presented by him which was referred to th",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 171,
+      "end": 173,
+      "text": "by",
+      "raw_start": 171,
+      "raw_end": 173,
+      "raw_quote": "by",
+      "context": " Affairs the petition presented by him which was referred to that,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 174,
+      "end": 177,
+      "text": "him",
+      "raw_start": 174,
+      "raw_end": 177,
+      "raw_quote": "him",
+      "context": "fairs the petition presented by him which was referred to that, com",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 178,
+      "end": 183,
+      "text": "which",
+      "raw_start": 178,
+      "raw_end": 183,
+      "raw_quote": "which",
+      "context": "s the petition presented by him which was referred to that, committee",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 184,
+      "end": 187,
+      "text": "was",
+      "raw_start": 184,
+      "raw_end": 187,
+      "raw_quote": "was",
+      "context": "petition presented by him which was referred to that, committee by ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 188,
+      "end": 196,
+      "text": "referred",
+      "raw_start": 188,
+      "raw_end": 196,
+      "raw_quote": "referred",
+      "context": "tion presented by him which was referred to that, committee by order of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 197,
+      "end": 199,
+      "text": "to",
+      "raw_start": 197,
+      "raw_end": 199,
+      "raw_quote": "to",
+      "context": "ented by him which was referred to that, committee by order of the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 200,
+      "end": 204,
+      "text": "that",
+      "raw_start": 200,
+      "raw_end": 204,
+      "raw_quote": "that",
+      "context": "ed by him which was referred to that, committee by order of the Sena",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 206,
+      "end": 215,
+      "text": "committee",
+      "raw_start": 206,
+      "raw_end": 215,
+      "raw_quote": "committee",
+      "context": "him which was referred to that, committee by order of the Senate some tim",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 216,
+      "end": 218,
+      "text": "by",
+      "raw_start": 216,
+      "raw_end": 218,
+      "raw_quote": "by",
+      "context": "was referred to that, committee by order of the Senate some time s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 219,
+      "end": 224,
+      "text": "order",
+      "raw_start": 219,
+      "raw_end": 224,
+      "raw_quote": "order",
+      "context": " referred to that, committee by order of the Senate some time since.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 225,
+      "end": 227,
+      "text": "of",
+      "raw_start": 225,
+      "raw_end": 227,
+      "raw_quote": "of",
+      "context": "red to that, committee by order of the Senate some time since.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 228,
+      "end": 231,
+      "text": "the",
+      "raw_start": 228,
+      "raw_end": 231,
+      "raw_quote": "the",
+      "context": " to that, committee by order of the Senate some time since.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 232,
+      "end": 238,
+      "text": "Senate",
+      "raw_start": 232,
+      "raw_end": 238,
+      "raw_quote": "Senate",
+      "context": "that, committee by order of the Senate some time since.",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 239,
+      "end": 243,
+      "text": "some",
+      "raw_start": 239,
+      "raw_end": 243,
+      "raw_quote": "some",
+      "context": "ommittee by order of the Senate some time since.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 244,
+      "end": 248,
+      "text": "time",
+      "raw_start": 244,
+      "raw_end": 248,
+      "raw_quote": "time",
+      "context": "tee by order of the Senate some time since.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 249,
+      "end": 254,
+      "text": "since",
+      "raw_start": 249,
+      "raw_end": 254,
+      "raw_quote": "since",
+      "context": "y order of the Senate some time since.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 3,
+      "text": "The",
+      "raw_start": 0,
+      "raw_end": 3,
+      "raw_quote": "The",
+      "context": "The PRESIDENT pro tempore. It is mo",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 13,
+      "text": "PRESIDENT",
+      "raw_start": 4,
+      "raw_end": 13,
+      "raw_quote": "PRESIDENT",
+      "context": "The PRESIDENT pro tempore. It is moved and se",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 14,
+      "end": 17,
+      "text": "pro",
+      "raw_start": 14,
+      "raw_end": 17,
+      "raw_quote": "pro",
+      "context": "The PRESIDENT pro tempore. It is moved and second",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 18,
+      "end": 25,
+      "text": "tempore",
+      "raw_start": 18,
+      "raw_end": 25,
+      "raw_quote": "tempore",
+      "context": "The PRESIDENT pro tempore. It is moved and seconded that ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 27,
+      "end": 29,
+      "text": "It",
+      "raw_start": 27,
+      "raw_end": 29,
+      "raw_quote": "It",
+      "context": "The PRESIDENT pro tempore. It is moved and seconded that the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 30,
+      "end": 32,
+      "text": "is",
+      "raw_start": 30,
+      "raw_end": 32,
+      "raw_quote": "is",
+      "context": "The PRESIDENT pro tempore. It is moved and seconded that the Sen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 33,
+      "end": 38,
+      "text": "moved",
+      "raw_start": 33,
+      "raw_end": 38,
+      "raw_quote": "moved",
+      "context": "he PRESIDENT pro tempore. It is moved and seconded that the Senator f",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 39,
+      "end": 42,
+      "text": "and",
+      "raw_start": 39,
+      "raw_end": 42,
+      "raw_quote": "and",
+      "context": "SIDENT pro tempore. It is moved and seconded that the Senator from ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 43,
+      "end": 51,
+      "text": "seconded",
+      "raw_start": 43,
+      "raw_end": 51,
+      "raw_quote": "seconded",
+      "context": "NT pro tempore. It is moved and seconded that the Senator from Illinois ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 52,
+      "end": 56,
+      "text": "that",
+      "raw_start": 52,
+      "raw_end": 56,
+      "raw_quote": "that",
+      "context": "mpore. It is moved and seconded that the Senator from Illinois be au",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 57,
+      "end": 60,
+      "text": "the",
+      "raw_start": 57,
+      "raw_end": 60,
+      "raw_quote": "the",
+      "context": ". It is moved and seconded that the Senator from Illinois be author",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 61,
+      "end": 68,
+      "text": "Senator",
+      "raw_start": 61,
+      "raw_end": 68,
+      "raw_quote": "Senator",
+      "context": " is moved and seconded that the Senator from Illinois be authorized to ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 69,
+      "end": 73,
+      "text": "from",
+      "raw_start": 69,
+      "raw_end": 73,
+      "raw_quote": "from",
+      "context": "d and seconded that the Senator from Illinois be authorized to withd",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 74,
+      "end": 82,
+      "text": "Illinois",
+      "raw_start": 74,
+      "raw_end": 82,
+      "raw_quote": "Illinois",
+      "context": " seconded that the Senator from Illinois be authorized to withdraw from ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 83,
+      "end": 85,
+      "text": "be",
+      "raw_start": 83,
+      "raw_end": 85,
+      "raw_quote": "be",
+      "context": " that the Senator from Illinois be authorized to withdraw from the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 86,
+      "end": 96,
+      "text": "authorized",
+      "raw_start": 86,
+      "raw_end": 96,
+      "raw_quote": "authorized",
+      "context": "at the Senator from Illinois be authorized to withdraw from the Committee ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 97,
+      "end": 99,
+      "text": "to",
+      "raw_start": 97,
+      "raw_end": 99,
+      "raw_quote": "to",
+      "context": "tor from Illinois be authorized to withdraw from the Committee on ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 100,
+      "end": 108,
+      "text": "withdraw",
+      "raw_start": 100,
+      "raw_end": 108,
+      "raw_quote": "withdraw",
+      "context": " from Illinois be authorized to withdraw from the Committee on Military ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 109,
+      "end": 113,
+      "text": "from",
+      "raw_start": 109,
+      "raw_end": 113,
+      "raw_quote": "from",
+      "context": "inois be authorized to withdraw from the Committee on Military Affai",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 114,
+      "end": 117,
+      "text": "the",
+      "raw_start": 114,
+      "raw_end": 117,
+      "raw_quote": "the",
+      "context": " be authorized to withdraw from the Committee on Military Affairs t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 118,
+      "end": 127,
+      "text": "Committee",
+      "raw_start": 118,
+      "raw_end": 127,
+      "raw_quote": "Committee",
+      "context": "authorized to withdraw from the Committee on Military Affairs the petitio",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 128,
+      "end": 130,
+      "text": "on",
+      "raw_start": 128,
+      "raw_end": 130,
+      "raw_quote": "on",
+      "context": " to withdraw from the Committee on Military Affairs the petition p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 131,
+      "end": 139,
+      "text": "Military",
+      "raw_start": 131,
+      "raw_end": 139,
+      "raw_quote": "Military",
+      "context": " withdraw from the Committee on Military Affairs the petition presented ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 140,
+      "end": 147,
+      "text": "Affairs",
+      "raw_start": 140,
+      "raw_end": 147,
+      "raw_quote": "Affairs",
+      "context": " from the Committee on Military Affairs the petition presented by him w",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 148,
+      "end": 151,
+      "text": "the",
+      "raw_start": 148,
+      "raw_end": 151,
+      "raw_quote": "the",
+      "context": "e Committee on Military Affairs the petition presented by him which",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 152,
+      "end": 160,
+      "text": "petition",
+      "raw_start": 152,
+      "raw_end": 160,
+      "raw_quote": "petition",
+      "context": "mmittee on Military Affairs the petition presented by him which was refe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 161,
+      "end": 170,
+      "text": "presented",
+      "raw_start": 161,
+      "raw_end": 170,
+      "raw_quote": "presented",
+      "context": "n Military Affairs the petition presented by him which was referred to th",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 171,
+      "end": 173,
+      "text": "by",
+      "raw_start": 171,
+      "raw_end": 173,
+      "raw_quote": "by",
+      "context": " Affairs the petition presented by him which was referred to that,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 174,
+      "end": 177,
+      "text": "him",
+      "raw_start": 174,
+      "raw_end": 177,
+      "raw_quote": "him",
+      "context": "fairs the petition presented by him which was referred to that, com",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 178,
+      "end": 183,
+      "text": "which",
+      "raw_start": 178,
+      "raw_end": 183,
+      "raw_quote": "which",
+      "context": "s the petition presented by him which was referred to that, committee",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 184,
+      "end": 187,
+      "text": "was",
+      "raw_start": 184,
+      "raw_end": 187,
+      "raw_quote": "was",
+      "context": "petition presented by him which was referred to that, committee by ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 188,
+      "end": 196,
+      "text": "referred",
+      "raw_start": 188,
+      "raw_end": 196,
+      "raw_quote": "referred",
+      "context": "tion presented by him which was referred to that, committee by order of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 197,
+      "end": 199,
+      "text": "to",
+      "raw_start": 197,
+      "raw_end": 199,
+      "raw_quote": "to",
+      "context": "ented by him which was referred to that, committee by order of the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 200,
+      "end": 204,
+      "text": "that",
+      "raw_start": 200,
+      "raw_end": 204,
+      "raw_quote": "that",
+      "context": "ed by him which was referred to that, committee by order of the Sena",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 206,
+      "end": 215,
+      "text": "committee",
+      "raw_start": 206,
+      "raw_end": 215,
+      "raw_quote": "committee",
+      "context": "him which was referred to that, committee by order of the Senate some tim",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 216,
+      "end": 218,
+      "text": "by",
+      "raw_start": 216,
+      "raw_end": 218,
+      "raw_quote": "by",
+      "context": "was referred to that, committee by order of the Senate some time s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 219,
+      "end": 224,
+      "text": "order",
+      "raw_start": 219,
+      "raw_end": 224,
+      "raw_quote": "order",
+      "context": " referred to that, committee by order of the Senate some time since.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 225,
+      "end": 227,
+      "text": "of",
+      "raw_start": 225,
+      "raw_end": 227,
+      "raw_quote": "of",
+      "context": "red to that, committee by order of the Senate some time since.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 228,
+      "end": 231,
+      "text": "the",
+      "raw_start": 228,
+      "raw_end": 231,
+      "raw_quote": "the",
+      "context": " to that, committee by order of the Senate some time since.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 232,
+      "end": 238,
+      "text": "Senate",
+      "raw_start": 232,
+      "raw_end": 238,
+      "raw_quote": "Senate",
+      "context": "that, committee by order of the Senate some time since.",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 239,
+      "end": 243,
+      "text": "some",
+      "raw_start": 239,
+      "raw_end": 243,
+      "raw_quote": "some",
+      "context": "ommittee by order of the Senate some time since.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 244,
+      "end": 248,
+      "text": "time",
+      "raw_start": 244,
+      "raw_end": 248,
+      "raw_quote": "time",
+      "context": "tee by order of the Senate some time since.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 249,
+      "end": 254,
+      "text": "since",
+      "raw_start": 249,
+      "raw_end": 254,
+      "raw_quote": "since",
+      "context": "y order of the Senate some time since.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7393unit:988:par_000988_000008",
+      "raw_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.",
+      "raw_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7393unit:988:par_000988_000008",
+        "raw_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.",
+        "raw_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.",
+    "proposed_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

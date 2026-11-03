@@ -1,0 +1,125 @@
+{
+  "task": "T131",
+  "authorization": "Direct user2026-11-03:keep going.do even more qwen; standing bounded-small-test autonomy.",
+  "cases": [
+    {
+      "case": "V1",
+      "source_id": "congressionalglo7393unit:988:par_000988_000008",
+      "part": 3,
+      "leaf": 988,
+      "paragraph_id": "par_000988_000008",
+      "raw_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+      "page_line_sha256": "4cc9aef972b5faf2049641947a3efd1e7dd9b38d602b6806b68d2ddf5439edc3",
+      "raw_codepoints": 255
+    },
+    {
+      "case": "V2",
+      "source_id": "congressionalglo7393unit:719:par_000719_000027",
+      "part": 3,
+      "leaf": 719,
+      "paragraph_id": "par_000719_000027",
+      "raw_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+      "page_line_sha256": "c27ddf8a771072513b89c86564d3bc7a32d7c5abd8f8dea261b955b22c10d330",
+      "raw_codepoints": 133
+    },
+    {
+      "case": "V3",
+      "source_id": "congressionalglo00unit:648:par_000648_000009",
+      "part": 4,
+      "leaf": 648,
+      "paragraph_id": "par_000648_000009",
+      "raw_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+      "page_line_sha256": "a2e272c96937dbf1bfe5fee7ce7c43433a764b37d499b1122136e8d13d68b52e",
+      "raw_codepoints": 185
+    },
+    {
+      "case": "V4",
+      "source_id": "congressionalglo00unit:717:par_000717_000026",
+      "part": 4,
+      "leaf": 717,
+      "paragraph_id": "par_000717_000026",
+      "raw_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+      "page_line_sha256": "c1bcbbc76148786696872988a847e9cc4c40acda30a410eea709332b6cb629c3",
+      "raw_codepoints": 56
+    },
+    {
+      "case": "V5",
+      "source_id": "congressionalglo7395unit:147:par_000147_000006",
+      "part": 5,
+      "leaf": 147,
+      "paragraph_id": "par_000147_000006",
+      "raw_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+      "page_line_sha256": "86a805c9f09c7cf50e3d490e537e150d00a81274187f2384f741068245293b81",
+      "raw_codepoints": 94
+    },
+    {
+      "case": "V6",
+      "source_id": "congressionalglo7395unit:302:par_000302_000012",
+      "part": 5,
+      "leaf": 302,
+      "paragraph_id": "par_000302_000012",
+      "raw_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+      "page_line_sha256": "2d0cbc5e5122d6c882024f343be99e192ef56cf24a33687c627b65a9cf2d01fc",
+      "raw_codepoints": 82
+    }
+  ],
+  "selection_rule": "Two longest raw-codepoint primary passages in each of parts3,4,5 after excluding all known model-exposed leaves; descending length then frozen priority/sourceID ties. Freeze before source-image outcomes. Purposeful length-selected diagnostic, not a probability estimate.",
+  "excluded_model_exposed_leaves": [
+    [
+      1,
+      278
+    ],
+    [
+      1,
+      526
+    ],
+    [
+      2,
+      406
+    ],
+    [
+      2,
+      716
+    ],
+    [
+      3,
+      1055
+    ],
+    [
+      5,
+      529
+    ],
+    [
+      5,
+      741
+    ],
+    [
+      5,
+      1060
+    ]
+  ],
+  "reserved_confirmation": "not examined or used",
+  "exposure": "Some canonical OCR/preparation may have been inspected in earlier offline preparation; no known previous model test on selected leaves. Broader/training exposure unknown.",
+  "bounds": {
+    "cases": 6,
+    "identical_runs_each": 3,
+    "total_calls": 18,
+    "retries": 0,
+    "request_seconds": 120,
+    "output_tokens": 1500,
+    "per_case_group_seconds": 1800,
+    "total_model_phase_seconds": 1800,
+    "image_downloads_max": 6,
+    "info_downloads_max": 6,
+    "per_image_bytes_max": 8000000,
+    "model_downloads": 0
+  },
+  "model": "qwen3.8:27b-mlx",
+  "request_format": "Existing full-target text reply/conformance-v4; software first pass and host computed differences; exact native paragraph crop.",
+  "limits": [
+    "One root image assessment before model outputs, not accepted benchmark gold.",
+    "No after-image replacement of short/unavailable/awkward cases.",
+    "Consistency is separate from fidelity; no corpus/nativefit/P0acceptance.",
+    "Unknown usage/ownedstop or exhausted globalbudget stops remaining slots; safety-stopped groups incomplete."
+  ]
+}

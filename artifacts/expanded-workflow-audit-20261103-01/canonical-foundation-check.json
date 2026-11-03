@@ -1,0 +1,218 @@
+{
+  "task": "T131",
+  "canonical_foundation": {
+    "path": "artifacts/runs/static-final-20261011/canonical_pages.jsonl",
+    "expected_sha256": "4ab8ef6b325b650a0db002a94d690989f02d82333e977e5fed05c8f651772eeb",
+    "bytes": 2231301433,
+    "streaming_passes": 1,
+    "digest_check": "passed in the one-pass extraction before selected-row validation; the later local line-serialization assertion was replaced by exact T49 line-ID comparison"
+  },
+  "sample_path": "artifacts/ocr-sample-design-20261027-01/sample.json",
+  "sample_sha256": "d460f3410be9905f4cf5fe42ee8eaa7e5a1174b9cde74d5d1be14a30395083b1",
+  "freeze_sha256": "bdb41fd784759e5d2e83c67622bc6ef5a8b48ba99a468c2251846a8d449f5c78",
+  "selected_pages": [
+    {
+      "case": "V1",
+      "source_id": "congressionalglo7393unit:988:par_000988_000008",
+      "part": 3,
+      "leaf": 988,
+      "paragraph_id": "par_000988_000008",
+      "raw_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+      "static_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+      "page_line_sha256": "4cc9aef972b5faf2049641947a3efd1e7dd9b38d602b6806b68d2ddf5439edc3",
+      "page_line_number": 3155,
+      "line_ids": [
+        "line_000988_000054",
+        "line_000988_000055",
+        "line_000988_000056",
+        "line_000988_000057",
+        "line_000988_000058",
+        "line_000988_000059"
+      ],
+      "bbox": {
+        "left": 201,
+        "top": 2242,
+        "right": 1080,
+        "bottom": 2488
+      },
+      "role": "body",
+      "page_row_path": "tmp/t131-source-prep/part3-leaf988.jsonl",
+      "page_row_sha256": "4cc9aef972b5faf2049641947a3efd1e7dd9b38d602b6806b68d2ddf5439edc3",
+      "raw_codepoints": 255,
+      "image_status": "not_bound_or_verified_for_this_target",
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      }
+    },
+    {
+      "case": "V2",
+      "source_id": "congressionalglo7393unit:719:par_000719_000027",
+      "part": 3,
+      "leaf": 719,
+      "paragraph_id": "par_000719_000027",
+      "raw_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+      "static_sha256": "061c83852778f5507fa9f69e1e356de3e64f3d119ed35b24333a0aac8e67eb06",
+      "page_line_sha256": "c27ddf8a771072513b89c86564d3bc7a32d7c5abd8f8dea261b955b22c10d330",
+      "page_line_number": 2886,
+      "line_ids": [
+        "line_000719_000267",
+        "line_000719_000268",
+        "line_000719_000269"
+      ],
+      "bbox": {
+        "left": 1912,
+        "top": 3681,
+        "right": 2793,
+        "bottom": 3815
+      },
+      "role": "body",
+      "page_row_path": "tmp/t131-source-prep/part3-leaf719.jsonl",
+      "page_row_sha256": "c27ddf8a771072513b89c86564d3bc7a32d7c5abd8f8dea261b955b22c10d330",
+      "raw_codepoints": 133,
+      "image_status": "not_bound_or_verified_for_this_target",
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      }
+    },
+    {
+      "case": "V3",
+      "source_id": "congressionalglo00unit:648:par_000648_000009",
+      "part": 4,
+      "leaf": 648,
+      "paragraph_id": "par_000648_000009",
+      "raw_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+      "static_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+      "page_line_sha256": "a2e272c96937dbf1bfe5fee7ce7c43433a764b37d499b1122136e8d13d68b52e",
+      "page_line_number": 3891,
+      "line_ids": [
+        "line_000648_000054",
+        "line_000648_000055",
+        "line_000648_000056",
+        "line_000648_000057"
+      ],
+      "bbox": {
+        "left": 238,
+        "top": 2343,
+        "right": 1119,
+        "bottom": 2505
+      },
+      "role": "body",
+      "page_row_path": "tmp/t131-source-prep/part4-leaf648.jsonl",
+      "page_row_sha256": "a2e272c96937dbf1bfe5fee7ce7c43433a764b37d499b1122136e8d13d68b52e",
+      "raw_codepoints": 185,
+      "image_status": "not_bound_or_verified_for_this_target",
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      }
+    },
+    {
+      "case": "V4",
+      "source_id": "congressionalglo00unit:717:par_000717_000026",
+      "part": 4,
+      "leaf": 717,
+      "paragraph_id": "par_000717_000026",
+      "raw_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+      "static_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+      "page_line_sha256": "c1bcbbc76148786696872988a847e9cc4c40acda30a410eea709332b6cb629c3",
+      "page_line_number": 3960,
+      "line_ids": [
+        "line_000717_000149",
+        "line_000717_000150"
+      ],
+      "bbox": {
+        "left": 1044,
+        "top": 2568,
+        "right": 1923,
+        "bottom": 2653
+      },
+      "role": "body",
+      "page_row_path": "tmp/t131-source-prep/part4-leaf717.jsonl",
+      "page_row_sha256": "c1bcbbc76148786696872988a847e9cc4c40acda30a410eea709332b6cb629c3",
+      "raw_codepoints": 56,
+      "image_status": "not_bound_or_verified_for_this_target",
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      }
+    },
+    {
+      "case": "V5",
+      "source_id": "congressionalglo7395unit:147:par_000147_000006",
+      "part": 5,
+      "leaf": 147,
+      "paragraph_id": "par_000147_000006",
+      "raw_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+      "static_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+      "page_line_sha256": "86a805c9f09c7cf50e3d490e537e150d00a81274187f2384f741068245293b81",
+      "page_line_number": 4470,
+      "line_ids": [
+        "line_000147_000028",
+        "line_000147_000029",
+        "line_000147_000030"
+      ],
+      "bbox": {
+        "left": 106,
+        "top": 1195,
+        "right": 996,
+        "bottom": 1313
+      },
+      "role": "body",
+      "page_row_path": "tmp/t131-source-prep/part5-leaf147.jsonl",
+      "page_row_sha256": "86a805c9f09c7cf50e3d490e537e150d00a81274187f2384f741068245293b81",
+      "raw_codepoints": 94,
+      "image_status": "not_bound_or_verified_for_this_target",
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      }
+    },
+    {
+      "case": "V6",
+      "source_id": "congressionalglo7395unit:302:par_000302_000012",
+      "part": 5,
+      "leaf": 302,
+      "paragraph_id": "par_000302_000012",
+      "raw_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+      "static_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+      "page_line_sha256": "2d0cbc5e5122d6c882024f343be99e192ef56cf24a33687c627b65a9cf2d01fc",
+      "page_line_number": 4625,
+      "line_ids": [
+        "line_000302_000092",
+        "line_000302_000093"
+      ],
+      "bbox": {
+        "left": 215,
+        "top": 3930,
+        "right": 1086,
+        "bottom": 4015
+      },
+      "role": "body",
+      "page_row_path": "tmp/t131-source-prep/part5-leaf302.jsonl",
+      "page_row_sha256": "2d0cbc5e5122d6c882024f343be99e192ef56cf24a33687c627b65a9cf2d01fc",
+      "raw_codepoints": 82,
+      "image_status": "not_bound_or_verified_for_this_target",
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      }
+    }
+  ],
+  "all_six_frozen_source_rows_validated": true,
+  "provider_calls": 0,
+  "image_fetches": 0
+}

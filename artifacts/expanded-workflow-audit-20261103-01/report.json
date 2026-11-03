@@ -1,0 +1,1724 @@
+{
+  "task": "T131",
+  "actual_calls": 18,
+  "retries": 0,
+  "image_downloads": 6,
+  "info_downloads": 6,
+  "cases": [
+    {
+      "case": "V1",
+      "source_id": "congressionalglo7393unit:988:par_000988_000008",
+      "source_codepoints": 255,
+      "software_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.",
+      "root_visible_illustration": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": null,
+      "signals": 11,
+      "route": "secondary_inspection",
+      "actual_calls": 3,
+      "input_body_sha256": "0a3270c2a26e564cb990bc485460506875b8eef99947d5f9a442cdfc6277da52",
+      "identical_input_bytes": true,
+      "distinct_raw_replies": 2,
+      "distinct_corrected_text_values": 1,
+      "distinct_coverage_text_pairs": 1,
+      "distinct_reason_values": 1,
+      "observations": [
+        {
+          "repeat": 1,
+          "coverage": "complete",
+          "corrected_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "c4b7516850c890e7e33aabb0e774d569bc1a96ff60046ab239aef6e42084e93d",
+            "host_packet_sha256": "6686b422065b34077486455afb85ea37346434345dbf9112e2465b0517aa5e32",
+            "image_sha256": "86cfc4576c031a72707fb6d6f1e67cfa47ed121f5f7e3a54c7e0594ab8bcac23",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 255,
+                      "raw_quote": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.",
+                      "replacement": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+                  "replay_verified": true,
+                  "sha256": "0a8f561c2c2d89fbcd7dd8fbcaa95e69af99342f3d1333ecdb9b4f46dee81a97",
+                  "source_id": "congressionalglo7393unit:988:par_000988_000008",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 254,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 255,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since."
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V1"
+              }
+            },
+            "provider_request_sha256": "0a3270c2a26e564cb990bc485460506875b8eef99947d5f9a442cdfc6277da52",
+            "raw_reply_sha256": "a5bc84423cae025947e2b15fe5a99752d3b0e262f45c6e5cfcc2bd716977d5c9",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"V1\"\n}",
+            "response_schema_sha256": "480baf4292c3a98d472bd4835bd8d41afd0662896da91f9ca540f58c23dedf6d",
+            "source_layers_sha256": "3f0a8ac441171bd96017515c63f7d227f2391e5a1a799257d62edcf64715d7a3"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 2160,
+            "output_tokens": 131
+          },
+          "elapsed_seconds": 39.1231408752501,
+          "transport_elapsed_seconds": 39.08693795884028,
+          "positive_owned_stop": true,
+          "receipt_sha256": "945759eab9f97a9d84463c3cbc3eca5886a5f0dd93e547e2a3146ee5095963b5",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": ",",
+              "model_quote": "",
+              "software_start": 204,
+              "software_end": 205,
+              "model_start": 204,
+              "model_end": 204
+            }
+          ]
+        },
+        {
+          "repeat": 2,
+          "coverage": "complete",
+          "corrected_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "c4b7516850c890e7e33aabb0e774d569bc1a96ff60046ab239aef6e42084e93d",
+            "host_packet_sha256": "6686b422065b34077486455afb85ea37346434345dbf9112e2465b0517aa5e32",
+            "image_sha256": "86cfc4576c031a72707fb6d6f1e67cfa47ed121f5f7e3a54c7e0594ab8bcac23",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 255,
+                      "raw_quote": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.",
+                      "replacement": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+                  "replay_verified": true,
+                  "sha256": "0a8f561c2c2d89fbcd7dd8fbcaa95e69af99342f3d1333ecdb9b4f46dee81a97",
+                  "source_id": "congressionalglo7393unit:988:par_000988_000008",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 254,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 255,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since."
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V1"
+              }
+            },
+            "provider_request_sha256": "0a3270c2a26e564cb990bc485460506875b8eef99947d5f9a442cdfc6277da52",
+            "raw_reply_sha256": "a5bc84423cae025947e2b15fe5a99752d3b0e262f45c6e5cfcc2bd716977d5c9",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"V1\"\n}",
+            "response_schema_sha256": "480baf4292c3a98d472bd4835bd8d41afd0662896da91f9ca540f58c23dedf6d",
+            "source_layers_sha256": "3f0a8ac441171bd96017515c63f7d227f2391e5a1a799257d62edcf64715d7a3"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 2160,
+            "output_tokens": 131
+          },
+          "elapsed_seconds": 37.75022133393213,
+          "transport_elapsed_seconds": 37.712281291838735,
+          "positive_owned_stop": true,
+          "receipt_sha256": "3bf991b5936df47bc71ad3d701e68dd6c6a91495dc3883c0c279150ab6dfe544",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": ",",
+              "model_quote": "",
+              "software_start": 204,
+              "software_end": 205,
+              "model_start": 204,
+              "model_end": 204
+            }
+          ]
+        },
+        {
+          "repeat": 3,
+          "coverage": "complete",
+          "corrected_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "c4b7516850c890e7e33aabb0e774d569bc1a96ff60046ab239aef6e42084e93d",
+            "host_packet_sha256": "6686b422065b34077486455afb85ea37346434345dbf9112e2465b0517aa5e32",
+            "image_sha256": "86cfc4576c031a72707fb6d6f1e67cfa47ed121f5f7e3a54c7e0594ab8bcac23",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 255,
+                      "raw_quote": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.",
+                      "replacement": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "6cac378db04e18b31c4d682c3c8bd7b2e9bae40b5102cb086b543f2f48a226a9",
+                  "replay_verified": true,
+                  "sha256": "0a8f561c2c2d89fbcd7dd8fbcaa95e69af99342f3d1333ecdb9b4f46dee81a97",
+                  "source_id": "congressionalglo7393unit:988:par_000988_000008",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 254,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 255,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since."
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V1"
+              }
+            },
+            "provider_request_sha256": "0a3270c2a26e564cb990bc485460506875b8eef99947d5f9a442cdfc6277da52",
+            "raw_reply_sha256": "db32b38a41cbef65641da69b6711ad6a178788f393830439bf4262412f62a13e",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  , \"unit_id\": \"V1\"\n}",
+            "response_schema_sha256": "480baf4292c3a98d472bd4835bd8d41afd0662896da91f9ca540f58c23dedf6d",
+            "source_layers_sha256": "3f0a8ac441171bd96017515c63f7d227f2391e5a1a799257d62edcf64715d7a3"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 2160,
+            "output_tokens": 128
+          },
+          "elapsed_seconds": 35.157789249904454,
+          "transport_elapsed_seconds": 35.12544620782137,
+          "positive_owned_stop": true,
+          "receipt_sha256": "cabbc25cac38fc9e60ce211c9edfb56c3156815453cc7ea81ad604288e9bd6cd",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": ",",
+              "model_quote": "",
+              "software_start": 204,
+              "software_end": 205,
+              "model_start": 204,
+              "model_end": 204
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "V2",
+      "source_id": "congressionalglo7393unit:719:par_000719_000027",
+      "source_codepoints": 133,
+      "software_text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+      "root_visible_illustration": "Mr. CONNESS. If the Senator from Michigan will give way I will move that the Senate proceed to the consideration of executive busi-",
+      "expected_behavior": "incomplete_null_with_concrete_reason",
+      "source_uncertainty": "Crop and frozen OCR record end in busi-; following letters not supplied. Exact whole word and continuation are unverified. The visible-fragment transcription is an illustration, not a full-word reference.",
+      "signals": 9,
+      "route": "secondary_inspection",
+      "actual_calls": 3,
+      "input_body_sha256": "30e714ef8ddaaf27b8da758fd87fa4a652f776e223a7ddffc257aec434e83fef",
+      "identical_input_bytes": true,
+      "distinct_raw_replies": 3,
+      "distinct_corrected_text_values": 2,
+      "distinct_coverage_text_pairs": 2,
+      "distinct_reason_values": 1,
+      "observations": [
+        {
+          "repeat": 1,
+          "coverage": "complete",
+          "corrected_text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "6bf6f72bf851e6260e42da231fbd495ece5e20ba1546f62a92136fc7c88c0a3e",
+            "host_packet_sha256": "7852e5c246c2f4ce91cafd499f902a0a0a55cd7634c204686d990c7137588d6e",
+            "image_sha256": "fc93e756f2521935296986ded73da70d9a934df0c4d44215af32fb0b44b18e3c",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "exact_copy",
+                  "deterministic_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [],
+                  "raw_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+                  "replay_verified": true,
+                  "sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+                  "source_id": "congressionalglo7393unit:719:par_000719_000027",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 133,
+                      "derived_start": 0,
+                      "mapping": "exact_copy",
+                      "raw_end": 133,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "no_finding",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V2"
+              }
+            },
+            "provider_request_sha256": "30e714ef8ddaaf27b8da758fd87fa4a652f776e223a7ddffc257aec434e83fef",
+            "raw_reply_sha256": "9177fd909cc838d2fc657fa83cd4a369603073ec8359056340459b741cf29a53",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  \n  ,\n  \"unit_id\": \"V2\"\n}",
+            "response_schema_sha256": "a0c2ab86a4db3e7f53386871881f96e3848d8ee83ffd21375bc6ef026d19b58c",
+            "source_layers_sha256": "627e917615f948f795c9b40d875eb0823c33274b5ed0617911ae4bf8ab483def"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1789,
+            "output_tokens": 115
+          },
+          "elapsed_seconds": 32.49864870775491,
+          "transport_elapsed_seconds": 32.46126816701144,
+          "positive_owned_stop": true,
+          "receipt_sha256": "bee4fde93cfc29b76a36dac1074bf6fd6fb3503498c0cbc2190305b97cbad703",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": false,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": false,
+          "software_differences": []
+        },
+        {
+          "repeat": 2,
+          "coverage": "complete",
+          "corrected_text": "Mr. CONNESS. If the Senator from Michigan will give way I will move that the Senate proceed to the consideration of executive busi-",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "6bf6f72bf851e6260e42da231fbd495ece5e20ba1546f62a92136fc7c88c0a3e",
+            "host_packet_sha256": "7852e5c246c2f4ce91cafd499f902a0a0a55cd7634c204686d990c7137588d6e",
+            "image_sha256": "fc93e756f2521935296986ded73da70d9a934df0c4d44215af32fb0b44b18e3c",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 133,
+                      "raw_quote": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+                      "replacement": "Mr. CONNESS. If the Senator from Michigan will give way I will move that the Senate proceed to the consideration of executive busi-",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+                  "replay_verified": true,
+                  "sha256": "061c83852778f5507fa9f69e1e356de3e64f3d119ed35b24333a0aac8e67eb06",
+                  "source_id": "congressionalglo7393unit:719:par_000719_000027",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 131,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 133,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "Mr. CONNESS. If the Senator from Michigan will give way I will move that the Senate proceed to the consideration of executive busi-"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "Mr. CONNESS. If the Senator from Michigan will give way I will move that the Senate proceed to the consideration of executive busi-",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V2"
+              }
+            },
+            "provider_request_sha256": "30e714ef8ddaaf27b8da758fd87fa4a652f776e223a7ddffc257aec434e83fef",
+            "raw_reply_sha256": "96a84a031029babea7058ff0efd10177f47a6f39f630d19abc94b9f5f016f717",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. CONNESS. If the Senator from Michigan will give way I will move that the Senate proceed to the consideration of executive busi-\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n,\n  \"unit_id\": \"V2\"\n}",
+            "response_schema_sha256": "a0c2ab86a4db3e7f53386871881f96e3848d8ee83ffd21375bc6ef026d19b58c",
+            "source_layers_sha256": "627e917615f948f795c9b40d875eb0823c33274b5ed0617911ae4bf8ab483def"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1789,
+            "output_tokens": 111
+          },
+          "elapsed_seconds": 31.679837999865413,
+          "transport_elapsed_seconds": 31.64984224969521,
+          "positive_owned_stop": true,
+          "receipt_sha256": "974e6e7820c45b84b47e328989c8d80c96147b6c8218a60b98bfd0c5a61fed28",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": false,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": "- ",
+              "model_quote": "",
+              "software_start": 38,
+              "software_end": 40,
+              "model_start": 38,
+              "model_end": 38
+            }
+          ]
+        },
+        {
+          "repeat": 3,
+          "coverage": "complete",
+          "corrected_text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "6bf6f72bf851e6260e42da231fbd495ece5e20ba1546f62a92136fc7c88c0a3e",
+            "host_packet_sha256": "7852e5c246c2f4ce91cafd499f902a0a0a55cd7634c204686d990c7137588d6e",
+            "image_sha256": "fc93e756f2521935296986ded73da70d9a934df0c4d44215af32fb0b44b18e3c",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "exact_copy",
+                  "deterministic_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [],
+                  "raw_sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+                  "replay_verified": true,
+                  "sha256": "ddd84bced88339d2bf98750baeb37e7364bd0c7e1fac94f731c560ca058d4cda",
+                  "source_id": "congressionalglo7393unit:719:par_000719_000027",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 133,
+                      "derived_start": 0,
+                      "mapping": "exact_copy",
+                      "raw_end": 133,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "no_finding",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V2"
+              }
+            },
+            "provider_request_sha256": "30e714ef8ddaaf27b8da758fd87fa4a652f776e223a7ddffc257aec434e83fef",
+            "raw_reply_sha256": "ec27e056f0dfa80d251694d4940f9c7bb3eb77e0b14ed8105a23282961d7c9dd",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. CONNESS. If the Senator from Michi- gan will give way I will move that the Senate proceed to the consideration of executive busi-\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"V2\"\n}",
+            "response_schema_sha256": "a0c2ab86a4db3e7f53386871881f96e3848d8ee83ffd21375bc6ef026d19b58c",
+            "source_layers_sha256": "627e917615f948f795c9b40d875eb0823c33274b5ed0617911ae4bf8ab483def"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1789,
+            "output_tokens": 114
+          },
+          "elapsed_seconds": 32.27920024981722,
+          "transport_elapsed_seconds": 32.24869399983436,
+          "positive_owned_stop": true,
+          "receipt_sha256": "79411d96fe7bab15f6c04a201f86691a1a0854db70e00453e0b3f31e0daa0285",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": false,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": false,
+          "software_differences": []
+        }
+      ]
+    },
+    {
+      "case": "V3",
+      "source_id": "congressionalglo00unit:648:par_000648_000009",
+      "source_codepoints": 185,
+      "software_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the tim-;) the men were mustered in.",
+      "root_visible_illustration": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": null,
+      "signals": 6,
+      "route": "secondary_inspection",
+      "actual_calls": 3,
+      "input_body_sha256": "7e22772e126256c6223a51a8b2a34df73c8a1df3c9cae978eb4b615f6e0f0a4b",
+      "identical_input_bytes": true,
+      "distinct_raw_replies": 2,
+      "distinct_corrected_text_values": 1,
+      "distinct_coverage_text_pairs": 1,
+      "distinct_reason_values": 1,
+      "observations": [
+        {
+          "repeat": 1,
+          "coverage": "complete",
+          "corrected_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "d41380d12088264ae76bd58875cea61e7b1938fd295e87935df1592d1b082c10",
+            "host_packet_sha256": "26052c3159a6f9324b841622ae57b3e144b4ad62c75547c5dcfee4ed0dc4b9b5",
+            "image_sha256": "d0fd13a67528e7d326b177c9d295abc9b64a7f8e17089820932ef758e61d0652",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 185,
+                      "raw_quote": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the tim-;) the men were mustered in.",
+                      "replacement": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+                  "replay_verified": true,
+                  "sha256": "9c51dc26aa083fc5ff4ea5e19f8ba111e23b86f653b22a69f1bccb53b3b18908",
+                  "source_id": "congressionalglo00unit:648:par_000648_000009",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 183,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 185,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in."
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V3"
+              }
+            },
+            "provider_request_sha256": "7e22772e126256c6223a51a8b2a34df73c8a1df3c9cae978eb4b615f6e0f0a4b",
+            "raw_reply_sha256": "63758e9491f03a106a18b2ab354130ef9b520083e7e0fee22cd98fcb3e5b1067",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\"unit_id\": \"V3\"}",
+            "response_schema_sha256": "ea9bd80f83a6e9e22d3f41d33c8842740c870fbf2dd57282eaae1cbfd678f267",
+            "source_layers_sha256": "e044853af0250bab43f868554b96cf118135a16c6f78a28f2db0c17e3e37f6d9"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1481,
+            "output_tokens": 118
+          },
+          "elapsed_seconds": 29.433239500038326,
+          "transport_elapsed_seconds": 29.397546332795173,
+          "positive_owned_stop": true,
+          "receipt_sha256": "f221487532cd8892696d01121a6257eac1f7b44a47c02f2197a684d186da25ba",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": "-;)",
+              "model_quote": "e",
+              "software_start": 156,
+              "software_end": 159,
+              "model_start": 156,
+              "model_end": 157
+            }
+          ]
+        },
+        {
+          "repeat": 2,
+          "coverage": "complete",
+          "corrected_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "d41380d12088264ae76bd58875cea61e7b1938fd295e87935df1592d1b082c10",
+            "host_packet_sha256": "26052c3159a6f9324b841622ae57b3e144b4ad62c75547c5dcfee4ed0dc4b9b5",
+            "image_sha256": "d0fd13a67528e7d326b177c9d295abc9b64a7f8e17089820932ef758e61d0652",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 185,
+                      "raw_quote": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the tim-;) the men were mustered in.",
+                      "replacement": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+                  "replay_verified": true,
+                  "sha256": "9c51dc26aa083fc5ff4ea5e19f8ba111e23b86f653b22a69f1bccb53b3b18908",
+                  "source_id": "congressionalglo00unit:648:par_000648_000009",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 183,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 185,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in."
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V3"
+              }
+            },
+            "provider_request_sha256": "7e22772e126256c6223a51a8b2a34df73c8a1df3c9cae978eb4b615f6e0f0a4b",
+            "raw_reply_sha256": "b38c62bbd7298cd097a8aa8eb60128a2be441ef008c56ba36c2315c94a375f58",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"V3\"\n}",
+            "response_schema_sha256": "ea9bd80f83a6e9e22d3f41d33c8842740c870fbf2dd57282eaae1cbfd678f267",
+            "source_layers_sha256": "e044853af0250bab43f868554b96cf118135a16c6f78a28f2db0c17e3e37f6d9"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1481,
+            "output_tokens": 123
+          },
+          "elapsed_seconds": 27.964186999946833,
+          "transport_elapsed_seconds": 27.932661667000502,
+          "positive_owned_stop": true,
+          "receipt_sha256": "3ac76e3c07300aebd76c1352384cc48db41e02d87517fc8d8d3ac8a05884a30a",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": "-;)",
+              "model_quote": "e",
+              "software_start": 156,
+              "software_end": 159,
+              "model_start": 156,
+              "model_end": 157
+            }
+          ]
+        },
+        {
+          "repeat": 3,
+          "coverage": "complete",
+          "corrected_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "d41380d12088264ae76bd58875cea61e7b1938fd295e87935df1592d1b082c10",
+            "host_packet_sha256": "26052c3159a6f9324b841622ae57b3e144b4ad62c75547c5dcfee4ed0dc4b9b5",
+            "image_sha256": "d0fd13a67528e7d326b177c9d295abc9b64a7f8e17089820932ef758e61d0652",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 185,
+                      "raw_quote": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the tim-;) the men were mustered in.",
+                      "replacement": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+                  "replay_verified": true,
+                  "sha256": "9c51dc26aa083fc5ff4ea5e19f8ba111e23b86f653b22a69f1bccb53b3b18908",
+                  "source_id": "congressionalglo00unit:648:par_000648_000009",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 183,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 185,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in."
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V3"
+              }
+            },
+            "provider_request_sha256": "7e22772e126256c6223a51a8b2a34df73c8a1df3c9cae978eb4b615f6e0f0a4b",
+            "raw_reply_sha256": "b38c62bbd7298cd097a8aa8eb60128a2be441ef008c56ba36c2315c94a375f58",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"V3\"\n}",
+            "response_schema_sha256": "ea9bd80f83a6e9e22d3f41d33c8842740c870fbf2dd57282eaae1cbfd678f267",
+            "source_layers_sha256": "e044853af0250bab43f868554b96cf118135a16c6f78a28f2db0c17e3e37f6d9"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1481,
+            "output_tokens": 123
+          },
+          "elapsed_seconds": 29.58986616600305,
+          "transport_elapsed_seconds": 29.55871145799756,
+          "positive_owned_stop": true,
+          "receipt_sha256": "8d5f697943f45c63a94741c295a64d720671cde2a6ab4f189c4932266ad755e7",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": "-;)",
+              "model_quote": "e",
+              "software_start": 156,
+              "software_end": 159,
+              "model_start": 156,
+              "model_end": 157
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "V4",
+      "source_id": "congressionalglo00unit:717:par_000717_000026",
+      "source_codepoints": 56,
+      "software_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+      "root_visible_illustration": "Mr. NYE. This is your bantling, and is stamped as yours.",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": null,
+      "signals": 2,
+      "route": "secondary_inspection",
+      "actual_calls": 3,
+      "input_body_sha256": "81f2655ae12b47bf13ed7faf1a0f35f02b2cc475aa5c96afc86a7241f1f2e0e9",
+      "identical_input_bytes": true,
+      "distinct_raw_replies": 2,
+      "distinct_corrected_text_values": 1,
+      "distinct_coverage_text_pairs": 1,
+      "distinct_reason_values": 1,
+      "observations": [
+        {
+          "repeat": 1,
+          "coverage": "complete",
+          "corrected_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "2743aaa2350f494b204ed3fb1635c1ae7eb4ba9697f02b537623edd5dc2e3612",
+            "host_packet_sha256": "7e615b9ec3d332a8ad73b01799eec20d64420eebcf88292a07299484276fd6b7",
+            "image_sha256": "2dba1d8bf07bf639a464b536ae789f7c7e6393ac2d9d2f610f869179b8b60126",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "exact_copy",
+                  "deterministic_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [],
+                  "raw_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+                  "replay_verified": true,
+                  "sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+                  "source_id": "congressionalglo00unit:717:par_000717_000026",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 56,
+                      "derived_start": 0,
+                      "mapping": "exact_copy",
+                      "raw_end": 56,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "Mr. NYE. This is your bantling, and is stamped as yours."
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "no_finding",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V4"
+              }
+            },
+            "provider_request_sha256": "81f2655ae12b47bf13ed7faf1a0f35f02b2cc475aa5c96afc86a7241f1f2e0e9",
+            "raw_reply_sha256": "b2de61436ae43fa294d2b59f0bba9d8ced4b5538584783df3ccb859812c7fcd9",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. NYE. This is your bantling, and is stamped as yours.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n,\n  \"unit_id\": \"V4\"\n}",
+            "response_schema_sha256": "04b850b28095e34db07afa0be2ee75a775b447f1630de212a9e8016383126981",
+            "source_layers_sha256": "2f4df19a5a8f99190d82389c3d882d11143b68e2a62f394069d61780f6b05aa6"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 903,
+            "output_tokens": 99
+          },
+          "elapsed_seconds": 23.139464541804045,
+          "transport_elapsed_seconds": 23.10800779098645,
+          "positive_owned_stop": true,
+          "receipt_sha256": "bd40ec9fdd731c5836bf471895208ffb29148fb22bcf4254bf4832b68315be0b",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": []
+        },
+        {
+          "repeat": 2,
+          "coverage": "complete",
+          "corrected_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "2743aaa2350f494b204ed3fb1635c1ae7eb4ba9697f02b537623edd5dc2e3612",
+            "host_packet_sha256": "7e615b9ec3d332a8ad73b01799eec20d64420eebcf88292a07299484276fd6b7",
+            "image_sha256": "2dba1d8bf07bf639a464b536ae789f7c7e6393ac2d9d2f610f869179b8b60126",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "exact_copy",
+                  "deterministic_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [],
+                  "raw_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+                  "replay_verified": true,
+                  "sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+                  "source_id": "congressionalglo00unit:717:par_000717_000026",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 56,
+                      "derived_start": 0,
+                      "mapping": "exact_copy",
+                      "raw_end": 56,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "Mr. NYE. This is your bantling, and is stamped as yours."
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "no_finding",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V4"
+              }
+            },
+            "provider_request_sha256": "81f2655ae12b47bf13ed7faf1a0f35f02b2cc475aa5c96afc86a7241f1f2e0e9",
+            "raw_reply_sha256": "6562f4d8ca1063a7f965d99d5f2d5b3ad394a793f561d206b1345643ce32f32c",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. NYE. This is your bantling, and is stamped as yours.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n, \"unit_id\": \"V4\"\n}",
+            "response_schema_sha256": "04b850b28095e34db07afa0be2ee75a775b447f1630de212a9e8016383126981",
+            "source_layers_sha256": "2f4df19a5a8f99190d82389c3d882d11143b68e2a62f394069d61780f6b05aa6"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 903,
+            "output_tokens": 98
+          },
+          "elapsed_seconds": 22.94662558287382,
+          "transport_elapsed_seconds": 22.917850375175476,
+          "positive_owned_stop": true,
+          "receipt_sha256": "08920d15ccf0415725bc520339577898f3fd7d30b2dbce01fc0c89de1a2ef83c",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": []
+        },
+        {
+          "repeat": 3,
+          "coverage": "complete",
+          "corrected_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "2743aaa2350f494b204ed3fb1635c1ae7eb4ba9697f02b537623edd5dc2e3612",
+            "host_packet_sha256": "7e615b9ec3d332a8ad73b01799eec20d64420eebcf88292a07299484276fd6b7",
+            "image_sha256": "2dba1d8bf07bf639a464b536ae789f7c7e6393ac2d9d2f610f869179b8b60126",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "exact_copy",
+                  "deterministic_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [],
+                  "raw_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+                  "replay_verified": true,
+                  "sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+                  "source_id": "congressionalglo00unit:717:par_000717_000026",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 56,
+                      "derived_start": 0,
+                      "mapping": "exact_copy",
+                      "raw_end": 56,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "Mr. NYE. This is your bantling, and is stamped as yours."
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "no_finding",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V4"
+              }
+            },
+            "provider_request_sha256": "81f2655ae12b47bf13ed7faf1a0f35f02b2cc475aa5c96afc86a7241f1f2e0e9",
+            "raw_reply_sha256": "6562f4d8ca1063a7f965d99d5f2d5b3ad394a793f561d206b1345643ce32f32c",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. NYE. This is your bantling, and is stamped as yours.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n, \"unit_id\": \"V4\"\n}",
+            "response_schema_sha256": "04b850b28095e34db07afa0be2ee75a775b447f1630de212a9e8016383126981",
+            "source_layers_sha256": "2f4df19a5a8f99190d82389c3d882d11143b68e2a62f394069d61780f6b05aa6"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 903,
+            "output_tokens": 96
+          },
+          "elapsed_seconds": 23.897270708810538,
+          "transport_elapsed_seconds": 23.86510983342305,
+          "positive_owned_stop": true,
+          "receipt_sha256": "5ed0f42d346db8e81eadd5caa6f88754ec57c50245f1a7f133398dfcfec9e497",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": []
+        }
+      ]
+    },
+    {
+      "case": "V5",
+      "source_id": "congressionalglo7395unit:147:par_000147_000006",
+      "source_codepoints": 94,
+      "software_text": "On the 5th of February the member from. Iowa replied to that language in the following words :",
+      "root_visible_illustration": "On the 5th of February the member from Iowa replied to that language in the following words:",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": null,
+      "signals": 5,
+      "route": "secondary_inspection",
+      "actual_calls": 3,
+      "input_body_sha256": "102701d94e98e79f829d7c2213ad777ada1a1b9fc4d466f6bd9b3dae0cefdf86",
+      "identical_input_bytes": true,
+      "distinct_raw_replies": 3,
+      "distinct_corrected_text_values": 1,
+      "distinct_coverage_text_pairs": 1,
+      "distinct_reason_values": 1,
+      "observations": [
+        {
+          "repeat": 1,
+          "coverage": "complete",
+          "corrected_text": "On the 5th of February the member from Iowa replied to that language in the following words :",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "a7933f6d03e801ad6dcbb7d4b5d74b45ec2e2e0a95de00ea19ba41fdc677f2c0",
+            "host_packet_sha256": "2dcb2e00098b7f4b57474a9a86bfebfeb112853a36ad674286bfd70a8a9822d9",
+            "image_sha256": "987dd13869c3760aaf386dfec50355a0be1486a9db8b95f50ba5ce8544547eb2",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 94,
+                      "raw_quote": "On the 5th of February the member from. Iowa replied to that language in the following words :",
+                      "replacement": "On the 5th of February the member from Iowa replied to that language in the following words :",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+                  "replay_verified": true,
+                  "sha256": "bfa4632e5377479f1c4e186391d8f7cec226c07bdc5ec06b5bd7d68c647bee58",
+                  "source_id": "congressionalglo7395unit:147:par_000147_000006",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 93,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 94,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "On the 5th of February the member from Iowa replied to that language in the following words :"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "On the 5th of February the member from Iowa replied to that language in the following words :",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V5"
+              }
+            },
+            "provider_request_sha256": "102701d94e98e79f829d7c2213ad777ada1a1b9fc4d466f6bd9b3dae0cefdf86",
+            "raw_reply_sha256": "1ad9f83f5ad841c2ac9dea5f7f651359cc2c1e69b487b96ee918fd695ba34156",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"On the 5th of February the member from Iowa replied to that language in the following words :\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"V5\"\n}",
+            "response_schema_sha256": "37fd905e7f4bc4db9fc63b7bac0d5b5acf06657bb7a0e51966c50f5a4b4713af",
+            "source_layers_sha256": "fd84d32da57bab9116f2131ddd806892403854086877fad63af77fc939f2f1b3"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1295,
+            "output_tokens": 102
+          },
+          "elapsed_seconds": 25.97150225006044,
+          "transport_elapsed_seconds": 25.939332916866988,
+          "positive_owned_stop": true,
+          "receipt_sha256": "583ef70b402ce35e13f00b84113addb5552df89178e9c4efb451e65b1a922ea4",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": false,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": ".",
+              "model_quote": "",
+              "software_start": 38,
+              "software_end": 39,
+              "model_start": 38,
+              "model_end": 38
+            }
+          ]
+        },
+        {
+          "repeat": 2,
+          "coverage": "complete",
+          "corrected_text": "On the 5th of February the member from Iowa replied to that language in the following words :",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "a7933f6d03e801ad6dcbb7d4b5d74b45ec2e2e0a95de00ea19ba41fdc677f2c0",
+            "host_packet_sha256": "2dcb2e00098b7f4b57474a9a86bfebfeb112853a36ad674286bfd70a8a9822d9",
+            "image_sha256": "987dd13869c3760aaf386dfec50355a0be1486a9db8b95f50ba5ce8544547eb2",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 94,
+                      "raw_quote": "On the 5th of February the member from. Iowa replied to that language in the following words :",
+                      "replacement": "On the 5th of February the member from Iowa replied to that language in the following words :",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+                  "replay_verified": true,
+                  "sha256": "bfa4632e5377479f1c4e186391d8f7cec226c07bdc5ec06b5bd7d68c647bee58",
+                  "source_id": "congressionalglo7395unit:147:par_000147_000006",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 93,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 94,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "On the 5th of February the member from Iowa replied to that language in the following words :"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "On the 5th of February the member from Iowa replied to that language in the following words :",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V5"
+              }
+            },
+            "provider_request_sha256": "102701d94e98e79f829d7c2213ad777ada1a1b9fc4d466f6bd9b3dae0cefdf86",
+            "raw_reply_sha256": "508aac0ac9f6d2eae0f25fb7ec7c414c81f50d72d3090d34b7e49c8bf151f9c8",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"On the 5th of February the member from Iowa replied to that language in the following words :\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n\"unit_id\":\"V5\"}",
+            "response_schema_sha256": "37fd905e7f4bc4db9fc63b7bac0d5b5acf06657bb7a0e51966c50f5a4b4713af",
+            "source_layers_sha256": "fd84d32da57bab9116f2131ddd806892403854086877fad63af77fc939f2f1b3"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1295,
+            "output_tokens": 97
+          },
+          "elapsed_seconds": 26.360190167091787,
+          "transport_elapsed_seconds": 26.32957849977538,
+          "positive_owned_stop": true,
+          "receipt_sha256": "fc11443b64a246d09d0b6e4c7848174df68f6910706cb8bb6039c32a58a21c25",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": false,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": ".",
+              "model_quote": "",
+              "software_start": 38,
+              "software_end": 39,
+              "model_start": 38,
+              "model_end": 38
+            }
+          ]
+        },
+        {
+          "repeat": 3,
+          "coverage": "complete",
+          "corrected_text": "On the 5th of February the member from Iowa replied to that language in the following words :",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "a7933f6d03e801ad6dcbb7d4b5d74b45ec2e2e0a95de00ea19ba41fdc677f2c0",
+            "host_packet_sha256": "2dcb2e00098b7f4b57474a9a86bfebfeb112853a36ad674286bfd70a8a9822d9",
+            "image_sha256": "987dd13869c3760aaf386dfec50355a0be1486a9db8b95f50ba5ce8544547eb2",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 94,
+                      "raw_quote": "On the 5th of February the member from. Iowa replied to that language in the following words :",
+                      "replacement": "On the 5th of February the member from Iowa replied to that language in the following words :",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+                  "replay_verified": true,
+                  "sha256": "bfa4632e5377479f1c4e186391d8f7cec226c07bdc5ec06b5bd7d68c647bee58",
+                  "source_id": "congressionalglo7395unit:147:par_000147_000006",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 93,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 94,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "On the 5th of February the member from Iowa replied to that language in the following words :"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "On the 5th of February the member from Iowa replied to that language in the following words :",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V5"
+              }
+            },
+            "provider_request_sha256": "102701d94e98e79f829d7c2213ad777ada1a1b9fc4d466f6bd9b3dae0cefdf86",
+            "raw_reply_sha256": "6846cf11a783e8bff469e3684cbf878e7effaa9e88978c3d66ad7c9e2a9bf1ff",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"On the 5th of February the member from Iowa replied to that language in the following words :\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\"unit_id\": \"V5\"\n}",
+            "response_schema_sha256": "37fd905e7f4bc4db9fc63b7bac0d5b5acf06657bb7a0e51966c50f5a4b4713af",
+            "source_layers_sha256": "fd84d32da57bab9116f2131ddd806892403854086877fad63af77fc939f2f1b3"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1295,
+            "output_tokens": 100
+          },
+          "elapsed_seconds": 27.340476457960904,
+          "transport_elapsed_seconds": 27.308771416079253,
+          "positive_owned_stop": true,
+          "receipt_sha256": "007d4a699f4cbd8c4197c23a35a895270d33a163020f3fc71eae7ea413955599",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": false,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": ".",
+              "model_quote": "",
+              "software_start": 38,
+              "software_end": 39,
+              "model_start": 38,
+              "model_end": 38
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "V6",
+      "source_id": "congressionalglo7395unit:302:par_000302_000012",
+      "source_codepoints": 82,
+      "software_text": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+      "root_visible_illustration": "Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": null,
+      "signals": 4,
+      "route": "secondary_inspection",
+      "actual_calls": 3,
+      "input_body_sha256": "3f72bffa795e42c30a4fb2a3e5f4032db6e2ea6827cc82156e8b159277729a4f",
+      "identical_input_bytes": true,
+      "distinct_raw_replies": 3,
+      "distinct_corrected_text_values": 2,
+      "distinct_coverage_text_pairs": 2,
+      "distinct_reason_values": 1,
+      "observations": [
+        {
+          "repeat": 1,
+          "coverage": "complete",
+          "corrected_text": "Mr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "ce70716b2890b8818f8d250556572dfbe5479b8e2b4d03e88ed543f39d7f7078",
+            "host_packet_sha256": "f29be6c217587638b577d3695fe7ee8497cfbc814c164a12fb30ccd4c7e68b91",
+            "image_sha256": "05f1bfd243d873d96401ae05ec7d39b993e537fa3c257e733b9fb88262b28634",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 82,
+                      "raw_quote": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+                      "replacement": "Mr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+                  "replay_verified": true,
+                  "sha256": "270c3c36f271481a91f97713f63c58bd957ea61b74d936413a037cb0fc28f26f",
+                  "source_id": "congressionalglo7395unit:302:par_000302_000012",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 81,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 82,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "Mr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "Mr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V6"
+              }
+            },
+            "provider_request_sha256": "3f72bffa795e42c30a4fb2a3e5f4032db6e2ea6827cc82156e8b159277729a4f",
+            "raw_reply_sha256": "de91f68988c7a2375b0bb4936c6fa236d83e49ad94258eadb63476173e33ae28",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"V6\"\n}",
+            "response_schema_sha256": "29a264031a3f12da1c18ada802dc26ed46e684622bb61fa7cab5be71ddb3b2b2",
+            "source_layers_sha256": "10646b53553b5c39223101295f95a6bf9d738d8de364761ae5041b2734ad7002"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1149,
+            "output_tokens": 104
+          },
+          "elapsed_seconds": 24.6151344999671,
+          "transport_elapsed_seconds": 24.584825166966766,
+          "positive_owned_stop": true,
+          "receipt_sha256": "ef4466fb3debf2e573893e14087a4ac34906a3d7d7d6f5beba4036ae27ef835f",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": false,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": false,
+          "software_differences": [
+            {
+              "software_quote": "ll",
+              "model_quote": "R",
+              "software_start": 9,
+              "software_end": 11,
+              "model_start": 9,
+              "model_end": 10
+            }
+          ]
+        },
+        {
+          "repeat": 2,
+          "coverage": "complete",
+          "corrected_text": "Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "ce70716b2890b8818f8d250556572dfbe5479b8e2b4d03e88ed543f39d7f7078",
+            "host_packet_sha256": "f29be6c217587638b577d3695fe7ee8497cfbc814c164a12fb30ccd4c7e68b91",
+            "image_sha256": "05f1bfd243d873d96401ae05ec7d39b993e537fa3c257e733b9fb88262b28634",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 82,
+                      "raw_quote": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+                      "replacement": "Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+                  "replay_verified": true,
+                  "sha256": "8b2cb02250e79945ab4d9c9168514ae3474e04585c13280fb49eae7ee8568440",
+                  "source_id": "congressionalglo7395unit:302:par_000302_000012",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 79,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 82,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V6"
+              }
+            },
+            "provider_request_sha256": "3f72bffa795e42c30a4fb2a3e5f4032db6e2ea6827cc82156e8b159277729a4f",
+            "raw_reply_sha256": "4ab2861eb0e2d9b807c110d8f09d7365b2b34a261d26d67184382e230b3c4800",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  \n  ,\n  \"unit_id\": \"V6\"\n}",
+            "response_schema_sha256": "29a264031a3f12da1c18ada802dc26ed46e684622bb61fa7cab5be71ddb3b2b2",
+            "source_layers_sha256": "10646b53553b5c39223101295f95a6bf9d738d8de364761ae5041b2734ad7002"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1149,
+            "output_tokens": 102
+          },
+          "elapsed_seconds": 24.716474334243685,
+          "transport_elapsed_seconds": 24.68732816586271,
+          "positive_owned_stop": true,
+          "receipt_sha256": "77e0b3d697ec44d1eaea3132e6186d0e21facb32bda7b9d6552095b8a230ee7f",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": true,
+          "exact_visible_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": "ll",
+              "model_quote": "R",
+              "software_start": 9,
+              "software_end": 11,
+              "model_start": 9,
+              "model_end": 10
+            },
+            {
+              "software_quote": "- ",
+              "model_quote": "",
+              "software_start": 34,
+              "software_end": 36,
+              "model_start": 33,
+              "model_end": 33
+            }
+          ]
+        },
+        {
+          "repeat": 3,
+          "coverage": "complete",
+          "corrected_text": "Mr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,",
+          "reason": null,
+          "host_export": {
+            "acceptance": "unreviewed_ai_evidence",
+            "contract": "source-bound-productive-ocr-text-v3",
+            "diagnostics_sha256": "ce70716b2890b8818f8d250556572dfbe5479b8e2b4d03e88ed543f39d7f7078",
+            "host_packet_sha256": "f29be6c217587638b577d3695fe7ee8497cfbc814c164a12fb30ccd4c7e68b91",
+            "image_sha256": "05f1bfd243d873d96401ae05ec7d39b993e537fa3c257e733b9fb88262b28634",
+            "model_digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e",
+            "outcome": {
+              "derived_proposals": [
+                {
+                  "acceptance": "unreviewed_model_proposal",
+                  "alignment": "coarse_whole_paragraph_not_token_alignment",
+                  "deterministic_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+                  "paragraph_alias": "P1",
+                  "raw_edits": [
+                    {
+                      "end": 82,
+                      "raw_quote": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+                      "replacement": "Mr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,",
+                      "rule_id": "software-whole-target-replacement-v3",
+                      "start": 0
+                    }
+                  ],
+                  "raw_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+                  "replay_verified": true,
+                  "sha256": "270c3c36f271481a91f97713f63c58bd957ea61b74d936413a037cb0fc28f26f",
+                  "source_id": "congressionalglo7395unit:302:par_000302_000012",
+                  "source_quality": "not_verified",
+                  "support_map": [
+                    {
+                      "derived_end": 81,
+                      "derived_start": 0,
+                      "mapping": "replacement",
+                      "raw_end": 82,
+                      "raw_start": 0
+                    }
+                  ],
+                  "text": "Mr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,"
+                }
+              ],
+              "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+              "proposal_status": "findings",
+              "provider_reply": {
+                "contract": "ocr-productive-repair-text-reply-v3",
+                "readings": [
+                  {
+                    "corrected_text": "Mr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,",
+                    "coverage": "complete",
+                    "paragraph_alias": "P1",
+                    "reason": null
+                  }
+                ],
+                "unit_id": "V6"
+              }
+            },
+            "provider_request_sha256": "3f72bffa795e42c30a4fb2a3e5f4032db6e2ea6827cc82156e8b159277729a4f",
+            "raw_reply_sha256": "afca13c6c42e33b4eb5b879e3e0ac9cf3e41f26224875fdbe6c9808348285816",
+            "raw_reply_text": "{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n, \"unit_id\": \"V6\"\n}",
+            "response_schema_sha256": "29a264031a3f12da1c18ada802dc26ed46e684622bb61fa7cab5be71ddb3b2b2",
+            "source_layers_sha256": "10646b53553b5c39223101295f95a6bf9d738d8de364761ae5041b2734ad7002"
+          },
+          "complete_http": true,
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 1149,
+            "output_tokens": 100
+          },
+          "elapsed_seconds": 24.582953750155866,
+          "transport_elapsed_seconds": 24.55371258314699,
+          "positive_owned_stop": true,
+          "receipt_sha256": "707c8b907c7d0dc5f2b54615a0b408b013fd86c447ce2630851c6c71933f9d44",
+          "incomplete_null_reply": false,
+          "expected_source_or_uncertainty_behavior_matches": false,
+          "exact_visible_root_illustration_match": false,
+          "case_apostrophe_normalized_tokens_match": false,
+          "software_differences": [
+            {
+              "software_quote": "ll",
+              "model_quote": "R",
+              "software_start": 9,
+              "software_end": 11,
+              "model_start": 9,
+              "model_end": 10
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "total": {
+    "request_cycle_seconds": 519.0462233754806,
+    "owned_transport_seconds": 518.4679060811177,
+    "input_tokens": 26331,
+    "output_tokens": 1992
+  },
+  "model_phase_budget": {
+    "calls": 18,
+    "deadline_epoch": 1793708764.483938,
+    "selection_sha256": "bdb41fd784759e5d2e83c67622bc6ef5a8b48ba99a468c2251846a8d449f5c78",
+    "started_at_epoch": 1793706964.483938,
+    "task": "T131"
+  },
+  "prior_recent_series": {
+    "attempts": 31,
+    "request_cycle_seconds": 2217.4216395816766,
+    "known_input_tokens": 119803,
+    "known_output_tokens": 8748,
+    "unknown_usage_attempts": 3
+  },
+  "cumulative_recent_series": {
+    "attempts": 49,
+    "request_cycle_seconds": 2736.467862957157,
+    "known_input_tokens": 146134,
+    "known_output_tokens": 10740,
+    "unknown_usage_attempts": 3
+  },
+  "limits": [
+    "Two longest unused primaries perpart3–5:purposeful,length-selected diagnostic,notpopulationaccuracy/routingfrequency.",
+    "One root source reader before replies; notacceptedbenchmarkgold.",
+    "V2wholewordcontinuationunavailable; null/incomplete compliance is an uncertainty outcome,notword-recognition accuracy.",
+    "Boundary instruction added for allcases beforecalls; no matched causal comparison with T129.",
+    "No corpus/nativefit/P0acceptance or model superiority claim."
+  ]
+}

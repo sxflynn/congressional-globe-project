@@ -1,0 +1,11 @@
+{
+  "task": "T131",
+  "selection_sha256": "bdb41fd784759e5d2e83c67622bc6ef5a8b48ba99a468c2251846a8d449f5c78",
+  "source_boundary_instruction_sha256": "0f6470564eee95900805ff3698e696d2dd583aa9a23f2fd8a135fb50d3df7d3c",
+  "timing": "Before any new provider call; original selection/budgets unchanged.",
+  "applies": "Same generic rule appended to the existing conformance-v4 prompt for every case and repetition; no source answer or expected word supplied.",
+  "reason": "V2registeredtargetendsmidword; apply existing incomplete/null uncertainty behavior rather than filling unseen text.",
+  "comparison_limit": "Different fresh sources plus explicit boundary instruction; no isolated causal comparison with T129prompt.",
+  "new_reply_contract": false,
+  "model_calls_so_far": 0
+}

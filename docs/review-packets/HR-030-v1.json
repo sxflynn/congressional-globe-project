@@ -1,0 +1,22 @@
+{
+  "id": "HR-030",
+  "version": 1,
+  "title": "Six fresh passages: first software result before Qwen",
+  "instructions": "More Qwen work is underway. This fixed study has six fresh source passages and three identical calls per passage. This first real software output is visible before expansion to the model calls. Optional comments can steer the work; no routine permission is needed to continue.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "expanded-workflow-comments",
+      "prompt": "Optional notes on these fresh inputs and results",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "First new passage: a Senate request about a petition",
+          "text": "Inputs — full original OCR from the first frozen passage:\nThe PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.\n\nExpected output — my direct source-image reading, recorded before seeing model replies; one reader, not accepted benchmark truth:\nThe PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.\n\nActual output — full first pass from the software:\nThe PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that, committee by order of the Senate some time since.\n\nDifferences — the software raises 11 inspection flags and selects secondary inspection of the whole passage. A flag is not a verified error. This is the first real software sample from a fixed six-passage study, selected as the two longest unused primary passages in each of parts 3–5. Three identical model calls per passage are planned, 18 calls maximum; no model call has run. The reserved sample is untouched. Images and text are not replaced after seeing the outcomes.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7393unit%2fcongressionalglo7393unit_jp2.zip%2fcongressionalglo7393unit_jp2%2fcongressionalglo7393unit_0988.jp2/201,2242,879,246/879,/0/default.jpg"
+        }
+      ]
+    }
+  ]
+}

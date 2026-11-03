@@ -1,0 +1,62 @@
+"""One-off bounded evidence assembly; reuses the existing full-text compiler."""
+import importlib.util,json,hashlib
+from pathlib import Path
+from congressional_globe.productive_ocr_host import EvidenceRegistry,EvidenceRecord,canonical_json,sha256_bytes,validate_host
+from congressional_globe.productive_ocr_projection import derive_reply_schema,compile_request_projection
+from congressional_globe.productive_ocr_routing import prepare_text_host,TEXT_PROMPT
+from congressional_globe.productive_ocr_runner import code_identity
+from congressional_globe.deterministic_rules import Resources
+from congressional_globe.deterministic_geometry import GeometryRegistry
+from congressional_globe.scan_fetch import read_bundle
+sp=importlib.util.spec_from_file_location('prep','tmp/t129-source-prep/prepare_candidates.py');prep=importlib.util.module_from_spec(sp);sp.loader.exec_module(prep)
+root=Path('artifacts/expanded-workflow-audit-20261103-01');registered=root/'registered';registered.mkdir(exist_ok=True)
+reg=EvidenceRegistry({}, {}, {});paths={}
+def pin(data,path=None):
+ h=sha256_bytes(data);reg.files[h]=data
+ if path: paths[h]={'path':str(path),'bytes':len(data)}
+ else:
+  p=registered/h
+  if not p.exists():p.write_bytes(data)
+  paths[h]={'path':str(p),'bytes':len(data)}
+ return h
+def obj(x):return pin(canonical_json(x))
+def file(p,expected=None):
+ p=Path(p);b=p.read_bytes();h=pin(b,p)
+ if expected:assert h==expected,(p,h,expected)
+ return h
+def record(x):
+ h=obj(x);reg.records[h]=EvidenceRecord(x,reg.files[h]);return h
+sample=json.loads(Path('artifacts/ocr-sample-design-20261027-01/sample.json').read_bytes());rows={x['source_id']:x for x in sample['primary']};selected=json.loads((root/'selection-freeze.json').read_bytes())
+parts={x['identifier']:x for x in json.loads(Path('artifacts/runs/static-final-20261011/workflow_manifest.json').read_bytes())['parts']}
+resources,_=prep.load_resources();source_readings=file(root/'root-source-readings.json');model=file('artifacts/ocr-live-readiness-20261028-01/installed-model-manifest.json');sampling=file(root/'selection-freeze.json');bounds=obj(selected['bounds']);code=obj(code_identity());images={}
+for choice in selected['cases']:
+ alias=choice['case'];d=root/alias;row=rows[choice['source_id']];source_bytes=(d/'source-page.jsonl').read_bytes();assert sha256_bytes(source_bytes)==row['page_line_sha256']
+ result,route,paragraph,geometry_sha,page=prep.prepare_case(row,source_bytes,resources)
+ geometry_data=json.dumps([dict(source_id=row['source_id'],raw_sha256=row['raw_sha256'],page_line_sha256=row['page_line_sha256'],lines=[x.model_dump(mode='json') for x in result.input.lines])]).encode()
+ assert sha256_bytes(geometry_data)==geometry_sha
+ case_resources=Resources(words=resources.words,names=resources.names,places=resources.places,geometry=GeometryRegistry(data=geometry_data,expected_sha256=geometry_sha))
+ (d/'software-result.json').write_text(result.model_dump_json(indent=2)+'\n');(d/'route.json').write_text(route.model_dump_json(indent=2)+'\n');(d/'geometry.json').write_bytes(geometry_data)
+ bundle=read_bundle(d/'image');crop=bundle.images[0];image_path=d/'image'/crop.file;image_data=image_path.read_bytes();image_hash=sha256_bytes(image_data);images[image_hash]=str(image_path);reg.image_bytes[image_hash]=image_data
+ part=parts[row['item_identifier']];hocr=file(part['hocr_path'],part['hocr_sha256']);map_hash=file(part['page_map_path'],part['page_map_sha256'])
+ identity=dict(sha256=image_hash,source_item_identifier=row['item_identifier'],source_scan_leaf=row['scan_leaf'],hocr_sha256=hocr,page_map_sha256=map_hash,width=crop.width,height=crop.height)
+ box=dict(left=0,top=0,right=crop.width,bottom=crop.height)
+ legibility=obj(dict(image_sha256=image_hash,source_item_identifier=row['item_identifier'],source_scan_leaf=row['scan_leaf'],status='checked',scope='whole_registered_crop',method='Root direct raster inspection before Qwen output; exact native paragraph bounds, no padding.',notes=('All recorded glyphs readable, but V2ends in a cut-off word and full-word coverage is unavailable; incomplete/null required.' if alias=='V2' else 'Every recorded line is visible and readable; this is one provisional source assessment, not accepted benchmark truth.')))
+ metadata={**identity,'paragraph_boxes':{'P1':box},'paragraph_order':['P1'],'paragraph_bindings':{'P1':dict(raw_sha256=row['raw_sha256'],raw_start=0,raw_end=len(row['raw_text']))},'derivation':{'bundle_sha256':file(d/'image/bundle.json'),'source_page_sha256':file(d/'source-page.jsonl'),'native_region':list(crop.region)}}
+ binding=record(metadata);registration=record({**metadata,'legibility_evidence_sha256':legibility})
+ image={'alias':'I1',**identity,'mime':'image/jpeg','bindings':[dict(paragraph_alias='P1',raw_sha256=row['raw_sha256'],raw_start=0,raw_end=len(row['raw_text']),crop_region=box)],'registration_status':'verified','legibility_status':'checked','binding_manifest_sha256':binding,'registration_evidence_sha256':registration}
+ raw_layer=dict(text=row['raw_text'],sha256=row['raw_sha256']);initial=dict(text=row['raw_text'],sha256=row['raw_sha256'],edits=[],rule_sha256=obj({'rule':'unchanged raw input before current first pass'}),lexicon_sha256=obj({'scope':'no repair before current first pass'}))
+ para=dict(alias='P1',source_id=row['source_id'],part_number=row['part_number'],scan_leaf=row['scan_leaf'],role='target',raw=raw_layer,static=initial)
+ prompt=pin(TEXT_PROMPT.encode());payload=dict(contract='ocr-productive-repair-host-input-v2',role='productive_repair_and_self_check',unit_id=alias,paragraphs=[para],image=image,diagnostics=dict(status='not_run',detector_sha256=None,configuration_sha256=None,signals=[],negative_targets=[]),saved_proposal=None,prompt_sha256=prompt,response_schema_sha256='0'*64,code_sha256=code,model_digest=model,sampling_manifest_sha256=sampling,bounds_sha256=bounds)
+ schema=derive_reply_schema(payload);payload['response_schema_sha256']=pin(schema.schema_text.encode());base={'packet_sha256':sha256_bytes(canonical_json(payload)),'payload':payload};validate_host(base,reg)
+ host,routes=prepare_text_host(base,reg,{'P1':result},case_resources,conformance_v4=True)
+ prompt_text=reg.files[host['payload']['prompt_sha256']].decode()+'\n\n'+(root/'source-boundary-instruction.txt').read_text();host['payload']['prompt_sha256']=pin(prompt_text.encode());host['packet_sha256']=sha256_bytes(canonical_json(host['payload']));validate_host(host,reg);projection,schema=compile_request_projection(host,reg,prompt_text,'qwen3.8:27b-mlx',conformance_v4=True)
+ for name,value in [('host.json',host),('projection.json',projection.model_dump(mode='json')),('schema.json',json.loads(schema.schema_text))]: (d/name).write_bytes(canonical_json(value))
+ (d/'request.json').write_bytes(projection.body_utf8.encode());(d/'prompt.txt').write_text(prompt_text)
+ print(alias,'frozen',projection.body_sha256,'route',routes[0].selection,'signals',len(routes[0].signals),flush=True)
+# prepare_text_host registers result/route/schema bytes directly; save all new small closure files.
+for h,data in reg.files.items():
+ if h not in paths:
+  p=registered/h;p.write_bytes(data);paths[h]={'path':str(p),'bytes':len(data)}
+(root/'registry-index.json').write_bytes(canonical_json(dict(files=paths,records=list(reg.records),images=images)))
+(root/'code-identity.json').write_bytes(canonical_json(code_identity()))
+print('All6 source/image/full-text requests validated; zero model calls.')

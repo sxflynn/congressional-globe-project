@@ -1,0 +1,750 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7395unit:147:par_000147_000006",
+      "raw_text": "On the 5th of February the member from. Iowa replied to that language in the following words :",
+      "raw_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33"
+    },
+    "static_text": "On the 5th of February the member from. Iowa replied to that language in the following words :",
+    "static_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+    "static_edits": [],
+    "lines": [
+      {
+        "line_id": "line_000147_000028",
+        "start": 0,
+        "end": 39,
+        "text": "On the 5th of February the member from."
+      },
+      {
+        "line_id": "line_000147_000029",
+        "start": 40,
+        "end": 86,
+        "text": "Iowa replied to that language in the following"
+      },
+      {
+        "line_id": "line_000147_000030",
+        "start": 87,
+        "end": 94,
+        "text": "words :"
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "86a805c9f09c7cf50e3d490e537e150d00a81274187f2384f741068245293b81"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "7602fc3c8afc06b8d3dadad5ba7d611d8360c793099c60e697fa430b8df033d7",
+  "proposed_text": "On the 5th of February the member from. Iowa replied to that language in the following words :",
+  "proposed_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 94,
+      "derived_start": 0,
+      "derived_end": 94,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 2,
+      "text": "On",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "On",
+      "context": "On the 5th of February the member ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 3,
+      "end": 6,
+      "text": "the",
+      "raw_start": 3,
+      "raw_end": 6,
+      "raw_quote": "the",
+      "context": "On the 5th of February the member from",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 7,
+      "end": 10,
+      "text": "5th",
+      "raw_start": 7,
+      "raw_end": 10,
+      "raw_quote": "5th",
+      "context": "On the 5th of February the member from. Io",
+      "categories": [
+        "mixed_alphanumeric"
+      ],
+      "signals": [
+        "mixed_identifier_unverified"
+      ],
+      "routes": [
+        "pattern_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 11,
+      "end": 13,
+      "text": "of",
+      "raw_start": 11,
+      "raw_end": 13,
+      "raw_quote": "of",
+      "context": "On the 5th of February the member from. Iowa ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 14,
+      "end": 22,
+      "text": "February",
+      "raw_start": 14,
+      "raw_end": 22,
+      "raw_quote": "February",
+      "context": "On the 5th of February the member from. Iowa replied t",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 23,
+      "end": 26,
+      "text": "the",
+      "raw_start": 23,
+      "raw_end": 26,
+      "raw_quote": "the",
+      "context": "On the 5th of February the member from. Iowa replied to th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 27,
+      "end": 33,
+      "text": "member",
+      "raw_start": 27,
+      "raw_end": 33,
+      "raw_quote": "member",
+      "context": "On the 5th of February the member from. Iowa replied to that lang",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 34,
+      "end": 38,
+      "text": "from",
+      "raw_start": 34,
+      "raw_end": 38,
+      "raw_quote": "from",
+      "context": " the 5th of February the member from. Iowa replied to that language ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 40,
+      "end": 44,
+      "text": "Iowa",
+      "raw_start": 40,
+      "raw_end": 44,
+      "raw_quote": "Iowa",
+      "context": "th of February the member from. Iowa replied to that language in the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 45,
+      "end": 52,
+      "text": "replied",
+      "raw_start": 45,
+      "raw_end": 52,
+      "raw_quote": "replied",
+      "context": " February the member from. Iowa replied to that language in the followi",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 53,
+      "end": 55,
+      "text": "to",
+      "raw_start": 53,
+      "raw_end": 55,
+      "raw_quote": "to",
+      "context": "y the member from. Iowa replied to that language in the following ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 56,
+      "end": 60,
+      "text": "that",
+      "raw_start": 56,
+      "raw_end": 60,
+      "raw_quote": "that",
+      "context": "he member from. Iowa replied to that language in the following words",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 61,
+      "end": 69,
+      "text": "language",
+      "raw_start": 61,
+      "raw_end": 69,
+      "raw_quote": "language",
+      "context": "mber from. Iowa replied to that language in the following words :",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 70,
+      "end": 72,
+      "text": "in",
+      "raw_start": 70,
+      "raw_end": 72,
+      "raw_quote": "in",
+      "context": ". Iowa replied to that language in the following words :",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 73,
+      "end": 76,
+      "text": "the",
+      "raw_start": 73,
+      "raw_end": 76,
+      "raw_quote": "the",
+      "context": "owa replied to that language in the following words :",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 77,
+      "end": 86,
+      "text": "following",
+      "raw_start": 77,
+      "raw_end": 86,
+      "raw_quote": "following",
+      "context": "replied to that language in the following words :",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 87,
+      "end": 92,
+      "text": "words",
+      "raw_start": 87,
+      "raw_end": 92,
+      "raw_quote": "words",
+      "context": " that language in the following words :",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 2,
+      "text": "On",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "On",
+      "context": "On the 5th of February the member ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 3,
+      "end": 6,
+      "text": "the",
+      "raw_start": 3,
+      "raw_end": 6,
+      "raw_quote": "the",
+      "context": "On the 5th of February the member from",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 7,
+      "end": 10,
+      "text": "5th",
+      "raw_start": 7,
+      "raw_end": 10,
+      "raw_quote": "5th",
+      "context": "On the 5th of February the member from. Io",
+      "categories": [
+        "mixed_alphanumeric"
+      ],
+      "signals": [
+        "mixed_identifier_unverified"
+      ],
+      "routes": [
+        "pattern_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 11,
+      "end": 13,
+      "text": "of",
+      "raw_start": 11,
+      "raw_end": 13,
+      "raw_quote": "of",
+      "context": "On the 5th of February the member from. Iowa ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 14,
+      "end": 22,
+      "text": "February",
+      "raw_start": 14,
+      "raw_end": 22,
+      "raw_quote": "February",
+      "context": "On the 5th of February the member from. Iowa replied t",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 23,
+      "end": 26,
+      "text": "the",
+      "raw_start": 23,
+      "raw_end": 26,
+      "raw_quote": "the",
+      "context": "On the 5th of February the member from. Iowa replied to th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 27,
+      "end": 33,
+      "text": "member",
+      "raw_start": 27,
+      "raw_end": 33,
+      "raw_quote": "member",
+      "context": "On the 5th of February the member from. Iowa replied to that lang",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 34,
+      "end": 38,
+      "text": "from",
+      "raw_start": 34,
+      "raw_end": 38,
+      "raw_quote": "from",
+      "context": " the 5th of February the member from. Iowa replied to that language ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 40,
+      "end": 44,
+      "text": "Iowa",
+      "raw_start": 40,
+      "raw_end": 44,
+      "raw_quote": "Iowa",
+      "context": "th of February the member from. Iowa replied to that language in the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 45,
+      "end": 52,
+      "text": "replied",
+      "raw_start": 45,
+      "raw_end": 52,
+      "raw_quote": "replied",
+      "context": " February the member from. Iowa replied to that language in the followi",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 53,
+      "end": 55,
+      "text": "to",
+      "raw_start": 53,
+      "raw_end": 55,
+      "raw_quote": "to",
+      "context": "y the member from. Iowa replied to that language in the following ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 56,
+      "end": 60,
+      "text": "that",
+      "raw_start": 56,
+      "raw_end": 60,
+      "raw_quote": "that",
+      "context": "he member from. Iowa replied to that language in the following words",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 61,
+      "end": 69,
+      "text": "language",
+      "raw_start": 61,
+      "raw_end": 69,
+      "raw_quote": "language",
+      "context": "mber from. Iowa replied to that language in the following words :",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 70,
+      "end": 72,
+      "text": "in",
+      "raw_start": 70,
+      "raw_end": 72,
+      "raw_quote": "in",
+      "context": ". Iowa replied to that language in the following words :",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 73,
+      "end": 76,
+      "text": "the",
+      "raw_start": 73,
+      "raw_end": 76,
+      "raw_quote": "the",
+      "context": "owa replied to that language in the following words :",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 77,
+      "end": 86,
+      "text": "following",
+      "raw_start": 77,
+      "raw_end": 86,
+      "raw_quote": "following",
+      "context": "replied to that language in the following words :",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 87,
+      "end": 92,
+      "text": "words",
+      "raw_start": 87,
+      "raw_end": 92,
+      "raw_quote": "words",
+      "context": " that language in the following words :",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7395unit:147:par_000147_000006",
+      "raw_text": "On the 5th of February the member from. Iowa replied to that language in the following words :",
+      "raw_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7395unit:147:par_000147_000006",
+        "raw_text": "On the 5th of February the member from. Iowa replied to that language in the following words :",
+        "raw_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "On the 5th of February the member from. Iowa replied to that language in the following words :",
+    "proposed_sha256": "d76d8a935436323cfa3feb0cf4c092483aaf77a092f74f40db86666bd57e8c33",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

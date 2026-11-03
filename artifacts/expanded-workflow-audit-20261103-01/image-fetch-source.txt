@@ -1,0 +1,7 @@
+import json
+from pathlib import Path
+from congressional_globe.scan_fetch import fetch_bundle
+from congressional_globe.scan_models import ScanTarget
+root=Path('artifacts/expanded-workflow-audit-20261103-01');freeze=json.loads((root/'selection-freeze.json').read_bytes())
+for x in freeze['cases']:
+ d=root/x['case']/'image';t=ScanTarget.model_validate_json((d/'target.json').read_bytes());b=fetch_bundle(d,t);print(x['case'],b.images[0].width,b.images[0].height,b.images[0].receipt.sha256,flush=True)

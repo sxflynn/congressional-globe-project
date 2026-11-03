@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 12:00:02 GMT
+Content-Length: 843
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T12:00:02.285974Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  , \"unit_id\": \"V1\"\n}"},"done":true,"done_reason":"stop","total_duration":26390387959,"load_duration":3612365667,"prompt_eval_count":2160,"prompt_eval_cached_count":0,"prompt_eval_duration":17575197500,"eval_count":128,"eval_duration":5187554708}

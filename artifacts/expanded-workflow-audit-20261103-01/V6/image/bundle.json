@@ -1,0 +1,90 @@
+{
+  "schema_version": "scan-bundle-v1",
+  "target": {
+    "item_identifier": "congressionalglo7395unit",
+    "part_number": 5,
+    "scan_leaf": 302,
+    "hocr_page_id": "page_000302",
+    "paragraph_id": "par_000302_000012",
+    "printed_page": "4030",
+    "raw_text": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+    "raw_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+    "hocr_sha256": "966c31d965de8d72080bd30c8e474e98a2061d3082bd8c0d7f89b10eb81436ff",
+    "page_map_sha256": "6ba53515281768c4f7b446f0d1845811bdbc100167f8e781c8e848be2f5a014b",
+    "ocr_width": 3115,
+    "ocr_height": 4275,
+    "selection_start": 0,
+    "selection_end": 82,
+    "selection_text": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+    "precision": "paragraph",
+    "max_width": 1600,
+    "regions": [
+      {
+        "bbox": {
+          "left": 215,
+          "top": 3930,
+          "right": 1086,
+          "bottom": 4015
+        },
+        "line_ids": [
+          "line_000302_000092",
+          "line_000302_000093"
+        ],
+        "word_ids": [
+          "word_000302_000714",
+          "word_000302_000715",
+          "word_000302_000716",
+          "word_000302_000717",
+          "word_000302_000718",
+          "word_000302_000719",
+          "word_000302_000720",
+          "word_000302_000721",
+          "word_000302_000722",
+          "word_000302_000723",
+          "word_000302_000724",
+          "word_000302_000725",
+          "word_000302_000726",
+          "word_000302_000727"
+        ]
+      }
+    ]
+  },
+  "target_sha256": "814b8ae731f14d8c782c02a19f876fd6c3c7e472617605f5bbea0676a4d1b27e",
+  "info_receipt": {
+    "requested_url": "https://iiif.archive.org/iiif/congressionalglo7395unit$302/info.json",
+    "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0302.jp2/info.json",
+    "retrieved_at_utc": "2026-11-03T11:45:29.096761+00:00",
+    "elapsed_seconds": 5.335208290722221,
+    "bytes": 999,
+    "sha256": "b0419d306e717a594faaa57bc485e8999b0bd47741eabdab14cefbd78bd6b1a3",
+    "content_type": "application/json;charset=utf-8"
+  },
+  "images": [
+    {
+      "file": "crop-01.jpg",
+      "width": 871,
+      "height": 85,
+      "region": [
+        215,
+        3930,
+        871,
+        85
+      ],
+      "receipt": {
+        "requested_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0302.jp2/215,3930,871,85/871,/0/default.jpg",
+        "resolved_url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0302.jp2/215,3930,871,85/871,/0/default.jpg",
+        "retrieved_at_utc": "2026-11-03T11:45:29.891674+00:00",
+        "elapsed_seconds": 0.7932039168663323,
+        "bytes": 18851,
+        "sha256": "05f1bfd243d873d96401ae05ec7d39b993e537fa3c257e733b9fb88262b28634",
+        "content_type": "image/jpeg"
+      }
+    }
+  ],
+  "code_sha256": {
+    "scan_models.py": "8c099fc7068cbb216a40cf05a4241d48eb9218a789ddcb5b1fbbc344c77c46b1",
+    "scan_geometry.py": "a70e9423ddb9c0868ecd1bd1aea8cac781919f03abfe84bb87631872055fc238",
+    "scan_fetch.py": "7ce46f0afc70f860b99ff631eb3eb006885741e50608cf2dbeaac0fec3e25da2"
+  },
+  "registration": "exact dimensions; native pixel coordinates; no inferred scaling/rotation"
+}

@@ -1,0 +1,35 @@
+{
+  "source_id": "congressionalglo00unit:717:par_000717_000026",
+  "raw_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+  "deterministic_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+  "deterministic_result_sha256": "1296d36b1b88d6e59ad061104fafc2a81d2e72680e3542af5b8519bb77572daf",
+  "name_list_state": "available",
+  "signals": [
+    {
+      "signal_id": "0ca86116ab521f622c90e523108b8ba21085ab116b77233d836fda3a880ff93f",
+      "paragraph_alias": "P1",
+      "raw_start": 4,
+      "raw_end": 7,
+      "raw_quote": "NYE",
+      "category": "word",
+      "flags": [
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "a2642bdcb03a179eb77dcd1ec45409b7baa4188103bc177bee44f0e9e689b691",
+      "paragraph_alias": "P1",
+      "raw_start": 39,
+      "raw_end": 46,
+      "raw_quote": "stamped",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    }
+  ],
+  "selection": "secondary_inspection",
+  "coverage_gaps": "Numeric-notation detection is conservative but incomplete; unusual/damaged numeric forms can be missed. Detected digit-bearing and ambiguous Roman notation still route, including raw numbers later repaired. Spelled-out number words use ordinary post-repair spelling checks; their numerical meaning alone does not route them. Unfamiliar/unassessed words, independent name flags and success/unflagged audits remain."
+}

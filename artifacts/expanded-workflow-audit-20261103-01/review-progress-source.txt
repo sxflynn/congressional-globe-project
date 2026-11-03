@@ -1,0 +1,41 @@
+import hashlib,json,re,sys
+from pathlib import Path
+r=Path('artifacts/expanded-workflow-audit-20261103-01');version=int(sys.argv[1]);freeze=json.loads((r/'selection-freeze.json').read_bytes());refs=json.loads((r/'root-source-readings.json').read_bytes());items=[];classified={};total=0
+norm=lambda t:re.findall(r'\w+|[^\w\s]',t.replace('’',"'").casefold())
+for choice in freeze['cases']:
+ alias=choice['case'];d=r/alias;host=json.loads((d/'host.json').read_bytes());target=host['payload']['paragraphs'][0];route=json.loads((d/'route.json').read_bytes());assessment=next(x for x in refs['assessments'] if x['case']==alias)
+ parts=[('Inputs — full original OCR:\n',False),(target['raw']['text'],True),('\n\nExpected output — my source-image reading of the visible text, frozen before Qwen replies; one reader, not accepted benchmark truth:\n',False),(assessment['visible_source_reading'],True)]
+ if alias=='V2':parts.append(('\n\nExpected behavior — this crop ends mid-word. The visible fragment above does not establish the missing letters. The existing uncertainty contract plus the fixed boundary instruction require incomplete coverage, null corrected text and a concrete reason. Do not guess the continuation. This is a contract requirement, not a verified whole-word answer.',False))
+ else:parts.append(('\n\nExpected behavior — return the full supported visible target, preserving names, numbers and historical wording. Do not extend the passage beyond the assigned crop.',False))
+ parts.extend([('\n\nActual output — full first pass from the software:\n',False),(target['static']['text'],True)])
+ complete=[];incomplete=[];matches=[];normalized_matches=[];shape=[];times=[];tokens=[0,0];recorded=0
+ for n in [1,2,3]:
+  path=d/f'call-{n}/result.json'
+  if not path.exists():continue
+  x=json.loads(path.read_bytes());recorded+=1;total+=1;response=x.get('response',{});reply=response.get('output_text','');reading=None;coverage=None;reason=None
+  try:
+   unit=json.loads(reply)['readings'][0];reading=unit['corrected_text'];coverage=unit['coverage'];reason=unit['reason']
+  except (ValueError,KeyError,IndexError,TypeError):pass
+  parts.append((f'\n\nActual output — model run {n} of 3:\n',False))
+  if reading is not None:parts.append((reading,True))
+  else:parts.append((reply or str(x.get('reason','No reply captured.')),True))
+  complete.append(coverage=='complete');incomplete.append(coverage=='incomplete' and reading is None and bool(reason));matches.append(reading==assessment['visible_source_reading']);normalized_matches.append(reading is not None and norm(reading)==norm(assessment['visible_source_reading']));shape.append(isinstance(x.get('export',{}).get('outcome'),dict));times.append(x.get('transport_elapsed_seconds',0));usage=response.get('usage') or {};tokens[0]+=usage.get('input_tokens',0);tokens[1]+=usage.get('output_tokens',0)
+ summary=f'\n\nDifferences — {len(route["signals"])} inspection flags select secondary inspection; a flag is not a verified error. {recorded} of 3 fixed model observations are recorded. '
+ if recorded:
+  summary+=f'{sum(shape)} pass host reply checks; {sum(complete)} report complete readings and {sum(incomplete)} withhold a reading with an incomplete/null reply. '
+  if alias=='V2':summary+=f'{sum(incomplete)} follow the predeclared cut-off-word rule. A complete reply here must not be confused with verified whole-word source coverage. '
+  else:summary+=f'{sum(matches)} exactly match my frozen source reading; {sum(normalized_matches)} match its words and punctuation with whitespace, letter case and straight/curly apostrophe differences treated alike. '
+  summary+=f'Observed transport time totals {sum(times):.3f} seconds; reported usage is {tokens[0]} input and {tokens[1]} output tokens. '
+ if recorded<3:summary+=f'{3-recorded} identical repetitions remain. '
+ summary+='No stored OCR is changed. This batch selects two longer unused primary passages per part 3–5 and is not a representative quality or routing-rate estimate. Model consistency is separate from source fidelity. '
+ if alias=='V2':summary+='The missing continuation stays unresolved; no extra image or inferred letters are substituted.'
+ if alias=='V6' and recorded==3:summary+='All three repair the speaker name to SUMNER. Runs 1 and 3 leave under- taken split; only run 2 joins it to undertaken. '
+ if alias=='V5' and recorded==3:summary+='All three preserve 5th and remove the stray period after from. The remaining difference is only a space before the final colon. '
+ parts.append((summary,False));text='';ranges=[]
+ for value,source in parts:
+  a=len(text);text+=value
+  if source:ranges.append(dict(start=a,end=len(text)))
+ url=json.loads((d/'image/crop-01.jpg.receipt.json').read_bytes())['requested_url'];items.append(dict(label=f'Fresh passage {alias[1:]}: part {choice["part"]}, source leaf {choice["leaf"]}',text=text,url=url));classified[hashlib.sha256(text.encode()).hexdigest()]=ranges
+packet=dict(id='HR-030',version=version,title=f'Six fresh passages: {total} of 18 Qwen observations',instructions='Work is underway on six fresh source passages, with three identical independent model calls per passage. Every actual reply is retained. Inputs, expected source reading or uncertainty behavior, software output, model output and differences are shown together. One crop ends mid-word and must remain incomplete rather than invite a guessed continuation. Optional notes can steer the remaining work; this is not a request for routine per-call permission.',blind=False,questions=[dict(id='expanded-workflow-comments',prompt='Optional notes on these fresh inputs and results',options=[],required=False,evidence=items)])
+p=Path(f'docs/review-packets/HR-030-v{version}.json');assert not p.exists();p.write_text(json.dumps(packet,indent=2,ensure_ascii=False)+'\n')
+p=Path('docs/review-source-spans.json');data=json.loads(p.read_bytes());data['source_spans'].update(classified);p.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n');print(f'HR030v{version}: {total}actual observations,6source cases; all prior bytes retained.')

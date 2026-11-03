@@ -1,0 +1,520 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo00unit:717:par_000717_000026",
+      "raw_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+      "raw_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352"
+    },
+    "static_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+    "static_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+    "static_edits": [],
+    "lines": [
+      {
+        "line_id": "line_000717_000149",
+        "start": 0,
+        "end": 38,
+        "text": "Mr. NYE. This is your bantling, and is"
+      },
+      {
+        "line_id": "line_000717_000150",
+        "start": 39,
+        "end": 56,
+        "text": "stamped as yours."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "c1bcbbc76148786696872988a847e9cc4c40acda30a410eea709332b6cb629c3"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "b746c5433126cb9cd46bc0acc51a1f798e770d2f551ed8f9a76b1a51e37a8aa6",
+  "proposed_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+  "proposed_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 56,
+      "derived_start": 0,
+      "derived_end": 56,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. NYE. This is your bantling, an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 7,
+      "text": "NYE",
+      "raw_start": 4,
+      "raw_end": 7,
+      "raw_quote": "NYE",
+      "context": "Mr. NYE. This is your bantling, and is ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 9,
+      "end": 13,
+      "text": "This",
+      "raw_start": 9,
+      "raw_end": 13,
+      "raw_quote": "This",
+      "context": "Mr. NYE. This is your bantling, and is stampe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 14,
+      "end": 16,
+      "text": "is",
+      "raw_start": 14,
+      "raw_end": 16,
+      "raw_quote": "is",
+      "context": "Mr. NYE. This is your bantling, and is stamped a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 17,
+      "end": 21,
+      "text": "your",
+      "raw_start": 17,
+      "raw_end": 21,
+      "raw_quote": "your",
+      "context": "Mr. NYE. This is your bantling, and is stamped as you",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 22,
+      "end": 30,
+      "text": "bantling",
+      "raw_start": 22,
+      "raw_end": 30,
+      "raw_quote": "bantling",
+      "context": "Mr. NYE. This is your bantling, and is stamped as yours.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 32,
+      "end": 35,
+      "text": "and",
+      "raw_start": 32,
+      "raw_end": 35,
+      "raw_quote": "and",
+      "context": "Mr. NYE. This is your bantling, and is stamped as yours.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 36,
+      "end": 38,
+      "text": "is",
+      "raw_start": 36,
+      "raw_end": 38,
+      "raw_quote": "is",
+      "context": "NYE. This is your bantling, and is stamped as yours.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 39,
+      "end": 46,
+      "text": "stamped",
+      "raw_start": 39,
+      "raw_end": 46,
+      "raw_quote": "stamped",
+      "context": ". This is your bantling, and is stamped as yours.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 47,
+      "end": 49,
+      "text": "as",
+      "raw_start": 47,
+      "raw_end": 49,
+      "raw_quote": "as",
+      "context": "s your bantling, and is stamped as yours.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 50,
+      "end": 55,
+      "text": "yours",
+      "raw_start": 50,
+      "raw_end": 55,
+      "raw_quote": "yours",
+      "context": "our bantling, and is stamped as yours.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. NYE. This is your bantling, an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 7,
+      "text": "NYE",
+      "raw_start": 4,
+      "raw_end": 7,
+      "raw_quote": "NYE",
+      "context": "Mr. NYE. This is your bantling, and is ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 9,
+      "end": 13,
+      "text": "This",
+      "raw_start": 9,
+      "raw_end": 13,
+      "raw_quote": "This",
+      "context": "Mr. NYE. This is your bantling, and is stampe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 14,
+      "end": 16,
+      "text": "is",
+      "raw_start": 14,
+      "raw_end": 16,
+      "raw_quote": "is",
+      "context": "Mr. NYE. This is your bantling, and is stamped a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 17,
+      "end": 21,
+      "text": "your",
+      "raw_start": 17,
+      "raw_end": 21,
+      "raw_quote": "your",
+      "context": "Mr. NYE. This is your bantling, and is stamped as you",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 22,
+      "end": 30,
+      "text": "bantling",
+      "raw_start": 22,
+      "raw_end": 30,
+      "raw_quote": "bantling",
+      "context": "Mr. NYE. This is your bantling, and is stamped as yours.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 32,
+      "end": 35,
+      "text": "and",
+      "raw_start": 32,
+      "raw_end": 35,
+      "raw_quote": "and",
+      "context": "Mr. NYE. This is your bantling, and is stamped as yours.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 36,
+      "end": 38,
+      "text": "is",
+      "raw_start": 36,
+      "raw_end": 38,
+      "raw_quote": "is",
+      "context": "NYE. This is your bantling, and is stamped as yours.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 39,
+      "end": 46,
+      "text": "stamped",
+      "raw_start": 39,
+      "raw_end": 46,
+      "raw_quote": "stamped",
+      "context": ". This is your bantling, and is stamped as yours.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 47,
+      "end": 49,
+      "text": "as",
+      "raw_start": 47,
+      "raw_end": 49,
+      "raw_quote": "as",
+      "context": "s your bantling, and is stamped as yours.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 50,
+      "end": 55,
+      "text": "yours",
+      "raw_start": 50,
+      "raw_end": 55,
+      "raw_quote": "yours",
+      "context": "our bantling, and is stamped as yours.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo00unit:717:par_000717_000026",
+      "raw_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+      "raw_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo00unit:717:par_000717_000026",
+        "raw_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+        "raw_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "Mr. NYE. This is your bantling, and is stamped as yours.",
+    "proposed_sha256": "20af1d2c51f9e5e090db73fe9793dd67d7aa6f60d9b1ab975be868e7da382352",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

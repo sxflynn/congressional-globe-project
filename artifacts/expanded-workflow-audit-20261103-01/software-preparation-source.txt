@@ -1,0 +1,81 @@
+"""Offline T131 current software routing from frozen T49 rows and pinned T52 resources."""
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = Path(__file__).resolve().parent
+FREEZE_PATH = ROOT / "artifacts/expanded-workflow-audit-20261103-01/selection-freeze.json"
+SAMPLE_PATH = ROOT / "artifacts/ocr-sample-design-20261027-01/sample.json"
+EXPOSURE_PATH = ROOT / "artifacts/ocr-sample-design-20261027-01/exposure.json"
+T52_RESULTS = ROOT / "artifacts/deterministic-sample-20261028-01/results.json"
+freeze = json.loads(FREEZE_PATH.read_bytes())
+sample = json.loads(SAMPLE_PATH.read_bytes())
+exposure = json.loads(EXPOSURE_PATH.read_bytes())
+rows = {row["source_id"]: row for row in sample["primary"]}
+modpath = ROOT / "tmp/t129-source-prep/prepare_candidates.py"
+spec = importlib.util.spec_from_file_location("t129_prep", modpath)
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+resources, resource_identity = module.load_resources()
+known_ids = set(exposure["known_source_ids"])
+known_hashes = set(exposure["known_raw_hashes"])
+known_pages = {(x["item_identifier"], x["scan_leaf"]) for x in exposure["known_pages"]}
+excluded_leaves = {tuple(x) for x in freeze["excluded_model_exposed_leaves"]}
+code_paths = [
+    ROOT / "src/congressional_globe/deterministic_models.py",
+    ROOT / "src/congressional_globe/deterministic_geometry.py",
+    ROOT / "src/congressional_globe/deterministic_rules.py",
+    ROOT / "src/congressional_globe/deterministic_repair.py",
+    ROOT / "src/congressional_globe/productive_ocr_routing.py",
+]
+report = {
+    "task": "T131",
+    "selection_freeze_sha256": hashlib.sha256(FREEZE_PATH.read_bytes()).hexdigest(),
+    "selection_rule": freeze["selection_rule"],
+    "t49_sample_sha256": hashlib.sha256(SAMPLE_PATH.read_bytes()).hexdigest(),
+    "canonical_foundation_sha256": sample["source"]["sha256"],
+    "t52_results_sha256": hashlib.sha256(T52_RESULTS.read_bytes()).hexdigest(),
+    "resources": resource_identity,
+    "preparation_code_sha256": hashlib.sha256(modpath.read_bytes()).hexdigest(),
+    "deterministic_code_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in code_paths},
+    "excluded_model_exposed_leaves": [list(x) for x in sorted(excluded_leaves)],
+    "cases": [],
+    "provider_calls": 0,
+    "image_fetches": 0,
+}
+for frozen in freeze["cases"]:
+    source_id = frozen["source_id"]
+    row = rows[source_id]
+    page_path = OUT / f"part{row['part_number']}-leaf{row['scan_leaf']}.jsonl"
+    if (row["part_number"], row["scan_leaf"]) in excluded_leaves:
+        raise ValueError(f"selected known exposed leaf: {source_id}")
+    if source_id in known_ids or row["raw_sha256"] in known_hashes:
+        raise ValueError(f"selected T49 exposure entry: {source_id}")
+    if (row["item_identifier"], row["scan_leaf"]) in known_pages:
+        raise ValueError(f"selected page in known exposure set: {source_id}")
+    if frozen["raw_sha256"] != row["raw_sha256"] or frozen["page_line_sha256"] != row["page_line_sha256"]:
+        raise ValueError(f"freeze/T49 hash mismatch: {source_id}")
+    result, route, paragraph, geometry_sha, page = module.prepare_case(row, page_path.read_bytes(), resources)
+    report["cases"].append({
+        "case": frozen["case"], "part": row["part_number"], "leaf": row["scan_leaf"],
+        "paragraph_id": row["paragraph_id"], "source_id": source_id,
+        "raw_sha256": row["raw_sha256"], "static_sha256": row["static_sha256"],
+        "page_line_sha256": row["page_line_sha256"], "page_line_number": row["page_line_number"],
+        "line_ids": row["line_ids"], "raw_codepoints": row["raw_codepoints"],
+        "static_edits": [{"raw_quote": e.raw_quote, "replacement": e.replacement, "rule": e.rule_id} for e in result.input.static_edits],
+        "proposed_text_sha256": result.proposed_sha256,
+        "proposed_edits": [{"raw_quote": e.raw_quote, "replacement": e.replacement, "rule": e.rule_id} for e in result.proposed_edits],
+        "geometry_registry_sha256": geometry_sha, "selection": route.selection,
+        "signal_count": len(route.signals),
+        "signal_summary": [{"category": s["category"], "raw_quote": s["raw_quote"], "flags": s["flags"]} for s in route.signals],
+        "bbox": row["bbox"], "reading_order": row["reading_order"], "role": paragraph["role"],
+        "item_identifier": row["item_identifier"], "page_record_id": page["id"],
+        "page_dimensions_px": [page["image_width_px"], page["image_height_px"]],
+        "image_status": row["image_status"], "prior_exposure": row["prior_exposure"],
+        "source_accuracy": "not inspected; root source reading pending",
+    })
+(OUT / "software-routes.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+print(json.dumps({"task": report["task"], "cases": [{"case": c["case"], "leaf": c["leaf"], "raw_codepoints": c["raw_codepoints"], "selection": c["selection"], "signals": c["signal_count"], "static_edits": len(c["static_edits"]), "proposed_edits": len(c["proposed_edits"])} for c in report["cases"]], "provider_calls": 0, "image_fetches": 0}, indent=2))

@@ -1,0 +1,34 @@
+{
+  "task": "T131",
+  "selection_sha256": "bdb41fd784759e5d2e83c67622bc6ef5a8b48ba99a468c2251846a8d449f5c78",
+  "method_sha256": "ceca60f1a28b275e684ded685241eb5ba7421d1904c67c2acbef496f2356adaf",
+  "body_sha256_by_case": {
+    "V1": "0a3270c2a26e564cb990bc485460506875b8eef99947d5f9a442cdfc6277da52",
+    "V2": "30e714ef8ddaaf27b8da758fd87fa4a652f776e223a7ddffc257aec434e83fef",
+    "V3": "7e22772e126256c6223a51a8b2a34df73c8a1df3c9cae978eb4b615f6e0f0a4b",
+    "V4": "81f2655ae12b47bf13ed7faf1a0f35f02b2cc475aa5c96afc86a7241f1f2e0e9",
+    "V5": "102701d94e98e79f829d7c2213ad777ada1a1b9fc4d466f6bd9b3dae0cefdf86",
+    "V6": "3f72bffa795e42c30a4fb2a3e5f4032db6e2ea6827cc82156e8b159277729a4f"
+  },
+  "script_sha256": "a0a0df445a266547e6e074a10d0e42d3d33fecd75cb2b2b67f94d0591a7cdff0",
+  "planned_calls": 18,
+  "planned_repeats": 3,
+  "provider_calls_so_far": 0,
+  "native_fit": "unknown; named bounded diagnostic, no general clearance",
+  "code_sha256": "143438fffc145e89e93d1b5eb5a655bec449a72af5114d066217ddac4cc49b5b",
+  "bounds": {
+    "cases": 6,
+    "identical_runs_each": 3,
+    "total_calls": 18,
+    "retries": 0,
+    "request_seconds": 120,
+    "output_tokens": 1500,
+    "per_case_group_seconds": 1800,
+    "total_model_phase_seconds": 1800,
+    "image_downloads_max": 6,
+    "info_downloads_max": 6,
+    "per_image_bytes_max": 8000000,
+    "model_downloads": 0
+  },
+  "runtime_pin": "Caller supplies manifestSHA as explicit command argument; manifest pins scriptSHA. This avoids an impossible circular script\u2194manifest selfhash."
+}

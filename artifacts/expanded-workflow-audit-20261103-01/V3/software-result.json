@@ -1,0 +1,1374 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo00unit:648:par_000648_000009",
+      "raw_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the tim-;) the men were mustered in.",
+      "raw_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5"
+    },
+    "static_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the tim-;) the men were mustered in.",
+    "static_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+    "static_edits": [],
+    "lines": [
+      {
+        "line_id": "line_000648_000054",
+        "start": 0,
+        "end": 40,
+        "text": "And then follows a copy of the telegram,"
+      },
+      {
+        "line_id": "line_000648_000055",
+        "start": 41,
+        "end": 87,
+        "text": "stating that the men were to be mustered in on"
+      },
+      {
+        "line_id": "line_000648_000056",
+        "start": 88,
+        "end": 132,
+        "text": "that condition, which telegram the mustering"
+      },
+      {
+        "line_id": "line_000648_000057",
+        "start": 133,
+        "end": 185,
+        "text": "officer held at the tim-;) the men were mustered in."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "a2e272c96937dbf1bfe5fee7ce7c43433a764b37d499b1122136e8d13d68b52e"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "5da384621ca11b81e153a109aebdc9fdf3db0cee6682eed8b4ac7c6f12db35d0",
+  "proposed_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the tim-;) the men were mustered in.",
+  "proposed_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 185,
+      "derived_start": 0,
+      "derived_end": 185,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 3,
+      "text": "And",
+      "raw_start": 0,
+      "raw_end": 3,
+      "raw_quote": "And",
+      "context": "And then follows a copy of the tele",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 8,
+      "text": "then",
+      "raw_start": 4,
+      "raw_end": 8,
+      "raw_quote": "then",
+      "context": "And then follows a copy of the telegram,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 9,
+      "end": 16,
+      "text": "follows",
+      "raw_start": 9,
+      "raw_end": 16,
+      "raw_quote": "follows",
+      "context": "And then follows a copy of the telegram, stating",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 17,
+      "end": 18,
+      "text": "a",
+      "raw_start": 17,
+      "raw_end": 18,
+      "raw_quote": "a",
+      "context": "And then follows a copy of the telegram, stating t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 19,
+      "end": 23,
+      "text": "copy",
+      "raw_start": 19,
+      "raw_end": 23,
+      "raw_quote": "copy",
+      "context": "And then follows a copy of the telegram, stating that t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 24,
+      "end": 26,
+      "text": "of",
+      "raw_start": 24,
+      "raw_end": 26,
+      "raw_quote": "of",
+      "context": "And then follows a copy of the telegram, stating that the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 27,
+      "end": 30,
+      "text": "the",
+      "raw_start": 27,
+      "raw_end": 30,
+      "raw_quote": "the",
+      "context": "And then follows a copy of the telegram, stating that the men ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 31,
+      "end": 39,
+      "text": "telegram",
+      "raw_start": 31,
+      "raw_end": 39,
+      "raw_quote": "telegram",
+      "context": "And then follows a copy of the telegram, stating that the men were to b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 41,
+      "end": 48,
+      "text": "stating",
+      "raw_start": 41,
+      "raw_end": 48,
+      "raw_quote": "stating",
+      "context": "follows a copy of the telegram, stating that the men were to be mustere",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 49,
+      "end": 53,
+      "text": "that",
+      "raw_start": 49,
+      "raw_end": 53,
+      "raw_quote": "that",
+      "context": "a copy of the telegram, stating that the men were to be mustered in ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 54,
+      "end": 57,
+      "text": "the",
+      "raw_start": 54,
+      "raw_end": 57,
+      "raw_quote": "the",
+      "context": "y of the telegram, stating that the men were to be mustered in on t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 58,
+      "end": 61,
+      "text": "men",
+      "raw_start": 58,
+      "raw_end": 61,
+      "raw_quote": "men",
+      "context": " the telegram, stating that the men were to be mustered in on that ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 62,
+      "end": 66,
+      "text": "were",
+      "raw_start": 62,
+      "raw_end": 66,
+      "raw_quote": "were",
+      "context": " telegram, stating that the men were to be mustered in on that condi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 67,
+      "end": 69,
+      "text": "to",
+      "raw_start": 67,
+      "raw_end": 69,
+      "raw_quote": "to",
+      "context": "gram, stating that the men were to be mustered in on that conditio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 70,
+      "end": 72,
+      "text": "be",
+      "raw_start": 70,
+      "raw_end": 72,
+      "raw_quote": "be",
+      "context": "m, stating that the men were to be mustered in on that condition, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 73,
+      "end": 81,
+      "text": "mustered",
+      "raw_start": 73,
+      "raw_end": 81,
+      "raw_quote": "mustered",
+      "context": "stating that the men were to be mustered in on that condition, which tel",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 82,
+      "end": 84,
+      "text": "in",
+      "raw_start": 82,
+      "raw_end": 84,
+      "raw_quote": "in",
+      "context": "hat the men were to be mustered in on that condition, which telegr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 85,
+      "end": 87,
+      "text": "on",
+      "raw_start": 85,
+      "raw_end": 87,
+      "raw_quote": "on",
+      "context": " the men were to be mustered in on that condition, which telegram ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 88,
+      "end": 92,
+      "text": "that",
+      "raw_start": 88,
+      "raw_end": 92,
+      "raw_quote": "that",
+      "context": "e men were to be mustered in on that condition, which telegram the m",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 93,
+      "end": 102,
+      "text": "condition",
+      "raw_start": 93,
+      "raw_end": 102,
+      "raw_quote": "condition",
+      "context": " were to be mustered in on that condition, which telegram the mustering o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 104,
+      "end": 109,
+      "text": "which",
+      "raw_start": 104,
+      "raw_end": 109,
+      "raw_quote": "which",
+      "context": " mustered in on that condition, which telegram the mustering officer ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 110,
+      "end": 118,
+      "text": "telegram",
+      "raw_start": 110,
+      "raw_end": 118,
+      "raw_quote": "telegram",
+      "context": "red in on that condition, which telegram the mustering officer held at t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 119,
+      "end": 122,
+      "text": "the",
+      "raw_start": 119,
+      "raw_end": 122,
+      "raw_quote": "the",
+      "context": " that condition, which telegram the mustering officer held at the t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 123,
+      "end": 132,
+      "text": "mustering",
+      "raw_start": 123,
+      "raw_end": 132,
+      "raw_quote": "mustering",
+      "context": "t condition, which telegram the mustering officer held at the tim-;) the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 133,
+      "end": 140,
+      "text": "officer",
+      "raw_start": 133,
+      "raw_end": 140,
+      "raw_quote": "officer",
+      "context": "n, which telegram the mustering officer held at the tim-;) the men were",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 141,
+      "end": 145,
+      "text": "held",
+      "raw_start": 141,
+      "raw_end": 145,
+      "raw_quote": "held",
+      "context": " telegram the mustering officer held at the tim-;) the men were must",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 146,
+      "end": 148,
+      "text": "at",
+      "raw_start": 146,
+      "raw_end": 148,
+      "raw_quote": "at",
+      "context": "gram the mustering officer held at the tim-;) the men were mustere",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 149,
+      "end": 152,
+      "text": "the",
+      "raw_start": 149,
+      "raw_end": 152,
+      "raw_quote": "the",
+      "context": "m the mustering officer held at the tim-;) the men were mustered in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 153,
+      "end": 156,
+      "text": "tim",
+      "raw_start": 153,
+      "raw_end": 156,
+      "raw_quote": "tim",
+      "context": "e mustering officer held at the tim-;) the men were mustered in.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 160,
+      "end": 163,
+      "text": "the",
+      "raw_start": 160,
+      "raw_end": 163,
+      "raw_quote": "the",
+      "context": "ring officer held at the tim-;) the men were mustered in.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 164,
+      "end": 167,
+      "text": "men",
+      "raw_start": 164,
+      "raw_end": 167,
+      "raw_quote": "men",
+      "context": " officer held at the tim-;) the men were mustered in.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 168,
+      "end": 172,
+      "text": "were",
+      "raw_start": 168,
+      "raw_end": 172,
+      "raw_quote": "were",
+      "context": "icer held at the tim-;) the men were mustered in.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 173,
+      "end": 181,
+      "text": "mustered",
+      "raw_start": 173,
+      "raw_end": 181,
+      "raw_quote": "mustered",
+      "context": "held at the tim-;) the men were mustered in.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 182,
+      "end": 184,
+      "text": "in",
+      "raw_start": 182,
+      "raw_end": 184,
+      "raw_quote": "in",
+      "context": "he tim-;) the men were mustered in.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 3,
+      "text": "And",
+      "raw_start": 0,
+      "raw_end": 3,
+      "raw_quote": "And",
+      "context": "And then follows a copy of the tele",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 8,
+      "text": "then",
+      "raw_start": 4,
+      "raw_end": 8,
+      "raw_quote": "then",
+      "context": "And then follows a copy of the telegram,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 9,
+      "end": 16,
+      "text": "follows",
+      "raw_start": 9,
+      "raw_end": 16,
+      "raw_quote": "follows",
+      "context": "And then follows a copy of the telegram, stating",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 17,
+      "end": 18,
+      "text": "a",
+      "raw_start": 17,
+      "raw_end": 18,
+      "raw_quote": "a",
+      "context": "And then follows a copy of the telegram, stating t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 19,
+      "end": 23,
+      "text": "copy",
+      "raw_start": 19,
+      "raw_end": 23,
+      "raw_quote": "copy",
+      "context": "And then follows a copy of the telegram, stating that t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 24,
+      "end": 26,
+      "text": "of",
+      "raw_start": 24,
+      "raw_end": 26,
+      "raw_quote": "of",
+      "context": "And then follows a copy of the telegram, stating that the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 27,
+      "end": 30,
+      "text": "the",
+      "raw_start": 27,
+      "raw_end": 30,
+      "raw_quote": "the",
+      "context": "And then follows a copy of the telegram, stating that the men ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 31,
+      "end": 39,
+      "text": "telegram",
+      "raw_start": 31,
+      "raw_end": 39,
+      "raw_quote": "telegram",
+      "context": "And then follows a copy of the telegram, stating that the men were to b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 41,
+      "end": 48,
+      "text": "stating",
+      "raw_start": 41,
+      "raw_end": 48,
+      "raw_quote": "stating",
+      "context": "follows a copy of the telegram, stating that the men were to be mustere",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 49,
+      "end": 53,
+      "text": "that",
+      "raw_start": 49,
+      "raw_end": 53,
+      "raw_quote": "that",
+      "context": "a copy of the telegram, stating that the men were to be mustered in ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 54,
+      "end": 57,
+      "text": "the",
+      "raw_start": 54,
+      "raw_end": 57,
+      "raw_quote": "the",
+      "context": "y of the telegram, stating that the men were to be mustered in on t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 58,
+      "end": 61,
+      "text": "men",
+      "raw_start": 58,
+      "raw_end": 61,
+      "raw_quote": "men",
+      "context": " the telegram, stating that the men were to be mustered in on that ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 62,
+      "end": 66,
+      "text": "were",
+      "raw_start": 62,
+      "raw_end": 66,
+      "raw_quote": "were",
+      "context": " telegram, stating that the men were to be mustered in on that condi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 67,
+      "end": 69,
+      "text": "to",
+      "raw_start": 67,
+      "raw_end": 69,
+      "raw_quote": "to",
+      "context": "gram, stating that the men were to be mustered in on that conditio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 70,
+      "end": 72,
+      "text": "be",
+      "raw_start": 70,
+      "raw_end": 72,
+      "raw_quote": "be",
+      "context": "m, stating that the men were to be mustered in on that condition, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 73,
+      "end": 81,
+      "text": "mustered",
+      "raw_start": 73,
+      "raw_end": 81,
+      "raw_quote": "mustered",
+      "context": "stating that the men were to be mustered in on that condition, which tel",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 82,
+      "end": 84,
+      "text": "in",
+      "raw_start": 82,
+      "raw_end": 84,
+      "raw_quote": "in",
+      "context": "hat the men were to be mustered in on that condition, which telegr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 85,
+      "end": 87,
+      "text": "on",
+      "raw_start": 85,
+      "raw_end": 87,
+      "raw_quote": "on",
+      "context": " the men were to be mustered in on that condition, which telegram ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 88,
+      "end": 92,
+      "text": "that",
+      "raw_start": 88,
+      "raw_end": 92,
+      "raw_quote": "that",
+      "context": "e men were to be mustered in on that condition, which telegram the m",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 93,
+      "end": 102,
+      "text": "condition",
+      "raw_start": 93,
+      "raw_end": 102,
+      "raw_quote": "condition",
+      "context": " were to be mustered in on that condition, which telegram the mustering o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 104,
+      "end": 109,
+      "text": "which",
+      "raw_start": 104,
+      "raw_end": 109,
+      "raw_quote": "which",
+      "context": " mustered in on that condition, which telegram the mustering officer ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 110,
+      "end": 118,
+      "text": "telegram",
+      "raw_start": 110,
+      "raw_end": 118,
+      "raw_quote": "telegram",
+      "context": "red in on that condition, which telegram the mustering officer held at t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 119,
+      "end": 122,
+      "text": "the",
+      "raw_start": 119,
+      "raw_end": 122,
+      "raw_quote": "the",
+      "context": " that condition, which telegram the mustering officer held at the t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 123,
+      "end": 132,
+      "text": "mustering",
+      "raw_start": 123,
+      "raw_end": 132,
+      "raw_quote": "mustering",
+      "context": "t condition, which telegram the mustering officer held at the tim-;) the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 133,
+      "end": 140,
+      "text": "officer",
+      "raw_start": 133,
+      "raw_end": 140,
+      "raw_quote": "officer",
+      "context": "n, which telegram the mustering officer held at the tim-;) the men were",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 141,
+      "end": 145,
+      "text": "held",
+      "raw_start": 141,
+      "raw_end": 145,
+      "raw_quote": "held",
+      "context": " telegram the mustering officer held at the tim-;) the men were must",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 146,
+      "end": 148,
+      "text": "at",
+      "raw_start": 146,
+      "raw_end": 148,
+      "raw_quote": "at",
+      "context": "gram the mustering officer held at the tim-;) the men were mustere",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 149,
+      "end": 152,
+      "text": "the",
+      "raw_start": 149,
+      "raw_end": 152,
+      "raw_quote": "the",
+      "context": "m the mustering officer held at the tim-;) the men were mustered in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 153,
+      "end": 156,
+      "text": "tim",
+      "raw_start": 153,
+      "raw_end": 156,
+      "raw_quote": "tim",
+      "context": "e mustering officer held at the tim-;) the men were mustered in.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 160,
+      "end": 163,
+      "text": "the",
+      "raw_start": 160,
+      "raw_end": 163,
+      "raw_quote": "the",
+      "context": "ring officer held at the tim-;) the men were mustered in.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 164,
+      "end": 167,
+      "text": "men",
+      "raw_start": 164,
+      "raw_end": 167,
+      "raw_quote": "men",
+      "context": " officer held at the tim-;) the men were mustered in.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 168,
+      "end": 172,
+      "text": "were",
+      "raw_start": 168,
+      "raw_end": 172,
+      "raw_quote": "were",
+      "context": "icer held at the tim-;) the men were mustered in.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 173,
+      "end": 181,
+      "text": "mustered",
+      "raw_start": 173,
+      "raw_end": 181,
+      "raw_quote": "mustered",
+      "context": "held at the tim-;) the men were mustered in.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 182,
+      "end": 184,
+      "text": "in",
+      "raw_start": 182,
+      "raw_end": 184,
+      "raw_quote": "in",
+      "context": "he tim-;) the men were mustered in.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo00unit:648:par_000648_000009",
+      "raw_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the tim-;) the men were mustered in.",
+      "raw_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo00unit:648:par_000648_000009",
+        "raw_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the tim-;) the men were mustered in.",
+        "raw_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the tim-;) the men were mustered in.",
+    "proposed_sha256": "7eaecd12169ed764c93944c2ce3d0a02088ea54fa3d8ce89dca0e638475a2ce5",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

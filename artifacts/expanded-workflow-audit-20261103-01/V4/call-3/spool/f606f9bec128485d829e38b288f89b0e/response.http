@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 12:11:51 GMT
+Content-Length: 640
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T12:11:51.437385Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. NYE. This is your bantling, and is stamped as yours.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n, \"unit_id\": \"V4\"\n}"},"done":true,"done_reason":"stop","total_duration":15407989292,"load_duration":4112668000,"prompt_eval_count":903,"prompt_eval_cached_count":0,"prompt_eval_duration":7709957000,"eval_count":96,"eval_duration":3580311792}

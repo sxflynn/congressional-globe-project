@@ -1,0 +1,57 @@
+{
+  "reader": "root, exact model unknown",
+  "method": "Direct native saved raster inspection before Qwen replies. Read all images before viewing raw OCR for casesV2\u2013V6; selection/part/length/signal counts known. V1reading separately frozen and published first.",
+  "accepted_benchmark_reference": false,
+  "readings": {
+    "V1": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.",
+    "V2": "Mr. CONNESS. If the Senator from Michigan will give way I will move that the Senate proceed to the consideration of executive busi-",
+    "V3": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.",
+    "V4": "Mr. NYE. This is your bantling, and is stamped as yours.",
+    "V5": "On the 5th of February the member from Iowa replied to that language in the following words:",
+    "V6": "Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,"
+  },
+  "assessments": [
+    {
+      "case": "V1",
+      "image_sha256": "86cfc4576c031a72707fb6d6f1e67cfa47ed121f5f7e3a54c7e0594ab8bcac23",
+      "visible_source_reading": "The PRESIDENT pro tempore. It is moved and seconded that the Senator from Illinois be authorized to withdraw from the Committee on Military Affairs the petition presented by him which was referred to that committee by order of the Senate some time since.",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": null
+    },
+    {
+      "case": "V2",
+      "image_sha256": "fc93e756f2521935296986ded73da70d9a934df0c4d44215af32fb0b44b18e3c",
+      "visible_source_reading": "Mr. CONNESS. If the Senator from Michigan will give way I will move that the Senate proceed to the consideration of executive busi-",
+      "expected_behavior": "incomplete_null_with_concrete_reason",
+      "source_uncertainty": "Crop and frozen OCR record end in busi-; following letters not supplied. Exact whole word and continuation are unverified. The visible-fragment transcription is an illustration, not a full-word reference."
+    },
+    {
+      "case": "V3",
+      "image_sha256": "d0fd13a67528e7d326b177c9d295abc9b64a7f8e17089820932ef758e61d0652",
+      "visible_source_reading": "And then follows a copy of the telegram, stating that the men were to be mustered in on that condition, which telegram the mustering officer held at the time the men were mustered in.",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": null
+    },
+    {
+      "case": "V4",
+      "image_sha256": "2dba1d8bf07bf639a464b536ae789f7c7e6393ac2d9d2f610f869179b8b60126",
+      "visible_source_reading": "Mr. NYE. This is your bantling, and is stamped as yours.",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": null
+    },
+    {
+      "case": "V5",
+      "image_sha256": "987dd13869c3760aaf386dfec50355a0be1486a9db8b95f50ba5ce8544547eb2",
+      "visible_source_reading": "On the 5th of February the member from Iowa replied to that language in the following words:",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": null
+    },
+    {
+      "case": "V6",
+      "image_sha256": "05f1bfd243d873d96401ae05ec7d39b993e537fa3c257e733b9fb88262b28634",
+      "visible_source_reading": "Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,",
+      "expected_behavior": "complete_supported_visible_target",
+      "source_uncertainty": null
+    }
+  ]
+}

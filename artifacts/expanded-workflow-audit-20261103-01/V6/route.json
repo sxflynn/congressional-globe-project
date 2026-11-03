@@ -1,0 +1,61 @@
+{
+  "source_id": "congressionalglo7395unit:302:par_000302_000012",
+  "raw_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+  "deterministic_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+  "deterministic_result_sha256": "226108a8f289b6c61fdd4e0c8f6f71b5dcf0f962798bb2ea7592a67cafbf9737",
+  "name_list_state": "available",
+  "signals": [
+    {
+      "signal_id": "6b53cff9e25b5e0432983d8901a4ca9709c042c10e7738da38db5a650ba2f4c0",
+      "paragraph_alias": "P1",
+      "raw_start": 4,
+      "raw_end": 11,
+      "raw_quote": "SUMNEll",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar",
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "9932dc4995bfab824eb6c48d4a5540ce48709d9fcadf5aa20a5d22ef6a9ac046",
+      "paragraph_alias": "P1",
+      "raw_start": 17,
+      "raw_end": 24,
+      "raw_quote": "Senator",
+      "category": "word",
+      "flags": [
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "fe8fce04e051bc5ab23b32131251492ad013da6cbb8aea3bfd51c992f9c9cc75",
+      "paragraph_alias": "P1",
+      "raw_start": 25,
+      "raw_end": 28,
+      "raw_quote": "has",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar",
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "15689a93412cd6244dc37fac426406d65bba88adea51a4108ee8aa45f3d50f7d",
+      "paragraph_alias": "P1",
+      "raw_start": 68,
+      "raw_end": 76,
+      "raw_quote": "salaries",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    }
+  ],
+  "selection": "secondary_inspection",
+  "coverage_gaps": "Numeric-notation detection is conservative but incomplete; unusual/damaged numeric forms can be missed. Detected digit-bearing and ambiguous Roman notation still route, including raw numbers later repaired. Spelled-out number words use ordinary post-repair spelling checks; their numerical meaning alone does not route them. Unfamiliar/unassessed words, independent name flags and success/unflagged audits remain."
+}

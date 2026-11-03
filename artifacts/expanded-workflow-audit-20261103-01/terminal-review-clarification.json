@@ -1,0 +1,15 @@
+{
+  "task": "T131",
+  "original_record": "terminal-processes.json preserved unchanged",
+  "meaning_of_additional_provider_calls_zero": "The terminal verification script made zero generating requests. This is not a claim that shared logs exhaustively prove zero unrelated calls.",
+  "phase_query_since_utc": "2026-11-03T11:56:04.483938+00:00",
+  "phase_query": "terminal-phase-log-query.json",
+  "limitation": "A bounded filtered log query can be incomplete/truncated; private owned service requests may not appear in the shared log. Do not use the query to prove global absence of all inference.",
+  "verified_scope": [
+    "18owned fixed slots/bodyhashes and independently read stopped transport receipts",
+    "recorded owned PIDs absent at terminalcheck",
+    "shared service nonloading GET returns no loadedmodels, cleanupqueue0claimed, sharedlockavailable"
+  ],
+  "unverified_scope": "Unrelated/unlogged inference outside the18ownedrequests is not exhaustively audited.",
+  "verification_generating_requests": 0
+}

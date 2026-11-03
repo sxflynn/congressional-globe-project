@@ -1,0 +1,23 @@
+import json,subprocess,time,urllib.request
+from pathlib import Path
+from congressional_globe.productive_ocr_runner import _session_lock
+r=Path('artifacts/expanded-workflow-audit-20261103-01')
+run=lambda args:subprocess.run(args,check=True,capture_output=True,text=True).stdout
+logs=json.loads(run(['uv','run','globe','ollama','logs','query','--limit','5','--max-output-bytes','10000','--max-scan-bytes','1048576','--no-raw']))
+identities=[]
+for p in r.glob('V*/call-*/spool/*/receipt.json'):
+ d=json.loads(p.read_bytes());payload=d.get('record',d)
+ for row in payload.get('known_processes',[]):identities.append(row)
+# Receipts may store their payload under another explicitly checked key.
+if not identities:
+ for p in r.glob('V*/call-*/spool/*/server.json'):
+  d=json.loads(p.read_bytes());identities.append(dict(pid=d['owned_pid'],started=d['process_started'],command=d['observed_command']))
+ids=sorted({x['pid'] for x in identities});ps=subprocess.run(['ps','-p',','.join(map(str,ids)),'-o','pid=,lstart=,command='],capture_output=True,text=True)
+assert ps.returncode in [0,1]
+assert not ps.stdout.strip(),'Owned PIDs still visible; inspect identities instead of claiming stopped'
+with urllib.request.urlopen('http://127.0.0.1:11434/api/ps',timeout=4) as response:shared=json.load(response)
+assert not shared.get('models')
+queue=json.loads(run(['uv','run','globe','cleanup','status','--run-directory','artifacts/runs/static-final-20261011','--run-id','static-final-20261011']));assert queue['claimed']==0
+with _session_lock():lock='acquired and released'
+report=dict(task='T131',checked_at_epoch=time.time(),owned_recorded_pids=ids,all_recorded_owned_pids_absent=True,shared_nonloading_GET=shared,shared_service='unowned; no control attempted',shared_lock=lock,queue=queue,logs=logs,additional_provider_calls=0)
+(r/'terminal-processes.json').write_text(json.dumps(report,indent=2)+'\n');print('Terminal check: recorded owned PIDs absent; shared service empty/untouched, queue0claimed and shared lock available.')
