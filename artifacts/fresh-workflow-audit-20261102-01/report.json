@@ -1,0 +1,697 @@
+{
+  "task": "T129",
+  "actual_calls": 9,
+  "preflight_no_request_failures": 1,
+  "retries": 0,
+  "image_downloads": 4,
+  "metadata_info_downloads": 4,
+  "cases": [
+    {
+      "case": "U1",
+      "source_id": "congressionalglo7393unit:1055:par_001055_000071",
+      "raw": "It was so referred.",
+      "software": "It was so referred.",
+      "root_source_reading": "It was so referred.",
+      "route": "audit_only",
+      "signals": 0,
+      "actual_calls": 3,
+      "input_body_sha256": "208e6b3c1f6f2e89fc3cc94228d2b8af90facbeeaf1d1c7f28ca86b8760619be",
+      "identical_input_bytes": true,
+      "distinct_raw_replies": 2,
+      "distinct_corrected_readings": 1,
+      "observations": [
+        {
+          "repeat": 1,
+          "complete_http": true,
+          "finish_reason": "stop",
+          "host_outcome": {
+            "derived_proposals": [
+              {
+                "acceptance": "unreviewed_model_proposal",
+                "alignment": "exact_copy",
+                "deterministic_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+                "paragraph_alias": "P1",
+                "raw_edits": [],
+                "raw_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+                "replay_verified": true,
+                "sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+                "source_id": "congressionalglo7393unit:1055:par_001055_000071",
+                "source_quality": "not_verified",
+                "support_map": [
+                  {
+                    "derived_end": 19,
+                    "derived_start": 0,
+                    "mapping": "exact_copy",
+                    "raw_end": 19,
+                    "raw_start": 0
+                  }
+                ],
+                "text": "It was so referred."
+              }
+            ],
+            "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+            "proposal_status": "no_finding",
+            "provider_reply": {
+              "contract": "ocr-productive-repair-text-reply-v3",
+              "readings": [
+                {
+                  "corrected_text": "It was so referred.",
+                  "coverage": "complete",
+                  "paragraph_alias": "P1",
+                  "reason": null
+                }
+              ],
+              "unit_id": "U1"
+            }
+          },
+          "reading": "It was so referred.",
+          "exact_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [],
+          "usage": {
+            "input_tokens": 584,
+            "output_tokens": 84
+          },
+          "elapsed_seconds": 23.52217754209414,
+          "transport_elapsed_seconds": 23.4890182078816,
+          "positive_owned_stop": true,
+          "receipt_sha256": "1ed126a591cdc481818b70ed3a4870760e97c929b6c8c5e1306348b6c0019f74"
+        },
+        {
+          "repeat": 2,
+          "complete_http": true,
+          "finish_reason": "stop",
+          "host_outcome": {
+            "derived_proposals": [
+              {
+                "acceptance": "unreviewed_model_proposal",
+                "alignment": "exact_copy",
+                "deterministic_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+                "paragraph_alias": "P1",
+                "raw_edits": [],
+                "raw_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+                "replay_verified": true,
+                "sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+                "source_id": "congressionalglo7393unit:1055:par_001055_000071",
+                "source_quality": "not_verified",
+                "support_map": [
+                  {
+                    "derived_end": 19,
+                    "derived_start": 0,
+                    "mapping": "exact_copy",
+                    "raw_end": 19,
+                    "raw_start": 0
+                  }
+                ],
+                "text": "It was so referred."
+              }
+            ],
+            "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+            "proposal_status": "no_finding",
+            "provider_reply": {
+              "contract": "ocr-productive-repair-text-reply-v3",
+              "readings": [
+                {
+                  "corrected_text": "It was so referred.",
+                  "coverage": "complete",
+                  "paragraph_alias": "P1",
+                  "reason": null
+                }
+              ],
+              "unit_id": "U1"
+            }
+          },
+          "reading": "It was so referred.",
+          "exact_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [],
+          "usage": {
+            "input_tokens": 584,
+            "output_tokens": 84
+          },
+          "elapsed_seconds": 23.01266362518072,
+          "transport_elapsed_seconds": 22.980155708268285,
+          "positive_owned_stop": true,
+          "receipt_sha256": "eba9a754f1a20be54c39e51970b1eb2932de34474dc3bdbc45f20aef17d0287b"
+        },
+        {
+          "repeat": 3,
+          "complete_http": true,
+          "finish_reason": "stop",
+          "host_outcome": {
+            "derived_proposals": [
+              {
+                "acceptance": "unreviewed_model_proposal",
+                "alignment": "exact_copy",
+                "deterministic_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+                "paragraph_alias": "P1",
+                "raw_edits": [],
+                "raw_sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+                "replay_verified": true,
+                "sha256": "491180bbbb62b0035986d7aab1abcff30de7e96094efd78c0f78997d3cda2fb4",
+                "source_id": "congressionalglo7393unit:1055:par_001055_000071",
+                "source_quality": "not_verified",
+                "support_map": [
+                  {
+                    "derived_end": 19,
+                    "derived_start": 0,
+                    "mapping": "exact_copy",
+                    "raw_end": 19,
+                    "raw_start": 0
+                  }
+                ],
+                "text": "It was so referred."
+              }
+            ],
+            "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+            "proposal_status": "no_finding",
+            "provider_reply": {
+              "contract": "ocr-productive-repair-text-reply-v3",
+              "readings": [
+                {
+                  "corrected_text": "It was so referred.",
+                  "coverage": "complete",
+                  "paragraph_alias": "P1",
+                  "reason": null
+                }
+              ],
+              "unit_id": "U1"
+            }
+          },
+          "reading": "It was so referred.",
+          "exact_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [],
+          "usage": {
+            "input_tokens": 584,
+            "output_tokens": 86
+          },
+          "elapsed_seconds": 22.305791332852095,
+          "transport_elapsed_seconds": 22.271490749903023,
+          "positive_owned_stop": true,
+          "receipt_sha256": "c2a31e6a70923fdd2f3a3e915b1fb824db53aac61ce97fabf242a527c0317aa2"
+        }
+      ]
+    },
+    {
+      "case": "U2",
+      "source_id": "congressionalg7391unit:278:par_000278_000024",
+      "raw": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the refer- ence of the amendments and the bill to the committee.",
+      "software": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+      "root_source_reading": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+      "route": "secondary_inspection",
+      "signals": 7,
+      "actual_calls": 3,
+      "input_body_sha256": "aac5942a611f6467c734fa63a447ac1329562e256c1fd26a016f745526f83be6",
+      "identical_input_bytes": true,
+      "distinct_raw_replies": 2,
+      "distinct_corrected_readings": 1,
+      "observations": [
+        {
+          "repeat": 1,
+          "complete_http": true,
+          "finish_reason": "stop",
+          "host_outcome": {
+            "derived_proposals": [
+              {
+                "acceptance": "unreviewed_model_proposal",
+                "alignment": "coarse_whole_paragraph_not_token_alignment",
+                "deterministic_sha256": "be20b6ed847d900d21b45a25865a57013c75fe44aad213af62bafa03b40c84a8",
+                "paragraph_alias": "P1",
+                "raw_edits": [
+                  {
+                    "end": 184,
+                    "raw_quote": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the refer- ence of the amendments and the bill to the committee.",
+                    "replacement": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+                    "rule_id": "software-whole-target-replacement-v3",
+                    "start": 0
+                  }
+                ],
+                "raw_sha256": "6abc0d63f74869ff6e901e2158c177e8bc6753b92dab6ef874f5a29e3cc8ce96",
+                "replay_verified": true,
+                "sha256": "7e211913da2aabc8e2738e348ee7ebf6af34f97916a8a931666ce62693df3ab7",
+                "source_id": "congressionalg7391unit:278:par_000278_000024",
+                "source_quality": "not_verified",
+                "support_map": [
+                  {
+                    "derived_end": 182,
+                    "derived_start": 0,
+                    "mapping": "replacement",
+                    "raw_end": 184,
+                    "raw_start": 0
+                  }
+                ],
+                "text": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee."
+              }
+            ],
+            "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+            "proposal_status": "findings",
+            "provider_reply": {
+              "contract": "ocr-productive-repair-text-reply-v3",
+              "readings": [
+                {
+                  "corrected_text": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+                  "coverage": "complete",
+                  "paragraph_alias": "P1",
+                  "reason": null
+                }
+              ],
+              "unit_id": "U2"
+            }
+          },
+          "reading": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+          "exact_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": "l",
+              "model_quote": "I",
+              "software_start": 8,
+              "software_end": 9,
+              "model_start": 8,
+              "model_end": 9
+            },
+            {
+              "software_quote": "X",
+              "model_quote": "N",
+              "software_start": 11,
+              "software_end": 12,
+              "model_start": 11,
+              "model_end": 12
+            },
+            {
+              "software_quote": "^j-",
+              "model_quote": " pr",
+              "software_start": 13,
+              "software_end": 16,
+              "model_start": 13,
+              "model_end": 16
+            }
+          ],
+          "usage": {
+            "input_tokens": 1613,
+            "output_tokens": 120
+          },
+          "elapsed_seconds": 32.259198083076626,
+          "transport_elapsed_seconds": 32.225254208315164,
+          "positive_owned_stop": true,
+          "receipt_sha256": "79890f65d193931557a8768a2393eb2fc75555c89791439db78140504c68d809"
+        },
+        {
+          "repeat": 2,
+          "complete_http": true,
+          "finish_reason": "stop",
+          "host_outcome": {
+            "derived_proposals": [
+              {
+                "acceptance": "unreviewed_model_proposal",
+                "alignment": "coarse_whole_paragraph_not_token_alignment",
+                "deterministic_sha256": "be20b6ed847d900d21b45a25865a57013c75fe44aad213af62bafa03b40c84a8",
+                "paragraph_alias": "P1",
+                "raw_edits": [
+                  {
+                    "end": 184,
+                    "raw_quote": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the refer- ence of the amendments and the bill to the committee.",
+                    "replacement": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+                    "rule_id": "software-whole-target-replacement-v3",
+                    "start": 0
+                  }
+                ],
+                "raw_sha256": "6abc0d63f74869ff6e901e2158c177e8bc6753b92dab6ef874f5a29e3cc8ce96",
+                "replay_verified": true,
+                "sha256": "7e211913da2aabc8e2738e348ee7ebf6af34f97916a8a931666ce62693df3ab7",
+                "source_id": "congressionalg7391unit:278:par_000278_000024",
+                "source_quality": "not_verified",
+                "support_map": [
+                  {
+                    "derived_end": 182,
+                    "derived_start": 0,
+                    "mapping": "replacement",
+                    "raw_end": 184,
+                    "raw_start": 0
+                  }
+                ],
+                "text": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee."
+              }
+            ],
+            "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+            "proposal_status": "findings",
+            "provider_reply": {
+              "contract": "ocr-productive-repair-text-reply-v3",
+              "readings": [
+                {
+                  "corrected_text": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+                  "coverage": "complete",
+                  "paragraph_alias": "P1",
+                  "reason": null
+                }
+              ],
+              "unit_id": "U2"
+            }
+          },
+          "reading": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+          "exact_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": "l",
+              "model_quote": "I",
+              "software_start": 8,
+              "software_end": 9,
+              "model_start": 8,
+              "model_end": 9
+            },
+            {
+              "software_quote": "X",
+              "model_quote": "N",
+              "software_start": 11,
+              "software_end": 12,
+              "model_start": 11,
+              "model_end": 12
+            },
+            {
+              "software_quote": "^j-",
+              "model_quote": " pr",
+              "software_start": 13,
+              "software_end": 16,
+              "model_start": 13,
+              "model_end": 16
+            }
+          ],
+          "usage": {
+            "input_tokens": 1613,
+            "output_tokens": 121
+          },
+          "elapsed_seconds": 33.1708589582704,
+          "transport_elapsed_seconds": 33.13780254218727,
+          "positive_owned_stop": true,
+          "receipt_sha256": "6840fb6c93dd54e79f9e25cb3a67771e1c8561b30fa34058a06a12fba8cd2a5b"
+        },
+        {
+          "repeat": 3,
+          "complete_http": true,
+          "finish_reason": "stop",
+          "host_outcome": {
+            "derived_proposals": [
+              {
+                "acceptance": "unreviewed_model_proposal",
+                "alignment": "coarse_whole_paragraph_not_token_alignment",
+                "deterministic_sha256": "be20b6ed847d900d21b45a25865a57013c75fe44aad213af62bafa03b40c84a8",
+                "paragraph_alias": "P1",
+                "raw_edits": [
+                  {
+                    "end": 184,
+                    "raw_quote": "The PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the refer- ence of the amendments and the bill to the committee.",
+                    "replacement": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+                    "rule_id": "software-whole-target-replacement-v3",
+                    "start": 0
+                  }
+                ],
+                "raw_sha256": "6abc0d63f74869ff6e901e2158c177e8bc6753b92dab6ef874f5a29e3cc8ce96",
+                "replay_verified": true,
+                "sha256": "7e211913da2aabc8e2738e348ee7ebf6af34f97916a8a931666ce62693df3ab7",
+                "source_id": "congressionalg7391unit:278:par_000278_000024",
+                "source_quality": "not_verified",
+                "support_map": [
+                  {
+                    "derived_end": 182,
+                    "derived_start": 0,
+                    "mapping": "replacement",
+                    "raw_end": 184,
+                    "raw_start": 0
+                  }
+                ],
+                "text": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee."
+              }
+            ],
+            "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+            "proposal_status": "findings",
+            "provider_reply": {
+              "contract": "ocr-productive-repair-text-reply-v3",
+              "readings": [
+                {
+                  "corrected_text": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+                  "coverage": "complete",
+                  "paragraph_alias": "P1",
+                  "reason": null
+                }
+              ],
+              "unit_id": "U2"
+            }
+          },
+          "reading": "The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.",
+          "exact_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [
+            {
+              "software_quote": "l",
+              "model_quote": "I",
+              "software_start": 8,
+              "software_end": 9,
+              "model_start": 8,
+              "model_end": 9
+            },
+            {
+              "software_quote": "X",
+              "model_quote": "N",
+              "software_start": 11,
+              "software_end": 12,
+              "model_start": 11,
+              "model_end": 12
+            },
+            {
+              "software_quote": "^j-",
+              "model_quote": " pr",
+              "software_start": 13,
+              "software_end": 16,
+              "model_start": 13,
+              "model_end": 16
+            }
+          ],
+          "usage": {
+            "input_tokens": 1613,
+            "output_tokens": 117
+          },
+          "elapsed_seconds": 31.393469916190952,
+          "transport_elapsed_seconds": 31.36928095901385,
+          "positive_owned_stop": true,
+          "receipt_sha256": "eb6f675909d40110f3c5280b7a5036e12579fd943dfeac6cf9e897b314f320b3"
+        }
+      ]
+    },
+    {
+      "case": "U3",
+      "source_id": "congressionalglo7392unit:406:par_000406_000009",
+      "raw": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+      "software": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+      "root_source_reading": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+      "route": "secondary_inspection",
+      "signals": 5,
+      "actual_calls": 3,
+      "input_body_sha256": "16951029984221ab6553e96e8d0516be3e80c831028a639bb91b27a19c0eda97",
+      "identical_input_bytes": true,
+      "distinct_raw_replies": 3,
+      "distinct_corrected_readings": 1,
+      "observations": [
+        {
+          "repeat": 1,
+          "complete_http": true,
+          "finish_reason": "stop",
+          "host_outcome": {
+            "derived_proposals": [
+              {
+                "acceptance": "unreviewed_model_proposal",
+                "alignment": "exact_copy",
+                "deterministic_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+                "paragraph_alias": "P1",
+                "raw_edits": [],
+                "raw_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+                "replay_verified": true,
+                "sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+                "source_id": "congressionalglo7392unit:406:par_000406_000009",
+                "source_quality": "not_verified",
+                "support_map": [
+                  {
+                    "derived_end": 211,
+                    "derived_start": 0,
+                    "mapping": "exact_copy",
+                    "raw_end": 211,
+                    "raw_start": 0
+                  }
+                ],
+                "text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson."
+              }
+            ],
+            "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+            "proposal_status": "no_finding",
+            "provider_reply": {
+              "contract": "ocr-productive-repair-text-reply-v3",
+              "readings": [
+                {
+                  "corrected_text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+                  "coverage": "complete",
+                  "paragraph_alias": "P1",
+                  "reason": null
+                }
+              ],
+              "unit_id": "U3"
+            }
+          },
+          "reading": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+          "exact_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [],
+          "usage": {
+            "input_tokens": 1364,
+            "output_tokens": 129
+          },
+          "elapsed_seconds": 30.623803082853556,
+          "transport_elapsed_seconds": 30.57004266604781,
+          "positive_owned_stop": true,
+          "receipt_sha256": "0f8424bdfcdacaea9481959aa44040f25c71581c8f61d4374cd16d19f6a926ea"
+        },
+        {
+          "repeat": 2,
+          "complete_http": true,
+          "finish_reason": "stop",
+          "host_outcome": {
+            "derived_proposals": [
+              {
+                "acceptance": "unreviewed_model_proposal",
+                "alignment": "exact_copy",
+                "deterministic_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+                "paragraph_alias": "P1",
+                "raw_edits": [],
+                "raw_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+                "replay_verified": true,
+                "sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+                "source_id": "congressionalglo7392unit:406:par_000406_000009",
+                "source_quality": "not_verified",
+                "support_map": [
+                  {
+                    "derived_end": 211,
+                    "derived_start": 0,
+                    "mapping": "exact_copy",
+                    "raw_end": 211,
+                    "raw_start": 0
+                  }
+                ],
+                "text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson."
+              }
+            ],
+            "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+            "proposal_status": "no_finding",
+            "provider_reply": {
+              "contract": "ocr-productive-repair-text-reply-v3",
+              "readings": [
+                {
+                  "corrected_text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+                  "coverage": "complete",
+                  "paragraph_alias": "P1",
+                  "reason": null
+                }
+              ],
+              "unit_id": "U3"
+            }
+          },
+          "reading": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+          "exact_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [],
+          "usage": {
+            "input_tokens": 1364,
+            "output_tokens": 124
+          },
+          "elapsed_seconds": 28.159088749904186,
+          "transport_elapsed_seconds": 28.128078958019614,
+          "positive_owned_stop": true,
+          "receipt_sha256": "1cddf841b8929c026ade720c6bcd213607e3d7190ecc55b46ac5578e7e03b09f"
+        },
+        {
+          "repeat": 3,
+          "complete_http": true,
+          "finish_reason": "stop",
+          "host_outcome": {
+            "derived_proposals": [
+              {
+                "acceptance": "unreviewed_model_proposal",
+                "alignment": "exact_copy",
+                "deterministic_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+                "paragraph_alias": "P1",
+                "raw_edits": [],
+                "raw_sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+                "replay_verified": true,
+                "sha256": "b751536c19095f11a11e40f5013f527087980bdbdec887729ce7715c0e48ef4f",
+                "source_id": "congressionalglo7392unit:406:par_000406_000009",
+                "source_quality": "not_verified",
+                "support_map": [
+                  {
+                    "derived_end": 211,
+                    "derived_start": 0,
+                    "mapping": "exact_copy",
+                    "raw_end": 211,
+                    "raw_start": 0
+                  }
+                ],
+                "text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson."
+              }
+            ],
+            "inspection_quality": "coverage_is_model_report_not_independent_proof; print_unverified",
+            "proposal_status": "no_finding",
+            "provider_reply": {
+              "contract": "ocr-productive-repair-text-reply-v3",
+              "readings": [
+                {
+                  "corrected_text": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+                  "coverage": "complete",
+                  "paragraph_alias": "P1",
+                  "reason": null
+                }
+              ],
+              "unit_id": "U3"
+            }
+          },
+          "reading": "Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.",
+          "exact_root_illustration_match": true,
+          "case_apostrophe_normalized_tokens_match": true,
+          "software_differences": [],
+          "usage": {
+            "input_tokens": 1364,
+            "output_tokens": 126
+          },
+          "elapsed_seconds": 28.879405708052218,
+          "transport_elapsed_seconds": 28.846256957855076,
+          "positive_owned_stop": true,
+          "receipt_sha256": "d8048144c06613245ac8a78f68deee3f0e5b32cbc4a1e11e87c6a6447d9dcc63"
+        }
+      ]
+    }
+  ],
+  "total": {
+    "request_cycle_seconds": 253.3264569984749,
+    "owned_transport_seconds": 253.0173809574917,
+    "input_tokens": 10683,
+    "output_tokens": 991
+  },
+  "prior_recent_series": {
+    "attempts": 22,
+    "request_cycle_seconds": 1964.0951825832017,
+    "known_input_tokens": 109120,
+    "known_output_tokens": 7757,
+    "unknown_usage_attempts": 3
+  },
+  "cumulative_recent_series": {
+    "attempts": 31,
+    "request_cycle_seconds": 2217.4216395816766,
+    "known_input_tokens": 119803,
+    "known_output_tokens": 8748,
+    "unknown_usage_attempts": 3
+  },
+  "limits": [
+    "Consistency is distinct from source accuracy.",
+    "One frontier source reader with known selection role; not accepted two-reader benchmark gold.",
+    "The zero-indicator control is19characters; no miss-rate estimate.",
+    "The apparent success is one guarded join, not an entirely unflagged repaired target.",
+    "No corpus/native-fit/P0 acceptance or model superiority claim."
+  ]
+}

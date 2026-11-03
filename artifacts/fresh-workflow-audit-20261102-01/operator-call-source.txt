@@ -1,0 +1,102 @@
+"""One-off operator use of existing owned transport; not an installed workflow."""
+import datetime,json,os,socket,subprocess,sys,time,urllib.request
+from pathlib import Path
+from congressional_globe.productive_ocr_host import canonical_json,sha256_bytes,validate_host
+from congressional_globe.productive_ocr_measurement_inputs import _registry
+from congressional_globe.productive_ocr_projection import RequestProjection,compile_request_projection
+from congressional_globe.productive_ocr_runner import _session_lock,code_identity
+from congressional_globe.productive_ocr_local import OwnedLocalPlan,OwnedLocalClient,read_spool
+from congressional_globe.productive_ocr_text_reply import export_text_reply
+root=Path('artifacts/fresh-workflow-audit-20261102-01');case=sys.argv[1];n=int(sys.argv[2]);assert case in ['U1','U2','U3'] and n in [1,2,3]
+d=root/case;run=d/f'call-{n}';run.mkdir(exist_ok=False)
+def write(p,x):
+ with p.open('xb') as f:f.write(canonical_json(x));f.flush();os.fsync(f.fileno())
+def command(args):return subprocess.run(args,check=True,capture_output=True,text=True).stdout
+code=code_identity();assert canonical_json(code)==(root/'code-identity.json').read_bytes(),'Code changed after request freeze'
+body=(d/'request.json').read_bytes();host=json.loads((d/'host.json').read_bytes());index=json.loads((root/'registry-index.json').read_bytes());registry=_registry(root.resolve(),host,index);validate_host(host,registry)
+saved=RequestProjection.model_validate_json((d/'projection.json').read_bytes());projection,_=compile_request_projection(host,registry,(d/'prompt.txt').read_text(),'qwen3.8:27b-mlx',conformance_v4=True);assert projection==saved and body==projection.body_utf8.encode()
+assert sha256_bytes((root/'selection-freeze.json').read_bytes())=='9cdd0621ee8f3eb2b6dcd44f18a2169dad0bcbcfe8e17154a170ef4ec0ea3faa', 'Pre-image selection freeze changed'
+freeze=json.loads((root/'selection-freeze.json').read_bytes())
+assert freeze['bounds']==dict(cases=3,identical_runs_each=3,total_calls=9,retries=0,request_seconds=120,output_tokens=1500,per_case_group_seconds=1800,image_downloads_max=4,per_image_bytes_max=8000000,model_downloads=0)
+trusted_bodies={'U1':'208e6b3c1f6f2e89fc3cc94228d2b8af90facbeeaf1d1c7f28ca86b8760619be','U2':'aac5942a611f6467c734fa63a447ac1329562e256c1fd26a016f745526f83be6','U3':'16951029984221ab6553e96e8d0516be3e80c831028a639bb91b27a19c0eda97'}
+assert projection.body_sha256==trusted_bodies[case]
+row=next(x for x in freeze['cases'] if x['case']==case);para=host['payload']['paragraphs'];assert len(para)==1
+assert (para[0]['source_id'],para[0]['raw']['sha256'])==(row['source_id'],row['raw_sha256'])
+assert sha256_bytes((d/'source-page.jsonl').read_bytes())==row['page_line_sha256']
+wire=json.loads(body);assert wire['model']==freeze['model']=='qwen3.8:27b-mlx' and wire['options']=={'num_predict':1500}
+assert wire['stream'] is False and wire['think'] is False and host['payload']['unit_id']==case
+assert host['payload']['model_digest']=='5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e'
+def prior_safe(prior_case,k):
+ path=root/prior_case/f'call-{k}';previous=json.loads((path/'result.json').read_bytes())
+ assert (previous['case'],previous['repeat'],previous['request_sha256'])==(prior_case,k,trusted_bodies[prior_case])
+ receipt=read_spool(path/'spool',trusted_bodies[prior_case],wire['model'],host['payload']['model_digest']);assert receipt and receipt.stop_observation=='stopped'
+ assert previous['receipt_sha256']==receipt.receipt_sha256 and previous['owned_stop_observation']=='stopped'
+ for key in ['output_text','usage','status','finish_reason']:assert previous['response'].get(key)==receipt.response.get(key)
+ usage=receipt.response.get('usage') or {}
+ assert receipt.response.get('status')=='completed' and all(type(usage.get(x)) is int and usage[x]>=0 for x in ['input_tokens','output_tokens']) and usage['output_tokens']<=1500
+ assert previous['safe_to_continue']
+for prior_case in ['U1','U2','U3'][:['U1','U2','U3'].index(case)]:
+ for k in [1,2,3]:prior_safe(prior_case,k)
+for k in range(1,n):prior_safe(case,k)
+start=time.time();group=d/'group.json'
+if n==1:write(group,dict(task='T129',case=case,calls=3,body_sha256=projection.body_sha256,started_at_epoch=start,deadline_epoch=start+1800,output_tokens=1500,retries=0))
+g=json.loads(group.read_bytes());assert g['case']==case and g['calls']==3 and g['output_tokens']==1500 and g['retries']==0
+assert g['deadline_epoch']==g['started_at_epoch']+1800 and time.time()+150<=g['deadline_epoch'] and g['body_sha256']==projection.body_sha256
+base=json.loads(Path('artifacts/exact-region-statute-20261102-01/repeat-1/run/spec.json').read_bytes())['plan'];base.pop('diagnostic_contract',None);base.update(port=65010,request_timeout_seconds=120.0,session_deadline_epoch=start+600)
+base['argv']=tuple(base['argv']);plan=OwnedLocalPlan.model_validate(base)
+assert plan.request_timeout_seconds==freeze['bounds']['request_seconds'] and plan.model_name==freeze['model'] and plan.model_digest==host['payload']['model_digest']
+# Fresh bounded logs query precedes all model interaction. No output dump.
+since=(datetime.datetime.now(datetime.UTC)-datetime.timedelta(minutes=10)).isoformat()
+logs=json.loads(command(['uv','run','globe','ollama','logs','query','--since',since,'--limit','8','--max-output-bytes','16000','--max-scan-bytes','1048576','--no-raw']))
+inbox=json.loads(command(['uv','run','globe','review','inbox']));assert not inbox,'New review must be applied before dependent calls'
+queue=json.loads(command(['uv','run','globe','cleanup','status','--run-directory','artifacts/runs/static-final-20261011','--run-id','static-final-20261011']));assert queue['claimed']==0
+processes=command(['ps','-axo','pid,ppid,lstart,etime,command']);rows=[];workers=[]
+for line in processes.splitlines()[1:]:
+ fields=line.split(None,8)
+ if len(fields)!=9:continue
+ cmd=fields[8];low=cmd.lower()
+ if low.startswith(('/bin/bash','bash ','/bin/zsh','zsh ')):continue
+ if not any(t in low for t in ['ollama','productive_ocr_measurement','globe cleanup','mlx_lm','mlx_vlm','t129-call.py']):continue
+ rows.append(line.strip())
+ if ('t129-call.py' in low and int(fields[0]) in [os.getpid(),os.getppid()]):continue
+ if any(t in low for t in [' runner ','mlx_lm','mlx_vlm','productive_ocr_measurement','globe cleanup run','t129-call.py']):workers.append(line.strip())
+assert not workers,workers
+with urllib.request.urlopen('http://127.0.0.1:11434/api/ps',timeout=4) as r:shared=json.load(r)
+assert not shared.get('models'),'Shared loaded model; do not compete'
+with socket.socket() as s:s.bind(('127.0.0.1',plan.port))
+assert sha256_bytes(Path(plan.model_manifest).read_bytes())==plan.model_digest
+write(run/'preflight.json',dict(task='T129',case=case,repeat=n,checked_at_epoch=time.time(),logs=logs,inbox=inbox,queue=queue,process_rows=rows,active_workers=workers,shared_nonloading_GET=shared,shared_service='unowned and untouched',model_manifest_sha256=plan.model_digest,code_sha256=sha256_bytes(canonical_json(code)),request_sha256=projection.body_sha256))
+write(run/'intent.json',dict(task='T129',case=case,repeat=n,plan=plan.model_dump(mode='json'),request_sha256=projection.body_sha256,script_sha256=sha256_bytes(Path(__file__).read_bytes()),native_fit='unknown; named bounded small diagnostic, no general launch clearance',calls=1,retries=0,prior_consumption='22attempts1964.0951825832017seconds/known109120input7757outputplus3unknownusage; all spent groups retained'))
+identity=command(['ps','-p',str(os.getpid()),'-o','pid=,lstart=,command=']).strip();write(run/'operator-process.json',dict(identity=identity))
+def checkpoint(server=None,terminal=None):
+ p=Path('MASTER_PLAN.md');lines=p.read_text().splitlines();out=[]
+ for line in lines:
+  if line.startswith('| T129 preparation /'):
+   detail=f'CLI {identity}; exact body{projection.body_sha256}; journal {run}; group deadline{g["deadline_epoch"]}'
+   if server:detail+=f'; server PID{server["owned_pid"]}/start{server["process_started"]}/{server["observed_command"]}'
+   if terminal:detail+=f'; terminal{terminal}'
+   line='| T129 preparation / M1.4,M2.4,M4.1,M5.2 | Root; '+detail+' | 3identical/case,9calls total/120s/1500output/1800s group/0retry; shared lock sequential | Complete source-bound fresh audits; publish first actual before repeats and check feedback each. |'
+  out.append(line)
+ p.write_text('\n'.join(out)+'\n')
+def before_send():
+ assert time.time()-start<90 and time.time()<g['deadline_epoch']
+ assert not json.loads(command(['uv','run','globe','review','inbox']))
+ servers=list((run/'spool').glob('*/server.json'));assert len(servers)==1
+ checkpoint(json.loads(servers[0].read_bytes()))
+checkpoint()
+with _session_lock():
+ begin=time.monotonic();call=None
+ try:
+  client=OwnedLocalClient(plan,run/'spool',before_send=before_send);call=client.start(body);response=call.result(120);state=call.observe()
+  receipt=read_spool(run/'spool',projection.body_sha256,plan.model_name,plan.model_digest)
+  assert receipt is not None
+  try:export=export_text_reply(host,body.decode(),response.get('output_text','')).model_dump(mode='json')
+  except (ValueError,KeyError,TypeError) as e:export=dict(outcome='invalid',rejection_reason=str(e),raw_reply_text=response.get('output_text',''))
+  usage=response.get('usage') or {};known=all(type(usage.get(k)) is int and usage[k]>=0 for k in ['input_tokens','output_tokens'])
+  safe=bool(response.get('status')=='completed' and state=='stopped' and receipt.stop_observation=='stopped' and known and usage['output_tokens']<=1500 and time.time()<g['deadline_epoch'])
+  result=dict(case=case,repeat=n,request_sha256=projection.body_sha256,response=response,export=export,elapsed_seconds=time.monotonic()-begin,transport_elapsed_seconds=receipt.elapsed_seconds,owned_stop_observation=state,receipt_sha256=receipt.receipt_sha256,safe_to_continue=safe)
+ except Exception as e:
+  state=call.cancel_and_observe() if call else getattr(e,'owned_stop_observation','unknown');result=dict(case=case,repeat=n,error=type(e).__name__,reason=str(e),elapsed_seconds=time.monotonic()-begin,owned_stop_observation=state,usage=None,safe_to_continue=False)
+ write(run/'result.json',result);checkpoint(terminal=result['owned_stop_observation'])
+print(json.dumps({k:v for k,v in result.items() if k not in ['response','export']},ensure_ascii=False),flush=True)
+if not result['safe_to_continue']:raise SystemExit(2)

@@ -1,0 +1,26 @@
+"""Read the fixed nine observations; never dispatches or rewrites results."""
+import difflib,json,re,hashlib
+from pathlib import Path
+from congressional_globe.productive_ocr_local import read_spool
+r=Path('artifacts/fresh-workflow-audit-20261102-01');sources=json.loads((r/'root-source-readings.json').read_bytes())['readings'];cases=[];total_in=total_out=0;elapsed=transport=0
+for case in ['U1','U2','U3']:
+ d=r/case;body=(d/'request.json').read_bytes();body_hash=hashlib.sha256(body).hexdigest();host=json.loads((d/'host.json').read_bytes());observations=[];raws=[];readings=[]
+ software=host['payload']['paragraphs'][0]['static']['text'];raw=host['payload']['paragraphs'][0]['raw']['text']
+ for n in [1,2,3]:
+  path=d/f'call-{n}';x=json.loads((path/'result.json').read_bytes());assert x['case']==case and x['repeat']==n and x['request_sha256']==body_hash
+  receipt=read_spool(path/'spool',body_hash,'qwen3.8:27b-mlx',host['payload']['model_digest']);assert receipt and receipt.stop_observation=='stopped' and receipt.receipt_sha256==x['receipt_sha256']
+  for p in (path/'spool').glob('*/request.bin'):assert p.read_bytes()==body
+  response=x['response'];usage=response['usage'];total_in+=usage['input_tokens'];total_out+=usage['output_tokens'];elapsed+=x['elapsed_seconds'];transport+=x['transport_elapsed_seconds'];raws.append(response['output_text'])
+  try:parsed=json.loads(response['output_text']);text=parsed['readings'][0]['corrected_text']
+  except (ValueError,KeyError,IndexError,TypeError):text=None
+  readings.append(text)
+  normalize=lambda t:re.findall(r'\w+|[^\w\s]',t.replace('’',"'").casefold())
+  matches=text==sources[case];word_punct=text is not None and normalize(text)==normalize(sources[case])
+  changes=[]
+  if text is not None:
+   for tag,a,b,c,e in difflib.SequenceMatcher(None,software,text,autojunk=False).get_opcodes():
+    if tag!='equal':changes.append(dict(software_quote=software[a:b],model_quote=text[c:e],software_start=a,software_end=b,model_start=c,model_end=e))
+  observations.append(dict(repeat=n,complete_http=response['status']=='completed',finish_reason=response.get('finish_reason'),host_outcome=x['export'].get('outcome'),reading=text,exact_root_illustration_match=matches,case_apostrophe_normalized_tokens_match=word_punct,software_differences=changes,usage=usage,elapsed_seconds=x['elapsed_seconds'],transport_elapsed_seconds=x['transport_elapsed_seconds'],positive_owned_stop=x['owned_stop_observation']=='stopped',receipt_sha256=x['receipt_sha256']))
+ route=json.loads((d/'route.json').read_bytes());cases.append(dict(case=case,source_id=host['payload']['paragraphs'][0]['source_id'],raw=raw,software=software,root_source_reading=sources[case],route=route['selection'],signals=len(route['signals']),actual_calls=3,input_body_sha256=body_hash,identical_input_bytes=True,distinct_raw_replies=len(set(raws)),distinct_corrected_readings=len(set(readings)),observations=observations))
+report=dict(task='T129',actual_calls=9,preflight_no_request_failures=1,retries=0,image_downloads=4,metadata_info_downloads=4,cases=cases,total=dict(request_cycle_seconds=elapsed,owned_transport_seconds=transport,input_tokens=total_in,output_tokens=total_out),prior_recent_series=dict(attempts=22,request_cycle_seconds=1964.0951825832017,known_input_tokens=109120,known_output_tokens=7757,unknown_usage_attempts=3),cumulative_recent_series=dict(attempts=31,request_cycle_seconds=1964.0951825832017+elapsed,known_input_tokens=109120+total_in,known_output_tokens=7757+total_out,unknown_usage_attempts=3),limits=['Consistency is distinct from source accuracy.','One frontier source reader with known selection role; not accepted two-reader benchmark gold.','The zero-indicator control is19characters; no miss-rate estimate.','The apparent success is one guarded join, not an entirely unflagged repaired target.','No corpus/native-fit/P0 acceptance or model superiority claim.'])
+(r/'report.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n');print(json.dumps({'actual_calls':9,'total':report['total'],'case_readings':[{k:x[k] for k in ['case','distinct_raw_replies','distinct_corrected_readings']} for x in cases]},ensure_ascii=False))

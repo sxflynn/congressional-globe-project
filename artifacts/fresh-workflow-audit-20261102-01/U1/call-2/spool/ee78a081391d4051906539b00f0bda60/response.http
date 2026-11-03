@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 03:13:44 GMT
+Content-Length: 604
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T03:13:44.584478Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"It was so referred.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ],\n  \"unit_id\": \"U1\"\n}"},"done":true,"done_reason":"stop","total_duration":13959507916,"load_duration":5214897750,"prompt_eval_count":584,"prompt_eval_cached_count":0,"prompt_eval_duration":5484046042,"eval_count":84,"eval_duration":3250306167}

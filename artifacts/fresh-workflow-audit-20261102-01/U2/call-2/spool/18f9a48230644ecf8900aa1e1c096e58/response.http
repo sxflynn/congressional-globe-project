@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 03:19:48 GMT
+Content-Length: 774
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T03:19:48.943904Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"The PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"U2\"\n}"},"done":true,"done_reason":"stop","total_duration":24065060959,"load_duration":4611820209,"prompt_eval_count":1613,"prompt_eval_cached_count":0,"prompt_eval_duration":14495174042,"eval_count":121,"eval_duration":4938965125}

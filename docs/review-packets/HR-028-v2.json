@@ -1,0 +1,32 @@
+{
+  "id": "HR-028",
+  "version": 2,
+  "title": "First fresh model result: a passage with no inspection flags",
+  "instructions": "Work is continuing. One real model observation is now visible before its remaining two repetitions. Optional comments can steer the work. This short control tests whether an unchanged passage is preserved; it does not establish how often hidden errors are missed.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "fresh-workflow-comments",
+      "prompt": "Optional notes on these first real results",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "Fresh part 3: first actual audit of a passage with no inspection flags",
+          "text": "Inputs — full original OCR and unchanged first pass; no inspection flags:\nIt was so referred.\n\nExpected output — my direct source-image reading, frozen before the model reply:\nIt was so referred.\n\nActual output — full corrected text from the first of three planned identical model calls:\nIt was so referred.\n\nDifferences — none in this first observation. The model preserves the whole assigned passage, agrees with my source reading, and reports complete coverage. The existing host checks accept its reply shape. The private model process stopped with a verified receipt; 584 input tokens and 84 output tokens were reported in 23.489 seconds of transport time. Two repetitions remain. This selected 19-character control contains no error found by this one source reader; it cannot estimate a missed-error rate.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7393unit%2fcongressionalglo7393unit_jp2.zip%2fcongressionalglo7393unit_jp2%2fcongressionalglo7393unit_1055.jp2/2052,3293,347,34/347,/0/default.jpg"
+        },
+        {
+          "label": "Fresh part 1: software repairs a split word but leaves a damaged title",
+          "text": "Inputs — full original OCR:\nThe PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the refer- ence of the amendments and the bill to the committee.\n\nExpected output — my direct reading of the new source image, one reader rather than an accepted reference:\nThe PRESIDENT pro tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.\n\nActual output — full first pass from the software:\nThe PRESlDEXT^j-o tempore. The Chair would suggest that the question now is not on the merits of the amendments, but on the reference of the amendments and the bill to the committee.\n\nDifferences — the guarded join repairs reference. The damaged PRESIDENT pro tempore remains. Seven inspection flags still select the whole sentence for secondary inspection. A successful individual repair does not mean the whole sentence is error-free. Three identical model calls are planned for this fixed input; none has run yet.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalg7391unit%2fcongressionalg7391unit_jp2.zip%2fcongressionalg7391unit_jp2%2fcongressionalg7391unit_0278.jp2/1204,1845,884,200/884,/0/default.jpg"
+        },
+        {
+          "label": "The requested column join now has a working reading view",
+          "text": "Inputs — two original source fragments at the bottom of one column and the top of the next.\n\nExpected output — the source image continues eastern directly into district of Louisiana. The next act must remain separate.\n\nActual output — software creates this joined reading, preserving every original OCR character:\nSec. 3. And be it further enacted, That all judgments, orders, decrees, and decisions of the United States provisional court for the State of Louisiana, relating to the causes hereby transferred to the district court of the eastern district of Louisiana, or to the circuit court held in said district, shall at once become the judgments, orders, decrees, and decisions of said district court, or said circuit court, unless the same are inconsistent with the rules and proceedings thereof; and may be enforced, pleaded, and proved, as the judgments, orders, decrees, or decisions of said district court, or said circuit court. Approved, July 28, 1866.\n\nDifferences — one added space joins the two stored fragments. Each original part retains its source identity and exact character range. The original paragraphs remain separate and unchanged. The new checks reject headings, sentence endings, missing geometry and nonadjacent passages. I checked the saved source image: this boundary continues the same section. This is a reading view, not a claim that every OCR word inside it is repaired.",
+          "url": "https://archive.org/details/congressionalglo7395unit/page/n1060/mode/1up"
+        }
+      ]
+    }
+  ]
+}

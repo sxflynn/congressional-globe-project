@@ -1,0 +1,39 @@
+import hashlib,json,re,sys
+from pathlib import Path
+r=Path('artifacts/fresh-workflow-audit-20261102-01');version=int(sys.argv[1]);refs=json.loads((r/'root-source-readings.json').read_bytes())['readings'];items=[];classified={};total=0
+normalize=lambda t:re.findall(r'\w+|[^\w\s]',t.replace('’',"'").casefold())
+def add(label,parts,url):
+ text='';spans=[]
+ for part,source in parts:
+  a=len(text);text+=part
+  if source:spans.append(dict(start=a,end=len(text)))
+ items.append(dict(label=label,text=text,url=url));classified[hashlib.sha256(text.encode()).hexdigest()]=spans
+labels={'U1':'Fresh part 3: passage with no inspection flags','U2':'Fresh part 1: repaired split word and damaged title','U3':'Fresh part 2: names selected for inspection'}
+for case in ['U1','U2','U3']:
+ d=r/case;host=json.loads((d/'host.json').read_bytes());target=host['payload']['paragraphs'][0];route=json.loads((d/'route.json').read_bytes());parts=[('Inputs — full original OCR:\n',False),(target['raw']['text'],True),('\n\nExpected output — my direct source-image reading, frozen before model outputs; one reader, not an accepted reference:\n',False),(refs[case],True),('\n\nActual output — full first pass from the software:\n',False),(target['static']['text'],True)];readings=[];calls=0;shape=[];times=[];tokens=[0,0]
+ for n in [1,2,3]:
+  path=d/f'call-{n}/result.json'
+  if not path.exists():continue
+  x=json.loads(path.read_bytes());calls+=1;total+=1;response=x.get('response',{});raw=response.get('output_text','')
+  try:text=json.loads(raw)['readings'][0]['corrected_text']
+  except (ValueError,KeyError,IndexError,TypeError):text=None
+  parts+=[(f'\n\nActual output — model run {n} of 3, full returned reading:\n',False),(text if text is not None else raw or str(x.get('reason','No reading returned.')),True)]
+  readings.append(text);shape.append(isinstance(x.get('export',{}).get('outcome'),dict));times.append(x.get('transport_elapsed_seconds',0));usage=response.get('usage') or {};tokens[0]+=usage.get('input_tokens',0);tokens[1]+=usage.get('output_tokens',0)
+ exact=sum(t==refs[case] for t in readings);normalized=sum(t is not None and normalize(t)==normalize(refs[case]) for t in readings)
+ status=f'{len(route["signals"])} inspection flags; '+('the software selects audit only.' if route['selection']=='audit_only' else 'the software selects secondary inspection.')
+ differences=f'\n\nDifferences — {status} {calls} of 3 fixed model observations are recorded. '
+ if calls:differences+=f'{exact} exactly match my frozen reading; {normalized} match its words and punctuation when letter case and straight/curly apostrophes are treated alike. {sum(shape)} pass the host reply checks. Observed transport time totals {sum(times):.3f} seconds, with {tokens[0]} input and {tokens[1]} output tokens reported. '
+ if calls<3:differences+=f'{3-calls} planned identical repetitions remain. '
+ differences+='No stored OCR is changed. A notice is not a verified error; model agreement and a single frontier source reading are not accepted benchmark truth. '
+ if case=='U1':differences+='This control has only 19 characters. No error was found in it; this cannot estimate the frequency of missed errors.'
+ if case=='U2':differences+='The software repairs the reference split but leaves the damaged title; the successful join does not clear the remaining passage.'
+ if case=='U3':differences+='The source names can be read in the image; selecting names for inspection does not establish that those names are OCR errors.'
+ parts.append((differences,False));url=json.loads((d/'image/crop-01.jpg.receipt.json').read_bytes())['requested_url'];add(labels[case],parts,url)
+# Keep the implemented-join sample, verbatim from v1.
+old=json.loads(Path('docs/review-packets/HR-028-v1.json').read_bytes())['questions'][0]['evidence'][1];items.append(old)
+prev=r/'previous-page-740';url=json.loads((prev/'page.jpg.receipt.json').read_bytes())['requested_url']
+add('Previous-page context: the running title belongs to an ongoing discussion',[
+ ('Inputs — the full previous page, leaf 740, printed page 106.\n\nExpected output — check whether the repeated heading marks a new speech or identifies material already underway. Do not assign a speech start from the heading alone.\n\nActual output — my direct source-image inspection finds the same running title, explicit Henderson and Wade exchanges, and discussion of presidential restoration and pardons. The page opens mid-sentence:\n',False),('to act speedily.',True),('\n\nIt ends with the pardon discussion:\n',False),('before conviction, as well as after conviction.',True),('\n\nDifferences — the old leaf 741 passage continues a larger speech/discussion. Leaf 740 is already a continuation too. The exact beginning and full document extent remain unverified in this bounded check; the heading alone does not establish them. One new full-page image was fetched for this question, within the four-image total.',False)],url)
+p={'id':'HR-028','version':version,'title':f'Fresh workflow audits: {total} of 9 fixed observations','instructions':'Real results are shown while work continues. Three fresh source cases each have three identical-input model observations planned. The software runs first, including an audit of text with no inspection flags. Full passages and every returned reading are retained. Optional notes can steer remaining work; no routine permission is needed.','blind':False,'questions':[dict(id='fresh-workflow-comments',prompt='Optional notes on these fresh results and the document context',options=[],required=False,evidence=items)]}
+path=Path(f'docs/review-packets/HR-028-v{version}.json');assert not path.exists();path.write_text(json.dumps(p,indent=2,ensure_ascii=False)+'\n')
+path=Path('docs/review-source-spans.json');spans=json.loads(path.read_text());spans['source_spans'].update(classified);path.write_text(json.dumps(spans,indent=2,ensure_ascii=False)+'\n');print(f'HR028v{version}: {total}actual observations, originals retained.')

@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 03:22:16 GMT
+Content-Length: 801
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T03:22:16.260306Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. VAN WINKLE. I will state that there must be a mistake in the name. This case of Anderson's was considered in the committee under the supposition that it was the same as the case of the person called Johnson.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n,\n  \"unit_id\": \"U3\"\n}"},"done":true,"done_reason":"stop","total_duration":21556280875,"load_duration":4715205042,"prompt_eval_count":1364,"prompt_eval_cached_count":0,"prompt_eval_duration":11761618667,"eval_count":129,"eval_duration":5057060625}
