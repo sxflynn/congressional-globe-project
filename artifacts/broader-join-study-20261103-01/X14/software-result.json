@@ -1,0 +1,4660 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7395unit:766:par_000766_000024",
+      "raw_text": "upon new questions, not within the contempla- tion of either the Union party or the Union people when the President was nominated. I have also shown that he has acted in pursuance of a policy adopted by Mr. Lincoln, and ap- proved by the people, and that no event has yet transpired that will preclude him from a heai'ty cooperation with the great mass of the Union party in securing to the country the ob- ject for which we conducted successfully a great war. That events have transpired, that utter- ances have been made tending in that direction, no one will deny. The surest evidence is in the joy of the worst enemies of the country over our divisions.",
+      "raw_sha256": "45fe1b75ec89976230d41e3a25f23558979ef833eff82789844c393203c996cf"
+    },
+    "static_text": "upon new questions, not within the contemplation of either the Union party or the Union people when the President was nominated. I have also shown that he has acted in pursuance of a policy adopted by Mr. Lincoln, and approved by the people, and that no event has yet transpired that will preclude him from a heai'ty cooperation with the great mass of the Union party in securing to the country the object for which we conducted successfully a great war. That events have transpired, that utterances have been made tending in that direction, no one will deny. The surest evidence is in the joy of the worst enemies of the country over our divisions.",
+    "static_sha256": "65c8298038da8e110b33831d575fe33930d278a6a3996493c8c9937b31930df7",
+    "static_edits": [
+      {
+        "start": 35,
+        "end": 50,
+        "raw_quote": "contempla- tion",
+        "replacement": "contemplation",
+        "rule_id": "adjacent-line wrap; lexicon form contemplation"
+      },
+      {
+        "start": 220,
+        "end": 230,
+        "raw_quote": "ap- proved",
+        "replacement": "approved",
+        "rule_id": "adjacent-line wrap; lexicon form approved"
+      },
+      {
+        "start": 403,
+        "end": 411,
+        "raw_quote": "ob- ject",
+        "replacement": "object",
+        "rule_id": "adjacent-line wrap; lexicon form object"
+      },
+      {
+        "start": 495,
+        "end": 507,
+        "raw_quote": "utter- ances",
+        "replacement": "utterances",
+        "rule_id": "adjacent-line wrap; lexicon form utterances"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000766_000191",
+        "start": 0,
+        "end": 45,
+        "text": "upon new questions, not within the contempla-"
+      },
+      {
+        "line_id": "line_000766_000192",
+        "start": 46,
+        "end": 89,
+        "text": "tion of either the Union party or the Union"
+      },
+      {
+        "line_id": "line_000766_000193",
+        "start": 90,
+        "end": 132,
+        "text": "people when the President was nominated. I"
+      },
+      {
+        "line_id": "line_000766_000194",
+        "start": 133,
+        "end": 179,
+        "text": "have also shown that he has acted in pursuance"
+      },
+      {
+        "line_id": "line_000766_000195",
+        "start": 180,
+        "end": 223,
+        "text": "of a policy adopted by Mr. Lincoln, and ap-"
+      },
+      {
+        "line_id": "line_000766_000196",
+        "start": 224,
+        "end": 267,
+        "text": "proved by the people, and that no event has"
+      },
+      {
+        "line_id": "line_000766_000197",
+        "start": 268,
+        "end": 312,
+        "text": "yet transpired that will preclude him from a"
+      },
+      {
+        "line_id": "line_000766_000198",
+        "start": 313,
+        "end": 359,
+        "text": "heai'ty cooperation with the great mass of the"
+      },
+      {
+        "line_id": "line_000766_000199",
+        "start": 360,
+        "end": 406,
+        "text": "Union party in securing to the country the ob-"
+      },
+      {
+        "line_id": "line_000766_000200",
+        "start": 407,
+        "end": 455,
+        "text": "ject for which we conducted successfully a great"
+      },
+      {
+        "line_id": "line_000766_000201",
+        "start": 456,
+        "end": 501,
+        "text": "war. That events have transpired, that utter-"
+      },
+      {
+        "line_id": "line_000766_000202",
+        "start": 502,
+        "end": 549,
+        "text": "ances have been made tending in that direction,"
+      },
+      {
+        "line_id": "line_000766_000203",
+        "start": 550,
+        "end": 597,
+        "text": "no one will deny. The surest evidence is in the"
+      },
+      {
+        "line_id": "line_000766_000204",
+        "start": 598,
+        "end": 642,
+        "text": "joy of the worst enemies of the country over"
+      },
+      {
+        "line_id": "line_000766_000205",
+        "start": 643,
+        "end": 657,
+        "text": "our divisions."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "1e78ae9196bad3175592e033dbddd4ff4a23b6ea4bbebe19a5a29de71bc4182d"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "117b9faec722b184818803a199f3a91cec6172689f41cc508dfaa4d8b3491eb0",
+  "proposed_text": "upon new questions, not within the contemplation of either the Union party or the Union people when the President was nominated. I have also shown that he has acted in pursuance of a policy adopted by Mr. Lincoln, and approved by the people, and that no event has yet transpired that will preclude him from a heai'ty cooperation with the great mass of the Union party in securing to the country the object for which we conducted successfully a great war. That events have transpired, that utter- ances have been made tending in that direction, no one will deny. The surest evidence is in the joy of the worst enemies of the country over our divisions.",
+  "proposed_sha256": "56dfbe51f41b1657672fcb30eabf9de74ee1da4dcd1d6c64ac2c7c208b953f2f",
+  "proposed_edits": [
+    {
+      "start": 35,
+      "end": 50,
+      "raw_quote": "contempla- tion",
+      "replacement": "contemplation",
+      "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+    },
+    {
+      "start": 220,
+      "end": 230,
+      "raw_quote": "ap- proved",
+      "replacement": "approved",
+      "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+    },
+    {
+      "start": 403,
+      "end": 411,
+      "raw_quote": "ob- ject",
+      "replacement": "object",
+      "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+    }
+  ],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 35,
+      "derived_start": 0,
+      "derived_end": 35,
+      "mapping": "exact_copy"
+    },
+    {
+      "raw_start": 35,
+      "raw_end": 50,
+      "derived_start": 35,
+      "derived_end": 48,
+      "mapping": "replacement"
+    },
+    {
+      "raw_start": 50,
+      "raw_end": 220,
+      "derived_start": 48,
+      "derived_end": 218,
+      "mapping": "exact_copy"
+    },
+    {
+      "raw_start": 220,
+      "raw_end": 230,
+      "derived_start": 218,
+      "derived_end": 226,
+      "mapping": "replacement"
+    },
+    {
+      "raw_start": 230,
+      "raw_end": 403,
+      "derived_start": 226,
+      "derived_end": 399,
+      "mapping": "exact_copy"
+    },
+    {
+      "raw_start": 403,
+      "raw_end": 411,
+      "derived_start": 399,
+      "derived_end": 405,
+      "mapping": "replacement"
+    },
+    {
+      "raw_start": 411,
+      "raw_end": 657,
+      "derived_start": 405,
+      "derived_end": 651,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 35,
+      "end": 50,
+      "raw_quote": "contempla- tion",
+      "joined_candidate": "contemplation",
+      "decision": "proposed_join",
+      "reason": "guarded_adjacent_line_join"
+    },
+    {
+      "start": 220,
+      "end": 230,
+      "raw_quote": "ap- proved",
+      "joined_candidate": "approved",
+      "decision": "proposed_join",
+      "reason": "guarded_adjacent_line_join"
+    },
+    {
+      "start": 403,
+      "end": 411,
+      "raw_quote": "ob- ject",
+      "joined_candidate": "object",
+      "decision": "proposed_join",
+      "reason": "guarded_adjacent_line_join"
+    },
+    {
+      "start": 495,
+      "end": 507,
+      "raw_quote": "utter- ances",
+      "joined_candidate": "utterances",
+      "decision": "retained_for_review",
+      "reason": "joined_form_not_known"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 4,
+      "text": "upon",
+      "raw_start": 0,
+      "raw_end": 4,
+      "raw_quote": "upon",
+      "context": "upon new questions, not within the c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 5,
+      "end": 8,
+      "text": "new",
+      "raw_start": 5,
+      "raw_end": 8,
+      "raw_quote": "new",
+      "context": "upon new questions, not within the conte",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 9,
+      "end": 18,
+      "text": "questions",
+      "raw_start": 9,
+      "raw_end": 18,
+      "raw_quote": "questions",
+      "context": "upon new questions, not within the contempla- tion",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 20,
+      "end": 23,
+      "text": "not",
+      "raw_start": 20,
+      "raw_end": 23,
+      "raw_quote": "not",
+      "context": "upon new questions, not within the contempla- tion of e",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 24,
+      "end": 30,
+      "text": "within",
+      "raw_start": 24,
+      "raw_end": 30,
+      "raw_quote": "within",
+      "context": "upon new questions, not within the contempla- tion of either t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 31,
+      "end": 34,
+      "text": "the",
+      "raw_start": 31,
+      "raw_end": 34,
+      "raw_quote": "the",
+      "context": "upon new questions, not within the contempla- tion of either the U",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 35,
+      "end": 44,
+      "text": "contempla",
+      "raw_start": 35,
+      "raw_end": 44,
+      "raw_quote": "contempla",
+      "context": "n new questions, not within the contempla- tion of either the Union party",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 46,
+      "end": 50,
+      "text": "tion",
+      "raw_start": 46,
+      "raw_end": 50,
+      "raw_quote": "tion",
+      "context": "ions, not within the contempla- tion of either the Union party or th",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 51,
+      "end": 53,
+      "text": "of",
+      "raw_start": 51,
+      "raw_end": 53,
+      "raw_quote": "of",
+      "context": " not within the contempla- tion of either the Union party or the U",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 54,
+      "end": 60,
+      "text": "either",
+      "raw_start": 54,
+      "raw_end": 60,
+      "raw_quote": "either",
+      "context": "t within the contempla- tion of either the Union party or the Union pe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 61,
+      "end": 64,
+      "text": "the",
+      "raw_start": 61,
+      "raw_end": 64,
+      "raw_quote": "the",
+      "context": "n the contempla- tion of either the Union party or the Union people",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 65,
+      "end": 70,
+      "text": "Union",
+      "raw_start": 65,
+      "raw_end": 70,
+      "raw_quote": "Union",
+      "context": "e contempla- tion of either the Union party or the Union people when ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 71,
+      "end": 76,
+      "text": "party",
+      "raw_start": 71,
+      "raw_end": 76,
+      "raw_quote": "party",
+      "context": "empla- tion of either the Union party or the Union people when the Pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 77,
+      "end": 79,
+      "text": "or",
+      "raw_start": 77,
+      "raw_end": 79,
+      "raw_quote": "or",
+      "context": " tion of either the Union party or the Union people when the Presi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 80,
+      "end": 83,
+      "text": "the",
+      "raw_start": 80,
+      "raw_end": 83,
+      "raw_quote": "the",
+      "context": "on of either the Union party or the Union people when the President",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 84,
+      "end": 89,
+      "text": "Union",
+      "raw_start": 84,
+      "raw_end": 89,
+      "raw_quote": "Union",
+      "context": "f either the Union party or the Union people when the President was n",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 90,
+      "end": 96,
+      "text": "people",
+      "raw_start": 90,
+      "raw_end": 96,
+      "raw_quote": "people",
+      "context": "er the Union party or the Union people when the President was nominate",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 97,
+      "end": 101,
+      "text": "when",
+      "raw_start": 97,
+      "raw_end": 101,
+      "raw_quote": "when",
+      "context": "Union party or the Union people when the President was nominated. I ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 102,
+      "end": 105,
+      "text": "the",
+      "raw_start": 102,
+      "raw_end": 105,
+      "raw_quote": "the",
+      "context": " party or the Union people when the President was nominated. I have",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 106,
+      "end": 115,
+      "text": "President",
+      "raw_start": 106,
+      "raw_end": 115,
+      "raw_quote": "President",
+      "context": "ty or the Union people when the President was nominated. I have also show",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 116,
+      "end": 119,
+      "text": "was",
+      "raw_start": 116,
+      "raw_end": 119,
+      "raw_quote": "was",
+      "context": "Union people when the President was nominated. I have also shown th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 120,
+      "end": 129,
+      "text": "nominated",
+      "raw_start": 120,
+      "raw_end": 129,
+      "raw_quote": "nominated",
+      "context": "n people when the President was nominated. I have also shown that he has ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 131,
+      "end": 132,
+      "text": "I",
+      "raw_start": 131,
+      "raw_end": 132,
+      "raw_quote": "I",
+      "context": "en the President was nominated. I have also shown that he has act",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 133,
+      "end": 137,
+      "text": "have",
+      "raw_start": 133,
+      "raw_end": 137,
+      "raw_quote": "have",
+      "context": " the President was nominated. I have also shown that he has acted in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 138,
+      "end": 142,
+      "text": "also",
+      "raw_start": 138,
+      "raw_end": 142,
+      "raw_quote": "also",
+      "context": "President was nominated. I have also shown that he has acted in purs",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 143,
+      "end": 148,
+      "text": "shown",
+      "raw_start": 143,
+      "raw_end": 148,
+      "raw_quote": "shown",
+      "context": "dent was nominated. I have also shown that he has acted in pursuance ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 149,
+      "end": 153,
+      "text": "that",
+      "raw_start": 149,
+      "raw_end": 153,
+      "raw_quote": "that",
+      "context": "as nominated. I have also shown that he has acted in pursuance of a ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 154,
+      "end": 156,
+      "text": "he",
+      "raw_start": 154,
+      "raw_end": 156,
+      "raw_quote": "he",
+      "context": "minated. I have also shown that he has acted in pursuance of a pol",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 157,
+      "end": 160,
+      "text": "has",
+      "raw_start": 157,
+      "raw_end": 160,
+      "raw_quote": "has",
+      "context": "ated. I have also shown that he has acted in pursuance of a policy ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 161,
+      "end": 166,
+      "text": "acted",
+      "raw_start": 161,
+      "raw_end": 166,
+      "raw_quote": "acted",
+      "context": ". I have also shown that he has acted in pursuance of a policy adopte",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 167,
+      "end": 169,
+      "text": "in",
+      "raw_start": 167,
+      "raw_end": 169,
+      "raw_quote": "in",
+      "context": "ve also shown that he has acted in pursuance of a policy adopted b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 170,
+      "end": 179,
+      "text": "pursuance",
+      "raw_start": 170,
+      "raw_end": 179,
+      "raw_quote": "pursuance",
+      "context": "also shown that he has acted in pursuance of a policy adopted by Mr. Linc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 180,
+      "end": 182,
+      "text": "of",
+      "raw_start": 180,
+      "raw_end": 182,
+      "raw_quote": "of",
+      "context": " that he has acted in pursuance of a policy adopted by Mr. Lincoln",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 183,
+      "end": 184,
+      "text": "a",
+      "raw_start": 183,
+      "raw_end": 184,
+      "raw_quote": "a",
+      "context": "at he has acted in pursuance of a policy adopted by Mr. Lincoln, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 185,
+      "end": 191,
+      "text": "policy",
+      "raw_start": 185,
+      "raw_end": 191,
+      "raw_quote": "policy",
+      "context": " he has acted in pursuance of a policy adopted by Mr. Lincoln, and ap-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 192,
+      "end": 199,
+      "text": "adopted",
+      "raw_start": 192,
+      "raw_end": 199,
+      "raw_quote": "adopted",
+      "context": " acted in pursuance of a policy adopted by Mr. Lincoln, and ap- proved ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 200,
+      "end": 202,
+      "text": "by",
+      "raw_start": 200,
+      "raw_end": 202,
+      "raw_quote": "by",
+      "context": "n pursuance of a policy adopted by Mr. Lincoln, and ap- proved by ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 203,
+      "end": 205,
+      "text": "Mr",
+      "raw_start": 203,
+      "raw_end": 205,
+      "raw_quote": "Mr",
+      "context": "ursuance of a policy adopted by Mr. Lincoln, and ap- proved by the",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 207,
+      "end": 214,
+      "text": "Lincoln",
+      "raw_start": 207,
+      "raw_end": 214,
+      "raw_quote": "Lincoln",
+      "context": "ance of a policy adopted by Mr. Lincoln, and ap- proved by the people, ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 216,
+      "end": 219,
+      "text": "and",
+      "raw_start": 216,
+      "raw_end": 219,
+      "raw_quote": "and",
+      "context": " policy adopted by Mr. Lincoln, and ap- proved by the people, and t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 220,
+      "end": 222,
+      "text": "ap",
+      "raw_start": 220,
+      "raw_end": 222,
+      "raw_quote": "ap",
+      "context": "icy adopted by Mr. Lincoln, and ap- proved by the people, and that",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 224,
+      "end": 230,
+      "text": "proved",
+      "raw_start": 224,
+      "raw_end": 230,
+      "raw_quote": "proved",
+      "context": "adopted by Mr. Lincoln, and ap- proved by the people, and that no even",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 231,
+      "end": 233,
+      "text": "by",
+      "raw_start": 231,
+      "raw_end": 233,
+      "raw_quote": "by",
+      "context": " by Mr. Lincoln, and ap- proved by the people, and that no event h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 234,
+      "end": 237,
+      "text": "the",
+      "raw_start": 234,
+      "raw_end": 237,
+      "raw_quote": "the",
+      "context": " Mr. Lincoln, and ap- proved by the people, and that no event has y",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 238,
+      "end": 244,
+      "text": "people",
+      "raw_start": 238,
+      "raw_end": 244,
+      "raw_quote": "people",
+      "context": " Lincoln, and ap- proved by the people, and that no event has yet tran",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 246,
+      "end": 249,
+      "text": "and",
+      "raw_start": 246,
+      "raw_end": 249,
+      "raw_quote": "and",
+      "context": ", and ap- proved by the people, and that no event has yet transpire",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 250,
+      "end": 254,
+      "text": "that",
+      "raw_start": 250,
+      "raw_end": 254,
+      "raw_quote": "that",
+      "context": "d ap- proved by the people, and that no event has yet transpired tha",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 255,
+      "end": 257,
+      "text": "no",
+      "raw_start": 255,
+      "raw_end": 257,
+      "raw_quote": "no",
+      "context": " proved by the people, and that no event has yet transpired that w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 258,
+      "end": 263,
+      "text": "event",
+      "raw_start": 258,
+      "raw_end": 263,
+      "raw_quote": "event",
+      "context": "oved by the people, and that no event has yet transpired that will pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 264,
+      "end": 267,
+      "text": "has",
+      "raw_start": 264,
+      "raw_end": 267,
+      "raw_quote": "has",
+      "context": "y the people, and that no event has yet transpired that will preclu",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 268,
+      "end": 271,
+      "text": "yet",
+      "raw_start": 268,
+      "raw_end": 271,
+      "raw_quote": "yet",
+      "context": "e people, and that no event has yet transpired that will preclude h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 272,
+      "end": 282,
+      "text": "transpired",
+      "raw_start": 272,
+      "raw_end": 282,
+      "raw_quote": "transpired",
+      "context": "ople, and that no event has yet transpired that will preclude him from a h",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 283,
+      "end": 287,
+      "text": "that",
+      "raw_start": 283,
+      "raw_end": 287,
+      "raw_quote": "that",
+      "context": "hat no event has yet transpired that will preclude him from a heai't",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 288,
+      "end": 292,
+      "text": "will",
+      "raw_start": 288,
+      "raw_end": 292,
+      "raw_quote": "will",
+      "context": "o event has yet transpired that will preclude him from a heai'ty coo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 293,
+      "end": 301,
+      "text": "preclude",
+      "raw_start": 293,
+      "raw_end": 301,
+      "raw_quote": "preclude",
+      "context": "nt has yet transpired that will preclude him from a heai'ty cooperation ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 302,
+      "end": 305,
+      "text": "him",
+      "raw_start": 302,
+      "raw_end": 305,
+      "raw_quote": "him",
+      "context": "t transpired that will preclude him from a heai'ty cooperation with",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 306,
+      "end": 310,
+      "text": "from",
+      "raw_start": 306,
+      "raw_end": 310,
+      "raw_quote": "from",
+      "context": "anspired that will preclude him from a heai'ty cooperation with the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 311,
+      "end": 312,
+      "text": "a",
+      "raw_start": 311,
+      "raw_end": 312,
+      "raw_quote": "a",
+      "context": "red that will preclude him from a heai'ty cooperation with the gr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 313,
+      "end": 320,
+      "text": "heai'ty",
+      "raw_start": 313,
+      "raw_end": 320,
+      "raw_quote": "heai'ty",
+      "context": "d that will preclude him from a heai'ty cooperation with the great mass",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 321,
+      "end": 332,
+      "text": "cooperation",
+      "raw_start": 321,
+      "raw_end": 332,
+      "raw_quote": "cooperation",
+      "context": "ill preclude him from a heai'ty cooperation with the great mass of the Unio",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 333,
+      "end": 337,
+      "text": "with",
+      "raw_start": 333,
+      "raw_end": 337,
+      "raw_quote": "with",
+      "context": " him from a heai'ty cooperation with the great mass of the Union par",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 338,
+      "end": 341,
+      "text": "the",
+      "raw_start": 338,
+      "raw_end": 341,
+      "raw_quote": "the",
+      "context": "from a heai'ty cooperation with the great mass of the Union party i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 342,
+      "end": 347,
+      "text": "great",
+      "raw_start": 342,
+      "raw_end": 347,
+      "raw_quote": "great",
+      "context": " a heai'ty cooperation with the great mass of the Union party in secu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 348,
+      "end": 352,
+      "text": "mass",
+      "raw_start": 348,
+      "raw_end": 352,
+      "raw_quote": "mass",
+      "context": "i'ty cooperation with the great mass of the Union party in securing ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 353,
+      "end": 355,
+      "text": "of",
+      "raw_start": 353,
+      "raw_end": 355,
+      "raw_quote": "of",
+      "context": "cooperation with the great mass of the Union party in securing to ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 356,
+      "end": 359,
+      "text": "the",
+      "raw_start": 356,
+      "raw_end": 359,
+      "raw_quote": "the",
+      "context": "peration with the great mass of the Union party in securing to the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 360,
+      "end": 365,
+      "text": "Union",
+      "raw_start": 360,
+      "raw_end": 365,
+      "raw_quote": "Union",
+      "context": "tion with the great mass of the Union party in securing to the countr",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 366,
+      "end": 371,
+      "text": "party",
+      "raw_start": 366,
+      "raw_end": 371,
+      "raw_quote": "party",
+      "context": "ith the great mass of the Union party in securing to the country the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 372,
+      "end": 374,
+      "text": "in",
+      "raw_start": 372,
+      "raw_end": 374,
+      "raw_quote": "in",
+      "context": "e great mass of the Union party in securing to the country the ob-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 375,
+      "end": 383,
+      "text": "securing",
+      "raw_start": 375,
+      "raw_end": 383,
+      "raw_quote": "securing",
+      "context": "reat mass of the Union party in securing to the country the ob- ject for",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 384,
+      "end": 386,
+      "text": "to",
+      "raw_start": 384,
+      "raw_end": 386,
+      "raw_quote": "to",
+      "context": " of the Union party in securing to the country the ob- ject for wh",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 387,
+      "end": 390,
+      "text": "the",
+      "raw_start": 387,
+      "raw_end": 390,
+      "raw_quote": "the",
+      "context": " the Union party in securing to the country the ob- ject for which ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 391,
+      "end": 398,
+      "text": "country",
+      "raw_start": 391,
+      "raw_end": 398,
+      "raw_quote": "country",
+      "context": " Union party in securing to the country the ob- ject for which we condu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 399,
+      "end": 402,
+      "text": "the",
+      "raw_start": 399,
+      "raw_end": 402,
+      "raw_quote": "the",
+      "context": "arty in securing to the country the ob- ject for which we conducted",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 403,
+      "end": 405,
+      "text": "ob",
+      "raw_start": 403,
+      "raw_end": 405,
+      "raw_quote": "ob",
+      "context": " in securing to the country the ob- ject for which we conducted su",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 407,
+      "end": 411,
+      "text": "ject",
+      "raw_start": 407,
+      "raw_end": 411,
+      "raw_quote": "ject",
+      "context": "securing to the country the ob- ject for which we conducted successf",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 412,
+      "end": 415,
+      "text": "for",
+      "raw_start": 412,
+      "raw_end": 415,
+      "raw_quote": "for",
+      "context": "ing to the country the ob- ject for which we conducted successfully",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 416,
+      "end": 421,
+      "text": "which",
+      "raw_start": 416,
+      "raw_end": 421,
+      "raw_quote": "which",
+      "context": "to the country the ob- ject for which we conducted successfully a gre",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 422,
+      "end": 424,
+      "text": "we",
+      "raw_start": 422,
+      "raw_end": 424,
+      "raw_quote": "we",
+      "context": " country the ob- ject for which we conducted successfully a great ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 425,
+      "end": 434,
+      "text": "conducted",
+      "raw_start": 425,
+      "raw_end": 434,
+      "raw_quote": "conducted",
+      "context": "untry the ob- ject for which we conducted successfully a great war. That ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 435,
+      "end": 447,
+      "text": "successfully",
+      "raw_start": 435,
+      "raw_end": 447,
+      "raw_quote": "successfully",
+      "context": "ob- ject for which we conducted successfully a great war. That events have t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 448,
+      "end": 449,
+      "text": "a",
+      "raw_start": 448,
+      "raw_end": 449,
+      "raw_quote": "a",
+      "context": "which we conducted successfully a great war. That events have tra",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 450,
+      "end": 455,
+      "text": "great",
+      "raw_start": 450,
+      "raw_end": 455,
+      "raw_quote": "great",
+      "context": "ich we conducted successfully a great war. That events have transpire",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 456,
+      "end": 459,
+      "text": "war",
+      "raw_start": 456,
+      "raw_end": 459,
+      "raw_quote": "war",
+      "context": " conducted successfully a great war. That events have transpired, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 461,
+      "end": 465,
+      "text": "That",
+      "raw_start": 461,
+      "raw_end": 465,
+      "raw_quote": "That",
+      "context": "ucted successfully a great war. That events have transpired, that ut",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 466,
+      "end": 472,
+      "text": "events",
+      "raw_start": 466,
+      "raw_end": 472,
+      "raw_quote": "events",
+      "context": " successfully a great war. That events have transpired, that utter- an",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 473,
+      "end": 477,
+      "text": "have",
+      "raw_start": 473,
+      "raw_end": 477,
+      "raw_quote": "have",
+      "context": "sfully a great war. That events have transpired, that utter- ances h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 478,
+      "end": 488,
+      "text": "transpired",
+      "raw_start": 478,
+      "raw_end": 488,
+      "raw_quote": "transpired",
+      "context": "y a great war. That events have transpired, that utter- ances have been ma",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 490,
+      "end": 494,
+      "text": "that",
+      "raw_start": 490,
+      "raw_end": 494,
+      "raw_quote": "that",
+      "context": "r. That events have transpired, that utter- ances have been made ten",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 495,
+      "end": 500,
+      "text": "utter",
+      "raw_start": 495,
+      "raw_end": 500,
+      "raw_quote": "utter",
+      "context": "at events have transpired, that utter- ances have been made tending i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 502,
+      "end": 507,
+      "text": "ances",
+      "raw_start": 502,
+      "raw_end": 507,
+      "raw_quote": "ances",
+      "context": "ts have transpired, that utter- ances have been made tending in that ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 508,
+      "end": 512,
+      "text": "have",
+      "raw_start": 508,
+      "raw_end": 512,
+      "raw_quote": "have",
+      "context": "e transpired, that utter- ances have been made tending in that direc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 513,
+      "end": 517,
+      "text": "been",
+      "raw_start": 513,
+      "raw_end": 517,
+      "raw_quote": "been",
+      "context": "nspired, that utter- ances have been made tending in that direction,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 518,
+      "end": 522,
+      "text": "made",
+      "raw_start": 518,
+      "raw_end": 522,
+      "raw_quote": "made",
+      "context": "ed, that utter- ances have been made tending in that direction, no o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 523,
+      "end": 530,
+      "text": "tending",
+      "raw_start": 523,
+      "raw_end": 530,
+      "raw_quote": "tending",
+      "context": "hat utter- ances have been made tending in that direction, no one will ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 531,
+      "end": 533,
+      "text": "in",
+      "raw_start": 531,
+      "raw_end": 533,
+      "raw_quote": "in",
+      "context": "r- ances have been made tending in that direction, no one will den",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 534,
+      "end": 538,
+      "text": "that",
+      "raw_start": 534,
+      "raw_end": 538,
+      "raw_quote": "that",
+      "context": "ances have been made tending in that direction, no one will deny. Th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 539,
+      "end": 548,
+      "text": "direction",
+      "raw_start": 539,
+      "raw_end": 548,
+      "raw_quote": "direction",
+      "context": " have been made tending in that direction, no one will deny. The surest e",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 550,
+      "end": 552,
+      "text": "no",
+      "raw_start": 550,
+      "raw_end": 552,
+      "raw_quote": "no",
+      "context": "made tending in that direction, no one will deny. The surest evide",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 553,
+      "end": 556,
+      "text": "one",
+      "raw_start": 553,
+      "raw_end": 556,
+      "raw_quote": "one",
+      "context": "e tending in that direction, no one will deny. The surest evidence ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 557,
+      "end": 561,
+      "text": "will",
+      "raw_start": 557,
+      "raw_end": 561,
+      "raw_quote": "will",
+      "context": "nding in that direction, no one will deny. The surest evidence is in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 562,
+      "end": 566,
+      "text": "deny",
+      "raw_start": 562,
+      "raw_end": 566,
+      "raw_quote": "deny",
+      "context": " in that direction, no one will deny. The surest evidence is in the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 568,
+      "end": 571,
+      "text": "The",
+      "raw_start": 568,
+      "raw_end": 571,
+      "raw_quote": "The",
+      "context": "at direction, no one will deny. The surest evidence is in the joy o",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 572,
+      "end": 578,
+      "text": "surest",
+      "raw_start": 572,
+      "raw_end": 578,
+      "raw_quote": "surest",
+      "context": "irection, no one will deny. The surest evidence is in the joy of the w",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 579,
+      "end": 587,
+      "text": "evidence",
+      "raw_start": 579,
+      "raw_end": 587,
+      "raw_quote": "evidence",
+      "context": "n, no one will deny. The surest evidence is in the joy of the worst enem",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 588,
+      "end": 590,
+      "text": "is",
+      "raw_start": 588,
+      "raw_end": 590,
+      "raw_quote": "is",
+      "context": " will deny. The surest evidence is in the joy of the worst enemies",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 591,
+      "end": 593,
+      "text": "in",
+      "raw_start": 591,
+      "raw_end": 593,
+      "raw_quote": "in",
+      "context": "ll deny. The surest evidence is in the joy of the worst enemies of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 594,
+      "end": 597,
+      "text": "the",
+      "raw_start": 594,
+      "raw_end": 597,
+      "raw_quote": "the",
+      "context": "deny. The surest evidence is in the joy of the worst enemies of the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 598,
+      "end": 601,
+      "text": "joy",
+      "raw_start": 598,
+      "raw_end": 601,
+      "raw_quote": "joy",
+      "context": ". The surest evidence is in the joy of the worst enemies of the cou",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 602,
+      "end": 604,
+      "text": "of",
+      "raw_start": 602,
+      "raw_end": 604,
+      "raw_quote": "of",
+      "context": "e surest evidence is in the joy of the worst enemies of the countr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 605,
+      "end": 608,
+      "text": "the",
+      "raw_start": 605,
+      "raw_end": 608,
+      "raw_quote": "the",
+      "context": "urest evidence is in the joy of the worst enemies of the country ov",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 609,
+      "end": 614,
+      "text": "worst",
+      "raw_start": 609,
+      "raw_end": 614,
+      "raw_quote": "worst",
+      "context": "t evidence is in the joy of the worst enemies of the country over our",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 615,
+      "end": 622,
+      "text": "enemies",
+      "raw_start": 615,
+      "raw_end": 622,
+      "raw_quote": "enemies",
+      "context": "ence is in the joy of the worst enemies of the country over our divisio",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 623,
+      "end": 625,
+      "text": "of",
+      "raw_start": 623,
+      "raw_end": 625,
+      "raw_quote": "of",
+      "context": "in the joy of the worst enemies of the country over our divisions.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 626,
+      "end": 629,
+      "text": "the",
+      "raw_start": 626,
+      "raw_end": 629,
+      "raw_quote": "the",
+      "context": "the joy of the worst enemies of the country over our divisions.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 630,
+      "end": 637,
+      "text": "country",
+      "raw_start": 630,
+      "raw_end": 637,
+      "raw_quote": "country",
+      "context": "joy of the worst enemies of the country over our divisions.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 638,
+      "end": 642,
+      "text": "over",
+      "raw_start": 638,
+      "raw_end": 642,
+      "raw_quote": "over",
+      "context": "he worst enemies of the country over our divisions.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 643,
+      "end": 646,
+      "text": "our",
+      "raw_start": 643,
+      "raw_end": 646,
+      "raw_quote": "our",
+      "context": "rst enemies of the country over our divisions.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 647,
+      "end": 656,
+      "text": "divisions",
+      "raw_start": 647,
+      "raw_end": 656,
+      "raw_quote": "divisions",
+      "context": "enemies of the country over our divisions.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 4,
+      "text": "upon",
+      "raw_start": 0,
+      "raw_end": 4,
+      "raw_quote": "upon",
+      "context": "upon new questions, not within the c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 5,
+      "end": 8,
+      "text": "new",
+      "raw_start": 5,
+      "raw_end": 8,
+      "raw_quote": "new",
+      "context": "upon new questions, not within the conte",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 9,
+      "end": 18,
+      "text": "questions",
+      "raw_start": 9,
+      "raw_end": 18,
+      "raw_quote": "questions",
+      "context": "upon new questions, not within the contempla- tion",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 20,
+      "end": 23,
+      "text": "not",
+      "raw_start": 20,
+      "raw_end": 23,
+      "raw_quote": "not",
+      "context": "upon new questions, not within the contempla- tion of e",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 24,
+      "end": 30,
+      "text": "within",
+      "raw_start": 24,
+      "raw_end": 30,
+      "raw_quote": "within",
+      "context": "upon new questions, not within the contempla- tion of either t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 31,
+      "end": 34,
+      "text": "the",
+      "raw_start": 31,
+      "raw_end": 34,
+      "raw_quote": "the",
+      "context": "upon new questions, not within the contempla- tion of either the U",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 35,
+      "end": 48,
+      "text": "contemplation",
+      "raw_start": 35,
+      "raw_end": 50,
+      "raw_quote": "contempla- tion",
+      "context": "n new questions, not within the contempla- tion of either the Union party or th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 49,
+      "end": 51,
+      "text": "of",
+      "raw_start": 51,
+      "raw_end": 53,
+      "raw_quote": "of",
+      "context": " not within the contempla- tion of either the Union party or the U",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 52,
+      "end": 58,
+      "text": "either",
+      "raw_start": 54,
+      "raw_end": 60,
+      "raw_quote": "either",
+      "context": "t within the contempla- tion of either the Union party or the Union pe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 59,
+      "end": 62,
+      "text": "the",
+      "raw_start": 61,
+      "raw_end": 64,
+      "raw_quote": "the",
+      "context": "n the contempla- tion of either the Union party or the Union people",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 63,
+      "end": 68,
+      "text": "Union",
+      "raw_start": 65,
+      "raw_end": 70,
+      "raw_quote": "Union",
+      "context": "e contempla- tion of either the Union party or the Union people when ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 69,
+      "end": 74,
+      "text": "party",
+      "raw_start": 71,
+      "raw_end": 76,
+      "raw_quote": "party",
+      "context": "empla- tion of either the Union party or the Union people when the Pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 75,
+      "end": 77,
+      "text": "or",
+      "raw_start": 77,
+      "raw_end": 79,
+      "raw_quote": "or",
+      "context": " tion of either the Union party or the Union people when the Presi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 78,
+      "end": 81,
+      "text": "the",
+      "raw_start": 80,
+      "raw_end": 83,
+      "raw_quote": "the",
+      "context": "on of either the Union party or the Union people when the President",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 82,
+      "end": 87,
+      "text": "Union",
+      "raw_start": 84,
+      "raw_end": 89,
+      "raw_quote": "Union",
+      "context": "f either the Union party or the Union people when the President was n",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 88,
+      "end": 94,
+      "text": "people",
+      "raw_start": 90,
+      "raw_end": 96,
+      "raw_quote": "people",
+      "context": "er the Union party or the Union people when the President was nominate",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 95,
+      "end": 99,
+      "text": "when",
+      "raw_start": 97,
+      "raw_end": 101,
+      "raw_quote": "when",
+      "context": "Union party or the Union people when the President was nominated. I ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 100,
+      "end": 103,
+      "text": "the",
+      "raw_start": 102,
+      "raw_end": 105,
+      "raw_quote": "the",
+      "context": " party or the Union people when the President was nominated. I have",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 104,
+      "end": 113,
+      "text": "President",
+      "raw_start": 106,
+      "raw_end": 115,
+      "raw_quote": "President",
+      "context": "ty or the Union people when the President was nominated. I have also show",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 114,
+      "end": 117,
+      "text": "was",
+      "raw_start": 116,
+      "raw_end": 119,
+      "raw_quote": "was",
+      "context": "Union people when the President was nominated. I have also shown th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 118,
+      "end": 127,
+      "text": "nominated",
+      "raw_start": 120,
+      "raw_end": 129,
+      "raw_quote": "nominated",
+      "context": "n people when the President was nominated. I have also shown that he has ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 129,
+      "end": 130,
+      "text": "I",
+      "raw_start": 131,
+      "raw_end": 132,
+      "raw_quote": "I",
+      "context": "en the President was nominated. I have also shown that he has act",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 131,
+      "end": 135,
+      "text": "have",
+      "raw_start": 133,
+      "raw_end": 137,
+      "raw_quote": "have",
+      "context": " the President was nominated. I have also shown that he has acted in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 136,
+      "end": 140,
+      "text": "also",
+      "raw_start": 138,
+      "raw_end": 142,
+      "raw_quote": "also",
+      "context": "President was nominated. I have also shown that he has acted in purs",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 141,
+      "end": 146,
+      "text": "shown",
+      "raw_start": 143,
+      "raw_end": 148,
+      "raw_quote": "shown",
+      "context": "dent was nominated. I have also shown that he has acted in pursuance ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 147,
+      "end": 151,
+      "text": "that",
+      "raw_start": 149,
+      "raw_end": 153,
+      "raw_quote": "that",
+      "context": "as nominated. I have also shown that he has acted in pursuance of a ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 152,
+      "end": 154,
+      "text": "he",
+      "raw_start": 154,
+      "raw_end": 156,
+      "raw_quote": "he",
+      "context": "minated. I have also shown that he has acted in pursuance of a pol",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 155,
+      "end": 158,
+      "text": "has",
+      "raw_start": 157,
+      "raw_end": 160,
+      "raw_quote": "has",
+      "context": "ated. I have also shown that he has acted in pursuance of a policy ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 159,
+      "end": 164,
+      "text": "acted",
+      "raw_start": 161,
+      "raw_end": 166,
+      "raw_quote": "acted",
+      "context": ". I have also shown that he has acted in pursuance of a policy adopte",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 165,
+      "end": 167,
+      "text": "in",
+      "raw_start": 167,
+      "raw_end": 169,
+      "raw_quote": "in",
+      "context": "ve also shown that he has acted in pursuance of a policy adopted b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 168,
+      "end": 177,
+      "text": "pursuance",
+      "raw_start": 170,
+      "raw_end": 179,
+      "raw_quote": "pursuance",
+      "context": "also shown that he has acted in pursuance of a policy adopted by Mr. Linc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 178,
+      "end": 180,
+      "text": "of",
+      "raw_start": 180,
+      "raw_end": 182,
+      "raw_quote": "of",
+      "context": " that he has acted in pursuance of a policy adopted by Mr. Lincoln",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 181,
+      "end": 182,
+      "text": "a",
+      "raw_start": 183,
+      "raw_end": 184,
+      "raw_quote": "a",
+      "context": "at he has acted in pursuance of a policy adopted by Mr. Lincoln, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 183,
+      "end": 189,
+      "text": "policy",
+      "raw_start": 185,
+      "raw_end": 191,
+      "raw_quote": "policy",
+      "context": " he has acted in pursuance of a policy adopted by Mr. Lincoln, and ap-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 190,
+      "end": 197,
+      "text": "adopted",
+      "raw_start": 192,
+      "raw_end": 199,
+      "raw_quote": "adopted",
+      "context": " acted in pursuance of a policy adopted by Mr. Lincoln, and ap- proved ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 198,
+      "end": 200,
+      "text": "by",
+      "raw_start": 200,
+      "raw_end": 202,
+      "raw_quote": "by",
+      "context": "n pursuance of a policy adopted by Mr. Lincoln, and ap- proved by ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 201,
+      "end": 203,
+      "text": "Mr",
+      "raw_start": 203,
+      "raw_end": 205,
+      "raw_quote": "Mr",
+      "context": "ursuance of a policy adopted by Mr. Lincoln, and ap- proved by the",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 205,
+      "end": 212,
+      "text": "Lincoln",
+      "raw_start": 207,
+      "raw_end": 214,
+      "raw_quote": "Lincoln",
+      "context": "ance of a policy adopted by Mr. Lincoln, and ap- proved by the people, ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 214,
+      "end": 217,
+      "text": "and",
+      "raw_start": 216,
+      "raw_end": 219,
+      "raw_quote": "and",
+      "context": " policy adopted by Mr. Lincoln, and ap- proved by the people, and t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 218,
+      "end": 226,
+      "text": "approved",
+      "raw_start": 220,
+      "raw_end": 230,
+      "raw_quote": "ap- proved",
+      "context": "icy adopted by Mr. Lincoln, and ap- proved by the people, and that no even",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 227,
+      "end": 229,
+      "text": "by",
+      "raw_start": 231,
+      "raw_end": 233,
+      "raw_quote": "by",
+      "context": " by Mr. Lincoln, and ap- proved by the people, and that no event h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 230,
+      "end": 233,
+      "text": "the",
+      "raw_start": 234,
+      "raw_end": 237,
+      "raw_quote": "the",
+      "context": " Mr. Lincoln, and ap- proved by the people, and that no event has y",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 234,
+      "end": 240,
+      "text": "people",
+      "raw_start": 238,
+      "raw_end": 244,
+      "raw_quote": "people",
+      "context": " Lincoln, and ap- proved by the people, and that no event has yet tran",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 242,
+      "end": 245,
+      "text": "and",
+      "raw_start": 246,
+      "raw_end": 249,
+      "raw_quote": "and",
+      "context": ", and ap- proved by the people, and that no event has yet transpire",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 246,
+      "end": 250,
+      "text": "that",
+      "raw_start": 250,
+      "raw_end": 254,
+      "raw_quote": "that",
+      "context": "d ap- proved by the people, and that no event has yet transpired tha",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 251,
+      "end": 253,
+      "text": "no",
+      "raw_start": 255,
+      "raw_end": 257,
+      "raw_quote": "no",
+      "context": " proved by the people, and that no event has yet transpired that w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 254,
+      "end": 259,
+      "text": "event",
+      "raw_start": 258,
+      "raw_end": 263,
+      "raw_quote": "event",
+      "context": "oved by the people, and that no event has yet transpired that will pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 260,
+      "end": 263,
+      "text": "has",
+      "raw_start": 264,
+      "raw_end": 267,
+      "raw_quote": "has",
+      "context": "y the people, and that no event has yet transpired that will preclu",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 264,
+      "end": 267,
+      "text": "yet",
+      "raw_start": 268,
+      "raw_end": 271,
+      "raw_quote": "yet",
+      "context": "e people, and that no event has yet transpired that will preclude h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 268,
+      "end": 278,
+      "text": "transpired",
+      "raw_start": 272,
+      "raw_end": 282,
+      "raw_quote": "transpired",
+      "context": "ople, and that no event has yet transpired that will preclude him from a h",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 279,
+      "end": 283,
+      "text": "that",
+      "raw_start": 283,
+      "raw_end": 287,
+      "raw_quote": "that",
+      "context": "hat no event has yet transpired that will preclude him from a heai't",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 284,
+      "end": 288,
+      "text": "will",
+      "raw_start": 288,
+      "raw_end": 292,
+      "raw_quote": "will",
+      "context": "o event has yet transpired that will preclude him from a heai'ty coo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 289,
+      "end": 297,
+      "text": "preclude",
+      "raw_start": 293,
+      "raw_end": 301,
+      "raw_quote": "preclude",
+      "context": "nt has yet transpired that will preclude him from a heai'ty cooperation ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 298,
+      "end": 301,
+      "text": "him",
+      "raw_start": 302,
+      "raw_end": 305,
+      "raw_quote": "him",
+      "context": "t transpired that will preclude him from a heai'ty cooperation with",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 302,
+      "end": 306,
+      "text": "from",
+      "raw_start": 306,
+      "raw_end": 310,
+      "raw_quote": "from",
+      "context": "anspired that will preclude him from a heai'ty cooperation with the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 307,
+      "end": 308,
+      "text": "a",
+      "raw_start": 311,
+      "raw_end": 312,
+      "raw_quote": "a",
+      "context": "red that will preclude him from a heai'ty cooperation with the gr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 309,
+      "end": 316,
+      "text": "heai'ty",
+      "raw_start": 313,
+      "raw_end": 320,
+      "raw_quote": "heai'ty",
+      "context": "d that will preclude him from a heai'ty cooperation with the great mass",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 317,
+      "end": 328,
+      "text": "cooperation",
+      "raw_start": 321,
+      "raw_end": 332,
+      "raw_quote": "cooperation",
+      "context": "ill preclude him from a heai'ty cooperation with the great mass of the Unio",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 329,
+      "end": 333,
+      "text": "with",
+      "raw_start": 333,
+      "raw_end": 337,
+      "raw_quote": "with",
+      "context": " him from a heai'ty cooperation with the great mass of the Union par",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 334,
+      "end": 337,
+      "text": "the",
+      "raw_start": 338,
+      "raw_end": 341,
+      "raw_quote": "the",
+      "context": "from a heai'ty cooperation with the great mass of the Union party i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 338,
+      "end": 343,
+      "text": "great",
+      "raw_start": 342,
+      "raw_end": 347,
+      "raw_quote": "great",
+      "context": " a heai'ty cooperation with the great mass of the Union party in secu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 344,
+      "end": 348,
+      "text": "mass",
+      "raw_start": 348,
+      "raw_end": 352,
+      "raw_quote": "mass",
+      "context": "i'ty cooperation with the great mass of the Union party in securing ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 349,
+      "end": 351,
+      "text": "of",
+      "raw_start": 353,
+      "raw_end": 355,
+      "raw_quote": "of",
+      "context": "cooperation with the great mass of the Union party in securing to ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 352,
+      "end": 355,
+      "text": "the",
+      "raw_start": 356,
+      "raw_end": 359,
+      "raw_quote": "the",
+      "context": "peration with the great mass of the Union party in securing to the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 356,
+      "end": 361,
+      "text": "Union",
+      "raw_start": 360,
+      "raw_end": 365,
+      "raw_quote": "Union",
+      "context": "tion with the great mass of the Union party in securing to the countr",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 362,
+      "end": 367,
+      "text": "party",
+      "raw_start": 366,
+      "raw_end": 371,
+      "raw_quote": "party",
+      "context": "ith the great mass of the Union party in securing to the country the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 368,
+      "end": 370,
+      "text": "in",
+      "raw_start": 372,
+      "raw_end": 374,
+      "raw_quote": "in",
+      "context": "e great mass of the Union party in securing to the country the ob-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 371,
+      "end": 379,
+      "text": "securing",
+      "raw_start": 375,
+      "raw_end": 383,
+      "raw_quote": "securing",
+      "context": "reat mass of the Union party in securing to the country the ob- ject for",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 380,
+      "end": 382,
+      "text": "to",
+      "raw_start": 384,
+      "raw_end": 386,
+      "raw_quote": "to",
+      "context": " of the Union party in securing to the country the ob- ject for wh",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 383,
+      "end": 386,
+      "text": "the",
+      "raw_start": 387,
+      "raw_end": 390,
+      "raw_quote": "the",
+      "context": " the Union party in securing to the country the ob- ject for which ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 387,
+      "end": 394,
+      "text": "country",
+      "raw_start": 391,
+      "raw_end": 398,
+      "raw_quote": "country",
+      "context": " Union party in securing to the country the ob- ject for which we condu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 395,
+      "end": 398,
+      "text": "the",
+      "raw_start": 399,
+      "raw_end": 402,
+      "raw_quote": "the",
+      "context": "arty in securing to the country the ob- ject for which we conducted",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 399,
+      "end": 405,
+      "text": "object",
+      "raw_start": 403,
+      "raw_end": 411,
+      "raw_quote": "ob- ject",
+      "context": " in securing to the country the ob- ject for which we conducted successf",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 406,
+      "end": 409,
+      "text": "for",
+      "raw_start": 412,
+      "raw_end": 415,
+      "raw_quote": "for",
+      "context": "ing to the country the ob- ject for which we conducted successfully",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 410,
+      "end": 415,
+      "text": "which",
+      "raw_start": 416,
+      "raw_end": 421,
+      "raw_quote": "which",
+      "context": "to the country the ob- ject for which we conducted successfully a gre",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 416,
+      "end": 418,
+      "text": "we",
+      "raw_start": 422,
+      "raw_end": 424,
+      "raw_quote": "we",
+      "context": " country the ob- ject for which we conducted successfully a great ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 419,
+      "end": 428,
+      "text": "conducted",
+      "raw_start": 425,
+      "raw_end": 434,
+      "raw_quote": "conducted",
+      "context": "untry the ob- ject for which we conducted successfully a great war. That ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 429,
+      "end": 441,
+      "text": "successfully",
+      "raw_start": 435,
+      "raw_end": 447,
+      "raw_quote": "successfully",
+      "context": "ob- ject for which we conducted successfully a great war. That events have t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 442,
+      "end": 443,
+      "text": "a",
+      "raw_start": 448,
+      "raw_end": 449,
+      "raw_quote": "a",
+      "context": "which we conducted successfully a great war. That events have tra",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 444,
+      "end": 449,
+      "text": "great",
+      "raw_start": 450,
+      "raw_end": 455,
+      "raw_quote": "great",
+      "context": "ich we conducted successfully a great war. That events have transpire",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 450,
+      "end": 453,
+      "text": "war",
+      "raw_start": 456,
+      "raw_end": 459,
+      "raw_quote": "war",
+      "context": " conducted successfully a great war. That events have transpired, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 455,
+      "end": 459,
+      "text": "That",
+      "raw_start": 461,
+      "raw_end": 465,
+      "raw_quote": "That",
+      "context": "ucted successfully a great war. That events have transpired, that ut",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 460,
+      "end": 466,
+      "text": "events",
+      "raw_start": 466,
+      "raw_end": 472,
+      "raw_quote": "events",
+      "context": " successfully a great war. That events have transpired, that utter- an",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 467,
+      "end": 471,
+      "text": "have",
+      "raw_start": 473,
+      "raw_end": 477,
+      "raw_quote": "have",
+      "context": "sfully a great war. That events have transpired, that utter- ances h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 472,
+      "end": 482,
+      "text": "transpired",
+      "raw_start": 478,
+      "raw_end": 488,
+      "raw_quote": "transpired",
+      "context": "y a great war. That events have transpired, that utter- ances have been ma",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 484,
+      "end": 488,
+      "text": "that",
+      "raw_start": 490,
+      "raw_end": 494,
+      "raw_quote": "that",
+      "context": "r. That events have transpired, that utter- ances have been made ten",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 489,
+      "end": 494,
+      "text": "utter",
+      "raw_start": 495,
+      "raw_end": 500,
+      "raw_quote": "utter",
+      "context": "at events have transpired, that utter- ances have been made tending i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 496,
+      "end": 501,
+      "text": "ances",
+      "raw_start": 502,
+      "raw_end": 507,
+      "raw_quote": "ances",
+      "context": "ts have transpired, that utter- ances have been made tending in that ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 502,
+      "end": 506,
+      "text": "have",
+      "raw_start": 508,
+      "raw_end": 512,
+      "raw_quote": "have",
+      "context": "e transpired, that utter- ances have been made tending in that direc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 507,
+      "end": 511,
+      "text": "been",
+      "raw_start": 513,
+      "raw_end": 517,
+      "raw_quote": "been",
+      "context": "nspired, that utter- ances have been made tending in that direction,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 512,
+      "end": 516,
+      "text": "made",
+      "raw_start": 518,
+      "raw_end": 522,
+      "raw_quote": "made",
+      "context": "ed, that utter- ances have been made tending in that direction, no o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 517,
+      "end": 524,
+      "text": "tending",
+      "raw_start": 523,
+      "raw_end": 530,
+      "raw_quote": "tending",
+      "context": "hat utter- ances have been made tending in that direction, no one will ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 525,
+      "end": 527,
+      "text": "in",
+      "raw_start": 531,
+      "raw_end": 533,
+      "raw_quote": "in",
+      "context": "r- ances have been made tending in that direction, no one will den",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 528,
+      "end": 532,
+      "text": "that",
+      "raw_start": 534,
+      "raw_end": 538,
+      "raw_quote": "that",
+      "context": "ances have been made tending in that direction, no one will deny. Th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 533,
+      "end": 542,
+      "text": "direction",
+      "raw_start": 539,
+      "raw_end": 548,
+      "raw_quote": "direction",
+      "context": " have been made tending in that direction, no one will deny. The surest e",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 544,
+      "end": 546,
+      "text": "no",
+      "raw_start": 550,
+      "raw_end": 552,
+      "raw_quote": "no",
+      "context": "made tending in that direction, no one will deny. The surest evide",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 547,
+      "end": 550,
+      "text": "one",
+      "raw_start": 553,
+      "raw_end": 556,
+      "raw_quote": "one",
+      "context": "e tending in that direction, no one will deny. The surest evidence ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 551,
+      "end": 555,
+      "text": "will",
+      "raw_start": 557,
+      "raw_end": 561,
+      "raw_quote": "will",
+      "context": "nding in that direction, no one will deny. The surest evidence is in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 556,
+      "end": 560,
+      "text": "deny",
+      "raw_start": 562,
+      "raw_end": 566,
+      "raw_quote": "deny",
+      "context": " in that direction, no one will deny. The surest evidence is in the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 562,
+      "end": 565,
+      "text": "The",
+      "raw_start": 568,
+      "raw_end": 571,
+      "raw_quote": "The",
+      "context": "at direction, no one will deny. The surest evidence is in the joy o",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 566,
+      "end": 572,
+      "text": "surest",
+      "raw_start": 572,
+      "raw_end": 578,
+      "raw_quote": "surest",
+      "context": "irection, no one will deny. The surest evidence is in the joy of the w",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 573,
+      "end": 581,
+      "text": "evidence",
+      "raw_start": 579,
+      "raw_end": 587,
+      "raw_quote": "evidence",
+      "context": "n, no one will deny. The surest evidence is in the joy of the worst enem",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 582,
+      "end": 584,
+      "text": "is",
+      "raw_start": 588,
+      "raw_end": 590,
+      "raw_quote": "is",
+      "context": " will deny. The surest evidence is in the joy of the worst enemies",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 585,
+      "end": 587,
+      "text": "in",
+      "raw_start": 591,
+      "raw_end": 593,
+      "raw_quote": "in",
+      "context": "ll deny. The surest evidence is in the joy of the worst enemies of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 588,
+      "end": 591,
+      "text": "the",
+      "raw_start": 594,
+      "raw_end": 597,
+      "raw_quote": "the",
+      "context": "deny. The surest evidence is in the joy of the worst enemies of the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 592,
+      "end": 595,
+      "text": "joy",
+      "raw_start": 598,
+      "raw_end": 601,
+      "raw_quote": "joy",
+      "context": ". The surest evidence is in the joy of the worst enemies of the cou",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 596,
+      "end": 598,
+      "text": "of",
+      "raw_start": 602,
+      "raw_end": 604,
+      "raw_quote": "of",
+      "context": "e surest evidence is in the joy of the worst enemies of the countr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 599,
+      "end": 602,
+      "text": "the",
+      "raw_start": 605,
+      "raw_end": 608,
+      "raw_quote": "the",
+      "context": "urest evidence is in the joy of the worst enemies of the country ov",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 603,
+      "end": 608,
+      "text": "worst",
+      "raw_start": 609,
+      "raw_end": 614,
+      "raw_quote": "worst",
+      "context": "t evidence is in the joy of the worst enemies of the country over our",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 609,
+      "end": 616,
+      "text": "enemies",
+      "raw_start": 615,
+      "raw_end": 622,
+      "raw_quote": "enemies",
+      "context": "ence is in the joy of the worst enemies of the country over our divisio",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 617,
+      "end": 619,
+      "text": "of",
+      "raw_start": 623,
+      "raw_end": 625,
+      "raw_quote": "of",
+      "context": "in the joy of the worst enemies of the country over our divisions.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 620,
+      "end": 623,
+      "text": "the",
+      "raw_start": 626,
+      "raw_end": 629,
+      "raw_quote": "the",
+      "context": "the joy of the worst enemies of the country over our divisions.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 624,
+      "end": 631,
+      "text": "country",
+      "raw_start": 630,
+      "raw_end": 637,
+      "raw_quote": "country",
+      "context": "joy of the worst enemies of the country over our divisions.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 632,
+      "end": 636,
+      "text": "over",
+      "raw_start": 638,
+      "raw_end": 642,
+      "raw_quote": "over",
+      "context": "he worst enemies of the country over our divisions.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 637,
+      "end": 640,
+      "text": "our",
+      "raw_start": 643,
+      "raw_end": 646,
+      "raw_quote": "our",
+      "context": "rst enemies of the country over our divisions.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 641,
+      "end": 650,
+      "text": "divisions",
+      "raw_start": 647,
+      "raw_end": 656,
+      "raw_quote": "divisions",
+      "context": "enemies of the country over our divisions.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7395unit:766:par_000766_000024",
+      "raw_text": "upon new questions, not within the contempla- tion of either the Union party or the Union people when the President was nominated. I have also shown that he has acted in pursuance of a policy adopted by Mr. Lincoln, and ap- proved by the people, and that no event has yet transpired that will preclude him from a heai'ty cooperation with the great mass of the Union party in securing to the country the ob- ject for which we conducted successfully a great war. That events have transpired, that utter- ances have been made tending in that direction, no one will deny. The surest evidence is in the joy of the worst enemies of the country over our divisions.",
+      "raw_sha256": "45fe1b75ec89976230d41e3a25f23558979ef833eff82789844c393203c996cf"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7395unit:766:par_000766_000024",
+        "raw_text": "upon new questions, not within the contempla- tion of either the Union party or the Union people when the President was nominated. I have also shown that he has acted in pursuance of a policy adopted by Mr. Lincoln, and ap- proved by the people, and that no event has yet transpired that will preclude him from a heai'ty cooperation with the great mass of the Union party in securing to the country the ob- ject for which we conducted successfully a great war. That events have transpired, that utter- ances have been made tending in that direction, no one will deny. The surest evidence is in the joy of the worst enemies of the country over our divisions.",
+        "raw_sha256": "45fe1b75ec89976230d41e3a25f23558979ef833eff82789844c393203c996cf"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "upon new questions, not within the contemplation of either the Union party or the Union people when the President was nominated. I have also shown that he has acted in pursuance of a policy adopted by Mr. Lincoln, and approved by the people, and that no event has yet transpired that will preclude him from a heai'ty cooperation with the great mass of the Union party in securing to the country the object for which we conducted successfully a great war. That events have transpired, that utter- ances have been made tending in that direction, no one will deny. The surest evidence is in the joy of the worst enemies of the country over our divisions.",
+    "proposed_sha256": "56dfbe51f41b1657672fcb30eabf9de74ee1da4dcd1d6c64ac2c7c208b953f2f",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

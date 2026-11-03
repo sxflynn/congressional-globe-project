@@ -1,0 +1,21 @@
+{
+  "id": "HR-033",
+  "version": 1,
+  "title": "Broader Qwen study: 0 of 51 observations",
+  "instructions": "This fixed study covers fifteen fresh passages across all five parts and two known word-joining cases. Each has three identical candidate calls. One generic instruction asks Qwen to join words divided only by printed line endings while preserving real compound-word hyphens. The first software and model results are shown while work continues. Optional comments can steer the remaining observations. Source readings are provisional, and a matching model answer is separate from human acceptance.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "broader-qwen-comments",
+      "prompt": "Optional notes on these passages and repeated results",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "X01: part 1, leaf 1029",
+          "text": "Inputs — full original OCR:\nBut, sir, when I say this I do not mean to be understood as defending the theory that the Congress has no right to take hold of these States and people and examine their political condition most thoroughly. I say that, although these rebellious States are in, territorially, the Union, and cannot get out by any act of theirs, yet by their rebellion they have forfeited their right to representation in the Halls of Con- gress, and placed themselves where the na- tional Government can determine at will when thoy shall resume again their original positions and have a^voice in the legislative halls of the nation.\n\nExpected output — inspect the whole assigned passage against its image, join a word split only by a printed line ending, and preserve real compound-word hyphens and dashes. Missing or unclear source text requires an explicit unresolved answer. The image reading is still pending. This card shows the actual software result first; it is not a verified transcription.\n\nActual output — full software first pass:\nBut, sir, when I say this I do not mean to be understood as defending the theory that the Congress has no right to take hold of these States and people and examine their political condition most thoroughly. I say that, although these rebellious States are in, territorially, the Union, and cannot get out by any act of theirs, yet by their rebellion they have forfeited their right to representation in the Halls of Con- gress, and placed themselves where the national Government can determine at will when thoy shall resume again their original positions and have a^voice in the legislative halls of the nation.\n\nDifferences — software proposes 1 changes; 0 of 3 identical candidate observations recorded. All raw inputs and replies remain preserved. Three runs measure repeatability on this exact input; they do not establish population accuracy or permission to change accepted text."
+        }
+      ]
+    }
+  ]
+}

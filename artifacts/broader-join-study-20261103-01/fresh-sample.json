@@ -1,0 +1,1873 @@
+{
+  "schema_version": "t134-fresh-sample-v1",
+  "task": "T134",
+  "selection_freeze_sha256": "7286e804ea88b8c818eb6592fbe3df23d2850b5aae8fab09c2c25f66bb642b8b",
+  "source": {
+    "path": "artifacts/runs/static-final-20261011/canonical_pages.jsonl",
+    "bytes": 2231301433,
+    "sha256": "4ab8ef6b325b650a0db002a94d690989f02d82333e977e5fed05c8f651772eeb"
+  },
+  "sampling_unit": "page first, then one paragraph per selected page",
+  "primary": [
+    {
+      "source_id": "congressionalg7391unit:1029:par_001029_000024",
+      "item_identifier": "congressionalg7391unit",
+      "part_number": 1,
+      "scan_leaf": 1029,
+      "paragraph_id": "par_001029_000024",
+      "raw_sha256": "a97fc18526ee486ab6e427f4f43786e496ea79b1dbbc00370a13a901556359cc",
+      "static_sha256": "4e9f55b42c3b59905ee36eaa436343833a8cfbaaf413d63b152714ccd4751716",
+      "raw_codepoints": 614,
+      "static_codepoints": 610,
+      "page_line_number": 1030,
+      "reading_order": 24,
+      "split": "primary",
+      "priority_sha256": "0068732dd6c769d9edd41cb394d170291130e227f8ecaf97e2f3e0a87e4a71b7",
+      "frame_size": 1038,
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 4498
+      },
+      "expansion_weight": {
+        "numerator": 4498,
+        "denominator": 1
+      },
+      "page_line_sha256": "78e6bac8a3ef5ff2eee695394df89b04f4c7acd522795fc09e384a451d60724e",
+      "hocr_page_id": "page_001029",
+      "printed_page": {
+        "detected": "911",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3113,
+        4309
+      ],
+      "bbox": {
+        "left": 1963,
+        "top": 1274,
+        "right": 2847,
+        "bottom": 1854
+      },
+      "line_ids": [
+        "line_001029_000209",
+        "line_001029_000210",
+        "line_001029_000211",
+        "line_001029_000212",
+        "line_001029_000213",
+        "line_001029_000214",
+        "line_001029_000215",
+        "line_001029_000216",
+        "line_001029_000217",
+        "line_001029_000218",
+        "line_001029_000219",
+        "line_001029_000220",
+        "line_001029_000221",
+        "line_001029_000222"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "But, sir, when I say this I do not mean to be understood as defending the theory that the Congress has no right to take hold of these States and people and examine their political condition most thoroughly. I say that, although these rebellious States are in, territorially, the Union, and cannot get out by any act of theirs, yet by their rebellion they have forfeited their right to representation in the Halls of Con- gress, and placed themselves where the na- tional Government can determine at will when thoy shall resume again their original positions and have a^voice in the legislative halls of the nation.",
+      "static_text": "But, sir, when I say this I do not mean to be understood as defending the theory that the Congress has no right to take hold of these States and people and examine their political condition most thoroughly. I say that, although these rebellious States are in, territorially, the Union, and cannot get out by any act of theirs, yet by their rebellion they have forfeited their right to representation in the Halls of Congress, and placed themselves where the national Government can determine at will when thoy shall resume again their original positions and have a^voice in the legislative halls of the nation.",
+      "static_edits": [
+        {
+          "start_char": 416,
+          "end_char": 426,
+          "expected": "Con- gress",
+          "replacement": "Congress",
+          "reason": "adjacent-line wrap; lexicon form congress",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 460,
+          "end_char": 470,
+          "expected": "na- tional",
+          "replacement": "national",
+          "reason": "adjacent-line wrap; lexicon form national",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalg7391unit:1029:par_001029_000023",
+          "raw_text": "power of the people of the States in rebellion. The people of the rebellious States attempted to destroy the Union by the separation of a part of the States from the Union, and by the erec- tion upon the ruins of the old Union of another government in its stead. They failed to accom- plish their design ; their ordinances of secession; their resolving themselves out of the Union; their attempt to fight themselves out of the Union, all failed, and in spile of all their ef- forts to get out, the loyal people of the nation kept them in. No State can by any act of its own sever its connection from the Union. A State may forfeit its right to representation ; its people may all commit crimes against the laws and Constitution of the Government ; the proper relation of the State to the Government may be broken by the insurrections and rebellions of the people, yet the State is not out of the Union so as to lose the jurisdiction to the Government over it until all the balance of the people of the Union consent to let her go, or until a suc- cessful rebellion takes her out in spite of the efforts of the Government to keep her in.",
+          "raw_sha256": "24ee6dedefac422fe147ba5f355ad6b45264028d70d2c0896beabfd30760a288",
+          "static_text": "power of the people of the States in rebellion. The people of the rebellious States attempted to destroy the Union by the separation of a part of the States from the Union, and by the erection upon the ruins of the old Union of another government in its stead. They failed to accomplish their design ; their ordinances of secession; their resolving themselves out of the Union; their attempt to fight themselves out of the Union, all failed, and in spile of all their efforts to get out, the loyal people of the nation kept them in. No State can by any act of its own sever its connection from the Union. A State may forfeit its right to representation ; its people may all commit crimes against the laws and Constitution of the Government ; the proper relation of the State to the Government may be broken by the insurrections and rebellions of the people, yet the State is not out of the Union so as to lose the jurisdiction to the Government over it until all the balance of the people of the Union consent to let her go, or until a successful rebellion takes her out in spite of the efforts of the Government to keep her in.",
+          "static_sha256": "b16e2e9f5abead5d1212441244bd9b118ebf81a2ed41b9bacf13b2604491c84a",
+          "bbox": {
+            "left": 1960,
+            "top": 268,
+            "right": 2851,
+            "bottom": 1274
+          },
+          "reading_order": 23
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalg7391unit:1029:par_001029_000025",
+          "raw_text": "Sir, the very first act of rebellion was in the States passing their ordinances of secession, declaring their connection with the Union at an end ; their acts of secession were followed up by confederating together in the formation of another government, and in the adoption of such measures as in their judgment would aid in the permanent establishment of that government. All the officers of state in each of the States operated together to destroy the old and build up a new government upon its ruins. By.State legislation and State procla- mations and State military orders, men, money, and credit were given to the organization which had for its object the dissolution of the Union liy the separation of the seceded States. For four years the proper relation of these States to the Union was cut off by their separate and combined action. And yet we are told by gen- tlemen that after all this, after the nation has staggered under the load of debt and been sorely oppressed with taxes, after it has witnessed the sacrifice upon the battle-field and in the Libbys and Andersonvilles of three quarters of a mil- lion of her brave sons struggling with the armies of the rebellion, and after the last tragic act of the bloody drama is consummated, and the civ- ilized world is startled as the Chief Executive is stricken down as with the dagger of a Brutus by the hand of a hired assassin — I say after all this, we are told that these people, fresh from all these scenes of carnage, are defiantly to take their places again in our national councils, and the loyal people of the always loyal States by their lawfully constituted Senators and Rep- resentatives have no constitutional power to tell them to stop one moment until we can look beyond their certificates, many of which are signed by newly-made Governors with rebel straps upon their shoulders and pardons in their pockets, and learn whether their States are now loyal or still cherishing that same spirit of rebellion and fiendish barbarity which char- acterized them in the struggle to destroy the nation.",
+          "raw_sha256": "56c1ffcd23843b6d892554df0a8ea5b0e8746db1b76e9c9ecaf7126cae9adb65",
+          "static_text": "Sir, the very first act of rebellion was in the States passing their ordinances of secession, declaring their connection with the Union at an end ; their acts of secession were followed up by confederating together in the formation of another government, and in the adoption of such measures as in their judgment would aid in the permanent establishment of that government. All the officers of state in each of the States operated together to destroy the old and build up a new government upon its ruins. By.State legislation and State proclamations and State military orders, men, money, and credit were given to the organization which had for its object the dissolution of the Union liy the separation of the seceded States. For four years the proper relation of these States to the Union was cut off by their separate and combined action. And yet we are told by gentlemen that after all this, after the nation has staggered under the load of debt and been sorely oppressed with taxes, after it has witnessed the sacrifice upon the battle-field and in the Libbys and Andersonvilles of three quarters of a million of her brave sons struggling with the armies of the rebellion, and after the last tragic act of the bloody drama is consummated, and the civilized world is startled as the Chief Executive is stricken down as with the dagger of a Brutus by the hand of a hired assassin — I say after all this, we are told that these people, fresh from all these scenes of carnage, are defiantly to take their places again in our national councils, and the loyal people of the always loyal States by their lawfully constituted Senators and Representatives have no constitutional power to tell them to stop one moment until we can look beyond their certificates, many of which are signed by newly-made Governors with rebel straps upon their shoulders and pardons in their pockets, and learn whether their States are now loyal or still cherishing that same spirit of rebellion and fiendish barbarity which char- acterized them in the struggle to destroy the nation.",
+          "static_sha256": "221d2b1bd115c0cc6ac98084038a7f56ca0dcec4b1c2eda131da2c520f36dc3f",
+          "bbox": {
+            "left": 1962,
+            "top": 1863,
+            "right": 2852,
+            "bottom": 3747
+          },
+          "reading_order": 25
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "0053cf8b7e99a417ddb03506d721b934cb33e805dfb94dd423656d6c73e72f55",
+      "selection_paragraph_rank_sha256": "0068732dd6c769d9edd41cb394d170291130e227f8ecaf97e2f3e0a87e4a71b7",
+      "eligible_paragraph_count_on_page": 13,
+      "eligible_page_count_in_part": 1038
+    },
+    {
+      "source_id": "congressionalg7391unit:872:par_000872_000059",
+      "item_identifier": "congressionalg7391unit",
+      "part_number": 1,
+      "scan_leaf": 872,
+      "paragraph_id": "par_000872_000059",
+      "raw_sha256": "87183a6a442cfc1f8054bcb99f884bb03a384b6219ac4354e7c2f12c0afe3b05",
+      "static_sha256": "7f6f4a3c9dbe3c58760a90ae1bebb93a86f044a78fdffc4e9392d3f761bcd513",
+      "raw_codepoints": 448,
+      "static_codepoints": 446,
+      "page_line_number": 873,
+      "reading_order": 59,
+      "split": "primary",
+      "priority_sha256": "00f30a2e222cd27aea88b53263c01d845d66364a3095d25f67d2c683054e5d77",
+      "frame_size": 1038,
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 4152
+      },
+      "expansion_weight": {
+        "numerator": 4152,
+        "denominator": 1
+      },
+      "page_line_sha256": "1b0478ada37fef6dca007bef92834acadab708943460ba96b50738eb5d4fc65f",
+      "hocr_page_id": "page_000872",
+      "printed_page": {
+        "detected": "754",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3114,
+        4252
+      ],
+      "bbox": {
+        "left": 2092,
+        "top": 3651,
+        "right": 2970,
+        "bottom": 4070
+      },
+      "line_ids": [
+        "line_000872_000274",
+        "line_000872_000275",
+        "line_000872_000276",
+        "line_000872_000277",
+        "line_000872_000278",
+        "line_000872_000279",
+        "line_000872_000280",
+        "line_000872_000281",
+        "line_000872_000282",
+        "line_000872_000283"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "I regret that it is necessary to make these explanations. The language I did utter the other day, however, justified me in what I said here. If the gentleman had properly quoted mv remarks I should have said nothing : but that he did not do. If there is a reporter here who will say that I have not given the true ver- sion of my remarks, that what is published is not just precisely what I uttered on this floor, then I will admit that I am wrong.",
+      "static_text": "I regret that it is necessary to make these explanations. The language I did utter the other day, however, justified me in what I said here. If the gentleman had properly quoted mv remarks I should have said nothing : but that he did not do. If there is a reporter here who will say that I have not given the true version of my remarks, that what is published is not just precisely what I uttered on this floor, then I will admit that I am wrong.",
+      "static_edits": [
+        {
+          "start_char": 314,
+          "end_char": 323,
+          "expected": "ver- sion",
+          "replacement": "version",
+          "reason": "adjacent-line wrap; lexicon form version",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalg7391unit:872:par_000872_000058",
+          "raw_text": "And when that gentleman got up here the other day and said that I had degraded my State when I said I would defend my wife and children as well as myself from these outrages, he uttered what I then pronounced to be a slan- der, and what I now repeat to have been a slan- der. If I know myself, I know that I could do no act that would degrade either my friends, my family, or myself. And the language he then used was unnecessary- and uncalled for ; it was discourteous and unkind, and against the rules of this House, as I understand them. And I did not know what else to do than to get up in my place here and pronounce it false and a vile slander upon me ; and that I did. And I think he should have done the same toward me, if I had assailed him in like manner. And what I accord to other men, I must and will claim for myself.",
+          "raw_sha256": "3d7e3fd91a172d1d9a699963fcd276edc2c3a061593524aadf96cb024564838c",
+          "static_text": "And when that gentleman got up here the other day and said that I had degraded my State when I said I would defend my wife and children as well as myself from these outrages, he uttered what I then pronounced to be a slander, and what I now repeat to have been a slander. If I know myself, I know that I could do no act that would degrade either my friends, my family, or myself. And the language he then used was unnecessary- and uncalled for ; it was discourteous and unkind, and against the rules of this House, as I understand them. And I did not know what else to do than to get up in my place here and pronounce it false and a vile slander upon me ; and that I did. And I think he should have done the same toward me, if I had assailed him in like manner. And what I accord to other men, I must and will claim for myself.",
+          "static_sha256": "084326ee68227ec8190342a263d289b92f96dffdc6855909b4d020ce330f64ae",
+          "bbox": {
+            "left": 2091,
+            "top": 2858,
+            "right": 2975,
+            "bottom": 3655
+          },
+          "reading_order": 58
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "0056878ccc97123f06bfd2ec285cbe3dee8de28cb63bad9ff7c90c54f87842ac",
+      "selection_paragraph_rank_sha256": "00f30a2e222cd27aea88b53263c01d845d66364a3095d25f67d2c683054e5d77",
+      "eligible_paragraph_count_on_page": 12,
+      "eligible_page_count_in_part": 1038
+    },
+    {
+      "source_id": "congressionalg7391unit:511:par_000511_000007",
+      "item_identifier": "congressionalg7391unit",
+      "part_number": 1,
+      "scan_leaf": 511,
+      "paragraph_id": "par_000511_000007",
+      "raw_sha256": "69b02d03f2f8e8b6c8c8768c43e2877715117f57ceae16fac94cd0e883bf1c43",
+      "static_sha256": "3c1ad6a6f57d8d65447f7a9e92a423cdf7597e47cdf913571b135a8abe50757e",
+      "raw_codepoints": 696,
+      "static_codepoints": 692,
+      "page_line_number": 512,
+      "reading_order": 7,
+      "split": "primary",
+      "priority_sha256": "0e74790202b1339eb448a7a758c7ede664246ad1dd5484d066dfd9d767f6c7d0",
+      "frame_size": 1038,
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 2076
+      },
+      "expansion_weight": {
+        "numerator": 2076,
+        "denominator": 1
+      },
+      "page_line_sha256": "1899ec8ff63f42bbe32c7d2b71a673784ce863bc00847555155803bb3d551fe4",
+      "hocr_page_id": "page_000511",
+      "printed_page": {
+        "detected": "395",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3127,
+        4298
+      ],
+      "bbox": {
+        "left": 186,
+        "top": 2360,
+        "right": 1069,
+        "bottom": 2798
+      },
+      "line_ids": [
+        "line_000511_000053",
+        "line_000511_000054",
+        "line_000511_000055",
+        "line_000511_000056",
+        "line_000511_000057",
+        "line_000511_000058",
+        "line_000511_000059",
+        "line_000511_000060",
+        "line_000511_000061",
+        "line_000511_000062",
+        "line_000511_000063",
+        "line_000511_000064",
+        "line_000511_000065",
+        "line_000511_000066"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "\" The conqueror dethrones the sovereign and as- sumes the dominion of the conquered territory ; but as a general rule he does no more. It has been well laid down by the tribunals of the North American United States that the modern usage of nations, that large and important part of the international law, would be violated, the sense of justice and of right, which is felt and acknowledged by the civilized world, would be outraged, if private property were generally confiscated and private rights annulled. The people, indeed, change their allegiance; their relation to their ancient sovereign is dissolved ; but their relations to each other and their rights of property remain un- disturbed.\"",
+      "static_text": "\" The conqueror dethrones the sovereign and assumes the dominion of the conquered territory ; but as a general rule he does no more. It has been well laid down by the tribunals of the North American United States that the modern usage of nations, that large and important part of the international law, would be violated, the sense of justice and of right, which is felt and acknowledged by the civilized world, would be outraged, if private property were generally confiscated and private rights annulled. The people, indeed, change their allegiance; their relation to their ancient sovereign is dissolved ; but their relations to each other and their rights of property remain undisturbed.\"",
+      "static_edits": [
+        {
+          "start_char": 44,
+          "end_char": 53,
+          "expected": "as- sumes",
+          "replacement": "assumes",
+          "reason": "adjacent-line wrap; lexicon form assumes",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 681,
+          "end_char": 694,
+          "expected": "un- disturbed",
+          "replacement": "undisturbed",
+          "reason": "adjacent-line wrap; lexicon form undisturbed",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalg7391unit:511:par_000511_000006",
+          "raw_text": "Now, sir, apply that principle to this intes- tine war, and all that was effected as our con- quering armies marched through the South and occupied the country was simply to dethrone the power of the confederate government.",
+          "raw_sha256": "98d88c82622988efa86e66ad859ecfdae1692b1009a37acea2d348d129eaaba0",
+          "static_text": "Now, sir, apply that principle to this intestine war, and all that was effected as our conquering armies marched through the South and occupied the country was simply to dethrone the power of the confederate government.",
+          "static_sha256": "be77d107d8b32d8ec3e260cd023c1b8760ec1ad8d0e4407ea65056033beb5a1e",
+          "bbox": {
+            "left": 186,
+            "top": 2140,
+            "right": 1068,
+            "bottom": 2351
+          },
+          "reading_order": 6
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalg7391unit:511:par_000511_000008",
+          "raw_text": "All the power that Congress has, all the power that the Government of the United States has, in relation to the late insurrection, is to sup- press it. They have not a particle of power outside of that which is imported by that term. The honorable Senator from Maryland [Mr. JoHNSox] in his masterly argument drew a cor- rect distinction between the power of war and the power to suppress insurrection under our Government. He stated truly, and he estab- lished the proposition beyond all doubt, that the one was the war power and the other was the simple power of police ; that the simple power of police applied and inured to the ben- efit of the Government of the United States in putting down this insurrection, in \"suppres- sing\" it, to use the language of the Constitu- tion, and that the war power, as it was created in the Constitution, had no application to the case ; and no gentleman on this floor, or out of this Senate, can overturn that position, or shake it. Phillimore, treating of war between indei^endent States, says expressly that where there is a war between independent States, and one country, or a portion of one country is con- quered, the only effect is that the conquered country yields its political subjection to the con- queror, and the moment peace is declared and made, that moment the private property of the conquered people reverts to its owners.",
+          "raw_sha256": "9536290d920a2791af5bff19fd903413d64735746ea94d3bb38b70c2e7c1aa74",
+          "static_text": "All the power that Congress has, all the power that the Government of the United States has, in relation to the late insurrection, is to suppress it. They have not a particle of power outside of that which is imported by that term. The honorable Senator from Maryland [Mr. JoHNSox] in his masterly argument drew a correct distinction between the power of war and the power to suppress insurrection under our Government. He stated truly, and he established the proposition beyond all doubt, that the one was the war power and the other was the simple power of police ; that the simple power of police applied and inured to the benefit of the Government of the United States in putting down this insurrection, in \"suppressing\" it, to use the language of the Constitution, and that the war power, as it was created in the Constitution, had no application to the case ; and no gentleman on this floor, or out of this Senate, can overturn that position, or shake it. Phillimore, treating of war between indei^endent States, says expressly that where there is a war between independent States, and one country, or a portion of one country is conquered, the only effect is that the conquered country yields its political subjection to the conqueror, and the moment peace is declared and made, that moment the private property of the conquered people reverts to its owners.",
+          "static_sha256": "a7e638a26a62ce9ce0ce33a0f3db58e8994ebf5b72623d8735df14f579f91ba1",
+          "bbox": {
+            "left": 189,
+            "top": 2815,
+            "right": 1072,
+            "bottom": 4072
+          },
+          "reading_order": 8
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "0086026e2e1ee2310f036527f59f1d8543be35cf570de732edd10fd38e749fdc",
+      "selection_paragraph_rank_sha256": "0e74790202b1339eb448a7a758c7ede664246ad1dd5484d066dfd9d767f6c7d0",
+      "eligible_paragraph_count_on_page": 6,
+      "eligible_page_count_in_part": 1038
+    },
+    {
+      "source_id": "congressionalglo7392unit:77:par_000077_000159",
+      "item_identifier": "congressionalglo7392unit",
+      "part_number": 2,
+      "scan_leaf": 77,
+      "paragraph_id": "par_000077_000159",
+      "raw_sha256": "8b92fe04d8f01889adc6fdf2df67f8758e0d4ab523317a360d18f98fadf22413",
+      "static_sha256": "1656af5fb1655a87957e2b72233a5b6e1164096a2db20bb7399408b0e96211b8",
+      "raw_codepoints": 289,
+      "static_codepoints": 283,
+      "page_line_number": 1164,
+      "reading_order": 159,
+      "split": "primary",
+      "priority_sha256": "0a8667acd611a99be61032e13c6fc5e7bac9cbce953ac4d857e606a0e41a3dc1",
+      "frame_size": 1048,
+      "inclusion_probability": {
+        "numerator": 3,
+        "denominator": 7336
+      },
+      "expansion_weight": {
+        "numerator": 7336,
+        "denominator": 3
+      },
+      "page_line_sha256": "8cfebe527e63186cfc58d895ab48f8659a0b5949a89a28051603103d08a20fae",
+      "hocr_page_id": "page_000077",
+      "printed_page": {
+        "detected": "LXXI",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": null
+      },
+      "image_dimensions": [
+        3151,
+        4275
+      ],
+      "bbox": {
+        "left": 1994,
+        "top": 3189,
+        "right": 2880,
+        "bottom": 3479
+      },
+      "line_ids": [
+        "line_000077_000250",
+        "line_000077_000251",
+        "line_000077_000252",
+        "line_000077_000253",
+        "line_000077_000254",
+        "line_000077_000255",
+        "line_000077_000256"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "Horsmauj James B., bill for the relief of.. .286 Hospital, joint resolution confirming the trans- fer of the United States, at Jeffersonville, Indiana, to the State of Indiana as a dona- tion for the benefit of Indiana soldiers and seamen disabled in the service of the Uni- ted States 919",
+      "static_text": "Horsmauj James B., bill for the relief of.. .286 Hospital, joint resolution confirming the transfer of the United States, at Jeffersonville, Indiana, to the State of Indiana as a donation for the benefit of Indiana soldiers and seamen disabled in the service of the United States 919",
+      "static_edits": [
+        {
+          "start_char": 91,
+          "end_char": 101,
+          "expected": "trans- fer",
+          "replacement": "transfer",
+          "reason": "adjacent-line wrap; lexicon form transfer",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 181,
+          "end_char": 191,
+          "expected": "dona- tion",
+          "replacement": "donation",
+          "reason": "adjacent-line wrap; lexicon form donation",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 270,
+          "end_char": 278,
+          "expected": "Uni- ted",
+          "replacement": "United",
+          "reason": "adjacent-line wrap; lexicon form united",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7392unit:77:par_000077_000158",
+          "raw_text": "Horses — see Army.",
+          "raw_sha256": "facaa7e98311ef76f0053e843bf39bb2996aebaa0a817c1e6e2f94854cc6401e",
+          "static_text": "Horses — see Army.",
+          "static_sha256": "facaa7e98311ef76f0053e843bf39bb2996aebaa0a817c1e6e2f94854cc6401e",
+          "bbox": {
+            "left": 1994,
+            "top": 3149,
+            "right": 2366,
+            "bottom": 3189
+          },
+          "reading_order": 158
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7392unit:77:par_000077_000160",
+          "raw_text": "joint resolution in relation to the purchase",
+          "raw_sha256": "e728b7819b3a2a8950fdcf4919e5a3043717db02094f6ce60bb15e7d93aca720",
+          "static_text": "joint resolution in relation to the purchase",
+          "static_sha256": "e728b7819b3a2a8950fdcf4919e5a3043717db02094f6ce60bb15e7d93aca720",
+          "bbox": {
+            "left": 2030,
+            "top": 3484,
+            "right": 2878,
+            "bottom": 3529
+          },
+          "reading_order": 160
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "0077448e4309a2ee6dd0c7e017a492f33e6b007e5bee7b68ac8769fcf06b4fc3",
+      "selection_paragraph_rank_sha256": "0a8667acd611a99be61032e13c6fc5e7bac9cbce953ac4d857e606a0e41a3dc1",
+      "eligible_paragraph_count_on_page": 7,
+      "eligible_page_count_in_part": 1048
+    },
+    {
+      "source_id": "congressionalglo7392unit:811:par_000811_000010",
+      "item_identifier": "congressionalglo7392unit",
+      "part_number": 2,
+      "scan_leaf": 811,
+      "paragraph_id": "par_000811_000010",
+      "raw_sha256": "b73f5b238c1c7c52769194a188fbed055ca7286a51796922797416d2b1713a71",
+      "static_sha256": "d67f38da93f29f0b685a5bdb0011cb2d1492702017787bb9dd1176a741c9ca0f",
+      "raw_codepoints": 645,
+      "static_codepoints": 643,
+      "page_line_number": 1898,
+      "reading_order": 10,
+      "split": "primary",
+      "priority_sha256": "0aaca1b73a2b06eae8f9e529a452f89d7faa395be6db9c02cbbf508b6385c494",
+      "frame_size": 1048,
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 3144
+      },
+      "expansion_weight": {
+        "numerator": 3144,
+        "denominator": 1
+      },
+      "page_line_sha256": "720a89f6429b1df0c72ac9f17101d3d38575b12a411009f9184e0619c7c327d1",
+      "hocr_page_id": "page_000811",
+      "printed_page": {
+        "detected": "1659",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3158,
+        4290
+      ],
+      "bbox": {
+        "left": 119,
+        "top": 2326,
+        "right": 1009,
+        "bottom": 2920
+      },
+      "line_ids": [
+        "line_000811_000053",
+        "line_000811_000054",
+        "line_000811_000055",
+        "line_000811_000056",
+        "line_000811_000057",
+        "line_000811_000058",
+        "line_000811_000059",
+        "line_000811_000060",
+        "line_000811_000061",
+        "line_000811_000062",
+        "line_000811_000063",
+        "line_000811_000064",
+        "line_000811_000065",
+        "line_000811_000066"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "Mr. BALDWIN. I move to strike out the last ten words of the section. This would kill it ; and I think this section ought to be killed in some way, and for this reason : the attempt to advertise letters in any other way than is now jjrescribed would certainly cost the Gov- ernment more than it costs now, or the attempt to advertise suitably would fail. Any job printer ■who should be required to furnish printed lists of letters suitable for posting would charge more for his work than it costs to advertise them in the newspapers. Any one familiar with the printing business knows this, or will readily see it by means of a little calculation.",
+      "static_text": "Mr. BALDWIN. I move to strike out the last ten words of the section. This would kill it ; and I think this section ought to be killed in some way, and for this reason : the attempt to advertise letters in any other way than is now jjrescribed would certainly cost the Government more than it costs now, or the attempt to advertise suitably would fail. Any job printer ■who should be required to furnish printed lists of letters suitable for posting would charge more for his work than it costs to advertise them in the newspapers. Any one familiar with the printing business knows this, or will readily see it by means of a little calculation.",
+      "static_edits": [
+        {
+          "start_char": 268,
+          "end_char": 280,
+          "expected": "Gov- ernment",
+          "replacement": "Government",
+          "reason": "adjacent-line wrap; lexicon form government",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7392unit:811:par_000811_000009",
+          "raw_text": "The question recurred on the motion to strike out the entire section.",
+          "raw_sha256": "5e1cf24ff5aa2bd61003b28907f593886179daaf05c64317fab721887d002301",
+          "static_text": "The question recurred on the motion to strike out the entire section.",
+          "static_sha256": "5e1cf24ff5aa2bd61003b28907f593886179daaf05c64317fab721887d002301",
+          "bbox": {
+            "left": 122,
+            "top": 2242,
+            "right": 1006,
+            "bottom": 2317
+          },
+          "reading_order": 9
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7392unit:811:par_000811_000011",
+          "raw_text": "Now, if it is necessary to give public notice of letters remaining in the post office uncalled for, it should be done in a way best calculated to bring the notice to the attention of those concerned. The present method is better than any that has been suggested. In one respect the present system might be improved; the present regulation might be so changed as to require letters to remain longer in the post ofiice before advertising them than is now required.",
+          "raw_sha256": "e7c795bcf87452be3888fb5ef5c00e58f9e5f8bb50587b93f9d2d9d69d2d5c5b",
+          "static_text": "Now, if it is necessary to give public notice of letters remaining in the post office uncalled for, it should be done in a way best calculated to bring the notice to the attention of those concerned. The present method is better than any that has been suggested. In one respect the present system might be improved; the present regulation might be so changed as to require letters to remain longer in the post ofiice before advertising them than is now required.",
+          "static_sha256": "e7c795bcf87452be3888fb5ef5c00e58f9e5f8bb50587b93f9d2d9d69d2d5c5b",
+          "bbox": {
+            "left": 123,
+            "top": 2921,
+            "right": 1009,
+            "bottom": 3384
+          },
+          "reading_order": 11
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "00b00bf1f76eac4a2e17d08161323332084d73fd1eba05fb41b75607d40e91b0",
+      "selection_paragraph_rank_sha256": "0aaca1b73a2b06eae8f9e529a452f89d7faa395be6db9c02cbbf508b6385c494",
+      "eligible_paragraph_count_on_page": 9,
+      "eligible_page_count_in_part": 1048
+    },
+    {
+      "source_id": "congressionalglo7392unit:1051:par_001051_000014",
+      "item_identifier": "congressionalglo7392unit",
+      "part_number": 2,
+      "scan_leaf": 1051,
+      "paragraph_id": "par_001051_000014",
+      "raw_sha256": "5e171ba3d1a69369966ffed0b12fb53bad892284746c46c675cfbf43508101d6",
+      "static_sha256": "5e171ba3d1a69369966ffed0b12fb53bad892284746c46c675cfbf43508101d6",
+      "raw_codepoints": 307,
+      "static_codepoints": 307,
+      "page_line_number": 2138,
+      "reading_order": 14,
+      "split": "primary",
+      "priority_sha256": "0213d1f16a57b512b13de33dbe4e5b79aa910683e8580c98f3cd591a5b356deb",
+      "frame_size": 1048,
+      "inclusion_probability": {
+        "numerator": 3,
+        "denominator": 11528
+      },
+      "expansion_weight": {
+        "numerator": 11528,
+        "denominator": 3
+      },
+      "page_line_sha256": "c1e57b3a20fa5085847f780a52569e4b935eb938b2769c7d27161d86e9a1d915",
+      "hocr_page_id": "page_001051",
+      "printed_page": {
+        "detected": "1899",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3158,
+        4290
+      ],
+      "bbox": {
+        "left": 149,
+        "top": 3728,
+        "right": 1033,
+        "bottom": 4025
+      },
+      "line_ids": [
+        "line_001051_000086",
+        "line_001051_000087",
+        "line_001051_000088",
+        "line_001051_000089",
+        "line_001051_000090",
+        "line_001051_000091",
+        "line_001051_000092"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "Mr. KASSON. It seems to me that it would be better to follow our old practice, according to which, on the admission of those Territories, Congress declares the terms upon which they are to be received, giving them certain grants of land in order to place them on an equality with States previously admitted.",
+      "static_text": "Mr. KASSON. It seems to me that it would be better to follow our old practice, according to which, on the admission of those Territories, Congress declares the terms upon which they are to be received, giving them certain grants of land in order to place them on an equality with States previously admitted.",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7392unit:1051:par_001051_000013",
+          "raw_text": "Mr. BIDWELL. The object is to save the necessity of enacting a law to apply to such special cases when Territories come into the Union as States.",
+          "raw_sha256": "8ff5401e3c7ba0a14b7ff8ded9b62e64b18248893dfd69ad1f5ff3b45ef3adf1",
+          "static_text": "Mr. BIDWELL. The object is to save the necessity of enacting a law to apply to such special cases when Territories come into the Union as States.",
+          "static_sha256": "8ff5401e3c7ba0a14b7ff8ded9b62e64b18248893dfd69ad1f5ff3b45ef3adf1",
+          "bbox": {
+            "left": 150,
+            "top": 3560,
+            "right": 1032,
+            "bottom": 3721
+          },
+          "reading_order": 13
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7392unit:1051:par_001051_000015",
+          "raw_text": "Mr.^ BIDWELl;. At any rate this will do no harm.",
+          "raw_sha256": "cfc5fe233374ac59ee2594c18c435c59d188df27b701f0ea09bf8e1f6a395a0e",
+          "static_text": "Mr.^ BIDWELl;. At any rate this will do no harm.",
+          "static_sha256": "cfc5fe233374ac59ee2594c18c435c59d188df27b701f0ea09bf8e1f6a395a0e",
+          "bbox": {
+            "left": 149,
+            "top": 4025,
+            "right": 1031,
+            "bottom": 4102
+          },
+          "reading_order": 15
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "00da8dc2ad1bb560f36b10e27eee536d6ac1094821409299db88193ace71d08d",
+      "selection_paragraph_rank_sha256": "0213d1f16a57b512b13de33dbe4e5b79aa910683e8580c98f3cd591a5b356deb",
+      "eligible_paragraph_count_on_page": 11,
+      "eligible_page_count_in_part": 1048
+    },
+    {
+      "source_id": "congressionalglo7393unit:756:par_000756_000028",
+      "item_identifier": "congressionalglo7393unit",
+      "part_number": 3,
+      "scan_leaf": 756,
+      "paragraph_id": "par_000756_000028",
+      "raw_sha256": "afda8d8560d57ab8b0f7511bb3734f2b5da9ba2515349f8c78d522de8f5fff07",
+      "static_sha256": "c3f54ccd2cb749699e9ff8bbb81a3c5d8a27dff486454ea19cd9b66128549edb",
+      "raw_codepoints": 664,
+      "static_codepoints": 658,
+      "page_line_number": 2923,
+      "reading_order": 28,
+      "split": "primary",
+      "priority_sha256": "1136394fc5c302ab93ea8b896bdb95af1e8cca8b174396531d2a7a9540b0da07",
+      "frame_size": 1045,
+      "inclusion_probability": {
+        "numerator": 3,
+        "denominator": 5225
+      },
+      "expansion_weight": {
+        "numerator": 5225,
+        "denominator": 3
+      },
+      "page_line_sha256": "ce2fb9cb4f9412ec963bdc8798f3150d2847430ecd2945d237c2804ae06056c9",
+      "hocr_page_id": "page_000756",
+      "printed_page": {
+        "detected": "2566",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": null
+      },
+      "image_dimensions": [
+        3117,
+        4290
+      ],
+      "bbox": {
+        "left": 2120,
+        "top": 1749,
+        "right": 3001,
+        "bottom": 2374
+      },
+      "line_ids": [
+        "line_000756_000220",
+        "line_000756_000221",
+        "line_000756_000222",
+        "line_000756_000223",
+        "line_000756_000224",
+        "line_000756_000225",
+        "line_000756_000226",
+        "line_000756_000227",
+        "line_000756_000228",
+        "line_000756_000229",
+        "line_000756_000230",
+        "line_000756_000231",
+        "line_000756_000232",
+        "line_000756_000233",
+        "line_000756_000234"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "My conclusion, therefore, is that these pro- visions of the act of 1799 respecting the onus probandi in cases of seizure being upon the claimant, are provisions which by the very let- ter as well as the spirit of the act apply to pros- ecutions against the property itself where a claimant, technically and legally known as such, appears in court and claims the property. In those cases, if I correctly understand the act of 1799, probable cause having been made out on the part of the prosecution, the onus pro- bandi is then turned over to the claimant who asks that the property maybe delivered to him, to explain the circumstances under which he introduced it.",
+      "static_text": "My conclusion, therefore, is that these provisions of the act of 1799 respecting the onus probandi in cases of seizure being upon the claimant, are provisions which by the very letter as well as the spirit of the act apply to prosecutions against the property itself where a claimant, technically and legally known as such, appears in court and claims the property. In those cases, if I correctly understand the act of 1799, probable cause having been made out on the part of the prosecution, the onus pro- bandi is then turned over to the claimant who asks that the property maybe delivered to him, to explain the circumstances under which he introduced it.",
+      "static_edits": [
+        {
+          "start_char": 40,
+          "end_char": 52,
+          "expected": "pro- visions",
+          "replacement": "provisions",
+          "reason": "adjacent-line wrap; lexicon form provisions",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 179,
+          "end_char": 187,
+          "expected": "let- ter",
+          "replacement": "letter",
+          "reason": "adjacent-line wrap; lexicon form letter",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 230,
+          "end_char": 244,
+          "expected": "pros- ecutions",
+          "replacement": "prosecutions",
+          "reason": "adjacent-line wrap; lexicon form prosecutions",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7393unit:756:par_000756_000027",
+          "raw_text": "Mr. EDMUNDS. With all respect, sir, I cannot help thinking that my friend from Mary- land is the person who misapprehends the scope of this clause of the seventy-first section of the act of 1799 rather than myself. The language which operates upon this subject is \" actions, suits, or informations.\" The term \"informa- tions,\", as used in this act against property where any seizure is made pursuant to the act, is a technical term perfectly well known to the law and to lawyers. It is what is in the admi- ralty practice, in the cases of seizure in rem, called a libel of information ; but in the more condensed language of the statute it is simply termed an information. When goods are seized by a customs officer for a breach of the revenue laws an information is filed against them ; and if any party fails to come forward and claim the goods they are condemned without any hearing at all upon the mere seizure. If any person comes forward, according to the rules of the court, and makes oath that he is the owner of the goods, he is then entitled to enter his claim; and the term \"claimant\" is a tech- nical term perfectly well understood by every- body who practices in those courts as indicating, not the plaintiff in an action at common law, not the defendant in an action of trover or tres- pass, but the party in a court of admiralty who, in a proceeding in rem, comes upon the record as making a formal claim to the property.",
+          "raw_sha256": "6aaefc6f03ab668fa7210870ae88de419b6a1f4f7619488cc395880143350f59",
+          "static_text": "Mr. EDMUNDS. With all respect, sir, I cannot help thinking that my friend from Maryland is the person who misapprehends the scope of this clause of the seventy-first section of the act of 1799 rather than myself. The language which operates upon this subject is \" actions, suits, or informations.\" The term \"informations,\", as used in this act against property where any seizure is made pursuant to the act, is a technical term perfectly well known to the law and to lawyers. It is what is in the admiralty practice, in the cases of seizure in rem, called a libel of information ; but in the more condensed language of the statute it is simply termed an information. When goods are seized by a customs officer for a breach of the revenue laws an information is filed against them ; and if any party fails to come forward and claim the goods they are condemned without any hearing at all upon the mere seizure. If any person comes forward, according to the rules of the court, and makes oath that he is the owner of the goods, he is then entitled to enter his claim; and the term \"claimant\" is a technical term perfectly well understood by everybody who practices in those courts as indicating, not the plaintiff in an action at common law, not the defendant in an action of trover or trespass, but the party in a court of admiralty who, in a proceeding in rem, comes upon the record as making a formal claim to the property.",
+          "static_sha256": "9c4d2784d1bf6952250f1355dc43c5751851f5d1347db1779561e05a1c75c5d3",
+          "bbox": {
+            "left": 2115,
+            "top": 438,
+            "right": 3000,
+            "bottom": 1749
+          },
+          "reading_order": 27
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7393unit:756:par_000756_000029",
+          "raw_text": "Now, what is \"probable cause?\" It is very difficult to define the distinction between the meaning of the term \"probable cause\" and the meaning of the term \" prima facie evidence.\" It would puzzle anybody except a Philadelphia lawyer to make any sensible and satisfactory distinction between these two terms. Then in a case of property — I leave aside, for a moment, entirely that part of it which relates to con- demnation and fine as toithe person — is it too hard to say to a claimant who comes into court and asks that property may be delivered up to him, prima facie evidence having been brought forward on the part of the Government that the property is justly subject to forfeiture, \"You shall not be entitled to receive it out of court again until you bring forward some proof to meet this prima facie or probable evidence which has been adduced against you?\" In my judgment it certainly is not.",
+          "raw_sha256": "6d95579fb699bc24cdb4fe71b572f4848a6907895e02a2535ce1a641636e899f",
+          "static_text": "Now, what is \"probable cause?\" It is very difficult to define the distinction between the meaning of the term \"probable cause\" and the meaning of the term \" prima facie evidence.\" It would puzzle anybody except a Philadelphia lawyer to make any sensible and satisfactory distinction between these two terms. Then in a case of property — I leave aside, for a moment, entirely that part of it which relates to condemnation and fine as toithe person — is it too hard to say to a claimant who comes into court and asks that property may be delivered up to him, prima facie evidence having been brought forward on the part of the Government that the property is justly subject to forfeiture, \"You shall not be entitled to receive it out of court again until you bring forward some proof to meet this prima facie or probable evidence which has been adduced against you?\" In my judgment it certainly is not.",
+          "static_sha256": "52e1feb918235d89b4d3ab6f3d6010ef089d01e76175e5a7b8e9610b36874fd0",
+          "bbox": {
+            "left": 2121,
+            "top": 2382,
+            "right": 3001,
+            "bottom": 3230
+          },
+          "reading_order": 29
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "00677d619eb119c90b4ab5a86b91e23d883472fe8ebd9d2b0484e60e92930407",
+      "selection_paragraph_rank_sha256": "1136394fc5c302ab93ea8b896bdb95af1e8cca8b174396531d2a7a9540b0da07",
+      "eligible_paragraph_count_on_page": 5,
+      "eligible_page_count_in_part": 1045
+    },
+    {
+      "source_id": "congressionalglo7393unit:48:par_000048_000101",
+      "item_identifier": "congressionalglo7393unit",
+      "part_number": 3,
+      "scan_leaf": 48,
+      "paragraph_id": "par_000048_000101",
+      "raw_sha256": "619d02c9e43ade64d4b3b93655d87c74ac042c704fe00636021f483676938a52",
+      "static_sha256": "a24ec35e0b57cec6cb51d76916943644035fcc9b57ea28dda57c47605ca57139",
+      "raw_codepoints": 346,
+      "static_codepoints": 344,
+      "page_line_number": 2215,
+      "reading_order": 101,
+      "split": "primary",
+      "priority_sha256": "244d81e466231193b689cf83d79ce10411eb8799ed456b4396f843ac48882e63",
+      "frame_size": 1045,
+      "inclusion_probability": {
+        "numerator": 3,
+        "denominator": 1045
+      },
+      "expansion_weight": {
+        "numerator": 1045,
+        "denominator": 3
+      },
+      "page_line_sha256": "7efbb8694d153e3f757dc9057d1a861c09095e2834b76c3a71b7d8cbc203d26f",
+      "hocr_page_id": "page_000048",
+      "printed_page": {
+        "detected": "XLIV",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": null
+      },
+      "image_dimensions": [
+        3166,
+        4290
+      ],
+      "bbox": {
+        "left": 1205,
+        "top": 3274,
+        "right": 2043,
+        "bottom": 3612
+      },
+      "line_ids": [
+        "line_000048_000163",
+        "line_000048_000164",
+        "line_000048_000165",
+        "line_000048_000166",
+        "line_000048_000167",
+        "line_000048_000168",
+        "line_000048_000169",
+        "line_000048_000170"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "resolution requesting the Postmaster Gen- eral to lay before the Senate information in regard to the feasibility and usefulness of establishing in connection with the Post Office Department lines of, along such of the principal mail routes as may be deemed advisable for use by the Government. ..979 bill (S. No. 249) to incorporate the National,",
+      "static_text": "resolution requesting the Postmaster General to lay before the Senate information in regard to the feasibility and usefulness of establishing in connection with the Post Office Department lines of, along such of the principal mail routes as may be deemed advisable for use by the Government. ..979 bill (S. No. 249) to incorporate the National,",
+      "static_edits": [
+        {
+          "start_char": 37,
+          "end_char": 46,
+          "expected": "Gen- eral",
+          "replacement": "General",
+          "reason": "adjacent-line wrap; lexicon form general",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7393unit:48:par_000048_000100",
+          "raw_text": "Pacific coast by the southern route 17",
+          "raw_sha256": "b4f874f72fca419fef1b38158415599d320171921387a6419439d33f79cf65ea",
+          "static_text": "Pacific coast by the southern route 17",
+          "static_sha256": "b4f874f72fca419fef1b38158415599d320171921387a6419439d33f79cf65ea",
+          "bbox": {
+            "left": 1248,
+            "top": 3232,
+            "right": 2041,
+            "bottom": 3273
+          },
+          "reading_order": 100
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7393unit:48:par_000048_000102",
+          "raw_text": "Company 1773,1843",
+          "raw_sha256": "bf0c2c5d496589fffe128c59e22fc019de9a931a9748a6bbf14c8e875db73689",
+          "static_text": "Company 1773,1843",
+          "static_sha256": "bf0c2c5d496589fffe128c59e22fc019de9a931a9748a6bbf14c8e875db73689",
+          "bbox": {
+            "left": 1250,
+            "top": 3613,
+            "right": 2041,
+            "bottom": 3655
+          },
+          "reading_order": 102
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "00b6052a33c26f999124e36ef6aef6082b1023ebd4d21cd2f2c2780d7c8e164c",
+      "selection_paragraph_rank_sha256": "244d81e466231193b689cf83d79ce10411eb8799ed456b4396f843ac48882e63",
+      "eligible_paragraph_count_on_page": 1,
+      "eligible_page_count_in_part": 1045
+    },
+    {
+      "source_id": "congressionalglo7393unit:258:par_000258_000011",
+      "item_identifier": "congressionalglo7393unit",
+      "part_number": 3,
+      "scan_leaf": 258,
+      "paragraph_id": "par_000258_000011",
+      "raw_sha256": "565734ce66143353558a6a1d4045729e0416e89ac04a151606b6e2fb7eaffc7b",
+      "static_sha256": "8e00a3f07617999abd88c2b6071115cf8a1d4745c9648c63f76f5c20c463d0c2",
+      "raw_codepoints": 625,
+      "static_codepoints": 619,
+      "page_line_number": 2425,
+      "reading_order": 11,
+      "split": "primary",
+      "priority_sha256": "070995de72d4ae09ba1086c86b5b20dafab603793ac42dda236e91bc515fb857",
+      "frame_size": 1045,
+      "inclusion_probability": {
+        "numerator": 3,
+        "denominator": 10450
+      },
+      "expansion_weight": {
+        "numerator": 10450,
+        "denominator": 3
+      },
+      "page_line_sha256": "a33d04b7142456ea67c5f4b667bedebd79cf17fe8e37c7c47d6c16ec14d58fc0",
+      "hocr_page_id": "page_000258",
+      "printed_page": {
+        "detected": "2068",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3117,
+        4290
+      ],
+      "bbox": {
+        "left": 311,
+        "top": 2837,
+        "right": 1191,
+        "bottom": 3414
+      },
+      "line_ids": [
+        "line_000258_000066",
+        "line_000258_000067",
+        "line_000258_000068",
+        "line_000258_000069",
+        "line_000258_000070",
+        "line_000258_000071",
+        "line_000258_000072",
+        "line_000258_000073",
+        "line_000258_000074",
+        "line_000258_000075",
+        "line_000258_000076",
+        "line_000258_000077",
+        "line_000258_000078",
+        "line_000258_000079"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "Mr. LOAN. _ Mr. Speaker, I would cheer- fully support this measure if I could do so con- sistently; but this same Committee of Claims, in the case of a lady from Springfield, Missouri, who lost all of her property of every character and description by the ravages of war, who also lost her husband and has been left penniless with six children to support, reported adversely to it under the rule which they established. If a claim of that kind could not receive a favor- able consideration, I do not see why we should make an exception in this case. I think it should fare the common fate and be rejected like all the others.",
+      "static_text": "Mr. LOAN. _ Mr. Speaker, I would cheerfully support this measure if I could do so consistently; but this same Committee of Claims, in the case of a lady from Springfield, Missouri, who lost all of her property of every character and description by the ravages of war, who also lost her husband and has been left penniless with six children to support, reported adversely to it under the rule which they established. If a claim of that kind could not receive a favorable consideration, I do not see why we should make an exception in this case. I think it should fare the common fate and be rejected like all the others.",
+      "static_edits": [
+        {
+          "start_char": 33,
+          "end_char": 45,
+          "expected": "cheer- fully",
+          "replacement": "cheerfully",
+          "reason": "adjacent-line wrap; lexicon form cheerfully",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 84,
+          "end_char": 98,
+          "expected": "con- sistently",
+          "replacement": "consistently",
+          "reason": "adjacent-line wrap; lexicon form consistently",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 464,
+          "end_char": 475,
+          "expected": "favor- able",
+          "replacement": "favorable",
+          "reason": "adjacent-line wrap; lexicon form favorable",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7393unit:258:par_000258_000010",
+          "raw_text": "Mr. WARD. I will answer the gentleman if he will allow me. That resolution applied only to the States that had been in the rebellion. It does not of course apply to Maryland.",
+          "raw_sha256": "c92594c0c0b88cb0cd16c8beca0517d0080b75e404274202b0e919f2aaddcbc5",
+          "static_text": "Mr. WARD. I will answer the gentleman if he will allow me. That resolution applied only to the States that had been in the rebellion. It does not of course apply to Maryland.",
+          "static_sha256": "c92594c0c0b88cb0cd16c8beca0517d0080b75e404274202b0e919f2aaddcbc5",
+          "bbox": {
+            "left": 311,
+            "top": 2668,
+            "right": 1190,
+            "bottom": 2837
+          },
+          "reading_order": 10
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7393unit:258:par_000258_000012",
+          "raw_text": "Mr. WARD. Mr. Speaker, the Committee of Claims have not been lavish of their favors, as the House will bear witness. They have felt, as the guardians of the public Treasury at this critical time in our affairs financially, we should be careful what kind of claims they should allow or recommend to the House. They have chosen to be just rather than tobegenerous, and hence a great many claims appealing strongly to our sympathy and patriotism have been re- jected by the committee, not because of unwill- ingness to give relief in these cases, but because of the condition of our finances and because they would establish a precedent which might involve the country in the payment of large amounts of money.",
+          "raw_sha256": "a35e86e32a3d81a142768bbd8f0c8f936b615cac6dbbeba6586df2e9d1b0594f",
+          "static_text": "Mr. WARD. Mr. Speaker, the Committee of Claims have not been lavish of their favors, as the House will bear witness. They have felt, as the guardians of the public Treasury at this critical time in our affairs financially, we should be careful what kind of claims they should allow or recommend to the House. They have chosen to be just rather than tobegenerous, and hence a great many claims appealing strongly to our sympathy and patriotism have been rejected by the committee, not because of unwillingness to give relief in these cases, but because of the condition of our finances and because they would establish a precedent which might involve the country in the payment of large amounts of money.",
+          "static_sha256": "1a4aa631e066afee7288ce9db14a85c858ea7697a140dea009477d81b4f5b047",
+          "bbox": {
+            "left": 309,
+            "top": 3424,
+            "right": 1191,
+            "bottom": 4095
+          },
+          "reading_order": 12
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "010852c7b6917d9263281d127ab8b0e24fdec3b63667c627a55a5339686a7676",
+      "selection_paragraph_rank_sha256": "070995de72d4ae09ba1086c86b5b20dafab603793ac42dda236e91bc515fb857",
+      "eligible_paragraph_count_on_page": 10,
+      "eligible_page_count_in_part": 1045
+    },
+    {
+      "source_id": "congressionalglo00unit:1036:par_001036_000042",
+      "item_identifier": "congressionalglo00unit",
+      "part_number": 4,
+      "scan_leaf": 1036,
+      "paragraph_id": "par_001036_000042",
+      "raw_sha256": "550bb3a586640f7a2c996ae2330e73a5aa387d0ca1b8cc2df406586e0daaec5f",
+      "static_sha256": "550bb3a586640f7a2c996ae2330e73a5aa387d0ca1b8cc2df406586e0daaec5f",
+      "raw_codepoints": 368,
+      "static_codepoints": 368,
+      "page_line_number": 4279,
+      "reading_order": 42,
+      "split": "primary",
+      "priority_sha256": "158144af97818d7fe8e9ce886c6f43e7bbc40096df40d7bbdd54ccefed5936bc",
+      "frame_size": 1045,
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 4180
+      },
+      "expansion_weight": {
+        "numerator": 4180,
+        "denominator": 1
+      },
+      "page_line_sha256": "724668a50bdf2ff7a66c99efebd25804f859b058cd0c7c35c53b139b0d7eae21",
+      "hocr_page_id": "page_001036",
+      "printed_page": {
+        "detected": "3804",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3120,
+        4292
+      ],
+      "bbox": {
+        "left": 2110,
+        "top": 3725,
+        "right": 2989,
+        "bottom": 4061
+      },
+      "line_ids": [
+        "line_001036_000278",
+        "line_001036_000279",
+        "line_001036_000280",
+        "line_001036_000281",
+        "line_001036_000282",
+        "line_001036_000283",
+        "line_001036_000284",
+        "line_001036_000285"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "You are to have a code of rules adopted in the Interior Department, and Congress is to have the privilege of revising them ; and those rules are for the leasing and the preserving of mineral springs. I suppose the rules will be in the nature of ordinances which shall inflict fines and punishment if anybody fills a bottle of mineral water from mineral springs without",
+      "static_text": "You are to have a code of rules adopted in the Interior Department, and Congress is to have the privilege of revising them ; and those rules are for the leasing and the preserving of mineral springs. I suppose the rules will be in the nature of ordinances which shall inflict fines and punishment if anybody fills a bottle of mineral water from mineral springs without",
+      "static_edits": [],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo00unit:1036:par_001036_000041",
+          "raw_text": "The second section of this bill provides that \"the Secretary of the Interior shall prescribe all necessary rules and regulations for the leas- ing, preserving, and developing said saline lands and mineral springs, and for the securing and collection of the rental revenues due the Gov- ernment therefrom ; provided, that such rules and regulations may be subject to revision by Congress.\"",
+          "raw_sha256": "4cd9424c0d412aebafe2b9cdc607f8201bb9bc3c9f8ce5b512e0b3fdee366e73",
+          "static_text": "The second section of this bill provides that \"the Secretary of the Interior shall prescribe all necessary rules and regulations for the leasing, preserving, and developing said saline lands and mineral springs, and for the securing and collection of the rental revenues due the Government therefrom ; provided, that such rules and regulations may be subject to revision by Congress.\"",
+          "static_sha256": "ed2e1ee56f55f7fe759abf94ed4faba36b0ca23732b4657031fd9dbcbda234f9",
+          "bbox": {
+            "left": 2111,
+            "top": 3348,
+            "right": 2992,
+            "bottom": 3729
+          },
+          "reading_order": 41
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "003e2e9d093548691c94cae89281efe1a13662da356bad6446d1ed101f949ced",
+      "selection_paragraph_rank_sha256": "158144af97818d7fe8e9ce886c6f43e7bbc40096df40d7bbdd54ccefed5936bc",
+      "eligible_paragraph_count_on_page": 12,
+      "eligible_page_count_in_part": 1045
+    },
+    {
+      "source_id": "congressionalglo00unit:716:par_000716_000009",
+      "item_identifier": "congressionalglo00unit",
+      "part_number": 4,
+      "scan_leaf": 716,
+      "paragraph_id": "par_000716_000009",
+      "raw_sha256": "1f4c0ff387985098f852f81dd09c90950fa030829f41191844aae8f8d560105f",
+      "static_sha256": "e9c67decad201b3a9f27197279da22a36e23dc3836a08039962678739891cd7b",
+      "raw_codepoints": 659,
+      "static_codepoints": 655,
+      "page_line_number": 3959,
+      "reading_order": 9,
+      "split": "primary",
+      "priority_sha256": "292903967a6ed4d2813e858756b577aa6545bf2e8b51d1750b9d4bd6bbc49713",
+      "frame_size": 1045,
+      "inclusion_probability": {
+        "numerator": 3,
+        "denominator": 2090
+      },
+      "expansion_weight": {
+        "numerator": 2090,
+        "denominator": 3
+      },
+      "page_line_sha256": "9d81c3a3d0c9b99535ce7dd14fb8543c2b24836d06c69aaaca7dd42c034289e5",
+      "hocr_page_id": "page_000716",
+      "printed_page": {
+        "detected": "3484",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3120,
+        4292
+      ],
+      "bbox": {
+        "left": 202,
+        "top": 815,
+        "right": 1084,
+        "bottom": 1444
+      },
+      "line_ids": [
+        "line_000716_000018",
+        "line_000716_000019",
+        "line_000716_000020",
+        "line_000716_000021",
+        "line_000716_000022",
+        "line_000716_000023",
+        "line_000716_000024",
+        "line_000716_000025",
+        "line_000716_000026",
+        "line_000716_000027",
+        "line_000716_000028",
+        "line_000716_000029",
+        "line_000716_000030",
+        "line_000716_000031",
+        "line_000716_000032"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": ". Mr. NYE. Seven dollars and eighty cents to send ten words from San Francisco to New York or Washington ; and from Carson City, wliere I reside, the price is the same, although that is three hundred miles nearer.. Now, sir, if t!ie Senator from Ohio, with his acute legal mind, will set himself to work to control the jnices upon these old lines, he will do his country a substantial service ; but I repeat, in my judgment, he never can effect it by this bill for a line v/hich only exists in fancy, the pur- chase of which will increase the capital of the present monopoly, and every time the capital IS increased the pi-ice for telegraphing is in- creased.",
+      "static_text": ". Mr. NYE. Seven dollars and eighty cents to send ten words from San Francisco to New York or Washington ; and from Carson City, wliere I reside, the price is the same, although that is three hundred miles nearer.. Now, sir, if t!ie Senator from Ohio, with his acute legal mind, will set himself to work to control the jnices upon these old lines, he will do his country a substantial service ; but I repeat, in my judgment, he never can effect it by this bill for a line v/hich only exists in fancy, the purchase of which will increase the capital of the present monopoly, and every time the capital IS increased the pi-ice for telegraphing is increased.",
+      "static_edits": [
+        {
+          "start_char": 505,
+          "end_char": 515,
+          "expected": "pur- chase",
+          "replacement": "purchase",
+          "reason": "adjacent-line wrap; lexicon form purchase",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 647,
+          "end_char": 658,
+          "expected": "in- creased",
+          "replacement": "increased",
+          "reason": "adjacent-line wrap; lexicon form increased",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo00unit:716:par_000716_000008",
+          "raw_text": "Mr. C0NNE3S. Seven dollars and eighty cents.",
+          "raw_sha256": "a7097ef90ca1ddb0f3bd295ffdcae0fafb3265aac9e29d829e6db3ef45e8e071",
+          "static_text": "Mr. C0NNE3S. Seven dollars and eighty cents.",
+          "static_sha256": "a7097ef90ca1ddb0f3bd295ffdcae0fafb3265aac9e29d829e6db3ef45e8e071",
+          "bbox": {
+            "left": 205,
+            "top": 730,
+            "right": 1083,
+            "bottom": 810
+          },
+          "reading_order": 8
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo00unit:716:par_000716_000010",
+          "raw_text": "Mr. STEWART. Mr. President, all the telegraph companies of the country have com- bined, and have formed a most oppressive monopoly. They have now their rights and their charters. It is very clear that there is no power in Congress to reduce their prices. All the companies which have obtained spe- cial privileges frwn Congress have been bought up or consolidated, thus creating a vast mo- nopoly, which is acknowledged to be oppress- ive. The simple question is, is there any rem- edy, and if so, what? To reduce the chai'ges every lawyer knows is impossible. They have their contract and their vested rights. The question is, is there any remedy for high prices against a monopoly ? I believe but one rem- edy has ever been discovered for such a case ; and that remedy is competition. The only way to reduce fares upon railroads is to build more railroads. The only way to reduce the charges of telegraph companies is to build more telegraph lines.",
+          "raw_sha256": "201d41e4b2927c90b754660dbf2bdf5287ad39044ebe279819deb5a6d30a7ac2",
+          "static_text": "Mr. STEWART. Mr. President, all the telegraph companies of the country have combined, and have formed a most oppressive monopoly. They have now their rights and their charters. It is very clear that there is no power in Congress to reduce their prices. All the companies which have obtained special privileges frwn Congress have been bought up or consolidated, thus creating a vast monopoly, which is acknowledged to be oppressive. The simple question is, is there any remedy, and if so, what? To reduce the chai'ges every lawyer knows is impossible. They have their contract and their vested rights. The question is, is there any remedy for high prices against a monopoly ? I believe but one remedy has ever been discovered for such a case ; and that remedy is competition. The only way to reduce fares upon railroads is to build more railroads. The only way to reduce the charges of telegraph companies is to build more telegraph lines.",
+          "static_sha256": "0afdb6b6c8a0349ce525ea029b829ae0e722b8e695d4005379faf94577382062",
+          "bbox": {
+            "left": 204,
+            "top": 1451,
+            "right": 1087,
+            "bottom": 2382
+          },
+          "reading_order": 10
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "004dae2d7c79766adfe70a040961e43f70c5f6d853c67061134a30a173a0265c",
+      "selection_paragraph_rank_sha256": "292903967a6ed4d2813e858756b577aa6545bf2e8b51d1750b9d4bd6bbc49713",
+      "eligible_paragraph_count_on_page": 2,
+      "eligible_page_count_in_part": 1045
+    },
+    {
+      "source_id": "congressionalglo00unit:808:par_000808_000007",
+      "item_identifier": "congressionalglo00unit",
+      "part_number": 4,
+      "scan_leaf": 808,
+      "paragraph_id": "par_000808_000007",
+      "raw_sha256": "94885e78c8468c6d87dfc8bffe1e26dc3f41e1e3b46794cfbfb9e4ce559e8162",
+      "static_sha256": "e8a58730b9f52ee525f1f7534323f8e5415997d8e0644f9588e89acac1e03841",
+      "raw_codepoints": 368,
+      "static_codepoints": 364,
+      "page_line_number": 4051,
+      "reading_order": 7,
+      "split": "primary",
+      "priority_sha256": "01ed3012a565636a024f4c45c53eff0cdb5fad4f86b39005e8b38146be9f01f6",
+      "frame_size": 1045,
+      "inclusion_probability": {
+        "numerator": 3,
+        "denominator": 11495
+      },
+      "expansion_weight": {
+        "numerator": 11495,
+        "denominator": 3
+      },
+      "page_line_sha256": "fae2b45e435e027d6bfaa9edc1c06d2bd4aa2ce00791c812644cf5f70d0b5fa3",
+      "hocr_page_id": "page_000808",
+      "printed_page": {
+        "detected": "3576",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3120,
+        4292
+      ],
+      "bbox": {
+        "left": 272,
+        "top": 3699,
+        "right": 1146,
+        "bottom": 4034
+      },
+      "line_ids": [
+        "line_000808_000086",
+        "line_000808_000087",
+        "line_000808_000088",
+        "line_000808_000089",
+        "line_000808_000090",
+        "line_000808_000091",
+        "line_000808_000092",
+        "line_000808_000093"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "Sir, this was simply at that time a loan of the money of Massachusetts to the General Govern- ment when the money which was wanted could r.ot lie obtained or was not in the hands of llio General Government, as every])ody knows, to ])ay tliese claims. Massachusetts at that time could more readily obtain the funds neces- sary ibr this exponditure than the General Gov-",
+      "static_text": "Sir, this was simply at that time a loan of the money of Massachusetts to the General Government when the money which was wanted could r.ot lie obtained or was not in the hands of llio General Government, as every])ody knows, to ])ay tliese claims. Massachusetts at that time could more readily obtain the funds necessary ibr this exponditure than the General Gov-",
+      "static_edits": [
+        {
+          "start_char": 86,
+          "end_char": 98,
+          "expected": "Govern- ment",
+          "replacement": "Government",
+          "reason": "adjacent-line wrap; lexicon form government",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 314,
+          "end_char": 325,
+          "expected": "neces- sary",
+          "replacement": "necessary",
+          "reason": "adjacent-line wrap; lexicon form necessary",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo00unit:808:par_000808_000006",
+          "raw_text": "Mr. SPRAGUE. There was no law for sending forty or fifty thousand troops to Wash- ington after the firing upon Fort Sumter ; Ijut still those troops have been paid by the Fed- eral Government. This is a parallel, ease. Danger threatened the coast; the Government of the United States warned the Governors of the States that were nearest to the danger, and expenditures were made for ammunition 'and for ordnance. Three fourths of this claim is for ammunition and ordnance now in the pos- session of Massachusetts v/hich it is desirable that the Government of the United States should take and pay for in accordance with the terms of the original purchase. The ex- jienditures for this ordnance and this ammu- nition were made at the desire of the General Government. By letters communicated to the different States and people throughout the country, the oflicials in each State were con- stantly -warned of threatened danger from foreign invasion and urged to take measures against them.",
+          "raw_sha256": "43bbd93a3e12ebc071d2f88003bf83278c2249071e013848ffef3a5c2debd1af",
+          "static_text": "Mr. SPRAGUE. There was no law for sending forty or fifty thousand troops to Washington after the firing upon Fort Sumter ; Ijut still those troops have been paid by the Federal Government. This is a parallel, ease. Danger threatened the coast; the Government of the United States warned the Governors of the States that were nearest to the danger, and expenditures were made for ammunition 'and for ordnance. Three fourths of this claim is for ammunition and ordnance now in the possession of Massachusetts v/hich it is desirable that the Government of the United States should take and pay for in accordance with the terms of the original purchase. The ex- jienditures for this ordnance and this ammunition were made at the desire of the General Government. By letters communicated to the different States and people throughout the country, the oflicials in each State were constantly -warned of threatened danger from foreign invasion and urged to take measures against them.",
+          "static_sha256": "01082361769920bf4130d0b788497c152584894d6252a3c183d7023ea91ce724",
+          "bbox": {
+            "left": 260,
+            "top": 2737,
+            "right": 1142,
+            "bottom": 3699
+          },
+          "reading_order": 6
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo00unit:808:par_000808_000008",
+          "raw_text": "ernmei^it, and hence the money was raised by Massachusetts and the expenditures made by her. At every point where ex])enses were entered into for coast defense, the spot was designated bj' the General. Government and by its officers. Most if not all of these ex- penditures were made upan works already existing in order to put them in a proper state of defense. They were in a dilapidated con- dition ; there had been little or no money ex- pended by the General Government upon those forts for many years, and a slight force could raid upon them and take them.",
+          "raw_sha256": "2f86c67b506a91dcf18d87f3aa69602c3aea806566540cfacba868479abeed53",
+          "static_text": "ernmei^it, and hence the money was raised by Massachusetts and the expenditures made by her. At every point where ex])enses were entered into for coast defense, the spot was designated bj' the General. Government and by its officers. Most if not all of these expenditures were made upan works already existing in order to put them in a proper state of defense. They were in a dilapidated condition ; there had been little or no money expended by the General Government upon those forts for many years, and a slight force could raid upon them and take them.",
+          "static_sha256": "e1a08589cff87e05710b882e5f89632322ce8f278af7eb1bc824f33604f0e5af",
+          "bbox": {
+            "left": 1180,
+            "top": 206,
+            "right": 2058,
+            "bottom": 755
+          },
+          "reading_order": 8
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "0063d900bba5e490da57348a9bdda93e561bccd19169fb645c95225434995202",
+      "selection_paragraph_rank_sha256": "01ed3012a565636a024f4c45c53eff0cdb5fad4f86b39005e8b38146be9f01f6",
+      "eligible_paragraph_count_on_page": 11,
+      "eligible_page_count_in_part": 1045
+    },
+    {
+      "source_id": "congressionalglo7395unit:99:par_000099_000103",
+      "item_identifier": "congressionalglo7395unit",
+      "part_number": 5,
+      "scan_leaf": 99,
+      "paragraph_id": "par_000099_000103",
+      "raw_sha256": "48aff21027939c15db0c4f10e827147e0e35267589e1c6fbe43eb33ce1d1bfd5",
+      "static_sha256": "de70a3af80fd82a0f000b41b07f1e2b4a625ad4a9cfe462c6a42a45ce3fafc6f",
+      "raw_codepoints": 514,
+      "static_codepoints": 510,
+      "page_line_number": 4422,
+      "reading_order": 103,
+      "split": "primary",
+      "priority_sha256": "087aff8a3c7901bf669408b60dd0396828683eee783f6f7caed5974b50d44904",
+      "frame_size": 1014,
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 1014
+      },
+      "expansion_weight": {
+        "numerator": 1014,
+        "denominator": 1
+      },
+      "page_line_sha256": "7e52a2c885348e8e240331ae48dfb008e143f25f5cdf0e9be360f6e11b906c76",
+      "hocr_page_id": "page_000099",
+      "printed_page": {
+        "detected": "XCIII",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": null
+      },
+      "image_dimensions": [
+        3107,
+        4288
+      ],
+      "bbox": {
+        "left": 1045,
+        "top": 3168,
+        "right": 1881,
+        "bottom": 3758
+      },
+      "line_ids": [
+        "line_000099_000163",
+        "line_000099_000164",
+        "line_000099_000165",
+        "line_000099_000166",
+        "line_000099_000167",
+        "line_000099_000168",
+        "line_000099_000169",
+        "line_000099_000170",
+        "line_000099_000171",
+        "line_000099_000172",
+        "line_000099_000173",
+        "line_000099_000174",
+        "line_000099_000175",
+        "line_000099_000176"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "bill (H. R. No. 513) to amend an act to pro- vide internal, to support the Govern- ment, to pay interest on the public debt, and for other purposes, approved June 30, 1864, and acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+      "static_text": "bill (H. R. No. 513) to amend an act to provide internal, to support the Government, to pay interest on the public debt, and for other purposes, approved June 30, 1864, and acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+      "static_edits": [
+        {
+          "start_char": 40,
+          "end_char": 49,
+          "expected": "pro- vide",
+          "replacement": "provide",
+          "reason": "adjacent-line wrap; lexicon form provide",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 75,
+          "end_char": 87,
+          "expected": "Govern- ment",
+          "replacement": "Government",
+          "reason": "adjacent-line wrap; lexicon form government",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7395unit:99:par_000099_000102",
+          "raw_text": "imports , 886, 2180, 2634",
+          "raw_sha256": "d91a66e874dcc45212df07accc6252829bedd5f1c0171bdee03f0504252a3451",
+          "static_text": "imports , 886, 2180, 2634",
+          "static_sha256": "d91a66e874dcc45212df07accc6252829bedd5f1c0171bdee03f0504252a3451",
+          "bbox": {
+            "left": 1088,
+            "top": 3126,
+            "right": 1884,
+            "bottom": 3167
+          },
+          "reading_order": 102
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7395unit:99:par_000099_000104",
+          "raw_text": "Mr. Alley 2732",
+          "raw_sha256": "d1455d4534b7a37937f8f12df8c36a24a8080ffd0aabbea92d488578981969fe",
+          "static_text": "Mr. Alley 2732",
+          "static_sha256": "d1455d4534b7a37937f8f12df8c36a24a8080ffd0aabbea92d488578981969fe",
+          "bbox": {
+            "left": 1130,
+            "top": 3758,
+            "right": 1884,
+            "bottom": 3799
+          },
+          "reading_order": 104
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "000c1fbdcce601f84217a9e8c306d466f9d2110faa4977c0943e1c826b8a7ca9",
+      "selection_paragraph_rank_sha256": "087aff8a3c7901bf669408b60dd0396828683eee783f6f7caed5974b50d44904",
+      "eligible_paragraph_count_on_page": 3,
+      "eligible_page_count_in_part": 1014
+    },
+    {
+      "source_id": "congressionalglo7395unit:766:par_000766_000024",
+      "item_identifier": "congressionalglo7395unit",
+      "part_number": 5,
+      "scan_leaf": 766,
+      "paragraph_id": "par_000766_000024",
+      "raw_sha256": "45fe1b75ec89976230d41e3a25f23558979ef833eff82789844c393203c996cf",
+      "static_sha256": "65c8298038da8e110b33831d575fe33930d278a6a3996493c8c9937b31930df7",
+      "raw_codepoints": 657,
+      "static_codepoints": 649,
+      "page_line_number": 5089,
+      "reading_order": 24,
+      "split": "primary",
+      "priority_sha256": "3d9f2eb471404327e6e662086084e1dd4cee6eace52de0dbfc502fffb7c0b5c5",
+      "frame_size": 1014,
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 2704
+      },
+      "expansion_weight": {
+        "numerator": 2704,
+        "denominator": 1
+      },
+      "page_line_sha256": "1e78ae9196bad3175592e033dbddd4ff4a23b6ea4bbebe19a5a29de71bc4182d",
+      "hocr_page_id": "page_000766",
+      "printed_page": {
+        "detected": "132",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": 100
+      },
+      "image_dimensions": [
+        3115,
+        4275
+      ],
+      "bbox": {
+        "left": 2113,
+        "top": 319,
+        "right": 3000,
+        "bottom": 942
+      },
+      "line_ids": [
+        "line_000766_000191",
+        "line_000766_000192",
+        "line_000766_000193",
+        "line_000766_000194",
+        "line_000766_000195",
+        "line_000766_000196",
+        "line_000766_000197",
+        "line_000766_000198",
+        "line_000766_000199",
+        "line_000766_000200",
+        "line_000766_000201",
+        "line_000766_000202",
+        "line_000766_000203",
+        "line_000766_000204",
+        "line_000766_000205"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "upon new questions, not within the contempla- tion of either the Union party or the Union people when the President was nominated. I have also shown that he has acted in pursuance of a policy adopted by Mr. Lincoln, and ap- proved by the people, and that no event has yet transpired that will preclude him from a heai'ty cooperation with the great mass of the Union party in securing to the country the ob- ject for which we conducted successfully a great war. That events have transpired, that utter- ances have been made tending in that direction, no one will deny. The surest evidence is in the joy of the worst enemies of the country over our divisions.",
+      "static_text": "upon new questions, not within the contemplation of either the Union party or the Union people when the President was nominated. I have also shown that he has acted in pursuance of a policy adopted by Mr. Lincoln, and approved by the people, and that no event has yet transpired that will preclude him from a heai'ty cooperation with the great mass of the Union party in securing to the country the object for which we conducted successfully a great war. That events have transpired, that utterances have been made tending in that direction, no one will deny. The surest evidence is in the joy of the worst enemies of the country over our divisions.",
+      "static_edits": [
+        {
+          "start_char": 35,
+          "end_char": 50,
+          "expected": "contempla- tion",
+          "replacement": "contemplation",
+          "reason": "adjacent-line wrap; lexicon form contemplation",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 220,
+          "end_char": 230,
+          "expected": "ap- proved",
+          "replacement": "approved",
+          "reason": "adjacent-line wrap; lexicon form approved",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 403,
+          "end_char": 411,
+          "expected": "ob- ject",
+          "replacement": "object",
+          "reason": "adjacent-line wrap; lexicon form object",
+          "confidence": 0.98
+        },
+        {
+          "start_char": 495,
+          "end_char": 507,
+          "expected": "utter- ances",
+          "replacement": "utterances",
+          "reason": "adjacent-line wrap; lexicon form utterances",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7395unit:766:par_000766_000023",
+          "raw_text": "Difi'erences have arisen, but they have arisea",
+          "raw_sha256": "a8336775dd7d435f52add02ad1075eb3b34018c504879fae11450ef30425a838",
+          "static_text": "Difi'erences have arisen, but they have arisea",
+          "static_sha256": "a8336775dd7d435f52add02ad1075eb3b34018c504879fae11450ef30425a838",
+          "bbox": {
+            "left": 1237,
+            "top": 3956,
+            "right": 2072,
+            "bottom": 4000
+          },
+          "reading_order": 23
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7395unit:766:par_000766_000025",
+          "raw_text": "I find in a recent paper this significant para- graph :",
+          "raw_sha256": "99e30095fc18b708f7cb0693fa44ae40b416d3c233b049e410e85911045a0bd4",
+          "static_text": "I find in a recent paper this significant paragraph :",
+          "static_sha256": "78f419c37014015928a1d026c9efea3259b14460c08b62ee4e5d357162cd7031",
+          "bbox": {
+            "left": 2117,
+            "top": 951,
+            "right": 2998,
+            "bottom": 1036
+          },
+          "reading_order": 25
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "00c2e32ce6edeab8d4760f04c5d89645cd1d26a4f5d12ec72cbaf15f879f7fb6",
+      "selection_paragraph_rank_sha256": "3d9f2eb471404327e6e662086084e1dd4cee6eace52de0dbfc502fffb7c0b5c5",
+      "eligible_paragraph_count_on_page": 8,
+      "eligible_page_count_in_part": 1014
+    },
+    {
+      "source_id": "congressionalglo7395unit:899:par_000899_000011",
+      "item_identifier": "congressionalglo7395unit",
+      "part_number": 5,
+      "scan_leaf": 899,
+      "paragraph_id": "par_000899_000011",
+      "raw_sha256": "ada0227caba01f548504e68001df52f1b3de3ce7ae13b8a47c3674cc577af0db",
+      "static_sha256": "a6070c7c3261c92b84013f59fc8c3c338a620a06b894c1fbee9015bf830b9d16",
+      "raw_codepoints": 506,
+      "static_codepoints": 504,
+      "page_line_number": 5222,
+      "reading_order": 10,
+      "split": "primary",
+      "priority_sha256": "0bc78b2c87246bdaff464890aa95085f6d03c393b33dc491978108d2ffa60d80",
+      "frame_size": 1014,
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 2028
+      },
+      "expansion_weight": {
+        "numerator": 2028,
+        "denominator": 1
+      },
+      "page_line_sha256": "07e4f85fab75cb3790191ffb1e455d92c37a8f11fa04bd80193950e71c912287",
+      "hocr_page_id": "page_000899",
+      "printed_page": {
+        "detected": "263",
+        "inferred": null,
+        "source": "archive_map",
+        "confidence": null
+      },
+      "image_dimensions": [
+        3115,
+        4275
+      ],
+      "bbox": {
+        "left": 125,
+        "top": 3522,
+        "right": 1004,
+        "bottom": 3985
+      },
+      "line_ids": [
+        "line_000899_000084",
+        "line_000899_000085",
+        "line_000899_000086",
+        "line_000899_000087",
+        "line_000899_000088",
+        "line_000899_000089",
+        "line_000899_000090",
+        "line_000899_000091",
+        "line_000899_000092",
+        "line_000899_000093",
+        "line_000899_000094"
+      ],
+      "reference_status": "not_requested",
+      "image_status": "not_bound_or_verified_for_this_target",
+      "image_sha256": null,
+      "prior_exposure": {
+        "exact_id_known": false,
+        "page_known": false,
+        "exact_raw_hash_known": false,
+        "broader_history": "unknown"
+      },
+      "target_status": "within_250_to_700_raw_codepoints",
+      "raw_text": "But it so happens that whether in this case we adhere to the ruling of the majority of the committee in the case of Koontz vs. Coffroth, or adhere to the opinion of the minority, we are still obliged, in my judgment, to award the contested seat to the sitting member. The re- sult is this : while I, in accordance with the views maintained by the minority in the case of Koontz vs. Coffroth, would have counted these six rejected returns, the majority of those who agreed to the report now before the House",
+      "static_text": "But it so happens that whether in this case we adhere to the ruling of the majority of the committee in the case of Koontz vs. Coffroth, or adhere to the opinion of the minority, we are still obliged, in my judgment, to award the contested seat to the sitting member. The result is this : while I, in accordance with the views maintained by the minority in the case of Koontz vs. Coffroth, would have counted these six rejected returns, the majority of those who agreed to the report now before the House",
+      "static_edits": [
+        {
+          "start_char": 272,
+          "end_char": 280,
+          "expected": "re- sult",
+          "replacement": "result",
+          "reason": "adjacent-line wrap; lexicon form result",
+          "confidence": 0.98
+        }
+      ],
+      "static_cleanup_provenance": {
+        "pipeline_sha256": "e182e2f4e61370fa77f6e7d2698f2b89b2fa5fcb9b70614d2aa24a87dcb8d8cb",
+        "lexicon_sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "input_sha256": "0ecddff3dd39b9ffbd229a7ebb46bd08f82abe117da89264888a6f1eef6834c4"
+      },
+      "context": [
+        {
+          "position": "before",
+          "source_id": "congressionalglo7395unit:899:par_000899_000010",
+          "raw_text": "But there were among these forty-five re- turns, seventeen which the committee were unable to consider worthy of being embraced in the canvass. Of these seventeen the com- mittee unanimously agreed to reject eleven wholly or in part. I will not say the commit- tee unanimously agreed to reject them, but I will say that those members of the committee who agreed to this report Avere unanimous in the exclusion of eleven of these seventeen re- turns. There were six of the seventeen returns respecting which the committee were not unani- mous. And the reason the committee were not unanimous was this : a principle had been established in a contest from the State of Penn- sylvania, already determined by this House, in accordance with the recommendation of a ma- jority of the committee, to which the minority could not assent. I refer to the case of Koontz vs. Coffroth. When that case was decided it was the opinion of the minority of the Com- mittee of Elections that certain military re- turns were unlawfully excluded from the can- vass ; that the irregularities for which they were rejected by the majority of the commit- tee and finally by the House were not substan- tial defects, but mere informalities, which, under the law of Pennsylvania, were not sufficient grounds for their exclusion. That opinion still remains unchanged. In the case of Koontz vs. Coffroth certain rejected returns ought in the judgment of the minority to have been counted. Of those members of the commit- tee who have agreed to the report made in the case now before the House in conformity with the ruling of the House in that case, two reserved to themselves the right to vote in the House on the present case in accordance with their own convictions of the law and the facts. If this difference of opinion among the members of the committee would have made any differ- ence in the result, two who sustained the report and now sustain it would have voted for the contestant. I am one of those. If the prin- ciple laid down by the minority of the com- mittee and repudiated by the House in the case of Koontz vs. Coffroth could have changed the result in this case, I would have felt not only authorized but bound as a member of the House ' to adhere to the opinion of the minority, and to vote to admit Smith Fuller to the contested seat as the lawfully chosen Representative of the twenty-first district of the State of Penn- sylvania in the Thirty-Ninth Congress.",
+          "raw_sha256": "0173a95003279b203be983ed39593f225878ea0f7722071386bead0fe36761c7",
+          "static_text": "But there were among these forty-five returns, seventeen which the committee were unable to consider worthy of being embraced in the canvass. Of these seventeen the committee unanimously agreed to reject eleven wholly or in part. I will not say the committee unanimously agreed to reject them, but I will say that those members of the committee who agreed to this report Avere unanimous in the exclusion of eleven of these seventeen returns. There were six of the seventeen returns respecting which the committee were not unanimous. And the reason the committee were not unanimous was this : a principle had been established in a contest from the State of Pennsylvania, already determined by this House, in accordance with the recommendation of a majority of the committee, to which the minority could not assent. I refer to the case of Koontz vs. Coffroth. When that case was decided it was the opinion of the minority of the Committee of Elections that certain military returns were unlawfully excluded from the canvass ; that the irregularities for which they were rejected by the majority of the committee and finally by the House were not substantial defects, but mere informalities, which, under the law of Pennsylvania, were not sufficient grounds for their exclusion. That opinion still remains unchanged. In the case of Koontz vs. Coffroth certain rejected returns ought in the judgment of the minority to have been counted. Of those members of the committee who have agreed to the report made in the case now before the House in conformity with the ruling of the House in that case, two reserved to themselves the right to vote in the House on the present case in accordance with their own convictions of the law and the facts. If this difference of opinion among the members of the committee would have made any difference in the result, two who sustained the report and now sustain it would have voted for the contestant. I am one of those. If the principle laid down by the minority of the committee and repudiated by the House in the case of Koontz vs. Coffroth could have changed the result in this case, I would have felt not only authorized but bound as a member of the House ' to adhere to the opinion of the minority, and to vote to admit Smith Fuller to the contested seat as the lawfully chosen Representative of the twenty-first district of the State of Pennsylvania in the Thirty-Ninth Congress.",
+          "static_sha256": "1db90a4b87d736416bbfdad5c9a9dbcabb6648c3e1365b55a5eb29c5a1b81de5",
+          "bbox": {
+            "left": 118,
+            "top": 1248,
+            "right": 1020,
+            "bottom": 3522
+          },
+          "reading_order": 9
+        },
+        {
+          "position": "after",
+          "source_id": "congressionalglo7395unit:899:par_000899_000012",
+          "raw_text": "were in favor of excluding them. If the posi- tion taken by the majority in that case is cor- rect, if the report recommended by the major- ity of the committee and adopted by the House in that case is to prevail in this, then, in the judgment not only of the majority, but of the minority, including myself, the sitting member is entitled to retain his seat by a majority of 21 votes. If the House should reverse its decis- ion made in the case of Koontz vs. Coffroth, and hold that the rejected votes should have been counted as the minority in that case rec- ommended, the sitting member would be enti- tled to his seat by a majority of 4 votes.",
+          "raw_sha256": "13ba1efa85ea6859bdc25c299926ea09f1e3e58788adab054f2ef5977f2ad29c",
+          "static_text": "were in favor of excluding them. If the position taken by the majority in that case is correct, if the report recommended by the majority of the committee and adopted by the House in that case is to prevail in this, then, in the judgment not only of the majority, but of the minority, including myself, the sitting member is entitled to retain his seat by a majority of 21 votes. If the House should reverse its decision made in the case of Koontz vs. Coffroth, and hold that the rejected votes should have been counted as the minority in that case recommended, the sitting member would be entitled to his seat by a majority of 4 votes.",
+          "static_sha256": "462c4f9773fded3a72f720471ec4f99bf6e3b10b3c0ef7b75d919f2350ebe1e9",
+          "bbox": {
+            "left": 1053,
+            "top": 281,
+            "right": 1931,
+            "bottom": 869
+          },
+          "reading_order": 11
+        }
+      ],
+      "context_status": "same_page_only; metadata continuity unverified",
+      "selection_page_rank_sha256": "00cf8fa64735ed71563b16390704a519b865db37e03757492bccf4fb271d5c52",
+      "selection_paragraph_rank_sha256": "0bc78b2c87246bdaff464890aa95085f6d03c393b33dc491978108d2ffa60d80",
+      "eligible_paragraph_count_on_page": 6,
+      "eligible_page_count_in_part": 1014
+    }
+  ],
+  "zero_model_calls": true,
+  "zero_image_fetches": true
+}

@@ -1,0 +1,320 @@
+"""Offline T134 sample selection and exact canonical page extraction."""
+from __future__ import annotations
+
+import hashlib
+import json
+from fractions import Fraction
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+WORK = ROOT / "tmp/t134-source-prep"
+ART = ROOT / "artifacts/broader-join-study-20261103-01"
+SAMPLE_PATH = ROOT / "artifacts/ocr-sample-design-20261027-01/sample.json"
+EXPOSURE_PATH = ROOT / "artifacts/ocr-sample-design-20261027-01/exposure.json"
+SEED = "T134-20261103-broad-v1"
+EXPECTED_PARTS = (1, 2, 3, 4, 5)
+PER_PART = 3
+MIN_CHARS = 250
+MAX_CHARS = 700
+
+
+def digest(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def seeded(label: str, value: str) -> str:
+    return digest(f"{SEED}\0{label}\0{value}".encode("utf-8"))
+
+
+def read_json(path: Path):
+    return json.loads(path.read_bytes())
+
+
+def prior_pages() -> dict[str, set[tuple[str, int]]]:
+    out: dict[str, set[tuple[str, int]]] = {"T129": set(), "T131": set(), "T133": set()}
+    out["T129"].update({
+        ("congressionalg7393unit", 1055),
+        ("congressionalg7391unit", 278),
+        ("congressionalg7392unit", 406),
+    })
+    for task, path in (
+        ("T131", ROOT / "artifacts/expanded-workflow-audit-20261103-01/selection-freeze.json"),
+        ("T133", ROOT / "artifacts/remaining-parts-audit-20261103-01/selection-freeze.json"),
+    ):
+        freeze = read_json(path)
+        for case in freeze["cases"]:
+            source_id = case["source_id"]
+            pieces = source_id.split(":")
+            out[task].add((pieces[0], int(pieces[1])))
+    return out
+
+
+def context_record(page, paragraph_index, position):
+    index = paragraph_index + (-1 if position == "before" else 1)
+    paragraphs = page["paragraphs"]
+    if not 0 <= index < len(paragraphs):
+        return None
+    para = paragraphs[index]
+    raw = para["text_ocr"]
+    static = para.get("text_normalized")
+    static = raw if static is None else static
+    return {
+        "position": position,
+        "source_id": f"{page['item_identifier']}:{page['scan_leaf']}:{para['id']}",
+        "raw_text": raw,
+        "raw_sha256": digest(raw.encode("utf-8")),
+        "static_text": static,
+        "static_sha256": digest(static.encode("utf-8")),
+        "bbox": para.get("bbox"),
+        "reading_order": para.get("reading_order"),
+    }
+
+
+def main():
+    sample = read_json(SAMPLE_PATH)
+    exposure = read_json(EXPOSURE_PATH)
+    canonical = ROOT / sample["source"]["path"]
+    expected_sha = sample["source"]["sha256"]
+    known_ids = set(exposure["known_source_ids"])
+    known_hashes = set(exposure["known_raw_hashes"])
+    known_pages = {
+        (entry["item_identifier"], int(entry["scan_leaf"]))
+        for entry in exposure["known_pages"]
+    }
+    prior = prior_pages()
+    excluded_prior = set().union(*prior.values())
+    # The two matched join controls are deliberately reserved for the root task.
+    excluded_prior.update({("congressionalglo7392unit", 96), ("congressionalglo7395unit", 302)})
+
+    hasher = hashlib.sha256()
+    counts = {
+        "pages_seen_by_part": {str(part): 0 for part in EXPECTED_PARTS},
+        "paragraph_role_counts_by_part": {str(part): {} for part in EXPECTED_PARTS},
+        "eligible_paragraphs_by_part": {str(part): 0 for part in EXPECTED_PARTS},
+        "eligible_pages_by_part": {str(part): 0 for part in EXPECTED_PARTS},
+        "excluded_pages_known_exposure": 0,
+        "excluded_pages_prior_study": 0,
+        "excluded_paragraphs_known_id_or_hash": 0,
+        "non_body_in_length_window_by_part": {str(part): 0 for part in EXPECTED_PARTS},
+    }
+    # Retain only the best three page records per part while streaming.
+    winners: dict[int, list[dict]] = {part: [] for part in EXPECTED_PARTS}
+    bytes_streamed = 0
+    bad_lines = 0
+    with canonical.open("rb") as source:
+        for line_number, raw_line in enumerate(source, 1):
+            hasher.update(raw_line)
+            bytes_streamed += len(raw_line)
+            try:
+                page = json.loads(raw_line)
+            except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+                bad_lines += 1
+                raise ValueError(f"canonical source line {line_number} is not JSON") from exc
+            part = page.get("part_number")
+            if part not in EXPECTED_PARTS:
+                continue
+            counts["pages_seen_by_part"][str(part)] += 1
+            page_key = (page["item_identifier"], int(page["scan_leaf"]))
+            if page_key in known_pages:
+                counts["excluded_pages_known_exposure"] += 1
+                continue
+            if page_key in excluded_prior:
+                counts["excluded_pages_prior_study"] += 1
+                continue
+            eligible = []
+            for para in page.get("paragraphs", []):
+                role = para.get("role")
+                role_counts = counts["paragraph_role_counts_by_part"][str(part)]
+                role_counts[role or "<missing>"] = role_counts.get(role or "<missing>", 0) + 1
+                raw_text = para.get("text_ocr")
+                if not isinstance(raw_text, str):
+                    continue
+                raw_chars = len(raw_text)
+                if not MIN_CHARS <= raw_chars <= MAX_CHARS:
+                    continue
+                if role != "body":
+                    counts["non_body_in_length_window_by_part"][str(part)] += 1
+                    continue
+                static_text = para.get("text_normalized")
+                static_text = raw_text if static_text is None else static_text
+                source_id = f"{page['item_identifier']}:{page['scan_leaf']}:{para['id']}"
+                raw_sha = digest(raw_text.encode("utf-8"))
+                if source_id in known_ids or raw_sha in known_hashes:
+                    counts["excluded_paragraphs_known_id_or_hash"] += 1
+                    continue
+                para_key = seeded("paragraph", source_id)
+                eligible.append((para_key, source_id, para, raw_text, static_text, raw_sha))
+            if not eligible:
+                continue
+            counts["eligible_pages_by_part"][str(part)] += 1
+            counts["eligible_paragraphs_by_part"][str(part)] += len(eligible)
+            eligible.sort(key=lambda value: (value[0], value[1]))
+            para_key, source_id, para, raw_text, static_text, raw_sha = eligible[0]
+            page_rank = seeded("page", f"{page['item_identifier']}:{page['scan_leaf']}")
+            candidate = {
+                "part": part,
+                "page_rank_sha256": page_rank,
+                "paragraph_rank_sha256": para_key,
+                "eligible_paragraph_count_on_page": len(eligible),
+                "source_id": source_id,
+                "raw_sha256": raw_sha,
+                "raw_chars": len(raw_text),
+                "static_sha256": digest(static_text.encode("utf-8")),
+                "page_line_number": line_number,
+                "page_line_sha256": digest(raw_line),
+                "page_line_bytes": len(raw_line),
+                "page_line_raw": raw_line,
+                "paragraph_id": para["id"],
+                "item_identifier": page["item_identifier"],
+                "scan_leaf": page["scan_leaf"],
+                "reading_order": para.get("reading_order"),
+                "role": para.get("role"),
+            }
+            ranked = sorted(winners[part] + [candidate], key=lambda value: (value["page_rank_sha256"], value["source_id"]))
+            winners[part] = ranked[:PER_PART]
+
+    actual_sha = hasher.hexdigest()
+    if actual_sha != expected_sha:
+        raise ValueError(f"canonical SHA mismatch: {actual_sha} != {expected_sha}")
+    if bytes_streamed != sample["source"]["bytes"]:
+        raise ValueError(f"canonical byte count mismatch: {bytes_streamed} != {sample['source']['bytes']}")
+    if bad_lines:
+        raise ValueError("canonical source contained invalid JSON lines")
+    if any(len(winners[p]) != PER_PART for p in EXPECTED_PARTS):
+        raise ValueError("fewer than three eligible pages in at least one part")
+
+    page_counts = {p: counts["eligible_pages_by_part"][str(p)] for p in EXPECTED_PARTS}
+    case_rows = []
+    canonical_rows = []
+    for part in EXPECTED_PARTS:
+        n_pages = page_counts[part]
+        for within, candidate in enumerate(winners[part], 1):
+            page = json.loads(candidate["page_line_raw"])
+            paragraph_index = next(i for i, p in enumerate(page["paragraphs"]) if p["id"] == candidate["paragraph_id"])
+            para = page["paragraphs"][paragraph_index]
+            raw_text = para["text_ocr"]
+            static_text = para.get("text_normalized")
+            static_text = raw_text if static_text is None else static_text
+            probability = Fraction(PER_PART, n_pages) * Fraction(1, candidate["eligible_paragraph_count_on_page"])
+            row = {
+                "source_id": candidate["source_id"],
+                "item_identifier": candidate["item_identifier"],
+                "part_number": part,
+                "scan_leaf": candidate["scan_leaf"],
+                "paragraph_id": candidate["paragraph_id"],
+                "raw_sha256": candidate["raw_sha256"],
+                "static_sha256": candidate["static_sha256"],
+                "raw_codepoints": len(raw_text),
+                "static_codepoints": len(static_text),
+                "page_line_number": candidate["page_line_number"],
+                "reading_order": para["reading_order"],
+                "split": "primary",
+                "priority_sha256": candidate["paragraph_rank_sha256"],
+                "frame_size": n_pages,
+                "inclusion_probability": {"numerator": probability.numerator, "denominator": probability.denominator},
+                "expansion_weight": {"numerator": probability.denominator, "denominator": probability.numerator},
+                "page_line_sha256": candidate["page_line_sha256"],
+                "hocr_page_id": page["hocr_page_id"],
+                "printed_page": page["printed_page"],
+                "image_dimensions": [page["image_width_px"], page["image_height_px"]],
+                "bbox": para["bbox"],
+                "line_ids": para["line_ids"],
+                "reference_status": "not_requested",
+                "image_status": "not_bound_or_verified_for_this_target",
+                "image_sha256": None,
+                "prior_exposure": {"exact_id_known": False, "page_known": False, "exact_raw_hash_known": False, "broader_history": "unknown"},
+                "target_status": "within_250_to_700_raw_codepoints",
+                "raw_text": raw_text,
+                "static_text": static_text,
+                "static_edits": para.get("static_edits", []),
+                "static_cleanup_provenance": para.get("static_cleanup_provenance"),
+                "context": [record for record in (context_record(page, paragraph_index, "before"), context_record(page, paragraph_index, "after")) if record is not None],
+                "context_status": "same_page_only; metadata continuity unverified",
+                "selection_page_rank_sha256": candidate["page_rank_sha256"],
+                "selection_paragraph_rank_sha256": candidate["paragraph_rank_sha256"],
+                "eligible_paragraph_count_on_page": candidate["eligible_paragraph_count_on_page"],
+                "eligible_page_count_in_part": n_pages,
+            }
+            page_path = WORK / f"part{part}-leaf{candidate['scan_leaf']}.jsonl"
+            page_path.write_bytes(candidate["page_line_raw"])
+            page_file_sha = digest(page_path.read_bytes())
+            if page_file_sha != candidate["page_line_sha256"]:
+                raise ValueError("extracted canonical page line SHA mismatch")
+            row_receipt = {
+                "case": f"X{(part-1)*PER_PART+within:02d}",
+                "selection_order_within_part": within,
+                "part": part,
+                "leaf": candidate["scan_leaf"],
+                "paragraph_id": candidate["paragraph_id"],
+                "source_id": candidate["source_id"],
+                "raw_sha256": candidate["raw_sha256"],
+                "static_sha256": candidate["static_sha256"],
+                "page_line_sha256": candidate["page_line_sha256"],
+                "page_line_number": candidate["page_line_number"],
+                "canonical_page_path": str(page_path.relative_to(ROOT)),
+                "canonical_page_file_sha256": page_file_sha,
+                "raw_codepoints": len(raw_text),
+                "role": para.get("role"),
+                "reading_order": para.get("reading_order"),
+                "bbox": para["bbox"],
+                "page_dimensions_px": [page["image_width_px"], page["image_height_px"]],
+                "image_status": row["image_status"],
+                "eligible_page_count_in_part": n_pages,
+                "eligible_paragraph_count_on_page": candidate["eligible_paragraph_count_on_page"],
+                "inclusion_probability": row["inclusion_probability"],
+                "selection_page_rank_sha256": candidate["page_rank_sha256"],
+                "selection_paragraph_rank_sha256": candidate["paragraph_rank_sha256"],
+            }
+            case_rows.append(row_receipt)
+            canonical_rows.append(row)
+
+    freeze = {
+        "task": "T134",
+        "seed": SEED,
+        "selection_rule": "For each eligible page, select the eligible body paragraph with the lowest SHA256(seed-NUL-paragraph-NUL-source_id); among pages with one or more eligible paragraphs, select the three lowest SHA256(seed-NUL-page-NUL-item_identifier:scan_leaf) per part. Sort selected pages by that key and assign X01-X15 by part then rank.",
+        "sampling_unit_and_inclusion": "Two-stage seeded selection. Pages are the equal-probability first-stage units within each part; paragraph selection is conditional and equal among eligible 250–700-codepoint body paragraphs on that page. The stored paragraph probability is (3/eligible pages in part)×(1/eligible paragraphs on selected page). This is not an equal-probability paragraph sample.",
+        "eligibility": {"part_numbers": list(EXPECTED_PARTS), "role": "body", "raw_codepoints_inclusive": [MIN_CHARS, MAX_CHARS]},
+        "exclusions": {"T49_known_pages": sorted([list(x) for x in known_pages]), "T49_known_source_ids_count": len(known_ids), "T49_known_raw_hashes_count": len(known_hashes), "T129_T131_T133_selected_pages": {key: sorted([list(x) for x in value]) for key, value in prior.items()}, "reserved_matched_pages": [["congressionalglo7392unit", 96], ["congressionalglo7395unit", 302]]},
+        "frame_counts": counts,
+        "bounds": {"cases": 17, "fresh_cases": 15, "identical_runs_each": 3, "total_calls": 51, "retries": 0, "request_seconds": 120, "output_tokens": 1500, "per_case_group_seconds": 1800, "total_model_phase_seconds": 7200, "image_downloads_max": 15, "info_downloads_max": 15, "per_image_bytes_max": 8000000, "model_downloads": 0},
+        "canonical_source": {"path": str(canonical.relative_to(ROOT)), "expected_sha256": expected_sha, "actual_sha256": actual_sha, "bytes_streamed": bytes_streamed, "source_line_count": line_number},
+        "cases": case_rows,
+        "provider_calls": 0,
+        "image_fetches": 0,
+        "scan_inspection": "none during selection",
+        "selection_caveat": "Exclusions are bounded to named T49 exposure records and named T129/T131/T133 pages. Broader unrecorded model/operator exposure is unknown. The selection is a seeded, restricted frame; no population-wide accuracy inference is authorized.",
+    }
+    ART.mkdir(parents=True, exist_ok=True)
+    (ART / "selection-freeze.json").write_text(json.dumps(freeze, ensure_ascii=False, indent=2) + "\n")
+    fresh_sample = {
+        "schema_version": "t134-fresh-sample-v1",
+        "task": "T134",
+        "selection_freeze_sha256": digest((ART / "selection-freeze.json").read_bytes()),
+        "source": {"path": str(canonical.relative_to(ROOT)), "bytes": bytes_streamed, "sha256": actual_sha},
+        "sampling_unit": "page first, then one paragraph per selected page",
+        "primary": canonical_rows,
+        "zero_model_calls": True,
+        "zero_image_fetches": True,
+    }
+    (ART / "fresh-sample.json").write_text(json.dumps(fresh_sample, ensure_ascii=False, indent=2) + "\n")
+    receipt = {
+        "task": "T134",
+        "method": "one streaming binary pass; hash all canonical bytes while counting and selecting two-stage seeded candidates; retain only current three page winners per part",
+        "canonical_source_path": str(canonical.relative_to(ROOT)),
+        "canonical_sha256_expected": expected_sha,
+        "canonical_sha256_actual": actual_sha,
+        "canonical_bytes_streamed": bytes_streamed,
+        "selected_page_count": len(case_rows),
+        "selected_cases": case_rows,
+        "selection_freeze_sha256": digest((ART / "selection-freeze.json").read_bytes()),
+        "fresh_sample_sha256": digest((ART / "fresh-sample.json").read_bytes()),
+        "provider_calls": 0,
+        "image_fetches": 0,
+        "scan_inspection": "none during selection",
+    }
+    (WORK / "extraction-receipt.json").write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
+    print(json.dumps({"canonical_sha256": actual_sha, "bytes": bytes_streamed, "selected": [{"case": x["case"], "part": x["part"], "leaf": x["leaf"], "source_id": x["source_id"], "raw_chars": x["raw_codepoints"], "role": x["role"], "signals_pending": True} for x in case_rows], "eligible_pages_by_part": counts["eligible_pages_by_part"], "body_candidates_by_part": counts["eligible_paragraphs_by_part"], "provider_calls": 0, "image_fetches": 0}, ensure_ascii=False, indent=2))
+
+
+if __name__ == "__main__":
+    main()

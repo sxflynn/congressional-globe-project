@@ -1,0 +1,2136 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7392unit:1051:par_001051_000014",
+      "raw_text": "Mr. KASSON. It seems to me that it would be better to follow our old practice, according to which, on the admission of those Territories, Congress declares the terms upon which they are to be received, giving them certain grants of land in order to place them on an equality with States previously admitted.",
+      "raw_sha256": "5e171ba3d1a69369966ffed0b12fb53bad892284746c46c675cfbf43508101d6"
+    },
+    "static_text": "Mr. KASSON. It seems to me that it would be better to follow our old practice, according to which, on the admission of those Territories, Congress declares the terms upon which they are to be received, giving them certain grants of land in order to place them on an equality with States previously admitted.",
+    "static_sha256": "5e171ba3d1a69369966ffed0b12fb53bad892284746c46c675cfbf43508101d6",
+    "static_edits": [],
+    "lines": [
+      {
+        "line_id": "line_001051_000086",
+        "start": 0,
+        "end": 40,
+        "text": "Mr. KASSON. It seems to me that it would"
+      },
+      {
+        "line_id": "line_001051_000087",
+        "start": 41,
+        "end": 88,
+        "text": "be better to follow our old practice, according"
+      },
+      {
+        "line_id": "line_001051_000088",
+        "start": 89,
+        "end": 137,
+        "text": "to which, on the admission of those Territories,"
+      },
+      {
+        "line_id": "line_001051_000089",
+        "start": 138,
+        "end": 181,
+        "text": "Congress declares the terms upon which they"
+      },
+      {
+        "line_id": "line_001051_000090",
+        "start": 182,
+        "end": 228,
+        "text": "are to be received, giving them certain grants"
+      },
+      {
+        "line_id": "line_001051_000091",
+        "start": 229,
+        "end": 274,
+        "text": "of land in order to place them on an equality"
+      },
+      {
+        "line_id": "line_001051_000092",
+        "start": 275,
+        "end": 307,
+        "text": "with States previously admitted."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "c1e57b3a20fa5085847f780a52569e4b935eb938b2769c7d27161d86e9a1d915"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "8c6ad0150402a299f12de9ba0f1238045664665cbef3ff248161acf149c87594",
+  "proposed_text": "Mr. KASSON. It seems to me that it would be better to follow our old practice, according to which, on the admission of those Territories, Congress declares the terms upon which they are to be received, giving them certain grants of land in order to place them on an equality with States previously admitted.",
+  "proposed_sha256": "5e171ba3d1a69369966ffed0b12fb53bad892284746c46c675cfbf43508101d6",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 307,
+      "derived_start": 0,
+      "derived_end": 307,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. KASSON. It seems to me that it",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 10,
+      "text": "KASSON",
+      "raw_start": 4,
+      "raw_end": 10,
+      "raw_quote": "KASSON",
+      "context": "Mr. KASSON. It seems to me that it would b",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "title_name_cue"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 12,
+      "end": 14,
+      "text": "It",
+      "raw_start": 12,
+      "raw_end": 14,
+      "raw_quote": "It",
+      "context": "Mr. KASSON. It seems to me that it would be be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 15,
+      "end": 20,
+      "text": "seems",
+      "raw_start": 15,
+      "raw_end": 20,
+      "raw_quote": "seems",
+      "context": "Mr. KASSON. It seems to me that it would be better t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 21,
+      "end": 23,
+      "text": "to",
+      "raw_start": 21,
+      "raw_end": 23,
+      "raw_quote": "to",
+      "context": "Mr. KASSON. It seems to me that it would be better to f",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 24,
+      "end": 26,
+      "text": "me",
+      "raw_start": 24,
+      "raw_end": 26,
+      "raw_quote": "me",
+      "context": "Mr. KASSON. It seems to me that it would be better to foll",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 27,
+      "end": 31,
+      "text": "that",
+      "raw_start": 27,
+      "raw_end": 31,
+      "raw_quote": "that",
+      "context": "Mr. KASSON. It seems to me that it would be better to follow ou",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 32,
+      "end": 34,
+      "text": "it",
+      "raw_start": 32,
+      "raw_end": 34,
+      "raw_quote": "it",
+      "context": "Mr. KASSON. It seems to me that it would be better to follow our o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 35,
+      "end": 40,
+      "text": "would",
+      "raw_start": 35,
+      "raw_end": 40,
+      "raw_quote": "would",
+      "context": " KASSON. It seems to me that it would be better to follow our old pra",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 41,
+      "end": 43,
+      "text": "be",
+      "raw_start": 41,
+      "raw_end": 43,
+      "raw_quote": "be",
+      "context": "N. It seems to me that it would be better to follow our old practi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 44,
+      "end": 50,
+      "text": "better",
+      "raw_start": 44,
+      "raw_end": 50,
+      "raw_quote": "better",
+      "context": "It seems to me that it would be better to follow our old practice, acc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 51,
+      "end": 53,
+      "text": "to",
+      "raw_start": 51,
+      "raw_end": 53,
+      "raw_quote": "to",
+      "context": "s to me that it would be better to follow our old practice, accord",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 54,
+      "end": 60,
+      "text": "follow",
+      "raw_start": 54,
+      "raw_end": 60,
+      "raw_quote": "follow",
+      "context": "o me that it would be better to follow our old practice, according to ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 61,
+      "end": 64,
+      "text": "our",
+      "raw_start": 61,
+      "raw_end": 64,
+      "raw_quote": "our",
+      "context": "at it would be better to follow our old practice, according to whic",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 65,
+      "end": 68,
+      "text": "old",
+      "raw_start": 65,
+      "raw_end": 68,
+      "raw_quote": "old",
+      "context": "t would be better to follow our old practice, according to which, o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 69,
+      "end": 77,
+      "text": "practice",
+      "raw_start": 69,
+      "raw_end": 77,
+      "raw_quote": "practice",
+      "context": "uld be better to follow our old practice, according to which, on the adm",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 79,
+      "end": 88,
+      "text": "according",
+      "raw_start": 79,
+      "raw_end": 88,
+      "raw_quote": "according",
+      "context": "ter to follow our old practice, according to which, on the admission of t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 89,
+      "end": 91,
+      "text": "to",
+      "raw_start": 89,
+      "raw_end": 91,
+      "raw_quote": "to",
+      "context": "low our old practice, according to which, on the admission of thos",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 92,
+      "end": 97,
+      "text": "which",
+      "raw_start": 92,
+      "raw_end": 97,
+      "raw_quote": "which",
+      "context": " our old practice, according to which, on the admission of those Terr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 99,
+      "end": 101,
+      "text": "on",
+      "raw_start": 99,
+      "raw_end": 101,
+      "raw_quote": "on",
+      "context": "d practice, according to which, on the admission of those Territor",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 102,
+      "end": 105,
+      "text": "the",
+      "raw_start": 102,
+      "raw_end": 105,
+      "raw_quote": "the",
+      "context": "ractice, according to which, on the admission of those Territories,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 106,
+      "end": 115,
+      "text": "admission",
+      "raw_start": 106,
+      "raw_end": 115,
+      "raw_quote": "admission",
+      "context": "ice, according to which, on the admission of those Territories, Congress ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 116,
+      "end": 118,
+      "text": "of",
+      "raw_start": 116,
+      "raw_end": 118,
+      "raw_quote": "of",
+      "context": "ding to which, on the admission of those Territories, Congress dec",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 119,
+      "end": 124,
+      "text": "those",
+      "raw_start": 119,
+      "raw_end": 124,
+      "raw_quote": "those",
+      "context": "g to which, on the admission of those Territories, Congress declares ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 125,
+      "end": 136,
+      "text": "Territories",
+      "raw_start": 125,
+      "raw_end": 136,
+      "raw_quote": "Territories",
+      "context": "hich, on the admission of those Territories, Congress declares the terms up",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 138,
+      "end": 146,
+      "text": "Congress",
+      "raw_start": 138,
+      "raw_end": 146,
+      "raw_quote": "Congress",
+      "context": "admission of those Territories, Congress declares the terms upon which t",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 147,
+      "end": 155,
+      "text": "declares",
+      "raw_start": 147,
+      "raw_end": 155,
+      "raw_quote": "declares",
+      "context": " of those Territories, Congress declares the terms upon which they are t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 156,
+      "end": 159,
+      "text": "the",
+      "raw_start": 156,
+      "raw_end": 159,
+      "raw_quote": "the",
+      "context": " Territories, Congress declares the terms upon which they are to be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 160,
+      "end": 165,
+      "text": "terms",
+      "raw_start": 160,
+      "raw_end": 165,
+      "raw_quote": "terms",
+      "context": "ritories, Congress declares the terms upon which they are to be recei",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 166,
+      "end": 170,
+      "text": "upon",
+      "raw_start": 166,
+      "raw_end": 170,
+      "raw_quote": "upon",
+      "context": "es, Congress declares the terms upon which they are to be received, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 171,
+      "end": 176,
+      "text": "which",
+      "raw_start": 171,
+      "raw_end": 176,
+      "raw_quote": "which",
+      "context": "ongress declares the terms upon which they are to be received, giving",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 177,
+      "end": 181,
+      "text": "they",
+      "raw_start": 177,
+      "raw_end": 181,
+      "raw_quote": "they",
+      "context": "s declares the terms upon which they are to be received, giving them",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 182,
+      "end": 185,
+      "text": "are",
+      "raw_start": 182,
+      "raw_end": 185,
+      "raw_quote": "are",
+      "context": "lares the terms upon which they are to be received, giving them cer",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 186,
+      "end": 188,
+      "text": "to",
+      "raw_start": 186,
+      "raw_end": 188,
+      "raw_quote": "to",
+      "context": "s the terms upon which they are to be received, giving them certai",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 189,
+      "end": 191,
+      "text": "be",
+      "raw_start": 189,
+      "raw_end": 191,
+      "raw_quote": "be",
+      "context": "he terms upon which they are to be received, giving them certain g",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 192,
+      "end": 200,
+      "text": "received",
+      "raw_start": 192,
+      "raw_end": 200,
+      "raw_quote": "received",
+      "context": "terms upon which they are to be received, giving them certain grants of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 202,
+      "end": 208,
+      "text": "giving",
+      "raw_start": 202,
+      "raw_end": 208,
+      "raw_quote": "giving",
+      "context": " which they are to be received, giving them certain grants of land in ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 209,
+      "end": 213,
+      "text": "them",
+      "raw_start": 209,
+      "raw_end": 213,
+      "raw_quote": "them",
+      "context": "they are to be received, giving them certain grants of land in order",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 214,
+      "end": 221,
+      "text": "certain",
+      "raw_start": 214,
+      "raw_end": 221,
+      "raw_quote": "certain",
+      "context": "are to be received, giving them certain grants of land in order to plac",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 222,
+      "end": 228,
+      "text": "grants",
+      "raw_start": 222,
+      "raw_end": 228,
+      "raw_quote": "grants",
+      "context": "e received, giving them certain grants of land in order to place them ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 229,
+      "end": 231,
+      "text": "of",
+      "raw_start": 229,
+      "raw_end": 231,
+      "raw_quote": "of",
+      "context": "ved, giving them certain grants of land in order to place them on ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 232,
+      "end": 236,
+      "text": "land",
+      "raw_start": 232,
+      "raw_end": 236,
+      "raw_quote": "land",
+      "context": ", giving them certain grants of land in order to place them on an eq",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 237,
+      "end": 239,
+      "text": "in",
+      "raw_start": 237,
+      "raw_end": 239,
+      "raw_quote": "in",
+      "context": "ing them certain grants of land in order to place them on an equal",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 240,
+      "end": 245,
+      "text": "order",
+      "raw_start": 240,
+      "raw_end": 245,
+      "raw_quote": "order",
+      "context": " them certain grants of land in order to place them on an equality wi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 246,
+      "end": 248,
+      "text": "to",
+      "raw_start": 246,
+      "raw_end": 248,
+      "raw_quote": "to",
+      "context": "certain grants of land in order to place them on an equality with ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 249,
+      "end": 254,
+      "text": "place",
+      "raw_start": 249,
+      "raw_end": 254,
+      "raw_quote": "place",
+      "context": "tain grants of land in order to place them on an equality with States",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 255,
+      "end": 259,
+      "text": "them",
+      "raw_start": 255,
+      "raw_end": 259,
+      "raw_quote": "them",
+      "context": "rants of land in order to place them on an equality with States prev",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 260,
+      "end": 262,
+      "text": "on",
+      "raw_start": 260,
+      "raw_end": 262,
+      "raw_quote": "on",
+      "context": " of land in order to place them on an equality with States previou",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 263,
+      "end": 265,
+      "text": "an",
+      "raw_start": 263,
+      "raw_end": 265,
+      "raw_quote": "an",
+      "context": " land in order to place them on an equality with States previously",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 266,
+      "end": 274,
+      "text": "equality",
+      "raw_start": 266,
+      "raw_end": 274,
+      "raw_quote": "equality",
+      "context": "nd in order to place them on an equality with States previously admitted",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 275,
+      "end": 279,
+      "text": "with",
+      "raw_start": 275,
+      "raw_end": 279,
+      "raw_quote": "with",
+      "context": "er to place them on an equality with States previously admitted.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 280,
+      "end": 286,
+      "text": "States",
+      "raw_start": 280,
+      "raw_end": 286,
+      "raw_quote": "States",
+      "context": " place them on an equality with States previously admitted.",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 287,
+      "end": 297,
+      "text": "previously",
+      "raw_start": 287,
+      "raw_end": 297,
+      "raw_quote": "previously",
+      "context": "them on an equality with States previously admitted.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 298,
+      "end": 306,
+      "text": "admitted",
+      "raw_start": 298,
+      "raw_end": 306,
+      "raw_quote": "admitted",
+      "context": "equality with States previously admitted.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. KASSON. It seems to me that it",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 10,
+      "text": "KASSON",
+      "raw_start": 4,
+      "raw_end": 10,
+      "raw_quote": "KASSON",
+      "context": "Mr. KASSON. It seems to me that it would b",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "title_name_cue"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 12,
+      "end": 14,
+      "text": "It",
+      "raw_start": 12,
+      "raw_end": 14,
+      "raw_quote": "It",
+      "context": "Mr. KASSON. It seems to me that it would be be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 15,
+      "end": 20,
+      "text": "seems",
+      "raw_start": 15,
+      "raw_end": 20,
+      "raw_quote": "seems",
+      "context": "Mr. KASSON. It seems to me that it would be better t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 21,
+      "end": 23,
+      "text": "to",
+      "raw_start": 21,
+      "raw_end": 23,
+      "raw_quote": "to",
+      "context": "Mr. KASSON. It seems to me that it would be better to f",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 24,
+      "end": 26,
+      "text": "me",
+      "raw_start": 24,
+      "raw_end": 26,
+      "raw_quote": "me",
+      "context": "Mr. KASSON. It seems to me that it would be better to foll",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 27,
+      "end": 31,
+      "text": "that",
+      "raw_start": 27,
+      "raw_end": 31,
+      "raw_quote": "that",
+      "context": "Mr. KASSON. It seems to me that it would be better to follow ou",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 32,
+      "end": 34,
+      "text": "it",
+      "raw_start": 32,
+      "raw_end": 34,
+      "raw_quote": "it",
+      "context": "Mr. KASSON. It seems to me that it would be better to follow our o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 35,
+      "end": 40,
+      "text": "would",
+      "raw_start": 35,
+      "raw_end": 40,
+      "raw_quote": "would",
+      "context": " KASSON. It seems to me that it would be better to follow our old pra",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 41,
+      "end": 43,
+      "text": "be",
+      "raw_start": 41,
+      "raw_end": 43,
+      "raw_quote": "be",
+      "context": "N. It seems to me that it would be better to follow our old practi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 44,
+      "end": 50,
+      "text": "better",
+      "raw_start": 44,
+      "raw_end": 50,
+      "raw_quote": "better",
+      "context": "It seems to me that it would be better to follow our old practice, acc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 51,
+      "end": 53,
+      "text": "to",
+      "raw_start": 51,
+      "raw_end": 53,
+      "raw_quote": "to",
+      "context": "s to me that it would be better to follow our old practice, accord",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 54,
+      "end": 60,
+      "text": "follow",
+      "raw_start": 54,
+      "raw_end": 60,
+      "raw_quote": "follow",
+      "context": "o me that it would be better to follow our old practice, according to ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 61,
+      "end": 64,
+      "text": "our",
+      "raw_start": 61,
+      "raw_end": 64,
+      "raw_quote": "our",
+      "context": "at it would be better to follow our old practice, according to whic",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 65,
+      "end": 68,
+      "text": "old",
+      "raw_start": 65,
+      "raw_end": 68,
+      "raw_quote": "old",
+      "context": "t would be better to follow our old practice, according to which, o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 69,
+      "end": 77,
+      "text": "practice",
+      "raw_start": 69,
+      "raw_end": 77,
+      "raw_quote": "practice",
+      "context": "uld be better to follow our old practice, according to which, on the adm",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 79,
+      "end": 88,
+      "text": "according",
+      "raw_start": 79,
+      "raw_end": 88,
+      "raw_quote": "according",
+      "context": "ter to follow our old practice, according to which, on the admission of t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 89,
+      "end": 91,
+      "text": "to",
+      "raw_start": 89,
+      "raw_end": 91,
+      "raw_quote": "to",
+      "context": "low our old practice, according to which, on the admission of thos",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 92,
+      "end": 97,
+      "text": "which",
+      "raw_start": 92,
+      "raw_end": 97,
+      "raw_quote": "which",
+      "context": " our old practice, according to which, on the admission of those Terr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 99,
+      "end": 101,
+      "text": "on",
+      "raw_start": 99,
+      "raw_end": 101,
+      "raw_quote": "on",
+      "context": "d practice, according to which, on the admission of those Territor",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 102,
+      "end": 105,
+      "text": "the",
+      "raw_start": 102,
+      "raw_end": 105,
+      "raw_quote": "the",
+      "context": "ractice, according to which, on the admission of those Territories,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 106,
+      "end": 115,
+      "text": "admission",
+      "raw_start": 106,
+      "raw_end": 115,
+      "raw_quote": "admission",
+      "context": "ice, according to which, on the admission of those Territories, Congress ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 116,
+      "end": 118,
+      "text": "of",
+      "raw_start": 116,
+      "raw_end": 118,
+      "raw_quote": "of",
+      "context": "ding to which, on the admission of those Territories, Congress dec",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 119,
+      "end": 124,
+      "text": "those",
+      "raw_start": 119,
+      "raw_end": 124,
+      "raw_quote": "those",
+      "context": "g to which, on the admission of those Territories, Congress declares ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 125,
+      "end": 136,
+      "text": "Territories",
+      "raw_start": 125,
+      "raw_end": 136,
+      "raw_quote": "Territories",
+      "context": "hich, on the admission of those Territories, Congress declares the terms up",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 138,
+      "end": 146,
+      "text": "Congress",
+      "raw_start": 138,
+      "raw_end": 146,
+      "raw_quote": "Congress",
+      "context": "admission of those Territories, Congress declares the terms upon which t",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 147,
+      "end": 155,
+      "text": "declares",
+      "raw_start": 147,
+      "raw_end": 155,
+      "raw_quote": "declares",
+      "context": " of those Territories, Congress declares the terms upon which they are t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 156,
+      "end": 159,
+      "text": "the",
+      "raw_start": 156,
+      "raw_end": 159,
+      "raw_quote": "the",
+      "context": " Territories, Congress declares the terms upon which they are to be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 160,
+      "end": 165,
+      "text": "terms",
+      "raw_start": 160,
+      "raw_end": 165,
+      "raw_quote": "terms",
+      "context": "ritories, Congress declares the terms upon which they are to be recei",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 166,
+      "end": 170,
+      "text": "upon",
+      "raw_start": 166,
+      "raw_end": 170,
+      "raw_quote": "upon",
+      "context": "es, Congress declares the terms upon which they are to be received, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 171,
+      "end": 176,
+      "text": "which",
+      "raw_start": 171,
+      "raw_end": 176,
+      "raw_quote": "which",
+      "context": "ongress declares the terms upon which they are to be received, giving",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 177,
+      "end": 181,
+      "text": "they",
+      "raw_start": 177,
+      "raw_end": 181,
+      "raw_quote": "they",
+      "context": "s declares the terms upon which they are to be received, giving them",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 182,
+      "end": 185,
+      "text": "are",
+      "raw_start": 182,
+      "raw_end": 185,
+      "raw_quote": "are",
+      "context": "lares the terms upon which they are to be received, giving them cer",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 186,
+      "end": 188,
+      "text": "to",
+      "raw_start": 186,
+      "raw_end": 188,
+      "raw_quote": "to",
+      "context": "s the terms upon which they are to be received, giving them certai",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 189,
+      "end": 191,
+      "text": "be",
+      "raw_start": 189,
+      "raw_end": 191,
+      "raw_quote": "be",
+      "context": "he terms upon which they are to be received, giving them certain g",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 192,
+      "end": 200,
+      "text": "received",
+      "raw_start": 192,
+      "raw_end": 200,
+      "raw_quote": "received",
+      "context": "terms upon which they are to be received, giving them certain grants of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 202,
+      "end": 208,
+      "text": "giving",
+      "raw_start": 202,
+      "raw_end": 208,
+      "raw_quote": "giving",
+      "context": " which they are to be received, giving them certain grants of land in ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 209,
+      "end": 213,
+      "text": "them",
+      "raw_start": 209,
+      "raw_end": 213,
+      "raw_quote": "them",
+      "context": "they are to be received, giving them certain grants of land in order",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 214,
+      "end": 221,
+      "text": "certain",
+      "raw_start": 214,
+      "raw_end": 221,
+      "raw_quote": "certain",
+      "context": "are to be received, giving them certain grants of land in order to plac",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 222,
+      "end": 228,
+      "text": "grants",
+      "raw_start": 222,
+      "raw_end": 228,
+      "raw_quote": "grants",
+      "context": "e received, giving them certain grants of land in order to place them ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 229,
+      "end": 231,
+      "text": "of",
+      "raw_start": 229,
+      "raw_end": 231,
+      "raw_quote": "of",
+      "context": "ved, giving them certain grants of land in order to place them on ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 232,
+      "end": 236,
+      "text": "land",
+      "raw_start": 232,
+      "raw_end": 236,
+      "raw_quote": "land",
+      "context": ", giving them certain grants of land in order to place them on an eq",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 237,
+      "end": 239,
+      "text": "in",
+      "raw_start": 237,
+      "raw_end": 239,
+      "raw_quote": "in",
+      "context": "ing them certain grants of land in order to place them on an equal",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 240,
+      "end": 245,
+      "text": "order",
+      "raw_start": 240,
+      "raw_end": 245,
+      "raw_quote": "order",
+      "context": " them certain grants of land in order to place them on an equality wi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 246,
+      "end": 248,
+      "text": "to",
+      "raw_start": 246,
+      "raw_end": 248,
+      "raw_quote": "to",
+      "context": "certain grants of land in order to place them on an equality with ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 249,
+      "end": 254,
+      "text": "place",
+      "raw_start": 249,
+      "raw_end": 254,
+      "raw_quote": "place",
+      "context": "tain grants of land in order to place them on an equality with States",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 255,
+      "end": 259,
+      "text": "them",
+      "raw_start": 255,
+      "raw_end": 259,
+      "raw_quote": "them",
+      "context": "rants of land in order to place them on an equality with States prev",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 260,
+      "end": 262,
+      "text": "on",
+      "raw_start": 260,
+      "raw_end": 262,
+      "raw_quote": "on",
+      "context": " of land in order to place them on an equality with States previou",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 263,
+      "end": 265,
+      "text": "an",
+      "raw_start": 263,
+      "raw_end": 265,
+      "raw_quote": "an",
+      "context": " land in order to place them on an equality with States previously",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 266,
+      "end": 274,
+      "text": "equality",
+      "raw_start": 266,
+      "raw_end": 274,
+      "raw_quote": "equality",
+      "context": "nd in order to place them on an equality with States previously admitted",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 275,
+      "end": 279,
+      "text": "with",
+      "raw_start": 275,
+      "raw_end": 279,
+      "raw_quote": "with",
+      "context": "er to place them on an equality with States previously admitted.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 280,
+      "end": 286,
+      "text": "States",
+      "raw_start": 280,
+      "raw_end": 286,
+      "raw_quote": "States",
+      "context": " place them on an equality with States previously admitted.",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 287,
+      "end": 297,
+      "text": "previously",
+      "raw_start": 287,
+      "raw_end": 297,
+      "raw_quote": "previously",
+      "context": "them on an equality with States previously admitted.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 298,
+      "end": 306,
+      "text": "admitted",
+      "raw_start": 298,
+      "raw_end": 306,
+      "raw_quote": "admitted",
+      "context": "equality with States previously admitted.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7392unit:1051:par_001051_000014",
+      "raw_text": "Mr. KASSON. It seems to me that it would be better to follow our old practice, according to which, on the admission of those Territories, Congress declares the terms upon which they are to be received, giving them certain grants of land in order to place them on an equality with States previously admitted.",
+      "raw_sha256": "5e171ba3d1a69369966ffed0b12fb53bad892284746c46c675cfbf43508101d6"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7392unit:1051:par_001051_000014",
+        "raw_text": "Mr. KASSON. It seems to me that it would be better to follow our old practice, according to which, on the admission of those Territories, Congress declares the terms upon which they are to be received, giving them certain grants of land in order to place them on an equality with States previously admitted.",
+        "raw_sha256": "5e171ba3d1a69369966ffed0b12fb53bad892284746c46c675cfbf43508101d6"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "Mr. KASSON. It seems to me that it would be better to follow our old practice, according to which, on the admission of those Territories, Congress declares the terms upon which they are to be received, giving them certain grants of land in order to place them on an equality with States previously admitted.",
+    "proposed_sha256": "5e171ba3d1a69369966ffed0b12fb53bad892284746c46c675cfbf43508101d6",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

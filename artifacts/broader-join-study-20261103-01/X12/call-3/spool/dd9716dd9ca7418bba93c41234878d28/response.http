@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 22:21:04 GMT
+Content-Length: 951
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T22:21:04.399784Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Sir, this was simply at that time a loan of the money of Massachusetts to the General Government when the money which was wanted could not be obtained or was not in the hands of the General Government, as everybody knows, to pay these claims. Massachusetts at that time could more readily obtain the funds necessary for this expenditure than the General Gov-\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"X12\"\n}"},"done":true,"done_reason":"stop","total_duration":36648083083,"load_duration":3612649833,"prompt_eval_count":3399,"prompt_eval_cached_count":0,"prompt_eval_duration":27816424667,"eval_count":150,"eval_duration":5196665709}

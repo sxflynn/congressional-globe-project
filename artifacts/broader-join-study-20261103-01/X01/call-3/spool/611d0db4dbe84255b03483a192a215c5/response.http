@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 21:51:54 GMT
+Content-Length: 1203
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T21:51:54.302473Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"But, sir, when I say this I do not mean to be understood as defending the theory that the Congress has no right to take hold of these States and people and examine their political condition most thoroughly. I say that, although these rebellious States are in, territorially, the Union, and cannot get out by any act of theirs, yet by their rebellion they have forfeited their right to representation in the Halls of Congress, and placed themselves where the national Government can determine at will when they shall resume again their original positions and have a voice in the legislative halls of the nation.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"X01\"\n}"},"done":true,"done_reason":"stop","total_duration":48283561584,"load_duration":4317361417,"prompt_eval_count":4160,"prompt_eval_cached_count":0,"prompt_eval_duration":36767002750,"eval_count":203,"eval_duration":7158200667}

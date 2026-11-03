@@ -1,0 +1,4750 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo00unit:716:par_000716_000009",
+      "raw_text": ". Mr. NYE. Seven dollars and eighty cents to send ten words from San Francisco to New York or Washington ; and from Carson City, wliere I reside, the price is the same, although that is three hundred miles nearer.. Now, sir, if t!ie Senator from Ohio, with his acute legal mind, will set himself to work to control the jnices upon these old lines, he will do his country a substantial service ; but I repeat, in my judgment, he never can effect it by this bill for a line v/hich only exists in fancy, the pur- chase of which will increase the capital of the present monopoly, and every time the capital IS increased the pi-ice for telegraphing is in- creased.",
+      "raw_sha256": "1f4c0ff387985098f852f81dd09c90950fa030829f41191844aae8f8d560105f"
+    },
+    "static_text": ". Mr. NYE. Seven dollars and eighty cents to send ten words from San Francisco to New York or Washington ; and from Carson City, wliere I reside, the price is the same, although that is three hundred miles nearer.. Now, sir, if t!ie Senator from Ohio, with his acute legal mind, will set himself to work to control the jnices upon these old lines, he will do his country a substantial service ; but I repeat, in my judgment, he never can effect it by this bill for a line v/hich only exists in fancy, the purchase of which will increase the capital of the present monopoly, and every time the capital IS increased the pi-ice for telegraphing is increased.",
+    "static_sha256": "e9c67decad201b3a9f27197279da22a36e23dc3836a08039962678739891cd7b",
+    "static_edits": [
+      {
+        "start": 505,
+        "end": 515,
+        "raw_quote": "pur- chase",
+        "replacement": "purchase",
+        "rule_id": "adjacent-line wrap; lexicon form purchase"
+      },
+      {
+        "start": 647,
+        "end": 658,
+        "raw_quote": "in- creased",
+        "replacement": "increased",
+        "rule_id": "adjacent-line wrap; lexicon form increased"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000716_000018",
+        "start": 0,
+        "end": 41,
+        "text": ". Mr. NYE. Seven dollars and eighty cents"
+      },
+      {
+        "line_id": "line_000716_000019",
+        "start": 42,
+        "end": 85,
+        "text": "to send ten words from San Francisco to New"
+      },
+      {
+        "line_id": "line_000716_000020",
+        "start": 86,
+        "end": 128,
+        "text": "York or Washington ; and from Carson City,"
+      },
+      {
+        "line_id": "line_000716_000021",
+        "start": 129,
+        "end": 177,
+        "text": "wliere I reside, the price is the same, although"
+      },
+      {
+        "line_id": "line_000716_000022",
+        "start": 178,
+        "end": 224,
+        "text": "that is three hundred miles nearer.. Now, sir,"
+      },
+      {
+        "line_id": "line_000716_000023",
+        "start": 225,
+        "end": 272,
+        "text": "if t!ie Senator from Ohio, with his acute legal"
+      },
+      {
+        "line_id": "line_000716_000024",
+        "start": 273,
+        "end": 318,
+        "text": "mind, will set himself to work to control the"
+      },
+      {
+        "line_id": "line_000716_000025",
+        "start": 319,
+        "end": 362,
+        "text": "jnices upon these old lines, he will do his"
+      },
+      {
+        "line_id": "line_000716_000026",
+        "start": 363,
+        "end": 411,
+        "text": "country a substantial service ; but I repeat, in"
+      },
+      {
+        "line_id": "line_000716_000027",
+        "start": 412,
+        "end": 460,
+        "text": "my judgment, he never can effect it by this bill"
+      },
+      {
+        "line_id": "line_000716_000028",
+        "start": 461,
+        "end": 509,
+        "text": "for a line v/hich only exists in fancy, the pur-"
+      },
+      {
+        "line_id": "line_000716_000029",
+        "start": 510,
+        "end": 557,
+        "text": "chase of which will increase the capital of the"
+      },
+      {
+        "line_id": "line_000716_000030",
+        "start": 558,
+        "end": 602,
+        "text": "present monopoly, and every time the capital"
+      },
+      {
+        "line_id": "line_000716_000031",
+        "start": 603,
+        "end": 650,
+        "text": "IS increased the pi-ice for telegraphing is in-"
+      },
+      {
+        "line_id": "line_000716_000032",
+        "start": 651,
+        "end": 659,
+        "text": "creased."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "9d81c3a3d0c9b99535ce7dd14fb8543c2b24836d06c69aaaca7dd42c034289e5"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "f29571cf55d1d0bc20196aa0cdb8c331fbee3f38db07d9aca77b759593063975",
+  "proposed_text": ". Mr. NYE. Seven dollars and eighty cents to send ten words from San Francisco to New York or Washington ; and from Carson City, wliere I reside, the price is the same, although that is three hundred miles nearer.. Now, sir, if t!ie Senator from Ohio, with his acute legal mind, will set himself to work to control the jnices upon these old lines, he will do his country a substantial service ; but I repeat, in my judgment, he never can effect it by this bill for a line v/hich only exists in fancy, the pur- chase of which will increase the capital of the present monopoly, and every time the capital IS increased the pi-ice for telegraphing is increased.",
+  "proposed_sha256": "562d7da19fe6a9cc8c7af757bac9cd24a64d45c1e26aaf0976f22c062878874d",
+  "proposed_edits": [
+    {
+      "start": 647,
+      "end": 658,
+      "raw_quote": "in- creased",
+      "replacement": "increased",
+      "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+    }
+  ],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 647,
+      "derived_start": 0,
+      "derived_end": 647,
+      "mapping": "exact_copy"
+    },
+    {
+      "raw_start": 647,
+      "raw_end": 658,
+      "derived_start": 647,
+      "derived_end": 656,
+      "mapping": "replacement"
+    },
+    {
+      "raw_start": 658,
+      "raw_end": 659,
+      "derived_start": 656,
+      "derived_end": 657,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 505,
+      "end": 515,
+      "raw_quote": "pur- chase",
+      "joined_candidate": "purchase",
+      "decision": "retained_for_review",
+      "reason": "standalone_parts_ambiguous"
+    },
+    {
+      "start": 647,
+      "end": 658,
+      "raw_quote": "in- creased",
+      "joined_candidate": "increased",
+      "decision": "proposed_join",
+      "reason": "guarded_adjacent_line_join"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 2,
+      "end": 4,
+      "text": "Mr",
+      "raw_start": 2,
+      "raw_end": 4,
+      "raw_quote": "Mr",
+      "context": ". Mr. NYE. Seven dollars and eighty ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 6,
+      "end": 9,
+      "text": "NYE",
+      "raw_start": 6,
+      "raw_end": 9,
+      "raw_quote": "NYE",
+      "context": ". Mr. NYE. Seven dollars and eighty cents",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 11,
+      "end": 16,
+      "text": "Seven",
+      "raw_start": 11,
+      "raw_end": 16,
+      "raw_quote": "Seven",
+      "context": ". Mr. NYE. Seven dollars and eighty cents to sen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 17,
+      "end": 24,
+      "text": "dollars",
+      "raw_start": 17,
+      "raw_end": 24,
+      "raw_quote": "dollars",
+      "context": ". Mr. NYE. Seven dollars and eighty cents to send ten wo",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 25,
+      "end": 28,
+      "text": "and",
+      "raw_start": 25,
+      "raw_end": 28,
+      "raw_quote": "and",
+      "context": ". Mr. NYE. Seven dollars and eighty cents to send ten words ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 29,
+      "end": 35,
+      "text": "eighty",
+      "raw_start": 29,
+      "raw_end": 35,
+      "raw_quote": "eighty",
+      "context": ". Mr. NYE. Seven dollars and eighty cents to send ten words from Sa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 36,
+      "end": 41,
+      "text": "cents",
+      "raw_start": 36,
+      "raw_end": 41,
+      "raw_quote": "cents",
+      "context": ". NYE. Seven dollars and eighty cents to send ten words from San Fran",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 42,
+      "end": 44,
+      "text": "to",
+      "raw_start": 42,
+      "raw_end": 44,
+      "raw_quote": "to",
+      "context": " Seven dollars and eighty cents to send ten words from San Francis",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 45,
+      "end": 49,
+      "text": "send",
+      "raw_start": 45,
+      "raw_end": 49,
+      "raw_quote": "send",
+      "context": "ven dollars and eighty cents to send ten words from San Francisco to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 50,
+      "end": 53,
+      "text": "ten",
+      "raw_start": 50,
+      "raw_end": 53,
+      "raw_quote": "ten",
+      "context": "ollars and eighty cents to send ten words from San Francisco to New",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 54,
+      "end": 59,
+      "text": "words",
+      "raw_start": 54,
+      "raw_end": 59,
+      "raw_quote": "words",
+      "context": "rs and eighty cents to send ten words from San Francisco to New York ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 60,
+      "end": 64,
+      "text": "from",
+      "raw_start": 60,
+      "raw_end": 64,
+      "raw_quote": "from",
+      "context": " eighty cents to send ten words from San Francisco to New York or Wa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 65,
+      "end": 68,
+      "text": "San",
+      "raw_start": 65,
+      "raw_end": 68,
+      "raw_quote": "San",
+      "context": "ty cents to send ten words from San Francisco to New York or Washin",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 69,
+      "end": 78,
+      "text": "Francisco",
+      "raw_start": 69,
+      "raw_end": 78,
+      "raw_quote": "Francisco",
+      "context": "ents to send ten words from San Francisco to New York or Washington ; and",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate",
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 79,
+      "end": 81,
+      "text": "to",
+      "raw_start": 79,
+      "raw_end": 81,
+      "raw_quote": "to",
+      "context": "nd ten words from San Francisco to New York or Washington ; and fr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 82,
+      "end": 85,
+      "text": "New",
+      "raw_start": 82,
+      "raw_end": 85,
+      "raw_quote": "New",
+      "context": "ten words from San Francisco to New York or Washington ; and from C",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 86,
+      "end": 90,
+      "text": "York",
+      "raw_start": 86,
+      "raw_end": 90,
+      "raw_quote": "York",
+      "context": "words from San Francisco to New York or Washington ; and from Carson",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 91,
+      "end": 93,
+      "text": "or",
+      "raw_start": 91,
+      "raw_end": 93,
+      "raw_quote": "or",
+      "context": " from San Francisco to New York or Washington ; and from Carson Ci",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 94,
+      "end": 104,
+      "text": "Washington",
+      "raw_start": 94,
+      "raw_end": 104,
+      "raw_quote": "Washington",
+      "context": "om San Francisco to New York or Washington ; and from Carson City, wliere ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 107,
+      "end": 110,
+      "text": "and",
+      "raw_start": 107,
+      "raw_end": 110,
+      "raw_quote": "and",
+      "context": "sco to New York or Washington ; and from Carson City, wliere I resi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 111,
+      "end": 115,
+      "text": "from",
+      "raw_start": 111,
+      "raw_end": 115,
+      "raw_quote": "from",
+      "context": "to New York or Washington ; and from Carson City, wliere I reside, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 116,
+      "end": 122,
+      "text": "Carson",
+      "raw_start": 116,
+      "raw_end": 122,
+      "raw_quote": "Carson",
+      "context": "w York or Washington ; and from Carson City, wliere I reside, the pric",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 123,
+      "end": 127,
+      "text": "City",
+      "raw_start": 123,
+      "raw_end": 127,
+      "raw_quote": "City",
+      "context": "or Washington ; and from Carson City, wliere I reside, the price is ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 129,
+      "end": 135,
+      "text": "wliere",
+      "raw_start": 129,
+      "raw_end": 135,
+      "raw_quote": "wliere",
+      "context": "hington ; and from Carson City, wliere I reside, the price is the same",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 136,
+      "end": 137,
+      "text": "I",
+      "raw_start": 136,
+      "raw_end": 137,
+      "raw_quote": "I",
+      "context": " ; and from Carson City, wliere I reside, the price is the same, ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 138,
+      "end": 144,
+      "text": "reside",
+      "raw_start": 138,
+      "raw_end": 144,
+      "raw_quote": "reside",
+      "context": " and from Carson City, wliere I reside, the price is the same, althoug",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 146,
+      "end": 149,
+      "text": "the",
+      "raw_start": 146,
+      "raw_end": 149,
+      "raw_quote": "the",
+      "context": "m Carson City, wliere I reside, the price is the same, although tha",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 150,
+      "end": 155,
+      "text": "price",
+      "raw_start": 150,
+      "raw_end": 155,
+      "raw_quote": "price",
+      "context": "rson City, wliere I reside, the price is the same, although that is t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 156,
+      "end": 158,
+      "text": "is",
+      "raw_start": 156,
+      "raw_end": 158,
+      "raw_quote": "is",
+      "context": "ity, wliere I reside, the price is the same, although that is thre",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 159,
+      "end": 162,
+      "text": "the",
+      "raw_start": 159,
+      "raw_end": 162,
+      "raw_quote": "the",
+      "context": ", wliere I reside, the price is the same, although that is three hu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 163,
+      "end": 167,
+      "text": "same",
+      "raw_start": 163,
+      "raw_end": 167,
+      "raw_quote": "same",
+      "context": "iere I reside, the price is the same, although that is three hundred",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 169,
+      "end": 177,
+      "text": "although",
+      "raw_start": 169,
+      "raw_end": 177,
+      "raw_quote": "although",
+      "context": " reside, the price is the same, although that is three hundred miles nea",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 178,
+      "end": 182,
+      "text": "that",
+      "raw_start": 178,
+      "raw_end": 182,
+      "raw_quote": "that",
+      "context": "the price is the same, although that is three hundred miles nearer..",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 183,
+      "end": 185,
+      "text": "is",
+      "raw_start": 183,
+      "raw_end": 185,
+      "raw_quote": "is",
+      "context": "rice is the same, although that is three hundred miles nearer.. No",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 186,
+      "end": 191,
+      "text": "three",
+      "raw_start": 186,
+      "raw_end": 191,
+      "raw_quote": "three",
+      "context": "e is the same, although that is three hundred miles nearer.. Now, sir",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 192,
+      "end": 199,
+      "text": "hundred",
+      "raw_start": 192,
+      "raw_end": 199,
+      "raw_quote": "hundred",
+      "context": "he same, although that is three hundred miles nearer.. Now, sir, if t!i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 200,
+      "end": 205,
+      "text": "miles",
+      "raw_start": 200,
+      "raw_end": 205,
+      "raw_quote": "miles",
+      "context": " although that is three hundred miles nearer.. Now, sir, if t!ie Sena",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 206,
+      "end": 212,
+      "text": "nearer",
+      "raw_start": 206,
+      "raw_end": 212,
+      "raw_quote": "nearer",
+      "context": "ugh that is three hundred miles nearer.. Now, sir, if t!ie Senator fro",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 215,
+      "end": 218,
+      "text": "Now",
+      "raw_start": 215,
+      "raw_end": 218,
+      "raw_quote": "Now",
+      "context": "is three hundred miles nearer.. Now, sir, if t!ie Senator from Ohio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 220,
+      "end": 223,
+      "text": "sir",
+      "raw_start": 220,
+      "raw_end": 223,
+      "raw_quote": "sir",
+      "context": "ree hundred miles nearer.. Now, sir, if t!ie Senator from Ohio, wit",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 225,
+      "end": 227,
+      "text": "if",
+      "raw_start": 225,
+      "raw_end": 227,
+      "raw_quote": "if",
+      "context": "undred miles nearer.. Now, sir, if t!ie Senator from Ohio, with hi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 228,
+      "end": 229,
+      "text": "t",
+      "raw_start": 228,
+      "raw_end": 229,
+      "raw_quote": "t",
+      "context": "red miles nearer.. Now, sir, if t!ie Senator from Ohio, with his ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 230,
+      "end": 232,
+      "text": "ie",
+      "raw_start": 230,
+      "raw_end": 232,
+      "raw_quote": "ie",
+      "context": "d miles nearer.. Now, sir, if t!ie Senator from Ohio, with his acu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 233,
+      "end": 240,
+      "text": "Senator",
+      "raw_start": 233,
+      "raw_end": 240,
+      "raw_quote": "Senator",
+      "context": "iles nearer.. Now, sir, if t!ie Senator from Ohio, with his acute legal",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 241,
+      "end": 245,
+      "text": "from",
+      "raw_start": 241,
+      "raw_end": 245,
+      "raw_quote": "from",
+      "context": "rer.. Now, sir, if t!ie Senator from Ohio, with his acute legal mind",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 246,
+      "end": 250,
+      "text": "Ohio",
+      "raw_start": 246,
+      "raw_end": 250,
+      "raw_quote": "Ohio",
+      "context": " Now, sir, if t!ie Senator from Ohio, with his acute legal mind, wil",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 252,
+      "end": 256,
+      "text": "with",
+      "raw_start": 252,
+      "raw_end": 256,
+      "raw_quote": "with",
+      "context": "sir, if t!ie Senator from Ohio, with his acute legal mind, will set ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 257,
+      "end": 260,
+      "text": "his",
+      "raw_start": 257,
+      "raw_end": 260,
+      "raw_quote": "his",
+      "context": "if t!ie Senator from Ohio, with his acute legal mind, will set hims",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 261,
+      "end": 266,
+      "text": "acute",
+      "raw_start": 261,
+      "raw_end": 266,
+      "raw_quote": "acute",
+      "context": "!ie Senator from Ohio, with his acute legal mind, will set himself to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 267,
+      "end": 272,
+      "text": "legal",
+      "raw_start": 267,
+      "raw_end": 272,
+      "raw_quote": "legal",
+      "context": "nator from Ohio, with his acute legal mind, will set himself to work ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 273,
+      "end": 277,
+      "text": "mind",
+      "raw_start": 273,
+      "raw_end": 277,
+      "raw_quote": "mind",
+      "context": "from Ohio, with his acute legal mind, will set himself to work to co",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 279,
+      "end": 283,
+      "text": "will",
+      "raw_start": 279,
+      "raw_end": 283,
+      "raw_quote": "will",
+      "context": "hio, with his acute legal mind, will set himself to work to control ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 284,
+      "end": 287,
+      "text": "set",
+      "raw_start": 284,
+      "raw_end": 287,
+      "raw_quote": "set",
+      "context": "with his acute legal mind, will set himself to work to control the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 288,
+      "end": 295,
+      "text": "himself",
+      "raw_start": 288,
+      "raw_end": 295,
+      "raw_quote": "himself",
+      "context": " his acute legal mind, will set himself to work to control the jnices u",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 296,
+      "end": 298,
+      "text": "to",
+      "raw_start": 296,
+      "raw_end": 298,
+      "raw_quote": "to",
+      "context": "te legal mind, will set himself to work to control the jnices upon",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 299,
+      "end": 303,
+      "text": "work",
+      "raw_start": 299,
+      "raw_end": 303,
+      "raw_quote": "work",
+      "context": "legal mind, will set himself to work to control the jnices upon thes",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 304,
+      "end": 306,
+      "text": "to",
+      "raw_start": 304,
+      "raw_end": 306,
+      "raw_quote": "to",
+      "context": " mind, will set himself to work to control the jnices upon these o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 307,
+      "end": 314,
+      "text": "control",
+      "raw_start": 307,
+      "raw_end": 314,
+      "raw_quote": "control",
+      "context": "nd, will set himself to work to control the jnices upon these old lines",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 315,
+      "end": 318,
+      "text": "the",
+      "raw_start": 315,
+      "raw_end": 318,
+      "raw_quote": "the",
+      "context": " set himself to work to control the jnices upon these old lines, he",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 319,
+      "end": 325,
+      "text": "jnices",
+      "raw_start": 319,
+      "raw_end": 325,
+      "raw_quote": "jnices",
+      "context": " himself to work to control the jnices upon these old lines, he will d",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 326,
+      "end": 330,
+      "text": "upon",
+      "raw_start": 326,
+      "raw_end": 330,
+      "raw_quote": "upon",
+      "context": "f to work to control the jnices upon these old lines, he will do his",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 331,
+      "end": 336,
+      "text": "these",
+      "raw_start": 331,
+      "raw_end": 336,
+      "raw_quote": "these",
+      "context": "work to control the jnices upon these old lines, he will do his count",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 337,
+      "end": 340,
+      "text": "old",
+      "raw_start": 337,
+      "raw_end": 340,
+      "raw_quote": "old",
+      "context": "o control the jnices upon these old lines, he will do his country a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 341,
+      "end": 346,
+      "text": "lines",
+      "raw_start": 341,
+      "raw_end": 346,
+      "raw_quote": "lines",
+      "context": "ntrol the jnices upon these old lines, he will do his country a subst",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 348,
+      "end": 350,
+      "text": "he",
+      "raw_start": 348,
+      "raw_end": 350,
+      "raw_quote": "he",
+      "context": "he jnices upon these old lines, he will do his country a substanti",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 351,
+      "end": 355,
+      "text": "will",
+      "raw_start": 351,
+      "raw_end": 355,
+      "raw_quote": "will",
+      "context": "jnices upon these old lines, he will do his country a substantial se",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 356,
+      "end": 358,
+      "text": "do",
+      "raw_start": 356,
+      "raw_end": 358,
+      "raw_quote": "do",
+      "context": "s upon these old lines, he will do his country a substantial servi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 359,
+      "end": 362,
+      "text": "his",
+      "raw_start": 359,
+      "raw_end": 362,
+      "raw_quote": "his",
+      "context": "pon these old lines, he will do his country a substantial service ;",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 363,
+      "end": 370,
+      "text": "country",
+      "raw_start": 363,
+      "raw_end": 370,
+      "raw_quote": "country",
+      "context": "these old lines, he will do his country a substantial service ; but I r",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 371,
+      "end": 372,
+      "text": "a",
+      "raw_start": 371,
+      "raw_end": 372,
+      "raw_quote": "a",
+      "context": "d lines, he will do his country a substantial service ; but I rep",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 373,
+      "end": 384,
+      "text": "substantial",
+      "raw_start": 373,
+      "raw_end": 384,
+      "raw_quote": "substantial",
+      "context": "lines, he will do his country a substantial service ; but I repeat, in my j",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 385,
+      "end": 392,
+      "text": "service",
+      "raw_start": 385,
+      "raw_end": 392,
+      "raw_quote": "service",
+      "context": "ll do his country a substantial service ; but I repeat, in my judgment,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 395,
+      "end": 398,
+      "text": "but",
+      "raw_start": 395,
+      "raw_end": 398,
+      "raw_quote": "but",
+      "context": "country a substantial service ; but I repeat, in my judgment, he ne",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 399,
+      "end": 400,
+      "text": "I",
+      "raw_start": 399,
+      "raw_end": 400,
+      "raw_quote": "I",
+      "context": "try a substantial service ; but I repeat, in my judgment, he neve",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 401,
+      "end": 407,
+      "text": "repeat",
+      "raw_start": 401,
+      "raw_end": 407,
+      "raw_quote": "repeat",
+      "context": "y a substantial service ; but I repeat, in my judgment, he never can e",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 409,
+      "end": 411,
+      "text": "in",
+      "raw_start": 409,
+      "raw_end": 411,
+      "raw_quote": "in",
+      "context": "tantial service ; but I repeat, in my judgment, he never can effec",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 412,
+      "end": 414,
+      "text": "my",
+      "raw_start": 412,
+      "raw_end": 414,
+      "raw_quote": "my",
+      "context": "tial service ; but I repeat, in my judgment, he never can effect i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 415,
+      "end": 423,
+      "text": "judgment",
+      "raw_start": 415,
+      "raw_end": 423,
+      "raw_quote": "judgment",
+      "context": "l service ; but I repeat, in my judgment, he never can effect it by this",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 425,
+      "end": 427,
+      "text": "he",
+      "raw_start": 425,
+      "raw_end": 427,
+      "raw_quote": "he",
+      "context": "; but I repeat, in my judgment, he never can effect it by this bil",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 428,
+      "end": 433,
+      "text": "never",
+      "raw_start": 428,
+      "raw_end": 433,
+      "raw_quote": "never",
+      "context": "ut I repeat, in my judgment, he never can effect it by this bill for ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 434,
+      "end": 437,
+      "text": "can",
+      "raw_start": 434,
+      "raw_end": 437,
+      "raw_quote": "can",
+      "context": "epeat, in my judgment, he never can effect it by this bill for a li",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 438,
+      "end": 444,
+      "text": "effect",
+      "raw_start": 438,
+      "raw_end": 444,
+      "raw_quote": "effect",
+      "context": "t, in my judgment, he never can effect it by this bill for a line v/hi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 445,
+      "end": 447,
+      "text": "it",
+      "raw_start": 445,
+      "raw_end": 447,
+      "raw_quote": "it",
+      "context": "y judgment, he never can effect it by this bill for a line v/hich ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 448,
+      "end": 450,
+      "text": "by",
+      "raw_start": 448,
+      "raw_end": 450,
+      "raw_quote": "by",
+      "context": "udgment, he never can effect it by this bill for a line v/hich onl",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 451,
+      "end": 455,
+      "text": "this",
+      "raw_start": 451,
+      "raw_end": 455,
+      "raw_quote": "this",
+      "context": "ment, he never can effect it by this bill for a line v/hich only exi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 456,
+      "end": 460,
+      "text": "bill",
+      "raw_start": 456,
+      "raw_end": 460,
+      "raw_quote": "bill",
+      "context": " he never can effect it by this bill for a line v/hich only exists i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 461,
+      "end": 464,
+      "text": "for",
+      "raw_start": 461,
+      "raw_end": 464,
+      "raw_quote": "for",
+      "context": "ever can effect it by this bill for a line v/hich only exists in fa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 465,
+      "end": 466,
+      "text": "a",
+      "raw_start": 465,
+      "raw_end": 466,
+      "raw_quote": "a",
+      "context": " can effect it by this bill for a line v/hich only exists in fanc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 467,
+      "end": 471,
+      "text": "line",
+      "raw_start": 467,
+      "raw_end": 471,
+      "raw_quote": "line",
+      "context": "an effect it by this bill for a line v/hich only exists in fancy, th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 472,
+      "end": 473,
+      "text": "v",
+      "raw_start": 472,
+      "raw_end": 473,
+      "raw_quote": "v",
+      "context": "fect it by this bill for a line v/hich only exists in fancy, the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 474,
+      "end": 478,
+      "text": "hich",
+      "raw_start": 474,
+      "raw_end": 478,
+      "raw_quote": "hich",
+      "context": "ct it by this bill for a line v/hich only exists in fancy, the pur- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 479,
+      "end": 483,
+      "text": "only",
+      "raw_start": 479,
+      "raw_end": 483,
+      "raw_quote": "only",
+      "context": " by this bill for a line v/hich only exists in fancy, the pur- chase",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 484,
+      "end": 490,
+      "text": "exists",
+      "raw_start": 484,
+      "raw_end": 490,
+      "raw_quote": "exists",
+      "context": "his bill for a line v/hich only exists in fancy, the pur- chase of whi",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 491,
+      "end": 493,
+      "text": "in",
+      "raw_start": 491,
+      "raw_end": 493,
+      "raw_quote": "in",
+      "context": "l for a line v/hich only exists in fancy, the pur- chase of which ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 494,
+      "end": 499,
+      "text": "fancy",
+      "raw_start": 494,
+      "raw_end": 499,
+      "raw_quote": "fancy",
+      "context": "or a line v/hich only exists in fancy, the pur- chase of which will i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 501,
+      "end": 504,
+      "text": "the",
+      "raw_start": 501,
+      "raw_end": 504,
+      "raw_quote": "the",
+      "context": "ne v/hich only exists in fancy, the pur- chase of which will increa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 505,
+      "end": 508,
+      "text": "pur",
+      "raw_start": 505,
+      "raw_end": 508,
+      "raw_quote": "pur",
+      "context": "/hich only exists in fancy, the pur- chase of which will increase t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 510,
+      "end": 515,
+      "text": "chase",
+      "raw_start": 510,
+      "raw_end": 515,
+      "raw_quote": "chase",
+      "context": " only exists in fancy, the pur- chase of which will increase the capi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 516,
+      "end": 518,
+      "text": "of",
+      "raw_start": 516,
+      "raw_end": 518,
+      "raw_quote": "of",
+      "context": "exists in fancy, the pur- chase of which will increase the capital",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 519,
+      "end": 524,
+      "text": "which",
+      "raw_start": 519,
+      "raw_end": 524,
+      "raw_quote": "which",
+      "context": "sts in fancy, the pur- chase of which will increase the capital of th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 525,
+      "end": 529,
+      "text": "will",
+      "raw_start": 525,
+      "raw_end": 529,
+      "raw_quote": "will",
+      "context": " fancy, the pur- chase of which will increase the capital of the pre",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 530,
+      "end": 538,
+      "text": "increase",
+      "raw_start": 530,
+      "raw_end": 538,
+      "raw_quote": "increase",
+      "context": "y, the pur- chase of which will increase the capital of the present mono",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 539,
+      "end": 542,
+      "text": "the",
+      "raw_start": 539,
+      "raw_end": 542,
+      "raw_quote": "the",
+      "context": "r- chase of which will increase the capital of the present monopoly",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 543,
+      "end": 550,
+      "text": "capital",
+      "raw_start": 543,
+      "raw_end": 550,
+      "raw_quote": "capital",
+      "context": "hase of which will increase the capital of the present monopoly, and ev",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 551,
+      "end": 553,
+      "text": "of",
+      "raw_start": 551,
+      "raw_end": 553,
+      "raw_quote": "of",
+      "context": "which will increase the capital of the present monopoly, and every",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 554,
+      "end": 557,
+      "text": "the",
+      "raw_start": 554,
+      "raw_end": 557,
+      "raw_quote": "the",
+      "context": "ch will increase the capital of the present monopoly, and every tim",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 558,
+      "end": 565,
+      "text": "present",
+      "raw_start": 558,
+      "raw_end": 565,
+      "raw_quote": "present",
+      "context": "ill increase the capital of the present monopoly, and every time the ca",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 566,
+      "end": 574,
+      "text": "monopoly",
+      "raw_start": 566,
+      "raw_end": 574,
+      "raw_quote": "monopoly",
+      "context": "ease the capital of the present monopoly, and every time the capital IS ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 576,
+      "end": 579,
+      "text": "and",
+      "raw_start": 576,
+      "raw_end": 579,
+      "raw_quote": "and",
+      "context": "apital of the present monopoly, and every time the capital IS incre",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 580,
+      "end": 585,
+      "text": "every",
+      "raw_start": 580,
+      "raw_end": 585,
+      "raw_quote": "every",
+      "context": "al of the present monopoly, and every time the capital IS increased t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 586,
+      "end": 590,
+      "text": "time",
+      "raw_start": 586,
+      "raw_end": 590,
+      "raw_quote": "time",
+      "context": "the present monopoly, and every time the capital IS increased the pi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 591,
+      "end": 594,
+      "text": "the",
+      "raw_start": 591,
+      "raw_end": 594,
+      "raw_quote": "the",
+      "context": "resent monopoly, and every time the capital IS increased the pi-ice",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 595,
+      "end": 602,
+      "text": "capital",
+      "raw_start": 595,
+      "raw_end": 602,
+      "raw_quote": "capital",
+      "context": "nt monopoly, and every time the capital IS increased the pi-ice for tel",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 603,
+      "end": 605,
+      "text": "IS",
+      "raw_start": 603,
+      "raw_end": 605,
+      "raw_quote": "IS",
+      "context": "oly, and every time the capital IS increased the pi-ice for telegr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 606,
+      "end": 615,
+      "text": "increased",
+      "raw_start": 606,
+      "raw_end": 615,
+      "raw_quote": "increased",
+      "context": ", and every time the capital IS increased the pi-ice for telegraphing is ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 616,
+      "end": 619,
+      "text": "the",
+      "raw_start": 616,
+      "raw_end": 619,
+      "raw_quote": "the",
+      "context": "y time the capital IS increased the pi-ice for telegraphing is in- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 620,
+      "end": 626,
+      "text": "pi-ice",
+      "raw_start": 620,
+      "raw_end": 626,
+      "raw_quote": "pi-ice",
+      "context": "me the capital IS increased the pi-ice for telegraphing is in- creased",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 627,
+      "end": 630,
+      "text": "for",
+      "raw_start": 627,
+      "raw_end": 630,
+      "raw_quote": "for",
+      "context": "capital IS increased the pi-ice for telegraphing is in- creased.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 631,
+      "end": 643,
+      "text": "telegraphing",
+      "raw_start": 631,
+      "raw_end": 643,
+      "raw_quote": "telegraphing",
+      "context": "tal IS increased the pi-ice for telegraphing is in- creased.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 644,
+      "end": 646,
+      "text": "is",
+      "raw_start": 644,
+      "raw_end": 646,
+      "raw_quote": "is",
+      "context": "sed the pi-ice for telegraphing is in- creased.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 647,
+      "end": 649,
+      "text": "in",
+      "raw_start": 647,
+      "raw_end": 649,
+      "raw_quote": "in",
+      "context": " the pi-ice for telegraphing is in- creased.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 651,
+      "end": 658,
+      "text": "creased",
+      "raw_start": 651,
+      "raw_end": 658,
+      "raw_quote": "creased",
+      "context": " pi-ice for telegraphing is in- creased.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 2,
+      "end": 4,
+      "text": "Mr",
+      "raw_start": 2,
+      "raw_end": 4,
+      "raw_quote": "Mr",
+      "context": ". Mr. NYE. Seven dollars and eighty ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 6,
+      "end": 9,
+      "text": "NYE",
+      "raw_start": 6,
+      "raw_end": 9,
+      "raw_quote": "NYE",
+      "context": ". Mr. NYE. Seven dollars and eighty cents",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 11,
+      "end": 16,
+      "text": "Seven",
+      "raw_start": 11,
+      "raw_end": 16,
+      "raw_quote": "Seven",
+      "context": ". Mr. NYE. Seven dollars and eighty cents to sen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 17,
+      "end": 24,
+      "text": "dollars",
+      "raw_start": 17,
+      "raw_end": 24,
+      "raw_quote": "dollars",
+      "context": ". Mr. NYE. Seven dollars and eighty cents to send ten wo",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 25,
+      "end": 28,
+      "text": "and",
+      "raw_start": 25,
+      "raw_end": 28,
+      "raw_quote": "and",
+      "context": ". Mr. NYE. Seven dollars and eighty cents to send ten words ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 29,
+      "end": 35,
+      "text": "eighty",
+      "raw_start": 29,
+      "raw_end": 35,
+      "raw_quote": "eighty",
+      "context": ". Mr. NYE. Seven dollars and eighty cents to send ten words from Sa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 36,
+      "end": 41,
+      "text": "cents",
+      "raw_start": 36,
+      "raw_end": 41,
+      "raw_quote": "cents",
+      "context": ". NYE. Seven dollars and eighty cents to send ten words from San Fran",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 42,
+      "end": 44,
+      "text": "to",
+      "raw_start": 42,
+      "raw_end": 44,
+      "raw_quote": "to",
+      "context": " Seven dollars and eighty cents to send ten words from San Francis",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 45,
+      "end": 49,
+      "text": "send",
+      "raw_start": 45,
+      "raw_end": 49,
+      "raw_quote": "send",
+      "context": "ven dollars and eighty cents to send ten words from San Francisco to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 50,
+      "end": 53,
+      "text": "ten",
+      "raw_start": 50,
+      "raw_end": 53,
+      "raw_quote": "ten",
+      "context": "ollars and eighty cents to send ten words from San Francisco to New",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 54,
+      "end": 59,
+      "text": "words",
+      "raw_start": 54,
+      "raw_end": 59,
+      "raw_quote": "words",
+      "context": "rs and eighty cents to send ten words from San Francisco to New York ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 60,
+      "end": 64,
+      "text": "from",
+      "raw_start": 60,
+      "raw_end": 64,
+      "raw_quote": "from",
+      "context": " eighty cents to send ten words from San Francisco to New York or Wa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 65,
+      "end": 68,
+      "text": "San",
+      "raw_start": 65,
+      "raw_end": 68,
+      "raw_quote": "San",
+      "context": "ty cents to send ten words from San Francisco to New York or Washin",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 69,
+      "end": 78,
+      "text": "Francisco",
+      "raw_start": 69,
+      "raw_end": 78,
+      "raw_quote": "Francisco",
+      "context": "ents to send ten words from San Francisco to New York or Washington ; and",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate",
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 79,
+      "end": 81,
+      "text": "to",
+      "raw_start": 79,
+      "raw_end": 81,
+      "raw_quote": "to",
+      "context": "nd ten words from San Francisco to New York or Washington ; and fr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 82,
+      "end": 85,
+      "text": "New",
+      "raw_start": 82,
+      "raw_end": 85,
+      "raw_quote": "New",
+      "context": "ten words from San Francisco to New York or Washington ; and from C",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 86,
+      "end": 90,
+      "text": "York",
+      "raw_start": 86,
+      "raw_end": 90,
+      "raw_quote": "York",
+      "context": "words from San Francisco to New York or Washington ; and from Carson",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 91,
+      "end": 93,
+      "text": "or",
+      "raw_start": 91,
+      "raw_end": 93,
+      "raw_quote": "or",
+      "context": " from San Francisco to New York or Washington ; and from Carson Ci",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 94,
+      "end": 104,
+      "text": "Washington",
+      "raw_start": 94,
+      "raw_end": 104,
+      "raw_quote": "Washington",
+      "context": "om San Francisco to New York or Washington ; and from Carson City, wliere ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 107,
+      "end": 110,
+      "text": "and",
+      "raw_start": 107,
+      "raw_end": 110,
+      "raw_quote": "and",
+      "context": "sco to New York or Washington ; and from Carson City, wliere I resi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 111,
+      "end": 115,
+      "text": "from",
+      "raw_start": 111,
+      "raw_end": 115,
+      "raw_quote": "from",
+      "context": "to New York or Washington ; and from Carson City, wliere I reside, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 116,
+      "end": 122,
+      "text": "Carson",
+      "raw_start": 116,
+      "raw_end": 122,
+      "raw_quote": "Carson",
+      "context": "w York or Washington ; and from Carson City, wliere I reside, the pric",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 123,
+      "end": 127,
+      "text": "City",
+      "raw_start": 123,
+      "raw_end": 127,
+      "raw_quote": "City",
+      "context": "or Washington ; and from Carson City, wliere I reside, the price is ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 129,
+      "end": 135,
+      "text": "wliere",
+      "raw_start": 129,
+      "raw_end": 135,
+      "raw_quote": "wliere",
+      "context": "hington ; and from Carson City, wliere I reside, the price is the same",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 136,
+      "end": 137,
+      "text": "I",
+      "raw_start": 136,
+      "raw_end": 137,
+      "raw_quote": "I",
+      "context": " ; and from Carson City, wliere I reside, the price is the same, ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 138,
+      "end": 144,
+      "text": "reside",
+      "raw_start": 138,
+      "raw_end": 144,
+      "raw_quote": "reside",
+      "context": " and from Carson City, wliere I reside, the price is the same, althoug",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 146,
+      "end": 149,
+      "text": "the",
+      "raw_start": 146,
+      "raw_end": 149,
+      "raw_quote": "the",
+      "context": "m Carson City, wliere I reside, the price is the same, although tha",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 150,
+      "end": 155,
+      "text": "price",
+      "raw_start": 150,
+      "raw_end": 155,
+      "raw_quote": "price",
+      "context": "rson City, wliere I reside, the price is the same, although that is t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 156,
+      "end": 158,
+      "text": "is",
+      "raw_start": 156,
+      "raw_end": 158,
+      "raw_quote": "is",
+      "context": "ity, wliere I reside, the price is the same, although that is thre",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 159,
+      "end": 162,
+      "text": "the",
+      "raw_start": 159,
+      "raw_end": 162,
+      "raw_quote": "the",
+      "context": ", wliere I reside, the price is the same, although that is three hu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 163,
+      "end": 167,
+      "text": "same",
+      "raw_start": 163,
+      "raw_end": 167,
+      "raw_quote": "same",
+      "context": "iere I reside, the price is the same, although that is three hundred",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 169,
+      "end": 177,
+      "text": "although",
+      "raw_start": 169,
+      "raw_end": 177,
+      "raw_quote": "although",
+      "context": " reside, the price is the same, although that is three hundred miles nea",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 178,
+      "end": 182,
+      "text": "that",
+      "raw_start": 178,
+      "raw_end": 182,
+      "raw_quote": "that",
+      "context": "the price is the same, although that is three hundred miles nearer..",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 183,
+      "end": 185,
+      "text": "is",
+      "raw_start": 183,
+      "raw_end": 185,
+      "raw_quote": "is",
+      "context": "rice is the same, although that is three hundred miles nearer.. No",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 186,
+      "end": 191,
+      "text": "three",
+      "raw_start": 186,
+      "raw_end": 191,
+      "raw_quote": "three",
+      "context": "e is the same, although that is three hundred miles nearer.. Now, sir",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 192,
+      "end": 199,
+      "text": "hundred",
+      "raw_start": 192,
+      "raw_end": 199,
+      "raw_quote": "hundred",
+      "context": "he same, although that is three hundred miles nearer.. Now, sir, if t!i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 200,
+      "end": 205,
+      "text": "miles",
+      "raw_start": 200,
+      "raw_end": 205,
+      "raw_quote": "miles",
+      "context": " although that is three hundred miles nearer.. Now, sir, if t!ie Sena",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 206,
+      "end": 212,
+      "text": "nearer",
+      "raw_start": 206,
+      "raw_end": 212,
+      "raw_quote": "nearer",
+      "context": "ugh that is three hundred miles nearer.. Now, sir, if t!ie Senator fro",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 215,
+      "end": 218,
+      "text": "Now",
+      "raw_start": 215,
+      "raw_end": 218,
+      "raw_quote": "Now",
+      "context": "is three hundred miles nearer.. Now, sir, if t!ie Senator from Ohio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 220,
+      "end": 223,
+      "text": "sir",
+      "raw_start": 220,
+      "raw_end": 223,
+      "raw_quote": "sir",
+      "context": "ree hundred miles nearer.. Now, sir, if t!ie Senator from Ohio, wit",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 225,
+      "end": 227,
+      "text": "if",
+      "raw_start": 225,
+      "raw_end": 227,
+      "raw_quote": "if",
+      "context": "undred miles nearer.. Now, sir, if t!ie Senator from Ohio, with hi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 228,
+      "end": 229,
+      "text": "t",
+      "raw_start": 228,
+      "raw_end": 229,
+      "raw_quote": "t",
+      "context": "red miles nearer.. Now, sir, if t!ie Senator from Ohio, with his ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 230,
+      "end": 232,
+      "text": "ie",
+      "raw_start": 230,
+      "raw_end": 232,
+      "raw_quote": "ie",
+      "context": "d miles nearer.. Now, sir, if t!ie Senator from Ohio, with his acu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 233,
+      "end": 240,
+      "text": "Senator",
+      "raw_start": 233,
+      "raw_end": 240,
+      "raw_quote": "Senator",
+      "context": "iles nearer.. Now, sir, if t!ie Senator from Ohio, with his acute legal",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 241,
+      "end": 245,
+      "text": "from",
+      "raw_start": 241,
+      "raw_end": 245,
+      "raw_quote": "from",
+      "context": "rer.. Now, sir, if t!ie Senator from Ohio, with his acute legal mind",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 246,
+      "end": 250,
+      "text": "Ohio",
+      "raw_start": 246,
+      "raw_end": 250,
+      "raw_quote": "Ohio",
+      "context": " Now, sir, if t!ie Senator from Ohio, with his acute legal mind, wil",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 252,
+      "end": 256,
+      "text": "with",
+      "raw_start": 252,
+      "raw_end": 256,
+      "raw_quote": "with",
+      "context": "sir, if t!ie Senator from Ohio, with his acute legal mind, will set ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 257,
+      "end": 260,
+      "text": "his",
+      "raw_start": 257,
+      "raw_end": 260,
+      "raw_quote": "his",
+      "context": "if t!ie Senator from Ohio, with his acute legal mind, will set hims",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 261,
+      "end": 266,
+      "text": "acute",
+      "raw_start": 261,
+      "raw_end": 266,
+      "raw_quote": "acute",
+      "context": "!ie Senator from Ohio, with his acute legal mind, will set himself to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 267,
+      "end": 272,
+      "text": "legal",
+      "raw_start": 267,
+      "raw_end": 272,
+      "raw_quote": "legal",
+      "context": "nator from Ohio, with his acute legal mind, will set himself to work ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 273,
+      "end": 277,
+      "text": "mind",
+      "raw_start": 273,
+      "raw_end": 277,
+      "raw_quote": "mind",
+      "context": "from Ohio, with his acute legal mind, will set himself to work to co",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 279,
+      "end": 283,
+      "text": "will",
+      "raw_start": 279,
+      "raw_end": 283,
+      "raw_quote": "will",
+      "context": "hio, with his acute legal mind, will set himself to work to control ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 284,
+      "end": 287,
+      "text": "set",
+      "raw_start": 284,
+      "raw_end": 287,
+      "raw_quote": "set",
+      "context": "with his acute legal mind, will set himself to work to control the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 288,
+      "end": 295,
+      "text": "himself",
+      "raw_start": 288,
+      "raw_end": 295,
+      "raw_quote": "himself",
+      "context": " his acute legal mind, will set himself to work to control the jnices u",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 296,
+      "end": 298,
+      "text": "to",
+      "raw_start": 296,
+      "raw_end": 298,
+      "raw_quote": "to",
+      "context": "te legal mind, will set himself to work to control the jnices upon",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 299,
+      "end": 303,
+      "text": "work",
+      "raw_start": 299,
+      "raw_end": 303,
+      "raw_quote": "work",
+      "context": "legal mind, will set himself to work to control the jnices upon thes",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 304,
+      "end": 306,
+      "text": "to",
+      "raw_start": 304,
+      "raw_end": 306,
+      "raw_quote": "to",
+      "context": " mind, will set himself to work to control the jnices upon these o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 307,
+      "end": 314,
+      "text": "control",
+      "raw_start": 307,
+      "raw_end": 314,
+      "raw_quote": "control",
+      "context": "nd, will set himself to work to control the jnices upon these old lines",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 315,
+      "end": 318,
+      "text": "the",
+      "raw_start": 315,
+      "raw_end": 318,
+      "raw_quote": "the",
+      "context": " set himself to work to control the jnices upon these old lines, he",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 319,
+      "end": 325,
+      "text": "jnices",
+      "raw_start": 319,
+      "raw_end": 325,
+      "raw_quote": "jnices",
+      "context": " himself to work to control the jnices upon these old lines, he will d",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 326,
+      "end": 330,
+      "text": "upon",
+      "raw_start": 326,
+      "raw_end": 330,
+      "raw_quote": "upon",
+      "context": "f to work to control the jnices upon these old lines, he will do his",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 331,
+      "end": 336,
+      "text": "these",
+      "raw_start": 331,
+      "raw_end": 336,
+      "raw_quote": "these",
+      "context": "work to control the jnices upon these old lines, he will do his count",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 337,
+      "end": 340,
+      "text": "old",
+      "raw_start": 337,
+      "raw_end": 340,
+      "raw_quote": "old",
+      "context": "o control the jnices upon these old lines, he will do his country a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 341,
+      "end": 346,
+      "text": "lines",
+      "raw_start": 341,
+      "raw_end": 346,
+      "raw_quote": "lines",
+      "context": "ntrol the jnices upon these old lines, he will do his country a subst",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 348,
+      "end": 350,
+      "text": "he",
+      "raw_start": 348,
+      "raw_end": 350,
+      "raw_quote": "he",
+      "context": "he jnices upon these old lines, he will do his country a substanti",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 351,
+      "end": 355,
+      "text": "will",
+      "raw_start": 351,
+      "raw_end": 355,
+      "raw_quote": "will",
+      "context": "jnices upon these old lines, he will do his country a substantial se",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 356,
+      "end": 358,
+      "text": "do",
+      "raw_start": 356,
+      "raw_end": 358,
+      "raw_quote": "do",
+      "context": "s upon these old lines, he will do his country a substantial servi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 359,
+      "end": 362,
+      "text": "his",
+      "raw_start": 359,
+      "raw_end": 362,
+      "raw_quote": "his",
+      "context": "pon these old lines, he will do his country a substantial service ;",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 363,
+      "end": 370,
+      "text": "country",
+      "raw_start": 363,
+      "raw_end": 370,
+      "raw_quote": "country",
+      "context": "these old lines, he will do his country a substantial service ; but I r",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 371,
+      "end": 372,
+      "text": "a",
+      "raw_start": 371,
+      "raw_end": 372,
+      "raw_quote": "a",
+      "context": "d lines, he will do his country a substantial service ; but I rep",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 373,
+      "end": 384,
+      "text": "substantial",
+      "raw_start": 373,
+      "raw_end": 384,
+      "raw_quote": "substantial",
+      "context": "lines, he will do his country a substantial service ; but I repeat, in my j",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 385,
+      "end": 392,
+      "text": "service",
+      "raw_start": 385,
+      "raw_end": 392,
+      "raw_quote": "service",
+      "context": "ll do his country a substantial service ; but I repeat, in my judgment,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 395,
+      "end": 398,
+      "text": "but",
+      "raw_start": 395,
+      "raw_end": 398,
+      "raw_quote": "but",
+      "context": "country a substantial service ; but I repeat, in my judgment, he ne",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 399,
+      "end": 400,
+      "text": "I",
+      "raw_start": 399,
+      "raw_end": 400,
+      "raw_quote": "I",
+      "context": "try a substantial service ; but I repeat, in my judgment, he neve",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 401,
+      "end": 407,
+      "text": "repeat",
+      "raw_start": 401,
+      "raw_end": 407,
+      "raw_quote": "repeat",
+      "context": "y a substantial service ; but I repeat, in my judgment, he never can e",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 409,
+      "end": 411,
+      "text": "in",
+      "raw_start": 409,
+      "raw_end": 411,
+      "raw_quote": "in",
+      "context": "tantial service ; but I repeat, in my judgment, he never can effec",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 412,
+      "end": 414,
+      "text": "my",
+      "raw_start": 412,
+      "raw_end": 414,
+      "raw_quote": "my",
+      "context": "tial service ; but I repeat, in my judgment, he never can effect i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 415,
+      "end": 423,
+      "text": "judgment",
+      "raw_start": 415,
+      "raw_end": 423,
+      "raw_quote": "judgment",
+      "context": "l service ; but I repeat, in my judgment, he never can effect it by this",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 425,
+      "end": 427,
+      "text": "he",
+      "raw_start": 425,
+      "raw_end": 427,
+      "raw_quote": "he",
+      "context": "; but I repeat, in my judgment, he never can effect it by this bil",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 428,
+      "end": 433,
+      "text": "never",
+      "raw_start": 428,
+      "raw_end": 433,
+      "raw_quote": "never",
+      "context": "ut I repeat, in my judgment, he never can effect it by this bill for ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 434,
+      "end": 437,
+      "text": "can",
+      "raw_start": 434,
+      "raw_end": 437,
+      "raw_quote": "can",
+      "context": "epeat, in my judgment, he never can effect it by this bill for a li",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 438,
+      "end": 444,
+      "text": "effect",
+      "raw_start": 438,
+      "raw_end": 444,
+      "raw_quote": "effect",
+      "context": "t, in my judgment, he never can effect it by this bill for a line v/hi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 445,
+      "end": 447,
+      "text": "it",
+      "raw_start": 445,
+      "raw_end": 447,
+      "raw_quote": "it",
+      "context": "y judgment, he never can effect it by this bill for a line v/hich ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 448,
+      "end": 450,
+      "text": "by",
+      "raw_start": 448,
+      "raw_end": 450,
+      "raw_quote": "by",
+      "context": "udgment, he never can effect it by this bill for a line v/hich onl",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 451,
+      "end": 455,
+      "text": "this",
+      "raw_start": 451,
+      "raw_end": 455,
+      "raw_quote": "this",
+      "context": "ment, he never can effect it by this bill for a line v/hich only exi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 456,
+      "end": 460,
+      "text": "bill",
+      "raw_start": 456,
+      "raw_end": 460,
+      "raw_quote": "bill",
+      "context": " he never can effect it by this bill for a line v/hich only exists i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 461,
+      "end": 464,
+      "text": "for",
+      "raw_start": 461,
+      "raw_end": 464,
+      "raw_quote": "for",
+      "context": "ever can effect it by this bill for a line v/hich only exists in fa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 465,
+      "end": 466,
+      "text": "a",
+      "raw_start": 465,
+      "raw_end": 466,
+      "raw_quote": "a",
+      "context": " can effect it by this bill for a line v/hich only exists in fanc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 467,
+      "end": 471,
+      "text": "line",
+      "raw_start": 467,
+      "raw_end": 471,
+      "raw_quote": "line",
+      "context": "an effect it by this bill for a line v/hich only exists in fancy, th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 472,
+      "end": 473,
+      "text": "v",
+      "raw_start": 472,
+      "raw_end": 473,
+      "raw_quote": "v",
+      "context": "fect it by this bill for a line v/hich only exists in fancy, the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 474,
+      "end": 478,
+      "text": "hich",
+      "raw_start": 474,
+      "raw_end": 478,
+      "raw_quote": "hich",
+      "context": "ct it by this bill for a line v/hich only exists in fancy, the pur- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 479,
+      "end": 483,
+      "text": "only",
+      "raw_start": 479,
+      "raw_end": 483,
+      "raw_quote": "only",
+      "context": " by this bill for a line v/hich only exists in fancy, the pur- chase",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 484,
+      "end": 490,
+      "text": "exists",
+      "raw_start": 484,
+      "raw_end": 490,
+      "raw_quote": "exists",
+      "context": "his bill for a line v/hich only exists in fancy, the pur- chase of whi",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 491,
+      "end": 493,
+      "text": "in",
+      "raw_start": 491,
+      "raw_end": 493,
+      "raw_quote": "in",
+      "context": "l for a line v/hich only exists in fancy, the pur- chase of which ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 494,
+      "end": 499,
+      "text": "fancy",
+      "raw_start": 494,
+      "raw_end": 499,
+      "raw_quote": "fancy",
+      "context": "or a line v/hich only exists in fancy, the pur- chase of which will i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 501,
+      "end": 504,
+      "text": "the",
+      "raw_start": 501,
+      "raw_end": 504,
+      "raw_quote": "the",
+      "context": "ne v/hich only exists in fancy, the pur- chase of which will increa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 505,
+      "end": 508,
+      "text": "pur",
+      "raw_start": 505,
+      "raw_end": 508,
+      "raw_quote": "pur",
+      "context": "/hich only exists in fancy, the pur- chase of which will increase t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 510,
+      "end": 515,
+      "text": "chase",
+      "raw_start": 510,
+      "raw_end": 515,
+      "raw_quote": "chase",
+      "context": " only exists in fancy, the pur- chase of which will increase the capi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 516,
+      "end": 518,
+      "text": "of",
+      "raw_start": 516,
+      "raw_end": 518,
+      "raw_quote": "of",
+      "context": "exists in fancy, the pur- chase of which will increase the capital",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 519,
+      "end": 524,
+      "text": "which",
+      "raw_start": 519,
+      "raw_end": 524,
+      "raw_quote": "which",
+      "context": "sts in fancy, the pur- chase of which will increase the capital of th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 525,
+      "end": 529,
+      "text": "will",
+      "raw_start": 525,
+      "raw_end": 529,
+      "raw_quote": "will",
+      "context": " fancy, the pur- chase of which will increase the capital of the pre",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 530,
+      "end": 538,
+      "text": "increase",
+      "raw_start": 530,
+      "raw_end": 538,
+      "raw_quote": "increase",
+      "context": "y, the pur- chase of which will increase the capital of the present mono",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 539,
+      "end": 542,
+      "text": "the",
+      "raw_start": 539,
+      "raw_end": 542,
+      "raw_quote": "the",
+      "context": "r- chase of which will increase the capital of the present monopoly",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 543,
+      "end": 550,
+      "text": "capital",
+      "raw_start": 543,
+      "raw_end": 550,
+      "raw_quote": "capital",
+      "context": "hase of which will increase the capital of the present monopoly, and ev",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 551,
+      "end": 553,
+      "text": "of",
+      "raw_start": 551,
+      "raw_end": 553,
+      "raw_quote": "of",
+      "context": "which will increase the capital of the present monopoly, and every",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 554,
+      "end": 557,
+      "text": "the",
+      "raw_start": 554,
+      "raw_end": 557,
+      "raw_quote": "the",
+      "context": "ch will increase the capital of the present monopoly, and every tim",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 558,
+      "end": 565,
+      "text": "present",
+      "raw_start": 558,
+      "raw_end": 565,
+      "raw_quote": "present",
+      "context": "ill increase the capital of the present monopoly, and every time the ca",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 566,
+      "end": 574,
+      "text": "monopoly",
+      "raw_start": 566,
+      "raw_end": 574,
+      "raw_quote": "monopoly",
+      "context": "ease the capital of the present monopoly, and every time the capital IS ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 576,
+      "end": 579,
+      "text": "and",
+      "raw_start": 576,
+      "raw_end": 579,
+      "raw_quote": "and",
+      "context": "apital of the present monopoly, and every time the capital IS incre",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 580,
+      "end": 585,
+      "text": "every",
+      "raw_start": 580,
+      "raw_end": 585,
+      "raw_quote": "every",
+      "context": "al of the present monopoly, and every time the capital IS increased t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 586,
+      "end": 590,
+      "text": "time",
+      "raw_start": 586,
+      "raw_end": 590,
+      "raw_quote": "time",
+      "context": "the present monopoly, and every time the capital IS increased the pi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 591,
+      "end": 594,
+      "text": "the",
+      "raw_start": 591,
+      "raw_end": 594,
+      "raw_quote": "the",
+      "context": "resent monopoly, and every time the capital IS increased the pi-ice",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 595,
+      "end": 602,
+      "text": "capital",
+      "raw_start": 595,
+      "raw_end": 602,
+      "raw_quote": "capital",
+      "context": "nt monopoly, and every time the capital IS increased the pi-ice for tel",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 603,
+      "end": 605,
+      "text": "IS",
+      "raw_start": 603,
+      "raw_end": 605,
+      "raw_quote": "IS",
+      "context": "oly, and every time the capital IS increased the pi-ice for telegr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 606,
+      "end": 615,
+      "text": "increased",
+      "raw_start": 606,
+      "raw_end": 615,
+      "raw_quote": "increased",
+      "context": ", and every time the capital IS increased the pi-ice for telegraphing is ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 616,
+      "end": 619,
+      "text": "the",
+      "raw_start": 616,
+      "raw_end": 619,
+      "raw_quote": "the",
+      "context": "y time the capital IS increased the pi-ice for telegraphing is in- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 620,
+      "end": 626,
+      "text": "pi-ice",
+      "raw_start": 620,
+      "raw_end": 626,
+      "raw_quote": "pi-ice",
+      "context": "me the capital IS increased the pi-ice for telegraphing is in- creased",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 627,
+      "end": 630,
+      "text": "for",
+      "raw_start": 627,
+      "raw_end": 630,
+      "raw_quote": "for",
+      "context": "capital IS increased the pi-ice for telegraphing is in- creased.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 631,
+      "end": 643,
+      "text": "telegraphing",
+      "raw_start": 631,
+      "raw_end": 643,
+      "raw_quote": "telegraphing",
+      "context": "tal IS increased the pi-ice for telegraphing is in- creased.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 644,
+      "end": 646,
+      "text": "is",
+      "raw_start": 644,
+      "raw_end": 646,
+      "raw_quote": "is",
+      "context": "sed the pi-ice for telegraphing is in- creased.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 647,
+      "end": 656,
+      "text": "increased",
+      "raw_start": 647,
+      "raw_end": 658,
+      "raw_quote": "in- creased",
+      "context": " the pi-ice for telegraphing is in- creased.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo00unit:716:par_000716_000009",
+      "raw_text": ". Mr. NYE. Seven dollars and eighty cents to send ten words from San Francisco to New York or Washington ; and from Carson City, wliere I reside, the price is the same, although that is three hundred miles nearer.. Now, sir, if t!ie Senator from Ohio, with his acute legal mind, will set himself to work to control the jnices upon these old lines, he will do his country a substantial service ; but I repeat, in my judgment, he never can effect it by this bill for a line v/hich only exists in fancy, the pur- chase of which will increase the capital of the present monopoly, and every time the capital IS increased the pi-ice for telegraphing is in- creased.",
+      "raw_sha256": "1f4c0ff387985098f852f81dd09c90950fa030829f41191844aae8f8d560105f"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo00unit:716:par_000716_000009",
+        "raw_text": ". Mr. NYE. Seven dollars and eighty cents to send ten words from San Francisco to New York or Washington ; and from Carson City, wliere I reside, the price is the same, although that is three hundred miles nearer.. Now, sir, if t!ie Senator from Ohio, with his acute legal mind, will set himself to work to control the jnices upon these old lines, he will do his country a substantial service ; but I repeat, in my judgment, he never can effect it by this bill for a line v/hich only exists in fancy, the pur- chase of which will increase the capital of the present monopoly, and every time the capital IS increased the pi-ice for telegraphing is in- creased.",
+        "raw_sha256": "1f4c0ff387985098f852f81dd09c90950fa030829f41191844aae8f8d560105f"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": ". Mr. NYE. Seven dollars and eighty cents to send ten words from San Francisco to New York or Washington ; and from Carson City, wliere I reside, the price is the same, although that is three hundred miles nearer.. Now, sir, if t!ie Senator from Ohio, with his acute legal mind, will set himself to work to control the jnices upon these old lines, he will do his country a substantial service ; but I repeat, in my judgment, he never can effect it by this bill for a line v/hich only exists in fancy, the pur- chase of which will increase the capital of the present monopoly, and every time the capital IS increased the pi-ice for telegraphing is increased.",
+    "proposed_sha256": "562d7da19fe6a9cc8c7af757bac9cd24a64d45c1e26aaf0976f22c062878874d",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

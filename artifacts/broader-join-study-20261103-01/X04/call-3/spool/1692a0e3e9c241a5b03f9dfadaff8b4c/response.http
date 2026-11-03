@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 22:00:26 GMT
+Content-Length: 878
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T22:00:26.493735Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Horsman, James E., bill for the relief of...286 Hospital, joint resolution confirming the transfer of the United States, at Jeffersonville, Indiana, to the State of Indiana as a donation for the benefit of Indiana soldiers and seamen disabled in the service of the United States... 919\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"X04\"\n}"},"done":true,"done_reason":"stop","total_duration":34073858416,"load_duration":2411249083,"prompt_eval_count":3259,"prompt_eval_cached_count":0,"prompt_eval_duration":26474917042,"eval_count":149,"eval_duration":5170203167}

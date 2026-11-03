@@ -1,0 +1,109 @@
+{
+  "source_id": "congressionalglo7392unit:1051:par_001051_000014",
+  "raw_sha256": "5e171ba3d1a69369966ffed0b12fb53bad892284746c46c675cfbf43508101d6",
+  "deterministic_sha256": "5e171ba3d1a69369966ffed0b12fb53bad892284746c46c675cfbf43508101d6",
+  "deterministic_result_sha256": "8029e46e9d9497993b385fcd8b5928bae889d80c492220e6802639acde134031",
+  "name_list_state": "available",
+  "signals": [
+    {
+      "signal_id": "902b0bd4db00a14b5e6217af3280f5e5200dc30690171e2226fee628dd36dd19",
+      "paragraph_alias": "P1",
+      "raw_start": 4,
+      "raw_end": 10,
+      "raw_quote": "KASSON",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar",
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "b4b0b64a24ff5392a55641f7f4c7b9cbaa5ed83f2204d0e277e40d0974233679",
+      "paragraph_alias": "P1",
+      "raw_start": 15,
+      "raw_end": 20,
+      "raw_quote": "seems",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "be430b1d9459c5f90be5a1d6e439925a771db969e9dbae272a839b7ad70b6e3c",
+      "paragraph_alias": "P1",
+      "raw_start": 125,
+      "raw_end": 136,
+      "raw_quote": "Territories",
+      "category": "word",
+      "flags": [
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "59d9bd34f147dcd855c5b67829e9ba4b083265bb0f303a907a0e94f04241183c",
+      "paragraph_alias": "P1",
+      "raw_start": 138,
+      "raw_end": 146,
+      "raw_quote": "Congress",
+      "category": "word",
+      "flags": [
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "13844ed643bd0e16695c3f2890b92b3181bc9b762923e5e9eab6e123d840122e",
+      "paragraph_alias": "P1",
+      "raw_start": 147,
+      "raw_end": 155,
+      "raw_quote": "declares",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "3a89089c11ad2fd707918d8abeeb5c1f3c11e71630c1d894c061997eab5c9eba",
+      "paragraph_alias": "P1",
+      "raw_start": 160,
+      "raw_end": 165,
+      "raw_quote": "terms",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "60029ecac61cc0e9ca741f5b42846290a34d961e75f46cc13142999b76e93b59",
+      "paragraph_alias": "P1",
+      "raw_start": 222,
+      "raw_end": 228,
+      "raw_quote": "grants",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    },
+    {
+      "signal_id": "3636dd41723a53b8a05b4ce0338b6f978079fe7388cad0e2c2496721470da8c2",
+      "paragraph_alias": "P1",
+      "raw_start": 280,
+      "raw_end": 286,
+      "raw_quote": "States",
+      "category": "word",
+      "flags": [
+        "post_repair_word_unfamiliar",
+        "name_list_unfamiliar"
+      ],
+      "route_reason": "Inspect the entire target against the image; this is not a verified error."
+    }
+  ],
+  "selection": "secondary_inspection",
+  "coverage_gaps": "Numeric-notation detection is conservative but incomplete; unusual/damaged numeric forms can be missed. Detected digit-bearing and ambiguous Roman notation still route, including raw numbers later repaired. Spelled-out number words use ordinary post-repair spelling checks; their numerical meaning alone does not route them. Unfamiliar/unassessed words, independent name flags and success/unflagged audits remain."
+}

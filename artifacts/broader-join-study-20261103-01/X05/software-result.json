@@ -1,0 +1,4485 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7392unit:811:par_000811_000010",
+      "raw_text": "Mr. BALDWIN. I move to strike out the last ten words of the section. This would kill it ; and I think this section ought to be killed in some way, and for this reason : the attempt to advertise letters in any other way than is now jjrescribed would certainly cost the Gov- ernment more than it costs now, or the attempt to advertise suitably would fail. Any job printer ■who should be required to furnish printed lists of letters suitable for posting would charge more for his work than it costs to advertise them in the newspapers. Any one familiar with the printing business knows this, or will readily see it by means of a little calculation.",
+      "raw_sha256": "b73f5b238c1c7c52769194a188fbed055ca7286a51796922797416d2b1713a71"
+    },
+    "static_text": "Mr. BALDWIN. I move to strike out the last ten words of the section. This would kill it ; and I think this section ought to be killed in some way, and for this reason : the attempt to advertise letters in any other way than is now jjrescribed would certainly cost the Government more than it costs now, or the attempt to advertise suitably would fail. Any job printer ■who should be required to furnish printed lists of letters suitable for posting would charge more for his work than it costs to advertise them in the newspapers. Any one familiar with the printing business knows this, or will readily see it by means of a little calculation.",
+    "static_sha256": "d67f38da93f29f0b685a5bdb0011cb2d1492702017787bb9dd1176a741c9ca0f",
+    "static_edits": [
+      {
+        "start": 268,
+        "end": 280,
+        "raw_quote": "Gov- ernment",
+        "replacement": "Government",
+        "rule_id": "adjacent-line wrap; lexicon form government"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000811_000053",
+        "start": 0,
+        "end": 37,
+        "text": "Mr. BALDWIN. I move to strike out the"
+      },
+      {
+        "line_id": "line_000811_000054",
+        "start": 38,
+        "end": 84,
+        "text": "last ten words of the section. This would kill"
+      },
+      {
+        "line_id": "line_000811_000055",
+        "start": 85,
+        "end": 133,
+        "text": "it ; and I think this section ought to be killed"
+      },
+      {
+        "line_id": "line_000811_000056",
+        "start": 134,
+        "end": 180,
+        "text": "in some way, and for this reason : the attempt"
+      },
+      {
+        "line_id": "line_000811_000057",
+        "start": 181,
+        "end": 226,
+        "text": "to advertise letters in any other way than is"
+      },
+      {
+        "line_id": "line_000811_000058",
+        "start": 227,
+        "end": 272,
+        "text": "now jjrescribed would certainly cost the Gov-"
+      },
+      {
+        "line_id": "line_000811_000059",
+        "start": 273,
+        "end": 319,
+        "text": "ernment more than it costs now, or the attempt"
+      },
+      {
+        "line_id": "line_000811_000060",
+        "start": 320,
+        "end": 369,
+        "text": "to advertise suitably would fail. Any job printer"
+      },
+      {
+        "line_id": "line_000811_000061",
+        "start": 370,
+        "end": 418,
+        "text": "■who should be required to furnish printed lists"
+      },
+      {
+        "line_id": "line_000811_000062",
+        "start": 419,
+        "end": 463,
+        "text": "of letters suitable for posting would charge"
+      },
+      {
+        "line_id": "line_000811_000063",
+        "start": 464,
+        "end": 508,
+        "text": "more for his work than it costs to advertise"
+      },
+      {
+        "line_id": "line_000811_000064",
+        "start": 509,
+        "end": 549,
+        "text": "them in the newspapers. Any one familiar"
+      },
+      {
+        "line_id": "line_000811_000065",
+        "start": 550,
+        "end": 596,
+        "text": "with the printing business knows this, or will"
+      },
+      {
+        "line_id": "line_000811_000066",
+        "start": 597,
+        "end": 645,
+        "text": "readily see it by means of a little calculation."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "720a89f6429b1df0c72ac9f17101d3d38575b12a411009f9184e0619c7c327d1"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "f7cf495307649e93f4b7a11ac61a01be1bc7476f1f13db53280e34e99bfc9a02",
+  "proposed_text": "Mr. BALDWIN. I move to strike out the last ten words of the section. This would kill it ; and I think this section ought to be killed in some way, and for this reason : the attempt to advertise letters in any other way than is now jjrescribed would certainly cost the Gov- ernment more than it costs now, or the attempt to advertise suitably would fail. Any job printer ■who should be required to furnish printed lists of letters suitable for posting would charge more for his work than it costs to advertise them in the newspapers. Any one familiar with the printing business knows this, or will readily see it by means of a little calculation.",
+  "proposed_sha256": "b73f5b238c1c7c52769194a188fbed055ca7286a51796922797416d2b1713a71",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 645,
+      "derived_start": 0,
+      "derived_end": 645,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 268,
+      "end": 280,
+      "raw_quote": "Gov- ernment",
+      "joined_candidate": "Government",
+      "decision": "retained_for_review",
+      "reason": "uppercase_or_nonlowercase"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. BALDWIN. I move to strike out ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 11,
+      "text": "BALDWIN",
+      "raw_start": 4,
+      "raw_end": 11,
+      "raw_quote": "BALDWIN",
+      "context": "Mr. BALDWIN. I move to strike out the last ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 13,
+      "end": 14,
+      "text": "I",
+      "raw_start": 13,
+      "raw_end": 14,
+      "raw_quote": "I",
+      "context": "Mr. BALDWIN. I move to strike out the last ten",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 15,
+      "end": 19,
+      "text": "move",
+      "raw_start": 15,
+      "raw_end": 19,
+      "raw_quote": "move",
+      "context": "Mr. BALDWIN. I move to strike out the last ten word",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 20,
+      "end": 22,
+      "text": "to",
+      "raw_start": 20,
+      "raw_end": 22,
+      "raw_quote": "to",
+      "context": "Mr. BALDWIN. I move to strike out the last ten words o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 23,
+      "end": 29,
+      "text": "strike",
+      "raw_start": 23,
+      "raw_end": 29,
+      "raw_quote": "strike",
+      "context": "Mr. BALDWIN. I move to strike out the last ten words of the s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 30,
+      "end": 33,
+      "text": "out",
+      "raw_start": 30,
+      "raw_end": 33,
+      "raw_quote": "out",
+      "context": "Mr. BALDWIN. I move to strike out the last ten words of the secti",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 34,
+      "end": 37,
+      "text": "the",
+      "raw_start": 34,
+      "raw_end": 37,
+      "raw_quote": "the",
+      "context": ". BALDWIN. I move to strike out the last ten words of the section. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 38,
+      "end": 42,
+      "text": "last",
+      "raw_start": 38,
+      "raw_end": 42,
+      "raw_quote": "last",
+      "context": "LDWIN. I move to strike out the last ten words of the section. This ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 43,
+      "end": 46,
+      "text": "ten",
+      "raw_start": 43,
+      "raw_end": 46,
+      "raw_quote": "ten",
+      "context": ". I move to strike out the last ten words of the section. This woul",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 47,
+      "end": 52,
+      "text": "words",
+      "raw_start": 47,
+      "raw_end": 52,
+      "raw_quote": "words",
+      "context": "move to strike out the last ten words of the section. This would kill",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 53,
+      "end": 55,
+      "text": "of",
+      "raw_start": 53,
+      "raw_end": 55,
+      "raw_quote": "of",
+      "context": "o strike out the last ten words of the section. This would kill it",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 56,
+      "end": 59,
+      "text": "the",
+      "raw_start": 56,
+      "raw_end": 59,
+      "raw_quote": "the",
+      "context": "trike out the last ten words of the section. This would kill it ; a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 60,
+      "end": 67,
+      "text": "section",
+      "raw_start": 60,
+      "raw_end": 67,
+      "raw_quote": "section",
+      "context": "e out the last ten words of the section. This would kill it ; and I thi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 69,
+      "end": 73,
+      "text": "This",
+      "raw_start": 69,
+      "raw_end": 73,
+      "raw_quote": "This",
+      "context": " last ten words of the section. This would kill it ; and I think thi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 74,
+      "end": 79,
+      "text": "would",
+      "raw_start": 74,
+      "raw_end": 79,
+      "raw_quote": "would",
+      "context": " ten words of the section. This would kill it ; and I think this sect",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 80,
+      "end": 84,
+      "text": "kill",
+      "raw_start": 80,
+      "raw_end": 84,
+      "raw_quote": "kill",
+      "context": "ords of the section. This would kill it ; and I think this section o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 85,
+      "end": 87,
+      "text": "it",
+      "raw_start": 85,
+      "raw_end": 87,
+      "raw_quote": "it",
+      "context": "of the section. This would kill it ; and I think this section ough",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 90,
+      "end": 93,
+      "text": "and",
+      "raw_start": 90,
+      "raw_end": 93,
+      "raw_quote": "and",
+      "context": "e section. This would kill it ; and I think this section ought to b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 94,
+      "end": 95,
+      "text": "I",
+      "raw_start": 94,
+      "raw_end": 95,
+      "raw_quote": "I",
+      "context": "ction. This would kill it ; and I think this section ought to be ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 96,
+      "end": 101,
+      "text": "think",
+      "raw_start": 96,
+      "raw_end": 101,
+      "raw_quote": "think",
+      "context": "ion. This would kill it ; and I think this section ought to be killed",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 102,
+      "end": 106,
+      "text": "this",
+      "raw_start": 102,
+      "raw_end": 106,
+      "raw_quote": "this",
+      "context": "his would kill it ; and I think this section ought to be killed in s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 107,
+      "end": 114,
+      "text": "section",
+      "raw_start": 107,
+      "raw_end": 114,
+      "raw_quote": "section",
+      "context": "ould kill it ; and I think this section ought to be killed in some way,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 115,
+      "end": 120,
+      "text": "ought",
+      "raw_start": 115,
+      "raw_end": 120,
+      "raw_quote": "ought",
+      "context": "l it ; and I think this section ought to be killed in some way, and f",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 121,
+      "end": 123,
+      "text": "to",
+      "raw_start": 121,
+      "raw_end": 123,
+      "raw_quote": "to",
+      "context": " and I think this section ought to be killed in some way, and for ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 124,
+      "end": 126,
+      "text": "be",
+      "raw_start": 124,
+      "raw_end": 126,
+      "raw_quote": "be",
+      "context": "d I think this section ought to be killed in some way, and for thi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 127,
+      "end": 133,
+      "text": "killed",
+      "raw_start": 127,
+      "raw_end": 133,
+      "raw_quote": "killed",
+      "context": " think this section ought to be killed in some way, and for this reaso",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 134,
+      "end": 136,
+      "text": "in",
+      "raw_start": 134,
+      "raw_end": 136,
+      "raw_quote": "in",
+      "context": "this section ought to be killed in some way, and for this reason :",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 137,
+      "end": 141,
+      "text": "some",
+      "raw_start": 137,
+      "raw_end": 141,
+      "raw_quote": "some",
+      "context": "s section ought to be killed in some way, and for this reason : the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 142,
+      "end": 145,
+      "text": "way",
+      "raw_start": 142,
+      "raw_end": 145,
+      "raw_quote": "way",
+      "context": "tion ought to be killed in some way, and for this reason : the atte",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 147,
+      "end": 150,
+      "text": "and",
+      "raw_start": 147,
+      "raw_end": 150,
+      "raw_quote": "and",
+      "context": "ought to be killed in some way, and for this reason : the attempt t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 151,
+      "end": 154,
+      "text": "for",
+      "raw_start": 151,
+      "raw_end": 154,
+      "raw_quote": "for",
+      "context": "t to be killed in some way, and for this reason : the attempt to ad",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 155,
+      "end": 159,
+      "text": "this",
+      "raw_start": 155,
+      "raw_end": 159,
+      "raw_quote": "this",
+      "context": " be killed in some way, and for this reason : the attempt to adverti",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 160,
+      "end": 166,
+      "text": "reason",
+      "raw_start": 160,
+      "raw_end": 166,
+      "raw_quote": "reason",
+      "context": "illed in some way, and for this reason : the attempt to advertise lett",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 169,
+      "end": 172,
+      "text": "the",
+      "raw_start": 169,
+      "raw_end": 172,
+      "raw_quote": "the",
+      "context": "some way, and for this reason : the attempt to advertise letters in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 173,
+      "end": 180,
+      "text": "attempt",
+      "raw_start": 173,
+      "raw_end": 180,
+      "raw_quote": "attempt",
+      "context": " way, and for this reason : the attempt to advertise letters in any oth",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 181,
+      "end": 183,
+      "text": "to",
+      "raw_start": 181,
+      "raw_end": 183,
+      "raw_quote": "to",
+      "context": "d for this reason : the attempt to advertise letters in any other ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 184,
+      "end": 193,
+      "text": "advertise",
+      "raw_start": 184,
+      "raw_end": 193,
+      "raw_quote": "advertise",
+      "context": "or this reason : the attempt to advertise letters in any other way than i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 194,
+      "end": 201,
+      "text": "letters",
+      "raw_start": 194,
+      "raw_end": 201,
+      "raw_quote": "letters",
+      "context": "ason : the attempt to advertise letters in any other way than is now jj",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 202,
+      "end": 204,
+      "text": "in",
+      "raw_start": 202,
+      "raw_end": 204,
+      "raw_quote": "in",
+      "context": "he attempt to advertise letters in any other way than is now jjres",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 205,
+      "end": 208,
+      "text": "any",
+      "raw_start": 205,
+      "raw_end": 208,
+      "raw_quote": "any",
+      "context": "attempt to advertise letters in any other way than is now jjrescrib",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 209,
+      "end": 214,
+      "text": "other",
+      "raw_start": 209,
+      "raw_end": 214,
+      "raw_quote": "other",
+      "context": "mpt to advertise letters in any other way than is now jjrescribed wou",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 215,
+      "end": 218,
+      "text": "way",
+      "raw_start": 215,
+      "raw_end": 218,
+      "raw_quote": "way",
+      "context": " advertise letters in any other way than is now jjrescribed would c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 219,
+      "end": 223,
+      "text": "than",
+      "raw_start": 219,
+      "raw_end": 223,
+      "raw_quote": "than",
+      "context": "ertise letters in any other way than is now jjrescribed would certai",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 224,
+      "end": 226,
+      "text": "is",
+      "raw_start": 224,
+      "raw_end": 226,
+      "raw_quote": "is",
+      "context": "e letters in any other way than is now jjrescribed would certainly",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 227,
+      "end": 230,
+      "text": "now",
+      "raw_start": 227,
+      "raw_end": 230,
+      "raw_quote": "now",
+      "context": "etters in any other way than is now jjrescribed would certainly cos",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 231,
+      "end": 242,
+      "text": "jjrescribed",
+      "raw_start": 231,
+      "raw_end": 242,
+      "raw_quote": "jjrescribed",
+      "context": "rs in any other way than is now jjrescribed would certainly cost the Gov- e",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 243,
+      "end": 248,
+      "text": "would",
+      "raw_start": 243,
+      "raw_end": 248,
+      "raw_quote": "would",
+      "context": "her way than is now jjrescribed would certainly cost the Gov- ernment",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 249,
+      "end": 258,
+      "text": "certainly",
+      "raw_start": 249,
+      "raw_end": 258,
+      "raw_quote": "certainly",
+      "context": "y than is now jjrescribed would certainly cost the Gov- ernment more than",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 259,
+      "end": 263,
+      "text": "cost",
+      "raw_start": 259,
+      "raw_end": 263,
+      "raw_quote": "cost",
+      "context": "now jjrescribed would certainly cost the Gov- ernment more than it c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 264,
+      "end": 267,
+      "text": "the",
+      "raw_start": 264,
+      "raw_end": 267,
+      "raw_quote": "the",
+      "context": "jrescribed would certainly cost the Gov- ernment more than it costs",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 268,
+      "end": 271,
+      "text": "Gov",
+      "raw_start": 268,
+      "raw_end": 271,
+      "raw_quote": "Gov",
+      "context": "cribed would certainly cost the Gov- ernment more than it costs now",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 273,
+      "end": 280,
+      "text": "ernment",
+      "raw_start": 273,
+      "raw_end": 280,
+      "raw_quote": "ernment",
+      "context": "d would certainly cost the Gov- ernment more than it costs now, or the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 281,
+      "end": 285,
+      "text": "more",
+      "raw_start": 281,
+      "raw_end": 285,
+      "raw_quote": "more",
+      "context": "certainly cost the Gov- ernment more than it costs now, or the attem",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 286,
+      "end": 290,
+      "text": "than",
+      "raw_start": 286,
+      "raw_end": 290,
+      "raw_quote": "than",
+      "context": "inly cost the Gov- ernment more than it costs now, or the attempt to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 291,
+      "end": 293,
+      "text": "it",
+      "raw_start": 291,
+      "raw_end": 293,
+      "raw_quote": "it",
+      "context": "cost the Gov- ernment more than it costs now, or the attempt to ad",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 294,
+      "end": 299,
+      "text": "costs",
+      "raw_start": 294,
+      "raw_end": 299,
+      "raw_quote": "costs",
+      "context": "t the Gov- ernment more than it costs now, or the attempt to advertis",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 300,
+      "end": 303,
+      "text": "now",
+      "raw_start": 300,
+      "raw_end": 303,
+      "raw_quote": "now",
+      "context": "Gov- ernment more than it costs now, or the attempt to advertise su",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 305,
+      "end": 307,
+      "text": "or",
+      "raw_start": 305,
+      "raw_end": 307,
+      "raw_quote": "or",
+      "context": "ernment more than it costs now, or the attempt to advertise suitab",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 308,
+      "end": 311,
+      "text": "the",
+      "raw_start": 308,
+      "raw_end": 311,
+      "raw_quote": "the",
+      "context": "ment more than it costs now, or the attempt to advertise suitably w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 312,
+      "end": 319,
+      "text": "attempt",
+      "raw_start": 312,
+      "raw_end": 319,
+      "raw_quote": "attempt",
+      "context": " more than it costs now, or the attempt to advertise suitably would fai",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 320,
+      "end": 322,
+      "text": "to",
+      "raw_start": 320,
+      "raw_end": 322,
+      "raw_quote": "to",
+      "context": "an it costs now, or the attempt to advertise suitably would fail. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 323,
+      "end": 332,
+      "text": "advertise",
+      "raw_start": 323,
+      "raw_end": 332,
+      "raw_quote": "advertise",
+      "context": "it costs now, or the attempt to advertise suitably would fail. Any job pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 333,
+      "end": 341,
+      "text": "suitably",
+      "raw_start": 333,
+      "raw_end": 341,
+      "raw_quote": "suitably",
+      "context": "ow, or the attempt to advertise suitably would fail. Any job printer ■wh",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 342,
+      "end": 347,
+      "text": "would",
+      "raw_start": 342,
+      "raw_end": 347,
+      "raw_quote": "would",
+      "context": "e attempt to advertise suitably would fail. Any job printer ■who shou",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 348,
+      "end": 352,
+      "text": "fail",
+      "raw_start": 348,
+      "raw_end": 352,
+      "raw_quote": "fail",
+      "context": "mpt to advertise suitably would fail. Any job printer ■who should be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 354,
+      "end": 357,
+      "text": "Any",
+      "raw_start": 354,
+      "raw_end": 357,
+      "raw_quote": "Any",
+      "context": " advertise suitably would fail. Any job printer ■who should be requ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 358,
+      "end": 361,
+      "text": "job",
+      "raw_start": 358,
+      "raw_end": 361,
+      "raw_quote": "job",
+      "context": "ertise suitably would fail. Any job printer ■who should be required",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 362,
+      "end": 369,
+      "text": "printer",
+      "raw_start": 362,
+      "raw_end": 369,
+      "raw_quote": "printer",
+      "context": "se suitably would fail. Any job printer ■who should be required to furn",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 371,
+      "end": 374,
+      "text": "who",
+      "raw_start": 371,
+      "raw_end": 374,
+      "raw_quote": "who",
+      "context": "ly would fail. Any job printer ■who should be required to furnish p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 375,
+      "end": 381,
+      "text": "should",
+      "raw_start": 375,
+      "raw_end": 381,
+      "raw_quote": "should",
+      "context": "ould fail. Any job printer ■who should be required to furnish printed ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 382,
+      "end": 384,
+      "text": "be",
+      "raw_start": 382,
+      "raw_end": 384,
+      "raw_quote": "be",
+      "context": "il. Any job printer ■who should be required to furnish printed lis",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 385,
+      "end": 393,
+      "text": "required",
+      "raw_start": 385,
+      "raw_end": 393,
+      "raw_quote": "required",
+      "context": " Any job printer ■who should be required to furnish printed lists of let",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 394,
+      "end": 396,
+      "text": "to",
+      "raw_start": 394,
+      "raw_end": 396,
+      "raw_quote": "to",
+      "context": "printer ■who should be required to furnish printed lists of letter",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 397,
+      "end": 404,
+      "text": "furnish",
+      "raw_start": 397,
+      "raw_end": 404,
+      "raw_quote": "furnish",
+      "context": "nter ■who should be required to furnish printed lists of letters suitab",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 405,
+      "end": 412,
+      "text": "printed",
+      "raw_start": 405,
+      "raw_end": 412,
+      "raw_quote": "printed",
+      "context": "o should be required to furnish printed lists of letters suitable for p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 413,
+      "end": 418,
+      "text": "lists",
+      "raw_start": 413,
+      "raw_end": 418,
+      "raw_quote": "lists",
+      "context": " be required to furnish printed lists of letters suitable for posting",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 419,
+      "end": 421,
+      "text": "of",
+      "raw_start": 419,
+      "raw_end": 421,
+      "raw_quote": "of",
+      "context": "quired to furnish printed lists of letters suitable for posting wo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 422,
+      "end": 429,
+      "text": "letters",
+      "raw_start": 422,
+      "raw_end": 429,
+      "raw_quote": "letters",
+      "context": "red to furnish printed lists of letters suitable for posting would char",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 430,
+      "end": 438,
+      "text": "suitable",
+      "raw_start": 430,
+      "raw_end": 438,
+      "raw_quote": "suitable",
+      "context": "urnish printed lists of letters suitable for posting would charge more f",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 439,
+      "end": 442,
+      "text": "for",
+      "raw_start": 439,
+      "raw_end": 442,
+      "raw_quote": "for",
+      "context": "inted lists of letters suitable for posting would charge more for h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 443,
+      "end": 450,
+      "text": "posting",
+      "raw_start": 443,
+      "raw_end": 450,
+      "raw_quote": "posting",
+      "context": "d lists of letters suitable for posting would charge more for his work ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 451,
+      "end": 456,
+      "text": "would",
+      "raw_start": 451,
+      "raw_end": 456,
+      "raw_quote": "would",
+      "context": "of letters suitable for posting would charge more for his work than i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 457,
+      "end": 463,
+      "text": "charge",
+      "raw_start": 457,
+      "raw_end": 463,
+      "raw_quote": "charge",
+      "context": "ters suitable for posting would charge more for his work than it costs",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 464,
+      "end": 468,
+      "text": "more",
+      "raw_start": 464,
+      "raw_end": 468,
+      "raw_quote": "more",
+      "context": "itable for posting would charge more for his work than it costs to a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 469,
+      "end": 472,
+      "text": "for",
+      "raw_start": 469,
+      "raw_end": 472,
+      "raw_quote": "for",
+      "context": "e for posting would charge more for his work than it costs to adver",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 473,
+      "end": 476,
+      "text": "his",
+      "raw_start": 473,
+      "raw_end": 476,
+      "raw_quote": "his",
+      "context": "r posting would charge more for his work than it costs to advertise",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 477,
+      "end": 481,
+      "text": "work",
+      "raw_start": 477,
+      "raw_end": 481,
+      "raw_quote": "work",
+      "context": "sting would charge more for his work than it costs to advertise them",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 482,
+      "end": 486,
+      "text": "than",
+      "raw_start": 482,
+      "raw_end": 486,
+      "raw_quote": "than",
+      "context": " would charge more for his work than it costs to advertise them in t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 487,
+      "end": 489,
+      "text": "it",
+      "raw_start": 487,
+      "raw_end": 489,
+      "raw_quote": "it",
+      "context": "d charge more for his work than it costs to advertise them in the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 490,
+      "end": 495,
+      "text": "costs",
+      "raw_start": 490,
+      "raw_end": 495,
+      "raw_quote": "costs",
+      "context": "harge more for his work than it costs to advertise them in the newspa",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 496,
+      "end": 498,
+      "text": "to",
+      "raw_start": 496,
+      "raw_end": 498,
+      "raw_quote": "to",
+      "context": "more for his work than it costs to advertise them in the newspaper",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 499,
+      "end": 508,
+      "text": "advertise",
+      "raw_start": 499,
+      "raw_end": 508,
+      "raw_quote": "advertise",
+      "context": "e for his work than it costs to advertise them in the newspapers. Any one",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 509,
+      "end": 513,
+      "text": "them",
+      "raw_start": 509,
+      "raw_end": 513,
+      "raw_quote": "them",
+      "context": "work than it costs to advertise them in the newspapers. Any one fami",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 514,
+      "end": 516,
+      "text": "in",
+      "raw_start": 514,
+      "raw_end": 516,
+      "raw_quote": "in",
+      "context": "than it costs to advertise them in the newspapers. Any one familia",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 517,
+      "end": 520,
+      "text": "the",
+      "raw_start": 517,
+      "raw_end": 520,
+      "raw_quote": "the",
+      "context": "n it costs to advertise them in the newspapers. Any one familiar wi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 521,
+      "end": 531,
+      "text": "newspapers",
+      "raw_start": 521,
+      "raw_end": 531,
+      "raw_quote": "newspapers",
+      "context": " costs to advertise them in the newspapers. Any one familiar with the prin",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 533,
+      "end": 536,
+      "text": "Any",
+      "raw_start": 533,
+      "raw_end": 536,
+      "raw_quote": "Any",
+      "context": "vertise them in the newspapers. Any one familiar with the printing ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 537,
+      "end": 540,
+      "text": "one",
+      "raw_start": 537,
+      "raw_end": 540,
+      "raw_quote": "one",
+      "context": "ise them in the newspapers. Any one familiar with the printing busi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 541,
+      "end": 549,
+      "text": "familiar",
+      "raw_start": 541,
+      "raw_end": 549,
+      "raw_quote": "familiar",
+      "context": "them in the newspapers. Any one familiar with the printing business know",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 550,
+      "end": 554,
+      "text": "with",
+      "raw_start": 550,
+      "raw_end": 554,
+      "raw_quote": "with",
+      "context": "he newspapers. Any one familiar with the printing business knows thi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 555,
+      "end": 558,
+      "text": "the",
+      "raw_start": 555,
+      "raw_end": 558,
+      "raw_quote": "the",
+      "context": "wspapers. Any one familiar with the printing business knows this, o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 559,
+      "end": 567,
+      "text": "printing",
+      "raw_start": 559,
+      "raw_end": 567,
+      "raw_quote": "printing",
+      "context": "pers. Any one familiar with the printing business knows this, or will re",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 568,
+      "end": 576,
+      "text": "business",
+      "raw_start": 568,
+      "raw_end": 576,
+      "raw_quote": "business",
+      "context": " one familiar with the printing business knows this, or will readily see",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 577,
+      "end": 582,
+      "text": "knows",
+      "raw_start": 577,
+      "raw_end": 582,
+      "raw_quote": "knows",
+      "context": "liar with the printing business knows this, or will readily see it by",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 583,
+      "end": 587,
+      "text": "this",
+      "raw_start": 583,
+      "raw_end": 587,
+      "raw_quote": "this",
+      "context": "ith the printing business knows this, or will readily see it by mean",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 589,
+      "end": 591,
+      "text": "or",
+      "raw_start": 589,
+      "raw_end": 591,
+      "raw_quote": "or",
+      "context": "e printing business knows this, or will readily see it by means of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 592,
+      "end": 596,
+      "text": "will",
+      "raw_start": 592,
+      "raw_end": 596,
+      "raw_quote": "will",
+      "context": "rinting business knows this, or will readily see it by means of a li",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 597,
+      "end": 604,
+      "text": "readily",
+      "raw_start": 597,
+      "raw_end": 604,
+      "raw_quote": "readily",
+      "context": "ng business knows this, or will readily see it by means of a little cal",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 605,
+      "end": 608,
+      "text": "see",
+      "raw_start": 605,
+      "raw_end": 608,
+      "raw_quote": "see",
+      "context": "ess knows this, or will readily see it by means of a little calcula",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 609,
+      "end": 611,
+      "text": "it",
+      "raw_start": 609,
+      "raw_end": 611,
+      "raw_quote": "it",
+      "context": "knows this, or will readily see it by means of a little calculatio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 612,
+      "end": 614,
+      "text": "by",
+      "raw_start": 612,
+      "raw_end": 614,
+      "raw_quote": "by",
+      "context": "ws this, or will readily see it by means of a little calculation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 615,
+      "end": 620,
+      "text": "means",
+      "raw_start": 615,
+      "raw_end": 620,
+      "raw_quote": "means",
+      "context": "this, or will readily see it by means of a little calculation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 621,
+      "end": 623,
+      "text": "of",
+      "raw_start": 621,
+      "raw_end": 623,
+      "raw_quote": "of",
+      "context": "or will readily see it by means of a little calculation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 624,
+      "end": 625,
+      "text": "a",
+      "raw_start": 624,
+      "raw_end": 625,
+      "raw_quote": "a",
+      "context": "will readily see it by means of a little calculation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 626,
+      "end": 632,
+      "text": "little",
+      "raw_start": 626,
+      "raw_end": 632,
+      "raw_quote": "little",
+      "context": "ll readily see it by means of a little calculation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 633,
+      "end": 644,
+      "text": "calculation",
+      "raw_start": 633,
+      "raw_end": 644,
+      "raw_quote": "calculation",
+      "context": "ily see it by means of a little calculation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. BALDWIN. I move to strike out ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 11,
+      "text": "BALDWIN",
+      "raw_start": 4,
+      "raw_end": 11,
+      "raw_quote": "BALDWIN",
+      "context": "Mr. BALDWIN. I move to strike out the last ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 13,
+      "end": 14,
+      "text": "I",
+      "raw_start": 13,
+      "raw_end": 14,
+      "raw_quote": "I",
+      "context": "Mr. BALDWIN. I move to strike out the last ten",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 15,
+      "end": 19,
+      "text": "move",
+      "raw_start": 15,
+      "raw_end": 19,
+      "raw_quote": "move",
+      "context": "Mr. BALDWIN. I move to strike out the last ten word",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 20,
+      "end": 22,
+      "text": "to",
+      "raw_start": 20,
+      "raw_end": 22,
+      "raw_quote": "to",
+      "context": "Mr. BALDWIN. I move to strike out the last ten words o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 23,
+      "end": 29,
+      "text": "strike",
+      "raw_start": 23,
+      "raw_end": 29,
+      "raw_quote": "strike",
+      "context": "Mr. BALDWIN. I move to strike out the last ten words of the s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 30,
+      "end": 33,
+      "text": "out",
+      "raw_start": 30,
+      "raw_end": 33,
+      "raw_quote": "out",
+      "context": "Mr. BALDWIN. I move to strike out the last ten words of the secti",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 34,
+      "end": 37,
+      "text": "the",
+      "raw_start": 34,
+      "raw_end": 37,
+      "raw_quote": "the",
+      "context": ". BALDWIN. I move to strike out the last ten words of the section. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 38,
+      "end": 42,
+      "text": "last",
+      "raw_start": 38,
+      "raw_end": 42,
+      "raw_quote": "last",
+      "context": "LDWIN. I move to strike out the last ten words of the section. This ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 43,
+      "end": 46,
+      "text": "ten",
+      "raw_start": 43,
+      "raw_end": 46,
+      "raw_quote": "ten",
+      "context": ". I move to strike out the last ten words of the section. This woul",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 47,
+      "end": 52,
+      "text": "words",
+      "raw_start": 47,
+      "raw_end": 52,
+      "raw_quote": "words",
+      "context": "move to strike out the last ten words of the section. This would kill",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 53,
+      "end": 55,
+      "text": "of",
+      "raw_start": 53,
+      "raw_end": 55,
+      "raw_quote": "of",
+      "context": "o strike out the last ten words of the section. This would kill it",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 56,
+      "end": 59,
+      "text": "the",
+      "raw_start": 56,
+      "raw_end": 59,
+      "raw_quote": "the",
+      "context": "trike out the last ten words of the section. This would kill it ; a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 60,
+      "end": 67,
+      "text": "section",
+      "raw_start": 60,
+      "raw_end": 67,
+      "raw_quote": "section",
+      "context": "e out the last ten words of the section. This would kill it ; and I thi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 69,
+      "end": 73,
+      "text": "This",
+      "raw_start": 69,
+      "raw_end": 73,
+      "raw_quote": "This",
+      "context": " last ten words of the section. This would kill it ; and I think thi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 74,
+      "end": 79,
+      "text": "would",
+      "raw_start": 74,
+      "raw_end": 79,
+      "raw_quote": "would",
+      "context": " ten words of the section. This would kill it ; and I think this sect",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 80,
+      "end": 84,
+      "text": "kill",
+      "raw_start": 80,
+      "raw_end": 84,
+      "raw_quote": "kill",
+      "context": "ords of the section. This would kill it ; and I think this section o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 85,
+      "end": 87,
+      "text": "it",
+      "raw_start": 85,
+      "raw_end": 87,
+      "raw_quote": "it",
+      "context": "of the section. This would kill it ; and I think this section ough",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 90,
+      "end": 93,
+      "text": "and",
+      "raw_start": 90,
+      "raw_end": 93,
+      "raw_quote": "and",
+      "context": "e section. This would kill it ; and I think this section ought to b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 94,
+      "end": 95,
+      "text": "I",
+      "raw_start": 94,
+      "raw_end": 95,
+      "raw_quote": "I",
+      "context": "ction. This would kill it ; and I think this section ought to be ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 96,
+      "end": 101,
+      "text": "think",
+      "raw_start": 96,
+      "raw_end": 101,
+      "raw_quote": "think",
+      "context": "ion. This would kill it ; and I think this section ought to be killed",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 102,
+      "end": 106,
+      "text": "this",
+      "raw_start": 102,
+      "raw_end": 106,
+      "raw_quote": "this",
+      "context": "his would kill it ; and I think this section ought to be killed in s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 107,
+      "end": 114,
+      "text": "section",
+      "raw_start": 107,
+      "raw_end": 114,
+      "raw_quote": "section",
+      "context": "ould kill it ; and I think this section ought to be killed in some way,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 115,
+      "end": 120,
+      "text": "ought",
+      "raw_start": 115,
+      "raw_end": 120,
+      "raw_quote": "ought",
+      "context": "l it ; and I think this section ought to be killed in some way, and f",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 121,
+      "end": 123,
+      "text": "to",
+      "raw_start": 121,
+      "raw_end": 123,
+      "raw_quote": "to",
+      "context": " and I think this section ought to be killed in some way, and for ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 124,
+      "end": 126,
+      "text": "be",
+      "raw_start": 124,
+      "raw_end": 126,
+      "raw_quote": "be",
+      "context": "d I think this section ought to be killed in some way, and for thi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 127,
+      "end": 133,
+      "text": "killed",
+      "raw_start": 127,
+      "raw_end": 133,
+      "raw_quote": "killed",
+      "context": " think this section ought to be killed in some way, and for this reaso",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 134,
+      "end": 136,
+      "text": "in",
+      "raw_start": 134,
+      "raw_end": 136,
+      "raw_quote": "in",
+      "context": "this section ought to be killed in some way, and for this reason :",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 137,
+      "end": 141,
+      "text": "some",
+      "raw_start": 137,
+      "raw_end": 141,
+      "raw_quote": "some",
+      "context": "s section ought to be killed in some way, and for this reason : the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 142,
+      "end": 145,
+      "text": "way",
+      "raw_start": 142,
+      "raw_end": 145,
+      "raw_quote": "way",
+      "context": "tion ought to be killed in some way, and for this reason : the atte",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 147,
+      "end": 150,
+      "text": "and",
+      "raw_start": 147,
+      "raw_end": 150,
+      "raw_quote": "and",
+      "context": "ought to be killed in some way, and for this reason : the attempt t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 151,
+      "end": 154,
+      "text": "for",
+      "raw_start": 151,
+      "raw_end": 154,
+      "raw_quote": "for",
+      "context": "t to be killed in some way, and for this reason : the attempt to ad",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 155,
+      "end": 159,
+      "text": "this",
+      "raw_start": 155,
+      "raw_end": 159,
+      "raw_quote": "this",
+      "context": " be killed in some way, and for this reason : the attempt to adverti",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 160,
+      "end": 166,
+      "text": "reason",
+      "raw_start": 160,
+      "raw_end": 166,
+      "raw_quote": "reason",
+      "context": "illed in some way, and for this reason : the attempt to advertise lett",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 169,
+      "end": 172,
+      "text": "the",
+      "raw_start": 169,
+      "raw_end": 172,
+      "raw_quote": "the",
+      "context": "some way, and for this reason : the attempt to advertise letters in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 173,
+      "end": 180,
+      "text": "attempt",
+      "raw_start": 173,
+      "raw_end": 180,
+      "raw_quote": "attempt",
+      "context": " way, and for this reason : the attempt to advertise letters in any oth",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 181,
+      "end": 183,
+      "text": "to",
+      "raw_start": 181,
+      "raw_end": 183,
+      "raw_quote": "to",
+      "context": "d for this reason : the attempt to advertise letters in any other ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 184,
+      "end": 193,
+      "text": "advertise",
+      "raw_start": 184,
+      "raw_end": 193,
+      "raw_quote": "advertise",
+      "context": "or this reason : the attempt to advertise letters in any other way than i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 194,
+      "end": 201,
+      "text": "letters",
+      "raw_start": 194,
+      "raw_end": 201,
+      "raw_quote": "letters",
+      "context": "ason : the attempt to advertise letters in any other way than is now jj",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 202,
+      "end": 204,
+      "text": "in",
+      "raw_start": 202,
+      "raw_end": 204,
+      "raw_quote": "in",
+      "context": "he attempt to advertise letters in any other way than is now jjres",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 205,
+      "end": 208,
+      "text": "any",
+      "raw_start": 205,
+      "raw_end": 208,
+      "raw_quote": "any",
+      "context": "attempt to advertise letters in any other way than is now jjrescrib",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 209,
+      "end": 214,
+      "text": "other",
+      "raw_start": 209,
+      "raw_end": 214,
+      "raw_quote": "other",
+      "context": "mpt to advertise letters in any other way than is now jjrescribed wou",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 215,
+      "end": 218,
+      "text": "way",
+      "raw_start": 215,
+      "raw_end": 218,
+      "raw_quote": "way",
+      "context": " advertise letters in any other way than is now jjrescribed would c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 219,
+      "end": 223,
+      "text": "than",
+      "raw_start": 219,
+      "raw_end": 223,
+      "raw_quote": "than",
+      "context": "ertise letters in any other way than is now jjrescribed would certai",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 224,
+      "end": 226,
+      "text": "is",
+      "raw_start": 224,
+      "raw_end": 226,
+      "raw_quote": "is",
+      "context": "e letters in any other way than is now jjrescribed would certainly",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 227,
+      "end": 230,
+      "text": "now",
+      "raw_start": 227,
+      "raw_end": 230,
+      "raw_quote": "now",
+      "context": "etters in any other way than is now jjrescribed would certainly cos",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 231,
+      "end": 242,
+      "text": "jjrescribed",
+      "raw_start": 231,
+      "raw_end": 242,
+      "raw_quote": "jjrescribed",
+      "context": "rs in any other way than is now jjrescribed would certainly cost the Gov- e",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 243,
+      "end": 248,
+      "text": "would",
+      "raw_start": 243,
+      "raw_end": 248,
+      "raw_quote": "would",
+      "context": "her way than is now jjrescribed would certainly cost the Gov- ernment",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 249,
+      "end": 258,
+      "text": "certainly",
+      "raw_start": 249,
+      "raw_end": 258,
+      "raw_quote": "certainly",
+      "context": "y than is now jjrescribed would certainly cost the Gov- ernment more than",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 259,
+      "end": 263,
+      "text": "cost",
+      "raw_start": 259,
+      "raw_end": 263,
+      "raw_quote": "cost",
+      "context": "now jjrescribed would certainly cost the Gov- ernment more than it c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 264,
+      "end": 267,
+      "text": "the",
+      "raw_start": 264,
+      "raw_end": 267,
+      "raw_quote": "the",
+      "context": "jrescribed would certainly cost the Gov- ernment more than it costs",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 268,
+      "end": 271,
+      "text": "Gov",
+      "raw_start": 268,
+      "raw_end": 271,
+      "raw_quote": "Gov",
+      "context": "cribed would certainly cost the Gov- ernment more than it costs now",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 273,
+      "end": 280,
+      "text": "ernment",
+      "raw_start": 273,
+      "raw_end": 280,
+      "raw_quote": "ernment",
+      "context": "d would certainly cost the Gov- ernment more than it costs now, or the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 281,
+      "end": 285,
+      "text": "more",
+      "raw_start": 281,
+      "raw_end": 285,
+      "raw_quote": "more",
+      "context": "certainly cost the Gov- ernment more than it costs now, or the attem",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 286,
+      "end": 290,
+      "text": "than",
+      "raw_start": 286,
+      "raw_end": 290,
+      "raw_quote": "than",
+      "context": "inly cost the Gov- ernment more than it costs now, or the attempt to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 291,
+      "end": 293,
+      "text": "it",
+      "raw_start": 291,
+      "raw_end": 293,
+      "raw_quote": "it",
+      "context": "cost the Gov- ernment more than it costs now, or the attempt to ad",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 294,
+      "end": 299,
+      "text": "costs",
+      "raw_start": 294,
+      "raw_end": 299,
+      "raw_quote": "costs",
+      "context": "t the Gov- ernment more than it costs now, or the attempt to advertis",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 300,
+      "end": 303,
+      "text": "now",
+      "raw_start": 300,
+      "raw_end": 303,
+      "raw_quote": "now",
+      "context": "Gov- ernment more than it costs now, or the attempt to advertise su",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 305,
+      "end": 307,
+      "text": "or",
+      "raw_start": 305,
+      "raw_end": 307,
+      "raw_quote": "or",
+      "context": "ernment more than it costs now, or the attempt to advertise suitab",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 308,
+      "end": 311,
+      "text": "the",
+      "raw_start": 308,
+      "raw_end": 311,
+      "raw_quote": "the",
+      "context": "ment more than it costs now, or the attempt to advertise suitably w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 312,
+      "end": 319,
+      "text": "attempt",
+      "raw_start": 312,
+      "raw_end": 319,
+      "raw_quote": "attempt",
+      "context": " more than it costs now, or the attempt to advertise suitably would fai",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 320,
+      "end": 322,
+      "text": "to",
+      "raw_start": 320,
+      "raw_end": 322,
+      "raw_quote": "to",
+      "context": "an it costs now, or the attempt to advertise suitably would fail. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 323,
+      "end": 332,
+      "text": "advertise",
+      "raw_start": 323,
+      "raw_end": 332,
+      "raw_quote": "advertise",
+      "context": "it costs now, or the attempt to advertise suitably would fail. Any job pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 333,
+      "end": 341,
+      "text": "suitably",
+      "raw_start": 333,
+      "raw_end": 341,
+      "raw_quote": "suitably",
+      "context": "ow, or the attempt to advertise suitably would fail. Any job printer ■wh",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 342,
+      "end": 347,
+      "text": "would",
+      "raw_start": 342,
+      "raw_end": 347,
+      "raw_quote": "would",
+      "context": "e attempt to advertise suitably would fail. Any job printer ■who shou",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 348,
+      "end": 352,
+      "text": "fail",
+      "raw_start": 348,
+      "raw_end": 352,
+      "raw_quote": "fail",
+      "context": "mpt to advertise suitably would fail. Any job printer ■who should be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 354,
+      "end": 357,
+      "text": "Any",
+      "raw_start": 354,
+      "raw_end": 357,
+      "raw_quote": "Any",
+      "context": " advertise suitably would fail. Any job printer ■who should be requ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 358,
+      "end": 361,
+      "text": "job",
+      "raw_start": 358,
+      "raw_end": 361,
+      "raw_quote": "job",
+      "context": "ertise suitably would fail. Any job printer ■who should be required",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 362,
+      "end": 369,
+      "text": "printer",
+      "raw_start": 362,
+      "raw_end": 369,
+      "raw_quote": "printer",
+      "context": "se suitably would fail. Any job printer ■who should be required to furn",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 371,
+      "end": 374,
+      "text": "who",
+      "raw_start": 371,
+      "raw_end": 374,
+      "raw_quote": "who",
+      "context": "ly would fail. Any job printer ■who should be required to furnish p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 375,
+      "end": 381,
+      "text": "should",
+      "raw_start": 375,
+      "raw_end": 381,
+      "raw_quote": "should",
+      "context": "ould fail. Any job printer ■who should be required to furnish printed ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 382,
+      "end": 384,
+      "text": "be",
+      "raw_start": 382,
+      "raw_end": 384,
+      "raw_quote": "be",
+      "context": "il. Any job printer ■who should be required to furnish printed lis",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 385,
+      "end": 393,
+      "text": "required",
+      "raw_start": 385,
+      "raw_end": 393,
+      "raw_quote": "required",
+      "context": " Any job printer ■who should be required to furnish printed lists of let",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 394,
+      "end": 396,
+      "text": "to",
+      "raw_start": 394,
+      "raw_end": 396,
+      "raw_quote": "to",
+      "context": "printer ■who should be required to furnish printed lists of letter",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 397,
+      "end": 404,
+      "text": "furnish",
+      "raw_start": 397,
+      "raw_end": 404,
+      "raw_quote": "furnish",
+      "context": "nter ■who should be required to furnish printed lists of letters suitab",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 405,
+      "end": 412,
+      "text": "printed",
+      "raw_start": 405,
+      "raw_end": 412,
+      "raw_quote": "printed",
+      "context": "o should be required to furnish printed lists of letters suitable for p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 413,
+      "end": 418,
+      "text": "lists",
+      "raw_start": 413,
+      "raw_end": 418,
+      "raw_quote": "lists",
+      "context": " be required to furnish printed lists of letters suitable for posting",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 419,
+      "end": 421,
+      "text": "of",
+      "raw_start": 419,
+      "raw_end": 421,
+      "raw_quote": "of",
+      "context": "quired to furnish printed lists of letters suitable for posting wo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 422,
+      "end": 429,
+      "text": "letters",
+      "raw_start": 422,
+      "raw_end": 429,
+      "raw_quote": "letters",
+      "context": "red to furnish printed lists of letters suitable for posting would char",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 430,
+      "end": 438,
+      "text": "suitable",
+      "raw_start": 430,
+      "raw_end": 438,
+      "raw_quote": "suitable",
+      "context": "urnish printed lists of letters suitable for posting would charge more f",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 439,
+      "end": 442,
+      "text": "for",
+      "raw_start": 439,
+      "raw_end": 442,
+      "raw_quote": "for",
+      "context": "inted lists of letters suitable for posting would charge more for h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 443,
+      "end": 450,
+      "text": "posting",
+      "raw_start": 443,
+      "raw_end": 450,
+      "raw_quote": "posting",
+      "context": "d lists of letters suitable for posting would charge more for his work ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 451,
+      "end": 456,
+      "text": "would",
+      "raw_start": 451,
+      "raw_end": 456,
+      "raw_quote": "would",
+      "context": "of letters suitable for posting would charge more for his work than i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 457,
+      "end": 463,
+      "text": "charge",
+      "raw_start": 457,
+      "raw_end": 463,
+      "raw_quote": "charge",
+      "context": "ters suitable for posting would charge more for his work than it costs",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 464,
+      "end": 468,
+      "text": "more",
+      "raw_start": 464,
+      "raw_end": 468,
+      "raw_quote": "more",
+      "context": "itable for posting would charge more for his work than it costs to a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 469,
+      "end": 472,
+      "text": "for",
+      "raw_start": 469,
+      "raw_end": 472,
+      "raw_quote": "for",
+      "context": "e for posting would charge more for his work than it costs to adver",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 473,
+      "end": 476,
+      "text": "his",
+      "raw_start": 473,
+      "raw_end": 476,
+      "raw_quote": "his",
+      "context": "r posting would charge more for his work than it costs to advertise",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 477,
+      "end": 481,
+      "text": "work",
+      "raw_start": 477,
+      "raw_end": 481,
+      "raw_quote": "work",
+      "context": "sting would charge more for his work than it costs to advertise them",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 482,
+      "end": 486,
+      "text": "than",
+      "raw_start": 482,
+      "raw_end": 486,
+      "raw_quote": "than",
+      "context": " would charge more for his work than it costs to advertise them in t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 487,
+      "end": 489,
+      "text": "it",
+      "raw_start": 487,
+      "raw_end": 489,
+      "raw_quote": "it",
+      "context": "d charge more for his work than it costs to advertise them in the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 490,
+      "end": 495,
+      "text": "costs",
+      "raw_start": 490,
+      "raw_end": 495,
+      "raw_quote": "costs",
+      "context": "harge more for his work than it costs to advertise them in the newspa",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 496,
+      "end": 498,
+      "text": "to",
+      "raw_start": 496,
+      "raw_end": 498,
+      "raw_quote": "to",
+      "context": "more for his work than it costs to advertise them in the newspaper",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 499,
+      "end": 508,
+      "text": "advertise",
+      "raw_start": 499,
+      "raw_end": 508,
+      "raw_quote": "advertise",
+      "context": "e for his work than it costs to advertise them in the newspapers. Any one",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 509,
+      "end": 513,
+      "text": "them",
+      "raw_start": 509,
+      "raw_end": 513,
+      "raw_quote": "them",
+      "context": "work than it costs to advertise them in the newspapers. Any one fami",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 514,
+      "end": 516,
+      "text": "in",
+      "raw_start": 514,
+      "raw_end": 516,
+      "raw_quote": "in",
+      "context": "than it costs to advertise them in the newspapers. Any one familia",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 517,
+      "end": 520,
+      "text": "the",
+      "raw_start": 517,
+      "raw_end": 520,
+      "raw_quote": "the",
+      "context": "n it costs to advertise them in the newspapers. Any one familiar wi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 521,
+      "end": 531,
+      "text": "newspapers",
+      "raw_start": 521,
+      "raw_end": 531,
+      "raw_quote": "newspapers",
+      "context": " costs to advertise them in the newspapers. Any one familiar with the prin",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 533,
+      "end": 536,
+      "text": "Any",
+      "raw_start": 533,
+      "raw_end": 536,
+      "raw_quote": "Any",
+      "context": "vertise them in the newspapers. Any one familiar with the printing ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 537,
+      "end": 540,
+      "text": "one",
+      "raw_start": 537,
+      "raw_end": 540,
+      "raw_quote": "one",
+      "context": "ise them in the newspapers. Any one familiar with the printing busi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 541,
+      "end": 549,
+      "text": "familiar",
+      "raw_start": 541,
+      "raw_end": 549,
+      "raw_quote": "familiar",
+      "context": "them in the newspapers. Any one familiar with the printing business know",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 550,
+      "end": 554,
+      "text": "with",
+      "raw_start": 550,
+      "raw_end": 554,
+      "raw_quote": "with",
+      "context": "he newspapers. Any one familiar with the printing business knows thi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 555,
+      "end": 558,
+      "text": "the",
+      "raw_start": 555,
+      "raw_end": 558,
+      "raw_quote": "the",
+      "context": "wspapers. Any one familiar with the printing business knows this, o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 559,
+      "end": 567,
+      "text": "printing",
+      "raw_start": 559,
+      "raw_end": 567,
+      "raw_quote": "printing",
+      "context": "pers. Any one familiar with the printing business knows this, or will re",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 568,
+      "end": 576,
+      "text": "business",
+      "raw_start": 568,
+      "raw_end": 576,
+      "raw_quote": "business",
+      "context": " one familiar with the printing business knows this, or will readily see",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 577,
+      "end": 582,
+      "text": "knows",
+      "raw_start": 577,
+      "raw_end": 582,
+      "raw_quote": "knows",
+      "context": "liar with the printing business knows this, or will readily see it by",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 583,
+      "end": 587,
+      "text": "this",
+      "raw_start": 583,
+      "raw_end": 587,
+      "raw_quote": "this",
+      "context": "ith the printing business knows this, or will readily see it by mean",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 589,
+      "end": 591,
+      "text": "or",
+      "raw_start": 589,
+      "raw_end": 591,
+      "raw_quote": "or",
+      "context": "e printing business knows this, or will readily see it by means of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 592,
+      "end": 596,
+      "text": "will",
+      "raw_start": 592,
+      "raw_end": 596,
+      "raw_quote": "will",
+      "context": "rinting business knows this, or will readily see it by means of a li",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 597,
+      "end": 604,
+      "text": "readily",
+      "raw_start": 597,
+      "raw_end": 604,
+      "raw_quote": "readily",
+      "context": "ng business knows this, or will readily see it by means of a little cal",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 605,
+      "end": 608,
+      "text": "see",
+      "raw_start": 605,
+      "raw_end": 608,
+      "raw_quote": "see",
+      "context": "ess knows this, or will readily see it by means of a little calcula",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 609,
+      "end": 611,
+      "text": "it",
+      "raw_start": 609,
+      "raw_end": 611,
+      "raw_quote": "it",
+      "context": "knows this, or will readily see it by means of a little calculatio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 612,
+      "end": 614,
+      "text": "by",
+      "raw_start": 612,
+      "raw_end": 614,
+      "raw_quote": "by",
+      "context": "ws this, or will readily see it by means of a little calculation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 615,
+      "end": 620,
+      "text": "means",
+      "raw_start": 615,
+      "raw_end": 620,
+      "raw_quote": "means",
+      "context": "this, or will readily see it by means of a little calculation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 621,
+      "end": 623,
+      "text": "of",
+      "raw_start": 621,
+      "raw_end": 623,
+      "raw_quote": "of",
+      "context": "or will readily see it by means of a little calculation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 624,
+      "end": 625,
+      "text": "a",
+      "raw_start": 624,
+      "raw_end": 625,
+      "raw_quote": "a",
+      "context": "will readily see it by means of a little calculation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 626,
+      "end": 632,
+      "text": "little",
+      "raw_start": 626,
+      "raw_end": 632,
+      "raw_quote": "little",
+      "context": "ll readily see it by means of a little calculation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 633,
+      "end": 644,
+      "text": "calculation",
+      "raw_start": 633,
+      "raw_end": 644,
+      "raw_quote": "calculation",
+      "context": "ily see it by means of a little calculation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7392unit:811:par_000811_000010",
+      "raw_text": "Mr. BALDWIN. I move to strike out the last ten words of the section. This would kill it ; and I think this section ought to be killed in some way, and for this reason : the attempt to advertise letters in any other way than is now jjrescribed would certainly cost the Gov- ernment more than it costs now, or the attempt to advertise suitably would fail. Any job printer ■who should be required to furnish printed lists of letters suitable for posting would charge more for his work than it costs to advertise them in the newspapers. Any one familiar with the printing business knows this, or will readily see it by means of a little calculation.",
+      "raw_sha256": "b73f5b238c1c7c52769194a188fbed055ca7286a51796922797416d2b1713a71"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7392unit:811:par_000811_000010",
+        "raw_text": "Mr. BALDWIN. I move to strike out the last ten words of the section. This would kill it ; and I think this section ought to be killed in some way, and for this reason : the attempt to advertise letters in any other way than is now jjrescribed would certainly cost the Gov- ernment more than it costs now, or the attempt to advertise suitably would fail. Any job printer ■who should be required to furnish printed lists of letters suitable for posting would charge more for his work than it costs to advertise them in the newspapers. Any one familiar with the printing business knows this, or will readily see it by means of a little calculation.",
+        "raw_sha256": "b73f5b238c1c7c52769194a188fbed055ca7286a51796922797416d2b1713a71"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "Mr. BALDWIN. I move to strike out the last ten words of the section. This would kill it ; and I think this section ought to be killed in some way, and for this reason : the attempt to advertise letters in any other way than is now jjrescribed would certainly cost the Gov- ernment more than it costs now, or the attempt to advertise suitably would fail. Any job printer ■who should be required to furnish printed lists of letters suitable for posting would charge more for his work than it costs to advertise them in the newspapers. Any one familiar with the printing business knows this, or will readily see it by means of a little calculation.",
+    "proposed_sha256": "b73f5b238c1c7c52769194a188fbed055ca7286a51796922797416d2b1713a71",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

@@ -1,0 +1,2116 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7392unit:77:par_000077_000159",
+      "raw_text": "Horsmauj James B., bill for the relief of.. .286 Hospital, joint resolution confirming the trans- fer of the United States, at Jeffersonville, Indiana, to the State of Indiana as a dona- tion for the benefit of Indiana soldiers and seamen disabled in the service of the Uni- ted States 919",
+      "raw_sha256": "8b92fe04d8f01889adc6fdf2df67f8758e0d4ab523317a360d18f98fadf22413"
+    },
+    "static_text": "Horsmauj James B., bill for the relief of.. .286 Hospital, joint resolution confirming the transfer of the United States, at Jeffersonville, Indiana, to the State of Indiana as a donation for the benefit of Indiana soldiers and seamen disabled in the service of the United States 919",
+    "static_sha256": "1656af5fb1655a87957e2b72233a5b6e1164096a2db20bb7399408b0e96211b8",
+    "static_edits": [
+      {
+        "start": 91,
+        "end": 101,
+        "raw_quote": "trans- fer",
+        "replacement": "transfer",
+        "rule_id": "adjacent-line wrap; lexicon form transfer"
+      },
+      {
+        "start": 181,
+        "end": 191,
+        "raw_quote": "dona- tion",
+        "replacement": "donation",
+        "rule_id": "adjacent-line wrap; lexicon form donation"
+      },
+      {
+        "start": 270,
+        "end": 278,
+        "raw_quote": "Uni- ted",
+        "replacement": "United",
+        "rule_id": "adjacent-line wrap; lexicon form united"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000077_000250",
+        "start": 0,
+        "end": 48,
+        "text": "Horsmauj James B., bill for the relief of.. .286"
+      },
+      {
+        "line_id": "line_000077_000251",
+        "start": 49,
+        "end": 97,
+        "text": "Hospital, joint resolution confirming the trans-"
+      },
+      {
+        "line_id": "line_000077_000252",
+        "start": 98,
+        "end": 142,
+        "text": "fer of the United States, at Jeffersonville,"
+      },
+      {
+        "line_id": "line_000077_000253",
+        "start": 143,
+        "end": 186,
+        "text": "Indiana, to the State of Indiana as a dona-"
+      },
+      {
+        "line_id": "line_000077_000254",
+        "start": 187,
+        "end": 231,
+        "text": "tion for the benefit of Indiana soldiers and"
+      },
+      {
+        "line_id": "line_000077_000255",
+        "start": 232,
+        "end": 274,
+        "text": "seamen disabled in the service of the Uni-"
+      },
+      {
+        "line_id": "line_000077_000256",
+        "start": 275,
+        "end": 289,
+        "text": "ted States 919"
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "8cfebe527e63186cfc58d895ab48f8659a0b5949a89a28051603103d08a20fae"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "ef70ebe82edf184a31f48e8d5e01ae9640eb224ba03b3147dd245248ab242583",
+  "proposed_text": "Horsmauj James B., bill for the relief of.. .286 Hospital, joint resolution confirming the transfer of the United States, at Jeffersonville, Indiana, to the State of Indiana as a donation for the benefit of Indiana soldiers and seamen disabled in the service of the Uni- ted States 919",
+  "proposed_sha256": "2cc69a0b68d66b21071364c37c5f16f8eb181837f5001a32ef3c25264b0e59f9",
+  "proposed_edits": [
+    {
+      "start": 91,
+      "end": 101,
+      "raw_quote": "trans- fer",
+      "replacement": "transfer",
+      "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+    },
+    {
+      "start": 181,
+      "end": 191,
+      "raw_quote": "dona- tion",
+      "replacement": "donation",
+      "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+    }
+  ],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 91,
+      "derived_start": 0,
+      "derived_end": 91,
+      "mapping": "exact_copy"
+    },
+    {
+      "raw_start": 91,
+      "raw_end": 101,
+      "derived_start": 91,
+      "derived_end": 99,
+      "mapping": "replacement"
+    },
+    {
+      "raw_start": 101,
+      "raw_end": 181,
+      "derived_start": 99,
+      "derived_end": 179,
+      "mapping": "exact_copy"
+    },
+    {
+      "raw_start": 181,
+      "raw_end": 191,
+      "derived_start": 179,
+      "derived_end": 187,
+      "mapping": "replacement"
+    },
+    {
+      "raw_start": 191,
+      "raw_end": 289,
+      "derived_start": 187,
+      "derived_end": 285,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 91,
+      "end": 101,
+      "raw_quote": "trans- fer",
+      "joined_candidate": "transfer",
+      "decision": "proposed_join",
+      "reason": "guarded_adjacent_line_join"
+    },
+    {
+      "start": 181,
+      "end": 191,
+      "raw_quote": "dona- tion",
+      "joined_candidate": "donation",
+      "decision": "proposed_join",
+      "reason": "guarded_adjacent_line_join"
+    },
+    {
+      "start": 270,
+      "end": 278,
+      "raw_quote": "Uni- ted",
+      "joined_candidate": "United",
+      "decision": "retained_for_review",
+      "reason": "uppercase_or_nonlowercase"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 8,
+      "text": "Horsmauj",
+      "raw_start": 0,
+      "raw_end": 8,
+      "raw_quote": "Horsmauj",
+      "context": "Horsmauj James B., bill for the relief o",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 9,
+      "end": 14,
+      "text": "James",
+      "raw_start": 9,
+      "raw_end": 14,
+      "raw_quote": "James",
+      "context": "Horsmauj James B., bill for the relief of.. .2",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate",
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 15,
+      "end": 16,
+      "text": "B",
+      "raw_start": 15,
+      "raw_end": 16,
+      "raw_quote": "B",
+      "context": "Horsmauj James B., bill for the relief of.. .286",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 19,
+      "end": 23,
+      "text": "bill",
+      "raw_start": 19,
+      "raw_end": 23,
+      "raw_quote": "bill",
+      "context": "Horsmauj James B., bill for the relief of.. .286 Hospit",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 24,
+      "end": 27,
+      "text": "for",
+      "raw_start": 24,
+      "raw_end": 27,
+      "raw_quote": "for",
+      "context": "Horsmauj James B., bill for the relief of.. .286 Hospital, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 28,
+      "end": 31,
+      "text": "the",
+      "raw_start": 28,
+      "raw_end": 31,
+      "raw_quote": "the",
+      "context": "Horsmauj James B., bill for the relief of.. .286 Hospital, join",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 32,
+      "end": 38,
+      "text": "relief",
+      "raw_start": 32,
+      "raw_end": 38,
+      "raw_quote": "relief",
+      "context": "Horsmauj James B., bill for the relief of.. .286 Hospital, joint resol",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 39,
+      "end": 41,
+      "text": "of",
+      "raw_start": 39,
+      "raw_end": 41,
+      "raw_quote": "of",
+      "context": "j James B., bill for the relief of.. .286 Hospital, joint resoluti",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 45,
+      "end": 48,
+      "text": "286",
+      "raw_start": 45,
+      "raw_end": 48,
+      "raw_quote": "286",
+      "context": "s B., bill for the relief of.. .286 Hospital, joint resolution conf",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 49,
+      "end": 57,
+      "text": "Hospital",
+      "raw_start": 49,
+      "raw_end": 57,
+      "raw_quote": "Hospital",
+      "context": ", bill for the relief of.. .286 Hospital, joint resolution confirming th",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 59,
+      "end": 64,
+      "text": "joint",
+      "raw_start": 59,
+      "raw_end": 64,
+      "raw_quote": "joint",
+      "context": " the relief of.. .286 Hospital, joint resolution confirming the trans",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 65,
+      "end": 75,
+      "text": "resolution",
+      "raw_start": 65,
+      "raw_end": 75,
+      "raw_quote": "resolution",
+      "context": "elief of.. .286 Hospital, joint resolution confirming the trans- fer of th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 76,
+      "end": 86,
+      "text": "confirming",
+      "raw_start": 76,
+      "raw_end": 86,
+      "raw_quote": "confirming",
+      "context": ".286 Hospital, joint resolution confirming the trans- fer of the United St",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 87,
+      "end": 90,
+      "text": "the",
+      "raw_start": 87,
+      "raw_end": 90,
+      "raw_quote": "the",
+      "context": "al, joint resolution confirming the trans- fer of the United States",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 91,
+      "end": 96,
+      "text": "trans",
+      "raw_start": 91,
+      "raw_end": 96,
+      "raw_quote": "trans",
+      "context": "joint resolution confirming the trans- fer of the United States, at J",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 98,
+      "end": 101,
+      "text": "fer",
+      "raw_start": 98,
+      "raw_end": 101,
+      "raw_quote": "fer",
+      "context": "esolution confirming the trans- fer of the United States, at Jeffer",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 102,
+      "end": 104,
+      "text": "of",
+      "raw_start": 102,
+      "raw_end": 104,
+      "raw_quote": "of",
+      "context": "ution confirming the trans- fer of the United States, at Jefferson",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 105,
+      "end": 108,
+      "text": "the",
+      "raw_start": 105,
+      "raw_end": 108,
+      "raw_quote": "the",
+      "context": "on confirming the trans- fer of the United States, at Jeffersonvill",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 109,
+      "end": 115,
+      "text": "United",
+      "raw_start": 109,
+      "raw_end": 115,
+      "raw_quote": "United",
+      "context": "onfirming the trans- fer of the United States, at Jeffersonville, Indi",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 116,
+      "end": 122,
+      "text": "States",
+      "raw_start": 116,
+      "raw_end": 122,
+      "raw_quote": "States",
+      "context": "ng the trans- fer of the United States, at Jeffersonville, Indiana, to",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 124,
+      "end": 126,
+      "text": "at",
+      "raw_start": 124,
+      "raw_end": 126,
+      "raw_quote": "at",
+      "context": "rans- fer of the United States, at Jeffersonville, Indiana, to the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 127,
+      "end": 141,
+      "text": "Jeffersonville",
+      "raw_start": 127,
+      "raw_end": 141,
+      "raw_quote": "Jeffersonville",
+      "context": "s- fer of the United States, at Jeffersonville, Indiana, to the State of India",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 143,
+      "end": 150,
+      "text": "Indiana",
+      "raw_start": 143,
+      "raw_end": 150,
+      "raw_quote": "Indiana",
+      "context": "ited States, at Jeffersonville, Indiana, to the State of Indiana as a d",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 152,
+      "end": 154,
+      "text": "to",
+      "raw_start": 152,
+      "raw_end": 154,
+      "raw_quote": "to",
+      "context": "es, at Jeffersonville, Indiana, to the State of Indiana as a dona-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 155,
+      "end": 158,
+      "text": "the",
+      "raw_start": 155,
+      "raw_end": 158,
+      "raw_quote": "the",
+      "context": " at Jeffersonville, Indiana, to the State of Indiana as a dona- tio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 159,
+      "end": 164,
+      "text": "State",
+      "raw_start": 159,
+      "raw_end": 164,
+      "raw_quote": "State",
+      "context": "Jeffersonville, Indiana, to the State of Indiana as a dona- tion for ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 165,
+      "end": 167,
+      "text": "of",
+      "raw_start": 165,
+      "raw_end": 167,
+      "raw_quote": "of",
+      "context": "sonville, Indiana, to the State of Indiana as a dona- tion for the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 168,
+      "end": 175,
+      "text": "Indiana",
+      "raw_start": 168,
+      "raw_end": 175,
+      "raw_quote": "Indiana",
+      "context": "ville, Indiana, to the State of Indiana as a dona- tion for the benefit",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 176,
+      "end": 178,
+      "text": "as",
+      "raw_start": 176,
+      "raw_end": 178,
+      "raw_quote": "as",
+      "context": "ndiana, to the State of Indiana as a dona- tion for the benefit of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 179,
+      "end": 180,
+      "text": "a",
+      "raw_start": 179,
+      "raw_end": 180,
+      "raw_quote": "a",
+      "context": "ana, to the State of Indiana as a dona- tion for the benefit of I",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 181,
+      "end": 185,
+      "text": "dona",
+      "raw_start": 181,
+      "raw_end": 185,
+      "raw_quote": "dona",
+      "context": "a, to the State of Indiana as a dona- tion for the benefit of Indian",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 187,
+      "end": 191,
+      "text": "tion",
+      "raw_start": 187,
+      "raw_end": 191,
+      "raw_quote": "tion",
+      "context": "the State of Indiana as a dona- tion for the benefit of Indiana sold",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 192,
+      "end": 195,
+      "text": "for",
+      "raw_start": 192,
+      "raw_end": 195,
+      "raw_quote": "for",
+      "context": "tate of Indiana as a dona- tion for the benefit of Indiana soldiers",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 196,
+      "end": 199,
+      "text": "the",
+      "raw_start": 196,
+      "raw_end": 199,
+      "raw_quote": "the",
+      "context": " of Indiana as a dona- tion for the benefit of Indiana soldiers and",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 200,
+      "end": 207,
+      "text": "benefit",
+      "raw_start": 200,
+      "raw_end": 207,
+      "raw_quote": "benefit",
+      "context": "Indiana as a dona- tion for the benefit of Indiana soldiers and seamen ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 208,
+      "end": 210,
+      "text": "of",
+      "raw_start": 208,
+      "raw_end": 210,
+      "raw_quote": "of",
+      "context": "as a dona- tion for the benefit of Indiana soldiers and seamen dis",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 211,
+      "end": 218,
+      "text": "Indiana",
+      "raw_start": 211,
+      "raw_end": 218,
+      "raw_quote": "Indiana",
+      "context": "a dona- tion for the benefit of Indiana soldiers and seamen disabled in",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 219,
+      "end": 227,
+      "text": "soldiers",
+      "raw_start": 219,
+      "raw_end": 227,
+      "raw_quote": "soldiers",
+      "context": "tion for the benefit of Indiana soldiers and seamen disabled in the serv",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 228,
+      "end": 231,
+      "text": "and",
+      "raw_start": 228,
+      "raw_end": 231,
+      "raw_quote": "and",
+      "context": "the benefit of Indiana soldiers and seamen disabled in the service ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 232,
+      "end": 238,
+      "text": "seamen",
+      "raw_start": 232,
+      "raw_end": 238,
+      "raw_quote": "seamen",
+      "context": "benefit of Indiana soldiers and seamen disabled in the service of the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 239,
+      "end": 247,
+      "text": "disabled",
+      "raw_start": 239,
+      "raw_end": 247,
+      "raw_quote": "disabled",
+      "context": " of Indiana soldiers and seamen disabled in the service of the Uni- ted ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 248,
+      "end": 250,
+      "text": "in",
+      "raw_start": 248,
+      "raw_end": 250,
+      "raw_quote": "in",
+      "context": "na soldiers and seamen disabled in the service of the Uni- ted Sta",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 251,
+      "end": 254,
+      "text": "the",
+      "raw_start": 251,
+      "raw_end": 254,
+      "raw_quote": "the",
+      "context": "soldiers and seamen disabled in the service of the Uni- ted States ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 255,
+      "end": 262,
+      "text": "service",
+      "raw_start": 255,
+      "raw_end": 262,
+      "raw_quote": "service",
+      "context": "iers and seamen disabled in the service of the Uni- ted States 919",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 263,
+      "end": 265,
+      "text": "of",
+      "raw_start": 263,
+      "raw_end": 265,
+      "raw_quote": "of",
+      "context": " seamen disabled in the service of the Uni- ted States 919",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 266,
+      "end": 269,
+      "text": "the",
+      "raw_start": 266,
+      "raw_end": 269,
+      "raw_quote": "the",
+      "context": "amen disabled in the service of the Uni- ted States 919",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 270,
+      "end": 273,
+      "text": "Uni",
+      "raw_start": 270,
+      "raw_end": 273,
+      "raw_quote": "Uni",
+      "context": " disabled in the service of the Uni- ted States 919",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 275,
+      "end": 278,
+      "text": "ted",
+      "raw_start": 275,
+      "raw_end": 278,
+      "raw_quote": "ted",
+      "context": "bled in the service of the Uni- ted States 919",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 279,
+      "end": 285,
+      "text": "States",
+      "raw_start": 279,
+      "raw_end": 285,
+      "raw_quote": "States",
+      "context": " in the service of the Uni- ted States 919",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 286,
+      "end": 289,
+      "text": "919",
+      "raw_start": 286,
+      "raw_end": 289,
+      "raw_quote": "919",
+      "context": " service of the Uni- ted States 919",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 8,
+      "text": "Horsmauj",
+      "raw_start": 0,
+      "raw_end": 8,
+      "raw_quote": "Horsmauj",
+      "context": "Horsmauj James B., bill for the relief o",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 9,
+      "end": 14,
+      "text": "James",
+      "raw_start": 9,
+      "raw_end": 14,
+      "raw_quote": "James",
+      "context": "Horsmauj James B., bill for the relief of.. .2",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate",
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 15,
+      "end": 16,
+      "text": "B",
+      "raw_start": 15,
+      "raw_end": 16,
+      "raw_quote": "B",
+      "context": "Horsmauj James B., bill for the relief of.. .286",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 19,
+      "end": 23,
+      "text": "bill",
+      "raw_start": 19,
+      "raw_end": 23,
+      "raw_quote": "bill",
+      "context": "Horsmauj James B., bill for the relief of.. .286 Hospit",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 24,
+      "end": 27,
+      "text": "for",
+      "raw_start": 24,
+      "raw_end": 27,
+      "raw_quote": "for",
+      "context": "Horsmauj James B., bill for the relief of.. .286 Hospital, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 28,
+      "end": 31,
+      "text": "the",
+      "raw_start": 28,
+      "raw_end": 31,
+      "raw_quote": "the",
+      "context": "Horsmauj James B., bill for the relief of.. .286 Hospital, join",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 32,
+      "end": 38,
+      "text": "relief",
+      "raw_start": 32,
+      "raw_end": 38,
+      "raw_quote": "relief",
+      "context": "Horsmauj James B., bill for the relief of.. .286 Hospital, joint resol",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 39,
+      "end": 41,
+      "text": "of",
+      "raw_start": 39,
+      "raw_end": 41,
+      "raw_quote": "of",
+      "context": "j James B., bill for the relief of.. .286 Hospital, joint resoluti",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 45,
+      "end": 48,
+      "text": "286",
+      "raw_start": 45,
+      "raw_end": 48,
+      "raw_quote": "286",
+      "context": "s B., bill for the relief of.. .286 Hospital, joint resolution conf",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 49,
+      "end": 57,
+      "text": "Hospital",
+      "raw_start": 49,
+      "raw_end": 57,
+      "raw_quote": "Hospital",
+      "context": ", bill for the relief of.. .286 Hospital, joint resolution confirming th",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 59,
+      "end": 64,
+      "text": "joint",
+      "raw_start": 59,
+      "raw_end": 64,
+      "raw_quote": "joint",
+      "context": " the relief of.. .286 Hospital, joint resolution confirming the trans",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 65,
+      "end": 75,
+      "text": "resolution",
+      "raw_start": 65,
+      "raw_end": 75,
+      "raw_quote": "resolution",
+      "context": "elief of.. .286 Hospital, joint resolution confirming the trans- fer of th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 76,
+      "end": 86,
+      "text": "confirming",
+      "raw_start": 76,
+      "raw_end": 86,
+      "raw_quote": "confirming",
+      "context": ".286 Hospital, joint resolution confirming the trans- fer of the United St",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 87,
+      "end": 90,
+      "text": "the",
+      "raw_start": 87,
+      "raw_end": 90,
+      "raw_quote": "the",
+      "context": "al, joint resolution confirming the trans- fer of the United States",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 91,
+      "end": 99,
+      "text": "transfer",
+      "raw_start": 91,
+      "raw_end": 101,
+      "raw_quote": "trans- fer",
+      "context": "joint resolution confirming the trans- fer of the United States, at Jeffer",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 100,
+      "end": 102,
+      "text": "of",
+      "raw_start": 102,
+      "raw_end": 104,
+      "raw_quote": "of",
+      "context": "ution confirming the trans- fer of the United States, at Jefferson",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 103,
+      "end": 106,
+      "text": "the",
+      "raw_start": 105,
+      "raw_end": 108,
+      "raw_quote": "the",
+      "context": "on confirming the trans- fer of the United States, at Jeffersonvill",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 107,
+      "end": 113,
+      "text": "United",
+      "raw_start": 109,
+      "raw_end": 115,
+      "raw_quote": "United",
+      "context": "onfirming the trans- fer of the United States, at Jeffersonville, Indi",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 114,
+      "end": 120,
+      "text": "States",
+      "raw_start": 116,
+      "raw_end": 122,
+      "raw_quote": "States",
+      "context": "ng the trans- fer of the United States, at Jeffersonville, Indiana, to",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 122,
+      "end": 124,
+      "text": "at",
+      "raw_start": 124,
+      "raw_end": 126,
+      "raw_quote": "at",
+      "context": "rans- fer of the United States, at Jeffersonville, Indiana, to the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 125,
+      "end": 139,
+      "text": "Jeffersonville",
+      "raw_start": 127,
+      "raw_end": 141,
+      "raw_quote": "Jeffersonville",
+      "context": "s- fer of the United States, at Jeffersonville, Indiana, to the State of India",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 141,
+      "end": 148,
+      "text": "Indiana",
+      "raw_start": 143,
+      "raw_end": 150,
+      "raw_quote": "Indiana",
+      "context": "ited States, at Jeffersonville, Indiana, to the State of Indiana as a d",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 150,
+      "end": 152,
+      "text": "to",
+      "raw_start": 152,
+      "raw_end": 154,
+      "raw_quote": "to",
+      "context": "es, at Jeffersonville, Indiana, to the State of Indiana as a dona-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 153,
+      "end": 156,
+      "text": "the",
+      "raw_start": 155,
+      "raw_end": 158,
+      "raw_quote": "the",
+      "context": " at Jeffersonville, Indiana, to the State of Indiana as a dona- tio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 157,
+      "end": 162,
+      "text": "State",
+      "raw_start": 159,
+      "raw_end": 164,
+      "raw_quote": "State",
+      "context": "Jeffersonville, Indiana, to the State of Indiana as a dona- tion for ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 163,
+      "end": 165,
+      "text": "of",
+      "raw_start": 165,
+      "raw_end": 167,
+      "raw_quote": "of",
+      "context": "sonville, Indiana, to the State of Indiana as a dona- tion for the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 166,
+      "end": 173,
+      "text": "Indiana",
+      "raw_start": 168,
+      "raw_end": 175,
+      "raw_quote": "Indiana",
+      "context": "ville, Indiana, to the State of Indiana as a dona- tion for the benefit",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 174,
+      "end": 176,
+      "text": "as",
+      "raw_start": 176,
+      "raw_end": 178,
+      "raw_quote": "as",
+      "context": "ndiana, to the State of Indiana as a dona- tion for the benefit of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 177,
+      "end": 178,
+      "text": "a",
+      "raw_start": 179,
+      "raw_end": 180,
+      "raw_quote": "a",
+      "context": "ana, to the State of Indiana as a dona- tion for the benefit of I",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 179,
+      "end": 187,
+      "text": "donation",
+      "raw_start": 181,
+      "raw_end": 191,
+      "raw_quote": "dona- tion",
+      "context": "a, to the State of Indiana as a dona- tion for the benefit of Indiana sold",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 188,
+      "end": 191,
+      "text": "for",
+      "raw_start": 192,
+      "raw_end": 195,
+      "raw_quote": "for",
+      "context": "tate of Indiana as a dona- tion for the benefit of Indiana soldiers",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 192,
+      "end": 195,
+      "text": "the",
+      "raw_start": 196,
+      "raw_end": 199,
+      "raw_quote": "the",
+      "context": " of Indiana as a dona- tion for the benefit of Indiana soldiers and",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 196,
+      "end": 203,
+      "text": "benefit",
+      "raw_start": 200,
+      "raw_end": 207,
+      "raw_quote": "benefit",
+      "context": "Indiana as a dona- tion for the benefit of Indiana soldiers and seamen ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 204,
+      "end": 206,
+      "text": "of",
+      "raw_start": 208,
+      "raw_end": 210,
+      "raw_quote": "of",
+      "context": "as a dona- tion for the benefit of Indiana soldiers and seamen dis",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 207,
+      "end": 214,
+      "text": "Indiana",
+      "raw_start": 211,
+      "raw_end": 218,
+      "raw_quote": "Indiana",
+      "context": "a dona- tion for the benefit of Indiana soldiers and seamen disabled in",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 215,
+      "end": 223,
+      "text": "soldiers",
+      "raw_start": 219,
+      "raw_end": 227,
+      "raw_quote": "soldiers",
+      "context": "tion for the benefit of Indiana soldiers and seamen disabled in the serv",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 224,
+      "end": 227,
+      "text": "and",
+      "raw_start": 228,
+      "raw_end": 231,
+      "raw_quote": "and",
+      "context": "the benefit of Indiana soldiers and seamen disabled in the service ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 228,
+      "end": 234,
+      "text": "seamen",
+      "raw_start": 232,
+      "raw_end": 238,
+      "raw_quote": "seamen",
+      "context": "benefit of Indiana soldiers and seamen disabled in the service of the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 235,
+      "end": 243,
+      "text": "disabled",
+      "raw_start": 239,
+      "raw_end": 247,
+      "raw_quote": "disabled",
+      "context": " of Indiana soldiers and seamen disabled in the service of the Uni- ted ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 244,
+      "end": 246,
+      "text": "in",
+      "raw_start": 248,
+      "raw_end": 250,
+      "raw_quote": "in",
+      "context": "na soldiers and seamen disabled in the service of the Uni- ted Sta",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 247,
+      "end": 250,
+      "text": "the",
+      "raw_start": 251,
+      "raw_end": 254,
+      "raw_quote": "the",
+      "context": "soldiers and seamen disabled in the service of the Uni- ted States ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 251,
+      "end": 258,
+      "text": "service",
+      "raw_start": 255,
+      "raw_end": 262,
+      "raw_quote": "service",
+      "context": "iers and seamen disabled in the service of the Uni- ted States 919",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 259,
+      "end": 261,
+      "text": "of",
+      "raw_start": 263,
+      "raw_end": 265,
+      "raw_quote": "of",
+      "context": " seamen disabled in the service of the Uni- ted States 919",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 262,
+      "end": 265,
+      "text": "the",
+      "raw_start": 266,
+      "raw_end": 269,
+      "raw_quote": "the",
+      "context": "amen disabled in the service of the Uni- ted States 919",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 266,
+      "end": 269,
+      "text": "Uni",
+      "raw_start": 270,
+      "raw_end": 273,
+      "raw_quote": "Uni",
+      "context": " disabled in the service of the Uni- ted States 919",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 271,
+      "end": 274,
+      "text": "ted",
+      "raw_start": 275,
+      "raw_end": 278,
+      "raw_quote": "ted",
+      "context": "bled in the service of the Uni- ted States 919",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 275,
+      "end": 281,
+      "text": "States",
+      "raw_start": 279,
+      "raw_end": 285,
+      "raw_quote": "States",
+      "context": " in the service of the Uni- ted States 919",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 282,
+      "end": 285,
+      "text": "919",
+      "raw_start": 286,
+      "raw_end": 289,
+      "raw_quote": "919",
+      "context": " service of the Uni- ted States 919",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7392unit:77:par_000077_000159",
+      "raw_text": "Horsmauj James B., bill for the relief of.. .286 Hospital, joint resolution confirming the trans- fer of the United States, at Jeffersonville, Indiana, to the State of Indiana as a dona- tion for the benefit of Indiana soldiers and seamen disabled in the service of the Uni- ted States 919",
+      "raw_sha256": "8b92fe04d8f01889adc6fdf2df67f8758e0d4ab523317a360d18f98fadf22413"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7392unit:77:par_000077_000159",
+        "raw_text": "Horsmauj James B., bill for the relief of.. .286 Hospital, joint resolution confirming the trans- fer of the United States, at Jeffersonville, Indiana, to the State of Indiana as a dona- tion for the benefit of Indiana soldiers and seamen disabled in the service of the Uni- ted States 919",
+        "raw_sha256": "8b92fe04d8f01889adc6fdf2df67f8758e0d4ab523317a360d18f98fadf22413"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "Horsmauj James B., bill for the relief of.. .286 Hospital, joint resolution confirming the transfer of the United States, at Jeffersonville, Indiana, to the State of Indiana as a donation for the benefit of Indiana soldiers and seamen disabled in the service of the Uni- ted States 919",
+    "proposed_sha256": "2cc69a0b68d66b21071364c37c5f16f8eb181837f5001a32ef3c25264b0e59f9",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

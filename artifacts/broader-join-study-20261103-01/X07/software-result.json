@@ -1,0 +1,4527 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7393unit:756:par_000756_000028",
+      "raw_text": "My conclusion, therefore, is that these pro- visions of the act of 1799 respecting the onus probandi in cases of seizure being upon the claimant, are provisions which by the very let- ter as well as the spirit of the act apply to pros- ecutions against the property itself where a claimant, technically and legally known as such, appears in court and claims the property. In those cases, if I correctly understand the act of 1799, probable cause having been made out on the part of the prosecution, the onus pro- bandi is then turned over to the claimant who asks that the property maybe delivered to him, to explain the circumstances under which he introduced it.",
+      "raw_sha256": "afda8d8560d57ab8b0f7511bb3734f2b5da9ba2515349f8c78d522de8f5fff07"
+    },
+    "static_text": "My conclusion, therefore, is that these provisions of the act of 1799 respecting the onus probandi in cases of seizure being upon the claimant, are provisions which by the very letter as well as the spirit of the act apply to prosecutions against the property itself where a claimant, technically and legally known as such, appears in court and claims the property. In those cases, if I correctly understand the act of 1799, probable cause having been made out on the part of the prosecution, the onus pro- bandi is then turned over to the claimant who asks that the property maybe delivered to him, to explain the circumstances under which he introduced it.",
+    "static_sha256": "c3f54ccd2cb749699e9ff8bbb81a3c5d8a27dff486454ea19cd9b66128549edb",
+    "static_edits": [
+      {
+        "start": 40,
+        "end": 52,
+        "raw_quote": "pro- visions",
+        "replacement": "provisions",
+        "rule_id": "adjacent-line wrap; lexicon form provisions"
+      },
+      {
+        "start": 179,
+        "end": 187,
+        "raw_quote": "let- ter",
+        "replacement": "letter",
+        "rule_id": "adjacent-line wrap; lexicon form letter"
+      },
+      {
+        "start": 230,
+        "end": 244,
+        "raw_quote": "pros- ecutions",
+        "replacement": "prosecutions",
+        "rule_id": "adjacent-line wrap; lexicon form prosecutions"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000756_000220",
+        "start": 0,
+        "end": 44,
+        "text": "My conclusion, therefore, is that these pro-"
+      },
+      {
+        "line_id": "line_000756_000221",
+        "start": 45,
+        "end": 91,
+        "text": "visions of the act of 1799 respecting the onus"
+      },
+      {
+        "line_id": "line_000756_000222",
+        "start": 92,
+        "end": 135,
+        "text": "probandi in cases of seizure being upon the"
+      },
+      {
+        "line_id": "line_000756_000223",
+        "start": 136,
+        "end": 183,
+        "text": "claimant, are provisions which by the very let-"
+      },
+      {
+        "line_id": "line_000756_000224",
+        "start": 184,
+        "end": 235,
+        "text": "ter as well as the spirit of the act apply to pros-"
+      },
+      {
+        "line_id": "line_000756_000225",
+        "start": 236,
+        "end": 280,
+        "text": "ecutions against the property itself where a"
+      },
+      {
+        "line_id": "line_000756_000226",
+        "start": 281,
+        "end": 329,
+        "text": "claimant, technically and legally known as such,"
+      },
+      {
+        "line_id": "line_000756_000227",
+        "start": 330,
+        "end": 374,
+        "text": "appears in court and claims the property. In"
+      },
+      {
+        "line_id": "line_000756_000228",
+        "start": 375,
+        "end": 421,
+        "text": "those cases, if I correctly understand the act"
+      },
+      {
+        "line_id": "line_000756_000229",
+        "start": 422,
+        "end": 466,
+        "text": "of 1799, probable cause having been made out"
+      },
+      {
+        "line_id": "line_000756_000230",
+        "start": 467,
+        "end": 512,
+        "text": "on the part of the prosecution, the onus pro-"
+      },
+      {
+        "line_id": "line_000756_000231",
+        "start": 513,
+        "end": 558,
+        "text": "bandi is then turned over to the claimant who"
+      },
+      {
+        "line_id": "line_000756_000232",
+        "start": 559,
+        "end": 605,
+        "text": "asks that the property maybe delivered to him,"
+      },
+      {
+        "line_id": "line_000756_000233",
+        "start": 606,
+        "end": 649,
+        "text": "to explain the circumstances under which he"
+      },
+      {
+        "line_id": "line_000756_000234",
+        "start": 650,
+        "end": 664,
+        "text": "introduced it."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "ce2fb9cb4f9412ec963bdc8798f3150d2847430ecd2945d237c2804ae06056c9"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "a6f603d15fefe90ad1b6496791f43a44a7d1d0d0609ee3f216316dc9e2336032",
+  "proposed_text": "My conclusion, therefore, is that these pro- visions of the act of 1799 respecting the onus probandi in cases of seizure being upon the claimant, are provisions which by the very letter as well as the spirit of the act apply to pros- ecutions against the property itself where a claimant, technically and legally known as such, appears in court and claims the property. In those cases, if I correctly understand the act of 1799, probable cause having been made out on the part of the prosecution, the onus pro- bandi is then turned over to the claimant who asks that the property maybe delivered to him, to explain the circumstances under which he introduced it.",
+  "proposed_sha256": "00894ace120c57fc5ad473693a6c11e73344d9fca3ef063368c33ac1c53840c2",
+  "proposed_edits": [
+    {
+      "start": 179,
+      "end": 187,
+      "raw_quote": "let- ter",
+      "replacement": "letter",
+      "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+    }
+  ],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 179,
+      "derived_start": 0,
+      "derived_end": 179,
+      "mapping": "exact_copy"
+    },
+    {
+      "raw_start": 179,
+      "raw_end": 187,
+      "derived_start": 179,
+      "derived_end": 185,
+      "mapping": "replacement"
+    },
+    {
+      "raw_start": 187,
+      "raw_end": 664,
+      "derived_start": 185,
+      "derived_end": 662,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 40,
+      "end": 52,
+      "raw_quote": "pro- visions",
+      "joined_candidate": "provisions",
+      "decision": "retained_for_review",
+      "reason": "joined_form_not_known"
+    },
+    {
+      "start": 179,
+      "end": 187,
+      "raw_quote": "let- ter",
+      "joined_candidate": "letter",
+      "decision": "proposed_join",
+      "reason": "guarded_adjacent_line_join"
+    },
+    {
+      "start": 230,
+      "end": 244,
+      "raw_quote": "pros- ecutions",
+      "joined_candidate": "prosecutions",
+      "decision": "retained_for_review",
+      "reason": "joined_form_not_known"
+    },
+    {
+      "start": 508,
+      "end": 518,
+      "raw_quote": "pro- bandi",
+      "joined_candidate": "probandi",
+      "decision": "retained_for_review",
+      "reason": "joined_form_not_known"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 2,
+      "text": "My",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "My",
+      "context": "My conclusion, therefore, is that ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 3,
+      "end": 13,
+      "text": "conclusion",
+      "raw_start": 3,
+      "raw_end": 13,
+      "raw_quote": "conclusion",
+      "context": "My conclusion, therefore, is that these pro- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 15,
+      "end": 24,
+      "text": "therefore",
+      "raw_start": 15,
+      "raw_end": 24,
+      "raw_quote": "therefore",
+      "context": "My conclusion, therefore, is that these pro- visions of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 26,
+      "end": 28,
+      "text": "is",
+      "raw_start": 26,
+      "raw_end": 28,
+      "raw_quote": "is",
+      "context": "My conclusion, therefore, is that these pro- visions of the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 29,
+      "end": 33,
+      "text": "that",
+      "raw_start": 29,
+      "raw_end": 33,
+      "raw_quote": "that",
+      "context": "My conclusion, therefore, is that these pro- visions of the act o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 34,
+      "end": 39,
+      "text": "these",
+      "raw_start": 34,
+      "raw_end": 39,
+      "raw_quote": "these",
+      "context": " conclusion, therefore, is that these pro- visions of the act of 1799",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 40,
+      "end": 43,
+      "text": "pro",
+      "raw_start": 40,
+      "raw_end": 43,
+      "raw_quote": "pro",
+      "context": "usion, therefore, is that these pro- visions of the act of 1799 res",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 45,
+      "end": 52,
+      "text": "visions",
+      "raw_start": 45,
+      "raw_end": 52,
+      "raw_quote": "visions",
+      "context": ", therefore, is that these pro- visions of the act of 1799 respecting t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 53,
+      "end": 55,
+      "text": "of",
+      "raw_start": 53,
+      "raw_end": 55,
+      "raw_quote": "of",
+      "context": "ore, is that these pro- visions of the act of 1799 respecting the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 56,
+      "end": 59,
+      "text": "the",
+      "raw_start": 56,
+      "raw_end": 59,
+      "raw_quote": "the",
+      "context": ", is that these pro- visions of the act of 1799 respecting the onus",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 60,
+      "end": 63,
+      "text": "act",
+      "raw_start": 60,
+      "raw_end": 63,
+      "raw_quote": "act",
+      "context": " that these pro- visions of the act of 1799 respecting the onus pro",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 64,
+      "end": 66,
+      "text": "of",
+      "raw_start": 64,
+      "raw_end": 66,
+      "raw_quote": "of",
+      "context": "t these pro- visions of the act of 1799 respecting the onus proban",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 67,
+      "end": 71,
+      "text": "1799",
+      "raw_start": 67,
+      "raw_end": 71,
+      "raw_quote": "1799",
+      "context": "hese pro- visions of the act of 1799 respecting the onus probandi in",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 72,
+      "end": 82,
+      "text": "respecting",
+      "raw_start": 72,
+      "raw_end": 82,
+      "raw_quote": "respecting",
+      "context": "pro- visions of the act of 1799 respecting the onus probandi in cases of s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 83,
+      "end": 86,
+      "text": "the",
+      "raw_start": 83,
+      "raw_end": 86,
+      "raw_quote": "the",
+      "context": "s of the act of 1799 respecting the onus probandi in cases of seizu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 87,
+      "end": 91,
+      "text": "onus",
+      "raw_start": 87,
+      "raw_end": 91,
+      "raw_quote": "onus",
+      "context": " the act of 1799 respecting the onus probandi in cases of seizure be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 92,
+      "end": 100,
+      "text": "probandi",
+      "raw_start": 92,
+      "raw_end": 100,
+      "raw_quote": "probandi",
+      "context": "act of 1799 respecting the onus probandi in cases of seizure being upon ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 101,
+      "end": 103,
+      "text": "in",
+      "raw_start": 101,
+      "raw_end": 103,
+      "raw_quote": "in",
+      "context": "99 respecting the onus probandi in cases of seizure being upon the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 104,
+      "end": 109,
+      "text": "cases",
+      "raw_start": 104,
+      "raw_end": 109,
+      "raw_quote": "cases",
+      "context": "respecting the onus probandi in cases of seizure being upon the claim",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 110,
+      "end": 112,
+      "text": "of",
+      "raw_start": 110,
+      "raw_end": 112,
+      "raw_quote": "of",
+      "context": "ting the onus probandi in cases of seizure being upon the claimant",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 113,
+      "end": 120,
+      "text": "seizure",
+      "raw_start": 113,
+      "raw_end": 120,
+      "raw_quote": "seizure",
+      "context": "g the onus probandi in cases of seizure being upon the claimant, are pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 121,
+      "end": 126,
+      "text": "being",
+      "raw_start": 121,
+      "raw_end": 126,
+      "raw_quote": "being",
+      "context": "us probandi in cases of seizure being upon the claimant, are provisio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 127,
+      "end": 131,
+      "text": "upon",
+      "raw_start": 127,
+      "raw_end": 131,
+      "raw_quote": "upon",
+      "context": "bandi in cases of seizure being upon the claimant, are provisions wh",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 132,
+      "end": 135,
+      "text": "the",
+      "raw_start": 132,
+      "raw_end": 135,
+      "raw_quote": "the",
+      "context": " in cases of seizure being upon the claimant, are provisions which ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 136,
+      "end": 144,
+      "text": "claimant",
+      "raw_start": 136,
+      "raw_end": 144,
+      "raw_quote": "claimant",
+      "context": "cases of seizure being upon the claimant, are provisions which by the ve",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 146,
+      "end": 149,
+      "text": "are",
+      "raw_start": 146,
+      "raw_end": 149,
+      "raw_quote": "are",
+      "context": "eizure being upon the claimant, are provisions which by the very le",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 150,
+      "end": 160,
+      "text": "provisions",
+      "raw_start": 150,
+      "raw_end": 160,
+      "raw_quote": "provisions",
+      "context": "re being upon the claimant, are provisions which by the very let- ter as w",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 161,
+      "end": 166,
+      "text": "which",
+      "raw_start": 161,
+      "raw_end": 166,
+      "raw_quote": "which",
+      "context": "on the claimant, are provisions which by the very let- ter as well as",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 167,
+      "end": 169,
+      "text": "by",
+      "raw_start": 167,
+      "raw_end": 169,
+      "raw_quote": "by",
+      "context": " claimant, are provisions which by the very let- ter as well as th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 170,
+      "end": 173,
+      "text": "the",
+      "raw_start": 170,
+      "raw_end": 173,
+      "raw_quote": "the",
+      "context": "aimant, are provisions which by the very let- ter as well as the sp",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 174,
+      "end": 178,
+      "text": "very",
+      "raw_start": 174,
+      "raw_end": 178,
+      "raw_quote": "very",
+      "context": "nt, are provisions which by the very let- ter as well as the spirit ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 179,
+      "end": 182,
+      "text": "let",
+      "raw_start": 179,
+      "raw_end": 182,
+      "raw_quote": "let",
+      "context": "re provisions which by the very let- ter as well as the spirit of t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 184,
+      "end": 187,
+      "text": "ter",
+      "raw_start": 184,
+      "raw_end": 187,
+      "raw_quote": "ter",
+      "context": "ovisions which by the very let- ter as well as the spirit of the ac",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 188,
+      "end": 190,
+      "text": "as",
+      "raw_start": 188,
+      "raw_end": 190,
+      "raw_quote": "as",
+      "context": "ions which by the very let- ter as well as the spirit of the act a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 191,
+      "end": 195,
+      "text": "well",
+      "raw_start": 191,
+      "raw_end": 195,
+      "raw_quote": "well",
+      "context": "s which by the very let- ter as well as the spirit of the act apply ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 196,
+      "end": 198,
+      "text": "as",
+      "raw_start": 196,
+      "raw_end": 198,
+      "raw_quote": "as",
+      "context": "ch by the very let- ter as well as the spirit of the act apply to ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 199,
+      "end": 202,
+      "text": "the",
+      "raw_start": 199,
+      "raw_end": 202,
+      "raw_quote": "the",
+      "context": "by the very let- ter as well as the spirit of the act apply to pros",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 203,
+      "end": 209,
+      "text": "spirit",
+      "raw_start": 203,
+      "raw_end": 209,
+      "raw_quote": "spirit",
+      "context": "he very let- ter as well as the spirit of the act apply to pros- ecuti",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 210,
+      "end": 212,
+      "text": "of",
+      "raw_start": 210,
+      "raw_end": 212,
+      "raw_quote": "of",
+      "context": " let- ter as well as the spirit of the act apply to pros- ecutions",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 213,
+      "end": 216,
+      "text": "the",
+      "raw_start": 213,
+      "raw_end": 216,
+      "raw_quote": "the",
+      "context": "t- ter as well as the spirit of the act apply to pros- ecutions aga",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 217,
+      "end": 220,
+      "text": "act",
+      "raw_start": 217,
+      "raw_end": 220,
+      "raw_quote": "act",
+      "context": "er as well as the spirit of the act apply to pros- ecutions against",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 221,
+      "end": 226,
+      "text": "apply",
+      "raw_start": 221,
+      "raw_end": 226,
+      "raw_quote": "apply",
+      "context": "s well as the spirit of the act apply to pros- ecutions against the p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 227,
+      "end": 229,
+      "text": "to",
+      "raw_start": 227,
+      "raw_end": 229,
+      "raw_quote": "to",
+      "context": " as the spirit of the act apply to pros- ecutions against the prop",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 230,
+      "end": 234,
+      "text": "pros",
+      "raw_start": 230,
+      "raw_end": 234,
+      "raw_quote": "pros",
+      "context": " the spirit of the act apply to pros- ecutions against the property ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 236,
+      "end": 244,
+      "text": "ecutions",
+      "raw_start": 236,
+      "raw_end": 244,
+      "raw_quote": "ecutions",
+      "context": "pirit of the act apply to pros- ecutions against the property itself whe",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 245,
+      "end": 252,
+      "text": "against",
+      "raw_start": 245,
+      "raw_end": 252,
+      "raw_quote": "against",
+      "context": "the act apply to pros- ecutions against the property itself where a cla",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 253,
+      "end": 256,
+      "text": "the",
+      "raw_start": 253,
+      "raw_end": 256,
+      "raw_quote": "the",
+      "context": "apply to pros- ecutions against the property itself where a claiman",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 257,
+      "end": 265,
+      "text": "property",
+      "raw_start": 257,
+      "raw_end": 265,
+      "raw_quote": "property",
+      "context": "y to pros- ecutions against the property itself where a claimant, techni",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 266,
+      "end": 272,
+      "text": "itself",
+      "raw_start": 266,
+      "raw_end": 272,
+      "raw_quote": "itself",
+      "context": "- ecutions against the property itself where a claimant, technically a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 273,
+      "end": 278,
+      "text": "where",
+      "raw_start": 273,
+      "raw_end": 278,
+      "raw_quote": "where",
+      "context": "ons against the property itself where a claimant, technically and leg",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 279,
+      "end": 280,
+      "text": "a",
+      "raw_start": 279,
+      "raw_end": 280,
+      "raw_quote": "a",
+      "context": "ainst the property itself where a claimant, technically and legal",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 281,
+      "end": 289,
+      "text": "claimant",
+      "raw_start": 281,
+      "raw_end": 289,
+      "raw_quote": "claimant",
+      "context": "nst the property itself where a claimant, technically and legally known ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 291,
+      "end": 302,
+      "text": "technically",
+      "raw_start": 291,
+      "raw_end": 302,
+      "raw_quote": "technically",
+      "context": "operty itself where a claimant, technically and legally known as such, appe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 303,
+      "end": 306,
+      "text": "and",
+      "raw_start": 303,
+      "raw_end": 306,
+      "raw_quote": "and",
+      "context": "f where a claimant, technically and legally known as such, appears ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 307,
+      "end": 314,
+      "text": "legally",
+      "raw_start": 307,
+      "raw_end": 314,
+      "raw_quote": "legally",
+      "context": "ere a claimant, technically and legally known as such, appears in court",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 315,
+      "end": 320,
+      "text": "known",
+      "raw_start": 315,
+      "raw_end": 320,
+      "raw_quote": "known",
+      "context": "aimant, technically and legally known as such, appears in court and c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 321,
+      "end": 323,
+      "text": "as",
+      "raw_start": 321,
+      "raw_end": 323,
+      "raw_quote": "as",
+      "context": ", technically and legally known as such, appears in court and clai",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 324,
+      "end": 328,
+      "text": "such",
+      "raw_start": 324,
+      "raw_end": 328,
+      "raw_quote": "such",
+      "context": "echnically and legally known as such, appears in court and claims th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 330,
+      "end": 337,
+      "text": "appears",
+      "raw_start": 330,
+      "raw_end": 337,
+      "raw_quote": "appears",
+      "context": "ally and legally known as such, appears in court and claims the propert",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 338,
+      "end": 340,
+      "text": "in",
+      "raw_start": 338,
+      "raw_end": 340,
+      "raw_quote": "in",
+      "context": " legally known as such, appears in court and claims the property. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 341,
+      "end": 346,
+      "text": "court",
+      "raw_start": 341,
+      "raw_end": 346,
+      "raw_quote": "court",
+      "context": "gally known as such, appears in court and claims the property. In tho",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 347,
+      "end": 350,
+      "text": "and",
+      "raw_start": 347,
+      "raw_end": 350,
+      "raw_quote": "and",
+      "context": "known as such, appears in court and claims the property. In those c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 351,
+      "end": 357,
+      "text": "claims",
+      "raw_start": 351,
+      "raw_end": 357,
+      "raw_quote": "claims",
+      "context": "n as such, appears in court and claims the property. In those cases, i",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 358,
+      "end": 361,
+      "text": "the",
+      "raw_start": 358,
+      "raw_end": 361,
+      "raw_quote": "the",
+      "context": "ch, appears in court and claims the property. In those cases, if I ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 362,
+      "end": 370,
+      "text": "property",
+      "raw_start": 362,
+      "raw_end": 370,
+      "raw_quote": "property",
+      "context": "appears in court and claims the property. In those cases, if I correctly",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 372,
+      "end": 374,
+      "text": "In",
+      "raw_start": 372,
+      "raw_end": 374,
+      "raw_quote": "In",
+      "context": " court and claims the property. In those cases, if I correctly und",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 375,
+      "end": 380,
+      "text": "those",
+      "raw_start": 375,
+      "raw_end": 380,
+      "raw_quote": "those",
+      "context": "urt and claims the property. In those cases, if I correctly understan",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 381,
+      "end": 386,
+      "text": "cases",
+      "raw_start": 381,
+      "raw_end": 386,
+      "raw_quote": "cases",
+      "context": "d claims the property. In those cases, if I correctly understand the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 388,
+      "end": 390,
+      "text": "if",
+      "raw_start": 388,
+      "raw_end": 390,
+      "raw_quote": "if",
+      "context": "s the property. In those cases, if I correctly understand the act ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 391,
+      "end": 392,
+      "text": "I",
+      "raw_start": 391,
+      "raw_end": 392,
+      "raw_quote": "I",
+      "context": "he property. In those cases, if I correctly understand the act of",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 393,
+      "end": 402,
+      "text": "correctly",
+      "raw_start": 393,
+      "raw_end": 402,
+      "raw_quote": "correctly",
+      "context": " property. In those cases, if I correctly understand the act of 1799, pro",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 403,
+      "end": 413,
+      "text": "understand",
+      "raw_start": 403,
+      "raw_end": 413,
+      "raw_quote": "understand",
+      "context": " In those cases, if I correctly understand the act of 1799, probable cause",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 414,
+      "end": 417,
+      "text": "the",
+      "raw_start": 414,
+      "raw_end": 417,
+      "raw_quote": "the",
+      "context": "ases, if I correctly understand the act of 1799, probable cause hav",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 418,
+      "end": 421,
+      "text": "act",
+      "raw_start": 418,
+      "raw_end": 421,
+      "raw_quote": "act",
+      "context": ", if I correctly understand the act of 1799, probable cause having ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 422,
+      "end": 424,
+      "text": "of",
+      "raw_start": 422,
+      "raw_end": 424,
+      "raw_quote": "of",
+      "context": " I correctly understand the act of 1799, probable cause having bee",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 425,
+      "end": 429,
+      "text": "1799",
+      "raw_start": 425,
+      "raw_end": 429,
+      "raw_quote": "1799",
+      "context": "correctly understand the act of 1799, probable cause having been mad",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 431,
+      "end": 439,
+      "text": "probable",
+      "raw_start": 431,
+      "raw_end": 439,
+      "raw_quote": "probable",
+      "context": "tly understand the act of 1799, probable cause having been made out on t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 440,
+      "end": 445,
+      "text": "cause",
+      "raw_start": 440,
+      "raw_end": 445,
+      "raw_quote": "cause",
+      "context": "stand the act of 1799, probable cause having been made out on the par",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 446,
+      "end": 452,
+      "text": "having",
+      "raw_start": 446,
+      "raw_end": 452,
+      "raw_quote": "having",
+      "context": "the act of 1799, probable cause having been made out on the part of th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 453,
+      "end": 457,
+      "text": "been",
+      "raw_start": 453,
+      "raw_end": 457,
+      "raw_quote": "been",
+      "context": " of 1799, probable cause having been made out on the part of the pro",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 458,
+      "end": 462,
+      "text": "made",
+      "raw_start": 458,
+      "raw_end": 462,
+      "raw_quote": "made",
+      "context": "799, probable cause having been made out on the part of the prosecut",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 463,
+      "end": 466,
+      "text": "out",
+      "raw_start": 463,
+      "raw_end": 466,
+      "raw_quote": "out",
+      "context": "probable cause having been made out on the part of the prosecution,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 467,
+      "end": 469,
+      "text": "on",
+      "raw_start": 467,
+      "raw_end": 469,
+      "raw_quote": "on",
+      "context": "able cause having been made out on the part of the prosecution, th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 470,
+      "end": 473,
+      "text": "the",
+      "raw_start": 470,
+      "raw_end": 473,
+      "raw_quote": "the",
+      "context": "e cause having been made out on the part of the prosecution, the on",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 474,
+      "end": 478,
+      "text": "part",
+      "raw_start": 474,
+      "raw_end": 478,
+      "raw_quote": "part",
+      "context": "use having been made out on the part of the prosecution, the onus pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 479,
+      "end": 481,
+      "text": "of",
+      "raw_start": 479,
+      "raw_end": 481,
+      "raw_quote": "of",
+      "context": "aving been made out on the part of the prosecution, the onus pro- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 482,
+      "end": 485,
+      "text": "the",
+      "raw_start": 482,
+      "raw_end": 485,
+      "raw_quote": "the",
+      "context": "ng been made out on the part of the prosecution, the onus pro- band",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 486,
+      "end": 497,
+      "text": "prosecution",
+      "raw_start": 486,
+      "raw_end": 497,
+      "raw_quote": "prosecution",
+      "context": "een made out on the part of the prosecution, the onus pro- bandi is then tu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 499,
+      "end": 502,
+      "text": "the",
+      "raw_start": 499,
+      "raw_end": 502,
+      "raw_quote": "the",
+      "context": "on the part of the prosecution, the onus pro- bandi is then turned ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 503,
+      "end": 507,
+      "text": "onus",
+      "raw_start": 503,
+      "raw_end": 507,
+      "raw_quote": "onus",
+      "context": "he part of the prosecution, the onus pro- bandi is then turned over ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 508,
+      "end": 511,
+      "text": "pro",
+      "raw_start": 508,
+      "raw_end": 511,
+      "raw_quote": "pro",
+      "context": "rt of the prosecution, the onus pro- bandi is then turned over to t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 513,
+      "end": 518,
+      "text": "bandi",
+      "raw_start": 513,
+      "raw_end": 518,
+      "raw_quote": "bandi",
+      "context": " the prosecution, the onus pro- bandi is then turned over to the clai",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 519,
+      "end": 521,
+      "text": "is",
+      "raw_start": 519,
+      "raw_end": 521,
+      "raw_quote": "is",
+      "context": "rosecution, the onus pro- bandi is then turned over to the claiman",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 522,
+      "end": 526,
+      "text": "then",
+      "raw_start": 522,
+      "raw_end": 526,
+      "raw_quote": "then",
+      "context": "ecution, the onus pro- bandi is then turned over to the claimant who",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 527,
+      "end": 533,
+      "text": "turned",
+      "raw_start": 527,
+      "raw_end": 533,
+      "raw_quote": "turned",
+      "context": "on, the onus pro- bandi is then turned over to the claimant who asks t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 534,
+      "end": 538,
+      "text": "over",
+      "raw_start": 534,
+      "raw_end": 538,
+      "raw_quote": "over",
+      "context": " onus pro- bandi is then turned over to the claimant who asks that t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 539,
+      "end": 541,
+      "text": "to",
+      "raw_start": 539,
+      "raw_end": 541,
+      "raw_quote": "to",
+      "context": " pro- bandi is then turned over to the claimant who asks that the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 542,
+      "end": 545,
+      "text": "the",
+      "raw_start": 542,
+      "raw_end": 545,
+      "raw_quote": "the",
+      "context": "o- bandi is then turned over to the claimant who asks that the prop",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 546,
+      "end": 554,
+      "text": "claimant",
+      "raw_start": 546,
+      "raw_end": 554,
+      "raw_quote": "claimant",
+      "context": "andi is then turned over to the claimant who asks that the property mayb",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 555,
+      "end": 558,
+      "text": "who",
+      "raw_start": 555,
+      "raw_end": 558,
+      "raw_quote": "who",
+      "context": "hen turned over to the claimant who asks that the property maybe de",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 559,
+      "end": 563,
+      "text": "asks",
+      "raw_start": 559,
+      "raw_end": 563,
+      "raw_quote": "asks",
+      "context": "turned over to the claimant who asks that the property maybe deliver",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 564,
+      "end": 568,
+      "text": "that",
+      "raw_start": 564,
+      "raw_end": 568,
+      "raw_quote": "that",
+      "context": "d over to the claimant who asks that the property maybe delivered to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 569,
+      "end": 572,
+      "text": "the",
+      "raw_start": 569,
+      "raw_end": 572,
+      "raw_quote": "the",
+      "context": "r to the claimant who asks that the property maybe delivered to him",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 573,
+      "end": 581,
+      "text": "property",
+      "raw_start": 573,
+      "raw_end": 581,
+      "raw_quote": "property",
+      "context": " the claimant who asks that the property maybe delivered to him, to expl",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 582,
+      "end": 587,
+      "text": "maybe",
+      "raw_start": 582,
+      "raw_end": 587,
+      "raw_quote": "maybe",
+      "context": "mant who asks that the property maybe delivered to him, to explain th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 588,
+      "end": 597,
+      "text": "delivered",
+      "raw_start": 588,
+      "raw_end": 597,
+      "raw_quote": "delivered",
+      "context": "ho asks that the property maybe delivered to him, to explain the circumst",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 598,
+      "end": 600,
+      "text": "to",
+      "raw_start": 598,
+      "raw_end": 600,
+      "raw_quote": "to",
+      "context": "at the property maybe delivered to him, to explain the circumstanc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 601,
+      "end": 604,
+      "text": "him",
+      "raw_start": 601,
+      "raw_end": 604,
+      "raw_quote": "him",
+      "context": "the property maybe delivered to him, to explain the circumstances u",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 606,
+      "end": 608,
+      "text": "to",
+      "raw_start": 606,
+      "raw_end": 608,
+      "raw_quote": "to",
+      "context": "roperty maybe delivered to him, to explain the circumstances under",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 609,
+      "end": 616,
+      "text": "explain",
+      "raw_start": 609,
+      "raw_end": 616,
+      "raw_quote": "explain",
+      "context": "erty maybe delivered to him, to explain the circumstances under which h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 617,
+      "end": 620,
+      "text": "the",
+      "raw_start": 617,
+      "raw_end": 620,
+      "raw_quote": "the",
+      "context": "be delivered to him, to explain the circumstances under which he in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 621,
+      "end": 634,
+      "text": "circumstances",
+      "raw_start": 621,
+      "raw_end": 634,
+      "raw_quote": "circumstances",
+      "context": "elivered to him, to explain the circumstances under which he introduced it.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 635,
+      "end": 640,
+      "text": "under",
+      "raw_start": 635,
+      "raw_end": 640,
+      "raw_quote": "under",
+      "context": "m, to explain the circumstances under which he introduced it.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 641,
+      "end": 646,
+      "text": "which",
+      "raw_start": 641,
+      "raw_end": 646,
+      "raw_quote": "which",
+      "context": "explain the circumstances under which he introduced it.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 647,
+      "end": 649,
+      "text": "he",
+      "raw_start": 647,
+      "raw_end": 649,
+      "raw_quote": "he",
+      "context": "n the circumstances under which he introduced it.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 650,
+      "end": 660,
+      "text": "introduced",
+      "raw_start": 650,
+      "raw_end": 660,
+      "raw_quote": "introduced",
+      "context": "he circumstances under which he introduced it.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 661,
+      "end": 663,
+      "text": "it",
+      "raw_start": 661,
+      "raw_end": 663,
+      "raw_quote": "it",
+      "context": "ances under which he introduced it.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 2,
+      "text": "My",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "My",
+      "context": "My conclusion, therefore, is that ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 3,
+      "end": 13,
+      "text": "conclusion",
+      "raw_start": 3,
+      "raw_end": 13,
+      "raw_quote": "conclusion",
+      "context": "My conclusion, therefore, is that these pro- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 15,
+      "end": 24,
+      "text": "therefore",
+      "raw_start": 15,
+      "raw_end": 24,
+      "raw_quote": "therefore",
+      "context": "My conclusion, therefore, is that these pro- visions of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 26,
+      "end": 28,
+      "text": "is",
+      "raw_start": 26,
+      "raw_end": 28,
+      "raw_quote": "is",
+      "context": "My conclusion, therefore, is that these pro- visions of the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 29,
+      "end": 33,
+      "text": "that",
+      "raw_start": 29,
+      "raw_end": 33,
+      "raw_quote": "that",
+      "context": "My conclusion, therefore, is that these pro- visions of the act o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 34,
+      "end": 39,
+      "text": "these",
+      "raw_start": 34,
+      "raw_end": 39,
+      "raw_quote": "these",
+      "context": " conclusion, therefore, is that these pro- visions of the act of 1799",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 40,
+      "end": 43,
+      "text": "pro",
+      "raw_start": 40,
+      "raw_end": 43,
+      "raw_quote": "pro",
+      "context": "usion, therefore, is that these pro- visions of the act of 1799 res",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 45,
+      "end": 52,
+      "text": "visions",
+      "raw_start": 45,
+      "raw_end": 52,
+      "raw_quote": "visions",
+      "context": ", therefore, is that these pro- visions of the act of 1799 respecting t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 53,
+      "end": 55,
+      "text": "of",
+      "raw_start": 53,
+      "raw_end": 55,
+      "raw_quote": "of",
+      "context": "ore, is that these pro- visions of the act of 1799 respecting the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 56,
+      "end": 59,
+      "text": "the",
+      "raw_start": 56,
+      "raw_end": 59,
+      "raw_quote": "the",
+      "context": ", is that these pro- visions of the act of 1799 respecting the onus",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 60,
+      "end": 63,
+      "text": "act",
+      "raw_start": 60,
+      "raw_end": 63,
+      "raw_quote": "act",
+      "context": " that these pro- visions of the act of 1799 respecting the onus pro",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 64,
+      "end": 66,
+      "text": "of",
+      "raw_start": 64,
+      "raw_end": 66,
+      "raw_quote": "of",
+      "context": "t these pro- visions of the act of 1799 respecting the onus proban",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 67,
+      "end": 71,
+      "text": "1799",
+      "raw_start": 67,
+      "raw_end": 71,
+      "raw_quote": "1799",
+      "context": "hese pro- visions of the act of 1799 respecting the onus probandi in",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 72,
+      "end": 82,
+      "text": "respecting",
+      "raw_start": 72,
+      "raw_end": 82,
+      "raw_quote": "respecting",
+      "context": "pro- visions of the act of 1799 respecting the onus probandi in cases of s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 83,
+      "end": 86,
+      "text": "the",
+      "raw_start": 83,
+      "raw_end": 86,
+      "raw_quote": "the",
+      "context": "s of the act of 1799 respecting the onus probandi in cases of seizu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 87,
+      "end": 91,
+      "text": "onus",
+      "raw_start": 87,
+      "raw_end": 91,
+      "raw_quote": "onus",
+      "context": " the act of 1799 respecting the onus probandi in cases of seizure be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 92,
+      "end": 100,
+      "text": "probandi",
+      "raw_start": 92,
+      "raw_end": 100,
+      "raw_quote": "probandi",
+      "context": "act of 1799 respecting the onus probandi in cases of seizure being upon ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 101,
+      "end": 103,
+      "text": "in",
+      "raw_start": 101,
+      "raw_end": 103,
+      "raw_quote": "in",
+      "context": "99 respecting the onus probandi in cases of seizure being upon the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 104,
+      "end": 109,
+      "text": "cases",
+      "raw_start": 104,
+      "raw_end": 109,
+      "raw_quote": "cases",
+      "context": "respecting the onus probandi in cases of seizure being upon the claim",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 110,
+      "end": 112,
+      "text": "of",
+      "raw_start": 110,
+      "raw_end": 112,
+      "raw_quote": "of",
+      "context": "ting the onus probandi in cases of seizure being upon the claimant",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 113,
+      "end": 120,
+      "text": "seizure",
+      "raw_start": 113,
+      "raw_end": 120,
+      "raw_quote": "seizure",
+      "context": "g the onus probandi in cases of seizure being upon the claimant, are pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 121,
+      "end": 126,
+      "text": "being",
+      "raw_start": 121,
+      "raw_end": 126,
+      "raw_quote": "being",
+      "context": "us probandi in cases of seizure being upon the claimant, are provisio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 127,
+      "end": 131,
+      "text": "upon",
+      "raw_start": 127,
+      "raw_end": 131,
+      "raw_quote": "upon",
+      "context": "bandi in cases of seizure being upon the claimant, are provisions wh",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 132,
+      "end": 135,
+      "text": "the",
+      "raw_start": 132,
+      "raw_end": 135,
+      "raw_quote": "the",
+      "context": " in cases of seizure being upon the claimant, are provisions which ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 136,
+      "end": 144,
+      "text": "claimant",
+      "raw_start": 136,
+      "raw_end": 144,
+      "raw_quote": "claimant",
+      "context": "cases of seizure being upon the claimant, are provisions which by the ve",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 146,
+      "end": 149,
+      "text": "are",
+      "raw_start": 146,
+      "raw_end": 149,
+      "raw_quote": "are",
+      "context": "eizure being upon the claimant, are provisions which by the very le",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 150,
+      "end": 160,
+      "text": "provisions",
+      "raw_start": 150,
+      "raw_end": 160,
+      "raw_quote": "provisions",
+      "context": "re being upon the claimant, are provisions which by the very let- ter as w",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 161,
+      "end": 166,
+      "text": "which",
+      "raw_start": 161,
+      "raw_end": 166,
+      "raw_quote": "which",
+      "context": "on the claimant, are provisions which by the very let- ter as well as",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 167,
+      "end": 169,
+      "text": "by",
+      "raw_start": 167,
+      "raw_end": 169,
+      "raw_quote": "by",
+      "context": " claimant, are provisions which by the very let- ter as well as th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 170,
+      "end": 173,
+      "text": "the",
+      "raw_start": 170,
+      "raw_end": 173,
+      "raw_quote": "the",
+      "context": "aimant, are provisions which by the very let- ter as well as the sp",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 174,
+      "end": 178,
+      "text": "very",
+      "raw_start": 174,
+      "raw_end": 178,
+      "raw_quote": "very",
+      "context": "nt, are provisions which by the very let- ter as well as the spirit ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 179,
+      "end": 185,
+      "text": "letter",
+      "raw_start": 179,
+      "raw_end": 187,
+      "raw_quote": "let- ter",
+      "context": "re provisions which by the very let- ter as well as the spirit of the ac",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 186,
+      "end": 188,
+      "text": "as",
+      "raw_start": 188,
+      "raw_end": 190,
+      "raw_quote": "as",
+      "context": "ions which by the very let- ter as well as the spirit of the act a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 189,
+      "end": 193,
+      "text": "well",
+      "raw_start": 191,
+      "raw_end": 195,
+      "raw_quote": "well",
+      "context": "s which by the very let- ter as well as the spirit of the act apply ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 194,
+      "end": 196,
+      "text": "as",
+      "raw_start": 196,
+      "raw_end": 198,
+      "raw_quote": "as",
+      "context": "ch by the very let- ter as well as the spirit of the act apply to ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 197,
+      "end": 200,
+      "text": "the",
+      "raw_start": 199,
+      "raw_end": 202,
+      "raw_quote": "the",
+      "context": "by the very let- ter as well as the spirit of the act apply to pros",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 201,
+      "end": 207,
+      "text": "spirit",
+      "raw_start": 203,
+      "raw_end": 209,
+      "raw_quote": "spirit",
+      "context": "he very let- ter as well as the spirit of the act apply to pros- ecuti",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 208,
+      "end": 210,
+      "text": "of",
+      "raw_start": 210,
+      "raw_end": 212,
+      "raw_quote": "of",
+      "context": " let- ter as well as the spirit of the act apply to pros- ecutions",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 211,
+      "end": 214,
+      "text": "the",
+      "raw_start": 213,
+      "raw_end": 216,
+      "raw_quote": "the",
+      "context": "t- ter as well as the spirit of the act apply to pros- ecutions aga",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 215,
+      "end": 218,
+      "text": "act",
+      "raw_start": 217,
+      "raw_end": 220,
+      "raw_quote": "act",
+      "context": "er as well as the spirit of the act apply to pros- ecutions against",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 219,
+      "end": 224,
+      "text": "apply",
+      "raw_start": 221,
+      "raw_end": 226,
+      "raw_quote": "apply",
+      "context": "s well as the spirit of the act apply to pros- ecutions against the p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 225,
+      "end": 227,
+      "text": "to",
+      "raw_start": 227,
+      "raw_end": 229,
+      "raw_quote": "to",
+      "context": " as the spirit of the act apply to pros- ecutions against the prop",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 228,
+      "end": 232,
+      "text": "pros",
+      "raw_start": 230,
+      "raw_end": 234,
+      "raw_quote": "pros",
+      "context": " the spirit of the act apply to pros- ecutions against the property ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 234,
+      "end": 242,
+      "text": "ecutions",
+      "raw_start": 236,
+      "raw_end": 244,
+      "raw_quote": "ecutions",
+      "context": "pirit of the act apply to pros- ecutions against the property itself whe",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 243,
+      "end": 250,
+      "text": "against",
+      "raw_start": 245,
+      "raw_end": 252,
+      "raw_quote": "against",
+      "context": "the act apply to pros- ecutions against the property itself where a cla",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 251,
+      "end": 254,
+      "text": "the",
+      "raw_start": 253,
+      "raw_end": 256,
+      "raw_quote": "the",
+      "context": "apply to pros- ecutions against the property itself where a claiman",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 255,
+      "end": 263,
+      "text": "property",
+      "raw_start": 257,
+      "raw_end": 265,
+      "raw_quote": "property",
+      "context": "y to pros- ecutions against the property itself where a claimant, techni",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 264,
+      "end": 270,
+      "text": "itself",
+      "raw_start": 266,
+      "raw_end": 272,
+      "raw_quote": "itself",
+      "context": "- ecutions against the property itself where a claimant, technically a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 271,
+      "end": 276,
+      "text": "where",
+      "raw_start": 273,
+      "raw_end": 278,
+      "raw_quote": "where",
+      "context": "ons against the property itself where a claimant, technically and leg",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 277,
+      "end": 278,
+      "text": "a",
+      "raw_start": 279,
+      "raw_end": 280,
+      "raw_quote": "a",
+      "context": "ainst the property itself where a claimant, technically and legal",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 279,
+      "end": 287,
+      "text": "claimant",
+      "raw_start": 281,
+      "raw_end": 289,
+      "raw_quote": "claimant",
+      "context": "nst the property itself where a claimant, technically and legally known ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 289,
+      "end": 300,
+      "text": "technically",
+      "raw_start": 291,
+      "raw_end": 302,
+      "raw_quote": "technically",
+      "context": "operty itself where a claimant, technically and legally known as such, appe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 301,
+      "end": 304,
+      "text": "and",
+      "raw_start": 303,
+      "raw_end": 306,
+      "raw_quote": "and",
+      "context": "f where a claimant, technically and legally known as such, appears ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 305,
+      "end": 312,
+      "text": "legally",
+      "raw_start": 307,
+      "raw_end": 314,
+      "raw_quote": "legally",
+      "context": "ere a claimant, technically and legally known as such, appears in court",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 313,
+      "end": 318,
+      "text": "known",
+      "raw_start": 315,
+      "raw_end": 320,
+      "raw_quote": "known",
+      "context": "aimant, technically and legally known as such, appears in court and c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 319,
+      "end": 321,
+      "text": "as",
+      "raw_start": 321,
+      "raw_end": 323,
+      "raw_quote": "as",
+      "context": ", technically and legally known as such, appears in court and clai",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 322,
+      "end": 326,
+      "text": "such",
+      "raw_start": 324,
+      "raw_end": 328,
+      "raw_quote": "such",
+      "context": "echnically and legally known as such, appears in court and claims th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 328,
+      "end": 335,
+      "text": "appears",
+      "raw_start": 330,
+      "raw_end": 337,
+      "raw_quote": "appears",
+      "context": "ally and legally known as such, appears in court and claims the propert",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 336,
+      "end": 338,
+      "text": "in",
+      "raw_start": 338,
+      "raw_end": 340,
+      "raw_quote": "in",
+      "context": " legally known as such, appears in court and claims the property. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 339,
+      "end": 344,
+      "text": "court",
+      "raw_start": 341,
+      "raw_end": 346,
+      "raw_quote": "court",
+      "context": "gally known as such, appears in court and claims the property. In tho",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 345,
+      "end": 348,
+      "text": "and",
+      "raw_start": 347,
+      "raw_end": 350,
+      "raw_quote": "and",
+      "context": "known as such, appears in court and claims the property. In those c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 349,
+      "end": 355,
+      "text": "claims",
+      "raw_start": 351,
+      "raw_end": 357,
+      "raw_quote": "claims",
+      "context": "n as such, appears in court and claims the property. In those cases, i",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 356,
+      "end": 359,
+      "text": "the",
+      "raw_start": 358,
+      "raw_end": 361,
+      "raw_quote": "the",
+      "context": "ch, appears in court and claims the property. In those cases, if I ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 360,
+      "end": 368,
+      "text": "property",
+      "raw_start": 362,
+      "raw_end": 370,
+      "raw_quote": "property",
+      "context": "appears in court and claims the property. In those cases, if I correctly",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 370,
+      "end": 372,
+      "text": "In",
+      "raw_start": 372,
+      "raw_end": 374,
+      "raw_quote": "In",
+      "context": " court and claims the property. In those cases, if I correctly und",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 373,
+      "end": 378,
+      "text": "those",
+      "raw_start": 375,
+      "raw_end": 380,
+      "raw_quote": "those",
+      "context": "urt and claims the property. In those cases, if I correctly understan",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 379,
+      "end": 384,
+      "text": "cases",
+      "raw_start": 381,
+      "raw_end": 386,
+      "raw_quote": "cases",
+      "context": "d claims the property. In those cases, if I correctly understand the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 386,
+      "end": 388,
+      "text": "if",
+      "raw_start": 388,
+      "raw_end": 390,
+      "raw_quote": "if",
+      "context": "s the property. In those cases, if I correctly understand the act ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 389,
+      "end": 390,
+      "text": "I",
+      "raw_start": 391,
+      "raw_end": 392,
+      "raw_quote": "I",
+      "context": "he property. In those cases, if I correctly understand the act of",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 391,
+      "end": 400,
+      "text": "correctly",
+      "raw_start": 393,
+      "raw_end": 402,
+      "raw_quote": "correctly",
+      "context": " property. In those cases, if I correctly understand the act of 1799, pro",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 401,
+      "end": 411,
+      "text": "understand",
+      "raw_start": 403,
+      "raw_end": 413,
+      "raw_quote": "understand",
+      "context": " In those cases, if I correctly understand the act of 1799, probable cause",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 412,
+      "end": 415,
+      "text": "the",
+      "raw_start": 414,
+      "raw_end": 417,
+      "raw_quote": "the",
+      "context": "ases, if I correctly understand the act of 1799, probable cause hav",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 416,
+      "end": 419,
+      "text": "act",
+      "raw_start": 418,
+      "raw_end": 421,
+      "raw_quote": "act",
+      "context": ", if I correctly understand the act of 1799, probable cause having ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 420,
+      "end": 422,
+      "text": "of",
+      "raw_start": 422,
+      "raw_end": 424,
+      "raw_quote": "of",
+      "context": " I correctly understand the act of 1799, probable cause having bee",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 423,
+      "end": 427,
+      "text": "1799",
+      "raw_start": 425,
+      "raw_end": 429,
+      "raw_quote": "1799",
+      "context": "correctly understand the act of 1799, probable cause having been mad",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 429,
+      "end": 437,
+      "text": "probable",
+      "raw_start": 431,
+      "raw_end": 439,
+      "raw_quote": "probable",
+      "context": "tly understand the act of 1799, probable cause having been made out on t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 438,
+      "end": 443,
+      "text": "cause",
+      "raw_start": 440,
+      "raw_end": 445,
+      "raw_quote": "cause",
+      "context": "stand the act of 1799, probable cause having been made out on the par",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 444,
+      "end": 450,
+      "text": "having",
+      "raw_start": 446,
+      "raw_end": 452,
+      "raw_quote": "having",
+      "context": "the act of 1799, probable cause having been made out on the part of th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 451,
+      "end": 455,
+      "text": "been",
+      "raw_start": 453,
+      "raw_end": 457,
+      "raw_quote": "been",
+      "context": " of 1799, probable cause having been made out on the part of the pro",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 456,
+      "end": 460,
+      "text": "made",
+      "raw_start": 458,
+      "raw_end": 462,
+      "raw_quote": "made",
+      "context": "799, probable cause having been made out on the part of the prosecut",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 461,
+      "end": 464,
+      "text": "out",
+      "raw_start": 463,
+      "raw_end": 466,
+      "raw_quote": "out",
+      "context": "probable cause having been made out on the part of the prosecution,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 465,
+      "end": 467,
+      "text": "on",
+      "raw_start": 467,
+      "raw_end": 469,
+      "raw_quote": "on",
+      "context": "able cause having been made out on the part of the prosecution, th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 468,
+      "end": 471,
+      "text": "the",
+      "raw_start": 470,
+      "raw_end": 473,
+      "raw_quote": "the",
+      "context": "e cause having been made out on the part of the prosecution, the on",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 472,
+      "end": 476,
+      "text": "part",
+      "raw_start": 474,
+      "raw_end": 478,
+      "raw_quote": "part",
+      "context": "use having been made out on the part of the prosecution, the onus pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 477,
+      "end": 479,
+      "text": "of",
+      "raw_start": 479,
+      "raw_end": 481,
+      "raw_quote": "of",
+      "context": "aving been made out on the part of the prosecution, the onus pro- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 480,
+      "end": 483,
+      "text": "the",
+      "raw_start": 482,
+      "raw_end": 485,
+      "raw_quote": "the",
+      "context": "ng been made out on the part of the prosecution, the onus pro- band",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 484,
+      "end": 495,
+      "text": "prosecution",
+      "raw_start": 486,
+      "raw_end": 497,
+      "raw_quote": "prosecution",
+      "context": "een made out on the part of the prosecution, the onus pro- bandi is then tu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 497,
+      "end": 500,
+      "text": "the",
+      "raw_start": 499,
+      "raw_end": 502,
+      "raw_quote": "the",
+      "context": "on the part of the prosecution, the onus pro- bandi is then turned ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 501,
+      "end": 505,
+      "text": "onus",
+      "raw_start": 503,
+      "raw_end": 507,
+      "raw_quote": "onus",
+      "context": "he part of the prosecution, the onus pro- bandi is then turned over ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 506,
+      "end": 509,
+      "text": "pro",
+      "raw_start": 508,
+      "raw_end": 511,
+      "raw_quote": "pro",
+      "context": "rt of the prosecution, the onus pro- bandi is then turned over to t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 511,
+      "end": 516,
+      "text": "bandi",
+      "raw_start": 513,
+      "raw_end": 518,
+      "raw_quote": "bandi",
+      "context": " the prosecution, the onus pro- bandi is then turned over to the clai",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 517,
+      "end": 519,
+      "text": "is",
+      "raw_start": 519,
+      "raw_end": 521,
+      "raw_quote": "is",
+      "context": "rosecution, the onus pro- bandi is then turned over to the claiman",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 520,
+      "end": 524,
+      "text": "then",
+      "raw_start": 522,
+      "raw_end": 526,
+      "raw_quote": "then",
+      "context": "ecution, the onus pro- bandi is then turned over to the claimant who",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 525,
+      "end": 531,
+      "text": "turned",
+      "raw_start": 527,
+      "raw_end": 533,
+      "raw_quote": "turned",
+      "context": "on, the onus pro- bandi is then turned over to the claimant who asks t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 532,
+      "end": 536,
+      "text": "over",
+      "raw_start": 534,
+      "raw_end": 538,
+      "raw_quote": "over",
+      "context": " onus pro- bandi is then turned over to the claimant who asks that t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 537,
+      "end": 539,
+      "text": "to",
+      "raw_start": 539,
+      "raw_end": 541,
+      "raw_quote": "to",
+      "context": " pro- bandi is then turned over to the claimant who asks that the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 540,
+      "end": 543,
+      "text": "the",
+      "raw_start": 542,
+      "raw_end": 545,
+      "raw_quote": "the",
+      "context": "o- bandi is then turned over to the claimant who asks that the prop",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 544,
+      "end": 552,
+      "text": "claimant",
+      "raw_start": 546,
+      "raw_end": 554,
+      "raw_quote": "claimant",
+      "context": "andi is then turned over to the claimant who asks that the property mayb",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 553,
+      "end": 556,
+      "text": "who",
+      "raw_start": 555,
+      "raw_end": 558,
+      "raw_quote": "who",
+      "context": "hen turned over to the claimant who asks that the property maybe de",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 557,
+      "end": 561,
+      "text": "asks",
+      "raw_start": 559,
+      "raw_end": 563,
+      "raw_quote": "asks",
+      "context": "turned over to the claimant who asks that the property maybe deliver",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 562,
+      "end": 566,
+      "text": "that",
+      "raw_start": 564,
+      "raw_end": 568,
+      "raw_quote": "that",
+      "context": "d over to the claimant who asks that the property maybe delivered to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 567,
+      "end": 570,
+      "text": "the",
+      "raw_start": 569,
+      "raw_end": 572,
+      "raw_quote": "the",
+      "context": "r to the claimant who asks that the property maybe delivered to him",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 571,
+      "end": 579,
+      "text": "property",
+      "raw_start": 573,
+      "raw_end": 581,
+      "raw_quote": "property",
+      "context": " the claimant who asks that the property maybe delivered to him, to expl",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 580,
+      "end": 585,
+      "text": "maybe",
+      "raw_start": 582,
+      "raw_end": 587,
+      "raw_quote": "maybe",
+      "context": "mant who asks that the property maybe delivered to him, to explain th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 586,
+      "end": 595,
+      "text": "delivered",
+      "raw_start": 588,
+      "raw_end": 597,
+      "raw_quote": "delivered",
+      "context": "ho asks that the property maybe delivered to him, to explain the circumst",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 596,
+      "end": 598,
+      "text": "to",
+      "raw_start": 598,
+      "raw_end": 600,
+      "raw_quote": "to",
+      "context": "at the property maybe delivered to him, to explain the circumstanc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 599,
+      "end": 602,
+      "text": "him",
+      "raw_start": 601,
+      "raw_end": 604,
+      "raw_quote": "him",
+      "context": "the property maybe delivered to him, to explain the circumstances u",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 604,
+      "end": 606,
+      "text": "to",
+      "raw_start": 606,
+      "raw_end": 608,
+      "raw_quote": "to",
+      "context": "roperty maybe delivered to him, to explain the circumstances under",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 607,
+      "end": 614,
+      "text": "explain",
+      "raw_start": 609,
+      "raw_end": 616,
+      "raw_quote": "explain",
+      "context": "erty maybe delivered to him, to explain the circumstances under which h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 615,
+      "end": 618,
+      "text": "the",
+      "raw_start": 617,
+      "raw_end": 620,
+      "raw_quote": "the",
+      "context": "be delivered to him, to explain the circumstances under which he in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 619,
+      "end": 632,
+      "text": "circumstances",
+      "raw_start": 621,
+      "raw_end": 634,
+      "raw_quote": "circumstances",
+      "context": "elivered to him, to explain the circumstances under which he introduced it.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 633,
+      "end": 638,
+      "text": "under",
+      "raw_start": 635,
+      "raw_end": 640,
+      "raw_quote": "under",
+      "context": "m, to explain the circumstances under which he introduced it.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 639,
+      "end": 644,
+      "text": "which",
+      "raw_start": 641,
+      "raw_end": 646,
+      "raw_quote": "which",
+      "context": "explain the circumstances under which he introduced it.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 645,
+      "end": 647,
+      "text": "he",
+      "raw_start": 647,
+      "raw_end": 649,
+      "raw_quote": "he",
+      "context": "n the circumstances under which he introduced it.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 648,
+      "end": 658,
+      "text": "introduced",
+      "raw_start": 650,
+      "raw_end": 660,
+      "raw_quote": "introduced",
+      "context": "he circumstances under which he introduced it.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 659,
+      "end": 661,
+      "text": "it",
+      "raw_start": 661,
+      "raw_end": 663,
+      "raw_quote": "it",
+      "context": "ances under which he introduced it.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7393unit:756:par_000756_000028",
+      "raw_text": "My conclusion, therefore, is that these pro- visions of the act of 1799 respecting the onus probandi in cases of seizure being upon the claimant, are provisions which by the very let- ter as well as the spirit of the act apply to pros- ecutions against the property itself where a claimant, technically and legally known as such, appears in court and claims the property. In those cases, if I correctly understand the act of 1799, probable cause having been made out on the part of the prosecution, the onus pro- bandi is then turned over to the claimant who asks that the property maybe delivered to him, to explain the circumstances under which he introduced it.",
+      "raw_sha256": "afda8d8560d57ab8b0f7511bb3734f2b5da9ba2515349f8c78d522de8f5fff07"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7393unit:756:par_000756_000028",
+        "raw_text": "My conclusion, therefore, is that these pro- visions of the act of 1799 respecting the onus probandi in cases of seizure being upon the claimant, are provisions which by the very let- ter as well as the spirit of the act apply to pros- ecutions against the property itself where a claimant, technically and legally known as such, appears in court and claims the property. In those cases, if I correctly understand the act of 1799, probable cause having been made out on the part of the prosecution, the onus pro- bandi is then turned over to the claimant who asks that the property maybe delivered to him, to explain the circumstances under which he introduced it.",
+        "raw_sha256": "afda8d8560d57ab8b0f7511bb3734f2b5da9ba2515349f8c78d522de8f5fff07"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "My conclusion, therefore, is that these pro- visions of the act of 1799 respecting the onus probandi in cases of seizure being upon the claimant, are provisions which by the very letter as well as the spirit of the act apply to pros- ecutions against the property itself where a claimant, technically and legally known as such, appears in court and claims the property. In those cases, if I correctly understand the act of 1799, probable cause having been made out on the part of the prosecution, the onus pro- bandi is then turned over to the claimant who asks that the property maybe delivered to him, to explain the circumstances under which he introduced it.",
+    "proposed_sha256": "00894ace120c57fc5ad473693a6c11e73344d9fca3ef063368c33ac1c53840c2",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

@@ -1,0 +1,220 @@
+"""One-off, offline T129 deterministic preparation; no image/provider access."""
+
+import hashlib
+import json
+from pathlib import Path
+
+from congressional_globe.bracket_cues import BracketSource
+from congressional_globe.deterministic_geometry import GeometryRegistry
+from congressional_globe.deterministic_lexicon import Lexicon, LexiconSpec
+from congressional_globe.deterministic_models import ExactEdit, OCRLine, ParagraphInput
+from congressional_globe.deterministic_repair import analyze_paragraph
+from congressional_globe.deterministic_rules import Resources
+from congressional_globe.productive_ocr_host import canonical_json, sha256_bytes
+from congressional_globe.productive_ocr_routing import prepare_text_host, route_paragraph
+
+ROOT = Path(__file__).resolve().parents[2]
+WORK = ROOT / "tmp/t129-source-prep"
+SAMPLE = ROOT / "artifacts/ocr-sample-design-20261027-01/sample.json"
+EXPOSURE = ROOT / "artifacts/ocr-sample-design-20261027-01/exposure.json"
+RESULTS = ROOT / "artifacts/deterministic-sample-20261028-01/results.json"
+CANONICAL_SHA = "4ab8ef6b325b650a0db002a94d690989f02d82333e977e5fed05c8f651772eeb"
+CANDIDATES = (
+    ("P3_zero", 3, 1055, "par_001055_000071", "part3-leaf1055.jsonl"),
+    ("P1_proposed_join", 1, 278, "par_000278_000024", "part1-leaf278.jsonl"),
+    ("P2_first_fresh", 2, 406, "par_000406_000009", "part2-leaf406.jsonl"),
+)
+EXCLUDED = {
+    (1, 526), (2, 716), (5, 529), (5, 1060), (5, 741)
+}
+
+
+def file_sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def load_resources():
+    saved = json.loads(RESULTS.read_bytes())
+    specs = {entry["spec"]["purpose"]: entry["spec"] for entry in saved[0]["lexicons"]}
+    resources = {}
+    identities = {}
+    for purpose, raw_spec in specs.items():
+        spec = LexiconSpec.model_validate(raw_spec)
+        data = Path(spec.label).read_bytes()
+        if sha256_bytes(data) != spec.sha256:
+            raise ValueError(f"pinned {purpose} lexicon hash changed")
+        resources[purpose] = Lexicon(spec=spec, data=data)
+        identities[purpose] = {"path": spec.label, "sha256": spec.sha256}
+    return Resources(**resources), identities
+
+
+def _exact_lines(row, page_paragraph):
+    lines = []
+    cursor = 0
+    for source_line in page_paragraph["lines"]:
+        text = source_line["text"]
+        start = row["raw_text"].find(text, cursor)
+        if start < 0:
+            raise ValueError(f"canonical line not found in raw source: {source_line['id']}")
+        end = start + len(text)
+        lines.append(OCRLine(line_id=source_line["id"], start=start, end=end, text=text))
+        cursor = end
+    return tuple(lines)
+
+
+def prepare_case(row, page_bytes, resources):
+    page = json.loads(page_bytes)
+    expected_item = row["item_identifier"]
+    if (page["part_number"], page["scan_leaf"], page["item_identifier"]) != (
+        row["part_number"], row["scan_leaf"], expected_item
+    ):
+        raise ValueError("page identity differs from frozen primary row")
+    paragraph = next(p for p in page["paragraphs"] if p["id"] == row["paragraph_id"])
+    if paragraph["text_ocr"] != row["raw_text"] or paragraph["text_normalized"] != row["static_text"]:
+        raise ValueError("canonical raw/static paragraph differs from frozen primary row")
+    lines = _exact_lines(row, paragraph)
+    edits = tuple(
+        ExactEdit(
+            start=edit["start_char"],
+            end=edit["end_char"],
+            raw_quote=edit["expected"],
+            replacement=edit["replacement"],
+            rule_id=edit["reason"],
+        )
+        for edit in row["static_edits"]
+    )
+    source = BracketSource(
+        source_id=row["source_id"],
+        raw_text=row["raw_text"],
+        raw_sha256=row["raw_sha256"],
+    )
+    source_input = ParagraphInput(
+        source=source,
+        static_text=row["static_text"],
+        static_sha256=row["static_sha256"],
+        static_edits=edits,
+        lines=lines,
+        line_status="declared_exact",
+        line_reason=None,
+        line_evidence_sha256=row["page_line_sha256"],
+    )
+    geometry_record = dict(
+        source_id=row["source_id"],
+        raw_sha256=row["raw_sha256"],
+        page_line_sha256=row["page_line_sha256"],
+        lines=[line.model_dump(mode="json") for line in lines],
+    )
+    geometry_bytes = json.dumps([geometry_record]).encode()
+    geometry_sha = sha256_bytes(geometry_bytes)
+    case_resources = Resources(
+        words=resources.words,
+        names=resources.names,
+        places=resources.places,
+        geometry=GeometryRegistry(data=geometry_bytes, expected_sha256=geometry_sha),
+    )
+    result = analyze_paragraph(source_input, case_resources)
+    route = route_paragraph(result, case_resources, "P1")
+    return result, route, paragraph, geometry_sha, page
+
+
+def build_text_host(base_host, registry, alias, result, resources, requirements=()):
+    """Use the existing full-text host compiler after source/image binding is ready."""
+    return prepare_text_host(
+        base_host, registry, {alias: result}, resources, requirements=tuple(requirements)
+    )
+
+
+def main():
+    sample = json.loads(SAMPLE.read_bytes())
+    if sample["source"]["sha256"] != CANONICAL_SHA:
+        raise ValueError("T49 canonical corpus identity changed")
+    rows = {row["source_id"]: row for row in sample["primary"]}
+    exposure = json.loads(EXPOSURE.read_bytes())
+    known_ids = set(exposure["known_source_ids"])
+    known_hashes = set(exposure["known_raw_hashes"])
+    known_pages = {
+        (entry["item_identifier"], entry["scan_leaf"]) for entry in exposure["known_pages"]
+    }
+    resources, resource_identities = load_resources()
+    code_paths = [
+        ROOT / "src/congressional_globe/deterministic_models.py",
+        ROOT / "src/congressional_globe/deterministic_geometry.py",
+        ROOT / "src/congressional_globe/deterministic_rules.py",
+        ROOT / "src/congressional_globe/deterministic_repair.py",
+        ROOT / "src/congressional_globe/productive_ocr_routing.py",
+    ]
+    report = {
+        "task": "T129",
+        "source_canonical_pages_sha256": CANONICAL_SHA,
+        "source_sample_path": str(SAMPLE.relative_to(ROOT)),
+        "source_sample_sha256": file_sha(SAMPLE),
+        "t52_results_sha256": file_sha(RESULTS),
+        "preparation_script_path": str(Path(__file__).relative_to(ROOT)),
+        "preparation_script_sha256": file_sha(Path(__file__)),
+        "preparation_command": "UV_CACHE_DIR=tmp/uv-cache uv run python tmp/t129-source-prep/prepare_candidates.py",
+        "resources": resource_identities,
+        "code_sha256": {p.name: file_sha(p) for p in code_paths},
+        "excluded_model_exposures": [list(x) for x in sorted(EXCLUDED)],
+        "cases": [],
+        "provider_calls": 0,
+        "public_image_fetches": 0,
+    }
+    for label, part, leaf, paragraph_id, page_name in CANDIDATES:
+        row = next(
+            r for r in rows.values()
+            if r["part_number"] == part and r["scan_leaf"] == leaf and r["paragraph_id"] == paragraph_id
+        )
+        page_path = WORK / page_name
+        if (part, leaf) in EXCLUDED or row["source_id"] in known_ids or row["raw_sha256"] in known_hashes:
+            raise ValueError("candidate overlaps known exposure")
+        if (row["item_identifier"], leaf) in known_pages:
+            raise ValueError("candidate page overlaps known exposure")
+        result, route, paragraph, geometry_sha, page = prepare_case(row, page_path.read_bytes(), resources)
+        report["cases"].append(
+            {
+                "selection_role": label,
+                "part_number": part,
+                "scan_leaf": leaf,
+                "paragraph_id": paragraph_id,
+                "source_id": row["source_id"],
+                "raw_sha256": row["raw_sha256"],
+                "static_sha256": row["static_sha256"],
+                "page_line_sha256": row["page_line_sha256"],
+                "canonical_page_path": str(page_path.relative_to(ROOT)),
+                "canonical_page_sha256": file_sha(page_path),
+                "item_identifier": page["item_identifier"],
+                "page_record_id": page["id"],
+                "page_dimensions_px": [page["image_width_px"], page["image_height_px"]],
+                "printed_page": page["printed_page"],
+                "reading_order": paragraph["reading_order"],
+                "role": paragraph["role"],
+                "bbox": row["bbox"],
+                "line_count": len(paragraph["lines"]),
+                "image_status": row["image_status"],
+                "prior_exposure": row["prior_exposure"],
+                "geometry_registry_sha256": geometry_sha,
+                "raw_codepoints": len(row["raw_text"]),
+                "static_edits": [
+                    {"expected": e.raw_quote, "replacement": e.replacement, "rule": e.rule_id}
+                    for e in result.input.static_edits
+                ],
+                "proposed_text_sha256": result.proposed_sha256,
+                "proposed_edits": [
+                    {"raw_quote": e.raw_quote, "replacement": e.replacement, "rule": e.rule_id}
+                    for e in result.proposed_edits
+                ],
+                "deterministic_result_sha256": sha256_bytes(canonical_json(result.model_dump(mode="json"))),
+                "selection": route.selection,
+                "signal_count": len(route.signals),
+                "signal_summary": [
+                    {"category": s["category"], "raw_quote": s["raw_quote"], "flags": s["flags"]}
+                    for s in route.signals
+                ],
+                "source_accuracy_status": "not inspected; model/root source check required",
+            }
+        )
+    return report
+
+
+if __name__ == "__main__":
+    print(json.dumps(main(), ensure_ascii=False, indent=2))

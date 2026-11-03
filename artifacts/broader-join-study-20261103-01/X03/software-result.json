@@ -1,0 +1,4390 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalg7391unit:511:par_000511_000007",
+      "raw_text": "\" The conqueror dethrones the sovereign and as- sumes the dominion of the conquered territory ; but as a general rule he does no more. It has been well laid down by the tribunals of the North American United States that the modern usage of nations, that large and important part of the international law, would be violated, the sense of justice and of right, which is felt and acknowledged by the civilized world, would be outraged, if private property were generally confiscated and private rights annulled. The people, indeed, change their allegiance; their relation to their ancient sovereign is dissolved ; but their relations to each other and their rights of property remain un- disturbed.\"",
+      "raw_sha256": "69b02d03f2f8e8b6c8c8768c43e2877715117f57ceae16fac94cd0e883bf1c43"
+    },
+    "static_text": "\" The conqueror dethrones the sovereign and assumes the dominion of the conquered territory ; but as a general rule he does no more. It has been well laid down by the tribunals of the North American United States that the modern usage of nations, that large and important part of the international law, would be violated, the sense of justice and of right, which is felt and acknowledged by the civilized world, would be outraged, if private property were generally confiscated and private rights annulled. The people, indeed, change their allegiance; their relation to their ancient sovereign is dissolved ; but their relations to each other and their rights of property remain undisturbed.\"",
+    "static_sha256": "3c1ad6a6f57d8d65447f7a9e92a423cdf7597e47cdf913571b135a8abe50757e",
+    "static_edits": [
+      {
+        "start": 44,
+        "end": 53,
+        "raw_quote": "as- sumes",
+        "replacement": "assumes",
+        "rule_id": "adjacent-line wrap; lexicon form assumes"
+      },
+      {
+        "start": 681,
+        "end": 694,
+        "raw_quote": "un- disturbed",
+        "replacement": "undisturbed",
+        "rule_id": "adjacent-line wrap; lexicon form undisturbed"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000511_000053",
+        "start": 0,
+        "end": 47,
+        "text": "\" The conqueror dethrones the sovereign and as-"
+      },
+      {
+        "line_id": "line_000511_000054",
+        "start": 48,
+        "end": 99,
+        "text": "sumes the dominion of the conquered territory ; but"
+      },
+      {
+        "line_id": "line_000511_000055",
+        "start": 100,
+        "end": 151,
+        "text": "as a general rule he does no more. It has been well"
+      },
+      {
+        "line_id": "line_000511_000056",
+        "start": 152,
+        "end": 200,
+        "text": "laid down by the tribunals of the North American"
+      },
+      {
+        "line_id": "line_000511_000057",
+        "start": 201,
+        "end": 253,
+        "text": "United States that the modern usage of nations, that"
+      },
+      {
+        "line_id": "line_000511_000058",
+        "start": 254,
+        "end": 304,
+        "text": "large and important part of the international law,"
+      },
+      {
+        "line_id": "line_000511_000059",
+        "start": 305,
+        "end": 358,
+        "text": "would be violated, the sense of justice and of right,"
+      },
+      {
+        "line_id": "line_000511_000060",
+        "start": 359,
+        "end": 413,
+        "text": "which is felt and acknowledged by the civilized world,"
+      },
+      {
+        "line_id": "line_000511_000061",
+        "start": 414,
+        "end": 467,
+        "text": "would be outraged, if private property were generally"
+      },
+      {
+        "line_id": "line_000511_000062",
+        "start": 468,
+        "end": 520,
+        "text": "confiscated and private rights annulled. The people,"
+      },
+      {
+        "line_id": "line_000511_000063",
+        "start": 521,
+        "end": 577,
+        "text": "indeed, change their allegiance; their relation to their"
+      },
+      {
+        "line_id": "line_000511_000064",
+        "start": 578,
+        "end": 633,
+        "text": "ancient sovereign is dissolved ; but their relations to"
+      },
+      {
+        "line_id": "line_000511_000065",
+        "start": 634,
+        "end": 684,
+        "text": "each other and their rights of property remain un-"
+      },
+      {
+        "line_id": "line_000511_000066",
+        "start": 685,
+        "end": 696,
+        "text": "disturbed.\""
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "1899ec8ff63f42bbe32c7d2b71a673784ce863bc00847555155803bb3d551fe4"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "77e3b403f3e1835a11c846d1048422f684cf897bbcd34668bf5f963c04b71f83",
+  "proposed_text": "\" The conqueror dethrones the sovereign and as- sumes the dominion of the conquered territory ; but as a general rule he does no more. It has been well laid down by the tribunals of the North American United States that the modern usage of nations, that large and important part of the international law, would be violated, the sense of justice and of right, which is felt and acknowledged by the civilized world, would be outraged, if private property were generally confiscated and private rights annulled. The people, indeed, change their allegiance; their relation to their ancient sovereign is dissolved ; but their relations to each other and their rights of property remain un- disturbed.\"",
+  "proposed_sha256": "69b02d03f2f8e8b6c8c8768c43e2877715117f57ceae16fac94cd0e883bf1c43",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 696,
+      "derived_start": 0,
+      "derived_end": 696,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 44,
+      "end": 53,
+      "raw_quote": "as- sumes",
+      "joined_candidate": "assumes",
+      "decision": "retained_for_review",
+      "reason": "joined_form_not_known"
+    },
+    {
+      "start": 681,
+      "end": 694,
+      "raw_quote": "un- disturbed",
+      "joined_candidate": "undisturbed",
+      "decision": "retained_for_review",
+      "reason": "standalone_parts_ambiguous"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 2,
+      "end": 5,
+      "text": "The",
+      "raw_start": 2,
+      "raw_end": 5,
+      "raw_quote": "The",
+      "context": "\" The conqueror dethrones the soverei",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate",
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 6,
+      "end": 15,
+      "text": "conqueror",
+      "raw_start": 6,
+      "raw_end": 15,
+      "raw_quote": "conqueror",
+      "context": "\" The conqueror dethrones the sovereign and as-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 16,
+      "end": 25,
+      "text": "dethrones",
+      "raw_start": 16,
+      "raw_end": 25,
+      "raw_quote": "dethrones",
+      "context": "\" The conqueror dethrones the sovereign and as- sumes the",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 26,
+      "end": 29,
+      "text": "the",
+      "raw_start": 26,
+      "raw_end": 29,
+      "raw_quote": "the",
+      "context": "\" The conqueror dethrones the sovereign and as- sumes the dom",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 30,
+      "end": 39,
+      "text": "sovereign",
+      "raw_start": 30,
+      "raw_end": 39,
+      "raw_quote": "sovereign",
+      "context": "\" The conqueror dethrones the sovereign and as- sumes the dominion of t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 40,
+      "end": 43,
+      "text": "and",
+      "raw_start": 40,
+      "raw_end": 43,
+      "raw_quote": "and",
+      "context": "nqueror dethrones the sovereign and as- sumes the dominion of the c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 44,
+      "end": 46,
+      "text": "as",
+      "raw_start": 44,
+      "raw_end": 46,
+      "raw_quote": "as",
+      "context": "ror dethrones the sovereign and as- sumes the dominion of the conq",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 48,
+      "end": 53,
+      "text": "sumes",
+      "raw_start": 48,
+      "raw_end": 53,
+      "raw_quote": "sumes",
+      "context": "dethrones the sovereign and as- sumes the dominion of the conquered t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 54,
+      "end": 57,
+      "text": "the",
+      "raw_start": 54,
+      "raw_end": 57,
+      "raw_quote": "the",
+      "context": "nes the sovereign and as- sumes the dominion of the conquered terri",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 58,
+      "end": 66,
+      "text": "dominion",
+      "raw_start": 58,
+      "raw_end": 66,
+      "raw_quote": "dominion",
+      "context": "the sovereign and as- sumes the dominion of the conquered territory ; bu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 67,
+      "end": 69,
+      "text": "of",
+      "raw_start": 67,
+      "raw_end": 69,
+      "raw_quote": "of",
+      "context": "eign and as- sumes the dominion of the conquered territory ; but a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 70,
+      "end": 73,
+      "text": "the",
+      "raw_start": 70,
+      "raw_end": 73,
+      "raw_quote": "the",
+      "context": "n and as- sumes the dominion of the conquered territory ; but as a ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 74,
+      "end": 83,
+      "text": "conquered",
+      "raw_start": 74,
+      "raw_end": 83,
+      "raw_quote": "conquered",
+      "context": "d as- sumes the dominion of the conquered territory ; but as a general ru",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 84,
+      "end": 93,
+      "text": "territory",
+      "raw_start": 84,
+      "raw_end": 93,
+      "raw_quote": "territory",
+      "context": "s the dominion of the conquered territory ; but as a general rule he does",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 96,
+      "end": 99,
+      "text": "but",
+      "raw_start": 96,
+      "raw_end": 99,
+      "raw_quote": "but",
+      "context": "on of the conquered territory ; but as a general rule he does no mo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 100,
+      "end": 102,
+      "text": "as",
+      "raw_start": 100,
+      "raw_end": 102,
+      "raw_quote": "as",
+      "context": "f the conquered territory ; but as a general rule he does no more.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 103,
+      "end": 104,
+      "text": "a",
+      "raw_start": 103,
+      "raw_end": 104,
+      "raw_quote": "a",
+      "context": "he conquered territory ; but as a general rule he does no more. I",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 105,
+      "end": 112,
+      "text": "general",
+      "raw_start": 105,
+      "raw_end": 112,
+      "raw_quote": "general",
+      "context": " conquered territory ; but as a general rule he does no more. It has be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 113,
+      "end": 117,
+      "text": "rule",
+      "raw_start": 113,
+      "raw_end": 117,
+      "raw_quote": "rule",
+      "context": "ed territory ; but as a general rule he does no more. It has been we",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 118,
+      "end": 120,
+      "text": "he",
+      "raw_start": 118,
+      "raw_end": 120,
+      "raw_quote": "he",
+      "context": "rritory ; but as a general rule he does no more. It has been well ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 121,
+      "end": 125,
+      "text": "does",
+      "raw_start": 121,
+      "raw_end": 125,
+      "raw_quote": "does",
+      "context": "tory ; but as a general rule he does no more. It has been well laid ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 126,
+      "end": 128,
+      "text": "no",
+      "raw_start": 126,
+      "raw_end": 128,
+      "raw_quote": "no",
+      "context": "; but as a general rule he does no more. It has been well laid dow",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 129,
+      "end": 133,
+      "text": "more",
+      "raw_start": 129,
+      "raw_end": 133,
+      "raw_quote": "more",
+      "context": "ut as a general rule he does no more. It has been well laid down by ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 135,
+      "end": 137,
+      "text": "It",
+      "raw_start": 135,
+      "raw_end": 137,
+      "raw_quote": "It",
+      "context": "a general rule he does no more. It has been well laid down by the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 138,
+      "end": 141,
+      "text": "has",
+      "raw_start": 138,
+      "raw_end": 141,
+      "raw_quote": "has",
+      "context": "eneral rule he does no more. It has been well laid down by the trib",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 142,
+      "end": 146,
+      "text": "been",
+      "raw_start": 142,
+      "raw_end": 146,
+      "raw_quote": "been",
+      "context": "al rule he does no more. It has been well laid down by the tribunals",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 147,
+      "end": 151,
+      "text": "well",
+      "raw_start": 147,
+      "raw_end": 151,
+      "raw_quote": "well",
+      "context": "le he does no more. It has been well laid down by the tribunals of t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 152,
+      "end": 156,
+      "text": "laid",
+      "raw_start": 152,
+      "raw_end": 156,
+      "raw_quote": "laid",
+      "context": " does no more. It has been well laid down by the tribunals of the No",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 157,
+      "end": 161,
+      "text": "down",
+      "raw_start": 157,
+      "raw_end": 161,
+      "raw_quote": "down",
+      "context": " no more. It has been well laid down by the tribunals of the North A",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 162,
+      "end": 164,
+      "text": "by",
+      "raw_start": 162,
+      "raw_end": 164,
+      "raw_quote": "by",
+      "context": "ore. It has been well laid down by the tribunals of the North Amer",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 165,
+      "end": 168,
+      "text": "the",
+      "raw_start": 165,
+      "raw_end": 168,
+      "raw_quote": "the",
+      "context": ". It has been well laid down by the tribunals of the North American",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 169,
+      "end": 178,
+      "text": "tribunals",
+      "raw_start": 169,
+      "raw_end": 178,
+      "raw_quote": "tribunals",
+      "context": " has been well laid down by the tribunals of the North American United St",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 179,
+      "end": 181,
+      "text": "of",
+      "raw_start": 179,
+      "raw_end": 181,
+      "raw_quote": "of",
+      "context": "well laid down by the tribunals of the North American United State",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 182,
+      "end": 185,
+      "text": "the",
+      "raw_start": 182,
+      "raw_end": 185,
+      "raw_quote": "the",
+      "context": "l laid down by the tribunals of the North American United States th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 186,
+      "end": 191,
+      "text": "North",
+      "raw_start": 186,
+      "raw_end": 191,
+      "raw_quote": "North",
+      "context": "id down by the tribunals of the North American United States that the",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 192,
+      "end": 200,
+      "text": "American",
+      "raw_start": 192,
+      "raw_end": 200,
+      "raw_quote": "American",
+      "context": "n by the tribunals of the North American United States that the modern u",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 201,
+      "end": 207,
+      "text": "United",
+      "raw_start": 201,
+      "raw_end": 207,
+      "raw_quote": "United",
+      "context": "tribunals of the North American United States that the modern usage of",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 208,
+      "end": 214,
+      "text": "States",
+      "raw_start": 208,
+      "raw_end": 214,
+      "raw_quote": "States",
+      "context": "ls of the North American United States that the modern usage of nation",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 215,
+      "end": 219,
+      "text": "that",
+      "raw_start": 215,
+      "raw_end": 219,
+      "raw_quote": "that",
+      "context": "he North American United States that the modern usage of nations, th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 220,
+      "end": 223,
+      "text": "the",
+      "raw_start": 220,
+      "raw_end": 223,
+      "raw_quote": "the",
+      "context": "rth American United States that the modern usage of nations, that l",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 224,
+      "end": 230,
+      "text": "modern",
+      "raw_start": 224,
+      "raw_end": 230,
+      "raw_quote": "modern",
+      "context": "American United States that the modern usage of nations, that large an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 231,
+      "end": 236,
+      "text": "usage",
+      "raw_start": 231,
+      "raw_end": 236,
+      "raw_quote": "usage",
+      "context": "n United States that the modern usage of nations, that large and impo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 237,
+      "end": 239,
+      "text": "of",
+      "raw_start": 237,
+      "raw_end": 239,
+      "raw_quote": "of",
+      "context": "ed States that the modern usage of nations, that large and importa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 240,
+      "end": 247,
+      "text": "nations",
+      "raw_start": 240,
+      "raw_end": 247,
+      "raw_quote": "nations",
+      "context": "States that the modern usage of nations, that large and important part ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 249,
+      "end": 253,
+      "text": "that",
+      "raw_start": 249,
+      "raw_end": 253,
+      "raw_quote": "that",
+      "context": "at the modern usage of nations, that large and important part of the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 254,
+      "end": 259,
+      "text": "large",
+      "raw_start": 254,
+      "raw_end": 259,
+      "raw_quote": "large",
+      "context": "e modern usage of nations, that large and important part of the inter",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 260,
+      "end": 263,
+      "text": "and",
+      "raw_start": 260,
+      "raw_end": 263,
+      "raw_quote": "and",
+      "context": "rn usage of nations, that large and important part of the internati",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 264,
+      "end": 273,
+      "text": "important",
+      "raw_start": 264,
+      "raw_end": 273,
+      "raw_quote": "important",
+      "context": "sage of nations, that large and important part of the international law, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 274,
+      "end": 278,
+      "text": "part",
+      "raw_start": 274,
+      "raw_end": 278,
+      "raw_quote": "part",
+      "context": "tions, that large and important part of the international law, would",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 279,
+      "end": 281,
+      "text": "of",
+      "raw_start": 279,
+      "raw_end": 281,
+      "raw_quote": "of",
+      "context": ", that large and important part of the international law, would be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 282,
+      "end": 285,
+      "text": "the",
+      "raw_start": 282,
+      "raw_end": 285,
+      "raw_quote": "the",
+      "context": "hat large and important part of the international law, would be vio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 286,
+      "end": 299,
+      "text": "international",
+      "raw_start": 286,
+      "raw_end": 299,
+      "raw_quote": "international",
+      "context": "large and important part of the international law, would be violated, the sen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 300,
+      "end": 303,
+      "text": "law",
+      "raw_start": 300,
+      "raw_end": 303,
+      "raw_quote": "law",
+      "context": "rtant part of the international law, would be violated, the sense o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 305,
+      "end": 310,
+      "text": "would",
+      "raw_start": 305,
+      "raw_end": 310,
+      "raw_quote": "would",
+      "context": " part of the international law, would be violated, the sense of justi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 311,
+      "end": 313,
+      "text": "be",
+      "raw_start": 311,
+      "raw_end": 313,
+      "raw_quote": "be",
+      "context": "of the international law, would be violated, the sense of justice ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 314,
+      "end": 322,
+      "text": "violated",
+      "raw_start": 314,
+      "raw_end": 322,
+      "raw_quote": "violated",
+      "context": "the international law, would be violated, the sense of justice and of ri",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 324,
+      "end": 327,
+      "text": "the",
+      "raw_start": 324,
+      "raw_end": 327,
+      "raw_quote": "the",
+      "context": "ational law, would be violated, the sense of justice and of right, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 328,
+      "end": 333,
+      "text": "sense",
+      "raw_start": 328,
+      "raw_end": 333,
+      "raw_quote": "sense",
+      "context": "nal law, would be violated, the sense of justice and of right, which ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 334,
+      "end": 336,
+      "text": "of",
+      "raw_start": 334,
+      "raw_end": 336,
+      "raw_quote": "of",
+      "context": "w, would be violated, the sense of justice and of right, which is ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 337,
+      "end": 344,
+      "text": "justice",
+      "raw_start": 337,
+      "raw_end": 344,
+      "raw_quote": "justice",
+      "context": "would be violated, the sense of justice and of right, which is felt and",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 345,
+      "end": 348,
+      "text": "and",
+      "raw_start": 345,
+      "raw_end": 348,
+      "raw_quote": "and",
+      "context": " violated, the sense of justice and of right, which is felt and ack",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 349,
+      "end": 351,
+      "text": "of",
+      "raw_start": 349,
+      "raw_end": 351,
+      "raw_quote": "of",
+      "context": "lated, the sense of justice and of right, which is felt and acknow",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 352,
+      "end": 357,
+      "text": "right",
+      "raw_start": 352,
+      "raw_end": 357,
+      "raw_quote": "right",
+      "context": "ed, the sense of justice and of right, which is felt and acknowledged",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 359,
+      "end": 364,
+      "text": "which",
+      "raw_start": 359,
+      "raw_end": 364,
+      "raw_quote": "which",
+      "context": " sense of justice and of right, which is felt and acknowledged by the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 365,
+      "end": 367,
+      "text": "is",
+      "raw_start": 365,
+      "raw_end": 367,
+      "raw_quote": "is",
+      "context": " of justice and of right, which is felt and acknowledged by the ci",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 368,
+      "end": 372,
+      "text": "felt",
+      "raw_start": 368,
+      "raw_end": 372,
+      "raw_quote": "felt",
+      "context": " justice and of right, which is felt and acknowledged by the civiliz",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 373,
+      "end": 376,
+      "text": "and",
+      "raw_start": 373,
+      "raw_end": 376,
+      "raw_quote": "and",
+      "context": "ice and of right, which is felt and acknowledged by the civilized w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 377,
+      "end": 389,
+      "text": "acknowledged",
+      "raw_start": 377,
+      "raw_end": 389,
+      "raw_quote": "acknowledged",
+      "context": "and of right, which is felt and acknowledged by the civilized world, would b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 390,
+      "end": 392,
+      "text": "by",
+      "raw_start": 390,
+      "raw_end": 392,
+      "raw_quote": "by",
+      "context": " which is felt and acknowledged by the civilized world, would be o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 393,
+      "end": 396,
+      "text": "the",
+      "raw_start": 393,
+      "raw_end": 396,
+      "raw_quote": "the",
+      "context": "ich is felt and acknowledged by the civilized world, would be outra",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 397,
+      "end": 406,
+      "text": "civilized",
+      "raw_start": 397,
+      "raw_end": 406,
+      "raw_quote": "civilized",
+      "context": "is felt and acknowledged by the civilized world, would be outraged, if pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 407,
+      "end": 412,
+      "text": "world",
+      "raw_start": 407,
+      "raw_end": 412,
+      "raw_quote": "world",
+      "context": "d acknowledged by the civilized world, would be outraged, if private ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 414,
+      "end": 419,
+      "text": "would",
+      "raw_start": 414,
+      "raw_end": 419,
+      "raw_quote": "would",
+      "context": "wledged by the civilized world, would be outraged, if private propert",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 420,
+      "end": 422,
+      "text": "be",
+      "raw_start": 420,
+      "raw_end": 422,
+      "raw_quote": "be",
+      "context": "d by the civilized world, would be outraged, if private property w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 423,
+      "end": 431,
+      "text": "outraged",
+      "raw_start": 423,
+      "raw_end": 431,
+      "raw_quote": "outraged",
+      "context": "y the civilized world, would be outraged, if private property were gener",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 433,
+      "end": 435,
+      "text": "if",
+      "raw_start": 433,
+      "raw_end": 435,
+      "raw_quote": "if",
+      "context": "lized world, would be outraged, if private property were generally",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 436,
+      "end": 443,
+      "text": "private",
+      "raw_start": 436,
+      "raw_end": 443,
+      "raw_quote": "private",
+      "context": "ed world, would be outraged, if private property were generally confisc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 444,
+      "end": 452,
+      "text": "property",
+      "raw_start": 444,
+      "raw_end": 452,
+      "raw_quote": "property",
+      "context": ", would be outraged, if private property were generally confiscated and ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 453,
+      "end": 457,
+      "text": "were",
+      "raw_start": 453,
+      "raw_end": 457,
+      "raw_quote": "were",
+      "context": "e outraged, if private property were generally confiscated and priva",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 458,
+      "end": 467,
+      "text": "generally",
+      "raw_start": 458,
+      "raw_end": 467,
+      "raw_quote": "generally",
+      "context": "raged, if private property were generally confiscated and private rights ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 468,
+      "end": 479,
+      "text": "confiscated",
+      "raw_start": 468,
+      "raw_end": 479,
+      "raw_quote": "confiscated",
+      "context": "private property were generally confiscated and private rights annulled. Th",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 480,
+      "end": 483,
+      "text": "and",
+      "raw_start": 480,
+      "raw_end": 483,
+      "raw_quote": "and",
+      "context": "erty were generally confiscated and private rights annulled. The pe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 484,
+      "end": 491,
+      "text": "private",
+      "raw_start": 484,
+      "raw_end": 491,
+      "raw_quote": "private",
+      "context": " were generally confiscated and private rights annulled. The people, in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 492,
+      "end": 498,
+      "text": "rights",
+      "raw_start": 492,
+      "raw_end": 498,
+      "raw_quote": "rights",
+      "context": "nerally confiscated and private rights annulled. The people, indeed, c",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 499,
+      "end": 507,
+      "text": "annulled",
+      "raw_start": 499,
+      "raw_end": 507,
+      "raw_quote": "annulled",
+      "context": " confiscated and private rights annulled. The people, indeed, change the",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 509,
+      "end": 512,
+      "text": "The",
+      "raw_start": 509,
+      "raw_end": 512,
+      "raw_quote": "The",
+      "context": "ed and private rights annulled. The people, indeed, change their al",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 513,
+      "end": 519,
+      "text": "people",
+      "raw_start": 513,
+      "raw_end": 519,
+      "raw_quote": "people",
+      "context": "nd private rights annulled. The people, indeed, change their allegianc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 521,
+      "end": 527,
+      "text": "indeed",
+      "raw_start": 521,
+      "raw_end": 527,
+      "raw_quote": "indeed",
+      "context": "te rights annulled. The people, indeed, change their allegiance; their",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 529,
+      "end": 535,
+      "text": "change",
+      "raw_start": 529,
+      "raw_end": 535,
+      "raw_quote": "change",
+      "context": "s annulled. The people, indeed, change their allegiance; their relatio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 536,
+      "end": 541,
+      "text": "their",
+      "raw_start": 536,
+      "raw_end": 541,
+      "raw_quote": "their",
+      "context": "led. The people, indeed, change their allegiance; their relation to t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 542,
+      "end": 552,
+      "text": "allegiance",
+      "raw_start": 542,
+      "raw_end": 552,
+      "raw_quote": "allegiance",
+      "context": "he people, indeed, change their allegiance; their relation to their ancien",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 554,
+      "end": 559,
+      "text": "their",
+      "raw_start": 554,
+      "raw_end": 559,
+      "raw_quote": "their",
+      "context": "ndeed, change their allegiance; their relation to their ancient sover",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 560,
+      "end": 568,
+      "text": "relation",
+      "raw_start": 560,
+      "raw_end": 568,
+      "raw_quote": "relation",
+      "context": " change their allegiance; their relation to their ancient sovereign is d",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 569,
+      "end": 571,
+      "text": "to",
+      "raw_start": 569,
+      "raw_end": 571,
+      "raw_quote": "to",
+      "context": "heir allegiance; their relation to their ancient sovereign is diss",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 572,
+      "end": 577,
+      "text": "their",
+      "raw_start": 572,
+      "raw_end": 577,
+      "raw_quote": "their",
+      "context": "r allegiance; their relation to their ancient sovereign is dissolved ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 578,
+      "end": 585,
+      "text": "ancient",
+      "raw_start": 578,
+      "raw_end": 585,
+      "raw_quote": "ancient",
+      "context": "giance; their relation to their ancient sovereign is dissolved ; but th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 586,
+      "end": 595,
+      "text": "sovereign",
+      "raw_start": 586,
+      "raw_end": 595,
+      "raw_quote": "sovereign",
+      "context": "their relation to their ancient sovereign is dissolved ; but their relati",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 596,
+      "end": 598,
+      "text": "is",
+      "raw_start": 596,
+      "raw_end": 598,
+      "raw_quote": "is",
+      "context": "tion to their ancient sovereign is dissolved ; but their relations",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 599,
+      "end": 608,
+      "text": "dissolved",
+      "raw_start": 599,
+      "raw_end": 608,
+      "raw_quote": "dissolved",
+      "context": "n to their ancient sovereign is dissolved ; but their relations to each o",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 611,
+      "end": 614,
+      "text": "but",
+      "raw_start": 611,
+      "raw_end": 614,
+      "raw_quote": "but",
+      "context": "ncient sovereign is dissolved ; but their relations to each other a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 615,
+      "end": 620,
+      "text": "their",
+      "raw_start": 615,
+      "raw_end": 620,
+      "raw_quote": "their",
+      "context": "nt sovereign is dissolved ; but their relations to each other and the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 621,
+      "end": 630,
+      "text": "relations",
+      "raw_start": 621,
+      "raw_end": 630,
+      "raw_quote": "relations",
+      "context": "ereign is dissolved ; but their relations to each other and their rights ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 631,
+      "end": 633,
+      "text": "to",
+      "raw_start": 631,
+      "raw_end": 633,
+      "raw_quote": "to",
+      "context": "dissolved ; but their relations to each other and their rights of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 634,
+      "end": 638,
+      "text": "each",
+      "raw_start": 634,
+      "raw_end": 638,
+      "raw_quote": "each",
+      "context": "solved ; but their relations to each other and their rights of prope",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 639,
+      "end": 644,
+      "text": "other",
+      "raw_start": 639,
+      "raw_end": 644,
+      "raw_quote": "other",
+      "context": "d ; but their relations to each other and their rights of property re",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 645,
+      "end": 648,
+      "text": "and",
+      "raw_start": 645,
+      "raw_end": 648,
+      "raw_quote": "and",
+      "context": "t their relations to each other and their rights of property remain",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 649,
+      "end": 654,
+      "text": "their",
+      "raw_start": 649,
+      "raw_end": 654,
+      "raw_quote": "their",
+      "context": "eir relations to each other and their rights of property remain un- d",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 655,
+      "end": 661,
+      "text": "rights",
+      "raw_start": 655,
+      "raw_end": 661,
+      "raw_quote": "rights",
+      "context": "lations to each other and their rights of property remain un- disturbe",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 662,
+      "end": 664,
+      "text": "of",
+      "raw_start": 662,
+      "raw_end": 664,
+      "raw_quote": "of",
+      "context": " to each other and their rights of property remain un- disturbed.\"",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 665,
+      "end": 673,
+      "text": "property",
+      "raw_start": 665,
+      "raw_end": 673,
+      "raw_quote": "property",
+      "context": " each other and their rights of property remain un- disturbed.\"",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 674,
+      "end": 680,
+      "text": "remain",
+      "raw_start": 674,
+      "raw_end": 680,
+      "raw_quote": "remain",
+      "context": "er and their rights of property remain un- disturbed.\"",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 681,
+      "end": 683,
+      "text": "un",
+      "raw_start": 681,
+      "raw_end": 683,
+      "raw_quote": "un",
+      "context": "their rights of property remain un- disturbed.\"",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 685,
+      "end": 694,
+      "text": "disturbed",
+      "raw_start": 685,
+      "raw_end": 694,
+      "raw_quote": "disturbed",
+      "context": "r rights of property remain un- disturbed.\"",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 2,
+      "end": 5,
+      "text": "The",
+      "raw_start": 2,
+      "raw_end": 5,
+      "raw_quote": "The",
+      "context": "\" The conqueror dethrones the soverei",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate",
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 6,
+      "end": 15,
+      "text": "conqueror",
+      "raw_start": 6,
+      "raw_end": 15,
+      "raw_quote": "conqueror",
+      "context": "\" The conqueror dethrones the sovereign and as-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 16,
+      "end": 25,
+      "text": "dethrones",
+      "raw_start": 16,
+      "raw_end": 25,
+      "raw_quote": "dethrones",
+      "context": "\" The conqueror dethrones the sovereign and as- sumes the",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 26,
+      "end": 29,
+      "text": "the",
+      "raw_start": 26,
+      "raw_end": 29,
+      "raw_quote": "the",
+      "context": "\" The conqueror dethrones the sovereign and as- sumes the dom",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 30,
+      "end": 39,
+      "text": "sovereign",
+      "raw_start": 30,
+      "raw_end": 39,
+      "raw_quote": "sovereign",
+      "context": "\" The conqueror dethrones the sovereign and as- sumes the dominion of t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 40,
+      "end": 43,
+      "text": "and",
+      "raw_start": 40,
+      "raw_end": 43,
+      "raw_quote": "and",
+      "context": "nqueror dethrones the sovereign and as- sumes the dominion of the c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 44,
+      "end": 46,
+      "text": "as",
+      "raw_start": 44,
+      "raw_end": 46,
+      "raw_quote": "as",
+      "context": "ror dethrones the sovereign and as- sumes the dominion of the conq",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 48,
+      "end": 53,
+      "text": "sumes",
+      "raw_start": 48,
+      "raw_end": 53,
+      "raw_quote": "sumes",
+      "context": "dethrones the sovereign and as- sumes the dominion of the conquered t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 54,
+      "end": 57,
+      "text": "the",
+      "raw_start": 54,
+      "raw_end": 57,
+      "raw_quote": "the",
+      "context": "nes the sovereign and as- sumes the dominion of the conquered terri",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 58,
+      "end": 66,
+      "text": "dominion",
+      "raw_start": 58,
+      "raw_end": 66,
+      "raw_quote": "dominion",
+      "context": "the sovereign and as- sumes the dominion of the conquered territory ; bu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 67,
+      "end": 69,
+      "text": "of",
+      "raw_start": 67,
+      "raw_end": 69,
+      "raw_quote": "of",
+      "context": "eign and as- sumes the dominion of the conquered territory ; but a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 70,
+      "end": 73,
+      "text": "the",
+      "raw_start": 70,
+      "raw_end": 73,
+      "raw_quote": "the",
+      "context": "n and as- sumes the dominion of the conquered territory ; but as a ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 74,
+      "end": 83,
+      "text": "conquered",
+      "raw_start": 74,
+      "raw_end": 83,
+      "raw_quote": "conquered",
+      "context": "d as- sumes the dominion of the conquered territory ; but as a general ru",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 84,
+      "end": 93,
+      "text": "territory",
+      "raw_start": 84,
+      "raw_end": 93,
+      "raw_quote": "territory",
+      "context": "s the dominion of the conquered territory ; but as a general rule he does",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 96,
+      "end": 99,
+      "text": "but",
+      "raw_start": 96,
+      "raw_end": 99,
+      "raw_quote": "but",
+      "context": "on of the conquered territory ; but as a general rule he does no mo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 100,
+      "end": 102,
+      "text": "as",
+      "raw_start": 100,
+      "raw_end": 102,
+      "raw_quote": "as",
+      "context": "f the conquered territory ; but as a general rule he does no more.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 103,
+      "end": 104,
+      "text": "a",
+      "raw_start": 103,
+      "raw_end": 104,
+      "raw_quote": "a",
+      "context": "he conquered territory ; but as a general rule he does no more. I",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 105,
+      "end": 112,
+      "text": "general",
+      "raw_start": 105,
+      "raw_end": 112,
+      "raw_quote": "general",
+      "context": " conquered territory ; but as a general rule he does no more. It has be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 113,
+      "end": 117,
+      "text": "rule",
+      "raw_start": 113,
+      "raw_end": 117,
+      "raw_quote": "rule",
+      "context": "ed territory ; but as a general rule he does no more. It has been we",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "title_name_cue"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 118,
+      "end": 120,
+      "text": "he",
+      "raw_start": 118,
+      "raw_end": 120,
+      "raw_quote": "he",
+      "context": "rritory ; but as a general rule he does no more. It has been well ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 121,
+      "end": 125,
+      "text": "does",
+      "raw_start": 121,
+      "raw_end": 125,
+      "raw_quote": "does",
+      "context": "tory ; but as a general rule he does no more. It has been well laid ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 126,
+      "end": 128,
+      "text": "no",
+      "raw_start": 126,
+      "raw_end": 128,
+      "raw_quote": "no",
+      "context": "; but as a general rule he does no more. It has been well laid dow",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 129,
+      "end": 133,
+      "text": "more",
+      "raw_start": 129,
+      "raw_end": 133,
+      "raw_quote": "more",
+      "context": "ut as a general rule he does no more. It has been well laid down by ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 135,
+      "end": 137,
+      "text": "It",
+      "raw_start": 135,
+      "raw_end": 137,
+      "raw_quote": "It",
+      "context": "a general rule he does no more. It has been well laid down by the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 138,
+      "end": 141,
+      "text": "has",
+      "raw_start": 138,
+      "raw_end": 141,
+      "raw_quote": "has",
+      "context": "eneral rule he does no more. It has been well laid down by the trib",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 142,
+      "end": 146,
+      "text": "been",
+      "raw_start": 142,
+      "raw_end": 146,
+      "raw_quote": "been",
+      "context": "al rule he does no more. It has been well laid down by the tribunals",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 147,
+      "end": 151,
+      "text": "well",
+      "raw_start": 147,
+      "raw_end": 151,
+      "raw_quote": "well",
+      "context": "le he does no more. It has been well laid down by the tribunals of t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 152,
+      "end": 156,
+      "text": "laid",
+      "raw_start": 152,
+      "raw_end": 156,
+      "raw_quote": "laid",
+      "context": " does no more. It has been well laid down by the tribunals of the No",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 157,
+      "end": 161,
+      "text": "down",
+      "raw_start": 157,
+      "raw_end": 161,
+      "raw_quote": "down",
+      "context": " no more. It has been well laid down by the tribunals of the North A",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 162,
+      "end": 164,
+      "text": "by",
+      "raw_start": 162,
+      "raw_end": 164,
+      "raw_quote": "by",
+      "context": "ore. It has been well laid down by the tribunals of the North Amer",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 165,
+      "end": 168,
+      "text": "the",
+      "raw_start": 165,
+      "raw_end": 168,
+      "raw_quote": "the",
+      "context": ". It has been well laid down by the tribunals of the North American",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 169,
+      "end": 178,
+      "text": "tribunals",
+      "raw_start": 169,
+      "raw_end": 178,
+      "raw_quote": "tribunals",
+      "context": " has been well laid down by the tribunals of the North American United St",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 179,
+      "end": 181,
+      "text": "of",
+      "raw_start": 179,
+      "raw_end": 181,
+      "raw_quote": "of",
+      "context": "well laid down by the tribunals of the North American United State",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 182,
+      "end": 185,
+      "text": "the",
+      "raw_start": 182,
+      "raw_end": 185,
+      "raw_quote": "the",
+      "context": "l laid down by the tribunals of the North American United States th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 186,
+      "end": 191,
+      "text": "North",
+      "raw_start": 186,
+      "raw_end": 191,
+      "raw_quote": "North",
+      "context": "id down by the tribunals of the North American United States that the",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 192,
+      "end": 200,
+      "text": "American",
+      "raw_start": 192,
+      "raw_end": 200,
+      "raw_quote": "American",
+      "context": "n by the tribunals of the North American United States that the modern u",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 201,
+      "end": 207,
+      "text": "United",
+      "raw_start": 201,
+      "raw_end": 207,
+      "raw_quote": "United",
+      "context": "tribunals of the North American United States that the modern usage of",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 208,
+      "end": 214,
+      "text": "States",
+      "raw_start": 208,
+      "raw_end": 214,
+      "raw_quote": "States",
+      "context": "ls of the North American United States that the modern usage of nation",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 215,
+      "end": 219,
+      "text": "that",
+      "raw_start": 215,
+      "raw_end": 219,
+      "raw_quote": "that",
+      "context": "he North American United States that the modern usage of nations, th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 220,
+      "end": 223,
+      "text": "the",
+      "raw_start": 220,
+      "raw_end": 223,
+      "raw_quote": "the",
+      "context": "rth American United States that the modern usage of nations, that l",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 224,
+      "end": 230,
+      "text": "modern",
+      "raw_start": 224,
+      "raw_end": 230,
+      "raw_quote": "modern",
+      "context": "American United States that the modern usage of nations, that large an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 231,
+      "end": 236,
+      "text": "usage",
+      "raw_start": 231,
+      "raw_end": 236,
+      "raw_quote": "usage",
+      "context": "n United States that the modern usage of nations, that large and impo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 237,
+      "end": 239,
+      "text": "of",
+      "raw_start": 237,
+      "raw_end": 239,
+      "raw_quote": "of",
+      "context": "ed States that the modern usage of nations, that large and importa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 240,
+      "end": 247,
+      "text": "nations",
+      "raw_start": 240,
+      "raw_end": 247,
+      "raw_quote": "nations",
+      "context": "States that the modern usage of nations, that large and important part ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 249,
+      "end": 253,
+      "text": "that",
+      "raw_start": 249,
+      "raw_end": 253,
+      "raw_quote": "that",
+      "context": "at the modern usage of nations, that large and important part of the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 254,
+      "end": 259,
+      "text": "large",
+      "raw_start": 254,
+      "raw_end": 259,
+      "raw_quote": "large",
+      "context": "e modern usage of nations, that large and important part of the inter",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 260,
+      "end": 263,
+      "text": "and",
+      "raw_start": 260,
+      "raw_end": 263,
+      "raw_quote": "and",
+      "context": "rn usage of nations, that large and important part of the internati",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 264,
+      "end": 273,
+      "text": "important",
+      "raw_start": 264,
+      "raw_end": 273,
+      "raw_quote": "important",
+      "context": "sage of nations, that large and important part of the international law, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 274,
+      "end": 278,
+      "text": "part",
+      "raw_start": 274,
+      "raw_end": 278,
+      "raw_quote": "part",
+      "context": "tions, that large and important part of the international law, would",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 279,
+      "end": 281,
+      "text": "of",
+      "raw_start": 279,
+      "raw_end": 281,
+      "raw_quote": "of",
+      "context": ", that large and important part of the international law, would be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 282,
+      "end": 285,
+      "text": "the",
+      "raw_start": 282,
+      "raw_end": 285,
+      "raw_quote": "the",
+      "context": "hat large and important part of the international law, would be vio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 286,
+      "end": 299,
+      "text": "international",
+      "raw_start": 286,
+      "raw_end": 299,
+      "raw_quote": "international",
+      "context": "large and important part of the international law, would be violated, the sen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 300,
+      "end": 303,
+      "text": "law",
+      "raw_start": 300,
+      "raw_end": 303,
+      "raw_quote": "law",
+      "context": "rtant part of the international law, would be violated, the sense o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 305,
+      "end": 310,
+      "text": "would",
+      "raw_start": 305,
+      "raw_end": 310,
+      "raw_quote": "would",
+      "context": " part of the international law, would be violated, the sense of justi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 311,
+      "end": 313,
+      "text": "be",
+      "raw_start": 311,
+      "raw_end": 313,
+      "raw_quote": "be",
+      "context": "of the international law, would be violated, the sense of justice ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 314,
+      "end": 322,
+      "text": "violated",
+      "raw_start": 314,
+      "raw_end": 322,
+      "raw_quote": "violated",
+      "context": "the international law, would be violated, the sense of justice and of ri",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 324,
+      "end": 327,
+      "text": "the",
+      "raw_start": 324,
+      "raw_end": 327,
+      "raw_quote": "the",
+      "context": "ational law, would be violated, the sense of justice and of right, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 328,
+      "end": 333,
+      "text": "sense",
+      "raw_start": 328,
+      "raw_end": 333,
+      "raw_quote": "sense",
+      "context": "nal law, would be violated, the sense of justice and of right, which ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 334,
+      "end": 336,
+      "text": "of",
+      "raw_start": 334,
+      "raw_end": 336,
+      "raw_quote": "of",
+      "context": "w, would be violated, the sense of justice and of right, which is ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 337,
+      "end": 344,
+      "text": "justice",
+      "raw_start": 337,
+      "raw_end": 344,
+      "raw_quote": "justice",
+      "context": "would be violated, the sense of justice and of right, which is felt and",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 345,
+      "end": 348,
+      "text": "and",
+      "raw_start": 345,
+      "raw_end": 348,
+      "raw_quote": "and",
+      "context": " violated, the sense of justice and of right, which is felt and ack",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 349,
+      "end": 351,
+      "text": "of",
+      "raw_start": 349,
+      "raw_end": 351,
+      "raw_quote": "of",
+      "context": "lated, the sense of justice and of right, which is felt and acknow",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 352,
+      "end": 357,
+      "text": "right",
+      "raw_start": 352,
+      "raw_end": 357,
+      "raw_quote": "right",
+      "context": "ed, the sense of justice and of right, which is felt and acknowledged",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 359,
+      "end": 364,
+      "text": "which",
+      "raw_start": 359,
+      "raw_end": 364,
+      "raw_quote": "which",
+      "context": " sense of justice and of right, which is felt and acknowledged by the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 365,
+      "end": 367,
+      "text": "is",
+      "raw_start": 365,
+      "raw_end": 367,
+      "raw_quote": "is",
+      "context": " of justice and of right, which is felt and acknowledged by the ci",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 368,
+      "end": 372,
+      "text": "felt",
+      "raw_start": 368,
+      "raw_end": 372,
+      "raw_quote": "felt",
+      "context": " justice and of right, which is felt and acknowledged by the civiliz",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 373,
+      "end": 376,
+      "text": "and",
+      "raw_start": 373,
+      "raw_end": 376,
+      "raw_quote": "and",
+      "context": "ice and of right, which is felt and acknowledged by the civilized w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 377,
+      "end": 389,
+      "text": "acknowledged",
+      "raw_start": 377,
+      "raw_end": 389,
+      "raw_quote": "acknowledged",
+      "context": "and of right, which is felt and acknowledged by the civilized world, would b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 390,
+      "end": 392,
+      "text": "by",
+      "raw_start": 390,
+      "raw_end": 392,
+      "raw_quote": "by",
+      "context": " which is felt and acknowledged by the civilized world, would be o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 393,
+      "end": 396,
+      "text": "the",
+      "raw_start": 393,
+      "raw_end": 396,
+      "raw_quote": "the",
+      "context": "ich is felt and acknowledged by the civilized world, would be outra",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 397,
+      "end": 406,
+      "text": "civilized",
+      "raw_start": 397,
+      "raw_end": 406,
+      "raw_quote": "civilized",
+      "context": "is felt and acknowledged by the civilized world, would be outraged, if pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 407,
+      "end": 412,
+      "text": "world",
+      "raw_start": 407,
+      "raw_end": 412,
+      "raw_quote": "world",
+      "context": "d acknowledged by the civilized world, would be outraged, if private ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 414,
+      "end": 419,
+      "text": "would",
+      "raw_start": 414,
+      "raw_end": 419,
+      "raw_quote": "would",
+      "context": "wledged by the civilized world, would be outraged, if private propert",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 420,
+      "end": 422,
+      "text": "be",
+      "raw_start": 420,
+      "raw_end": 422,
+      "raw_quote": "be",
+      "context": "d by the civilized world, would be outraged, if private property w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 423,
+      "end": 431,
+      "text": "outraged",
+      "raw_start": 423,
+      "raw_end": 431,
+      "raw_quote": "outraged",
+      "context": "y the civilized world, would be outraged, if private property were gener",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 433,
+      "end": 435,
+      "text": "if",
+      "raw_start": 433,
+      "raw_end": 435,
+      "raw_quote": "if",
+      "context": "lized world, would be outraged, if private property were generally",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 436,
+      "end": 443,
+      "text": "private",
+      "raw_start": 436,
+      "raw_end": 443,
+      "raw_quote": "private",
+      "context": "ed world, would be outraged, if private property were generally confisc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 444,
+      "end": 452,
+      "text": "property",
+      "raw_start": 444,
+      "raw_end": 452,
+      "raw_quote": "property",
+      "context": ", would be outraged, if private property were generally confiscated and ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 453,
+      "end": 457,
+      "text": "were",
+      "raw_start": 453,
+      "raw_end": 457,
+      "raw_quote": "were",
+      "context": "e outraged, if private property were generally confiscated and priva",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 458,
+      "end": 467,
+      "text": "generally",
+      "raw_start": 458,
+      "raw_end": 467,
+      "raw_quote": "generally",
+      "context": "raged, if private property were generally confiscated and private rights ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 468,
+      "end": 479,
+      "text": "confiscated",
+      "raw_start": 468,
+      "raw_end": 479,
+      "raw_quote": "confiscated",
+      "context": "private property were generally confiscated and private rights annulled. Th",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 480,
+      "end": 483,
+      "text": "and",
+      "raw_start": 480,
+      "raw_end": 483,
+      "raw_quote": "and",
+      "context": "erty were generally confiscated and private rights annulled. The pe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 484,
+      "end": 491,
+      "text": "private",
+      "raw_start": 484,
+      "raw_end": 491,
+      "raw_quote": "private",
+      "context": " were generally confiscated and private rights annulled. The people, in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 492,
+      "end": 498,
+      "text": "rights",
+      "raw_start": 492,
+      "raw_end": 498,
+      "raw_quote": "rights",
+      "context": "nerally confiscated and private rights annulled. The people, indeed, c",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 499,
+      "end": 507,
+      "text": "annulled",
+      "raw_start": 499,
+      "raw_end": 507,
+      "raw_quote": "annulled",
+      "context": " confiscated and private rights annulled. The people, indeed, change the",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 509,
+      "end": 512,
+      "text": "The",
+      "raw_start": 509,
+      "raw_end": 512,
+      "raw_quote": "The",
+      "context": "ed and private rights annulled. The people, indeed, change their al",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 513,
+      "end": 519,
+      "text": "people",
+      "raw_start": 513,
+      "raw_end": 519,
+      "raw_quote": "people",
+      "context": "nd private rights annulled. The people, indeed, change their allegianc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 521,
+      "end": 527,
+      "text": "indeed",
+      "raw_start": 521,
+      "raw_end": 527,
+      "raw_quote": "indeed",
+      "context": "te rights annulled. The people, indeed, change their allegiance; their",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 529,
+      "end": 535,
+      "text": "change",
+      "raw_start": 529,
+      "raw_end": 535,
+      "raw_quote": "change",
+      "context": "s annulled. The people, indeed, change their allegiance; their relatio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 536,
+      "end": 541,
+      "text": "their",
+      "raw_start": 536,
+      "raw_end": 541,
+      "raw_quote": "their",
+      "context": "led. The people, indeed, change their allegiance; their relation to t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 542,
+      "end": 552,
+      "text": "allegiance",
+      "raw_start": 542,
+      "raw_end": 552,
+      "raw_quote": "allegiance",
+      "context": "he people, indeed, change their allegiance; their relation to their ancien",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 554,
+      "end": 559,
+      "text": "their",
+      "raw_start": 554,
+      "raw_end": 559,
+      "raw_quote": "their",
+      "context": "ndeed, change their allegiance; their relation to their ancient sover",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 560,
+      "end": 568,
+      "text": "relation",
+      "raw_start": 560,
+      "raw_end": 568,
+      "raw_quote": "relation",
+      "context": " change their allegiance; their relation to their ancient sovereign is d",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 569,
+      "end": 571,
+      "text": "to",
+      "raw_start": 569,
+      "raw_end": 571,
+      "raw_quote": "to",
+      "context": "heir allegiance; their relation to their ancient sovereign is diss",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 572,
+      "end": 577,
+      "text": "their",
+      "raw_start": 572,
+      "raw_end": 577,
+      "raw_quote": "their",
+      "context": "r allegiance; their relation to their ancient sovereign is dissolved ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 578,
+      "end": 585,
+      "text": "ancient",
+      "raw_start": 578,
+      "raw_end": 585,
+      "raw_quote": "ancient",
+      "context": "giance; their relation to their ancient sovereign is dissolved ; but th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 586,
+      "end": 595,
+      "text": "sovereign",
+      "raw_start": 586,
+      "raw_end": 595,
+      "raw_quote": "sovereign",
+      "context": "their relation to their ancient sovereign is dissolved ; but their relati",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 596,
+      "end": 598,
+      "text": "is",
+      "raw_start": 596,
+      "raw_end": 598,
+      "raw_quote": "is",
+      "context": "tion to their ancient sovereign is dissolved ; but their relations",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 599,
+      "end": 608,
+      "text": "dissolved",
+      "raw_start": 599,
+      "raw_end": 608,
+      "raw_quote": "dissolved",
+      "context": "n to their ancient sovereign is dissolved ; but their relations to each o",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 611,
+      "end": 614,
+      "text": "but",
+      "raw_start": 611,
+      "raw_end": 614,
+      "raw_quote": "but",
+      "context": "ncient sovereign is dissolved ; but their relations to each other a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 615,
+      "end": 620,
+      "text": "their",
+      "raw_start": 615,
+      "raw_end": 620,
+      "raw_quote": "their",
+      "context": "nt sovereign is dissolved ; but their relations to each other and the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 621,
+      "end": 630,
+      "text": "relations",
+      "raw_start": 621,
+      "raw_end": 630,
+      "raw_quote": "relations",
+      "context": "ereign is dissolved ; but their relations to each other and their rights ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 631,
+      "end": 633,
+      "text": "to",
+      "raw_start": 631,
+      "raw_end": 633,
+      "raw_quote": "to",
+      "context": "dissolved ; but their relations to each other and their rights of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 634,
+      "end": 638,
+      "text": "each",
+      "raw_start": 634,
+      "raw_end": 638,
+      "raw_quote": "each",
+      "context": "solved ; but their relations to each other and their rights of prope",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 639,
+      "end": 644,
+      "text": "other",
+      "raw_start": 639,
+      "raw_end": 644,
+      "raw_quote": "other",
+      "context": "d ; but their relations to each other and their rights of property re",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 645,
+      "end": 648,
+      "text": "and",
+      "raw_start": 645,
+      "raw_end": 648,
+      "raw_quote": "and",
+      "context": "t their relations to each other and their rights of property remain",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 649,
+      "end": 654,
+      "text": "their",
+      "raw_start": 649,
+      "raw_end": 654,
+      "raw_quote": "their",
+      "context": "eir relations to each other and their rights of property remain un- d",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 655,
+      "end": 661,
+      "text": "rights",
+      "raw_start": 655,
+      "raw_end": 661,
+      "raw_quote": "rights",
+      "context": "lations to each other and their rights of property remain un- disturbe",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 662,
+      "end": 664,
+      "text": "of",
+      "raw_start": 662,
+      "raw_end": 664,
+      "raw_quote": "of",
+      "context": " to each other and their rights of property remain un- disturbed.\"",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 665,
+      "end": 673,
+      "text": "property",
+      "raw_start": 665,
+      "raw_end": 673,
+      "raw_quote": "property",
+      "context": " each other and their rights of property remain un- disturbed.\"",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 674,
+      "end": 680,
+      "text": "remain",
+      "raw_start": 674,
+      "raw_end": 680,
+      "raw_quote": "remain",
+      "context": "er and their rights of property remain un- disturbed.\"",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 681,
+      "end": 683,
+      "text": "un",
+      "raw_start": 681,
+      "raw_end": 683,
+      "raw_quote": "un",
+      "context": "their rights of property remain un- disturbed.\"",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 685,
+      "end": 694,
+      "text": "disturbed",
+      "raw_start": 685,
+      "raw_end": 694,
+      "raw_quote": "disturbed",
+      "context": "r rights of property remain un- disturbed.\"",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalg7391unit:511:par_000511_000007",
+      "raw_text": "\" The conqueror dethrones the sovereign and as- sumes the dominion of the conquered territory ; but as a general rule he does no more. It has been well laid down by the tribunals of the North American United States that the modern usage of nations, that large and important part of the international law, would be violated, the sense of justice and of right, which is felt and acknowledged by the civilized world, would be outraged, if private property were generally confiscated and private rights annulled. The people, indeed, change their allegiance; their relation to their ancient sovereign is dissolved ; but their relations to each other and their rights of property remain un- disturbed.\"",
+      "raw_sha256": "69b02d03f2f8e8b6c8c8768c43e2877715117f57ceae16fac94cd0e883bf1c43"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalg7391unit:511:par_000511_000007",
+        "raw_text": "\" The conqueror dethrones the sovereign and as- sumes the dominion of the conquered territory ; but as a general rule he does no more. It has been well laid down by the tribunals of the North American United States that the modern usage of nations, that large and important part of the international law, would be violated, the sense of justice and of right, which is felt and acknowledged by the civilized world, would be outraged, if private property were generally confiscated and private rights annulled. The people, indeed, change their allegiance; their relation to their ancient sovereign is dissolved ; but their relations to each other and their rights of property remain un- disturbed.\"",
+        "raw_sha256": "69b02d03f2f8e8b6c8c8768c43e2877715117f57ceae16fac94cd0e883bf1c43"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "\" The conqueror dethrones the sovereign and as- sumes the dominion of the conquered territory ; but as a general rule he does no more. It has been well laid down by the tribunals of the North American United States that the modern usage of nations, that large and important part of the international law, would be violated, the sense of justice and of right, which is felt and acknowledged by the civilized world, would be outraged, if private property were generally confiscated and private rights annulled. The people, indeed, change their allegiance; their relation to their ancient sovereign is dissolved ; but their relations to each other and their rights of property remain un- disturbed.\"",
+    "proposed_sha256": "69b02d03f2f8e8b6c8c8768c43e2877715117f57ceae16fac94cd0e883bf1c43",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

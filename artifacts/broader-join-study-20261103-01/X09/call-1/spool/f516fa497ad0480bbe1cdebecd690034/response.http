@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 22:11:09 GMT
+Content-Length: 1208
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T22:11:09.3674Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. LOAN. Mr. Speaker, I would cheerfully support this measure if I could do so consistently; but this same Committee of Claims, in the case of a lady from Springfield, Missouri, who lost all of her property of every character and description by the ravages of war, who also lost her husband and has been left penniless with six children to support, reported adversely to it under the rule which they established. If a claim of that kind could not receive a favorable consideration, I do not see why we should make an exception in this case. I think it should fare the common fate and be rejected like all the others.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"X09\"\n}"},"done":true,"done_reason":"stop","total_duration":44366133958,"load_duration":2913762000,"prompt_eval_count":4176,"prompt_eval_cached_count":0,"prompt_eval_duration":34605506500,"eval_count":213,"eval_duration":6812463584}

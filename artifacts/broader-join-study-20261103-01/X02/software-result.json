@@ -1,0 +1,3433 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalg7391unit:872:par_000872_000059",
+      "raw_text": "I regret that it is necessary to make these explanations. The language I did utter the other day, however, justified me in what I said here. If the gentleman had properly quoted mv remarks I should have said nothing : but that he did not do. If there is a reporter here who will say that I have not given the true ver- sion of my remarks, that what is published is not just precisely what I uttered on this floor, then I will admit that I am wrong.",
+      "raw_sha256": "87183a6a442cfc1f8054bcb99f884bb03a384b6219ac4354e7c2f12c0afe3b05"
+    },
+    "static_text": "I regret that it is necessary to make these explanations. The language I did utter the other day, however, justified me in what I said here. If the gentleman had properly quoted mv remarks I should have said nothing : but that he did not do. If there is a reporter here who will say that I have not given the true version of my remarks, that what is published is not just precisely what I uttered on this floor, then I will admit that I am wrong.",
+    "static_sha256": "7f6f4a3c9dbe3c58760a90ae1bebb93a86f044a78fdffc4e9392d3f761bcd513",
+    "static_edits": [
+      {
+        "start": 314,
+        "end": 323,
+        "raw_quote": "ver- sion",
+        "replacement": "version",
+        "rule_id": "adjacent-line wrap; lexicon form version"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000872_000274",
+        "start": 0,
+        "end": 43,
+        "text": "I regret that it is necessary to make these"
+      },
+      {
+        "line_id": "line_000872_000275",
+        "start": 44,
+        "end": 86,
+        "text": "explanations. The language I did utter the"
+      },
+      {
+        "line_id": "line_000872_000276",
+        "start": 87,
+        "end": 134,
+        "text": "other day, however, justified me in what I said"
+      },
+      {
+        "line_id": "line_000872_000277",
+        "start": 135,
+        "end": 177,
+        "text": "here. If the gentleman had properly quoted"
+      },
+      {
+        "line_id": "line_000872_000278",
+        "start": 178,
+        "end": 221,
+        "text": "mv remarks I should have said nothing : but"
+      },
+      {
+        "line_id": "line_000872_000279",
+        "start": 222,
+        "end": 269,
+        "text": "that he did not do. If there is a reporter here"
+      },
+      {
+        "line_id": "line_000872_000280",
+        "start": 270,
+        "end": 318,
+        "text": "who will say that I have not given the true ver-"
+      },
+      {
+        "line_id": "line_000872_000281",
+        "start": 319,
+        "end": 364,
+        "text": "sion of my remarks, that what is published is"
+      },
+      {
+        "line_id": "line_000872_000282",
+        "start": 365,
+        "end": 413,
+        "text": "not just precisely what I uttered on this floor,"
+      },
+      {
+        "line_id": "line_000872_000283",
+        "start": 414,
+        "end": 448,
+        "text": "then I will admit that I am wrong."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "1b0478ada37fef6dca007bef92834acadab708943460ba96b50738eb5d4fc65f"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "9543192294684362a1264696d2d4dc7669447be0109069fe9eb16900aef32f4f",
+  "proposed_text": "I regret that it is necessary to make these explanations. The language I did utter the other day, however, justified me in what I said here. If the gentleman had properly quoted mv remarks I should have said nothing : but that he did not do. If there is a reporter here who will say that I have not given the true version of my remarks, that what is published is not just precisely what I uttered on this floor, then I will admit that I am wrong.",
+  "proposed_sha256": "7f6f4a3c9dbe3c58760a90ae1bebb93a86f044a78fdffc4e9392d3f761bcd513",
+  "proposed_edits": [
+    {
+      "start": 314,
+      "end": 323,
+      "raw_quote": "ver- sion",
+      "replacement": "version",
+      "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+    }
+  ],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 314,
+      "derived_start": 0,
+      "derived_end": 314,
+      "mapping": "exact_copy"
+    },
+    {
+      "raw_start": 314,
+      "raw_end": 323,
+      "derived_start": 314,
+      "derived_end": 321,
+      "mapping": "replacement"
+    },
+    {
+      "raw_start": 323,
+      "raw_end": 448,
+      "derived_start": 321,
+      "derived_end": 446,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 314,
+      "end": 323,
+      "raw_quote": "ver- sion",
+      "joined_candidate": "version",
+      "decision": "proposed_join",
+      "reason": "guarded_adjacent_line_join"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 1,
+      "text": "I",
+      "raw_start": 0,
+      "raw_end": 1,
+      "raw_quote": "I",
+      "context": "I regret that it is necessary to ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 2,
+      "end": 8,
+      "text": "regret",
+      "raw_start": 2,
+      "raw_end": 8,
+      "raw_quote": "regret",
+      "context": "I regret that it is necessary to make th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 9,
+      "end": 13,
+      "text": "that",
+      "raw_start": 9,
+      "raw_end": 13,
+      "raw_quote": "that",
+      "context": "I regret that it is necessary to make these e",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 14,
+      "end": 16,
+      "text": "it",
+      "raw_start": 14,
+      "raw_end": 16,
+      "raw_quote": "it",
+      "context": "I regret that it is necessary to make these expl",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 17,
+      "end": 19,
+      "text": "is",
+      "raw_start": 17,
+      "raw_end": 19,
+      "raw_quote": "is",
+      "context": "I regret that it is necessary to make these explana",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 20,
+      "end": 29,
+      "text": "necessary",
+      "raw_start": 20,
+      "raw_end": 29,
+      "raw_quote": "necessary",
+      "context": "I regret that it is necessary to make these explanations. The",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 30,
+      "end": 32,
+      "text": "to",
+      "raw_start": 30,
+      "raw_end": 32,
+      "raw_quote": "to",
+      "context": "I regret that it is necessary to make these explanations. The la",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 33,
+      "end": 37,
+      "text": "make",
+      "raw_start": 33,
+      "raw_end": 37,
+      "raw_quote": "make",
+      "context": " regret that it is necessary to make these explanations. The languag",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 38,
+      "end": 43,
+      "text": "these",
+      "raw_start": 38,
+      "raw_end": 43,
+      "raw_quote": "these",
+      "context": "et that it is necessary to make these explanations. The language I di",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 44,
+      "end": 56,
+      "text": "explanations",
+      "raw_start": 44,
+      "raw_end": 56,
+      "raw_quote": "explanations",
+      "context": "t it is necessary to make these explanations. The language I did utter the o",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 58,
+      "end": 61,
+      "text": "The",
+      "raw_start": 58,
+      "raw_end": 61,
+      "raw_quote": "The",
+      "context": "ary to make these explanations. The language I did utter the other ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 62,
+      "end": 70,
+      "text": "language",
+      "raw_start": 62,
+      "raw_end": 70,
+      "raw_quote": "language",
+      "context": "to make these explanations. The language I did utter the other day, howe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 71,
+      "end": 72,
+      "text": "I",
+      "raw_start": 71,
+      "raw_end": 72,
+      "raw_quote": "I",
+      "context": "hese explanations. The language I did utter the other day, howeve",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 73,
+      "end": 76,
+      "text": "did",
+      "raw_start": 73,
+      "raw_end": 76,
+      "raw_quote": "did",
+      "context": "se explanations. The language I did utter the other day, however, j",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 77,
+      "end": 82,
+      "text": "utter",
+      "raw_start": 77,
+      "raw_end": 82,
+      "raw_quote": "utter",
+      "context": "xplanations. The language I did utter the other day, however, justifi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 83,
+      "end": 86,
+      "text": "the",
+      "raw_start": 83,
+      "raw_end": 86,
+      "raw_quote": "the",
+      "context": "tions. The language I did utter the other day, however, justified m",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 87,
+      "end": 92,
+      "text": "other",
+      "raw_start": 87,
+      "raw_end": 92,
+      "raw_quote": "other",
+      "context": "s. The language I did utter the other day, however, justified me in w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 93,
+      "end": 96,
+      "text": "day",
+      "raw_start": 93,
+      "raw_end": 96,
+      "raw_quote": "day",
+      "context": " language I did utter the other day, however, justified me in what ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 98,
+      "end": 105,
+      "text": "however",
+      "raw_start": 98,
+      "raw_end": 105,
+      "raw_quote": "however",
+      "context": "uage I did utter the other day, however, justified me in what I said he",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 107,
+      "end": 116,
+      "text": "justified",
+      "raw_start": 107,
+      "raw_end": 116,
+      "raw_quote": "justified",
+      "context": "d utter the other day, however, justified me in what I said here. If the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 117,
+      "end": 119,
+      "text": "me",
+      "raw_start": 117,
+      "raw_end": 119,
+      "raw_quote": "me",
+      "context": "e other day, however, justified me in what I said here. If the gen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 120,
+      "end": 122,
+      "text": "in",
+      "raw_start": 120,
+      "raw_end": 122,
+      "raw_quote": "in",
+      "context": "ther day, however, justified me in what I said here. If the gentle",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 123,
+      "end": 127,
+      "text": "what",
+      "raw_start": 123,
+      "raw_end": 127,
+      "raw_quote": "what",
+      "context": "r day, however, justified me in what I said here. If the gentleman h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 128,
+      "end": 129,
+      "text": "I",
+      "raw_start": 128,
+      "raw_end": 129,
+      "raw_quote": "I",
+      "context": ", however, justified me in what I said here. If the gentleman had",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 130,
+      "end": 134,
+      "text": "said",
+      "raw_start": 130,
+      "raw_end": 134,
+      "raw_quote": "said",
+      "context": "however, justified me in what I said here. If the gentleman had prop",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 135,
+      "end": 139,
+      "text": "here",
+      "raw_start": 135,
+      "raw_end": 139,
+      "raw_quote": "here",
+      "context": "er, justified me in what I said here. If the gentleman had properly ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 141,
+      "end": 143,
+      "text": "If",
+      "raw_start": 141,
+      "raw_end": 143,
+      "raw_quote": "If",
+      "context": "stified me in what I said here. If the gentleman had properly quot",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 144,
+      "end": 147,
+      "text": "the",
+      "raw_start": 144,
+      "raw_end": 147,
+      "raw_quote": "the",
+      "context": "fied me in what I said here. If the gentleman had properly quoted m",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 148,
+      "end": 157,
+      "text": "gentleman",
+      "raw_start": 148,
+      "raw_end": 157,
+      "raw_quote": "gentleman",
+      "context": " me in what I said here. If the gentleman had properly quoted mv remarks ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 158,
+      "end": 161,
+      "text": "had",
+      "raw_start": 158,
+      "raw_end": 161,
+      "raw_quote": "had",
+      "context": "t I said here. If the gentleman had properly quoted mv remarks I sh",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 162,
+      "end": 170,
+      "text": "properly",
+      "raw_start": 162,
+      "raw_end": 170,
+      "raw_quote": "properly",
+      "context": "said here. If the gentleman had properly quoted mv remarks I should have",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 171,
+      "end": 177,
+      "text": "quoted",
+      "raw_start": 171,
+      "raw_end": 177,
+      "raw_quote": "quoted",
+      "context": ". If the gentleman had properly quoted mv remarks I should have said n",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 178,
+      "end": 180,
+      "text": "mv",
+      "raw_start": 178,
+      "raw_end": 180,
+      "raw_quote": "mv",
+      "context": "e gentleman had properly quoted mv remarks I should have said noth",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 181,
+      "end": 188,
+      "text": "remarks",
+      "raw_start": 181,
+      "raw_end": 188,
+      "raw_quote": "remarks",
+      "context": "entleman had properly quoted mv remarks I should have said nothing : bu",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 189,
+      "end": 190,
+      "text": "I",
+      "raw_start": 189,
+      "raw_end": 190,
+      "raw_quote": "I",
+      "context": " had properly quoted mv remarks I should have said nothing : but ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 191,
+      "end": 197,
+      "text": "should",
+      "raw_start": 191,
+      "raw_end": 197,
+      "raw_quote": "should",
+      "context": "ad properly quoted mv remarks I should have said nothing : but that he",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 198,
+      "end": 202,
+      "text": "have",
+      "raw_start": 198,
+      "raw_end": 202,
+      "raw_quote": "have",
+      "context": "erly quoted mv remarks I should have said nothing : but that he did ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 203,
+      "end": 207,
+      "text": "said",
+      "raw_start": 203,
+      "raw_end": 207,
+      "raw_quote": "said",
+      "context": "quoted mv remarks I should have said nothing : but that he did not d",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 208,
+      "end": 215,
+      "text": "nothing",
+      "raw_start": 208,
+      "raw_end": 215,
+      "raw_quote": "nothing",
+      "context": "d mv remarks I should have said nothing : but that he did not do. If th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 218,
+      "end": 221,
+      "text": "but",
+      "raw_start": 218,
+      "raw_end": 221,
+      "raw_quote": "but",
+      "context": "ks I should have said nothing : but that he did not do. If there is",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 222,
+      "end": 226,
+      "text": "that",
+      "raw_start": 222,
+      "raw_end": 226,
+      "raw_quote": "that",
+      "context": " should have said nothing : but that he did not do. If there is a re",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 227,
+      "end": 229,
+      "text": "he",
+      "raw_start": 227,
+      "raw_end": 229,
+      "raw_quote": "he",
+      "context": "ld have said nothing : but that he did not do. If there is a repor",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 230,
+      "end": 233,
+      "text": "did",
+      "raw_start": 230,
+      "raw_end": 233,
+      "raw_quote": "did",
+      "context": "have said nothing : but that he did not do. If there is a reporter ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 234,
+      "end": 237,
+      "text": "not",
+      "raw_start": 234,
+      "raw_end": 237,
+      "raw_quote": "not",
+      "context": " said nothing : but that he did not do. If there is a reporter here",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 238,
+      "end": 240,
+      "text": "do",
+      "raw_start": 238,
+      "raw_end": 240,
+      "raw_quote": "do",
+      "context": "d nothing : but that he did not do. If there is a reporter here wh",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 242,
+      "end": 244,
+      "text": "If",
+      "raw_start": 242,
+      "raw_end": 244,
+      "raw_quote": "If",
+      "context": "thing : but that he did not do. If there is a reporter here who wi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 245,
+      "end": 250,
+      "text": "there",
+      "raw_start": 245,
+      "raw_end": 250,
+      "raw_quote": "there",
+      "context": "ng : but that he did not do. If there is a reporter here who will say",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 251,
+      "end": 253,
+      "text": "is",
+      "raw_start": 251,
+      "raw_end": 253,
+      "raw_quote": "is",
+      "context": "ut that he did not do. If there is a reporter here who will say th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 254,
+      "end": 255,
+      "text": "a",
+      "raw_start": 254,
+      "raw_end": 255,
+      "raw_quote": "a",
+      "context": "that he did not do. If there is a reporter here who will say that",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 256,
+      "end": 264,
+      "text": "reporter",
+      "raw_start": 256,
+      "raw_end": 264,
+      "raw_quote": "reporter",
+      "context": "at he did not do. If there is a reporter here who will say that I have n",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 265,
+      "end": 269,
+      "text": "here",
+      "raw_start": 265,
+      "raw_end": 269,
+      "raw_quote": "here",
+      "context": " not do. If there is a reporter here who will say that I have not gi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 270,
+      "end": 273,
+      "text": "who",
+      "raw_start": 270,
+      "raw_end": 273,
+      "raw_quote": "who",
+      "context": "do. If there is a reporter here who will say that I have not given ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 274,
+      "end": 278,
+      "text": "will",
+      "raw_start": 274,
+      "raw_end": 278,
+      "raw_quote": "will",
+      "context": "If there is a reporter here who will say that I have not given the t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 279,
+      "end": 282,
+      "text": "say",
+      "raw_start": 279,
+      "raw_end": 282,
+      "raw_quote": "say",
+      "context": "ere is a reporter here who will say that I have not given the true ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 283,
+      "end": 287,
+      "text": "that",
+      "raw_start": 283,
+      "raw_end": 287,
+      "raw_quote": "that",
+      "context": "is a reporter here who will say that I have not given the true ver- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 288,
+      "end": 289,
+      "text": "I",
+      "raw_start": 288,
+      "raw_end": 289,
+      "raw_quote": "I",
+      "context": "reporter here who will say that I have not given the true ver- si",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 290,
+      "end": 294,
+      "text": "have",
+      "raw_start": 290,
+      "raw_end": 294,
+      "raw_quote": "have",
+      "context": "porter here who will say that I have not given the true ver- sion of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 295,
+      "end": 298,
+      "text": "not",
+      "raw_start": 295,
+      "raw_end": 298,
+      "raw_quote": "not",
+      "context": "r here who will say that I have not given the true ver- sion of my ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 299,
+      "end": 304,
+      "text": "given",
+      "raw_start": 299,
+      "raw_end": 304,
+      "raw_quote": "given",
+      "context": "re who will say that I have not given the true ver- sion of my remark",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 305,
+      "end": 308,
+      "text": "the",
+      "raw_start": 305,
+      "raw_end": 308,
+      "raw_quote": "the",
+      "context": " will say that I have not given the true ver- sion of my remarks, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 309,
+      "end": 313,
+      "text": "true",
+      "raw_start": 309,
+      "raw_end": 313,
+      "raw_quote": "true",
+      "context": "l say that I have not given the true ver- sion of my remarks, that w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 314,
+      "end": 317,
+      "text": "ver",
+      "raw_start": 314,
+      "raw_end": 317,
+      "raw_quote": "ver",
+      "context": " that I have not given the true ver- sion of my remarks, that what ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 319,
+      "end": 323,
+      "text": "sion",
+      "raw_start": 319,
+      "raw_end": 323,
+      "raw_quote": "sion",
+      "context": " I have not given the true ver- sion of my remarks, that what is pub",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 324,
+      "end": 326,
+      "text": "of",
+      "raw_start": 324,
+      "raw_end": 326,
+      "raw_quote": "of",
+      "context": "ve not given the true ver- sion of my remarks, that what is publis",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 327,
+      "end": 329,
+      "text": "my",
+      "raw_start": 327,
+      "raw_end": 329,
+      "raw_quote": "my",
+      "context": "not given the true ver- sion of my remarks, that what is published",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 330,
+      "end": 337,
+      "text": "remarks",
+      "raw_start": 330,
+      "raw_end": 337,
+      "raw_quote": "remarks",
+      "context": " given the true ver- sion of my remarks, that what is published is not ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 339,
+      "end": 343,
+      "text": "that",
+      "raw_start": 339,
+      "raw_end": 343,
+      "raw_quote": "that",
+      "context": "e true ver- sion of my remarks, that what is published is not just p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 344,
+      "end": 348,
+      "text": "what",
+      "raw_start": 344,
+      "raw_end": 348,
+      "raw_quote": "what",
+      "context": "e ver- sion of my remarks, that what is published is not just precis",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 349,
+      "end": 351,
+      "text": "is",
+      "raw_start": 349,
+      "raw_end": 351,
+      "raw_quote": "is",
+      "context": "- sion of my remarks, that what is published is not just precisely",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 352,
+      "end": 361,
+      "text": "published",
+      "raw_start": 352,
+      "raw_end": 361,
+      "raw_quote": "published",
+      "context": "ion of my remarks, that what is published is not just precisely what I ut",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 362,
+      "end": 364,
+      "text": "is",
+      "raw_start": 362,
+      "raw_end": 364,
+      "raw_quote": "is",
+      "context": "remarks, that what is published is not just precisely what I utter",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 365,
+      "end": 368,
+      "text": "not",
+      "raw_start": 365,
+      "raw_end": 368,
+      "raw_quote": "not",
+      "context": "arks, that what is published is not just precisely what I uttered o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 369,
+      "end": 373,
+      "text": "just",
+      "raw_start": 369,
+      "raw_end": 373,
+      "raw_quote": "just",
+      "context": ", that what is published is not just precisely what I uttered on thi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 374,
+      "end": 383,
+      "text": "precisely",
+      "raw_start": 374,
+      "raw_end": 383,
+      "raw_quote": "precisely",
+      "context": "t what is published is not just precisely what I uttered on this floor, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 384,
+      "end": 388,
+      "text": "what",
+      "raw_start": 384,
+      "raw_end": 388,
+      "raw_quote": "what",
+      "context": "published is not just precisely what I uttered on this floor, then I",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 389,
+      "end": 390,
+      "text": "I",
+      "raw_start": 389,
+      "raw_end": 390,
+      "raw_quote": "I",
+      "context": "shed is not just precisely what I uttered on this floor, then I w",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 391,
+      "end": 398,
+      "text": "uttered",
+      "raw_start": 391,
+      "raw_end": 398,
+      "raw_quote": "uttered",
+      "context": "ed is not just precisely what I uttered on this floor, then I will admi",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 399,
+      "end": 401,
+      "text": "on",
+      "raw_start": 399,
+      "raw_end": 401,
+      "raw_quote": "on",
+      "context": "t just precisely what I uttered on this floor, then I will admit t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 402,
+      "end": 406,
+      "text": "this",
+      "raw_start": 402,
+      "raw_end": 406,
+      "raw_quote": "this",
+      "context": "ust precisely what I uttered on this floor, then I will admit that I",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 407,
+      "end": 412,
+      "text": "floor",
+      "raw_start": 407,
+      "raw_end": 412,
+      "raw_quote": "floor",
+      "context": "recisely what I uttered on this floor, then I will admit that I am wr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 414,
+      "end": 418,
+      "text": "then",
+      "raw_start": 414,
+      "raw_end": 418,
+      "raw_quote": "then",
+      "context": "y what I uttered on this floor, then I will admit that I am wrong.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 419,
+      "end": 420,
+      "text": "I",
+      "raw_start": 419,
+      "raw_end": 420,
+      "raw_quote": "I",
+      "context": "t I uttered on this floor, then I will admit that I am wrong.",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 421,
+      "end": 425,
+      "text": "will",
+      "raw_start": 421,
+      "raw_end": 425,
+      "raw_quote": "will",
+      "context": "I uttered on this floor, then I will admit that I am wrong.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 426,
+      "end": 431,
+      "text": "admit",
+      "raw_start": 426,
+      "raw_end": 431,
+      "raw_quote": "admit",
+      "context": "ered on this floor, then I will admit that I am wrong.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 432,
+      "end": 436,
+      "text": "that",
+      "raw_start": 432,
+      "raw_end": 436,
+      "raw_quote": "that",
+      "context": "n this floor, then I will admit that I am wrong.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 437,
+      "end": 438,
+      "text": "I",
+      "raw_start": 437,
+      "raw_end": 438,
+      "raw_quote": "I",
+      "context": "s floor, then I will admit that I am wrong.",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 439,
+      "end": 441,
+      "text": "am",
+      "raw_start": 439,
+      "raw_end": 441,
+      "raw_quote": "am",
+      "context": "floor, then I will admit that I am wrong.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 442,
+      "end": 447,
+      "text": "wrong",
+      "raw_start": 442,
+      "raw_end": 447,
+      "raw_quote": "wrong",
+      "context": "or, then I will admit that I am wrong.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 1,
+      "text": "I",
+      "raw_start": 0,
+      "raw_end": 1,
+      "raw_quote": "I",
+      "context": "I regret that it is necessary to ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 2,
+      "end": 8,
+      "text": "regret",
+      "raw_start": 2,
+      "raw_end": 8,
+      "raw_quote": "regret",
+      "context": "I regret that it is necessary to make th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 9,
+      "end": 13,
+      "text": "that",
+      "raw_start": 9,
+      "raw_end": 13,
+      "raw_quote": "that",
+      "context": "I regret that it is necessary to make these e",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 14,
+      "end": 16,
+      "text": "it",
+      "raw_start": 14,
+      "raw_end": 16,
+      "raw_quote": "it",
+      "context": "I regret that it is necessary to make these expl",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 17,
+      "end": 19,
+      "text": "is",
+      "raw_start": 17,
+      "raw_end": 19,
+      "raw_quote": "is",
+      "context": "I regret that it is necessary to make these explana",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 20,
+      "end": 29,
+      "text": "necessary",
+      "raw_start": 20,
+      "raw_end": 29,
+      "raw_quote": "necessary",
+      "context": "I regret that it is necessary to make these explanations. The",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 30,
+      "end": 32,
+      "text": "to",
+      "raw_start": 30,
+      "raw_end": 32,
+      "raw_quote": "to",
+      "context": "I regret that it is necessary to make these explanations. The la",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 33,
+      "end": 37,
+      "text": "make",
+      "raw_start": 33,
+      "raw_end": 37,
+      "raw_quote": "make",
+      "context": " regret that it is necessary to make these explanations. The languag",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 38,
+      "end": 43,
+      "text": "these",
+      "raw_start": 38,
+      "raw_end": 43,
+      "raw_quote": "these",
+      "context": "et that it is necessary to make these explanations. The language I di",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 44,
+      "end": 56,
+      "text": "explanations",
+      "raw_start": 44,
+      "raw_end": 56,
+      "raw_quote": "explanations",
+      "context": "t it is necessary to make these explanations. The language I did utter the o",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 58,
+      "end": 61,
+      "text": "The",
+      "raw_start": 58,
+      "raw_end": 61,
+      "raw_quote": "The",
+      "context": "ary to make these explanations. The language I did utter the other ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 62,
+      "end": 70,
+      "text": "language",
+      "raw_start": 62,
+      "raw_end": 70,
+      "raw_quote": "language",
+      "context": "to make these explanations. The language I did utter the other day, howe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 71,
+      "end": 72,
+      "text": "I",
+      "raw_start": 71,
+      "raw_end": 72,
+      "raw_quote": "I",
+      "context": "hese explanations. The language I did utter the other day, howeve",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 73,
+      "end": 76,
+      "text": "did",
+      "raw_start": 73,
+      "raw_end": 76,
+      "raw_quote": "did",
+      "context": "se explanations. The language I did utter the other day, however, j",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 77,
+      "end": 82,
+      "text": "utter",
+      "raw_start": 77,
+      "raw_end": 82,
+      "raw_quote": "utter",
+      "context": "xplanations. The language I did utter the other day, however, justifi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 83,
+      "end": 86,
+      "text": "the",
+      "raw_start": 83,
+      "raw_end": 86,
+      "raw_quote": "the",
+      "context": "tions. The language I did utter the other day, however, justified m",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 87,
+      "end": 92,
+      "text": "other",
+      "raw_start": 87,
+      "raw_end": 92,
+      "raw_quote": "other",
+      "context": "s. The language I did utter the other day, however, justified me in w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 93,
+      "end": 96,
+      "text": "day",
+      "raw_start": 93,
+      "raw_end": 96,
+      "raw_quote": "day",
+      "context": " language I did utter the other day, however, justified me in what ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 98,
+      "end": 105,
+      "text": "however",
+      "raw_start": 98,
+      "raw_end": 105,
+      "raw_quote": "however",
+      "context": "uage I did utter the other day, however, justified me in what I said he",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 107,
+      "end": 116,
+      "text": "justified",
+      "raw_start": 107,
+      "raw_end": 116,
+      "raw_quote": "justified",
+      "context": "d utter the other day, however, justified me in what I said here. If the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 117,
+      "end": 119,
+      "text": "me",
+      "raw_start": 117,
+      "raw_end": 119,
+      "raw_quote": "me",
+      "context": "e other day, however, justified me in what I said here. If the gen",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 120,
+      "end": 122,
+      "text": "in",
+      "raw_start": 120,
+      "raw_end": 122,
+      "raw_quote": "in",
+      "context": "ther day, however, justified me in what I said here. If the gentle",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 123,
+      "end": 127,
+      "text": "what",
+      "raw_start": 123,
+      "raw_end": 127,
+      "raw_quote": "what",
+      "context": "r day, however, justified me in what I said here. If the gentleman h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 128,
+      "end": 129,
+      "text": "I",
+      "raw_start": 128,
+      "raw_end": 129,
+      "raw_quote": "I",
+      "context": ", however, justified me in what I said here. If the gentleman had",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 130,
+      "end": 134,
+      "text": "said",
+      "raw_start": 130,
+      "raw_end": 134,
+      "raw_quote": "said",
+      "context": "however, justified me in what I said here. If the gentleman had prop",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 135,
+      "end": 139,
+      "text": "here",
+      "raw_start": 135,
+      "raw_end": 139,
+      "raw_quote": "here",
+      "context": "er, justified me in what I said here. If the gentleman had properly ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 141,
+      "end": 143,
+      "text": "If",
+      "raw_start": 141,
+      "raw_end": 143,
+      "raw_quote": "If",
+      "context": "stified me in what I said here. If the gentleman had properly quot",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 144,
+      "end": 147,
+      "text": "the",
+      "raw_start": 144,
+      "raw_end": 147,
+      "raw_quote": "the",
+      "context": "fied me in what I said here. If the gentleman had properly quoted m",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 148,
+      "end": 157,
+      "text": "gentleman",
+      "raw_start": 148,
+      "raw_end": 157,
+      "raw_quote": "gentleman",
+      "context": " me in what I said here. If the gentleman had properly quoted mv remarks ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 158,
+      "end": 161,
+      "text": "had",
+      "raw_start": 158,
+      "raw_end": 161,
+      "raw_quote": "had",
+      "context": "t I said here. If the gentleman had properly quoted mv remarks I sh",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 162,
+      "end": 170,
+      "text": "properly",
+      "raw_start": 162,
+      "raw_end": 170,
+      "raw_quote": "properly",
+      "context": "said here. If the gentleman had properly quoted mv remarks I should have",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 171,
+      "end": 177,
+      "text": "quoted",
+      "raw_start": 171,
+      "raw_end": 177,
+      "raw_quote": "quoted",
+      "context": ". If the gentleman had properly quoted mv remarks I should have said n",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 178,
+      "end": 180,
+      "text": "mv",
+      "raw_start": 178,
+      "raw_end": 180,
+      "raw_quote": "mv",
+      "context": "e gentleman had properly quoted mv remarks I should have said noth",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 181,
+      "end": 188,
+      "text": "remarks",
+      "raw_start": 181,
+      "raw_end": 188,
+      "raw_quote": "remarks",
+      "context": "entleman had properly quoted mv remarks I should have said nothing : bu",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 189,
+      "end": 190,
+      "text": "I",
+      "raw_start": 189,
+      "raw_end": 190,
+      "raw_quote": "I",
+      "context": " had properly quoted mv remarks I should have said nothing : but ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 191,
+      "end": 197,
+      "text": "should",
+      "raw_start": 191,
+      "raw_end": 197,
+      "raw_quote": "should",
+      "context": "ad properly quoted mv remarks I should have said nothing : but that he",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 198,
+      "end": 202,
+      "text": "have",
+      "raw_start": 198,
+      "raw_end": 202,
+      "raw_quote": "have",
+      "context": "erly quoted mv remarks I should have said nothing : but that he did ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 203,
+      "end": 207,
+      "text": "said",
+      "raw_start": 203,
+      "raw_end": 207,
+      "raw_quote": "said",
+      "context": "quoted mv remarks I should have said nothing : but that he did not d",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 208,
+      "end": 215,
+      "text": "nothing",
+      "raw_start": 208,
+      "raw_end": 215,
+      "raw_quote": "nothing",
+      "context": "d mv remarks I should have said nothing : but that he did not do. If th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 218,
+      "end": 221,
+      "text": "but",
+      "raw_start": 218,
+      "raw_end": 221,
+      "raw_quote": "but",
+      "context": "ks I should have said nothing : but that he did not do. If there is",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 222,
+      "end": 226,
+      "text": "that",
+      "raw_start": 222,
+      "raw_end": 226,
+      "raw_quote": "that",
+      "context": " should have said nothing : but that he did not do. If there is a re",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 227,
+      "end": 229,
+      "text": "he",
+      "raw_start": 227,
+      "raw_end": 229,
+      "raw_quote": "he",
+      "context": "ld have said nothing : but that he did not do. If there is a repor",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 230,
+      "end": 233,
+      "text": "did",
+      "raw_start": 230,
+      "raw_end": 233,
+      "raw_quote": "did",
+      "context": "have said nothing : but that he did not do. If there is a reporter ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 234,
+      "end": 237,
+      "text": "not",
+      "raw_start": 234,
+      "raw_end": 237,
+      "raw_quote": "not",
+      "context": " said nothing : but that he did not do. If there is a reporter here",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 238,
+      "end": 240,
+      "text": "do",
+      "raw_start": 238,
+      "raw_end": 240,
+      "raw_quote": "do",
+      "context": "d nothing : but that he did not do. If there is a reporter here wh",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 242,
+      "end": 244,
+      "text": "If",
+      "raw_start": 242,
+      "raw_end": 244,
+      "raw_quote": "If",
+      "context": "thing : but that he did not do. If there is a reporter here who wi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 245,
+      "end": 250,
+      "text": "there",
+      "raw_start": 245,
+      "raw_end": 250,
+      "raw_quote": "there",
+      "context": "ng : but that he did not do. If there is a reporter here who will say",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 251,
+      "end": 253,
+      "text": "is",
+      "raw_start": 251,
+      "raw_end": 253,
+      "raw_quote": "is",
+      "context": "ut that he did not do. If there is a reporter here who will say th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 254,
+      "end": 255,
+      "text": "a",
+      "raw_start": 254,
+      "raw_end": 255,
+      "raw_quote": "a",
+      "context": "that he did not do. If there is a reporter here who will say that",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 256,
+      "end": 264,
+      "text": "reporter",
+      "raw_start": 256,
+      "raw_end": 264,
+      "raw_quote": "reporter",
+      "context": "at he did not do. If there is a reporter here who will say that I have n",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 265,
+      "end": 269,
+      "text": "here",
+      "raw_start": 265,
+      "raw_end": 269,
+      "raw_quote": "here",
+      "context": " not do. If there is a reporter here who will say that I have not gi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 270,
+      "end": 273,
+      "text": "who",
+      "raw_start": 270,
+      "raw_end": 273,
+      "raw_quote": "who",
+      "context": "do. If there is a reporter here who will say that I have not given ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 274,
+      "end": 278,
+      "text": "will",
+      "raw_start": 274,
+      "raw_end": 278,
+      "raw_quote": "will",
+      "context": "If there is a reporter here who will say that I have not given the t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 279,
+      "end": 282,
+      "text": "say",
+      "raw_start": 279,
+      "raw_end": 282,
+      "raw_quote": "say",
+      "context": "ere is a reporter here who will say that I have not given the true ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 283,
+      "end": 287,
+      "text": "that",
+      "raw_start": 283,
+      "raw_end": 287,
+      "raw_quote": "that",
+      "context": "is a reporter here who will say that I have not given the true ver- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 288,
+      "end": 289,
+      "text": "I",
+      "raw_start": 288,
+      "raw_end": 289,
+      "raw_quote": "I",
+      "context": "reporter here who will say that I have not given the true ver- si",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 290,
+      "end": 294,
+      "text": "have",
+      "raw_start": 290,
+      "raw_end": 294,
+      "raw_quote": "have",
+      "context": "porter here who will say that I have not given the true ver- sion of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 295,
+      "end": 298,
+      "text": "not",
+      "raw_start": 295,
+      "raw_end": 298,
+      "raw_quote": "not",
+      "context": "r here who will say that I have not given the true ver- sion of my ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 299,
+      "end": 304,
+      "text": "given",
+      "raw_start": 299,
+      "raw_end": 304,
+      "raw_quote": "given",
+      "context": "re who will say that I have not given the true ver- sion of my remark",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 305,
+      "end": 308,
+      "text": "the",
+      "raw_start": 305,
+      "raw_end": 308,
+      "raw_quote": "the",
+      "context": " will say that I have not given the true ver- sion of my remarks, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 309,
+      "end": 313,
+      "text": "true",
+      "raw_start": 309,
+      "raw_end": 313,
+      "raw_quote": "true",
+      "context": "l say that I have not given the true ver- sion of my remarks, that w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 314,
+      "end": 321,
+      "text": "version",
+      "raw_start": 314,
+      "raw_end": 323,
+      "raw_quote": "ver- sion",
+      "context": " that I have not given the true ver- sion of my remarks, that what is pub",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 322,
+      "end": 324,
+      "text": "of",
+      "raw_start": 324,
+      "raw_end": 326,
+      "raw_quote": "of",
+      "context": "ve not given the true ver- sion of my remarks, that what is publis",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 325,
+      "end": 327,
+      "text": "my",
+      "raw_start": 327,
+      "raw_end": 329,
+      "raw_quote": "my",
+      "context": "not given the true ver- sion of my remarks, that what is published",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 328,
+      "end": 335,
+      "text": "remarks",
+      "raw_start": 330,
+      "raw_end": 337,
+      "raw_quote": "remarks",
+      "context": " given the true ver- sion of my remarks, that what is published is not ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 337,
+      "end": 341,
+      "text": "that",
+      "raw_start": 339,
+      "raw_end": 343,
+      "raw_quote": "that",
+      "context": "e true ver- sion of my remarks, that what is published is not just p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 342,
+      "end": 346,
+      "text": "what",
+      "raw_start": 344,
+      "raw_end": 348,
+      "raw_quote": "what",
+      "context": "e ver- sion of my remarks, that what is published is not just precis",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 347,
+      "end": 349,
+      "text": "is",
+      "raw_start": 349,
+      "raw_end": 351,
+      "raw_quote": "is",
+      "context": "- sion of my remarks, that what is published is not just precisely",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 350,
+      "end": 359,
+      "text": "published",
+      "raw_start": 352,
+      "raw_end": 361,
+      "raw_quote": "published",
+      "context": "ion of my remarks, that what is published is not just precisely what I ut",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 360,
+      "end": 362,
+      "text": "is",
+      "raw_start": 362,
+      "raw_end": 364,
+      "raw_quote": "is",
+      "context": "remarks, that what is published is not just precisely what I utter",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 363,
+      "end": 366,
+      "text": "not",
+      "raw_start": 365,
+      "raw_end": 368,
+      "raw_quote": "not",
+      "context": "arks, that what is published is not just precisely what I uttered o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 367,
+      "end": 371,
+      "text": "just",
+      "raw_start": 369,
+      "raw_end": 373,
+      "raw_quote": "just",
+      "context": ", that what is published is not just precisely what I uttered on thi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 372,
+      "end": 381,
+      "text": "precisely",
+      "raw_start": 374,
+      "raw_end": 383,
+      "raw_quote": "precisely",
+      "context": "t what is published is not just precisely what I uttered on this floor, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 382,
+      "end": 386,
+      "text": "what",
+      "raw_start": 384,
+      "raw_end": 388,
+      "raw_quote": "what",
+      "context": "published is not just precisely what I uttered on this floor, then I",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 387,
+      "end": 388,
+      "text": "I",
+      "raw_start": 389,
+      "raw_end": 390,
+      "raw_quote": "I",
+      "context": "shed is not just precisely what I uttered on this floor, then I w",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 389,
+      "end": 396,
+      "text": "uttered",
+      "raw_start": 391,
+      "raw_end": 398,
+      "raw_quote": "uttered",
+      "context": "ed is not just precisely what I uttered on this floor, then I will admi",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 397,
+      "end": 399,
+      "text": "on",
+      "raw_start": 399,
+      "raw_end": 401,
+      "raw_quote": "on",
+      "context": "t just precisely what I uttered on this floor, then I will admit t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 400,
+      "end": 404,
+      "text": "this",
+      "raw_start": 402,
+      "raw_end": 406,
+      "raw_quote": "this",
+      "context": "ust precisely what I uttered on this floor, then I will admit that I",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 405,
+      "end": 410,
+      "text": "floor",
+      "raw_start": 407,
+      "raw_end": 412,
+      "raw_quote": "floor",
+      "context": "recisely what I uttered on this floor, then I will admit that I am wr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 412,
+      "end": 416,
+      "text": "then",
+      "raw_start": 414,
+      "raw_end": 418,
+      "raw_quote": "then",
+      "context": "y what I uttered on this floor, then I will admit that I am wrong.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 417,
+      "end": 418,
+      "text": "I",
+      "raw_start": 419,
+      "raw_end": 420,
+      "raw_quote": "I",
+      "context": "t I uttered on this floor, then I will admit that I am wrong.",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 419,
+      "end": 423,
+      "text": "will",
+      "raw_start": 421,
+      "raw_end": 425,
+      "raw_quote": "will",
+      "context": "I uttered on this floor, then I will admit that I am wrong.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 424,
+      "end": 429,
+      "text": "admit",
+      "raw_start": 426,
+      "raw_end": 431,
+      "raw_quote": "admit",
+      "context": "ered on this floor, then I will admit that I am wrong.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 430,
+      "end": 434,
+      "text": "that",
+      "raw_start": 432,
+      "raw_end": 436,
+      "raw_quote": "that",
+      "context": "n this floor, then I will admit that I am wrong.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 435,
+      "end": 436,
+      "text": "I",
+      "raw_start": 437,
+      "raw_end": 438,
+      "raw_quote": "I",
+      "context": "s floor, then I will admit that I am wrong.",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 437,
+      "end": 439,
+      "text": "am",
+      "raw_start": 439,
+      "raw_end": 441,
+      "raw_quote": "am",
+      "context": "floor, then I will admit that I am wrong.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 440,
+      "end": 445,
+      "text": "wrong",
+      "raw_start": 442,
+      "raw_end": 447,
+      "raw_quote": "wrong",
+      "context": "or, then I will admit that I am wrong.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalg7391unit:872:par_000872_000059",
+      "raw_text": "I regret that it is necessary to make these explanations. The language I did utter the other day, however, justified me in what I said here. If the gentleman had properly quoted mv remarks I should have said nothing : but that he did not do. If there is a reporter here who will say that I have not given the true ver- sion of my remarks, that what is published is not just precisely what I uttered on this floor, then I will admit that I am wrong.",
+      "raw_sha256": "87183a6a442cfc1f8054bcb99f884bb03a384b6219ac4354e7c2f12c0afe3b05"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalg7391unit:872:par_000872_000059",
+        "raw_text": "I regret that it is necessary to make these explanations. The language I did utter the other day, however, justified me in what I said here. If the gentleman had properly quoted mv remarks I should have said nothing : but that he did not do. If there is a reporter here who will say that I have not given the true ver- sion of my remarks, that what is published is not just precisely what I uttered on this floor, then I will admit that I am wrong.",
+        "raw_sha256": "87183a6a442cfc1f8054bcb99f884bb03a384b6219ac4354e7c2f12c0afe3b05"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "I regret that it is necessary to make these explanations. The language I did utter the other day, however, justified me in what I said here. If the gentleman had properly quoted mv remarks I should have said nothing : but that he did not do. If there is a reporter here who will say that I have not given the true version of my remarks, that what is published is not just precisely what I uttered on this floor, then I will admit that I am wrong.",
+    "proposed_sha256": "7f6f4a3c9dbe3c58760a90ae1bebb93a86f044a78fdffc4e9392d3f761bcd513",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

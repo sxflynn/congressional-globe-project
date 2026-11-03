@@ -1,0 +1,84 @@
+{
+  "task": "T134",
+  "review_type": "bounded offline failure analysis",
+  "verdict": "failure cause remains unknown; do not retry or raise limits",
+  "inputs": {
+    "failed_attempt": "X13/call-1",
+    "frozen_request_sha256_matches": true,
+    "failed_receipt": {
+      "request_sha256": "22369723b7b166f8758d9c2e935094714f50db3a0fcfc97d54604b404deb554c",
+      "complete_http_response": false,
+      "response_http_sha256": null,
+      "response.http_or_partial_present": false,
+      "reported_usage": null,
+      "elapsed_seconds": 114.306814,
+      "owned_stop_observation": "stopped"
+    },
+    "operator_result": {
+      "error_type": "OwnedLocalError",
+      "reason": "owned local HTTP request failed",
+      "elapsed_seconds": 114.325412,
+      "response_saved": false,
+      "usage_saved": false
+    },
+    "failed_input": {
+      "request_body_bytes": 213916,
+      "system_message_chars": 1838,
+      "user_message_chars": 37218,
+      "raw_chars": 514,
+      "static_chars": 512,
+      "diagnostic_signal_count": 106,
+      "image_dimensions_px": [836, 590],
+      "image_pixels": 493240,
+      "crop_bytes": 127656
+    },
+    "completed_cases_X01_X12": {
+      "attempts": 36,
+      "all_complete_http_and_stopped": true,
+      "elapsed_seconds_min_median_max": [33.539, 48.527, 66.999],
+      "input_tokens_min_median_max": [1968, 3608, 5614],
+      "input_tokens_sum": 133422,
+      "output_tokens_min_median_max": [126, 190.5, 224],
+      "output_tokens_sum": 6643,
+      "request_body_bytes_min_max": [104861, 250427],
+      "user_message_chars_min_max": [3758, 13417],
+      "diagnostic_signal_count_min_max": [8, 37],
+      "image_pixels_min_max": [256940, 554778],
+      "crop_bytes_min_max": [70339, 176436]
+    },
+    "bounded_log_query": {
+      "artifact": "tmp/t134-failure-window-log-query.json",
+      "returned_events": 0,
+      "whole_log_dump_used": false
+    }
+  },
+  "expected_output": {
+    "analysis_rule": "Separate durable receipt facts from possible explanations. A stopped owned process proves cleanup observation, not why the HTTP response failed.",
+    "decision": "Keep X13 and the remaining 14 call slots closed; retain the failed attempt and unknown usage. No retry, model call, image fetch, resource change, or limit increase is authorized by this review."
+  },
+  "actual_output": {
+    "confirmed": [
+      "The saved request hash matches the frozen X13 body.",
+      "The owned process was observed stopped after 114.306814 seconds.",
+      "The receipt records no complete HTTP response or response hash; no response file, partial response file, or token usage was retained.",
+      "All 36 prior observations completed with known usage. X13's request-body bytes and image dimensions are within their observed ranges, while its diagnostic signal count and user-message character count exceed all prior completed cases.",
+      "The fresh bounded Ollama log query returned zero events. The operator result preserves only the generic OwnedLocalError and message. The server's stdout/stderr were directed to DEVNULL."
+    ],
+    "implementation_detail": "The transport sets a 120-second request deadline and reserves two 3-second stop intervals before the HTTP exchange. Its result wrapper raises a generic OwnedLocalError from the underlying exception, but the one-off operator stores only the wrapper type and text, not the cause chain or request-stage classification."
+  },
+  "differences": {
+    "confirmed_gap": "The failure is durably recorded, but the evidence needed to classify its underlying cause was not captured.",
+    "inference_only": "114.306814 seconds is consistent with exhausting the approximately 114-second HTTP budget after the stop reserve, but timing alone does not prove a timeout. The 106 signals and 37,218-character user message are possible workload contributors, not evidence of the cause. The image size and total request bytes are not unusually large relative to completed cases.",
+    "unknown": [
+      "Underlying exception class and message",
+      "Whether the socket timed out, the server closed/reset the connection, or another transport/server failure occurred",
+      "Actual input/output token usage for X13"
+    ]
+  },
+  "recommended_follow_up": {
+    "task": "T135 offline evidence-capture fix only",
+    "scope": "Persist a bounded, sanitized exception-class chain and failure stage; record deadline/budget, sent/received byte counts, partial-response presence and hash, HTTP status if available, and owned-stop result. Never persist request text, credentials, environment values, or unbounded stdout/stderr.",
+    "proof": "Use offline saved-response and synthetic transport-failure tests to show timeout, connection, HTTP, parse, and stop failures receive distinct safe classifications while raw content remains absent. Do not use a provider call to validate this persistence change.",
+    "limit": "This cannot reconstruct X13's lost underlying exception and does not authorize a retry, a new call, a resource/cap change, or reopening the 14 closed slots."
+  }
+}

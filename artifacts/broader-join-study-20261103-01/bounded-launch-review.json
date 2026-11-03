@@ -1,0 +1,52 @@
+{
+  "task": "T134",
+  "reviewer": "Luna",
+  "review_scope": "Independent offline review of the frozen launch inputs, one-off scripts, matched candidate requests, and review-packet checks. No model calls, image fetches, or browser/device checks were performed by this reviewer.",
+  "verdict": "clear_to_launch_with_manual_review_notification",
+  "inputs": {
+    "roadmap": "MASTER_PLAN.md T134 row and engineering/review rules",
+    "study": "artifacts/broader-join-study-20261103-01",
+    "selection": "selection-freeze.json; canonical foundation check; selection linkage",
+    "requests": "17 frozen request bodies and request-freeze.json",
+    "review_packet": "HR-033-v2, 17 evidence cards, 18 comment boxes"
+  },
+  "expected_output": {
+    "scope": "15 fresh cases, three per part, plus two exposed known-join cases; three identical-input observations per case; 51-call maximum",
+    "limits": "120 seconds and 1500 output tokens per call; 1800 seconds per case group; 7200 seconds total model phase; zero retries or model downloads; at most 15 image and 15 metadata fetches",
+    "comparison": "Matched candidates change only the system message by appending the generic join instruction; source assessments stay outside model requests.",
+    "review": "Publish the first actual result after its first call, register and check it, then check the inbox before the remaining repeats. Keep source/OCR/model excerpts plain and AI explanations glossed."
+  },
+  "actual_output": {
+    "selection": {
+      "canonical_sha256_matches": true,
+      "canonical_bytes_streamed": 2231301433,
+      "fresh_cases": 15,
+      "distinct_pages": 15,
+      "cases_per_part": 3,
+      "eligible_raw_length": [250, 700],
+      "sampling": "Seeded two-stage page then conditional paragraph selection; per-case inclusion probabilities recorded.",
+      "exposure": "Named T49 and prior-study pages/identities excluded; broader operator/model exposure remains unknown.",
+      "selection_time_scans_calls_fetches": 0
+    },
+    "request_binding": {
+      "case_body_hashes_match_freeze": true,
+      "independent_launch_pin_matches": true,
+      "selection_method_code_and_driver_pins_match": true,
+      "matched_J1_J2_deep_json_comparison": "Both candidate bodies equal their saved baseline with only the generic join instruction appended to messages[0].content. Candidate and baseline hashes are retained in matched-input-proof.json.",
+      "source_assessment_text_in_matched_requests": false
+    },
+    "runtime": "The call script validates projection/body/code/model pins, fixed slot and prior-stop evidence; each call checks bounded recent logs, inbox, queue, process state, shared loaded model, port, and shared lock. Fixed ordering, sequential calls, per-case/global deadlines, no-retry behavior, and terminal evidence are explicit.",
+    "review": "HR-033-v2 corrects the v1 future-tense claim, is registered, has 17 evidence cards and 18 comment boxes, zero exceptions, exact evidence text, and no glossary buttons inside source spans. Local renderer checks passed; browser/device rendering was not performed.",
+    "calls_started": 0
+  },
+  "differences": [
+    "No launch-binding or budget mismatch found in the reviewed frozen files.",
+    "The initial v1 review text incorrectly said model results were already shown. HR-033-v2 changes this to say model results will be added as calls finish; the frozen initial-packet hash points to v2.",
+    "The driver registers and verifies each first-result packet but does not send the human-facing review-desk notification. The operator must notify the human with the currently verified LAN link when the first actual sample is available; the call preflight checks the inbox before the next request."
+  ],
+  "limits": [
+    "This is a launch-script and binding review, not a source-accuracy audit or human approval.",
+    "The source readings remain provisional; this reviewer did not inspect the images.",
+    "No population accuracy, automatic adoption, native-fit, broader workflow, or P0 clearance follows from this diagnostic."
+  ]
+}

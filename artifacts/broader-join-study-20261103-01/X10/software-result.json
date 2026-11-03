@@ -1,0 +1,2548 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo00unit:1036:par_001036_000042",
+      "raw_text": "You are to have a code of rules adopted in the Interior Department, and Congress is to have the privilege of revising them ; and those rules are for the leasing and the preserving of mineral springs. I suppose the rules will be in the nature of ordinances which shall inflict fines and punishment if anybody fills a bottle of mineral water from mineral springs without",
+      "raw_sha256": "550bb3a586640f7a2c996ae2330e73a5aa387d0ca1b8cc2df406586e0daaec5f"
+    },
+    "static_text": "You are to have a code of rules adopted in the Interior Department, and Congress is to have the privilege of revising them ; and those rules are for the leasing and the preserving of mineral springs. I suppose the rules will be in the nature of ordinances which shall inflict fines and punishment if anybody fills a bottle of mineral water from mineral springs without",
+    "static_sha256": "550bb3a586640f7a2c996ae2330e73a5aa387d0ca1b8cc2df406586e0daaec5f",
+    "static_edits": [],
+    "lines": [
+      {
+        "line_id": "line_001036_000278",
+        "start": 0,
+        "end": 42,
+        "text": "You are to have a code of rules adopted in"
+      },
+      {
+        "line_id": "line_001036_000279",
+        "start": 43,
+        "end": 86,
+        "text": "the Interior Department, and Congress is to"
+      },
+      {
+        "line_id": "line_001036_000280",
+        "start": 87,
+        "end": 134,
+        "text": "have the privilege of revising them ; and those"
+      },
+      {
+        "line_id": "line_001036_000281",
+        "start": 135,
+        "end": 182,
+        "text": "rules are for the leasing and the preserving of"
+      },
+      {
+        "line_id": "line_001036_000282",
+        "start": 183,
+        "end": 227,
+        "text": "mineral springs. I suppose the rules will be"
+      },
+      {
+        "line_id": "line_001036_000283",
+        "start": 228,
+        "end": 275,
+        "text": "in the nature of ordinances which shall inflict"
+      },
+      {
+        "line_id": "line_001036_000284",
+        "start": 276,
+        "end": 322,
+        "text": "fines and punishment if anybody fills a bottle"
+      },
+      {
+        "line_id": "line_001036_000285",
+        "start": 323,
+        "end": 368,
+        "text": "of mineral water from mineral springs without"
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "724668a50bdf2ff7a66c99efebd25804f859b058cd0c7c35c53b139b0d7eae21"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "58d3fe8e10a55cd78ccd4d69e7d5e38cc8dc4e7891e1c989d0cf80475d450d53",
+  "proposed_text": "You are to have a code of rules adopted in the Interior Department, and Congress is to have the privilege of revising them ; and those rules are for the leasing and the preserving of mineral springs. I suppose the rules will be in the nature of ordinances which shall inflict fines and punishment if anybody fills a bottle of mineral water from mineral springs without",
+  "proposed_sha256": "550bb3a586640f7a2c996ae2330e73a5aa387d0ca1b8cc2df406586e0daaec5f",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 368,
+      "derived_start": 0,
+      "derived_end": 368,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 3,
+      "text": "You",
+      "raw_start": 0,
+      "raw_end": 3,
+      "raw_quote": "You",
+      "context": "You are to have a code of rules ado",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 7,
+      "text": "are",
+      "raw_start": 4,
+      "raw_end": 7,
+      "raw_quote": "are",
+      "context": "You are to have a code of rules adopted",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 8,
+      "end": 10,
+      "text": "to",
+      "raw_start": 8,
+      "raw_end": 10,
+      "raw_quote": "to",
+      "context": "You are to have a code of rules adopted in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 11,
+      "end": 15,
+      "text": "have",
+      "raw_start": 11,
+      "raw_end": 15,
+      "raw_quote": "have",
+      "context": "You are to have a code of rules adopted in the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 16,
+      "end": 17,
+      "text": "a",
+      "raw_start": 16,
+      "raw_end": 17,
+      "raw_quote": "a",
+      "context": "You are to have a code of rules adopted in the In",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 18,
+      "end": 22,
+      "text": "code",
+      "raw_start": 18,
+      "raw_end": 22,
+      "raw_quote": "code",
+      "context": "You are to have a code of rules adopted in the Interio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 23,
+      "end": 25,
+      "text": "of",
+      "raw_start": 23,
+      "raw_end": 25,
+      "raw_quote": "of",
+      "context": "You are to have a code of rules adopted in the Interior D",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 26,
+      "end": 31,
+      "text": "rules",
+      "raw_start": 26,
+      "raw_end": 31,
+      "raw_quote": "rules",
+      "context": "You are to have a code of rules adopted in the Interior Departm",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 32,
+      "end": 39,
+      "text": "adopted",
+      "raw_start": 32,
+      "raw_end": 39,
+      "raw_quote": "adopted",
+      "context": "You are to have a code of rules adopted in the Interior Department, and",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 40,
+      "end": 42,
+      "text": "in",
+      "raw_start": 40,
+      "raw_end": 42,
+      "raw_quote": "in",
+      "context": "to have a code of rules adopted in the Interior Department, and Co",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 43,
+      "end": 46,
+      "text": "the",
+      "raw_start": 43,
+      "raw_end": 46,
+      "raw_quote": "the",
+      "context": "have a code of rules adopted in the Interior Department, and Congre",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 47,
+      "end": 55,
+      "text": "Interior",
+      "raw_start": 47,
+      "raw_end": 55,
+      "raw_quote": "Interior",
+      "context": " a code of rules adopted in the Interior Department, and Congress is to ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 56,
+      "end": 66,
+      "text": "Department",
+      "raw_start": 56,
+      "raw_end": 66,
+      "raw_quote": "Department",
+      "context": "f rules adopted in the Interior Department, and Congress is to have the pr",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 68,
+      "end": 71,
+      "text": "and",
+      "raw_start": 68,
+      "raw_end": 71,
+      "raw_quote": "and",
+      "context": "ted in the Interior Department, and Congress is to have the privile",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 72,
+      "end": 80,
+      "text": "Congress",
+      "raw_start": 72,
+      "raw_end": 80,
+      "raw_quote": "Congress",
+      "context": "in the Interior Department, and Congress is to have the privilege of rev",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 81,
+      "end": 83,
+      "text": "is",
+      "raw_start": 81,
+      "raw_end": 83,
+      "raw_quote": "is",
+      "context": "terior Department, and Congress is to have the privilege of revisi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 84,
+      "end": 86,
+      "text": "to",
+      "raw_start": 84,
+      "raw_end": 86,
+      "raw_quote": "to",
+      "context": "ior Department, and Congress is to have the privilege of revising ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 87,
+      "end": 91,
+      "text": "have",
+      "raw_start": 87,
+      "raw_end": 91,
+      "raw_quote": "have",
+      "context": " Department, and Congress is to have the privilege of revising them ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 92,
+      "end": 95,
+      "text": "the",
+      "raw_start": 92,
+      "raw_end": 95,
+      "raw_quote": "the",
+      "context": "rtment, and Congress is to have the privilege of revising them ; an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 96,
+      "end": 105,
+      "text": "privilege",
+      "raw_start": 96,
+      "raw_end": 105,
+      "raw_quote": "privilege",
+      "context": "nt, and Congress is to have the privilege of revising them ; and those ru",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 106,
+      "end": 108,
+      "text": "of",
+      "raw_start": 106,
+      "raw_end": 108,
+      "raw_quote": "of",
+      "context": "ngress is to have the privilege of revising them ; and those rules",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 109,
+      "end": 117,
+      "text": "revising",
+      "raw_start": 109,
+      "raw_end": 117,
+      "raw_quote": "revising",
+      "context": "ess is to have the privilege of revising them ; and those rules are for ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 118,
+      "end": 122,
+      "text": "them",
+      "raw_start": 118,
+      "raw_end": 122,
+      "raw_quote": "them",
+      "context": " have the privilege of revising them ; and those rules are for the l",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 125,
+      "end": 128,
+      "text": "and",
+      "raw_start": 125,
+      "raw_end": 128,
+      "raw_quote": "and",
+      "context": "he privilege of revising them ; and those rules are for the leasing",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 129,
+      "end": 134,
+      "text": "those",
+      "raw_start": 129,
+      "raw_end": 134,
+      "raw_quote": "those",
+      "context": "rivilege of revising them ; and those rules are for the leasing and t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 135,
+      "end": 140,
+      "text": "rules",
+      "raw_start": 135,
+      "raw_end": 140,
+      "raw_quote": "rules",
+      "context": "ge of revising them ; and those rules are for the leasing and the pre",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 141,
+      "end": 144,
+      "text": "are",
+      "raw_start": 141,
+      "raw_end": 144,
+      "raw_quote": "are",
+      "context": "revising them ; and those rules are for the leasing and the preserv",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 145,
+      "end": 148,
+      "text": "for",
+      "raw_start": 145,
+      "raw_end": 148,
+      "raw_quote": "for",
+      "context": "sing them ; and those rules are for the leasing and the preserving ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 149,
+      "end": 152,
+      "text": "the",
+      "raw_start": 149,
+      "raw_end": 152,
+      "raw_quote": "the",
+      "context": " them ; and those rules are for the leasing and the preserving of m",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 153,
+      "end": 160,
+      "text": "leasing",
+      "raw_start": 153,
+      "raw_end": 160,
+      "raw_quote": "leasing",
+      "context": "m ; and those rules are for the leasing and the preserving of mineral s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 161,
+      "end": 164,
+      "text": "and",
+      "raw_start": 161,
+      "raw_end": 164,
+      "raw_quote": "and",
+      "context": "those rules are for the leasing and the preserving of mineral sprin",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 165,
+      "end": 168,
+      "text": "the",
+      "raw_start": 165,
+      "raw_end": 168,
+      "raw_quote": "the",
+      "context": "e rules are for the leasing and the preserving of mineral springs. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 169,
+      "end": 179,
+      "text": "preserving",
+      "raw_start": 169,
+      "raw_end": 179,
+      "raw_quote": "preserving",
+      "context": "les are for the leasing and the preserving of mineral springs. I suppose t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 180,
+      "end": 182,
+      "text": "of",
+      "raw_start": 180,
+      "raw_end": 182,
+      "raw_quote": "of",
+      "context": " the leasing and the preserving of mineral springs. I suppose the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 183,
+      "end": 190,
+      "text": "mineral",
+      "raw_start": 183,
+      "raw_end": 190,
+      "raw_quote": "mineral",
+      "context": "e leasing and the preserving of mineral springs. I suppose the rules wi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 191,
+      "end": 198,
+      "text": "springs",
+      "raw_start": 191,
+      "raw_end": 198,
+      "raw_quote": "springs",
+      "context": "g and the preserving of mineral springs. I suppose the rules will be in",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 200,
+      "end": 201,
+      "text": "I",
+      "raw_start": 200,
+      "raw_end": 201,
+      "raw_quote": "I",
+      "context": " preserving of mineral springs. I suppose the rules will be in th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 202,
+      "end": 209,
+      "text": "suppose",
+      "raw_start": 202,
+      "raw_end": 209,
+      "raw_quote": "suppose",
+      "context": "reserving of mineral springs. I suppose the rules will be in the nature",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 210,
+      "end": 213,
+      "text": "the",
+      "raw_start": 210,
+      "raw_end": 213,
+      "raw_quote": "the",
+      "context": "g of mineral springs. I suppose the rules will be in the nature of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 214,
+      "end": 219,
+      "text": "rules",
+      "raw_start": 214,
+      "raw_end": 219,
+      "raw_quote": "rules",
+      "context": " mineral springs. I suppose the rules will be in the nature of ordina",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 220,
+      "end": 224,
+      "text": "will",
+      "raw_start": 220,
+      "raw_end": 224,
+      "raw_quote": "will",
+      "context": "al springs. I suppose the rules will be in the nature of ordinances ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 225,
+      "end": 227,
+      "text": "be",
+      "raw_start": 225,
+      "raw_end": 227,
+      "raw_quote": "be",
+      "context": "rings. I suppose the rules will be in the nature of ordinances whi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 228,
+      "end": 230,
+      "text": "in",
+      "raw_start": 228,
+      "raw_end": 230,
+      "raw_quote": "in",
+      "context": "gs. I suppose the rules will be in the nature of ordinances which ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 231,
+      "end": 234,
+      "text": "the",
+      "raw_start": 231,
+      "raw_end": 234,
+      "raw_quote": "the",
+      "context": " I suppose the rules will be in the nature of ordinances which shal",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 235,
+      "end": 241,
+      "text": "nature",
+      "raw_start": 235,
+      "raw_end": 241,
+      "raw_quote": "nature",
+      "context": "uppose the rules will be in the nature of ordinances which shall infli",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 242,
+      "end": 244,
+      "text": "of",
+      "raw_start": 242,
+      "raw_end": 244,
+      "raw_quote": "of",
+      "context": "the rules will be in the nature of ordinances which shall inflict ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 245,
+      "end": 255,
+      "text": "ordinances",
+      "raw_start": 245,
+      "raw_end": 255,
+      "raw_quote": "ordinances",
+      "context": " rules will be in the nature of ordinances which shall inflict fines and p",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 256,
+      "end": 261,
+      "text": "which",
+      "raw_start": 256,
+      "raw_end": 261,
+      "raw_quote": "which",
+      "context": " be in the nature of ordinances which shall inflict fines and punishm",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 262,
+      "end": 267,
+      "text": "shall",
+      "raw_start": 262,
+      "raw_end": 267,
+      "raw_quote": "shall",
+      "context": " the nature of ordinances which shall inflict fines and punishment if",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 268,
+      "end": 275,
+      "text": "inflict",
+      "raw_start": 268,
+      "raw_end": 275,
+      "raw_quote": "inflict",
+      "context": "ature of ordinances which shall inflict fines and punishment if anybody",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 276,
+      "end": 281,
+      "text": "fines",
+      "raw_start": 276,
+      "raw_end": 281,
+      "raw_quote": "fines",
+      "context": " ordinances which shall inflict fines and punishment if anybody fills",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 282,
+      "end": 285,
+      "text": "and",
+      "raw_start": 282,
+      "raw_end": 285,
+      "raw_quote": "and",
+      "context": "ances which shall inflict fines and punishment if anybody fills a b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 286,
+      "end": 296,
+      "text": "punishment",
+      "raw_start": 286,
+      "raw_end": 296,
+      "raw_quote": "punishment",
+      "context": "s which shall inflict fines and punishment if anybody fills a bottle of mi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 297,
+      "end": 299,
+      "text": "if",
+      "raw_start": 297,
+      "raw_end": 299,
+      "raw_quote": "if",
+      "context": "ll inflict fines and punishment if anybody fills a bottle of miner",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 300,
+      "end": 307,
+      "text": "anybody",
+      "raw_start": 300,
+      "raw_end": 307,
+      "raw_quote": "anybody",
+      "context": "inflict fines and punishment if anybody fills a bottle of mineral water",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 308,
+      "end": 313,
+      "text": "fills",
+      "raw_start": 308,
+      "raw_end": 313,
+      "raw_quote": "fills",
+      "context": "fines and punishment if anybody fills a bottle of mineral water from ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 314,
+      "end": 315,
+      "text": "a",
+      "raw_start": 314,
+      "raw_end": 315,
+      "raw_quote": "a",
+      "context": "and punishment if anybody fills a bottle of mineral water from mi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 316,
+      "end": 322,
+      "text": "bottle",
+      "raw_start": 316,
+      "raw_end": 322,
+      "raw_quote": "bottle",
+      "context": "d punishment if anybody fills a bottle of mineral water from mineral s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 323,
+      "end": 325,
+      "text": "of",
+      "raw_start": 323,
+      "raw_end": 325,
+      "raw_quote": "of",
+      "context": "hment if anybody fills a bottle of mineral water from mineral spri",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 326,
+      "end": 333,
+      "text": "mineral",
+      "raw_start": 326,
+      "raw_end": 333,
+      "raw_quote": "mineral",
+      "context": "nt if anybody fills a bottle of mineral water from mineral springs with",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 334,
+      "end": 339,
+      "text": "water",
+      "raw_start": 334,
+      "raw_end": 339,
+      "raw_quote": "water",
+      "context": "ybody fills a bottle of mineral water from mineral springs without",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 340,
+      "end": 344,
+      "text": "from",
+      "raw_start": 340,
+      "raw_end": 344,
+      "raw_quote": "from",
+      "context": "fills a bottle of mineral water from mineral springs without",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 345,
+      "end": 352,
+      "text": "mineral",
+      "raw_start": 345,
+      "raw_end": 352,
+      "raw_quote": "mineral",
+      "context": " a bottle of mineral water from mineral springs without",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 353,
+      "end": 360,
+      "text": "springs",
+      "raw_start": 353,
+      "raw_end": 360,
+      "raw_quote": "springs",
+      "context": "e of mineral water from mineral springs without",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 361,
+      "end": 368,
+      "text": "without",
+      "raw_start": 361,
+      "raw_end": 368,
+      "raw_quote": "without",
+      "context": "eral water from mineral springs without",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 3,
+      "text": "You",
+      "raw_start": 0,
+      "raw_end": 3,
+      "raw_quote": "You",
+      "context": "You are to have a code of rules ado",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 7,
+      "text": "are",
+      "raw_start": 4,
+      "raw_end": 7,
+      "raw_quote": "are",
+      "context": "You are to have a code of rules adopted",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 8,
+      "end": 10,
+      "text": "to",
+      "raw_start": 8,
+      "raw_end": 10,
+      "raw_quote": "to",
+      "context": "You are to have a code of rules adopted in",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 11,
+      "end": 15,
+      "text": "have",
+      "raw_start": 11,
+      "raw_end": 15,
+      "raw_quote": "have",
+      "context": "You are to have a code of rules adopted in the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 16,
+      "end": 17,
+      "text": "a",
+      "raw_start": 16,
+      "raw_end": 17,
+      "raw_quote": "a",
+      "context": "You are to have a code of rules adopted in the In",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 18,
+      "end": 22,
+      "text": "code",
+      "raw_start": 18,
+      "raw_end": 22,
+      "raw_quote": "code",
+      "context": "You are to have a code of rules adopted in the Interio",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 23,
+      "end": 25,
+      "text": "of",
+      "raw_start": 23,
+      "raw_end": 25,
+      "raw_quote": "of",
+      "context": "You are to have a code of rules adopted in the Interior D",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 26,
+      "end": 31,
+      "text": "rules",
+      "raw_start": 26,
+      "raw_end": 31,
+      "raw_quote": "rules",
+      "context": "You are to have a code of rules adopted in the Interior Departm",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 32,
+      "end": 39,
+      "text": "adopted",
+      "raw_start": 32,
+      "raw_end": 39,
+      "raw_quote": "adopted",
+      "context": "You are to have a code of rules adopted in the Interior Department, and",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 40,
+      "end": 42,
+      "text": "in",
+      "raw_start": 40,
+      "raw_end": 42,
+      "raw_quote": "in",
+      "context": "to have a code of rules adopted in the Interior Department, and Co",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 43,
+      "end": 46,
+      "text": "the",
+      "raw_start": 43,
+      "raw_end": 46,
+      "raw_quote": "the",
+      "context": "have a code of rules adopted in the Interior Department, and Congre",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 47,
+      "end": 55,
+      "text": "Interior",
+      "raw_start": 47,
+      "raw_end": 55,
+      "raw_quote": "Interior",
+      "context": " a code of rules adopted in the Interior Department, and Congress is to ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 56,
+      "end": 66,
+      "text": "Department",
+      "raw_start": 56,
+      "raw_end": 66,
+      "raw_quote": "Department",
+      "context": "f rules adopted in the Interior Department, and Congress is to have the pr",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 68,
+      "end": 71,
+      "text": "and",
+      "raw_start": 68,
+      "raw_end": 71,
+      "raw_quote": "and",
+      "context": "ted in the Interior Department, and Congress is to have the privile",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 72,
+      "end": 80,
+      "text": "Congress",
+      "raw_start": 72,
+      "raw_end": 80,
+      "raw_quote": "Congress",
+      "context": "in the Interior Department, and Congress is to have the privilege of rev",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 81,
+      "end": 83,
+      "text": "is",
+      "raw_start": 81,
+      "raw_end": 83,
+      "raw_quote": "is",
+      "context": "terior Department, and Congress is to have the privilege of revisi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 84,
+      "end": 86,
+      "text": "to",
+      "raw_start": 84,
+      "raw_end": 86,
+      "raw_quote": "to",
+      "context": "ior Department, and Congress is to have the privilege of revising ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 87,
+      "end": 91,
+      "text": "have",
+      "raw_start": 87,
+      "raw_end": 91,
+      "raw_quote": "have",
+      "context": " Department, and Congress is to have the privilege of revising them ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 92,
+      "end": 95,
+      "text": "the",
+      "raw_start": 92,
+      "raw_end": 95,
+      "raw_quote": "the",
+      "context": "rtment, and Congress is to have the privilege of revising them ; an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 96,
+      "end": 105,
+      "text": "privilege",
+      "raw_start": 96,
+      "raw_end": 105,
+      "raw_quote": "privilege",
+      "context": "nt, and Congress is to have the privilege of revising them ; and those ru",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 106,
+      "end": 108,
+      "text": "of",
+      "raw_start": 106,
+      "raw_end": 108,
+      "raw_quote": "of",
+      "context": "ngress is to have the privilege of revising them ; and those rules",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 109,
+      "end": 117,
+      "text": "revising",
+      "raw_start": 109,
+      "raw_end": 117,
+      "raw_quote": "revising",
+      "context": "ess is to have the privilege of revising them ; and those rules are for ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 118,
+      "end": 122,
+      "text": "them",
+      "raw_start": 118,
+      "raw_end": 122,
+      "raw_quote": "them",
+      "context": " have the privilege of revising them ; and those rules are for the l",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 125,
+      "end": 128,
+      "text": "and",
+      "raw_start": 125,
+      "raw_end": 128,
+      "raw_quote": "and",
+      "context": "he privilege of revising them ; and those rules are for the leasing",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 129,
+      "end": 134,
+      "text": "those",
+      "raw_start": 129,
+      "raw_end": 134,
+      "raw_quote": "those",
+      "context": "rivilege of revising them ; and those rules are for the leasing and t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 135,
+      "end": 140,
+      "text": "rules",
+      "raw_start": 135,
+      "raw_end": 140,
+      "raw_quote": "rules",
+      "context": "ge of revising them ; and those rules are for the leasing and the pre",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 141,
+      "end": 144,
+      "text": "are",
+      "raw_start": 141,
+      "raw_end": 144,
+      "raw_quote": "are",
+      "context": "revising them ; and those rules are for the leasing and the preserv",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 145,
+      "end": 148,
+      "text": "for",
+      "raw_start": 145,
+      "raw_end": 148,
+      "raw_quote": "for",
+      "context": "sing them ; and those rules are for the leasing and the preserving ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 149,
+      "end": 152,
+      "text": "the",
+      "raw_start": 149,
+      "raw_end": 152,
+      "raw_quote": "the",
+      "context": " them ; and those rules are for the leasing and the preserving of m",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 153,
+      "end": 160,
+      "text": "leasing",
+      "raw_start": 153,
+      "raw_end": 160,
+      "raw_quote": "leasing",
+      "context": "m ; and those rules are for the leasing and the preserving of mineral s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 161,
+      "end": 164,
+      "text": "and",
+      "raw_start": 161,
+      "raw_end": 164,
+      "raw_quote": "and",
+      "context": "those rules are for the leasing and the preserving of mineral sprin",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 165,
+      "end": 168,
+      "text": "the",
+      "raw_start": 165,
+      "raw_end": 168,
+      "raw_quote": "the",
+      "context": "e rules are for the leasing and the preserving of mineral springs. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 169,
+      "end": 179,
+      "text": "preserving",
+      "raw_start": 169,
+      "raw_end": 179,
+      "raw_quote": "preserving",
+      "context": "les are for the leasing and the preserving of mineral springs. I suppose t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 180,
+      "end": 182,
+      "text": "of",
+      "raw_start": 180,
+      "raw_end": 182,
+      "raw_quote": "of",
+      "context": " the leasing and the preserving of mineral springs. I suppose the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 183,
+      "end": 190,
+      "text": "mineral",
+      "raw_start": 183,
+      "raw_end": 190,
+      "raw_quote": "mineral",
+      "context": "e leasing and the preserving of mineral springs. I suppose the rules wi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 191,
+      "end": 198,
+      "text": "springs",
+      "raw_start": 191,
+      "raw_end": 198,
+      "raw_quote": "springs",
+      "context": "g and the preserving of mineral springs. I suppose the rules will be in",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 200,
+      "end": 201,
+      "text": "I",
+      "raw_start": 200,
+      "raw_end": 201,
+      "raw_quote": "I",
+      "context": " preserving of mineral springs. I suppose the rules will be in th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 202,
+      "end": 209,
+      "text": "suppose",
+      "raw_start": 202,
+      "raw_end": 209,
+      "raw_quote": "suppose",
+      "context": "reserving of mineral springs. I suppose the rules will be in the nature",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 210,
+      "end": 213,
+      "text": "the",
+      "raw_start": 210,
+      "raw_end": 213,
+      "raw_quote": "the",
+      "context": "g of mineral springs. I suppose the rules will be in the nature of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 214,
+      "end": 219,
+      "text": "rules",
+      "raw_start": 214,
+      "raw_end": 219,
+      "raw_quote": "rules",
+      "context": " mineral springs. I suppose the rules will be in the nature of ordina",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 220,
+      "end": 224,
+      "text": "will",
+      "raw_start": 220,
+      "raw_end": 224,
+      "raw_quote": "will",
+      "context": "al springs. I suppose the rules will be in the nature of ordinances ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 225,
+      "end": 227,
+      "text": "be",
+      "raw_start": 225,
+      "raw_end": 227,
+      "raw_quote": "be",
+      "context": "rings. I suppose the rules will be in the nature of ordinances whi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 228,
+      "end": 230,
+      "text": "in",
+      "raw_start": 228,
+      "raw_end": 230,
+      "raw_quote": "in",
+      "context": "gs. I suppose the rules will be in the nature of ordinances which ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 231,
+      "end": 234,
+      "text": "the",
+      "raw_start": 231,
+      "raw_end": 234,
+      "raw_quote": "the",
+      "context": " I suppose the rules will be in the nature of ordinances which shal",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 235,
+      "end": 241,
+      "text": "nature",
+      "raw_start": 235,
+      "raw_end": 241,
+      "raw_quote": "nature",
+      "context": "uppose the rules will be in the nature of ordinances which shall infli",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 242,
+      "end": 244,
+      "text": "of",
+      "raw_start": 242,
+      "raw_end": 244,
+      "raw_quote": "of",
+      "context": "the rules will be in the nature of ordinances which shall inflict ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 245,
+      "end": 255,
+      "text": "ordinances",
+      "raw_start": 245,
+      "raw_end": 255,
+      "raw_quote": "ordinances",
+      "context": " rules will be in the nature of ordinances which shall inflict fines and p",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 256,
+      "end": 261,
+      "text": "which",
+      "raw_start": 256,
+      "raw_end": 261,
+      "raw_quote": "which",
+      "context": " be in the nature of ordinances which shall inflict fines and punishm",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 262,
+      "end": 267,
+      "text": "shall",
+      "raw_start": 262,
+      "raw_end": 267,
+      "raw_quote": "shall",
+      "context": " the nature of ordinances which shall inflict fines and punishment if",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 268,
+      "end": 275,
+      "text": "inflict",
+      "raw_start": 268,
+      "raw_end": 275,
+      "raw_quote": "inflict",
+      "context": "ature of ordinances which shall inflict fines and punishment if anybody",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 276,
+      "end": 281,
+      "text": "fines",
+      "raw_start": 276,
+      "raw_end": 281,
+      "raw_quote": "fines",
+      "context": " ordinances which shall inflict fines and punishment if anybody fills",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 282,
+      "end": 285,
+      "text": "and",
+      "raw_start": 282,
+      "raw_end": 285,
+      "raw_quote": "and",
+      "context": "ances which shall inflict fines and punishment if anybody fills a b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 286,
+      "end": 296,
+      "text": "punishment",
+      "raw_start": 286,
+      "raw_end": 296,
+      "raw_quote": "punishment",
+      "context": "s which shall inflict fines and punishment if anybody fills a bottle of mi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 297,
+      "end": 299,
+      "text": "if",
+      "raw_start": 297,
+      "raw_end": 299,
+      "raw_quote": "if",
+      "context": "ll inflict fines and punishment if anybody fills a bottle of miner",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 300,
+      "end": 307,
+      "text": "anybody",
+      "raw_start": 300,
+      "raw_end": 307,
+      "raw_quote": "anybody",
+      "context": "inflict fines and punishment if anybody fills a bottle of mineral water",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 308,
+      "end": 313,
+      "text": "fills",
+      "raw_start": 308,
+      "raw_end": 313,
+      "raw_quote": "fills",
+      "context": "fines and punishment if anybody fills a bottle of mineral water from ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 314,
+      "end": 315,
+      "text": "a",
+      "raw_start": 314,
+      "raw_end": 315,
+      "raw_quote": "a",
+      "context": "and punishment if anybody fills a bottle of mineral water from mi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 316,
+      "end": 322,
+      "text": "bottle",
+      "raw_start": 316,
+      "raw_end": 322,
+      "raw_quote": "bottle",
+      "context": "d punishment if anybody fills a bottle of mineral water from mineral s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 323,
+      "end": 325,
+      "text": "of",
+      "raw_start": 323,
+      "raw_end": 325,
+      "raw_quote": "of",
+      "context": "hment if anybody fills a bottle of mineral water from mineral spri",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 326,
+      "end": 333,
+      "text": "mineral",
+      "raw_start": 326,
+      "raw_end": 333,
+      "raw_quote": "mineral",
+      "context": "nt if anybody fills a bottle of mineral water from mineral springs with",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 334,
+      "end": 339,
+      "text": "water",
+      "raw_start": 334,
+      "raw_end": 339,
+      "raw_quote": "water",
+      "context": "ybody fills a bottle of mineral water from mineral springs without",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 340,
+      "end": 344,
+      "text": "from",
+      "raw_start": 340,
+      "raw_end": 344,
+      "raw_quote": "from",
+      "context": "fills a bottle of mineral water from mineral springs without",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 345,
+      "end": 352,
+      "text": "mineral",
+      "raw_start": 345,
+      "raw_end": 352,
+      "raw_quote": "mineral",
+      "context": " a bottle of mineral water from mineral springs without",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 353,
+      "end": 360,
+      "text": "springs",
+      "raw_start": 353,
+      "raw_end": 360,
+      "raw_quote": "springs",
+      "context": "e of mineral water from mineral springs without",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 361,
+      "end": 368,
+      "text": "without",
+      "raw_start": 361,
+      "raw_end": 368,
+      "raw_quote": "without",
+      "context": "eral water from mineral springs without",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo00unit:1036:par_001036_000042",
+      "raw_text": "You are to have a code of rules adopted in the Interior Department, and Congress is to have the privilege of revising them ; and those rules are for the leasing and the preserving of mineral springs. I suppose the rules will be in the nature of ordinances which shall inflict fines and punishment if anybody fills a bottle of mineral water from mineral springs without",
+      "raw_sha256": "550bb3a586640f7a2c996ae2330e73a5aa387d0ca1b8cc2df406586e0daaec5f"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo00unit:1036:par_001036_000042",
+        "raw_text": "You are to have a code of rules adopted in the Interior Department, and Congress is to have the privilege of revising them ; and those rules are for the leasing and the preserving of mineral springs. I suppose the rules will be in the nature of ordinances which shall inflict fines and punishment if anybody fills a bottle of mineral water from mineral springs without",
+        "raw_sha256": "550bb3a586640f7a2c996ae2330e73a5aa387d0ca1b8cc2df406586e0daaec5f"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "You are to have a code of rules adopted in the Interior Department, and Congress is to have the privilege of revising them ; and those rules are for the leasing and the preserving of mineral springs. I suppose the rules will be in the nature of ordinances which shall inflict fines and punishment if anybody fills a bottle of mineral water from mineral springs without",
+    "proposed_sha256": "550bb3a586640f7a2c996ae2330e73a5aa387d0ca1b8cc2df406586e0daaec5f",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

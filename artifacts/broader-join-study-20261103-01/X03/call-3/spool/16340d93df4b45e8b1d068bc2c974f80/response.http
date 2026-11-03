@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 21:58:04 GMT
+Content-Length: 1285
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T21:58:04.31517Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"“The conqueror dethrones the sovereign and assumes the dominion of the conquered territory; but as a general rule he does no more. It has been well laid down by the tribunals of the North American United States that the modern usage of nations, that large and important part of the international law, would be violated, the sense of justice and of right, which is felt and acknowledged by the civilized world, would be outraged, if private property were generally confiscated and private rights annulled. The people, indeed, change their allegiance; their relation to their ancient sovereign is dissolved; but their relations to each other and their rights of property remain undisturbed.”\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"X03\"\n}"},"done":true,"done_reason":"stop","total_duration":39851865042,"load_duration":3412763750,"prompt_eval_count":3551,"prompt_eval_cached_count":0,"prompt_eval_duration":29082613750,"eval_count":220,"eval_duration":7326528791}

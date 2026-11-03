@@ -1,0 +1,11 @@
+import json
+from pathlib import Path
+from congressional_globe.models import PageRecord
+from congressional_globe.scan_geometry import target_from_page
+from congressional_globe.scan_fetch import prepare_bundle
+root=Path('artifacts/broader-join-study-20261103-01');freeze=json.loads((root/'selection-freeze.json').read_bytes());parts={x['identifier']:x for x in json.loads(Path('artifacts/runs/static-final-20261011/workflow_manifest.json').read_bytes())['parts']}
+for x in [x for x in freeze['cases'] if x['case'].startswith('X')]:
+ d=root/x['case'];d.mkdir(exist_ok=True);raw=Path(f'tmp/t134-source-prep/part{x["part"]}-leaf{x["leaf"]}.jsonl').read_bytes();page=PageRecord.model_validate_json(raw);part=parts[page.item_identifier]
+ target=target_from_page(page,x['paragraph_id'],part['hocr_sha256'],part['page_map_sha256'],padding=0,max_width=1600)
+ assert target.raw_sha256==x['raw_sha256'];(d/'source-page.jsonl').write_bytes(raw);prepare_bundle(d/'image',target)
+print('Three exact native-paragraph image targets prepared; no fetch yet.')

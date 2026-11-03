@@ -1,0 +1,23 @@
+import json,tempfile,os,sys
+from pathlib import Path
+from streamlit.testing.v1 import AppTest
+from lxml import html
+from congressional_globe.review_store import ReviewStore
+from congressional_globe.review_evidence import evidence_html
+from congressional_globe.review_glossary import definitions
+version=sys.argv[1] if len(sys.argv)>1 else '1'
+review_id=sys.argv[2] if len(sys.argv)>2 else 'HR-028'
+artifact={'HR-028':'fresh-workflow-audit-20261102-01','HR-029':'lexical-suggestions-20261102-01','HR-030':'expanded-workflow-audit-20261103-01','HR-031':'source-fragment-guard-20261103-01','HR-032':'remaining-parts-audit-20261103-01','HR-033':'broader-join-study-20261103-01'}[review_id]
+p=json.loads(Path(f'docs/review-packets/{review_id}-v{version}.json').read_text())
+with tempfile.TemporaryDirectory() as d:
+ os.environ['GLOBE_REVIEW_DATABASE']=d+'/reviews.sqlite';ReviewStore(Path(d)/'reviews.sqlite').register(p)
+ app=AppTest.from_string('from congressional_globe.review_app import main\nmain()').run();assert not app.exception
+ app.text_input(key='reviewer').set_value('Isolated synthetic check').run();assert not app.exception
+ for i,e in enumerate(p['questions'][0]['evidence']):
+  tree=html.fragment_fromstring(evidence_html(e['text'],str(i)),create_parent='div')
+  assert not tree.xpath('.//span[@class="review-source-text"]//button')
+  for pop in tree.xpath('.//*[@popover]'):pop.drop_tree()
+  assert tree.text_content()==e['text']
+ assert len(app.text_area)==len(p['questions'][0]['evidence'])+1
+ report={'packet':f'{review_id}v{version}','exceptions':0,'comment_boxes':len(app.text_area),'historical_glossary_buttons':0,'all_evidence_text_exact':True,'browser_device_check':False}
+ Path(f'artifacts/{artifact}/review-v{version}-checks.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report))

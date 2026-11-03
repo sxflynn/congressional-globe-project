@@ -1,0 +1,3666 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7395unit:99:par_000099_000103",
+      "raw_text": "bill (H. R. No. 513) to amend an act to pro- vide internal, to support the Govern- ment, to pay interest on the public debt, and for other purposes, approved June 30, 1864, and acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+      "raw_sha256": "48aff21027939c15db0c4f10e827147e0e35267589e1c6fbe43eb33ce1d1bfd5"
+    },
+    "static_text": "bill (H. R. No. 513) to amend an act to provide internal, to support the Government, to pay interest on the public debt, and for other purposes, approved June 30, 1864, and acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+    "static_sha256": "de70a3af80fd82a0f000b41b07f1e2b4a625ad4a9cfe462c6a42a45ce3fafc6f",
+    "static_edits": [
+      {
+        "start": 40,
+        "end": 49,
+        "raw_quote": "pro- vide",
+        "replacement": "provide",
+        "rule_id": "adjacent-line wrap; lexicon form provide"
+      },
+      {
+        "start": 75,
+        "end": 87,
+        "raw_quote": "Govern- ment",
+        "replacement": "Government",
+        "rule_id": "adjacent-line wrap; lexicon form government"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000099_000163",
+        "start": 0,
+        "end": 44,
+        "text": "bill (H. R. No. 513) to amend an act to pro-"
+      },
+      {
+        "line_id": "line_000099_000164",
+        "start": 45,
+        "end": 82,
+        "text": "vide internal, to support the Govern-"
+      },
+      {
+        "line_id": "line_000099_000165",
+        "start": 83,
+        "end": 124,
+        "text": "ment, to pay interest on the public debt,"
+      },
+      {
+        "line_id": "line_000099_000166",
+        "start": 125,
+        "end": 162,
+        "text": "and for other purposes, approved June"
+      },
+      {
+        "line_id": "line_000099_000167",
+        "start": 163,
+        "end": 201,
+        "text": "30, 1864, and acts amendatory thereof,"
+      },
+      {
+        "line_id": "line_000099_000168",
+        "start": 202,
+        "end": 237,
+        "text": "2187, 2215, 2434, 2473, 2476, 2513,"
+      },
+      {
+        "line_id": "line_000099_000169",
+        "start": 238,
+        "end": 273,
+        "text": "2546, 2575, 2579, 2603, 2608, 2626,"
+      },
+      {
+        "line_id": "line_000099_000170",
+        "start": 274,
+        "end": 309,
+        "text": "2632, 2633, 2656, 2659, 2663, 2679,"
+      },
+      {
+        "line_id": "line_000099_000171",
+        "start": 310,
+        "end": 347,
+        "text": "-.2683, 2688, 2727, 2730, 2733, 2744,"
+      },
+      {
+        "line_id": "line_000099_000172",
+        "start": 348,
+        "end": 383,
+        "text": "2747, 2753, 2750, 2759, 2780, 2785,"
+      },
+      {
+        "line_id": "line_000099_000173",
+        "start": 384,
+        "end": 419,
+        "text": "2786, 2788, 2810, 2817, 2827, 2831,"
+      },
+      {
+        "line_id": "line_000099_000174",
+        "start": 420,
+        "end": 455,
+        "text": "2839, 2851, 2859, 3417, 3418, 3419,"
+      },
+      {
+        "line_id": "line_000099_000175",
+        "start": 456,
+        "end": 492,
+        "text": "• 3420, 3443, 3464, 3033, 3793, 3846"
+      },
+      {
+        "line_id": "line_000099_000176",
+        "start": 493,
+        "end": 514,
+        "text": "remarlfs on the, by —"
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "7e52a2c885348e8e240331ae48dfb008e143f25f5cdf0e9be360f6e11b906c76"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "ba354b228b18d4ffeb026e88fad1a840bca5133361b26e4477dc9253656a7ff9",
+  "proposed_text": "bill (H. R. No. 513) to amend an act to provide internal, to support the Govern- ment, to pay interest on the public debt, and for other purposes, approved June 30, 1864, and acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+  "proposed_sha256": "984b17e2af6ecf9d9c810fc943564b8e651dc72195721b2ac01690d39e27f02a",
+  "proposed_edits": [
+    {
+      "start": 40,
+      "end": 49,
+      "raw_quote": "pro- vide",
+      "replacement": "provide",
+      "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+    }
+  ],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 40,
+      "derived_start": 0,
+      "derived_end": 40,
+      "mapping": "exact_copy"
+    },
+    {
+      "raw_start": 40,
+      "raw_end": 49,
+      "derived_start": 40,
+      "derived_end": 47,
+      "mapping": "replacement"
+    },
+    {
+      "raw_start": 49,
+      "raw_end": 514,
+      "derived_start": 47,
+      "derived_end": 512,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 40,
+      "end": 49,
+      "raw_quote": "pro- vide",
+      "joined_candidate": "provide",
+      "decision": "proposed_join",
+      "reason": "guarded_adjacent_line_join"
+    },
+    {
+      "start": 75,
+      "end": 87,
+      "raw_quote": "Govern- ment",
+      "joined_candidate": "Government",
+      "decision": "retained_for_review",
+      "reason": "uppercase_or_nonlowercase"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 4,
+      "text": "bill",
+      "raw_start": 0,
+      "raw_end": 4,
+      "raw_quote": "bill",
+      "context": "bill (H. R. No. 513) to amend an act",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 6,
+      "end": 7,
+      "text": "H",
+      "raw_start": 6,
+      "raw_end": 7,
+      "raw_quote": "H",
+      "context": "bill (H. R. No. 513) to amend an act to",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 9,
+      "end": 10,
+      "text": "R",
+      "raw_start": 9,
+      "raw_end": 10,
+      "raw_quote": "R",
+      "context": "bill (H. R. No. 513) to amend an act to pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 12,
+      "end": 14,
+      "text": "No",
+      "raw_start": 12,
+      "raw_end": 14,
+      "raw_quote": "No",
+      "context": "bill (H. R. No. 513) to amend an act to pro- v",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 16,
+      "end": 19,
+      "text": "513",
+      "raw_start": 16,
+      "raw_end": 19,
+      "raw_quote": "513",
+      "context": "bill (H. R. No. 513) to amend an act to pro- vide i",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 21,
+      "end": 23,
+      "text": "to",
+      "raw_start": 21,
+      "raw_end": 23,
+      "raw_quote": "to",
+      "context": "bill (H. R. No. 513) to amend an act to pro- vide inter",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 24,
+      "end": 29,
+      "text": "amend",
+      "raw_start": 24,
+      "raw_end": 29,
+      "raw_quote": "amend",
+      "context": "bill (H. R. No. 513) to amend an act to pro- vide internal, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 30,
+      "end": 32,
+      "text": "an",
+      "raw_start": 30,
+      "raw_end": 32,
+      "raw_quote": "an",
+      "context": "bill (H. R. No. 513) to amend an act to pro- vide internal, to s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 33,
+      "end": 36,
+      "text": "act",
+      "raw_start": 33,
+      "raw_end": 36,
+      "raw_quote": "act",
+      "context": "ill (H. R. No. 513) to amend an act to pro- vide internal, to suppo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 37,
+      "end": 39,
+      "text": "to",
+      "raw_start": 37,
+      "raw_end": 39,
+      "raw_quote": "to",
+      "context": "(H. R. No. 513) to amend an act to pro- vide internal, to support ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 40,
+      "end": 43,
+      "text": "pro",
+      "raw_start": 40,
+      "raw_end": 43,
+      "raw_quote": "pro",
+      "context": " R. No. 513) to amend an act to pro- vide internal, to support the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 45,
+      "end": 49,
+      "text": "vide",
+      "raw_start": 45,
+      "raw_end": 49,
+      "raw_quote": "vide",
+      "context": "o. 513) to amend an act to pro- vide internal, to support the Govern",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 50,
+      "end": 58,
+      "text": "internal",
+      "raw_start": 50,
+      "raw_end": 58,
+      "raw_quote": "internal",
+      "context": "3) to amend an act to pro- vide internal, to support the Govern- ment, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 60,
+      "end": 62,
+      "text": "to",
+      "raw_start": 60,
+      "raw_end": 62,
+      "raw_quote": "to",
+      "context": "d an act to pro- vide internal, to support the Govern- ment, to pa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 63,
+      "end": 70,
+      "text": "support",
+      "raw_start": 63,
+      "raw_end": 70,
+      "raw_quote": "support",
+      "context": "n act to pro- vide internal, to support the Govern- ment, to pay intere",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 71,
+      "end": 74,
+      "text": "the",
+      "raw_start": 71,
+      "raw_end": 74,
+      "raw_quote": "the",
+      "context": " pro- vide internal, to support the Govern- ment, to pay interest o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 75,
+      "end": 81,
+      "text": "Govern",
+      "raw_start": 75,
+      "raw_end": 81,
+      "raw_quote": "Govern",
+      "context": "- vide internal, to support the Govern- ment, to pay interest on the p",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 83,
+      "end": 87,
+      "text": "ment",
+      "raw_start": 83,
+      "raw_end": 87,
+      "raw_quote": "ment",
+      "context": "nternal, to support the Govern- ment, to pay interest on the public ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 89,
+      "end": 91,
+      "text": "to",
+      "raw_start": 89,
+      "raw_end": 91,
+      "raw_quote": "to",
+      "context": "l, to support the Govern- ment, to pay interest on the public debt",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 92,
+      "end": 95,
+      "text": "pay",
+      "raw_start": 92,
+      "raw_end": 95,
+      "raw_quote": "pay",
+      "context": "to support the Govern- ment, to pay interest on the public debt, an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 96,
+      "end": 104,
+      "text": "interest",
+      "raw_start": 96,
+      "raw_end": 104,
+      "raw_quote": "interest",
+      "context": "upport the Govern- ment, to pay interest on the public debt, and for oth",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 105,
+      "end": 107,
+      "text": "on",
+      "raw_start": 105,
+      "raw_end": 107,
+      "raw_quote": "on",
+      "context": "e Govern- ment, to pay interest on the public debt, and for other ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 108,
+      "end": 111,
+      "text": "the",
+      "raw_start": 108,
+      "raw_end": 111,
+      "raw_quote": "the",
+      "context": "overn- ment, to pay interest on the public debt, and for other purp",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 112,
+      "end": 118,
+      "text": "public",
+      "raw_start": 112,
+      "raw_end": 118,
+      "raw_quote": "public",
+      "context": "n- ment, to pay interest on the public debt, and for other purposes, a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 119,
+      "end": 123,
+      "text": "debt",
+      "raw_start": 119,
+      "raw_end": 123,
+      "raw_quote": "debt",
+      "context": ", to pay interest on the public debt, and for other purposes, approv",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 125,
+      "end": 128,
+      "text": "and",
+      "raw_start": 125,
+      "raw_end": 128,
+      "raw_quote": "and",
+      "context": "ay interest on the public debt, and for other purposes, approved Ju",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 129,
+      "end": 132,
+      "text": "for",
+      "raw_start": 129,
+      "raw_end": 132,
+      "raw_quote": "for",
+      "context": "nterest on the public debt, and for other purposes, approved June 3",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 133,
+      "end": 138,
+      "text": "other",
+      "raw_start": 133,
+      "raw_end": 138,
+      "raw_quote": "other",
+      "context": "est on the public debt, and for other purposes, approved June 30, 186",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 139,
+      "end": 147,
+      "text": "purposes",
+      "raw_start": 139,
+      "raw_end": 147,
+      "raw_quote": "purposes",
+      "context": " the public debt, and for other purposes, approved June 30, 1864, and ac",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 149,
+      "end": 157,
+      "text": "approved",
+      "raw_start": 149,
+      "raw_end": 157,
+      "raw_quote": "approved",
+      "context": "c debt, and for other purposes, approved June 30, 1864, and acts amendat",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 158,
+      "end": 162,
+      "text": "June",
+      "raw_start": 158,
+      "raw_end": 162,
+      "raw_quote": "June",
+      "context": "nd for other purposes, approved June 30, 1864, and acts amendatory t",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate",
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 163,
+      "end": 165,
+      "text": "30",
+      "raw_start": 163,
+      "raw_end": 165,
+      "raw_quote": "30",
+      "context": "r other purposes, approved June 30, 1864, and acts amendatory ther",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 167,
+      "end": 171,
+      "text": "1864",
+      "raw_start": 167,
+      "raw_end": 171,
+      "raw_quote": "1864",
+      "context": "her purposes, approved June 30, 1864, and acts amendatory thereof, 2",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 173,
+      "end": 176,
+      "text": "and",
+      "raw_start": 173,
+      "raw_end": 176,
+      "raw_quote": "and",
+      "context": "rposes, approved June 30, 1864, and acts amendatory thereof, 2187, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 177,
+      "end": 181,
+      "text": "acts",
+      "raw_start": 177,
+      "raw_end": 181,
+      "raw_quote": "acts",
+      "context": "es, approved June 30, 1864, and acts amendatory thereof, 2187, 2215,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 182,
+      "end": 192,
+      "text": "amendatory",
+      "raw_start": 182,
+      "raw_end": 192,
+      "raw_quote": "amendatory",
+      "context": "pproved June 30, 1864, and acts amendatory thereof, 2187, 2215, 2434, 2473",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 193,
+      "end": 200,
+      "text": "thereof",
+      "raw_start": 193,
+      "raw_end": 200,
+      "raw_quote": "thereof",
+      "context": "e 30, 1864, and acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 202,
+      "end": 206,
+      "text": "2187",
+      "raw_start": 202,
+      "raw_end": 206,
+      "raw_quote": "2187",
+      "context": "4, and acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 208,
+      "end": 212,
+      "text": "2215",
+      "raw_start": 208,
+      "raw_end": 212,
+      "raw_quote": "2215",
+      "context": " acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 214,
+      "end": 218,
+      "text": "2434",
+      "raw_start": 214,
+      "raw_end": 218,
+      "raw_quote": "2434",
+      "context": "amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 220,
+      "end": 224,
+      "text": "2473",
+      "raw_start": 220,
+      "raw_end": 224,
+      "raw_quote": "2473",
+      "context": "tory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 226,
+      "end": 230,
+      "text": "2476",
+      "raw_start": 226,
+      "raw_end": 230,
+      "raw_quote": "2476",
+      "context": "hereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 232,
+      "end": 236,
+      "text": "2513",
+      "raw_start": 232,
+      "raw_end": 236,
+      "raw_quote": "2513",
+      "context": ", 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 238,
+      "end": 242,
+      "text": "2546",
+      "raw_start": 238,
+      "raw_end": 242,
+      "raw_quote": "2546",
+      "context": ", 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 244,
+      "end": 248,
+      "text": "2575",
+      "raw_start": 244,
+      "raw_end": 248,
+      "raw_quote": "2575",
+      "context": ", 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 250,
+      "end": 254,
+      "text": "2579",
+      "raw_start": 250,
+      "raw_end": 254,
+      "raw_quote": "2579",
+      "context": ", 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 256,
+      "end": 260,
+      "text": "2603",
+      "raw_start": 256,
+      "raw_end": 260,
+      "raw_quote": "2603",
+      "context": ", 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 262,
+      "end": 266,
+      "text": "2608",
+      "raw_start": 262,
+      "raw_end": 266,
+      "raw_quote": "2608",
+      "context": ", 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 268,
+      "end": 272,
+      "text": "2626",
+      "raw_start": 268,
+      "raw_end": 272,
+      "raw_quote": "2626",
+      "context": ", 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 274,
+      "end": 278,
+      "text": "2632",
+      "raw_start": 274,
+      "raw_end": 278,
+      "raw_quote": "2632",
+      "context": ", 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 280,
+      "end": 284,
+      "text": "2633",
+      "raw_start": 280,
+      "raw_end": 284,
+      "raw_quote": "2633",
+      "context": ", 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 286,
+      "end": 290,
+      "text": "2656",
+      "raw_start": 286,
+      "raw_end": 290,
+      "raw_quote": "2656",
+      "context": ", 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 292,
+      "end": 296,
+      "text": "2659",
+      "raw_start": 292,
+      "raw_end": 296,
+      "raw_quote": "2659",
+      "context": ", 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 298,
+      "end": 302,
+      "text": "2663",
+      "raw_start": 298,
+      "raw_end": 302,
+      "raw_quote": "2663",
+      "context": ", 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 304,
+      "end": 308,
+      "text": "2679",
+      "raw_start": 304,
+      "raw_end": 308,
+      "raw_quote": "2679",
+      "context": ", 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 312,
+      "end": 316,
+      "text": "2683",
+      "raw_start": 312,
+      "raw_end": 316,
+      "raw_quote": "2683",
+      "context": "2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 318,
+      "end": 322,
+      "text": "2688",
+      "raw_start": 318,
+      "raw_end": 322,
+      "raw_quote": "2688",
+      "context": "2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 324,
+      "end": 328,
+      "text": "2727",
+      "raw_start": 324,
+      "raw_end": 328,
+      "raw_quote": "2727",
+      "context": "2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 330,
+      "end": 334,
+      "text": "2730",
+      "raw_start": 330,
+      "raw_end": 334,
+      "raw_quote": "2730",
+      "context": "2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 336,
+      "end": 340,
+      "text": "2733",
+      "raw_start": 336,
+      "raw_end": 340,
+      "raw_quote": "2733",
+      "context": "2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 342,
+      "end": 346,
+      "text": "2744",
+      "raw_start": 342,
+      "raw_end": 346,
+      "raw_quote": "2744",
+      "context": "-.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 348,
+      "end": 352,
+      "text": "2747",
+      "raw_start": 348,
+      "raw_end": 352,
+      "raw_quote": "2747",
+      "context": ", 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 354,
+      "end": 358,
+      "text": "2753",
+      "raw_start": 354,
+      "raw_end": 358,
+      "raw_quote": "2753",
+      "context": ", 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 360,
+      "end": 364,
+      "text": "2750",
+      "raw_start": 360,
+      "raw_end": 364,
+      "raw_quote": "2750",
+      "context": ", 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 366,
+      "end": 370,
+      "text": "2759",
+      "raw_start": 366,
+      "raw_end": 370,
+      "raw_quote": "2759",
+      "context": ", 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 372,
+      "end": 376,
+      "text": "2780",
+      "raw_start": 372,
+      "raw_end": 376,
+      "raw_quote": "2780",
+      "context": ", 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 378,
+      "end": 382,
+      "text": "2785",
+      "raw_start": 378,
+      "raw_end": 382,
+      "raw_quote": "2785",
+      "context": ", 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 384,
+      "end": 388,
+      "text": "2786",
+      "raw_start": 384,
+      "raw_end": 388,
+      "raw_quote": "2786",
+      "context": ", 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 390,
+      "end": 394,
+      "text": "2788",
+      "raw_start": 390,
+      "raw_end": 394,
+      "raw_quote": "2788",
+      "context": ", 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 396,
+      "end": 400,
+      "text": "2810",
+      "raw_start": 396,
+      "raw_end": 400,
+      "raw_quote": "2810",
+      "context": ", 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 402,
+      "end": 406,
+      "text": "2817",
+      "raw_start": 402,
+      "raw_end": 406,
+      "raw_quote": "2817",
+      "context": ", 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 408,
+      "end": 412,
+      "text": "2827",
+      "raw_start": 408,
+      "raw_end": 412,
+      "raw_quote": "2827",
+      "context": ", 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 414,
+      "end": 418,
+      "text": "2831",
+      "raw_start": 414,
+      "raw_end": 418,
+      "raw_quote": "2831",
+      "context": ", 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 420,
+      "end": 424,
+      "text": "2839",
+      "raw_start": 420,
+      "raw_end": 424,
+      "raw_quote": "2839",
+      "context": ", 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 426,
+      "end": 430,
+      "text": "2851",
+      "raw_start": 426,
+      "raw_end": 430,
+      "raw_quote": "2851",
+      "context": ", 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 432,
+      "end": 436,
+      "text": "2859",
+      "raw_start": 432,
+      "raw_end": 436,
+      "raw_quote": "2859",
+      "context": ", 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 438,
+      "end": 442,
+      "text": "3417",
+      "raw_start": 438,
+      "raw_end": 442,
+      "raw_quote": "3417",
+      "context": ", 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 444,
+      "end": 448,
+      "text": "3418",
+      "raw_start": 444,
+      "raw_end": 448,
+      "raw_quote": "3418",
+      "context": ", 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 450,
+      "end": 454,
+      "text": "3419",
+      "raw_start": 450,
+      "raw_end": 454,
+      "raw_quote": "3419",
+      "context": ", 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 458,
+      "end": 462,
+      "text": "3420",
+      "raw_start": 458,
+      "raw_end": 462,
+      "raw_quote": "3420",
+      "context": "2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 r",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 464,
+      "end": 468,
+      "text": "3443",
+      "raw_start": 464,
+      "raw_end": 468,
+      "raw_quote": "3443",
+      "context": "2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlf",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 470,
+      "end": 474,
+      "text": "3464",
+      "raw_start": 470,
+      "raw_end": 474,
+      "raw_quote": "3464",
+      "context": "3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on t",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 476,
+      "end": 480,
+      "text": "3033",
+      "raw_start": 476,
+      "raw_end": 480,
+      "raw_quote": "3033",
+      "context": "3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 482,
+      "end": 486,
+      "text": "3793",
+      "raw_start": 482,
+      "raw_end": 486,
+      "raw_quote": "3793",
+      "context": "3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 488,
+      "end": 492,
+      "text": "3846",
+      "raw_start": 488,
+      "raw_end": 492,
+      "raw_quote": "3846",
+      "context": "• 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 493,
+      "end": 501,
+      "text": "remarlfs",
+      "raw_start": 493,
+      "raw_end": 501,
+      "raw_quote": "remarlfs",
+      "context": "0, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 502,
+      "end": 504,
+      "text": "on",
+      "raw_start": 502,
+      "raw_end": 504,
+      "raw_quote": "on",
+      "context": "3464, 3033, 3793, 3846 remarlfs on the, by —",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 505,
+      "end": 508,
+      "text": "the",
+      "raw_start": 505,
+      "raw_end": 508,
+      "raw_quote": "the",
+      "context": "4, 3033, 3793, 3846 remarlfs on the, by —",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 510,
+      "end": 512,
+      "text": "by",
+      "raw_start": 510,
+      "raw_end": 512,
+      "raw_quote": "by",
+      "context": "33, 3793, 3846 remarlfs on the, by —",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 4,
+      "text": "bill",
+      "raw_start": 0,
+      "raw_end": 4,
+      "raw_quote": "bill",
+      "context": "bill (H. R. No. 513) to amend an act",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 6,
+      "end": 7,
+      "text": "H",
+      "raw_start": 6,
+      "raw_end": 7,
+      "raw_quote": "H",
+      "context": "bill (H. R. No. 513) to amend an act to",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 9,
+      "end": 10,
+      "text": "R",
+      "raw_start": 9,
+      "raw_end": 10,
+      "raw_quote": "R",
+      "context": "bill (H. R. No. 513) to amend an act to pr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 12,
+      "end": 14,
+      "text": "No",
+      "raw_start": 12,
+      "raw_end": 14,
+      "raw_quote": "No",
+      "context": "bill (H. R. No. 513) to amend an act to pro- v",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 16,
+      "end": 19,
+      "text": "513",
+      "raw_start": 16,
+      "raw_end": 19,
+      "raw_quote": "513",
+      "context": "bill (H. R. No. 513) to amend an act to pro- vide i",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 21,
+      "end": 23,
+      "text": "to",
+      "raw_start": 21,
+      "raw_end": 23,
+      "raw_quote": "to",
+      "context": "bill (H. R. No. 513) to amend an act to pro- vide inter",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 24,
+      "end": 29,
+      "text": "amend",
+      "raw_start": 24,
+      "raw_end": 29,
+      "raw_quote": "amend",
+      "context": "bill (H. R. No. 513) to amend an act to pro- vide internal, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 30,
+      "end": 32,
+      "text": "an",
+      "raw_start": 30,
+      "raw_end": 32,
+      "raw_quote": "an",
+      "context": "bill (H. R. No. 513) to amend an act to pro- vide internal, to s",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 33,
+      "end": 36,
+      "text": "act",
+      "raw_start": 33,
+      "raw_end": 36,
+      "raw_quote": "act",
+      "context": "ill (H. R. No. 513) to amend an act to pro- vide internal, to suppo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 37,
+      "end": 39,
+      "text": "to",
+      "raw_start": 37,
+      "raw_end": 39,
+      "raw_quote": "to",
+      "context": "(H. R. No. 513) to amend an act to pro- vide internal, to support ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 40,
+      "end": 47,
+      "text": "provide",
+      "raw_start": 40,
+      "raw_end": 49,
+      "raw_quote": "pro- vide",
+      "context": " R. No. 513) to amend an act to pro- vide internal, to support the Govern",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 48,
+      "end": 56,
+      "text": "internal",
+      "raw_start": 50,
+      "raw_end": 58,
+      "raw_quote": "internal",
+      "context": "3) to amend an act to pro- vide internal, to support the Govern- ment, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 58,
+      "end": 60,
+      "text": "to",
+      "raw_start": 60,
+      "raw_end": 62,
+      "raw_quote": "to",
+      "context": "d an act to pro- vide internal, to support the Govern- ment, to pa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 61,
+      "end": 68,
+      "text": "support",
+      "raw_start": 63,
+      "raw_end": 70,
+      "raw_quote": "support",
+      "context": "n act to pro- vide internal, to support the Govern- ment, to pay intere",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 69,
+      "end": 72,
+      "text": "the",
+      "raw_start": 71,
+      "raw_end": 74,
+      "raw_quote": "the",
+      "context": " pro- vide internal, to support the Govern- ment, to pay interest o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 73,
+      "end": 79,
+      "text": "Govern",
+      "raw_start": 75,
+      "raw_end": 81,
+      "raw_quote": "Govern",
+      "context": "- vide internal, to support the Govern- ment, to pay interest on the p",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 81,
+      "end": 85,
+      "text": "ment",
+      "raw_start": 83,
+      "raw_end": 87,
+      "raw_quote": "ment",
+      "context": "nternal, to support the Govern- ment, to pay interest on the public ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 87,
+      "end": 89,
+      "text": "to",
+      "raw_start": 89,
+      "raw_end": 91,
+      "raw_quote": "to",
+      "context": "l, to support the Govern- ment, to pay interest on the public debt",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 90,
+      "end": 93,
+      "text": "pay",
+      "raw_start": 92,
+      "raw_end": 95,
+      "raw_quote": "pay",
+      "context": "to support the Govern- ment, to pay interest on the public debt, an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 94,
+      "end": 102,
+      "text": "interest",
+      "raw_start": 96,
+      "raw_end": 104,
+      "raw_quote": "interest",
+      "context": "upport the Govern- ment, to pay interest on the public debt, and for oth",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 103,
+      "end": 105,
+      "text": "on",
+      "raw_start": 105,
+      "raw_end": 107,
+      "raw_quote": "on",
+      "context": "e Govern- ment, to pay interest on the public debt, and for other ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 106,
+      "end": 109,
+      "text": "the",
+      "raw_start": 108,
+      "raw_end": 111,
+      "raw_quote": "the",
+      "context": "overn- ment, to pay interest on the public debt, and for other purp",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 110,
+      "end": 116,
+      "text": "public",
+      "raw_start": 112,
+      "raw_end": 118,
+      "raw_quote": "public",
+      "context": "n- ment, to pay interest on the public debt, and for other purposes, a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 117,
+      "end": 121,
+      "text": "debt",
+      "raw_start": 119,
+      "raw_end": 123,
+      "raw_quote": "debt",
+      "context": ", to pay interest on the public debt, and for other purposes, approv",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 123,
+      "end": 126,
+      "text": "and",
+      "raw_start": 125,
+      "raw_end": 128,
+      "raw_quote": "and",
+      "context": "ay interest on the public debt, and for other purposes, approved Ju",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 127,
+      "end": 130,
+      "text": "for",
+      "raw_start": 129,
+      "raw_end": 132,
+      "raw_quote": "for",
+      "context": "nterest on the public debt, and for other purposes, approved June 3",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 131,
+      "end": 136,
+      "text": "other",
+      "raw_start": 133,
+      "raw_end": 138,
+      "raw_quote": "other",
+      "context": "est on the public debt, and for other purposes, approved June 30, 186",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 137,
+      "end": 145,
+      "text": "purposes",
+      "raw_start": 139,
+      "raw_end": 147,
+      "raw_quote": "purposes",
+      "context": " the public debt, and for other purposes, approved June 30, 1864, and ac",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 147,
+      "end": 155,
+      "text": "approved",
+      "raw_start": 149,
+      "raw_end": 157,
+      "raw_quote": "approved",
+      "context": "c debt, and for other purposes, approved June 30, 1864, and acts amendat",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 156,
+      "end": 160,
+      "text": "June",
+      "raw_start": 158,
+      "raw_end": 162,
+      "raw_quote": "June",
+      "context": "nd for other purposes, approved June 30, 1864, and acts amendatory t",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate",
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 161,
+      "end": 163,
+      "text": "30",
+      "raw_start": 163,
+      "raw_end": 165,
+      "raw_quote": "30",
+      "context": "r other purposes, approved June 30, 1864, and acts amendatory ther",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 165,
+      "end": 169,
+      "text": "1864",
+      "raw_start": 167,
+      "raw_end": 171,
+      "raw_quote": "1864",
+      "context": "her purposes, approved June 30, 1864, and acts amendatory thereof, 2",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 171,
+      "end": 174,
+      "text": "and",
+      "raw_start": 173,
+      "raw_end": 176,
+      "raw_quote": "and",
+      "context": "rposes, approved June 30, 1864, and acts amendatory thereof, 2187, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 175,
+      "end": 179,
+      "text": "acts",
+      "raw_start": 177,
+      "raw_end": 181,
+      "raw_quote": "acts",
+      "context": "es, approved June 30, 1864, and acts amendatory thereof, 2187, 2215,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 180,
+      "end": 190,
+      "text": "amendatory",
+      "raw_start": 182,
+      "raw_end": 192,
+      "raw_quote": "amendatory",
+      "context": "pproved June 30, 1864, and acts amendatory thereof, 2187, 2215, 2434, 2473",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 191,
+      "end": 198,
+      "text": "thereof",
+      "raw_start": 193,
+      "raw_end": 200,
+      "raw_quote": "thereof",
+      "context": "e 30, 1864, and acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 200,
+      "end": 204,
+      "text": "2187",
+      "raw_start": 202,
+      "raw_end": 206,
+      "raw_quote": "2187",
+      "context": "4, and acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 206,
+      "end": 210,
+      "text": "2215",
+      "raw_start": 208,
+      "raw_end": 212,
+      "raw_quote": "2215",
+      "context": " acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 212,
+      "end": 216,
+      "text": "2434",
+      "raw_start": 214,
+      "raw_end": 218,
+      "raw_quote": "2434",
+      "context": "amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 218,
+      "end": 222,
+      "text": "2473",
+      "raw_start": 220,
+      "raw_end": 224,
+      "raw_quote": "2473",
+      "context": "tory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 224,
+      "end": 228,
+      "text": "2476",
+      "raw_start": 226,
+      "raw_end": 230,
+      "raw_quote": "2476",
+      "context": "hereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 230,
+      "end": 234,
+      "text": "2513",
+      "raw_start": 232,
+      "raw_end": 236,
+      "raw_quote": "2513",
+      "context": ", 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 236,
+      "end": 240,
+      "text": "2546",
+      "raw_start": 238,
+      "raw_end": 242,
+      "raw_quote": "2546",
+      "context": ", 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 242,
+      "end": 246,
+      "text": "2575",
+      "raw_start": 244,
+      "raw_end": 248,
+      "raw_quote": "2575",
+      "context": ", 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 248,
+      "end": 252,
+      "text": "2579",
+      "raw_start": 250,
+      "raw_end": 254,
+      "raw_quote": "2579",
+      "context": ", 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 254,
+      "end": 258,
+      "text": "2603",
+      "raw_start": 256,
+      "raw_end": 260,
+      "raw_quote": "2603",
+      "context": ", 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 260,
+      "end": 264,
+      "text": "2608",
+      "raw_start": 262,
+      "raw_end": 266,
+      "raw_quote": "2608",
+      "context": ", 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 266,
+      "end": 270,
+      "text": "2626",
+      "raw_start": 268,
+      "raw_end": 272,
+      "raw_quote": "2626",
+      "context": ", 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 272,
+      "end": 276,
+      "text": "2632",
+      "raw_start": 274,
+      "raw_end": 278,
+      "raw_quote": "2632",
+      "context": ", 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 278,
+      "end": 282,
+      "text": "2633",
+      "raw_start": 280,
+      "raw_end": 284,
+      "raw_quote": "2633",
+      "context": ", 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 284,
+      "end": 288,
+      "text": "2656",
+      "raw_start": 286,
+      "raw_end": 290,
+      "raw_quote": "2656",
+      "context": ", 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 290,
+      "end": 294,
+      "text": "2659",
+      "raw_start": 292,
+      "raw_end": 296,
+      "raw_quote": "2659",
+      "context": ", 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 296,
+      "end": 300,
+      "text": "2663",
+      "raw_start": 298,
+      "raw_end": 302,
+      "raw_quote": "2663",
+      "context": ", 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 302,
+      "end": 306,
+      "text": "2679",
+      "raw_start": 304,
+      "raw_end": 308,
+      "raw_quote": "2679",
+      "context": ", 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 310,
+      "end": 314,
+      "text": "2683",
+      "raw_start": 312,
+      "raw_end": 316,
+      "raw_quote": "2683",
+      "context": "2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 316,
+      "end": 320,
+      "text": "2688",
+      "raw_start": 318,
+      "raw_end": 322,
+      "raw_quote": "2688",
+      "context": "2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 322,
+      "end": 326,
+      "text": "2727",
+      "raw_start": 324,
+      "raw_end": 328,
+      "raw_quote": "2727",
+      "context": "2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 328,
+      "end": 332,
+      "text": "2730",
+      "raw_start": 330,
+      "raw_end": 334,
+      "raw_quote": "2730",
+      "context": "2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 334,
+      "end": 338,
+      "text": "2733",
+      "raw_start": 336,
+      "raw_end": 340,
+      "raw_quote": "2733",
+      "context": "2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 340,
+      "end": 344,
+      "text": "2744",
+      "raw_start": 342,
+      "raw_end": 346,
+      "raw_quote": "2744",
+      "context": "-.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 346,
+      "end": 350,
+      "text": "2747",
+      "raw_start": 348,
+      "raw_end": 352,
+      "raw_quote": "2747",
+      "context": ", 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 352,
+      "end": 356,
+      "text": "2753",
+      "raw_start": 354,
+      "raw_end": 358,
+      "raw_quote": "2753",
+      "context": ", 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 358,
+      "end": 362,
+      "text": "2750",
+      "raw_start": 360,
+      "raw_end": 364,
+      "raw_quote": "2750",
+      "context": ", 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 364,
+      "end": 368,
+      "text": "2759",
+      "raw_start": 366,
+      "raw_end": 370,
+      "raw_quote": "2759",
+      "context": ", 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 370,
+      "end": 374,
+      "text": "2780",
+      "raw_start": 372,
+      "raw_end": 376,
+      "raw_quote": "2780",
+      "context": ", 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 376,
+      "end": 380,
+      "text": "2785",
+      "raw_start": 378,
+      "raw_end": 382,
+      "raw_quote": "2785",
+      "context": ", 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 382,
+      "end": 386,
+      "text": "2786",
+      "raw_start": 384,
+      "raw_end": 388,
+      "raw_quote": "2786",
+      "context": ", 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 388,
+      "end": 392,
+      "text": "2788",
+      "raw_start": 390,
+      "raw_end": 394,
+      "raw_quote": "2788",
+      "context": ", 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 394,
+      "end": 398,
+      "text": "2810",
+      "raw_start": 396,
+      "raw_end": 400,
+      "raw_quote": "2810",
+      "context": ", 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 400,
+      "end": 404,
+      "text": "2817",
+      "raw_start": 402,
+      "raw_end": 406,
+      "raw_quote": "2817",
+      "context": ", 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 406,
+      "end": 410,
+      "text": "2827",
+      "raw_start": 408,
+      "raw_end": 412,
+      "raw_quote": "2827",
+      "context": ", 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 412,
+      "end": 416,
+      "text": "2831",
+      "raw_start": 414,
+      "raw_end": 418,
+      "raw_quote": "2831",
+      "context": ", 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 418,
+      "end": 422,
+      "text": "2839",
+      "raw_start": 420,
+      "raw_end": 424,
+      "raw_quote": "2839",
+      "context": ", 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, ",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 424,
+      "end": 428,
+      "text": "2851",
+      "raw_start": 426,
+      "raw_end": 430,
+      "raw_quote": "2851",
+      "context": ", 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 430,
+      "end": 434,
+      "text": "2859",
+      "raw_start": 432,
+      "raw_end": 436,
+      "raw_quote": "2859",
+      "context": ", 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 436,
+      "end": 440,
+      "text": "3417",
+      "raw_start": 438,
+      "raw_end": 442,
+      "raw_quote": "3417",
+      "context": ", 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 442,
+      "end": 446,
+      "text": "3418",
+      "raw_start": 444,
+      "raw_end": 448,
+      "raw_quote": "3418",
+      "context": ", 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 448,
+      "end": 452,
+      "text": "3419",
+      "raw_start": 450,
+      "raw_end": 454,
+      "raw_quote": "3419",
+      "context": ", 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 456,
+      "end": 460,
+      "text": "3420",
+      "raw_start": 458,
+      "raw_end": 462,
+      "raw_quote": "3420",
+      "context": "2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 r",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 462,
+      "end": 466,
+      "text": "3443",
+      "raw_start": 464,
+      "raw_end": 468,
+      "raw_quote": "3443",
+      "context": "2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlf",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 468,
+      "end": 472,
+      "text": "3464",
+      "raw_start": 470,
+      "raw_end": 474,
+      "raw_quote": "3464",
+      "context": "3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on t",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 474,
+      "end": 478,
+      "text": "3033",
+      "raw_start": 476,
+      "raw_end": 480,
+      "raw_quote": "3033",
+      "context": "3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 480,
+      "end": 484,
+      "text": "3793",
+      "raw_start": 482,
+      "raw_end": 486,
+      "raw_quote": "3793",
+      "context": "3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 486,
+      "end": 490,
+      "text": "3846",
+      "raw_start": 488,
+      "raw_end": 492,
+      "raw_quote": "3846",
+      "context": "• 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 491,
+      "end": 499,
+      "text": "remarlfs",
+      "raw_start": 493,
+      "raw_end": 501,
+      "raw_quote": "remarlfs",
+      "context": "0, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 500,
+      "end": 502,
+      "text": "on",
+      "raw_start": 502,
+      "raw_end": 504,
+      "raw_quote": "on",
+      "context": "3464, 3033, 3793, 3846 remarlfs on the, by —",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 503,
+      "end": 506,
+      "text": "the",
+      "raw_start": 505,
+      "raw_end": 508,
+      "raw_quote": "the",
+      "context": "4, 3033, 3793, 3846 remarlfs on the, by —",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 508,
+      "end": 510,
+      "text": "by",
+      "raw_start": 510,
+      "raw_end": 512,
+      "raw_quote": "by",
+      "context": "33, 3793, 3846 remarlfs on the, by —",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7395unit:99:par_000099_000103",
+      "raw_text": "bill (H. R. No. 513) to amend an act to pro- vide internal, to support the Govern- ment, to pay interest on the public debt, and for other purposes, approved June 30, 1864, and acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+      "raw_sha256": "48aff21027939c15db0c4f10e827147e0e35267589e1c6fbe43eb33ce1d1bfd5"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7395unit:99:par_000099_000103",
+        "raw_text": "bill (H. R. No. 513) to amend an act to pro- vide internal, to support the Govern- ment, to pay interest on the public debt, and for other purposes, approved June 30, 1864, and acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+        "raw_sha256": "48aff21027939c15db0c4f10e827147e0e35267589e1c6fbe43eb33ce1d1bfd5"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "bill (H. R. No. 513) to amend an act to provide internal, to support the Govern- ment, to pay interest on the public debt, and for other purposes, approved June 30, 1864, and acts amendatory thereof, 2187, 2215, 2434, 2473, 2476, 2513, 2546, 2575, 2579, 2603, 2608, 2626, 2632, 2633, 2656, 2659, 2663, 2679, -.2683, 2688, 2727, 2730, 2733, 2744, 2747, 2753, 2750, 2759, 2780, 2785, 2786, 2788, 2810, 2817, 2827, 2831, 2839, 2851, 2859, 3417, 3418, 3419, • 3420, 3443, 3464, 3033, 3793, 3846 remarlfs on the, by —",
+    "proposed_sha256": "984b17e2af6ecf9d9c810fc943564b8e651dc72195721b2ac01690d39e27f02a",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

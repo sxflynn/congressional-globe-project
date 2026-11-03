@@ -1,0 +1,2271 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7393unit:48:par_000048_000101",
+      "raw_text": "resolution requesting the Postmaster Gen- eral to lay before the Senate information in regard to the feasibility and usefulness of establishing in connection with the Post Office Department lines of, along such of the principal mail routes as may be deemed advisable for use by the Government. ..979 bill (S. No. 249) to incorporate the National,",
+      "raw_sha256": "619d02c9e43ade64d4b3b93655d87c74ac042c704fe00636021f483676938a52"
+    },
+    "static_text": "resolution requesting the Postmaster General to lay before the Senate information in regard to the feasibility and usefulness of establishing in connection with the Post Office Department lines of, along such of the principal mail routes as may be deemed advisable for use by the Government. ..979 bill (S. No. 249) to incorporate the National,",
+    "static_sha256": "a24ec35e0b57cec6cb51d76916943644035fcc9b57ea28dda57c47605ca57139",
+    "static_edits": [
+      {
+        "start": 37,
+        "end": 46,
+        "raw_quote": "Gen- eral",
+        "replacement": "General",
+        "rule_id": "adjacent-line wrap; lexicon form general"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000048_000163",
+        "start": 0,
+        "end": 41,
+        "text": "resolution requesting the Postmaster Gen-"
+      },
+      {
+        "line_id": "line_000048_000164",
+        "start": 42,
+        "end": 83,
+        "text": "eral to lay before the Senate information"
+      },
+      {
+        "line_id": "line_000048_000165",
+        "start": 84,
+        "end": 127,
+        "text": "in regard to the feasibility and usefulness"
+      },
+      {
+        "line_id": "line_000048_000166",
+        "start": 128,
+        "end": 171,
+        "text": "of establishing in connection with the Post"
+      },
+      {
+        "line_id": "line_000048_000167",
+        "start": 172,
+        "end": 213,
+        "text": "Office Department lines of, along such of"
+      },
+      {
+        "line_id": "line_000048_000168",
+        "start": 214,
+        "end": 256,
+        "text": "the principal mail routes as may be deemed"
+      },
+      {
+        "line_id": "line_000048_000169",
+        "start": 257,
+        "end": 299,
+        "text": "advisable for use by the Government. ..979"
+      },
+      {
+        "line_id": "line_000048_000170",
+        "start": 300,
+        "end": 346,
+        "text": "bill (S. No. 249) to incorporate the National,"
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "7efbb8694d153e3f757dc9057d1a861c09095e2834b76c3a71b7d8cbc203d26f"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "d1f56f6a1081523a7d8ba453675b599c8de695b8842121f40343a2af97c55889",
+  "proposed_text": "resolution requesting the Postmaster Gen- eral to lay before the Senate information in regard to the feasibility and usefulness of establishing in connection with the Post Office Department lines of, along such of the principal mail routes as may be deemed advisable for use by the Government. ..979 bill (S. No. 249) to incorporate the National,",
+  "proposed_sha256": "619d02c9e43ade64d4b3b93655d87c74ac042c704fe00636021f483676938a52",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 346,
+      "derived_start": 0,
+      "derived_end": 346,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 37,
+      "end": 46,
+      "raw_quote": "Gen- eral",
+      "joined_candidate": "General",
+      "decision": "retained_for_review",
+      "reason": "uppercase_or_nonlowercase"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 10,
+      "text": "resolution",
+      "raw_start": 0,
+      "raw_end": 10,
+      "raw_quote": "resolution",
+      "context": "resolution requesting the Postmaster Gen- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 11,
+      "end": 21,
+      "text": "requesting",
+      "raw_start": 11,
+      "raw_end": 21,
+      "raw_quote": "requesting",
+      "context": "resolution requesting the Postmaster Gen- eral to lay",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 22,
+      "end": 25,
+      "text": "the",
+      "raw_start": 22,
+      "raw_end": 25,
+      "raw_quote": "the",
+      "context": "resolution requesting the Postmaster Gen- eral to lay bef",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 26,
+      "end": 36,
+      "text": "Postmaster",
+      "raw_start": 26,
+      "raw_end": 36,
+      "raw_quote": "Postmaster",
+      "context": "resolution requesting the Postmaster Gen- eral to lay before the Sen",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 37,
+      "end": 40,
+      "text": "Gen",
+      "raw_start": 37,
+      "raw_end": 40,
+      "raw_quote": "Gen",
+      "context": "ution requesting the Postmaster Gen- eral to lay before the Senate ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 42,
+      "end": 46,
+      "text": "eral",
+      "raw_start": 42,
+      "raw_end": 46,
+      "raw_quote": "eral",
+      "context": " requesting the Postmaster Gen- eral to lay before the Senate inform",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 47,
+      "end": 49,
+      "text": "to",
+      "raw_start": 47,
+      "raw_end": 49,
+      "raw_quote": "to",
+      "context": "esting the Postmaster Gen- eral to lay before the Senate informati",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 50,
+      "end": 53,
+      "text": "lay",
+      "raw_start": 50,
+      "raw_end": 53,
+      "raw_quote": "lay",
+      "context": "ing the Postmaster Gen- eral to lay before the Senate information i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 54,
+      "end": 60,
+      "text": "before",
+      "raw_start": 54,
+      "raw_end": 60,
+      "raw_quote": "before",
+      "context": "the Postmaster Gen- eral to lay before the Senate information in regar",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 61,
+      "end": 64,
+      "text": "the",
+      "raw_start": 61,
+      "raw_end": 64,
+      "raw_quote": "the",
+      "context": "tmaster Gen- eral to lay before the Senate information in regard to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 65,
+      "end": 71,
+      "text": "Senate",
+      "raw_start": 65,
+      "raw_end": 71,
+      "raw_quote": "Senate",
+      "context": "ter Gen- eral to lay before the Senate information in regard to the fe",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 72,
+      "end": 83,
+      "text": "information",
+      "raw_start": 72,
+      "raw_end": 83,
+      "raw_quote": "information",
+      "context": "- eral to lay before the Senate information in regard to the feasibility an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 84,
+      "end": 86,
+      "text": "in",
+      "raw_start": 84,
+      "raw_end": 86,
+      "raw_quote": "in",
+      "context": "y before the Senate information in regard to the feasibility and u",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 87,
+      "end": 93,
+      "text": "regard",
+      "raw_start": 87,
+      "raw_end": 93,
+      "raw_quote": "regard",
+      "context": "efore the Senate information in regard to the feasibility and usefulne",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 94,
+      "end": 96,
+      "text": "to",
+      "raw_start": 94,
+      "raw_end": 96,
+      "raw_quote": "to",
+      "context": "he Senate information in regard to the feasibility and usefulness ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 97,
+      "end": 100,
+      "text": "the",
+      "raw_start": 97,
+      "raw_end": 100,
+      "raw_quote": "the",
+      "context": "Senate information in regard to the feasibility and usefulness of e",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 101,
+      "end": 112,
+      "text": "feasibility",
+      "raw_start": 101,
+      "raw_end": 112,
+      "raw_quote": "feasibility",
+      "context": "te information in regard to the feasibility and usefulness of establishing ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 113,
+      "end": 116,
+      "text": "and",
+      "raw_start": 113,
+      "raw_end": 116,
+      "raw_quote": "and",
+      "context": "on in regard to the feasibility and usefulness of establishing in c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 117,
+      "end": 127,
+      "text": "usefulness",
+      "raw_start": 117,
+      "raw_end": 127,
+      "raw_quote": "usefulness",
+      "context": "n regard to the feasibility and usefulness of establishing in connection w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 128,
+      "end": 130,
+      "text": "of",
+      "raw_start": 128,
+      "raw_end": 130,
+      "raw_quote": "of",
+      "context": " the feasibility and usefulness of establishing in connection with",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 131,
+      "end": 143,
+      "text": "establishing",
+      "raw_start": 131,
+      "raw_end": 143,
+      "raw_quote": "establishing",
+      "context": "e feasibility and usefulness of establishing in connection with the Post Off",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 144,
+      "end": 146,
+      "text": "in",
+      "raw_start": 144,
+      "raw_end": 146,
+      "raw_quote": "in",
+      "context": " and usefulness of establishing in connection with the Post Office",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 147,
+      "end": 157,
+      "text": "connection",
+      "raw_start": 147,
+      "raw_end": 157,
+      "raw_quote": "connection",
+      "context": "d usefulness of establishing in connection with the Post Office Department",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 158,
+      "end": 162,
+      "text": "with",
+      "raw_start": 158,
+      "raw_end": 162,
+      "raw_quote": "with",
+      "context": "s of establishing in connection with the Post Office Department line",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 163,
+      "end": 166,
+      "text": "the",
+      "raw_start": 163,
+      "raw_end": 166,
+      "raw_quote": "the",
+      "context": "establishing in connection with the Post Office Department lines of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 167,
+      "end": 171,
+      "text": "Post",
+      "raw_start": 167,
+      "raw_end": 171,
+      "raw_quote": "Post",
+      "context": "blishing in connection with the Post Office Department lines of, alo",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 172,
+      "end": 178,
+      "text": "Office",
+      "raw_start": 172,
+      "raw_end": 178,
+      "raw_quote": "Office",
+      "context": "ing in connection with the Post Office Department lines of, along such",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 179,
+      "end": 189,
+      "text": "Department",
+      "raw_start": 179,
+      "raw_end": 189,
+      "raw_quote": "Department",
+      "context": "connection with the Post Office Department lines of, along such of the pri",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 190,
+      "end": 195,
+      "text": "lines",
+      "raw_start": 190,
+      "raw_end": 195,
+      "raw_quote": "lines",
+      "context": "with the Post Office Department lines of, along such of the principal",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 196,
+      "end": 198,
+      "text": "of",
+      "raw_start": 196,
+      "raw_end": 198,
+      "raw_quote": "of",
+      "context": "he Post Office Department lines of, along such of the principal ma",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 200,
+      "end": 205,
+      "text": "along",
+      "raw_start": 200,
+      "raw_end": 205,
+      "raw_quote": "along",
+      "context": "ost Office Department lines of, along such of the principal mail rout",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 206,
+      "end": 210,
+      "text": "such",
+      "raw_start": 206,
+      "raw_end": 210,
+      "raw_quote": "such",
+      "context": "fice Department lines of, along such of the principal mail routes as",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 211,
+      "end": 213,
+      "text": "of",
+      "raw_start": 211,
+      "raw_end": 213,
+      "raw_quote": "of",
+      "context": "Department lines of, along such of the principal mail routes as ma",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 214,
+      "end": 217,
+      "text": "the",
+      "raw_start": 214,
+      "raw_end": 217,
+      "raw_quote": "the",
+      "context": "artment lines of, along such of the principal mail routes as may be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 218,
+      "end": 227,
+      "text": "principal",
+      "raw_start": 218,
+      "raw_end": 227,
+      "raw_quote": "principal",
+      "context": "ent lines of, along such of the principal mail routes as may be deemed ad",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 228,
+      "end": 232,
+      "text": "mail",
+      "raw_start": 228,
+      "raw_end": 232,
+      "raw_quote": "mail",
+      "context": "of, along such of the principal mail routes as may be deemed advisab",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 233,
+      "end": 239,
+      "text": "routes",
+      "raw_start": 233,
+      "raw_end": 239,
+      "raw_quote": "routes",
+      "context": "long such of the principal mail routes as may be deemed advisable for ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 240,
+      "end": 242,
+      "text": "as",
+      "raw_start": 240,
+      "raw_end": 242,
+      "raw_quote": "as",
+      "context": "ch of the principal mail routes as may be deemed advisable for use",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 243,
+      "end": 246,
+      "text": "may",
+      "raw_start": 243,
+      "raw_end": 246,
+      "raw_quote": "may",
+      "context": "of the principal mail routes as may be deemed advisable for use by ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 247,
+      "end": 249,
+      "text": "be",
+      "raw_start": 247,
+      "raw_end": 249,
+      "raw_quote": "be",
+      "context": "he principal mail routes as may be deemed advisable for use by the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 250,
+      "end": 256,
+      "text": "deemed",
+      "raw_start": 250,
+      "raw_end": 256,
+      "raw_quote": "deemed",
+      "context": "principal mail routes as may be deemed advisable for use by the Govern",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 257,
+      "end": 266,
+      "text": "advisable",
+      "raw_start": 257,
+      "raw_end": 266,
+      "raw_quote": "advisable",
+      "context": "al mail routes as may be deemed advisable for use by the Government. ..97",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 267,
+      "end": 270,
+      "text": "for",
+      "raw_start": 267,
+      "raw_end": 270,
+      "raw_quote": "for",
+      "context": "utes as may be deemed advisable for use by the Government. ..979 bi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 271,
+      "end": 274,
+      "text": "use",
+      "raw_start": 271,
+      "raw_end": 274,
+      "raw_quote": "use",
+      "context": " as may be deemed advisable for use by the Government. ..979 bill (",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 275,
+      "end": 277,
+      "text": "by",
+      "raw_start": 275,
+      "raw_end": 277,
+      "raw_quote": "by",
+      "context": "may be deemed advisable for use by the Government. ..979 bill (S. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 278,
+      "end": 281,
+      "text": "the",
+      "raw_start": 278,
+      "raw_end": 281,
+      "raw_quote": "the",
+      "context": " be deemed advisable for use by the Government. ..979 bill (S. No. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 282,
+      "end": 292,
+      "text": "Government",
+      "raw_start": 282,
+      "raw_end": 292,
+      "raw_quote": "Government",
+      "context": "deemed advisable for use by the Government. ..979 bill (S. No. 249) to inc",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 296,
+      "end": 299,
+      "text": "979",
+      "raw_start": 296,
+      "raw_end": 299,
+      "raw_quote": "979",
+      "context": "le for use by the Government. ..979 bill (S. No. 249) to incorporat",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 300,
+      "end": 304,
+      "text": "bill",
+      "raw_start": 300,
+      "raw_end": 304,
+      "raw_quote": "bill",
+      "context": "or use by the Government. ..979 bill (S. No. 249) to incorporate the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 306,
+      "end": 307,
+      "text": "S",
+      "raw_start": 306,
+      "raw_end": 307,
+      "raw_quote": "S",
+      "context": " by the Government. ..979 bill (S. No. 249) to incorporate the Na",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 309,
+      "end": 311,
+      "text": "No",
+      "raw_start": 309,
+      "raw_end": 311,
+      "raw_quote": "No",
+      "context": " the Government. ..979 bill (S. No. 249) to incorporate the Nation",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 313,
+      "end": 316,
+      "text": "249",
+      "raw_start": 313,
+      "raw_end": 316,
+      "raw_quote": "249",
+      "context": " Government. ..979 bill (S. No. 249) to incorporate the National,",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 318,
+      "end": 320,
+      "text": "to",
+      "raw_start": 318,
+      "raw_end": 320,
+      "raw_quote": "to",
+      "context": "rnment. ..979 bill (S. No. 249) to incorporate the National,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 321,
+      "end": 332,
+      "text": "incorporate",
+      "raw_start": 321,
+      "raw_end": 332,
+      "raw_quote": "incorporate",
+      "context": "ent. ..979 bill (S. No. 249) to incorporate the National,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 333,
+      "end": 336,
+      "text": "the",
+      "raw_start": 333,
+      "raw_end": 336,
+      "raw_quote": "the",
+      "context": "ill (S. No. 249) to incorporate the National,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 337,
+      "end": 345,
+      "text": "National",
+      "raw_start": 337,
+      "raw_end": 345,
+      "raw_quote": "National",
+      "context": "(S. No. 249) to incorporate the National,",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 10,
+      "text": "resolution",
+      "raw_start": 0,
+      "raw_end": 10,
+      "raw_quote": "resolution",
+      "context": "resolution requesting the Postmaster Gen- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 11,
+      "end": 21,
+      "text": "requesting",
+      "raw_start": 11,
+      "raw_end": 21,
+      "raw_quote": "requesting",
+      "context": "resolution requesting the Postmaster Gen- eral to lay",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 22,
+      "end": 25,
+      "text": "the",
+      "raw_start": 22,
+      "raw_end": 25,
+      "raw_quote": "the",
+      "context": "resolution requesting the Postmaster Gen- eral to lay bef",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 26,
+      "end": 36,
+      "text": "Postmaster",
+      "raw_start": 26,
+      "raw_end": 36,
+      "raw_quote": "Postmaster",
+      "context": "resolution requesting the Postmaster Gen- eral to lay before the Sen",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 37,
+      "end": 40,
+      "text": "Gen",
+      "raw_start": 37,
+      "raw_end": 40,
+      "raw_quote": "Gen",
+      "context": "ution requesting the Postmaster Gen- eral to lay before the Senate ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 42,
+      "end": 46,
+      "text": "eral",
+      "raw_start": 42,
+      "raw_end": 46,
+      "raw_quote": "eral",
+      "context": " requesting the Postmaster Gen- eral to lay before the Senate inform",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 47,
+      "end": 49,
+      "text": "to",
+      "raw_start": 47,
+      "raw_end": 49,
+      "raw_quote": "to",
+      "context": "esting the Postmaster Gen- eral to lay before the Senate informati",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 50,
+      "end": 53,
+      "text": "lay",
+      "raw_start": 50,
+      "raw_end": 53,
+      "raw_quote": "lay",
+      "context": "ing the Postmaster Gen- eral to lay before the Senate information i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 54,
+      "end": 60,
+      "text": "before",
+      "raw_start": 54,
+      "raw_end": 60,
+      "raw_quote": "before",
+      "context": "the Postmaster Gen- eral to lay before the Senate information in regar",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 61,
+      "end": 64,
+      "text": "the",
+      "raw_start": 61,
+      "raw_end": 64,
+      "raw_quote": "the",
+      "context": "tmaster Gen- eral to lay before the Senate information in regard to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 65,
+      "end": 71,
+      "text": "Senate",
+      "raw_start": 65,
+      "raw_end": 71,
+      "raw_quote": "Senate",
+      "context": "ter Gen- eral to lay before the Senate information in regard to the fe",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 72,
+      "end": 83,
+      "text": "information",
+      "raw_start": 72,
+      "raw_end": 83,
+      "raw_quote": "information",
+      "context": "- eral to lay before the Senate information in regard to the feasibility an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 84,
+      "end": 86,
+      "text": "in",
+      "raw_start": 84,
+      "raw_end": 86,
+      "raw_quote": "in",
+      "context": "y before the Senate information in regard to the feasibility and u",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 87,
+      "end": 93,
+      "text": "regard",
+      "raw_start": 87,
+      "raw_end": 93,
+      "raw_quote": "regard",
+      "context": "efore the Senate information in regard to the feasibility and usefulne",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 94,
+      "end": 96,
+      "text": "to",
+      "raw_start": 94,
+      "raw_end": 96,
+      "raw_quote": "to",
+      "context": "he Senate information in regard to the feasibility and usefulness ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 97,
+      "end": 100,
+      "text": "the",
+      "raw_start": 97,
+      "raw_end": 100,
+      "raw_quote": "the",
+      "context": "Senate information in regard to the feasibility and usefulness of e",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 101,
+      "end": 112,
+      "text": "feasibility",
+      "raw_start": 101,
+      "raw_end": 112,
+      "raw_quote": "feasibility",
+      "context": "te information in regard to the feasibility and usefulness of establishing ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 113,
+      "end": 116,
+      "text": "and",
+      "raw_start": 113,
+      "raw_end": 116,
+      "raw_quote": "and",
+      "context": "on in regard to the feasibility and usefulness of establishing in c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 117,
+      "end": 127,
+      "text": "usefulness",
+      "raw_start": 117,
+      "raw_end": 127,
+      "raw_quote": "usefulness",
+      "context": "n regard to the feasibility and usefulness of establishing in connection w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 128,
+      "end": 130,
+      "text": "of",
+      "raw_start": 128,
+      "raw_end": 130,
+      "raw_quote": "of",
+      "context": " the feasibility and usefulness of establishing in connection with",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 131,
+      "end": 143,
+      "text": "establishing",
+      "raw_start": 131,
+      "raw_end": 143,
+      "raw_quote": "establishing",
+      "context": "e feasibility and usefulness of establishing in connection with the Post Off",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 144,
+      "end": 146,
+      "text": "in",
+      "raw_start": 144,
+      "raw_end": 146,
+      "raw_quote": "in",
+      "context": " and usefulness of establishing in connection with the Post Office",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 147,
+      "end": 157,
+      "text": "connection",
+      "raw_start": 147,
+      "raw_end": 157,
+      "raw_quote": "connection",
+      "context": "d usefulness of establishing in connection with the Post Office Department",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 158,
+      "end": 162,
+      "text": "with",
+      "raw_start": 158,
+      "raw_end": 162,
+      "raw_quote": "with",
+      "context": "s of establishing in connection with the Post Office Department line",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 163,
+      "end": 166,
+      "text": "the",
+      "raw_start": 163,
+      "raw_end": 166,
+      "raw_quote": "the",
+      "context": "establishing in connection with the Post Office Department lines of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 167,
+      "end": 171,
+      "text": "Post",
+      "raw_start": 167,
+      "raw_end": 171,
+      "raw_quote": "Post",
+      "context": "blishing in connection with the Post Office Department lines of, alo",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 172,
+      "end": 178,
+      "text": "Office",
+      "raw_start": 172,
+      "raw_end": 178,
+      "raw_quote": "Office",
+      "context": "ing in connection with the Post Office Department lines of, along such",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 179,
+      "end": 189,
+      "text": "Department",
+      "raw_start": 179,
+      "raw_end": 189,
+      "raw_quote": "Department",
+      "context": "connection with the Post Office Department lines of, along such of the pri",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 190,
+      "end": 195,
+      "text": "lines",
+      "raw_start": 190,
+      "raw_end": 195,
+      "raw_quote": "lines",
+      "context": "with the Post Office Department lines of, along such of the principal",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 196,
+      "end": 198,
+      "text": "of",
+      "raw_start": 196,
+      "raw_end": 198,
+      "raw_quote": "of",
+      "context": "he Post Office Department lines of, along such of the principal ma",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 200,
+      "end": 205,
+      "text": "along",
+      "raw_start": 200,
+      "raw_end": 205,
+      "raw_quote": "along",
+      "context": "ost Office Department lines of, along such of the principal mail rout",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 206,
+      "end": 210,
+      "text": "such",
+      "raw_start": 206,
+      "raw_end": 210,
+      "raw_quote": "such",
+      "context": "fice Department lines of, along such of the principal mail routes as",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 211,
+      "end": 213,
+      "text": "of",
+      "raw_start": 211,
+      "raw_end": 213,
+      "raw_quote": "of",
+      "context": "Department lines of, along such of the principal mail routes as ma",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 214,
+      "end": 217,
+      "text": "the",
+      "raw_start": 214,
+      "raw_end": 217,
+      "raw_quote": "the",
+      "context": "artment lines of, along such of the principal mail routes as may be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 218,
+      "end": 227,
+      "text": "principal",
+      "raw_start": 218,
+      "raw_end": 227,
+      "raw_quote": "principal",
+      "context": "ent lines of, along such of the principal mail routes as may be deemed ad",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 228,
+      "end": 232,
+      "text": "mail",
+      "raw_start": 228,
+      "raw_end": 232,
+      "raw_quote": "mail",
+      "context": "of, along such of the principal mail routes as may be deemed advisab",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 233,
+      "end": 239,
+      "text": "routes",
+      "raw_start": 233,
+      "raw_end": 239,
+      "raw_quote": "routes",
+      "context": "long such of the principal mail routes as may be deemed advisable for ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 240,
+      "end": 242,
+      "text": "as",
+      "raw_start": 240,
+      "raw_end": 242,
+      "raw_quote": "as",
+      "context": "ch of the principal mail routes as may be deemed advisable for use",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 243,
+      "end": 246,
+      "text": "may",
+      "raw_start": 243,
+      "raw_end": 246,
+      "raw_quote": "may",
+      "context": "of the principal mail routes as may be deemed advisable for use by ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 247,
+      "end": 249,
+      "text": "be",
+      "raw_start": 247,
+      "raw_end": 249,
+      "raw_quote": "be",
+      "context": "he principal mail routes as may be deemed advisable for use by the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 250,
+      "end": 256,
+      "text": "deemed",
+      "raw_start": 250,
+      "raw_end": 256,
+      "raw_quote": "deemed",
+      "context": "principal mail routes as may be deemed advisable for use by the Govern",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 257,
+      "end": 266,
+      "text": "advisable",
+      "raw_start": 257,
+      "raw_end": 266,
+      "raw_quote": "advisable",
+      "context": "al mail routes as may be deemed advisable for use by the Government. ..97",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 267,
+      "end": 270,
+      "text": "for",
+      "raw_start": 267,
+      "raw_end": 270,
+      "raw_quote": "for",
+      "context": "utes as may be deemed advisable for use by the Government. ..979 bi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 271,
+      "end": 274,
+      "text": "use",
+      "raw_start": 271,
+      "raw_end": 274,
+      "raw_quote": "use",
+      "context": " as may be deemed advisable for use by the Government. ..979 bill (",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 275,
+      "end": 277,
+      "text": "by",
+      "raw_start": 275,
+      "raw_end": 277,
+      "raw_quote": "by",
+      "context": "may be deemed advisable for use by the Government. ..979 bill (S. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 278,
+      "end": 281,
+      "text": "the",
+      "raw_start": 278,
+      "raw_end": 281,
+      "raw_quote": "the",
+      "context": " be deemed advisable for use by the Government. ..979 bill (S. No. ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 282,
+      "end": 292,
+      "text": "Government",
+      "raw_start": 282,
+      "raw_end": 292,
+      "raw_quote": "Government",
+      "context": "deemed advisable for use by the Government. ..979 bill (S. No. 249) to inc",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 296,
+      "end": 299,
+      "text": "979",
+      "raw_start": 296,
+      "raw_end": 299,
+      "raw_quote": "979",
+      "context": "le for use by the Government. ..979 bill (S. No. 249) to incorporat",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 300,
+      "end": 304,
+      "text": "bill",
+      "raw_start": 300,
+      "raw_end": 304,
+      "raw_quote": "bill",
+      "context": "or use by the Government. ..979 bill (S. No. 249) to incorporate the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 306,
+      "end": 307,
+      "text": "S",
+      "raw_start": 306,
+      "raw_end": 307,
+      "raw_quote": "S",
+      "context": " by the Government. ..979 bill (S. No. 249) to incorporate the Na",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 309,
+      "end": 311,
+      "text": "No",
+      "raw_start": 309,
+      "raw_end": 311,
+      "raw_quote": "No",
+      "context": " the Government. ..979 bill (S. No. 249) to incorporate the Nation",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 313,
+      "end": 316,
+      "text": "249",
+      "raw_start": 313,
+      "raw_end": 316,
+      "raw_quote": "249",
+      "context": " Government. ..979 bill (S. No. 249) to incorporate the National,",
+      "categories": [
+        "number"
+      ],
+      "signals": [
+        "numeric_value_unverified"
+      ],
+      "routes": [
+        "number_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 318,
+      "end": 320,
+      "text": "to",
+      "raw_start": 318,
+      "raw_end": 320,
+      "raw_quote": "to",
+      "context": "rnment. ..979 bill (S. No. 249) to incorporate the National,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 321,
+      "end": 332,
+      "text": "incorporate",
+      "raw_start": 321,
+      "raw_end": 332,
+      "raw_quote": "incorporate",
+      "context": "ent. ..979 bill (S. No. 249) to incorporate the National,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 333,
+      "end": 336,
+      "text": "the",
+      "raw_start": 333,
+      "raw_end": 336,
+      "raw_quote": "the",
+      "context": "ill (S. No. 249) to incorporate the National,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 337,
+      "end": 345,
+      "text": "National",
+      "raw_start": 337,
+      "raw_end": 345,
+      "raw_quote": "National",
+      "context": "(S. No. 249) to incorporate the National,",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7393unit:48:par_000048_000101",
+      "raw_text": "resolution requesting the Postmaster Gen- eral to lay before the Senate information in regard to the feasibility and usefulness of establishing in connection with the Post Office Department lines of, along such of the principal mail routes as may be deemed advisable for use by the Government. ..979 bill (S. No. 249) to incorporate the National,",
+      "raw_sha256": "619d02c9e43ade64d4b3b93655d87c74ac042c704fe00636021f483676938a52"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7393unit:48:par_000048_000101",
+        "raw_text": "resolution requesting the Postmaster Gen- eral to lay before the Senate information in regard to the feasibility and usefulness of establishing in connection with the Post Office Department lines of, along such of the principal mail routes as may be deemed advisable for use by the Government. ..979 bill (S. No. 249) to incorporate the National,",
+        "raw_sha256": "619d02c9e43ade64d4b3b93655d87c74ac042c704fe00636021f483676938a52"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "resolution requesting the Postmaster Gen- eral to lay before the Senate information in regard to the feasibility and usefulness of establishing in connection with the Post Office Department lines of, along such of the principal mail routes as may be deemed advisable for use by the Government. ..979 bill (S. No. 249) to incorporate the National,",
+    "proposed_sha256": "619d02c9e43ade64d4b3b93655d87c74ac042c704fe00636021f483676938a52",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

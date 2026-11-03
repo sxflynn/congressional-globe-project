@@ -1,0 +1,306 @@
+"""Read-only checkpoint report for the safety-stopped T134 series."""
+from __future__ import annotations
+
+import difflib
+import hashlib
+import json
+import re
+from pathlib import Path
+
+from congressional_globe.productive_ocr_local import LocalTransportReceipt, read_spool
+
+ROOT = Path(__file__).resolve().parents[1]
+ART = ROOT / "artifacts/broader-join-study-20261103-01"
+MODEL = "qwen3.8:27b-mlx"
+MODEL_DIGEST = "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e"
+CASE_ORDER = [f"X{i:02d}" for i in range(1, 16)] + ["J1", "J2"]
+
+
+def sha(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def load(path: Path):
+    return json.loads(path.read_bytes())
+
+
+def normalized_punctuation_tokens(text: str) -> list[str]:
+    normalized = text.replace("’", "'").replace("“", '"').replace("”", '"')
+    return re.findall(r"\w+|[^\w\s]", normalized.casefold())
+
+
+def parse_reply(text: str):
+    try:
+        value = json.loads(text)
+        reading = value["readings"][0]
+        return reading.get("coverage"), reading.get("corrected_text"), reading.get("reason")
+    except (ValueError, KeyError, IndexError, TypeError):
+        return None, None, None
+
+
+def source_snapshot(freeze, refs, source_review):
+    targets = []
+    selected_rows = {row["source_id"]: row for row in load(ART / "fresh-sample.json")["primary"]}
+    for row in freeze["cases"]:
+        case = row["case"]
+        assessment = next(x for x in refs["assessments"] if x["case"] == case)
+        host = load(ART / case / "host.json")
+        sample_row = selected_rows.get(row["source_id"], {})
+        targets.append({
+            "case": case,
+            "source_id": row["source_id"],
+            "raw_sha256": row["raw_sha256"],
+            "static_sha256": sample_row.get("static_sha256"),
+            "page_line_sha256": row["page_line_sha256"],
+            "image_sha256": host["payload"]["image"]["sha256"],
+            "root_visible_illustration": assessment["visible_source_reading"],
+            "comparison_mode": assessment["comparison_mode"],
+            "expected_numbers": assessment.get("expected_numbers", []),
+            "expected_behavior": assessment["expected_behavior"],
+            "source_uncertainty": assessment.get("source_uncertainty"),
+            "source_reference_review": next((x for x in source_review["cases"] if x["case"] == case), None),
+        })
+    return {
+        "task": "T134 partial result snapshot",
+        "selection_sha256": sha((ART / "selection-freeze.json").read_bytes()),
+        "root_source_readings_sha256": sha((ART / "root-source-readings.json").read_bytes()),
+        "independent_source_review_sha256": sha((ART / "source-reference-review.json").read_bytes()),
+        "accepted_gold": refs.get("accepted_gold", False),
+        "source_reference_method": refs.get("method"),
+        "cases": targets,
+        "interpretation_limit": "Root readings and the bounded source review are provisional source assessments, not accepted gold or human labels.",
+    }
+
+
+def main():
+    freeze = load(ART / "selection-freeze.json")
+    refs = load(ART / "root-source-readings.json")
+    source_review = load(ART / "source-reference-review.json")
+    manifest_path = ART / "request-freeze.json"
+    manifest_bytes = manifest_path.read_bytes()
+    manifest = json.loads(manifest_bytes)
+    pin = (ART / "launch-pin.txt").read_text().strip()
+    code_sha = sha((ART / "code-identity.json").read_bytes())
+    selection_sha = sha((ART / "selection-freeze.json").read_bytes())
+    method_sha = sha((ART / "method-freeze.json").read_bytes())
+    driver_path = ROOT / "tmp/t134-drive.py"
+    call_path = ROOT / "tmp/t134-call.py"
+    assert pin == sha(manifest_bytes)
+    assert manifest["script_sha256"] == sha(call_path.read_bytes())
+    assert manifest["driver_sha256"] == sha(driver_path.read_bytes())
+    assert manifest["selection_sha256"] == selection_sha
+    assert manifest["method_sha256"] == method_sha
+    assert manifest["code_sha256"] == code_sha
+    assert manifest["bounds"] == freeze["bounds"]
+    assert manifest["provider_calls_so_far"] == 0
+    assert set(manifest["body_sha256_by_case"]) == set(CASE_ORDER)
+    assert len(freeze["cases"]) == 17
+
+    phase = load(ART / "model-phase.json")
+    case_reports = []
+    success_count = 0
+    failure_count = 0
+    attempt_count = 0
+    known_input = known_output = 0
+    cycle_seconds = transport_seconds = 0.0
+    failure_seconds = 0.0
+    receipt_ends = []
+
+    for frozen in freeze["cases"]:
+        case = frozen["case"]
+        case_dir = ART / case
+        body = (case_dir / "request.json").read_bytes()
+        body_sha = sha(body)
+        assert body_sha == manifest["body_sha256_by_case"][case]
+        host = load(case_dir / "host.json")
+        assessment = next(x for x in refs["assessments"] if x["case"] == case)
+        target = host["payload"]["paragraphs"][0]
+        assert target["source_id"] == frozen["source_id"]
+        assert target["raw"]["sha256"] == frozen["raw_sha256"]
+        observations = []
+
+        for repeat in (1, 2, 3):
+            run = case_dir / f"call-{repeat}"
+            result_path = run / "result.json"
+            if not result_path.is_file():
+                if run.exists():
+                    raise ValueError(f"started slot lacks terminal result: {case}/{repeat}")
+                continue
+            result = load(result_path)
+            attempt_count += 1
+            assert (result["case"], result["repeat"]) == (case, repeat)
+            assert result.get("request_sha256", body_sha) == body_sha
+            intent = load(run / "intent.json")
+            assert intent["request_sha256"] == body_sha
+            assert intent["script_sha256"] == manifest["script_sha256"]
+            assert intent["calls"] == 1 and intent["retries"] == 0
+            spool_dirs = list((run / "spool").glob("*"))
+            assert len(spool_dirs) == 1
+            spool = spool_dirs[0]
+            request_path = spool / "request.bin"
+            assert request_path.read_bytes() == body
+            receipt_path = spool / "receipt.json"
+            receipt_bytes = receipt_path.read_bytes()
+            receipt_sha = sha(receipt_bytes)
+            assert (spool / "receipt.sha256").read_text().strip() == receipt_sha
+            receipt = LocalTransportReceipt.model_validate_json(receipt_bytes)
+            assert receipt.request_sha256 == body_sha
+            assert receipt.model_name == MODEL and receipt.model_digest == host["payload"]["model_digest"] == MODEL_DIGEST
+            assert receipt.stop_observation == result["owned_stop_observation"]
+            receipt_ends.append(receipt.ended_at_epoch)
+
+            response = result.get("response")
+            if response is None:
+                failure_count += 1
+                failure_seconds += float(result["elapsed_seconds"])
+                assert result.get("safe_to_continue") is False
+                assert result["owned_stop_observation"] == "stopped"
+                assert receipt.stop_observation == "stopped"
+                assert receipt.response_http_sha256 is None
+                assert not (spool / "response.http").exists()
+                observations.append({
+                    "repeat": repeat,
+                    "attempt_status": "capture_failed_after_request_start",
+                    "error_type": result.get("error"),
+                    "error_cause": "not inferred",
+                    "request_sha256": body_sha,
+                    "receipt_sha256": receipt_sha,
+                    "receipt_file_sha256_matches_sidecar": True,
+                    "receipt_request_sha256_matches_request": True,
+                    "known_stop_observation": "stopped",
+                    "response_http_bytes_available": False,
+                    "usage": None,
+                    "elapsed_seconds": result["elapsed_seconds"],
+                    "safe_to_continue": False,
+                })
+                continue
+
+            recovered = read_spool(run / "spool", body_sha, MODEL, MODEL_DIGEST)
+            assert recovered is not None
+            assert recovered.stop_observation == "stopped"
+            assert recovered.receipt_sha256 == result["receipt_sha256"] == receipt_sha
+            for key in ("output_text", "usage", "status", "finish_reason"):
+                assert recovered.response.get(key) == response.get(key)
+            assert result["owned_stop_observation"] == "stopped" and result["safe_to_continue"] is True
+            assert response.get("status") == "completed" and response.get("finish_reason") == "stop"
+            usage = response.get("usage") or {}
+            assert all(type(usage.get(key)) is int and usage[key] >= 0 for key in ("input_tokens", "output_tokens"))
+            assert usage["output_tokens"] <= 1500
+            output_text = response.get("output_text", "")
+            coverage, corrected_text, reason = parse_reply(output_text)
+            success_count += 1
+            known_input += usage["input_tokens"]
+            known_output += usage["output_tokens"]
+            cycle_seconds += float(result["elapsed_seconds"])
+            transport_seconds += float(result["transport_elapsed_seconds"])
+            if case == "X12":
+                expected_source_behavior = coverage == "incomplete" and corrected_text is None and isinstance(reason, str) and bool(reason.strip())
+            elif corrected_text is None:
+                expected_source_behavior = False
+            elif assessment["comparison_mode"] == "words_and_numbers_ignore_dotleader_count":
+                expected_source_behavior = re.findall(r"\w+", corrected_text.casefold()) == re.findall(r"\w+", assessment["visible_source_reading"].casefold()) and re.findall(r"\d+", corrected_text) == assessment.get("expected_numbers", [])
+            else:
+                expected_source_behavior = normalized_punctuation_tokens(corrected_text) == normalized_punctuation_tokens(assessment["visible_source_reading"])
+            changes = []
+            if corrected_text is not None:
+                for tag, a, b, c, d in difflib.SequenceMatcher(None, target["static"]["text"], corrected_text, autojunk=False).get_opcodes():
+                    if tag != "equal":
+                        changes.append({"software_quote": target["static"]["text"][a:b], "model_quote": corrected_text[c:d], "start": a, "end": b})
+            observations.append({
+                "repeat": repeat,
+                "attempt_status": "completed_http_response",
+                "request_sha256": body_sha,
+                "receipt_sha256": receipt_sha,
+                "raw_reply_sha256": sha(output_text.encode("utf-8")),
+                "complete_http": True,
+                "positive_owned_stop": True,
+                "finish_reason": response["finish_reason"],
+                "usage": usage,
+                "elapsed_seconds": result["elapsed_seconds"],
+                "transport_elapsed_seconds": result["transport_elapsed_seconds"],
+                "reply_coverage": coverage,
+                "corrected_text": corrected_text,
+                "reason": reason,
+                "host_export_outcome": result["export"].get("outcome"),
+                "proposal_status": result["export"].get("outcome", {}).get("proposal_status") if isinstance(result["export"].get("outcome"), dict) else None,
+                "exact_root_illustration_match": corrected_text == assessment["visible_source_reading"],
+                "case_and_punctuation_token_match": corrected_text is not None and normalized_punctuation_tokens(corrected_text) == normalized_punctuation_tokens(assessment["visible_source_reading"]),
+                "word_sequence_match": corrected_text is not None and re.findall(r"\w+", corrected_text.casefold()) == re.findall(r"\w+", assessment["visible_source_reading"].casefold()),
+                "numeric_sequence_match": corrected_text is not None and re.findall(r"\d+", corrected_text) == assessment.get("expected_numbers", []),
+                "predeclared_source_behavior_matches": expected_source_behavior,
+                "software_to_reply_differences": changes,
+            })
+
+        if len(observations) == 0:
+            status = "not_started"
+        elif all(x["attempt_status"] == "completed_http_response" for x in observations) and len(observations) == 3:
+            status = "three_http_calls_complete"
+        elif len(observations) == 1 and observations[0]["attempt_status"] == "capture_failed_after_request_start":
+            status = "safety_stopped_after_capture_failure"
+        else:
+            status = "partial_or_mixed_attempts"
+        texts = [x.get("corrected_text") for x in observations if x["attempt_status"] == "completed_http_response"]
+        case_reports.append({
+            "case": case,
+            "source_id": frozen["source_id"],
+            "raw_sha256": frozen["raw_sha256"],
+            "root_visible_illustration": assessment["visible_source_reading"],
+            "expected_behavior": assessment["expected_behavior"],
+            "comparison_mode": assessment["comparison_mode"],
+            "expected_numbers": assessment.get("expected_numbers", []),
+            "source_uncertainty": assessment.get("source_uncertainty"),
+            "body_sha256": body_sha,
+            "observed_attempts": len(observations),
+            "completed_http_responses": sum(x["attempt_status"] == "completed_http_response" for x in observations),
+            "capture_failures": sum(x["attempt_status"] == "capture_failed_after_request_start" for x in observations),
+            "group_status": status,
+            "distinct_corrected_text_values": len(set(texts)),
+            "observations": observations,
+        })
+
+    # Check fixed slot accounting without pretending the three groups were completed.
+    assert attempt_count == 37 and success_count == 36 and failure_count == 1
+    assert sum(c["group_status"] == "three_http_calls_complete" for c in case_reports) == 12
+    assert next(c for c in case_reports if c["case"] == "X13")["group_status"] == "safety_stopped_after_capture_failure"
+    assert {c["case"] for c in case_reports if c["group_status"] == "not_started"} == {"X14", "X15", "J1", "J2"}
+    assert len(receipt_ends) == 37
+    last_end = max(receipt_ends)
+    phase_elapsed = last_end - phase["started_at_epoch"]
+    phase_within_budget = phase_elapsed <= 7200 and last_end <= phase["deadline_epoch"]
+
+    prior = load(ROOT / "artifacts/remaining-parts-audit-20261103-01/report.json")["cumulative_recent_series"]
+    cumulative = {
+        "attempts": prior["attempts"] + attempt_count,
+        "request_cycle_seconds_known_completed_only": prior["request_cycle_seconds"] + cycle_seconds,
+        "known_input_tokens": prior["known_input_tokens"] + known_input,
+        "known_output_tokens": prior["known_output_tokens"] + known_output,
+        "unknown_usage_attempts": prior["unknown_usage_attempts"] + failure_count,
+    }
+    proc = load(ART / "terminal-processes.json")
+    status_counts = {status: sum(c["group_status"] == status for c in case_reports) for status in sorted({c["group_status"] for c in case_reports})}
+    report = {
+        "task": "T134",
+        "report_status": "partial_safety_stopped",
+        "safety_stop": {"trigger": "One owned-local capture failed after the request started; response HTTP bytes, raw reply, and usage were unavailable. Failure is retained as unknown-usage; no cause inferred. The operator closed all remaining slots.", "failed_case": "X13", "failed_repeat": 1, "failed_elapsed_seconds": failure_seconds, "known_owned_stop": "stopped", "response_bytes_present": False},
+        "planned": {"cases": 17, "calls": 51, "per_case_repeats": 3, "retries": 0, "per_case_group_seconds": 1800, "total_model_phase_seconds": 7200},
+        "actual": {"attempts": attempt_count, "completed_http_responses": success_count, "capture_failures_with_unknown_usage": failure_count, "unused_slots_closed": 14, "case_status_counts": status_counts, "retries": 0},
+        "frozen_binding_verification": {"external_launch_pin_matches_request_freeze": True, "request_freeze_sha256": sha(manifest_bytes), "operator_script_sha256_matches_manifest": True, "driver_sha256_matches_manifest": True, "selection_sha256_matches_manifest": True, "method_sha256_matches_manifest": True, "code_sha256_matches_manifest": True, "all_17_request_body_hashes_match_manifest": True, "all_37_attempt_body_and_intent_hashes_match": True},
+        "receipt_verification": {"completed_attempts_recovered_by_read_spool": success_count, "all_completed_receipts_match_result_and_request": True, "failed_receipt_sidecar_and_request_hash_match": True, "failed_receipt_stop_observation": "stopped", "failed_receipt_has_no_http_response_hash_or_file": True},
+        "timing_and_usage": {"completed_request_cycle_seconds": cycle_seconds, "completed_owned_transport_seconds": transport_seconds, "failed_attempt_seconds_separate": failure_seconds, "known_input_tokens_36_responses": known_input, "known_output_tokens_36_responses": known_output, "unknown_usage_attempts_this_run": failure_count, "last_receipt_phase_elapsed_seconds": phase_elapsed, "within_7200_second_phase_budget": phase_within_budget},
+        "cumulative_recent_series": cumulative,
+        "terminal_runtime_evidence": {"recorded_owned_pids_absent": proc["all_recorded_owned_pids_absent"], "recorded_owned_identities_absent": proc["all_recorded_owned_identities_absent"], "shared_lock": proc["shared_lock"], "cleanup_claimed": proc["queue"].get("claimed"), "bounded_logs_limit": proc["log_scope"]},
+        "cases": case_reports,
+        "limits": ["Only X01–X12 completed three response captures. X12 transport completed in all three repeats, but two inferred-complete replies were rejected by the source-bound reply guard; one incomplete/null reply with a reason was accepted.", "X13 call 1 ended with a positive owned stop but no HTTP response bytes or usage; repeats 2–3 and all X14, X15, J1 and J2 slots were not started. These are not zero-error outcomes.", "No five-part model comparison or matched-case result is available; J1 and J2 were not executed.", "Source readings are one reader's provisional illustrations with the separate cached-image review; there is no accepted gold or inferred human label.", "T134 remains a small bounded sample; it establishes neither population accuracy nor model superiority. Raw output artifacts remain the source of record."],
+        "evidence_paths": {"request_freeze": "request-freeze.json", "selection_freeze": "selection-freeze.json", "root_source_readings": "root-source-readings.json", "source_reference_review": "source-reference-review.json", "model_phase": "model-phase.json", "terminal_processes": "terminal-processes.json", "attempts": "X01–X12/call-{1,2,3}/result.json; X13/call-1/result.json"},
+    }
+    snapshot = source_snapshot(freeze, refs, source_review)
+    snapshot_path = ART / "source-snapshot.json"
+    snapshot_path.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n")
+    report["source_snapshot"] = {"path": "source-snapshot.json", "sha256": sha(snapshot_path.read_bytes())}
+    report_path = ART / "report.json"
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+    print(json.dumps({"report_status": report["report_status"], "attempts": attempt_count, "completed_http": success_count, "capture_failures": failure_count, "known_tokens": [known_input, known_output], "failed_seconds": failure_seconds, "phase_elapsed_seconds": phase_elapsed, "source_snapshot_sha256": report["source_snapshot"]["sha256"], "report_sha256": sha(report_path.read_bytes())}, indent=2))
+
+
+if __name__ == "__main__":
+    main()

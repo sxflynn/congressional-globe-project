@@ -1,0 +1,53 @@
+"""One-off progress packets, immutable versions, original passages plain."""
+import hashlib,json,re,sys
+from pathlib import Path
+r=Path('artifacts/broader-join-study-20261103-01');version=int(sys.argv[1]);f=json.loads((r/'selection-freeze.json').read_bytes());sample=json.loads((r/'fresh-sample.json').read_bytes());rows={x['source_id']:x for x in sample['primary']};refs=json.loads((r/'root-source-readings.json').read_bytes()) if (r/'root-source-readings.json').exists() else {'assessments':[]};items=[];catalog={};total=0;total_replies=0
+for choice in f['cases']:
+ case=choice['case'];d=r/case;hostpath=d/'host.json';swpath=d/'software-result.json'
+ if not swpath.exists():continue
+ host=json.loads(hostpath.read_bytes()) if hostpath.exists() else None
+ raw=host['payload']['paragraphs'][0]['raw']['text'] if host else rows[choice['source_id']]['raw_text'];sw=json.loads(swpath.read_bytes());software=host['payload']['paragraphs'][0]['static']['text'] if host else sw['proposed_text'];a=next((x for x in refs['assessments'] if x['case']==case),None)
+ parts=[('Inputs — full original OCR:\n',False),(raw,True),('\n\nExpected output — inspect the whole assigned passage against its image, join a word split only by a printed line ending, and preserve real compound-word hyphens and dashes. Missing or unclear source text requires an explicit unresolved answer. ',False)]
+ if a:
+  parts.extend([('My source reading was recorded before these candidate replies. It is provisional AI evidence; uncertainty is described below:\n',False),(a['visible_source_reading'],True),('\n'+str(a.get('source_uncertainty') or 'No uncertainty noted by this reader.'),False)])
+ else:parts.append(('The image reading is still pending. This card shows the actual software result first; it is not a verified transcription.',False))
+ parts.extend([('\n\nActual output — full software first pass:\n',False),(software,True)]);observations=[];uncertainty_matches=0;elapsed=0;input_tokens=0;output_tokens=0;unknown_usage=0;valid_replies=0;rejection_reasons=[];available_replies=0
+ if case=='X13':parts.extend([('\n\nExpected number checks — the original OCR and software contain two plausible numbers that differ from the frozen source reading. Across all 51 numeric tokens, the provisional source-supported replacements are:\n',False),('2750 → 2756; 3033 → 3633',True),('\nThese are AI source assessments, not accepted human grades. The original source text and model requests remain unchanged.',False)])
+ for n in [1,2,3]:
+  p=d/f'call-{n}/result.json'
+  if not p.exists():continue
+  x=json.loads(p.read_bytes());reply=x.get('response',{}).get('output_text','');text=None;q={}
+  try:
+   q=json.loads(reply)['readings'][0];text=q['corrected_text'];uncertainty_matches+=q.get('coverage')=='incomplete' and text is None and isinstance(q.get('reason'),str) and bool(q['reason'].strip())
+  except (ValueError,TypeError,KeyError,IndexError):pass
+  total+=1;available=bool(x.get('response',{}).get('output_text'));available_replies+=available;total_replies+=available;observations.append(text);valid_replies+=isinstance(x.get('export',{}).get('outcome'),dict);rejection_reasons.extend([x['export']['rejection_reason']] if isinstance(x.get('export',{}).get('rejection_reason'),str) else []);elapsed+=x.get('elapsed_seconds',0);usage=x.get('response',{}).get('usage') or {};known_usage=all(type(usage.get(k)) is int for k in ['input_tokens','output_tokens']);input_tokens+=usage.get('input_tokens',0) if known_usage else 0;output_tokens+=usage.get('output_tokens',0) if known_usage else 0;unknown_usage+=not known_usage;parts.extend([((f'\n\nActual output — Qwen run {n} of 3:\n' if available else f'\n\nActual outcome — attempt {n} of 3 returned no model reply:\n'),False),(text if text is not None else reply or x.get('reason','No captured reply.'),True)])
+  parts.append((f'\nReported coverage: {q.get("coverage","unreadable")}; software reply checks: '+('passed, still unreviewed AI evidence.' if isinstance(x.get('export',{}).get('outcome'),dict) else ('rejected.' if x.get('export') else 'no reply available to check.')),False))
+ changes=sw.get('proposed_edits',[]);summary=f'\n\nDifferences — software proposes {len(changes)} changes; {len(observations)} of 3 planned attempts recorded, with {available_replies} model replies. '
+ if a and observations and case!='X12':
+  normalized=lambda t:re.findall(r'\w+|[^\w\s]',t.replace('’',"'").replace('“','"').replace('”','"').casefold())
+  matches=sum(t is not None and ((re.findall(r'\w+',t.casefold())==re.findall(r'\w+',a['visible_source_reading'].casefold())) if a['comparison_mode']=='words_and_numbers_ignore_dotleader_count' else normalized(t)==normalized(a['visible_source_reading'])) for t in observations);nums=re.findall(r'\d+',a['visible_source_reading']);nm=sum(t is not None and re.findall(r'\d+',t)==nums for t in observations);summary+=(f'{matches} match the provisional word sequence; index leader counts and spacing are not scored. ' if a['comparison_mode']=='words_and_numbers_ignore_dotleader_count' else f'{matches} match the provisional words and punctuation with case, spacing and quote-style variants treated alike. ');summary+=(f'{nm} match its numeric sequence. ' if nums else 'The provisional reading contains no digit-based numbers; an empty sequence is not a numeric-accuracy test. ')
+ if case=='X12' and observations:summary+=f'{uncertainty_matches} of {len(observations)} return the required incomplete coverage with null text and a reason. This checks uncertainty handling rather than full-transcription accuracy. '
+ if case=='X11':summary+='A separate source check before this passage’s model outputs found a small leading mark before Mr. NYE. in the crop and raw OCR. Its ownership at the paragraph boundary is unresolved; retaining or dropping this mark is not graded as a known source error. The frozen reading is preserved.'
+ if case=='X12':summary+='The source ends in a cut-off word. The required uncertainty behavior is incomplete coverage with null corrected text and a reason; do not score this as a complete transcription. '
+ if case in ['J1','J2']:
+  prior=Path(choice['baseline_root'])/choice['baseline_case'];baseline=[]
+  for n in [1,2,3]:
+   x=json.loads((prior/f'call-{n}/result.json').read_bytes());baseline.append(json.loads(x['response']['output_text'])['readings'][0]['corrected_text'])
+  for n,t in enumerate(baseline,1):parts.extend([(f'\n\nActual output — saved earlier baseline run {n}, not a new call:\n',False),(t,True)])
+  summary+='This is a known previous failure case. Only the generic word-joining instruction differs in the actual request; earlier results are reused. The operator has seen those results, so this is an exposed diagnostic rather than fresh confirmation. '
+ if observations:summary+=f'{valid_replies} of {available_replies} available replies pass software reply checks; those checks do not certify source accuracy. ';summary+=(' Rejection reason: '+'; '.join(sorted(set(rejection_reasons)))+'. ' if rejection_reasons else '')
+ if observations:summary+=f'Recorded call time totals {elapsed:.3f} seconds; reported usage is {input_tokens} input and {output_tokens} output tokens, with {unknown_usage} observations missing usage. '
+ summary+='All raw inputs and replies remain preserved. Three runs measure repeatability on this exact input; they do not establish population accuracy or permission to change accepted text.';parts.append((summary,False));text='';spans=[]
+ for value,source in parts:
+  start=len(text);text+=value
+  if source:spans.append({'start':start,'end':len(text)})
+ item=dict(label=f'{case}: part {choice["part"]}, leaf {choice["leaf"]}',text=text)
+ receipt=d/'image/crop-01.jpg.receipt.json'
+ if receipt.exists():item['url']=json.loads(receipt.read_bytes())['requested_url']
+ items.append(item);catalog[hashlib.sha256(text.encode()).hexdigest()]=spans
+packet=dict(id='HR-033',version=version,title=f'Broader Qwen study: {total} of 51 observations',instructions='This fixed study covers fifteen fresh passages across all five parts and two known word-joining cases. Each has three identical candidate calls. One generic instruction asks Qwen to join words divided only by printed line endings while preserving real compound-word hyphens. Actual software results appear first; actual model results are added as calls finish. Optional comments can steer the remaining observations. Source readings are provisional, and a matching model answer is separate from human acceptance.',blind=False,questions=[dict(id='broader-qwen-comments',prompt='Optional notes on these passages and repeated results',options=[],required=False,evidence=items)])
+if (r/'safety-stop.json').exists():
+ packet['title']=f'Qwen study halted: {total_replies} replies and {total-total_replies} failed attempt'
+ packet['instructions']='This study stopped after 37 of its 51 planned attempts: 36 replies were captured, then the dense index request failed without a reply or token counts. Its worker stopped. The remaining 14 slots are closed and unexecuted under the fixed stopping rule; no retry is scheduled. Twelve groups have three observations each; the dense index group is incomplete, and the last four groups never started. The two exposed comparison cases therefore have no new model results. My source readings and the source-check disagreement remain provisional. Optional notes can inform future work.'
+if total==51:packet['instructions']+=' All 51 fixed observations are now recorded and these slots are spent. Further comments can inform future work; no more calls are scheduled in this study.'
+p=Path(f'docs/review-packets/HR-033-v{version}.json');assert not p.exists();p.write_text(json.dumps(packet,indent=2,ensure_ascii=False)+'\n');p=Path('docs/review-source-spans.json');data=json.loads(p.read_bytes());data['source_spans'].update(catalog);p.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n');print(f'HR033v{version}: {total} actual calls, {len(items)} visible cases.')

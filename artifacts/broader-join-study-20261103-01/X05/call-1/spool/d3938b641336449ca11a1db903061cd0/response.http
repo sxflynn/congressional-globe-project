@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 22:01:19 GMT
+Content-Length: 1232
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T22:01:19.701085Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. BALDWIN. I move to strike out the last ten words of the section. This would kill it; and I think this section ought to be killed in some way, and for this reason: the attempt to advertise letters in any other way than is now prescribed would certainly cost the Government more than it costs now, or the attempt to advertise suitably would fail. Any job printer who should be required to furnish printed lists of letters suitable for posting would charge more for his work than it costs to advertise them in the newspapers. Any one familiar with the printing business knows this, or will readily see it by means of a little calculation.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"X05\"\n}"},"done":true,"done_reason":"stop","total_duration":40453817667,"load_duration":3213590750,"prompt_eval_count":3665,"prompt_eval_cached_count":0,"prompt_eval_duration":30172584583,"eval_count":214,"eval_duration":7034420709}

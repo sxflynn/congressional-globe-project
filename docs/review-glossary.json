@@ -2575,6 +2575,101 @@
       "term": "source capture",
       "aliases": [],
       "definition": "The process of obtaining and bounding the image or text supplied for inspection."
+    },
+    {
+      "term": "Qwen",
+      "aliases": [],
+      "definition": "The name of a family of AI models. The particular model and settings used in a study are recorded with its results."
+    },
+    {
+      "term": "candidate",
+      "aliases": [
+        "candidate calls",
+        "candidate observations"
+      ],
+      "definition": "An option being tested. Here, a candidate call uses the proposed instruction and records the model reply."
+    },
+    {
+      "term": "generic instruction",
+      "aliases": [
+        "generic word-joining instruction",
+        "generic linejoininstruction"
+      ],
+      "definition": "A direction written to apply across passages, without supplying the answer for a particular passage."
+    },
+    {
+      "term": "repeatability",
+      "aliases": [],
+      "definition": "How consistently repeated attempts with the same input and settings give the same result. Agreement alone does not show whether that result matches the source."
+    },
+    {
+      "term": "numeric sequence",
+      "aliases": [
+        "numeric tokens"
+      ],
+      "definition": "The numbers listed in their original order. Comparing this sequence checks whether numbers were added, removed, reordered or changed."
+    },
+    {
+      "term": "source reading",
+      "aliases": [
+        "source readings"
+      ],
+      "definition": "A reader’s account of the words and marks visible in a source image. It can contain uncertainty or mistakes and may need another review."
+    },
+    {
+      "term": "compound-word hyphens",
+      "aliases": [
+        "compound-word hyphen"
+      ],
+      "definition": "Hyphens that connect parts of a word as printed, rather than appearing only because a word reaches the end of a line."
+    },
+    {
+      "term": "printed line endings",
+      "aliases": [
+        "printed line ending"
+      ],
+      "definition": "The places where lines of print end on a page. A word may be split there and continue on the next line."
+    },
+    {
+      "term": "observations",
+      "aliases": [
+        "observation"
+      ],
+      "definition": "Recorded results of actual attempts. In this study each observation is one model response, including any uncertainty or failure."
+    },
+    {
+      "term": "identical calls",
+      "aliases": [
+        "identical candidate calls",
+        "identical candidate observations"
+      ],
+      "definition": "Separate model attempts using the same input bytes, prompt, image and settings. Each attempt is recorded even when its answer differs."
+    },
+    {
+      "term": "word-joining",
+      "aliases": [
+        "word joining"
+      ],
+      "definition": "Combining visible parts of a word that were split across printed lines. A real compound-word hyphen may need to remain."
+    },
+    {
+      "term": "failure record",
+      "aliases": [
+        "failure records"
+      ],
+      "definition": "A saved account of a failed attempt. It can show what was observed, what remains unknown and which request it belongs to."
+    },
+    {
+      "term": "error category",
+      "aliases": [
+        "error categories"
+      ],
+      "definition": "A short label for a kind of failure, such as a timeout or a broken connection. A label may describe only one step rather than the underlying cause."
+    },
+    {
+      "term": "http_exchange",
+      "aliases": [],
+      "definition": "The step that sends a request to a local service and reads its reply. This label alone does not explain why that step failed."
     }
   ]
 }

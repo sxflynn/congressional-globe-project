@@ -1,0 +1,24 @@
+"""One-off matched-input assembly; no model or network calls."""
+import copy,json,shutil
+from pathlib import Path
+from congressional_globe.productive_ocr_host import canonical_json,sha256_bytes
+from congressional_globe.productive_ocr_measurement_inputs import _registry
+from congressional_globe.productive_ocr_projection import compile_request_projection
+r=Path('artifacts/broader-join-study-20261103-01');index=json.loads((r/'registry-index.json').read_bytes());proof=[]
+for case,oldroot,oldcase in [('J1','remaining-parts-audit-20261103-01','W2'),('J2','expanded-workflow-audit-20261103-01','V6')]:
+ prior=Path('artifacts')/oldroot;d=r/case;d.mkdir(exist_ok=False);old=prior/oldcase
+ for name in ['source-page.jsonl','software-result.json','route.json','geometry.json']:
+  shutil.copyfile(old/name,d/name)
+ shutil.copytree(old/'image',d/'image');host=json.loads((old/'host.json').read_bytes());oldindex=json.loads((prior/'registry-index.json').read_bytes())
+ registry=_registry(prior.resolve(),host,oldindex);oldprompt=(old/'prompt.txt').read_text();join=(r/'join-instruction.txt').read_text();prompt=oldprompt+'\n\n'+join;ph=sha256_bytes(prompt.encode());registry.files[ph]=prompt.encode();path=r/'registered'/ph;path.write_text(prompt);oldindex['files'][ph]={'path':str(path),'bytes':len(prompt.encode())}
+ host['payload']['prompt_sha256']=ph;host['packet_sha256']=sha256_bytes(canonical_json(host['payload']));projection,schema=compile_request_projection(host,registry,prompt,'qwen3.8:27b-mlx',conformance_v4=True)
+ baseline=json.loads((old/'request.json').read_bytes());candidate=json.loads(projection.body_utf8);expected=copy.deepcopy(baseline);expected['messages'][0]['content']+='\n\n'+join;assert candidate==expected,'Actual request differs beyond appended generic instruction'
+ for name,value in [('host.json',host),('projection.json',projection.model_dump(mode='json')),('schema.json',json.loads(schema.schema_text))]:(d/name).write_bytes(canonical_json(value))
+ (d/'request.json').write_bytes(projection.body_utf8.encode());(d/'prompt.txt').write_text(prompt)
+ for key in ['files','images']:
+  for h,v in oldindex[key].items():
+   if h in index[key]:assert index[key][h]==v or key=='files'
+   else:index[key][h]=v
+ index['records']=sorted(set(index['records'])|set(oldindex['records']))
+ proof.append(dict(case=case,unit_id=host['payload']['unit_id'],baseline_root=str(prior),baseline_case=oldcase,baseline_request_sha256=sha256_bytes((old/'request.json').read_bytes()),candidate_request_sha256=projection.body_sha256,sole_wire_change='messages[0].content appended generic join instruction',baseline_saved_calls=3,new_candidate_calls=3))
+(r/'registry-index.json').write_bytes(canonical_json(index));(r/'matched-input-proof.json').write_bytes(canonical_json(proof));print('Two matched candidates differ from saved baselines only by appended generic instruction.')

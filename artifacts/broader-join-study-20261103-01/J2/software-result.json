@@ -1,0 +1,699 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7395unit:302:par_000302_000012",
+      "raw_text": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+      "raw_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e"
+    },
+    "static_text": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+    "static_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+    "static_edits": [],
+    "lines": [
+      {
+        "line_id": "line_000302_000092",
+        "start": 0,
+        "end": 35,
+        "text": "Mr. SUMNEll. The Senator has under-"
+      },
+      {
+        "line_id": "line_000302_000093",
+        "start": 36,
+        "end": 82,
+        "text": "taken to lead in an increase of salaries. Now,"
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "2d0cbc5e5122d6c882024f343be99e192ef56cf24a33687c627b65a9cf2d01fc"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "1df7c8317a364c8b7fb53b986112833c53ee8e858369695e9d52f8a7e0c2dbe2",
+  "proposed_text": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+  "proposed_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+  "proposed_edits": [],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 82,
+      "derived_start": 0,
+      "derived_end": 82,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 29,
+      "end": 41,
+      "raw_quote": "under- taken",
+      "joined_candidate": "undertaken",
+      "decision": "retained_for_review",
+      "reason": "joined_form_not_known"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. SUMNEll. The Senator has under",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 11,
+      "text": "SUMNEll",
+      "raw_start": 4,
+      "raw_end": 11,
+      "raw_quote": "SUMNEll",
+      "context": "Mr. SUMNEll. The Senator has under- taken t",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "title_name_cue"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 13,
+      "end": 16,
+      "text": "The",
+      "raw_start": 13,
+      "raw_end": 16,
+      "raw_quote": "The",
+      "context": "Mr. SUMNEll. The Senator has under- taken to lea",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 17,
+      "end": 24,
+      "text": "Senator",
+      "raw_start": 17,
+      "raw_end": 24,
+      "raw_quote": "Senator",
+      "context": "Mr. SUMNEll. The Senator has under- taken to lead in an ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 25,
+      "end": 28,
+      "text": "has",
+      "raw_start": 25,
+      "raw_end": 28,
+      "raw_quote": "has",
+      "context": "Mr. SUMNEll. The Senator has under- taken to lead in an incr",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "title_name_cue"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 29,
+      "end": 34,
+      "text": "under",
+      "raw_start": 29,
+      "raw_end": 34,
+      "raw_quote": "under",
+      "context": "Mr. SUMNEll. The Senator has under- taken to lead in an increase o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 36,
+      "end": 41,
+      "text": "taken",
+      "raw_start": 36,
+      "raw_end": 41,
+      "raw_quote": "taken",
+      "context": "SUMNEll. The Senator has under- taken to lead in an increase of salar",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 42,
+      "end": 44,
+      "text": "to",
+      "raw_start": 42,
+      "raw_end": 44,
+      "raw_quote": "to",
+      "context": "l. The Senator has under- taken to lead in an increase of salaries",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 45,
+      "end": 49,
+      "text": "lead",
+      "raw_start": 45,
+      "raw_end": 49,
+      "raw_quote": "lead",
+      "context": "The Senator has under- taken to lead in an increase of salaries. Now",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 50,
+      "end": 52,
+      "text": "in",
+      "raw_start": 50,
+      "raw_end": 52,
+      "raw_quote": "in",
+      "context": "enator has under- taken to lead in an increase of salaries. Now,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 53,
+      "end": 55,
+      "text": "an",
+      "raw_start": 53,
+      "raw_end": 55,
+      "raw_quote": "an",
+      "context": "tor has under- taken to lead in an increase of salaries. Now,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 56,
+      "end": 64,
+      "text": "increase",
+      "raw_start": 56,
+      "raw_end": 64,
+      "raw_quote": "increase",
+      "context": " has under- taken to lead in an increase of salaries. Now,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 65,
+      "end": 67,
+      "text": "of",
+      "raw_start": 65,
+      "raw_end": 67,
+      "raw_quote": "of",
+      "context": "r- taken to lead in an increase of salaries. Now,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 68,
+      "end": 76,
+      "text": "salaries",
+      "raw_start": 68,
+      "raw_end": 76,
+      "raw_quote": "salaries",
+      "context": "taken to lead in an increase of salaries. Now,",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 78,
+      "end": 81,
+      "text": "Now",
+      "raw_start": 78,
+      "raw_end": 81,
+      "raw_quote": "Now",
+      "context": "ead in an increase of salaries. Now,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 2,
+      "text": "Mr",
+      "raw_start": 0,
+      "raw_end": 2,
+      "raw_quote": "Mr",
+      "context": "Mr. SUMNEll. The Senator has under",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 11,
+      "text": "SUMNEll",
+      "raw_start": 4,
+      "raw_end": 11,
+      "raw_quote": "SUMNEll",
+      "context": "Mr. SUMNEll. The Senator has under- taken t",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "title_name_cue"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 13,
+      "end": 16,
+      "text": "The",
+      "raw_start": 13,
+      "raw_end": 16,
+      "raw_quote": "The",
+      "context": "Mr. SUMNEll. The Senator has under- taken to lea",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 17,
+      "end": 24,
+      "text": "Senator",
+      "raw_start": 17,
+      "raw_end": 24,
+      "raw_quote": "Senator",
+      "context": "Mr. SUMNEll. The Senator has under- taken to lead in an ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 25,
+      "end": 28,
+      "text": "has",
+      "raw_start": 25,
+      "raw_end": 28,
+      "raw_quote": "has",
+      "context": "Mr. SUMNEll. The Senator has under- taken to lead in an incr",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "title_name_cue"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 29,
+      "end": 34,
+      "text": "under",
+      "raw_start": 29,
+      "raw_end": 34,
+      "raw_quote": "under",
+      "context": "Mr. SUMNEll. The Senator has under- taken to lead in an increase o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 36,
+      "end": 41,
+      "text": "taken",
+      "raw_start": 36,
+      "raw_end": 41,
+      "raw_quote": "taken",
+      "context": "SUMNEll. The Senator has under- taken to lead in an increase of salar",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 42,
+      "end": 44,
+      "text": "to",
+      "raw_start": 42,
+      "raw_end": 44,
+      "raw_quote": "to",
+      "context": "l. The Senator has under- taken to lead in an increase of salaries",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 45,
+      "end": 49,
+      "text": "lead",
+      "raw_start": 45,
+      "raw_end": 49,
+      "raw_quote": "lead",
+      "context": "The Senator has under- taken to lead in an increase of salaries. Now",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 50,
+      "end": 52,
+      "text": "in",
+      "raw_start": 50,
+      "raw_end": 52,
+      "raw_quote": "in",
+      "context": "enator has under- taken to lead in an increase of salaries. Now,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 53,
+      "end": 55,
+      "text": "an",
+      "raw_start": 53,
+      "raw_end": 55,
+      "raw_quote": "an",
+      "context": "tor has under- taken to lead in an increase of salaries. Now,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 56,
+      "end": 64,
+      "text": "increase",
+      "raw_start": 56,
+      "raw_end": 64,
+      "raw_quote": "increase",
+      "context": " has under- taken to lead in an increase of salaries. Now,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 65,
+      "end": 67,
+      "text": "of",
+      "raw_start": 65,
+      "raw_end": 67,
+      "raw_quote": "of",
+      "context": "r- taken to lead in an increase of salaries. Now,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 68,
+      "end": 76,
+      "text": "salaries",
+      "raw_start": 68,
+      "raw_end": 76,
+      "raw_quote": "salaries",
+      "context": "taken to lead in an increase of salaries. Now,",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 78,
+      "end": 81,
+      "text": "Now",
+      "raw_start": 78,
+      "raw_end": 81,
+      "raw_quote": "Now",
+      "context": "ead in an increase of salaries. Now,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7395unit:302:par_000302_000012",
+      "raw_text": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+      "raw_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7395unit:302:par_000302_000012",
+        "raw_text": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+        "raw_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "Mr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,",
+    "proposed_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

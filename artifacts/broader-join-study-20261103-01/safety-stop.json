@@ -1,0 +1,272 @@
+{
+  "task": "T134",
+  "status": "safety_stopped_incomplete",
+  "failed_case": "X13",
+  "failed_repeat": 1,
+  "attempted": 37,
+  "complete_http_responses": 36,
+  "unknown_usage_attempts": 1,
+  "closed_unexecuted_slots": 14,
+  "owned_stop": "stopped",
+  "reason": "Failed local HTTP request returned no response bytes or usage. Fixed rule stops remaining calls on unknown usage; no retry.",
+  "actual_failure_result_sha256": "f205f1da12fd0ffda629c2f35e79392bbfb0908775a488ffdf58b2b80333becd",
+  "slots": [
+    {
+      "case": "X01",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X01",
+      "repeat": 2,
+      "status": "attempted"
+    },
+    {
+      "case": "X01",
+      "repeat": 3,
+      "status": "attempted"
+    },
+    {
+      "case": "X02",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X02",
+      "repeat": 2,
+      "status": "attempted"
+    },
+    {
+      "case": "X02",
+      "repeat": 3,
+      "status": "attempted"
+    },
+    {
+      "case": "X03",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X03",
+      "repeat": 2,
+      "status": "attempted"
+    },
+    {
+      "case": "X03",
+      "repeat": 3,
+      "status": "attempted"
+    },
+    {
+      "case": "X04",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X04",
+      "repeat": 2,
+      "status": "attempted"
+    },
+    {
+      "case": "X04",
+      "repeat": 3,
+      "status": "attempted"
+    },
+    {
+      "case": "X05",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X05",
+      "repeat": 2,
+      "status": "attempted"
+    },
+    {
+      "case": "X05",
+      "repeat": 3,
+      "status": "attempted"
+    },
+    {
+      "case": "X06",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X06",
+      "repeat": 2,
+      "status": "attempted"
+    },
+    {
+      "case": "X06",
+      "repeat": 3,
+      "status": "attempted"
+    },
+    {
+      "case": "X07",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X07",
+      "repeat": 2,
+      "status": "attempted"
+    },
+    {
+      "case": "X07",
+      "repeat": 3,
+      "status": "attempted"
+    },
+    {
+      "case": "X08",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X08",
+      "repeat": 2,
+      "status": "attempted"
+    },
+    {
+      "case": "X08",
+      "repeat": 3,
+      "status": "attempted"
+    },
+    {
+      "case": "X09",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X09",
+      "repeat": 2,
+      "status": "attempted"
+    },
+    {
+      "case": "X09",
+      "repeat": 3,
+      "status": "attempted"
+    },
+    {
+      "case": "X10",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X10",
+      "repeat": 2,
+      "status": "attempted"
+    },
+    {
+      "case": "X10",
+      "repeat": 3,
+      "status": "attempted"
+    },
+    {
+      "case": "X11",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X11",
+      "repeat": 2,
+      "status": "attempted"
+    },
+    {
+      "case": "X11",
+      "repeat": 3,
+      "status": "attempted"
+    },
+    {
+      "case": "X12",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X12",
+      "repeat": 2,
+      "status": "attempted"
+    },
+    {
+      "case": "X12",
+      "repeat": 3,
+      "status": "attempted"
+    },
+    {
+      "case": "X13",
+      "repeat": 1,
+      "status": "attempted"
+    },
+    {
+      "case": "X13",
+      "repeat": 2,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "X13",
+      "repeat": 3,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "X14",
+      "repeat": 1,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "X14",
+      "repeat": 2,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "X14",
+      "repeat": 3,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "X15",
+      "repeat": 1,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "X15",
+      "repeat": 2,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "X15",
+      "repeat": 3,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "J1",
+      "repeat": 1,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "J1",
+      "repeat": 2,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "J1",
+      "repeat": 3,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "J2",
+      "repeat": 1,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "J2",
+      "repeat": 2,
+      "status": "closed_unexecuted"
+    },
+    {
+      "case": "J2",
+      "repeat": 3,
+      "status": "closed_unexecuted"
+    }
+  ],
+  "root_cause": "unknown; no retained exception chain or private-backend stdout/stderr",
+  "verifier_generation_requests": 0
+}

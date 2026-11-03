@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 21:53:05 GMT
+Content-Length: 1038
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T21:53:05.421306Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"I regret that it is necessary to make these explanations. The language I did utter the other day, however, justified me in what I said here. If the gentleman had properly quoted my remarks I should have said nothing; but that he did not do. If there is a reporter here who will say that I have not given the true version of my remarks, that what is published is not just precisely what I uttered on this floor, then I will admit that I am wrong.\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"X02\"\n}"},"done":true,"done_reason":"stop","total_duration":58274191875,"load_duration":3810788750,"prompt_eval_count":5614,"prompt_eval_cached_count":0,"prompt_eval_duration":47911165333,"eval_count":180,"eval_duration":6527434416}

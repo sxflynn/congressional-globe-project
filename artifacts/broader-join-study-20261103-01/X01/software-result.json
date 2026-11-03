@@ -1,0 +1,4214 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalg7391unit:1029:par_001029_000024",
+      "raw_text": "But, sir, when I say this I do not mean to be understood as defending the theory that the Congress has no right to take hold of these States and people and examine their political condition most thoroughly. I say that, although these rebellious States are in, territorially, the Union, and cannot get out by any act of theirs, yet by their rebellion they have forfeited their right to representation in the Halls of Con- gress, and placed themselves where the na- tional Government can determine at will when thoy shall resume again their original positions and have a^voice in the legislative halls of the nation.",
+      "raw_sha256": "a97fc18526ee486ab6e427f4f43786e496ea79b1dbbc00370a13a901556359cc"
+    },
+    "static_text": "But, sir, when I say this I do not mean to be understood as defending the theory that the Congress has no right to take hold of these States and people and examine their political condition most thoroughly. I say that, although these rebellious States are in, territorially, the Union, and cannot get out by any act of theirs, yet by their rebellion they have forfeited their right to representation in the Halls of Congress, and placed themselves where the national Government can determine at will when thoy shall resume again their original positions and have a^voice in the legislative halls of the nation.",
+    "static_sha256": "4e9f55b42c3b59905ee36eaa436343833a8cfbaaf413d63b152714ccd4751716",
+    "static_edits": [
+      {
+        "start": 416,
+        "end": 426,
+        "raw_quote": "Con- gress",
+        "replacement": "Congress",
+        "rule_id": "adjacent-line wrap; lexicon form congress"
+      },
+      {
+        "start": 460,
+        "end": 470,
+        "raw_quote": "na- tional",
+        "replacement": "national",
+        "rule_id": "adjacent-line wrap; lexicon form national"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_001029_000209",
+        "start": 0,
+        "end": 42,
+        "text": "But, sir, when I say this I do not mean to"
+      },
+      {
+        "line_id": "line_001029_000210",
+        "start": 43,
+        "end": 89,
+        "text": "be understood as defending the theory that the"
+      },
+      {
+        "line_id": "line_001029_000211",
+        "start": 90,
+        "end": 133,
+        "text": "Congress has no right to take hold of these"
+      },
+      {
+        "line_id": "line_001029_000212",
+        "start": 134,
+        "end": 179,
+        "text": "States and people and examine their political"
+      },
+      {
+        "line_id": "line_001029_000213",
+        "start": 180,
+        "end": 227,
+        "text": "condition most thoroughly. I say that, although"
+      },
+      {
+        "line_id": "line_001029_000214",
+        "start": 228,
+        "end": 278,
+        "text": "these rebellious States are in, territorially, the"
+      },
+      {
+        "line_id": "line_001029_000215",
+        "start": 279,
+        "end": 326,
+        "text": "Union, and cannot get out by any act of theirs,"
+      },
+      {
+        "line_id": "line_001029_000216",
+        "start": 327,
+        "end": 375,
+        "text": "yet by their rebellion they have forfeited their"
+      },
+      {
+        "line_id": "line_001029_000217",
+        "start": 376,
+        "end": 420,
+        "text": "right to representation in the Halls of Con-"
+      },
+      {
+        "line_id": "line_001029_000218",
+        "start": 421,
+        "end": 463,
+        "text": "gress, and placed themselves where the na-"
+      },
+      {
+        "line_id": "line_001029_000219",
+        "start": 464,
+        "end": 508,
+        "text": "tional Government can determine at will when"
+      },
+      {
+        "line_id": "line_001029_000220",
+        "start": 509,
+        "end": 557,
+        "text": "thoy shall resume again their original positions"
+      },
+      {
+        "line_id": "line_001029_000221",
+        "start": 558,
+        "end": 606,
+        "text": "and have a^voice in the legislative halls of the"
+      },
+      {
+        "line_id": "line_001029_000222",
+        "start": 607,
+        "end": 614,
+        "text": "nation."
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "78e6bac8a3ef5ff2eee695394df89b04f4c7acd522795fc09e384a451d60724e"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "3aa5007449b774ed0d70328864f9a63a4eb1070339e131f76d93b060700a502b",
+  "proposed_text": "But, sir, when I say this I do not mean to be understood as defending the theory that the Congress has no right to take hold of these States and people and examine their political condition most thoroughly. I say that, although these rebellious States are in, territorially, the Union, and cannot get out by any act of theirs, yet by their rebellion they have forfeited their right to representation in the Halls of Con- gress, and placed themselves where the national Government can determine at will when thoy shall resume again their original positions and have a^voice in the legislative halls of the nation.",
+  "proposed_sha256": "a444aa3a0bebac5a26741f3fd7a296e7be613de2a77653f80f97200063c32102",
+  "proposed_edits": [
+    {
+      "start": 460,
+      "end": 470,
+      "raw_quote": "na- tional",
+      "replacement": "national",
+      "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+    }
+  ],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 460,
+      "derived_start": 0,
+      "derived_end": 460,
+      "mapping": "exact_copy"
+    },
+    {
+      "raw_start": 460,
+      "raw_end": 470,
+      "derived_start": 460,
+      "derived_end": 468,
+      "mapping": "replacement"
+    },
+    {
+      "raw_start": 470,
+      "raw_end": 614,
+      "derived_start": 468,
+      "derived_end": 612,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 416,
+      "end": 426,
+      "raw_quote": "Con- gress",
+      "joined_candidate": "Congress",
+      "decision": "retained_for_review",
+      "reason": "uppercase_or_nonlowercase"
+    },
+    {
+      "start": 460,
+      "end": 470,
+      "raw_quote": "na- tional",
+      "joined_candidate": "national",
+      "decision": "proposed_join",
+      "reason": "guarded_adjacent_line_join"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 3,
+      "text": "But",
+      "raw_start": 0,
+      "raw_end": 3,
+      "raw_quote": "But",
+      "context": "But, sir, when I say this I do not ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 5,
+      "end": 8,
+      "text": "sir",
+      "raw_start": 5,
+      "raw_end": 8,
+      "raw_quote": "sir",
+      "context": "But, sir, when I say this I do not mean ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 10,
+      "end": 14,
+      "text": "when",
+      "raw_start": 10,
+      "raw_end": 14,
+      "raw_quote": "when",
+      "context": "But, sir, when I say this I do not mean to be ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 15,
+      "end": 16,
+      "text": "I",
+      "raw_start": 15,
+      "raw_end": 16,
+      "raw_quote": "I",
+      "context": "But, sir, when I say this I do not mean to be un",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 17,
+      "end": 20,
+      "text": "say",
+      "raw_start": 17,
+      "raw_end": 20,
+      "raw_quote": "say",
+      "context": "But, sir, when I say this I do not mean to be unders",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 21,
+      "end": 25,
+      "text": "this",
+      "raw_start": 21,
+      "raw_end": 25,
+      "raw_quote": "this",
+      "context": "But, sir, when I say this I do not mean to be understood ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 26,
+      "end": 27,
+      "text": "I",
+      "raw_start": 26,
+      "raw_end": 27,
+      "raw_quote": "I",
+      "context": "But, sir, when I say this I do not mean to be understood as",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 28,
+      "end": 30,
+      "text": "do",
+      "raw_start": 28,
+      "raw_end": 30,
+      "raw_quote": "do",
+      "context": "But, sir, when I say this I do not mean to be understood as de",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 31,
+      "end": 34,
+      "text": "not",
+      "raw_start": 31,
+      "raw_end": 34,
+      "raw_quote": "not",
+      "context": "But, sir, when I say this I do not mean to be understood as defend",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 35,
+      "end": 39,
+      "text": "mean",
+      "raw_start": 35,
+      "raw_end": 39,
+      "raw_quote": "mean",
+      "context": ", sir, when I say this I do not mean to be understood as defending t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 40,
+      "end": 42,
+      "text": "to",
+      "raw_start": 40,
+      "raw_end": 42,
+      "raw_quote": "to",
+      "context": ", when I say this I do not mean to be understood as defending the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 43,
+      "end": 45,
+      "text": "be",
+      "raw_start": 43,
+      "raw_end": 45,
+      "raw_quote": "be",
+      "context": "hen I say this I do not mean to be understood as defending the the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 46,
+      "end": 56,
+      "text": "understood",
+      "raw_start": 46,
+      "raw_end": 56,
+      "raw_quote": "understood",
+      "context": " I say this I do not mean to be understood as defending the theory that th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 57,
+      "end": 59,
+      "text": "as",
+      "raw_start": 57,
+      "raw_end": 59,
+      "raw_quote": "as",
+      "context": " I do not mean to be understood as defending the theory that the C",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 60,
+      "end": 69,
+      "text": "defending",
+      "raw_start": 60,
+      "raw_end": 69,
+      "raw_quote": "defending",
+      "context": "do not mean to be understood as defending the theory that the Congress ha",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 70,
+      "end": 73,
+      "text": "the",
+      "raw_start": 70,
+      "raw_end": 73,
+      "raw_quote": "the",
+      "context": "n to be understood as defending the theory that the Congress has no",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 74,
+      "end": 80,
+      "text": "theory",
+      "raw_start": 74,
+      "raw_end": 80,
+      "raw_quote": "theory",
+      "context": " be understood as defending the theory that the Congress has no right ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 81,
+      "end": 85,
+      "text": "that",
+      "raw_start": 81,
+      "raw_end": 85,
+      "raw_quote": "that",
+      "context": "erstood as defending the theory that the Congress has no right to ta",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 86,
+      "end": 89,
+      "text": "the",
+      "raw_start": 86,
+      "raw_end": 89,
+      "raw_quote": "the",
+      "context": "od as defending the theory that the Congress has no right to take h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 90,
+      "end": 98,
+      "text": "Congress",
+      "raw_start": 90,
+      "raw_end": 98,
+      "raw_quote": "Congress",
+      "context": "s defending the theory that the Congress has no right to take hold of th",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 99,
+      "end": 102,
+      "text": "has",
+      "raw_start": 99,
+      "raw_end": 102,
+      "raw_quote": "has",
+      "context": "ng the theory that the Congress has no right to take hold of these ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 103,
+      "end": 105,
+      "text": "no",
+      "raw_start": 103,
+      "raw_end": 105,
+      "raw_quote": "no",
+      "context": "he theory that the Congress has no right to take hold of these Sta",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 106,
+      "end": 111,
+      "text": "right",
+      "raw_start": 106,
+      "raw_end": 111,
+      "raw_quote": "right",
+      "context": "theory that the Congress has no right to take hold of these States an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 112,
+      "end": 114,
+      "text": "to",
+      "raw_start": 112,
+      "raw_end": 114,
+      "raw_quote": "to",
+      "context": " that the Congress has no right to take hold of these States and p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 115,
+      "end": 119,
+      "text": "take",
+      "raw_start": 115,
+      "raw_end": 119,
+      "raw_quote": "take",
+      "context": "at the Congress has no right to take hold of these States and people",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 120,
+      "end": 124,
+      "text": "hold",
+      "raw_start": 120,
+      "raw_end": 124,
+      "raw_quote": "hold",
+      "context": "e Congress has no right to take hold of these States and people and ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 125,
+      "end": 127,
+      "text": "of",
+      "raw_start": 125,
+      "raw_end": 127,
+      "raw_quote": "of",
+      "context": "gress has no right to take hold of these States and people and exa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 128,
+      "end": 133,
+      "text": "these",
+      "raw_start": 128,
+      "raw_end": 133,
+      "raw_quote": "these",
+      "context": "ss has no right to take hold of these States and people and examine t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 134,
+      "end": 140,
+      "text": "States",
+      "raw_start": 134,
+      "raw_end": 140,
+      "raw_quote": "States",
+      "context": " no right to take hold of these States and people and examine their po",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 141,
+      "end": 144,
+      "text": "and",
+      "raw_start": 141,
+      "raw_end": 144,
+      "raw_quote": "and",
+      "context": "ht to take hold of these States and people and examine their politi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 145,
+      "end": 151,
+      "text": "people",
+      "raw_start": 145,
+      "raw_end": 151,
+      "raw_quote": "people",
+      "context": "o take hold of these States and people and examine their political con",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 152,
+      "end": 155,
+      "text": "and",
+      "raw_start": 152,
+      "raw_end": 155,
+      "raw_quote": "and",
+      "context": "hold of these States and people and examine their political conditi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 156,
+      "end": 163,
+      "text": "examine",
+      "raw_start": 156,
+      "raw_end": 163,
+      "raw_quote": "examine",
+      "context": " of these States and people and examine their political condition most ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 164,
+      "end": 169,
+      "text": "their",
+      "raw_start": 164,
+      "raw_end": 169,
+      "raw_quote": "their",
+      "context": "e States and people and examine their political condition most thorou",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 170,
+      "end": 179,
+      "text": "political",
+      "raw_start": 170,
+      "raw_end": 179,
+      "raw_quote": "political",
+      "context": "es and people and examine their political condition most thoroughly. I sa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 180,
+      "end": 189,
+      "text": "condition",
+      "raw_start": 180,
+      "raw_end": 189,
+      "raw_quote": "condition",
+      "context": "ple and examine their political condition most thoroughly. I say that, al",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 190,
+      "end": 194,
+      "text": "most",
+      "raw_start": 190,
+      "raw_end": 194,
+      "raw_quote": "most",
+      "context": "amine their political condition most thoroughly. I say that, althoug",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 195,
+      "end": 205,
+      "text": "thoroughly",
+      "raw_start": 195,
+      "raw_end": 205,
+      "raw_quote": "thoroughly",
+      "context": " their political condition most thoroughly. I say that, although these reb",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 207,
+      "end": 208,
+      "text": "I",
+      "raw_start": 207,
+      "raw_end": 208,
+      "raw_quote": "I",
+      "context": "ical condition most thoroughly. I say that, although these rebell",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 209,
+      "end": 212,
+      "text": "say",
+      "raw_start": 209,
+      "raw_end": 212,
+      "raw_quote": "say",
+      "context": "al condition most thoroughly. I say that, although these rebellious",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 213,
+      "end": 217,
+      "text": "that",
+      "raw_start": 213,
+      "raw_end": 217,
+      "raw_quote": "that",
+      "context": "ondition most thoroughly. I say that, although these rebellious Stat",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 219,
+      "end": 227,
+      "text": "although",
+      "raw_start": 219,
+      "raw_end": 227,
+      "raw_quote": "although",
+      "context": "on most thoroughly. I say that, although these rebellious States are in,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 228,
+      "end": 233,
+      "text": "these",
+      "raw_start": 228,
+      "raw_end": 233,
+      "raw_quote": "these",
+      "context": "horoughly. I say that, although these rebellious States are in, terri",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 234,
+      "end": 244,
+      "text": "rebellious",
+      "raw_start": 234,
+      "raw_end": 244,
+      "raw_quote": "rebellious",
+      "context": "hly. I say that, although these rebellious States are in, territorially, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 245,
+      "end": 251,
+      "text": "States",
+      "raw_start": 245,
+      "raw_end": 251,
+      "raw_quote": "States",
+      "context": "that, although these rebellious States are in, territorially, the Unio",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 252,
+      "end": 255,
+      "text": "are",
+      "raw_start": 252,
+      "raw_end": 255,
+      "raw_quote": "are",
+      "context": "lthough these rebellious States are in, territorially, the Union, a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 256,
+      "end": 258,
+      "text": "in",
+      "raw_start": 256,
+      "raw_end": 258,
+      "raw_quote": "in",
+      "context": "ugh these rebellious States are in, territorially, the Union, and ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 260,
+      "end": 273,
+      "text": "territorially",
+      "raw_start": 260,
+      "raw_end": 273,
+      "raw_quote": "territorially",
+      "context": "these rebellious States are in, territorially, the Union, and cannot get out ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 275,
+      "end": 278,
+      "text": "the",
+      "raw_start": 275,
+      "raw_end": 278,
+      "raw_quote": "the",
+      "context": "s States are in, territorially, the Union, and cannot get out by an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 279,
+      "end": 284,
+      "text": "Union",
+      "raw_start": 279,
+      "raw_end": 284,
+      "raw_quote": "Union",
+      "context": "ates are in, territorially, the Union, and cannot get out by any act ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 286,
+      "end": 289,
+      "text": "and",
+      "raw_start": 286,
+      "raw_end": 289,
+      "raw_quote": "and",
+      "context": "e in, territorially, the Union, and cannot get out by any act of th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 290,
+      "end": 296,
+      "text": "cannot",
+      "raw_start": 290,
+      "raw_end": 296,
+      "raw_quote": "cannot",
+      "context": ", territorially, the Union, and cannot get out by any act of theirs, y",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 297,
+      "end": 300,
+      "text": "get",
+      "raw_start": 297,
+      "raw_end": 300,
+      "raw_quote": "get",
+      "context": "torially, the Union, and cannot get out by any act of theirs, yet b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 301,
+      "end": 304,
+      "text": "out",
+      "raw_start": 301,
+      "raw_end": 304,
+      "raw_quote": "out",
+      "context": "ally, the Union, and cannot get out by any act of theirs, yet by th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 305,
+      "end": 307,
+      "text": "by",
+      "raw_start": 305,
+      "raw_end": 307,
+      "raw_quote": "by",
+      "context": ", the Union, and cannot get out by any act of theirs, yet by their",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 308,
+      "end": 311,
+      "text": "any",
+      "raw_start": 308,
+      "raw_end": 311,
+      "raw_quote": "any",
+      "context": "he Union, and cannot get out by any act of theirs, yet by their reb",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 312,
+      "end": 315,
+      "text": "act",
+      "raw_start": 312,
+      "raw_end": 315,
+      "raw_quote": "act",
+      "context": "nion, and cannot get out by any act of theirs, yet by their rebelli",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 316,
+      "end": 318,
+      "text": "of",
+      "raw_start": 316,
+      "raw_end": 318,
+      "raw_quote": "of",
+      "context": ", and cannot get out by any act of theirs, yet by their rebellion ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 319,
+      "end": 325,
+      "text": "theirs",
+      "raw_start": 319,
+      "raw_end": 325,
+      "raw_quote": "theirs",
+      "context": "nd cannot get out by any act of theirs, yet by their rebellion they ha",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 327,
+      "end": 330,
+      "text": "yet",
+      "raw_start": 327,
+      "raw_end": 330,
+      "raw_quote": "yet",
+      "context": "t get out by any act of theirs, yet by their rebellion they have fo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 331,
+      "end": 333,
+      "text": "by",
+      "raw_start": 331,
+      "raw_end": 333,
+      "raw_quote": "by",
+      "context": "t out by any act of theirs, yet by their rebellion they have forfe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 334,
+      "end": 339,
+      "text": "their",
+      "raw_start": 334,
+      "raw_end": 339,
+      "raw_quote": "their",
+      "context": "ut by any act of theirs, yet by their rebellion they have forfeited t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 340,
+      "end": 349,
+      "text": "rebellion",
+      "raw_start": 340,
+      "raw_end": 349,
+      "raw_quote": "rebellion",
+      "context": "any act of theirs, yet by their rebellion they have forfeited their right",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 350,
+      "end": 354,
+      "text": "they",
+      "raw_start": 350,
+      "raw_end": 354,
+      "raw_quote": "they",
+      "context": " theirs, yet by their rebellion they have forfeited their right to r",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 355,
+      "end": 359,
+      "text": "have",
+      "raw_start": 355,
+      "raw_end": 359,
+      "raw_quote": "have",
+      "context": "rs, yet by their rebellion they have forfeited their right to repres",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 360,
+      "end": 369,
+      "text": "forfeited",
+      "raw_start": 360,
+      "raw_end": 369,
+      "raw_quote": "forfeited",
+      "context": "et by their rebellion they have forfeited their right to representation i",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 370,
+      "end": 375,
+      "text": "their",
+      "raw_start": 370,
+      "raw_end": 375,
+      "raw_quote": "their",
+      "context": "r rebellion they have forfeited their right to representation in the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 376,
+      "end": 381,
+      "text": "right",
+      "raw_start": 376,
+      "raw_end": 381,
+      "raw_quote": "right",
+      "context": "llion they have forfeited their right to representation in the Halls ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 382,
+      "end": 384,
+      "text": "to",
+      "raw_start": 382,
+      "raw_end": 384,
+      "raw_quote": "to",
+      "context": "they have forfeited their right to representation in the Halls of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 385,
+      "end": 399,
+      "text": "representation",
+      "raw_start": 385,
+      "raw_end": 399,
+      "raw_quote": "representation",
+      "context": "y have forfeited their right to representation in the Halls of Con- gress, and",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 400,
+      "end": 402,
+      "text": "in",
+      "raw_start": 400,
+      "raw_end": 402,
+      "raw_quote": "in",
+      "context": "d their right to representation in the Halls of Con- gress, and pl",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 403,
+      "end": 406,
+      "text": "the",
+      "raw_start": 403,
+      "raw_end": 406,
+      "raw_quote": "the",
+      "context": "heir right to representation in the Halls of Con- gress, and placed",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 407,
+      "end": 412,
+      "text": "Halls",
+      "raw_start": 407,
+      "raw_end": 412,
+      "raw_quote": "Halls",
+      "context": " right to representation in the Halls of Con- gress, and placed thems",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 413,
+      "end": 415,
+      "text": "of",
+      "raw_start": 413,
+      "raw_end": 415,
+      "raw_quote": "of",
+      "context": " to representation in the Halls of Con- gress, and placed themselv",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 416,
+      "end": 419,
+      "text": "Con",
+      "raw_start": 416,
+      "raw_end": 419,
+      "raw_quote": "Con",
+      "context": " representation in the Halls of Con- gress, and placed themselves w",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 421,
+      "end": 426,
+      "text": "gress",
+      "raw_start": 421,
+      "raw_end": 426,
+      "raw_quote": "gress",
+      "context": "esentation in the Halls of Con- gress, and placed themselves where th",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 428,
+      "end": 431,
+      "text": "and",
+      "raw_start": 428,
+      "raw_end": 431,
+      "raw_quote": "and",
+      "context": "ion in the Halls of Con- gress, and placed themselves where the na-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 432,
+      "end": 438,
+      "text": "placed",
+      "raw_start": 432,
+      "raw_end": 438,
+      "raw_quote": "placed",
+      "context": "in the Halls of Con- gress, and placed themselves where the na- tional",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 439,
+      "end": 449,
+      "text": "themselves",
+      "raw_start": 439,
+      "raw_end": 449,
+      "raw_quote": "themselves",
+      "context": "Halls of Con- gress, and placed themselves where the na- tional Government",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 450,
+      "end": 455,
+      "text": "where",
+      "raw_start": 450,
+      "raw_end": 455,
+      "raw_quote": "where",
+      "context": "n- gress, and placed themselves where the na- tional Government can d",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 456,
+      "end": 459,
+      "text": "the",
+      "raw_start": 456,
+      "raw_end": 459,
+      "raw_quote": "the",
+      "context": "ss, and placed themselves where the na- tional Government can deter",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 460,
+      "end": 462,
+      "text": "na",
+      "raw_start": 460,
+      "raw_end": 462,
+      "raw_quote": "na",
+      "context": "and placed themselves where the na- tional Government can determin",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 464,
+      "end": 470,
+      "text": "tional",
+      "raw_start": 464,
+      "raw_end": 470,
+      "raw_quote": "tional",
+      "context": "placed themselves where the na- tional Government can determine at wil",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 471,
+      "end": 481,
+      "text": "Government",
+      "raw_start": 471,
+      "raw_end": 481,
+      "raw_quote": "Government",
+      "context": "themselves where the na- tional Government can determine at will when thoy",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 482,
+      "end": 485,
+      "text": "can",
+      "raw_start": 482,
+      "raw_end": 485,
+      "raw_quote": "can",
+      "context": "where the na- tional Government can determine at will when thoy sha",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 486,
+      "end": 495,
+      "text": "determine",
+      "raw_start": 486,
+      "raw_end": 495,
+      "raw_quote": "determine",
+      "context": "e the na- tional Government can determine at will when thoy shall resume ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 496,
+      "end": 498,
+      "text": "at",
+      "raw_start": 496,
+      "raw_end": 498,
+      "raw_quote": "at",
+      "context": "tional Government can determine at will when thoy shall resume aga",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 499,
+      "end": 503,
+      "text": "will",
+      "raw_start": 499,
+      "raw_end": 503,
+      "raw_quote": "will",
+      "context": "nal Government can determine at will when thoy shall resume again th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 504,
+      "end": 508,
+      "text": "when",
+      "raw_start": 504,
+      "raw_end": 508,
+      "raw_quote": "when",
+      "context": "overnment can determine at will when thoy shall resume again their o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 509,
+      "end": 513,
+      "text": "thoy",
+      "raw_start": 509,
+      "raw_end": 513,
+      "raw_quote": "thoy",
+      "context": "ment can determine at will when thoy shall resume again their origin",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 514,
+      "end": 519,
+      "text": "shall",
+      "raw_start": 514,
+      "raw_end": 519,
+      "raw_quote": "shall",
+      "context": "can determine at will when thoy shall resume again their original pos",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 520,
+      "end": 526,
+      "text": "resume",
+      "raw_start": 520,
+      "raw_end": 526,
+      "raw_quote": "resume",
+      "context": "termine at will when thoy shall resume again their original positions ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 527,
+      "end": 532,
+      "text": "again",
+      "raw_start": 527,
+      "raw_end": 532,
+      "raw_quote": "again",
+      "context": " at will when thoy shall resume again their original positions and ha",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 533,
+      "end": 538,
+      "text": "their",
+      "raw_start": 533,
+      "raw_end": 538,
+      "raw_quote": "their",
+      "context": "ll when thoy shall resume again their original positions and have a^v",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 539,
+      "end": 547,
+      "text": "original",
+      "raw_start": 539,
+      "raw_end": 547,
+      "raw_quote": "original",
+      "context": "n thoy shall resume again their original positions and have a^voice in t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 548,
+      "end": 557,
+      "text": "positions",
+      "raw_start": 548,
+      "raw_end": 557,
+      "raw_quote": "positions",
+      "context": "all resume again their original positions and have a^voice in the legisla",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 558,
+      "end": 561,
+      "text": "and",
+      "raw_start": 558,
+      "raw_end": 561,
+      "raw_quote": "and",
+      "context": " again their original positions and have a^voice in the legislative",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 562,
+      "end": 566,
+      "text": "have",
+      "raw_start": 562,
+      "raw_end": 566,
+      "raw_quote": "have",
+      "context": "in their original positions and have a^voice in the legislative hall",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 567,
+      "end": 568,
+      "text": "a",
+      "raw_start": 567,
+      "raw_end": 568,
+      "raw_quote": "a",
+      "context": "eir original positions and have a^voice in the legislative halls ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 568,
+      "end": 569,
+      "text": "^",
+      "raw_start": 568,
+      "raw_end": 569,
+      "raw_quote": "^",
+      "context": "ir original positions and have a^voice in the legislative halls o",
+      "categories": [
+        "symbol_pattern"
+      ],
+      "signals": [
+        "symbol_pattern_unverified"
+      ],
+      "routes": [
+        "pattern_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "raw",
+      "start": 569,
+      "end": 574,
+      "text": "voice",
+      "raw_start": 569,
+      "raw_end": 574,
+      "raw_quote": "voice",
+      "context": "r original positions and have a^voice in the legislative halls of the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 575,
+      "end": 577,
+      "text": "in",
+      "raw_start": 575,
+      "raw_end": 577,
+      "raw_quote": "in",
+      "context": "inal positions and have a^voice in the legislative halls of the na",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 578,
+      "end": 581,
+      "text": "the",
+      "raw_start": 578,
+      "raw_end": 581,
+      "raw_quote": "the",
+      "context": "l positions and have a^voice in the legislative halls of the nation",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 582,
+      "end": 593,
+      "text": "legislative",
+      "raw_start": 582,
+      "raw_end": 593,
+      "raw_quote": "legislative",
+      "context": "sitions and have a^voice in the legislative halls of the nation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 594,
+      "end": 599,
+      "text": "halls",
+      "raw_start": 594,
+      "raw_end": 599,
+      "raw_quote": "halls",
+      "context": "have a^voice in the legislative halls of the nation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 600,
+      "end": 602,
+      "text": "of",
+      "raw_start": 600,
+      "raw_end": 602,
+      "raw_quote": "of",
+      "context": "^voice in the legislative halls of the nation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 603,
+      "end": 606,
+      "text": "the",
+      "raw_start": 603,
+      "raw_end": 606,
+      "raw_quote": "the",
+      "context": "ice in the legislative halls of the nation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 607,
+      "end": 613,
+      "text": "nation",
+      "raw_start": 607,
+      "raw_end": 613,
+      "raw_quote": "nation",
+      "context": "in the legislative halls of the nation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 3,
+      "text": "But",
+      "raw_start": 0,
+      "raw_end": 3,
+      "raw_quote": "But",
+      "context": "But, sir, when I say this I do not ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 5,
+      "end": 8,
+      "text": "sir",
+      "raw_start": 5,
+      "raw_end": 8,
+      "raw_quote": "sir",
+      "context": "But, sir, when I say this I do not mean ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 10,
+      "end": 14,
+      "text": "when",
+      "raw_start": 10,
+      "raw_end": 14,
+      "raw_quote": "when",
+      "context": "But, sir, when I say this I do not mean to be ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 15,
+      "end": 16,
+      "text": "I",
+      "raw_start": 15,
+      "raw_end": 16,
+      "raw_quote": "I",
+      "context": "But, sir, when I say this I do not mean to be un",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 17,
+      "end": 20,
+      "text": "say",
+      "raw_start": 17,
+      "raw_end": 20,
+      "raw_quote": "say",
+      "context": "But, sir, when I say this I do not mean to be unders",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 21,
+      "end": 25,
+      "text": "this",
+      "raw_start": 21,
+      "raw_end": 25,
+      "raw_quote": "this",
+      "context": "But, sir, when I say this I do not mean to be understood ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 26,
+      "end": 27,
+      "text": "I",
+      "raw_start": 26,
+      "raw_end": 27,
+      "raw_quote": "I",
+      "context": "But, sir, when I say this I do not mean to be understood as",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 28,
+      "end": 30,
+      "text": "do",
+      "raw_start": 28,
+      "raw_end": 30,
+      "raw_quote": "do",
+      "context": "But, sir, when I say this I do not mean to be understood as de",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 31,
+      "end": 34,
+      "text": "not",
+      "raw_start": 31,
+      "raw_end": 34,
+      "raw_quote": "not",
+      "context": "But, sir, when I say this I do not mean to be understood as defend",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 35,
+      "end": 39,
+      "text": "mean",
+      "raw_start": 35,
+      "raw_end": 39,
+      "raw_quote": "mean",
+      "context": ", sir, when I say this I do not mean to be understood as defending t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 40,
+      "end": 42,
+      "text": "to",
+      "raw_start": 40,
+      "raw_end": 42,
+      "raw_quote": "to",
+      "context": ", when I say this I do not mean to be understood as defending the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 43,
+      "end": 45,
+      "text": "be",
+      "raw_start": 43,
+      "raw_end": 45,
+      "raw_quote": "be",
+      "context": "hen I say this I do not mean to be understood as defending the the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 46,
+      "end": 56,
+      "text": "understood",
+      "raw_start": 46,
+      "raw_end": 56,
+      "raw_quote": "understood",
+      "context": " I say this I do not mean to be understood as defending the theory that th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 57,
+      "end": 59,
+      "text": "as",
+      "raw_start": 57,
+      "raw_end": 59,
+      "raw_quote": "as",
+      "context": " I do not mean to be understood as defending the theory that the C",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 60,
+      "end": 69,
+      "text": "defending",
+      "raw_start": 60,
+      "raw_end": 69,
+      "raw_quote": "defending",
+      "context": "do not mean to be understood as defending the theory that the Congress ha",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 70,
+      "end": 73,
+      "text": "the",
+      "raw_start": 70,
+      "raw_end": 73,
+      "raw_quote": "the",
+      "context": "n to be understood as defending the theory that the Congress has no",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 74,
+      "end": 80,
+      "text": "theory",
+      "raw_start": 74,
+      "raw_end": 80,
+      "raw_quote": "theory",
+      "context": " be understood as defending the theory that the Congress has no right ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 81,
+      "end": 85,
+      "text": "that",
+      "raw_start": 81,
+      "raw_end": 85,
+      "raw_quote": "that",
+      "context": "erstood as defending the theory that the Congress has no right to ta",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 86,
+      "end": 89,
+      "text": "the",
+      "raw_start": 86,
+      "raw_end": 89,
+      "raw_quote": "the",
+      "context": "od as defending the theory that the Congress has no right to take h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 90,
+      "end": 98,
+      "text": "Congress",
+      "raw_start": 90,
+      "raw_end": 98,
+      "raw_quote": "Congress",
+      "context": "s defending the theory that the Congress has no right to take hold of th",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 99,
+      "end": 102,
+      "text": "has",
+      "raw_start": 99,
+      "raw_end": 102,
+      "raw_quote": "has",
+      "context": "ng the theory that the Congress has no right to take hold of these ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 103,
+      "end": 105,
+      "text": "no",
+      "raw_start": 103,
+      "raw_end": 105,
+      "raw_quote": "no",
+      "context": "he theory that the Congress has no right to take hold of these Sta",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 106,
+      "end": 111,
+      "text": "right",
+      "raw_start": 106,
+      "raw_end": 111,
+      "raw_quote": "right",
+      "context": "theory that the Congress has no right to take hold of these States an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 112,
+      "end": 114,
+      "text": "to",
+      "raw_start": 112,
+      "raw_end": 114,
+      "raw_quote": "to",
+      "context": " that the Congress has no right to take hold of these States and p",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 115,
+      "end": 119,
+      "text": "take",
+      "raw_start": 115,
+      "raw_end": 119,
+      "raw_quote": "take",
+      "context": "at the Congress has no right to take hold of these States and people",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 120,
+      "end": 124,
+      "text": "hold",
+      "raw_start": 120,
+      "raw_end": 124,
+      "raw_quote": "hold",
+      "context": "e Congress has no right to take hold of these States and people and ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 125,
+      "end": 127,
+      "text": "of",
+      "raw_start": 125,
+      "raw_end": 127,
+      "raw_quote": "of",
+      "context": "gress has no right to take hold of these States and people and exa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 128,
+      "end": 133,
+      "text": "these",
+      "raw_start": 128,
+      "raw_end": 133,
+      "raw_quote": "these",
+      "context": "ss has no right to take hold of these States and people and examine t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 134,
+      "end": 140,
+      "text": "States",
+      "raw_start": 134,
+      "raw_end": 140,
+      "raw_quote": "States",
+      "context": " no right to take hold of these States and people and examine their po",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 141,
+      "end": 144,
+      "text": "and",
+      "raw_start": 141,
+      "raw_end": 144,
+      "raw_quote": "and",
+      "context": "ht to take hold of these States and people and examine their politi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 145,
+      "end": 151,
+      "text": "people",
+      "raw_start": 145,
+      "raw_end": 151,
+      "raw_quote": "people",
+      "context": "o take hold of these States and people and examine their political con",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 152,
+      "end": 155,
+      "text": "and",
+      "raw_start": 152,
+      "raw_end": 155,
+      "raw_quote": "and",
+      "context": "hold of these States and people and examine their political conditi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 156,
+      "end": 163,
+      "text": "examine",
+      "raw_start": 156,
+      "raw_end": 163,
+      "raw_quote": "examine",
+      "context": " of these States and people and examine their political condition most ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 164,
+      "end": 169,
+      "text": "their",
+      "raw_start": 164,
+      "raw_end": 169,
+      "raw_quote": "their",
+      "context": "e States and people and examine their political condition most thorou",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 170,
+      "end": 179,
+      "text": "political",
+      "raw_start": 170,
+      "raw_end": 179,
+      "raw_quote": "political",
+      "context": "es and people and examine their political condition most thoroughly. I sa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 180,
+      "end": 189,
+      "text": "condition",
+      "raw_start": 180,
+      "raw_end": 189,
+      "raw_quote": "condition",
+      "context": "ple and examine their political condition most thoroughly. I say that, al",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 190,
+      "end": 194,
+      "text": "most",
+      "raw_start": 190,
+      "raw_end": 194,
+      "raw_quote": "most",
+      "context": "amine their political condition most thoroughly. I say that, althoug",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 195,
+      "end": 205,
+      "text": "thoroughly",
+      "raw_start": 195,
+      "raw_end": 205,
+      "raw_quote": "thoroughly",
+      "context": " their political condition most thoroughly. I say that, although these reb",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 207,
+      "end": 208,
+      "text": "I",
+      "raw_start": 207,
+      "raw_end": 208,
+      "raw_quote": "I",
+      "context": "ical condition most thoroughly. I say that, although these rebell",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 209,
+      "end": 212,
+      "text": "say",
+      "raw_start": 209,
+      "raw_end": 212,
+      "raw_quote": "say",
+      "context": "al condition most thoroughly. I say that, although these rebellious",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 213,
+      "end": 217,
+      "text": "that",
+      "raw_start": 213,
+      "raw_end": 217,
+      "raw_quote": "that",
+      "context": "ondition most thoroughly. I say that, although these rebellious Stat",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 219,
+      "end": 227,
+      "text": "although",
+      "raw_start": 219,
+      "raw_end": 227,
+      "raw_quote": "although",
+      "context": "on most thoroughly. I say that, although these rebellious States are in,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 228,
+      "end": 233,
+      "text": "these",
+      "raw_start": 228,
+      "raw_end": 233,
+      "raw_quote": "these",
+      "context": "horoughly. I say that, although these rebellious States are in, terri",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 234,
+      "end": 244,
+      "text": "rebellious",
+      "raw_start": 234,
+      "raw_end": 244,
+      "raw_quote": "rebellious",
+      "context": "hly. I say that, although these rebellious States are in, territorially, t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 245,
+      "end": 251,
+      "text": "States",
+      "raw_start": 245,
+      "raw_end": 251,
+      "raw_quote": "States",
+      "context": "that, although these rebellious States are in, territorially, the Unio",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 252,
+      "end": 255,
+      "text": "are",
+      "raw_start": 252,
+      "raw_end": 255,
+      "raw_quote": "are",
+      "context": "lthough these rebellious States are in, territorially, the Union, a",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 256,
+      "end": 258,
+      "text": "in",
+      "raw_start": 256,
+      "raw_end": 258,
+      "raw_quote": "in",
+      "context": "ugh these rebellious States are in, territorially, the Union, and ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 260,
+      "end": 273,
+      "text": "territorially",
+      "raw_start": 260,
+      "raw_end": 273,
+      "raw_quote": "territorially",
+      "context": "these rebellious States are in, territorially, the Union, and cannot get out ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 275,
+      "end": 278,
+      "text": "the",
+      "raw_start": 275,
+      "raw_end": 278,
+      "raw_quote": "the",
+      "context": "s States are in, territorially, the Union, and cannot get out by an",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 279,
+      "end": 284,
+      "text": "Union",
+      "raw_start": 279,
+      "raw_end": 284,
+      "raw_quote": "Union",
+      "context": "ates are in, territorially, the Union, and cannot get out by any act ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 286,
+      "end": 289,
+      "text": "and",
+      "raw_start": 286,
+      "raw_end": 289,
+      "raw_quote": "and",
+      "context": "e in, territorially, the Union, and cannot get out by any act of th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 290,
+      "end": 296,
+      "text": "cannot",
+      "raw_start": 290,
+      "raw_end": 296,
+      "raw_quote": "cannot",
+      "context": ", territorially, the Union, and cannot get out by any act of theirs, y",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 297,
+      "end": 300,
+      "text": "get",
+      "raw_start": 297,
+      "raw_end": 300,
+      "raw_quote": "get",
+      "context": "torially, the Union, and cannot get out by any act of theirs, yet b",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 301,
+      "end": 304,
+      "text": "out",
+      "raw_start": 301,
+      "raw_end": 304,
+      "raw_quote": "out",
+      "context": "ally, the Union, and cannot get out by any act of theirs, yet by th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 305,
+      "end": 307,
+      "text": "by",
+      "raw_start": 305,
+      "raw_end": 307,
+      "raw_quote": "by",
+      "context": ", the Union, and cannot get out by any act of theirs, yet by their",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 308,
+      "end": 311,
+      "text": "any",
+      "raw_start": 308,
+      "raw_end": 311,
+      "raw_quote": "any",
+      "context": "he Union, and cannot get out by any act of theirs, yet by their reb",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 312,
+      "end": 315,
+      "text": "act",
+      "raw_start": 312,
+      "raw_end": 315,
+      "raw_quote": "act",
+      "context": "nion, and cannot get out by any act of theirs, yet by their rebelli",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 316,
+      "end": 318,
+      "text": "of",
+      "raw_start": 316,
+      "raw_end": 318,
+      "raw_quote": "of",
+      "context": ", and cannot get out by any act of theirs, yet by their rebellion ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 319,
+      "end": 325,
+      "text": "theirs",
+      "raw_start": 319,
+      "raw_end": 325,
+      "raw_quote": "theirs",
+      "context": "nd cannot get out by any act of theirs, yet by their rebellion they ha",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 327,
+      "end": 330,
+      "text": "yet",
+      "raw_start": 327,
+      "raw_end": 330,
+      "raw_quote": "yet",
+      "context": "t get out by any act of theirs, yet by their rebellion they have fo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 331,
+      "end": 333,
+      "text": "by",
+      "raw_start": 331,
+      "raw_end": 333,
+      "raw_quote": "by",
+      "context": "t out by any act of theirs, yet by their rebellion they have forfe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 334,
+      "end": 339,
+      "text": "their",
+      "raw_start": 334,
+      "raw_end": 339,
+      "raw_quote": "their",
+      "context": "ut by any act of theirs, yet by their rebellion they have forfeited t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 340,
+      "end": 349,
+      "text": "rebellion",
+      "raw_start": 340,
+      "raw_end": 349,
+      "raw_quote": "rebellion",
+      "context": "any act of theirs, yet by their rebellion they have forfeited their right",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 350,
+      "end": 354,
+      "text": "they",
+      "raw_start": 350,
+      "raw_end": 354,
+      "raw_quote": "they",
+      "context": " theirs, yet by their rebellion they have forfeited their right to r",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 355,
+      "end": 359,
+      "text": "have",
+      "raw_start": 355,
+      "raw_end": 359,
+      "raw_quote": "have",
+      "context": "rs, yet by their rebellion they have forfeited their right to repres",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 360,
+      "end": 369,
+      "text": "forfeited",
+      "raw_start": 360,
+      "raw_end": 369,
+      "raw_quote": "forfeited",
+      "context": "et by their rebellion they have forfeited their right to representation i",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 370,
+      "end": 375,
+      "text": "their",
+      "raw_start": 370,
+      "raw_end": 375,
+      "raw_quote": "their",
+      "context": "r rebellion they have forfeited their right to representation in the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 376,
+      "end": 381,
+      "text": "right",
+      "raw_start": 376,
+      "raw_end": 381,
+      "raw_quote": "right",
+      "context": "llion they have forfeited their right to representation in the Halls ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 382,
+      "end": 384,
+      "text": "to",
+      "raw_start": 382,
+      "raw_end": 384,
+      "raw_quote": "to",
+      "context": "they have forfeited their right to representation in the Halls of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 385,
+      "end": 399,
+      "text": "representation",
+      "raw_start": 385,
+      "raw_end": 399,
+      "raw_quote": "representation",
+      "context": "y have forfeited their right to representation in the Halls of Con- gress, and",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 400,
+      "end": 402,
+      "text": "in",
+      "raw_start": 400,
+      "raw_end": 402,
+      "raw_quote": "in",
+      "context": "d their right to representation in the Halls of Con- gress, and pl",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 403,
+      "end": 406,
+      "text": "the",
+      "raw_start": 403,
+      "raw_end": 406,
+      "raw_quote": "the",
+      "context": "heir right to representation in the Halls of Con- gress, and placed",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 407,
+      "end": 412,
+      "text": "Halls",
+      "raw_start": 407,
+      "raw_end": 412,
+      "raw_quote": "Halls",
+      "context": " right to representation in the Halls of Con- gress, and placed thems",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 413,
+      "end": 415,
+      "text": "of",
+      "raw_start": 413,
+      "raw_end": 415,
+      "raw_quote": "of",
+      "context": " to representation in the Halls of Con- gress, and placed themselv",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 416,
+      "end": 419,
+      "text": "Con",
+      "raw_start": 416,
+      "raw_end": 419,
+      "raw_quote": "Con",
+      "context": " representation in the Halls of Con- gress, and placed themselves w",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 421,
+      "end": 426,
+      "text": "gress",
+      "raw_start": 421,
+      "raw_end": 426,
+      "raw_quote": "gress",
+      "context": "esentation in the Halls of Con- gress, and placed themselves where th",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 428,
+      "end": 431,
+      "text": "and",
+      "raw_start": 428,
+      "raw_end": 431,
+      "raw_quote": "and",
+      "context": "ion in the Halls of Con- gress, and placed themselves where the na-",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 432,
+      "end": 438,
+      "text": "placed",
+      "raw_start": 432,
+      "raw_end": 438,
+      "raw_quote": "placed",
+      "context": "in the Halls of Con- gress, and placed themselves where the na- tional",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 439,
+      "end": 449,
+      "text": "themselves",
+      "raw_start": 439,
+      "raw_end": 449,
+      "raw_quote": "themselves",
+      "context": "Halls of Con- gress, and placed themselves where the na- tional Government",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 450,
+      "end": 455,
+      "text": "where",
+      "raw_start": 450,
+      "raw_end": 455,
+      "raw_quote": "where",
+      "context": "n- gress, and placed themselves where the na- tional Government can d",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 456,
+      "end": 459,
+      "text": "the",
+      "raw_start": 456,
+      "raw_end": 459,
+      "raw_quote": "the",
+      "context": "ss, and placed themselves where the na- tional Government can deter",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 460,
+      "end": 468,
+      "text": "national",
+      "raw_start": 460,
+      "raw_end": 470,
+      "raw_quote": "na- tional",
+      "context": "and placed themselves where the na- tional Government can determine at wil",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 469,
+      "end": 479,
+      "text": "Government",
+      "raw_start": 471,
+      "raw_end": 481,
+      "raw_quote": "Government",
+      "context": "themselves where the na- tional Government can determine at will when thoy",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 480,
+      "end": 483,
+      "text": "can",
+      "raw_start": 482,
+      "raw_end": 485,
+      "raw_quote": "can",
+      "context": "where the na- tional Government can determine at will when thoy sha",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 484,
+      "end": 493,
+      "text": "determine",
+      "raw_start": 486,
+      "raw_end": 495,
+      "raw_quote": "determine",
+      "context": "e the na- tional Government can determine at will when thoy shall resume ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 494,
+      "end": 496,
+      "text": "at",
+      "raw_start": 496,
+      "raw_end": 498,
+      "raw_quote": "at",
+      "context": "tional Government can determine at will when thoy shall resume aga",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 497,
+      "end": 501,
+      "text": "will",
+      "raw_start": 499,
+      "raw_end": 503,
+      "raw_quote": "will",
+      "context": "nal Government can determine at will when thoy shall resume again th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 502,
+      "end": 506,
+      "text": "when",
+      "raw_start": 504,
+      "raw_end": 508,
+      "raw_quote": "when",
+      "context": "overnment can determine at will when thoy shall resume again their o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 507,
+      "end": 511,
+      "text": "thoy",
+      "raw_start": 509,
+      "raw_end": 513,
+      "raw_quote": "thoy",
+      "context": "ment can determine at will when thoy shall resume again their origin",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 512,
+      "end": 517,
+      "text": "shall",
+      "raw_start": 514,
+      "raw_end": 519,
+      "raw_quote": "shall",
+      "context": "can determine at will when thoy shall resume again their original pos",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 518,
+      "end": 524,
+      "text": "resume",
+      "raw_start": 520,
+      "raw_end": 526,
+      "raw_quote": "resume",
+      "context": "termine at will when thoy shall resume again their original positions ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 525,
+      "end": 530,
+      "text": "again",
+      "raw_start": 527,
+      "raw_end": 532,
+      "raw_quote": "again",
+      "context": " at will when thoy shall resume again their original positions and ha",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 531,
+      "end": 536,
+      "text": "their",
+      "raw_start": 533,
+      "raw_end": 538,
+      "raw_quote": "their",
+      "context": "ll when thoy shall resume again their original positions and have a^v",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 537,
+      "end": 545,
+      "text": "original",
+      "raw_start": 539,
+      "raw_end": 547,
+      "raw_quote": "original",
+      "context": "n thoy shall resume again their original positions and have a^voice in t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 546,
+      "end": 555,
+      "text": "positions",
+      "raw_start": 548,
+      "raw_end": 557,
+      "raw_quote": "positions",
+      "context": "all resume again their original positions and have a^voice in the legisla",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 556,
+      "end": 559,
+      "text": "and",
+      "raw_start": 558,
+      "raw_end": 561,
+      "raw_quote": "and",
+      "context": " again their original positions and have a^voice in the legislative",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 560,
+      "end": 564,
+      "text": "have",
+      "raw_start": 562,
+      "raw_end": 566,
+      "raw_quote": "have",
+      "context": "in their original positions and have a^voice in the legislative hall",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 565,
+      "end": 566,
+      "text": "a",
+      "raw_start": 567,
+      "raw_end": 568,
+      "raw_quote": "a",
+      "context": "eir original positions and have a^voice in the legislative halls ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 566,
+      "end": 567,
+      "text": "^",
+      "raw_start": 568,
+      "raw_end": 569,
+      "raw_quote": "^",
+      "context": "ir original positions and have a^voice in the legislative halls o",
+      "categories": [
+        "symbol_pattern"
+      ],
+      "signals": [
+        "symbol_pattern_unverified"
+      ],
+      "routes": [
+        "pattern_image_check_candidate"
+      ],
+      "membership": "not_word"
+    },
+    {
+      "layer": "proposed",
+      "start": 567,
+      "end": 572,
+      "text": "voice",
+      "raw_start": 569,
+      "raw_end": 574,
+      "raw_quote": "voice",
+      "context": "r original positions and have a^voice in the legislative halls of the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 573,
+      "end": 575,
+      "text": "in",
+      "raw_start": 575,
+      "raw_end": 577,
+      "raw_quote": "in",
+      "context": "inal positions and have a^voice in the legislative halls of the na",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 576,
+      "end": 579,
+      "text": "the",
+      "raw_start": 578,
+      "raw_end": 581,
+      "raw_quote": "the",
+      "context": "l positions and have a^voice in the legislative halls of the nation",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 580,
+      "end": 591,
+      "text": "legislative",
+      "raw_start": 582,
+      "raw_end": 593,
+      "raw_quote": "legislative",
+      "context": "sitions and have a^voice in the legislative halls of the nation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 592,
+      "end": 597,
+      "text": "halls",
+      "raw_start": 594,
+      "raw_end": 599,
+      "raw_quote": "halls",
+      "context": "have a^voice in the legislative halls of the nation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 598,
+      "end": 600,
+      "text": "of",
+      "raw_start": 600,
+      "raw_end": 602,
+      "raw_quote": "of",
+      "context": "^voice in the legislative halls of the nation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 601,
+      "end": 604,
+      "text": "the",
+      "raw_start": 603,
+      "raw_end": 606,
+      "raw_quote": "the",
+      "context": "ice in the legislative halls of the nation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 605,
+      "end": 611,
+      "text": "nation",
+      "raw_start": 607,
+      "raw_end": 613,
+      "raw_quote": "nation",
+      "context": "in the legislative halls of the nation.",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalg7391unit:1029:par_001029_000024",
+      "raw_text": "But, sir, when I say this I do not mean to be understood as defending the theory that the Congress has no right to take hold of these States and people and examine their political condition most thoroughly. I say that, although these rebellious States are in, territorially, the Union, and cannot get out by any act of theirs, yet by their rebellion they have forfeited their right to representation in the Halls of Con- gress, and placed themselves where the na- tional Government can determine at will when thoy shall resume again their original positions and have a^voice in the legislative halls of the nation.",
+      "raw_sha256": "a97fc18526ee486ab6e427f4f43786e496ea79b1dbbc00370a13a901556359cc"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalg7391unit:1029:par_001029_000024",
+        "raw_text": "But, sir, when I say this I do not mean to be understood as defending the theory that the Congress has no right to take hold of these States and people and examine their political condition most thoroughly. I say that, although these rebellious States are in, territorially, the Union, and cannot get out by any act of theirs, yet by their rebellion they have forfeited their right to representation in the Halls of Con- gress, and placed themselves where the na- tional Government can determine at will when thoy shall resume again their original positions and have a^voice in the legislative halls of the nation.",
+        "raw_sha256": "a97fc18526ee486ab6e427f4f43786e496ea79b1dbbc00370a13a901556359cc"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "But, sir, when I say this I do not mean to be understood as defending the theory that the Congress has no right to take hold of these States and people and examine their political condition most thoroughly. I say that, although these rebellious States are in, territorially, the Union, and cannot get out by any act of theirs, yet by their rebellion they have forfeited their right to representation in the Halls of Con- gress, and placed themselves where the national Government can determine at will when thoy shall resume again their original positions and have a^voice in the legislative halls of the nation.",
+    "proposed_sha256": "a444aa3a0bebac5a26741f3fd7a296e7be613de2a77653f80f97200063c32102",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

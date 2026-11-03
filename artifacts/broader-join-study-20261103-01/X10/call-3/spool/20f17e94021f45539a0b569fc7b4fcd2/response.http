@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Nov 2026 22:15:23 GMT
+Content-Length: 958
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-03T22:15:23.045041Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"You are to have a code of rules adopted in the Interior Department, and Congress is to have the privilege of revising them; and those rules are for the leasing and the preserving of mineral springs. I suppose the rules will be in the nature of ordinances which shall inflict fines and punishment if anybody fills a bottle of mineral water from mineral springs without\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n,\n  \"unit_id\": \"X10\"\n}"},"done":true,"done_reason":"stop","total_duration":32165266500,"load_duration":3914093875,"prompt_eval_count":2793,"prompt_eval_cached_count":0,"prompt_eval_duration":23135858417,"eval_count":153,"eval_duration":5097247792}
