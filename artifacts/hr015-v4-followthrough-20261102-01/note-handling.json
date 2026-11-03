@@ -1,0 +1,79 @@
+{
+  "submission_id": "218d7248-838f-4712-8e57-07fe5955da13",
+  "packet_sha256": "aeb5a30719dcfdd4e0ba1ee18336e88a1673690f8204a9006b3e3e4239ca980d",
+  "payload_sha256": "83516891141c75df3a2d128dd9711712e13015c9d264d18dbb86727db04e82e3",
+  "archive": "docs/archive/human-review/HR-015-v4/218d7248-838f-4712-8e57-07fe5955da13.json",
+  "notes": [
+    {
+      "item_number": 1,
+      "note_id": "evidence-note:scan-variety-comments:0:3de469143111bea291b2fd29aa013502592d33d98396a33b4ebded76043cfff1",
+      "verbatim_comment": "So I am generally curious, let's imagine the software process is able to think that it fixed it perfectly, following the rules, but it would be interesting if Qwen (and the frontier model like GPT6) still found an error in the software primary pass. I wonder if that's part of your workflow? Like doing a bunch of sampling where you \"over-use\" the LLM call, but only as a way to see if the software-only with no seocndary inspection indicators was a false positive, if you know what I mean.\n\n\n\nBy the way, can you do better in the review desk of adding a new line break after something? Like this:\n\"Expected output and rule:\" you should put a line break before that.\n\nAnd here: \" with the loyal States.\" you should have added a line break there.",
+      "topic": "Unflagged/apparent-success audits and evidence spacing",
+      "tasks": [
+        "T128",
+        "T129"
+      ],
+      "action_or_check": "The design called for audits of apparent successes/unflagged text, but the repeated old model-proposal cases did not demonstrate fresh software-only false-reassurance sampling. Implement/run fresh cases with root source assessment plus three identical Qwen calls each. Render existing line breaks visibly; do not rewrite historical text.",
+      "disposition": "Direction accepted; concrete implementation/results pending named tasks, not claimed complete."
+    },
+    {
+      "item_number": 2,
+      "note_id": "evidence-note:scan-variety-comments:1:ceac6aa219fa350a17f9ee5140a43bbcd25ef0d40e8a50e65c45d8585edad823",
+      "verbatim_comment": "Yeah this is an excellent example of secondary inspection being necessary. Although I wonder if there's some kind of machine learning solution to this which is like.... hey let's try to predict this next word, especially given that we have a lot of the letters we want, like 'prop'..... and so if you said \"hey this failed the spell check, make a prediction for what this word truly is\". and let's imagine the algorithm chooses \"property\", but then still, you're probably going to get more false words or mistakes, compared to a Qwen Ollama call.\n\nBy the way, where it says \"Press Command Enter to submit form\" it always gets in the way of my typing when I start to take over the entire vertical of these typing boxes in the human review desk. Please fix that.. Maybe add more bottom padding or something so I'm never typing over it?",
+      "topic": "Lexical prediction idea and typing-hint overlap",
+      "tasks": [
+        "T128",
+        "T130"
+      ],
+      "action_or_check": "Remove the form keyboard hint from the textarea typing area. Keep lexical/character-based candidate suggestions separate from image-verified corrections; a bounded comparison may follow new cases, with no assumption of Qwen superiority or automatic acceptance.",
+      "disposition": "Direction accepted; concrete implementation/results pending named tasks, not claimed complete."
+    },
+    {
+      "item_number": 4,
+      "note_id": "evidence-note:scan-variety-comments:3:815b1440a0c510f86876d56c890fc17803b63e1246277db21ea88888838554dc",
+      "verbatim_comment": "I'm still kind of unsure what you're doin with this. Is this to show your difficulty with continuing the bottom right of the first column with the top left of the next column? Well, just keep working on it, come up with a hypothesis on how to deterministically join them, or if that doesn't work, using Qwen to join stuff like that.",
+      "topic": "Actual cross-column continuation",
+      "tasks": [
+        "T129"
+      ],
+      "action_or_check": "Implement a non-destructive joined reading using verified reading order, geometry, adjacency and boundary checks; preserve two original source spans and test nonjoins. Use Qwen only for a genuinely ambiguous bounded relation, not a repeated format experiment.",
+      "disposition": "Direction accepted; concrete implementation/results pending named tasks, not claimed complete."
+    },
+    {
+      "item_number": 7,
+      "note_id": "evidence-note:scan-variety-comments:6:c32dd36b68783908562ec67818c2200e3c7dbc8f1307375edd7a63eb4eab836e",
+      "verbatim_comment": "I don't know, I think a frontier model needs to deeply look at this and figrue out how to make it work with software plus secondary inspection and qwen stuff. Just look at it again and this time don't propose confusing stuff to the human. Just make it work. I'm getting fatiqued of you rnning around in circles with this.",
+      "topic": "Frontier end-to-end work instead of circular proposals",
+      "tasks": [
+        "T129"
+      ],
+      "action_or_check": "Root performs independent source/structure assessment and improves the software-first/full-target secondary workflow on fresh cases. Reuse proven contracts and transport; deliver actual changes/results rather than another confusing method-choice packet.",
+      "disposition": "Direction accepted; concrete implementation/results pending named tasks, not claimed complete."
+    },
+    {
+      "item_number": 8,
+      "note_id": "evidence-note:scan-variety-comments:7:e9b902fd57417b627b2dfd06e378b77aa4b1df32d73062e735c5cc9cb6c1d884",
+      "verbatim_comment": "It would have been nice if the previous page context was there too because again, I don't know why you keep on with this top header thing. Is this just some sort of super long speech this guy has written? Maybe it goes on for many pages? I'm not sure. You keep focusing on this one page. The frontier model like GPT6 should be smarter about this! You should be looking at the previous page, to see what the actual context of this strcture is.",
+      "topic": "Previous-page and speech/document context",
+      "tasks": [
+        "T129"
+      ],
+      "action_or_check": "Inspect cached previous-leaf740source, current741and bounded surrounding context to identify continuation/running headers and speech scope. If its image is missing, at most one explicit public image fetch is included in the4image task cap. Do not invent an opening boundary or infer structure from the running header alone.",
+      "disposition": "Direction accepted; concrete implementation/results pending named tasks, not claimed complete."
+    },
+    {
+      "item_number": 9,
+      "note_id": "evidence-note:scan-variety-comments:8:0d52ff9717f0c49065b3e182d29cd3d8d5a2e67d40b24016c4cea5357a45f93b",
+      "verbatim_comment": "\"I must admit that that act is quite full.\"\n\nWhy do you keep printing just this one thing?? I stll don't get it. You keep going on and on about the same little samples instead of diversifying and taking tons of interesting various samples and more and more an dhaving the GPT6 frontier model actually think deeply about how best to make it so that the software 1st pass could get it right, and if not, how the secondary inspection could work with Qwen to capture it.",
+      "topic": "Diversify samples and stop repeating the small sentence",
+      "tasks": [
+        "T129"
+      ],
+      "action_or_check": "Retire the repeated sentence as the main case. Select fresh nonreserved/unexposed source leaves across multiple parts/layouts, freeze before image-outcome inspection, include actual zero-indicator and apparent-success strata, publish first actual observation before further repeats/expansion. Preserve all earlier data.",
+      "disposition": "Direction accepted; concrete implementation/results pending named tasks, not claimed complete."
+    }
+  ],
+  "blank_evidence_notes": 6,
+  "overall_answer": "Blank; no direction inferred.",
+  "provider_calls": 0
+}
