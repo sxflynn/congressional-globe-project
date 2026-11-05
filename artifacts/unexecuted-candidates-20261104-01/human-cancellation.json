@@ -1,0 +1,35 @@
+{
+  "task": "T136",
+  "human_instruction": "Cancel remaining qwen calls for now. Fan noise is a lot",
+  "driver_identities_stopped": [
+    {
+      "pid": 56026,
+      "ppid": 52644,
+      "pgid": 56026,
+      "started": "Wed Nov 4 21:13:56 2026",
+      "command": "uv run python tmp/t136-drive.py 933419416849a79b766e692e55c6303794ac66221f1c959e56ec4fe080aad797 2"
+    },
+    {
+      "pid": 56027,
+      "ppid": 56026,
+      "pgid": 56026,
+      "started": "Wed Nov 4 21:13:56 2026",
+      "command": "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python tmp/t136-drive.py 933419416849a79b766e692e55c6303794ac66221f1c959e56ec4fe080aad797 2"
+    }
+  ],
+  "owned_server_groups_signalled": [
+    {
+      "pid": 69356,
+      "ppid": 69126,
+      "pgid": 69356,
+      "started": "Wed Nov 4 21:19:57 2026",
+      "command": "/Applications/Ollama.app/Contents/Resources/ollama serve"
+    }
+  ],
+  "forced_owned_groups": [],
+  "unowned_service": "Not controlled",
+  "generation_requests_added": 0,
+  "control_recorded_at_epoch": 1793845203.378892,
+  "timestamp_note": "This is the control-record time, not a timestamp of the incoming human message.",
+  "final_verification": "No t136driver/call or Ollama runner remained; sharednonloadingmodel list empty."
+}

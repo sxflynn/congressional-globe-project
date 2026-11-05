@@ -1,0 +1,15 @@
+"""One-off preparation of four previously undispatched candidate bodies; no network."""
+import hashlib,json,shutil
+from pathlib import Path
+from congressional_globe.productive_ocr_runner import code_identity
+from congressional_globe.productive_ocr_host import canonical_json
+r=Path('artifacts/unexecuted-candidates-20261104-01');r.mkdir(exist_ok=False);old=Path('artifacts/broader-join-study-20261103-01');selection=json.loads((old/'selection-freeze.json').read_bytes());cases=['X14','X15','J1','J2'];bounds=dict(cases=4,identical_runs_each=3,total_calls=12,retries=0,request_seconds=120,output_tokens=1500,per_case_group_seconds=1800,total_model_phase_seconds=1800,image_downloads_max=0,info_downloads_max=0,model_downloads=0,literal_user_characters_max=16000)
+f=dict(task='T136',authority='Direct Nov4Keepgoing after sealedT134/T135 results; new finite12call cohort, not unusedslotrollover or an X13retry.',bounds=bounds,model='qwen3.8:27b-mlx',cases=[],prior=dict(attempts=95,request_cycle_seconds=4925.524095502216,known_input_tokens=296503,known_output_tokens=18465,unknown_usage_attempts=4),old_failure='T134X13 remains closed with unknown usage/cause; no new dense request or cap raise.',input_selection='Exactly the four original preselected candidate inputs never dispatched; no outcome-based replacement. X14/X15previouslyunexecutedpart5; J1/J2knownexposedmatchedcases.',native_fit='unknown; bounded diagnostics only')
+proof=[]
+for c in cases:
+ d=r/c;d.mkdir();assert not list((old/c).glob('call-*'))
+ for name in ['host.json','request.json','projection.json','prompt.txt','schema.json','source-page.jsonl','software-result.json','route.json','geometry.json']:shutil.copyfile(old/c/name,d/name)
+ shutil.copytree(old/c/'image',d/'image');body=(d/'request.json').read_bytes();wire=json.loads(body);user=wire['messages'][1]['content'];assert isinstance(user,str) and len(user)<=16000
+ row=next(x for x in selection['cases'] if x['case']==c);host=json.loads((d/'host.json').read_bytes());row={**row,'unit_id':host['payload']['unit_id']};f['cases'].append(row);proof.append(dict(case=c,source_id=row['source_id'],body_sha256=hashlib.sha256(body).hexdigest(),literal_user_characters=len(user),prior_candidate_attempts=0,image_sha256=host['payload']['image']['sha256'],unchanged_parent_body=True))
+for name in ['registry-index.json','source-boundary-instruction.txt','join-instruction.txt','matched-input-proof.json']:shutil.copyfile(old/name,r/name)
+refs=json.loads((old/'root-source-readings.json').read_bytes());refs['assessments']=[a for a in refs['assessments'] if a['case'] in cases];refs['reuse_note']='Preserved earlier source assessments; root reinspects cached crops before T136calls. Not new blind gold; baseline/source material already known.';(r/'root-source-readings.json').write_text(json.dumps(refs,indent=2,ensure_ascii=False)+'\n');(r/'code-identity.json').write_bytes(canonical_json(code_identity()));(r/'selection-freeze.json').write_text(json.dumps(f,indent=2)+'\n');(r/'preparation-proof.json').write_text(json.dumps(proof,indent=2)+'\n');print(json.dumps(proof))

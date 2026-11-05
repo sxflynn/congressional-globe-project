@@ -1,0 +1,101 @@
+{
+  "task": "T136",
+  "status": "human_cancelled_incomplete",
+  "human_instruction": "Cancel remaining qwen calls for now. Fan noise is a lot",
+  "planned_calls": 12,
+  "attempts": [
+    {
+      "case": "J1",
+      "repeat": 1,
+      "status": "human_cancelled_no_reply",
+      "usage": null,
+      "owned_stop": "stopped",
+      "result_sha256": "c004291d0fe0b2b6d8fdf9b9b57c731a4c3c34342434d23e8546f6575b53f943"
+    },
+    {
+      "case": "X14",
+      "repeat": 1,
+      "status": "completed_reply",
+      "usage": {
+        "input_tokens": 4299,
+        "output_tokens": 217
+      },
+      "owned_stop": "stopped",
+      "result_sha256": "e80df70e05959d2ac27378994583bb8fdc450f7590ec157fe09e85e12f7591b9"
+    },
+    {
+      "case": "X14",
+      "repeat": 2,
+      "status": "completed_reply",
+      "usage": {
+        "input_tokens": 4299,
+        "output_tokens": 219
+      },
+      "owned_stop": "stopped",
+      "result_sha256": "fe8e3dc50ebf5da16cec12debffd33d2cf824a4dc7a0593c7726b3becf05c3a5"
+    },
+    {
+      "case": "X14",
+      "repeat": 3,
+      "status": "completed_reply",
+      "usage": {
+        "input_tokens": 4299,
+        "output_tokens": 219
+      },
+      "owned_stop": "stopped",
+      "result_sha256": "24c679d6b35294250d547f69a5494c93cff71fa814710f8a56a7eb4b96b957fc"
+    },
+    {
+      "case": "X15",
+      "repeat": 1,
+      "status": "completed_reply",
+      "usage": {
+        "input_tokens": 3303,
+        "output_tokens": 196
+      },
+      "owned_stop": "stopped",
+      "result_sha256": "966e1e4a94a65a40ef74330bc9dde2b7fdfd839595e42136be54973c3570f133"
+    },
+    {
+      "case": "X15",
+      "repeat": 2,
+      "status": "completed_reply",
+      "usage": {
+        "input_tokens": 3303,
+        "output_tokens": 192
+      },
+      "owned_stop": "stopped",
+      "result_sha256": "d73112bd3b1a7c60e8abe235402f2b740285a086bd06822f5fab1e2f46d70165"
+    },
+    {
+      "case": "X15",
+      "repeat": 3,
+      "status": "completed_reply",
+      "usage": {
+        "input_tokens": 3303,
+        "output_tokens": 195
+      },
+      "owned_stop": "stopped",
+      "result_sha256": "4c8b42bc7676347c5f96cc4737c7ce977ca29b77f63b5aa4cd65150727c3f0b3"
+    }
+  ],
+  "complete_replies": 6,
+  "cancelled_attempts": 1,
+  "unstarted_closed_slots": 5,
+  "known_input_tokens": 22806,
+  "known_output_tokens": 1238,
+  "unknown_usage_attempts": 1,
+  "known_elapsed_seconds": 335.25045383442193,
+  "cumulative_recent_series": {
+    "attempts": 102,
+    "known_input_tokens": 319309,
+    "known_output_tokens": 19703,
+    "unknown_usage_attempts": 5,
+    "request_cycle_seconds": 5260.774549336638
+  },
+  "provider_retries": 0,
+  "remaining_calls_cancelled": true,
+  "resume": "Do not start Qwen again until the human resumes model work.",
+  "source_quality": "No new acceptedgold; J1/J2candidatecomparison incomplete. X14/X15 have3capturedreplies each.",
+  "historical_T134": "Untouched; denseX13notretried."
+}

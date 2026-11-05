@@ -1,0 +1,34 @@
+{
+  "task": "T136",
+  "selection_sha256": "b0cc25b421959910f2f28da17d58a511ac4d6e270f5737abb433d474927e3725",
+  "method_sha256": "1223abf5a8240b42fb9a5f43eb2b0b7ebdc19c3dab16581bc33946c844510ea8",
+  "body_sha256_by_case": {
+    "X14": "0260e7bc73d0a16ddb5a9a05b84c22c15ea5cf857a721bd56152540528e18c57",
+    "X15": "4751f4c7451a55af188b466df654852f329bce8b35e33ab9fd4473e14fc8f5df",
+    "J1": "b0604da857a079f92bd2ef936804fc8b4959d89e642489896f81a53a243450c1",
+    "J2": "8b808e920dca5d82f955cfbea1ccfaacae81cfd60d3a0b9f20daf6ed68f1e560"
+  },
+  "script_sha256": "af009c6a456fabb32cfff5770e508ebf017ad3ab3b3fc2488ea02c4542ce6663",
+  "driver_sha256": "94c8a72478c6f7055c19354bf0ac119a3a53d932b8a131955571b6c7919dabc7",
+  "code_sha256": "d838da00fb947fdb0a7dab5d70ec200a3212daacec0643cbe79b7ac1cbe708ba",
+  "bounds": {
+    "cases": 4,
+    "identical_runs_each": 3,
+    "total_calls": 12,
+    "retries": 0,
+    "request_seconds": 120,
+    "output_tokens": 1500,
+    "per_case_group_seconds": 1800,
+    "total_model_phase_seconds": 1800,
+    "image_downloads_max": 0,
+    "info_downloads_max": 0,
+    "model_downloads": 0,
+    "literal_user_characters_max": 16000
+  },
+  "planned_calls": 12,
+  "planned_repeats": 3,
+  "provider_calls_so_far": 0,
+  "native_fit": "unknown; named bounded diagnostic, no general clearance",
+  "initial_review_packet": "docs/review-packets/HR-035-v2.json",
+  "initial_review_packet_sha256": "a1b734295517d6dc2eaa23d76d92e7807c6a915945db82edcff27dd1e1e34212"
+}

@@ -1,0 +1,3 @@
+Source-boundary rule: If the assigned text ends in a word cut off by the registered crop, return coverage "incomplete", corrected_text null, and a concrete reason. Do not infer or append unseen letters from language probability. Preserve supported historical wording and fully visible line continuations; do not silently extend the assigned target beyond the image.
+
+When a word is divided across two printed lines solely because the line ends, join its visible parts into one word in the corrected reading. Preserve genuine compound-word hyphens and punctuation dashes. Use the image and the full assigned target to distinguish these cases; do not invent missing letters or continue beyond the assigned target.

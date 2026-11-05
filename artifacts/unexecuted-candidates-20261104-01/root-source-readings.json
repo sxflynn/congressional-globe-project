@@ -1,0 +1,54 @@
+{
+  "reader": "root, exact model unknown",
+  "method": "Direct inspection of fifteen saved native crops before any new Qwen candidate output; known prior assessments reused for two exposed matched cases.",
+  "accepted_gold": false,
+  "comparison": "Case/spacing and curly-vs-straight quotes reported separately from word/punctuation sequences; no Unicode accent modernization. Index leader count unscored onlyX04/X08/J1. X12null/incomplete required. Empty digit sequences are not number-accuracy evidence.",
+  "assessments": [
+    {
+      "case": "X14",
+      "visible_source_reading": "upon new questions, not within the contemplation of either the Union party or the Union people when the President was nominated. I have also shown that he has acted in pursuance of a policy adopted by Mr. Lincoln, and approved by the people, and that no event has yet transpired that will preclude him from a hearty coöperation with the great mass of the Union party in securing to the country the object for which we conducted successfully a great war. That events have transpired, that utterances have been made tending in that direction, no one will deny. The surest evidence is in the joy of the worst enemies of the country over our divisions.",
+      "image_sha256": "d58600044776fcf80b59689a238e1ca0972e6279bc83f5796fafa89dde011295",
+      "expected_behavior": "complete_visible_assigned_target",
+      "comparison_mode": "words_and_punctuation",
+      "expected_numbers": [],
+      "source_uncertainty": "Printed coöperation retains its diaeresis; no modernization.",
+      "reference_status": "provisional_root_before_candidate_replies"
+    },
+    {
+      "case": "X15",
+      "visible_source_reading": "But it so happens that whether in this case we adhere to the ruling of the majority of the committee in the case of Koontz vs. Coffroth, or adhere to the opinion of the minority, we are still obliged, in my judgment, to award the contested seat to the sitting member. The result is this: while I, in accordance with the views maintained by the minority in the case of Koontz vs. Coffroth, would have counted these six rejected returns, the majority of those who agreed to the report now before the House",
+      "image_sha256": "2b54894fb14a11a929a9daf80d9f692dd50ee82e5ecf128326e025f026f70fc0",
+      "expected_behavior": "complete_visible_assigned_target",
+      "comparison_mode": "words_and_punctuation",
+      "expected_numbers": [],
+      "source_uncertainty": "Sentence continues outside this assigned crop after complete word House. Do not add the continuation.",
+      "reference_status": "provisional_root_before_candidate_replies"
+    },
+    {
+      "case": "J1",
+      "visible_source_reading": "bill (S. No. 156) making an additional grant of lands to the State of Minnesota in alternate sections to aid in the construction of, in said State … 1893, 1921, 3464",
+      "image_sha256": "bc58111e65875e61c7623a386056c6f777826a67f36b4f076cc8649b49005b0e",
+      "expected_behavior": "complete_visible_assigned_target",
+      "comparison_mode": "words_and_numbers_ignore_dotleader_count",
+      "expected_numbers": [
+        "156",
+        "1893",
+        "1921",
+        "3464"
+      ],
+      "source_uncertainty": "Known baseline outputs and prior root assessment reused; exposed matched diagnostic, not fresh confirmation.",
+      "reference_status": "prior_root_reference_reused_before_candidate"
+    },
+    {
+      "case": "J2",
+      "visible_source_reading": "Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,",
+      "image_sha256": "05f1bfd243d873d96401ae05ec7d39b993e537fa3c257e733b9fb88262b28634",
+      "expected_behavior": "complete_visible_assigned_target",
+      "comparison_mode": "words_and_punctuation",
+      "expected_numbers": [],
+      "source_uncertainty": "Known baseline outputs and prior root assessment reused; exposed matched diagnostic, not fresh confirmation.",
+      "reference_status": "prior_root_reference_reused_before_candidate"
+    }
+  ],
+  "reuse_note": "Preserved earlier source assessments; root reinspects cached crops before T136calls. Not new blind gold; baseline/source material already known."
+}

@@ -1,0 +1,22 @@
+{
+  "id": "HR-035",
+  "version": 1,
+  "title": "Four Qwen cases: 0 of 12 observations",
+  "instructions": "This new November 4 study uses four previously untested candidate inputs: two remaining part-five passages and two known word-joining comparisons. Each has three identical candidate calls under the same 120-second limit. Earlier results are reused for comparison; the failed dense-index request stays closed with unknown usage. Source readings are provisional AI evidence. The first software and model results are shown as work proceeds; optional notes can steer remaining observations.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "broader-qwen-comments",
+      "prompt": "Optional notes on these passages and repeated results",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "X14: part 5, leaf 766",
+          "text": "Inputs — full original OCR:\nupon new questions, not within the contempla- tion of either the Union party or the Union people when the President was nominated. I have also shown that he has acted in pursuance of a policy adopted by Mr. Lincoln, and ap- proved by the people, and that no event has yet transpired that will preclude him from a heai'ty cooperation with the great mass of the Union party in securing to the country the ob- ject for which we conducted successfully a great war. That events have transpired, that utter- ances have been made tending in that direction, no one will deny. The surest evidence is in the joy of the worst enemies of the country over our divisions.\n\nExpected output — inspect the whole assigned passage against its image, join a word split only by a printed line ending, and preserve real compound-word hyphens and dashes. Missing or unclear source text requires an explicit unresolved answer. My source reading was recorded before these candidate replies. It is provisional AI evidence; uncertainty is described below:\nupon new questions, not within the contemplation of either the Union party or the Union people when the President was nominated. I have also shown that he has acted in pursuance of a policy adopted by Mr. Lincoln, and approved by the people, and that no event has yet transpired that will preclude him from a hearty coöperation with the great mass of the Union party in securing to the country the object for which we conducted successfully a great war. That events have transpired, that utterances have been made tending in that direction, no one will deny. The surest evidence is in the joy of the worst enemies of the country over our divisions.\nPrinted coöperation retains its diaeresis; no modernization.\n\nActual output — full software first pass:\nupon new questions, not within the contemplation of either the Union party or the Union people when the President was nominated. I have also shown that he has acted in pursuance of a policy adopted by Mr. Lincoln, and approved by the people, and that no event has yet transpired that will preclude him from a heai'ty cooperation with the great mass of the Union party in securing to the country the object for which we conducted successfully a great war. That events have transpired, that utter- ances have been made tending in that direction, no one will deny. The surest evidence is in the joy of the worst enemies of the country over our divisions.\n\nDifferences — software proposes 3 changes; 0 of 3 planned attempts recorded, with 0 model replies. All raw inputs and replies remain preserved. Three runs measure repeatability on this exact input; they do not establish population accuracy or permission to change accepted text.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0766.jp2/2113,319,887,623/887,/0/default.jpg"
+        }
+      ]
+    }
+  ]
+}

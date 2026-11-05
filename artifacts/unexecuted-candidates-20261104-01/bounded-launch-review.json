@@ -1,0 +1,72 @@
+{
+  "task": "T136",
+  "reviewer": "bounded Luna offline review",
+  "verdict": "clear to start the separate bounded T136 cohort; no provenance or launch-binding blocker found",
+  "scope": "Offline provenance and launch review only. No provider calls, image or metadata fetches, browser checks, or tests were run by this reviewer.",
+  "inputs": {
+    "artifacts": "artifacts/unexecuted-candidates-20261104-01",
+    "launch_scripts": ["tmp/t136-call.py", "tmp/t136-drive.py", "tmp/t136-publish.py"],
+    "baseline_artifacts": [
+      "artifacts/broader-join-study-20261103-01",
+      "artifacts/remaining-parts-audit-20261103-01/W2",
+      "artifacts/expanded-workflow-audit-20261103-01/V6"
+    ],
+    "source_review": "source-reinspection.json, four cached-image SHA bindings, with accepted_gold false"
+  },
+  "expected_output": {
+    "new_cohort": "Four T134 candidates, X14, X15, J1 and J2, with three identical-input observations each; 12 calls maximum under a new human-authorized T136 budget.",
+    "preserved_history": "T134's 37 attempted slots and 14 unused closed slots remain historical. X13 is not retried. The four selected candidates must have no T134 call attempts. Existing W2/V6 baselines are reused as prior comparisons, not counted as new candidate runs.",
+    "input_and_limits": "Use the existing Qwen model/body bytes; at most 120 seconds and 1500 output tokens per request, 1800 seconds per case group and model phase, no retry, image/info/model downloads, and no literal user message above 16000 characters.",
+    "matched_cases": "J1 and J2 actual request JSON may differ from their saved baselines only by appending the generic join instruction to system-message content. Source readings remain outside model requests.",
+    "execution_identity": "Pin current execution code separately from the preserved host/body identity; check fresh logs, inbox, queue, workers, shared model, port and lock before each request. Publish the first actual result before repeats two and three."
+  },
+  "actual_output": {
+    "launch_pin": {
+      "provided_pin": "933419416849a79b766e692e55c6303794ac66221f1c959e56ec4fe080aad797",
+      "request_freeze_matches": true,
+      "case_body_map_count": 4,
+      "body_hashes_match_files": true,
+      "call_script_driver_code_method_selection_initial_packet_pins_match": true
+    },
+    "body_preservation": {
+      "all_four_request_files_byte_identical_to_T134_candidates": true,
+      "user_message_characters": {"X14": 9516, "X15": 7105, "J1": 5459, "J2": 2083},
+      "model": "qwen3.8:27b-mlx",
+      "output_cap": 1500
+    },
+    "original_t134_status": {
+      "attempt_slot_directories": 37,
+      "X13_attempts": 1,
+      "T134_call_slots_for_X14_X15_J1_J2": 0,
+      "new_T136_attempts_started": 0,
+      "prior_cumulative_usage_retained": "95 attempts / 4925.524095502216 seconds / 296503 known input tokens / 18465 known output tokens / 4 unknown-usage attempts"
+    },
+    "baseline_reuse": {
+      "J1_baseline": "W2 has three completed, stopped observations with the pinned original request body hash.",
+      "J2_baseline": "V6 has three completed, stopped observations with the pinned original request body hash.",
+      "matched_json": "Independent comparison confirms each candidate request equals its saved baseline after only the frozen system-message append. Both candidate bodies also match the unattempted T134 candidate bodies byte for byte.",
+      "source_reference_exact_text_in_request": false
+    },
+    "caps_and_source": {
+      "calls": 12,
+      "retries": 0,
+      "downloads": 0,
+      "request_seconds": 120,
+      "per_case_seconds": 1800,
+      "total_phase_seconds": 1800,
+      "literal_user_chars_max": 16000,
+      "root_source_readings_frozen_before_T136_calls": true,
+      "source_readings_are_accepted_gold": false
+    }
+  },
+  "differences": [
+    "No mismatch found between the new 12-call authorization, frozen bodies, and launch-script pins.",
+    "The current launch driver registers first-result packets and checks inbox state before later requests; the human-facing review-desk notification remains an operator action after each first result.",
+    "The root's source reinspection is bound to the cached image hashes and recorded before T136 calls, but this reviewer did not independently assess print accuracy."
+  ],
+  "limits": [
+    "T136 is a separate bounded cohort. It does not reopen or erase T134's safety stop or unused slots, and does not justify changes to corpus policy, routing, native fit, quality acceptance, or P0.",
+    "The earlier cumulative unknown usage remains four attempts; this new cohort does not reset or reclassify it.",
+    "No T136 calls have started as of this review. Runtime preflight and inbox checks must still be performed by the frozen operator for each request."
+  ]
+}

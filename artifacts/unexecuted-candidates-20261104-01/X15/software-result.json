@@ -1,0 +1,3657 @@
+{
+  "contract": "bounded-deterministic-proposal-v1",
+  "rule_version": "bounded-lexical-linewrap-v1",
+  "implementation_sha256": "88cc59d8377f185d2715d3716041a5b5341fa326e21ae98c49c9ce5960b32f03",
+  "input": {
+    "source": {
+      "source_id": "congressionalglo7395unit:899:par_000899_000011",
+      "raw_text": "But it so happens that whether in this case we adhere to the ruling of the majority of the committee in the case of Koontz vs. Coffroth, or adhere to the opinion of the minority, we are still obliged, in my judgment, to award the contested seat to the sitting member. The re- sult is this : while I, in accordance with the views maintained by the minority in the case of Koontz vs. Coffroth, would have counted these six rejected returns, the majority of those who agreed to the report now before the House",
+      "raw_sha256": "ada0227caba01f548504e68001df52f1b3de3ce7ae13b8a47c3674cc577af0db"
+    },
+    "static_text": "But it so happens that whether in this case we adhere to the ruling of the majority of the committee in the case of Koontz vs. Coffroth, or adhere to the opinion of the minority, we are still obliged, in my judgment, to award the contested seat to the sitting member. The result is this : while I, in accordance with the views maintained by the minority in the case of Koontz vs. Coffroth, would have counted these six rejected returns, the majority of those who agreed to the report now before the House",
+    "static_sha256": "a6070c7c3261c92b84013f59fc8c3c338a620a06b894c1fbee9015bf830b9d16",
+    "static_edits": [
+      {
+        "start": 272,
+        "end": 280,
+        "raw_quote": "re- sult",
+        "replacement": "result",
+        "rule_id": "adjacent-line wrap; lexicon form result"
+      }
+    ],
+    "lines": [
+      {
+        "line_id": "line_000899_000084",
+        "start": 0,
+        "end": 43,
+        "text": "But it so happens that whether in this case"
+      },
+      {
+        "line_id": "line_000899_000085",
+        "start": 44,
+        "end": 90,
+        "text": "we adhere to the ruling of the majority of the"
+      },
+      {
+        "line_id": "line_000899_000086",
+        "start": 91,
+        "end": 136,
+        "text": "committee in the case of Koontz vs. Coffroth,"
+      },
+      {
+        "line_id": "line_000899_000087",
+        "start": 137,
+        "end": 181,
+        "text": "or adhere to the opinion of the minority, we"
+      },
+      {
+        "line_id": "line_000899_000088",
+        "start": 182,
+        "end": 229,
+        "text": "are still obliged, in my judgment, to award the"
+      },
+      {
+        "line_id": "line_000899_000089",
+        "start": 230,
+        "end": 275,
+        "text": "contested seat to the sitting member. The re-"
+      },
+      {
+        "line_id": "line_000899_000090",
+        "start": 276,
+        "end": 322,
+        "text": "sult is this : while I, in accordance with the"
+      },
+      {
+        "line_id": "line_000899_000091",
+        "start": 323,
+        "end": 367,
+        "text": "views maintained by the minority in the case"
+      },
+      {
+        "line_id": "line_000899_000092",
+        "start": 368,
+        "end": 410,
+        "text": "of Koontz vs. Coffroth, would have counted"
+      },
+      {
+        "line_id": "line_000899_000093",
+        "start": 411,
+        "end": 460,
+        "text": "these six rejected returns, the majority of those"
+      },
+      {
+        "line_id": "line_000899_000094",
+        "start": 461,
+        "end": 506,
+        "text": "who agreed to the report now before the House"
+      }
+    ],
+    "line_status": "declared_exact",
+    "line_reason": null,
+    "line_evidence_sha256": "07e4f85fab75cb3790191ffb1e455d92c37a8f11fa04bd80193950e71c912287"
+  },
+  "lexicons": [
+    {
+      "spec": {
+        "label": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "purpose": "words",
+        "sha256": "fef27d9e883ae3f84f440918ca7b37a627b2f1327445e5418b80006fce44a11d",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 310675
+    },
+    {
+      "spec": {
+        "label": "/usr/share/dict/propernames",
+        "purpose": "names",
+        "sha256": "626d634b40b1ad9257d0e4f16e155ea87d258dd458e9ccf94fb84bb1b63e585a",
+        "provenance": "Existing local pinned file; see T48 local-inputs.json for vocabulary provenance.",
+        "limitations": "Modern dictionary hints only; not an1865 spelling authority, identity roster or accepted transcription. Historical coverage and redistribution/licensing unresolved."
+      },
+      "lookup_rule": "nonblank-lines-strip-casefold-v1",
+      "forms_count": 1308
+    }
+  ],
+  "geometry_registry_sha256": "6cdc31f0762ab5b93197ed9ef43510bd8db32fc7e7b4deae32343e8983bbbeb7",
+  "proposed_text": "But it so happens that whether in this case we adhere to the ruling of the majority of the committee in the case of Koontz vs. Coffroth, or adhere to the opinion of the minority, we are still obliged, in my judgment, to award the contested seat to the sitting member. The result is this : while I, in accordance with the views maintained by the minority in the case of Koontz vs. Coffroth, would have counted these six rejected returns, the majority of those who agreed to the report now before the House",
+  "proposed_sha256": "a6070c7c3261c92b84013f59fc8c3c338a620a06b894c1fbee9015bf830b9d16",
+  "proposed_edits": [
+    {
+      "start": 272,
+      "end": 280,
+      "raw_quote": "re- sult",
+      "replacement": "result",
+      "rule_id": "bounded-lexical-linewrap-v1:guarded_adjacent_line_join"
+    }
+  ],
+  "support_map": [
+    {
+      "raw_start": 0,
+      "raw_end": 272,
+      "derived_start": 0,
+      "derived_end": 272,
+      "mapping": "exact_copy"
+    },
+    {
+      "raw_start": 272,
+      "raw_end": 280,
+      "derived_start": 272,
+      "derived_end": 278,
+      "mapping": "replacement"
+    },
+    {
+      "raw_start": 280,
+      "raw_end": 506,
+      "derived_start": 278,
+      "derived_end": 504,
+      "mapping": "exact_copy"
+    }
+  ],
+  "splits": [
+    {
+      "start": 272,
+      "end": 280,
+      "raw_quote": "re- sult",
+      "joined_candidate": "result",
+      "decision": "proposed_join",
+      "reason": "guarded_adjacent_line_join"
+    }
+  ],
+  "raw_tokens": [
+    {
+      "layer": "raw",
+      "start": 0,
+      "end": 3,
+      "text": "But",
+      "raw_start": 0,
+      "raw_end": 3,
+      "raw_quote": "But",
+      "context": "But it so happens that whether in t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 4,
+      "end": 6,
+      "text": "it",
+      "raw_start": 4,
+      "raw_end": 6,
+      "raw_quote": "it",
+      "context": "But it so happens that whether in this",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 7,
+      "end": 9,
+      "text": "so",
+      "raw_start": 7,
+      "raw_end": 9,
+      "raw_quote": "so",
+      "context": "But it so happens that whether in this ca",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 10,
+      "end": 17,
+      "text": "happens",
+      "raw_start": 10,
+      "raw_end": 17,
+      "raw_quote": "happens",
+      "context": "But it so happens that whether in this case we ad",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 18,
+      "end": 22,
+      "text": "that",
+      "raw_start": 18,
+      "raw_end": 22,
+      "raw_quote": "that",
+      "context": "But it so happens that whether in this case we adhere ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 23,
+      "end": 30,
+      "text": "whether",
+      "raw_start": 23,
+      "raw_end": 30,
+      "raw_quote": "whether",
+      "context": "But it so happens that whether in this case we adhere to the r",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 31,
+      "end": 33,
+      "text": "in",
+      "raw_start": 31,
+      "raw_end": 33,
+      "raw_quote": "in",
+      "context": "But it so happens that whether in this case we adhere to the ruli",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 34,
+      "end": 38,
+      "text": "this",
+      "raw_start": 34,
+      "raw_end": 38,
+      "raw_quote": "this",
+      "context": "t it so happens that whether in this case we adhere to the ruling of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 39,
+      "end": 43,
+      "text": "case",
+      "raw_start": 39,
+      "raw_end": 43,
+      "raw_quote": "case",
+      "context": "so happens that whether in this case we adhere to the ruling of the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 44,
+      "end": 46,
+      "text": "we",
+      "raw_start": 44,
+      "raw_end": 46,
+      "raw_quote": "we",
+      "context": "ppens that whether in this case we adhere to the ruling of the maj",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 47,
+      "end": 53,
+      "text": "adhere",
+      "raw_start": 47,
+      "raw_end": 53,
+      "raw_quote": "adhere",
+      "context": "ns that whether in this case we adhere to the ruling of the majority o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 54,
+      "end": 56,
+      "text": "to",
+      "raw_start": 54,
+      "raw_end": 56,
+      "raw_quote": "to",
+      "context": " whether in this case we adhere to the ruling of the majority of t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 57,
+      "end": 60,
+      "text": "the",
+      "raw_start": 57,
+      "raw_end": 60,
+      "raw_quote": "the",
+      "context": "ether in this case we adhere to the ruling of the majority of the c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 61,
+      "end": 67,
+      "text": "ruling",
+      "raw_start": 61,
+      "raw_end": 67,
+      "raw_quote": "ruling",
+      "context": "r in this case we adhere to the ruling of the majority of the committe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 68,
+      "end": 70,
+      "text": "of",
+      "raw_start": 68,
+      "raw_end": 70,
+      "raw_quote": "of",
+      "context": "is case we adhere to the ruling of the majority of the committee i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 71,
+      "end": 74,
+      "text": "the",
+      "raw_start": 71,
+      "raw_end": 74,
+      "raw_quote": "the",
+      "context": "case we adhere to the ruling of the majority of the committee in th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 75,
+      "end": 83,
+      "text": "majority",
+      "raw_start": 75,
+      "raw_end": 83,
+      "raw_quote": "majority",
+      "context": " we adhere to the ruling of the majority of the committee in the case of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 84,
+      "end": 86,
+      "text": "of",
+      "raw_start": 84,
+      "raw_end": 86,
+      "raw_quote": "of",
+      "context": "e to the ruling of the majority of the committee in the case of Ko",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 87,
+      "end": 90,
+      "text": "the",
+      "raw_start": 87,
+      "raw_end": 90,
+      "raw_quote": "the",
+      "context": "o the ruling of the majority of the committee in the case of Koontz",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 91,
+      "end": 100,
+      "text": "committee",
+      "raw_start": 91,
+      "raw_end": 100,
+      "raw_quote": "committee",
+      "context": "e ruling of the majority of the committee in the case of Koontz vs. Coffr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 101,
+      "end": 103,
+      "text": "in",
+      "raw_start": 101,
+      "raw_end": 103,
+      "raw_quote": "in",
+      "context": "f the majority of the committee in the case of Koontz vs. Coffroth",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 104,
+      "end": 107,
+      "text": "the",
+      "raw_start": 104,
+      "raw_end": 107,
+      "raw_quote": "the",
+      "context": "he majority of the committee in the case of Koontz vs. Coffroth, or",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 108,
+      "end": 112,
+      "text": "case",
+      "raw_start": 108,
+      "raw_end": 112,
+      "raw_quote": "case",
+      "context": "ajority of the committee in the case of Koontz vs. Coffroth, or adhe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 113,
+      "end": 115,
+      "text": "of",
+      "raw_start": 113,
+      "raw_end": 115,
+      "raw_quote": "of",
+      "context": "ty of the committee in the case of Koontz vs. Coffroth, or adhere ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 116,
+      "end": 122,
+      "text": "Koontz",
+      "raw_start": 116,
+      "raw_end": 122,
+      "raw_quote": "Koontz",
+      "context": "of the committee in the case of Koontz vs. Coffroth, or adhere to the ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 123,
+      "end": 125,
+      "text": "vs",
+      "raw_start": 123,
+      "raw_end": 125,
+      "raw_quote": "vs",
+      "context": "committee in the case of Koontz vs. Coffroth, or adhere to the opi",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 127,
+      "end": 135,
+      "text": "Coffroth",
+      "raw_start": 127,
+      "raw_end": 135,
+      "raw_quote": "Coffroth",
+      "context": "ittee in the case of Koontz vs. Coffroth, or adhere to the opinion of th",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 137,
+      "end": 139,
+      "text": "or",
+      "raw_start": 137,
+      "raw_end": 139,
+      "raw_quote": "or",
+      "context": "he case of Koontz vs. Coffroth, or adhere to the opinion of the mi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 140,
+      "end": 146,
+      "text": "adhere",
+      "raw_start": 140,
+      "raw_end": 146,
+      "raw_quote": "adhere",
+      "context": "case of Koontz vs. Coffroth, or adhere to the opinion of the minority,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 147,
+      "end": 149,
+      "text": "to",
+      "raw_start": 147,
+      "raw_end": 149,
+      "raw_quote": "to",
+      "context": " Koontz vs. Coffroth, or adhere to the opinion of the minority, we",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 150,
+      "end": 153,
+      "text": "the",
+      "raw_start": 150,
+      "raw_end": 153,
+      "raw_quote": "the",
+      "context": "ontz vs. Coffroth, or adhere to the opinion of the minority, we are",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 154,
+      "end": 161,
+      "text": "opinion",
+      "raw_start": 154,
+      "raw_end": 161,
+      "raw_quote": "opinion",
+      "context": " vs. Coffroth, or adhere to the opinion of the minority, we are still o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 162,
+      "end": 164,
+      "text": "of",
+      "raw_start": 162,
+      "raw_end": 164,
+      "raw_quote": "of",
+      "context": "froth, or adhere to the opinion of the minority, we are still obli",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 165,
+      "end": 168,
+      "text": "the",
+      "raw_start": 165,
+      "raw_end": 168,
+      "raw_quote": "the",
+      "context": "th, or adhere to the opinion of the minority, we are still obliged,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 169,
+      "end": 177,
+      "text": "minority",
+      "raw_start": 169,
+      "raw_end": 177,
+      "raw_quote": "minority",
+      "context": "or adhere to the opinion of the minority, we are still obliged, in my ju",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 179,
+      "end": 181,
+      "text": "we",
+      "raw_start": 179,
+      "raw_end": 181,
+      "raw_quote": "we",
+      "context": "to the opinion of the minority, we are still obliged, in my judgme",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 182,
+      "end": 185,
+      "text": "are",
+      "raw_start": 182,
+      "raw_end": 185,
+      "raw_quote": "are",
+      "context": "the opinion of the minority, we are still obliged, in my judgment, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 186,
+      "end": 191,
+      "text": "still",
+      "raw_start": 186,
+      "raw_end": 191,
+      "raw_quote": "still",
+      "context": "opinion of the minority, we are still obliged, in my judgment, to awa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 192,
+      "end": 199,
+      "text": "obliged",
+      "raw_start": 192,
+      "raw_end": 199,
+      "raw_quote": "obliged",
+      "context": "n of the minority, we are still obliged, in my judgment, to award the c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 201,
+      "end": 203,
+      "text": "in",
+      "raw_start": 201,
+      "raw_end": 203,
+      "raw_quote": "in",
+      "context": "minority, we are still obliged, in my judgment, to award the conte",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 204,
+      "end": 206,
+      "text": "my",
+      "raw_start": 204,
+      "raw_end": 206,
+      "raw_quote": "my",
+      "context": "ority, we are still obliged, in my judgment, to award the conteste",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 207,
+      "end": 215,
+      "text": "judgment",
+      "raw_start": 207,
+      "raw_end": 215,
+      "raw_quote": "judgment",
+      "context": "ty, we are still obliged, in my judgment, to award the contested seat to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 217,
+      "end": 219,
+      "text": "to",
+      "raw_start": 217,
+      "raw_end": 219,
+      "raw_quote": "to",
+      "context": " still obliged, in my judgment, to award the contested seat to the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 220,
+      "end": 225,
+      "text": "award",
+      "raw_start": 220,
+      "raw_end": 225,
+      "raw_quote": "award",
+      "context": "ill obliged, in my judgment, to award the contested seat to the sitti",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 226,
+      "end": 229,
+      "text": "the",
+      "raw_start": 226,
+      "raw_end": 229,
+      "raw_quote": "the",
+      "context": "liged, in my judgment, to award the contested seat to the sitting m",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 230,
+      "end": 239,
+      "text": "contested",
+      "raw_start": 230,
+      "raw_end": 239,
+      "raw_quote": "contested",
+      "context": "d, in my judgment, to award the contested seat to the sitting member. The",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 240,
+      "end": 244,
+      "text": "seat",
+      "raw_start": 240,
+      "raw_end": 244,
+      "raw_quote": "seat",
+      "context": "udgment, to award the contested seat to the sitting member. The re- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 245,
+      "end": 247,
+      "text": "to",
+      "raw_start": 245,
+      "raw_end": 247,
+      "raw_quote": "to",
+      "context": "nt, to award the contested seat to the sitting member. The re- sul",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 248,
+      "end": 251,
+      "text": "the",
+      "raw_start": 248,
+      "raw_end": 251,
+      "raw_quote": "the",
+      "context": " to award the contested seat to the sitting member. The re- sult is",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 252,
+      "end": 259,
+      "text": "sitting",
+      "raw_start": 252,
+      "raw_end": 259,
+      "raw_quote": "sitting",
+      "context": "award the contested seat to the sitting member. The re- sult is this : ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 260,
+      "end": 266,
+      "text": "member",
+      "raw_start": 260,
+      "raw_end": 266,
+      "raw_quote": "member",
+      "context": "e contested seat to the sitting member. The re- sult is this : while I",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 268,
+      "end": 271,
+      "text": "The",
+      "raw_start": 268,
+      "raw_end": 271,
+      "raw_quote": "The",
+      "context": "ted seat to the sitting member. The re- sult is this : while I, in ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 272,
+      "end": 274,
+      "text": "re",
+      "raw_start": 272,
+      "raw_end": 274,
+      "raw_quote": "re",
+      "context": "seat to the sitting member. The re- sult is this : while I, in acc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 276,
+      "end": 280,
+      "text": "sult",
+      "raw_start": 276,
+      "raw_end": 280,
+      "raw_quote": "sult",
+      "context": " to the sitting member. The re- sult is this : while I, in accordanc",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 281,
+      "end": 283,
+      "text": "is",
+      "raw_start": 281,
+      "raw_end": 283,
+      "raw_quote": "is",
+      "context": "he sitting member. The re- sult is this : while I, in accordance w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 284,
+      "end": 288,
+      "text": "this",
+      "raw_start": 284,
+      "raw_end": 288,
+      "raw_quote": "this",
+      "context": "sitting member. The re- sult is this : while I, in accordance with t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 291,
+      "end": 296,
+      "text": "while",
+      "raw_start": 291,
+      "raw_end": 296,
+      "raw_quote": "while",
+      "context": " member. The re- sult is this : while I, in accordance with the views",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 297,
+      "end": 298,
+      "text": "I",
+      "raw_start": 297,
+      "raw_end": 298,
+      "raw_quote": "I",
+      "context": "r. The re- sult is this : while I, in accordance with the views m",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 300,
+      "end": 302,
+      "text": "in",
+      "raw_start": 300,
+      "raw_end": 302,
+      "raw_quote": "in",
+      "context": "The re- sult is this : while I, in accordance with the views maint",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 303,
+      "end": 313,
+      "text": "accordance",
+      "raw_start": 303,
+      "raw_end": 313,
+      "raw_quote": "accordance",
+      "context": " re- sult is this : while I, in accordance with the views maintained by th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 314,
+      "end": 318,
+      "text": "with",
+      "raw_start": 314,
+      "raw_end": 318,
+      "raw_quote": "with",
+      "context": "s this : while I, in accordance with the views maintained by the min",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 319,
+      "end": 322,
+      "text": "the",
+      "raw_start": 319,
+      "raw_end": 322,
+      "raw_quote": "the",
+      "context": "s : while I, in accordance with the views maintained by the minorit",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 323,
+      "end": 328,
+      "text": "views",
+      "raw_start": 323,
+      "raw_end": 328,
+      "raw_quote": "views",
+      "context": "while I, in accordance with the views maintained by the minority in t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 329,
+      "end": 339,
+      "text": "maintained",
+      "raw_start": 329,
+      "raw_end": 339,
+      "raw_quote": "maintained",
+      "context": "I, in accordance with the views maintained by the minority in the case of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 340,
+      "end": 342,
+      "text": "by",
+      "raw_start": 340,
+      "raw_end": 342,
+      "raw_quote": "by",
+      "context": "dance with the views maintained by the minority in the case of Koo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 343,
+      "end": 346,
+      "text": "the",
+      "raw_start": 343,
+      "raw_end": 346,
+      "raw_quote": "the",
+      "context": "ce with the views maintained by the minority in the case of Koontz ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 347,
+      "end": 355,
+      "text": "minority",
+      "raw_start": 347,
+      "raw_end": 355,
+      "raw_quote": "minority",
+      "context": "ith the views maintained by the minority in the case of Koontz vs. Coffr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 356,
+      "end": 358,
+      "text": "in",
+      "raw_start": 356,
+      "raw_end": 358,
+      "raw_quote": "in",
+      "context": "iews maintained by the minority in the case of Koontz vs. Coffroth",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 359,
+      "end": 362,
+      "text": "the",
+      "raw_start": 359,
+      "raw_end": 362,
+      "raw_quote": "the",
+      "context": "s maintained by the minority in the case of Koontz vs. Coffroth, wo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 363,
+      "end": 367,
+      "text": "case",
+      "raw_start": 363,
+      "raw_end": 367,
+      "raw_quote": "case",
+      "context": "intained by the minority in the case of Koontz vs. Coffroth, would h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 368,
+      "end": 370,
+      "text": "of",
+      "raw_start": 368,
+      "raw_end": 370,
+      "raw_quote": "of",
+      "context": "ned by the minority in the case of Koontz vs. Coffroth, would have",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 371,
+      "end": 377,
+      "text": "Koontz",
+      "raw_start": 371,
+      "raw_end": 377,
+      "raw_quote": "Koontz",
+      "context": " by the minority in the case of Koontz vs. Coffroth, would have counte",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 378,
+      "end": 380,
+      "text": "vs",
+      "raw_start": 378,
+      "raw_end": 380,
+      "raw_quote": "vs",
+      "context": " minority in the case of Koontz vs. Coffroth, would have counted t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 382,
+      "end": 390,
+      "text": "Coffroth",
+      "raw_start": 382,
+      "raw_end": 390,
+      "raw_quote": "Coffroth",
+      "context": "ority in the case of Koontz vs. Coffroth, would have counted these six r",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 392,
+      "end": 397,
+      "text": "would",
+      "raw_start": 392,
+      "raw_end": 397,
+      "raw_quote": "would",
+      "context": "he case of Koontz vs. Coffroth, would have counted these six rejected",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 398,
+      "end": 402,
+      "text": "have",
+      "raw_start": 398,
+      "raw_end": 402,
+      "raw_quote": "have",
+      "context": "e of Koontz vs. Coffroth, would have counted these six rejected retu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 403,
+      "end": 410,
+      "text": "counted",
+      "raw_start": 403,
+      "raw_end": 410,
+      "raw_quote": "counted",
+      "context": "Koontz vs. Coffroth, would have counted these six rejected returns, the",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 411,
+      "end": 416,
+      "text": "these",
+      "raw_start": 411,
+      "raw_end": 416,
+      "raw_quote": "these",
+      "context": "s. Coffroth, would have counted these six rejected returns, the major",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 417,
+      "end": 420,
+      "text": "six",
+      "raw_start": 417,
+      "raw_end": 420,
+      "raw_quote": "six",
+      "context": "froth, would have counted these six rejected returns, the majority ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 421,
+      "end": 429,
+      "text": "rejected",
+      "raw_start": 421,
+      "raw_end": 429,
+      "raw_quote": "rejected",
+      "context": "h, would have counted these six rejected returns, the majority of those ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 430,
+      "end": 437,
+      "text": "returns",
+      "raw_start": 430,
+      "raw_end": 437,
+      "raw_quote": "returns",
+      "context": "have counted these six rejected returns, the majority of those who agre",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "raw",
+      "start": 439,
+      "end": 442,
+      "text": "the",
+      "raw_start": 439,
+      "raw_end": 442,
+      "raw_quote": "the",
+      "context": "ted these six rejected returns, the majority of those who agreed to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 443,
+      "end": 451,
+      "text": "majority",
+      "raw_start": 443,
+      "raw_end": 451,
+      "raw_quote": "majority",
+      "context": "these six rejected returns, the majority of those who agreed to the repo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 452,
+      "end": 454,
+      "text": "of",
+      "raw_start": 452,
+      "raw_end": 454,
+      "raw_quote": "of",
+      "context": " rejected returns, the majority of those who agreed to the report ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 455,
+      "end": 460,
+      "text": "those",
+      "raw_start": 455,
+      "raw_end": 460,
+      "raw_quote": "those",
+      "context": "jected returns, the majority of those who agreed to the report now be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 461,
+      "end": 464,
+      "text": "who",
+      "raw_start": 461,
+      "raw_end": 464,
+      "raw_quote": "who",
+      "context": " returns, the majority of those who agreed to the report now before",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 465,
+      "end": 471,
+      "text": "agreed",
+      "raw_start": 465,
+      "raw_end": 471,
+      "raw_quote": "agreed",
+      "context": "urns, the majority of those who agreed to the report now before the Ho",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 472,
+      "end": 474,
+      "text": "to",
+      "raw_start": 472,
+      "raw_end": 474,
+      "raw_quote": "to",
+      "context": "he majority of those who agreed to the report now before the House",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 475,
+      "end": 478,
+      "text": "the",
+      "raw_start": 475,
+      "raw_end": 478,
+      "raw_quote": "the",
+      "context": "majority of those who agreed to the report now before the House",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 479,
+      "end": 485,
+      "text": "report",
+      "raw_start": 479,
+      "raw_end": 485,
+      "raw_quote": "report",
+      "context": "rity of those who agreed to the report now before the House",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 486,
+      "end": 489,
+      "text": "now",
+      "raw_start": 486,
+      "raw_end": 489,
+      "raw_quote": "now",
+      "context": " those who agreed to the report now before the House",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 490,
+      "end": 496,
+      "text": "before",
+      "raw_start": 490,
+      "raw_end": 496,
+      "raw_quote": "before",
+      "context": "se who agreed to the report now before the House",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 497,
+      "end": 500,
+      "text": "the",
+      "raw_start": 497,
+      "raw_end": 500,
+      "raw_quote": "the",
+      "context": "agreed to the report now before the House",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "raw",
+      "start": 501,
+      "end": 506,
+      "text": "House",
+      "raw_start": 501,
+      "raw_end": 506,
+      "raw_quote": "House",
+      "context": "ed to the report now before the House",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    }
+  ],
+  "proposed_tokens": [
+    {
+      "layer": "proposed",
+      "start": 0,
+      "end": 3,
+      "text": "But",
+      "raw_start": 0,
+      "raw_end": 3,
+      "raw_quote": "But",
+      "context": "But it so happens that whether in t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 4,
+      "end": 6,
+      "text": "it",
+      "raw_start": 4,
+      "raw_end": 6,
+      "raw_quote": "it",
+      "context": "But it so happens that whether in this",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 7,
+      "end": 9,
+      "text": "so",
+      "raw_start": 7,
+      "raw_end": 9,
+      "raw_quote": "so",
+      "context": "But it so happens that whether in this ca",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 10,
+      "end": 17,
+      "text": "happens",
+      "raw_start": 10,
+      "raw_end": 17,
+      "raw_quote": "happens",
+      "context": "But it so happens that whether in this case we ad",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 18,
+      "end": 22,
+      "text": "that",
+      "raw_start": 18,
+      "raw_end": 22,
+      "raw_quote": "that",
+      "context": "But it so happens that whether in this case we adhere ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 23,
+      "end": 30,
+      "text": "whether",
+      "raw_start": 23,
+      "raw_end": 30,
+      "raw_quote": "whether",
+      "context": "But it so happens that whether in this case we adhere to the r",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 31,
+      "end": 33,
+      "text": "in",
+      "raw_start": 31,
+      "raw_end": 33,
+      "raw_quote": "in",
+      "context": "But it so happens that whether in this case we adhere to the ruli",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 34,
+      "end": 38,
+      "text": "this",
+      "raw_start": 34,
+      "raw_end": 38,
+      "raw_quote": "this",
+      "context": "t it so happens that whether in this case we adhere to the ruling of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 39,
+      "end": 43,
+      "text": "case",
+      "raw_start": 39,
+      "raw_end": 43,
+      "raw_quote": "case",
+      "context": "so happens that whether in this case we adhere to the ruling of the ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 44,
+      "end": 46,
+      "text": "we",
+      "raw_start": 44,
+      "raw_end": 46,
+      "raw_quote": "we",
+      "context": "ppens that whether in this case we adhere to the ruling of the maj",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 47,
+      "end": 53,
+      "text": "adhere",
+      "raw_start": 47,
+      "raw_end": 53,
+      "raw_quote": "adhere",
+      "context": "ns that whether in this case we adhere to the ruling of the majority o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 54,
+      "end": 56,
+      "text": "to",
+      "raw_start": 54,
+      "raw_end": 56,
+      "raw_quote": "to",
+      "context": " whether in this case we adhere to the ruling of the majority of t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 57,
+      "end": 60,
+      "text": "the",
+      "raw_start": 57,
+      "raw_end": 60,
+      "raw_quote": "the",
+      "context": "ether in this case we adhere to the ruling of the majority of the c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 61,
+      "end": 67,
+      "text": "ruling",
+      "raw_start": 61,
+      "raw_end": 67,
+      "raw_quote": "ruling",
+      "context": "r in this case we adhere to the ruling of the majority of the committe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 68,
+      "end": 70,
+      "text": "of",
+      "raw_start": 68,
+      "raw_end": 70,
+      "raw_quote": "of",
+      "context": "is case we adhere to the ruling of the majority of the committee i",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 71,
+      "end": 74,
+      "text": "the",
+      "raw_start": 71,
+      "raw_end": 74,
+      "raw_quote": "the",
+      "context": "case we adhere to the ruling of the majority of the committee in th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 75,
+      "end": 83,
+      "text": "majority",
+      "raw_start": 75,
+      "raw_end": 83,
+      "raw_quote": "majority",
+      "context": " we adhere to the ruling of the majority of the committee in the case of",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 84,
+      "end": 86,
+      "text": "of",
+      "raw_start": 84,
+      "raw_end": 86,
+      "raw_quote": "of",
+      "context": "e to the ruling of the majority of the committee in the case of Ko",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 87,
+      "end": 90,
+      "text": "the",
+      "raw_start": 87,
+      "raw_end": 90,
+      "raw_quote": "the",
+      "context": "o the ruling of the majority of the committee in the case of Koontz",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 91,
+      "end": 100,
+      "text": "committee",
+      "raw_start": 91,
+      "raw_end": 100,
+      "raw_quote": "committee",
+      "context": "e ruling of the majority of the committee in the case of Koontz vs. Coffr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 101,
+      "end": 103,
+      "text": "in",
+      "raw_start": 101,
+      "raw_end": 103,
+      "raw_quote": "in",
+      "context": "f the majority of the committee in the case of Koontz vs. Coffroth",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 104,
+      "end": 107,
+      "text": "the",
+      "raw_start": 104,
+      "raw_end": 107,
+      "raw_quote": "the",
+      "context": "he majority of the committee in the case of Koontz vs. Coffroth, or",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 108,
+      "end": 112,
+      "text": "case",
+      "raw_start": 108,
+      "raw_end": 112,
+      "raw_quote": "case",
+      "context": "ajority of the committee in the case of Koontz vs. Coffroth, or adhe",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 113,
+      "end": 115,
+      "text": "of",
+      "raw_start": 113,
+      "raw_end": 115,
+      "raw_quote": "of",
+      "context": "ty of the committee in the case of Koontz vs. Coffroth, or adhere ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 116,
+      "end": 122,
+      "text": "Koontz",
+      "raw_start": 116,
+      "raw_end": 122,
+      "raw_quote": "Koontz",
+      "context": "of the committee in the case of Koontz vs. Coffroth, or adhere to the ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 123,
+      "end": 125,
+      "text": "vs",
+      "raw_start": 123,
+      "raw_end": 125,
+      "raw_quote": "vs",
+      "context": "committee in the case of Koontz vs. Coffroth, or adhere to the opi",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 127,
+      "end": 135,
+      "text": "Coffroth",
+      "raw_start": 127,
+      "raw_end": 135,
+      "raw_quote": "Coffroth",
+      "context": "ittee in the case of Koontz vs. Coffroth, or adhere to the opinion of th",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 137,
+      "end": 139,
+      "text": "or",
+      "raw_start": 137,
+      "raw_end": 139,
+      "raw_quote": "or",
+      "context": "he case of Koontz vs. Coffroth, or adhere to the opinion of the mi",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 140,
+      "end": 146,
+      "text": "adhere",
+      "raw_start": 140,
+      "raw_end": 146,
+      "raw_quote": "adhere",
+      "context": "case of Koontz vs. Coffroth, or adhere to the opinion of the minority,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 147,
+      "end": 149,
+      "text": "to",
+      "raw_start": 147,
+      "raw_end": 149,
+      "raw_quote": "to",
+      "context": " Koontz vs. Coffroth, or adhere to the opinion of the minority, we",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 150,
+      "end": 153,
+      "text": "the",
+      "raw_start": 150,
+      "raw_end": 153,
+      "raw_quote": "the",
+      "context": "ontz vs. Coffroth, or adhere to the opinion of the minority, we are",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 154,
+      "end": 161,
+      "text": "opinion",
+      "raw_start": 154,
+      "raw_end": 161,
+      "raw_quote": "opinion",
+      "context": " vs. Coffroth, or adhere to the opinion of the minority, we are still o",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 162,
+      "end": 164,
+      "text": "of",
+      "raw_start": 162,
+      "raw_end": 164,
+      "raw_quote": "of",
+      "context": "froth, or adhere to the opinion of the minority, we are still obli",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 165,
+      "end": 168,
+      "text": "the",
+      "raw_start": 165,
+      "raw_end": 168,
+      "raw_quote": "the",
+      "context": "th, or adhere to the opinion of the minority, we are still obliged,",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 169,
+      "end": 177,
+      "text": "minority",
+      "raw_start": 169,
+      "raw_end": 177,
+      "raw_quote": "minority",
+      "context": "or adhere to the opinion of the minority, we are still obliged, in my ju",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 179,
+      "end": 181,
+      "text": "we",
+      "raw_start": 179,
+      "raw_end": 181,
+      "raw_quote": "we",
+      "context": "to the opinion of the minority, we are still obliged, in my judgme",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 182,
+      "end": 185,
+      "text": "are",
+      "raw_start": 182,
+      "raw_end": 185,
+      "raw_quote": "are",
+      "context": "the opinion of the minority, we are still obliged, in my judgment, ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 186,
+      "end": 191,
+      "text": "still",
+      "raw_start": 186,
+      "raw_end": 191,
+      "raw_quote": "still",
+      "context": "opinion of the minority, we are still obliged, in my judgment, to awa",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 192,
+      "end": 199,
+      "text": "obliged",
+      "raw_start": 192,
+      "raw_end": 199,
+      "raw_quote": "obliged",
+      "context": "n of the minority, we are still obliged, in my judgment, to award the c",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 201,
+      "end": 203,
+      "text": "in",
+      "raw_start": 201,
+      "raw_end": 203,
+      "raw_quote": "in",
+      "context": "minority, we are still obliged, in my judgment, to award the conte",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 204,
+      "end": 206,
+      "text": "my",
+      "raw_start": 204,
+      "raw_end": 206,
+      "raw_quote": "my",
+      "context": "ority, we are still obliged, in my judgment, to award the conteste",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 207,
+      "end": 215,
+      "text": "judgment",
+      "raw_start": 207,
+      "raw_end": 215,
+      "raw_quote": "judgment",
+      "context": "ty, we are still obliged, in my judgment, to award the contested seat to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 217,
+      "end": 219,
+      "text": "to",
+      "raw_start": 217,
+      "raw_end": 219,
+      "raw_quote": "to",
+      "context": " still obliged, in my judgment, to award the contested seat to the",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 220,
+      "end": 225,
+      "text": "award",
+      "raw_start": 220,
+      "raw_end": 225,
+      "raw_quote": "award",
+      "context": "ill obliged, in my judgment, to award the contested seat to the sitti",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 226,
+      "end": 229,
+      "text": "the",
+      "raw_start": 226,
+      "raw_end": 229,
+      "raw_quote": "the",
+      "context": "liged, in my judgment, to award the contested seat to the sitting m",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 230,
+      "end": 239,
+      "text": "contested",
+      "raw_start": 230,
+      "raw_end": 239,
+      "raw_quote": "contested",
+      "context": "d, in my judgment, to award the contested seat to the sitting member. The",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 240,
+      "end": 244,
+      "text": "seat",
+      "raw_start": 240,
+      "raw_end": 244,
+      "raw_quote": "seat",
+      "context": "udgment, to award the contested seat to the sitting member. The re- ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 245,
+      "end": 247,
+      "text": "to",
+      "raw_start": 245,
+      "raw_end": 247,
+      "raw_quote": "to",
+      "context": "nt, to award the contested seat to the sitting member. The re- sul",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 248,
+      "end": 251,
+      "text": "the",
+      "raw_start": 248,
+      "raw_end": 251,
+      "raw_quote": "the",
+      "context": " to award the contested seat to the sitting member. The re- sult is",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 252,
+      "end": 259,
+      "text": "sitting",
+      "raw_start": 252,
+      "raw_end": 259,
+      "raw_quote": "sitting",
+      "context": "award the contested seat to the sitting member. The re- sult is this : ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 260,
+      "end": 266,
+      "text": "member",
+      "raw_start": 260,
+      "raw_end": 266,
+      "raw_quote": "member",
+      "context": "e contested seat to the sitting member. The re- sult is this : while I",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 268,
+      "end": 271,
+      "text": "The",
+      "raw_start": 268,
+      "raw_end": 271,
+      "raw_quote": "The",
+      "context": "ted seat to the sitting member. The re- sult is this : while I, in ",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "lexical_name_hint"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 272,
+      "end": 278,
+      "text": "result",
+      "raw_start": 272,
+      "raw_end": 280,
+      "raw_quote": "re- sult",
+      "context": "seat to the sitting member. The re- sult is this : while I, in accordanc",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 279,
+      "end": 281,
+      "text": "is",
+      "raw_start": 281,
+      "raw_end": 283,
+      "raw_quote": "is",
+      "context": "he sitting member. The re- sult is this : while I, in accordance w",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 282,
+      "end": 286,
+      "text": "this",
+      "raw_start": 284,
+      "raw_end": 288,
+      "raw_quote": "this",
+      "context": "sitting member. The re- sult is this : while I, in accordance with t",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 289,
+      "end": 294,
+      "text": "while",
+      "raw_start": 291,
+      "raw_end": 296,
+      "raw_quote": "while",
+      "context": " member. The re- sult is this : while I, in accordance with the views",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 295,
+      "end": 296,
+      "text": "I",
+      "raw_start": 297,
+      "raw_end": 298,
+      "raw_quote": "I",
+      "context": "r. The re- sult is this : while I, in accordance with the views m",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 298,
+      "end": 300,
+      "text": "in",
+      "raw_start": 300,
+      "raw_end": 302,
+      "raw_quote": "in",
+      "context": "The re- sult is this : while I, in accordance with the views maint",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 301,
+      "end": 311,
+      "text": "accordance",
+      "raw_start": 303,
+      "raw_end": 313,
+      "raw_quote": "accordance",
+      "context": " re- sult is this : while I, in accordance with the views maintained by th",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 312,
+      "end": 316,
+      "text": "with",
+      "raw_start": 314,
+      "raw_end": 318,
+      "raw_quote": "with",
+      "context": "s this : while I, in accordance with the views maintained by the min",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 317,
+      "end": 320,
+      "text": "the",
+      "raw_start": 319,
+      "raw_end": 322,
+      "raw_quote": "the",
+      "context": "s : while I, in accordance with the views maintained by the minorit",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 321,
+      "end": 326,
+      "text": "views",
+      "raw_start": 323,
+      "raw_end": 328,
+      "raw_quote": "views",
+      "context": "while I, in accordance with the views maintained by the minority in t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 327,
+      "end": 337,
+      "text": "maintained",
+      "raw_start": 329,
+      "raw_end": 339,
+      "raw_quote": "maintained",
+      "context": "I, in accordance with the views maintained by the minority in the case of ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 338,
+      "end": 340,
+      "text": "by",
+      "raw_start": 340,
+      "raw_end": 342,
+      "raw_quote": "by",
+      "context": "dance with the views maintained by the minority in the case of Koo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 341,
+      "end": 344,
+      "text": "the",
+      "raw_start": 343,
+      "raw_end": 346,
+      "raw_quote": "the",
+      "context": "ce with the views maintained by the minority in the case of Koontz ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 345,
+      "end": 353,
+      "text": "minority",
+      "raw_start": 347,
+      "raw_end": 355,
+      "raw_quote": "minority",
+      "context": "ith the views maintained by the minority in the case of Koontz vs. Coffr",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 354,
+      "end": 356,
+      "text": "in",
+      "raw_start": 356,
+      "raw_end": 358,
+      "raw_quote": "in",
+      "context": "iews maintained by the minority in the case of Koontz vs. Coffroth",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 357,
+      "end": 360,
+      "text": "the",
+      "raw_start": 359,
+      "raw_end": 362,
+      "raw_quote": "the",
+      "context": "s maintained by the minority in the case of Koontz vs. Coffroth, wo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 361,
+      "end": 365,
+      "text": "case",
+      "raw_start": 363,
+      "raw_end": 367,
+      "raw_quote": "case",
+      "context": "intained by the minority in the case of Koontz vs. Coffroth, would h",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 366,
+      "end": 368,
+      "text": "of",
+      "raw_start": 368,
+      "raw_end": 370,
+      "raw_quote": "of",
+      "context": "ned by the minority in the case of Koontz vs. Coffroth, would have",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 369,
+      "end": 375,
+      "text": "Koontz",
+      "raw_start": 371,
+      "raw_end": 377,
+      "raw_quote": "Koontz",
+      "context": " by the minority in the case of Koontz vs. Coffroth, would have counte",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "word_not_in_vocabulary",
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "word_image_check_candidate",
+        "name_place_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 376,
+      "end": 378,
+      "text": "vs",
+      "raw_start": 378,
+      "raw_end": 380,
+      "raw_quote": "vs",
+      "context": " minority in the case of Koontz vs. Coffroth, would have counted t",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 380,
+      "end": 388,
+      "text": "Coffroth",
+      "raw_start": 382,
+      "raw_end": 390,
+      "raw_quote": "Coffroth",
+      "context": "ority in the case of Koontz vs. Coffroth, would have counted these six r",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 390,
+      "end": 395,
+      "text": "would",
+      "raw_start": 392,
+      "raw_end": 397,
+      "raw_quote": "would",
+      "context": "he case of Koontz vs. Coffroth, would have counted these six rejected",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 396,
+      "end": 400,
+      "text": "have",
+      "raw_start": 398,
+      "raw_end": 402,
+      "raw_quote": "have",
+      "context": "e of Koontz vs. Coffroth, would have counted these six rejected retu",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 401,
+      "end": 408,
+      "text": "counted",
+      "raw_start": 403,
+      "raw_end": 410,
+      "raw_quote": "counted",
+      "context": "Koontz vs. Coffroth, would have counted these six rejected returns, the",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 409,
+      "end": 414,
+      "text": "these",
+      "raw_start": 411,
+      "raw_end": 416,
+      "raw_quote": "these",
+      "context": "s. Coffroth, would have counted these six rejected returns, the major",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 415,
+      "end": 418,
+      "text": "six",
+      "raw_start": 417,
+      "raw_end": 420,
+      "raw_quote": "six",
+      "context": "froth, would have counted these six rejected returns, the majority ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 419,
+      "end": 427,
+      "text": "rejected",
+      "raw_start": 421,
+      "raw_end": 429,
+      "raw_quote": "rejected",
+      "context": "h, would have counted these six rejected returns, the majority of those ",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 428,
+      "end": 435,
+      "text": "returns",
+      "raw_start": 430,
+      "raw_end": 437,
+      "raw_quote": "returns",
+      "context": "have counted these six rejected returns, the majority of those who agre",
+      "categories": [
+        "word"
+      ],
+      "signals": [
+        "word_not_in_vocabulary"
+      ],
+      "routes": [
+        "word_image_check_candidate"
+      ],
+      "membership": "unfamiliar"
+    },
+    {
+      "layer": "proposed",
+      "start": 437,
+      "end": 440,
+      "text": "the",
+      "raw_start": 439,
+      "raw_end": 442,
+      "raw_quote": "the",
+      "context": "ted these six rejected returns, the majority of those who agreed to",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 441,
+      "end": 449,
+      "text": "majority",
+      "raw_start": 443,
+      "raw_end": 451,
+      "raw_quote": "majority",
+      "context": "these six rejected returns, the majority of those who agreed to the repo",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 450,
+      "end": 452,
+      "text": "of",
+      "raw_start": 452,
+      "raw_end": 454,
+      "raw_quote": "of",
+      "context": " rejected returns, the majority of those who agreed to the report ",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 453,
+      "end": 458,
+      "text": "those",
+      "raw_start": 455,
+      "raw_end": 460,
+      "raw_quote": "those",
+      "context": "jected returns, the majority of those who agreed to the report now be",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 459,
+      "end": 462,
+      "text": "who",
+      "raw_start": 461,
+      "raw_end": 464,
+      "raw_quote": "who",
+      "context": " returns, the majority of those who agreed to the report now before",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 463,
+      "end": 469,
+      "text": "agreed",
+      "raw_start": 465,
+      "raw_end": 471,
+      "raw_quote": "agreed",
+      "context": "urns, the majority of those who agreed to the report now before the Ho",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 470,
+      "end": 472,
+      "text": "to",
+      "raw_start": 472,
+      "raw_end": 474,
+      "raw_quote": "to",
+      "context": "he majority of those who agreed to the report now before the House",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 473,
+      "end": 476,
+      "text": "the",
+      "raw_start": 475,
+      "raw_end": 478,
+      "raw_quote": "the",
+      "context": "majority of those who agreed to the report now before the House",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 477,
+      "end": 483,
+      "text": "report",
+      "raw_start": 479,
+      "raw_end": 485,
+      "raw_quote": "report",
+      "context": "rity of those who agreed to the report now before the House",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 484,
+      "end": 487,
+      "text": "now",
+      "raw_start": 486,
+      "raw_end": 489,
+      "raw_quote": "now",
+      "context": " those who agreed to the report now before the House",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 488,
+      "end": 494,
+      "text": "before",
+      "raw_start": 490,
+      "raw_end": 496,
+      "raw_quote": "before",
+      "context": "se who agreed to the report now before the House",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 495,
+      "end": 498,
+      "text": "the",
+      "raw_start": 497,
+      "raw_end": 500,
+      "raw_quote": "the",
+      "context": "agreed to the report now before the House",
+      "categories": [
+        "word"
+      ],
+      "signals": [],
+      "routes": [
+        "whole_unit_audit_only"
+      ],
+      "membership": "known"
+    },
+    {
+      "layer": "proposed",
+      "start": 499,
+      "end": 504,
+      "text": "House",
+      "raw_start": 501,
+      "raw_end": 506,
+      "raw_quote": "House",
+      "context": "ed to the report now before the House",
+      "categories": [
+        "word",
+        "name_place_candidate"
+      ],
+      "signals": [
+        "capitalized_candidate"
+      ],
+      "routes": [
+        "name_place_image_check_candidate"
+      ],
+      "membership": "known"
+    }
+  ],
+  "brackets": {
+    "contract": "source-bound-bracket-candidates-v1",
+    "rule_version": "literal-bracket-cues-v1",
+    "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+    "source": {
+      "source_id": "congressionalglo7395unit:899:par_000899_000011",
+      "raw_text": "But it so happens that whether in this case we adhere to the ruling of the majority of the committee in the case of Koontz vs. Coffroth, or adhere to the opinion of the minority, we are still obliged, in my judgment, to award the contested seat to the sitting member. The re- sult is this : while I, in accordance with the views maintained by the minority in the case of Koontz vs. Coffroth, would have counted these six rejected returns, the majority of those who agreed to the report now before the House",
+      "raw_sha256": "ada0227caba01f548504e68001df52f1b3de3ce7ae13b8a47c3674cc577af0db"
+    },
+    "annotations": [],
+    "issues": [],
+    "inspection_state": "complete"
+  },
+  "bracket_preservation": {
+    "contract": "bracket-literal-preservation-v1",
+    "source_report": {
+      "contract": "source-bound-bracket-candidates-v1",
+      "rule_version": "literal-bracket-cues-v1",
+      "rules_sha256": "8cf1ba6b02b8ef4dbb89d7f4fe1bbb57469036fb1b5005f3f132375ccad6f40c",
+      "source": {
+        "source_id": "congressionalglo7395unit:899:par_000899_000011",
+        "raw_text": "But it so happens that whether in this case we adhere to the ruling of the majority of the committee in the case of Koontz vs. Coffroth, or adhere to the opinion of the minority, we are still obliged, in my judgment, to award the contested seat to the sitting member. The re- sult is this : while I, in accordance with the views maintained by the minority in the case of Koontz vs. Coffroth, would have counted these six rejected returns, the majority of those who agreed to the report now before the House",
+        "raw_sha256": "ada0227caba01f548504e68001df52f1b3de3ce7ae13b8a47c3674cc577af0db"
+      },
+      "annotations": [],
+      "issues": [],
+      "inspection_state": "complete"
+    },
+    "proposed_text": "But it so happens that whether in this case we adhere to the ruling of the majority of the committee in the case of Koontz vs. Coffroth, or adhere to the opinion of the minority, we are still obliged, in my judgment, to award the contested seat to the sitting member. The result is this : while I, in accordance with the views maintained by the minority in the case of Koontz vs. Coffroth, would have counted these six rejected returns, the majority of those who agreed to the report now before the House",
+    "proposed_sha256": "a6070c7c3261c92b84013f59fc8c3c338a620a06b894c1fbee9015bf830b9d16",
+    "proposed_quotes": [],
+    "proposed_issues": [],
+    "status": "same_literal_sequence"
+  },
+  "word_lookup": "available",
+  "name_lookup": "available",
+  "place_lookup": "not_assessed",
+  "detector_state": "signals_present",
+  "acceptance": "unreviewed_deterministic_proposal",
+  "source_quality": "not_verified"
+}

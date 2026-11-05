@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 05 Nov 2026 02:18:54 GMT
+Content-Length: 1090
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-05T02:18:54.76461Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"But it so happens that whether in this case we adhere to the ruling of the majority of the committee in the case of Koontz vs. Coffroth, or adhere to the opinion of the minority, we are still obliged, in my judgment, to award the contested seat to the sitting member. The result is this: while I, in accordance with the views maintained by the minority in the case of Koontz vs. Coffroth, would have counted these six rejected returns, the majority of those who agreed to the report now before the House\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  , \"unit_id\": \"X15\"}"},"done":true,"done_reason":"stop","total_duration":37319473500,"load_duration":3313938666,"prompt_eval_count":3303,"prompt_eval_cached_count":0,"prompt_eval_duration":27441686042,"eval_count":192,"eval_duration":6538827375}

@@ -1,0 +1,133 @@
+{
+  "task": "T136",
+  "authority": "Direct Nov4Keepgoing after sealedT134/T135 results; new finite12call cohort, not unusedslotrollover or an X13retry.",
+  "bounds": {
+    "cases": 4,
+    "identical_runs_each": 3,
+    "total_calls": 12,
+    "retries": 0,
+    "request_seconds": 120,
+    "output_tokens": 1500,
+    "per_case_group_seconds": 1800,
+    "total_model_phase_seconds": 1800,
+    "image_downloads_max": 0,
+    "info_downloads_max": 0,
+    "model_downloads": 0,
+    "literal_user_characters_max": 16000
+  },
+  "model": "qwen3.8:27b-mlx",
+  "cases": [
+    {
+      "case": "X14",
+      "selection_order_within_part": 2,
+      "part": 5,
+      "leaf": 766,
+      "paragraph_id": "par_000766_000024",
+      "source_id": "congressionalglo7395unit:766:par_000766_000024",
+      "raw_sha256": "45fe1b75ec89976230d41e3a25f23558979ef833eff82789844c393203c996cf",
+      "static_sha256": "65c8298038da8e110b33831d575fe33930d278a6a3996493c8c9937b31930df7",
+      "page_line_sha256": "1e78ae9196bad3175592e033dbddd4ff4a23b6ea4bbebe19a5a29de71bc4182d",
+      "page_line_number": 5089,
+      "canonical_page_path": "tmp/t134-source-prep/part5-leaf766.jsonl",
+      "canonical_page_file_sha256": "1e78ae9196bad3175592e033dbddd4ff4a23b6ea4bbebe19a5a29de71bc4182d",
+      "raw_codepoints": 657,
+      "role": "body",
+      "reading_order": 24,
+      "bbox": {
+        "left": 2113,
+        "top": 319,
+        "right": 3000,
+        "bottom": 942
+      },
+      "page_dimensions_px": [
+        3115,
+        4275
+      ],
+      "image_status": "not_bound_or_verified_for_this_target",
+      "eligible_page_count_in_part": 1014,
+      "eligible_paragraph_count_on_page": 8,
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 2704
+      },
+      "selection_page_rank_sha256": "00c2e32ce6edeab8d4760f04c5d89645cd1d26a4f5d12ec72cbaf15f879f7fb6",
+      "selection_paragraph_rank_sha256": "3d9f2eb471404327e6e662086084e1dd4cee6eace52de0dbfc502fffb7c0b5c5",
+      "unit_id": "X14"
+    },
+    {
+      "case": "X15",
+      "selection_order_within_part": 3,
+      "part": 5,
+      "leaf": 899,
+      "paragraph_id": "par_000899_000011",
+      "source_id": "congressionalglo7395unit:899:par_000899_000011",
+      "raw_sha256": "ada0227caba01f548504e68001df52f1b3de3ce7ae13b8a47c3674cc577af0db",
+      "static_sha256": "a6070c7c3261c92b84013f59fc8c3c338a620a06b894c1fbee9015bf830b9d16",
+      "page_line_sha256": "07e4f85fab75cb3790191ffb1e455d92c37a8f11fa04bd80193950e71c912287",
+      "page_line_number": 5222,
+      "canonical_page_path": "tmp/t134-source-prep/part5-leaf899.jsonl",
+      "canonical_page_file_sha256": "07e4f85fab75cb3790191ffb1e455d92c37a8f11fa04bd80193950e71c912287",
+      "raw_codepoints": 506,
+      "role": "body",
+      "reading_order": 10,
+      "bbox": {
+        "left": 125,
+        "top": 3522,
+        "right": 1004,
+        "bottom": 3985
+      },
+      "page_dimensions_px": [
+        3115,
+        4275
+      ],
+      "image_status": "not_bound_or_verified_for_this_target",
+      "eligible_page_count_in_part": 1014,
+      "eligible_paragraph_count_on_page": 6,
+      "inclusion_probability": {
+        "numerator": 1,
+        "denominator": 2028
+      },
+      "selection_page_rank_sha256": "00cf8fa64735ed71563b16390704a519b865db37e03757492bccf4fb271d5c52",
+      "selection_paragraph_rank_sha256": "0bc78b2c87246bdaff464890aa95085f6d03c393b33dc491978108d2ffa60d80",
+      "unit_id": "X15"
+    },
+    {
+      "case": "J1",
+      "source_id": "congressionalglo7392unit:96:par_000096_000041",
+      "part": 2,
+      "leaf": 96,
+      "paragraph_id": "par_000096_000041",
+      "raw_sha256": "83417a122dd772a52658855e1992530bc95c04dc12b855524c68e4715d6f33ea",
+      "page_line_sha256": "5283ddb322430c5ab3177f551a88b6cedbae2625c79d073eb9b071b2f1a0ff51",
+      "raw_codepoints": 165,
+      "unit_id": "W2",
+      "baseline_root": "artifacts/remaining-parts-audit-20261103-01",
+      "baseline_case": "W2",
+      "exposure": "Known previous join miss; candidate only, saved baseline three calls reused."
+    },
+    {
+      "case": "J2",
+      "source_id": "congressionalglo7395unit:302:par_000302_000012",
+      "part": 5,
+      "leaf": 302,
+      "paragraph_id": "par_000302_000012",
+      "raw_sha256": "0859aa82bd5573a802b0724628408e188a0ea432e070ec2047d9d11e86810a3e",
+      "page_line_sha256": "2d0cbc5e5122d6c882024f343be99e192ef56cf24a33687c627b65a9cf2d01fc",
+      "raw_codepoints": 82,
+      "unit_id": "V6",
+      "baseline_root": "artifacts/expanded-workflow-audit-20261103-01",
+      "baseline_case": "V6",
+      "exposure": "Known previous join miss; candidate only, saved baseline three calls reused."
+    }
+  ],
+  "prior": {
+    "attempts": 95,
+    "request_cycle_seconds": 4925.524095502216,
+    "known_input_tokens": 296503,
+    "known_output_tokens": 18465,
+    "unknown_usage_attempts": 4
+  },
+  "old_failure": "T134X13 remains closed with unknown usage/cause; no new dense request or cap raise.",
+  "input_selection": "Exactly the four original preselected candidate inputs never dispatched; no outcome-based replacement. X14/X15previouslyunexecutedpart5; J1/J2knownexposedmatchedcases.",
+  "native_fit": "unknown; bounded diagnostics only"
+}
