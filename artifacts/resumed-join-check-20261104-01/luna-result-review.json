@@ -1,0 +1,13 @@
+{
+  "reviewer": "gpt-6-luna",
+  "verdict": "No findings blocking commit",
+  "checks": [
+    "Candidate equals baseline after removing only frozen generic instruction append",
+    "Three request/result SHA values match, safe_to_continue and stopped receipts present",
+    "Independent arithmetic:87.6652869s,3639input,308output",
+    "HR036v3 source/input/expected/actual/differences, reused baseline, source-exposed and no accepted-gold limitations clear"
+  ],
+  "observations": "Candidate 3of3joined and exact provisionalsource; saved baseline1of3joined. Named fixed slots spent.",
+  "provider_calls": 0,
+  "edits": false
+}

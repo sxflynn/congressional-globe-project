@@ -1,0 +1,22 @@
+{
+  "id": "HR-036",
+  "version": 2,
+  "title": "Word-joining check: 1 of 3 observations",
+  "instructions": "After your request to resume, this small study checks one previously unstarted candidate input. The instruction asks the model to join a word divided by a printed line ending. Three identical calls have a 120-second limit each, with no downloads or automatic retries. Three earlier replies are reused for comparison. The cancelled study remains closed. Source readings are provisional AI evidence. Software results appear first; actual model results are added as calls finish; optional notes can steer remaining observations.",
+  "blind": false,
+  "questions": [
+    {
+      "id": "broader-qwen-comments",
+      "prompt": "Optional notes on these passages and repeated results",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "J2: part 5, leaf 302",
+          "text": "Inputs — full original OCR:\nMr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,\n\nExpected output — inspect the whole assigned passage against its image, join a word split only by a printed line ending, and preserve real compound-word hyphens and dashes. Missing or unclear source text requires an explicit unresolved answer. My source reading was recorded before these candidate replies. It is provisional AI evidence; uncertainty is described below:\nMr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,\nKnown baseline outputs and prior root assessment reused; exposed matched diagnostic, not fresh confirmation.\n\nActual output — full software first pass:\nMr. SUMNEll. The Senator has under- taken to lead in an increase of salaries. Now,\n\nActual output — Qwen run 1 of 3:\nMr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,\nReported coverage: complete; software reply checks: passed, still unreviewed AI evidence.\n\nActual output — saved earlier baseline run 1, not a new call:\nMr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,\n\nActual output — saved earlier baseline run 2, not a new call:\nMr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,\n\nActual output — saved earlier baseline run 3, not a new call:\nMr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,\n\nDifferences — software proposes 0 changes; 1 of 3 planned attempts recorded, with 1 model replies. 1 match the provisional words and punctuation with case, spacing and quote-style variants treated alike. The provisional reading contains no digit-based numbers; an empty sequence is not a numeric-accuracy test. This is a known previous failure case. Only the generic word-joining instruction differs in the actual request; earlier results are reused. The operator has seen those results, so this is an exposed diagnostic rather than fresh confirmation. 1 of 1 available replies pass software reply checks; those checks do not certify source accuracy. Recorded call time totals 29.799 seconds; reported usage is 1213 input and 103 output tokens, with 0 observations missing usage. All raw inputs and replies remain preserved. Three runs measure repeatability on this exact input; they do not establish population accuracy or permission to change accepted text.",
+          "url": "https://iiif.archive.org/image/iiif/2/congressionalglo7395unit%2fcongressionalglo7395unit_jp2.zip%2fcongressionalglo7395unit_jp2%2fcongressionalglo7395unit_0302.jp2/215,3930,871,85/871,/0/default.jpg"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 05 Nov 2026 03:46:52 GMT
+Content-Length: 671
+Connection: close
+
+{"model":"qwen3.8:27b-mlx","created_at":"2026-11-05T03:46:52.488281Z","message":{"role":"assistant","content":"{\n  \"contract\": \"ocr-productive-repair-text-reply-v3\",\n  \"readings\": [\n    {\n      \"corrected_text\": \"Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,\",\n      \"coverage\": \"complete\",\n      \"paragraph_alias\": \"P1\",\n      \"reason\": null\n    }\n  ]\n  ,\n  \"unit_id\": \"V6\"\n}"},"done":true,"done_reason":"stop","total_duration":20062643709,"load_duration":4416163834,"prompt_eval_count":1213,"prompt_eval_cached_count":0,"prompt_eval_duration":11106418250,"eval_count":102,"eval_duration":4530110417}

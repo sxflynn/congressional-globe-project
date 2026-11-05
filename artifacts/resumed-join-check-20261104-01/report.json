@@ -1,0 +1,108 @@
+{
+  "task": "T137",
+  "status": "three_identical_observations_complete",
+  "question": "Does appended generic line-join instruction consistently repair undertaken on the previously unstarted J2candidate?",
+  "attempts": 3,
+  "replies": 3,
+  "unknown_usage_attempts": 0,
+  "candidate": [
+    {
+      "repeat": 1,
+      "reading": "Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,",
+      "coverage": "complete",
+      "full_reference_exact": true,
+      "undertaken_joined": true,
+      "SUMNER_preserved": true,
+      "elapsed_seconds": 29.79907574970275,
+      "transport_elapsed_seconds": 29.76463279221207,
+      "usage": {
+        "input_tokens": 1213,
+        "output_tokens": 103
+      },
+      "reply_valid": true,
+      "response_text_sha256": "65306e78dd2184c9a6017fa252c7c4e0acc95ffd9f93cae0118376cbca9c6ee5",
+      "result_sha256": "a11fbea9edb44cb4692d362c4220d9d4e05e63b559ccc1ed766b8792aee6cdba"
+    },
+    {
+      "repeat": 2,
+      "reading": "Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,",
+      "coverage": "complete",
+      "full_reference_exact": true,
+      "undertaken_joined": true,
+      "SUMNER_preserved": true,
+      "elapsed_seconds": 28.359374708030373,
+      "transport_elapsed_seconds": 28.33480108389631,
+      "usage": {
+        "input_tokens": 1213,
+        "output_tokens": 103
+      },
+      "reply_valid": true,
+      "response_text_sha256": "65306e78dd2184c9a6017fa252c7c4e0acc95ffd9f93cae0118376cbca9c6ee5",
+      "result_sha256": "e5acb83cc106c4ab1b0e200f7d06dec37d2d0f084cee0e050323385233cc3524"
+    },
+    {
+      "repeat": 3,
+      "reading": "Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,",
+      "coverage": "complete",
+      "full_reference_exact": true,
+      "undertaken_joined": true,
+      "SUMNER_preserved": true,
+      "elapsed_seconds": 29.506836417131126,
+      "transport_elapsed_seconds": 29.48222312470898,
+      "usage": {
+        "input_tokens": 1213,
+        "output_tokens": 102
+      },
+      "reply_valid": true,
+      "response_text_sha256": "65306e78dd2184c9a6017fa252c7c4e0acc95ffd9f93cae0118376cbca9c6ee5",
+      "result_sha256": "d65616e3689dfd0db03f86014383eee8c63b251c772dd6b92b698f151c1d3194"
+    }
+  ],
+  "saved_baseline": [
+    {
+      "repeat": 1,
+      "reading": "Mr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,",
+      "undertaken_joined": false,
+      "result_sha256": "5924e629e11785de94e5da897b3549f052869d78383c0737baf88a715935ae1f"
+    },
+    {
+      "repeat": 2,
+      "reading": "Mr. SUMNER. The Senator has undertaken to lead in an increase of salaries. Now,",
+      "undertaken_joined": true,
+      "result_sha256": "11a6ed9c50334a5d3a52c6ddc466243f579bb04f1e9f6d965434c8a3103bf36d"
+    },
+    {
+      "repeat": 3,
+      "reading": "Mr. SUMNER. The Senator has under- taken to lead in an increase of salaries. Now,",
+      "undertaken_joined": false,
+      "result_sha256": "a7399624422b63e74205e25e860b62ba582be61f875cbcac117390dca5ed0bdc"
+    }
+  ],
+  "candidate_undertaken_joined": 3,
+  "baseline_undertaken_joined": 1,
+  "candidate_distinct_readings": 1,
+  "candidate_distinct_raw_reply_texts": 1,
+  "full_reference_exact_matches": 3,
+  "request_cycle_seconds": 87.66528687486425,
+  "transport_seconds": 87.58165700081736,
+  "model_phase_seconds": 100.81682109832764,
+  "known_input_tokens": 3639,
+  "known_output_tokens": 308,
+  "retries": 0,
+  "downloads": 0,
+  "cumulative_recent_series": {
+    "attempts": 105,
+    "known_input_tokens": 322948,
+    "known_output_tokens": 20011,
+    "unknown_usage_attempts": 5,
+    "request_cycle_seconds": 5348.439836211503
+  },
+  "limits": [
+    "Known exposed challenge; one provisional source reader, not accepted gold or fresh confirmation.",
+    "Three observations per arm on one source do not establish population accuracy or isolate runtime/session variation.",
+    "No digit-based numbers; empty numeric sequence is not a numeric accuracy test.",
+    "Source SUMNER and line-end under-/taken visually rechecked before new calls.",
+    "T134 and cancelled T136 unchanged; J1 and dense X13 not retried.",
+    "Native fit and general safe repair policy P0 remain open."
+  ]
+}
