@@ -31,6 +31,7 @@ from congressional_globe.providers import (
 from congressional_globe.reading_cli import add_reading_commands, run_reading
 from congressional_globe.review_cli import add_review_commands, run_review
 from congressional_globe.scan_cli import add_scan_commands, run_scan
+from congressional_globe.source_downloads import add_source_commands, run_sources
 from congressional_globe.static_cleanup import normalize_jsonl
 from congressional_globe.storage import (
     CleanupJob,
@@ -60,6 +61,7 @@ CommandHandler = Callable[[argparse.Namespace, Path], None]
 def _commands() -> dict[str, CommandHandler]:
     return {
         "inventory": _inventory,
+        "sources": run_sources,
         "review": run_review,
         "scan": run_scan,
         "ollama": run_ollama_logs,
@@ -284,6 +286,7 @@ def _job_payload(job: CleanupJob | None) -> dict[str, object]:
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="globe")
     commands = parser.add_subparsers(dest="command", required=True)
+    add_source_commands(commands)
     add_review_commands(commands)
     add_scan_commands(commands)
     add_ollama_log_commands(commands)

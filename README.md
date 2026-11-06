@@ -91,3 +91,18 @@ make gate
 ```
 
 Runs formatting, code checks and tests. Node.js/npm is needed for the Markdown formatter; formatting may change files. Project status and the next development task are maintained in the master plan.
+
+## Restore the original sources
+
+The fifteen Internet Archive source files live in ignored `downloads/`, with only `.gitkeep` tracked. From the repository root run:
+
+```bash
+uv run globe sources download
+uv run globe sources verify
+```
+
+The tracked manifest at `src/congressional_globe/data/source_downloads.json` pins all five item identifiers, filenames (item plus derivative), byte sizes, SHA-256 checksums and Archive SHA-1 checksums. Download URLs are `https://archive.org/download/{item}/{item}_{derivative}`. Downloads stream sequentially and become usable only after size and SHA-256 verification. Existing matching files are verified and reused. A mismatch fails without replacing the existing file. A failed transfer leaves a `.partial` file for inspection; move it aside before explicitly trying again. There is no automatic retry or acceptance of changed remote bytes. Archive availability is required only to restore missing files.
+
+Source-reading commands accept the repository root as before and find missing sources in `downloads/`. An explicit source directory still works. Historical source-path records stay unchanged; supported source verification resolves a missing original root path to the downloaded copy and checks the recorded checksum. Existing run recovery may still reject changed code/source-location identities; this migration does not certify every historical run as resumable.
+
+Large source files were removed from Git history for GitHub portability. Local originals and historical evidence are preserved; old-to-new commit mappings are retained under `docs/history-migration/`. No model or full-corpus run is part of source restoration.

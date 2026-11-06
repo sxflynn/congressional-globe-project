@@ -35,7 +35,7 @@ uv run globe scan crop --item congressionalglo7392unit --leaf 328 --paragraph pa
 uv run globe scan inspect artifacts/scans/scan-poc-20261024-01/petition
 ```
 
-Do not refetch the four tracked examples merely to show them. New targets need item hOCR/page-map files under `--root` (repository default). Padding defaults64pixels (0–256); output width defaults1600 (100–2000), without upscaling a crop. Use raw text/span/hash references; reverse mapping of current cleaned-text patches is not implemented. Cache includes `target.json`, `info.json`, receipts, `crop-NN.jpg`, `bundle.json`, and `events.jsonl`. Preserve failures and incompatible results. Investigate frame/leaf mismatches rather than guessing. These commands make no model request or corpus correction.
+Do not refetch the four tracked examples merely to show them. New targets need item hOCR/page-map files under `--root` or its `downloads/` child (repository default). Padding defaults64pixels (0–256); output width defaults1600 (100–2000), without upscaling a crop. Use raw text/span/hash references; reverse mapping of current cleaned-text patches is not implemented. Cache includes `target.json`, `info.json`, receipts, `crop-NN.jpg`, `bundle.json`, and `events.jsonl`. Preserve failures and incompatible results. Investigate frame/leaf mismatches rather than guessing. These commands make no model request or corpus correction.
 
 ### Clean-reading pilot preparation (offline)
 
@@ -122,3 +122,7 @@ mkdir -p artifacts/static-audit-20261011
 ```
 
 Do not rebuild resources during an active run. Dictionary changes alter fingerprints; use a new compatible run plan rather than silently overwriting results. Other systems must copy the recorded resource or document its substitute and new fingerprints. Preserve existing verified artifacts before intentionally refreshing them.
+
+## Restore pinned Internet Archive sources
+
+From the repository root use `uv run globe sources download`, then `uv run globe sources verify`. Both accept `--directory` (default `downloads`). Existing source files are never silently replaced. Missing files require network access; changed remote bytes fail the pinned size/SHA-256 checks. Inspect and move aside a failed `.partial` transfer before explicitly retrying. The manifest and downloader are tracked; the fifteen large files are ignored. Normal source commands resolve repository-root inputs into `downloads/`; explicit source roots remain supported.

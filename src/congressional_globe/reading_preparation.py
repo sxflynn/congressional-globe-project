@@ -13,7 +13,7 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict
 
-from congressional_globe.inventory import PARTS, sha256_file
+from congressional_globe.inventory import PARTS, resolve_source_path, sha256_file
 from congressional_globe.models import PageRecord, ParagraphRecord
 from congressional_globe.reading_contracts import (
     ReadingCandidate,
@@ -438,7 +438,7 @@ def _check_source_coverage(parts: list[_SourcePart], needed: set[str]) -> None:
 def _verify_source(part: _SourcePart) -> dict:
     files = [(part.hocr_path, part.hocr_sha256), (part.page_map_path, part.page_map_sha256)]
     for path, digest in files:
-        if sha256_file(path) != digest:
+        if sha256_file(resolve_source_path(path, relocated=True)) != digest:
             raise ValueError(f"immutable source hash mismatch: {path.name}")
     return part.model_dump(mode="json")
 

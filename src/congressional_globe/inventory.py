@@ -24,7 +24,7 @@ class SourceFile:
 
 
 def expected_paths(root: Path, identifier: str) -> dict[str, Path]:
-    return {suffix: root / f"{identifier}_{suffix}" for suffix in DERIVATIVES}
+    return {suffix: resolve_source_path(root / f"{identifier}_{suffix}") for suffix in DERIVATIVES}
 
 
 def sha256_file(path: Path) -> str:
@@ -52,3 +52,18 @@ def _source_file(path: Path, include_hashes: bool) -> SourceFile | None:
     if not path.is_file():
         return None
     return SourceFile(path, path.stat().st_size, sha256_file(path) if include_hashes else None)
+
+
+def resolve_source_path(path: Path, *, relocated: bool = False) -> Path:
+    """Resolve missing known sources, including saved pre-relocation absolute paths."""
+    names = {f"{item}_{suffix}" for item in PARTS for suffix in DERIVATIVES}
+    if path.exists() or path.name not in names:
+        return path
+    return _downloaded_path(path, relocated)
+
+
+def _downloaded_path(path: Path, relocated: bool) -> Path:
+    candidates = [path.parent / "downloads" / path.name]
+    if relocated:
+        candidates.append(Path(__file__).resolve().parents[2] / "downloads" / path.name)
+    return next((candidate for candidate in candidates if candidate.is_file()), path)

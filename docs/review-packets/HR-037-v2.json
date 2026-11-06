@@ -1,0 +1,66 @@
+{
+  "id": "HR-037",
+  "version": 2,
+  "title": "Source migration and proposed disk cleanup",
+  "instructions": "The source files now live in ignored downloads. The downloader and compatibility checks are implemented; Git history removal and final checks are pending. Optional comments can steer this work and the next storage cleanup. No experiment evidence has been deleted.",
+  "blind": false,
+  "glossary": [
+    {
+      "term": "Git history",
+      "definition": "The saved sequence of file versions and commits in a Git repository.",
+      "aliases": []
+    },
+    {
+      "term": "checksum",
+      "definition": "A value calculated from file bytes to help check whether a copy matches.",
+      "aliases": [
+        "checksums"
+      ]
+    },
+    {
+      "term": "SHA-1",
+      "definition": "The checksum method used in Internet Archive file records.",
+      "aliases": []
+    },
+    {
+      "term": "GiB",
+      "definition": "A size unit equal to 1,073,741,824 bytes. It differs from decimal GB.",
+      "aliases": []
+    },
+    {
+      "term": "GB",
+      "definition": "A decimal size unit equal to one billion bytes.",
+      "aliases": []
+    },
+    {
+      "term": "archive",
+      "definition": "A preserved package of files that can later be restored.",
+      "aliases": [
+        "archives"
+      ]
+    },
+    {
+      "term": "SQLite",
+      "definition": "A database stored in a local file.",
+      "aliases": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "migration-comments",
+      "prompt": "Optional comments on downloading and preserving these files",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "First real download: part 1 page list",
+          "text": "Inputs \u2014 congressionalg7391unit_page_numbers.json from https://archive.org/download/congressionalg7391unit/congressionalg7391unit_page_numbers.json; original size 181545 bytes and a recorded SHA-256 checksum.\n\nExpected output \u2014 restore exactly the original bytes into a separate test folder, as required by your request for repeatable downloads.\n\nActual output \u2014 downloaded_verified; 181545 bytes restored with the original SHA-256 checksum. All 15 local originals separately match current Internet Archive sizes and SHA-1 checksums and your backup by SHA-256.\n\nDifferences \u2014 none for this first restored file. The other 14 files have not been downloaded again. Their existing local copies have been checked. Migration and Git history removal are pending. No historical text has changed."
+        },
+        {
+          "label": "Local storage: measured size and next cleanup proposal",
+          "text": "Inputs \u2014 directory sizes measured on this working copy, excluding inspection of the protected performance work.\n\nExpected output \u2014 explain the roughly 51 GB folder and plan a smaller working copy while preserving evidence, as you requested.\n\nActual output \u2014 about 48 GiB total, the same scale as 51 GB in decimal units. artifacts occupies about 21 GiB, tmp about 23 GiB, sources about 2.38 GiB, Git about 559 MiB before rewriting, and the Python environment about 442 MiB. Two historical run folders account for 17.5 GiB; static-audit outputs add 2.9 GiB. Proposed next step: check references and exact file checksums, make verified archives outside the working folder, test restoring them, then relocate only cold outputs whose consumers have been checked. Similar file names do not prove duplicate bytes. The protected performance area is excluded.\n\nDifferences \u2014 this explains where most space lives; it does not yet establish how much is safely recoverable. No cleanup deletion has occurred. No change to historical evidence, human answers, source bytes or model results is proposed. Backup removal and performance-work cleanup are outside this plan."
+        }
+      ]
+    }
+  ]
+}

@@ -8,7 +8,7 @@ from pathlib import Path
 from lxml import etree  # ty: ignore[unresolved-import]
 
 from congressional_globe.extraction import _is_hocr_page, _page_record, _release_page, load_page_map
-from congressional_globe.inventory import sha256_file
+from congressional_globe.inventory import resolve_source_path, sha256_file
 from congressional_globe.models import PageRecord
 from congressional_globe.reading_contracts import ReadingCandidate, ReadingParagraph
 from congressional_globe.reading_preparation import _Sources, source_paragraph
@@ -54,10 +54,12 @@ def _verify_item(source, wanted: dict[str, ReadingParagraph]) -> list[str]:
     if not wanted:
         return []
     _verify_files(source)
-    page_map = load_page_map(source.page_map_path)
+    page_map = load_page_map(resolve_source_path(Path(source.page_map_path), relocated=True))
     leaves = {p.scan_leaf for p in wanted.values()}
     checked = []
-    for page in _selected_pages(source.hocr_path, page_map, leaves):
+    for page in _selected_pages(
+        resolve_source_path(Path(source.hocr_path), relocated=True), page_map, leaves
+    ):
         checked.extend(_verify_page(page, wanted))
     if wanted:
         raise ValueError("source paragraphs missing from original hOCR")
@@ -99,5 +101,5 @@ def _verify_files(source) -> None:
         (source.hocr_path, source.hocr_sha256),
         (source.page_map_path, source.page_map_sha256),
     ]:
-        if sha256_file(path) != expected:
+        if sha256_file(resolve_source_path(Path(path), relocated=True)) != expected:
             raise ValueError("source file changed")

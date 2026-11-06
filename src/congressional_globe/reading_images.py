@@ -14,7 +14,7 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from congressional_globe import scan_fetch
 from congressional_globe.extraction import load_page_map
-from congressional_globe.inventory import sha256_file
+from congressional_globe.inventory import resolve_source_path, sha256_file
 from congressional_globe.models import BoundingBox, PageRecord, ParagraphRecord
 from congressional_globe.reading_contracts import EvidenceSpan, ReadingCandidate, text_hash
 from congressional_globe.reading_preparation import _Sources
@@ -170,9 +170,11 @@ def _item_plans(source, grouped) -> list[ReadingImagePlan]:
     if not leaves:
         return []
     _verify_files(source)
-    page_map = load_page_map(source.page_map_path)
+    page_map = load_page_map(resolve_source_path(Path(source.page_map_path), relocated=True))
     plans = []
-    for page in _selected_pages(source.hocr_path, page_map, leaves):
+    for page in _selected_pages(
+        resolve_source_path(Path(source.hocr_path), relocated=True), page_map, leaves
+    ):
         plans.extend(_plans_for_page(source, page, grouped))
     return plans
 

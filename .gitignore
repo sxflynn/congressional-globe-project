@@ -19,3 +19,23 @@ artifacts/
 !/tmp/.gitkeep
 
 .playwright-mcp/*
+# Downloaded immutable Internet Archive sources; keep only the directory marker.
+/downloads/*
+!/downloads/.gitkeep
+
+# Prevent original root paths from being accidentally committed again.
+/congressionalg7391unit_djvu.xml
+/congressionalg7391unit_hocr.html
+/congressionalg7391unit_page_numbers.json
+/congressionalglo7392unit_djvu.xml
+/congressionalglo7392unit_hocr.html
+/congressionalglo7392unit_page_numbers.json
+/congressionalglo7393unit_djvu.xml
+/congressionalglo7393unit_hocr.html
+/congressionalglo7393unit_page_numbers.json
+/congressionalglo00unit_djvu.xml
+/congressionalglo00unit_hocr.html
+/congressionalglo00unit_page_numbers.json
+/congressionalglo7395unit_djvu.xml
+/congressionalglo7395unit_hocr.html
+/congressionalglo7395unit_page_numbers.json

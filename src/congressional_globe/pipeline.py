@@ -13,7 +13,7 @@ from typing import Any
 
 from congressional_globe.chunking import chunk_page
 from congressional_globe.extraction import iter_pages, load_page_map
-from congressional_globe.inventory import PARTS, SourceFile, inventory
+from congressional_globe.inventory import PARTS, SourceFile, expected_paths, inventory
 from congressional_globe.models import PageRecord, ParagraphRecord
 from congressional_globe.normalization import apply_edits
 
@@ -30,8 +30,8 @@ def write_inventory(root: Path, destination: Path, include_hashes: bool) -> None
 
 
 def extract_identifier(root: Path, destination: Path, identifier: str) -> tuple[Path, Path]:
-    hocr_path = root / f"{identifier}_hocr.html"
-    map_path = root / f"{identifier}_page_numbers.json"
+    hocr_path = expected_paths(root, identifier)["hocr.html"]
+    map_path = expected_paths(root, identifier)["page_numbers.json"]
     page_path = destination / f"{identifier}_pages.jsonl"
     paragraph_path = destination / f"{identifier}_paragraphs.jsonl"
     destination.mkdir(parents=True, exist_ok=True)

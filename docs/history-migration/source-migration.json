@@ -1,0 +1,113 @@
+{
+  "task": "T138",
+  "date": "2026-11-05",
+  "before_head": "05ff265af4efdc221359e07b9a6235509a00fc4d",
+  "backup": "../congressional-globe-project-backup",
+  "backup_head_matches": true,
+  "backup_git_connectivity_check": "passed",
+  "all_15_backup_sha256_match": true,
+  "all_15_archive_metadata_size_sha1_match": true,
+  "source_bytes": 2550914693,
+  "real_restore": {
+    "file": "congressionalg7391unit_page_numbers.json",
+    "bytes": 181545,
+    "status": "downloaded_verified"
+  },
+  "historical_path_compatibility": "Known source names only; missing former absolute paths resolve into current downloads; existing checksum checks remain mandatory. Immutable records unchanged.",
+  "review": {
+    "packets": [
+      "HR-037-v1",
+      "HR-037-v2"
+    ],
+    "comment_boxes": [
+      2,
+      3
+    ],
+    "AppTest_exceptions": 0,
+    "browser_device_checks": false
+  },
+  "storage_plan": {
+    "artifacts/runs": [
+      {
+        "path": "artifacts/runs/static-final-20261011",
+        "kib": 11836752
+      },
+      {
+        "path": "artifacts/runs/static-full-audit-20261011",
+        "kib": 6542008
+      },
+      {
+        "path": "artifacts/runs/ollama-part5-v1",
+        "kib": 83444
+      },
+      {
+        "path": "artifacts/runs/e2e-final-20261011",
+        "kib": 42928
+      },
+      {
+        "path": "artifacts/runs/e2e-bounded-20261011",
+        "kib": 21980
+      },
+      {
+        "path": "artifacts/runs/ollama-pilot",
+        "kib": 48
+      },
+      {
+        "path": "artifacts/runs/ollama-pilot-2",
+        "kib": 40
+      },
+      {
+        "path": "artifacts/runs/ollama-pilot-3",
+        "kib": 32
+      }
+    ],
+    "artifacts/static-audit-20261011": [
+      {
+        "path": "artifacts/static-audit-20261011/supplemented-static.jsonl",
+        "kib": 2105196
+      },
+      {
+        "path": "artifacts/static-audit-20261011/current-router-residuals.jsonl",
+        "kib": 454844
+      },
+      {
+        "path": "artifacts/static-audit-20261011/supplemented-residuals.jsonl",
+        "kib": 453928
+      },
+      {
+        "path": "artifacts/static-audit-20261011/supplemented-lexicon.txt",
+        "kib": 3428
+      },
+      {
+        "path": "artifacts/static-audit-20261011/samples.jsonl",
+        "kib": 668
+      },
+      {
+        "path": "artifacts/static-audit-20261011/summary.json",
+        "kib": 336
+      },
+      {
+        "path": "artifacts/static-audit-20261011/static_edit_review_parts_1_2.jsonl",
+        "kib": 148
+      },
+      {
+        "path": "artifacts/static-audit-20261011/residual-review-parts-3-5.jsonl",
+        "kib": 124
+      }
+    ]
+  },
+  "protected_performance": "Not inspected or modified; excluded from cleanup plan.",
+  "cleanup_deleted_files": 0,
+  "full_gate": {
+    "status": "passed",
+    "tests": 1383,
+    "seconds": 123.86,
+    "ruff": "passed",
+    "ty": "passed",
+    "complexity_maximum": 5,
+    "markdown_formatter": "passed"
+  },
+  "history_rewrite": "pending",
+  "fresh_checkout": "pending",
+  "remote": "none configured; no push performed"
+}

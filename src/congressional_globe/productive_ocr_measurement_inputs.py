@@ -8,6 +8,7 @@ import re
 from pathlib import Path
 from typing import Any
 
+from congressional_globe.inventory import resolve_source_path
 from congressional_globe.productive_ocr_host import EvidenceRecord, EvidenceRegistry, validate_host
 from congressional_globe.productive_ocr_projection import (
     RequestProjection,
@@ -35,7 +36,7 @@ def _hashes(value: Any) -> set[str]:
 
 
 def _read_verified(path: Path, digest: str) -> bytes:
-    content = path.read_bytes()
+    content = resolve_source_path(path, relocated=True).read_bytes()
     if hashlib.sha256(content).hexdigest() != digest:
         raise ValueError(f"registered resource changed: {digest}")
     return content

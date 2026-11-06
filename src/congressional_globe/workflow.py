@@ -21,7 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from congressional_globe import cleanup
 from congressional_globe.extraction import iter_pages, load_page_map
-from congressional_globe.inventory import PARTS
+from congressional_globe.inventory import PARTS, expected_paths
 from congressional_globe.models import PageRecord, ParagraphRecord, RAGChunk
 from congressional_globe.pipeline import (
     _paragraph_payload,
@@ -474,9 +474,9 @@ def _source_parts(root: Path, metadata_directory: Path) -> list[SourcePart]:
 def _source_part(
     root: Path, metadata_directory: Path, identifier: str, part_number: int
 ) -> SourcePart:
-    hocr = root / f"{identifier}_hocr.html"
-    djvu = root / f"{identifier}_djvu.xml"
-    page_map = root / f"{identifier}_page_numbers.json"
+    hocr = expected_paths(root, identifier)["hocr.html"]
+    djvu = expected_paths(root, identifier)["djvu.xml"]
+    page_map = expected_paths(root, identifier)["page_numbers.json"]
     if not hocr.is_file() or not djvu.is_file() or not page_map.is_file():
         raise ValueError(f"Missing required source derivative for {identifier}")
     metadata = _metadata_source(root, identifier)
@@ -543,10 +543,10 @@ def _extract_part(
     pages: Any,
     paragraphs: Any,
 ) -> tuple[int, int]:
-    page_map = load_page_map(root / f"{identifier}_page_numbers.json")
+    page_map = load_page_map(expected_paths(root, identifier)["page_numbers.json"])
     page_count = 0
     paragraph_count = 0
-    page_stream = iter_pages(root / f"{identifier}_hocr.html", page_map)
+    page_stream = iter_pages(expected_paths(root, identifier)["hocr.html"], page_map)
     started_pages = dropwhile(lambda page: page.scan_leaf < start_leaf, page_stream)
     bounded_pages = started_pages if page_limit is None else islice(started_pages, page_limit)
     for raw_page in bounded_pages:

@@ -1,0 +1,40 @@
+{
+  "id": "HR-037",
+  "version": 1,
+  "title": "Source downloads: first restored file",
+  "instructions": "Early work sample for your requested migration. Optional comments can steer the remaining work. Large files have not moved and Git history has not changed yet.",
+  "blind": false,
+  "glossary": [
+    {
+      "term": "Git history",
+      "definition": "The saved sequence of file versions and commits in a Git repository.",
+      "aliases": []
+    },
+    {
+      "term": "checksum",
+      "definition": "A value calculated from file bytes to help check whether a copy matches.",
+      "aliases": [
+        "checksums"
+      ]
+    },
+    {
+      "term": "SHA-1",
+      "definition": "The checksum method used in Internet Archive file records.",
+      "aliases": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "migration-comments",
+      "prompt": "Optional comments on downloading and preserving these files",
+      "options": [],
+      "required": false,
+      "evidence": [
+        {
+          "label": "First real download: part 1 page list",
+          "text": "Inputs \u2014 congressionalg7391unit_page_numbers.json from https://archive.org/download/congressionalg7391unit/congressionalg7391unit_page_numbers.json; original size 181545 bytes and a recorded SHA-256 checksum.\n\nExpected output \u2014 restore exactly the original bytes into a separate test folder, as required by your request for repeatable downloads.\n\nActual output \u2014 downloaded_verified; 181545 bytes restored with the original SHA-256 checksum. All 15 local originals separately match current Internet Archive sizes and SHA-1 checksums and your backup by SHA-256.\n\nDifferences \u2014 none for this first restored file. The other 14 files have not been downloaded again. Their existing local copies have been checked. Migration and Git history removal are pending. No historical text has changed."
+        }
+      ]
+    }
+  ]
+}
