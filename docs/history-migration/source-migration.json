@@ -107,7 +107,35 @@
     "complexity_maximum": 5,
     "markdown_formatter": "passed"
   },
-  "history_rewrite": "pending",
-  "fresh_checkout": "pending",
+  "history_rewrite": {
+    "status": "passed",
+    "tool": "git-filter-repo",
+    "rewritten_migration_commit": "2638b73",
+    "commits_parsed": 269,
+    "commit_mapping": "docs/history-migration/commit-map.txt",
+    "removed_generated_tree_references": [
+      {
+        "ref": "refs/codex/turn-diffs/captures/1793937073103/477b70fb-9709-44fa-953e-5605098204af/base",
+        "source_paths": 15
+      },
+      {
+        "ref": "refs/codex/turn-diffs/checkpoints/a41fb57116958cba3eb3c5ea05438345/97b5c52db18fd0f64a15fea3420b81ca/1793937021583/e546e5c1-3a77-4c65-b77b-928df5b0930e",
+        "source_paths": 15
+      }
+    ],
+    "packed_storage_before_MiB": 556.84,
+    "packed_storage_after_MiB": 53.89,
+    "source_paths_in_history": 0,
+    "original_source_blobs_reachable": 0,
+    "original_source_blobs_in_object_database": 0,
+    "blobs_at_or_above_100_MiB": 0,
+    "largest_remaining_blob_bytes": 6881280,
+    "git_fsck": "passed"
+  },
+  "fresh_checkout": {
+    "fresh_checkout": "/private/tmp/globe-clean-check-tptjjrxg/repo",
+    "fresh_restore": "one real page map downloaded and SHA-256 verified",
+    "fresh_cli_verify": "all fifteen existing migrated sources verified using clean-checkout code"
+  },
   "remote": "none configured; no push performed"
 }
