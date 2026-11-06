@@ -2,35 +2,34 @@
 
 Prepare the five parts of the 39th Congress, first session for keyword, OCR-tolerant and semantic search, with historical filters and precise source citations. The data/backend workflow is under development; a complete research search service or public research interface is not shipped yet.
 
+## Start the human review desk
+
+1. Open **Terminal** on this Mac.
+2. Paste these two lines and press **Return**:
+
+   ```bash
+   cd /Users/sflynn/workspace/sxflynn/congressional-globe-project
+   make review
+   ```
+
+3. Open **[the human review desk](http://10.0.0.56:8501)** in your browser. The same link works on a phone or tablet connected to the same Wi-Fi.
+4. Choose a review, enter your name, and read the questions. Click **Save draft** to save unfinished answers, or **Submit review** when you are done.
+
+**Keep Terminal open while using the desk.** To stop it, click the Terminal window and press **Control+C**. To start it again, run the same two lines above. If Terminal says the address is already in use, try opening the desk link: it may already be running.
+
+**First time on a new machine:** install `uv` and `make`, open this project folder in Terminal, and run `uv sync --all-groups` once before `make review`. The `cd` line above is this Mac's folder location; use your own project folder location on another machine. You do not need to download the large source files just to start the desk. Existing reviews are stored separately from Git and must be copied from the prepared machine.
+
+If your Wi-Fi address changes, use the **Network URL** printed in Terminal after startup instead of the link above.
+
+Unsaved typing is not preserved. Agents pick up submitted reviews when they next work on the project. Saved reviews live in `artifacts/human-review/reviews.sqlite`; stop the desk before copying that file as a backup. More review details are in [HUMAN_REVIEW.md](HUMAN_REVIEW.md).
+
+## Project status
+
 **[MASTER_PLAN.md](MASTER_PLAN.md)** connects the destination and pilot acceptance checks to seven engineering stages, their subtasks, current progress and the next executable task. Agents start at [AGENTS.md](AGENTS.md); detailed policies and commands are linked by task, not required reading for everyone.
 
 The immediate investigation measures how accurately and efficiently damaged OCR can be repaired with deterministic processing and image-grounded AI, including audits of text that appears clean. The [evaluation contract](docs/reference/ocr-repair-evaluation.md) explains the method; the master contains the actionable tasks and current permission bounds. Optional predictive scoring must not delay cleanup evaluation.
 
 The [bounded deterministic study](artifacts/deterministic-sample-20261028-01/README.md) now preserves exact original-text support for cautious line joins and word/name/number review signals over18frozen paragraphs. The [productive repair checks and recovery path](artifacts/productive-ocr-integration-20261028-01/README.md) are now implemented and tested with fake responses. Actual model readiness and historical accuracy remain unproved.
-
-Use the browser review desk below to answer questions and grade samples. Agents pick up submitted answers when they next work on the project.
-
-## Get started
-
-Install **uv** and **make**, then run from this folder:
-
-```bash
-uv sync --all-groups
-```
-
-Original corpus source files and most generated artifacts are not bundled in Git. The small Wikipedia authority-candidate bundle below is included. On another machine, copy the sources and required resources or follow the [setup and operator notes](docs/reference/commands.md). The prepared machine already has the canonical files and experiment evidence.
-
-## Review samples
-
-```bash
-make review
-```
-
-Open [the review desk on this Mac](http://127.0.0.1:8501), or [from another device on the same network](http://10.0.0.56:8501). Choose a pending review, enter your name, read the source excerpts, and answer the questions. **Save draft** saves unfinished answers; **Submit review** sends a completed review to the agent inbox. Unsaved typing is not preserved. Submitted answers appear under **Submitted**, then **History** after an agent applies them. You can submit a revision without erasing your previous answer.
-
-To try an invented practice example first, use `make review-demo`. It does not call a model or change historical data. Stop the server with Ctrl+C. The desk is available on your local network. No login or access code is needed for this single-user local tool. The LAN IP may change when your network changes.
-
-Saved reviews live in `artifacts/human-review/reviews.sqlite`, outside Git. Stop the desk before copying that file as a backup or transferring it to another machine. Agents archive submitted answers as portable JSON alongside plan updates. Existing paper reviews are linked from [HUMAN_REVIEW.md](HUMAN_REVIEW.md).
 
 ## Compare OCR with the scan
 
